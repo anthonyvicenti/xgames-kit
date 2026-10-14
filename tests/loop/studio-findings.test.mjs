@@ -10,6 +10,7 @@ import { join } from 'node:path';
 import { openLoop, fileStore, stateFileOf, pitchShapeProblems, readerBrief, deliverableFiles, isHostSkipped, messages } from '../../builder/loop/index.mjs';
 import { fakeBindings, keepAll, scriptedVerify, seenTwo, touch } from './dryrun/fakes.mjs';
 import { fakeRegistry, goodLedger, pitchV2, PROMPT } from './fixtures/registry.mjs';
+import { RULES } from '../../builder/loop/brief.mjs';
 
 const reg = fakeRegistry();
 const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate of Ash', hook: 'Hold the gate with friends until the boss comes.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
@@ -60,7 +61,8 @@ test('2. the summary the person reads first is the game in their terms, from the
 
 test('3. a repair is for a player, never the tester; the second reader names what looks made for a tester', async t => {
   const m = messages.repairMessage({ round: { kind: 'repair' }, after: 'playtest', playtest: { answers: { 'row.view': { status: 'not-seen', note: 'no camera' } } }, promises: [{ id: 'row.view', text: 'view' }], ladder: null });
-  assert.match(m, /Fix it for a player, never for the tester.*a readout of the camera, a debug line/s);
+  assert.ok(m.includes(RULES[4]), 'the repair quotes rule 5, which carries "for a player, never only for a check or a tester"');
+  assert.match(RULES[4], /for a player, never only for a check or a tester \(no debug readout, marker or key\)/);
   const b = readerBrief({ bundle: { words: { idea: 'x', references: [], answers: [] }, rows: [], promises: [], tester: null, captures: [] }, reportHow: '' });
   assert.match(b, /anything on screen that looks made for a tester rather than a player/);
 });

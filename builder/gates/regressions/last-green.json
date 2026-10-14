@@ -1,8 +1,8 @@
 {
  "schema": "xgk-regress/1",
- "date": "2026-10-14T03:18:32.607Z",
+ "date": "2026-10-14T05:00:28.145Z",
  "ok": true,
- "seconds": 57,
+ "seconds": 101,
  "results": [
   {
    "id": "camera-keys-dead",
@@ -49,6 +49,17 @@
    "seconds": 6
   },
   {
+   "id": "slow-bots-race",
+   "kind": "control",
+   "gates": [
+    "D"
+   ],
+   "measure": 12,
+   "ok": true,
+   "why": "passes measure 12: scores moved: solo round 0/0/0/0; fair-play pages max score 3, 3, held moved 0.1 s, 0.1 s; every score change came from a counted event (2 of 2 changes over 3 pages: race.onCheckpoint 2)",
+   "seconds": 45
+  },
+  {
    "id": "vista-fewer-islands",
    "kind": "broken",
    "gates": [
@@ -82,10 +93,10 @@
    "seconds": 10
   }
  ],
- "fingerprint": "531aa3f6ae34c0d3c1efc36f7ad3ec6f9eafc20ae82e5daecee2e9d7d298126c",
+ "fingerprint": "eb10f48ed5eef41210e59ddd80ee9a39c5bf76160027ded729cacce60ad1c7a7",
  "files": {
   "builder/gates/regress.mjs": "b54d85d580250714c55bcb86f39757461e80f58ca80839551ad1f9f8fa2187a4",
-  "builder/gates/regressions/README.md": "9e5e46dbeb2f6468e9c38194b71da6cfd614bf2166ff75b480bfa8dfe1518bd8",
+  "builder/gates/regressions/README.md": "b84c5b0f528b936fe26e2a954c8a85afb453d467a0385f7209276fc713d000c7",
   "builder/gates/regressions/bases/kart-loop/base.json": "c14d7b3b8900ad9b331432cc7d80778ba637f8755ce2a40c906072bc408fbcdc",
   "builder/gates/regressions/bases/kart-loop/rules.js": "f06d90b54b50f54581ce437c151e6dba7a7c9b5e377bab304c5a63f097da2c9f",
   "builder/gates/regressions/bases/kart-loop/spec.json": "fe350effe19d631e33f4e9cdd740cd003cb6f289c800fc0b8363b7c5d67a111d",
@@ -99,6 +110,7 @@
   "builder/gates/regressions/car-drives/regression.json": "c802cbfe6570d7a45a9ed7ed86c60d4cdb2472400641b203370b61b4197cf197",
   "builder/gates/regressions/car-strafes/car.js": "5f53e0e7db4dbbbe5069b34d881bb46e6da9404615674d71c11300cfe8b01568",
   "builder/gates/regressions/car-strafes/regression.json": "735fd6deb3057c3a788fe5ad51aa8a1bb6830c67f64e0727585be8d6cc266ff2",
+  "builder/gates/regressions/slow-bots-race/regression.json": "8e1c0d8899099a2dff284d049d486c5e755a1748576e1e6cc9d7641de5e1125e",
   "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
   "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
   "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
@@ -107,7 +119,7 @@
   "builder/tools/lib/controls-check.mjs": "457985506dffc33b09f87958b30aa0ce39c2006f7369455b88f8288fab699312",
   "builder/tools/lib/embed-check.mjs": "5ebc6a5984f5d59e3b7d5a0634ffbc790ec23953e7e8cdd01d7da01b38b17f29",
   "builder/tools/lib/events-check.mjs": "ac814f6008648f924f2461fa49641ecff97a73a520b0a1931384322d94f7bd0a",
-  "builder/tools/lib/fair-check.mjs": "a0fdff3fb6d491751e3479e706683347facc20216651653433b6c6f2dcdd2be4",
+  "builder/tools/lib/fair-check.mjs": "b159673368399c7026c38de679fd196008f51cba61ec210871e679efae70f6dd",
   "builder/tools/lib/forge-cart-check.mjs": "52e5f987d408e63d328d61b874b1c20ee79d60739b61a9d42332d3bdf0fc62d0",
   "builder/tools/lib/forge-controls-check.mjs": "ec711c9b96acbdb9cc38046d690b05090fb70f4220300fd6767570bfac76180e",
   "builder/tools/lib/forge-feel-check.mjs": "faa3916aba65c124ecf9d4abf0735b5208e1e1df33fd8cc4f498c462ed6006dc",
@@ -115,7 +127,7 @@
   "builder/tools/lib/forge-hud-check.mjs": "e0f9edb2e77678a77a9e6b78db0071c016b1905b121df36ac1d1330e29ee585f",
   "builder/tools/lib/forge-keys-check.mjs": "bcbd006a5f47f7a0ed8cb517e7628180bdee2ef076753a7e9f77aeee9779e273",
   "builder/tools/lib/forge-pickup-check.mjs": "49ef5944acf1ace845d22ef5824aba55f7dde798abdfafefb2d5be7be5d7ca80",
-  "builder/tools/lib/forge-round-check.mjs": "f6df155011443100ba4ac545c01adb86331ebf334c83ee7d0904802248c07ec3",
+  "builder/tools/lib/forge-round-check.mjs": "7b944bd2361b6162a129e825e4b26fab94ced569b3cf77b87c74f9a23904fc30",
   "builder/tools/lib/forge-sight-check.mjs": "e8c3d49e88d1ee93ddc6b5f3d013bb13755c91255d8fd89859a1e45117c91b00",
   "builder/tools/lib/forge-touch-check.mjs": "efea3c18bb70518dc10022771f854ac5c3d412544a2f8c3a8f95508903f0e29c",
   "builder/tools/lib/forge-webgl-check.mjs": "af2dfa1f26a5ce672b59bd4bb5f047ef0afc1978849e41e7aa1036ea641f7ce6",
@@ -137,12 +149,12 @@
   "builder/tools/lib/verdict.mjs": "912cd0c4f85330c8d0743d0a7f14d05783b7336e66a593666df7b5796a038df9",
   "builder/tools/lib/vista-sight-check.mjs": "5d1a193a7641ee3e5be1357fb15dcf57b5fa2f8ac4551db90cbc7ffd40f9ddc5",
   "builder/tools/lib/voice-chat-check.mjs": "eb362061c40b256b2d4d1712c147be2fb7be81b53507b81492acb0dfeb3b6218",
-  "builder/tools/lib/world-check.mjs": "c47a7ed1fe92597bb2c02616fc2ea843bca308b76945d5bcde661f7ab5f13623",
+  "builder/tools/lib/world-check.mjs": "e84f30100c609b68a923f6565a2ef9dd631cdbd8f597b388008efbb046dfdc12",
   "builder/tools/lib/worlds-check.mjs": "c7b814b1022baf37f6fb3785fa024fd0a14a73e92fe41a8cf25383b59136a97f",
   "builder/tools/lib/worlds-net-check.mjs": "01075d040a2a7f695710fc11662710f9f3fe22e3421fb32f8cb3ae24cc21cc43",
   "builder/tools/lib/worlds-room-check.mjs": "0490ff4756cd7b4ce20d1405980fe8e5576917ce4720537fc887c013a9f1767e",
   "builder/tools/lib/worlds-watch-check.mjs": "de72125f7a1733a66290c27426da7a401e5ec9a3b986f5a819e52c476feb9011",
-  "builder/tools/verify.mjs": "ca1627046e92327c86b351c6bfe2e0056745cbbe5802175e1ae463ad031acd07"
+  "builder/tools/verify.mjs": "47841933242ad4a3453a2d49f00966add8e147a253b73002f7d9629759b66b0f"
  },
  "machine": {
   "node": "v24.19.0",

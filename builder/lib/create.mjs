@@ -51,6 +51,7 @@ export async function writeGuide(dir, { force = false } = {}) {
     MECHANICS: (spec.mechanics ?? []).map(m => `\`${m.id}\`${m.as ? ` (${m.as})` : ''}`).join(', ') || '(none)',
     CONTROLS: Object.entries(spec.controls ?? {}).map(([k, v]) => `${k}: ${v}`).join('; ') || '(none named)',
     WORLD: spec.world ? `${spec.world.template}, ${spec.world.size ?? 'small'}` : '',
+    PLACE: [spec.runtime && `runtime ${spec.runtime}${spec.profile ? `/${spec.profile}` : ''}`, spec.loop && `loop ${spec.loop}`, spec.kind && `kind ${spec.kind}`].filter(Boolean).join(', ') || 'a game',
   };
   const wrote = [];
   for (const [from, to] of GUIDE_FILES) {

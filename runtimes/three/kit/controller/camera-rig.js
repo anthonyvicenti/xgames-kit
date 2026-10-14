@@ -29,6 +29,19 @@ export const RIG_DEFAULTS = {
 };
 const DEG = Math.PI / 180;
 
+/**
+ * How far from the player the crosshair rests on flat ground when the camera is left alone: the ray from the camera
+ * through the pivot (`height` above the feet, pitched down `pitchDeg`) meets the ground `height / tan(pitch)` past the
+ * pivot. Pure, so create reads it from a game's own camera config (a mechanic's derived defaults: the projectile's
+ * stream reaches it). → metres, or null for a rig with no crosshair at rest (first person looks at the horizon; top and
+ * follow aim at the cursor).
+ */
+export function restAimDistance(mode = 'third', settings = {}) {
+  if (mode !== 'third' && mode !== 'orbit') return null;
+  const C = { ...RIG_DEFAULTS[mode], ...settings }, pitch = (C.pitchDeg ?? 0) * DEG;
+  return pitch > 0.01 && C.height > 0 ? C.height / Math.tan(pitch) : null;
+}
+
 export function createCameraRig({ camera, mode = 'third', physics = null, exclude = null, settings = {}, yaw = 0, pointer = null, wheel = null, free = null }) {
   const C = { ...RIG_DEFAULTS[mode] ?? RIG_DEFAULTS.third, ...settings };
   const fixed = mode === 'top' || mode === 'follow';

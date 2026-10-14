@@ -49,8 +49,16 @@ export function forgeKeys(forge = {}) {
 }
 
 
-export function forgeHud({ spec = {}, game, sounds, multiplayer, assets, world, notes = [] }) {
-  const T = themeOf(THEME);
+/** The HUD theme of a forge game: its kind's (kinds/<id>.json → hud.theme) when the theme exists, else the runtime's. */
+export function themeFor(kind) {
+  const asked = kind?.hud?.theme;
+  return { name: themeOf(asked) ? asked : THEME, unmet: !!kind?.hud && !themeOf(asked) };
+}
+
+export function forgeHud({ spec = {}, game, sounds, multiplayer, assets, world, notes = [], kind = null }) {
+  const th = themeFor(kind);
+  if (th.unmet) notes.push(`forge HUD: the ${kind.id} kind's HUD is colours and a font, and the forge HUD draws whole themes only; the ${th.name} theme stands until the game builds its own`);
+  const T = themeOf(th.name);
   // ---- the theme: colours, words, fonts ----
   const cross = game.ui?.crosshair;
   game.ui = { ...T.ui, ...(cross && cross !== '#ffffff' ? { crosshair: cross } : {}) };
@@ -82,7 +90,7 @@ export function forgeHud({ spec = {}, game, sounds, multiplayer, assets, world, 
   }
   for (const p of r.problems) notes.push(`sounds: ${p}`);
   notes.push(`sounds: ${r.rows.length - r.presets.length} of ${r.rows.length} ids play the forge library's files (${r.assets.length} files, ${(r.bytes / 1024).toFixed(0)} KB) through gf-audio at the default bus levels${r.presets.length ? `; still gf-audio presets (the library has no file): ${r.presets.join(', ')}` : ''}`);
-  notes.push(`hud: the "${THEME}" theme (two OFL font files as font slots, six colour slots), the forge keys in How to play (${game.controls.more.map(k => k[1].toLowerCase()).join(', ')}), touch buttons for each`);
+  notes.push(`hud: the "${th.name}" theme (two OFL font files as font slots, six colour slots), the forge keys in How to play (${game.controls.more.map(k => k[1].toLowerCase()).join(', ')}), touch buttons for each`);
   // ---- the friends page in the theme's colours ----
   if (multiplayer && multiplayer.theme === undefined) multiplayer.theme = { ...T.mp };
   // ---- what the game downloads before its menu: the loading bar's total ----
@@ -104,5 +112,5 @@ export function forgeHud({ spec = {}, game, sounds, multiplayer, assets, world, 
   try { const raw = JSON.parse(readFileSync(join(FORGE, 'kit/BUILD.json'), 'utf8')).wasm.bytes.raw; if (raw > 0) { bytes += raw; files++; } } catch { /* no build record: the total is the assets' */ }
   game.boot = { bytes, files, later: LATER, laterBytes: later, afterMenu: { first: wait.first.length, later: wait.later.length } };
   (world.__art ??= []).push(...art);
-  return { theme: THEME, sounds: r };
+  return { theme: th.name, sounds: r };
 }

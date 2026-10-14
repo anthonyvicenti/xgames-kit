@@ -7,7 +7,7 @@ import { pathToFileURL } from 'node:url';
 import { deflateRawSync } from 'node:zlib';
 import { createBridge, fnv } from '../runtimes/godot/kit/bridge.js';
 import { worldFor } from '../runtimes/godot/kit/world.js';
-import { checkSpec, closure, mapOf, sourceOf, DEFAULT_SIDE_MAP } from '../runtimes/godot/tools/create.mjs';
+import { checkSpec, closure, flatStyleOf, mapOf, sourceOf, DEFAULT_SIDE_MAP } from '../runtimes/godot/tools/create.mjs';
 import { logErrors } from '../runtimes/godot/tools/export.mjs';
 import { extract, platformKey } from '../runtimes/godot/tools/install.mjs';
 import { RUNTIME, SHARED, TOOLCHAIN } from '../runtimes/godot/tools/lib.mjs';
@@ -279,4 +279,14 @@ test('seen from above the field is three\'s draw plan, packed for the bridge; a 
   assert.equal(pieces[0][10], 2.5, 'it stands on its near edge (row 2, the bottom of the footprint)');
   assert.ok(P.items.some(i => i[0] === -1), 'a shadow under it');
   assert.deepEqual(P.items.map(i => i[9]), [...P.items.map(i => i[9])].sort((a, b) => a - b), 'drawn in layer order');
+});
+
+test('the 2D style is the kind look\'s own, never the kind\'s name', async () => {
+  const { readFile } = await import('node:fs/promises');
+  const look = async id => { const k = JSON.parse(await readFile(join(SHARED.kinds, `${id}.json`), 'utf8')); return k.look.godot ?? k.look.three; };
+  assert.equal(flatStyleOf(await look('pixel')), 'pixel');
+  assert.equal(flatStyleOf(await look('drawn')), 'drawn');
+  assert.equal(flatStyleOf({ style: 'drawn', preset: 'storybook-day' }), 'drawn', 'a new kind with a drawn look is drawn, whatever its id');
+  assert.equal(flatStyleOf(await look('silly')), 'pixel', 'a 3D look names no 2D style');
+  assert.equal(flatStyleOf(null), 'pixel');
 });

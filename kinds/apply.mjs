@@ -1,6 +1,7 @@
 // Applying a kind in create: the one seam (builder/tools/create.mjs, right after specToConfig) through which a spec's
 // `kind` reaches the game it makes. A kind changes how the game looks and sounds, never a rule of play, and the spec's
-// own answers always win over it:
+// own answers always win over it (a kind is a starting default: it never refuses, and never overwrites what the spec
+// said):
 //
 //   look     the kind's look values on this runtime (kinds/<id>.json → look.<runtime>.values) over the preset's, folded
 //            into the chosen time of day too, so a preset's time block never shadows them; only when the game's look
@@ -28,6 +29,17 @@ export function over(a, b) {
   const out = structuredClone(a);
   for (const [k, v] of Object.entries(b)) out[k] = isObj(v) && isObj(out[k]) ? over(out[k], v) : structuredClone(v);
   return out;
+}
+
+/** Lay the spec's own values back over `target` wherever the kind's `laid` layer set them. → the paths kept */
+function keepSpec(target, laid, own, at = '') {
+  const kept = [];
+  for (const [k, v] of Object.entries(own)) {
+    if (!(k in laid)) continue;
+    if (isObj(v) && isObj(laid[k]) && isObj(target[k])) kept.push(...keepSpec(target[k], laid[k], v, `${at}${k}.`));
+    else { target[k] = structuredClone(v); kept.push(`${at}${k}`); }
+  }
+  return kept;
 }
 
 /** A kind preset by id (kinds/<id>.json), or null. */
@@ -65,23 +77,35 @@ export async function applyKind(C, spec, { place, kinds = HERE } = {}) {
   const rt = place?.runtime, said = [];
 
   // ---- look: the kind's values, over the preset and over its time of day ----
+  // the spec's own colours (look.palette) are its answer: the kind's palette and HUD accent stay out of their way
+  const ownPalette = Array.isArray(spec?.look?.palette) && spec.look.palette.length > 0;
   const L = kindLook(kind, { runtime: rt, profile: place?.profile });
-  if (L?.values && Object.keys(L.values).length && C.look && (!spec.look?.preset || spec.look.preset === L.preset)) {
+  const lookValues = L?.values ? Object.fromEntries(Object.entries(L.values).filter(([k]) => !(ownPalette && k === 'palette'))) : {};
+  if (Object.keys(lookValues).length && C.look && (!spec.look?.preset || spec.look.preset === L.preset)) {
     const time = C.look.time ?? L.time;
-    C.look = over(C.look, L.values);
-    if (isObj(C.look.times) && time) C.look.times[time] = over(C.look.times[time] ?? {}, L.values);
-    said.push(`look values (${Object.keys(L.values).join(', ')})`);
+    C.look = over(C.look, lookValues);
+    if (isObj(C.look.times) && time) C.look.times[time] = over(C.look.times[time] ?? {}, lookValues);
+    said.push(`look values (${Object.keys(lookValues).join(', ')})`);
   }
 
   // ---- world: values over the template, the kind's world preset ----
   const W = kind.world?.[rt];
   if (W && C.world && (!W.templates || W.templates.includes(spec.world?.template))) {
+    let laid = {};
     if (W.preset && spec.world?.template === (W.default ?? W.templates?.[0])) {
       const file = join(REPO, W.preset);
-      if (existsSync(file)) { const { about, template, ...p } = JSON.parse(readFileSync(file, 'utf8')); C.world = over(C.world, p); said.push(`world preset ${W.preset}`); }
+      if (existsSync(file)) { const { about, template, ...p } = JSON.parse(readFileSync(file, 'utf8')); C.world = over(C.world, p); laid = over(laid, p); said.push(`world preset ${W.preset}`); }
       else notes.push(`kind ${kind.id}: its world preset ${W.preset} is not in this checkout`);
     }
-    if (W.values) { C.world = over(C.world, W.values); said.push(`world values (${Object.keys(W.values).join(', ')})`); }
+    if (W.values) { C.world = over(C.world, W.values); laid = over(laid, W.values); said.push(`world values (${Object.keys(W.values).join(', ')})`); }
+    // the spec's own world values (world.params, which the template keeps under its own name when it has one: voxel)
+    // win wherever the kind's layer touched them
+    const own = isObj(spec.world?.params) ? spec.world.params : null, key = spec.world?.template;
+    if (own) {
+      const inner = isObj(C.world[key]) && isObj(laid[key]);
+      const kept = keepSpec(inner ? C.world[key] : C.world, inner ? laid[key] : laid, own);
+      if (kept.length) notes.push(`kind ${kind.id}: the spec's own world values kept (${kept.join(', ')})`);
+    }
   }
 
   // ---- camera: the rig's numbers when the rig is the kind's ----
@@ -114,7 +138,7 @@ export async function applyKind(C, spec, { place, kinds = HERE } = {}) {
     const ui = C.game.ui = { ...(C.game.ui ?? {}) };
     if (theme) ui.theme = theme;
     else {
-      Object.assign(ui, { ...(accent ? { accent, crosshair: accent } : {}), ...(panel ? { panel } : {}), ...(text ? { text } : {}) });
+      Object.assign(ui, { ...(accent && !ownPalette ? { accent, crosshair: accent } : {}), ...(panel ? { panel } : {}), ...(text ? { text } : {}) });
       ui.style = { ...style, ...(font ? { font } : {}) };
       const f = font ? await fontOf(font) : null;
       if (f?.file) {

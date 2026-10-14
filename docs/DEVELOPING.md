@@ -113,11 +113,11 @@ even for a game that has a `gamesfun.json`. `tests/web3-switch.test.mjs` holds b
 
 `skills/<name>/SKILL.md` is the source. `node scripts/sync-skills.mjs` mirrors it byte for byte into `.claude/skills/`
 and `.agents/skills/`; `tests/skills.test.mjs` fails on drift. The front matter `name` must equal the folder name.
-Four things are generated first (`scripts/gen-loop.mjs`), never edited by hand: `skills/build-loop/SKILL.md` (from the
-loop tools), `plugin/agents/playtester.md` (from the loop's play-test prompt in `builder/spec/prompts/`), the block
-between the `gf:pitch-play` marks in `skills/make-a-game/SKILL.md` and the block between the `gf:game-building` marks
-in `AGENTS.md` (from the prompt source, `builder/spec/prompts/source/`). Change a loop tool's description or a prompt
-and run the script.
+Four things are generated first (`scripts/gen-loop.mjs`), never edited by hand: `skills/build-loop/SKILL.md` (from
+the loop's order, `builder/loop/order.mjs`, and the loop tools), `plugin/agents/playtester.md` and
+`plugin/agents/reader.md` (from `builder/loop/playtest.mjs` and `builder/loop/reader.mjs`), and the block between the
+`gf:rules` marks in `AGENTS.md` (the five prompt rules, `builder/loop/brief.mjs` RULES, each with its enforcer in
+`builder/tools/lib/homes.json`). Change one of those sources and run the script.
 
 ## Cross-platform rules
 

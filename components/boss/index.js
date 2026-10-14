@@ -433,7 +433,7 @@ export const manifest = {
   ],
   sync: { owner: 'host', how: 'the host owns the boss; every copy draws it, its telegraphs and its bar from the shared row' },
   note: [
-    'Give it its own body: a character role "boss" in the spec (else it wears the minions\' body, which the creator rejected).',
+    'Give it its own body: a character role "boss" in the spec (else it wears the minions\' body and reads as one more of them).',
     'Melee swings and shots hurt it by themselves, its name and health are a bar across the top of the HUD, and bringing it down already scores killPoints.',
     'With the levels mechanic it comes on the last level; without one it comes startDelay s into the round.',
   ],

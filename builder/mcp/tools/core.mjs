@@ -52,7 +52,7 @@ export const tools = [
   {
     name: 'gamesfun_create',
     annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: false, openWorldHint: false },
-    description: 'Make a game folder from an example (from) or from a locked game spec file (spec): a runnable, multiplayer three.js project on gf-three with the kit vendored, the world, mechanics, bodies and look applied, every visible thing a slot, and an AGENTS.md guide. With a spec, rules.js is a stub you then write. Re-running on an existing game refreshes the kit and keeps rules.js and config.',
+    description: 'Make a game folder from an example (from) or from a locked game spec file (spec): a runnable multiplayer game on the spec\'s runtime with the kit vendored, the world, mechanics, bodies and look applied, every visible thing a slot, and an AGENTS.md guide. With a spec, rules.js is a stub you then write. Re-running on an existing game refreshes the kit and keeps rules.js and config.',
     inputSchema: {
       type: 'object', required: ['dir'],
       properties: {

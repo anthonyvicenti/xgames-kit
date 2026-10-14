@@ -1,7 +1,7 @@
 {
   "catalogVersion": 1,
   "inputs": {
-    "sha256": "40a977810cb02be5e406b257952e48cfc968c8e0be7f44ce519ed1fb7b6ead3a",
+    "sha256": "78a8283593b261ca751f5ab58657a7c865deef21490c5293b710ce27bd579dfd",
     "files": [
       "components/board/mechanic.json",
       "components/boss/mechanic.json",
@@ -1340,7 +1340,7 @@
             "date": "2026-10-13"
           }
         ],
-        "note": "tested by headless browsers only; nobody has played a Godot game on the kit yet. Opening it to pitches is the creator's call."
+        "note": "tested by headless browsers only; nobody has played a Godot game on the kit yet. Open to pitches with every runtime (the creator, 2026-10-14: \"Lets offer all engines\")."
       },
       "profiles": [
         {
@@ -9282,7 +9282,7 @@
       "bots": "no bot code",
       "notes": {
         "lines": [
-          "Give it its own body: a character role \"boss\" in the spec (else it wears the minions' body, which the creator rejected).",
+          "Give it its own body: a character role \"boss\" in the spec (else it wears the minions' body and reads as one more of them).",
           "Melee swings and shots hurt it by themselves, its name and health are a bar across the top of the HUD, and bringing it down already scores killPoints.",
           "With the levels mechanic it comes on the last level; without one it comes startDelay s into the round."
         ],
@@ -10671,7 +10671,7 @@
         "lines": [
           "Give the rules once, in setup: board.rules({ legal(move, s) → true or the reason in words, winner(s) → null | { seat, cells } | { draw: true } }). The board does turns, refusals, pieces, the win line, bots and the end of the round.",
           "A move is { type: \"place\", to: [c, r] } or { type: \"move\", from, to }. s has at, empty, owner, set, line, flank, reach, dropRow, count, full, last, turn, data. apply(move, s) for captures, start(s) for the opening (README.md).",
-          "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): ask the creator which when the prompt does not say."
+          "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): the ledger's body line decides it (asked only when the person's words leave it open)."
         ],
         "readme": "components/board/README.md",
         "stub": {
@@ -11266,7 +11266,7 @@
     {
       "id": "blocky",
       "label": "Blocky",
-      "feel": "Pixel-textured blocks under a real sun, lanterns glowing in the caves, and block people in saturated colours: a world you build cube by cube, from the hilltops down into the dark.",
+      "feel": "Pixel-textured blocks under a real sun, lanterns glowing in the caves, and block people in saturated colours: the look of a world made cube by cube, from the hilltops down into the dark (whether players build in it is the game's).",
       "references": [
         "Grow a Garden",
         "Steal a Brainrot",
@@ -11859,7 +11859,7 @@
     {
       "id": "drawn",
       "label": "Drawn",
-      "feel": "2D hand-drawn cartoon at 128 texels a metre: smooth shapes with thick dark ink, soft edges, bright flat colour, squashy characters with big expressions. A side-on stage you read like a cartoon panel.",
+      "feel": "2D hand-drawn cartoon at 128 texels a metre: smooth shapes with thick dark ink, soft edges, bright flat colour, squashy characters with big expressions. Seen side-on by default, read like a cartoon panel.",
       "references": [
         "Hollow Knight: Silksong",
         "Cuphead",
@@ -12417,7 +12417,7 @@
     {
       "id": "pixel",
       "label": "Pixel",
-      "feel": "2D pixel art with hard square texels, 16 a metre, whole screen pixels a texel, at most 32 colours a picture, a one-texel outline in each thing's own deep shade. A cosy town seen from above in three-quarter view: villagers with their own skin, hair and clothes, soft paths and pond shores, flowers, crops behind a fence, houses and trees to walk behind; or a cave seen from the side.",
+      "feel": "2D pixel art with hard square texels, 16 a metre, whole screen pixels a texel, at most 32 colours a picture, a one-texel outline in each thing's own deep shade. For example a cosy town seen from above in three-quarter view (villagers with their own skin, hair and clothes, soft paths and pond shores, houses and trees to walk behind), or a cave seen from the side; what the place is, is the game's.",
       "references": [
         "Stardew Valley",
         "Balatro",

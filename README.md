@@ -1,18 +1,17 @@
 # xgames-kit
 
 An open-source game builder for the AI coding agent you already use (Claude Code, Codex, Cursor, opencode, Cline…).
-You describe a multiplayer 3D browser game; your agent pitches it, locks a spec, builds it on games.fun's three.js kit
-(**gf-three**), and the kit's own checks and a black-box play-tester decide when it is done. Friends join from their
-own browser and see each other in the game. Every model, texture and number is a slot you can swap without code.
+You describe a multiplayer browser game. Your agent writes down what you asked for in your own words, pitches two or
+three takes, locks a spec and builds the game; six gates and a black-box play-tester decide when it is done. Friends
+join from their own browser and see each other in the game. Every model, texture and number is a slot you can swap
+without code.
 
-Windows, macOS and Linux, with Node 24 and Chrome (or Edge). No desktop app and no build step. MIT licensed.
-
-The repository is `xgames-kit`; the command it installs is `gamesfun` (`npx gamesfun …` or `node bin/gamesfun.mjs …`),
-and its MCP tools are named `gamesfun_*`.
+Windows, macOS and Linux, with Node 24 and Chrome (or Edge). No desktop app and no build step. MIT licensed. The
+command it installs is `gamesfun` (`npx gamesfun …` or `node bin/gamesfun.mjs …`); its MCP tools are `gamesfun_*`.
 
 **Status, plainly:** used day to day on Linux by its makers; on Windows and macOS only automated tests have run it so
 far ([docs/TRY-IT.md](docs/TRY-IT.md) asks for your first report). The web3 parts run on Solana devnet only. A game
-passing the kit's checks is the kit's bar, not a player's verdict.
+passing the gates is the kit's bar, not a player's verdict.
 
 ## Quick start (about a minute)
 
@@ -33,102 +32,116 @@ in your agent and say what you want ("make a game where we defend a lighthouse f
 read `AGENTS.md` ([docs/MCP.md](docs/MCP.md) sets up the server for each). Stay current with
 `node bin/gamesfun.mjs update` (fast-forward only).
 
-## How the AI loop works
+## Three questions place every game
 
-```
- your words ──▶ pitch ──▶ spec ──▶ create ──▶ rules ──▶ gates ──▶ black-box ──▶ deliver
-                2–3 takes  locked    the kit    your      the full   play-test      the honest
-                you pick   & checked builds it  agent     verify in  by a separate  outcome, with
-                                                writes    real Chrome subagent      what failed
-                                                rules.js
-                                ▲                              │ fail
-                                └──────── repair round ◀───────┘
-```
-
-1. **Pitch.** The agent reads the kit's catalog and offers 2–3 takes that differ in how they play; you pick one.
-2. **Spec.** Your choice becomes a game spec that must validate against the schema and the kit; then it is locked.
-3. **Create.** A script makes the game from the spec: the kit vendored, the world, the mechanics, bodies and look.
-4. **Rules.** The agent writes only what makes this game this game (`rules.js`) and tunes its config.
-5. **Gates.** `verify` plays the game in real Chrome with real keys and mouse, alone with bots and as two players over
-   WebRTC, and answers six questions, the gates: is the kit intact and everything a slot, does it boot clean, does
-   every input and event show on the player's screen, does the round close with scores from real events, do friends
-   see each other, and is it what the spec says. A fail hands the agent a repair round. A bug report never adds a
-   rule: it becomes a broken example a gate must fail ([GATES.md](builder/GATES.md)).
-6. **Black-box play-test.** A separate subagent plays the game from the screen only and reports which promises it saw
-   work. It never sees the code.
-7. **Deliver.** The version that passed is handed over with its honest outcome, and what still fails is named.
-
-The order is held by the loop's tools (`gamesfun_next` and the `gamesfun_step_*` tools, also from a terminal as
-`node bin/gamesfun.mjs tool <name>`), not by a prompt. The playbook for agents is [AGENTS.md](AGENTS.md).
-
-## Runtimes, loops and kinds
-
-A spec (v2, `builder/spec/game-spec.v2.schema.json`) places a game by three answers: **runtime** and its **profile**
-(what runs it, chosen by hard limits: devices, graphics, camera), **loop** (how it is played: who acts when) and **kind**
-(how it feels; it never changes play). `npx gamesfun catalog` lists them from the registry (`registry/catalog.json`),
-with each one's state and its device limits said plainly; `npx gamesfun catalog matrix` shows which kinds are proven
-on which runtime.
-
-| Runtime / profile | For | Draws with |
+| Question | Answer | Chosen by |
 |---|---|---|
-| `three` / `standard-3d` | 3D on lots, buildings, arenas and the block world | WebGL (three.js) |
-| `three` / `flat-2d` | 2D games seen from above or from the side | WebGL (three.js) |
-| `three` / `scenic-3d` | stylised scenic 3D: living grass, fog, a day cycle | WebGPU, or WebGL2 inside the same renderer |
-| `vista` | calm games where the place is the point: a coast, the sea, the sky | **WebGPU only**, on a desktop graphics card |
-| `forge`, no example yet | first-person action with weight for friends in co-op | a prebuilt Rust core on WebGPU, or its WebGL2 build where a browser has no WebGPU |
+| What runs it? | the **runtime** (and its profile) | hard limits only: the devices, the graphics, the camera, what must be built |
+| How is it played? | the **loop** (`round`, `run`, `world`, `turns`, `match`, `endless`, `saved`) and its mechanics | who acts when, and what moves |
+| How does it feel? | the **kind** | last, from your words and references |
 
-**vista** plays on a desktop only. It has no WebGL path: a browser without WebGPU, or a card with fewer than 31 sampled
-or 5 storage textures per shader stage, gets the kit's "open in a browser with WebGPU" screen; never a phone, never
-inside a post on X. Each vista game carries the core (about 53 MB; about 62 MB a game). Its clouds are the core's own
-(MIT): this kit leaves out the volumetric sky-pro-webgpu clouds, whose notice names a separate licence. The example is
-`lantern-cove`.
+A spec (v2, `builder/spec/game-spec.v2.schema.json`) says each. The registry (`registry/`, built from the parts'
+own manifests) answers what exists, what is tested and what is open: `npx gamesfun catalog`, and
+`npx gamesfun catalog matrix` for which kinds are proven on which runtime. The catalog assists; it never refuses or
+narrows an idea. What the kit lacks, the game builds (in `rules.js`, a module under `src/`, or a declared override of
+a runtime file), and the play-tester checks it like every other promise. A part moves into the kit only after a
+second game needs it.
 
-**forge has no example yet: its free stand-in art is still to be made.** The runtime is in `runtimes/forge` (its core is
-our own Rust, MIT, on wgpu, shipped as two prebuilt, hash-pinned `.wasm` builds, one for WebGPU and one for WebGL2, so
-no Rust toolchain is needed). The kit ships no Meshy output, so a forge game made here draws CC0 stand-ins in place of
-models made with Meshy; those stand-ins are not made yet, and a forge example comes with them. Art and sound licences:
-[THIRD_PARTY.md](THIRD_PARTY.md).
+## Runtimes
 
-## Enforced by code, and advice
+| Runtime / profile | For | Runs on | Examples |
+|---|---|---|---|
+| `three` / `standard-3d` | 3D: arenas, yards, a board on a square, a block world | any browser with WebGL2: desktops, laptops, phones, inside a post on X | `soak-squad`, `giant-four`, `block-valley` |
+| `three` / `scenic-3d` | stylised scenic 3D: living grass, fog, a day cycle | WebGPU, else WebGL2 in the same renderer | `isle-run` |
+| `three` / `flat-2d` | 2D seen from above or from the side | as standard-3d | `coin-hop`, `market-day` |
+| `forge` | first person with weight, co-op for 1 to 4 | phones and desktops: WebGPU where the browser has it, else its WebGL2 build; first person only | `ruin-hold` |
+| `vista` | calm places: a coast, the sea, the sky | **a desktop browser with WebGPU only**: not phones or tablets, not inside a post on X; the first visit compiles shaders (about 10 s); about 62 MB a game | `lantern-cove`, `isle-hop` |
+| `godot` / `2d`, `3d` | Godot 4 web exports: 2D side-on and top-down, 3D with a follow camera | WebGL2, one thread; a 37.7 MB engine file (about 9 MB compressed) on first load; not Safari | `godot-ledge-friends`, `godot-meadow-walk`, `godot-arena-friends`, `godot-coin-hop` |
 
-| Enforced by code | Advice the agent is given |
-|---|---|
-| the order of the steps; a step out of order is refused | keep the first version small (one map, one loop, 2–4 mechanics) |
-| the locked spec (an edit is put back and refused) | pitch takes that differ in how they play |
-| the loop's state, sealed with an HMAC (key in your config folder) | choose the smallest edit that does what you asked |
-| proof is about the files as they are (change a file, and that step runs again) | say plainly what was left out and why |
-| the play-test report: only the play-tester's, with the round's one-time token | the content policy (steer, don't refuse) |
-| the kit's checks, and the kit's copies in a game unedited | |
-| in Claude Code with the kit's plugin: no writes to the loop's folder; the play-tester reads only its own folder | |
-| devnet only; no private key in the kit; wallets sign in your browser | |
+Phones are measured in a phone-sized browser, not yet on a real phone. forge's core is our own Rust on wgpu, shipped
+as two prebuilt, hash-pinned `.wasm` builds, so no Rust toolchain is needed; its example draws free CC0 stand-ins.
+Godot installs its toolchain only when a game chooses it. Each runtime's limits are in its `runtimes/<id>/runtime.json`.
 
-What code cannot hold is said where it applies: [plugin/scripts/guard.mjs](plugin/scripts/guard.mjs) and
-[builder/lib/loop-seal.mjs](builder/lib/loop-seal.mjs) each list what they cannot stop.
+## Kinds: starting looks, not rules
+
+A kind is one JSON preset (`kinds/<id>.json`): the look, the world family, the camera, the bodies, the sound
+character, the HUD and the art packs ranked first. `create` applies it as a starting point. Your spec's own answers
+always win, a kind never changes how the game plays, and a kind not yet proven on a runtime is allowed (the game
+builds its look there, and the gates say so).
+
+| Kind | The feel | Proven on |
+|---|---|---|
+| `silly` | toon low-poly in pastels, soft bodies that flop | three standard-3d |
+| `blocky` | blocks under a real sun, block people in saturated colours | three standard-3d (the block world) |
+| `lofi` | cheap and dark on purpose: hard pixels, dither, grime | a look on three and forge |
+| `scenic` | painterly stylised 3D where the light does the work | three scenic-3d |
+| `dark` | grim fantasy at night: ruins, embers, firelight | forge |
+| `calm` | photoreal light, sea and sky | vista |
+| `pixel` | 2D pixel art, 16 texels a metre | three flat-2d, godot 2d |
+| `drawn` | 2D hand-drawn cartoon, 128 texels a metre | three flat-2d |
+
+## The asset library
+
+One library of packs serves every runtime, 2D and 3D alike (`library/`). A pack has one licence, one pinned source
+and one owner; every asset has one manifest and one preview. Style is measured at ingest and judged on each kind's
+contact sheet, never declared by a folder. A slot asks by need and the resolver answers by fit: the kind's packs
+first, then the slot's words, then the devices' budgets, then the licence policy (own, CC0 and MIT first; CC-BY with
+its credit line written into the game). Search before you generate: `gamesfun art find "wooden bridge" --kind scenic
+--3d`; add your own art with `gamesfun art ingest`. [library/README.md](library/README.md) has the rest.
+
+## How a game is made
+
+```
+idea → ledger → foundation → pitch (you choose) → spec (locked) → create → build round → six gates
+     → play-test of the promises → second reader → deliver
+                     a fail: a repair round, under the stop rule and its ladder
+```
+
+1. **Ledger.** Before any card, what you asked for, in your own words, each line with a home: the kit has it, the
+   game builds it, or a short probe decides.
+2. **Foundation.** The runtime by hard limits, the loop by who acts when, the kind last.
+3. **Pitch and spec.** Two or three cards that differ in how they play; every card keeps every line. You choose, and
+   the spec is locked. Every "the game builds it" line becomes a promise.
+4. **Create and build.** The game is made from the spec; your agent writes `rules.js`, its `src/` modules and any
+   declared overrides from a one-page brief of only the parts the spec chose.
+5. **Six gates.** A integrity (the kit untouched, everything visible a slot), B health (boots clean, at a fair frame
+   cost), C cause and effect (every input and event shows on the screen it concerns), D the loop closes (it ends,
+   replays, every score from a counted event), E shared truth (friends see each other where they really are), F
+   matches the spec. Each runtime supplies its own measures and names what it skips. A bug report never adds a rule:
+   it becomes a broken example a gate must fail ([builder/GATES.md](builder/GATES.md)).
+6. **Play-test.** A separate subagent plays from the screen only and reports each promise seen, not seen or
+   unreachable. A second reader compares the result with your words.
+7. **Repair, then deliver.** A failure hands back a repair round. When rounds stop making progress the loop climbs a
+   ladder (a stronger model, a specialist round, paid generation, questions for you); cost never ends a build. The
+   delivery names every line proven, failed or untested.
+
+The loop's tools hold the order (`gamesfun_next` and the `gamesfun_step_*` tools; in a terminal,
+`node bin/gamesfun.mjs tool <name>`), not a prompt. The guide for agents is [AGENTS.md](AGENTS.md).
 
 ## Commands
 
-`npx gamesfun help` lists them all; `npx gamesfun <command> --help` gives each one's options. The ones you will meet:
+`npx gamesfun help` lists them all; `npx gamesfun <command> --help` gives each one's options.
 
 | Command | |
 |---|---|
 | `dev [dir]` | the studio: the game, its slots, verify, a friends lobby, live reload (127.0.0.1 only) |
-| `examples`, `catalog [--all]` | example games (`soak-squad`, `giant-four`, `isle-run`, `coin-hop`, `lantern-cove`; a forge example is coming); what the kit can build (`catalog runtimes`, `kinds`, `matrix`, `loops`, `mechanics`) |
+| `examples`, `catalog [--all]` | the example games; what the kit has (`catalog runtimes`, `kinds`, `matrix`, `loops`, `mechanics`) |
 | `create <dir> --from <example>` / `--spec <file>` | make a game outside the loop |
-| `verify [dir] --quick` | the checks, in real Chrome with real input (about 2 minutes) |
+| `verify [dir] --quick` | the six gates, in real Chrome with real input |
 | `slots list\|set …` | list and swap slots (`slots set prop.bucket --file my.glb`) |
+| `art find\|fill\|ingest\|fetch\|check\|generate` | the asset library |
 | `play [dir] --steps '…' --out <dir>` | play it like a new player, with screenshots |
 | `tool <name> '<json>'` | any of the kit's MCP tools, from a terminal |
 | `doctor`, `connect`, `update` | is this machine ready; add the tools to your agent; fetch the newest kit |
-| `login`, `publish [dir]` | put a game on games.fun at an unlisted link ([docs/PUBLISH.md](docs/PUBLISH.md)) |
+| `login`, `publish [dir]` | put a game online at an unlisted link ([docs/PUBLISH.md](docs/PUBLISH.md)) |
 
 ## Where things are
 
-The repository is in layers ([docs/LAYOUT.md](docs/LAYOUT.md) has the whole map): `builder/` the shared system (the
-CLI, the MCP server, the studio page, create and verify, the build loop, the kits every game vendors) · `runtimes/`
-what runs a game (three with its profiles, forge, vista) · `components/` the mechanics · `loops/` · `worlds/` ·
-`examples/` example games · `games/` your games (git-ignored) · `AGENTS.md` the playbook · `skills/` the agent skills ·
-`plugin/` the Claude Code plugin (hooks, the play-tester agent) · `docs/` the docs ([docs/README.md](docs/README.md)
-is the index).
+[docs/LAYOUT.md](docs/LAYOUT.md) is the whole map: `builder/` the shared system (spec, create, slots, multiplayer,
+sound, menu and HUD, the gates, the loop, the CLI, the MCP server, the studio page) · `runtimes/` what runs a game ·
+`loops/` · `components/` the mechanics · `worlds/` · `kinds/` · `registry/` · `library/` the asset library ·
+`examples/` · `evals/` · `games/` your games (git-ignored) · `skills/` and `plugin/` for your agent · `docs/`
+([docs/README.md](docs/README.md) is the index).
 
 ## Hosted services
 
@@ -150,8 +163,8 @@ Two defaults point at services games.fun runs. Both are optional, and nothing el
 
 ## Licence and credits
 
-MIT: see [LICENSE](LICENSE). It covers everything of ours here. The kits (gf-three, gf-scenic, gf-forge, gf-vista,
-gf-multiplayer, gf-audio, gf-assets) carry three.js, Rapier, pmndrs postprocessing, N8AO, ecctrl, ws and ZzFX,
-and a library of CC0 and CC BY models by Kenney, Quaternius, Poly by Google and others. Those keep their own licences:
+MIT: see [LICENSE](LICENSE). It covers everything of ours here. The runtimes and the kits every game vendors carry
+three.js, Rapier, pmndrs postprocessing, N8AO, ecctrl, ws, ZzFX and the vista core, and the asset library holds
+CC0 and CC BY models by Kenney, Quaternius, KayKit, Poly by Google and others. Those keep their own licences:
 [THIRD_PARTY.md](THIRD_PARTY.md) lists each, [CREDITS.md](CREDITS.md) thanks the people, and
 [docs/LICENSING.md](docs/LICENSING.md) says in plain words what a game you make has to carry.

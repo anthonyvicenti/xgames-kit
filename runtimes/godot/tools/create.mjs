@@ -102,14 +102,17 @@ export function checkSpec(spec) {
 }
 
 /** Notes create says about a spec it accepts (never a refusal). */
-function notesFor(spec) {
+function notesFor(spec, style, kindStyle) {
   const n = [];
   if (!['round', 'endless'].includes(spec.loop ?? 'round')) n.push(`loop "${spec.loop}" has no implementation on godot yet: the session runs the round loop under it, and the game builds the rest (a build item on its closest loop)`);
-  if (starterOf(spec)?.profile === '2d' && !['pixel', 'drawn'].includes(spec.kind)) n.push(`kind "${spec.kind}": a 2D Godot game is drawn in the pixel or drawn style; pixel was used`);
+  if (starterOf(spec)?.profile === '2d' && kindStyle !== style) n.push(`kind "${spec.kind}": its look names no 2D style (pixel or drawn), so the ${style} style was used`);
   if (spec.multiplayer?.watch) n.push('multiplayer.watch: Go live is not on godot yet');
   if (spec.multiplayer?.voice) n.push('multiplayer.voice: voice chat is not wired on godot yet');
   return n;
 }
+
+/** The 2D art style of a kind's look (its `style`, kinds/<id>.json), never read from the kind's name: pixel when it names none. */
+export const flatStyleOf = look => (Object.hasOwn(PPM, look?.style ?? '') ? look.style : 'pixel');
 
 /** The kind's preset (kinds/<id>.json), when the kinds folder is there: its look values and HUD colours. */
 async function kindOf(id) {
@@ -256,11 +259,11 @@ export async function create(specPath, outDir, { exportNow = true, allowEvidence
   if (existsSync(dir) && (await readdir(dir)).some(e => !(allowEvidence && ['evidence', '.git'].includes(e)))) return { ok: false, problems: [`${dir} is not empty (create writes a new game)`] };
   const { map, M } = await mapOf(spec);
   if (!M.ok) return { ok: false, problems: M.problems.map(p => `world.map: ${p}`) };
-  const style = spec.kind === 'drawn' ? 'drawn' : 'pixel';
   const st = starterOf(spec);
-  const notes = notesFor(spec);
   const kind = await kindOf(spec.kind);
   const kl = kind?.look?.godot ?? kind?.look?.three ?? kind?.look?.flat ?? null;
+  const style = flatStyleOf(kl);
+  const notes = notesFor(spec, style, kl?.style);
   // a kind's look values are for its own plane: a top-down field's grass green is no side-on sky
   // (a 3D game takes a 3D look's values; a 2D one a look drawn for its own plane)
   const fits = kl && (st.profile === '3d' ? /3d$/.test(kl.profile ?? '3d') : (kl.plane ?? 'side') === st.plane);

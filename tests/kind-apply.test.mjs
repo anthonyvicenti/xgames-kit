@@ -47,6 +47,25 @@ test('the spec\'s own look wins; a camera rig the kind does not default to keeps
   assert.equal(C.game.controller.camera.first.fov, 72);
 });
 
+test('the spec\'s own palette wins over the kind\'s palette and HUD accent', async () => {
+  const C = config(), mine = ['#123456', '#abcdef'];
+  C.look.palette = mine; C.game.ui = { accent: mine[0] };
+  await applyKind(C, spec({ look: { palette: mine } }), { place });
+  assert.deepEqual(C.look.palette, mine, 'the kind\'s palette stays out');
+  assert.equal(C.game.ui.accent, mine[0], 'the HUD accent is the spec\'s first colour');
+  assert.equal(C.game.ui.crosshair, undefined);
+  assert.equal(C.look.renderer.exposure, lofi.look.three.values.renderer.exposure, 'the rest of the kind\'s look still applies');
+  assert.equal(C.game.ui.panel, lofi.hud.panel);
+});
+
+test('applyKind never refuses: any kind id, runtime or spec gives notes, never a throw', async () => {
+  for (const k of ['silly', 'blocky', 'lofi', 'scenic', 'dark', 'calm', 'pixel', 'drawn', 'nope', undefined])
+    for (const runtime of ['three', 'forge', 'vista', 'godot', 'other']) {
+      const r = await applyKind(config(), { kind: k, camera: 'side' }, { place: { runtime } });
+      assert.ok(Array.isArray(r.notes));
+    }
+});
+
 test('no kind, or a kind with no preset, changes nothing', async () => {
   const C = config(), before = structuredClone(C);
   assert.deepEqual((await applyKind(C, { camera: 'first' }, { place })).notes, []);
@@ -66,4 +85,14 @@ test('a kind\'s world preset (blocky\'s land) goes over the voxel world when the
   assert.deepEqual(C.world.voxel.size, [192, 96, 192], 'the preset leaves the size (and so the protected spawn square) alone');
   assert.equal(C.world.voxel.textures.dirt, 'library:xk-voxel-blocks/dirt', 'what the preset leaves stays');
   assert.equal(C.world.voxel.faces.filter, 'pixel');
+});
+
+test('the spec\'s own world values (world.params) win over the kind\'s world preset where both set them', async () => {
+  const C = { world: { template: 'voxel', voxel: { size: [192, 96, 192], terrain: { kind: 'island', seed: 3, trees: 0 } } }, game: { controller: { camera: {} } }, sounds: { sounds: {} }, assets: [], notes: [] };
+  const { notes } = await applyKind(C, { kind: 'blocky', camera: 'third', world: { template: 'voxel', params: { terrain: { kind: 'island', trees: 0 }, hotbar: ['dirt'] } } }, { place: { runtime: 'three', profile: 'standard-3d' } });
+  assert.equal(C.world.voxel.terrain.kind, 'island', 'the spec asked for an island');
+  assert.equal(C.world.voxel.terrain.trees, 0);
+  assert.equal(C.world.voxel.faces.filter, 'pixel', 'what the spec did not say is the kind\'s');
+  assert.equal(C.world.voxel.hotbar, undefined, 'a value the kind never laid is left where the template put it');
+  assert.ok(notes.some(n => /spec's own world values kept \(terrain.kind, terrain.trees\)/.test(n)));
 });

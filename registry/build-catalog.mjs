@@ -297,7 +297,12 @@ export function checkSpec(catalog, spec) {
   if (spec.world?.template && (rt.worlds ?? []).length && !(rt.worlds ?? []).some(w => w.id === spec.world.template && inProfile(w))) {
     if (!build.some(b => b.closest)) problems.push(`world.template: "${spec.world.template}" is not a world of ${where} (${(rt.worlds ?? []).filter(inProfile).map(w => w.id).join(', ')}): use one, or build it on the closest (a build item with closest)`);
   }
-  const w = (rt.worlds ?? []).find(x => x.id === spec.world?.template);
+  // the world the game is made on: its template when the runtime has it, else the world its build item builds it on
+  const madeOn = (rt.worlds ?? []).some(x => x.id === spec.world?.template && inProfile(x)) ? spec.world.template
+    : build.map(b => b.closest).find(c => (rt.worlds ?? []).some(x => x.id === c)) ?? spec.world?.template;
+  const loopWorlds = byId(catalog.loops, spec.loop)?.needs?.worlds ?? [];
+  if (loopWorlds.length && madeOn && !loopWorlds.includes(madeOn)) problems.push(`world.template: the ${spec.loop} loop plays on ${loopWorlds.map(x => `the ${x} world`).join(' or ')} today (another world is built on it: a build item with closest ${loopWorlds.map(x => `"${x}"`).join(' or ')})`);
+  const w = (rt.worlds ?? []).find(x => x.id === madeOn);
   if (w?.loops && spec.loop && !w.loops.includes(spec.loop)) problems.push(`world.template: ${w.id} is played only with loop ${w.loops.join(' or ')}`);
   if (spec.look?.preset && (rt.looks ?? []).length && !(rt.looks ?? []).some(x => x.id === spec.look.preset && inProfile(x))) problems.push(`look.preset: "${spec.look.preset}" is not a look of ${where}`);
   // mechanics: each on this runtime and profile, params by its schema, no unshared claim twice
@@ -309,7 +314,7 @@ export function checkSpec(catalog, spec) {
     if (!impl?.state?.open || (impl.profiles && p && !impl.profiles.includes(p.id))) { problems.push(`mechanics[${i}]: ${m.id} does not run on ${where}: take it out and add a build item that writes it for this game`); continue; }
     if (m.params) for (const x of paramsProblems(man.params, m.params)) problems.push(`mechanics[${i}].params${x}`);
     for (const n of man.needs?.mechanics ?? []) if (!n.when && !(spec.mechanics ?? []).some(x => x.id === n.id)) problems.push(`mechanics[${i}]: ${m.id} needs ${n.id}${n.why ? ` (${n.why})` : ''}`);
-    for (const n of man.needs?.worlds ?? []) if (spec.world?.template !== n.id) problems.push(`mechanics[${i}]: ${m.id} needs the ${n.id} world${n.why ? ` (${n.why})` : ''}`);
+    for (const n of man.needs?.worlds ?? []) if (madeOn !== n.id) problems.push(`mechanics[${i}]: ${m.id} needs the ${n.id} world${n.why ? ` (${n.why})` : ''}`);
     for (const c of man.capabilities ?? []) if (!(L.capabilities ?? []).includes(c)) problems.push(`mechanics[${i}]: ${m.id} needs ${c}, which ${where} has not got`);
     chosen.push(man);
   }
@@ -417,7 +422,7 @@ export function createRegistry(catalog) {
       }
       if (type === 'loop') { const l = byId(catalog.loops, id); return l && { id, describe: l.describe, note: l.notes ?? [], events: l.hooks ?? [], promise: l.promise, clock: l.clock, params: l.params }; }
       if (type === 'mechanic') { const m = byId(catalog.mechanics, id); return m && { id, describe: m.describe, note: m.notes?.lines ?? [], traps: m.notes?.stub?.traps ?? [], stub: m.notes?.stub ?? null, events: m.events, sync: { owner: m.host.owner, how: m.host.how ?? '' }, params: m.params }; }
-      if (type === 'kind') { const k = byId(catalog.kinds, id); return k && { id, describe: k.feel, note: [k.state?.note].filter(Boolean), packs: k.packs ?? [], look: k.look, camera: k.camera }; }
+      if (type === 'kind') { const k = byId(catalog.kinds, id); return k && { id, describe: k.feel, note: [], packs: k.packs ?? [], look: k.look, camera: k.camera }; }
       return null;   // packs are the library's: its resolver answers for them
     },
   };

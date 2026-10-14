@@ -184,3 +184,17 @@ test('no engine is read by the builder\'s tools, the CLI or the three runtime\'s
   }
   assert.deepEqual(hits, []);
 });
+
+test('a loop that plays on certain worlds says so in its manifest; another world built on one of them is made', async () => {
+  const tmp = await tempDir();
+  try {
+    const base = await example('block-valley'), file = path.join(tmp.dir, 'spec.json'), fs = await import('node:fs/promises');
+    await fs.writeFile(file, JSON.stringify({ ...base, world: { ...base.world, template: 'arena' } }));
+    const bad = await create(file, path.join(tmp.dir, 'a'));
+    assert.match((bad.problems ?? []).join('\n'), /the world loop plays on the voxel world today/, 'read from loops/world/loop.json needs.worlds');
+    const built = { ...base, world: { ...base.world, template: 'castle-town' }, build: [...(base.build ?? []), { what: 'a castle town built on the block world', how: 'a module in src/ that raises the town on the voxel world', where: 'module', row: 'r1', closest: 'voxel' }] };
+    await fs.writeFile(file, JSON.stringify(built));
+    const r = await create(file, path.join(tmp.dir, 'b'));
+    assert.equal(r.ok, true, `a world built on voxel is made: ${(r.problems ?? []).join('; ')}`);
+  } finally { await tmp.cleanup(); }
+});

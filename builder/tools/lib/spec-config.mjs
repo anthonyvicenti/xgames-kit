@@ -1,6 +1,7 @@
 // A game spec v2 (builder/spec/game-spec.v2.schema.json) → the project's config files, sound list, multiplayer
 // manifest and asset choices. Pure apart from reading the libraries (track L's props, track C's bodies) when they
 // exist. Deterministic: positions come from a random stream seeded by the spec's title.
+import { readKind } from '../../../kinds/apply.mjs';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -408,7 +409,7 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
   if (!look.palette?.accent) game.ui.accent = spec.look?.palette?.[0] ?? '#ff7a59';   // the look's accent wins when it has one
   // forge, wave 2 (track U; runtimes/forge/hud/create.mjs): the grim theme's colours, words and fonts, the forge keys
   // for How to play and touch, the library's sound files in place of the presets above, the friends page's colours
-  if (forge) (await importPart(join(FORGE, 'hud/create.mjs'), 'the forge runtime')).forgeHud({ spec, game, sounds, multiplayer, assets, world, notes });
+  if (forge) (await importPart(join(FORGE, 'hud/create.mjs'), 'the forge runtime')).forgeHud({ spec, game, sounds, multiplayer, assets, world, notes, kind: readKind(spec.kind) });
   const props = world.__catalog ?? null; delete world.__catalog;
   const worldArt = world.__art ?? null; delete world.__art;
   return { game, look, world, characters, props, sounds, multiplayer: mpOut, assets, propFiles, named, bodies, notes, worldArt };

@@ -525,7 +525,7 @@
     "lines": [
       "Give the rules once, in setup: board.rules({ legal(move, s) → true or the reason in words, winner(s) → null | { seat, cells } | { draw: true } }). The board does turns, refusals, pieces, the win line, bots and the end of the round.",
       "A move is { type: \"place\", to: [c, r] } or { type: \"move\", from, to }. s has at, empty, owner, set, line, flank, reach, dropRow, count, full, last, turn, data. apply(move, s) for captures, start(s) for the opening (README.md).",
-      "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): ask the creator which when the prompt does not say."
+      "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): the ledger's body line decides it (asked only when the person's words leave it open)."
     ],
     "readme": "components/board/README.md",
     "stub": {

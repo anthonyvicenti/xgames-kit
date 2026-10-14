@@ -35,9 +35,19 @@ const SAMPLE = () => {
   return { phase: s.phase, t: s.time?.round ?? 0, fair: s.fair ?? null, players: s.players.map(p => ({ id: p.id, name: p.name, local: p.local, bot: p.bot, alive: p.alive, anim: p.anim, score: p.score, control: p.control, down: p.down, protected: p.protected, pl: p.pl })) };
 };
 
-/** One page: play `seconds` as `mode` ('stand' | 'wander'), return the samples. */
-async function playPage({ newPage, url, seed, mode, seconds, log, stepped = true }) {
-  const T = await newPage(`fair ${mode}`, { overrides: { patches: [{ file: 'config/game.json', pointer: '/round/seconds', value: Math.ceil(seconds) + 8 }] } });
+/**
+ * How long a page plays on, past its `seconds`, while no score has moved yet: up to the game's own round, at most
+ * this. A game whose first score comes late by its own design (a race scored at the finish line, a match's first goal)
+ * is given the time its round gives it, so no game is tuned to the check's clock (the rules audit, 2026-10-14: a
+ * race's bots were made faster than a new player could enjoy so one finished inside the old fixed window).
+ */
+export const PLAY_ON_MAX_SECONDS = 150;
+/** The seconds a page may play for this game: its own round when longer than `seconds`, capped. */
+export const playOnFor = (game, seconds) => Math.max(seconds, Math.min(PLAY_ON_MAX_SECONDS, Number(game?.round?.seconds) || 0));
+
+/** One page: play `seconds` as `mode` ('stand' | 'wander'), and on up to `upTo` while no score has moved; the samples. */
+async function playPage({ newPage, url, seed, mode, seconds, upTo = seconds, log, stepped = true }) {
+  const T = await newPage(`fair ${mode}`, { overrides: { patches: [{ file: 'config/game.json', pointer: '/round/seconds', value: Math.ceil(Math.max(seconds, upTo)) + 8 }] } });
   const p = T.page, rnd = stream(seed * 7919 + (mode === 'stand' ? 1 : 2));
   const samples = [];
   let clock = null;
@@ -56,7 +66,9 @@ async function playPage({ newPage, url, seed, mode, seconds, log, stepped = true
     if (mode === 'wander') await p.keyboard.down('KeyW');
     let k = 0, firing = false;
     const start = clock.now();
-    while ((clock.now() - start) / 1000 < seconds) {
+    // past `seconds`, only while nothing has scored yet (checked once a second), up to `upTo`
+    const more = () => { const t = (clock.now() - start) / 1000; return t < seconds || (t < upTo && (k % 10 !== 0 || !measure(samples).scoreMoved)); };
+    while (more()) {
       const s = await p.evaluate(SAMPLE).catch(() => null);
       if (!s) break;
       samples.push({ ...s, wall: (clock.now() - start) / 1000 });
@@ -124,7 +136,10 @@ export function measure(samples, { downSeconds = 1.2 } = {}) {
   const peak = Math.max(0, ...samples.flatMap(s => (s.players ?? []).map(p => (p.score ?? 0) - (first.get(p.id) ?? 0))));
   // scores in a real round build up; a broken one flickers between 0 and the 1 point a pickup gives before the rules
   // wipe it (the flicker held 1.9–2.6 s on 2026-10-07, so time alone can't tell them apart)
-  const scoreMoved = heldMax >= PULSE_HOLD_SECONDS && peak >= PULSE_MIN_PEAK;
+  // a round the game itself ended with a score built up (a race won at the line) keeps that score on its results: it is
+  // held however late in the page it came
+  const endedScored = !!end && !['playing', 'lobby', 'countdown'].includes(end.phase) && (end.players ?? []).some(p => (p.score ?? 0) - (first.get(p.id) ?? 0) >= PULSE_MIN_PEAK);
+  const scoreMoved = (heldMax >= PULSE_HOLD_SECONDS || endedScored) && peak >= PULSE_MIN_PEAK;
   const maxScore = Math.max(0, ...samples.flatMap(s => (s.players ?? []).map(p => p.score ?? 0)));
   return {
     scoreMoved, scoreHeldSec: Math.round(heldMax * 10) / 10, maxScore,
@@ -139,10 +154,11 @@ export function measure(samples, { downSeconds = 1.2 } = {}) {
 /**
  * Check 10. newPage(label, {overrides}) → {ctx, page, errors} (verify's own); url: the served game. → {ok, detail, record}
  */
-export async function checkFairPlay({ newPage, url, seconds = 42, log = () => {}, stepped = true }) {
+export async function checkFairPlay({ newPage, url, seconds = 42, game = null, log = () => {}, stepped = true }) {
+  const upTo = playOnFor(game, seconds);
   const runs = await Promise.all([
-    playPage({ newPage, url, seed: 11, mode: 'stand', seconds, log, stepped }),
-    playPage({ newPage, url, seed: 7, mode: 'wander', seconds, log, stepped }),
+    playPage({ newPage, url, seed: 11, mode: 'stand', seconds, upTo, log, stepped }),
+    playPage({ newPage, url, seed: 7, mode: 'wander', seconds, upTo, log, stepped }),
   ]);
   const pages = runs.map(r => {
     const downSeconds = r.samples.at(-1)?.fair?.downSeconds ?? 1.2;
@@ -175,5 +191,5 @@ export async function checkFairPlay({ newPage, url, seconds = 42, log = () => {}
     if (bots.length && Math.max(...bots) >= 10 && Math.max(...bots) > 3 * Math.max(1, Math.min(...bots), me)) warnings.push(`${p.mode}: bot scores lopsided (${p.scores.map(s => `${s.local ? 'you' : s.name} ${s.score}`).join(', ')}): consider fair.botSkill or the rules' scoring`);
   }
   for (const p of pages) if (p.aliveSec < 10 && !p.fails.length) warnings.push(`${p.mode}: the round ended after ${p.observed} s (rules.check), too short to judge fair play well`);
-  return { ok, detail, warnings, record: { limits: FAIR_LIMITS, seconds, pages: pages.map(({ scores, ...rest }) => ({ ...rest, scores })) } };
+  return { ok, detail, warnings, record: { limits: FAIR_LIMITS, seconds, upTo, pages: pages.map(({ scores, ...rest }) => ({ ...rest, scores })) } };
 }

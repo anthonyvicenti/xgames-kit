@@ -10,7 +10,7 @@ import { conceptCheck, modelCheck, pictureCheck, sheetCheck, tileCheck } from '.
 import { gridProblems, rasteriseGrid } from '../builder/art/grid.mjs';
 import { blank, decodePng, encodePng, scaleDown, scaleUp, stats } from '../builder/art/png.mjs';
 import { artDoctor, chooseMaker, detectAgent, loadProviders, providerProblems } from '../builder/art/providers.mjs';
-import { artMake, artRequest, artTake, kindOfSlot, requestText } from '../builder/art/session.mjs';
+import { artMake, artRequest, artTake, kindOfSlot, requestText, styleAnchor } from '../builder/art/session.mjs';
 import { sizeFor, STANDARD } from '../builder/art/standard.mjs';
 import { svgProblems } from '../builder/art/svg.mjs';
 import { runDoctor } from '../builder/lib/doctor.mjs';
@@ -341,4 +341,16 @@ test('SVG → PNG in the browser (opt in: GF_ART_BROWSER=1; it starts Chrome)', 
   assert.deepEqual([pic.width, pic.height], [64, 64]);
   assert.equal(pic.data[3], 0, 'see-through where nothing is drawn');
   const i = (32 * 64 + 32) * 4; assert.deepEqual([...pic.data.subarray(i, i + 4)], [255, 0, 0, 255]);
+});
+
+test('a game\'s style anchor reads its look\'s style, then its kind\'s, never a preset\'s name', async () => {
+  const T = [await tempDir('gf-art-state-'), await tempDir('gf-art-game-'), await tempDir('gf-art-game-')], [state, g1, g2] = T.map(t => t.dir);
+  const { mkdir } = await import('node:fs/promises');
+  await mkdir(path.join(g1, 'config'), { recursive: true });
+  await writeFile(path.join(g1, 'config', 'look.json'), JSON.stringify({ preset: 'anything-at-all', style: 'pixel' }));
+  await writeFile(path.join(g1, 'spec.json'), JSON.stringify({ runtime: 'three', kind: 'drawn', look: { preset: 'drawn-day' } }));
+  assert.equal((await styleAnchor(g1, { stateDir: state })).style, 'pixel', 'the game\'s own look wins');
+  await writeFile(path.join(g2, 'spec.json'), JSON.stringify({ runtime: 'three', kind: 'pixel', look: { preset: 'my-own-preset' } }));
+  assert.equal((await styleAnchor(g2, { stateDir: state })).style, 'pixel', 'the kind\'s look style, whatever the preset is called');
+  for (const t of T) await t.cleanup();
 });

@@ -36,7 +36,7 @@ mechanics). Write one line per essential:
 - `needs`: the capabilities the line needs from what runs the game (the runtime is chosen by these).
 
 Ask only how friends play together and what a player is, and only when their words leave it open (`asked: true` on
-the line, the question in `asks` with options and a default). A character that walks about needs no question. Never
+the line, the question in `asks` with options and a default); a question their words already answer is never asked. Never
 cut a line yourself: a line leaves only with the person's own words (`cut: {words}`).
 
 ## 2. The foundation
@@ -57,7 +57,8 @@ on the cards (a device limit, what this game builds).
 - The questions are the ledger's, and only those.
 
 World size: `small` is one space everyone sees across; `medium` has rooms or areas joined by doors and paths; `large`
-is a place to roam. Characters: every role has its own body; a kind's own body set fills `{"from": "kind"}`.
+is a place to roam. Characters: each role can have its own body (a boss that wears its minions' body reads as one of
+them); a kind's own body set fills `{"from": "kind"}`.
 
 ## 4. The spec (v2)
 
@@ -74,27 +75,26 @@ item `{what, how, where, row}`; item n is the promise `build.<n>`. Put every tun
 manifests of only the parts the spec chose, every promise the build writes, the five rules and the six gates. The game
 gets its own `AGENTS.md`.
 
-## 6. Write rules.js and what the game builds
+## 6. Write the game's own code
 
-Open `games/<name>/rules.js` (a stub with the spec's rules as comments) and `builder/CONTRACT.md` §3.
-Write only what makes this game this game:
-- `setup(ctx)`: get mechanics (`ctx.mechanics.get(id)`), make HUD meters (`ctx.ui.meter`), register callbacks
-  (`onHit`, `onCollect`, ...) under `if (ctx.host)` when they decide shared things.
-- `roundStart(ctx)`: reset per-round state (`p.data` keeps its identity across rounds).
-- `update(ctx, dt)`: per-frame logic for the players this copy owns (`ctx.players.owned()`); host-only scoring under
-  `if (ctx.host)`, throttled (once a second is plenty).
-- `event(ctx, name, data, from)`: an edge another copy sent with `ctx.net.send(name, data, to)`.
-- `check(ctx)`: host only; return `{ winners, reason }` to end early, or null (the round also ends on time).
-- `results(ctx)`: rows for the results card.
-- `bot(ctx, p, dt)`: steer bots with `ctx.bots.target` / `ctx.bots.attack`, `p.bot.seek`, `p.bot.wander`.
+Write only what makes this game this game, on the surface its runtime gives (the brief names the section):
+- **three** (every profile): `rules.js` with `ctx` (`builder/CONTRACT.md` §3). Its hooks: `setup` (get mechanics,
+  make HUD meters, register callbacks), `roundStart` (reset per-round state), `update` (the players this copy owns;
+  host-only scoring under `if (ctx.host)`, not every frame), `event` (an edge another copy sent), `check` (host: end
+  early with `{winners, reason}`), `results`, `bot` (bots act through `ctx.bots` and `p.bot`).
+- **forge**: the spec's data tables first (`spec.tables`: weapons, enemies, waves, cards…), then `rules.js` for what
+  they cannot say (commands in, events out; `runtimes/CONTRACT.md` and `builder/CONTRACT.md` §8).
+- **vista**: its tables and `rules.js` over `ctx.vista` (`builder/CONTRACT.md` §8).
+- **godot**: the game's own scenes and scripts in its Godot project, talking to the kit through the bridge
+  (`runtimes/godot/README.md`).
 
-Read tuning from `ctx.config.rules.params` with defaults. Use `ctx.rng()`. Don't draw art in code. If you added rules
-params, props or mechanics to config: `npx gamesfun slots write games/<name>`.
+On every runtime: tuning numbers in `config/game.json` → `rules.params` (each a slot), chance through the runtime's
+seeded random (`ctx.rng()` on three), shared decisions on the host, nothing visible drawn in code. After adding rules
+params, props or mechanics: `npx gamesfun slots write games/<name>`.
 
 Every build promise is yours to make work: a module under `src/` that `rules.js` imports, or, when only the runtime
 can do it, an edit of the runtime's copy in the game declared in the game's record (`overrides`, with the file's
-hash before the edit and why). Never leave a promise out because it is hard; say plainly in the summary what does not
-work yet.
+hash before the edit and why). Say plainly in the summary what does not work yet.
 
 ## 7. End the round
 

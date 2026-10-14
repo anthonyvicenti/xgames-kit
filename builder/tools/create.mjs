@@ -158,8 +158,6 @@ export async function create(specPath, outDir, { force = false, newRules = false
   if (flow?.manifest.refuse) { try { problems.push(...(flow.manifest.refuse(spec0) ?? [])); } catch (e) { problems.push(`loop "${flow.id}": its manifest's refuse threw: ${e.message}`); } }
   // round.params are the flow's own (its params schema), as a mechanic's params are the mechanic's
   if (spec0.round?.params !== undefined && flow?.manifest.params) for (const p of check(flow.manifest.params, spec0.round.params)) problems.push(`round.params (loop "${flow.id}"): ${p}`);
-  // the world loop is today's block world (loops/world/loop.json needs: the voxel world and the build mechanic)
-  if (spec0.loop === 'world' && spec0.world.template !== 'voxel') problems.push('world.template: the world loop plays on the voxel world today (another world is built on it: a build item with closest "voxel")');
   if (problems.length) return { ok: false, code: 2, problems: problems.map(p => `spec ${p}`) };
 
   // the spec as it is made: what it leaves to its kind is filled in (the look: the kind's on this runtime, else the
@@ -251,6 +249,14 @@ export async function create(specPath, outDir, { force = false, newRules = false
   const mechanicItems = Object.fromEntries(Object.entries(mods.mechanics ?? {}).filter(([, m]) => Array.isArray(m.manifest?.items)).map(([id, m]) => [id, m.manifest.items]));
   const C = await specToConfig(spec, { place, modules, lookPreset, lookConfig, standinPresetValues: standinLook.presetValues, mechanicDefaults, mechanicSounds, mechanicItems, worldConfig, flow: flowUse, flat: flat ? { part: flatPart, plane: flat, style: flatPart.presets[spec.look?.preset]?.style ?? 'pixel', repoFile: flatFile } : null });
   C.notes.unshift(...madeNotes, ...(await applyKind(C, spec, { place })).notes);   // the kind's layer: kinds/apply.mjs (the one seam)
+  // a param whose default follows the game's own config (a mechanic module's derive(game, params), after the kind has
+  // set the camera): only what the spec left unset, and said in the notes
+  for (const m of C.game?.mechanics ?? []) {
+    const derive = mods.mechanics?.[m.id]?.derive, own = spec.mechanics.find(x => x.id === m.id)?.params ?? {};
+    if (typeof derive !== 'function') continue;
+    const set = Object.entries(derive(C.game, m.params) ?? {}).filter(([k]) => !(k in own));
+    if (set.length) { Object.assign(m.params, Object.fromEntries(set)); C.notes.push(`mechanic ${m.id}: ${set.map(([k, v]) => `${k} ${v}`).join(', ')}, from the game's own config (the spec left it to the default)`); }
+  }
   C.notes.push(...tableNotes);
   // optional kit modules (a kit folder with a module.js; kit/vfx/module.js documents the contract): one the spec (or the
   // rules.js already there) needs gets its config block, its stand-in files and its folder in gf/three. A module added

@@ -296,7 +296,7 @@ function enemiesConfig(spec, { assets = [], notes = [], library }, art) {
       if (!held.has(name)) { held.set(name, { name, slot: `enemy.held.${name}`, file: hto, label: name.replace(/^grim-/, '').replace(/-/g, ' ') }); assets.push({ to: hto, from: forgeLib(h.file), license: hl }); art?.push({ file: hto, what: `what an enemy holds: ${name} (${libName(library, h.file)})`, license: `${hl.spdx}, ${hl.author}` }); }
       holds.push({ slot: `enemy.held.${name}`, socket: h.grip?.socket ?? hand, grip: { position: h.grip?.position ?? [0, 0, 0], quaternion: h.grip?.quaternion ?? [0, 0, 0, 1], scale: h.grip?.scale ?? 1 } });
     }
-    bodies.push({ row, id: r.id, body, slot: `enemy.${r.id}.body`, file: to, label: r.name || r.id, ...(holds.length ? { held: holds } : {}) });
+    bodies.push({ row, id: r.id, body, slot: `enemy.${r.id}.body`, file: to, label: r.name || r.id, ...(role?.describe ? { describe: role.describe } : {}), ...(holds.length ? { held: holds } : {}) });
   });
   const clipsRel = 'clips/forge-humanoid-1.glb', cl = licenceOf(clipsRel);
   assets.push({ to: 'assets/clips/forge-humanoid-1.glb', from: forgeLib(clipsRel), license: cl });
@@ -372,7 +372,7 @@ export function slotsFor(cfg) {
     tier: 'advanced', facet: 'look', rank: 30, description: `How high the clouds hang over the ${O?.place ?? 'arena'} (lower: larger and closer; a second layer hangs a third higher)` });
   const e = w.enemies;
   for (const b of e?.bodies ?? []) out.push({ id: b.slot, group: 'characters', label: `${b.label} (enemy)`, type: 'model', source: { file: b.file }, constraints: { maxBytes: 8388608, scale: 1, rig: 'gf-humanoid-1' },
-    tier: 'main', facet: 'look', rank: 88, description: `The ${b.label} enemy's body: a gf-humanoid-1 character with a glow_eyes material (its eyes glow per state)`, generate: { prompt: `${/^zombie-/.test(String(b.body)) ? 'a zombie-like risen townsperson in ragged old-town clothes' : 'a grim skeleton warrior'}, ${b.label}`, style: 'stylised low-poly, hand-painted, rigged gf-humanoid-1' } });
+    tier: 'main', facet: 'look', rank: 88, description: `The ${b.label} enemy's body: a gf-humanoid-1 character with a glow_eyes material (its eyes glow per state)`, generate: { prompt: `${b.describe ?? 'an enemy'}, ${b.label}`, style: 'stylised low-poly, hand-painted, rigged gf-humanoid-1' } });
   for (const h of e?.held ?? []) out.push({ id: h.slot, group: 'characters', label: `Enemy weapon: ${h.label}`, type: 'model', source: { file: h.file }, constraints: { maxBytes: 4194304, scale: 1 },
     tier: 'advanced', facet: 'look', rank: 41, description: `What an enemy holds (${h.label}): origin at the grip; a glow_tip material glows` });
   if (e?.clips) out.push({ id: e.clips.slot, group: 'characters', label: 'Enemy animations', type: 'model', source: { file: e.clips.file }, constraints: { maxBytes: 8388608, rig: 'gf-humanoid-1' },

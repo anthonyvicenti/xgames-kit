@@ -2,8 +2,8 @@
 
 {{HOOK}}
 
-A multiplayer three.js game on games.fun's gf-three kit, made with xgames-kit. **The playbook is `{{KIT}}/AGENTS.md`**
-(the kit root): read it first. If this folder was moved out of the kit, the playbook is AGENTS.md in the xgames-kit
+A multiplayer browser game made with xgames-kit ({{PLACE}}). **The guide is `{{KIT}}/AGENTS.md`**
+(the kit root): read it first. If this folder was moved out of the kit, the guide is AGENTS.md in the xgames-kit
 repository. Build and change this game through the build loop: call `gamesfun_next {"game": "{{GAME}}"}` first and do
 what it says (without the MCP tools: `node bin/gamesfun.mjs tool gamesfun_next --game {{GAME}}` from the kit root).
 

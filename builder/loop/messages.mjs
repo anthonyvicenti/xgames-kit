@@ -2,6 +2,7 @@
 import { ASKABLE, liveRows, PROBE_MAX_MINUTES } from './ledger.mjs';
 import { rid } from './registry.mjs';
 import { partFailureLines, pitchPartLines } from './parts.mjs';
+import { RULES } from './brief.mjs';
 
 const T0 = { ledger: 'gamesfun_step_ledger', foundation: 'gamesfun_step_foundation', pitch: 'gamesfun_step_pitch', spec: 'gamesfun_step_spec', fix: 'gamesfun_step_fix', ask: 'gamesfun_ask', quick: 'gamesfun_verify', play: 'gamesfun_play', art: 'gamesfun_art_generate' };
 const tools = t => ({ ...T0, ...t });
@@ -79,12 +80,12 @@ const playLines = (pt, promises) => Object.entries(pt?.answers ?? {}).filter(([,
 export function repairMessage({ round, after, verify, playtest, promises, ladder, partsFailed = [], toolNames }) {
   const t = tools(toolNames);
   const what = after === 'parts' ? ['A part the person kept failed its check (each refusal says its fix):', ...partFailureLines(partsFailed)]
-    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play (never by a debug key).'];
+    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play.'];
   const climb = ladder?.climbs?.at(-1);
   const head = round.kind === 'specialist' ? [`# Specialist round: ${round.area}`, '', `The repair loop stopped repeating itself (${climb?.reason}: the same failures came back), so this round is a ${round.area} specialist's. Look at the failures below only as a ${round.area} specialist would: ${SPECIALIST[round.area] ?? SPECIALIST.code}`]
     : round.kind === 'generate' ? ['# Generation round', '', `The repair loop is stuck on ${round.areas.join(' and ')} the game's own files cannot fix, so this round makes new ones with the paid makers (\`${t.art}\`, and sound makers where the host has them). Cost is not a reason to stop: make what is needed, put each into its slot, and say what you made.`]
     : [`# Repair round${round.strong ? ' (stronger model)' : ''}`, '', ...(climb?.rung === 'model' && round.strong ? ['The last round failed on the same set as the one before it, so this round runs on the stronger model. Do not repeat what was tried: read the failures fresh.', ''] : [])];
-  return [...head, '', ...what, '', 'Fix it for a player, never for the tester: what the tester could not see is what a new player cannot see. Add nothing a player has no use for (a readout of the camera, a debug line, a marker or a key only a tester needs); make the game itself show it.', '', `Fix it, run \`${t.quick}\` until it passes, remove what you made and no longer need (\`${t.remove ?? 'gamesfun_remove'}\`), then call \`${t.fix}\` with \`summary\` and \`controls\`.`].join('\n');
+  return [...head, '', ...what, '', 'What the tester could not see is what a new player cannot see: make the game itself show it. Rule 5 holds here as in every round:', RULES[4], '', `Fix it, run \`${t.quick}\` until it passes, remove what you made and no longer need (\`${t.remove ?? 'gamesfun_remove'}\`), then call \`${t.fix}\` with \`summary\` and \`controls\`.`].join('\n');
 }
 const SPECIALIST = {
   art: 'models, textures, materials and how they read on screen; the slots and their packs; nothing about rules.',

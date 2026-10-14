@@ -20,6 +20,7 @@ import * as THREE from 'three';
 import { launchVelocity, step, sweepBody, segDist, knockImpulse, splashTargets, bounce, streamPath, cooldownGate, canHit, MAX_SPEED } from './logic.js';
 import { physicsOf } from '../../core/util.js';
 import { aimTarget, solveLaunch } from '../../core/aim.js';
+import { restAimDistance } from '../../controller/camera-rig.js';
 
 export const id = 'projectile';
 export const examples = ['dodgeball throw', 'water-gun stream', 'paint sprayer', 'fire hose'];
@@ -117,6 +118,18 @@ function rayFixed(ctx, a, b) {
   if (!h) return null;
   const toi = h.timeOfImpact ?? h.toi;
   return { t: toi / d, d: toi, n: [h.normal.x, h.normal.y, h.normal.z], point: { x: a.x + dx / d * toi, y: a.y + dy / d * toi, z: a.z + dz / d * toi } };
+}
+
+/**
+ * Defaults that follow the game's own config (create calls it for the params the spec left unset; the spec's own value
+ * always wins): a held stream reaches where the game's camera rests its crosshair, so on a camera set high and far (a
+ * kind's framing) the stream still lands under the crosshair rather than short of it. → {param: value}
+ */
+export function derive(game = {}, params = {}) {
+  if ((params.kind ?? D.kind) !== 'continuous') return {};
+  const mode = game.camera ?? 'third', rest = restAimDistance(mode, game.controller?.camera?.[mode] ?? {});
+  const want = rest ? Math.min(30, Math.ceil(rest * 1.05)) : 0;
+  return want > (params.streamReach ?? D.streamReach) ? { streamReach: want } : {};
 }
 
 export function create(ctx, params = {}) {

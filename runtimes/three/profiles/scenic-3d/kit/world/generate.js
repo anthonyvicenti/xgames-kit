@@ -25,7 +25,7 @@ export const templates = ['island', 'isles', 'ruins', 'dungeon'];
 // portal zone; `levels` says whether a level is its own place.
 export const templateInfo = {
   island: { label: 'Island', describe: 'one island in the sea: cliffs, grass, trees, paths and water round it', kind: 'outdoor', levels: 'one place', provides: ['levels', 'zone:centre', 'zone:arena', 'zone:portal'] },
-  isles: { label: 'Floating isles', describe: 'floating islands over a void, one per level, joined by portals; cliff skirts below', kind: 'outdoor', levels: 'one island or room set per level (the levels mechanic)', provides: ['levels', 'zone:centre', 'zone:arena', 'zone:portal'] },
+  isles: { label: 'Floating isles', describe: 'floating islands over a void, one per level, joined by portals; cliff skirts below', kind: 'outdoor', levels: 'one island or room set per level (the levels mechanic)', defaultLevels: 3, provides: ['levels', 'zone:centre', 'zone:arena', 'zone:portal'] },
   ruins: { label: 'Ruins', describe: 'a stone arena among ruins and trees', kind: 'outdoor', levels: 'one place', provides: ['levels', 'zone:centre', 'zone:arena', 'zone:portal'] },
   dungeon: { label: 'Dungeon', describe: 'rooms joined by doors, one room set per level', kind: 'outdoor', levels: 'one island or room set per level (the levels mechanic)', provides: ['levels', 'zone:centre', 'zone:arena', 'zone:portal'] },
 };
@@ -71,10 +71,11 @@ export const palettes = PALETTES;
 const RUNES = new Set(['dusk-isle', 'night-ruins']);
 export function paletteFor(preset) { return JSON.parse(JSON.stringify(PALETTES[preset] ?? PALETTES['dusk-isle'])); }
 
-/** How many levels the spec asks for: the levels mechanic's `count`, else rules.params.levels, else 1 (isles: 3). */
+/** How many levels the spec asks for: the levels mechanic's `count`, else rules.params.levels, else the template's own
+ *  default (templateInfo.<id>.defaultLevels), else 1. */
 export function levelCount(spec) {
   const m = (spec.mechanics ?? []).find(x => x.id === 'levels');
-  const n = Number(m?.params?.count ?? spec.rules?.params?.levels ?? (spec.world?.template === 'isles' ? 3 : 1));
+  const n = Number(m?.params?.count ?? spec.rules?.params?.levels ?? templateInfo[spec.world?.template]?.defaultLevels ?? 1);
   return Math.max(1, Math.min(8, Math.round(n) || 1));
 }
 
@@ -231,7 +232,7 @@ export function generate({ template = 'isles', size = 'medium', seed = 1, levels
   const T = templates.includes(template) ? template : 'island';
   const R = SIZE_RADIUS[size] ?? SIZE_RADIUS.medium;
   const rng = rngOf(seed);
-  const L = Math.max(1, Math.min(8, levels ?? (T === 'isles' ? 3 : 1)));
+  const L = Math.max(1, Math.min(8, levels ?? templateInfo[T]?.defaultLevels ?? 1));
   const isVoid = T !== 'island';
   const depth = T === 'dungeon' ? 9 : r2(R * 0.85);
   const pal = paletteFor(preset);

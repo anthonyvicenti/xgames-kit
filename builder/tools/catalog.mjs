@@ -379,7 +379,7 @@ async function scenicCatalog() {
   const at = { runtime: 'three', profile: 'scenic-3d' };
   for (const id of world.templates ?? []) {
     const info = world.templateInfo?.[id] ?? SCENIC_WORLDS[id] ?? {};
-    out.worlds.push({ id, ...at, label: info.label ?? id, describe: info.describe ?? '', kind: info.kind ?? 'outdoor', levels: info.levels ?? (id === 'isles' || id === 'dungeon' ? 'one island or room set per level (the levels mechanic)' : 'one place'), provides: info.provides ?? [], sizes: Object.fromEntries(Object.entries(world.SIZE_RADIUS ?? {}).map(([k, r]) => [k, { radius: r, area: Math.round(Math.PI * r * r) }])) });
+    out.worlds.push({ id, ...at, label: info.label ?? id, describe: info.describe ?? '', kind: info.kind ?? 'outdoor', levels: info.levels ?? 'one place', provides: info.provides ?? [], sizes: Object.fromEntries(Object.entries(world.SIZE_RADIUS ?? {}).map(([k, r]) => [k, { radius: r, area: Math.round(Math.PI * r * r) }])) });
   }
   for (const [id, p] of Object.entries(look.presets ?? {})) out.looks.push({ id, ...at, label: p.label ?? id, describe: p.describe ?? '', times: look.TIMES ?? ['day', 'golden', 'dusk', 'night'] });
   // the scenic-3d profile's packs in the asset library (runtimes/three/profiles/scenic-3d/art.json): KayKit bodies on

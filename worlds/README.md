@@ -92,8 +92,8 @@ node research/gf-three/tools/world.mjs office:medium --layout out.json   # the g
 A layout is clean when nothing overlaps, floats or pokes through the edge; props stand along the edges and in groups,
 with open floor in the middle; seats face a table, a centrepiece or the middle; spawns have a metre of clear floor; no
 small loose thing lies in the open; and the ground has a pattern and contrast against the player colours. The rules
-and their thresholds are in `tools/lib/dressing.mjs` (`RULES`, `T`); the agent's checklist is
-`research/studio-v2/prompts/look-rubric.md`.
+and their thresholds are in `tools/lib/dressing.mjs` (`RULES`, `T`); how the game looks is the look judge's
+(`builder/look-judge`), on the contact sheet.
 
 ## Layout JSON (what agents edit; `config/world.json` is a copy of a template plus the game's own props)
 

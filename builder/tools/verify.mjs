@@ -49,7 +49,7 @@
 //     fair.downSeconds + 1 s while alive, no knock on a protected player (bot score balance is reported, not failed)
 //  11 set dressing (tools/lib/dressing.mjs, no browser): the world is clean (nothing overlapping, floating or out of
 //     scale, no litter, open floor, readable ground and player colours, clear spawns); errors fail, warnings are notes.
-//     Runs in --quick too. The build agent also answers builder/spec/prompts/look-rubric.md from the sheet.
+//     Runs in --quick too. How the game looks is judged on the contact sheet by the look judge (builder/look-judge).
 //  12 (gate D) scores come from counted events (tools/lib/score-events.mjs): something happens (across the solo round
 //     and check 10's two pages, three rounds with 3 bots, some score moved; a game in which nobody ever scores is dead
 //     even when everything else passes), and every score change on every page is matched one to one by a counted
@@ -599,7 +599,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
     let fp = null, und = null, fairSeconds = 0;
     if (needFair) {
       [[fp, und], fairSeconds] = await timed(() => Promise.all([
-        checkFairPlay({ newPage, url: srv.url, log: say }),
+        checkFairPlay({ newPage, url: srv.url, game, log: say }),
         W && want(15) ? undefended({ newPage, url: srv.url, game, world, shot, log: say }).catch(e => ({ error: e.message })) : null,
       ]));
       rec.fair = fp.record;
@@ -856,6 +856,7 @@ async function staticOnly(dir, list, { rec, outDir, add, t0 }) {
 
 /** --check 10: fair play alone (its own browser and server), for a repair loop. */
 async function fairOnly(dir, { rec, outDir, add, log, t0 }) {
+  const game = JSON.parse(await readFile(join(dir, 'config/game.json'), 'utf8'));
   const srv = await startParty({ dir, port: 0, overlay: await kitEditsOverlay(dir) });
   const { browser, gpu: usedGpu } = await launchForGame(launchChrome, dir); rec.renderer = usedGpu;
   rec.chrome = browser.version();
@@ -869,7 +870,7 @@ async function fairOnly(dir, { rec, outDir, add, log, t0 }) {
     return { ctx, page, errors };
   };
   try {
-    const fp = await checkFairPlay({ newPage, url: srv.url, log });
+    const fp = await checkFairPlay({ newPage, url: srv.url, game, log });
     rec.fair = fp.record; if (fp.warnings.length) rec.notes.push(...fp.warnings);
     add(10, 'fair play', fp.ok, fp.detail);
   } catch (e) { add(10, 'fair play', false, `not reached: ${e.message}`); }

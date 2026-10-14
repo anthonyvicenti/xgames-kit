@@ -1,0 +1,8 @@
+{
+  "base": "kart-loop",
+  "why": "The control for a game whose first score comes late by design: the race scores only at the finish line, and with the bot pace a new player found fair (0.72) no bot finished inside the check's fixed window, so measure 12 failed and the build made its bots faster to pass (PA10: \"A botPace of 0.72 made the bots fair game for a new player, but it failed check 12 ... That is why it is 0.8\"). Fair play's pages now play on to the game's own round while nothing has scored (fair-check.mjs playOnFor), so the fair pace passes.",
+  "evidence": "builder/loop/evidence/2026-10-13-pa10-headless.json",
+  "patches": [{ "file": "config/game.json", "pointer": "/rules/params/botPace", "value": 0.72 }],
+  "mustPass": ["D"],
+  "measure": 12
+}

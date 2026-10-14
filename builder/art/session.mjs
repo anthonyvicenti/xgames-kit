@@ -18,6 +18,7 @@ import { sizeFor, STANDARD } from './standard.mjs';
 import { rasteriseSvg, svgProblems } from './svg.mjs';
 import { loadPolicy } from './policy.mjs';
 import { loadKind, needFromSlot, resolveNeed } from './resolve.mjs';
+import { readKind } from '../../kinds/apply.mjs';
 import { artLibrary, assetFile, findAsset, licenceOf } from './views.mjs';
 
 export const ART_STATE = path.join(STATE, 'art');
@@ -39,8 +40,12 @@ export async function styleAnchor(gameDir, { style = null, palette = null, direc
   if (have && !style && !palette && !direction) return { ...have, file, fresh: false };
   let guessed = null;
   if (!have && !style) {
+    // the game's own look says its style (config/look.json → style, what create wrote), else its kind's look on its
+    // runtime (kinds/<id>.json → look.<runtime>.style); never a guess from a preset's name
+    const look = await readJson(path.join(gameDir, 'config', 'look.json'), {});
     const spec = await readJson(path.join(gameDir, 'spec.json'), {});
-    guessed = /pixel/i.test(`${spec.look?.preset ?? ''} ${spec.look?.style ?? ''}`) ? 'pixel' : 'drawn';
+    const kindStyle = readKind(spec.kind)?.look?.[spec.runtime]?.style ?? null;
+    guessed = [look?.style, kindStyle].find(s => STANDARD.styles[s]) ?? 'drawn';
   }
   const next = { game: path.basename(gameDir), style: style ?? have?.style ?? guessed, palette: palette ?? have?.palette ?? null, direction: direction ?? have?.direction ?? null, set: new Date().toISOString() };
   if (!STANDARD.styles[next.style]) throw new Error(`style "${next.style}" is not one of ${Object.keys(STANDARD.styles).join(', ')}`);

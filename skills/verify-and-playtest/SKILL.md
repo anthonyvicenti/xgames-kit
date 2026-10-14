@@ -45,7 +45,7 @@ gate must fail.
 | **C** cause → effect | Every input and every event the kit logs shows on that player's screen soon; control comes back | 10, 13, 15, 16, 38 | a control with no visible effect; an event nobody sees or hears; an unused mechanic; bots ganging up | use the mechanic's own `fire`/`stream`/E or take the control out; make the rules use the mechanic; bots via `ctx.bots.target`/`attack` |
 | **D** the loop closes | A round ends, replays, and every score comes from a counted event | 6, 12 | the round never ends; a score that only ticks | `check()` returns null or `{winners, reason}`; score in `onHit`/`onDamage`/`onCollect`, never per frame |
 | **E** shared truth | Every player sees the others where they are; each player's own values are theirs | 5, 25 | shared state decided on a non-host copy; one shared score; bots with friends | `if (ctx.host)`, `ctx.shared`, events on edges (skill `multiplayer`); each player's score in `p.score`; `rules.bot` for solo only |
-| **F** matches the spec | World size and completeness, a body per role, hits per kill, the game's own tests | 11, 14, 17, 35, 39 | props placed badly; walls removed; roles sharing a body; a one-hit weapon the spec didn't ask for; a failing own test | `config/world.json` → `props`; keep the generated world; a body per role; projectile `damage` below waves `hp` (or the spec's `hitsPerKill`); fix the game, the test is the promise |
+| **F** matches the spec | World size and completeness, a body per role, hits per kill, the game's own tests | 11, 14, 17, 35, 39 | props placed badly; walls removed; roles sharing a body; a one-hit weapon the spec didn't ask for; a failing own test | `config/world.json` → `props`; keep the generated world; a body per role; a weapon's damage against its enemies' health (or the spec's `hitsPerKill`); fix the game, the test is the promise |
 | judges | The reference likeness (when the spec has references), the black-box play-test | 23 | the look drifted from the references | the failing line's notes; advice, not a rule |
 
 Release-only measures test the kit, not your game, and a build's verify neither runs nor requires them: 7 (bus
@@ -55,9 +55,9 @@ play). Check 9 (the contact sheet on the GPU) is skipped by `--quick`.
 ## The look, in eight questions
 
 From the screenshots in the evidence folder (or your own from `play`), answer yes or no; fix every "no" in
-`config/*.json` and slots, never in code or the look preset:
+`config/*.json` and slots, never in code:
 1. Does the ground read as a surface (pattern visible, players lighter or darker than it)?
-2. Can you see every player colour, its paint and the stream on the ground?
+2. Can you see every player's colour, and what their actions leave in the world (paint, a stream, marks), against the ground?
 3. Is the floor free of litter (no loose small things, no scenery that looks collectable)?
 4. Does every prop stand cleanly (no overlap, float, sink, tilt; seats face something)?
 5. Is the layout purposeful (props along edges and in groups, open floor in the middle)?

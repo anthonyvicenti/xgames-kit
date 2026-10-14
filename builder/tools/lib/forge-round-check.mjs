@@ -9,7 +9,7 @@
 // rules.check() alone; who has fallen is the rules' to say (ctx.round.end('lost', []) when nobody stands).
 //
 // What it does: a game whose player has hit points and whose enemies come in waves (as check 21's forge leg) is played
-// alone with HEALTH hit points and no armour (set as Studio overrides a value: one hit fells the player, so the check
+// alone with HEALTH hit points (the least the table takes) and no armour (set as Studio overrides a value: any enemy's hit fells the player, so the check
 // does not wait out a whole fight) and a long clock (CLOCK s, so the clock cannot be what ends it). The player stands
 // where it spawned and the first wave comes. From the moment the core says it fell: within END_S the round must reach
 // its results, or the player must stand again (a game that puts a fallen player back on their feet has not stranded
@@ -18,7 +18,7 @@ import { healthApplies } from './forge-hud-check.mjs';
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const r1 = v => Math.round(v * 10) / 10;
-export const FORGE_ROUND_LIMITS = { HEALTH: 12, CLOCK: 600, FALL_S: 60, END_S: 8 };
+export const FORGE_ROUND_LIMITS = { HEALTH: 1, CLOCK: 600, FALL_S: 60, END_S: 8 };
 
 /** In the page: the round and the local player, as the core holds it. */
 const READ = () => {

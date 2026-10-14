@@ -39,6 +39,7 @@ patches, then the change, then verify. So it runs from any checkout, on the kit 
 | `car-strafes` | C · 13 | a car whose A and D slide it sideways, as a walker strafes (PA10, 2026-10-13: verify passed three times on a car nobody could drive) |
 | `car-controls-unshown` | C · 13 | PA10's controls as delivered: steer, accelerate and brake named, shown on no screen, skipped by verify |
 | `camera-keys-dead` | C · 13 | the same class for a camera: a row says Q and E turn the camera, and nothing turns it |
+| `slow-bots-race` | control · D · 12 | PA10's race at the bot pace a new player found fair (0.72): the first score comes at the finish line, after the check's old fixed window; it passes because fair play's pages play on to the game's own round while nothing has scored |
 | `car-drives` | control | the same car as the build wrote it, its controls as rows with what each does: passes 13 |
 
 The base `kart-loop` is PA10's Island Circuit (builder/loop/evidence/2026-10-13-pa10-headless.json): made by the kit's
