@@ -421,7 +421,7 @@ export function createRegistry(catalog) {
         return { id, describe: p?.describe ?? rt.describe, note: [rt.says, rt.play?.rules, rt.play?.loops].filter(Boolean), traps: (rt.core?.neverOverride ?? []).map(f => `never override ${f}`), gates: gatesOf(rt), limits: profileLimits(rt, p) };
       }
       if (type === 'loop') { const l = byId(catalog.loops, id); return l && { id, describe: l.describe, note: l.notes ?? [], events: l.hooks ?? [], promise: l.promise, clock: l.clock, params: l.params }; }
-      if (type === 'mechanic') { const m = byId(catalog.mechanics, id); return m && { id, describe: m.describe, note: m.notes?.lines ?? [], traps: m.notes?.stub?.traps ?? [], stub: m.notes?.stub ?? null, events: m.events, sync: { owner: m.host.owner, how: m.host.how ?? '' }, params: m.params }; }
+      if (type === 'mechanic') { const m = byId(catalog.mechanics, id); return m && { id, describe: m.describe, note: m.notes?.lines ?? [], traps: m.notes?.stub?.traps ?? [], stub: m.notes?.stub ?? null, events: m.events, sync: { owner: m.host.owner, how: m.host.how ?? '' }, params: m.params, holds: m.holds ?? [] }; }
       if (type === 'kind') { const k = byId(catalog.kinds, id); return k && { id, describe: k.feel, note: [], packs: k.packs ?? [], look: k.look, camera: k.camera }; }
       return null;   // packs are the library's: its resolver answers for them
     },

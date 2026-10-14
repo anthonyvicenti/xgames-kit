@@ -52,8 +52,8 @@
       "gate": "E",
       "home": "invariant",
       "run": "build",
-      "rule": "Two players over real WebRTC are in one game: each screen draws the other where they are, in their own look, and the shared state matches.",
-      "fix": "Keep shared state on the host (if (ctx.host)), send events on edges and never every frame, use ctx.rng() instead of Math.random, and read a player's colour or model per player: ctx.assets.value(slotId, fallback, { player: p }).",
+      "rule": "Two players over real WebRTC are in one game: each screen draws the other where they are, in their own look, and the shared state matches. When no player is a character (a board played from the seats, own boards), each screen shows the other's presence instead: their seat card, pointer and moves live, or their own board live beside yours.",
+      "fix": "Keep shared state on the host (if (ctx.host)), send events on edges and never every frame, use ctx.rng() instead of Math.random, and read a player's colour or model per player: ctx.assets.value(slotId, fallback, { player: p }). With no character, keep the kit's presence part (gf/three/ui/presence.js): a part that holds the body says so in its manifest (holds), a game whose own code holds the players says multiplayer.presence in its spec and hands its board and moves to ctx.presence.set.",
       "also": [
         {
           "home": "part",
@@ -64,6 +64,11 @@
           "home": "part",
           "part": "mechanic:*",
           "what": "a part that holds the body says where the player is (presence(p)): the kit's gate block reports the mark as the player's place, with mark: true, so the gate's 'movement shows on the other screen' is judged on what the friend sees move"
+        },
+        {
+          "home": "part",
+          "part": "ui:presence",
+          "what": "the presence leg (builder/tools/lib/presence-check.mjs): with no character, each screen shows the other's seat card or board, and each move made with the mouse lands on the other screen within 3 s"
         }
       ]
     },

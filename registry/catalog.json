@@ -1,7 +1,7 @@
 {
   "catalogVersion": 1,
   "inputs": {
-    "sha256": "78a8283593b261ca751f5ab58657a7c865deef21490c5293b710ce27bd579dfd",
+    "sha256": "19c5678b9247d34a8fb321fffa569a67354ffabb35c99d9bd54147389f980dbc",
     "files": [
       "components/board/mechanic.json",
       "components/boss/mechanic.json",
@@ -143,7 +143,8 @@
               "voxel-world",
               "persistent-world",
               "ui-panels",
-              "board-grid"
+              "board-grid",
+              "friend-presence"
             ]
           }
         },
@@ -279,7 +280,8 @@
               "tilemap",
               "sprites",
               "ui-panels",
-              "board-grid"
+              "board-grid",
+              "friend-presence"
             ]
           }
         }
@@ -10215,7 +10217,16 @@
               "cursor"
             ],
             "default": "walk",
-            "description": "How a player is at the board. walk: your body walks beside and on it and the cell under your feet is yours to act on. cursor: your body stands at your side of the board and you move a mark in your colour (mouse, keys, stick); friends see the mark move"
+            "description": "How a player is at the board. walk: your body walks beside and on it and the cell under your feet is yours to act on. cursor: your body stands at your side of the board and you move a mark in your colour (mouse, keys, stick); friends see the mark move, and the kit's presence part gives every friend a seat card (gf/mp/presence.js: seats)"
+          },
+          "boards": {
+            "type": "string",
+            "enum": [
+              "shared",
+              "own"
+            ],
+            "default": "shared",
+            "description": "shared: one board, players take turns on it. own: each player plays a board of their own at the same time (the same opening for everyone, no turns; a mark in your colour, as with presence cursor), and the first board the winner rule decides wins; friends see each other's boards live beside their own (gf/mp/presence.js: boards)"
           },
           "action": {
             "type": "string",
@@ -10615,7 +10626,7 @@
       ],
       "host": {
         "owner": "host",
-        "how": "the host owns the grid, the turn and the result; a copy sends its move and is told why when it is refused; a cursor mark is its own player's",
+        "how": "the host owns the grid, the turn and the result; a copy sends its move and is told why when it is refused; a cursor mark is its own player's. Own boards: each copy owns its own player's board and sends it to everyone through the presence part; the host reads the result from it",
         "state": "board",
         "fields": {
           "g": "the grid, one letter a cell from row 0 (\".\" empty; read it with board.state.at(c, r), never by hand)",
@@ -10627,7 +10638,9 @@
           "w": "null, or the result { s: winning seats, c: cells, r: reason, d: 1 for a draw }",
           "d": "the round second the turn runs out (0: untimed)",
           "k": "moves refused so far",
-          "x": "the game's own data (state.data)"
+          "x": "the game's own data (state.data; own boards: { seed }, the one opening)",
+          "m": "moves each seat made (own boards: on their own board)",
+          "v": "the cell index of each seat's last move (-1: none)"
         }
       },
       "owns": [
@@ -10642,13 +10655,13 @@
         },
         {
           "res": "player.control",
-          "when": "presence is cursor",
-          "why": "a cursor in place of a body"
+          "when": "presence is cursor, or boards is own",
+          "why": "a cursor (or a board of your own) in place of a body"
         },
         {
           "res": "input.primary",
           "shared": true,
-          "when": "presence is cursor",
+          "when": "presence is cursor, or boards is own",
           "why": "click to act"
         }
       ],
@@ -10658,20 +10671,37 @@
       },
       "uses": [],
       "gives": [
-        "board-grid"
+        "board-grid",
+        "friend-presence"
       ],
       "bots": "bots play by themselves (botThink)",
       "asks": [
         {
           "about": "body",
-          "why": "on a board each player is a character walking beside it (presence walk) or a mark that moves over the cells (presence cursor)"
+          "why": "on a board a player walks beside it as a character (presence walk) or plays from their seat with a mark (presence cursor); how a friend is shown then is the kit's presence default"
+        }
+      ],
+      "holds": [
+        {
+          "when": {
+            "presence": "cursor"
+          },
+          "as": "mark",
+          "why": "each player plays from their seat with a mark over the cells"
+        },
+        {
+          "when": {
+            "boards": "own"
+          },
+          "as": "board",
+          "why": "each player plays a board of their own"
         }
       ],
       "notes": {
         "lines": [
           "Give the rules once, in setup: board.rules({ legal(move, s) → true or the reason in words, winner(s) → null | { seat, cells } | { draw: true } }). The board does turns, refusals, pieces, the win line, bots and the end of the round.",
           "A move is { type: \"place\", to: [c, r] } or { type: \"move\", from, to }. s has at, empty, owner, set, line, flank, reach, dropRow, count, full, last, turn, data. apply(move, s) for captures, start(s) for the opening (README.md).",
-          "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): the ledger's body line decides it (asked only when the person's words leave it open)."
+          "input \"place\" | \"drop\" | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies at the table, each moves a mark): the ledger's body line decides it. boards \"own\": everyone plays their own board at once (start(s) reads s.data.seed; winner(s) → { seat: 0 } when this board is done)."
         ],
         "readme": "components/board/README.md",
         "stub": {
@@ -13106,6 +13136,10 @@
     {
       "id": "board-grid",
       "describe": "a grid of cells to place or move pieces on"
+    },
+    {
+      "id": "friend-presence",
+      "describe": "friends seen with no character: a seat card each (name, colour, an avatar that reacts), live pointers and every move landing on a shared board; each friend's own board live beside yours"
     },
     {
       "id": "terrain",

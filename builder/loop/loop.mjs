@@ -11,7 +11,7 @@
 // each round is handed over: step() answers {waiting, message}, and the next step(input) takes the round's result.
 import { chooseFoundation, foundationSummary, rehomeLedger, resolveProbes } from './foundation.mjs';
 import { applyAnswers, checkAmend, checkLedger, ledgerOutputSchema, sourcesOf } from './ledger.mjs';
-import { checkPitch, checkSpec, PITCH_OUTPUT, PITCH_VERSION } from './pitch.mjs';
+import { checkPitch, checkSpec, friendsShapeOf, PITCH_OUTPUT, PITCH_VERSION } from './pitch.mjs';
 import { classifyChange, checkChangeSpec } from './change.mjs';
 import { creatorSummary, holdPromises, ledgerVerdict, notYetWords, outcomeOf, promisesDoc, promisesOf, settlePromises } from './promises.mjs';
 import { failingSet, ladderRecordOf, newLadder, nextRound, observe, resetLadder, SAY, sayKeyOf } from './ladder.mjs';
@@ -251,7 +251,7 @@ export async function openLoop(host) {
       if (problems.length) { S.candidate = { spec, needsRound: true }; return talkTrouble('spec', problems, p => M.specMessage({ base: spec, change: changing ? { class: S.change.class, holds: S.change.holds, to: S.change.to } : null, problems: p, ...words })); }
       // the lock: the spec as agreed, and its promises. A change keeps every promise of a line that is still live.
       const text = JSON.stringify(spec, null, 2) + '\n';
-      const promises = promisesOf({ spec, ledger: S.ledger, loopManifest: await registry.manifest('loop', spec.loop) });
+      const promises = promisesOf({ spec, ledger: S.ledger, loopManifest: await registry.manifest('loop', spec.loop), friends: await friendsShapeOf(spec, registry) });
       const held = changing ? (S.lock?.promises ?? []).filter(p => p.kind !== 'build' && p.kind !== 'control' && (!p.row || S.ledger.rows.some(r => r.id === p.row && !r.cut))) : [];
       holdPromises(promises, held);
       S.lock = { at: stamp(), spec: { sha: sha(text), text }, promises };

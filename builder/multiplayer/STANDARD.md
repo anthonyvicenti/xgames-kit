@@ -10,11 +10,38 @@ v1 of this standard (2026-10-04) counted `race` mode as multiplayer. v2 does not
 
 **Every game carries a `multiplayer.json` and passes the multiplayer gate.** The file says how the game plays with friends, or says in a full sentence why it doesn't. A game with no `multiplayer.json` is unfinished.
 
-**The bar for "plays with friends":** the players are in one game, in sync, and **each player sees the others as a character** in their own view. A number in a side panel is not seeing your friend.
+**The bar for "plays with friends":** the players are in one game, in sync, and **each player sees the others as a character** in their own view (when nobody is one, by presence: the next section). A number in a side panel is not seeing your friend.
 
 One player hosts in their own browser and the others join with a code or a link (the host-join kit, `p2p/README.md`). There is no game server.
 
 **Friends play friends (creator, 2026-10-08: "We really shouldn't have bots in multiplayer modes").** A round with friends has no bots, and needs two players in the room before the host can start; bots are for playing alone. Every player picks a name before hosting or joining and can change it in the waiting room, the waiting room shows the room once with everyone in the colour their character wears, and the results show each player their own score (kit 1.4.0, `kits/gf-multiplayer/1.4.0/README.md`; gf-three verify check 25).
+
+## Seeing a friend with no character
+
+The creator, 2026-10-14: "You can fix seeing your friend default." A board, card or puzzle game has no character, so
+"each player sees the others as a character" was open since 2026-10-05. The default, for every game of each shape and
+never per game (`gf/mp/presence.js`, drawn on three by `gf/three/ui/presence.js`):
+
+| Shape | When | What each screen shows of a friend |
+|---|---|---|
+| `character` | the players walk the world | their character, where they really are (the bar above) |
+| `seats` | nobody is a character; one shared board or table (turns, four in a row, cards) | a **seat card** with their name, colour and an **avatar that reacts** (thinking on their turn, placed just after a move, won, lost, away); their **pointer** moving where they point; a ring in their colour where **each of their moves lands**, as they make it |
+| `boards` | nobody is a character; each player has their own board (falling blocks, a puzzle side by side) | **their board, live, beside yours**, framed in their colour, with their name, score and avatar on its rim; their pointer and each move on it |
+
+- **Chosen from the spec, by the loop and `create`:** the parts say when they hold every player's body (a mechanic
+  manifest's `holds`: the board played from the seats is `mark`, a board of one's own is `board`), and a game whose own
+  code holds the players says `multiplayer.presence`. The loop writes it from the ledger's body line (a board, a
+  pointer or cards) and how friends play together (`own-board`), and never asks the creator what a friend looks like
+  when the shape answers it; it still asks whether the players are characters at all when their words leave it open.
+- **Owned like everything else:** each copy owns and sends its own player's pointer, mood and own board (at most 10
+  times a second, only on change); a shared board, the turn and the result stay the host's.
+- **Gated (gate E, measure 5's presence leg, `builder/tools/lib/presence-check.mjs`):** in a two-player game with no
+  character, each screen must show the other's presence in the shape the spec and parts call for, and each move a
+  player makes with the mouse must land on the other's screen within 3 s (seats: counted on their card, with its ring;
+  boards: their board as they have it), and their pointer too. Regressions `board-friend-unseen`, `own-board-unseen`
+  and the controls `table-four-friends-seen`, `lights-race-friends-seen`; examples `table-four` and `lights-race`.
+- Prior art: the Brickbloom pilot of 2026-10-06 (each friend's bed live beside yours with a small reacting gardener),
+  which the creator never judged; this default generalises it.
 
 ## The modes
 

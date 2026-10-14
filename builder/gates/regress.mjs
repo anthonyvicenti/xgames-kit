@@ -38,7 +38,10 @@ export async function fingerprintFiles() {
   const own = [];
   const walk = async (dir, rel) => { for (const e of await readdir(dir, { withFileTypes: true })) { const r = `${rel}/${e.name}`; if (e.isDirectory()) await walk(join(dir, e.name), r); else if (e.name !== 'last-green.json') own.push(r); } };
   await walk(REGRESSIONS, 'builder/gates/regressions');
-  return [...['builder/tools/verify.mjs', 'builder/tools/lib/verdict.mjs', 'builder/tools/lib/stepped.mjs', 'builder/gates/regress.mjs'], ...checks, ...own].sort();
+  // the runtimes' own verify flows, the flows' signs, and measure 5's two-player gate and presence part decide verdicts too
+  const flows = ['builder/tools/verify-forge.mjs', 'builder/tools/verify-vista.mjs', 'builder/tools/verify-world.mjs', 'builder/tools/lib/flow-signs.mjs',
+    'builder/tools/lib/presence.mjs', 'builder/multiplayer/party/gate.mjs', 'builder/multiplayer/party/gate-live.mjs'];
+  return [...['builder/tools/verify.mjs', 'builder/tools/lib/verdict.mjs', 'builder/tools/lib/stepped.mjs', 'builder/gates/regress.mjs'], ...flows, ...checks, ...own].sort();
 }
 /** {file: sha256} over fingerprintFiles(), and one hash of them all. */
 export async function fingerprint() {

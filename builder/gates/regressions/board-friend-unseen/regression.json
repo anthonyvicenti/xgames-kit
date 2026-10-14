@@ -1,0 +1,9 @@
+{
+  "base": "table-four",
+  "why": "A board game where nobody is a character, its settings saying the players are characters: the friend sits still at the table and nothing on the screen says what they are doing. The open question since 2026-10-05 (\"each player sees the others as a character\": what is that for a board?), settled by the creator on 2026-10-14 (\"You can fix seeing your friend default\"): with no character, each friend is shown by presence. Gate E must fail it: the board holds every player's body, so each screen must show the other's seat card, pointer and moves.",
+  "evidence": "builder/gates/evidence/2026-10-14-friends-default.json",
+  "patches": [{ "file": "config/game.json", "pointer": "/players/presence", "value": "character" }],
+  "mustFail": ["E"],
+  "measure": 5,
+  "detail": "shows no presence for"
+}

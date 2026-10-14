@@ -1,0 +1,51 @@
+{
+  "schema": "xgk-evidence/1",
+  "date": "2026-10-14",
+  "what": "The friends default for games with no character, built and gated (stream friends-default).",
+  "creator": {
+    "words": "You can fix seeing your friend default.",
+    "date": "2026-10-14",
+    "context": "The bar since 2026-10-05 is \"friends are in one game, in sync, and each player sees the others as a character\"; what that means for a board, card or puzzle game was the open question in DESIGN (\"Still open\") and in the PA11 eval case's interim reading."
+  },
+  "decision": {
+    "rule": "How a friend is seen is the game's shape, chosen from how friends play together and whether a player is a character, never per game (gf/mp/presence.js shapeOf).",
+    "shapes": {
+      "character": "the players walk the world: each sees the others where they really are (unchanged)",
+      "seats": "nobody is a character, one shared board or table: a seat card per friend (name, colour, an avatar that reacts: waiting, thinking on their turn, placed just after a move, won, lost, away), their pointer moving where they point, and a ring in their colour where each of their moves lands, on every screen",
+      "boards": "nobody is a character, each player has their own board: each friend's board drawn live beside yours, framed in their colour, with their name, score, avatar, pointer and last move"
+    },
+    "chosen_by": "a part's manifest says when it holds every player's body (holds: the board played from the seats is a mark, a board of one's own is a board); a game whose own code holds the players says multiplayer.presence; create writes config/game.json players.presence; the loop holds a spec to the ledger's body line and stops asking what a friend looks like when the shape answers it",
+    "prior_art": "the Brickbloom live-boards pilot (games.fun research/foundations/evidence/multiplayer-live-boards-pilot-2026-10-06.json, commit 81ec523b8), never judged by the creator; PA11's interim reading (\"a named marker where they are about to play\") and its two builds, which made the players characters walking a giant board"
+  },
+  "gate": {
+    "gate": "E",
+    "measure": 5,
+    "how": "the presence leg (builder/tools/lib/presence-check.mjs): two players over real WebRTC; what the game must show comes from its locked spec and parts, never its config; each screen must show the other in that shape; each player makes moves with the real mouse where their screen lists them, and each must land on the other screen within 3 s, with their pointer",
+    "regressions": {
+      "board-friend-unseen": "mustFail E · 5 (Table Four with its settings saying the players are characters)",
+      "own-board-unseen": "mustFail E · 5 (Lights Race shown as seats)",
+      "table-four-friends-seen": "control, passes 5",
+      "lights-race-friends-seen": "control, passes 5"
+    }
+  },
+  "runs": {
+    "table-four": "verify, every build measure: PASS gates 6/6, measures 22/22 in 183 s; presence leg 2 of 2 moves each way within 3 s, both pointers seen",
+    "lights-race": "first verify FAIL A (look.time dusk not a jelly-pastel option) and D 12 (score only +1 at the end: nothing built up in a timed round); fixed in the example (day; the score is the lights switched off, from each move); then PASS gates 6/6, measures 22/22 in 185 s; presence leg 2 of 2 each way",
+    "giant-four": "verify after the board changes (shape character, no presence part): PASS gates 6/6, measures 22/22 in 169 s",
+    "regressions_first_run": "board-friend-unseen ok, own-board-unseen ok; lights-race-friends-seen failed kit-identical because this session rewrote gf-multiplayer's SHA256SUMS while the run was going (the presence leg itself passed); table-four-friends-seen failed the gate's background-host step once under load (an npm test and a forge verify on the machine) and passed it alone right after (verify --check 5, 97 s)",
+    "screenshots": "2026-10-14-friends-default/: each player's own screen right after the first moves (Table Four and Lights Race, host and joiner)"
+  },
+  "forge_gate_flag": {
+    "asked": "remove the forge ?gf-gate=1 check.query if the live gate holds without it",
+    "run": "ruin-hold, multiplayer.json without check.query, verify --check 5: PASS, but only because forge's measure 5 lets a soft check pass: the gate's own record says round 1 ended before the background-host step and round 2 was not running either, so that step was never checked",
+    "kept": "the flag stays (create still writes it): without it forge loses the background-host proof. It also serves the loadout leg and forge's pickup walk."
+  },
+  "not_done": [
+    "Nobody has played it; the creator has not seen it.",
+    "Two Chrome contexts on one machine; no real network, no phone, not at 4K.",
+    "Seats and boards are drawn by the three runtime only (forge, vista and godot games all have characters today).",
+    "The avatar is one stand-in face (ui.avatar) on a disc of the player's colour, not a portrait of the player's own body.",
+    "Four players were not run; the boards column is sized for three friends.",
+    "Bodies at the board stand where the board's seats put them: on the plaza one stands in the fountain (the board clears props, not the fountain)."
+  ]
+}

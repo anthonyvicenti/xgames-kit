@@ -87,6 +87,11 @@ export async function gateLive({ manifest, live, assets, dir, srv, player, check
   check('everyone-starts-together', tH && tJ && Math.abs(tH - tJ) < 1500, tH && tJ ? `the two games started ${Math.abs(tH - tJ)} ms apart` : `started: host ${!!tH}, joiner ${!!tJ} (the game must begin play from net.onStart, with no title screen to click through)`);
   const [nh, nj] = [await net(H.page), await net(J.page)];
   check('one-host', nh?.host === true && nj?.host === false, `host copy: ${nh?.you}, the other: ${nj?.you}`);
+  // own boards (gf/mp/presence.js shape "boards"): nobody is anywhere in the world; a friend is where their own board
+  // is, beside yours. The position legs below do not apply, and verify's presence leg of measure 5
+  // (builder/tools/lib/presence-check.mjs) holds each screen to the other's board and moves instead
+  const ownBoards = nh?.presence?.shape === 'boards' || nj?.presence?.shape === 'boards';
+  if (ownBoards) notes.push('own boards: the players are not anywhere in the world, so the position legs (each draws the other, the host\'s movement, a friend on screen) were not run; the presence leg of measure 5 judges what each screen shows of the other');
 
   // ---- scripted players, kept off the party page's own cards (gate-lib) ----
   const proxyOf = async P => { const box = await P.page.locator('#game').boundingBox(); return inFrame(P.page, frameOf(P.page), { width: Math.round(box.width), height: Math.round(box.height) }); };
@@ -97,9 +102,9 @@ export async function gateLive({ manifest, live, assets, dir, srv, player, check
 
   // ---- each copy draws the other player, where that player really is ----
   const seen = async (viewer, other) => { const [v, o] = [await net(viewer.page), await net(other.page)]; const p = v?.peers?.find(x => x.id === o?.you); return p && p.x != null && o.me ? { p, me: o.me, d: dist(p, o.me) } : null; };
-  const jSeesH = await until(() => seen(J, H), 10000, 'the joiner to draw the host').catch(() => null);
-  const hSeesJ = await until(() => seen(H, J), 10000, 'the host to draw the joiner').catch(() => null);
-  check('each-draws-the-other', !!jSeesH && !!hSeesJ, jSeesH && hSeesJ ? `the joiner draws "${jSeesH.p.name}", the host draws "${hSeesJ.p.name}"` : `joiner draws the host: ${!!jSeesH}; host draws the joiner: ${!!hSeesJ} (snapshot().net.peers must list every other player with a position)`);
+  const jSeesH = ownBoards ? null : await until(() => seen(J, H), 10000, 'the joiner to draw the host').catch(() => null);
+  const hSeesJ = ownBoards ? null : await until(() => seen(H, J), 10000, 'the host to draw the joiner').catch(() => null);
+  if (!ownBoards) check('each-draws-the-other', !!jSeesH && !!hSeesJ, jSeesH && hSeesJ ? `the joiner draws "${jSeesH.p.name}", the host draws "${hSeesJ.p.name}"` : `joiner draws the host: ${!!jSeesH}; host draws the joiner: ${!!hSeesJ} (snapshot().net.peers must list every other player with a position)`);
 
   // ---- play: both move with real input; the gate watches positions, the screen and the shared world ----
   const trace = { onScreen: { host: 0, joiner: 0 }, sharedSame: 0, sharedSamples: 0, sharedDiff: [], hostMoved: 0, drawnGap: [], firstShot: false };
@@ -132,10 +137,10 @@ export async function gateLive({ manifest, live, assets, dir, srv, player, check
   await shot(H.page, 'host-playing'); await shot(J.page, 'joiner-playing');
   rec.live = { ...trace, near };
 
-  check('host-movement-shows-on-the-joiner', trace.hostMoved > near && trace.drawnGap.length > 5 && trace.drawnGap.slice(-8).some(d => d <= near * 2),
+  if (!ownBoards) check('host-movement-shows-on-the-joiner', trace.hostMoved > near && trace.drawnGap.length > 5 && trace.drawnGap.slice(-8).some(d => d <= near * 2),
     `the host moved ${trace.hostMoved.toFixed(1)} units; the joiner drew the host ${trace.drawnGap.length ? Math.min(...trace.drawnGap.slice(-8)).toFixed(2) : '?'} units from where the host was (allowed ${near * 2})`);
-  check('a-friend-is-on-screen', trace.onScreen.joiner + trace.onScreen.host > 0, `the other player's character was inside the view in ${trace.onScreen.joiner} of the joiner's samples and ${trace.onScreen.host} of the host's (screenshots: *-sees-the-*)`);
-  check('both-see-each-other-on-screen', trace.onScreen.joiner > 0 && trace.onScreen.host > 0, `joiner saw the host ${trace.onScreen.joiner} times, host saw the joiner ${trace.onScreen.host} times`, { soft: true });
+  if (!ownBoards) check('a-friend-is-on-screen', trace.onScreen.joiner + trace.onScreen.host > 0, `the other player's character was inside the view in ${trace.onScreen.joiner} of the joiner's samples and ${trace.onScreen.host} of the host's (screenshots: *-sees-the-*)`);
+  if (!ownBoards) check('both-see-each-other-on-screen', trace.onScreen.joiner > 0 && trace.onScreen.host > 0, `joiner saw the host ${trace.onScreen.joiner} times, host saw the joiner ${trace.onScreen.host} times`, { soft: true });
   const agree = trace.sharedSamples ? trace.sharedSame / trace.sharedSamples : 0;
   check('the-shared-world-matches', trace.sharedSamples >= 5 && agree >= 0.8, `${trace.sharedSame} of ${trace.sharedSamples} samples had the same shared world on both copies${trace.sharedDiff.length ? `; e.g. ${trace.sharedDiff[0]}` : ''}`);
 

@@ -51,10 +51,14 @@ A move is `{ type: 'place', to: [c, r], kind }` or `{ type: 'move', from: [c, r]
 | `hints` | true | the mover sees their legal cells |
 | colours, sounds, texts | | `boardColor`, `cellColor`, `cellColorB`, `hintColor`, `refuseColor`, `winColor`; `soundPlace`, `soundSelect`, `soundRefuse`, `soundWin`; `textYourTurn`, `textTheirTurn`, `textNotYourTurn`, `textDraw` |
 
-## A player's presence (open question G5: both are here, the pitch asks)
+## A player's presence (the ledger's body line decides; how a friend is seen is the kit's default)
 
 - **`walk`**: your body walks beside and on the board. The cell under your feet (or the nearest edge cell when you stand beside it) carries a ring in your colour on every screen; the action plays it. Friends see each other as characters, as in any kit game. The board has no step and pieces have no colliders: a body walks through a piece.
-- **`cursor`**: your body stands at your side of the board and its controls are held off (the mechanic owns `player.control`). You move a mark in your colour (a ring, a pointer and your name): the mouse where it is free (the `follow` camera) or the middle of the screen where the mouse is taken (`third`), the move keys or the stick one cell a step, and a click, E or the interact button plays. Friends see your body at the table and your mark moving, at most 10 changes a second. With a fixed camera (`follow`, `top`) the mechanic turns it square on from your side and centres it on the board.
+- **`cursor`**: your body stands at your side of the board and its controls are held off (the mechanic owns `player.control`). You move a mark in your colour (a ring, a pointer and your name): the mouse where it is free (the `follow` camera) or the middle of the screen where the mouse is taken (`third`), the move keys or the stick one cell a step, and a click, E or the interact button plays. Friends see your body at the table and your mark moving, at most 10 changes a second. With a fixed camera (`follow`, `top`) the mechanic turns it square on from your side and centres it on the board. Nobody is a character then, so the kit's presence part shows each friend as `seats` (`gf/mp/presence.js`; manifest `holds`): a seat card with an avatar that reacts to the board (thinking on their turn, placed after a move, won or lost), and a ring where each of their pieces lands. The board feeds it (`presenceFeed`, `presenceScreen`, `presenceMarks`).
+
+## Own boards (`boards: "own"`)
+
+Each player plays a board of their own at the same time: no turns, a mark in your colour (as with `cursor`), your body at the table. The host deals one seed a round (`state.data.seed`) and `start(s)` builds the opening from it, so every board starts the same. Your moves are played on your own copy at once (`legal`, `apply` as usual, with `s.turn` always 0 and your pieces seat 0); your board goes to every friend through the presence part, which draws it live beside theirs (shape `boards`). The host reads every board with `winner(s)`: the first that returns `{ seat: 0 }` wins the round (`score: "win"`), and `score: "pieces"` follows each board. Alone, bots play boards of their own on the host (`bot(s, 0, rng)`, else the one-ply bot). `onMove` and `onEnd` fire on the host as each board changes. The example is `examples/minimal/lights-race`.
 
 ## Turn order is an input
 
@@ -81,7 +85,7 @@ The module exports `sounds` (`board-place`, `board-select`, `board-refuse`, `boa
 - Pieces are kit primitives in the player's colour. A model per kind (a slot a creator swaps) is not there.
 - scenic-3d: never run; the registry manifest (`mechanic.json`) does not list it.
 - "Clear this area" is done when the game starts, on every copy, from the world's own prop list. A world that knows about a stage (and spawns players round it) would be the better home; the layout file still lists the props.
-- No undo, no hidden information, no dice, no hands of cards, no simultaneous turns. One board a game.
+- No undo, no hidden information, no dice, no hands of cards. One board a game, or one each (`boards: "own"`); a player's own board is theirs to say (the host checks the result on the board it was sent, not each move).
 - Cursor presence on a phone: the stick steps the mark and the on-screen button plays. Not run on a phone.
 - A player who leaves mid-game keeps their seat; their turns are played by the turn timer.
 

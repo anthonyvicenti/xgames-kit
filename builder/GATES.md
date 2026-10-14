@@ -119,6 +119,16 @@ design above:
   `builder/ui/hud.js`): forge's vitals, wave and purse are read where forge draws them, and 21 holds them to the
   mechanics' state.
 
+- **Gate E widened for "a friend with no character is not seen"** (the creator, 2026-10-14: "You can fix seeing your
+  friend default"). Measure 5 gained a presence leg (`builder/tools/lib/presence-check.mjs`): when the spec and its
+  parts say nobody is a character (a board played from the seats, own boards, `multiplayer.presence`), each screen must
+  show the other's presence in that shape (seats: their seat card and avatar; boards: their board), and each move a
+  player makes with the mouse must land on the other's screen within 3 s, with their pointer. What to show comes from
+  the locked spec, never the game's own config. The live gate leaves its position legs out for own boards (nobody is
+  anywhere in the world). No numbered check was added. Regressions `board-friend-unseen` and `own-board-unseen` (E),
+  with the controls `table-four-friends-seen` and `lights-race-friends-seen`. The runner now also fingerprints the
+  runtimes' verify flows, the flows' signs and the live gate.
+
 ## Rules that stay (prompt rules: at most five)
 
 1. Write the game's own files: `rules.js`, config, assets and, when the kit lacks what the idea needs, the game's own

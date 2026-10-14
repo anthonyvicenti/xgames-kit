@@ -23,6 +23,8 @@ export const WHERE = ['rules', 'module', 'engine'];
 /** The only things the creator is asked (the creator, 2026-10-11: "We should ask about multiplayer and characters if there are non obvious."). */
 export const ASKABLE = ['players', 'body'];
 export const PROBE_MAX_MINUTES = 30;
+/** What a player is when they are not a character: friends are then seen by the kit's presence default (gf/mp/presence.js). */
+export const NO_CHARACTER = ['board', 'cursor', 'cards'];
 /** A line's words may be `default` only for these: the creator said nothing, and the kit's default stands (said plainly). */
 const DEFAULTABLE = ['devices'];
 
@@ -96,6 +98,15 @@ export async function checkLedger(ledger, { sources = [], registry, extraAsks = 
     if (ASKABLE.includes(q.about) && row && !row.asked) out.push(row.words && row.words !== 'default'
       ? `${at}: the ${q.about} line quotes the person ("${row.words}") and is not marked asked. When their words settle ${q.about === 'players' ? 'how friends play together' : 'what a player is'}, drop this question; when they leave part of it open (a part's own question, such as how each player is shown at a board), set asked: true on the line and keep the question`
       : `${at}: the ${q.about} line is not marked asked: set asked: true on it`);
+  });
+  // what a friend looks like is never asked once the shape answers it (the creator, 2026-10-14: "You can fix seeing your
+  // friend default"): when the person's words make the players a board, a pointer or cards, the kit shows each friend by
+  // presence. A body question still stands when it chooses whether the players are characters at all (an option of each)
+  asks.forEach((q, i) => {
+    const row = lines.find(r => r?.about === 'body' && !r.cut);
+    if (q?.about !== 'body' || !row || !NO_CHARACTER.includes(row.body) || !row.words || row.words === 'default') return;
+    const values = (Array.isArray(q.options) ? q.options : []).map(o => o?.value ?? o?.id);
+    if (!values.includes('character')) out.push(`$.asks[${i}]: the person's words make the players no characters ("${row.words}": ${row.body}), so how a friend is seen is the kit's default, never a question: a seat card each with an avatar that reacts, their pointer and their moves live round one board, or each friend's own board live beside yours. Drop this question; ask about the body only to choose whether the players are characters at all (an option "character" beside one that is not)`);
   });
   for (const r of lines) if (r?.asked && !asks.some(q => q?.about === r.about)) out.push(`$.rows: the ${r.about} line is asked, and asks has no question about it`);
   if (asks.filter(q => q?.about === 'players').length > 1 || asks.filter(q => q?.about === 'body').length > 1) out.push('$.asks: one question per thing asked');

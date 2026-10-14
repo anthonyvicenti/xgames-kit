@@ -1,0 +1,10 @@
+{
+  "title": "Lights Race",
+  "summary": "A lights out race on own boards: everyone gets the same board and plays it at once, and each friend's board is drawn live beside yours with their name, avatar and score.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22; measure 5's presence leg: boards on both screens, 2 of 2 presses each way showed on the other screen's copy of that board within 3 s, each pointer seen on its board",
+    "kit": "xgames-kit stream/friends-default (after main 6faf334)",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from lights-race, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 185 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\")"
+  }
+}

@@ -8,21 +8,26 @@
 // A promise about friends (`friends: true`: the ledger's players line, and a build line that serves it) is proven by
 // the play-tester only with two player-driven seats (playtest.mjs twoSeats); seen with bots or alone it stays untested.
 import { liveRows } from './ledger.mjs';
+import { SEES } from '../gf-multiplayer/source/presence.js';
 
 export const PLAY = 'play';
 const gate = g => `gate:${g}`;
 /** A ledger line's gate, beside the play-test, by what the line is about. */
 const GATE_OF = { acts: 'D', players: 'E', devices: 'B', action: 'C' };
 
-/** The promise list for a locked spec. Pure, given the loop manifest (registry.manifest('loop', id)). */
-export function promisesOf({ spec, ledger, loopManifest = null }) {
+/**
+ * The promise list for a locked spec. Pure, given the loop manifest (registry.manifest('loop', id)) and how friends are
+ * seen (`friends`: pitch.mjs friendsShapeOf): with no character, a friends promise says what each screen shows instead.
+ */
+export function promisesOf({ spec, ledger, loopManifest = null, friends = null }) {
+  const sees = friends === 'seats' || friends === 'boards' ? { sees: friends, text: ` Nobody is a character here, so on each screen ${SEES[friends]}.` } : null;
   const out = [], live = liveRows(ledger);
   // the lines about friends: how friends play together (anything but solo)
   const friendRows = new Set(live.filter(r => r.about === 'players' && r.together !== 'solo').map(r => r.id));
   for (const r of live.filter(x => x.home === 'exists')) {
     const proofs = r.about === 'devices' ? [gate('B')] : [...(GATE_OF[r.about] ? [gate(GATE_OF[r.about])] : []), PLAY];
     const text = r.about === 'devices' ? `It plays on ${[r.devices].flat().join(' and ')}.` : r.words ? `${r.what} (you said: "${r.words}")` : r.what;
-    out.push({ id: `row.${r.id}`, kind: 'row', row: r.id, text, core: !!r.core, proofs, ...(friendRows.has(r.id) ? { friends: true } : {}) });
+    out.push({ id: `row.${r.id}`, kind: 'row', row: r.id, text: friendRows.has(r.id) && sees ? text + sees.text : text, core: !!r.core, proofs, ...(friendRows.has(r.id) ? { friends: true, ...(sees ? { sees: sees.sees } : {}) } : {}) });
   }
   (spec?.build ?? []).forEach((b, i) => out.push({
     id: `build.${i + 1}`, kind: 'build', row: b.row ?? null, ...(b.kind ? { look: b.kind } : {}), where: b.where,

@@ -168,8 +168,10 @@ export async function gate(gameDir, { out = null, seconds = 75, draft = null, de
       const before = srv.requests.length;
       await S.page.goto(srv.url + entry, { waitUntil: 'load' });
       await sleep(2500);
-      // A live game imports gf/mp/net.js itself (it does nothing alone); nothing else of the kit may load.
-      const kitReq = srv.requests.slice(before).filter(r => (r.startsWith(`${KIT_DIR}/`) && !(manifest.mode === 'live' && r === `${KIT_DIR}/net.js`)) || r === MANIFEST);
+      // A live game imports gf/mp/net.js itself (it does nothing alone), and gf/mp/presence.js (pure: the shape and the
+      // state a friend's presence keeps; it opens nothing); nothing else of the kit may load.
+      const LIVE_IMPORTS = [`${KIT_DIR}/net.js`, `${KIT_DIR}/presence.js`];
+      const kitReq = srv.requests.slice(before).filter(r => (r.startsWith(`${KIT_DIR}/`) && !(manifest.mode === 'live' && LIVE_IMPORTS.includes(r))) || r === MANIFEST);
       const st = srv.sig.stats();
       check('solo-untouched', kitReq.length === 0 && st.sockets === 0 && !st.httpRequests, kitReq.length || st.sockets || st.httpRequests ? `the game on its own asked for ${kitReq.join(', ') || (st.sockets ? 'a signaling socket' : 'HTTP signaling')}` : 'played alone, the game loads no kit file and opens no connection');
       await S.ctx.close();

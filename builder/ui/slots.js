@@ -51,6 +51,13 @@ const TEXT = [
   ['loading', 'Loading line', 'advanced', 7, 40],
   ['clickToFight', 'Click to take the mouse back (back in a fight with the mouse free)', 'advanced', 7, 30],
   ['preparing', 'Loading line, after the download', 'advanced', 7, 40],
+  // the words under a friend's avatar when the players are not characters (./presence.js: seat cards and boards)
+  ['moodWaiting', 'A friend waiting (under their avatar)', 'advanced', 7, 16],
+  ['moodThinking', 'A friend whose turn it is', 'advanced', 7, 16],
+  ['moodPlaced', 'A friend who just moved', 'advanced', 7, 16],
+  ['moodWon', 'A friend who won', 'advanced', 7, 16],
+  ['moodLost', 'A friend who lost', 'advanced', 7, 16],
+  ['moodAway', 'A friend who left or lost the connection', 'advanced', 7, 16],
 ];
 const COLORS = [
   ['accent', 'Accent colour (buttons, bars)', 'main', 74, '--gf-accent'], ['panel', 'Panel colour', 'advanced', 18, '--gf-panel'], ['text', 'Text colour', 'advanced', 16, '--gf-text'], ['crosshair', 'Crosshair colour', 'advanced', 15, '--gf-cross'],
@@ -78,6 +85,9 @@ export function slotsFor(cfg) {
   // a theme's font files (each replaceable; its licence travels in the slot and beside the file)
   for (const f of themeOf(g.ui?.theme)?.fonts ?? []) if ((cfg.files ?? []).includes(f.file)) out.push({ id: f.slot, group: 'ui', label: f.label, type: 'font', source: { file: f.file }, constraints: { formats: ['woff2', 'woff', 'ttf', 'otf'], maxBytes: 400000 }, tier: 'advanced', facet: 'look', rank: 12, license: f.license, description: `"${f.family}": the theme's ${f.slot.endsWith('display') ? 'display' : 'text'} type; a replacement keeps the family name` });
   // a kind's HUD font (kinds/apply.mjs → ui.style.fontFile; ./kind-hud.js loads it)
+  // the avatar each friend wears on their seat card or board when the players are not characters (./presence.js), drawn
+  // over a disc of the player's own colour
+  if ((cfg.files ?? []).includes('assets/ui/avatar.svg')) out.push({ id: 'ui.avatar', group: 'ui', label: 'Friend avatar', type: 'image', source: { file: 'assets/ui/avatar.svg' }, constraints: { formats: ['svg', 'png', 'webp'], maxBytes: 300000 }, tier: 'main', facet: 'look', rank: 70, license: { spdx: 'CC0-1.0', author: 'xgames-kit (stand-in)', url: 'https://xgames.fun' }, description: 'The face each friend wears on their seat card (or on the rim of their board), over a disc of their own colour: keep the background clear', generate: { prompt: 'a friendly cartoon face, big eyes and a smile, on a clear background, no body', style: 'the game\'s own look' } });
   const kf = g.ui?.style?.fontFile;
   if (kf && (cfg.files ?? []).includes(kf)) out.push({ id: 'ui.font', group: 'ui', label: 'HUD font', type: 'font', source: { file: kf }, constraints: { formats: ['woff2', 'woff', 'ttf', 'otf'], maxBytes: 400000 }, tier: 'advanced', facet: 'look', rank: 12, description: `"${g.ui.style.font}": the HUD's type, from the game's kind; a replacement keeps the family name` });
   return out;

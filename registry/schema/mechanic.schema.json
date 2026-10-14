@@ -309,6 +309,35 @@
       },
       "description": "What a pitch must ask when the creator's words do not settle it."
     },
+    "holds": {
+      "type": "array",
+      "maxItems": 4,
+      "description": "When the player acts through this part all round and never as a walking body (a board played from the seats, a board of one's own), so friends are seen by the kit's presence part (gf/mp/presence.js): each entry's when is the params that make it so, its as what the player is: mark (a mark over one shared board: seats) or board (their own board: boards).",
+      "items": {
+        "type": "object",
+        "required": [
+          "when",
+          "as"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "when": {
+            "type": "object",
+            "description": "params and the values that make it so (a param left out takes its default)"
+          },
+          "as": {
+            "enum": [
+              "mark",
+              "board"
+            ]
+          },
+          "why": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      }
+    },
     "notes": {
       "type": "object",
       "additionalProperties": false,

@@ -41,9 +41,16 @@ patches, then the change, then verify. So it runs from any checkout, on the kit 
 | `camera-keys-dead` | C · 13 | the same class for a camera: a row says Q and E turn the camera, and nothing turns it |
 | `slow-bots-race` | control · D · 12 | PA10's race at the bot pace a new player found fair (0.72): the first score comes at the finish line, after the check's old fixed window; it passes because fair play's pages play on to the game's own round while nothing has scored |
 | `car-drives` | control | the same car as the build wrote it, its controls as rows with what each does: passes 13 |
+| `board-friend-unseen` | E · 5 | a board played from the seats whose settings say the players are characters: the friend sits still and nothing says what they do (the creator, 2026-10-14: "You can fix seeing your friend default") |
+| `own-board-unseen` | E · 5 | an own-boards game shown as seats: the friend's board, the thing they play, is on no screen but theirs |
+| `table-four-friends-seen` | control | the same board with its default (seats): each screen shows the other's seat card, pointer and every disc they drop |
+| `lights-race-friends-seen` | control | own boards with their default (boards): each screen shows the other's board live |
 
 The base `kart-loop` is PA10's Island Circuit (builder/loop/evidence/2026-10-13-pa10-headless.json): made by the kit's
 own build loop, no upstream code; its art comes from the library when `create` fills its slots.
+
+The bases `table-four` and `lights-race` are the kit's own examples of the same names (examples/minimal), written for
+this kit with no upstream code.
 
 The games.fun regressions (research/gf-three/regressions, 88 of them) stay there as history: they are run by games.fun's
 `regress.mjs` on its own kit, never from here.

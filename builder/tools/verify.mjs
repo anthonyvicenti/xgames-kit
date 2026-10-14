@@ -151,6 +151,7 @@ import { checkFairPlay } from './lib/fair-check.mjs';
 import { checkControls } from './lib/controls-check.mjs';
 import { checkHits } from './lib/hits-check.mjs';
 import { checkLoadouts } from './lib/loadout-check.mjs';
+import { checkPresence } from './lib/presence-check.mjs';
 import { loadSubject, lintDressing, lines as dressingLines } from './lib/dressing.mjs';
 import { RECORDER, recordingOf, firstLook, undefended, judgeAlive, goalOf } from './lib/alive-check.mjs';
 import { gameFingerprint } from './lib/own-verify.mjs';
@@ -319,6 +320,12 @@ export async function verify(gameDir, { quick = false, out = null, log = console
       // the loadout leg (CONTRACT §6e, tools/lib/loadout-check.mjs): each screen draws the other player in their own look
       R.lo = await checkLoadouts({ dir, outDir, shots: rec.shots, log: line => say(`  ${line}`) }).catch(e => ({ ok: false, detail: `loadouts: ${e.message}`, record: null, warnings: [] }));
       lap('loadouts', t2); R.seconds.loadouts = (Date.now() - t2) / 1000;
+      // the presence leg (tools/lib/presence-check.mjs; builder/multiplayer/STANDARD.md): when no player is a character
+      // (a board played from the seats, own boards), each screen shows the other's presence and their moves live
+      const t5 = Date.now();
+      R.pr = await checkPresence({ dir, outDir, shots: rec.shots, log: line => say(`  ${line}`) }).catch(e => ({ ok: false, ran: true, detail: `presence: ${e.message}`, record: null, warnings: [] }));
+      if (R.pr.ran) lap('presence', t5);
+      R.seconds.presence = (Date.now() - t5) / 1000;
     }
     if (want(25)) {
       // 25. playing with friends (tools/lib/friends-check.mjs): the friends page the way a new player meets it
@@ -663,7 +670,9 @@ export async function verify(gameDir, { quick = false, out = null, log = console
       const lo = d.lo;
       rec.loadouts = lo.record ? { ok: lo.ok, steps: lo.record.steps, shots: lo.record.shots } : { ok: false, detail: lo.detail };
       rec.notes.push(...lo.warnings);
-      add(5, 'two-player live gate', gateRec.verdict === 'pass' && lo.ok, `${gateLine}; ${lo.detail}`, { seconds: d.seconds.gate + d.seconds.loadouts });
+      const pr = d.pr;
+      if (pr?.ran) { rec.presence = pr.record; rec.notes.push(...(pr.warnings ?? [])); }
+      add(5, 'two-player live gate', gateRec.verdict === 'pass' && lo.ok && pr?.ok !== false, `${pr?.ran && !pr.ok ? `${pr.detail}; ` : ''}${gateLine}; ${lo.detail}${pr?.ran && pr.ok ? `; ${pr.detail}` : ''}`, { seconds: d.seconds.gate + d.seconds.loadouts + (d.seconds.presence ?? 0) });
     } else if (lobbyOnly) {
       // the profile keeps the lobby legs: a failure there fails the check; passing them is never a pass of check 5
       const why = skipBy.get(5).reason;

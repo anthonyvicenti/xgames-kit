@@ -43,6 +43,7 @@ import { assembleManifest } from './lib/slots-lib.mjs';
 import { ensurePictures } from './lib/items-lib.mjs';
 import { mechanicIds, composeProblems, worldParts, flowOf, flowParts } from './catalog.mjs';
 import { adopt } from '../multiplayer/party/adopt.mjs';
+import { shapeOfSpec, AVATAR, AVATAR_FILE, AVATAR_LICENSE, MOOD_TEXT } from './lib/presence.mjs';
 import { KIT_VERSION as MP_KIT_VERSION } from '../multiplayer/party/manifest.mjs';
 
 export const AUDIO_FILES = ['audio.js', 'zzfx.mjs', 'sounds.mjs', 'meter.mjs', 'presets.json', 'code-sounds.js', 'LICENSE-zzfx', 'ATTRIBUTION.md', 'VERSION'];
@@ -258,6 +259,18 @@ export async function create(specPath, outDir, { force = false, newRules = false
     if (set.length) { Object.assign(m.params, Object.fromEntries(set)); C.notes.push(`mechanic ${m.id}: ${set.map(([k, v]) => `${k} ${v}`).join(', ')}, from the game's own config (the spec left it to the default)`); }
   }
   C.notes.push(...tableNotes);
+  // how a friend is seen (gf/mp/presence.js; builder/multiplayer/STANDARD.md): a character, or, when no player is one,
+  // seats round one board or each friend's own board beside yours. The three runtime draws seats and boards
+  // (gf/three/ui/presence.js) with the stand-in avatar in its ui.avatar slot and the mood words as text slots.
+  const friends = await shapeOfSpec(spec, { of: id => mods.mechanics?.[id]?.manifest ?? null });
+  if (friends.shape && C.game.players) {
+    C.game.players.presence = friends.shape;
+    if (friends.shape !== 'character' && place.runtime === 'three') {
+      C.assets.push({ to: AVATAR_FILE, from: AVATAR, license: AVATAR_LICENSE, note: 'the stand-in avatar a friend wears on their seat card (ui.avatar)' });
+      C.game.text = { ...MOOD_TEXT, ...(C.game.text ?? {}) };
+      C.notes.push(`friends: no player is a character here (${friends.held.join(', ') || 'the spec says so'}), so each friend is shown as ${friends.shape}: ${friends.sees}`);
+    } else if (friends.shape !== 'character') C.notes.push(`friends: ${friends.shape} is drawn by the three runtime; ${place.runtime} has no presence part yet, so the game draws it (a build line)`);
+  }
   // optional kit modules (a kit folder with a module.js; kit/vfx/module.js documents the contract): one the spec (or the
   // rules.js already there) needs gets its config block, its stand-in files and its folder in gf/three. A module added
   // to the kit later needs no line here. A game that needs none is unchanged.

@@ -1,0 +1,9 @@
+{
+  "base": "lights-race",
+  "why": "An own-boards game shown as seats: each friend has a card, and their board, the thing they are playing, is on nobody's screen but their own (the Brickbloom pilot of 2026-10-06 showed each friend's board live beside yours; the creator, 2026-10-14: \"You can fix seeing your friend default\"). Gate E must fail it: each player plays a board of their own, so each screen must show the other's board, live.",
+  "evidence": "builder/gates/evidence/2026-10-14-friends-default.json",
+  "patches": [{ "file": "config/game.json", "pointer": "/players/presence", "value": "seats" }],
+  "mustFail": ["E"],
+  "measure": 5,
+  "detail": "must show boards"
+}

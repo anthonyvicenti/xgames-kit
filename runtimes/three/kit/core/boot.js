@@ -38,6 +38,8 @@ import { sight } from './sight.js';
 import * as refusals from './refusals.js';
 import { seedRules, guardCamera, readOnlyView, refusedPress, watchKit, setupFailed, frameFailed } from './guard.js';
 import { net } from '../../mp/net.js';
+import { createPresence } from '../../mp/presence.js';
+import { createPresenceView } from '../ui/presence.js';
 import { RIG_DEFAULTS } from '../controller/camera-rig.js';
 import { AIM_HEIGHT } from './aim.js';
 import { stepAsked, createStepper, fixedCameraPlace } from './step.js';
@@ -243,6 +245,25 @@ export async function boot({ rules = {} } = {}) {
     if (camMode === 'follow') canvas.style.cursor = 'crosshair';
     // mechanics that need players, ctx.shared or ctx.me get them here (create() runs before the session exists)
     ctx.fair.setup();
+    // how a friend is seen when the players are not characters (gf/mp/presence.js; config/game.json → players.presence,
+    // which create chose from multiplayer.together and the parts that hold the body): a seat card, an avatar that
+    // reacts, a pointer and every move on a shared board; each friend's board live beside yours on own boards
+    const presenceShape = game.players?.presence ?? 'character';
+    if (presenceShape === 'seats' || presenceShape === 'boards') {
+      const model = createPresence({ shape: presenceShape, me: () => ctx.me?.id ?? null, send: (type, d) => ctx.net.send(type, d, 'all') });
+      ctx.net.on('presence:me', (d, from) => model.receive(d, from));
+      const words = Object.fromEntries(['waiting', 'thinking', 'placed', 'won', 'lost', 'away'].map(k => [k, T[`mood${k[0].toUpperCase()}${k.slice(1)}`]]));
+      const view = backdrop ? null : createPresenceView(ctx, ui, { shape: presenceShape, model, text: words, avatar: assets.has('ui.avatar') ? assets.url('ui.avatar') : null });
+      ctx.presence = Object.freeze({
+        shape: presenceShape,
+        /** This player's own presence, sent to every friend: {pointer: [c, r], mood, moves, last: [c, r], board: {cols, rows, g}, score}. */
+        set: patch => model.set(patch),
+        /** What this copy knows of a player's presence (a friend's as they sent it). */
+        of: id => model.of(id),
+        frame: dt => { model.frame(dt); view?.frame(dt); },
+        observe: () => ({ ...(view?.observe() ?? { shape: presenceShape, seats: [] }), me: model.local }),
+      });
+    }
     // the kit's own elements (CONTRACT §6g) are kept as the kit means them from here on (kit/core/guard.js)
     const kitGuard = watchKit({ layer: ui.root, items: () => [{ el: ui.root, name: "the kit's layer (#gf-ui)", want: true }, ...hud.kitItems(), ...(menu?.kitItems() ?? [])] });
     if (params.get('gf-ui') === '0' || backdrop) kitGuard.off = true;
@@ -335,7 +356,9 @@ export async function boot({ rules = {} } = {}) {
       shared: ctx.shared.snapshot(),
       rules: (() => { try { return rules.observe?.(ctx) ?? null; } catch { return null; } })(),
       modules: { standins: mods.standins, mechanics: list.map(m => ({ id: m.id, standin: m.standin })) },
-      net: session.gateBlock(ui.covered),
+      // with friends, what this screen shows of each of them when the players are not characters (the presence part)
+      net: (b => (b && ctx.presence ? { ...b, presence: ctx.presence.observe() } : b))(session.gateBlock(ui.covered)),
+      presence: ctx.presence?.observe() ?? null,
       // a flow that publishes what it does (kit/loops/<id>: whose turn, turns taken): what the checks read as its sign
       ...(session.flow.observe ? { flow: session.flow.observe() } : {}),
       // watch then play (gf-multiplayer 1.6.0): a viewer's copy, who it follows and whether the camera has them
@@ -524,6 +547,7 @@ export async function boot({ rules = {} } = {}) {
       }
       ui.update(dt, { left: phase === 'playing' && Number.isFinite(ctx.time.left) ? ctx.time.left : null, players: ctx.players.list(), plates });
       hud.update(dt, { phase, covered: ui.covered });
+      if (ctx.presence) { try { ctx.presence.frame(dt); } catch (e) { frameFailed('the presence part (gf/three/ui/presence.js)', e); } }
       if (!session.watching) kitGuard.tick(performance.now() / 1000);
       // the home menu: the camera circles the player's character, which stands right of the menu column; a world
       // drifts over the island instead (behind the kit's menu alone, behind the party page's world card with friends)

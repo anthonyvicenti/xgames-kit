@@ -139,7 +139,7 @@
         "together"
       ],
       "additionalProperties": false,
-      "description": "How friends play (research/multiplayer/STANDARD.md). The bar: friends are in one game, in sync, and each sees the others as a character. race is gone: it never met the bar.",
+      "description": "How friends play (builder/multiplayer/STANDARD.md). The bar: friends are in one game, in sync, and each sees the others as a character; when the players are no characters (a board, a table, a puzzle), as presence (presence). race is gone: it never met the bar.",
       "properties": {
         "mode": {
           "enum": [
@@ -158,6 +158,14 @@
             "own-board"
           ],
           "description": "How friends play: against each other, together, in teams, taking turns, each on their own board."
+        },
+        "presence": {
+          "enum": [
+            "character",
+            "seats",
+            "boards"
+          ],
+          "description": "How each friend is seen (builder/multiplayer/STANDARD.md, \"Seeing a friend with no character\"; gf/mp/presence.js). Left out, create decides from the parts: a part that holds every player's body (a board played from the seats, own boards) makes it seats or boards, and anything else is character. Say it outright only when the game's own code holds the players (a falling-blocks well in src/): seats for one shared board or table, boards when each player has their own."
         },
         "teams": {
           "type": "integer",

@@ -1,0 +1,10 @@
+{
+  "title": "Table Four",
+  "summary": "A turn-based board game played from the seats: four in a row, and nobody is a character, so each friend is a seat card with an avatar that reacts, a pointer and every disc they drop.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22; measure 5's presence leg: seats on both screens, 2 of 2 moves each way landed on the other screen within 3 s, each pointer seen",
+    "kit": "xgames-kit stream/friends-default (after main 6faf334)",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from table-four, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 183 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\")"
+  }
+}

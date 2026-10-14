@@ -34,6 +34,7 @@ Every promise you are asked about gets exactly one status: `seen`, `not-seen`, `
 - `unreachable`: you could not get to where it would happen with a new player's hand in the time you had. Say how far you got.
 - A promise marked **built new for this game** is a part the game wrote for itself: always try it.
 - A promise marked **(two players)** is about friends: play it with `{"do":"start","friend":true}`, act as each player, capture each screen, and give the run as `run` and what each screen showed as `screens`. With bots or alone it stays untested.
+- When nobody in the game is a character (a board, a table, cards, a puzzle), you see a friend by their seat card (name, colour, an avatar that reacts), their pointer and their moves landing on your screen, or by their own board drawn live beside yours: a friends promise is seen only when each screen showed that of the other.
 - A control is not seen when pressing it does nothing you can see, or does it somewhere you cannot see (behind you, off screen, under your own character).
 - If the game does not load or play at all, every promise is `unreachable`, with what you saw in the note.
 

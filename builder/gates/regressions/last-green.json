@@ -1,9 +1,20 @@
 {
  "schema": "xgk-regress/1",
- "date": "2026-10-14T05:00:28.145Z",
+ "date": "2026-10-14T06:33:20.606Z",
  "ok": true,
- "seconds": 101,
+ "seconds": 546,
  "results": [
+  {
+   "id": "board-friend-unseen",
+   "kind": "broken",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "gate E failed, measure 5: no player is a character here (mark), so each friend has a seat card with their name, colour and an avatar that reacts (thinking on their turn, placed just after a move, won or lost), a pointer where they point, and their moves land on your screen as they make them: the host shows the joiner: the pl",
+   "seconds": 146
+  },
   {
    "id": "camera-keys-dead",
    "kind": "broken",
@@ -13,7 +24,7 @@
    "measure": 13,
    "ok": true,
    "why": "gate C failed, measure 13: Q E (\"turn the camera\"): DEAD, held 1.2 s: the camera turned 2° (needs 10°). The HUD lists W / ↑ \"speed up\" (does go), A D / ← → \"steer the car left and right\" (does turn), S / ↓ \"brake and reverse\" (does stop), Q E \"turn the camera\" (does look); every listed control must do on the player's own scre",
-   "seconds": 7
+   "seconds": 6
   },
   {
    "id": "car-controls-unshown",
@@ -49,6 +60,28 @@
    "seconds": 6
   },
   {
+   "id": "lights-race-friends-seen",
+   "kind": "control",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "passes measure 5: pass 20/20 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (board): boards shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner",
+   "seconds": 93
+  },
+  {
+   "id": "own-board-unseen",
+   "kind": "broken",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "gate E failed, measure 5: no player is a character here (board), so each friend's own board is drawn live beside yours, framed in their colour, with their name, their avatar on its rim and their score: the host shows the boards shape: this screen shows seats; the game must show boards (each friend's own board is drawn live b",
+   "seconds": 112
+  },
+  {
    "id": "slow-bots-race",
    "kind": "control",
    "gates": [
@@ -58,6 +91,17 @@
    "ok": true,
    "why": "passes measure 12: scores moved: solo round 0/0/0/0; fair-play pages max score 3, 3, held moved 0.1 s, 0.1 s; every score change came from a counted event (2 of 2 changes over 3 pages: race.onCheckpoint 2)",
    "seconds": 45
+  },
+  {
+   "id": "table-four-friends-seen",
+   "kind": "control",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "passes measure 5: pass 24/24 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (mark): seats shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner's",
+   "seconds": 93
   },
   {
    "id": "vista-fewer-islands",
@@ -78,7 +122,7 @@
    ],
    "measure": 17,
    "ok": true,
-   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.2 s); none is the reference island (ffca9377)",
+   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.1 s); none is the reference island (ffca9377)",
    "seconds": 17
   },
   {
@@ -93,33 +137,46 @@
    "seconds": 10
   }
  ],
- "fingerprint": "eb10f48ed5eef41210e59ddd80ee9a39c5bf76160027ded729cacce60ad1c7a7",
+ "fingerprint": "b7f1ad8d10888237794a064745d2cbc9fdb79a797ac84986ade18eb684375e92",
  "files": {
-  "builder/gates/regress.mjs": "b54d85d580250714c55bcb86f39757461e80f58ca80839551ad1f9f8fa2187a4",
-  "builder/gates/regressions/README.md": "b84c5b0f528b936fe26e2a954c8a85afb453d467a0385f7209276fc713d000c7",
+  "builder/gates/regress.mjs": "8f01ec18b82d29b1f902c45f5a7bcee743c7d4881e1275234d8120635e97f827",
+  "builder/gates/regressions/README.md": "04346ce3004598dd4c4c3f6dc4727015de201c6857e7f404ac3b5de392352557",
   "builder/gates/regressions/bases/kart-loop/base.json": "c14d7b3b8900ad9b331432cc7d80778ba637f8755ce2a40c906072bc408fbcdc",
   "builder/gates/regressions/bases/kart-loop/rules.js": "f06d90b54b50f54581ce437c151e6dba7a7c9b5e377bab304c5a63f097da2c9f",
   "builder/gates/regressions/bases/kart-loop/spec.json": "fe350effe19d631e33f4e9cdd740cd003cb6f289c800fc0b8363b7c5d67a111d",
   "builder/gates/regressions/bases/kart-loop/src/car.js": "fb79212e9afca74b10815a552494e081ccdef9d1eb802b3d60d94e2984f460f7",
   "builder/gates/regressions/bases/kart-loop/src/track.js": "19b3f3cff42990d76958f35a05fe3bd3f7568e1ecc1ef2053d3f76b78c8657c4",
+  "builder/gates/regressions/bases/lights-race/base.json": "7ce6f07a6edafe76fae786294c7d4583147fc5151bc865719603acd383a8f290",
+  "builder/gates/regressions/bases/lights-race/rules.js": "f3a19e62a8e25547ac2e872c2ed1c79550b4a637cb0bcde0fc84cc6f255a8c68",
+  "builder/gates/regressions/bases/lights-race/spec.json": "7904aa07eb3d4536fa75ae32d5034b6d1bfd73d015076fbffa528e3089dfebc6",
+  "builder/gates/regressions/bases/table-four/base.json": "1357c99f886a7063f5324e0afdbad9cca5cad279ceed5a06f5158b37a0131139",
+  "builder/gates/regressions/bases/table-four/rules.js": "29c34339ace38db3abbc26220694616b4549b8734c33da7ca75ab564f07a63ec",
+  "builder/gates/regressions/bases/table-four/spec.json": "1888a2b3f247bc19231b05ed70ab396e0c70998987550ee7a09bea92817de2fa",
   "builder/gates/regressions/bases/vista-isles/base.json": "e472b5722f8eb422c96ee1778960e8b57f1306b610fd021249514f9bbf553b64",
   "builder/gates/regressions/bases/vista-isles/rules.js": "be669f50f8689cc677f9a581ea5358b522f1b928cbdbad56f578c5b776cedcb8",
   "builder/gates/regressions/bases/vista-isles/spec.json": "72b123642124033ebd078fd89d585e0f1452dfe98b192e9b402d47953ed2911b",
+  "builder/gates/regressions/board-friend-unseen/regression.json": "f5ce85e78b44128d31bd43bd5a86a455fe7f22df5fc45e40d576e202c2c75777",
   "builder/gates/regressions/camera-keys-dead/regression.json": "3a89ae2d8a7e1476f3d1c38699a5308ebfae17a78859107a9515afefcf6f048d",
   "builder/gates/regressions/car-controls-unshown/regression.json": "df6764bf22111736e0ff5958c1773db5d290b68ff22192d1037ef29cb34ad147",
   "builder/gates/regressions/car-drives/regression.json": "c802cbfe6570d7a45a9ed7ed86c60d4cdb2472400641b203370b61b4197cf197",
   "builder/gates/regressions/car-strafes/car.js": "5f53e0e7db4dbbbe5069b34d881bb46e6da9404615674d71c11300cfe8b01568",
   "builder/gates/regressions/car-strafes/regression.json": "735fd6deb3057c3a788fe5ad51aa8a1bb6830c67f64e0727585be8d6cc266ff2",
+  "builder/gates/regressions/lights-race-friends-seen/regression.json": "493ed7d39ef241dd702c985311e6de8c6b13b52620457102528268f3551c8822",
+  "builder/gates/regressions/own-board-unseen/regression.json": "ac52bbfef06e636caed2a86c50056cf89cabecfdde6a0eeddc22aa7a8643fac2",
   "builder/gates/regressions/slow-bots-race/regression.json": "8e1c0d8899099a2dff284d049d486c5e755a1748576e1e6cc9d7641de5e1125e",
+  "builder/gates/regressions/table-four-friends-seen/regression.json": "c6d15b3ebb279cc82912d614d8ee1b7f5a8874fc31aca8a4f03b77db81796a17",
   "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
   "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
   "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
+  "builder/multiplayer/party/gate-live.mjs": "1672a910751698483ba855563e82b63291f94d3bb13370f13230e4139d193e0e",
+  "builder/multiplayer/party/gate.mjs": "9f54772c860e07c022b63b4e5f69c8398a791d92cca1b3667712fa1ab91020fd",
   "builder/tools/lib/alive-check.mjs": "52ffa1cc82a3984c9d013c179474886ee7f9d490cc649da85d15273293c13509",
   "builder/tools/lib/bodies-check.mjs": "6e2a2670e4172427f91dd150c1973ba3cea5f356a7e505849e427d02ca967343",
   "builder/tools/lib/controls-check.mjs": "457985506dffc33b09f87958b30aa0ce39c2006f7369455b88f8288fab699312",
   "builder/tools/lib/embed-check.mjs": "5ebc6a5984f5d59e3b7d5a0634ffbc790ec23953e7e8cdd01d7da01b38b17f29",
   "builder/tools/lib/events-check.mjs": "ac814f6008648f924f2461fa49641ecff97a73a520b0a1931384322d94f7bd0a",
   "builder/tools/lib/fair-check.mjs": "b159673368399c7026c38de679fd196008f51cba61ec210871e679efae70f6dd",
+  "builder/tools/lib/flow-signs.mjs": "aa0f73596a172f1cf1c92de2f9c39ec26f099f99ff138556be19d7da27db2e8d",
   "builder/tools/lib/forge-cart-check.mjs": "52e5f987d408e63d328d61b874b1c20ee79d60739b61a9d42332d3bdf0fc62d0",
   "builder/tools/lib/forge-controls-check.mjs": "ec711c9b96acbdb9cc38046d690b05090fb70f4220300fd6767570bfac76180e",
   "builder/tools/lib/forge-feel-check.mjs": "faa3916aba65c124ecf9d4abf0735b5208e1e1df33fd8cc4f498c462ed6006dc",
@@ -142,6 +199,8 @@
   "builder/tools/lib/looks-check.mjs": "a751d31b15ec347ac277da0a73e22892a2213c7645fa18afdd03f2823063497b",
   "builder/tools/lib/manifest-check.mjs": "881b36fc7a0d667be49a01244be90a7cc2ada1501297d75d511083fe1f006638",
   "builder/tools/lib/menu-check.mjs": "c011e65493350868260d0756930713457f44817f3bc0f14770f13d19b379ea97",
+  "builder/tools/lib/presence-check.mjs": "06412a9c600c18a90a89602351a9c10838002aead9504d78729b393178e16811",
+  "builder/tools/lib/presence.mjs": "affae62b33fe343e81425cd68927c2b33bd8fb2b329aa5220530e20872e88d29",
   "builder/tools/lib/screens-check.mjs": "2dd8dbd34e36b715a0e10f0ac30f9b6f37f70915a59f5591658ef1a5b2d98a31",
   "builder/tools/lib/sheet-check.mjs": "6ba0651b86b81f0c5faa1e0537e29d5451411b95ca6a7a280fbe939c895cc66e",
   "builder/tools/lib/sounds-check.mjs": "a1b3bf30e85b99803fc35469d790e670e9775976c21ef9d871dcf8a65a70b626",
@@ -154,7 +213,10 @@
   "builder/tools/lib/worlds-net-check.mjs": "01075d040a2a7f695710fc11662710f9f3fe22e3421fb32f8cb3ae24cc21cc43",
   "builder/tools/lib/worlds-room-check.mjs": "0490ff4756cd7b4ce20d1405980fe8e5576917ce4720537fc887c013a9f1767e",
   "builder/tools/lib/worlds-watch-check.mjs": "de72125f7a1733a66290c27426da7a401e5ec9a3b986f5a819e52c476feb9011",
-  "builder/tools/verify.mjs": "47841933242ad4a3453a2d49f00966add8e147a253b73002f7d9629759b66b0f"
+  "builder/tools/verify-forge.mjs": "90eb1d8199cc1ef123a1b7bd5809d45b88f2f25ce030d1e547eafc51004267dd",
+  "builder/tools/verify-vista.mjs": "0308bcdd82c79fb3b1388cc9a34f58af789631ed330a0ee9dd1862180163392a",
+  "builder/tools/verify-world.mjs": "efdd835f291dbd67c3f68d8c8b344c991bca20e05a65eb6f2f3ca6348f61e8c5",
+  "builder/tools/verify.mjs": "b9ddc862a214bc72a4db0ab02e081421b65bf54a0849630b8edf4b1f14ce6ac6"
  },
  "machine": {
   "node": "v24.19.0",

@@ -1,0 +1,97 @@
+{
+  "specVersion": 2,
+  "title": "Lights Race",
+  "hook": "Everyone gets the same board of lights: switch them all off first, while your friends' boards flicker beside yours.",
+  "prompt": "a lights out puzzle race with friends, each on our own board",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "own-board"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "top",
+  "controls": {
+    "primary": "press the light you point at: it and its four neighbours switch"
+  },
+  "round": {
+    "seconds": 180,
+    "winBy": "first to switch every light off",
+    "replay": true
+  },
+  "world": {
+    "template": "plaza",
+    "size": "small",
+    "props": [],
+    "notes": "A five by five board of lights on the paving; each player sees their own board there."
+  },
+  "mechanics": [
+    {
+      "id": "board",
+      "as": "a board of lights of your own",
+      "params": {
+        "cols": 5,
+        "rows": 5,
+        "cell": 1.4,
+        "input": "place",
+        "boards": "own",
+        "piece": "ball",
+        "cellShape": "square",
+        "checker": false,
+        "boardColor": "#3a2f5c",
+        "cellColor": "#231c38",
+        "cellColorB": "#231c38",
+        "hints": false,
+        "turnSeconds": 0,
+        "botThink": 0.9,
+        "score": "none"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Everyone gets the same board of lights. Press a light: it and the lights beside it switch on or off. Your score is how many lights are off on your board; the first to switch every light off wins. Alone, bots race you on boards of their own.",
+    "scoring": "your score is how many lights you have switched off; the first board cleared wins",
+    "params": {
+      "presses": 7
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid at the board",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [],
+  "build": [],
+  "accept": [
+    "each friend's board is drawn live beside mine, in their colour, with their name",
+    "a friend's press shows on their board on my screen as they make it",
+    "the first board with every light off wins"
+  ],
+  "notInV1": [
+    "harder boards",
+    "a hint"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

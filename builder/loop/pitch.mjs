@@ -6,7 +6,8 @@
 // Pure: checkPitch(pitch, ctx) and checkSpec(spec, ctx) → ['$.cards[0].spec.build: …'].
 import { readFileSync } from 'node:fs';
 import Ajv2020 from 'ajv/dist/2020.js';
-import { liveRows, WHERE } from './ledger.mjs';
+import { liveRows, WHERE, NO_CHARACTER } from './ledger.mjs';
+import { heldBy, shapeOf, SEES } from '../gf-multiplayer/source/presence.js';
 import { parseBy, provenOn } from './registry.mjs';
 import { HOW_BUILD, LONGER, NARROWING, list, names } from './words.mjs';
 
@@ -70,8 +71,28 @@ export async function checkSpec(spec, { ledger, foundation, registry, hostCheck 
   for (const [i, n] of (spec.notInV1 ?? []).entries()) {
     if (!cut.some(r => names(n, r.what) || names(n, r.words ?? ''))) out.push(`${at}.notInV1[${i}]: "${n}" is not a line the person cut; nothing they asked for waits for a later version (a line the kit lacks is built: spec.build)`);
   }
+  // how friends are seen agrees with what a player is (the ledger's body line; gf/mp/presence.js): players who are no
+  // characters (a board, a pointer, cards) are shown by presence, seats round one board or boards side by side
+  const body = live.find(r => r.about === 'body')?.body, together = live.find(r => r.about === 'players')?.together ?? spec.multiplayer?.together;
+  if (body && together !== 'solo' && spec.multiplayer && spec.multiplayer.mode !== 'solo') {
+    const man = new Map();
+    for (const m of spec.mechanics ?? []) if (m?.id && !man.has(m.id)) man.set(m.id, typeof registry.manifest === 'function' ? await Promise.resolve(registry.manifest('mechanic', m.id)).catch(() => null) : null);
+    const shape = shapeOf({ together: spec.multiplayer.together, presence: spec.multiplayer.presence ?? null, held: heldBy(spec.mechanics ?? [], id => man.get(id)) });
+    const want = spec.multiplayer.together === 'own-board' ? 'boards' : 'seats';
+    if (NO_CHARACTER.includes(body) && shape === 'character') out.push(`${at}.multiplayer.presence: the ledger's body line makes the players no characters (${body}), and no part of this spec holds them: set "${want}" (friends seen as ${want}: ${SEES[want]}), or use a part that holds them (the board's presence "cursor", or its boards "own")`);
+    else if (NO_CHARACTER.includes(body) && spec.multiplayer.together === 'own-board' && shape === 'seats') out.push(`${at}.multiplayer: each player has their own board (together own-board), so friends are seen as boards: the board's boards "own", or presence "boards"`);
+    else if (body === 'character' && shape !== 'character') out.push(`${at}.multiplayer.presence: the ledger's body line makes the players characters, and this spec shows them as ${shape}: drop presence, or play the board walking (presence "walk")`);
+  }
   if (hostCheck) out.push(...(await hostCheck(spec)).map(p => `${at}: ${p}`));
   return out;
+}
+
+/** How friends are seen in a spec (gf/mp/presence.js shapeOf, with the registry's manifests): 'character' | 'seats' | 'boards' | null. */
+export async function friendsShapeOf(spec, registry) {
+  if (!spec?.multiplayer || spec.multiplayer.mode === 'solo' || spec.multiplayer.together === 'solo') return null;
+  const man = new Map();
+  for (const m of spec.mechanics ?? []) if (m?.id && !man.has(m.id)) man.set(m.id, typeof registry?.manifest === 'function' ? await Promise.resolve(registry.manifest('mechanic', m.id)).catch(() => null) : null);
+  return shapeOf({ together: spec.multiplayer.together, presence: spec.multiplayer.presence ?? null, held: heldBy(spec.mechanics ?? [], id => man.get(id)) });
 }
 
 /** The cards. kind 'pitch' (2–3 cards) or 'refine' (1–3). → problems */
