@@ -7,6 +7,17 @@ follow [Semantic Versioning](https://semver.org/).
 
 Version 0.0.0 until the first release.
 
+### Gate E's background-host leg and read-only kits (2026-10-14)
+
+- **The background-host leg's verdict depends on the game, not the machine's load.** When round 1 ends early it waits
+  for the room to say round 2 runs (one read raced the room's standings and skipped the step: Table Four, 3 of 5 full
+  verifies under load); it holds the joiner's clock with the host's tab behind another to its pace in front, never to
+  the wall clock. On a copy that is not the host's, `snapshot().net.clock` is now the last clock the host sent, so a
+  host that stops shows as a clock that stops (`builder/gates/evidence/2026-10-14-background-host.json`).
+- **Game files are writable whatever the kit's mode.** `create`, the in-game web3 and backend kits, art and items, and
+  the Godot and forge copy steps copy through `builder/lib/writable.mjs`: a game made from a read-only kit (Studio's
+  release snapshot) can be edited, refreshed by a later `create` and deleted.
+
 ### Spec v2 and the registry (2026-10-13)
 
 - **Spec v2 is the only spec.** `runtime` (with its `profile`), `loop` and `kind` replace `engine`

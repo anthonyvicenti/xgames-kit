@@ -13,12 +13,13 @@
 //   xgames.json (what made the game: versions and the hash of every kit file it carries)
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { copyFile, cp, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join, posix, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { exportGame } from './export.mjs';
 import { walkReach, worldFor } from '../kit/world.js';
 import { importShared, isMain, KIT_VERSIONS, PPM, repoFileOf, RUNTIME, SHARED, TOOLCHAIN, VERSION } from './lib.mjs';
+import { copyFileWritable } from '../../../builder/lib/writable.mjs';
 
 const sha = b => createHash('sha256').update(b).digest('hex');
 const json = v => JSON.stringify(v, null, 2) + '\n';
@@ -271,7 +272,7 @@ export async function create(specPath, outDir, { exportNow = true, allowEvidence
   if (kl && !fits) notes.push(`kind "${spec.kind}": its look is for ${st.profile === '3d' ? `a ${kl.profile} game` : `a ${kl.plane ?? 'side'} view`}, so the ${st.world} keeps the runtime's own background`);
   const name = slug(spec.title);
   const w = async (rel, body) => { const p = join(dir, rel); await mkdir(dirname(p), { recursive: true }); await writeFile(p, body); };
-  const put = async (rel, from) => { const p = join(dir, rel); await mkdir(dirname(p), { recursive: true }); await copyFile(from, p); };
+  const put = async (rel, from) => { const p = join(dir, rel); await mkdir(dirname(p), { recursive: true }); await copyFileWritable(from, p); };
 
   // ---- the game's own files (shared create's part) ----
   // the game's own pictures (spec.slots: game.*), each a stand-in picked by its name until the library fills it

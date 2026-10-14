@@ -4,8 +4,9 @@
 // file byte for byte, else by running the pack's rebuild line (rebuild.mjs). A file is only ever kept under its own hash.
 import { createHash } from 'node:crypto';
 import { existsSync } from 'node:fs';
-import { copyFile, mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { copyFileWritable } from '../lib/writable.mjs';
 
 export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 
@@ -92,6 +93,6 @@ export const rebuildable = pack => !!(pack?.source?.download && pack.source.sha2
 export async function exportAsset(config, asset, to, opts = {}) {
   const { path: from } = await fetchAsset(config, asset, opts.pack ?? null, opts);
   await mkdir(path.dirname(to), { recursive: true });
-  await copyFile(from, to);
+  await copyFileWritable(from, to);
   return to;
 }

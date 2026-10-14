@@ -1,8 +1,8 @@
 {
  "schema": "xgk-regress/1",
- "date": "2026-10-14T06:33:20.606Z",
+ "date": "2026-10-14T07:53:26.388Z",
  "ok": true,
- "seconds": 546,
+ "seconds": 581,
  "results": [
   {
    "id": "board-friend-unseen",
@@ -13,7 +13,7 @@
    "measure": 5,
    "ok": true,
    "why": "gate E failed, measure 5: no player is a character here (mark), so each friend has a seat card with their name, colour and an avatar that reacts (thinking on their turn, placed just after a move, won or lost), a pointer where they point, and their moves land on your screen as they make them: the host shows the joiner: the pl",
-   "seconds": 146
+   "seconds": 153
   },
   {
    "id": "camera-keys-dead",
@@ -24,7 +24,7 @@
    "measure": 13,
    "ok": true,
    "why": "gate C failed, measure 13: Q E (\"turn the camera\"): DEAD, held 1.2 s: the camera turned 2° (needs 10°). The HUD lists W / ↑ \"speed up\" (does go), A D / ← → \"steer the car left and right\" (does turn), S / ↓ \"brake and reverse\" (does stop), Q E \"turn the camera\" (does look); every listed control must do on the player's own scre",
-   "seconds": 6
+   "seconds": 8
   },
   {
    "id": "car-controls-unshown",
@@ -46,7 +46,7 @@
    "measure": 13,
    "ok": true,
    "why": "passes measure 13: W / ↑ (\"speed up\"): ok, held 1.2 s: the player moved 4.02 m; A D / ← → (\"steer the car left and right\"): ok, KeyA: the path turned 27° while it was held, 18° of it after the first 200 ms (judged until the player was stopped, 500 ms into the hold); KeyD: the path turned 47° while it was held, 38° of ",
-   "seconds": 6
+   "seconds": 7
   },
   {
    "id": "car-strafes",
@@ -57,7 +57,7 @@
    "measure": 13,
    "ok": true,
    "why": "gate C failed, measure 13: A D / ← → (\"steer the car left and right\"): DEAD, KeyA: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player slid sideways, as a walker strafes, instead of turning; KeyD: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player sl",
-   "seconds": 6
+   "seconds": 7
   },
   {
    "id": "lights-race-friends-seen",
@@ -68,7 +68,7 @@
    "measure": 5,
    "ok": true,
    "why": "passes measure 5: pass 20/20 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (board): boards shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner",
-   "seconds": 93
+   "seconds": 98
   },
   {
    "id": "own-board-unseen",
@@ -79,7 +79,7 @@
    "measure": 5,
    "ok": true,
    "why": "gate E failed, measure 5: no player is a character here (board), so each friend's own board is drawn live beside yours, framed in their colour, with their name, their avatar on its rim and their score: the host shows the boards shape: this screen shows seats; the game must show boards (each friend's own board is drawn live b",
-   "seconds": 112
+   "seconds": 119
   },
   {
    "id": "slow-bots-race",
@@ -90,7 +90,7 @@
    "measure": 12,
    "ok": true,
    "why": "passes measure 12: scores moved: solo round 0/0/0/0; fair-play pages max score 3, 3, held moved 0.1 s, 0.1 s; every score change came from a counted event (2 of 2 changes over 3 pages: race.onCheckpoint 2)",
-   "seconds": 45
+   "seconds": 44
   },
   {
    "id": "table-four-friends-seen",
@@ -101,7 +101,7 @@
    "measure": 5,
    "ok": true,
    "why": "passes measure 5: pass 24/24 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (mark): seats shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner's",
-   "seconds": 93
+   "seconds": 98
   },
   {
    "id": "vista-fewer-islands",
@@ -112,7 +112,7 @@
    "measure": 17,
    "ok": true,
    "why": "gate F failed, measure 17: config/world.json lists 1 island, the spec 2; the game sails between 1 island; the spec lists 2",
-   "seconds": 10
+   "seconds": 12
   },
   {
    "id": "vista-own-islands",
@@ -122,8 +122,8 @@
    ],
    "measure": 17,
    "ok": true,
-   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.1 s); none is the reference island (ffca9377)",
-   "seconds": 17
+   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 8.1 s); none is the reference island (ffca9377)",
+   "seconds": 20
   },
   {
    "id": "vista-reference-island",
@@ -134,12 +134,12 @@
    "measure": 17,
    "ok": true,
    "why": "gate F failed, measure 17: config/world.json lists 0 islands, the spec 2; the game is on the reference island (place ffca9377): every vista game has its own islands (world.islands); the game sails between 1 island; the spec lists 2",
-   "seconds": 10
+   "seconds": 12
   }
  ],
- "fingerprint": "b7f1ad8d10888237794a064745d2cbc9fdb79a797ac84986ade18eb684375e92",
+ "fingerprint": "16694cf2033eb6b83f11071c06db3f1d311a5069471ba7a5de354b3e26afb289",
  "files": {
-  "builder/gates/regress.mjs": "8f01ec18b82d29b1f902c45f5a7bcee743c7d4881e1275234d8120635e97f827",
+  "builder/gates/regress.mjs": "a58629725ee00b822d84c4239e9d2d26e675802645a9a528cc7c2106d286b1c1",
   "builder/gates/regressions/README.md": "04346ce3004598dd4c4c3f6dc4727015de201c6857e7f404ac3b5de392352557",
   "builder/gates/regressions/bases/kart-loop/base.json": "c14d7b3b8900ad9b331432cc7d80778ba637f8755ce2a40c906072bc408fbcdc",
   "builder/gates/regressions/bases/kart-loop/rules.js": "f06d90b54b50f54581ce437c151e6dba7a7c9b5e377bab304c5a63f097da2c9f",
@@ -168,7 +168,7 @@
   "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
   "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
   "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
-  "builder/multiplayer/party/gate-live.mjs": "1672a910751698483ba855563e82b63291f94d3bb13370f13230e4139d193e0e",
+  "builder/multiplayer/party/gate-live.mjs": "465a511d6ea717f5eafa4a80ee969a7b99111bffe91f74b77ddf92d5af169596",
   "builder/multiplayer/party/gate.mjs": "9f54772c860e07c022b63b4e5f69c8398a791d92cca1b3667712fa1ab91020fd",
   "builder/tools/lib/alive-check.mjs": "52ffa1cc82a3984c9d013c179474886ee7f9d490cc649da85d15273293c13509",
   "builder/tools/lib/bodies-check.mjs": "6e2a2670e4172427f91dd150c1973ba3cea5f356a7e505849e427d02ca967343",

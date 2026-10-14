@@ -111,7 +111,8 @@ net: net.active ? {
         // where THIS copy is drawing each other player, and whether their character is inside this player's view now
         // (project the drawn position through the camera: in front, inside the frustum, not hidden by the HUD)
   over: net.over,                                    // true once the round has ended for everyone (net.onEnd fired)
-  clock,                                             // seconds of shared time, the host's, rising while the round runs
+  clock,                                             // seconds of shared time, the host's, rising while the round runs; on
+                                                     // another copy the last one the host sent, never run on by that copy's frames
   shared,                                            // a short string, equal on every copy when the shared world is in sync:
                                                      // e.g. `${wave}|${phase}|${ids of live enemies, sorted}`; '-' when only the level is shared
 } : null
@@ -123,7 +124,7 @@ The gate's players press random keys and click at random. In a game with enemies
 
 `check.near` is in the game's own units (pixels in a 2D game) and has to allow for speed: a friend is drawn 130 ms behind, which is 5 m for a glider at cruise. The live gate plays random input only, and a round that ends early (every player out, or a one-frame game) loses the later checks: give the gate a round that lasts with `check.query`.
 
-It checks: both games say `ready`; they start within 1.5 s of each other; each copy draws the other player within `check.near` world units (default 2.5) of where that player is; a friend's character is on screen at some point (it takes the screenshot at that moment: look at it); the host's movement shows on the joiner; `shared` agrees in at least 80% of samples; the shared clock keeps running while the host's tab is in the background; both get the same result; play again; a reloaded joiner drops back in and draws the host; the host ends a round; the host leaving closes the room.
+It checks: both games say `ready`; they start within 1.5 s of each other; each copy draws the other player within `check.near` world units (default 2.5) of where that player is; a friend's character is on screen at some point (it takes the screenshot at that moment: look at it); the host's movement shows on the joiner; `shared` agrees in at least 80% of samples; the shared clock keeps running while the host's tab is in the background (its pace on the joiner with the host's tab behind another, held to its pace with the tab in front, read just before and after: a busy machine slows both alike); both get the same result; play again; a reloaded joiner drops back in and draws the host; the host ends a round; the host leaving closes the room.
 
 ## `multiplayer.json`
 

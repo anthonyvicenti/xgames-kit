@@ -6,17 +6,18 @@
 //
 //   node runtimes/godot/tools/example.mjs <example-dir> <new-game-dir> [--json]
 import { existsSync } from 'node:fs';
-import { cp, copyFile, readdir } from 'node:fs/promises';
+import { readdir } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
 import { create } from './create.mjs';
 import { exportGame } from './export.mjs';
 import { isMain } from './lib.mjs';
+import { copyFileWritable, cpWritable } from '../../../builder/lib/writable.mjs';
 
 /** Lay an example's own files over a created game: rules.js and everything under files/. → the paths laid. */
 export async function applyExample(ex, out) {
   const own = [];
-  if (existsSync(join(ex, 'rules.js'))) { await copyFile(join(ex, 'rules.js'), join(out, 'rules.js')); own.push('rules.js'); }
-  if (existsSync(join(ex, 'files'))) for (const e of await readdir(join(ex, 'files'))) { await cp(join(ex, 'files', e), join(out, e), { recursive: true }); own.push(e); }
+  if (existsSync(join(ex, 'rules.js'))) { await copyFileWritable(join(ex, 'rules.js'), join(out, 'rules.js')); own.push('rules.js'); }
+  if (existsSync(join(ex, 'files'))) for (const e of await readdir(join(ex, 'files'))) { await cpWritable(join(ex, 'files', e), join(out, e), { recursive: true }); own.push(e); }
   return own;
 }
 

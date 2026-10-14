@@ -11,13 +11,14 @@
 //
 // No list of mechanics here: what a table is comes from the slot's constraints.item (written from the mechanic's own
 // manifest by tools/slots.mjs) and, for the pictures at create time, from the mechanic's manifest.items.
-import { readFile, writeFile, copyFile, mkdir, rename, rm } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, rename, rm } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, dirname, resolve, relative } from 'node:path';
 import { json } from './paths.mjs';
 import { findAsset, licenceOf, localFile, propEntry } from '../../art/views.mjs';
 import { kitModule, assembleManifest } from './slots-lib.mjs';
 import { checkItems, slotValueProblems, getAt, setAt, libraryRef, pictureFile, nameOf } from '../../../runtimes/three/kit/assets/items.js';
+import { copyFileWritable } from '../../lib/writable.mjs';
 
 const readJson = async p => JSON.parse(await readFile(p, 'utf8'));
 const readJsonMaybe = async p => { try { return await readJson(p); } catch { return null; } };
@@ -80,7 +81,7 @@ export async function pictureStep(gameDir, item, table, { write = true } = {}) {
       const e = await libraryEntry(ref);
       if (!e) { problems.push(`${who}: there is no "${ref}" in the asset library on this machine (gamesfun art find)`); continue; }
       if (!to) { problems.push(`${who}: its mechanic names no file for its ${fieldWords}`); continue; }
-      if (write) { await mkdir(dirname(join(gameDir, to)), { recursive: true }); await copyFile(e.file, join(gameDir, to)); }
+      if (write) { await mkdir(dirname(join(gameDir, to)), { recursive: true }); await copyFileWritable(e.file, join(gameDir, to)); }
       entry[P.field] = toRel;
       for (const f of Object.values(P.extra ?? {})) if (f === 'grip' && e.grip && entry[f] == null) entry[f] = e.grip;
       entry.license ??= e.license;
@@ -92,7 +93,7 @@ export async function pictureStep(gameDir, item, table, { write = true } = {}) {
     if (!abs || !existsSync(abs)) { problems.push(`${who}: its ${fieldWords} ${at} is not in the game (put a file there, or write "library:<id>" for a library one)`); continue; }
     if (used.has(v) && to && to !== at) {
       // a copy of another entry's picture: its own file, so either can be replaced alone
-      if (write) await copyFile(abs, join(gameDir, to));
+      if (write) await copyFileWritable(abs, join(gameDir, to));
       entry[P.field] = toRel;
       changed.push(`${who}: ${fieldWords} ${at} was ${nameOf(item, table[used.get(v)], used.get(v))}'s too → its own copy ${to}`);
       used.set(toRel, j);

@@ -8,6 +8,7 @@
 //   peers: [{id, name, x, y, z?, onScreen}]  every OTHER player this copy is drawing: where it draws them, and whether
 //                                            their character is inside this player's view right now
 //   clock                                    seconds of shared time, owned by the host's copy, rising while the round runs
+//                                            (another copy: the last one the host sent, never run on by its own frames)
 //   shared                                   a short string that is equal on every copy when the shared world is in sync
 //                                            (the wave and the ids of the live enemies; "-" when only the level is shared)
 //
@@ -24,6 +25,24 @@ import { checkTransport, connectionTrace, endRound, inFrame, joinState, p2p, sle
 const PLAY_MARGIN = 16000, PLAY_MIN = 12000, PLAY_MAX = 40000;
 /** When scripted play stops (ms, wall clock): PLAY_MARGIN before the room's own end of the round, at most PLAY_MAX from now, at least PLAY_MIN. */
 export const playDeadline = ({ roundT0, now, cap }) => Math.max(now + PLAY_MIN, Math.min(roundT0 + cap * 1000 - PLAY_MARGIN, now + PLAY_MAX));
+// the background-host step (below): each window's length, how many times a window that falls short is tried again, and
+// the share of the in-front pace the background pace must keep
+const BG_WINDOW = 2000, BG_TRIES = 3, BG_SHARE = 0.5;
+/**
+ * The background-host step's verdict from the joiner's clock pace (shared seconds per second): front[i] with the host's
+ * tab in front just before try i, front[i + 1] just after it, behind[i] with it behind another. A try passes when the
+ * background pace keeps BG_SHARE of the slower of the two in-front paces around it; one passing try is enough. ok null:
+ * the clock did not rise with the host's tab in front either, so there is nothing to hold it to.
+ */
+export function backgroundVerdict({ front, behind }) {
+  const tries = behind.map((b, i) => ({ behind: b?.pace ?? null, ref: Math.min(front[i]?.pace ?? -1, front[i + 1]?.pace ?? front[i]?.pace ?? -1) }));
+  const fmt = n => (n == null ? '?' : n.toFixed(2));
+  const said = tries.map((t, i) => `try ${i + 1}: ${fmt(t.behind)} behind, ${fmt(t.ref)} in front`).join('; ');
+  const good = tries.findIndex(t => t.ref > 0 && t.behind > 0 && t.behind >= BG_SHARE * t.ref);
+  if (good >= 0) return { ok: true, detail: `with the host's tab behind another the joiner's shared clock rose ${fmt(tries[good].behind)} s a second, against ${fmt(tries[good].ref)} with it in front (${said})` };
+  if (!tries.length || tries.every(t => !(t.ref > 0))) return { ok: null, detail: `the joiner's shared clock did not rise with the host's tab in front either (${said || 'no reads'}), so there was nothing to hold the background to` };
+  return { ok: false, detail: `with the host's tab behind another the joiner's shared clock kept under ${Math.round(BG_SHARE * 100)}% of its pace in front, ${tries.length} times (${said}): the host's frames stopped or slowed while its tab was hidden` };
+}
 const dist = (a, b) =>Math.hypot((a.x ?? 0) - (b.x ?? 0), (a.y ?? 0) - (b.y ?? 0), (a.z ?? 0) - (b.z ?? 0));
 
 export async function gateLive({ manifest, live, assets, dir, srv, player, check, notes, shot, rec, errors, seconds, signal = null, legs = null, diagnose = null }) {
@@ -145,17 +164,37 @@ export async function gateLive({ manifest, live, assets, dir, srv, player, check
   check('the-shared-world-matches', trace.sharedSamples >= 5 && agree >= 0.8, `${trace.sharedSame} of ${trace.sharedSamples} samples had the same shared world on both copies${trace.sharedDiff.length ? `; e.g. ${trace.sharedDiff[0]}` : ''}`);
 
   // ---- the host's tab goes behind another one: the shared world keeps running for the joiner ----
+  // The joiner's clock is the host's (the last one the host sent), so it rises only while the host's frames come. How
+  // fast it rises is the game's own pace on this machine at this moment (a frame's step is capped, so on a busy machine
+  // slow frames are slow time), never the wall clock's: the pace with the host's tab behind another is held to the pace
+  // with it in front, read the same way just before and just after. A busy spell can slow one window, so a window that
+  // falls short is tried again (at most BG_TRIES); a host whose frames stop, or come from a once-a-second page timer,
+  // falls short every time.
   // In round 1 while it runs; when round 1 has already ended (the game's own end under random input: everyone down, the
   // goal reached), at the start of round 2 instead, so whether it is measured never depends on how long scripted
   // players survived or how loaded the machine was.
   const backgroundStep = async round => {
-    const other = await H.ctx.newPage();
-    await other.goto('about:blank'); await other.bringToFront();
-    // the clock read against the wall clock between the two reads, never a fixed 2 s: a loaded machine stretches the reads
-    const t1 = Date.now(), c1 = (await net(J.page))?.clock; await sleep(2000); const c2 = (await net(J.page))?.clock, t2 = Date.now();
-    await H.page.bringToFront(); await other.close();
-    const span = (t2 - t1) / 1000;
-    check('a-background-host-does-not-stop-the-world', typeof c1 === 'number' && typeof c2 === 'number' && c2 - c1 > 0.6 * span, `the shared clock went ${c1} → ${c2} on the joiner in ${span.toFixed(1)} s while the host's tab was in the background, in round ${round} (the game runs its frame through net.loop). Headless Chrome does not slow a background tab the way a real one does, so this proves the frames kept coming, not that a real hidden tab is safe`);
+    const front = [await clockPace(BG_WINDOW)], behind = [];
+    for (let i = 0; i < BG_TRIES; i++) {
+      const other = await H.ctx.newPage();
+      await other.goto('about:blank'); await other.bringToFront();
+      behind.push(await clockPace(BG_WINDOW));
+      await H.page.bringToFront(); await other.close();
+      front.push(await clockPace(BG_WINDOW));
+      if (backgroundVerdict({ front, behind }).ok !== false) break;
+    }
+    const v = backgroundVerdict({ front, behind });
+    rec.background = { round, window: BG_WINDOW, front, behind, verdict: v.ok };
+    const lead = v.ok === null ? 'not checked: ' : '';
+    check('a-background-host-does-not-stop-the-world', v.ok === true, `${lead}${v.detail}, in round ${round} (the joiner's clock is the host's; the game runs its frame through net.loop). Headless Chrome does not slow a background tab the way a real one does, so this proves the frames kept coming, not that a real hidden tab is safe`, v.ok === null ? { soft: true } : undefined);
+  };
+  // the joiner's shared clock over `ms`: seconds of shared time per second, from reads timed at their middle
+  const clockPace = async ms => {
+    const s = [], tEnd = Date.now() + ms;
+    do { const a = Date.now(), c = (await net(J.page))?.clock, b = Date.now(); if (typeof c === 'number') s.push({ c, t: (a + b) / 2 }); await sleep(150); } while (Date.now() < tEnd || (s.length < 2 && Date.now() < tEnd + ms));
+    if (s.length < 2) return { pace: null, reads: s.length };
+    const [f, l] = [s[0], s[s.length - 1]];
+    return { pace: Math.round((l.c - f.c) / ((l.t - f.t) / 1000) * 1000) / 1000, from: f.c, to: l.c, seconds: Math.round(l.t - f.t) / 1000, reads: s.length };
   };
   let backgroundDone = false;
   if ((await snap(J.page))?.room === 'racing') { await backgroundStep(1); backgroundDone = true; }
@@ -181,8 +220,15 @@ export async function gateLive({ manifest, live, assets, dir, srv, player, check
   await until(async () => (await net(H.page))?.started && (await net(J.page))?.started, 20000, 'round 2 to start').catch(() => {});
   check('play-again-starts-a-new-round', (await net(H.page))?.started === true && (await net(J.page))?.started === true, 'both games are playing round 2');
   if (!backgroundDone) {
-    if ((await snap(J.page))?.room === 'racing') await backgroundStep(2);
-    else check('a-background-host-does-not-stop-the-world', false, 'not checked: round 1 ended before this step and round 2 was not running either', { soft: true });
+    // The party page shows the round, and the games start, on its own countdown; the room says 'racing' in its next
+    // standings message, a room tick and a delivery later, which a loaded machine stretches: read once, the moment both
+    // games had started, the room still said 'countdown' and the step was skipped (2026-10-14, "unproven 23/24"). So
+    // the step waits for the room itself to say the round runs.
+    const seen = [];
+    const room = await until(async () => { const r = (await snap(J.page))?.room ?? null; if (seen.at(-1) !== r) seen.push(r); return r === 'racing' || r === 'results' ? r : null; }, 30000, 'the room to run round 2').catch(() => null);
+    rec.backgroundRoom2 = seen;
+    if (room === 'racing') await backgroundStep(2);
+    else check('a-background-host-does-not-stop-the-world', false, `not checked: round 1 ended before this step, and round 2 ${room === 'results' ? 'was over before the room said it ran' : 'did not run within 30 s'} (the room said ${seen.join(' → ')})`, { soft: true });
   }
   await J.page.reload({ waitUntil: 'load' });
   const back = await until(async () => { const s = await snap(J.page); const n = await net(J.page); return s?.phase === 'room' && s.round === 2 && n?.started && n.peers?.some(p => p.id === h0.you && p.x != null) ? { s, n } : null; }, 90000, 'the joiner to drop back in').catch(() => null);

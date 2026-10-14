@@ -16,7 +16,7 @@
 //   --owner own|third-party|generated --private --source-kind zip|git|maker|own|collection --download <u> --zip-sha256 <h>
 //   --repo <u> --commit <c> --page <u> --maker <m>
 import { readFileSync, existsSync } from 'node:fs';
-import { copyFile, mkdir } from 'node:fs/promises';
+import { mkdir } from 'node:fs/promises';
 import path from 'node:path';
 import { loadConfig } from './config.mjs';
 import { fillGame } from './fill.mjs';
@@ -26,6 +26,7 @@ import { loadPolicy } from './policy.mjs';
 import { lazyRenderer } from './render.mjs';
 import { find, loadKind } from './resolve.mjs';
 import { fetchAsset, localPath } from './store.mjs';
+import { copyFileWritable } from '../lib/writable.mjs';
 
 export function parse(argv) {
   const pos = [], o = {};
@@ -101,7 +102,7 @@ async function cmdFetch(pos, o, config) {
   const p = lib.find(x => x.pack.id === packId), a = p?.assets.find(x => x.id === id);
   if (!a) throw new Error(`no asset ${pos[0]}`);
   const r = await fetchAsset(config, a, p.pack);
-  if (o.to) { await mkdir(path.dirname(path.resolve(o.to)), { recursive: true }); await copyFile(r.path, o.to); }
+  if (o.to) { await mkdir(path.dirname(path.resolve(o.to)), { recursive: true }); await copyFileWritable(r.path, o.to); }
   out(o, { ...r, to: o.to ?? null }, () => `${pos[0]}: ${o.to ?? r.path} (from ${r.from})`);
 }
 

@@ -17,10 +17,11 @@
 //        assets.json lists the new audio slots)
 //
 // Default bus levels only (research/audio/GUIDE.md): no `buses` key is written, and no gainDb is above 0.
-import { readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync, statSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { forgeLibrarySync } from './library.mjs';
+import { copyFileWritableSync } from '../../../builder/lib/writable.mjs';
 
 const FORGE = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SOUNDS = join(FORGE, 'sounds');
@@ -98,7 +99,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === resolve(process.argv[1
   if (a.includes('--write')) {
     if (!isDir) { console.error('--write needs a game dir'); process.exit(2); }
     const dir = resolve(target), mf = join(dir, 'assets.json'), m = readJson(mf);
-    for (const x of r.assets) { mkdirSync(dirname(join(dir, x.to)), { recursive: true }); copyFileSync(x.from, join(dir, x.to)); }
+    for (const x of r.assets) { mkdirSync(dirname(join(dir, x.to)), { recursive: true }); copyFileWritableSync(x.from, join(dir, x.to)); }
     m.sounds = { version: 1, sounds: r.sounds };
     writeFileSync(mf, JSON.stringify(m, null, 2) + '\n');
     console.log(`wrote ${r.assets.length} files under assets/sounds and the sound list in assets.json (run upgrade or create next: the files become audio slots)`);

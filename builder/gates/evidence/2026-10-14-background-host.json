@@ -1,0 +1,34 @@
+{
+  "schema": "xgk-gates-load/1",
+  "date": "2026-10-14",
+  "what": "Gate E's two-player live check (measure 5) leg a-background-host-does-not-stop-the-world failed only on a loaded machine (stream bg-host). Before: xgames-kit main 3648a47; after: stream/bg-host. Each run is a full build verify (node builder/tools/verify.mjs <game>, every build measure) of a game made fresh with `gamesfun create --from <example>`, two at a time under the machine's two-slot GPU queue (gpu-run.sh), with 12 busy CPU loops added on a 24-thread machine already at load 15 from other sessions (load average 27 to 47 during the runs).",
+  "symptom": "2026-10-14: a full verify of table-four failed only this leg (gate E, 'unproven 23/24'); `--check 5` alone passed twice.",
+  "rootCause": {
+    "named": "The leg read the room's phase once, the moment both games said they had started round 2, and skipped the step as 'not running' unless it read 'racing'. The party page reveals a round, and the games start, on its own countdown; the room says 'racing' in its next standings message, a room tick and a delivery later. On a loaded machine that read landed in the gap and saw 'countdown'.",
+    "why table-four": "Table Four's round 1 ends early under random input (four in a row in about 35 s), so the step always moves to round 2, where the read races the room. Soak Squad and Ruin Hold run the step in round 1 and never hit it.",
+    "evidence": [
+      "before: 3 of 5 table-four verifies failed with exactly the parent's verdict: gate E unproven, the leg's detail 'not checked: round 1 ended before this step and round 2 was not running either', the step and play-again stamped the same second (53.8 s) in the gate's timeline",
+      "after: the gate records the room phases it saw while waiting (record.backgroundRoom2): 2 of 5 table-four runs saw ['countdown', 'racing'], the case the old single read skipped"
+    ],
+    "also": [
+      "The joiner's shared clock (snapshot().net.clock) was the joiner's own: runtimes/three/kit/net/session.js added every frame's step to it on every copy and only raised it to the host's, so it rose with the host stopped and the leg could not fail for the reason it names. A copy that is not the host's now shows the last clock the host sent.",
+      "The leg held that clock to 0.6 of the wall clock. A frame's step is capped at 0.1 s, so a game drawn under 6 frames a second runs slower than that in front as much as behind: an assumed frame rate. The leg now holds the pace with the host's tab behind another to the pace with it in front, read the same way just before and after, and tries a short window again (at most 3) when one falls short.",
+      "Headless Chrome never hides a background tab: a tab behind another, and a window minimized over CDP, both keep visibilityState 'visible' and 60 animation frames a second, with or without Playwright's anti-throttling flags. So in headless the leg proves the host's clock keeps reaching the joiner while another tab is in front, not that a real hidden tab is safe (the record says so). The kit's own hidden-tab path (net.loop's worker timer, the room in a worker) was read, not exercised."
+    ]
+  },
+  "runs": {
+    "before": {
+      "table-four": "2 of 5 passed; 3 failed gate E on this leg (unproven)",
+      "soak-squad": "5 of 5 passed",
+      "ruin-hold": "5 of 5 passed",
+      "leg": "12 of 15 passed (all 3 fails: the round-2 phase read)"
+    },
+    "after": {
+      "table-four": "5 of 5 passed (the step ran in round 2 every time; twice after waiting through 'countdown')",
+      "soak-squad": "5 of 5 passed",
+      "ruin-hold": "4 of 5 passed; 1 failed gate B measure 9 (contact sheet and frame rate on the GPU, 57 fps), not this leg",
+      "leg": "15 of 15 passed; background pace 0.94 to 1.06 shared seconds a second against 0.96 to 1.04 in front, each on its first try"
+    }
+  },
+  "notChanged": ["the leg's place (round 1 while it runs, else round 2)", "no timeout was widened: the round-2 wait is for the room's own word that the round runs, where there was no wait before"]
+}

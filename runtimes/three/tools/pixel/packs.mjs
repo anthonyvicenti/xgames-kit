@@ -11,11 +11,12 @@
 // also the flat runtime's stand-in files (builder/tools/lib/standin-assets/flat/pixel: folk.mjs and town.mjs --standins).
 //
 //   node runtimes/three/tools/pixel/packs.mjs [--only flat-standins-pixel,xk-pixel-folk,xk-pixel-town]
-import { mkdirSync, writeFileSync, copyFileSync, existsSync, readFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { FOLK, sheet } from './folk.mjs';
 import { PICTURES, make } from './town.mjs';
+import { copyFileWritableSync } from '../../../../builder/lib/writable.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, '../../../..');
@@ -71,7 +72,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
     // the bytes into the kit's default set (in git), so every clone has them
     const m = JSON.parse(readFileSync(join(REPO, 'library/packs', item.pack, 'assets', `${item.id}.json`), 'utf8'));
     const to = storePath(config.defaults, m.sha256); mkdirSync(dirname(to), { recursive: true });
-    if (!existsSync(to)) copyFileSync(storePath(config.store, m.sha256), to);
+    if (!existsSync(to)) copyFileWritableSync(storePath(config.store, m.sha256), to);
     console.log(`${item.pack}/${item.id}  ok  ${m.validated.map(v => `${v.by} ${v.ok ? 'ok' : 'FAIL'}`).join(', ')}`);
   }
   process.exit(bad ? 1 : 0);

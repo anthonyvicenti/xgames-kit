@@ -13,11 +13,12 @@
 // checks.json and a picture of each screen (JPEG); the game itself goes to a scratch folder and is gone after (--keep keeps it).
 // Exit 0 when every check of every fixture passed. A mechanic's manifest marks forge tested only with such a record.
 import { existsSync } from 'node:fs';
-import { cp, mkdir, mkdtemp, readdir, rm, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readdir, rm, writeFile, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { COMPONENTS, PARTY, BUILDER, launchForGame } from '../../../builder/tools/lib/paths.mjs';
+import { cpWritable } from '../../../builder/lib/writable.mjs';
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 async function until(fn, ms, label) {
@@ -42,7 +43,7 @@ export async function runFixture(id, { out = null, flat = false, keep = false, l
   const made = await create(join(fx, 'spec.json'), dir, { force: true, log: () => {} });
   if (!made.ok) throw new Error(`create failed: ${(made.problems ?? []).join('; ')}`);
   if (!made.modules?.mechanics?.includes(id)) throw new Error(`create did not pick ${id}'s forge implementation: ${(made.why ?? []).join('; ')}`);
-  await cp(join(fx, 'rules.js'), join(dir, 'rules.js'));
+  await cpWritable(join(fx, 'rules.js'), join(dir, 'rules.js'));
   const { startParty } = await import(pathToFileURL(join(PARTY, 'lib.mjs')).href);
   const { launchChrome } = await import(pathToFileURL(join(BUILDER, 'qa/browser.mjs')).href);
   const srv = await startParty({ dir, port: 0 });

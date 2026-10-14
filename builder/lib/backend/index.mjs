@@ -8,7 +8,7 @@
 // What reaches the game, whatever the way: backend.json (builder/lib/backend/config.mjs: the URL, a public key, the origins)
 // and the client at gf/backend/. Both are checked first: the game folder's secret scan must be clean, and the key
 // must be one designed to be public.
-import { cp, mkdir, rm, stat } from 'node:fs/promises';
+import { mkdir, rm, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { addKitIgnores } from '../manifest-ignores.mjs';
@@ -18,6 +18,7 @@ import { describeHits, scanGame } from './scan.mjs';
 import * as supabase from './supabase.mjs';
 import * as mcp from './mcp.mjs';
 import { listed, provider } from './providers.mjs';
+import { cpWritable } from '../writable.mjs';
 
 export const CLIENT_SOURCE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'backend', 'gf-backend');
 export const CLIENT_IN_GAME = ['gf', 'backend'];
@@ -29,7 +30,7 @@ export async function installClient(gameDir) {
   const target = path.join(gameDir, ...CLIENT_IN_GAME);
   await rm(target, { recursive: true, force: true });
   await mkdir(path.dirname(target), { recursive: true });
-  await cp(CLIENT_SOURCE, target, { recursive: true });
+  await cpWritable(CLIENT_SOURCE, target, { recursive: true });
   return target;
 }
 

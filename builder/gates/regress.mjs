@@ -18,13 +18,14 @@
 // tests/gates-regressions.test.mjs fails while that fingerprint is not the current one: a change to a gate is
 // recorded green on the GPU before it lands.
 import { isMain } from '../tools/lib/main.mjs';
-import { cp, mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
+import { mkdir, mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { gateOf } from '../tools/lib/verdict.mjs';
+import { cpWritable } from '../lib/writable.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 export const KIT = resolve(HERE, '../..');
@@ -98,7 +99,7 @@ async function applyPatches(game, patches = []) {
 async function overlay(from, game, { skip = [] } = {}) {
   for (const e of await readdir(from, { withFileTypes: true })) {
     if (skip.includes(e.name)) continue;
-    await cp(join(from, e.name), join(game, e.name), { recursive: true });
+    await cpWritable(join(from, e.name), join(game, e.name), { recursive: true });
   }
 }
 
@@ -111,7 +112,7 @@ export async function makeGame(r, root, { log = () => {} } = {}) {
   await overlay(base, game, { skip: ['spec.json', 'base.json', 'README.md'] });
   const b = existsSync(join(base, 'base.json')) ? JSON.parse(await readFile(join(base, 'base.json'), 'utf8')) : {};
   await applyPatches(game, b.patches);
-  for (const [to, from] of Object.entries(r.files ?? {})) { await mkdir(dirname(join(game, to)), { recursive: true }); await cp(join(r.dir, from), join(game, to)); }
+  for (const [to, from] of Object.entries(r.files ?? {})) { await mkdir(dirname(join(game, to)), { recursive: true }); await cpWritable(join(r.dir, from), join(game, to)); }
   await applyPatches(game, r.patches);
   log(`  made ${relative(root, game)} (base ${r.base}${Object.keys(r.files ?? {}).length ? `, ${Object.keys(r.files).join(', ')} changed` : ''}${r.patches?.length ? `, ${r.patches.length} patches` : ''})`);
   return game;

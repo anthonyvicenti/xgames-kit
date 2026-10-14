@@ -2,7 +2,7 @@
 // rules and files when the game starts from an example, then the game's guide for the user's agent (AGENTS.md, with a
 // CLAUDE.md that imports it).
 import { existsSync } from 'node:fs';
-import { copyFile, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { UsageError } from './cli.mjs';
 import { resolveExample } from './examples.mjs';
@@ -12,6 +12,7 @@ import { runTool, runToolJson } from './run-tool.mjs';
 import { web3On } from './web3-switch.mjs';
 import { refreshClient } from './backend/index.mjs';
 import { createGodotGame, isGodotSpec } from '../../runtimes/godot/gamesfun.mjs';
+import { copyFileWritable } from './writable.mjs';
 
 /**
  * The in-game web3 kit (gf/web3/ and the gamesfun.json stub), from this checkout's builder/web3/ folder. Imported when it is
@@ -90,13 +91,13 @@ export async function createGame(target, { spec = null, from = null, force = fal
   const applied = [];
   if (example && (fresh || force)) {
     const rules = path.join(example.dir, 'rules.js');
-    if (existsSync(rules)) { await copyFile(rules, path.join(dir, 'rules.js')); applied.push('rules.js'); }
+    if (existsSync(rules)) { await copyFileWritable(rules, path.join(dir, 'rules.js')); applied.push('rules.js'); }
     const files = path.join(example.dir, 'files');
     if (existsSync(files)) {
       for (const rel of await walk(files)) {
         const to = path.join(dir, rel);
         await mkdir(path.dirname(to), { recursive: true });
-        await copyFile(path.join(files, rel), to);
+        await copyFileWritable(path.join(files, rel), to);
         applied.push(toPosix(rel));
       }
       // config or asset files changed: assets.json follows the declarations again (keeping the sound list)

@@ -361,8 +361,10 @@ export function createSession(ctx, { rules, spawnCharacter, characterFor, rng, b
 
   /** Every frame, before the physics steps: the round clock and, on other copies, the host's world. */
   function tick(dt) {
-    hostTime += dt;
     if (ctx.host) {
+      // the shared clock (snapshot().net.clock) is the host's own: another copy shows the last one the host sent and
+      // never runs it on with its own frames, so a host whose frames stop (a hidden tab) shows as a clock that stops
+      hostTime += dt;
       if (round.phase === 'countdown') { round.countdown -= dt; if (round.countdown <= 0) beginPlaying(); }
       else if (round.phase === 'playing' && worldMode) round.clock += dt;    // a world has no end
       else if (round.phase === 'playing') flow.hostTick(dt);     // the flow's: its clock, who may act, what ends it
