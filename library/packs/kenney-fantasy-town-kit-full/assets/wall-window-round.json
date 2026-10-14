@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "wall-window-round",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-window-round.glb",
+ "sha256": "37a3d2c10efaa4c3d457370779e455c56a8c074f580721e5cc9c52a6e9ba2dc0",
+ "bytes": 17392,
+ "preview": "previews/wall-window-round.png",
+ "from": "Models/GLB format/wall-window-round.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall window round",
+ "tags": [
+  "wall",
+  "window",
+  "round"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 278,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 278,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#99a1c1",
+     "#aab2d6",
+     "#8f95b3",
+     "#9fa7c8",
+     "#9fa6c7",
+     "#a0a8c9"
+    ],
+    "saturation": 0.363,
+    "value": 0.636,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.491
+     },
+     {
+      "hue": "blue",
+      "share": 0.431
+     },
+     {
+      "hue": "grey",
+      "share": 0.077
+     }
+    ],
+    "grey": 0.077
+   },
+   "trianglesPerMetre": 10.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ec911d8b3bd041ff46d5f5b21a04c2e1bcd006c51262866da94dc24a2c21e41c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

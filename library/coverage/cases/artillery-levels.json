@@ -1,0 +1,1223 @@
+{
+ "id": "artillery-levels",
+ "about": "The artillery case at level scale (looks wave 3): a cartoon artillery battle on small islands whose references swing between three looks, a sunny castle isle, a violet dusk fortress and a sunset canyon. Each look has its own style anchor, written from the look's measured facts and our own words, and its own set pieces; creatures and weapons are drawn from the sunny anchor and fit every level. Every design is our own: the kinds of things the levels show, never the reference's buildings, characters or layouts.",
+ "target": {
+  "schema": "gf-look-target/1",
+  "from": "refs+words",
+  "confidence": 0.85,
+  "about": "Style facts measured from a private set of reference frames (palette, light, materials, shapes, place), with every line of words our own. No frame, name or picture of the reference is in this file.",
+  "palette": {
+   "colors": [
+    {
+     "hex": "#7eaee2",
+     "share": 0.164,
+     "words": "light blue",
+     "role": "day sky / sea"
+    },
+    {
+     "hex": "#2d3c71",
+     "share": 0.109,
+     "words": "dark blue",
+     "role": "dusk sea / deep water"
+    },
+    {
+     "hex": "#ccdee4",
+     "share": 0.1,
+     "words": "very light grey",
+     "role": "clouds / smoke"
+    },
+    {
+     "hex": "#cb915a",
+     "share": 0.09,
+     "words": "light orange",
+     "role": "sand / sandstone"
+    },
+    {
+     "hex": "#594f42",
+     "share": 0.09,
+     "words": "dark grey",
+     "role": "rock shadow / soil"
+    },
+    {
+     "hex": "#6952bd",
+     "share": 0.086,
+     "words": "saturated violet",
+     "role": "violet dusk sky"
+    },
+    {
+     "hex": "#956140",
+     "share": 0.079,
+     "words": "orange",
+     "role": "cliff rock / wood"
+    },
+    {
+     "hex": "#2f3232",
+     "share": 0.079,
+     "words": "dark grey",
+     "role": "ink / deep shadow"
+    },
+    {
+     "hex": "#a1de77",
+     "share": 0.075,
+     "words": "light yellow-green",
+     "role": "grass"
+    },
+    {
+     "hex": "#5c8970",
+     "share": 0.061,
+     "words": "muted green",
+     "role": "pine foliage / shaded grass"
+    },
+    {
+     "hex": "#4e6182",
+     "share": 0.046,
+     "words": "dark muted blue",
+     "role": "castle stone"
+    }
+   ],
+   "value": {
+    "mean": 0.586,
+    "spread": 0.5,
+    "hist": [
+     0.021,
+     0.001,
+     0.001,
+     0.008,
+     0.035,
+     0.099,
+     0.094,
+     0.116,
+     0.113,
+     0.073,
+     0.065,
+     0.115,
+     0.096,
+     0.087,
+     0.056,
+     0.02
+    ]
+   },
+   "chroma": {
+    "mean": 0.091,
+    "spread": 0.131,
+    "hist": [
+     0.089,
+     0.099,
+     0.077,
+     0.101,
+     0.18,
+     0.135,
+     0.093,
+     0.088,
+     0.065,
+     0.022,
+     0.029,
+     0.02,
+     0.002,
+     0,
+     0,
+     0
+    ]
+   },
+   "warmth": -0.229,
+   "mean": {
+    "L": 0.585,
+    "C": 0.091,
+    "contrast": 0.145,
+    "litL": 0.684,
+    "litC": 0.102
+   }
+  },
+  "edges": {
+   "density": 0.208,
+   "dark": 0.031,
+   "outline": "low",
+   "outlineColor": "#1a1a24"
+  },
+  "lighting": {
+   "key": "#fff2d6",
+   "fill": "#5a5f9e",
+   "keyStrength": "mid",
+   "contrast": 0.4,
+   "shadowSoftness": 0.6,
+   "fog": {
+    "color": "#c6d8ee",
+    "density": 0.15
+   },
+   "time": "day",
+   "local": [
+    "#ffb347",
+    "#ffe066"
+   ],
+   "sky": [
+    "#7eaee2",
+    "#6952bd",
+    "#2d3c71",
+    "#e48a5a"
+   ]
+  },
+  "materials": {
+   "shading": "soft-toon",
+   "bands": 0,
+   "roughness": 0.75,
+   "gloss": "low",
+   "rim": "low",
+   "texture": "painted"
+  },
+  "shapes": {
+   "chunkiness": 0.75,
+   "roundness": 0.8,
+   "detail": "low",
+   "headToBody": 0.45,
+   "eyes": "huge",
+   "language": [
+    "rounded",
+    "chunky",
+    "rubbery",
+    "exaggerated cartoon",
+    "soft bevels",
+    "leaning shapes"
+   ]
+  },
+  "world": {
+   "setting": "islands",
+   "also": [
+    "coast",
+    "ruins",
+    "desert"
+   ],
+   "land": "islands",
+   "horizon": "sea",
+   "water": "sea",
+   "relief": 0.5,
+   "destructible": true,
+   "sky": {
+    "kind": "cumulus",
+    "clouds": 0.45,
+    "cloudStyle": "puff",
+    "cloudColor": "#f2f4fb"
+   },
+   "props": {
+    "density": 0.45,
+    "dressing": [
+     "cone-roof castle",
+     "onion-dome tower",
+     "arched stone bridge",
+     "curly palm tree",
+     "leaning pine tree",
+     "sandstone mesa",
+     "rope plank bridge",
+     "wooden crate"
+    ]
+   },
+   "ground": {
+    "tile": 3,
+    "detail": "mid",
+    "crossSection": true
+   }
+  },
+  "reads": [
+   "round big-eyed cartoon creatures of our own, chunky and squashy",
+   "small rounded islands on open sea, each level its own place: a sunny castle isle, a violet dusk fortress, a sunset canyon",
+   "saturated painted surfaces and soft toon light; the sky carries each level's mood",
+   "explosions as clumps of round puffs throwing chunky rocks; the ground breaks"
+  ],
+  "avoid": [
+   "the reference game's characters, names, logos, HUD art or level layouts",
+   "realistic PBR materials, gritty or desaturated palettes",
+   "thin detailed geometry or sharp sci-fi shapes",
+   "heavy fog or dark horror lighting"
+  ],
+  "looks": [
+   {
+    "id": "sunny-castle-isles",
+    "name": "Sunny Castle Isles",
+    "share": 0.44,
+    "setting": "day",
+    "palette": {
+     "colors": [
+      {
+       "hex": "#d2e3da",
+       "share": 0.188,
+       "words": "very light grey",
+       "role": "clouds / smoke"
+      },
+      {
+       "hex": "#79bbc9",
+       "share": 0.133,
+       "words": "light muted teal",
+       "role": "day sky / sea"
+      },
+      {
+       "hex": "#879df6",
+       "share": 0.126,
+       "words": "light blue",
+       "role": "day sky / sea"
+      },
+      {
+       "hex": "#67775d",
+       "share": 0.106,
+       "words": "muted yellow-green",
+       "role": "pine foliage / shaded grass"
+      },
+      {
+       "hex": "#6be26b",
+       "share": 0.104,
+       "words": "light saturated yellow-green",
+       "role": "grass"
+      },
+      {
+       "hex": "#8fc6f4",
+       "share": 0.104,
+       "words": "light cyan",
+       "role": "day sky / sea"
+      },
+      {
+       "hex": "#a89e5f",
+       "share": 0.066,
+       "words": "yellow",
+       "role": "sand / sandstone"
+      },
+      {
+       "hex": "#4d4457",
+       "share": 0.05,
+       "words": "dark muted violet",
+       "role": "rock shadow / soil"
+      },
+      {
+       "hex": "#6795bc",
+       "share": 0.05,
+       "words": "blue"
+      },
+      {
+       "hex": "#0c2e1f",
+       "share": 0.027,
+       "words": "very dark muted green",
+       "role": "ink / deep shadow"
+      },
+      {
+       "hex": "#295e39",
+       "share": 0.023,
+       "words": "dark green"
+      }
+     ],
+     "value": {
+      "mean": 0.704,
+      "spread": 0.438,
+      "hist": [
+       0.024,
+       0.001,
+       0.001,
+       0.007,
+       0.022,
+       0.015,
+       0.026,
+       0.037,
+       0.058,
+       0.053,
+       0.07,
+       0.204,
+       0.177,
+       0.155,
+       0.112,
+       0.039
+      ]
+     },
+     "chroma": {
+      "mean": 0.093,
+      "spread": 0.131,
+      "hist": [
+       0.099,
+       0.089,
+       0.093,
+       0.089,
+       0.194,
+       0.096,
+       0.103,
+       0.084,
+       0.054,
+       0.027,
+       0.027,
+       0.039,
+       0.005,
+       0,
+       0,
+       0
+      ]
+     },
+     "warmth": -0.288,
+     "mean": {
+      "L": 0.702,
+      "C": 0.092,
+      "contrast": 0.158,
+      "litL": 0.753,
+      "litC": 0.097
+     }
+    },
+    "edges": {
+     "density": 0.205,
+     "dark": 0.031,
+     "outline": "low"
+    },
+    "lighting": {
+     "key": "#fff4dc",
+     "fill": "#7088c0",
+     "sky": [
+      "#7eaee2",
+      "#9fd0e8"
+     ],
+     "fog": {
+      "color": "#cfe2f2",
+      "density": 0.15
+     },
+     "time": "day",
+     "contrast": 0.4
+    },
+    "world": {
+     "setting": "islands",
+     "land": "cliffs",
+     "horizon": "sea",
+     "water": "sea",
+     "relief": 0.5,
+     "sky": {
+      "kind": "cumulus",
+      "clouds": 0.5,
+      "cloudStyle": "puff",
+      "cloudColor": "#f4f6fb"
+     },
+     "props": {
+      "density": 0.45,
+      "dressing": [
+       "cone-roof castle",
+       "castle wall ruin",
+       "arched stone bridge",
+       "curly palm tree",
+       "leaning pine tree",
+       "wooden crate",
+       "oil drum"
+      ]
+     }
+    },
+    "reads": [
+     "small rounded islands of vivid yellow-green grass on pale sandstone cliffs in an open blue sea",
+     "storybook buildings of cream plaster and chunky crooked stone under terracotta cone roofs",
+     "big soft white clouds in a light blue sky, a warm midday sun",
+     "everything rounded, chunky and a little leaning, painted with soft toon light and no fine detail"
+    ]
+   },
+   {
+    "id": "violet-dusk-fortress",
+    "name": "Violet Dusk Fortress",
+    "share": 0.33,
+    "setting": "night",
+    "palette": {
+     "colors": [
+      {
+       "hex": "#283469",
+       "share": 0.186,
+       "words": "dark blue",
+       "role": "dusk sea / deep water"
+      },
+      {
+       "hex": "#776bd0",
+       "share": 0.119,
+       "words": "saturated violet",
+       "role": "violet dusk sky"
+      },
+      {
+       "hex": "#363539",
+       "share": 0.119,
+       "words": "dark grey",
+       "role": "ink / deep shadow"
+      },
+      {
+       "hex": "#2e4885",
+       "share": 0.102,
+       "words": "dark blue",
+       "role": "dusk sea / deep water"
+      },
+      {
+       "hex": "#496185",
+       "share": 0.091,
+       "words": "dark muted blue",
+       "role": "castle stone"
+      },
+      {
+       "hex": "#5852b3",
+       "share": 0.078,
+       "words": "dark violet",
+       "role": "violet dusk sky"
+      },
+      {
+       "hex": "#494555",
+       "share": 0.075,
+       "words": "dark grey",
+       "role": "rock shadow / soil"
+      },
+      {
+       "hex": "#682fb1",
+       "share": 0.075,
+       "words": "dark saturated violet",
+       "role": "violet dusk sky"
+      },
+      {
+       "hex": "#3a734a",
+       "share": 0.047,
+       "words": "green"
+      },
+      {
+       "hex": "#9c807b",
+       "share": 0.042,
+       "words": "muted red"
+      },
+      {
+       "hex": "#29262b",
+       "share": 0.042,
+       "words": "very dark grey",
+       "role": "ink / deep shadow"
+      },
+      {
+       "hex": "#c5d2ce",
+       "share": 0.025,
+       "words": "very light grey",
+       "role": "clouds / smoke"
+      }
+     ],
+     "value": {
+      "mean": 0.443,
+      "spread": 0.25,
+      "hist": [
+       0,
+       0,
+       0.002,
+       0.014,
+       0.069,
+       0.261,
+       0.176,
+       0.199,
+       0.136,
+       0.082,
+       0.029,
+       0.008,
+       0.006,
+       0.011,
+       0.005,
+       0.002
+      ]
+     },
+     "chroma": {
+      "mean": 0.097,
+      "spread": 0.131,
+      "hist": [
+       0.087,
+       0.081,
+       0.065,
+       0.082,
+       0.207,
+       0.162,
+       0.02,
+       0.091,
+       0.118,
+       0.03,
+       0.05,
+       0.008,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "warmth": -0.899,
+     "mean": {
+      "L": 0.444,
+      "C": 0.097,
+      "contrast": 0.113,
+      "litL": 0.551,
+      "litC": 0.12
+     }
+    },
+    "edges": {
+     "density": 0.198,
+     "dark": 0.03,
+     "outline": "low"
+    },
+    "lighting": {
+     "key": "#c9b8ff",
+     "fill": "#2d3c71",
+     "sky": [
+      "#6952bd",
+      "#2d3c71"
+     ],
+     "fog": {
+      "color": "#5a4fa0",
+      "density": 0.2
+     },
+     "time": "dusk",
+     "contrast": 0.45
+    },
+    "world": {
+     "setting": "islands",
+     "land": "islands",
+     "horizon": "sea",
+     "water": "sea",
+     "relief": 0.4,
+     "sky": {
+      "kind": "cumulus",
+      "clouds": 0.5,
+      "cloudStyle": "puff",
+      "cloudColor": "#8a78d8"
+     },
+     "props": {
+      "density": 0.45,
+      "dressing": [
+       "onion-dome tower",
+       "fortress gatehouse",
+       "domed kiosk",
+       "rampart corner",
+       "crumbling stone stair",
+       "leaning pine tree",
+       "curly palm tree"
+      ]
+     }
+    },
+    "reads": [
+     "dusk under a saturated violet sky with lilac painted clouds over a deep navy sea",
+     "fortresses of chunky blue-grey stone with big ribbed onion domes in deep teal and gold",
+     "cool violet light over everything, warm lamp glows in small windows",
+     "rounded, chunky, slightly crooked shapes with soft toon shading"
+    ]
+   },
+   {
+    "id": "sunset-canyon-sands",
+    "name": "Sunset Canyon Sands",
+    "share": 0.22,
+    "setting": "day",
+    "palette": {
+     "colors": [
+      {
+       "hex": "#634d44",
+       "share": 0.244,
+       "words": "dark muted red",
+       "role": "rock shadow / soil"
+      },
+      {
+       "hex": "#875c3b",
+       "share": 0.197,
+       "words": "orange",
+       "role": "cliff rock / wood"
+      },
+      {
+       "hex": "#ca8c52",
+       "share": 0.118,
+       "words": "orange",
+       "role": "sand / sandstone"
+      },
+      {
+       "hex": "#eba561",
+       "share": 0.101,
+       "words": "light orange",
+       "role": "sand / sandstone"
+      },
+      {
+       "hex": "#b6754b",
+       "share": 0.097,
+       "words": "orange"
+      },
+      {
+       "hex": "#f9ce75",
+       "share": 0.076,
+       "words": "very light yellow"
+      },
+      {
+       "hex": "#b05d3e",
+       "share": 0.067,
+       "words": "red",
+       "role": "cliff rock / wood"
+      },
+      {
+       "hex": "#b2b9c0",
+       "share": 0.021,
+       "words": "light grey"
+      },
+      {
+       "hex": "#372c2b",
+       "share": 0.021,
+       "words": "dark grey",
+       "role": "ink / deep shadow"
+      },
+      {
+       "hex": "#649ecd",
+       "share": 0.008,
+       "words": "cyan",
+       "role": "day sky / sea"
+      }
+     ],
+     "value": {
+      "mean": 0.563,
+      "spread": 0.375,
+      "hist": [
+       0.048,
+       0.003,
+       0.002,
+       0.003,
+       0.009,
+       0.024,
+       0.107,
+       0.148,
+       0.187,
+       0.1,
+       0.108,
+       0.1,
+       0.069,
+       0.066,
+       0.021,
+       0.008
+      ]
+     },
+     "chroma": {
+      "mean": 0.082,
+      "spread": 0.113,
+      "hist": [
+       0.072,
+       0.145,
+       0.061,
+       0.154,
+       0.111,
+       0.173,
+       0.182,
+       0.091,
+       0.009,
+       0.002,
+       0,
+       0,
+       0,
+       0,
+       0,
+       0
+      ]
+     },
+     "warmth": 0.899,
+     "mean": {
+      "L": 0.561,
+      "C": 0.082,
+      "contrast": 0.166,
+      "litL": 0.635,
+      "litC": 0.096
+     }
+    },
+    "edges": {
+     "density": 0.229,
+     "dark": 0.034,
+     "outline": "low"
+    },
+    "lighting": {
+     "key": "#ffb070",
+     "fill": "#8a5a4a",
+     "sky": [
+      "#e48a5a",
+      "#c56a50"
+     ],
+     "fog": {
+      "color": "#d9906a",
+      "density": 0.25
+     },
+     "time": "golden",
+     "contrast": 0.4
+    },
+    "world": {
+     "setting": "desert",
+     "land": "canyon",
+     "horizon": "sea",
+     "water": "pools",
+     "relief": 0.6,
+     "sky": {
+      "kind": "gradient",
+      "clouds": 0.3,
+      "cloudStyle": "card",
+      "cloudColor": "#b5605a"
+     },
+     "props": {
+      "density": 0.45,
+      "dressing": [
+       "sandstone mesa",
+       "sandstone rock arch",
+       "carved temple wall",
+       "rope plank bridge",
+       "rope ladder lookout",
+       "curly palm tree",
+       "wooden crate"
+      ]
+     }
+    },
+    "reads": [
+     "a warm sunset canyon of orange and rust sandstone in soft horizontal bands over smooth pale-orange sand",
+     "flat-topped mesas and natural rock arches worn smooth and rounded",
+     "old carved sandstone temple walls, wooden rope-and-plank bridges and ladders",
+     "an orange-pink haze and a low golden sun, soft toon shading, chunky rounded shapes"
+    ]
+   }
+  ]
+ },
+ "needs": [
+  {
+   "id": "sunny-castle",
+   "look": "sunny-castle-isles",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "cone-roof castle, castle keep, castle",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "sunny-ruin",
+   "look": "sunny-castle-isles",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "castle wall ruin, ruined wall, ruin",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "sunny-bridge",
+   "look": "sunny-castle-isles",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "arched stone bridge, stone bridge",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "sunny-palm",
+   "look": "sunny-castle-isles",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "palm tree, palm",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "sunny-pine",
+   "look": "sunny-castle-isles",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "leaning pine tree, pine tree, pine",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "dusk-dome-tower",
+   "look": "violet-dusk-fortress",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "onion-dome tower, onion dome, domed tower",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "dusk-gate",
+   "look": "violet-dusk-fortress",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "fortress gatehouse, gatehouse, fortress gate",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "dusk-kiosk",
+   "look": "violet-dusk-fortress",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "domed kiosk, pavilion, gazebo",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "dusk-rampart",
+   "look": "violet-dusk-fortress",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "rampart corner, rampart, battlement",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "dusk-stair",
+   "look": "violet-dusk-fortress",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "crumbling stone stair, stone stairs, stairs",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "canyon-mesa",
+   "look": "sunset-canyon-sands",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "sandstone mesa, mesa, butte",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "canyon-arch",
+   "look": "sunset-canyon-sands",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "sandstone rock arch, rock arch, natural arch",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "canyon-temple",
+   "look": "sunset-canyon-sands",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "carved temple wall, temple wall, temple ruin",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "canyon-rope-bridge",
+   "look": "sunset-canyon-sands",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "rope plank bridge, rope bridge",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "canyon-ladder",
+   "look": "sunset-canyon-sands",
+   "group": "set pieces",
+   "category": "prop",
+   "words": "rope ladder lookout, rope ladder, ladder",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "creature-worm",
+   "group": "characters",
+   "category": "body",
+   "archetype": "worm",
+   "words": "worm, eel, grub, serpent, critter",
+   "count": 2,
+   "dimension": "3d"
+  },
+  {
+   "id": "creature-blob",
+   "group": "characters",
+   "category": "body",
+   "archetype": "blob",
+   "words": "critter, blob, jelly, slime",
+   "count": 4,
+   "dimension": "3d"
+  },
+  {
+   "id": "held-gun",
+   "group": "weapons",
+   "category": "prop",
+   "words": "blaster, gun, launcher, bazooka",
+   "count": 2,
+   "dimension": "3d"
+  },
+  {
+   "id": "rocket",
+   "group": "weapons",
+   "category": "prop",
+   "words": "rocket, firework, missile",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "bomb",
+   "group": "weapons",
+   "category": "prop",
+   "words": "bomb, grenade, dynamite",
+   "count": 2,
+   "dimension": "3d"
+  },
+  {
+   "id": "prize",
+   "group": "pickups",
+   "category": "prop",
+   "words": "trophy, prize, cup",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "health",
+   "group": "pickups",
+   "category": "prop",
+   "words": "health crate, first aid, medkit",
+   "count": 1,
+   "dimension": "3d"
+  },
+  {
+   "id": "crates",
+   "group": "props",
+   "category": "prop",
+   "words": "crate, supply crate, wooden crate",
+   "count": 2,
+   "dimension": "3d"
+  },
+  {
+   "id": "drum",
+   "group": "props",
+   "category": "prop",
+   "words": "oil drum, barrel, drum",
+   "count": 1,
+   "dimension": "3d"
+  }
+ ],
+ "wave": {
+  "id": "looks-wave3-artillery-levels-2026-10-14",
+  "cap": 1000,
+  "pack": "looks-artillery-levels",
+  "packTitle": "Looks wave 3: artillery levels",
+  "packDescribe": "The looks layer's third Meshy wave (2026-10-14): one style anchor per level (a sunny castle isle, a violet dusk fortress, a sunset canyon), each level's set pieces drawn from its anchor, three creatures for the worm and blob standards, and a few weapons and pickups. All our own designs, concept art first. Paid plan: the creator's own.",
+  "tags": [
+   "generated",
+   "meshy",
+   "cartoon",
+   "artillery"
+  ],
+  "looks": {
+   "sunny-castle-isles": {
+    "keep": [
+     "small rounded islands of vivid yellow-green grass on pale sandstone cliffs in an open blue sea",
+     "storybook buildings of cream plaster and chunky crooked stone under terracotta cone roofs",
+     "big soft white clouds in a light blue sky, a warm midday sun",
+     "everything rounded, chunky and a little leaning, painted with soft toon light and no fine detail"
+    ],
+    "subjects": [
+     "a small cream-plaster castle keep with two round towers under terracotta cone roofs",
+     "a curly leaning palm tree",
+     "an arched cobbled stone bridge",
+     "a chunk of yellow-green grass over a pale sandstone cliff",
+     "a round big-eyed critter with a headband and tiny feet"
+    ]
+   },
+   "violet-dusk-fortress": {
+    "keep": [
+     "dusk under a saturated violet sky with lilac painted clouds over a deep navy sea",
+     "fortresses of chunky blue-grey stone with big ribbed onion domes in deep teal and gold",
+     "cool violet light over everything, warm lamp glows in small windows",
+     "rounded, chunky, slightly crooked shapes with soft toon shading"
+    ],
+    "subjects": [
+     "a tall blue-grey stone tower with a ribbed deep-teal onion dome",
+     "a stubby fortress gatehouse with a round arch",
+     "a leaning cartoon pine tree",
+     "a chunk of grassy island with a blue-grey stone cliff",
+     "a glowing lantern"
+    ]
+   },
+   "sunset-canyon-sands": {
+    "keep": [
+     "a warm sunset canyon of orange and rust sandstone in soft horizontal bands over smooth pale-orange sand",
+     "flat-topped mesas and natural rock arches worn smooth and rounded",
+     "old carved sandstone temple walls, wooden rope-and-plank bridges and ladders",
+     "an orange-pink haze and a low golden sun, soft toon shading, chunky rounded shapes"
+    ],
+    "subjects": [
+     "a flat-topped sandstone mesa with orange and rust bands",
+     "a natural sandstone rock arch",
+     "a rope-and-plank bridge between stout wooden posts",
+     "a broken carved sandstone temple wall",
+     "a desert palm tree"
+    ]
+   }
+  },
+  "items": [
+   {
+    "id": "cone-roof-castle",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 8,
+    "polycount": 12000,
+    "collider": "box",
+    "words": "a small storybook castle keep of cream plaster and chunky crooked stone: two round towers of different heights joined by a short wall with a rounded wooden door, each tower under a tall terracotta cone roof, small dark windows; chunky, rounded, slightly leaning"
+   },
+   {
+    "id": "castle-wall-ruin",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 6,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a broken stretch of old castle wall of chunky rounded cream stone blocks with one round archway and a half-fallen round turret, tufts of grass on top, a few fallen blocks at its foot"
+   },
+   {
+    "id": "arched-stone-bridge",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 8,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a short chunky arched bridge of rounded cobbles all in warm cream and pale sandstone tones with no dark or black stones, one wide round arch, low rounded parapet walls on both sides, a little moss"
+   },
+   {
+    "id": "curly-palm-tree",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 5,
+    "collider": "trunk",
+    "words": "a cartoon palm tree with a curving trunk of chunky stacked rings leaning to one side, a crown of six big rounded bright green fronds and three coconuts"
+   },
+   {
+    "id": "leaning-pine-tree",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 5,
+    "collider": "trunk",
+    "words": "a cartoon pine tree leaning a little, three chunky stacked rounded tiers of deep green foliage with soft bevels, a short brown trunk"
+   },
+   {
+    "id": "onion-dome-tower",
+    "look": "violet-dusk-fortress",
+    "kind": "prop",
+    "size": 9,
+    "polycount": 12000,
+    "collider": "cylinder",
+    "words": "a tall round tower of chunky blue-grey stone bricks with a balcony ring near the top, crowned by a big ribbed onion dome in deep teal with gold ribs and a small gold spire, a few small arched windows glowing warm yellow"
+   },
+   {
+    "id": "fortress-gatehouse",
+    "look": "violet-dusk-fortress",
+    "kind": "prop",
+    "size": 7,
+    "polycount": 12000,
+    "collider": "box",
+    "words": "a squat fortress gatehouse of chunky blue-grey stone: a wide round arched gate with a wooden door, two stubby round towers with rounded crenellations, one tower partly broken"
+   },
+   {
+    "id": "domed-kiosk",
+    "look": "violet-dusk-fortress",
+    "kind": "prop",
+    "size": 4.5,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a small open pavilion: four chunky round stone columns holding a small ribbed onion dome in deep teal and gold, a round stone floor with two steps"
+   },
+   {
+    "id": "rampart-corner",
+    "look": "violet-dusk-fortress",
+    "kind": "prop",
+    "size": 6,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a corner of a fortress rampart: two short thick walls of chunky blue-grey stone meeting at a right angle, rounded crenellations along the top, a small flagpole with a plain pennant at the corner"
+   },
+   {
+    "id": "crumbling-stone-stair",
+    "look": "violet-dusk-fortress",
+    "kind": "prop",
+    "size": 5,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a crumbling staircase of chunky blue-grey stone blocks rising to nowhere, a broken archway at the top, some blocks fallen beside it"
+   },
+   {
+    "id": "sandstone-mesa",
+    "look": "sunset-canyon-sands",
+    "kind": "prop",
+    "size": 9,
+    "polycount": 10000,
+    "collider": "cylinder",
+    "words": "a flat-topped sandstone mesa with steep rounded sides in soft horizontal bands of orange, rust and pale cream, a few small rocks at its base, worn smooth and chunky"
+   },
+   {
+    "id": "sandstone-rock-arch",
+    "look": "sunset-canyon-sands",
+    "kind": "prop",
+    "size": 8,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a natural rock arch of orange and rust banded sandstone, thick rounded legs and a chunky curved span, worn smooth by wind"
+   },
+   {
+    "id": "carved-temple-wall",
+    "look": "sunset-canyon-sands",
+    "kind": "prop",
+    "size": 6,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a broken old temple wall of big rounded sandstone blocks with simple carved spirals and sun discs, one broken column standing beside it, sand drifted at its foot; clean warm sandstone everywhere, no dark, burnt or black patches"
+   },
+   {
+    "id": "rope-plank-bridge",
+    "look": "sunset-canyon-sands",
+    "kind": "prop",
+    "size": 7,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a rope-and-plank bridge: a sagging deck of chunky wooden planks hung on two thick ropes between pairs of stout wooden posts at each end"
+   },
+   {
+    "id": "rope-ladder-lookout",
+    "look": "sunset-canyon-sands",
+    "kind": "prop",
+    "size": 5,
+    "polycount": 10000,
+    "collider": "box",
+    "words": "a small wooden lookout platform on four stout leaning wooden poles, a rope ladder of chunky rungs hanging from its edge, a little striped canvas awning"
+   },
+   {
+    "id": "noodle-eel",
+    "look": "sunny-castle-isles",
+    "kind": "body",
+    "archetype": "worm",
+    "size": 1.4,
+    "words": "a long round-bodied noodle eel creature standing upright on its tail in a gentle S, sea teal with soft yellow bands, a small fin crest on its head, huge round white eyes with black pupils, a wide cheeky smile; no arms, no legs"
+   },
+   {
+    "id": "sprout-grub",
+    "look": "sunny-castle-isles",
+    "kind": "body",
+    "archetype": "worm",
+    "size": 1.2,
+    "words": "a plump segmented grub creature standing upright, lime green with orange spots, a small leaf sprouting from the top of its head, huge round white eyes with black pupils, a tiny smile; no arms, no legs"
+   },
+   {
+    "id": "jelly-drop",
+    "look": "sunny-castle-isles",
+    "kind": "body",
+    "archetype": "blob",
+    "size": 1.0,
+    "words": "a squat round jelly-drop creature in grape purple with a pale lilac belly, a little curled stalk on top, huge round white eyes with black pupils, two tiny nub hands and two tiny nub feet"
+   },
+   {
+    "id": "fizz-blaster",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "held": true,
+    "size": 1.0,
+    "words": "a stubby cartoon blaster gun built from a round soda-bottle tank, orange and teal, a wide bell-shaped muzzle, a chunky grip and a big trigger"
+   },
+   {
+    "id": "firework-rocket",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "held": true,
+    "size": 0.9,
+    "words": "a chunky cartoon firework rocket with a red-and-white striped body, a pointed yellow nose cone, three small fins and a short fuse"
+   },
+   {
+    "id": "bounce-bomb",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "held": true,
+    "size": 0.5,
+    "words": "a round bright cherry-red cartoon bomb wrapped in a thick springy yellow rubber band, a short curly fuse on top"
+   },
+   {
+    "id": "prize-trophy",
+    "look": "sunny-castle-isles",
+    "kind": "prop",
+    "size": 0.8,
+    "collider": "box",
+    "words": "a chunky gold trophy cup with two round handles on a short teal base, a big round gem set in its front"
+   }
+  ]
+ }
+}

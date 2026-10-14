@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tent-detailedopen",
+ "pack": "kenney-nature-kit-full",
+ "file": "tent-detailedopen.glb",
+ "sha256": "6eab6a525841900ef8743a0d55f8506f8704f8963431ec9acb31d09f1ad96882",
+ "bytes": 5500,
+ "preview": "previews/tent-detailedopen.png",
+ "from": "Models/GLTF format/tent_detailedOpen.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tent detailedopen",
+ "tags": [
+  "tent",
+  "detailedopen"
+ ],
+ "use": {
+  "size": [
+   0.875,
+   0.561,
+   0.666
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 232,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 232,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5500,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f19398",
+     "#ffc5a7"
+    ],
+    "saturation": 0.782,
+    "value": 0.764,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.948
+     },
+     {
+      "hue": "orange",
+      "share": 0.052
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d54d9665d07e0ff9680e56731c9f5338fc25d93788504d63b8375f54e6444193",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

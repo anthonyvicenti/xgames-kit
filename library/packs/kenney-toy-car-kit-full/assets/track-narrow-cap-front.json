@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "track-narrow-cap-front",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-narrow-cap-front.glb",
+ "sha256": "d2e4264f2fb9624ca90b774a327111ec1857a172d4a7cee75eccf12ba6a076dc",
+ "bytes": 12008,
+ "preview": "previews/track-narrow-cap-front.png",
+ "from": "Models/GLB format/track-narrow-cap-front.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track narrow cap front",
+ "tags": [
+  "track",
+  "narrow",
+  "cap",
+  "front"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ff7944",
+     "#585abf",
+     "#658dd6",
+     "#ff7e44",
+     "#ff8644",
+     "#5d6cc7",
+     "#617dcf",
+     "#ff8f44"
+    ],
+    "saturation": 0.762,
+    "value": 0.609,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.512
+     },
+     {
+      "hue": "blue",
+      "share": 0.488
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.97,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "50eac0929ff55260cce730cd46fbd740a4ed8bceda90916ddb1b488a17f00118",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

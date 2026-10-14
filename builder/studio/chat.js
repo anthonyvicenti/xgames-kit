@@ -44,6 +44,12 @@ export function choiceRequest(card, answers, folder) {
     `The person chose card "${card.id}" of your concepts for ${folder}${answers.length ? ` and answered: ${answers.map(a => `${a.id} = ${a.option}`).join(', ')}` : ''}. The run waits on this answer: call gamesfun_step_pitch {"game": "${folder}", "choice": {"card": "${card.id}", "answers": {${answers.map(a => `"${a.id}": "${a.option}"`).join(', ')}}, "words": <the words above>}}, then do what its answer names.`);
 }
 
+/** The person picked a look (the loop's look step, before the build round): the way back into the run. */
+export function lookRequest(option, folder) {
+  return compose(`Let's go with the look "${option.title}".`,
+    `The person picked the look "${option.id}" for ${folder}. The run waits on this answer: call gamesfun_step_look {"game": "${folder}", "pick": {"option": "${option.id}", "words": <the words above>}}, then do what its answer names.`);
+}
+
 export function mountChat(root, ctx) {
   const events = [], answered = new Set(), removed = new Set();
   let queueRaw = null, build = null, setup = null, context = null, lastKey = '', picked = null;
@@ -238,6 +244,25 @@ export function mountChat(root, ctx) {
     return NONE_HINT;
   }
 
+  // the look options: each reading of the style target as a contact sheet on this game's own world; one pick
+  function looksView(L) {
+    if (!L?.options?.length) return null;
+    if (!L.waiting) return bubble('them', [el('div', { className: 'small' }, `Look: ${L.options.find(o => o.id === L.pick?.option)?.title ?? 'chosen'}${L.pick?.by === 'judge' ? ' (the judge\'s pick)' : ''}`)], { 'data-part': 'looks' });
+    const opts = L.options.map(o => el('article', { className: 'concept look-option', 'data-look': o.id, 'aria-current': picked === `look:${o.id}` ? 'true' : null },
+      el('h3', {}, o.title), el('a', { href: o.sheet, target: '_blank', rel: 'noopener' }, el('img', { src: o.sheet, alt: `The look "${o.title}" on this game`, loading: 'lazy', style: 'width:100%;border-radius:6px' })),
+      el('p', { className: 'small' }, o.reading), o.score != null ? el('p', { className: 'small muted' }, `Judge's score: ${o.score}`) : null,
+      picked === `look:${o.id}` ? el('div', { className: 'concept-picked small' }, 'Your pick: sent to your session') : null,
+      !picked ? el('button', { type: 'button', className: 'concept-go', on: { click: async e => {
+        e.currentTarget.disabled = true; picked = `look:${o.id}`; lastKey = '';
+        try { await submit(lookRequest(o, folder()), { selection: null }); ctx.toast(`Sent: the look "${o.title}"`, 'ok'); }
+        catch (err) { ctx.toast(err.message, 'error'); picked = null; lastKey = ''; paint(); }
+      } } }, 'Use this look') : null));
+    return bubble('them card wide', [
+      el('div', { className: 'msg-title' }, 'Before the build: pick the look'),
+      L.reads?.length ? el('p', { className: 'small' }, `What makes your references read: ${L.reads.join(' · ')}`) : null,
+      el('div', { className: 'concepts' }, ...opts)], { 'data-part': 'looks' });
+  }
+
   function paint() {
     const c = paintStatus();
     const q = readQueue(queueRaw, removed);
@@ -252,7 +277,7 @@ export function mountChat(root, ctx) {
     for (const cp of build?.checkpoints ?? []) items.push({ at: when(cp.at), node: line(el('span', {}, cp.label ?? `Round ${cp.round ?? cp.id}`, ' ', el('button', { type: 'button', className: 'linkish', on: { click: () => rollback(cp) } }, 'Roll back to this')), cp.at, { className: 'msg-line checkpoint' }) });
     if (v.status !== 'waiting-on-creator') { const folded = pitchView(build?.pitch, v); if (folded) items.push({ at: 1, node: folded }); }
     items.sort((a, b) => a.at - b.at);
-    const key = JSON.stringify([q.requests.map(r => [r.id, r.state, r.note, r.text]), c.guard?.why ?? null, c.mode, events.length, build?.loop?.updated ?? build?.loop?.step, build?.loop?.status, (build?.checkpoints ?? []).length, build?.verdict?.run, !!build?.pitch, made, c.state, setup?.connected, removed.size, answered.size, q.permissions.length, picked, [...(openSecs ?? [])].join()]);
+    const key = JSON.stringify([q.requests.map(r => [r.id, r.state, r.note, r.text]), c.guard?.why ?? null, c.mode, events.length, build?.loop?.updated ?? build?.loop?.step, build?.loop?.status, (build?.checkpoints ?? []).length, build?.verdict?.run, !!build?.pitch, build?.looks?.waiting ?? null, build?.looks?.pick?.option ?? null, made, c.state, setup?.connected, removed.size, answered.size, q.permissions.length, picked, [...(openSecs ?? [])].join()]);
     if (key === lastKey) return;
     lastKey = key;
     const stick = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 40;
@@ -287,7 +312,9 @@ export function mountChat(root, ctx) {
       if (panel) live.append(panel);
     }
     const pv = pitchView(build?.pitch, v);
-    if (pv && v.status === 'waiting-on-creator') live.append(pv);
+    if (pv && v.status === 'waiting-on-creator' && build?.loop?.waiting?.about !== 'looks') live.append(pv);
+    const lv = looksView(build?.looks);
+    if (lv) live.append(lv);
     if (build?.verdict) live.append(verdictView(build.verdict));
     else if (v.present && v.verify) live.append(bubble('them card', [   // the loop's own verify run (its verdict is in the loop's folder)
       el('div', { className: 'msg-title' }, el('span', { className: `st ${v.verify.ok ? 'pass' : 'fail'}` }, v.verify.ok ? 'PASS' : 'FAIL'), ` The six gates, run ${v.verify.n ?? ''}`, el('span', { className: 'time' }, clock(v.verify.at))),

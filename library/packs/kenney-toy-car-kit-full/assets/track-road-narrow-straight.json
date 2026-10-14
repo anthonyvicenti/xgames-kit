@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-straight",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-straight.glb",
+ "sha256": "e0b2ef946f3e74eae740243722b47f501829a7cc79fab3633ed2abe69aa1e06b",
+ "bytes": 15840,
+ "preview": "previews/track-road-narrow-straight.png",
+ "from": "Models/GLB format/track-road-narrow-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow straight",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15840,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.387,
+    "value": 0.659,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.357
+     },
+     {
+      "hue": "red",
+      "share": 0.355
+     },
+     {
+      "hue": "grey",
+      "share": 0.288
+     }
+    ],
+    "grey": 0.288
+   },
+   "trianglesPerMetre": 4.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b1e64ce8a2ccddc524f9c98299b4f0470e6064bb46e5b902d4465a0c1433f014",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-block",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-block.glb",
+ "sha256": "021f5d9acf96211b29baaa80b1b47331c08f9055b5256fb21125a3fbcee304ed",
+ "bytes": 14868,
+ "preview": "previews/wall-wood-block.png",
+ "from": "Models/GLB format/wall-wood-block.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood block",
+ "tags": [
+  "wall",
+  "wood",
+  "block"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14868,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#8c5541",
+     "#945945",
+     "#9c5e48",
+     "#85503e",
+     "#c3805f",
+     "#c78362",
+     "#be7c5d",
+     "#cc8665"
+    ],
+    "saturation": 0.383,
+    "value": 0.442,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.588
+     },
+     {
+      "hue": "brown",
+      "share": 0.412
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c405053f4ac8ae0c85e9973613d205f0bc9dff0a5fe95a4910823384e131e824",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

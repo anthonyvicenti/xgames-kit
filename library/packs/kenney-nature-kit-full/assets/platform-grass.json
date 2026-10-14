@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "platform-grass",
+ "pack": "kenney-nature-kit-full",
+ "file": "platform-grass.glb",
+ "sha256": "761bbb57808ff5e51f72e72a27441a8491092ad753df5f017796fa34f591f527",
+ "bytes": 5192,
+ "preview": "previews/platform-grass.png",
+ "from": "Models/GLTF format/platform_grass.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "platform grass",
+ "tags": [
+  "platform",
+  "grass"
+ ],
+ "use": {
+  "size": [
+   0.893,
+   0.083,
+   0.724
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 186,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 186,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5192,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.765,
+    "value": 0.764,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.783
+     },
+     {
+      "hue": "cyan",
+      "share": 0.217
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.77,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "74105fc9912c97e7809264dd69621863e0ddfd6ab92136f05918eda436ee898b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

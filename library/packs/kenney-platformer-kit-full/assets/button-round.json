@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "button-round",
+ "pack": "kenney-platformer-kit-full",
+ "file": "button-round.glb",
+ "sha256": "7b9c102d4a930dcd53a68dff9326ba7f39365c5f215ffd63c5d5d3af5c091ce9",
+ "bytes": 19916,
+ "preview": "previews/button-round.png",
+ "from": "Models/GLB format/button-round.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "button round",
+ "tags": [
+  "button",
+  "round"
+ ],
+ "use": {
+  "size": [
+   0.58,
+   0.185,
+   0.502
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 19916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#65657a",
+     "#c1c1d8",
+     "#6f7085",
+     "#797c91",
+     "#e66048",
+     "#82879d",
+     "#f36744",
+     "#fa6b41"
+    ],
+    "saturation": 0.319,
+    "value": 0.573,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.559
+     },
+     {
+      "hue": "red",
+      "share": 0.269
+     },
+     {
+      "hue": "blue",
+      "share": 0.172
+     }
+    ],
+    "grey": 0.559
+   },
+   "trianglesPerMetre": 10.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b029052de9a7f21c1f72db6ca24b5dd1cfca613b5ab00af35af2c4b55c422d88",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

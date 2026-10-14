@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-corner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-corner.glb",
+ "sha256": "f6c37a5f85a81f0fba4bed969105c95aadedcdf07a0ae4a5d5d19e8275a3903d",
+ "bytes": 14532,
+ "preview": "previews/wall-wood-corner.png",
+ "from": "Models/GLB format/wall-wood-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood corner",
+ "tags": [
+  "wall",
+  "wood",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14532,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8c5541",
+     "#945945",
+     "#c3805f",
+     "#c78362",
+     "#9c5e48",
+     "#85503e",
+     "#cc8665",
+     "#be7c5d"
+    ],
+    "saturation": 0.392,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.636
+     },
+     {
+      "hue": "brown",
+      "share": 0.364
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f4c38de352c80c110874fabe7323577d985af191c25242887574238146dc7d82",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

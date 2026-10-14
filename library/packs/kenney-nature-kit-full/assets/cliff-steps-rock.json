@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-steps-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-steps-rock.glb",
+ "sha256": "5124d95bdde7e7959d00c36c3c7809a026ca56328aff8646b026e0679df9787d",
+ "bytes": 5684,
+ "preview": "previews/cliff-steps-rock.png",
+ "from": "Models/GLTF format/cliff_steps_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff steps rock",
+ "tags": [
+  "cliff",
+  "steps",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1.05
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 219,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 219,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5684,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.766,
+    "value": 0.762,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.762
+     },
+     {
+      "hue": "cyan",
+      "share": 0.238
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f290e67a836ec459efcedb013f67258c2043fec128f07d6a16454e8505b7530f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

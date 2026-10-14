@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinegrounda",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinegrounda.glb",
+ "sha256": "31efc71c41d7f03751e6cb38101abf56dbd9b6427b17989eaeace1d5ce93efdb",
+ "bytes": 3120,
+ "preview": "previews/tree-pinegrounda.png",
+ "from": "Models/GLTF format/tree_pineGroundA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinegrounda",
+ "tags": [
+  "tree",
+  "pinegrounda"
+ ],
+ "use": {
+  "size": [
+   0.48,
+   0.914,
+   0.555
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 82,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 82,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3120,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#72d3d5"
+    ],
+    "saturation": 0.541,
+    "value": 0.641,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.71,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "dfffda4e4f0796076c502561cbf9527245656b7384b67657edc2a45205bbce51",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

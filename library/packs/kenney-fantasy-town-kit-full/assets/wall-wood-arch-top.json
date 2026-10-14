@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-arch-top",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-arch-top.glb",
+ "sha256": "ee2a50f13f22035b16b0640918fab38992937d4697ea1bd40de034901345b37b",
+ "bytes": 16008,
+ "preview": "previews/wall-wood-arch-top.png",
+ "from": "Models/GLB format/wall-wood-arch-top.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood arch top",
+ "tags": [
+  "wall",
+  "wood",
+  "arch",
+  "top"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 146,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 146,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#9a5d47",
+     "#975b46",
+     "#8c5541",
+     "#985c47",
+     "#955a45",
+     "#945a45"
+    ],
+    "saturation": 0.32,
+    "value": 0.481,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.588
+     },
+     {
+      "hue": "grey",
+      "share": 0.277
+     },
+     {
+      "hue": "brown",
+      "share": 0.135
+     }
+    ],
+    "grey": 0.277
+   },
+   "trianglesPerMetre": 9.09,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "595a0235499eb7adc79c4bb8ddd49cda81e170d70632e22bfa83756909eae345",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "statue-head",
+ "pack": "kenney-nature-kit-full",
+ "file": "statue-head.glb",
+ "sha256": "aa71133f5c43aa5e8eb8c362a4b8760d2458e353c6905f5a52d6c0ee97faa632",
+ "bytes": 6488,
+ "preview": "previews/statue-head.png",
+ "from": "Models/GLTF format/statue_head.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "statue head",
+ "tags": [
+  "statue",
+  "head"
+ ],
+ "use": {
+  "size": [
+   0.726,
+   1,
+   0.554
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 196,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 196,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6488,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff",
+     "#ccdbde"
+    ],
+    "saturation": 0.48,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.925
+     },
+     {
+      "hue": "grey",
+      "share": 0.075
+     }
+    ],
+    "grey": 0.075
+   },
+   "trianglesPerMetre": 9.59,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "02a0c58e713176004f9054f6a6181b965e2cc25ff7c77f5d17458b00c270b60e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -33,6 +33,7 @@ import { REPO, KIT, SCENIC_KIT, FORGE, FORGE_KIT, VISTA_KIT, importPart, KIT_VER
 import { check, withDefaults } from './lib/schema.mjs';
 import { readSpec, readCatalog, lookOf, planeOf } from './lib/spec.mjs';
 import { applyKind } from '../../kinds/apply.mjs';
+import { applyTarget } from '../look/apply.mjs';
 import { put, vendorLibraries, vendorKit, vendorGfAssets, kitModuleFiles, optionalModuleDirs, gameCodeTexts, kitNow } from './lib/vendor.mjs';
 import { overrideConflicts, holdOverrides } from './lib/overrides.mjs';
 import { importKitModule } from './lib/kit-import.mjs';
@@ -138,6 +139,26 @@ export async function decideModules({ standins = false, standinMechanics = false
     out.mechanics.push(id); mods.mechanics[id] = m;
   }
   return { modules: out, why, mods };
+}
+
+/**
+ * The camera behind a player who is a small creature (CREATURES.md: a 0.8 m critter, a 0.2 m snake): the kind's rig is
+ * set for a person 1.7 m tall, so the creature would be a speck at the bottom of the screen. Its distance, height and
+ * shoulder come in by the creature's height over a person's (at most to 45%); each stays a slot. A person's rig is
+ * untouched.
+ */
+export function cameraForBody(C) {
+  const r = C.characters?.roles?.player;
+  const cams = C.game?.controller?.camera;
+  if (!r?.archetype || r.archetype === 'humanoid' || !cams || typeof r.height !== 'number' || r.height >= 1.5) return [];
+  const k = Math.max(0.45, Math.min(1, r.height / 1.7));
+  const said = [];
+  for (const mode of ['third', 'orbit']) {
+    const c = cams[mode]; if (!c) continue;
+    for (const f of ['distance', 'minDistance', 'maxDistance', 'height', 'shoulder']) if (typeof c[f] === 'number') c[f] = +(c[f] * k).toFixed(2);
+    said.push(mode);
+  }
+  return said.length ? [`camera ${said.join(', ')}: brought in to the player's size (a ${r.height} m ${r.archetype}, ×${k.toFixed(2)} of a person's distance and height)`] : [];
 }
 
 export async function create(specPath, outDir, { force = false, newRules = false, standins = null, standinMechanics = null, kitDir = KIT, log = () => {} } = {}) {
@@ -250,6 +271,8 @@ export async function create(specPath, outDir, { force = false, newRules = false
   const mechanicItems = Object.fromEntries(Object.entries(mods.mechanics ?? {}).filter(([, m]) => Array.isArray(m.manifest?.items)).map(([id, m]) => [id, m.manifest.items]));
   const C = await specToConfig(spec, { place, modules, lookPreset, lookConfig, standinPresetValues: standinLook.presetValues, mechanicDefaults, mechanicSounds, mechanicItems, worldConfig, flow: flowUse, flat: flat ? { part: flatPart, plane: flat, style: flatPart.presets[spec.look?.preset]?.style ?? 'pixel', repoFile: flatFile } : null });
   C.notes.unshift(...madeNotes, ...(await applyKind(C, spec, { place })).notes);   // the kind's layer: kinds/apply.mjs (the one seam)
+  C.notes.push(...applyTarget(C, spec, { place }).notes);   // the style target over the kind, then the spec's own look values (builder/look/apply.mjs)
+  C.notes.push(...cameraForBody(C));                       // a small creature's camera comes in to its size
   // a param whose default follows the game's own config (a mechanic module's derive(game, params), after the kind has
   // set the camera): only what the spec left unset, and said in the notes
   for (const m of C.game?.mechanics ?? []) {

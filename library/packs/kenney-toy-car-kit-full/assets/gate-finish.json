@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "gate-finish",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "gate-finish.glb",
+ "sha256": "e3b01ecc4975226f1b06e0d821bc0685d8bbf44b255cd43ae57c6f6a914b20f6",
+ "bytes": 13296,
+ "preview": "previews/gate-finish.png",
+ "from": "Models/GLB format/gate-finish.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "gate finish",
+ "tags": [
+  "gate",
+  "finish"
+ ],
+ "use": {
+  "size": [
+   1.55,
+   1.162,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13296,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#e6e6ef",
+     "#c7c7db",
+     "#cdcddf",
+     "#eaeaf2",
+     "#dadae7",
+     "#424451",
+     "#ffc658",
+     "#464957"
+    ],
+    "saturation": 0.366,
+    "value": 0.706,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.397
+     },
+     {
+      "hue": "grey",
+      "share": 0.383
+     },
+     {
+      "hue": "orange",
+      "share": 0.219
+     }
+    ],
+    "grey": 0.383
+   },
+   "trianglesPerMetre": 6.29,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "735544560f5e9b4b49fc6d1e59ae62a5e0a2d351a50a7a145f587a0dbb96df9e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

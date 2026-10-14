@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-straight-hill-complete",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-straight-hill-complete.glb",
+ "sha256": "4a0bb7def1614abe2ad8fb3943f9ed85c666c4acf3d1d40da07167110378c4ae",
+ "bytes": 16484,
+ "preview": "previews/track-striped-narrow-straight-hill-complete.png",
+ "from": "Models/GLB format/track-striped-narrow-straight-hill-complete.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow straight hill complete",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "straight",
+  "hill",
+  "complete"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16484,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#fa6b41"
+    ],
+    "saturation": 0.471,
+    "value": 0.715,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.491
+     },
+     {
+      "hue": "blue",
+      "share": 0.424
+     },
+     {
+      "hue": "grey",
+      "share": 0.086
+     }
+    ],
+    "grey": 0.086
+   },
+   "trianglesPerMetre": 4.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0c566c6cba89d9f2224cb347bdcf8c3e63fb3586387556628fa7124613554974",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-cave-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-cave-rock.glb",
+ "sha256": "2930b185ccbf7b624b1f05f4b5ea57235ee1b9d1322120f6e9eb0665e3b5a03a",
+ "bytes": 2688,
+ "preview": "previews/cliff-cave-rock.png",
+ "from": "Models/GLTF format/cliff_cave_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff cave rock",
+ "tags": [
+  "cliff",
+  "cave",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.168
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2688,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2d83296b0166ad0e980152ad4f45b4e45349e932a6b6c2adbe7eb606a6472d8d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

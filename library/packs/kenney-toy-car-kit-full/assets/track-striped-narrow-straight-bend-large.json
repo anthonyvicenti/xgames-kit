@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-straight-bend-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-straight-bend-large.glb",
+ "sha256": "880cd068ee9abc587d9cbe6f3d21d7b10fdf4d635b689b78e53de4ed49955f04",
+ "bytes": 18004,
+ "preview": "previews/track-striped-narrow-straight-bend-large.png",
+ "from": "Models/GLB format/track-striped-narrow-straight-bend-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow straight bend large",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "straight",
+  "bend",
+  "large"
+ ],
+ "use": {
+  "size": [
+   1,
+   4.2,
+   4.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 316,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 316,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#e2e2ed",
+     "#eb6246"
+    ],
+    "saturation": 0.471,
+    "value": 0.717,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.493
+     },
+     {
+      "hue": "blue",
+      "share": 0.43
+     },
+     {
+      "hue": "grey",
+      "share": 0.077
+     }
+    ],
+    "grey": 0.077
+   },
+   "trianglesPerMetre": 4.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0695ea42dfb9f08fd7aa1a86b70f7cf31de0d4bd58d3b49392f98d5e0397a764",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -148,7 +148,7 @@ export function bodyEntry(a, L = artLibrary()) {
   // the standing height rig-check measured on the standard (a hat or a raised weapon is not the body's height)
   return {
     id: a.id, ref: refOf(a), label: x.label ?? a.id, file: `${a.pack}/${a.file}`, describe: x.describeFull ?? a.describe, tags: a.tags ?? [],
-    from: x.kind ?? (/^bean-/.test(a.id) ? 'bean' : 'library'), rig: u.rig ?? 'gf-humanoid-1', height: judge?.report?.facts?.height ?? u.height ?? u.size?.[1] ?? null, tint: u.tint ?? [],
+    from: x.kind ?? (/^bean-/.test(a.id) ? 'bean' : 'library'), rig: u.rig ?? 'gf-humanoid-1', archetype: u.archetype ?? ARCHETYPE_OF_RIG[u.rig ?? 'gf-humanoid-1'] ?? 'humanoid', height: judge?.report?.facts?.height ?? u.height ?? u.size?.[1] ?? null, tint: u.tint ?? [],
     ...(x.color ? { color: x.color } : {}), ...(x.default ? { default: true } : {}), bytes: a.bytes, sha256: a.sha256,
     triangles: a.budgets?.triangles ?? null, joints: a.budgets?.joints ?? null,
     license: { spdx: lic.spdx, author: lic.author, url: lic.url, ...(lic.credit ? { credit: lic.credit, title: lic.title } : {}) },
@@ -156,9 +156,12 @@ export function bodyEntry(a, L = artLibrary()) {
   };
 }
 
-/** Bodies in a scope that pass their validator (a body the model judge fails is never offered), a pack's default first. */
-export function bodiesIn(scope, { L = artLibrary(), all = false } = {}) {
-  const list = assetsIn(scope, { L, category: 'body' }).filter(a => all || (a.validated ?? []).every(v => v.ok !== false)).map(a => bodyEntry(a, L));
+/** A body's rig standard → its archetype (runtimes/three/kit/character/archetypes.js). */
+export const ARCHETYPE_OF_RIG = { 'gf-humanoid-1': 'humanoid', 'gf-worm-1': 'worm', 'gf-blob-1': 'blob', 'gf-quadruped-1': 'quadruped', 'gf-flyer-1': 'flyer' };
+/** Bodies in a scope that pass their validator (a body the model judge fails is never offered), a pack's default first.
+ *  archetype: only bodies of that archetype (humanoid, worm, blob, quadruped, flyer). */
+export function bodiesIn(scope, { L = artLibrary(), all = false, archetype = null } = {}) {
+  const list = assetsIn(scope, { L, category: 'body' }).filter(a => all || (a.validated ?? []).every(v => v.ok !== false)).map(a => bodyEntry(a, L)).filter(b => !archetype || b.archetype === archetype);
   return [...list.filter(b => b.default), ...list.filter(b => !b.default)];
 }
 

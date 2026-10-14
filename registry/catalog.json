@@ -1,12 +1,13 @@
 {
   "catalogVersion": 1,
   "inputs": {
-    "sha256": "19c5678b9247d34a8fb321fffa569a67354ffabb35c99d9bd54147389f980dbc",
+    "sha256": "0aea68abf759c7a931c8a1618565ccb6a6f1175e620d0b0bd39d915f33a78ce1",
     "files": [
       "components/board/mechanic.json",
       "components/boss/mechanic.json",
       "components/build/mechanic.json",
       "components/carry/mechanic.json",
+      "components/carve/mechanic.json",
       "components/health/mechanic.json",
       "components/levels/mechanic.json",
       "components/loot/mechanic.json",
@@ -135,12 +136,14 @@
             },
             "capabilities": [
               "characters",
+              "creature-bodies",
               "physics-bodies",
               "ragdoll",
               "projectiles",
               "melee",
               "enemies",
               "voxel-world",
+              "smooth-terrain",
               "persistent-world",
               "ui-panels",
               "board-grid",
@@ -381,31 +384,148 @@
           "id": "arena",
           "profiles": [
             "standard-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "arena",
+              "yard"
+            ],
+            "land": [
+              "flat",
+              "terraces"
+            ],
+            "horizon": [
+              "walls",
+              "trees",
+              "sky"
+            ],
+            "water": [
+              "none"
+            ]
+          }
         },
         {
           "id": "backyard",
           "profiles": [
             "standard-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "yard",
+              "town"
+            ],
+            "land": [
+              "flat"
+            ],
+            "horizon": [
+              "trees",
+              "city"
+            ],
+            "water": [
+              "none",
+              "pools"
+            ]
+          }
         },
         {
           "id": "office",
           "profiles": [
             "standard-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "indoor"
+            ],
+            "land": [
+              "rooms",
+              "flat"
+            ],
+            "horizon": [
+              "walls",
+              "city"
+            ],
+            "water": [
+              "none"
+            ]
+          }
         },
         {
           "id": "plaza",
           "profiles": [
             "standard-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "town",
+              "yard"
+            ],
+            "land": [
+              "flat"
+            ],
+            "horizon": [
+              "city",
+              "trees"
+            ],
+            "water": [
+              "none",
+              "pools"
+            ]
+          }
         },
         {
           "id": "store",
           "profiles": [
             "standard-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "indoor"
+            ],
+            "land": [
+              "rooms",
+              "flat"
+            ],
+            "horizon": [
+              "walls",
+              "city"
+            ],
+            "water": [
+              "none"
+            ]
+          }
+        },
+        {
+          "id": "sea-islands",
+          "profiles": [
+            "standard-3d"
+          ],
+          "describe": "islands in an open sea: a main island with rolling hills and cut cliffs, beaches, more islands on the horizon, big clouds",
+          "reads": {
+            "setting": [
+              "islands",
+              "coast",
+              "hills",
+              "ruins",
+              "desert"
+            ],
+            "land": [
+              "islands",
+              "cliffs",
+              "hills",
+              "canyon",
+              "terraces"
+            ],
+            "horizon": [
+              "sea",
+              "sky"
+            ],
+            "water": [
+              "sea"
+            ],
+            "traits": [
+              "cross-section"
+            ]
+          }
         },
         {
           "id": "voxel",
@@ -415,45 +535,225 @@
           "loops": [
             "world"
           ],
-          "describe": "a generated block island players change, saved on the play host"
+          "describe": "a generated block island players change, saved on the play host",
+          "reads": {
+            "setting": [
+              "blocks",
+              "hills",
+              "cave",
+              "mountains",
+              "forest"
+            ],
+            "land": [
+              "blocky",
+              "hills",
+              "terraces",
+              "cliffs"
+            ],
+            "horizon": [
+              "hills",
+              "mountains",
+              "sky"
+            ],
+            "water": [
+              "lake",
+              "pools",
+              "none"
+            ],
+            "traits": [
+              "destructible",
+              "blocky",
+              "cross-section"
+            ]
+          }
+        },
+        {
+          "id": "terrain",
+          "profiles": [
+            "standard-3d"
+          ],
+          "describe": "smooth generated land in a sea (islands or a cliff shore) with a soil cross-section, which explosions carve into round craters (the carve mechanic)",
+          "reads": {
+            "setting": [
+              "islands",
+              "coast",
+              "hills",
+              "desert",
+              "ruins"
+            ],
+            "land": [
+              "islands",
+              "cliffs",
+              "hills",
+              "canyon",
+              "terraces"
+            ],
+            "horizon": [
+              "sea",
+              "sky"
+            ],
+            "water": [
+              "sea"
+            ],
+            "traits": [
+              "destructible",
+              "cross-section"
+            ]
+          }
         },
         {
           "id": "island",
           "profiles": [
             "scenic-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "islands",
+              "sky",
+              "forest"
+            ],
+            "land": [
+              "floating",
+              "cliffs",
+              "hills"
+            ],
+            "horizon": [
+              "void",
+              "sky"
+            ],
+            "water": [
+              "river",
+              "pools",
+              "none"
+            ]
+          }
         },
         {
           "id": "isles",
           "profiles": [
             "scenic-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "islands",
+              "sky"
+            ],
+            "land": [
+              "floating",
+              "islands",
+              "cliffs"
+            ],
+            "horizon": [
+              "void",
+              "sky"
+            ],
+            "water": [
+              "river",
+              "pools",
+              "none"
+            ]
+          }
         },
         {
           "id": "ruins",
           "profiles": [
             "scenic-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "ruins",
+              "islands"
+            ],
+            "land": [
+              "floating",
+              "cliffs",
+              "terraces"
+            ],
+            "horizon": [
+              "void",
+              "sky"
+            ],
+            "water": [
+              "none",
+              "pools"
+            ]
+          }
         },
         {
           "id": "dungeon",
           "profiles": [
             "scenic-3d"
-          ]
+          ],
+          "reads": {
+            "setting": [
+              "dungeon",
+              "cave",
+              "indoor"
+            ],
+            "land": [
+              "rooms",
+              "flat"
+            ],
+            "horizon": [
+              "walls",
+              "none"
+            ],
+            "water": [
+              "none"
+            ]
+          }
         },
         {
           "id": "field",
           "profiles": [
             "flat-2d"
           ],
-          "describe": "a tile map seen from above"
+          "describe": "a tile map seen from above",
+          "reads": {
+            "setting": [
+              "town",
+              "forest",
+              "plain",
+              "yard"
+            ],
+            "land": [
+              "flat"
+            ],
+            "horizon": [
+              "none"
+            ],
+            "water": [
+              "none",
+              "pools",
+              "river"
+            ]
+          }
         },
         {
           "id": "stage",
           "profiles": [
             "flat-2d"
           ],
-          "describe": "a tile map seen from the side, with gravity"
+          "describe": "a tile map seen from the side, with gravity",
+          "reads": {
+            "setting": [
+              "plain",
+              "cave",
+              "forest",
+              "sky"
+            ],
+            "land": [
+              "flat",
+              "terraces"
+            ],
+            "horizon": [
+              "sky",
+              "hills"
+            ],
+            "water": [
+              "none"
+            ]
+          }
         }
       ],
       "looks": [
@@ -3855,6 +4155,267 @@
       "openOn": [
         "three",
         "forge"
+      ]
+    },
+    {
+      "id": "carve",
+      "name": "Carve",
+      "describe": "Explosions carve smooth craters in the terrain world; the host keeps the ground the same everywhere",
+      "examples": [
+        "explosions blow smooth craters in the ground",
+        "dig tunnels through an island",
+        "artillery that reshapes the land"
+      ],
+      "rank": 34,
+      "params": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "fromProjectile": {
+            "type": "boolean",
+            "default": true,
+            "description": "Carve where the projectile mechanic's shots end, when they have a splash (splashRadius > 0)"
+          },
+          "radius": {
+            "type": "number",
+            "description": "Crater radius in metres (0: the shot's splash radius times scale)",
+            "minimum": 0,
+            "maximum": 20,
+            "default": 0
+          },
+          "scale": {
+            "type": "number",
+            "description": "Crater radius per metre of the shot's splash radius",
+            "minimum": 0.1,
+            "maximum": 4,
+            "default": 1
+          },
+          "minRadius": {
+            "type": "number",
+            "description": "Smallest crater (m)",
+            "minimum": 0.2,
+            "maximum": 10,
+            "default": 0.6
+          },
+          "maxRadius": {
+            "type": "number",
+            "description": "Largest crater (m)",
+            "minimum": 0.5,
+            "maximum": 20,
+            "default": 8
+          },
+          "keep": {
+            "type": "boolean",
+            "default": false,
+            "description": "Keep the craters from one round to the next (false: every round starts on the ground as it was made)"
+          },
+          "debris": {
+            "type": "boolean",
+            "default": true,
+            "description": "Lumps of ground thrown out of each crater"
+          },
+          "blastFx": {
+            "type": "string",
+            "description": "A vfx preset (kit/vfx: impact-flash, spark-burst, ...) at the heart of each blast; unset: none",
+            "default": ""
+          },
+          "dustFx": {
+            "type": "string",
+            "description": "A vfx preset (kit/vfx: smoke-puff, dust-kick, ...) rising from each crater; unset: none",
+            "default": ""
+          },
+          "splashFx": {
+            "type": "string",
+            "description": "A vfx preset (kit/vfx: smoke-puff, ...) where a blast lands in the sea and carves nothing; unset: none",
+            "default": ""
+          },
+          "splashSound": {
+            "type": "string",
+            "description": "A sound id played where a blast lands in the sea; unset: none",
+            "default": ""
+          },
+          "sound": {
+            "type": "string",
+            "description": "A sound id (assets.json → sounds) played at each crater; unset: none",
+            "default": ""
+          },
+          "shake": {
+            "type": "number",
+            "description": "Camera shake at a blast next to the camera (m)",
+            "minimum": 0,
+            "maximum": 2,
+            "default": 0.25
+          }
+        }
+      },
+      "slots": {
+        "templates": [
+          {
+            "id": "mechanic.carve.scale",
+            "label": "Crater size (per metre of blast)",
+            "group": "mechanics",
+            "type": "number",
+            "source": {
+              "pointer": "{base}/scale"
+            },
+            "tier": "main",
+            "facet": "gameplay",
+            "rank": 46,
+            "constraints": {
+              "min": 0.1,
+              "max": 4
+            }
+          },
+          {
+            "id": "mechanic.carve.radius",
+            "label": "Crater size (fixed, 0: from the blast)",
+            "group": "mechanics",
+            "type": "number",
+            "source": {
+              "pointer": "{base}/radius"
+            },
+            "tier": "advanced",
+            "facet": "gameplay",
+            "constraints": {
+              "min": 0,
+              "max": 20,
+              "unit": "m"
+            }
+          },
+          {
+            "id": "mechanic.carve.max-radius",
+            "label": "Largest crater",
+            "group": "mechanics",
+            "type": "number",
+            "source": {
+              "pointer": "{base}/maxRadius"
+            },
+            "tier": "advanced",
+            "facet": "gameplay",
+            "constraints": {
+              "min": 0.5,
+              "max": 20,
+              "unit": "m"
+            }
+          },
+          {
+            "id": "mechanic.carve.keep",
+            "label": "Craters stay between rounds",
+            "group": "mechanics",
+            "type": "boolean",
+            "source": {
+              "pointer": "{base}/keep"
+            },
+            "tier": "advanced",
+            "facet": "gameplay"
+          },
+          {
+            "id": "mechanic.carve.shake",
+            "label": "Blast camera shake",
+            "group": "mechanics",
+            "type": "number",
+            "source": {
+              "pointer": "{base}/shake"
+            },
+            "tier": "advanced",
+            "facet": "look",
+            "constraints": {
+              "min": 0,
+              "max": 2,
+              "unit": "m"
+            }
+          }
+        ]
+      },
+      "events": [
+        {
+          "name": "onCarve",
+          "on": "every copy",
+          "args": "{ op: 'carve' | 'add', at: {x, y, z}, r, normal, live, by }",
+          "when": "the ground changed here (live: false while a late copy catches up)"
+        }
+      ],
+      "counters": [],
+      "host": {
+        "owner": "host",
+        "how": "the host makes every edit and numbers it; every copy applies them in order on the same generated ground; a copy missing some asks the host for them",
+        "state": "carve",
+        "fields": {
+          "r": "the host's round count (a new round starts the ground again)",
+          "n": "how many edits the host has made this round"
+        }
+      },
+      "owns": [],
+      "needs": {
+        "mechanics": [],
+        "worlds": [
+          {
+            "id": "terrain",
+            "why": "it edits the smooth terrain's field (config/world.json template \"terrain\")"
+          }
+        ]
+      },
+      "uses": [
+        "projectile"
+      ],
+      "capabilities": [
+        "smooth-terrain"
+      ],
+      "gives": [
+        "destructible-ground"
+      ],
+      "bots": "no bot code (bots fire the projectile; the craters come by themselves)",
+      "notes": {
+        "lines": [
+          "With the projectile mechanic every shot with a splash (splashRadius > 0) carves where it ends by itself (fromProjectile); otherwise the host calls carve.carve({ x, y, z }, r).",
+          "Players fall when the ground under them goes, and into the sea past the land: the rules decide what the sea does (world.seaLevel)."
+        ],
+        "readme": "components/carve/README.md",
+        "stub": {
+          "as": "carve",
+          "worked": "carve.onCarve(c => { if (c.live) ctx.audio.play('explosion-small', { at: c.at, optional: true }); });",
+          "traps": [
+            "carve.carve and carve.add change the ground on the host only: keep them under if (ctx.host)"
+          ]
+        }
+      },
+      "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+      "fixture": {
+        "players": 2,
+        "missing": "no k2 fixture folder: the two-player check is tests/terrain-two-players.mjs <game> (host + joiner over WebRTC, the same craters on both screens, a late joiner gets the edited ground)"
+      },
+      "impl": {
+        "three": {
+          "path": "components/carve/index.js",
+          "profiles": [
+            "standard-3d"
+          ],
+          "state": {
+            "exists": true,
+            "tested": true,
+            "open": true,
+            "evidence": [
+              {
+                "what": "tests/terrain.test.mjs pass; tests/terrain-two-players.mjs (crater-isles, WebRTC): same field hash on host and joiner after 6 real bombs, a late joiner caught up (6/6); verify 6/6 gates, 22/22 measures",
+                "date": "2026-10-14"
+              }
+            ]
+          }
+        }
+      },
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/terrain.test.mjs pass; tests/terrain-two-players.mjs (crater-isles, WebRTC): same field hash on host and joiner after 6 real bombs, a late joiner caught up (6/6); verify 6/6 gates, 22/22 measures",
+            "date": "2026-10-14"
+          }
+        ]
+      },
+      "openOn": [
+        "three"
       ]
     },
     {
@@ -13099,7 +13660,11 @@
   "capabilities": [
     {
       "id": "characters",
-      "describe": "players and others drawn as gf-humanoid-1 bodies (or picture bodies in 2D) that walk"
+      "describe": "players and others drawn as bodies that walk: gf-humanoid-1 bodies, creature bodies (creature-bodies), or picture bodies in 2D"
+    },
+    {
+      "id": "creature-bodies",
+      "describe": "players and others as a worm or serpent, a blob, a four-legged animal or a winged flyer (each archetype a rig standard beside gf-humanoid-1), moved by procedural motion from the same actions (move, jump, act, hit, down, celebrate) and seen by friends like any body; a plain mesh is rigged by autorig"
     },
     {
       "id": "physics-bodies",
@@ -13124,6 +13689,10 @@
     {
       "id": "voxel-world",
       "describe": "a block island players change"
+    },
+    {
+      "id": "smooth-terrain",
+      "describe": "smooth ground explosions carve into round craters, with a soil cross-section"
     },
     {
       "id": "persistent-world",
@@ -13208,6 +13777,10 @@
     {
       "id": "block-building",
       "describe": "place, break and paint blocks"
+    },
+    {
+      "id": "destructible-ground",
+      "describe": "blasts carve round craters in the ground, the same on every screen"
     },
     {
       "id": "checkpoints",

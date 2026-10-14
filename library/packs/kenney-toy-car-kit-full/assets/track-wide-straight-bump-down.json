@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-straight-bump-down",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-straight-bump-down.glb",
+ "sha256": "6782fe4991d700bd2cbd87cd6fd932aa77015d63b8c345a0687f26a8635fda41",
+ "bytes": 16012,
+ "preview": "previews/track-wide-straight-bump-down.png",
+ "from": "Models/GLB format/track-wide-straight-bump-down.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide straight bump down",
+ "tags": [
+  "track",
+  "wide",
+  "straight",
+  "bump",
+  "down"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.8,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16012,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff8a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.994,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.988
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "09072e3818497c0b70a8ba8a237c6d83709c9ce0dea8d37032457530abb653ff",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

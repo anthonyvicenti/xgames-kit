@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-blockslopewalls-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-blockslopewalls-rock.glb",
+ "sha256": "495d1c43f8eaa963b4bfe56f52b8f3718cf65723ad5c038ec2ad26a851374160",
+ "bytes": 4364,
+ "preview": "previews/cliff-blockslopewalls-rock.png",
+ "from": "Models/GLTF format/cliff_blockSlopeWalls_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff blockslopewalls rock",
+ "tags": [
+  "cliff",
+  "blockslopewalls",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 106,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 106,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4364,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.766,
+    "value": 0.763,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.776
+     },
+     {
+      "hue": "cyan",
+      "share": 0.224
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "055776add47ad3a13c53900a728ace7533c02f7afa27fdb57557ca117d44a55d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

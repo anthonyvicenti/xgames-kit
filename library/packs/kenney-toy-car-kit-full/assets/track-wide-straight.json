@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-straight",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-straight.glb",
+ "sha256": "602dafe6d31f5feda0d52d602eb700183b372939282eac793a49e28605ae8e7d",
+ "bytes": 14792,
+ "preview": "previews/track-wide-straight.png",
+ "from": "Models/GLB format/track-wide-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide straight",
+ "tags": [
+  "track",
+  "wide",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14792,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff8a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.994,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.987
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "339527094603d68e86cde469b2511bb85889586482df894a813a221c5f255356",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

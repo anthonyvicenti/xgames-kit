@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-fat-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-fat-fall.glb",
+ "sha256": "7c080858cba0ea5b00bee260dca713c789be497cfe248cd660fa19d30c389f09",
+ "bytes": 3812,
+ "preview": "previews/tree-fat-fall.png",
+ "from": "Models/GLTF format/tree_fat_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree fat fall",
+ "tags": [
+  "tree",
+  "fat",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.755,
+   1.15,
+   0.654
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 50,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 50,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3812,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc78a",
+     "#fff9f0"
+    ],
+    "saturation": 1,
+    "value": 0.783,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.938
+     },
+     {
+      "hue": "grey",
+      "share": 0.062
+     }
+    ],
+    "grey": 0.062
+   },
+   "trianglesPerMetre": 4.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "02fffc9b631a5f5834ac39b600d42ace0c9352fdcd3ed31912b0f6e8e685b660",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

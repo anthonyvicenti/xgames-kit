@@ -141,7 +141,11 @@ function valueProblems(r, at, vocab, loops) {
     if (!acts.includes(r.acts)) out.push(`${at}.acts: who acts when, one of ${acts.join(', ')} (the registry's loops say what each means)`);
   }
   if (r.about === 'players') { if (!vocab.together.includes(r.together)) out.push(`${at}.together: one of ${vocab.together.join(', ')}`); }
-  if (r.about === 'body') { if (!vocab.bodies.includes(r.body)) out.push(`${at}.body: one of ${vocab.bodies.join(', ')}`); }
+  if (r.about === 'body') {
+    if (!vocab.bodies.includes(r.body)) out.push(`${at}.body: one of ${vocab.bodies.join(', ')}`);
+    if (r.archetype != null && !(vocab.archetypes ?? []).includes(r.archetype)) out.push(`${at}.archetype: the character's shape, one of ${(vocab.archetypes ?? []).join(', ')}`);
+    if (r.archetype != null && r.body !== 'character') out.push(`${at}.archetype: only a character has an archetype (this line's body is ${r.body})`);
+  }
   if (r.about === 'perspective') {
     if (!vocab.cameras.includes(r.camera)) out.push(`${at}.camera: one of ${vocab.cameras.join(', ')}`);
     if (!vocab.dimensions.includes(r.dimension)) out.push(`${at}.dimension: one of ${vocab.dimensions.join(', ')}`);

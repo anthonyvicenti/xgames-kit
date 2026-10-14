@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-skew-left-side",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-skew-left-side.glb",
+ "sha256": "2543d605b644421548048c06cae3de7a0d3c0308c55fc4952006f25e3faceca6",
+ "bytes": 16884,
+ "preview": "previews/track-road-wide-straight-skew-left-side.png",
+ "from": "Models/GLB format/track-road-wide-straight-skew-left-side.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight skew left side",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "skew",
+  "left",
+  "side"
+ ],
+ "use": {
+  "size": [
+   2.042,
+   2.042,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16884,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#e6e6ef",
+     "#d1d1e2",
+     "#fa6b41"
+    ],
+    "saturation": 0.343,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.373
+     },
+     {
+      "hue": "blue",
+      "share": 0.314
+     },
+     {
+      "hue": "red",
+      "share": 0.313
+     }
+    ],
+    "grey": 0.373
+   },
+   "trianglesPerMetre": 3.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "41a3654b45d45e373e77b59dfdcc19663fca7b4850d3a6169747a0004c453616",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

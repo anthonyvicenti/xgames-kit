@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-thin-dark",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-thin-dark.glb",
+ "sha256": "23c369862925c9891c8e4f45c3779b2238d9ffab00046583ee43c34c9ceb93e3",
+ "bytes": 10128,
+ "preview": "previews/tree-thin-dark.png",
+ "from": "Models/GLTF format/tree_thin_dark.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree thin dark",
+ "tags": [
+  "tree",
+  "thin",
+  "dark"
+ ],
+ "use": {
+  "size": [
+   0.68,
+   1.49,
+   0.617
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 456,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 456,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 10128,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e7b5a3",
+     "#72d3d5"
+    ],
+    "saturation": 0.567,
+    "value": 0.717,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.579
+     },
+     {
+      "hue": "cyan",
+      "share": 0.421
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8f12bf461e38c43866ddfeaa56f77fadaa56425642bcb2e71dcf3c5c74abab47",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

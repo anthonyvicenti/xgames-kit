@@ -1,0 +1,278 @@
+{
+  "specVersion": 2,
+  "title": "Soak Squad",
+  "hook": "Grab a bucket, fill your soaker, then soak your friends and claim the whole yard in your colour.",
+  "prompt": "a backyard water fight with friends where you spray your colour all over the lawn",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 8,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "hold to spray water",
+    "interact": "grab a bucket",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 150,
+    "winBy": "most lawn claimed plus points stolen when time is up",
+    "replay": true
+  },
+  "world": {
+    "template": "backyard",
+    "size": "medium",
+    "props": [
+      {
+        "name": "bucket",
+        "describe": "a bucket of water",
+        "count": 8,
+        "role": "refills your water tank",
+        "kind": "gameplay"
+      },
+      {
+        "name": "bench",
+        "describe": "a wooden bench",
+        "count": 2,
+        "role": "claimable turf",
+        "kind": "scenery"
+      },
+      {
+        "name": "slide",
+        "describe": "a playground slide",
+        "count": 1,
+        "role": "claimable turf",
+        "kind": "scenery"
+      }
+    ],
+    "notes": "Buckets respawn around the lawn."
+  },
+  "mechanics": [
+    {
+      "id": "projectile",
+      "as": "your water soaker, limited by its tank",
+      "params": {
+        "kind": "continuous",
+        "color": "#4ab8ff",
+        "streamKnock": 1.5
+      }
+    },
+    {
+      "id": "pickup",
+      "as": "water buckets that refill your tank",
+      "params": {
+        "prop": "bucket",
+        "respawnSeconds": 8
+      }
+    },
+    {
+      "id": "paint",
+      "as": "claim the lawn by soaking it",
+      "params": {
+        "by": "player",
+        "color": "#4ab8ff",
+        "fromProjectile": true
+      }
+    },
+    {
+      "id": "health",
+      "as": "soaked: knocked about, loses points",
+      "params": {
+        "hp": 0,
+        "ragdollOnHit": true,
+        "getUpSeconds": 1.5
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Buckets fill your water tank. Hold fire to spray: soaking ground or props claims them in your colour, and soaking a friend knocks them about and steals some of their points. An empty tank means no spray until you grab another bucket. Most points when the bell rings wins.",
+    "scoring": "+1 per claimed patch, steal 2 points per soaking",
+    "params": {
+      "stealPoints": 2,
+      "stealCooldown": 1.5,
+      "tankSeconds": 16,
+      "bucketFill": 0.6
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid in swim goggles",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day",
+    "target": {
+      "schema": "gf-look-target/1",
+      "from": "refs",
+      "confidence": 0.9,
+      "refsUsed": 4,
+      "palette": {
+        "colors": [
+          {
+            "hex": "#8fae4c",
+            "share": 0.544,
+            "words": "light yellow-green"
+          },
+          {
+            "hex": "#c6bbc8",
+            "share": 0.213,
+            "words": "light grey"
+          },
+          {
+            "hex": "#b36341",
+            "share": 0.063,
+            "words": "red"
+          },
+          {
+            "hex": "#e2839c",
+            "share": 0.058,
+            "words": "light pink-red"
+          },
+          {
+            "hex": "#568659",
+            "share": 0.043,
+            "words": "yellow-green"
+          },
+          {
+            "hex": "#7baaaa",
+            "share": 0.04,
+            "words": "light muted teal"
+          },
+          {
+            "hex": "#659755",
+            "share": 0.028,
+            "words": "yellow-green"
+          },
+          {
+            "hex": "#493e4a",
+            "share": 0.013,
+            "words": "dark grey"
+          }
+        ],
+        "value": {
+          "mean": 0.708,
+          "spread": 0.25,
+          "hist": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0.005,
+            0.008,
+            0.006,
+            0.036,
+            0.057,
+            0.168,
+            0.477,
+            0.166,
+            0.076,
+            0,
+            0
+          ]
+        },
+        "chroma": {
+          "mean": 0.102,
+          "spread": 0.438,
+          "hist": [
+            0.018,
+            0.197,
+            0.019,
+            0.036,
+            0.06,
+            0.088,
+            0.182,
+            0.355,
+            0.043,
+            0.001,
+            0.001,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "mean": {
+          "L": 0.708,
+          "C": 0.102,
+          "contrast": 0.075
+        }
+      },
+      "regions": {
+        "sky": {
+          "colors": [
+            {
+              "hex": "#a9b2a6",
+              "share": 1
+            }
+          ],
+          "value": 0.753,
+          "hue": 136,
+          "chroma": 0.019
+        }
+      },
+      "edges": {
+        "density": 0.11,
+        "dark": 0.012
+      },
+      "reads": [
+        "soft pastel candy colours on a sunlit lawn",
+        "glossy jelly bodies with a gentle rim and a light ink outline",
+        "a lilac-pink haze at the horizon"
+      ]
+    }
+  },
+  "sounds": [
+    {
+      "id": "spray",
+      "describe": "water spray hiss"
+    },
+    {
+      "id": "slosh",
+      "describe": "water bucket slosh"
+    },
+    {
+      "id": "bonk",
+      "describe": "soggy splat"
+    },
+    {
+      "id": "bell",
+      "describe": "round-end bell"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other",
+    "your spray paints the lawn and soaks friends",
+    "buckets refill the tank"
+  ],
+  "notInV1": [
+    "teams",
+    "water balloons",
+    "more maps"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "A cartoon water fight: beans get soaked and knocked about, nobody is hurt."
+  }
+}

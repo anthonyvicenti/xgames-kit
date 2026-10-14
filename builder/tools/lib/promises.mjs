@@ -235,10 +235,15 @@ export function derivePromises({ spec = {}, config = {} } = {}) {
       : k.id === 'kit.round' && winBy ? `A round ends on a results screen that says who won (${winBy}), and I can play again.` : k.text;
     add({ id: k.id, kind: 'kit', text, source: `kit: ${k.check}`, proofs: [...k.proofs], core: false });
   }
-  // the creator's reference images (verify check 23, track S; after the roguelike miss: "The game also doesn't have the
-  // right vibe at all"): only when the locked spec lists references used as its style or its characters
-  const refs = (spec.references ?? []).filter(r => r && (r.use === 'style' || r.use === 'character'));
-  if (refs.length) add({ id: 'kit.likeness', kind: 'kit', text: `The game looks like the creator's reference images (${refs.length} picture${refs.length === 1 ? '' : 's'}: ${[...new Set(refs.map(r => r.use))].join(' and ')}): the camera, palette, light, places and characters.`, source: 'spec.references (use style or character)', proofs: ['verify:23'], core: false });
+  // the look the spec is held to (verify measure 23, gate F; the looks layer, 2026-10-14): a style target, or the
+  // creator's style pictures (before it, the roguelike miss: "The game also doesn't have the right vibe at all")
+  const refs = (spec.references ?? []).filter(r => r && r.use === 'style');
+  const target = spec.look?.target ?? null;
+  if (target || refs.length || spec.look?.refs?.length) {
+    const reads = (target?.reads ?? []).slice(0, 3).join('; ');
+    add({ id: 'kit.look', kind: 'kit', text: `The game looks like its style target${reads ? ` (${reads})` : refs.length ? ` (the creator's ${refs.length} style picture${refs.length === 1 ? '' : 's'})` : ''}: its palette, light, materials, shapes and characters, at the target's camera framings.`,
+      source: target ? 'spec.look.target' : 'spec.references (use style)', proofs: ['verify:23'], core: false });
+  }
   // 7. a game with enemies: every hit reads (verify check 16; creator, "Hang Up On Them": "The zombies are instant killed")
   if (mechanics.some(m => m?.id === 'waves')) add({ id: 'kit.hits', kind: 'kit', text: `When I ${mechanics.some(m => m?.id === 'melee') ? 'strike' : 'shoot'} an enemy I see each hit land: a health bar over it drops, it flashes and flinches, and it takes a few hits to go down.`, source: 'kit: hits read', proofs: ['verify:16', 'verify:39', 'play'], core: false });
 

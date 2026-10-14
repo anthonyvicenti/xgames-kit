@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-hexagon",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-hexagon.glb",
+ "sha256": "0877739011d8a59c99bd5c6a5f53385cfcbf3626de8fd66f5879978289eac79b",
+ "bytes": 14804,
+ "preview": "previews/block-grass-hexagon.png",
+ "from": "Models/GLB format/block-grass-hexagon.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass hexagon",
+ "tags": [
+  "block",
+  "grass",
+  "hexagon"
+ ],
+ "use": {
+  "size": [
+   1.1,
+   1,
+   1.27
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#339c75",
+     "#47b07e",
+     "#299270",
+     "#50ba83"
+    ],
+    "saturation": 0.567,
+    "value": 0.564,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.652
+     },
+     {
+      "hue": "green",
+      "share": 0.255
+     },
+     {
+      "hue": "cyan",
+      "share": 0.092
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fc9ed7874d260f38dada73c39758cd1ecd4fc2e27a1e08207eb70a599a2e89b2",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-large-slope-steep",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-large-slope-steep.glb",
+ "sha256": "7fafcfd42faed0b8b00920ce44e07f26fd98498338ae28e69157a981beebe5f4",
+ "bytes": 16144,
+ "preview": "previews/block-snow-large-slope-steep.png",
+ "from": "Models/GLB format/block-snow-large-slope-steep.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow large slope steep",
+ "tags": [
+  "block",
+  "snow",
+  "large",
+  "slope",
+  "steep"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   1.217,
+   1.857
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16144,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f8f8fb",
+     "#c1c1d8",
+     "#ea9168",
+     "#d9835c",
+     "#da835d",
+     "#c77451",
+     "#db855e",
+     "#e6e6ef"
+    ],
+    "saturation": 0.421,
+    "value": 0.783,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.408
+     },
+     {
+      "hue": "blue",
+      "share": 0.327
+     },
+     {
+      "hue": "grey",
+      "share": 0.265
+     }
+    ],
+    "grey": 0.265
+   },
+   "trianglesPerMetre": 2.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "afce6c14263971c3d4d5425a989247f562dd8f308316193cc4e2445f48412910",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

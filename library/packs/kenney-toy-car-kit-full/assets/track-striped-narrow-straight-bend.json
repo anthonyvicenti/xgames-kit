@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-straight-bend",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-straight-bend.glb",
+ "sha256": "3b918730e4d2afd07aef9e6c7b8ec71b9dda11b6d4d19d98daa4b71718f1a763",
+ "bytes": 15860,
+ "preview": "previews/track-striped-narrow-straight-bend.png",
+ "from": "Models/GLB format/track-striped-narrow-straight-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow straight bend",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "straight",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   1,
+   2.2,
+   2.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15860,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#eb6246",
+     "#e2e2ed"
+    ],
+    "saturation": 0.464,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.486
+     },
+     {
+      "hue": "blue",
+      "share": 0.427
+     },
+     {
+      "hue": "grey",
+      "share": 0.087
+     }
+    ],
+    "grey": 0.087
+   },
+   "trianglesPerMetre": 4.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "21cd5a54028da50bad4ae636f7d47e76fc2c00f0055bf308d468260e88bc1a6a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

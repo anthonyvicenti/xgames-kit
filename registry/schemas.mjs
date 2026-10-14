@@ -23,6 +23,7 @@ export const SCHEMA = {
   loop: 'https://xgames.fun/schemas/loop/1.json',
   mechanic: 'https://xgames.fun/schemas/mechanic/1.json',
   kind: 'https://xgames.fun/schemas/kind/1.json',
+  lookTarget: 'https://xgames.fun/schemas/look-target/1.json',
   pack: 'https://xgames.fun/schemas/pack/1.json',
   asset: 'https://xgames.fun/schemas/asset/1.json',
   catalog: 'https://xgames.fun/schemas/catalog/1.json',

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smallflata",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smallflata.glb",
+ "sha256": "71441877359e98ecae205ef4a4234a879fe3b333464a8e9bf0862773918cd858",
+ "bytes": 2240,
+ "preview": "previews/stone-smallflata.png",
+ "from": "Models/GLTF format/stone_smallFlatA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smallflata",
+ "tags": [
+  "stone",
+  "smallflata"
+ ],
+ "use": {
+  "size": [
+   0.496,
+   0.065,
+   0.43
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 20,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 20,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2240,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "04f2d1bf9dba77426a5fa076a07d7b1319fb78021b7fe619a6ca3599d96d762a",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

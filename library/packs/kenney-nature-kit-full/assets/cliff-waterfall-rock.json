@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-waterfall-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-waterfall-rock.glb",
+ "sha256": "ba270924f4bd8fa6fad2ae421ee7470c971dbe874ceef7c5cd8796e8a48ddab7",
+ "bytes": 4284,
+ "preview": "previews/cliff-waterfall-rock.png",
+ "from": "Models/GLTF format/cliff_waterfall_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff waterfall rock",
+ "tags": [
+  "cliff",
+  "waterfall",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.168
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 34,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 34,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4284,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#d8faff",
+     "#ffffff"
+    ],
+    "saturation": 0.808,
+    "value": 0.811,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.81
+     },
+     {
+      "hue": "grey",
+      "share": 0.19
+     }
+    ],
+    "grey": 0.19
+   },
+   "trianglesPerMetre": 3.59,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "08063b24498cae385c204e9038a72f0dd438fdfa29ecf106a0df5e656b7edff6",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

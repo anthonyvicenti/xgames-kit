@@ -41,7 +41,9 @@ export async function fingerprintFiles() {
   await walk(REGRESSIONS, 'builder/gates/regressions');
   // the runtimes' own verify flows, the flows' signs, and measure 5's two-player gate and presence part decide verdicts too
   const flows = ['builder/tools/verify-forge.mjs', 'builder/tools/verify-vista.mjs', 'builder/tools/verify-world.mjs', 'builder/tools/lib/flow-signs.mjs',
-    'builder/tools/lib/presence.mjs', 'builder/multiplayer/party/gate.mjs', 'builder/multiplayer/party/gate-live.mjs'];
+    'builder/tools/lib/presence.mjs', 'builder/multiplayer/party/gate.mjs', 'builder/multiplayer/party/gate-live.mjs',
+    // measure 23's judge (tools/lib/look-check.mjs reads it): its numbers and its pass rule decide the look's verdict
+    'builder/look/judge.mjs', 'builder/look/stats.mjs', 'builder/look/vision.mjs', 'builder/look/render.mjs', 'builder/look/pixels.mjs', 'builder/look/settings.mjs', 'builder/look/measure.mjs'];
   return [...['builder/tools/verify.mjs', 'builder/tools/lib/verdict.mjs', 'builder/tools/lib/stepped.mjs', 'builder/gates/regress.mjs'], ...flows, ...checks, ...own].sort();
 }
 /** {file: sha256} over fingerprintFiles(), and one hash of them all. */

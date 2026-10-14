@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-curve",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-curve.glb",
+ "sha256": "a41cf6514ba4a4a186c4123a341d5366f4604bd7d40a429c6dd7fc7b7254e97c",
+ "bytes": 16332,
+ "preview": "previews/track-striped-wide-curve.png",
+ "from": "Models/GLB format/track-striped-wide-curve.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide curve",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "curve"
+ ],
+ "use": {
+  "size": [
+   4,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16332,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#eb6246"
+    ],
+    "saturation": 0.461,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.494
+     },
+     {
+      "hue": "blue",
+      "share": 0.455
+     },
+     {
+      "hue": "grey",
+      "share": 0.051
+     }
+    ],
+    "grey": 0.051
+   },
+   "trianglesPerMetre": 3.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ed0c48db08abd11f76d81ab69c0ce46e2d302c35944d9e3c2cca6f91ba4e6f79",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

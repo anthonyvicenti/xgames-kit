@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "plant",
+ "pack": "kenney-platformer-kit-full",
+ "file": "plant.glb",
+ "sha256": "ab0c1bc3f3889daa6fb2baa7e9edcac99ee71c3b4c98132e9bd5643beaadd4a3",
+ "bytes": 16992,
+ "preview": "previews/plant.png",
+ "from": "Models/GLB format/plant.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant",
+ "tags": [
+  "plant"
+ ],
+ "use": {
+  "size": [
+   0.511,
+   0.172,
+   0.443
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16992,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#2d9672",
+     "#4bb480",
+     "#3ba478",
+     "#54be85",
+     "#36a076",
+     "#45af7e",
+     "#39a277",
+     "#59c387"
+    ],
+    "saturation": 0.469,
+    "value": 0.466,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.573
+     },
+     {
+      "hue": "cyan",
+      "share": 0.427
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 18.78,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0881669528fcc01038a104a89c5290d1cbe0cb4aa90c4f78e78ebe1de2281d7a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

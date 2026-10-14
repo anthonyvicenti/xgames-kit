@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "fence-low-straight",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-low-straight.glb",
+ "sha256": "e753279c2b29f53e6429d5afb3fe5b23643ae98f8315c297e7eea3be70f1d7a2",
+ "bytes": 15112,
+ "preview": "previews/fence-low-straight.png",
+ "from": "Models/GLB format/fence-low-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence low straight",
+ "tags": [
+  "fence",
+  "low",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15112,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#9f5b41",
+     "#925841",
+     "#9d5b41",
+     "#a25c41",
+     "#a65d41",
+     "#ab5f41",
+     "#aa5e41",
+     "#865542"
+    ],
+    "saturation": 0.434,
+    "value": 0.45,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.739
+     },
+     {
+      "hue": "brown",
+      "share": 0.261
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3186547a1679f337053fd5db1e8b530a3bf02d7a07efade1d400096bc517dca1",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

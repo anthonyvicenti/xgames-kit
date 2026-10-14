@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smalla",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smalla.glb",
+ "sha256": "f3e8a66877cea7095134ee893d0e70261825476b2f7584b3c0412786c60afc20",
+ "bytes": 2152,
+ "preview": "previews/stone-smalla.png",
+ "from": "Models/GLTF format/stone_smallA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smalla",
+ "tags": [
+  "stone",
+  "smalla"
+ ],
+ "use": {
+  "size": [
+   0.361,
+   0.191,
+   0.361
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 16,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 16,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2152,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b48e731e6c4b453e8e5e8caace6edc18da40bc09874d831b7914e840fc853ae4",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

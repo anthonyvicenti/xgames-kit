@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-side-wood",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-side-wood.glb",
+ "sha256": "2d95597811d7ee6a84dab534ca3028a17eee4fecbf95a8f4bb68276199dd9bf0",
+ "bytes": 5440,
+ "preview": "previews/bridge-side-wood.png",
+ "from": "Models/GLTF format/bridge_side_wood.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge side wood",
+ "tags": [
+  "bridge",
+  "side",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   0.4,
+   1.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5440,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ddf2f5",
+     "#ffc5a7"
+    ],
+    "saturation": 0.729,
+    "value": 0.824,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.726
+     },
+     {
+      "hue": "cyan",
+      "share": 0.274
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3857c2a286d236375dbae209897884eebc379d18e4af39ee8414f2d9511e2c49",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

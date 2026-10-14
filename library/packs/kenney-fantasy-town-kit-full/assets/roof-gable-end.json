@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "roof-gable-end",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-gable-end.glb",
+ "sha256": "ce3b3131a8239fc3151250dc0814bdca368e997d0dbba04b4f43e6cec94e7c80",
+ "bytes": 14620,
+ "preview": "previews/roof-gable-end.png",
+ "from": "Models/GLB format/roof-gable-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof gable end",
+ "tags": [
+  "roof",
+  "gable",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1.085,
+   0.571,
+   1.071
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 50,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 50,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14620,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#52b098",
+     "#7d829c",
+     "#5abaa3",
+     "#8f96b4",
+     "#51af97",
+     "#55b59d",
+     "#46a289",
+     "#45a187"
+    ],
+    "saturation": 0.295,
+    "value": 0.532,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.615
+     },
+     {
+      "hue": "grey",
+      "share": 0.368
+     }
+    ],
+    "grey": 0.368
+   },
+   "trianglesPerMetre": 3.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2ee635e8550180bb7840f7fdfff0b0835a34a425ffb903f19657cde65c261704",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

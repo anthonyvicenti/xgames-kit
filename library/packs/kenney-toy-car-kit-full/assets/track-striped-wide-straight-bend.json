@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight-bend",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight-bend.glb",
+ "sha256": "cbbde3671d8dcb60e085bb8a8e47f8a50654a1adce86ee0a0a5080599a211b53",
+ "bytes": 15836,
+ "preview": "previews/track-striped-wide-straight-bend.png",
+ "from": "Models/GLB format/track-striped-wide-straight-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight bend",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.2,
+   2.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15836,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#e2e2ed",
+     "#eb6246"
+    ],
+    "saturation": 0.456,
+    "value": 0.706,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.491
+     },
+     {
+      "hue": "blue",
+      "share": 0.457
+     },
+     {
+      "hue": "grey",
+      "share": 0.052
+     }
+    ],
+    "grey": 0.052
+   },
+   "trianglesPerMetre": 3.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a1a72290a988e028f82f76e33ba2130d253de73bfd3414d0cc864323d2aa3044",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

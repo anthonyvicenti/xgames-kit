@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "crops-dirtdoublerowend",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-dirtdoublerowend.glb",
+ "sha256": "9992607f6a6d4edc593aecd697eead0fc46101441d8e533e18386008082d72cf",
+ "bytes": 3892,
+ "preview": "previews/crops-dirtdoublerowend.png",
+ "from": "Models/GLTF format/crops_dirtDoubleRowEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops dirtdoublerowend",
+ "tags": [
+  "crops",
+  "dirtdoublerowend"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.05,
+   0.938
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3892,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.703,
+    "value": 0.766,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "997b8cc31495742e1ab278bcbf4f49afb4167c2aa5d5cc18422bb044f9d3b27e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

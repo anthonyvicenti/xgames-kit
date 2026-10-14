@@ -1,0 +1,210 @@
+{
+ "tool": "builder/look/calibrate.mjs",
+ "name": "artillery-options",
+ "at": "2026-10-14T10:28:41.725Z",
+ "about": "The look options look-target pitched for the proving case (a third-party cartoon artillery game; 18 published screenshots kept local), judged side by side against the references (judge.mjs compare). By eye (look-target and the parent): B (faithful, with the pilot pack) about 5/10 and closest; C (pushed) and D (the other sky) about 3/10; A (the kind as it is) and B without the pack about 3/10. Numbers only: the frames and the judge's words about them stay local.",
+ "states": {
+  "A": "the kind as it is",
+  "B": "faithful + the pilot pack",
+  "C": "pushed + the pilot pack",
+  "D": "the other sky + the pilot pack",
+  "Bnopack": "faithful without the pack"
+ },
+ "scales": {
+  "palette": 34,
+  "value": 0.25,
+  "saturation": 0.09,
+  "edges": 1.1,
+  "sky": 30,
+  "surface": 30
+ },
+ "sideBySide": {
+  "ranking": [
+   "B",
+   "Bnopack",
+   "C",
+   "D",
+   "A"
+  ],
+  "judgeRanking": [
+   "B",
+   "Bnopack",
+   "A",
+   "D",
+   "C"
+  ],
+  "partWeights": {
+   "palette": 1,
+   "lighting": 2,
+   "materials": 2,
+   "shape": 2,
+   "characters": 2,
+   "ui": 2,
+   "vfx": 2
+  },
+  "vision": {
+   "model": "claude-opus-5-5",
+   "seconds": 55.3,
+   "cost": 0.526807
+  },
+  "looks": {
+   "A": {
+    "score": 41,
+    "measured": 49,
+    "judged": 38,
+    "judgedParts": {
+     "palette": 4,
+     "lighting": 4,
+     "materials": 4,
+     "shape": 5,
+     "characters": 4,
+     "ui": 2,
+     "vfx": null
+    }
+   },
+   "B": {
+    "score": 47,
+    "measured": 45,
+    "judged": 48,
+    "judgedParts": {
+     "palette": 7,
+     "lighting": 5,
+     "materials": 6,
+     "shape": 6,
+     "characters": 4,
+     "ui": 2,
+     "vfx": null
+    }
+   },
+   "C": {
+    "score": 43,
+    "measured": 49,
+    "judged": 41,
+    "judgedParts": {
+     "palette": 3,
+     "lighting": 5,
+     "materials": 5,
+     "shape": 5,
+     "characters": 4,
+     "ui": 2,
+     "vfx": null
+    }
+   },
+   "D": {
+    "score": 43,
+    "measured": 49,
+    "judged": 40,
+    "judgedParts": {
+     "palette": 4,
+     "lighting": 4,
+     "materials": 5,
+     "shape": 5,
+     "characters": 4,
+     "ui": 2,
+     "vfx": null
+    }
+   },
+   "Bnopack": {
+    "score": 44,
+    "measured": 50,
+    "judged": 42,
+    "judgedParts": {
+     "palette": 6,
+     "lighting": 5,
+     "materials": 4,
+     "shape": 5,
+     "characters": 4,
+     "ui": 2,
+     "vfx": null
+    }
+   }
+  }
+ },
+ "alone": {
+  "A": {
+   "measured": 49,
+   "parts": {
+    "palette": 52,
+    "value": 56,
+    "saturation": 37,
+    "sky": 50,
+    "ground": 46,
+    "characters": 49,
+    "edges": 65
+   }
+  },
+  "B": {
+   "measured": 45,
+   "parts": {
+    "palette": 54,
+    "value": 61,
+    "saturation": 24,
+    "sky": 52,
+    "ground": 42,
+    "characters": 46,
+    "edges": 53
+   }
+  },
+  "C": {
+   "measured": 49,
+   "parts": {
+    "palette": 54,
+    "value": 58,
+    "saturation": 38,
+    "sky": 51,
+    "ground": 41,
+    "characters": 48,
+    "edges": 56
+   }
+  },
+  "D": {
+   "measured": 49,
+   "parts": {
+    "palette": 59,
+    "value": 61,
+    "saturation": 34,
+    "sky": 51,
+    "ground": 47,
+    "characters": 49,
+    "edges": 43
+   }
+  },
+  "Bnopack": {
+   "measured": 50,
+   "parts": {
+    "palette": 52,
+    "value": 57,
+    "saturation": 33,
+    "sky": 51,
+    "ground": 45,
+    "characters": 49,
+    "edges": 75
+   }
+  }
+ },
+ "earlier": "Before the side-by-side judge: each option judged alone gave B 43, C 44, D 46, A 45 (B last); measured alone B 45 against 49–50; a set judge marking each option alone gave B, C and D the same marks (37). Those are why compare() exists and the judged part weighs 70 %.",
+ "checks": [
+  {
+   "check": "B above C; C and D about 3/10\")",
+   "ok": true,
+   "detail": "47 against 43"
+  },
+  {
+   "check": "B above D; C and D about 3/10\")",
+   "ok": true,
+   "detail": "47 against 43"
+  },
+  {
+   "check": "B above A; C and D about 3/10\")",
+   "ok": true,
+   "detail": "47 against 41"
+  },
+  {
+   "check": "B above Bnopack; C and D about 3/10\")",
+   "ok": true,
+   "detail": "47 against 44"
+  }
+ ],
+ "ok": true,
+ "runs": "Two side-by-side runs: B 51, C 48, D 47, B without the pack 47, A 43 (the blend at 30/70 from the start of that run); then, after the surfaces were taken from the same bands on both sides, B 47, B without the pack 44, C 43, D 43, A 41 (this record). The judge ranked B first both times."
+}

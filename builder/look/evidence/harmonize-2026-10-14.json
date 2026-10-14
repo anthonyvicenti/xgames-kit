@@ -1,0 +1,890 @@
+{
+ "record": "looks wave 3, the style pass (harmonizer)",
+ "date": "2026-10-14",
+ "tool": "builder/look/harmonize.mjs, runtimes/three/kit/look/harmonize.js, builder/art/harmonize.mjs (HARMONIZE_VERSION 2)",
+ "about": "Before and after the style pass. Numbers only: the reference frames and the sheets stay in the local looks folder (out/harmonize-2026-10-14). The vision judge (vision.mjs judgeOptions, side by side, marks of 10 as 0-100) was run several times with the order swapped each pass; its noise is about 8 points a run.",
+ "artillery_case_sunny_isles": {
+  "scene": "the level game (terrain islands, pilot critters and props) with six off-style library props added beside the pilot props (kenney-nature-kit tree-oak, kenney-platformer-kit crate and bomb, kaykit dungeon barrel, kenney-survival-kit rock-a, quaternius rock) and its Kenney pines and crates as scenery; the sheet page rendered with ?harm=0 (before) and with the pass (after); the look picked world pictures are skipped",
+  "refs": 8,
+  "measured": {
+   "before": {
+    "score": 53,
+    "parts": {
+     "palette": 61,
+     "value": 74,
+     "saturation": 16,
+     "sky": 74,
+     "ground": 60,
+     "characters": 54,
+     "edges": 75
+    }
+   },
+   "after": {
+    "score": 53,
+    "parts": {
+     "palette": 61,
+     "value": 74,
+     "saturation": 16,
+     "sky": 74,
+     "ground": 60,
+     "characters": 54,
+     "edges": 73
+    }
+   }
+  },
+  "judgePasses": [
+   {
+    "order": [
+     "before",
+     "after"
+    ],
+    "before": 47,
+    "after": 46,
+    "first": "before"
+   },
+   {
+    "order": [
+     "after",
+     "before"
+    ],
+    "before": 49,
+    "after": 48,
+    "first": "before"
+   },
+   {
+    "order": [
+     "before",
+     "after"
+    ],
+    "before": 45,
+    "after": 46,
+    "first": "after"
+   },
+   {
+    "order": [
+     "after",
+     "before"
+    ],
+    "before": 43,
+    "after": 45,
+    "first": "after"
+   }
+  ],
+  "summary": {
+   "before": {
+    "mean": 46,
+    "min": 43,
+    "max": 49
+   },
+   "after": {
+    "mean": 46.3,
+    "min": 45,
+    "max": 48
+   },
+   "delta": {
+    "mean": 0.3,
+    "min": -1,
+    "max": 2
+   },
+   "afterFirst": 2
+  },
+  "eye": "The props shot: the teal low-poly oak turns a light mint green, grey rocks take a slight moss tint, the pilot art (critters, oil drum, ground, cliffs) is nearly unchanged. In the wide and hero shots the change is hard to see: the off-style pieces are small in frame. Shapes are untouched: the oak is still a faceted low-poly ball beside painted, rounded art, which is what reads as off-style now (the art ladder's, not the pass's).",
+  "verdict": "no measurable change: measured 53 \u2192 53, judged a tie (delta mean +0.25 over 4 passes, after first 2 of 4); the judges split on whether the reference foliage is closer to teal or to mint green"
+ },
+ "bake_sunny_isles": {
+  "command": "art harmonize --pack <p> --look <the case target> --level sunny-castle-isles --only \u2026",
+  "assets": [
+   {
+    "asset": "kaykit-dungeon-remastered/dungeon-barrel",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     18.32,
+     17.84
+    ],
+    "styleFit": [
+     0.73,
+     0.755
+    ]
+   },
+   {
+    "asset": "kenney-fantasy-town-kit/rock-small",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     20,
+     15.79
+    ],
+    "styleFit": [
+     0.671,
+     0.679
+    ]
+   },
+   {
+    "asset": "kenney-fantasy-town-kit/tree-pine",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     17.83,
+     16.86
+    ],
+    "styleFit": [
+     0.781,
+     0.709
+    ]
+   },
+   {
+    "asset": "kenney-nature-kit/tree-oak",
+    "did": [
+     "colours",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     29.1,
+     26.58
+    ],
+    "styleFit": [
+     0.658,
+     0.751
+    ]
+   },
+   {
+    "asset": "kenney-platformer-kit/bomb",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     18.1,
+     18.06
+    ],
+    "styleFit": [
+     0.723,
+     0.752
+    ]
+   },
+   {
+    "asset": "kenney-platformer-kit/crate",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     17.37,
+     15.92
+    ],
+    "styleFit": [
+     0.734,
+     0.707
+    ]
+   },
+   {
+    "asset": "kenney-survival-kit-full/barrel",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     22.17,
+     21.91
+    ],
+    "styleFit": [
+     0.508,
+     0.518
+    ]
+   },
+   {
+    "asset": "kenney-survival-kit-full/chest",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     19.97,
+     18.63
+    ],
+    "styleFit": [
+     0.666,
+     0.637
+    ]
+   },
+   {
+    "asset": "kenney-survival-kit-full/rock-a",
+    "did": [
+     "textures",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     13.31,
+     13.11
+    ],
+    "styleFit": [
+     0.576,
+     0.571
+    ]
+   },
+   {
+    "asset": "quaternius-props/rock",
+    "did": [
+     "colours",
+     "roughness",
+     "metalness"
+    ],
+    "distance": [
+     16.75,
+     16.16
+    ],
+    "styleFit": [
+     0.57,
+     0.576
+    ]
+   }
+  ],
+  "summary": {
+   "distanceMean": [
+    19.29,
+    18.09
+   ],
+   "distanceDown": 10,
+   "styleFitUp": 6,
+   "n": 10
+  },
+  "eye": "tree-oak teal \u2192 leaf green, rocks a touch warmer; crates, barrels, bomb and chest nearly unchanged (they were already near the look's wood, accent and metal colours). The derived packs validate against the asset and pack schemas; the original packs are not written."
+ },
+ "flat_mixed_packs": {
+  "pixel": {
+   "settings": {
+    "strength": 0.85,
+    "outline": "ink",
+    "outlineColor": "own",
+    "quantize": true,
+    "texelsPerMetre": 16
+   },
+   "measuredMark": [
+    74,
+    77
+   ],
+   "assets": [
+    {
+     "asset": "kenney-tiny-town/tile-0000",
+     "did": [
+      "palette",
+      "ramp"
+     ],
+     "distance": [
+      27.38,
+      27.11
+     ],
+     "styleFit": [
+      0.644,
+      0.652
+     ],
+     "colours": [
+      1,
+      1
+     ]
+    },
+    {
+     "asset": "kenney-tiny-town/tile-0002",
+     "did": [
+      "palette",
+      "ramp"
+     ],
+     "distance": [
+      25.97,
+      24.54
+     ],
+     "styleFit": [
+      0.627,
+      0.62
+     ],
+     "colours": [
+      5,
+      5
+     ]
+    },
+    {
+     "asset": "kenney-tiny-town/tile-0005",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      15.7,
+      16.1
+     ],
+     "styleFit": [
+      0.741,
+      0.632
+     ],
+     "colours": [
+      3,
+      5
+     ]
+    },
+    {
+     "asset": "kenney-tiny-town/tile-0028",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      14.89,
+      15.59
+     ],
+     "styleFit": [
+      0.694,
+      0.583
+     ],
+     "colours": [
+      4,
+      6
+     ]
+    },
+    {
+     "asset": "kenney-tiny-town/tile-0027",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      14.06,
+      14.63
+     ],
+     "styleFit": [
+      0.601,
+      0.441
+     ],
+     "colours": [
+      4,
+      6
+     ]
+    },
+    {
+     "asset": "kenney-tiny-dungeon/tile-0082",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      11.68,
+      12.26
+     ],
+     "styleFit": [
+      0.809,
+      0.843
+     ],
+     "colours": [
+      5,
+      8
+     ]
+    },
+    {
+     "asset": "kenney-tiny-dungeon/tile-0090",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      11.77,
+      11.56
+     ],
+     "styleFit": [
+      0.719,
+      0.81
+     ],
+     "colours": [
+      8,
+      12
+     ]
+    },
+    {
+     "asset": "kenney-tiny-dungeon/tile-0084",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      15.22,
+      15.89
+     ],
+     "styleFit": [
+      0.732,
+      0.667
+     ],
+     "colours": [
+      9,
+      12
+     ]
+    },
+    {
+     "asset": "kenney-tiny-dungeon/tile-0096",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      14.05,
+      14.63
+     ],
+     "styleFit": [
+      0.593,
+      0.621
+     ],
+     "colours": [
+      5,
+      9
+     ]
+    },
+    {
+     "asset": "flat-standins-pixel/crate",
+     "did": [
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      10.67,
+      10.48
+     ],
+     "styleFit": [
+      0.799,
+      0.828
+     ],
+     "colours": [
+      7,
+      7
+     ]
+    },
+    {
+     "asset": "flat-standins-pixel/gem",
+     "did": [
+      "palette",
+      "ramp",
+      "ink"
+     ],
+     "distance": [
+      17.81,
+      19.01
+     ],
+     "styleFit": [
+      0.486,
+      0.457
+     ],
+     "colours": [
+      9,
+      8
+     ]
+    },
+    {
+     "asset": "kenney-new-platformer-pack/bush",
+     "did": [
+      "texels 128 \u2192 16 a metre",
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      20.73,
+      18.85
+     ],
+     "styleFit": [
+      0.626,
+      0.805
+     ],
+     "colours": [
+      154,
+      14
+     ]
+    },
+    {
+     "asset": "kenney-new-platformer-pack/gem-red",
+     "did": [
+      "texels 128 \u2192 16 a metre",
+      "palette",
+      "ramp",
+      "ink in its own shades"
+     ],
+     "distance": [
+      15.75,
+      13.15
+     ],
+     "styleFit": [
+      0.723,
+      0.809
+     ],
+     "colours": [
+      129,
+      11
+     ]
+    },
+    {
+     "asset": "kenney-background-elements-remastered/tree",
+     "did": [
+      "texels 128 \u2192 16 a metre",
+      "palette",
+      "ramp",
+      "ink"
+     ],
+     "distance": [
+      25.38,
+      23.22
+     ],
+     "styleFit": [
+      0.501,
+      0.729
+     ],
+     "colours": [
+      107,
+      12
+     ]
+    }
+   ],
+   "judgePasses": [
+    {
+     "order": [
+      "before",
+      "after"
+     ],
+     "before": 48,
+     "after": 50,
+     "first": "after"
+    },
+    {
+     "order": [
+      "after",
+      "before"
+     ],
+     "before": 48,
+     "after": 52,
+     "first": "after"
+    },
+    {
+     "order": [
+      "before",
+      "after"
+     ],
+     "before": 50,
+     "after": 52,
+     "first": "after"
+    },
+    {
+     "order": [
+      "after",
+      "before"
+     ],
+     "before": 44,
+     "after": 50,
+     "first": "after"
+    }
+   ]
+  },
+  "drawn": {
+   "settings": {
+    "strength": 0.85,
+    "outline": "ink",
+    "outlineColor": "#1a1a24",
+    "texelsPerMetre": 128
+   },
+   "measuredMark": [
+    77,
+    79
+   ],
+   "assets": [
+    {
+     "asset": "kenney-background-elements-remastered/tree",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      24.88,
+      24.04
+     ],
+     "styleFit": [
+      0.514,
+      0.323
+     ],
+     "colours": [
+      107,
+      73
+     ]
+    },
+    {
+     "asset": "kenney-background-elements-remastered/bush1",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      23.92,
+      23.26
+     ],
+     "styleFit": [
+      0.468,
+      0.454
+     ],
+     "colours": [
+      23,
+      18
+     ]
+    },
+    {
+     "asset": "kenney-background-elements-remastered/housesmall1",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      22.39,
+      22.53
+     ],
+     "styleFit": [
+      0.767,
+      0.621
+     ],
+     "colours": [
+      101,
+      75
+     ]
+    },
+    {
+     "asset": "kenney-background-elements-remastered/castlesmall",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      24.25,
+      23.75
+     ],
+     "styleFit": [
+      0.626,
+      0.664
+     ],
+     "colours": [
+      76,
+      53
+     ]
+    },
+    {
+     "asset": "kenney-toon-characters/character-femaleadventurer-cheer0",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      23.14,
+      17.49
+     ],
+     "styleFit": [
+      0.646,
+      0.702
+     ],
+     "colours": [
+      222,
+      177
+     ]
+    },
+    {
+     "asset": "flat-standins-drawn/crate",
+     "did": [
+      "palette"
+     ],
+     "distance": [
+      15.72,
+      15.69
+     ],
+     "styleFit": [
+      0.762,
+      0.712
+     ],
+     "colours": [
+      18,
+      18
+     ]
+    },
+    {
+     "asset": "flat-standins-drawn/gem",
+     "did": [
+      "palette"
+     ],
+     "distance": [
+      23.1,
+      22.74
+     ],
+     "styleFit": [
+      0.485,
+      0.4
+     ],
+     "colours": [
+      43,
+      43
+     ]
+    },
+    {
+     "asset": "flat-standins-drawn/star",
+     "did": [
+      "palette"
+     ],
+     "distance": [
+      24.38,
+      22.96
+     ],
+     "styleFit": [
+      0.364,
+      0.379
+     ],
+     "colours": [
+      41,
+      41
+     ]
+    },
+    {
+     "asset": "flat-standins-drawn/tile-grass",
+     "did": [
+      "palette"
+     ],
+     "distance": [
+      27.05,
+      26.61
+     ],
+     "styleFit": [
+      0.653,
+      0.636
+     ],
+     "colours": [
+      28,
+      28
+     ]
+    },
+    {
+     "asset": "xk-pixel-town/tree-oak",
+     "did": [
+      "palette"
+     ],
+     "distance": [
+      15.71,
+      15.38
+     ],
+     "styleFit": [
+      0.639,
+      0.667
+     ],
+     "colours": [
+      20,
+      20
+     ]
+    },
+    {
+     "asset": "xk-pixel-town/house-red",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      14.73,
+      15.3
+     ],
+     "styleFit": [
+      0.791,
+      0.771
+     ],
+     "colours": [
+      32,
+      33
+     ]
+    },
+    {
+     "asset": "xk-artillery-icons/blink",
+     "did": [
+      "palette",
+      "ink"
+     ],
+     "distance": [
+      27.92,
+      21.8
+     ],
+     "styleFit": [
+      0.205,
+      0.793
+     ],
+     "colours": [
+      54,
+      30
+     ]
+    }
+   ],
+   "judgePasses": [
+    {
+     "order": [
+      "before",
+      "after"
+     ],
+     "before": 45,
+     "after": 52,
+     "first": "after"
+    },
+    {
+     "order": [
+      "after",
+      "before"
+     ],
+     "before": 43,
+     "after": 43,
+     "first": "before"
+    },
+    {
+     "order": [
+      "before",
+      "after"
+     ],
+     "before": 46,
+     "after": 54,
+     "first": "after"
+    },
+    {
+     "order": [
+      "after",
+      "before"
+     ],
+     "before": 50,
+     "after": 48,
+     "first": "before"
+    }
+   ]
+  }
+ },
+ "flat_eye": {
+  "pixel": "Kenney tiny-town and tiny-dungeon pictures and three drawn pictures beside our pixel kind's own pack: the drawn bush, ruby and cypress come down to 16 texels a metre with hard edges, the uniform dark-brown Kenney outline takes each thing's own deep shade (green on a bush, purple on the wizard) as the kind draws it, and colours keep to the look's ramp beside each picture's own few (a blue gem stays blue). Still off: Kenney's flat two-tone shading against our dithered shading (the pass adds no shading).",
+  "drawn": "Kenney background elements, a toon character, our code-drawn stand-ins and two pixel pictures beside the new-platformer pack: unoutlined pictures get the pack's dark ink edge, colours move toward its bold flat palette. Still off: the pixel pictures stay pixel art (no upscaling into vector), and the background elements keep their soft gradients."
+ },
+ "findings": [
+  "Colour and material levers do not move the artillery case's look: the off-style pieces differ in shape language and surface detail (faceted flat colour against painted rounded art), which the pass never changes by design. The art ladder (library swap, then generation) is the lever there.",
+  "Frame-measured colours are darker and greyer than surface colours (light, shade, haze): the pass therefore turns hues and moves only part of the chroma and lightness gap.",
+  "Colour alone cannot tell a teal canopy (should be green) from a sea-coloured prop: the asset's own words (slot id, material and mesh names, tags) meet the look colours' roles (MATTER groups). An asset with no words falls back to colour.",
+  "Accents need the look's accent colours (ui.accent, vfx.palette) as anchors, else a red barrel drifts toward the nearest earth colour."
+ ]
+}

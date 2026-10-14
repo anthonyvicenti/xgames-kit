@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "rock-flat-grass",
+ "pack": "kenney-survival-kit-full",
+ "file": "rock-flat-grass.glb",
+ "sha256": "1f70297782de34ca173e6b566a377c88254ba0d1f5155604cb80eb07f561468a",
+ "bytes": 24236,
+ "preview": "previews/rock-flat-grass.png",
+ "from": "Models/GLB format/rock-flat-grass.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock flat grass",
+ "tags": [
+  "rock",
+  "flat",
+  "grass"
+ ],
+ "use": {
+  "size": [
+   1.786,
+   0.226,
+   1.448
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 758,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 758,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 24236,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#edb791",
+     "#eab38d",
+     "#61cb8b",
+     "#f2bf99",
+     "#e1a680",
+     "#d7966f",
+     "#e7af89",
+     "#dea27b"
+    ],
+    "saturation": 0.634,
+    "value": 0.68,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.794
+     },
+     {
+      "hue": "green",
+      "share": 0.144
+     },
+     {
+      "hue": "cyan",
+      "share": 0.062
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1e14dbd2603467f607f7a099aa40a7b8abfdb6fcbd63b7c06bb746bdd085ecac",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "track-narrow-straight-bend",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-narrow-straight-bend.glb",
+ "sha256": "8d898b6da483d4adc21acdbe6a62a94a809fc787e99330db019a46dd226c7743",
+ "bytes": 15488,
+ "preview": "previews/track-narrow-straight-bend.png",
+ "from": "Models/GLB format/track-narrow-straight-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track narrow straight bend",
+ "tags": [
+  "track",
+  "narrow",
+  "straight",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   1,
+   2.2,
+   2.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15488,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8a44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff7944",
+     "#585abf"
+    ],
+    "saturation": 0.986,
+    "value": 0.632,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.971
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "00c8ceb7b8955d9ccaece6286e8712b7eb5e05e2bc46fb0154a6c863b7dfa5f6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

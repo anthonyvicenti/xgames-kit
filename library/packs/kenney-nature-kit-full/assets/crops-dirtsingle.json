@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "crops-dirtsingle",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-dirtsingle.glb",
+ "sha256": "ce00d2c7285e02744266aa1126a1128ed698082629a284a33705962b05cb19d0",
+ "bytes": 3372,
+ "preview": "previews/crops-dirtsingle.png",
+ "from": "Models/GLTF format/crops_dirtSingle.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops dirtsingle",
+ "tags": [
+  "crops",
+  "dirtsingle"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.1,
+   0.346
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3372,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.68,
+    "value": 0.758,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6d9df48fa8b691a949c053f56977e1134cd917ec7c8a936612d7fa1978dcce1d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

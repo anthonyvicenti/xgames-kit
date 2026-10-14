@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "fence-low-corner",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-low-corner.glb",
+ "sha256": "4093282202154fb7cbe769bf2a3cde2f52d1f1211c7a6d242857b18f70cfd61b",
+ "bytes": 16012,
+ "preview": "previews/fence-low-corner.png",
+ "from": "Models/GLB format/fence-low-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence low corner",
+ "tags": [
+  "fence",
+  "low",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 116,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 116,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16012,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#9f5b41",
+     "#925841",
+     "#9d5b41",
+     "#ab5f41",
+     "#a25c41",
+     "#a65d41",
+     "#aa5e41",
+     "#865542"
+    ],
+    "saturation": 0.434,
+    "value": 0.45,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.775
+     },
+     {
+      "hue": "brown",
+      "share": 0.225
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6ace14aafabe79fe7a83e77466c6f2d137e188129bd15bd80944d2327ddc4ac0",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

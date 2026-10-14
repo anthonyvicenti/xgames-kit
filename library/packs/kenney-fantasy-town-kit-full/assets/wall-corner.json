@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "wall-corner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-corner.glb",
+ "sha256": "c2cd6a694d406fc3627bba409e7cf5bfdd09a13d88730d40d1d5493d58858f37",
+ "bytes": 14516,
+ "preview": "previews/wall-corner.png",
+ "from": "Models/GLB format/wall-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall corner",
+ "tags": [
+  "wall",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14516,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#989fbe",
+     "#a2aacc",
+     "#c3805f",
+     "#c78362",
+     "#adb5d9",
+     "#8d93b1",
+     "#cc8665",
+     "#be7c5d"
+    ],
+    "saturation": 0.316,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.71
+     },
+     {
+      "hue": "orange",
+      "share": 0.273
+     }
+    ],
+    "grey": 0.017
+   },
+   "trianglesPerMetre": 3.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d67d4c6210d5e877ce24ccfb42cb3eab1576f7addb689924e7776d6b73e4165a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

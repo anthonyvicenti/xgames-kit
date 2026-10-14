@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-corner-small-ramp",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-corner-small-ramp.glb",
+ "sha256": "f372ddc67a7b69ae4403971de2d1867971c943117bdad2c4f40968126751068b",
+ "bytes": 15420,
+ "preview": "previews/track-wide-corner-small-ramp.png",
+ "from": "Models/GLB format/track-wide-corner-small-ramp.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide corner small ramp",
+ "tags": [
+  "track",
+  "wide",
+  "corner",
+  "small",
+  "ramp"
+ ],
+ "use": {
+  "size": [
+   3.2,
+   1.3,
+   3.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15420,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff8a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.992,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.984
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.58,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c1b5916607868969df2aa772d29e84b71b588b67db5ebccf18ff95e68d8aeb88",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

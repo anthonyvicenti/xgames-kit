@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-detail-diagonal",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-detail-diagonal.glb",
+ "sha256": "8cc614017fd754c8081dadaf901b0bf50a98cc4d007400a882cc132f6a6a6b71",
+ "bytes": 14616,
+ "preview": "previews/wall-wood-detail-diagonal.png",
+ "from": "Models/GLB format/wall-wood-detail-diagonal.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood detail diagonal",
+ "tags": [
+  "wall",
+  "wood",
+  "detail",
+  "diagonal"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 56,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 56,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14616,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8c5541",
+     "#945945",
+     "#c78362",
+     "#c3805f",
+     "#c38060",
+     "#c88363",
+     "#c48060",
+     "#c37f5f"
+    ],
+    "saturation": 0.408,
+    "value": 0.484,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.716
+     },
+     {
+      "hue": "brown",
+      "share": 0.284
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.36,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3b1ef50674432944f3f9561e511c0867571393c58e3c73d475d383c5bfc469fc",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

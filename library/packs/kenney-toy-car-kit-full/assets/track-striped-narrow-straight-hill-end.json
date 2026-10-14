@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-straight-hill-end",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-straight-hill-end.glb",
+ "sha256": "e7ab8be72bedf4c59041ae8fb10bbeb6e6589ecca9e3f05617d1f127a3a69e41",
+ "bytes": 16492,
+ "preview": "previews/track-striped-narrow-straight-hill-end.png",
+ "from": "Models/GLB format/track-striped-narrow-straight-hill-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow straight hill end",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "straight",
+  "hill",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.441,
+   4.412
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16492,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#f8f8fb"
+    ],
+    "saturation": 0.471,
+    "value": 0.716,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.489
+     },
+     {
+      "hue": "blue",
+      "share": 0.423
+     },
+     {
+      "hue": "grey",
+      "share": 0.088
+     }
+    ],
+    "grey": 0.088
+   },
+   "trianglesPerMetre": 4.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e3511402babea126578783d69c135a94f6e3a8e85d4d023a9b38d2e782e7eebb",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

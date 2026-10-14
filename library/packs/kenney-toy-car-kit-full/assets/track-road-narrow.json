@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow.glb",
+ "sha256": "554ae6383328c82d67501935fb24763e65b0177ee04ab2c8916dc0a136704534",
+ "bytes": 11872,
+ "preview": "previews/track-road-narrow.png",
+ "from": "Models/GLB format/track-road-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow",
+ "tags": [
+  "track",
+  "road",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11872,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#e6e6ef",
+     "#d1d1e2",
+     "#eb6246"
+    ],
+    "saturation": 0.395,
+    "value": 0.667,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.367
+     },
+     {
+      "hue": "red",
+      "share": 0.367
+     },
+     {
+      "hue": "grey",
+      "share": 0.267
+     }
+    ],
+    "grey": 0.267
+   },
+   "trianglesPerMetre": 4,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4ba06694bf2aa0e70010fdb644e22d63310c0b87d932444058ec248288f3b451",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

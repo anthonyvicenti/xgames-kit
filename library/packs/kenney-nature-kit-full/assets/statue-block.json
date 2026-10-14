@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "statue-block",
+ "pack": "kenney-nature-kit-full",
+ "file": "statue-block.glb",
+ "sha256": "949682cbee4b2c86fda8d512f2bc8449462bdeb6feb1caa017191f131c940ff0",
+ "bytes": 4584,
+ "preview": "previews/statue-block.png",
+ "from": "Models/GLTF format/statue_block.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "statue block",
+ "tags": [
+  "statue",
+  "block"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.4,
+   0.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4584,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ccdbde"
+    ],
+    "saturation": 0.411,
+    "value": 0.882,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5caa9f4d0ede962d36f78355b73e59c88e4c978ba4ef44e6df6e52d484c60bac",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

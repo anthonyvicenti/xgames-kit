@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinerounda",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinerounda.glb",
+ "sha256": "a49915cd87cff08760a2778d9c2757838865fae8242922f668ccb1b3eb6121c1",
+ "bytes": 5580,
+ "preview": "previews/tree-pinerounda.png",
+ "from": "Models/GLTF format/tree_pineRoundA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinerounda",
+ "tags": [
+  "tree",
+  "pinerounda"
+ ],
+ "use": {
+  "size": [
+   0.617,
+   1.366,
+   0.713
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.545,
+    "value": 0.651,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.922
+     },
+     {
+      "hue": "orange",
+      "share": 0.078
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7dc9711f31585eafdcb965d0649c30af5e19f2def1955f7a915081d30759ef8e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

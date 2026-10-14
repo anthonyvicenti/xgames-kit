@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "fence-corner",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-corner.glb",
+ "sha256": "e3269758532d3932155c9bd811be0692a6cdbea99b93553684423ff3f6899a3c",
+ "bytes": 4100,
+ "preview": "previews/fence-corner.png",
+ "from": "Models/GLTF format/fence_corner.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence corner",
+ "tags": [
+  "fence",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 116,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 116,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4100,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc5a7",
+     "#e3af94"
+    ],
+    "saturation": 0.806,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.28,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f37060de68c5680e518183d44e7ac498e0bfe7b04f3fe71e355d8a4670ef83f1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

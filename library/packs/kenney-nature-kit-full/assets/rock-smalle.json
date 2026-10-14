@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "rock-smalle",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-smalle.glb",
+ "sha256": "a9277a7ab9220cf046d85097b035df463589f63a8baffacda173b3cf0fa64c7a",
+ "bytes": 3796,
+ "preview": "previews/rock-smalle.png",
+ "from": "Models/GLTF format/rock_smallE.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock smalle",
+ "tags": [
+  "rock",
+  "smalle"
+ ],
+ "use": {
+  "size": [
+   0.361,
+   0.256,
+   0.312
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3796,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.765,
+    "value": 0.773,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.88
+     },
+     {
+      "hue": "cyan",
+      "share": 0.12
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e6e03586ca03316bab707ced869f5d4fa50dccc67dd056e94b667fc1e929c05c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

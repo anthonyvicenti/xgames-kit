@@ -77,6 +77,7 @@ about 10–12 m of floor reads clearly ahead.
 | `office` | a closed office building on a city street: open floor with desk pods round an atrium, break room, meeting room (glass), lobby, manager's office, store room, lounge; doors to the street | `carpet-tiles` | 24 × 24 (3 rooms), 40 × 32 (6), 48 × 40 m (9) |
 | `store` | a closed supermarket on a city street: aisles of stocked shelves round an open middle, freezers on the walls, checkouts and trolleys by the entrance; store room with a loading door, staff room, manager's office, cold room, bakery | `carpet-tiles` (read as floor tiles) | 24 × 24 (3 rooms), 40 × 32 (5), 48 × 40 m (7) |
 | `plaza` | paved square: fountain ringed by benches and lanterns, market and café corners, townhouses all round with streets into the square | `paving-slabs` | 30 × 30, 40 × 36, 50 × 46 m |
+| `sea-islands` | islands in an open sea: hills, shores, cut cliffs, beaches, islands on the horizon, puff clouds (generated from params) | the look's ground picture, else colour | 30 × 24, 40 × 32, 52 × 40 m play area |
 | `arena` | candy party arena on a checkered pitch: trophy block with ramps, raised corner blocks, springs, hazards by the walls, open gateways | `arena-checker` | 28 × 28, 36 × 36, 46 × 46 m |
 
 Every template at every size passes the set-dressing lint and the world check with no errors (`tests/d-worlds.test.mjs`);
@@ -94,6 +95,18 @@ with open floor in the middle; seats face a table, a centrepiece or the middle; 
 small loose thing lies in the open; and the ground has a pattern and contrast against the player colours. The rules
 and their thresholds are in `tools/lib/dressing.mjs` (`RULES`, `T`); how the game looks is the look judge's
 (`builder/look-judge`), on the contact sheet.
+
+## Sea islands (`sea-islands`, `sea.js` + `islands.js`; looks wave 2)
+
+Islands in an open sea: the play island's flat middle (the size class's play area, inside invisible walls) ringed by
+hills in two or three groups, the land falling toward the shore between them, its edge rounding over into cut cliffs
+(the ground's cross-section: a strata picture, slot `world.sea-islands.cliffs.pattern`, over coloured bands) with ledges
+and a beach at the foot, more islands toward the horizon, puff clouds in a ring over the sea, and one sea disc of the
+house water material. `params` (`SEA_PARAMS`: relief, cliff, terraces, beach, islands, clouds, cloudStyle, cloudColor,
+density, dressing, ground, cliffs) come from the recipe, a spec's `world.params` or a look target
+(`builder/look/world.mjs`). `heightAt(layout, x, z)` is the ground's height (the set-dressing lint and the sheet read it);
+the hills that reach the play area are hull colliders. The terrain stream's destructible ground takes the same island
+list when it lands (it owns the ground's mesh; `sea.js` owns where the land is and how high).
 
 ## Layout JSON (what agents edit; `config/world.json` is a copy of a template plus the game's own props)
 

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "fence-simplelow",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-simplelow.glb",
+ "sha256": "fdebdd0cc3f0dafe695509949dce86c5c32b48c1070bffa9ef2ca4f489699049",
+ "bytes": 2440,
+ "preview": "previews/fence-simplelow.png",
+ "from": "Models/GLTF format/fence_simpleLow.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence simplelow",
+ "tags": [
+  "fence",
+  "simplelow"
+ ],
+ "use": {
+  "size": [
+   1.041,
+   0.195,
+   0.111
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2440,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffc5a7"
+    ],
+    "saturation": 1,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f48ce73576b4976da6416f4b4c1e221cb4b617dba6f9f52affda283910f75755",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

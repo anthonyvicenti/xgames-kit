@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "mushroom-redgroup",
+ "pack": "kenney-nature-kit-full",
+ "file": "mushroom-redgroup.glb",
+ "sha256": "dabd2970fb8172be9ff91e662e253980d6e2398dd7e1b31cb2fc5d0b808f07bd",
+ "bytes": 5788,
+ "preview": "previews/mushroom-redgroup.png",
+ "from": "Models/GLTF format/mushroom_redGroup.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "mushroom redgroup",
+ "tags": [
+  "mushroom",
+  "redgroup"
+ ],
+ "use": {
+  "size": [
+   0.27,
+   0.25,
+   0.254
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5788,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#f19398"
+    ],
+    "saturation": 0.267,
+    "value": 0.917,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.654
+     },
+     {
+      "hue": "red",
+      "share": 0.346
+     }
+    ],
+    "grey": 0.654
+   },
+   "trianglesPerMetre": 28.63,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "29f02df0589dd2b09e8d2aff6a4662394dac5cfcf1fec701640dcbd6127e0802",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

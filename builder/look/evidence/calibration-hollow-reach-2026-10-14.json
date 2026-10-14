@@ -1,0 +1,1343 @@
+{
+ "tool": "builder/look/calibrate.mjs",
+ "name": "hollow-reach-blocky",
+ "at": "2026-10-14T10:29:48.962Z",
+ "vision": true,
+ "scales": {
+  "palette": 34,
+  "value": 0.25,
+  "saturation": 0.09,
+  "edges": 1.1,
+  "sky": 30,
+  "surface": 30
+ },
+ "refs": [
+  {
+   "file": "side-by-side-voxel3.jpg",
+   "framing": "land",
+   "sha256": "f8ca4b32bd31906c8e8a4c94a743818fdcc586a37ebe71c2fdb694ee97735d05",
+   "crop": [
+    16,
+    104,
+    1120,
+    720
+   ]
+  },
+  {
+   "file": "side-by-side-voxel3.jpg",
+   "framing": "cave",
+   "sha256": "f8ca4b32bd31906c8e8a4c94a743818fdcc586a37ebe71c2fdb694ee97735d05",
+   "crop": [
+    16,
+    884,
+    1120,
+    720
+   ]
+  },
+  {
+   "file": "side-by-side-voxel3.jpg",
+   "framing": "underground",
+   "sha256": "f8ca4b32bd31906c8e8a4c94a743818fdcc586a37ebe71c2fdb694ee97735d05",
+   "crop": [
+    16,
+    1664,
+    1120,
+    720
+   ]
+  },
+  {
+   "file": "side-by-side-voxel3.jpg",
+   "framing": "pit",
+   "sha256": "f8ca4b32bd31906c8e8a4c94a743818fdcc586a37ebe71c2fdb694ee97735d05",
+   "crop": [
+    16,
+    2444,
+    1120,
+    720
+   ]
+  },
+  {
+   "file": "side-by-side-voxel3.jpg",
+   "framing": "house",
+   "sha256": "f8ca4b32bd31906c8e8a4c94a743818fdcc586a37ebe71c2fdb694ee97735d05",
+   "crop": [
+    16,
+    3224,
+    1120,
+    720
+   ]
+  }
+ ],
+ "states": {
+  "before": {
+   "note": "kinds/sheets/blocky.png at 70f220c: flat plaza, no voxel land, no caves",
+   "score": 30,
+   "parts": {
+    "measured": {
+     "palette": 53,
+     "value": 49,
+     "saturation": 16,
+     "sky": 45,
+     "characters": 58,
+     "edges": 75
+    },
+    "judged": {
+     "palette": {
+      "mark": 20,
+      "vs": {
+       "par": 3,
+       "worse": 2
+      }
+     },
+     "lighting": {
+      "mark": 15,
+      "vs": {
+       "par": 3,
+       "worse": 2
+      }
+     },
+     "materials": {
+      "mark": 25,
+      "vs": {
+       "worse": 5
+      }
+     },
+     "shape": {
+      "mark": 40,
+      "vs": {
+       "par": 3,
+       "worse": 2
+      }
+     }
+    }
+   },
+   "vision": {
+    "model": "claude-opus-5-5",
+    "rubric": "look-rubric-1",
+    "seconds": 38.1,
+    "cost": 0.2023454
+   },
+   "framings": [
+    {
+     "framing": "land",
+     "ours": "props",
+     "score": 39,
+     "measured": 57,
+     "judged": 31,
+     "measuredParts": {
+      "palette": 69,
+      "characters": 57,
+      "sky": 68,
+      "value": 72,
+      "saturation": 22,
+      "edges": 67
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours is saturated candy blue sky, pure green and orange; the reference is muted, with a grey-blue overcast sky, desaturated sage grass and grey stone"
+      },
+      "lighting": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours is bright sun with crisp blue-tinted cast shadows and a clear sky; the reference is flat overcast light with thick grey distance fog that fades the far trees"
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours uses flat untextured toy shading; the reference uses low-res pixel textures with noisy bark, speckled leaves and cracked-stone patterns on every block"
+      },
+      "shape": {
+       "match": 2,
+       "vs": "par",
+       "finding": "The blocky voxel trees fit the same family, but ours adds smooth low-poly props (octagons, stars, beveled crates) that the reference never uses; the reference has terraced block hills"
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame"
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD; the reference has dark translucent rounded panels, so UI can't be compared"
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no effects; the reference has a glowing cyan waystone, so VFX can't be compared"
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 par: Ours is saturated candy blue sky, pure green and orange; the reference is muted, with a grey-blue overcast sky, desaturated sage grass and grey stone",
+      "lighting": "1/4 par: Ours is bright sun with crisp blue-tinted cast shadows and a clear sky; the reference is flat overcast light with thick grey distance fog that fades the far trees",
+      "materials": "1/4 worse: Ours uses flat untextured toy shading; the reference uses low-res pixel textures with noisy bark, speckled leaves and cracked-stone patterns on every block",
+      "shape": "2/4 par: The blocky voxel trees fit the same family, but ours adds smooth low-poly props (octagons, stars, beveled crates) that the reference never uses; the reference has terraced block hills"
+     }
+    },
+    {
+     "framing": "cave",
+     "ours": "props",
+     "score": 17,
+     "measured": 27,
+     "judged": 13,
+     "measuredParts": {
+      "palette": 32,
+      "sky": 19,
+      "value": 23,
+      "saturation": 12,
+      "edges": 91
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 0,
+       "vs": "worse",
+       "finding": "Ours is a bright daylight scene; the reference cave is dark slate blue and violet, with warm red-orange pools of colour and cyan glowing mushrooms"
+      },
+      "lighting": {
+       "match": 0,
+       "vs": "worse",
+       "finding": "Ours has no dark or enclosed lighting at all; the reference lights the cave with coloured pools (orange ember glow, blue fungus light) against deep shadow"
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours is flat and untextured; the reference has dense pixel rock textures with lit highlights on block faces"
+      },
+      "shape": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours has no cave geometry; the reference has jagged stepped voxel cave walls and an overhanging ceiling"
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame"
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD, so UI can't be compared"
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no effects; the reference has emissive mushrooms, so VFX can't be compared"
+      }
+     },
+     "vs": {
+      "vs": "worse",
+      "counts": {
+       "worse": 4,
+       "par": 0,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "0/4 worse: Ours is a bright daylight scene; the reference cave is dark slate blue and violet, with warm red-orange pools of colour and cyan glowing mushrooms",
+      "lighting": "0/4 worse: Ours has no dark or enclosed lighting at all; the reference lights the cave with coloured pools (orange ember glow, blue fungus light) against deep shadow",
+      "materials": "1/4 worse: Ours is flat and untextured; the reference has dense pixel rock textures with lit highlights on block faces",
+      "shape": "1/4 worse: Ours has no cave geometry; the reference has jagged stepped voxel cave walls and an overhanging ceiling"
+     }
+    },
+    {
+     "framing": "underground",
+     "ours": "props",
+     "score": 25,
+     "measured": 40,
+     "judged": 19,
+     "measuredParts": {
+      "palette": 47,
+      "sky": 34,
+      "value": 40,
+      "saturation": 19,
+      "edges": 91
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours is sky blue, vivid green and orange; the reference is warm tan sandstone with dark crimson ore blocks, dim and earthy"
+      },
+      "lighting": {
+       "match": 0,
+       "vs": "worse",
+       "finding": "Ours is open sunlight; the reference is enclosed, dim, warm light with heavy darkening into the recesses"
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours has no surface texture; the reference has cracked, cobbled pixel stone textures with moss specks"
+      },
+      "shape": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours shows no underground block terrain; the reference has stacked ledges and walls"
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame"
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD, so UI can't be compared"
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "No comparable effects"
+      }
+     },
+     "vs": {
+      "vs": "worse",
+      "counts": {
+       "worse": 4,
+       "par": 0,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 worse: Ours is sky blue, vivid green and orange; the reference is warm tan sandstone with dark crimson ore blocks, dim and earthy",
+      "lighting": "0/4 worse: Ours is open sunlight; the reference is enclosed, dim, warm light with heavy darkening into the recesses",
+      "materials": "1/4 worse: Ours has no surface texture; the reference has cracked, cobbled pixel stone textures with moss specks",
+      "shape": "1/4 worse: Ours shows no underground block terrain; the reference has stacked ledges and walls"
+     }
+    },
+    {
+     "framing": "pit",
+     "ours": "props",
+     "score": 33,
+     "measured": 38,
+     "judged": 31,
+     "measuredParts": {
+      "palette": 54,
+      "sky": 38,
+      "value": 48,
+      "saturation": 10,
+      "edges": 75
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours is oversaturated; the reference pit is muted brown dirt, grey stone, pale icy blue-grey floor and a little mossy green"
+      },
+      "lighting": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours has hard sun shadows; the reference has soft, diffuse overcast light with gentle ambient occlusion on the terraces"
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours is flat-shaded; the reference has textured dirt, stone, gravel and mossy cobble"
+      },
+      "shape": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is a flat plaza with chunky props; the reference is a terraced, stepped voxel crater"
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame"
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD, so UI can't be compared"
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "No comparable effects"
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 par: Ours is oversaturated; the reference pit is muted brown dirt, grey stone, pale icy blue-grey floor and a little mossy green",
+      "lighting": "1/4 par: Ours has hard sun shadows; the reference has soft, diffuse overcast light with gentle ambient occlusion on the terraces",
+      "materials": "1/4 worse: Ours is flat-shaded; the reference has textured dirt, stone, gravel and mossy cobble",
+      "shape": "2/4 par: Ours is a flat plaza with chunky props; the reference is a terraced, stepped voxel crater"
+     }
+    },
+    {
+     "framing": "house",
+     "ours": "props",
+     "score": 37,
+     "measured": 51,
+     "judged": 31,
+     "measuredParts": {
+      "palette": 63,
+      "characters": 58,
+      "sky": 65,
+      "value": 61,
+      "saturation": 18,
+      "edges": 52
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours has a saturated blue sky and toy colours; the reference has a grey hazy sky, desaturated greens and cool blue-grey stone"
+      },
+      "lighting": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours has a clear sky and hard shadows; the reference has overcast light, strong distance fog and a glowing waystone as the bright accent"
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours has no textures; the reference has bold pixel textures (dark-outlined flagstones, speckled leaves)"
+      },
+      "shape": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has the same cube trees, but its smooth beveled props break the strict voxel grid the reference keeps"
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame"
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD, so UI can't be compared"
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no effects; the reference has an emissive waystone, so VFX can't be compared"
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 par: Ours has a saturated blue sky and toy colours; the reference has a grey hazy sky, desaturated greens and cool blue-grey stone",
+      "lighting": "1/4 par: Ours has a clear sky and hard shadows; the reference has overcast light, strong distance fog and a glowing waystone as the bright accent",
+      "materials": "1/4 worse: Ours has no textures; the reference has bold pixel textures (dark-outlined flagstones, speckled leaves)",
+      "shape": "2/4 par: Ours has the same cube trees, but its smooth beveled props break the strict voxel grid the reference keeps"
+     }
+    }
+   ],
+   "findings": [
+    "cave: Ours is a bright daylight scene; the reference cave is dark slate blue and violet, with warm red-orange pools of colour and cyan glowing mushrooms",
+    "cave: Ours has no dark or enclosed lighting at all; the reference lights the cave with coloured pools (orange ember glow, blue fungus light) against deep shadow",
+    "underground: Ours is open sunlight; the reference is enclosed, dim, warm light with heavy darkening into the recesses",
+    "land: Ours is saturated candy blue sky, pure green and orange; the reference is muted, with a grey-blue overcast sky, desaturated sage grass and grey stone",
+    "land: Ours is bright sun with crisp blue-tinted cast shadows and a clear sky; the reference is flat overcast light with thick grey distance fog that fades the far trees",
+    "land: Ours uses flat untextured toy shading; the reference uses low-res pixel textures with noisy bark, speckled leaves and cracked-stone patterns on every block",
+    "cave: Ours is flat and untextured; the reference has dense pixel rock textures with lit highlights on block faces",
+    "cave: Ours has no cave geometry; the reference has jagged stepped voxel cave walls and an overhanging ceiling"
+   ],
+   "sheet": "look-sheet.jpg"
+  },
+  "mid": {
+   "note": "kinds/sheets/blocky-vs-hollow-reach.jpg at 0e9e811 (voxel2): parent: cave TOO DARK (mostly black)",
+   "score": 51,
+   "parts": {
+    "measured": {
+     "palette": 64,
+     "value": 63,
+     "saturation": 44,
+     "sky": 51,
+     "characters": 54,
+     "edges": 77
+    },
+    "judged": {
+     "palette": {
+      "mark": 40,
+      "vs": {
+       "par": 3,
+       "worse": 2
+      }
+     },
+     "lighting": {
+      "mark": 35,
+      "vs": {
+       "worse": 3,
+       "par": 2
+      }
+     },
+     "materials": {
+      "mark": 45,
+      "vs": {
+       "par": 4,
+       "worse": 1
+      }
+     },
+     "shape": {
+      "mark": 75,
+      "vs": {
+       "par": 5
+      }
+     },
+     "vfx": {
+      "mark": 50,
+      "vs": {
+       "par": 1,
+       "worse": 1
+      }
+     }
+    }
+   },
+   "vision": {
+    "model": "claude-opus-5-5",
+    "rubric": "look-rubric-1",
+    "seconds": 42.2,
+    "cost": 0.19996540000000002
+   },
+   "framings": [
+    {
+     "framing": "land",
+     "ours": "land",
+     "score": 58,
+     "measured": 62,
+     "judged": 56,
+     "measuredParts": {
+      "palette": 68,
+      "characters": 57,
+      "sky": 53,
+      "value": 65,
+      "saturation": 61,
+      "edges": 76
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is bright, warm and saturated (light-blue sky, lime greens). The reference is muted, with a grey-blue overcast sky and a cooler, desaturated green."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "worse",
+       "finding": "Ours has a hazy sunny day with heavy white fog that washes out the midground. The reference has flat overcast light, light fog and crisper contrast up close."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Our textures are clean, fine Minecraft-style pixels. The reference uses chunky, high-contrast textures with dark crack lines (cobble, leaves, bark)."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both use blocky voxel terrain and cube trees. The reference's tree canopies are larger and squarer."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD. The reference has dark translucent rounded panels for the objective, the floodwater meter and the hotbar."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows an effect (the glowing waystone)."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "2/4 par: Ours is bright, warm and saturated (light-blue sky, lime greens). The reference is muted, with a grey-blue overcast sky and a cooler, desaturated green.",
+      "lighting": "2/4 worse: Ours has a hazy sunny day with heavy white fog that washes out the midground. The reference has flat overcast light, light fog and crisper contrast up close.",
+      "materials": "2/4 par: Our textures are clean, fine Minecraft-style pixels. The reference uses chunky, high-contrast textures with dark crack lines (cobble, leaves, bark).",
+      "shape": "3/4 par: Both use blocky voxel terrain and cube trees. The reference's tree canopies are larger and squarer."
+     }
+    },
+    {
+     "framing": "cave",
+     "ours": "cave",
+     "score": 53,
+     "measured": 59,
+     "judged": 50,
+     "measuredParts": {
+      "palette": 64,
+      "sky": 50,
+      "value": 66,
+      "saturation": 47,
+      "edges": 77
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "worse",
+       "finding": "Ours is almost all black and deep red. The reference mixes cool blue-violet stone with warm red and orange walls, plus cyan accents."
+      },
+      "lighting": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours is far darker: most of the frame is crushed to black. The reference lights the whole cave with blue ambient light and orange glowing pools, so the walls stay readable."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Our stone is a soft, noisy pink texture. The reference's stone is rougher, chunkier and more contrasted, and its rubble is outlined."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both have stepped voxel cave walls. The reference shows more of the stepped wall silhouettes because ours is too dark to see them."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours glows from small orange crystals and cyan mushrooms. The reference relies on larger cyan mushroom glows and warm emissive ore patches that light the surfaces around them."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 2,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "2/4 worse: Ours is almost all black and deep red. The reference mixes cool blue-violet stone with warm red and orange walls, plus cyan accents.",
+      "lighting": "1/4 worse: Ours is far darker: most of the frame is crushed to black. The reference lights the whole cave with blue ambient light and orange glowing pools, so the walls stay readable.",
+      "materials": "2/4 par: Our stone is a soft, noisy pink texture. The reference's stone is rougher, chunkier and more contrasted, and its rubble is outlined.",
+      "shape": "3/4 par: Both have stepped voxel cave walls. The reference shows more of the stepped wall silhouettes because ours is too dark to see them.",
+      "vfx": "2/4 par: Ours glows from small orange crystals and cyan mushrooms. The reference relies on larger cyan mushroom glows and warm emissive ore patches that light the surfaces around them."
+     }
+    },
+    {
+     "framing": "underground",
+     "ours": "underground",
+     "score": 35,
+     "measured": 45,
+     "judged": 31,
+     "measuredParts": {
+      "palette": 47,
+      "sky": 36,
+      "value": 39,
+      "saturation": 39,
+      "edges": 74
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours is black and deep red. The reference is a light tan/khaki cave with crimson accent blocks and moss green."
+      },
+      "lighting": {
+       "match": 0,
+       "vs": "worse",
+       "finding": "Ours is a black cave. The reference is a well-lit cave with soft, even warm light."
+      },
+      "materials": {
+       "match": 1,
+       "vs": "worse",
+       "finding": "Ours uses soft, low-contrast noisy stone. The reference has a bold cracked-flagstone texture with dark grout lines and moss patches."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both use stepped voxel ledges and ordinary block silhouettes."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "The reference shows no characters, so ours (blocky smiley figures) can't be compared."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "The reference shows no effects."
+      }
+     },
+     "vs": {
+      "vs": "worse",
+      "counts": {
+       "worse": 3,
+       "par": 1,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 worse: Ours is black and deep red. The reference is a light tan/khaki cave with crimson accent blocks and moss green.",
+      "lighting": "0/4 worse: Ours is a black cave. The reference is a well-lit cave with soft, even warm light.",
+      "materials": "1/4 worse: Ours uses soft, low-contrast noisy stone. The reference has a bold cracked-flagstone texture with dark grout lines and moss patches.",
+      "shape": "3/4 par: Both use stepped voxel ledges and ordinary block silhouettes."
+     }
+    },
+    {
+     "framing": "pit",
+     "ours": "pit",
+     "score": 50,
+     "measured": 49,
+     "judged": 50,
+     "measuredParts": {
+      "palette": 70,
+      "sky": 38,
+      "value": 65,
+      "saturation": 23,
+      "edges": 70
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Ours is candy-bright: lime grass, orange dirt, lavender floor and sky-blue water. The reference uses muted brown dirt, grey stone and a pale icy cyan floor."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has warm sunny light, bloom and a purple-tinted shadow in the pit. The reference is lit by neutral overcast daylight with soft, slightly darker ambient occlusion."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Our surfaces are smooth and lightly textured. The reference uses rough, bumpy, high-contrast textures (lumpy dirt, cracked stone, mottled ice-cobble with moss)."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both are terraced voxel pits. The reference's pit is wider, with more stepped tiers."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only ours shows sparkles on the water. The reference shows none."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 0,
+       "par": 4,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "1/4 par: Ours is candy-bright: lime grass, orange dirt, lavender floor and sky-blue water. The reference uses muted brown dirt, grey stone and a pale icy cyan floor.",
+      "lighting": "2/4 par: Ours has warm sunny light, bloom and a purple-tinted shadow in the pit. The reference is lit by neutral overcast daylight with soft, slightly darker ambient occlusion.",
+      "materials": "2/4 par: Our surfaces are smooth and lightly textured. The reference uses rough, bumpy, high-contrast textures (lumpy dirt, cracked stone, mottled ice-cobble with moss).",
+      "shape": "3/4 par: Both are terraced voxel pits. The reference's pit is wider, with more stepped tiers."
+     }
+    },
+    {
+     "framing": "house",
+     "ours": "house",
+     "score": 59,
+     "measured": 68,
+     "judged": 55,
+     "measuredParts": {
+      "palette": 72,
+      "characters": 51,
+      "sky": 79,
+      "value": 78,
+      "saturation": 51,
+      "edges": 88
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is warm and saturated (orange planks, red brick, blue sky and water). The reference is cool and muted: grey-blue stone, pale cyan glow and grey sky."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has a clear blue sky, warm sunlight and white distance haze. The reference has an overcast grey-violet sky and flat, cool light."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Our textures are clean and finely detailed. The reference's are bold and chunky, with thick dark crack outlines and pale highlight edges."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both use blocky voxels. The reference uses squarer, chunkier tree canopies."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": 2,
+       "vs": "worse",
+       "finding": "Our lamp glow is small and warm. The reference's waystone has a strong cyan emissive glow with a soft halo."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 4,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "2/4 par: Ours is warm and saturated (orange planks, red brick, blue sky and water). The reference is cool and muted: grey-blue stone, pale cyan glow and grey sky.",
+      "lighting": "2/4 par: Ours has a clear blue sky, warm sunlight and white distance haze. The reference has an overcast grey-violet sky and flat, cool light.",
+      "materials": "2/4 par: Our textures are clean and finely detailed. The reference's are bold and chunky, with thick dark crack outlines and pale highlight edges.",
+      "shape": "3/4 par: Both use blocky voxels. The reference uses squarer, chunkier tree canopies.",
+      "vfx": "2/4 worse: Our lamp glow is small and warm. The reference's waystone has a strong cyan emissive glow with a soft halo."
+     }
+    }
+   ],
+   "findings": [
+    "underground: Ours is a black cave. The reference is a well-lit cave with soft, even warm light.",
+    "cave: Ours is far darker: most of the frame is crushed to black. The reference lights the whole cave with blue ambient light and orange glowing pools, so the walls stay readable.",
+    "underground: Ours is black and deep red. The reference is a light tan/khaki cave with crimson accent blocks and moss green.",
+    "underground: Ours uses soft, low-contrast noisy stone. The reference has a bold cracked-flagstone texture with dark grout lines and moss patches.",
+    "pit: Ours is candy-bright: lime grass, orange dirt, lavender floor and sky-blue water. The reference uses muted brown dirt, grey stone and a pale icy cyan floor.",
+    "land: Ours is bright, warm and saturated (light-blue sky, lime greens). The reference is muted, with a grey-blue overcast sky and a cooler, desaturated green.",
+    "land: Ours has a hazy sunny day with heavy white fog that washes out the midground. The reference has flat overcast light, light fog and crisper contrast up close.",
+    "land: Our textures are clean, fine Minecraft-style pixels. The reference uses chunky, high-contrast textures with dark crack lines (cobble, leaves, bark)."
+   ],
+   "sheet": "look-sheet.jpg"
+  },
+  "after": {
+   "note": "kinds/sheets/blocky-vs-hollow-reach.jpg at 9aef0db (voxel3): parent: readable, on par with Hollow Reach",
+   "score": 60,
+   "parts": {
+    "measured": {
+     "palette": 71,
+     "value": 71,
+     "saturation": 59,
+     "sky": 61,
+     "characters": 54,
+     "edges": 83
+    },
+    "judged": {
+     "palette": {
+      "mark": 55,
+      "vs": {
+       "better": 1,
+       "par": 4
+      }
+     },
+     "lighting": {
+      "mark": 55,
+      "vs": {
+       "better": 3,
+       "par": 2
+      }
+     },
+     "materials": {
+      "mark": 45,
+      "vs": {
+       "better": 1,
+       "par": 3,
+       "worse": 1
+      }
+     },
+     "shape": {
+      "mark": 75,
+      "vs": {
+       "better": 1,
+       "par": 4
+      }
+     },
+     "vfx": {
+      "mark": 75,
+      "vs": {
+       "better": 1
+      }
+     }
+    }
+   },
+   "vision": {
+    "model": "claude-opus-5-5",
+    "rubric": "look-rubric-1",
+    "seconds": 49.4,
+    "cost": 0.21840899999999996
+   },
+   "framings": [
+    {
+     "framing": "land",
+     "ours": "land",
+     "score": 58,
+     "measured": 62,
+     "judged": 56,
+     "measuredParts": {
+      "palette": 68,
+      "characters": 57,
+      "sky": 53,
+      "value": 65,
+      "saturation": 61,
+      "edges": 76
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "better",
+       "finding": "Sky is a clear light blue and the grass a bright, saturated green. The reference is grey-blue and overcast, with muted, slightly olive greens."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "better",
+       "finding": "Ours is bright daytime with a pale, sunlit haze. The reference has flat overcast light and a heavier grey fog that cuts off the distance sooner."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "better",
+       "finding": "Ours uses crisp, fine 16px pixel textures. The reference uses large, chunky textures (stone with thick black grout lines, blurry magnified grass noise)."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "better",
+       "finding": "Same blocky voxel terrain and boxy trees. Ours adds terraced mountains and denser forest, so the silhouettes are busier than the reference's sparse rolling hills."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Ours shows no HUD (the reference has dark rounded objective, floodwater and hotbar panels), so UI can't be compared."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference has an effect (the glowing cyan waystone); ours shows none."
+      }
+     },
+     "vs": {
+      "vs": "better",
+      "counts": {
+       "worse": 0,
+       "par": 0,
+       "better": 4
+      }
+     },
+     "findings": {
+      "palette": "2/4 better: Sky is a clear light blue and the grass a bright, saturated green. The reference is grey-blue and overcast, with muted, slightly olive greens.",
+      "lighting": "2/4 better: Ours is bright daytime with a pale, sunlit haze. The reference has flat overcast light and a heavier grey fog that cuts off the distance sooner.",
+      "materials": "2/4 better: Ours uses crisp, fine 16px pixel textures. The reference uses large, chunky textures (stone with thick black grout lines, blurry magnified grass noise).",
+      "shape": "3/4 better: Same blocky voxel terrain and boxy trees. Ours adds terraced mountains and denser forest, so the silhouettes are busier than the reference's sparse rolling hills."
+     }
+    },
+    {
+     "framing": "cave",
+     "ours": "cave",
+     "score": 72,
+     "measured": 78,
+     "judged": 70,
+     "measuredParts": {
+      "palette": 73,
+      "sky": 71,
+      "value": 73,
+      "saturation": 90,
+      "edges": 93
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Same idea of a two-tone cool/warm cave. Ours uses teal and amber where the reference uses blue-violet and red-orange, and our stone is a lighter grey-beige."
+      },
+      "lighting": {
+       "match": 3,
+       "vs": "better",
+       "finding": "Both have dark caves lit by coloured pools and glowing mushrooms. Ours has stronger contrast and deeper black ceilings than the reference's softer violet ambient."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has fine speckled gravel textures. The reference has large, dark cobblestone with heavy dark crack lines."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Similar stepped cave walls and thin-stemmed mushrooms. The reference's ceiling is more jagged and stalactite-like."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": 3,
+       "vs": "better",
+       "finding": "Glowing mushrooms in both. Ours adds more bloom and an orange crystal glow, which is a bit stronger than the reference's soft cyan glow."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 0,
+       "par": 3,
+       "better": 2
+      }
+     },
+     "findings": {
+      "palette": "3/4 par: Same idea of a two-tone cool/warm cave. Ours uses teal and amber where the reference uses blue-violet and red-orange, and our stone is a lighter grey-beige.",
+      "lighting": "3/4 better: Both have dark caves lit by coloured pools and glowing mushrooms. Ours has stronger contrast and deeper black ceilings than the reference's softer violet ambient.",
+      "materials": "2/4 par: Ours has fine speckled gravel textures. The reference has large, dark cobblestone with heavy dark crack lines.",
+      "shape": "3/4 par: Similar stepped cave walls and thin-stemmed mushrooms. The reference's ceiling is more jagged and stalactite-like.",
+      "vfx": "3/4 better: Glowing mushrooms in both. Ours adds more bloom and an orange crystal glow, which is a bit stronger than the reference's soft cyan glow."
+     }
+    },
+    {
+     "framing": "underground",
+     "ours": "underground",
+     "score": 60,
+     "measured": 70,
+     "judged": 56,
+     "measuredParts": {
+      "palette": 73,
+      "sky": 62,
+      "value": 69,
+      "saturation": 64,
+      "edges": 90
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is dominated by teal shadows and amber light. The reference is a warm, muted tan and khaki with crimson ore walls."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is a dark cave with deep black areas. The reference lights its underground evenly with soft, warm ambient light and mild shadows."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "worse",
+       "finding": "Ours has small speckled pixel noise. The reference has large, embossed cracked-stone textures with visible relief and moss patches."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both are stepped voxel walls of similar chunkiness."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "The reference has no characters. Ours shows blocky toy-like miners with simple smiley faces and no outlines."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only ours shows effects (mushroom and crystal glow)."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 1,
+       "par": 3,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "2/4 par: Ours is dominated by teal shadows and amber light. The reference is a warm, muted tan and khaki with crimson ore walls.",
+      "lighting": "2/4 par: Ours is a dark cave with deep black areas. The reference lights its underground evenly with soft, warm ambient light and mild shadows.",
+      "materials": "2/4 worse: Ours has small speckled pixel noise. The reference has large, embossed cracked-stone textures with visible relief and moss patches.",
+      "shape": "3/4 par: Both are stepped voxel walls of similar chunkiness."
+     }
+    },
+    {
+     "framing": "pit",
+     "ours": "pit",
+     "score": 54,
+     "measured": 50,
+     "judged": 56,
+     "measuredParts": {
+      "palette": 70,
+      "sky": 38,
+      "value": 66,
+      "saturation": 25,
+      "edges": 70
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has saturated grass, orange-brown dirt, a lavender floor and bright cyan water. The reference has muted brown dirt, grey stone and a pale icy blue-white floor."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "better",
+       "finding": "Ours is sunny and bright with strong AO. The reference has soft, overcast, slightly hazy light with low contrast."
+      },
+      "materials": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours has crisp pixel textures with grass tufts. The reference has blurrier, larger-scale painted textures with moss blotches and rough-cut stone."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Similar terraced, stepped pit. Ours adds grass tufts and flowers that the reference doesn't have."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only ours shows an effect (water sparkles)."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 0,
+       "par": 3,
+       "better": 1
+      }
+     },
+     "findings": {
+      "palette": "2/4 par: Ours has saturated grass, orange-brown dirt, a lavender floor and bright cyan water. The reference has muted brown dirt, grey stone and a pale icy blue-white floor.",
+      "lighting": "2/4 better: Ours is sunny and bright with strong AO. The reference has soft, overcast, slightly hazy light with low contrast.",
+      "materials": "2/4 par: Ours has crisp pixel textures with grass tufts. The reference has blurrier, larger-scale painted textures with moss blotches and rough-cut stone.",
+      "shape": "3/4 par: Similar terraced, stepped pit. Ours adds grass tufts and flowers that the reference doesn't have."
+     }
+    },
+    {
+     "framing": "house",
+     "ours": "house",
+     "score": 56,
+     "measured": 69,
+     "judged": 50,
+     "measuredParts": {
+      "palette": 73,
+      "characters": 51,
+      "sky": 81,
+      "value": 81,
+      "saturation": 53,
+      "edges": 87
+     },
+     "judgedParts": {
+      "palette": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is warm (red brick, orange wood) under a clear blue sky. The reference is cool and grey: steel-blue cobble, a pale cyan glow, a grey overcast sky and muted green."
+      },
+      "lighting": {
+       "match": 2,
+       "vs": "par",
+       "finding": "Ours is bright and sunny with crisp shading. The reference is flat and overcast with a grey haze in the distance."
+      },
+      "materials": {
+       "match": 1,
+       "vs": "par",
+       "finding": "Our cobble is fine and low-contrast. The reference's cobble is large, with thick black outlines around each stone and bright edge highlights."
+      },
+      "shape": {
+       "match": 3,
+       "vs": "par",
+       "finding": "Both are simple block structures with boxy trees in the distance."
+      },
+      "characters": {
+       "match": null,
+       "vs": null,
+       "finding": "No characters in either frame."
+      },
+      "ui": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows UI."
+      },
+      "vfx": {
+       "match": null,
+       "vs": null,
+       "finding": "Only the reference shows an effect (the emissive waystone glow); our lamp block is just lit, not an effect."
+      }
+     },
+     "vs": {
+      "vs": "par",
+      "counts": {
+       "worse": 0,
+       "par": 4,
+       "better": 0
+      }
+     },
+     "findings": {
+      "palette": "2/4 par: Ours is warm (red brick, orange wood) under a clear blue sky. The reference is cool and grey: steel-blue cobble, a pale cyan glow, a grey overcast sky and muted green.",
+      "lighting": "2/4 par: Ours is bright and sunny with crisp shading. The reference is flat and overcast with a grey haze in the distance.",
+      "materials": "1/4 par: Our cobble is fine and low-contrast. The reference's cobble is large, with thick black outlines around each stone and bright edge highlights.",
+      "shape": "3/4 par: Both are simple block structures with boxy trees in the distance."
+     }
+    }
+   ],
+   "findings": [
+    "house: Our cobble is fine and low-contrast. The reference's cobble is large, with thick black outlines around each stone and bright edge highlights.",
+    "land: Sky is a clear light blue and the grass a bright, saturated green. The reference is grey-blue and overcast, with muted, slightly olive greens.",
+    "land: Ours is bright daytime with a pale, sunlit haze. The reference has flat overcast light and a heavier grey fog that cuts off the distance sooner.",
+    "land: Ours uses crisp, fine 16px pixel textures. The reference uses large, chunky textures (stone with thick black grout lines, blurry magnified grass noise).",
+    "cave: Ours has fine speckled gravel textures. The reference has large, dark cobblestone with heavy dark crack lines.",
+    "underground: Ours is dominated by teal shadows and amber light. The reference is a warm, muted tan and khaki with crimson ore walls.",
+    "underground: Ours is a dark cave with deep black areas. The reference lights its underground evenly with soft, warm ambient light and mild shadows.",
+    "underground: Ours has small speckled pixel noise. The reference has large, embossed cracked-stone textures with visible relief and moss patches."
+   ],
+   "sheet": "look-sheet.jpg"
+  }
+ },
+ "expect": {
+  "order": [
+   "before",
+   "mid",
+   "after"
+  ],
+  "said": "voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach",
+  "claims": [
+   {
+    "state": "mid",
+    "framing": "cave",
+    "part": "lighting",
+    "vs": "worse",
+    "words": "dark|black"
+   },
+   {
+    "framing": "cave",
+    "above": [
+     "mid",
+     "after"
+    ]
+   },
+   {
+    "framing": "land",
+    "above": [
+     "before",
+     "after"
+    ]
+   },
+   {
+    "state": "after",
+    "framing": "land",
+    "vs": [
+     "par",
+     "better"
+    ]
+   },
+   {
+    "state": "after",
+    "framing": "cave",
+    "vs": [
+     "par",
+     "better"
+    ]
+   }
+  ]
+ },
+ "checks": [
+  {
+   "check": "mid scores above before",
+   "ok": true,
+   "detail": "51 against 30"
+  },
+  {
+   "check": "after scores above mid",
+   "ok": true,
+   "detail": "60 against 51"
+  },
+  {
+   "check": "mid cave lighting: worse (/dark|black/) (\"voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach\")",
+   "ok": true,
+   "detail": "1/4 worse: Ours is far darker: most of the frame is crushed to black. The reference lights the whole cave with blue ambient light and orange glowing pools, so the walls stay readable."
+  },
+  {
+   "check": "cave: after above mid (\"voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach\")",
+   "ok": true,
+   "detail": "72 against 53"
+  },
+  {
+   "check": "land: after above before (\"voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach\")",
+   "ok": true,
+   "detail": "58 against 39"
+  },
+  {
+   "check": "after land: par or better (\"voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach\")",
+   "ok": true,
+   "detail": "the judge: better (worse 0, par 0, better 4); score 58"
+  },
+  {
+   "check": "after cave: par or better (\"voxel2: cave TOO DARK (mostly black) vs Hollow Reach; voxel3: land view better, cave readable, on par with Hollow Reach\")",
+   "ok": true,
+   "detail": "the judge: par (worse 0, par 3, better 2); score 72"
+  }
+ ],
+ "ok": true
+}

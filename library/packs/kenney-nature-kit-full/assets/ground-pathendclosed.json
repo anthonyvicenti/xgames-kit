@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathendclosed",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathendclosed.glb",
+ "sha256": "e6a43e9928ba9871aa6fa01816c8e921650d645cab2fccc3a41fe80a8a44ad95",
+ "bytes": 4576,
+ "preview": "previews/ground-pathendclosed.png",
+ "from": "Models/GLTF format/ground_pathEndClosed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathendclosed",
+ "tags": [
+  "ground",
+  "pathendclosed"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4576,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.733,
+    "value": 0.737,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.609
+     },
+     {
+      "hue": "cyan",
+      "share": 0.391
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d260528d7bf288792f6e2dcb63be5eb25957cd92edd5dcb53e12295ea5e22358",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

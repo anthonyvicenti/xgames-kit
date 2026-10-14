@@ -26,7 +26,7 @@ export function ledgerMessage({ prompt, references = [], amend = null, before = 
     '- `id`, `about`, `what` (one plain sentence), `words` (their words, copied exactly; a few are enough), `core` (true when the game is not theirs without it)',
     '- `home`: `exists` with `by` (what in the registry does it: `mechanic:<id>`, `loop:<id>`, `runtime:<id>`, `kind:<id>`, `capability:<id>`), `build` with `how` (what will be written) and `where` (`rules`, `module` or `engine`), or `probe` with `probe: {question, minutes}` (at most ' + PROBE_MAX_MINUTES + ') when only a short try can tell',
     '- `needs`: the capabilities the line needs from what runs the game, from the list below (the runtime is chosen by these and by the devices, the graphics and the camera, never by theme)',
-    `- the structured value of its kind: acts → \`acts\` (${c.acts.map(a => `\`${a.acts}\` ${a.describe}`).join('; ')}); perspective → \`camera\` (${c.vocab.cameras.join(', ')}) and \`dimension\` (${c.vocab.dimensions.join(', ')}); players → \`together\` (${c.vocab.together.join(', ')}); body → \`body\` (${c.vocab.bodies.join(', ')}); devices → \`devices\` (${c.vocab.devices.join(', ')}); a feel or reference line may name a \`kind\` (${c.kinds.map(k => `\`${k.id}\` ${k.describe}`).join('; ')}) and \`graphics\` (${c.vocab.graphics.join(', ')}) when the person asked for it`,
+    `- the structured value of its kind: acts → \`acts\` (${c.acts.map(a => `\`${a.acts}\` ${a.describe}`).join('; ')}); perspective → \`camera\` (${c.vocab.cameras.join(', ')}) and \`dimension\` (${c.vocab.dimensions.join(', ')}); players → \`together\` (${c.vocab.together.join(', ')}); body → \`body\` (${c.vocab.bodies.join(', ')}) and, for a character, \`archetype\` (${(c.vocab.archetypes ?? ['humanoid']).join(', ')}: its shape, from their words: a worm, snake, slime, critter, dog, horse, bird or bat is not a humanoid; each archetype is a rig standard with its own motion); devices → \`devices\` (${c.vocab.devices.join(', ')}); a feel or reference line may name a \`kind\` (${c.kinds.map(k => `\`${k.id}\` ${k.describe}`).join('; ')}) and \`graphics\` (${c.vocab.graphics.join(', ')}) when the person asked for it`,
     `- Capabilities: ${c.capabilities.map(x => `\`${x.id}\``).join(', ')}. Mechanics: ${c.mechanics.map(m => `\`${m.id}\``).join(', ')}.`,
     '',
     `**Nothing narrows the idea.** A line the kit lacks is \`build\`. Ask the person only ${ASKABLE.join(' and ')}, and only when their words leave it open: then set \`asked: true\` on that line, give it the default, and add the question to \`asks\` (\`{about, text, options: [{id, label}], default}\`). A line that quotes their words may still be asked when the words leave part of it open (a part's own question, such as how each player is shown at a board): keep the words and mark it asked. A character that walks about needs no question, and neither does how a friend is seen when the players are a board, a pointer or cards (the kit shows each friend by presence: a seat card with an avatar that reacts, their pointer and moves; on own boards, their board beside yours); never ask what their words already say.`,
@@ -77,16 +77,31 @@ const failedLines = verify => (verify?.failed ?? []).map(f => `- gate ${f.gate},
 const playLines = (pt, promises) => Object.entries(pt?.answers ?? {}).filter(([, a]) => a.status !== 'seen').map(([id, a]) => `- \`${id}\` ${a.status}: ${promises.find(p => p.id === id)?.text ?? ''}${a.note ? `\n  the tester: ${a.note}` : ''}`);
 
 /** A repair round, plain or from the ladder (specialist, generate). */
-export function repairMessage({ round, after, verify, playtest, promises, ladder, partsFailed = [], toolNames }) {
+export function repairMessage({ round, after, verify, playtest, promises, ladder, partsFailed = [], tune = null, toolNames }) {
   const t = tools(toolNames);
   const what = after === 'parts' ? ['A part the person kept failed its check (each refusal says its fix):', ...partFailureLines(partsFailed)]
-    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play.'];
+    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify), ...lookTuneLines(tune, verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play.'];
   const climb = ladder?.climbs?.at(-1);
   const head = round.kind === 'specialist' ? [`# Specialist round: ${round.area}`, '', `The repair loop stopped repeating itself (${climb?.reason}: the same failures came back), so this round is a ${round.area} specialist's. Look at the failures below only as a ${round.area} specialist would: ${SPECIALIST[round.area] ?? SPECIALIST.code}`]
     : round.kind === 'generate' ? ['# Generation round', '', `The repair loop is stuck on ${round.areas.join(' and ')} the game's own files cannot fix, so this round makes new ones with the paid makers (\`${t.art}\`, and sound makers where the host has them). Cost is not a reason to stop: make what is needed, put each into its slot, and say what you made.`]
     : [`# Repair round${round.strong ? ' (stronger model)' : ''}`, '', ...(climb?.rung === 'model' && round.strong ? ['The last round failed on the same set as the one before it, so this round runs on the stronger model. Do not repeat what was tried: read the failures fresh.', ''] : [])];
   return [...head, '', ...what, '', 'What the tester could not see is what a new player cannot see: make the game itself show it. Rule 5 holds here as in every round:', RULES[4], '', `Fix it, run \`${t.quick}\` until it passes, remove what you made and no longer need (\`${t.remove ?? 'gamesfun_remove'}\`), then call \`${t.fix}\` with \`summary\` and \`controls\`.`].join('\n');
 }
+/**
+ * The look's tuning, when it ran before this repair (builder/look/tune.mjs): the levers are spent, so the round makes
+ * what they could not reach, in our own art (never the reference's characters, names or art). → lines, or none
+ */
+export function lookTuneLines(tune, verify) {
+  if (!tune || !(verify?.failed ?? []).some(f => f.measure === 23)) return [];
+  if (tune.error) return ['', `The look's tuning loop could not run (${tune.error}); the findings above are the judge's.`];
+  const art = tune.ladder?.art ?? [], left = tune.ladder?.leversLeft ?? [];
+  const head = tune.wrote ? `The look was tuned first (light, sky, fog, grade, outlines, material values: ${tune.before} → ${tune.after}, the bar ${tune.bar}); those values are in config/look.json, keep them.`
+    : `The look's tuning loop proposed light, sky, fog, grade, outline and material values (${tune.before} → ${tune.after} on its judge, the bar ${tune.bar})${tune.suggestion ? `: ${tune.suggestion.values}, with the before and after in ${tune.suggestion.sheet}` : ''}. They are a suggestion, not applied: look at the sheet, take a value only where the after frame is better by eye in every setting it shows (daylight, caves, night), and never one that darkens or greys a place the references do not show.`;
+  return ['', `${head} What the levers cannot reach is this round's: change the art the slots hold (the library first: \`gamesfun art find\`, by the look target), and make what the library lacks.`,
+    ...art.slice(0, 8).map(f => `- ${f.framing ? `${f.framing}, ` : ''}${f.part}: ${f.line}`),
+    ...(left.length ? ['Light and colour the levers left (change them by hand only with a reason):', ...left.slice(0, 3).map(f => `- ${f.line}`)] : [])];
+}
+
 const SPECIALIST = {
   art: 'models, textures, materials and how they read on screen; the slots and their packs; nothing about rules.',
   sound: 'what the player hears, when, and from where; the sound slots and the bus levels the kit keeps.',

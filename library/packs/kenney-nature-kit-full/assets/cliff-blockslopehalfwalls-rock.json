@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-blockslopehalfwalls-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-blockslopehalfwalls-rock.glb",
+ "sha256": "a7412fe4b8ca47fa5c34126253bfca8aa4d3028f897624717ffb708a9ad91e21",
+ "bytes": 4436,
+ "preview": "previews/cliff-blockslopehalfwalls-rock.png",
+ "from": "Models/GLTF format/cliff_blockSlopeHalfWalls_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff blockslopehalfwalls rock",
+ "tags": [
+  "cliff",
+  "blockslopehalfwalls",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 106,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 106,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4436,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.766,
+    "value": 0.762,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.762
+     },
+     {
+      "hue": "cyan",
+      "share": 0.238
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "95a25398990b978071d461998c442c034feb517ecea6538e88ed2ee957a2c3e6",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

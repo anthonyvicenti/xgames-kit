@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-skew-left",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-skew-left.glb",
+ "sha256": "cec0aab0f58aee3ac9303a02967eb172d6f8382c6ace5e14eceb6b7189b3b31e",
+ "bytes": 16900,
+ "preview": "previews/track-road-wide-straight-skew-left.png",
+ "from": "Models/GLB format/track-road-wide-straight-skew-left.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight skew left",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "skew",
+  "left"
+ ],
+ "use": {
+  "size": [
+   2.044,
+   1.627,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16900,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#e6e6ef",
+     "#d1d1e2",
+     "#efeff5"
+    ],
+    "saturation": 0.343,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.375
+     },
+     {
+      "hue": "blue",
+      "share": 0.313
+     },
+     {
+      "hue": "red",
+      "share": 0.312
+     }
+    ],
+    "grey": 0.375
+   },
+   "trianglesPerMetre": 3.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e73a1a07ce64c851dc63b220f1b3dee0312abf06fbcc1ca5679dc089852a2580",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

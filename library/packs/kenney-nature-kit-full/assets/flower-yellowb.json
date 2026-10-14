@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "flower-yellowb",
+ "pack": "kenney-nature-kit-full",
+ "file": "flower-yellowb.glb",
+ "sha256": "55055c7ca69385038933d171cacb2c5f1d851bd7fc53f91ca36a0f56af0a6851",
+ "bytes": 4964,
+ "preview": "previews/flower-yellowb.png",
+ "from": "Models/GLTF format/flower_yellowB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "flower yellowb",
+ "tags": [
+  "flower",
+  "yellowb"
+ ],
+ "use": {
+  "size": [
+   0.207,
+   0.158,
+   0.239
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 154,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 154,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4964,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffd990",
+     "#73eddd"
+    ],
+    "saturation": 0.894,
+    "value": 0.74,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.536
+     },
+     {
+      "hue": "cyan",
+      "share": 0.464
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 30.24,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "aaa8707779a5de59f881f80185bc507b35ec3fd5f23a39d6447ef61141dcd4f5",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

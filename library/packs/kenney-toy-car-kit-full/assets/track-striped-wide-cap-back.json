@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-cap-back",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-cap-back.glb",
+ "sha256": "87ba7a57b53ad0d2c78a85d6138c3935ab885de3d6f9d863989ebb4a81b03ce7",
+ "bytes": 11984,
+ "preview": "previews/track-striped-wide-cap-back.png",
+ "from": "Models/GLB format/track-striped-wide-cap-back.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide cap back",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "cap",
+  "back"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11984,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#d6574d",
+     "#de5b4a",
+     "#505463",
+     "#3e414d",
+     "#e65f48",
+     "#444754",
+     "#4b4e5d",
+     "#f16544"
+    ],
+    "saturation": 0.479,
+    "value": 0.484,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.642
+     },
+     {
+      "hue": "grey",
+      "share": 0.358
+     }
+    ],
+    "grey": 0.358
+   },
+   "trianglesPerMetre": 11.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "386387d065a7b287f1dee585a55dd21733cc0c503dee8aee452403229896a55b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

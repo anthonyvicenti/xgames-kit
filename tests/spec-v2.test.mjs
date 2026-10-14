@@ -148,7 +148,7 @@ test('verify\'s verdict: per gate ran, passed and skipped (with why), the runtim
     game: 'x', place: { runtime: 'vista', profile: null }, specLoop: 'round', loop: { casts: 1 }, specSha: 'a'.repeat(64), release: false, pass: false, seconds: 12, renderer: 'webgpu', chrome: 'Chrome 141',
     required: [1, 2, 3, 13],
     checks: [{ n: 1, ok: true, name: 'manifests' }, { n: 2, ok: true }, { n: 3, ok: false, name: 'boots', detail: 'a console error', rule: 'r', fix: 'f' },
-      { n: 4, ok: null, notYet: 'the core is not slots yet' }, { n: 23, ok: false, name: 'likeness', detail: 'too dark' }],
+      { n: 4, ok: null, notYet: 'the core is not slots yet' }, { n: 23, ok: false, name: 'looks like its target', detail: '41/100 like its look target: too dark' }],
   };
   const v = verdictOf(rec, { skips: [{ measure: 38, why: 'no event log on vista yet' }] });
   assert.deepEqual(validate(SCHEMA.verdict, v), []);
@@ -156,11 +156,11 @@ test('verify\'s verdict: per gate ran, passed and skipped (with why), the runtim
   assert.deepEqual(v.gates.A.ran, [1, 2]);
   assert.deepEqual(v.gates.A.skipped, [{ measure: 4, why: 'the core is not slots yet' }]);
   assert.equal(v.gates.B.ok, false);
-  assert.deepEqual(v.failed.map(f => `${f.gate}${f.measure}`), ['B3']);
+  assert.deepEqual(v.failed.map(f => `${f.gate}${f.measure}`), ['B3', 'F23'], 'a look held to its target fails gate F (the looks layer, 2026-10-14)');
   assert.equal(v.gates.C.skipped.find(s => s.measure === 13).required, true, 'a required measure that did not run is a required skip');
   assert.equal(v.gates.C.ok, false);
   assert.ok(v.gates.C.skipped.some(s => s.measure === 38 && /event log/.test(s.why)), 'the runtime\'s own skip is named');
-  assert.equal(v.judges[0].measure, 23, 'a judge is advice, never a failed gate');
+  assert.equal(v.judges, undefined, 'no measure is a judge now: 23 holds the look in gate F');
 });
 
 test('no engine is read by the builder\'s tools, the CLI or the three runtime\'s boot', async () => {

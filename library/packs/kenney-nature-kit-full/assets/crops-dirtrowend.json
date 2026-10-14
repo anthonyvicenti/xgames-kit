@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "crops-dirtrowend",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-dirtrowend.glb",
+ "sha256": "2cafe48c8eaee196b584ac1eebacc4e8efc6e12572e7b3e01cc71778cf476ace",
+ "bytes": 3404,
+ "preview": "previews/crops-dirtrowend.png",
+ "from": "Models/GLTF format/crops_dirtRowEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops dirtrowend",
+ "tags": [
+  "crops",
+  "dirtrowend"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.05,
+   0.62
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.717,
+    "value": 0.77,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9c65aac1b350fa3bb7a05d651ef1e21961cda0b71706f4d6882c03ba892eb62d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "ground-riverendclosed",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-riverendclosed.glb",
+ "sha256": "a1e5a963404c4f981bdcb4ff7230bee0287317a40a0cc907432942de43aa1f6f",
+ "bytes": 5712,
+ "preview": "previews/ground-riverendclosed.png",
+ "from": "Models/GLTF format/ground_riverEndClosed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground riverendclosed",
+ "tags": [
+  "ground",
+  "riverendclosed"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5712,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#73eddd",
+     "#d8faff",
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.799,
+    "value": 0.777,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.378
+     },
+     {
+      "hue": "orange",
+      "share": 0.341
+     },
+     {
+      "hue": "grey",
+      "share": 0.281
+     }
+    ],
+    "grey": 0.281
+   },
+   "trianglesPerMetre": 9.02,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "402150e81fa7b0a8b92baa7bce5bab48518e4b34a9aa07c542d17e9e912a8862",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

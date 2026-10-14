@@ -13,6 +13,7 @@ import { join, resolve, basename } from 'node:path';
 import { KIT, kitPath } from './paths.mjs';
 import { pictureFile, propsCatalog } from '../../art/views.mjs';
 import { expandLayout, footprint, placementYaw, placementScale, turn } from '../../../worlds/layout.js';
+import { heightAt } from '../../../worlds/sea.js';
 import { importLayer } from './kit-import.mjs';
 // kit modules whose imports cross layers: through the hook (kit-import.mjs importLayer)
 const { generateLayout } = await importLayer(kitPath(KIT, 'world/generate.js'));
@@ -215,7 +216,10 @@ export function lintDressing(subject) {
   const byId = new Map((catalog?.props ?? []).map(p => [p.id, p]));
   const [W, D] = cfg.size ?? [24, 24];
   const play = { shape: 'box', cx: 0, cz: 0, hx: W / 2, hz: D / 2, yaw: 0 };
-  const charH = Object.values(characters?.roles ?? {})[0]?.height ?? 1.7;
+  // the world is scaled to its people: a creature (a 0.8 m critter, a 0.2 m snake; CREATURES.md) is its own size in a
+  // world built to a person's, so only a humanoid role's height scales the real-world sizes
+  const person = Object.values(characters?.roles ?? {}).find(r => !r?.archetype || r.archetype === 'humanoid');
+  const charH = person?.height ?? 1.7;
   const k = charH / T.charHeight;
   const groundKind = cfg.ground?.kind ?? ({ plaza: 'paved', office: 'floor' }[t] ?? 'grass');
   const problems = [];
@@ -253,21 +257,23 @@ export function lintDressing(subject) {
   const structural = q => [...q.tags].some(x => STRUCTURAL.has(x));
 
   // --- stacking: what each prop rests on ---
+  // the ground's height: 0 for a flat world; a sea-islands world's land rises and falls (worlds/sea.js heightAt)
+  const groundY = (x, z) => (cfg.islands?.length ? heightAt(cfg, x, z) ?? cfg.sea?.level ?? 0 : 0);
   const restOn = new Map();
   for (const q of live) {
     if (q.cls === 'sky') continue;
-    const y = q.p.at?.[1] ?? 0;
+    const y = (q.p.at?.[1] ?? 0) - groundY(q.p.at?.[0] ?? 0, q.p.at?.[2] ?? 0);
     if (y < -T.sunk) {
       const buried = q.cls === 'flat' ? y + q.h < 0.001 : true;
       if (buried) add('sunk', 'error', { pointer: pointer(q.i), prop: q.p.prop, index: q.i, at: q.p.at, slot: `world.${t}.layout`, message: `${name(q.i)} at ${fmt(q.p.at)} is ${(-y).toFixed(2)} m below the ground`, fix: `set its at[1] to 0` });
       continue;
     }
     if (y <= T.restTolerance) continue;
-    const x = q.p.at[0], z = q.p.at[2];
-    const support = live.find(s => s !== q && s.cls !== 'sky' && s.cls !== 'decor' && contains(s.vis, x, z, 0.05) && Math.abs(s.vis.y1 - y) <= T.restTolerance);
+    const x = q.p.at[0], z = q.p.at[2], y0 = groundY(x, z);
+    const support = live.find(s => s !== q && s.cls !== 'sky' && s.cls !== 'decor' && contains(s.vis, x, z, 0.05) && Math.abs(s.vis.y1 - y0 - y) <= T.restTolerance);
     if (support) { restOn.set(q, support); continue; }
-    const under = live.filter(s => s !== q && s.cls !== 'sky' && contains(s.vis, x, z) && s.vis.y1 <= y + T.restTolerance).sort((a, b) => b.vis.y1 - a.vis.y1)[0];
-    const gap = y - (under?.vis.y1 ?? 0);
+    const under = live.filter(s => s !== q && s.cls !== 'sky' && contains(s.vis, x, z) && s.vis.y1 - y0 <= y + T.restTolerance).sort((a, b) => b.vis.y1 - a.vis.y1)[0];
+    const gap = y - (under ? under.vis.y1 - y0 : 0);
     if (q.cls === 'item' && gap <= T.itemHover) { if (under) restOn.set(q, under); continue; }
     add('floating', 'error', { pointer: pointer(q.i), prop: q.p.prop, index: q.i, at: q.p.at, message: `${name(q.i)} at ${fmt(q.p.at)} floats ${gap.toFixed(2)} m above ${under ? name(under.i) : 'the ground'}`, fix: `set its at[1] to ${under ? under.vis.y1.toFixed(2) : 0} (the top of what is under it) or move it onto a support` });
   }
@@ -339,9 +345,11 @@ export function lintDressing(subject) {
   // the middle the spawns face (world.js turns each spawn toward it): in a world with rooms the main room's centre zone,
   // else the origin
   const mid = (cfg.rooms?.length && cfg.zones?.centre?.at) || [0, 0, 0];
-  const spawns = (cfg.spawns ?? []).map((s, i) => ({ i, x: s[0], y: s[1] ?? 0, z: s[2] }));
+  // a world that places its own spawns (terrain: `spawns: n`, seats on flat pads it chooses) is held to the count only
+  const generated = Number.isInteger(cfg.spawns);
+  const spawns = Array.isArray(cfg.spawns) ? cfg.spawns.map((s, i) => ({ i, x: s[0], y: s[1] ?? 0, z: s[2] })) : [];
   const maxPlayers = game?.players?.max ?? 8;
-  if (spawns.length < Math.min(maxPlayers, 8)) add('spawn-count', 'error', { slot: `world.${t}.spawns`, pointer: '/spawns', message: `${spawns.length} spawns for up to ${maxPlayers} players`, fix: `add spawns to config/world.json /spawns (one per player)` });
+  if ((generated ? cfg.spawns : spawns.length) < Math.min(maxPlayers, 8)) add('spawn-count', 'error', { slot: `world.${t}.spawns`, pointer: '/spawns', message: `${generated ? cfg.spawns : spawns.length} spawns for up to ${maxPlayers} players`, fix: `add spawns to config/world.json /spawns (one per player)` });
   const playSolids = solids.filter(q => q.cls === 'solid');
   const camDist = game?.controller?.camera?.third?.distance ?? 5.2;
   const thirdPerson = (game?.camera ?? 'third') === 'third';

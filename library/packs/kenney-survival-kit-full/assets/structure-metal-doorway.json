@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "structure-metal-doorway",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-metal-doorway.glb",
+ "sha256": "ecc09b25d22692389932d20fed82717e10d426b12f02e74c545ee6d6e7168d28",
+ "bytes": 14572,
+ "preview": "previews/structure-metal-doorway.png",
+ "from": "Models/GLB format/structure-metal-doorway.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure metal doorway",
+ "tags": [
+  "structure",
+  "metal",
+  "doorway"
+ ],
+ "use": {
+  "size": [
+   0.535,
+   0.517,
+   0.089
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 160,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 160,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14572,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#9197b6",
+     "#a9b1d4",
+     "#747990",
+     "#6a7087",
+     "#676c84",
+     "#71768d",
+     "#7d829a",
+     "#bfc8f0"
+    ],
+    "saturation": 0.193,
+    "value": 0.582,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.58
+     },
+     {
+      "hue": "blue",
+      "share": 0.42
+     }
+    ],
+    "grey": 0.58
+   },
+   "trianglesPerMetre": 17.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c91e83d64cc0991e73758fe722618e07b0c282894f7a3f4b9040209a6d006b9e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

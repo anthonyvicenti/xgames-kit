@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-cone-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-cone-fall.glb",
+ "sha256": "b7bea8d14c079d5d5c5d66edc13af3663d4f1a14ff5d92f3c6ae1c9093ef67bc",
+ "bytes": 5044,
+ "preview": "previews/tree-cone-fall.png",
+ "from": "Models/GLTF format/tree_cone_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree cone fall",
+ "tags": [
+  "tree",
+  "cone",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.53,
+   1.43,
+   0.53
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 132,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 132,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5044,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc78a",
+     "#fff9f0"
+    ],
+    "saturation": 1,
+    "value": 0.801,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.849
+     },
+     {
+      "hue": "grey",
+      "share": 0.151
+     }
+    ],
+    "grey": 0.151
+   },
+   "trianglesPerMetre": 9.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bd1d2833ef7a838fc27224c6f4a7cb0bb0680e1896f1c1f122814a8424e4c694",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

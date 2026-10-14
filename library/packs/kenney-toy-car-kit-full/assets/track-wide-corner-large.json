@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-corner-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-corner-large.glb",
+ "sha256": "4e1bd8dec8cd29e34dcb752148ed99a381f3e2bbf11f4b74b4fdafd9d6d09b13",
+ "bytes": 17204,
+ "preview": "previews/track-wide-corner-large.png",
+ "from": "Models/GLB format/track-wide-corner-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide corner large",
+ "tags": [
+  "track",
+  "wide",
+  "corner",
+  "large"
+ ],
+ "use": {
+  "size": [
+   5.2,
+   0.3,
+   5.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 316,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 316,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17204,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff8a44",
+     "#ff9a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.996,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.992
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ce78a78750ebec6f143d7cb82b6e7d6d1ddce84559c470480d0e01a66e24d734",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

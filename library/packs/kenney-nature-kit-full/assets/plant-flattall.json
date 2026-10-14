@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "plant-flattall",
+ "pack": "kenney-nature-kit-full",
+ "file": "plant-flattall.glb",
+ "sha256": "87cf2aa2dbd9d946afa111fa55fd204958fdffe93595dafb9beb2fd254198077",
+ "bytes": 2296,
+ "preview": "previews/plant-flattall.png",
+ "from": "Models/GLTF format/plant_flatTall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant flattall",
+ "tags": [
+  "plant",
+  "flattall"
+ ],
+ "use": {
+  "size": [
+   0.272,
+   0.284,
+   0.272
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2296,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#70e6d6"
+    ],
+    "saturation": 0.702,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b192523736f32754788de4dc7a5dcf30a58322b260ec8969120c91432a10b633",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "tree-pine.glb",
+ "sha256": "0f221e460472bffda036217e54adbed4cf93e2155d8a3bfd787716f52aef7199",
+ "bytes": 14132,
+ "preview": "previews/tree-pine.png",
+ "from": "Models/GLB format/tree-pine.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pine",
+ "tags": [
+  "tree",
+  "pine"
+ ],
+ "use": {
+  "size": [
+   0.558,
+   0.831,
+   0.558
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 114,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 114,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14132,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#4cb681",
+     "#3aa378",
+     "#2c9671",
+     "#43ad7d",
+     "#319a74",
+     "#3fa87a"
+    ],
+    "saturation": 0.457,
+    "value": 0.462,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.562
+     },
+     {
+      "hue": "green",
+      "share": 0.438
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "997258cfe56e0fde6f383579e78116750de459837f3597dda93f7861263fd43d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "wall-door",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-door.glb",
+ "sha256": "3cd708304443ced6f99f9ac8798faacd602c6cb3c9ec57e1b8cccde3ed2a0fa2",
+ "bytes": 20084,
+ "preview": "previews/wall-door.png",
+ "from": "Models/GLB format/wall-door.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall door",
+ "tags": [
+  "wall",
+  "door"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 376,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 376,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20084,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#c17e5e",
+     "#abb3d7",
+     "#9da5c5",
+     "#cb8665",
+     "#cc8665",
+     "#c48160"
+    ],
+    "saturation": 0.42,
+    "value": 0.606,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.713
+     },
+     {
+      "hue": "blue",
+      "share": 0.245
+     }
+    ],
+    "grey": 0.015
+   },
+   "trianglesPerMetre": 11.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "79b2d40db110ca96a6e77d4261da665fdf8c68f4c20c2afef5bce1c28ad72857",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -174,6 +174,7 @@ export async function assembleManifest(gameDir, { sounds = null, modules = null,
   push(mods.character ? fromModule(await provider(gameDir, 'character/character.js'), cfg) : standins.characterSlots(cfg), 'character');   // track C's slotsFor takes {characters, …}
   // a voxel world (CONTRACT §9, worlds) is its own world module, whichever profile draws the rest
   if (cfg.world?.template === 'voxel') push(fromModule(await provider(gameDir, 'world/voxel/world.js'), cfg.world), 'world');
+  else if (cfg.world?.template === 'terrain') push(fromModule(await provider(gameDir, 'world/terrain/world.js'), cfg.world, cfg.catalog, cfg.licences), 'world');
   else push(scenic || mods.world ? fromModule(await provider(gameDir, 'world/world.js', { scenic }), cfg.world, cfg.catalog, cfg.licences) : standins.worldSlots(cfg), 'world');
   push(scenic || mods.look ? fromModule(await provider(gameDir, 'look/look.js', { scenic }), cfg.look) : standins.lookSlots(cfg), 'look');
   }

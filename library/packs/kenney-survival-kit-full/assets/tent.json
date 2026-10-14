@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tent",
+ "pack": "kenney-survival-kit-full",
+ "file": "tent.glb",
+ "sha256": "b9f9951db6ade04d6ab344cedf513b0af0c3c8b2eea9fdab7c58d40946ef5930",
+ "bytes": 12636,
+ "preview": "previews/tent.png",
+ "from": "Models/GLB format/tent.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tent",
+ "tags": [
+  "tent"
+ ],
+ "use": {
+  "size": [
+   0.561,
+   0.491,
+   0.561
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12636,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#cf7a55",
+     "#c4714e",
+     "#b86746",
+     "#cb7753",
+     "#e78f65",
+     "#c06e4c",
+     "#c77450",
+     "#df8860"
+    ],
+    "saturation": 0.542,
+    "value": 0.558,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.24,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2c1c5fcc213929af0904a84921084361599ffab5077423a44d3d72a81d8c87c6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

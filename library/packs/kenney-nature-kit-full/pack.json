@@ -1,0 +1,72 @@
+{
+ "packVersion": 1,
+ "id": "kenney-nature-kit-full",
+ "title": "Kenney Nature Kit (all models)",
+ "describe": "Kenney's nature-kit, every model the curated kenney-nature-kit pack does not hold: low-poly, flat colours from one colour swatch texture, in Kenney's own units (not baked to metres).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/nature-kit",
+  "file": "library/packs/kenney-nature-kit-full/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+  "retrieved": "2026-10-14",
+  "rebuild": "art ingest kenney_nature-kit.zip --pack kenney-nature-kit-full --include 'Models/GLTF format/*.glb' (the models kenney-nature-kit holds come back too and are dropped)"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 2,
+   "hues": [
+    "#f2be9e",
+    "#ddf2f5",
+    "#73eddd",
+    "#72d3d5",
+    "#70e6d6",
+    "#ffc5a7",
+    "#ffffff",
+    "#ffc78a",
+    "#ccdbde",
+    "#d8faff",
+    "#dbab8e",
+    "#e7b5a3"
+   ],
+   "saturation": 0.714,
+   "value": 0.784,
+   "families": [
+    {
+     "hue": "cyan",
+     "share": 0.498
+    },
+    {
+     "hue": "orange",
+     "share": 0.4
+    },
+    {
+     "hue": "grey",
+     "share": 0.08
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 8.36,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 323,
+ "validators": [
+  "budget"
+ ]
+}

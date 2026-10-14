@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "wall-doorway-square-wide-curved",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-doorway-square-wide-curved.glb",
+ "sha256": "618bf7e04bded86eddccce3c261fd60d62add321d0e180c12f8f6956399c59fd",
+ "bytes": 16028,
+ "preview": "previews/wall-doorway-square-wide-curved.png",
+ "from": "Models/GLB format/wall-doorway-square-wide-curved.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall doorway square wide curved",
+ "tags": [
+  "wall",
+  "doorway",
+  "square",
+  "wide",
+  "curved"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 166,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 166,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16028,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#abb3d7",
+     "#696e86",
+     "#aab2d5",
+     "#767b92",
+     "#757a91",
+     "#767c92"
+    ],
+    "saturation": 0.275,
+    "value": 0.596,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.4
+     },
+     {
+      "hue": "blue",
+      "share": 0.329
+     },
+     {
+      "hue": "orange",
+      "share": 0.271
+     }
+    ],
+    "grey": 0.4
+   },
+   "trianglesPerMetre": 10.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d29b18fafb53b9280c7781b79514c5b3059a12c26586a78e0391eb055135b4a2",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

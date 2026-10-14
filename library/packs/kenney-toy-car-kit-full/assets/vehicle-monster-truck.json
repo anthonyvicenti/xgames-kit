@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-monster-truck",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-monster-truck.glb",
+ "sha256": "5ee6104810153a1ed10a6a5a48cc87a87760cebe7e6ddc90b25bd933ac338614",
+ "bytes": 45712,
+ "preview": "previews/vehicle-monster-truck.png",
+ "from": "Models/GLB format/vehicle-monster-truck.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle monster truck",
+ "tags": [
+  "vehicle",
+  "monster",
+  "truck"
+ ],
+ "use": {
+  "size": [
+   0.625,
+   0.75,
+   0.875
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1272,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1272,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 45712,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#494c5a",
+     "#505463",
+     "#696f86",
+     "#71778e",
+     "#464957",
+     "#4b4e5d",
+     "#613ebb",
+     "#3e414d"
+    ],
+    "saturation": 0.239,
+    "value": 0.437,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.71
+     },
+     {
+      "hue": "purple",
+      "share": 0.272
+     }
+    ],
+    "grey": 0.71
+   },
+   "trianglesPerMetre": 19.62,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5cab772a63005db81504a3403b54c5de73f23bfb731c93405811d73025d6db3e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

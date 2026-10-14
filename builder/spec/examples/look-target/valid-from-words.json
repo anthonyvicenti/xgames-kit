@@ -1,0 +1,22 @@
+{
+  "schema": "gf-look-target/1",
+  "from": "words",
+  "confidence": 0.4,
+  "words": "cosy cartoon village at golden hour, chunky rounded houses, soft light",
+  "palette": {
+    "colors": [
+      { "hex": "#f2b45a", "share": 0.3, "role": "warm light" },
+      { "hex": "#6fa35a", "share": 0.25, "role": "grass" },
+      { "hex": "#8fb8e8", "share": 0.2, "role": "sky" },
+      { "hex": "#7a4b35", "share": 0.15, "role": "wood" },
+      { "hex": "#2b2233", "share": 0.1, "role": "ink" }
+    ]
+  },
+  "lighting": { "key": "#ffd59a", "fill": "#6c7fb0", "keyStrength": "mid", "contrast": 0.45, "shadowSoftness": 0.7, "fog": { "density": 0.3, "color": "#f5d6a8" }, "time": "golden" },
+  "materials": { "shading": "soft-toon", "bands": 2, "roughness": 0.8, "gloss": "low", "rim": "low", "texture": "flat-colour" },
+  "shapes": { "chunkiness": 0.75, "roundness": 0.8, "detail": "low", "headToBody": 0.35, "eyes": "big", "language": ["rounded", "chunky", "soft bevels"] },
+  "camera": { "view": "three-quarter", "pitch": 30, "distance": "mid", "projection": "perspective" },
+  "reads": ["warm low sun on everything", "big soft rounded masses, no sharp corners", "a few warm colours against a soft blue sky"],
+  "avoid": ["photoreal textures", "thin spiky silhouettes"],
+  "sources": { "measured": [], "judged": ["palette", "lighting", "materials", "shapes", "camera", "reads"] }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "crops-wheatstageb",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-wheatstageb.glb",
+ "sha256": "933596384f9f8d3df678a1d05331ecfd0bb7c6c6325e20fa99fe6e211d2c7cf5",
+ "bytes": 9464,
+ "preview": "previews/crops-wheatstageb.png",
+ "from": "Models/GLTF format/crops_wheatStageB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops wheatstageb",
+ "tags": [
+  "crops",
+  "wheatstageb"
+ ],
+ "use": {
+  "size": [
+   0.54,
+   0.535,
+   0.447
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 360,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 360,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 9464,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#fbedde",
+     "#ffffff"
+    ],
+    "saturation": 0.757,
+    "value": 0.93,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 24.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "589db4d6fe0bd7616c1f1c2f10a335704b2dad5d24638dc08a5b2e5334c68852",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

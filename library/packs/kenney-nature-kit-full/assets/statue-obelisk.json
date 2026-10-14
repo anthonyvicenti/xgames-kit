@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "statue-obelisk",
+ "pack": "kenney-nature-kit-full",
+ "file": "statue-obelisk.glb",
+ "sha256": "5eb9caaea64a8babe56eb532524748baa60d1ec866364d26d395c3cc72e55886",
+ "bytes": 3528,
+ "preview": "previews/statue-obelisk.png",
+ "from": "Models/GLTF format/statue_obelisk.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "statue obelisk",
+ "tags": [
+  "statue",
+  "obelisk"
+ ],
+ "use": {
+  "size": [
+   0.307,
+   0.875,
+   0.307
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 38,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 38,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3528,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ccdbde"
+    ],
+    "saturation": 0.415,
+    "value": 0.883,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e18013044ad6453a1850226be29f63c37d67e0002141f5f6a4d14a46bde69e00",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

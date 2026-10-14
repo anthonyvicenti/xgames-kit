@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "crops-cornstagea",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-cornstagea.glb",
+ "sha256": "a8286dd5db74cd1954432fe9b6d1fc3216177a09636bef7c53b42ca4dffac698",
+ "bytes": 3628,
+ "preview": "previews/crops-cornstagea.png",
+ "from": "Models/GLTF format/crops_cornStageA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops cornstagea",
+ "tags": [
+  "crops",
+  "cornstagea"
+ ],
+ "use": {
+  "size": [
+   0.304,
+   0.5,
+   0.304
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 100,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 100,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3628,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 19.58,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "085e2f0501f0f39acc10762cf46449fd962d9ac0630e7fd128cf9aa4a1edcfb5",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

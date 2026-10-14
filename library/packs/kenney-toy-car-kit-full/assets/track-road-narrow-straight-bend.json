@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-straight-bend",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-straight-bend.glb",
+ "sha256": "61c6c33987a6678892b97a87124e7fdafc1794b8e0c963594fce8631f0edd00d",
+ "bytes": 17232,
+ "preview": "previews/track-road-narrow-straight-bend.png",
+ "from": "Models/GLB format/track-road-narrow-straight-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow straight bend",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "straight",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   1,
+   2.2,
+   2.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17232,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#d1d1e2",
+     "#e25d49",
+     "#e6e6ef",
+     "#eb6246"
+    ],
+    "saturation": 0.381,
+    "value": 0.654,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.36
+     },
+     {
+      "hue": "red",
+      "share": 0.351
+     },
+     {
+      "hue": "grey",
+      "share": 0.289
+     }
+    ],
+    "grey": 0.289
+   },
+   "trianglesPerMetre": 5.71,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8fd0ae48f8a4be7ce1dac70505d8d290d51c5ebe4ddb245904413d35ee0dd1d6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

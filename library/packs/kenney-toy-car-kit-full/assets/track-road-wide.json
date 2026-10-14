@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide.glb",
+ "sha256": "48406475584aae1fbf1d860b6dc4acf04d776f3e8886c70142ba661c347a4b28",
+ "bytes": 11844,
+ "preview": "previews/track-road-wide.png",
+ "from": "Models/GLB format/track-road-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide",
+ "tags": [
+  "track",
+  "road",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11844,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#eb6246"
+    ],
+    "saturation": 0.349,
+    "value": 0.62,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.36
+     },
+     {
+      "hue": "blue",
+      "share": 0.32
+     },
+     {
+      "hue": "red",
+      "share": 0.32
+     }
+    ],
+    "grey": 0.36
+   },
+   "trianglesPerMetre": 3.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3ebefe30cd8d8fe2d53e0af8e88ea6173b8571baf5ba12bd1d3cc396e6247882",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

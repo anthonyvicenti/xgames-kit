@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "conveyor-belt",
+ "pack": "kenney-platformer-kit-full",
+ "file": "conveyor-belt.glb",
+ "sha256": "ebf57f1821156cfcf6daae9d20241655bfe477b044d5b5134c536aabba430781",
+ "bytes": 22172,
+ "preview": "previews/conveyor-belt.png",
+ "from": "Models/GLB format/conveyor-belt.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "conveyor belt",
+ "tags": [
+  "conveyor",
+  "belt"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.35,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 364,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 364,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 22172,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#658ed6",
+     "#585abe",
+     "#65657a",
+     "#82879d",
+     "#6b6c81",
+     "#7d8096",
+     "#69697e",
+     "#7f8398"
+    ],
+    "saturation": 0.338,
+    "value": 0.546,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.484
+     },
+     {
+      "hue": "grey",
+      "share": 0.471
+     },
+     {
+      "hue": "orange",
+      "share": 0.045
+     }
+    ],
+    "grey": 0.471
+   },
+   "trianglesPerMetre": 9.29,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f689bd8d4cbcf483a5ea8bcfc9b6008a00779aca5f642c14e6b7f9f4953af069",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

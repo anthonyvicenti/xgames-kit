@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tool-hoe-upgraded",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-hoe-upgraded.glb",
+ "sha256": "b907fa5c9d558cec86a67b879531673a40f74ad73bffd04e2e995e31caf96b76",
+ "bytes": 11908,
+ "preview": "previews/tool-hoe-upgraded.png",
+ "from": "Models/GLB format/tool-hoe-upgraded.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool hoe upgraded",
+ "tags": [
+  "tool",
+  "hoe",
+  "upgraded"
+ ],
+ "use": {
+  "size": [
+   0.089,
+   0.24,
+   0.091
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 106,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 106,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11908,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#676c84",
+     "#747990",
+     "#c77450",
+     "#d7815b",
+     "#8a91ad",
+     "#a9b1d4",
+     "#9197b6",
+     "#a0a8c9"
+    ],
+    "saturation": 0.282,
+    "value": 0.579,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.482
+     },
+     {
+      "hue": "blue",
+      "share": 0.283
+     },
+     {
+      "hue": "orange",
+      "share": 0.235
+     }
+    ],
+    "grey": 0.482
+   },
+   "trianglesPerMetre": 47.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5eeb272214900705e2a147ca2500e233b629e5dc6fc53ffc82f29534fda4378a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

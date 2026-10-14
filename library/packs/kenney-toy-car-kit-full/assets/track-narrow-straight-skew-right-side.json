@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "track-narrow-straight-skew-right-side",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-narrow-straight-skew-right-side.glb",
+ "sha256": "53ee997fdb08ab2986af41ec2772b5f8c3c0a8155e8a0541a361300b07e29bdd",
+ "bytes": 15176,
+ "preview": "previews/track-narrow-straight-skew-right-side.png",
+ "from": "Models/GLB format/track-narrow-straight-skew-right-side.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track narrow straight skew right side",
+ "tags": [
+  "track",
+  "narrow",
+  "straight",
+  "skew",
+  "right",
+  "side"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1.082,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15176,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff8a44",
+     "#ff7944",
+     "#658dd6"
+    ],
+    "saturation": 0.99,
+    "value": 0.632,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.979
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "580b1c2a057b7bba347bc7ae9788e71a9d3d3fc62191c09d5c6d1118a8b22e65",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "plant-bush",
+ "pack": "kenney-nature-kit-full",
+ "file": "plant-bush.glb",
+ "sha256": "8f2e7298cb6a2b503091763696e3a93d66e15584abd5770176e70cc20178eb3e",
+ "bytes": 2588,
+ "preview": "previews/plant-bush.png",
+ "from": "Models/GLTF format/plant_bush.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant bush",
+ "tags": [
+  "plant",
+  "bush"
+ ],
+ "use": {
+  "size": [
+   0.396,
+   0.244,
+   0.396
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2588,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ae7b1beb39e242b13f5f29e3ec23ef21034b814f82297b8aa00a9bf4e1b09590",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-cone",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-cone.glb",
+ "sha256": "e9e8221a0dab0d6fc337e25cd4c1ed35bf12a3136c85839898c938a0f67d8546",
+ "bytes": 5048,
+ "preview": "previews/tree-cone.png",
+ "from": "Models/GLTF format/tree_cone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree cone",
+ "tags": [
+  "tree",
+  "cone"
+ ],
+ "use": {
+  "size": [
+   0.53,
+   1.43,
+   0.53
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 132,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 132,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5048,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.712,
+    "value": 0.688,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.849
+     },
+     {
+      "hue": "orange",
+      "share": 0.151
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "90be4d214ee2cbf79d317677cb87fc11dac9873b73e446b75e8c12825a374272",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

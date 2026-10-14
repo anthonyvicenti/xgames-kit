@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "crops-dirtdoublerow",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-dirtdoublerow.glb",
+ "sha256": "616349d6bfddedf102262cfec492ca52dc356cea147d8732018e6fe4f4e73828",
+ "bytes": 3996,
+ "preview": "previews/crops-dirtdoublerow.png",
+ "from": "Models/GLTF format/crops_dirtDoubleRow.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops dirtdoublerow",
+ "tags": [
+  "crops",
+  "dirtdoublerow"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   0.938
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 88,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 88,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3996,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.714,
+    "value": 0.769,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.36,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b5c330d81a4efe0944caf5f1d1dd0c0d50227c93f2a4a57ec2425d2c9b7a2d84",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-side-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-side-stone.glb",
+ "sha256": "188b0755a6f87e263898cfbefe383962f6b999b13d888dd1bf99590e1672ee94",
+ "bytes": 4852,
+ "preview": "previews/bridge-side-stone.png",
+ "from": "Models/GLTF format/bridge_side_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge side stone",
+ "tags": [
+  "bridge",
+  "side",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   0.4,
+   1.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4852,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ccdbde",
+     "#ddf2f5"
+    ],
+    "saturation": 0.339,
+    "value": 0.865,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2da6236082152f843a29393225be8bbbd28abacf597acc35704c0bb393bc4127",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

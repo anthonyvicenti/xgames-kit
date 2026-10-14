@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-wood",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-wood.glb",
+ "sha256": "28532712f54bce051c5bfd7a15176b2d03a30ed524bfd0ae5e6aadb2acdb4e16",
+ "bytes": 6356,
+ "preview": "previews/bridge-wood.png",
+ "from": "Models/GLTF format/bridge_wood.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge wood",
+ "tags": [
+  "bridge",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.04,
+   0.4,
+   1.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6356,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ddf2f5",
+     "#ffc5a7"
+    ],
+    "saturation": 0.727,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.707
+     },
+     {
+      "hue": "cyan",
+      "share": 0.293
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3da4c208b0f72b7f2ba42db521b62ec4b0278050c75256a6982c40d21aab5701",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

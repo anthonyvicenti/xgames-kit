@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-low-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-low-narrow.glb",
+ "sha256": "5848a689dda7d1ab138f6d5723fd12f1a7a6074bcbeeea55e884387e191c90d3",
+ "bytes": 15956,
+ "preview": "previews/block-snow-low-narrow.png",
+ "from": "Models/GLB format/block-snow-low-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow low narrow",
+ "tags": [
+  "block",
+  "snow",
+  "low",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   0.5,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15956,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#cacade",
+     "#efeff5"
+    ],
+    "saturation": 0.437,
+    "value": 0.774,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.481
+     },
+     {
+      "hue": "grey",
+      "share": 0.274
+     },
+     {
+      "hue": "blue",
+      "share": 0.246
+     }
+    ],
+    "grey": 0.274
+   },
+   "trianglesPerMetre": 6.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fb30b6d84905d25d322546adc57481bdd8eb68534c8f1e79267b4767782d819f",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

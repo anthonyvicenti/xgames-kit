@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "chimney-base",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "chimney-base.glb",
+ "sha256": "ecb94045bf29ffe0888dabaff1453e386cbd10410737822b5f26905eef12c9f7",
+ "bytes": 15044,
+ "preview": "previews/chimney-base.png",
+ "from": "Models/GLB format/chimney-base.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "chimney base",
+ "tags": [
+  "chimney",
+  "base"
+ ],
+ "use": {
+  "size": [
+   0.344,
+   1,
+   0.52
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 78,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 78,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15044,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#8d93b1",
+     "#adb5d9",
+     "#9da4c4",
+     "#6a7087",
+     "#71768d",
+     "#989fbe",
+     "#a9b1d4",
+     "#a5add0"
+    ],
+    "saturation": 0.219,
+    "value": 0.627,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.552
+     },
+     {
+      "hue": "grey",
+      "share": 0.448
+     }
+    ],
+    "grey": 0.448
+   },
+   "trianglesPerMetre": 6.67,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f7da0ca85be73a00f65aa297023e136e6bed93b7667ef49861a97ce89fd3a6e9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

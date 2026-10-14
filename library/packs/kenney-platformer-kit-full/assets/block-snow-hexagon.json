@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-hexagon",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-hexagon.glb",
+ "sha256": "876a24d50990d65cdc4b053edd93f916cf5cd8d406b4cf68970c1f4389c421f4",
+ "bytes": 14800,
+ "preview": "previews/block-snow-hexagon.png",
+ "from": "Models/GLB format/block-snow-hexagon.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow hexagon",
+ "tags": [
+  "block",
+  "snow",
+  "hexagon"
+ ],
+ "use": {
+  "size": [
+   1.1,
+   1,
+   1.27
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14800,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#cacade",
+     "#efeff5"
+    ],
+    "saturation": 0.487,
+    "value": 0.714,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.652
+     },
+     {
+      "hue": "grey",
+      "share": 0.207
+     },
+     {
+      "hue": "blue",
+      "share": 0.141
+     }
+    ],
+    "grey": 0.207
+   },
+   "trianglesPerMetre": 2.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9ffd69efb0462e99418f17682fb4ae4cb26cb0206c1379b4524d4d8e1b5b55da",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

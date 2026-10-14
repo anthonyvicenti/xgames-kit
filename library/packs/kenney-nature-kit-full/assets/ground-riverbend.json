@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "ground-riverbend",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-riverbend.glb",
+ "sha256": "c3694c1ab94251357b62127e56316cb29620262113f6fb12998373611ee79e78",
+ "bytes": 5520,
+ "preview": "previews/ground-riverbend.png",
+ "from": "Models/GLTF format/ground_riverBend.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground riverbend",
+ "tags": [
+  "ground",
+  "riverbend"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 54,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 54,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5520,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#73eddd",
+     "#d8faff",
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.815,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.399
+     },
+     {
+      "hue": "grey",
+      "share": 0.33
+     },
+     {
+      "hue": "orange",
+      "share": 0.271
+     }
+    ],
+    "grey": 0.33
+   },
+   "trianglesPerMetre": 7.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "26bc9c6cc1a9f6c0e9e6a430a92b655e53150dd6dea0085e76a3828d0fd92f86",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

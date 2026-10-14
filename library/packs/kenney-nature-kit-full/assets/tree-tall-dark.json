@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-tall-dark",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-tall-dark.glb",
+ "sha256": "4250d3107dbbbb01bc46e7c160b112c516fa189e0640c0b50bd17123d7cbc330",
+ "bytes": 4124,
+ "preview": "previews/tree-tall-dark.png",
+ "from": "Models/GLTF format/tree_tall_dark.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree tall dark",
+ "tags": [
+  "tree",
+  "tall",
+  "dark"
+ ],
+ "use": {
+  "size": [
+   0.399,
+   1.688,
+   0.461
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4124,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.544,
+    "value": 0.649,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.94
+     },
+     {
+      "hue": "orange",
+      "share": 0.06
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c764c0f497c752459b59df3bc637e7d595ef767c0a33614b1b2f928a4299629f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

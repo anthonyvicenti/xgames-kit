@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-low-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-low-narrow.glb",
+ "sha256": "ee19eb6164447fcff2bae1f516904ecf711d4876c297bc7287e579d1a12cf91c",
+ "bytes": 16200,
+ "preview": "previews/block-snow-overhang-low-narrow.png",
+ "from": "Models/GLB format/block-snow-overhang-low-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang low narrow",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "low",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   0.5,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16200,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.428,
+    "value": 0.776,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.464
+     },
+     {
+      "hue": "blue",
+      "share": 0.278
+     },
+     {
+      "hue": "grey",
+      "share": 0.258
+     }
+    ],
+    "grey": 0.258
+   },
+   "trianglesPerMetre": 6.96,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ccc84caf8c732260e127d08543b80f82a002d403007b30a5d269d3403a9276ac",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

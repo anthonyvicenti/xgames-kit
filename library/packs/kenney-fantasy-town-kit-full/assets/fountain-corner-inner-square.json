@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "fountain-corner-inner-square",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fountain-corner-inner-square.glb",
+ "sha256": "f7a36bc06d0dac40147249429caa95f3720793fb8c7f2810108ba3a250715c58",
+ "bytes": 15660,
+ "preview": "previews/fountain-corner-inner-square.png",
+ "from": "Models/GLB format/fountain-corner-inner-square.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fountain corner inner square",
+ "tags": [
+  "fountain",
+  "corner",
+  "inner",
+  "square"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.28,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15660,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#79dcff",
+     "#7d829c",
+     "#bdc6ee",
+     "#9299b7",
+     "#a8b0d3",
+     "#969dbd",
+     "#747990",
+     "#6c7289"
+    ],
+    "saturation": 0.643,
+    "value": 0.673,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.561
+     },
+     {
+      "hue": "grey",
+      "share": 0.337
+     },
+     {
+      "hue": "blue",
+      "share": 0.102
+     }
+    ],
+    "grey": 0.337
+   },
+   "trianglesPerMetre": 3.77,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "76c96385cddbe153a75088d717f63624ac5e1dd948e84f6ae540140d23825ec2",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

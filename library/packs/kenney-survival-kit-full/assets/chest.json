@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "chest",
+ "pack": "kenney-survival-kit-full",
+ "file": "chest.glb",
+ "sha256": "9dd882341b748b79d6d953cea93a1d041e3fb76586b6b09538f5d377e64921e3",
+ "bytes": 20136,
+ "preview": "previews/chest.png",
+ "from": "Models/GLB format/chest.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "chest",
+ "tags": [
+  "chest"
+ ],
+ "use": {
+  "size": [
+   0.26,
+   0.257,
+   0.272
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 322,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 322,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 20136,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c4714e",
+     "#c06e4c",
+     "#c77450",
+     "#b86746",
+     "#d7815b",
+     "#ca7652",
+     "#d37d58",
+     "#bc6a49"
+    ],
+    "saturation": 0.511,
+    "value": 0.555,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.955
+     },
+     {
+      "hue": "blue",
+      "share": 0.037
+     }
+    ],
+    "grey": 0.008
+   },
+   "trianglesPerMetre": 22.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "84b03023e425cc1f96c6d0b0f352608be9e8e01b112790e6b00b8651bf84379b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

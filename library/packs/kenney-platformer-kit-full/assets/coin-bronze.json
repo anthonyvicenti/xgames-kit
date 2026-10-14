@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "coin-bronze",
+ "pack": "kenney-platformer-kit-full",
+ "file": "coin-bronze.glb",
+ "sha256": "9923ccefbf17e05ee99ef14ca79e6294b0cc4703d7b62cb99bf76f4499217202",
+ "bytes": 15680,
+ "preview": "previews/coin-bronze.png",
+ "from": "Models/GLB format/coin-bronze.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "coin bronze",
+ "tags": [
+  "coin",
+  "bronze"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.4,
+   0.175
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ba6948",
+     "#e68e65",
+     "#d6815b",
+     "#cc7854",
+     "#dd865f",
+     "#ca7652",
+     "#c3714e",
+     "#e88f66"
+    ],
+    "saturation": 0.557,
+    "value": 0.562,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.955
+     },
+     {
+      "hue": "brown",
+      "share": 0.045
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 15.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "08dac2b3fcd16888728aaa67e1f9b6ddd89806a2898f07c538792dd4330f3657",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

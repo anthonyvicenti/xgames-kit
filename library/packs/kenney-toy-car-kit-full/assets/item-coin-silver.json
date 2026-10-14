@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "item-coin-silver",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "item-coin-silver.glb",
+ "sha256": "283108ce9e1a0bbd5b89f7474ed62d24ce2671b7b679a6fe11966a40ad10dc43",
+ "bytes": 13004,
+ "preview": "previews/item-coin-silver.png",
+ "from": "Models/GLB format/item-coin-silver.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "item coin silver",
+ "tags": [
+  "item",
+  "coin",
+  "silver"
+ ],
+ "use": {
+  "size": [
+   0.264,
+   0.264,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#656a82",
+     "#696f86",
+     "#71778e",
+     "#7c8199",
+     "#767b92",
+     "#5e647b",
+     "#5c617a",
+     "#6d738a"
+    ],
+    "saturation": 0.124,
+    "value": 0.481,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 21.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2ed8cda7f406266e3fae9f9289a59fdfce2b761061ba30d8800477fa524c131c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

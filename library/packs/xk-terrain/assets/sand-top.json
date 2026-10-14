@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "sand-top",
+ "pack": "xk-terrain",
+ "file": "sand-top.png",
+ "sha256": "a9e0fc2a8d19a54eb7cc5053c4c2845320353a1ac8873f923b9bb0a785a920ef",
+ "bytes": 633846,
+ "preview": "previews/sand-top.png",
+ "from": "runtimes/three/tools/terrain-textures.mjs: sand-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a sandy beach seen from above: ripples, specks and shell bits; seamless",
+ "tags": [
+  "terrain",
+  "tileable",
+  "cartoon",
+  "sand",
+  "top"
+ ],
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ebd092",
+     "#ecd193",
+     "#e9ce91",
+     "#eed394",
+     "#e8cd90",
+     "#edd293",
+     "#eacf91",
+     "#eacf92"
+    ],
+    "saturation": 0.668,
+    "value": 0.733,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.58
+     },
+     {
+      "hue": "orange",
+      "share": 0.42
+     }
+    ],
+    "exact": 2720,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6ec6568bbd1ff75d21ce729e3c18e042928b9c4e0c87ba4ce7338a1133d95021",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

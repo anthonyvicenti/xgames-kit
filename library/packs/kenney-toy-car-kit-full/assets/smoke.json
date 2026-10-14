@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "smoke",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "smoke.glb",
+ "sha256": "45dcc8e8d9aaaf95b02abbe3cddd544b95d2b2f2eb2005d15ee1f9f3e2b6bf2e",
+ "bytes": 20136,
+ "preview": "previews/smoke.png",
+ "from": "Models/GLB format/smoke.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "smoke",
+ "tags": [
+  "smoke"
+ ],
+ "use": {
+  "size": [
+   0.363,
+   0.33,
+   0.363
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 336,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 336,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20136,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c1c1d8",
+     "#c7c7db",
+     "#c5c5da",
+     "#cdcddf",
+     "#dadae7",
+     "#d1d1e2",
+     "#d5d5e4",
+     "#dedeea"
+    ],
+    "saturation": 0.223,
+    "value": 0.836,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.964
+     },
+     {
+      "hue": "grey",
+      "share": 0.036
+     }
+    ],
+    "grey": 0.036
+   },
+   "trianglesPerMetre": 21.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "66ce46e67c85982ca117d3c30bff0dd2c478cb19928ed768f9ce09b1243314c2",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

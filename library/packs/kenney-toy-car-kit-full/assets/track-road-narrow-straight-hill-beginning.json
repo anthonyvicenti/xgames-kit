@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-straight-hill-beginning",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-straight-hill-beginning.glb",
+ "sha256": "41df712e45f67869950ba92639e928f5b381d56e4befc2f5b39f3e248e0dbfae",
+ "bytes": 18016,
+ "preview": "previews/track-road-narrow-straight-hill-beginning.png",
+ "from": "Models/GLB format/track-road-narrow-straight-hill-beginning.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow straight hill beginning",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "straight",
+  "hill",
+  "beginning"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.212,
+   4.341
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 352,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 352,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18016,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#d1d1e2",
+     "#e25d49",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.385,
+    "value": 0.659,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.36
+     },
+     {
+      "hue": "red",
+      "share": 0.355
+     },
+     {
+      "hue": "grey",
+      "share": 0.285
+     }
+    ],
+    "grey": 0.285
+   },
+   "trianglesPerMetre": 5.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "205d27b48ff4d13ac13483b5c292b064a5c41585848a88b6c0d9d4458b7d7595",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-corner-small-ramp",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-corner-small-ramp.glb",
+ "sha256": "835d0bfe7b8a943e5e7b211cab9226e36854d781ad6c144474baf304a95e9734",
+ "bytes": 17288,
+ "preview": "previews/track-road-wide-corner-small-ramp.png",
+ "from": "Models/GLB format/track-road-wide-corner-small-ramp.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide corner small ramp",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "corner",
+  "small",
+  "ramp"
+ ],
+ "use": {
+  "size": [
+   3.2,
+   1.3,
+   3.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17288,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.343,
+    "value": 0.613,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.378
+     },
+     {
+      "hue": "red",
+      "share": 0.312
+     },
+     {
+      "hue": "blue",
+      "share": 0.31
+     }
+    ],
+    "grey": 0.378
+   },
+   "trianglesPerMetre": 4.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ce2f4c9dc53710601a8532cac1c90134e0ba0e96b3bd9212ab546f10f2a25da",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

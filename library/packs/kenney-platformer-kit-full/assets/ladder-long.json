@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "ladder-long",
+ "pack": "kenney-platformer-kit-full",
+ "file": "ladder-long.glb",
+ "sha256": "590515da138a1b75c98b237e68540ebbf1a2cac4994874cdf763ba3787f66452",
+ "bytes": 15272,
+ "preview": "previews/ladder-long.png",
+ "from": "Models/GLB format/ladder-long.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ladder long",
+ "tags": [
+  "ladder",
+  "long"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   2,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 88,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 88,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15272,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#965941",
+     "#9c5b41",
+     "#a25c41",
+     "#905741",
+     "#b66545",
+     "#ea9168"
+    ],
+    "saturation": 0.527,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.946
+     },
+     {
+      "hue": "brown",
+      "share": 0.054
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d978660e855dd45c93f47ebced1c83eaf4005680f16db637c5ce2aa15949bf14",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

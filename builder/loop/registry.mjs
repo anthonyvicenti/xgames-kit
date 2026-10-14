@@ -11,7 +11,7 @@
 //   kinds()        → [{id, describe, proven: ['<runtime>/<profile>' | '<runtime>'], packs}]
 //   mechanics()    → [{id, describe, runtimes: [...], capabilities: [...]}]
 //   capabilities() → [{id, describe}]                                   what a ledger line's `needs` may name
-//   vocabulary()   → {devices: [...], graphics: [...], cameras: [...], dimensions: [...], together: [...], bodies: [...]}
+//   vocabulary()   → {devices: [...], graphics: [...], cameras: [...], dimensions: [...], together: [...], bodies: [...], archetypes: [...]}
 //   manifest(type, id) → the manifest of one runtime ('runtime', '<runtime>/<profile>'), loop, mechanic, kind or pack:
 //                      {id, describe, note: [...], traps: [...], events, sync, gates: {A..F: {measures, skips}}, promise?}
 export const REGISTRY_CALLS = ['runtimes', 'compat', 'loops', 'kinds', 'mechanics', 'capabilities', 'vocabulary', 'manifest'];

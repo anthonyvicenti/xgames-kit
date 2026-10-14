@@ -1,0 +1,26 @@
+{
+  "about": "The terrain world (worlds/terrain) and the carve mechanic, measured 2026-10-14 by the terrain stream on Linux with a desktop GPU, headless Chrome 148 on the GPU (gpu-run.sh, CHROME_ARGS=--use-gl=angle --use-angle=gl-egl). The sheet beside this file shows only our own frames (top: examples/minimal/crater-isles at the reference framings, the kit's xk-terrain pictures; bottom: the two-player run, host and joiner from the same wide camera, the host's view, a late joiner) and no reference picture.",
+  "example": { "game": "examples/minimal/crater-isles", "verify": "PASS gates 6/6, measures 22/22 (176 s)" },
+  "twoPlayers": {
+    "how": "node tests/terrain-two-players.mjs <crater-isles game> --shots <dir> (host and joiner over real WebRTC on this machine's signaling, the host lobbing 6 bombs with real mouse clicks; then a third player joins the running round)",
+    "result": "6 of 6 steps: same generated ground (field hash ddb7a8ca on both); 6 craters carved; the joiner's field hash equal to the host's (3579d146) with all 6 applied live; the late joiner's equal after catching up from the host's log (asked once); no page errors"
+  },
+  "frameCost": {
+    "how": "window.__gfLook.perf(4000) on crater-isles alone with 3 bots, before and while bombs carve; the frame rate is held at 60 by the display rate, so p50/p95 show only that it never dropped a frame; renderCpuMs is the main thread's draw time",
+    "3840x2160": { "fps": 60, "p95Ms": 16.8, "renderCpuMs": 1.33, "calls": 268, "sceneTriangles": 273804, "pixelRatio": 1 },
+    "1920x1080": { "fps": 60, "p95Ms": 16.7, "renderCpuMs": 1.39, "calls": 260, "sceneTriangles": 271102 },
+    "phone 390x844 dpr 3 (emulated, low tier)": { "fps": 60, "p95Ms": 16.7, "renderCpuMs": 1.02, "calls": 225 },
+    "phone 390x844 dpr 3, 4x CPU throttle": { "fps": 60, "p95Ms": 16.7, "renderCpuMs": 2.64, "calls": 220 },
+    "notReal": "no real phone and no GPU timer: the phone rows are emulated on the desktop GPU"
+  },
+  "editCost": {
+    "terrainTriangles": 95000, "chunks": 135, "generateMs": 100, "firstMeshMs": 130,
+    "fieldEditMainThreadMs": [0.1, 0.4], "remeshOnWorkerMs": [5, 13], "chunkSwapMainThreadMaxMs": 1.4,
+    "under4xThrottle": { "generateMs": 317, "firstMeshMs": 270, "fieldEditMs": 1.1, "remeshMs": [22, 25], "chunkSwapMaxMs": 4.1 }
+  },
+  "artilleryCase": {
+    "how": "the wave-1 option B game (puff-artillery: the measured target's light, grade and ink, pilot-pack art) rebuilt on the terrain world: islands, the pilot's meadow top and seam-fixed meadow soil, xk-terrain rock strata on the cliffs, bombs that carve; rendered at four framings and scored by the look judge (builder/look/judge.mjs, measured part only: --no-vision), the same refs manifest and target as wave 1. The side-by-side with the references stays local, in a folder outside the repositories",
+    "measured": { "wave-1 option B (its sheet tiles)": 47, "terrain, soil cliffs": 54, "terrain, rock-strata cliffs": 53 },
+    "byEye": "Closer in what dominates: islands with rounded grassy hills over strata cliffs standing in a sea, craters through soil, where wave 1 had a fenced yard. Still off: a pale flat sea and sky with no clouds, no pines or props on the islands, bean bodies, the HUD (other streams' levers). About 6/10 on the world and ground (wave 1: about 5/10 overall); the measured part rose 47 → 53–54, under the judge's bar of 55."
+  }
+}

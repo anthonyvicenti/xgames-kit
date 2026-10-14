@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "item-cone",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "item-cone.glb",
+ "sha256": "d6f4bac7e9b5cddfe5bedca1965aec5afc862fd36f67fbffd48574cf8dc0bd5b",
+ "bytes": 12524,
+ "preview": "previews/item-cone.png",
+ "from": "Models/GLB format/item-cone.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "item cone",
+ "tags": [
+  "item",
+  "cone"
+ ],
+ "use": {
+  "size": [
+   0.24,
+   0.245,
+   0.24
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 66,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 66,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12524,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ff9a44",
+     "#ff7544",
+     "#ff8d44",
+     "#c9c9dd",
+     "#ff8144",
+     "#d1d1e2",
+     "#ff9344"
+    ],
+    "saturation": 0.858,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.816
+     },
+     {
+      "hue": "blue",
+      "share": 0.184
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 16.77,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9fb546dc8d86e15d9e0d6008f721b3bcd83645d107c0ab68634c25e243a7f6f6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

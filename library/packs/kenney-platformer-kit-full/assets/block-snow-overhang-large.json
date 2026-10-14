@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-large",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-large.glb",
+ "sha256": "4219445a79cb1fe5dee37fee2756108832f50df06f29aeee7544960d32182e7f",
+ "bytes": 16628,
+ "preview": "previews/block-snow-overhang-large.png",
+ "from": "Models/GLB format/block-snow-overhang-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang large",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "large"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   1,
+   2.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16628,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.483,
+    "value": 0.746,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.587
+     },
+     {
+      "hue": "grey",
+      "share": 0.272
+     },
+     {
+      "hue": "blue",
+      "share": 0.141
+     }
+    ],
+    "grey": 0.272
+   },
+   "trianglesPerMetre": 3.06,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fb6b8f2024ab4ad611a53283430e5b438637c35499c540f8d1d077c58d12e2bf",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

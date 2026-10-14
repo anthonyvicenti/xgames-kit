@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-stone-corner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-stone-corner.glb",
+ "sha256": "3eb1331f159bdad749d2cd2a72eb8220c6d00cefcfcef632f56fb68d4b012f96",
+ "bytes": 15900,
+ "preview": "previews/stairs-stone-corner.png",
+ "from": "Models/GLB format/stairs-stone-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs stone corner",
+ "tags": [
+  "stairs",
+  "stone",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15900,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#878eaa",
+     "#9299b7",
+     "#9da5c5",
+     "#a8b0d3",
+     "#8a91ae",
+     "#a7aed1",
+     "#a0a7c8"
+    ],
+    "saturation": 0.252,
+    "value": 0.696,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.714
+     },
+     {
+      "hue": "grey",
+      "share": 0.286
+     }
+    ],
+    "grey": 0.286
+   },
+   "trianglesPerMetre": 5.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4fd7ab97b286ab1c57ae66ab62eb0325a0f9b25880eeb24767a42036146bb5d7",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

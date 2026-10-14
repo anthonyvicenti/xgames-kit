@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-doorway-square-wide-curved",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-doorway-square-wide-curved.glb",
+ "sha256": "629af9f8fb5cc1d994d3a927b5d122d9b9040eb8895de71250353ff5ef3e0cbb",
+ "bytes": 16040,
+ "preview": "previews/wall-wood-doorway-square-wide-curved.png",
+ "from": "Models/GLB format/wall-wood-doorway-square-wide-curved.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood doorway square wide curved",
+ "tags": [
+  "wall",
+  "wood",
+  "doorway",
+  "square",
+  "wide",
+  "curved"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 166,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 166,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16040,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#9a5d47",
+     "#696e86",
+     "#995d47",
+     "#767b92",
+     "#757a91",
+     "#767c92"
+    ],
+    "saturation": 0.294,
+    "value": 0.497,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.493
+     },
+     {
+      "hue": "grey",
+      "share": 0.396
+     },
+     {
+      "hue": "brown",
+      "share": 0.111
+     }
+    ],
+    "grey": 0.396
+   },
+   "trianglesPerMetre": 10.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a246e8c19492085694a4874634b6027e12dfc8aea189872dee0b9085baf296b6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

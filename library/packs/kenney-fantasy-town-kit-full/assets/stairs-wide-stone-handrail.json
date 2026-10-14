@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-wide-stone-handrail",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-wide-stone-handrail.glb",
+ "sha256": "8f0ae8de41541d249fa5ef3a6a8a15366c15bf4516a0c9ec7bd6c8cf4f74ef75",
+ "bytes": 17736,
+ "preview": "previews/stairs-wide-stone-handrail.png",
+ "from": "Models/GLB format/stairs-wide-stone-handrail.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs wide stone handrail",
+ "tags": [
+  "stairs",
+  "wide",
+  "stone",
+  "handrail"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1.445,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 272,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 272,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17736,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#9197b5",
+     "#a4acce",
+     "#c27f5f",
+     "#ca8564",
+     "#8d93b1",
+     "#adb5d9",
+     "#b5bee3",
+     "#959cbb"
+    ],
+    "saturation": 0.316,
+    "value": 0.675,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.534
+     },
+     {
+      "hue": "grey",
+      "share": 0.294
+     },
+     {
+      "hue": "orange",
+      "share": 0.172
+     }
+    ],
+    "grey": 0.294
+   },
+   "trianglesPerMetre": 7.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "def3d44694a5393d3ddc1c002d09db90387dcef820286961ac506b0b9fc7009b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

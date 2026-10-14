@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "coin-silver",
+ "pack": "kenney-platformer-kit-full",
+ "file": "coin-silver.glb",
+ "sha256": "b247c2428130279d2058b0d5aea275fc37d7a80545646c54aad26c26bec5d2a8",
+ "bytes": 15684,
+ "preview": "previews/coin-silver.png",
+ "from": "Models/GLB format/coin-silver.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "coin silver",
+ "tags": [
+  "coin",
+  "silver"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.4,
+   0.175
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15684,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#8288a3",
+     "#b8c0e6",
+     "#a5accf",
+     "#adb5d9",
+     "#959cbb",
+     "#8d93b1",
+     "#bac3ea",
+     "#8086a0"
+    ],
+    "saturation": 0.268,
+    "value": 0.674,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.597
+     },
+     {
+      "hue": "grey",
+      "share": 0.403
+     }
+    ],
+    "grey": 0.403
+   },
+   "trianglesPerMetre": 15.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "267012feb04e773cbb6c82a477f38743a69a34249b506a6eb551370392acc55c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

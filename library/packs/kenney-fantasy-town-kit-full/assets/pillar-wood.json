@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "pillar-wood",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "pillar-wood.glb",
+ "sha256": "db90439cd5cab471bbcaa35a4a9d6b5eb80a7f89993058e29e2496cb4a9e2872",
+ "bytes": 14500,
+ "preview": "previews/pillar-wood.png",
+ "from": "Models/GLB format/pillar-wood.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "pillar wood",
+ "tags": [
+  "pillar",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   0.16,
+   1,
+   0.16
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14500,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#c48160",
+     "#cb8665",
+     "#5d627a",
+     "#5f657d",
+     "#5a6078",
+     "#62687f",
+     "#d38c6a"
+    ],
+    "saturation": 0.371,
+    "value": 0.535,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.685
+     },
+     {
+      "hue": "grey",
+      "share": 0.315
+     }
+    ],
+    "grey": 0.315
+   },
+   "trianglesPerMetre": 9.56,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "569c83dade6063399576640e80db35c34e422817ec132419fc2e2695189be5cf",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

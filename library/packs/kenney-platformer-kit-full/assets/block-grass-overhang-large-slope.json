@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-large-slope",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-large-slope.glb",
+ "sha256": "8a3b4d3f87583094dbe4639269d088cabbb3bcf44813c05a444f0fb5a9e075e4",
+ "bytes": 17200,
+ "preview": "previews/block-grass-overhang-large-slope.png",
+ "from": "Models/GLB format/block-grass-overhang-large-slope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang large slope",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "large",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   0.914,
+   2.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 154,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 154,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17200,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#d9835c",
+     "#329b74",
+     "#47b07e",
+     "#339c75",
+     "#50ba83"
+    ],
+    "saturation": 0.589,
+    "value": 0.504,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.38
+     },
+     {
+      "hue": "orange",
+      "share": 0.33
+     },
+     {
+      "hue": "green",
+      "share": 0.29
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "576e4a47388b9d7d826d52afedcca767e3b1f412857f030447dbc9904c972122",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

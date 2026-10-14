@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "roof-high-gable-end",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-high-gable-end.glb",
+ "sha256": "d2bd3eca5f7abf7b14ef2e75b073d76832378d69638e914ccd5ca48de8c695d6",
+ "bytes": 14680,
+ "preview": "previews/roof-high-gable-end.png",
+ "from": "Models/GLB format/roof-high-gable-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof high gable end",
+ "tags": [
+  "roof",
+  "high",
+  "gable",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1.118,
+   1.157,
+   1.134
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#d74d5b",
+     "#794939",
+     "#e2505b",
+     "#87523f",
+     "#c74a5c",
+     "#d84e5b",
+     "#de4f5b",
+     "#e1505b"
+    ],
+    "saturation": 0.558,
+    "value": 0.513,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.697
+     },
+     {
+      "hue": "brown",
+      "share": 0.297
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5f31970df848c6ffa95de3300f786bec2a331c63b1cb505ad893027ca67bf187",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

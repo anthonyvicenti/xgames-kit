@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "crops-leafsstageb",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-leafsstageb.glb",
+ "sha256": "8f2f5064f4cb27e95607929622d82e2363922e144b0d492deb414353544bb935",
+ "bytes": 3392,
+ "preview": "previews/crops-leafsstageb.png",
+ "from": "Models/GLTF format/crops_leafsStageB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops leafsstageb",
+ "tags": [
+  "crops",
+  "leafsstageb"
+ ],
+ "use": {
+  "size": [
+   0.389,
+   0.677,
+   0.389
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 16.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "aea4fe9a7943e7b2b7df99dc4fa00b85e34d00ea9b8e1b144504cef25d77b98c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

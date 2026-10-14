@@ -191,6 +191,7 @@ export async function worldParts({ kit = KIT, scenicKit = SCENIC_KIT } = {}) {
     }
   }
   if (existsSync(kitPath(kit, 'world/voxel/default.json'))) out.voxel = { profile: 'standard-3d', provides: ['voxel'] };
+  if (existsSync(kitPath(kit, 'world/terrain/default.json'))) out.terrain = { profile: 'standard-3d', provides: ['terrain', 'zone:centre'] };
   const sw = existsSync(join(scenicKit, 'world/generate.js')) ? await importKitModule(join(scenicKit, 'world/generate.js')) : null;
   if (sw && !sw.error) for (const id of sw.templates ?? []) out[id] = { profile: 'scenic-3d', provides: sw.templateInfo?.[id]?.provides ?? [] };
   return out;
@@ -321,6 +322,8 @@ export async function catalog({ kit = KIT } = {}) {
   }
   // the block world (CONTRACT §9): the world loop's (loops/world/loop.json needs it and the build mechanic)
   if (provides.voxel) out.worlds.push({ id: 'voxel', ...STD, label: 'Block world', describe: 'a generated block island everyone shares and changes (place, break and paint blocks), saved on the play host. Only for the loop "world" (with the build mechanic): never a timed round. world.params tunes the terrain (seed, radius, hills, trees, lake)', kind: 'outdoor', setPieces: [], size: null, spawns: 0, zones: [], props: 0, sizes: {}, provides: provides.voxel.provides, loop: 'world' });
+  // smooth terrain (worlds/terrain): islands in a sea or a cliff shore that explosions carve (the carve mechanic)
+  if (provides.terrain) out.worlds.push({ id: 'terrain', ...STD, label: 'Smooth terrain', describe: 'generated rounded land in a sea (islands, or a cliff shore) with a soil cross-section, which explosions carve into smooth craters (the carve mechanic) on every screen. world.params: shape (islands | cliffs), size [x, y, z] m, land {height, hills, cliff, overhang, tunnels}, islands {count, radius}, materials {top, soil: {from: "library:<pack>/<id>", size}}', kind: 'outdoor', setPieces: [], size: null, spawns: 8, zones: ['centre'], props: 0, sizes: {}, provides: provides.terrain.provides });
   out.worldSizes = Object.fromEntries(gen.SIZES.map(k => [k, { area: gen.SIZE_CLASSES[k].area, describe: gen.SIZE_CLASSES[k].describe }]));
   // bodies (tags to match a game's theme; `playerColour` when the kit tints the body per seat); a body the model judge
   // fails (a clip distorts its hands, face, …) is not offered

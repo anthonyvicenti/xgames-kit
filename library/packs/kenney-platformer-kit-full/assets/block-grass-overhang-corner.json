@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-corner",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-corner.glb",
+ "sha256": "8ef80738c78914986cbc94ab3eab9d69ec9bc3bd20f2ff015ee4844d2b30d8b0",
+ "bytes": 16580,
+ "preview": "previews/block-grass-overhang-corner.png",
+ "from": "Models/GLB format/block-grass-overhang-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang corner",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#329b74",
+     "#2a9370",
+     "#47b07e",
+     "#339c75"
+    ],
+    "saturation": 0.564,
+    "value": 0.543,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.573
+     },
+     {
+      "hue": "green",
+      "share": 0.227
+     },
+     {
+      "hue": "cyan",
+      "share": 0.2
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8c1ce3ae7a1e605d08deb8535a91377dbe003e2489f48aeef53c4afd4527637e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

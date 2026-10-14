@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-pit",
+ "pack": "kenney-survival-kit-full",
+ "file": "campfire-pit.glb",
+ "sha256": "3ccf3bae999d1515dcb425e32f2fc422d7e92234cc6774e8f478f965cc5438e8",
+ "bytes": 16364,
+ "preview": "previews/campfire-pit.png",
+ "from": "Models/GLB format/campfire-pit.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire pit",
+ "tags": [
+  "campfire",
+  "pit"
+ ],
+ "use": {
+  "size": [
+   0.278,
+   0.109,
+   0.269
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 305,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 305,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16364,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#cb865e",
+     "#d7966f",
+     "#d18f67",
+     "#d4936b",
+     "#d37d58",
+     "#e1a680",
+     "#dc9e77",
+     "#cf7a55"
+    ],
+    "saturation": 0.559,
+    "value": 0.613,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 38.71,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a78ce38de408456649146077e1917d70bb39f7c87c3c7370276d809d2409b0ab",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

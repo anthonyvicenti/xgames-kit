@@ -1,0 +1,20 @@
+{
+  "template": "sea-islands",
+  "kind": "outdoor",
+  "generator": "sea",
+  "label": "Sea islands",
+  "describe": "Islands in an open sea: the play island's flat middle ringed by rolling hills, its edge rounding over into cut cliffs down to the water, beaches, more islands toward the horizon and big clouds over the sea. 2-8 players.",
+  "size": [30, 24],
+  "sizes": { "small": [30, 24], "medium": [40, 32], "large": [52, 40] },
+  "players": 8,
+  "ground": { "kind": "grass", "color": "#8fd24e", "color2": "#77bf3f", "beach": "#ecd193" },
+  "cliffs": { "color": "#c8925a", "strata": ["#d9a46a", "#b87a48", "#9a6440", "#c8925a"], "under": "#7a5a44" },
+  "sea": { "radius": 900 },
+  "params": { "relief": 0.5, "cliff": 4, "terraces": 1, "beach": 0.5, "islands": 4, "clouds": 0.45, "cloudStyle": "puff", "density": 0.5, "dressing": [] },
+  "dressing": { "always": ["tree-pine-cute", "tree-puffy", "rock-large", "rock-small", "grass-tuft", "bush"] },
+  "setPieces": [
+    "the play island's flat middle (zone centre), open for play, the hills round it",
+    "the cliffs at the island's edge: the ground cut open (a soil texture slot) down to the sea",
+    "the other islands and the clouds toward the horizon: the place goes on over the water"
+  ]
+}

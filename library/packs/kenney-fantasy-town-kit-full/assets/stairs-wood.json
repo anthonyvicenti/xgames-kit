@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-wood",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-wood.glb",
+ "sha256": "4a5631ccbb5ccb088aae1e56b8c43cd4ddff1d9f3eba68945666e61e7dc12471",
+ "bytes": 19128,
+ "preview": "previews/stairs-wood.png",
+ "from": "Models/GLB format/stairs-wood.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs wood",
+ "tags": [
+  "stairs",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 432,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 432,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19128,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c07d5d",
+     "#c88363",
+     "#c88463",
+     "#c27f5f",
+     "#cc8665",
+     "#c58161",
+     "#ce8867",
+     "#b97859"
+    ],
+    "saturation": 0.468,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.57,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f6be9e5f77572d493dce374b68d231f116800ce388a3dcb0d646032162ccadd9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

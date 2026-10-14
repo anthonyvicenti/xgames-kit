@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-default-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-default-fall.glb",
+ "sha256": "472461955111041f4220820803d3809f16ed7b9e5bc3e480074b1334c7c4d289",
+ "bytes": 6336,
+ "preview": "previews/tree-default-fall.png",
+ "from": "Models/GLTF format/tree_default_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree default fall",
+ "tags": [
+  "tree",
+  "default",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.755,
+   1.708,
+   0.654
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 228,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 228,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6336,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#fff9f0",
+     "#ffc78a"
+    ],
+    "saturation": 1,
+    "value": 0.889,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.591
+     },
+     {
+      "hue": "orange",
+      "share": 0.409
+     }
+    ],
+    "grey": 0.591
+   },
+   "trianglesPerMetre": 6.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f8e90ed7f7771644998a7c361302213af04350150b3ea0631e8384d26506efa2",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

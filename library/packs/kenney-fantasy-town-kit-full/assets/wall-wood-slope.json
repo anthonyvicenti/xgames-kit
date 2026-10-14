@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-slope",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-slope.glb",
+ "sha256": "f42528f3a4f79a9e03d4f6330bd1f91e3802afedd509f2b64c050cc79b175528",
+ "bytes": 15020,
+ "preview": "previews/wall-wood-slope.png",
+ "from": "Models/GLB format/wall-wood-slope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood slope",
+ "tags": [
+  "wall",
+  "wood",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15020,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#895340",
+     "#885240",
+     "#8d5542",
+     "#935944",
+     "#905743",
+     "#925844"
+    ],
+    "saturation": 0.4,
+    "value": 0.466,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.575
+     },
+     {
+      "hue": "orange",
+      "share": 0.425
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.84,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "56bdc7b8755fab80c753c1f6a7c856be15442fd89d0e53a1588ac2baba2401b8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

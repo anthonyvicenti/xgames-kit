@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-cornerinnertop-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-cornerinnertop-stone.glb",
+ "sha256": "efd1719c49c6e9589647df17d9b330af6353a9f996c8944967fbd58aafab7e1b",
+ "bytes": 3996,
+ "preview": "previews/cliff-cornerinnertop-stone.png",
+ "from": "Models/GLTF format/cliff_cornerInnerTop_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff cornerinnertop stone",
+ "tags": [
+  "cliff",
+  "cornerinnertop",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 89,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 89,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3996,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.568,
+    "value": 0.892,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.23,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fc18f8195c2850731bec89b99b0102f625bab539ef4fdd9dee6d618986125abf",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

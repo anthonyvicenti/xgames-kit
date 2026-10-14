@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-full-corner-inner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-full-corner-inner.glb",
+ "sha256": "8de2f6a0223f68a3b08cc58eea685f7293175094787160f71bd2dc5067d86db0",
+ "bytes": 15020,
+ "preview": "previews/stairs-full-corner-inner.png",
+ "from": "Models/GLB format/stairs-full-corner-inner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs full corner inner",
+ "tags": [
+  "stairs",
+  "full",
+  "corner",
+  "inner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15020,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7d829c",
+     "#bdc6ee",
+     "#a8b0d3",
+     "#9299b7",
+     "#989fbe",
+     "#a6aed0",
+     "#8288a3",
+     "#adb5d9"
+    ],
+    "saturation": 0.309,
+    "value": 0.691,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.696
+     },
+     {
+      "hue": "grey",
+      "share": 0.304
+     }
+    ],
+    "grey": 0.304
+   },
+   "trianglesPerMetre": 4.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4065d32494ad3ffca8d4d351f27f7927ff0c4c8f8deb99a2464210bcef58a208",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

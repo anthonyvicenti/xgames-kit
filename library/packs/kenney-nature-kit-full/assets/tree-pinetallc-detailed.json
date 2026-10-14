@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinetallc-detailed",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinetallc-detailed.glb",
+ "sha256": "c0d9582c0f4d743e0187a9eff6d9e41a0d7e67e4831bdc2a9facf973c5b82f07",
+ "bytes": 5168,
+ "preview": "previews/tree-pinetallc-detailed.png",
+ "from": "Models/GLTF format/tree_pineTallC_detailed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinetallc detailed",
+ "tags": [
+  "tree",
+  "pinetallc",
+  "detailed"
+ ],
+ "use": {
+  "size": [
+   0.48,
+   1.67,
+   0.555
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 154,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 154,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5168,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.549,
+    "value": 0.663,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.83
+     },
+     {
+      "hue": "orange",
+      "share": 0.17
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b538e229a9fb8cbbb579fa2a0df784d5354c8a70faa115fa80f8190f2e6bef47",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

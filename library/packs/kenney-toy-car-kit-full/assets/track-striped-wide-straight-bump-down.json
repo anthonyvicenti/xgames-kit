@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight-bump-down",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight-bump-down.glb",
+ "sha256": "c23324d27b5ce91098fa23081de4b31b2b5415db99c538fc33e489dacaa0d1f9",
+ "bytes": 16392,
+ "preview": "previews/track-striped-wide-straight-bump-down.png",
+ "from": "Models/GLB format/track-striped-wide-straight-bump-down.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight bump down",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight",
+  "bump",
+  "down"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.8,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#fa6b41"
+    ],
+    "saturation": 0.46,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.494
+     },
+     {
+      "hue": "blue",
+      "share": 0.454
+     },
+     {
+      "hue": "grey",
+      "share": 0.052
+     }
+    ],
+    "grey": 0.052
+   },
+   "trianglesPerMetre": 3.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "190e8fcaecf54b4606ae00648fde14ae24cda64ae548e72bd53bec87104bb647",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

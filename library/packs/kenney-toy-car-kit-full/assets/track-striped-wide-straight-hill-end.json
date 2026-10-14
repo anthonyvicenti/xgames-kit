@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight-hill-end",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight-hill-end.glb",
+ "sha256": "d8b40312b3f89de77e2751fdfc85044535df7fa9254213822abb3efb7eb001a8",
+ "bytes": 16476,
+ "preview": "previews/track-striped-wide-straight-hill-end.png",
+ "from": "Models/GLB format/track-striped-wide-straight-hill-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight hill end",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight",
+  "hill",
+  "end"
+ ],
+ "use": {
+  "size": [
+   2,
+   1.441,
+   4.412
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16476,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#f8f8fb"
+    ],
+    "saturation": 0.461,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.493
+     },
+     {
+      "hue": "blue",
+      "share": 0.454
+     },
+     {
+      "hue": "grey",
+      "share": 0.054
+     }
+    ],
+    "grey": 0.054
+   },
+   "trianglesPerMetre": 3.38,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "53a78d81e78e5d4197f77cab4473edf67b52ca76b3c5f400a654ed6db4bc886b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

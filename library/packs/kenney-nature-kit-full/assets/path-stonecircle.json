@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "path-stonecircle",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-stonecircle.glb",
+ "sha256": "ddf98d9220ac569e4826f1bd1313fcdb1b36651a16408dfad2f5fd3b55664a83",
+ "bytes": 5156,
+ "preview": "previews/path-stonecircle.png",
+ "from": "Models/GLTF format/path_stoneCircle.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path stonecircle",
+ "tags": [
+  "path",
+  "stonecircle"
+ ],
+ "use": {
+  "size": [
+   0.932,
+   0.05,
+   0.877
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 164,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 164,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5156,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ccdbde",
+     "#ddf2f5"
+    ],
+    "saturation": 0.342,
+    "value": 0.866,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d3f2044acdaeb7100d82aca702207e9c2f198aa0f03b9aef79a714e3a4a563f5",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

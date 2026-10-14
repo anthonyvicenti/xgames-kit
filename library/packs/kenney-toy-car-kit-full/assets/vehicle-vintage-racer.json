@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-vintage-racer",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-vintage-racer.glb",
+ "sha256": "510db680ec527d25d649cbbbfe413ecaf1a83b898ae625cd846db094b66c1f43",
+ "bytes": 41088,
+ "preview": "previews/vehicle-vintage-racer.png",
+ "from": "Models/GLB format/vehicle-vintage-racer.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle vintage racer",
+ "tags": [
+  "vehicle",
+  "vintage",
+  "racer"
+ ],
+ "use": {
+  "size": [
+   0.55,
+   0.325,
+   0.875
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1052,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1052,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41088,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#5a6078",
+     "#71778e",
+     "#7f849c",
+     "#494c5a",
+     "#696f86",
+     "#505463",
+     "#613ebb",
+     "#744ec8"
+    ],
+    "saturation": 0.237,
+    "value": 0.462,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.73
+     },
+     {
+      "hue": "purple",
+      "share": 0.234
+     },
+     {
+      "hue": "blue",
+      "share": 0.036
+     }
+    ],
+    "grey": 0.73
+   },
+   "trianglesPerMetre": 22.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8528456ca062685ddabb713509eb60b82146e26343b283344c26811dd5d8faf8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-cornerinnerlarge-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-cornerinnerlarge-rock.glb",
+ "sha256": "a0d9edbf38203b43799b01694f5c2ae0ee9e72596908b03e8fe62b73595e2ea6",
+ "bytes": 2420,
+ "preview": "previews/cliff-cornerinnerlarge-rock.png",
+ "from": "Models/GLTF format/cliff_cornerInnerLarge_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff cornerinnerlarge rock",
+ "tags": [
+  "cliff",
+  "cornerinnerlarge",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2420,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "03b7038dfc6449f646e789819014f3a26548a64ef42d028979c00df949c5d49f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

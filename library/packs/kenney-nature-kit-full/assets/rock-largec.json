@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "rock-largec",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-largec.glb",
+ "sha256": "1d7bb32f02c1337d794a849b9d108294ff836d1fdf6f014d95c8b6be38de1c06",
+ "bytes": 4136,
+ "preview": "previews/rock-largec.png",
+ "from": "Models/GLTF format/rock_largeC.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock largec",
+ "tags": [
+  "rock",
+  "largec"
+ ],
+ "use": {
+  "size": [
+   1.064,
+   0.321,
+   1.016
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4136,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.765,
+    "value": 0.771,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.86
+     },
+     {
+      "hue": "cyan",
+      "share": 0.14
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "23aee8b727adeaf260207af3e0615dc69aa766c6d87de1d44cbc8c2711d74dd1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

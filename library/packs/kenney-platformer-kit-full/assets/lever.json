@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "lever",
+ "pack": "kenney-platformer-kit-full",
+ "file": "lever.glb",
+ "sha256": "43227c37646e079e83624db3911992411ccd572ae83fd378a894d11559796a3f",
+ "bytes": 21352,
+ "preview": "previews/lever.png",
+ "from": "Models/GLB format/lever.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "lever",
+ "tags": [
+  "lever"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.642,
+   0.45
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 134,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 134,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 21352,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7b7e94",
+     "#6c6e83",
+     "#707287",
+     "#717388",
+     "#73768b",
+     "#76798e",
+     "#787b90",
+     "#e76047"
+    ],
+    "saturation": 0.17,
+    "value": 0.499,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.895
+     },
+     {
+      "hue": "red",
+      "share": 0.105
+     }
+    ],
+    "grey": 0.895
+   },
+   "trianglesPerMetre": 9.58,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a742f4d8f0d1fdd70fe1e1cb3510d61ec53879766d3fb4da249b6d83b0ae8578",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

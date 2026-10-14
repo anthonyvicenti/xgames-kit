@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-corner-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-corner-large.glb",
+ "sha256": "1a37a097954170a159488464d7c87c104e365e8d79a62fa348140957f2f04b54",
+ "bytes": 19048,
+ "preview": "previews/track-road-wide-corner-large.png",
+ "from": "Models/GLB format/track-road-wide-corner-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide corner large",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "corner",
+  "large"
+ ],
+ "use": {
+  "size": [
+   5.2,
+   0.3,
+   5.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 448,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 448,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19048,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.345,
+    "value": 0.617,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.371
+     },
+     {
+      "hue": "blue",
+      "share": 0.315
+     },
+     {
+      "hue": "red",
+      "share": 0.314
+     }
+    ],
+    "grey": 0.371
+   },
+   "trianglesPerMetre": 3.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "cdfdef7c6c709e2cf9dd4d820ec0740751ee6969bb9ffb929f0fefb19d4d6553",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

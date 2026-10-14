@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "planks-half",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "planks-half.glb",
+ "sha256": "b364962f7d4bf1254c3ef31fbddf8e5abc3c820bf17fad44a8600b85dee501af",
+ "bytes": 15052,
+ "preview": "previews/planks-half.png",
+ "from": "Models/GLB format/planks-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "planks half",
+ "tags": [
+  "planks",
+  "half"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.06,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15052,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#be7c5d",
+     "#cc8665",
+     "#c3805f",
+     "#c78362"
+    ],
+    "saturation": 0.465,
+    "value": 0.576,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fe096b7ed7b29104724feab61d65ebc06966075955bf6e044eea635ef1076043",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

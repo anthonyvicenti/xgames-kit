@@ -1,0 +1,106 @@
+{
+ "schema": "xgames-art-case/1",
+ "id": "artillery-cartoon",
+ "about": "The looks layer's proving case (2026-10-14): a turn-based artillery battle between teams of cartoon creatures on chunky destructible ground, with the aesthetic of a well-known 3D artillery game. This file holds no image and no name of that game. The target below is written from words alone (from: words, confidence 0.4), from the brief's 'what makes it read'; the look-target stream's target measured from the local reference frames replaces it when it lands (builder/look/target.mjs). The needs are what such a look asks the library for; `wave` is the pilot made with Meshy (library/COVERAGE.md).",
+ "target": {
+  "schema": "gf-look-target/1",
+  "from": "words",
+  "confidence": 0.4,
+  "words": "candy-saturated cartoon: big-eyed creatures, chunky rounded ground with a visible soil cross-section, comic-book UI, oversized explosions, a bright sky",
+  "palette": {
+   "colors": [
+    { "hex": "#5ec8ff", "share": 0.3, "role": "sky" },
+    { "hex": "#6fd43a", "share": 0.16, "role": "grass" },
+    { "hex": "#a0622d", "share": 0.18, "role": "soil" },
+    { "hex": "#6b3a1c", "share": 0.08, "role": "deep soil" },
+    { "hex": "#ff9ec0", "share": 0.07, "role": "creature" },
+    { "hex": "#ffd23f", "share": 0.08, "role": "accent" },
+    { "hex": "#ff7a1a", "share": 0.06, "role": "explosion" },
+    { "hex": "#231d33", "share": 0.07, "role": "ink" }
+   ]
+  },
+  "edges": { "outline": "mid", "outlineColor": "#231d33" },
+  "lighting": { "key": "#fff4d6", "fill": "#9fd8ff", "keyStrength": "high", "contrast": 0.45, "shadowSoftness": 0.6, "time": "day" },
+  "materials": { "shading": "soft-toon", "bands": 2, "gloss": "mid", "rim": "low", "texture": "painted" },
+  "shapes": { "chunkiness": 0.85, "roundness": 0.85, "detail": "mid", "headToBody": 0.45, "eyes": "huge", "language": ["rounded", "chunky", "soft bevels", "squashy", "oversized"] },
+  "camera": { "view": "three-quarter", "distance": "mid", "projection": "perspective" },
+  "ui": { "style": "comic panels with thick dark ink and drop shadows", "font": ["chunky rounded display", "hand-lettered comic"], "corners": "rounded", "ink": "high" },
+  "vfx": { "style": "oversized cartoon fireballs with dark smoke rings and flying debris", "scale": "high", "palette": ["#ff7a1a", "#ffd23f", "#3a2f45"] },
+  "reads": [
+   "candy-saturated colours under a bright sky",
+   "cartoon creatures with huge eyes and squashy bodies",
+   "chunky rounded ground with a visible layered soil cross-section",
+   "explosions far bigger than the creatures",
+   "comic-book UI with thick ink"
+  ],
+  "avoid": [
+   "the reference game's characters, names, logos or actual art",
+   "realistic or grey PBR surfaces",
+   "thin, detailed or angular shapes"
+  ]
+ },
+ "needs": [
+  { "id": "creature-team", "group": "characters", "category": "body", "archetype": "blob", "words": "critter, blob, worm, grub", "count": 4, "dimension": "3d" },
+  { "id": "creature-fallback", "group": "characters", "category": "body", "archetype": "humanoid", "words": "bean, cute, toon", "count": 4, "dimension": "3d" },
+  { "id": "launcher", "group": "weapons", "category": "prop", "words": "bazooka, rocket launcher, launcher, cannon", "count": 1, "dimension": "3d" },
+  { "id": "grenade", "group": "weapons", "category": "prop", "words": "grenade, bomb", "count": 1, "dimension": "3d" },
+  { "id": "dynamite", "group": "weapons", "category": "prop", "words": "dynamite, tnt", "count": 1, "dimension": "3d" },
+  { "id": "mine", "group": "weapons", "category": "prop", "words": "land mine, mine", "count": 1, "dimension": "3d" },
+  { "id": "gun", "group": "weapons", "category": "prop", "words": "shotgun, gun, pistol, blaster", "count": 1, "dimension": "3d" },
+  { "id": "melee", "group": "weapons", "category": "prop", "words": "bat, club, hammer", "count": 1, "dimension": "3d" },
+  { "id": "crates", "group": "props", "category": "prop", "words": "weapon crate, supply crate, crate, health box", "count": 3, "dimension": "3d" },
+  { "id": "barrel", "group": "props", "category": "prop", "words": "oil drum, explosive barrel, barrel", "count": 1, "dimension": "3d" },
+  { "id": "gravestone", "group": "props", "category": "prop", "words": "gravestone, tombstone, grave", "count": 1, "dimension": "3d" },
+  { "id": "girder", "group": "props", "category": "prop", "words": "girder, beam, plank, bridge", "count": 1, "dimension": "3d" },
+  { "id": "scenery", "group": "props", "category": "prop", "words": "tree, rock, flower, mushroom", "count": 6, "dimension": "3d" },
+  { "id": "ground-top", "group": "terrain", "category": "texture", "words": "grass, turf", "count": 2, "dimension": "2d" },
+  { "id": "ground-soil", "group": "terrain", "category": "texture", "words": "soil, dirt, mud", "count": 2, "dimension": "2d" },
+  { "id": "ground-cross-section", "group": "terrain", "category": "texture", "words": "soil cross section, soil layers, strata", "count": 1, "dimension": "2d" },
+  { "id": "ground-rock", "group": "terrain", "category": "texture", "words": "rock, stone", "count": 1, "dimension": "2d" },
+  { "id": "water", "group": "terrain", "category": "texture", "words": "water, sea", "count": 1, "dimension": "2d", "code": "a water surface shader (each runtime's own)" },
+  { "id": "sky", "group": "skies", "category": "sky", "words": "sky", "count": 1, "dimension": "2d", "code": "runtimes/three/kit/look/sky.js (a gradient dome; colours are look slots)" },
+  { "id": "clouds", "group": "skies", "category": "prop", "words": "cloud", "count": 2, "dimension": "3d" },
+  { "id": "explosion", "group": "vfx", "category": "effect", "words": "explosion, fireball", "count": 1, "dimension": "2d" },
+  { "id": "smoke", "group": "vfx", "category": "effect", "words": "smoke, puff", "count": 1, "dimension": "2d", "code": "runtimes/three/kit/vfx preset smoke-puff" },
+  { "id": "debris", "group": "vfx", "category": "effect", "words": "debris, dirt, chunk", "count": 1, "dimension": "2d", "code": "runtimes/three/kit/vfx preset dust-kick" },
+  { "id": "comic-burst", "group": "vfx", "category": "effect", "words": "comic burst, starburst, pow", "count": 1, "dimension": "2d" },
+  { "id": "ui-display-font", "group": "ui", "category": "font", "words": "heavy, rounded, chunky", "count": 1, "dimension": "2d" },
+  { "id": "ui-comic-font", "group": "ui", "category": "font", "words": "comic, hand lettered", "count": 1, "dimension": "2d" },
+  { "id": "ui-panel", "group": "ui", "category": "picture", "words": "comic panel, speech bubble", "count": 1, "dimension": "2d", "code": "builder/ui/panels (CSS panels; ink and colours from the theme)" },
+  { "id": "snd-explosion", "group": "sounds", "category": "sound", "words": "explosion, boom", "count": 1, "dimension": "audio" },
+  { "id": "snd-launch", "group": "sounds", "category": "sound", "words": "launch, whoosh, rocket", "count": 1, "dimension": "audio" }
+ ],
+ "wave": {
+  "id": "looks-pilot-artillery-2026-10-14",
+  "cap": 600,
+  "pack": "looks-pilot-artillery",
+  "looks": { "candy-cartoon": {
+   "subjects": [
+    "a round egg-shaped legless critter with a headband, huge round eyes and tiny stubby feet",
+    "a wooden supply crate with rounded corners",
+    "a chunk of grassy ground cut open to show thick layered brown soil with pebbles and roots",
+    "a round cartoon bomb with a lit fuse",
+    "a big puffy cartoon explosion cloud"
+   ]
+  } },
+  "items": [
+   { "id": "moss-mole", "kind": "body", "archetype": "blob", "size": 1.0, "from": "our own Crumble Cove critter (games.fun trial artillery, drawn in code)", "words": "a round egg-shaped legless critter in leaf green with a pale green belly, a darker green headband knotted at the back, huge white eyes with black pupils and a small pink nose; two tiny stubby feet, no arms" },
+   { "id": "ember-newt", "kind": "body", "archetype": "blob", "size": 1.0, "from": "our own Crumble Cove critter (games.fun trial artillery, drawn in code)", "words": "a round egg-shaped legless critter in bright orange with a cream belly, a crest of small red-orange spikes along its head and back, a dark red headband, huge white eyes with black pupils; two tiny stubby feet, no arms" },
+   { "id": "tide-puff", "kind": "body", "archetype": "blob", "size": 1.0, "from": "a third crew in the same family, new", "words": "a round egg-shaped legless critter in sky blue with a white belly, two small fin-shaped ears, freckles on its cheeks, a yellow headband, huge white eyes with black pupils; two tiny stubby feet, no arms" },
+   { "id": "launcher", "kind": "prop", "held": true, "size": 1.2, "words": "a chunky cartoon rocket launcher tube, olive green with a yellow band, a big rounded muzzle and a simple grip" },
+   { "id": "grenade", "kind": "prop", "held": true, "size": 0.35, "words": "a round cartoon hand grenade, bright green, with a chunky pin ring and lever" },
+   { "id": "dynamite", "kind": "prop", "held": true, "size": 0.45, "words": "a bundle of three fat red cartoon dynamite sticks tied with rope, with a short curly fuse" },
+   { "id": "land-mine", "kind": "prop", "size": 0.45, "words": "a squat round cartoon land mine, dark grey with a red blinking button on top" },
+   { "id": "weapon-crate", "kind": "prop", "size": 0.9, "words": "a sturdy wooden supply crate with rounded corners and painted orange stripes" },
+   { "id": "health-crate", "kind": "prop", "size": 0.8, "words": "a white first-aid crate with rounded corners and a big red cross on each side" },
+   { "id": "oil-drum", "kind": "prop", "size": 1.0, "words": "a dented red oil drum with a yellow flame warning stripe" },
+   { "id": "gravestone", "kind": "prop", "size": 0.8, "words": "a small rounded cartoon gravestone of grey stone with a tuft of grass at its base" },
+   { "id": "meadow-top", "kind": "texture", "words": "bright cartoon grass turf seen from above, thick blades in two greens with little flowers" },
+   { "id": "meadow-soil", "kind": "texture", "words": "a cut-away cross-section of rich brown soil in soft horizontal layers, with pebbles, roots and small stones" },
+   { "id": "candy-top", "kind": "texture", "words": "a cartoon ground of pink frosting with rainbow sprinkles" },
+   { "id": "candy-soil", "kind": "texture", "words": "a cut-away cross-section of chocolate cake layers with cream filling and cookie crumbs" },
+   { "id": "rock-top", "kind": "texture", "words": "a cartoon ground of mossy grey-blue cobbles" },
+   { "id": "rock-soil", "kind": "texture", "words": "a cut-away cross-section of layered sandstone rock in warm ochre and rust bands with fossils and pebbles" }
+  ]
+ }
+}

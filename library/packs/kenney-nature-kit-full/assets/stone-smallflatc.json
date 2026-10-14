@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smallflatc",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smallflatc.glb",
+ "sha256": "247140770e45fd81db3b74d37640826ed69fb5dfcaf473e2bb2f9164d5c9d957",
+ "bytes": 2500,
+ "preview": "previews/stone-smallflatc.png",
+ "from": "Models/GLTF format/stone_smallFlatC.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smallflatc",
+ "tags": [
+  "stone",
+  "smallflatc"
+ ],
+ "use": {
+  "size": [
+   0.47,
+   0.065,
+   0.36
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 40,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 40,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2500,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.89,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8c7069b5c9b9fee5afa8bb7949df82f43935f7d4b513852b0846da5bb8337d91",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

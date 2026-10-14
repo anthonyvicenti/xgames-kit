@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-stone-handrail",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-stone-handrail.glb",
+ "sha256": "c488a55a14630a5e5b7571c614987d8c7acaaf2aa9d440185414af8fdf7d46a9",
+ "bytes": 17680,
+ "preview": "previews/stairs-stone-handrail.png",
+ "from": "Models/GLB format/stairs-stone-handrail.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs stone handrail",
+ "tags": [
+  "stairs",
+  "stone",
+  "handrail"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1.445,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 272,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 272,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#9197b5",
+     "#a4acce",
+     "#c27f5f",
+     "#ca8564",
+     "#939ab9",
+     "#cb8665",
+     "#8d93b1",
+     "#adb5d9"
+    ],
+    "saturation": 0.335,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.474
+     },
+     {
+      "hue": "orange",
+      "share": 0.279
+     },
+     {
+      "hue": "grey",
+      "share": 0.246
+     }
+    ],
+    "grey": 0.246
+   },
+   "trianglesPerMetre": 9.5,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "715e36185b27fcc37a84c345740584a10897a9148ba66050cda4a49eae4f7262",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

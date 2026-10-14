@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "ground-riverbendbank",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-riverbendbank.glb",
+ "sha256": "96402903e1807027b415886b4ab5f25b5fbb03d44c0f723d944b3345f8b5528f",
+ "bytes": 5524,
+ "preview": "previews/ground-riverbendbank.png",
+ "from": "Models/GLTF format/ground_riverBendBank.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground riverbendbank",
+ "tags": [
+  "ground",
+  "riverbendbank"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 54,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 54,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5524,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d8faff",
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.814,
+    "value": 0.797,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.412
+     },
+     {
+      "hue": "grey",
+      "share": 0.33
+     },
+     {
+      "hue": "cyan",
+      "share": 0.258
+     }
+    ],
+    "grey": 0.33
+   },
+   "trianglesPerMetre": 7.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fe9a92785a74bf4c3b716a83b5bdddc2a28e4ca9266db8922d4d3f24ee3eaef1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

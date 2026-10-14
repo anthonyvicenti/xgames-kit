@@ -105,15 +105,16 @@ test('the conversation\'s words: the person\'s words first, the line for their s
 });
 
 test('the stages a person follows, from the loop state (gf-loop/2: every step has a stage)', () => {
-  assert.deepEqual(STAGES.map(s => s.label), ['Ledger', 'Foundation', 'Pitch', 'Spec', 'Build', 'Gates', 'Play-test', 'Reader', 'Deliver']);
+  assert.deepEqual(STAGES.map(s => s.label), ['Ledger', 'Foundation', 'Pitch', 'Spec', 'Look', 'Build', 'Gates', 'Play-test', 'Reader', 'Deliver']);
   assert.equal(stageOf(null).index, -1, 'no loop (an example): no stages shown');
   assert.deepEqual(stageOf({ status: 'building', step: 'ledger' }), { index: 0, waiting: false, done: false });
   assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'pitch', waiting: { about: 'cards' } }), { index: 2, waiting: true, done: false });
   assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'foundation', waiting: { about: 'migration' } }), { index: 1, waiting: true, done: false });
-  assert.equal(stageOf({ status: 'building', step: 'repair' }).index, 4);
-  for (const step of ['economy', 'backend', 'verify']) assert.equal(stageOf({ status: 'building', step }).index, 5);
-  assert.equal(stageOf({ status: 'building', step: 'read' }).index, 7);
-  assert.deepEqual(stageOf({ status: 'delivered', step: 'done' }), { index: 8, waiting: false, done: true });
+  assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'look', waiting: { about: 'looks' } }), { index: 4, waiting: true, done: false });
+  assert.equal(stageOf({ status: 'building', step: 'repair' }).index, 5);
+  for (const step of ['economy', 'backend', 'verify']) assert.equal(stageOf({ status: 'building', step }).index, 6);
+  assert.equal(stageOf({ status: 'building', step: 'read' }).index, 8);
+  assert.deepEqual(stageOf({ status: 'delivered', step: 'done' }), { index: 9, waiting: false, done: true });
   const { ORDER } = ORDER_MOD;
   for (const o of ORDER) assert.ok(STAGES.some(s => s.steps.includes(o.step)), `the step ${o.step} has a stage`);
 });

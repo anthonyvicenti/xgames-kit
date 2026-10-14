@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-large-slope-steep-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-large-slope-steep-narrow.glb",
+ "sha256": "16f257e34a77ff6750eaba623bc3b7faab61ed9efbc3b2a5cda0151deb2ec9ec",
+ "bytes": 16144,
+ "preview": "previews/block-snow-large-slope-steep-narrow.png",
+ "from": "Models/GLB format/block-snow-large-slope-steep-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow large slope steep narrow",
+ "tags": [
+  "block",
+  "snow",
+  "large",
+  "slope",
+  "steep",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1.217,
+   1.857
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16144,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f8f8fb",
+     "#c1c1d8",
+     "#ea9168",
+     "#da835d",
+     "#db855e",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.427,
+    "value": 0.776,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.432
+     },
+     {
+      "hue": "blue",
+      "share": 0.325
+     },
+     {
+      "hue": "grey",
+      "share": 0.243
+     }
+    ],
+    "grey": 0.243
+   },
+   "trianglesPerMetre": 3.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa348ea5a0f76979f81db315ebef132702598a437ad1cab1135f57596db146cb",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-window-small",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-window-small.glb",
+ "sha256": "779dd863183ba8d4585afbc7efc5b95358f3d143320a9e50727a4d8bdcb3d16c",
+ "bytes": 15492,
+ "preview": "previews/wall-wood-window-small.png",
+ "from": "Models/GLB format/wall-wood-window-small.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood window small",
+ "tags": [
+  "wall",
+  "wood",
+  "window",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.2,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 134,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 134,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15492,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#a2aacc",
+     "#989fbe",
+     "#99a1c1",
+     "#a0a8c9",
+     "#8d93b1",
+     "#abb3d7",
+     "#8f95b3",
+     "#a9b0d3"
+    ],
+    "saturation": 0.256,
+    "value": 0.687,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.833
+     },
+     {
+      "hue": "grey",
+      "share": 0.167
+     }
+    ],
+    "grey": 0.167
+   },
+   "trianglesPerMetre": 7.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3c9118d167d8e75ee78f884b9edb90101f9c1928d4fcc2afaedcc349bf8c672b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

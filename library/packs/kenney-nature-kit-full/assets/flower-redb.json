@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "flower-redb",
+ "pack": "kenney-nature-kit-full",
+ "file": "flower-redb.glb",
+ "sha256": "8c7d5e2f9c23f1d495b12c21203f23cb8d65554a6bc596253f0ef240aefc0ddf",
+ "bytes": 4316,
+ "preview": "previews/flower-redb.png",
+ "from": "Models/GLTF format/flower_redB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "flower redb",
+ "tags": [
+  "flower",
+  "redb"
+ ],
+ "use": {
+  "size": [
+   0.207,
+   0.258,
+   0.239
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 98,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 98,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4316,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#73eddd",
+     "#f19398"
+    ],
+    "saturation": 0.772,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.707
+     },
+     {
+      "hue": "red",
+      "share": 0.293
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 27.38,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ed430a4ee2be9e86649e1ce22ec23162814a3f8c2ad133117315db19293fc16",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

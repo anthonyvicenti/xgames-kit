@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-straight-hill-beginning",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-straight-hill-beginning.glb",
+ "sha256": "11e5375df8cb8433e6a5d95add32f13a0749bc9fcdde06bd2e2550c171d786ff",
+ "bytes": 16072,
+ "preview": "previews/track-wide-straight-hill-beginning.png",
+ "from": "Models/GLB format/track-wide-straight-hill-beginning.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide straight hill beginning",
+ "tags": [
+  "track",
+  "wide",
+  "straight",
+  "hill",
+  "beginning"
+ ],
+ "use": {
+  "size": [
+   2,
+   1.212,
+   4.341
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16072,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff8a44",
+     "#ff9a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.994,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.988
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "23fee766d59f8d3efadb43ee1ab369499da7c71c269712ae8500a40813d85169",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

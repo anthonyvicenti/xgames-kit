@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "mushroom-redtall",
+ "pack": "kenney-nature-kit-full",
+ "file": "mushroom-redtall.glb",
+ "sha256": "c7d9de914759a750d38f8e4427435cdd466c5a83c414b92ad8e3db75ffbfb379",
+ "bytes": 3828,
+ "preview": "previews/mushroom-redtall.png",
+ "from": "Models/GLTF format/mushroom_redTall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "mushroom redtall",
+ "tags": [
+  "mushroom",
+  "redtall"
+ ],
+ "use": {
+  "size": [
+   0.124,
+   0.25,
+   0.143
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3828,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#f19398"
+    ],
+    "saturation": 0.26,
+    "value": 0.919,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.663
+     },
+     {
+      "hue": "red",
+      "share": 0.337
+     }
+    ],
+    "grey": 0.663
+   },
+   "trianglesPerMetre": 28.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d982f6c5dce9ca870132448034eced9e84573aeed87e9158e18a3a033124f810",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

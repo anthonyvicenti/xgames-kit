@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-stepscornerinner-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-stepscornerinner-rock.glb",
+ "sha256": "19b49e0e9031a42ad670b92bfecffd5a73ed1a309acb2f87224659d75b3a36d2",
+ "bytes": 5804,
+ "preview": "previews/cliff-stepscornerinner-rock.png",
+ "from": "Models/GLTF format/cliff_stepsCornerInner_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff stepscornerinner rock",
+ "tags": [
+  "cliff",
+  "stepscornerinner",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 213,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 213,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.765,
+    "value": 0.765,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.798
+     },
+     {
+      "hue": "cyan",
+      "share": 0.202
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.75,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e076973baeedd79dc24fe90610978cde5805d04bc629b9034b4bb34d80ded6af",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

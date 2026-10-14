@@ -7,6 +7,22 @@ follow [Semantic Versioning](https://semver.org/).
 
 Version 0.0.0 until the first release.
 
+### The style pass: mixed packs made one look (2026-10-14)
+
+- **Load time (three).** Every model and picture a slot loads is moved toward the game's look once, as it is parsed:
+  colours toward the look's colours of things (OKLab clusters, each turned toward its nearest look colour as far as it
+  is near; the asset's own words choose by matter, so a teal canopy goes green, not sea-blue; lightness moved once per
+  asset, so its contrast stays), roughness, metalness and emissive toward the look's, the house toon material and an
+  inverted-hull outline when the look asks; a flat game's pictures get the look's ramp, an ink edge in each thing's own
+  shade and whole texels. Geometry and alpha never change. Settings: `config/look.json` `harmonize`, each level its own
+  (`look.level(id)` restyles live); create writes them from `look.target`, `spec.look.harmonize` wins, `false` is off;
+  UI, fonts and the look's own picks are left, and any slot can opt out (`runtimes/three/kit/look/harmonize.js`,
+  `harmonize-core.js`, `builder/look/harmonize.mjs`).
+- **The bake.** `gamesfun art harmonize --pack <id> --look <target | config/look.json | game | kind>` writes harmonised
+  copies as new assets in a derived pack (`harmonized` names each original and the look; the originals are never
+  written), measured before and after: distance to the look's colours and style fit (`builder/art/harmonize.mjs`).
+- Schemas: asset `harmonized`; spec `look.harmonize`. The look judge's sheet page runs the pass (`?harm=0` turns it off).
+
 ### Gate E's background-host leg and read-only kits (2026-10-14)
 
 - **The background-host leg's verdict depends on the game, not the machine's load.** When round 1 ends early it waits

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-stonenarrow",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-stonenarrow.glb",
+ "sha256": "ebf7e939152c7a374b8bfb9eb8757cd2a8055d8f642a770de1769126c7333dc3",
+ "bytes": 5960,
+ "preview": "previews/bridge-stonenarrow.png",
+ "from": "Models/GLTF format/bridge_stoneNarrow.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge stonenarrow",
+ "tags": [
+  "bridge",
+  "stonenarrow"
+ ],
+ "use": {
+  "size": [
+   1.04,
+   0.35,
+   0.84
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ccdbde",
+     "#ddf2f5"
+    ],
+    "saturation": 0.351,
+    "value": 0.868,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.24,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ea011dbaa2926013456c001ac93d24be07c2b1bed98fe5b24aae372f68c5ff24",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

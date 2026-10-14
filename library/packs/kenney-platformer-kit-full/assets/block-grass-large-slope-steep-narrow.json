@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-large-slope-steep-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-large-slope-steep-narrow.glb",
+ "sha256": "8456f3c01a7861286c62cee2839f56421406743a849614bf947a0a1605380ab3",
+ "bytes": 16148,
+ "preview": "previews/block-grass-large-slope-steep-narrow.png",
+ "from": "Models/GLB format/block-grass-large-slope-steep-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass large slope steep narrow",
+ "tags": [
+  "block",
+  "grass",
+  "large",
+  "slope",
+  "steep",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1.217,
+   1.857
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16148,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#da835d",
+     "#db855e",
+     "#339c75",
+     "#47b07e",
+     "#50ba83"
+    ],
+    "saturation": 0.589,
+    "value": 0.523,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.432
+     },
+     {
+      "hue": "green",
+      "share": 0.284
+     },
+     {
+      "hue": "cyan",
+      "share": 0.284
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3c9944f276b9314ce53d47371cc8d2200413ca204a0e5e78010548d904ef0250",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

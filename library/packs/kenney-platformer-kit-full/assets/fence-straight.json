@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "fence-straight",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-straight.glb",
+ "sha256": "e736a8f1e24f1c3a27978439c6154b957d9482ff5d6842b2a2a6e3ec13c85fd5",
+ "bytes": 14492,
+ "preview": "previews/fence-straight.png",
+ "from": "Models/GLB format/fence-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence straight",
+ "tags": [
+  "fence",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.4,
+   0.14
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14492,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c77451",
+     "#d9835c",
+     "#9f5c41",
+     "#9d5b41",
+     "#925841",
+     "#955941",
+     "#9b5a41",
+     "#a25c41"
+    ],
+    "saturation": 0.468,
+    "value": 0.485,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.735
+     },
+     {
+      "hue": "brown",
+      "share": 0.265
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "008d1895b4ac463bb7438d7ba4b34d66548cdb547130b228cc3526e575291f0a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

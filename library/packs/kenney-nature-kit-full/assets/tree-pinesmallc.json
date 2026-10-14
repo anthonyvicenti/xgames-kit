@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinesmallc",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinesmallc.glb",
+ "sha256": "db44ecfacfa3ec9d31d35e101e5e90b9cd1fffb6be6d21a6f8ffc095fcc9c537",
+ "bytes": 3780,
+ "preview": "previews/tree-pinesmallc.png",
+ "from": "Models/GLTF format/tree_pineSmallC.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinesmallc",
+ "tags": [
+  "tree",
+  "pinesmallc"
+ ],
+ "use": {
+  "size": [
+   0.386,
+   1.123,
+   0.392
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 54,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 54,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3780,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.545,
+    "value": 0.653,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.909
+     },
+     {
+      "hue": "orange",
+      "share": 0.091
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.89,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c334c78379b2968b0c198a92b4e429e433c89e1685792b5c6ed730216c8512e3",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

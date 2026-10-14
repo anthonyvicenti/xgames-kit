@@ -1,0 +1,156 @@
+{
+  "specVersion": 2,
+  "title": "Critter Lob",
+  "hook": "Round little critters on a sunny lawn: lob seeds to bowl your friends over, and grab the berries before they do.",
+  "prompt": "round cartoon critters lobbing seeds at each other on a lawn, each friend a different critter",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 3,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "lob a seed",
+    "interact": "grab a berry",
+    "jump": "hop"
+  },
+  "round": {
+    "seconds": 90,
+    "winBy": "most berries when time is up",
+    "replay": true
+  },
+  "world": {
+    "template": "backyard",
+    "size": "medium",
+    "props": [
+      {
+        "name": "berry",
+        "describe": "a big shiny red berry",
+        "count": 10,
+        "role": "collected by players",
+        "kind": "gameplay"
+      },
+      {
+        "name": "bench",
+        "describe": "a wooden bench",
+        "count": 2,
+        "role": "cover to hide behind",
+        "kind": "scenery"
+      }
+    ],
+    "notes": "Berries come back around the lawn a few seconds after they are taken."
+  },
+  "mechanics": [
+    {
+      "id": "projectile",
+      "as": "seeds lobbed at friends",
+      "params": {
+        "kind": "discrete",
+        "color": "#ffb020",
+        "size": 0.24,
+        "speed": 13,
+        "arc": 0.35,
+        "muzzle": "hips",
+        "fireAnim": "throw",
+        "knockback": 5,
+        "knockUp": 3.5,
+        "knockSeconds": 1.4,
+        "cooldown": 0.7
+      }
+    },
+    {
+      "id": "pickup",
+      "as": "berries to collect",
+      "params": {
+        "prop": "berry",
+        "effect": "score",
+        "value": 1,
+        "respawnSeconds": 5
+      }
+    },
+    {
+      "id": "health",
+      "params": {
+        "hp": 0,
+        "ragdollOnHit": true,
+        "getUpSeconds": 1.4
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Hop about the lawn and grab berries: each one is a point, and the critter who takes it does a little celebration. Lob a seed at a friend to bowl them over: they tumble, roll and pop back up a moment later. Most berries when the time runs out wins.",
+    "scoring": "+1 per berry",
+    "params": {
+      "cheerSeconds": 1.2
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round egg-shaped critter with big eyes and a headband; each friend is a different critter",
+      "body": {
+        "archetype": "blob",
+        "from": "library",
+        "asset": "looks-pilot-artillery/ember-newt-blob",
+        "standIn": "xk-creature-bodies/slime-blue"
+      },
+      "seats": [
+        {
+          "archetype": "blob",
+          "from": "library",
+          "asset": "looks-pilot-artillery/moss-mole-blob",
+          "standIn": "xk-creature-bodies/slime-blue"
+        },
+        {
+          "archetype": "blob",
+          "from": "library",
+          "asset": "looks-pilot-artillery/tide-puff-blob",
+          "standIn": "xk-creature-bodies/slime-blue"
+        }
+      ]
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [
+    {
+      "id": "pop",
+      "describe": "a soft pop as a berry is taken"
+    },
+    {
+      "id": "bell",
+      "describe": "round-end bell"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other as different critters",
+    "a seed bowls a friend over and they get back up",
+    "berries score and the taker celebrates"
+  ],
+  "notInV1": [
+    "teams",
+    "more critters to choose from",
+    "more maps"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "A cartoon lawn game: critters are bowled over and pop back up, nobody is hurt."
+  }
+}

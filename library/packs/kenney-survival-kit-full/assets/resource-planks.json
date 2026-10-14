@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "resource-planks",
+ "pack": "kenney-survival-kit-full",
+ "file": "resource-planks.glb",
+ "sha256": "a637417f57c363502758546c8ed5f2c210df5f4880defeeb138b5cb28243232b",
+ "bytes": 11456,
+ "preview": "previews/resource-planks.png",
+ "from": "Models/GLB format/resource-planks.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "resource planks",
+ "tags": [
+  "resource",
+  "planks"
+ ],
+ "use": {
+  "size": [
+   0.373,
+   0.094,
+   0.626
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11456,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#b86746",
+     "#ea9167",
+     "#d37d58",
+     "#c77450",
+     "#d7815b",
+     "#c06e4c"
+    ],
+    "saturation": 0.553,
+    "value": 0.56,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d3804257474a3baab7ac067be91de5c3d6d18d5803775dc876cb6d9442c30873",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

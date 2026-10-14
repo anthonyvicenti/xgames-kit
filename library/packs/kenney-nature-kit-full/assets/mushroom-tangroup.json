@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "mushroom-tangroup",
+ "pack": "kenney-nature-kit-full",
+ "file": "mushroom-tangroup.glb",
+ "sha256": "0f4201ab265014e0a76ad9536ea2abf83655f8e1c0b004f5628bf88b0690ffae",
+ "bytes": 5784,
+ "preview": "previews/mushroom-tangroup.png",
+ "from": "Models/GLTF format/mushroom_tanGroup.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "mushroom tangroup",
+ "tags": [
+  "mushroom",
+  "tangroup"
+ ],
+ "use": {
+  "size": [
+   0.27,
+   0.25,
+   0.254
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5784,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#ffd7b0"
+    ],
+    "saturation": 0.346,
+    "value": 0.946,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.654
+     },
+     {
+      "hue": "orange",
+      "share": 0.346
+     }
+    ],
+    "grey": 0.654
+   },
+   "trianglesPerMetre": 28.63,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2dc979485f164d7dce34329096271f44e0c9ea329c104251d94bcfbc8f8fe05e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

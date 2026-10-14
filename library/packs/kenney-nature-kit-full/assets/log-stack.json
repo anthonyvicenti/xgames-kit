@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "log-stack",
+ "pack": "kenney-nature-kit-full",
+ "file": "log-stack.glb",
+ "sha256": "f540ebdf35aac8d9de30fef90677401261e299b3b92541fbb28143ae3a0fe4b1",
+ "bytes": 5084,
+ "preview": "previews/log-stack.png",
+ "from": "Models/GLTF format/log_stack.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "log stack",
+ "tags": [
+  "log",
+  "stack"
+ ],
+ "use": {
+  "size": [
+   0.425,
+   0.346,
+   0.71
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 184,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 184,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5084,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e",
+     "#fbedde"
+    ],
+    "saturation": 0.765,
+    "value": 0.791,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.95
+     },
+     {
+      "hue": "grey",
+      "share": 0.05
+     }
+    ],
+    "grey": 0.05
+   },
+   "trianglesPerMetre": 11.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "90eaae4a01ba1f25c2f0c6d83087e4a7a8fac684f2452615245333968d118d68",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

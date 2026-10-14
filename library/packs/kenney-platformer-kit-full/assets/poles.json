@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "poles",
+ "pack": "kenney-platformer-kit-full",
+ "file": "poles.glb",
+ "sha256": "ed3490acb13d721bd216d2c0c8e5af71e388f49bae8a6b6019f681d480cbcf48",
+ "bytes": 18376,
+ "preview": "previews/poles.png",
+ "from": "Models/GLB format/poles.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "poles",
+ "tags": [
+  "poles"
+ ],
+ "use": {
+  "size": [
+   1.1,
+   1,
+   0.35
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 268,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 268,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18376,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bd6b4a",
+     "#c4714f",
+     "#c77451",
+     "#d9835c",
+     "#ab5f41",
+     "#865542",
+     "#925841",
+     "#9f5b41"
+    ],
+    "saturation": 0.486,
+    "value": 0.514,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.855
+     },
+     {
+      "hue": "brown",
+      "share": 0.145
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "643472848441ae59737879cd52ae07056c50721797c7d113f20c65dd2dc7492b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

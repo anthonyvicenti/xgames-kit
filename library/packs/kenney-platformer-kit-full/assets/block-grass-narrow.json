@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-narrow.glb",
+ "sha256": "a8247f558ca97512084d1c3edfe46a5429a3ab54581b0249fd9bba4ecaa38cb8",
+ "bytes": 15812,
+ "preview": "previews/block-grass-narrow.png",
+ "from": "Models/GLB format/block-grass-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass narrow",
+ "tags": [
+  "block",
+  "grass",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   1,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15812,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#47b07e",
+     "#339c75",
+     "#50ba83",
+     "#299270"
+    ],
+    "saturation": 0.562,
+    "value": 0.559,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.668
+     },
+     {
+      "hue": "green",
+      "share": 0.229
+     },
+     {
+      "hue": "cyan",
+      "share": 0.103
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "96f3d138e41ae66852eb5e513230a4f2832827e8e7dd79707942c7b8718f7c24",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

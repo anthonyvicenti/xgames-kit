@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-cap-back",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-cap-back.glb",
+ "sha256": "0c7d972683f7b9a3adcd0e6e831c10de349bd1da797231ee9a4602f05091ff3e",
+ "bytes": 11960,
+ "preview": "previews/track-wide-cap-back.png",
+ "from": "Models/GLB format/track-wide-cap-back.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide cap back",
+ "tags": [
+  "track",
+  "wide",
+  "cap",
+  "back"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ff7944",
+     "#ff7e44",
+     "#585abf",
+     "#658dd6",
+     "#ff8644",
+     "#5d6cc7",
+     "#617dcf",
+     "#ff8f44"
+    ],
+    "saturation": 0.825,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.642
+     },
+     {
+      "hue": "blue",
+      "share": 0.358
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d636f7c8b81906b5271d09de100e50edaada0e9d6757d9b709af1ae1fcbf714b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

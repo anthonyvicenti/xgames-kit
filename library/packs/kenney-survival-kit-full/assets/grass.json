@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "grass",
+ "pack": "kenney-survival-kit-full",
+ "file": "grass.glb",
+ "sha256": "692e84e668c417569c8ead40de9157e1b4cf234a2dcad82d9fa647656f8b5a8c",
+ "bytes": 11140,
+ "preview": "previews/grass.png",
+ "from": "Models/GLB format/grass.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "grass",
+ "tags": [
+  "grass"
+ ],
+ "use": {
+  "size": [
+   0.234,
+   0.142,
+   0.257
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 36,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 36,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11140,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#329c74",
+     "#37a177",
+     "#41ab7b",
+     "#3ca579",
+     "#2e9772",
+     "#47b17e",
+     "#29926f"
+    ],
+    "saturation": 0.489,
+    "value": 0.426,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.919
+     },
+     {
+      "hue": "green",
+      "share": 0.081
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 17.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f9430602f076fad8f67b396008ba412fc0c073a93eb8c863ec0944564cbda93d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

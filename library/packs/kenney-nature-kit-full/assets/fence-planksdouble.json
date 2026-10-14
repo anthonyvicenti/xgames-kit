@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "fence-planksdouble",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-planksdouble.glb",
+ "sha256": "06f75688baa098f78d1bf3e47917887faed45e9dfd4a9433e9e7acac4486abb2",
+ "bytes": 3700,
+ "preview": "previews/fence-planksdouble.png",
+ "from": "Models/GLTF format/fence_planksDouble.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence planksdouble",
+ "tags": [
+  "fence",
+  "planksdouble"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   0.06
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3700,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffc5a7"
+    ],
+    "saturation": 1,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 15.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0bbc8fe43f7a1d20de8ff2d687b5b08675beacb431e43ebbb0b1705b9c684f55",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

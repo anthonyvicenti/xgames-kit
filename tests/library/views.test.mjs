@@ -44,10 +44,14 @@ test('a prop entry carries what the worlds read: collider, size, light, door, pa
   assert.ok(propsCatalog('three').props.length >= 149, 'every three prop');
 });
 
-test('bodies: a pack\'s default first, every one on gf-humanoid-1 with the height rig-check measured', () => {
+test('bodies: a pack\'s default first, every person on gf-humanoid-1 with the height rig-check measured, every creature on its archetype\'s standard', () => {
   const three = bodiesIn('three');
   assert.equal(three[0].id, 'bean-classic');
-  assert.ok(three.every(b => b.rig === 'gf-humanoid-1' && b.height > 1));
+  const people = three.filter(b => b.archetype === 'humanoid'), creatures = three.filter(b => b.archetype !== 'humanoid');
+  assert.ok(people.length && people.every(b => b.rig === 'gf-humanoid-1' && b.height > 1));
+  const rigs = { worm: 'gf-worm-1', blob: 'gf-blob-1', quadruped: 'gf-quadruped-1', flyer: 'gf-flyer-1' };
+  assert.ok(creatures.length >= 5 && creatures.every(b => b.rig === rigs[b.archetype] && b.height > 0.1), 'the creature set (CREATURES.md)');
+  assert.deepEqual(bodiesIn('three', { archetype: 'flyer' }).map(b => b.id), ['bird-red']);
   assert.equal(bodiesIn('scenic').find(b => b.id === 'kaykit-knight').height, 1.736);
   assert.ok(!three.some(b => b.id === 'quaternius-zombie' && b.judge.ok === false), 'a body its judge fails is never offered');
 });

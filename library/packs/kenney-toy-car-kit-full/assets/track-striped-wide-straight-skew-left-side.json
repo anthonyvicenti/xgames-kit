@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight-skew-left-side",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight-skew-left-side.glb",
+ "sha256": "b0b22671f998f6ff88b0da7c71296b5ea883235d0892116864244f267a785341",
+ "bytes": 15532,
+ "preview": "previews/track-striped-wide-straight-skew-left-side.png",
+ "from": "Models/GLB format/track-striped-wide-straight-skew-left-side.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight skew left side",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight",
+  "skew",
+  "left",
+  "side"
+ ],
+ "use": {
+  "size": [
+   2.042,
+   2.042,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15532,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#fa6b41",
+     "#f8f8fb"
+    ],
+    "saturation": 0.46,
+    "value": 0.709,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.494
+     },
+     {
+      "hue": "blue",
+      "share": 0.455
+     },
+     {
+      "hue": "grey",
+      "share": 0.051
+     }
+    ],
+    "grey": 0.051
+   },
+   "trianglesPerMetre": 3.17,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d1a1271ffd224c07f0040aebd301bcc76c108d27f5445568891ab235bcb68dd4",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

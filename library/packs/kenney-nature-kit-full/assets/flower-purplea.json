@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "flower-purplea",
+ "pack": "kenney-nature-kit-full",
+ "file": "flower-purplea.glb",
+ "sha256": "4b989bf0666ddaf1da75cebaaad26f5e8dd61afc62bac16c56ef8d6c3dff97c1",
+ "bytes": 4112,
+ "preview": "previews/flower-purplea.png",
+ "from": "Models/GLTF format/flower_purpleA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "flower purplea",
+ "tags": [
+  "flower",
+  "purplea"
+ ],
+ "use": {
+  "size": [
+   0.159,
+   0.242,
+   0.181
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4112,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#cfc2ff",
+     "#73eddd"
+    ],
+    "saturation": 0.904,
+    "value": 0.8,
+    "families": [
+     {
+      "hue": "purple",
+      "share": 0.577
+     },
+     {
+      "hue": "cyan",
+      "share": 0.423
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 23.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f6fc34c96a03420a74fe36d4c2d0ec88f15204fcad99cd1416c3c4ecb22e48c4",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

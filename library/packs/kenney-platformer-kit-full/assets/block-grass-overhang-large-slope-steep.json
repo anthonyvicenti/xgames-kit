@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-large-slope-steep",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-large-slope-steep.glb",
+ "sha256": "8cfcabca79d3214a6c831c5ca0c122bf2edb09ff50dd5c0167934f33849c730d",
+ "bytes": 17204,
+ "preview": "previews/block-grass-overhang-large-slope-steep.png",
+ "from": "Models/GLB format/block-grass-overhang-large-slope-steep.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang large slope steep",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "large",
+  "slope",
+  "steep"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   1.367,
+   1.967
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 154,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 154,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17204,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#d9835c",
+     "#da835d",
+     "#329b74",
+     "#c77451",
+     "#db855e"
+    ],
+    "saturation": 0.587,
+    "value": 0.509,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.373
+     },
+     {
+      "hue": "cyan",
+      "share": 0.356
+     },
+     {
+      "hue": "green",
+      "share": 0.271
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2884a48f9c47fc59aa19e69b717f8123fe58a0eb41a2165a17cb3a70dc718224",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

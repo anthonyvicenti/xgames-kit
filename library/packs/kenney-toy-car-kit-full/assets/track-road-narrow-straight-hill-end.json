@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-straight-hill-end",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-straight-hill-end.glb",
+ "sha256": "99d8898999b42d600e917cd6f2441b304ab18e1da12e4d9f4e4c2fbb614091c2",
+ "bytes": 17952,
+ "preview": "previews/track-road-narrow-straight-hill-end.png",
+ "from": "Models/GLB format/track-road-narrow-straight-hill-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow straight hill end",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "straight",
+  "hill",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.441,
+   4.412
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 352,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 352,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17952,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#e25d49",
+     "#d1d1e2",
+     "#efeff5"
+    ],
+    "saturation": 0.388,
+    "value": 0.661,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.356
+     },
+     {
+      "hue": "red",
+      "share": 0.355
+     },
+     {
+      "hue": "grey",
+      "share": 0.289
+     }
+    ],
+    "grey": 0.289
+   },
+   "trianglesPerMetre": 5.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0862656d5379a5a9246530bef9192f4a8cdff22f86b2ef0473d78c78f5da0015",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

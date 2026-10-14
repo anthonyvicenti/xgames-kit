@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "statue-ring",
+ "pack": "kenney-nature-kit-full",
+ "file": "statue-ring.glb",
+ "sha256": "3847acc93a8f267f9ad27635d01bd1eea7d080c9508284bf11e5e6d2ba602088",
+ "bytes": 3932,
+ "preview": "previews/statue-ring.png",
+ "from": "Models/GLTF format/statue_ring.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "statue ring",
+ "tags": [
+  "statue",
+  "ring"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.796,
+   0.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3932,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ccdbde"
+    ],
+    "saturation": 0.481,
+    "value": 0.898,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.79,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5c62e4165f7a76436faa0b20e98b47d0a9e5021dcbf2a0eef0cdf0912180f02c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

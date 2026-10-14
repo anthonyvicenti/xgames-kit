@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-speedster",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-speedster.glb",
+ "sha256": "57acc8cca10064cb777b3a8c9da2b501767d45ce87d837b4e3d74b946c09b71b",
+ "bytes": 41372,
+ "preview": "previews/vehicle-speedster.png",
+ "from": "Models/GLB format/vehicle-speedster.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle speedster",
+ "tags": [
+  "vehicle",
+  "speedster"
+ ],
+ "use": {
+  "size": [
+   0.55,
+   0.375,
+   0.875
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1068,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1068,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41372,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#7f849c",
+     "#d3554e",
+     "#5a6078",
+     "#fa6b41",
+     "#eb6246",
+     "#de5b4a",
+     "#494c5a",
+     "#696f86"
+    ],
+    "saturation": 0.377,
+    "value": 0.486,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.584
+     },
+     {
+      "hue": "red",
+      "share": 0.405
+     }
+    ],
+    "grey": 0.584
+   },
+   "trianglesPerMetre": 21.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "64e7e343e5039105949a827234de550630d75183cf5836d76b113ab65e355175",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

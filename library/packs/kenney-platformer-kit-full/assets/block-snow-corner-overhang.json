@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-corner-overhang",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-corner-overhang.glb",
+ "sha256": "b33012fa99242d2b8950f1142232d567686f57389de4aa51df4c5a0d84dc5a39",
+ "bytes": 16124,
+ "preview": "previews/block-snow-corner-overhang.png",
+ "from": "Models/GLB format/block-snow-corner-overhang.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow corner overhang",
+ "tags": [
+  "block",
+  "snow",
+  "corner",
+  "overhang"
+ ],
+ "use": {
+  "size": [
+   1.054,
+   1,
+   1.054
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16124,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.479,
+    "value": 0.713,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.643
+     },
+     {
+      "hue": "grey",
+      "share": 0.186
+     },
+     {
+      "hue": "blue",
+      "share": 0.171
+     }
+    ],
+    "grey": 0.186
+   },
+   "trianglesPerMetre": 4.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "690691f060f50c674c29839da2bc29e3e371f5782ce264da57c7fdcb3e73158a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

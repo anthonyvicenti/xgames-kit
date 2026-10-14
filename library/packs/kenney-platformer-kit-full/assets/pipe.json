@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "pipe",
+ "pack": "kenney-platformer-kit-full",
+ "file": "pipe.glb",
+ "sha256": "4501cacd25e5f8d6958f6e493cb6e5fc75f0bb0084685134e0227520699795e2",
+ "bytes": 18152,
+ "preview": "previews/pipe.png",
+ "from": "Models/GLB format/pipe.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "pipe",
+ "tags": [
+  "pipe"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.564,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 216,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 216,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18152,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#617dce",
+     "#5e70c8",
+     "#5d6bc6",
+     "#6281d0",
+     "#5c67c4",
+     "#6077cc",
+     "#658ed6",
+     "#6078cc"
+    ],
+    "saturation": 0.509,
+    "value": 0.585,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.49,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "458af425a9f341fc52a36ff1d713926162efeda503b1509ca24299a782f467d8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

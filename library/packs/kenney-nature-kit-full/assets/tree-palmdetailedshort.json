@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palmdetailedshort",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palmdetailedshort.glb",
+ "sha256": "7ac1366c1a8f1d45f53bcb469f5d19780fd88a870ea4d40469db836d7b6adf57",
+ "bytes": 8812,
+ "preview": "previews/tree-palmdetailedshort.png",
+ "from": "Models/GLTF format/tree_palmDetailedShort.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palmdetailedshort",
+ "tags": [
+  "tree",
+  "palmdetailedshort"
+ ],
+ "use": {
+  "size": [
+   1.034,
+   1.124,
+   1.034
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 336,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 336,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 8812,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.714,
+    "value": 0.693,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.802
+     },
+     {
+      "hue": "orange",
+      "share": 0.198
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bc1013aaacca3bdd116ad1cded4f9499f008fe3056e760f3238be05aa21ff9f2",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

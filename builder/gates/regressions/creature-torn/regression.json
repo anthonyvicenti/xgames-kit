@@ -1,0 +1,13 @@
+{
+  "base": "critter-lob",
+  "why": "A blob whose skeleton was fitted badly: its Top joint sits metres above the body, so every wobble of the top swings the skin about a far pivot (the class of a mis-fitted creature rig). Gate A must fail it: the creature judge refuses a joint off the body before it poses anything.",
+  "evidence": "builder/gates/evidence/2026-10-14-creature-bodies.json",
+  "files": {
+    "assets/models/body-player.glb": "slime-top-off.glb"
+  },
+  "mustFail": [
+    "A"
+  ],
+  "measure": 19,
+  "detail": "sits off the body"
+}

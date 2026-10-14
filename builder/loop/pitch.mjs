@@ -83,6 +83,14 @@ export async function checkSpec(spec, { ledger, foundation, registry, hostCheck 
     else if (NO_CHARACTER.includes(body) && spec.multiplayer.together === 'own-board' && shape === 'seats') out.push(`${at}.multiplayer: each player has their own board (together own-board), so friends are seen as boards: the board's boards "own", or presence "boards"`);
     else if (body === 'character' && shape !== 'character') out.push(`${at}.multiplayer.presence: the ledger's body line makes the players characters, and this spec shows them as ${shape}: drop presence, or play the board walking (presence "walk")`);
   }
+  // the players' shape agrees with the ledger's body line: a worm, blob, quadruped or flyer the person asked for is that
+  // archetype's body in the spec (a humanoid in its place is the look drifting from the idea)
+  const shape = live.find(r => r.about === 'body' && r.body === 'character')?.archetype;
+  if (shape) {
+    const player = (spec.characters ?? []).find(c => c?.role === 'player');
+    const has = player?.body?.archetype ?? 'humanoid';
+    if (player && has !== shape) out.push(`${at}.characters[player].body.archetype: the ledger's body line makes the players ${shape === 'humanoid' ? 'humanoids' : `a ${shape}`} ("${live.find(r => r.about === 'body')?.words ?? ''}"), and this spec gives them a ${has}: set body.archetype "${shape}" (a library body of that archetype, or one made and rigged by autorig)`);
+  }
   if (hostCheck) out.push(...(await hostCheck(spec)).map(p => `${at}: ${p}`));
   return out;
 }

@@ -1,0 +1,10 @@
+{
+  "title": "Critter Lob",
+  "summary": "Creature bodies: round critters (blobs on gf-blob-1, procedural motion) lob seeds and grab berries; each seat a different critter.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22",
+    "kit": "xgames-kit stream/bodies (looks wave 2) on main 9cf4a90",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from critter-lob, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 180 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\"), with the looks pilot's private pack on the machine (its three rigged critters in the three seats)"
+  }
+}

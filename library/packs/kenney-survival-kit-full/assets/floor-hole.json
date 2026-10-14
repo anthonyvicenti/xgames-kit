@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "floor-hole",
+ "pack": "kenney-survival-kit-full",
+ "file": "floor-hole.glb",
+ "sha256": "0c3b3f49dc9eb63c2cccc53908f8dbec58379f94e012d8d4851b954682edb10f",
+ "bytes": 12420,
+ "preview": "previews/floor-hole.png",
+ "from": "Models/GLB format/floor-hole.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "floor hole",
+ "tags": [
+  "floor",
+  "hole"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.067,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12420,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#b86746",
+     "#ea9167",
+     "#c77450",
+     "#d7815b",
+     "#d37d58",
+     "#c06e4c"
+    ],
+    "saturation": 0.567,
+    "value": 0.567,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.89,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2969344bdaef5b481d91a656064a61a7819d12859278ec7d62c21f075582eef4",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathbend",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathbend.glb",
+ "sha256": "9a0009dc7a8389f12a76ba6f3b793d3fe21d31148d6b8ffde7c10b85a73a7a62",
+ "bytes": 4132,
+ "preview": "previews/ground-pathbend.png",
+ "from": "Models/GLTF format/ground_pathBend.glb; kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathbend",
+ "tags": [
+  "ground",
+  "pathbend"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4132,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.739,
+    "value": 0.736,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.581
+     },
+     {
+      "hue": "cyan",
+      "share": 0.419
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.58,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "modified": "kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

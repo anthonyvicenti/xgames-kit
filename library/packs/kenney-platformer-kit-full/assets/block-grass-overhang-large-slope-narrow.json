@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-large-slope-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-large-slope-narrow.glb",
+ "sha256": "b8ea37db867ca48c691ca1aad5aecd062e3aab7050e533b08dcd9a072efb1f76",
+ "bytes": 17060,
+ "preview": "previews/block-grass-overhang-large-slope-narrow.png",
+ "from": "Models/GLB format/block-grass-overhang-large-slope-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang large slope narrow",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "large",
+  "slope",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   0.914,
+   2.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 142,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 142,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17060,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#329b74",
+     "#d9835c",
+     "#47b07e",
+     "#339c75",
+     "#50ba83"
+    ],
+    "saturation": 0.583,
+    "value": 0.501,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.394
+     },
+     {
+      "hue": "orange",
+      "share": 0.33
+     },
+     {
+      "hue": "green",
+      "share": 0.276
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.84,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9dd5e1f558d4ba24a66aac67a7885eed0e1862d25dd579a40d37bf1e4393fe35",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

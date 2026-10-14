@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-diagonal-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-diagonal-rock.glb",
+ "sha256": "2594a71318a837634aa65b8f9b0e5f0080846e7823c163e9aa4133b09ef9de96",
+ "bytes": 2520,
+ "preview": "previews/cliff-diagonal-rock.png",
+ "from": "Models/GLTF format/cliff_diagonal_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff diagonal rock",
+ "tags": [
+  "cliff",
+  "diagonal",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1.169,
+   1,
+   1.169
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2520,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.36,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "648bdb3118cda8900bad55e281f56c245a1a0252cc1c0e1bf4fa085d8ef75a0b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "plant-flatshort",
+ "pack": "kenney-nature-kit-full",
+ "file": "plant-flatshort.glb",
+ "sha256": "17869087cf1436cc9d55941f3ff3ddb6794086fea06a578d647b947250c91ec7",
+ "bytes": 2312,
+ "preview": "previews/plant-flatshort.png",
+ "from": "Models/GLTF format/plant_flatShort.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant flatshort",
+ "tags": [
+  "plant",
+  "flatshort"
+ ],
+ "use": {
+  "size": [
+   0.278,
+   0.235,
+   0.278
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2312,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#70e6d6"
+    ],
+    "saturation": 0.702,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 18.4,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5885f6bb6ce004eb7ccc887fd30b7671492a94be76ffeb1e64c07c47d6b7bae1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

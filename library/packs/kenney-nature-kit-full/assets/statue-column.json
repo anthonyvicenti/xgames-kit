@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "statue-column",
+ "pack": "kenney-nature-kit-full",
+ "file": "statue-column.glb",
+ "sha256": "9a44088d9a279aa312a941254c5ef196a0b59ca49dc2cdead8206895ffee569a",
+ "bytes": 5512,
+ "preview": "previews/statue-column.png",
+ "from": "Models/GLTF format/statue_column.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "statue column",
+ "tags": [
+  "statue",
+  "column"
+ ],
+ "use": {
+  "size": [
+   0.3,
+   1,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 122,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 122,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5512,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ccdbde",
+     "#ffffff"
+    ],
+    "saturation": 0.39,
+    "value": 0.885,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.965
+     },
+     {
+      "hue": "grey",
+      "share": 0.035
+     }
+    ],
+    "grey": 0.035
+   },
+   "trianglesPerMetre": 9.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5d7f6c8bce8d1dc7ee62b1841376cda331c4359acfa2b9a11dd7e78c14ea9dbb",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

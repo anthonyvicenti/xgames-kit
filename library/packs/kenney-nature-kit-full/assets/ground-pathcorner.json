@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathcorner",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathcorner.glb",
+ "sha256": "704324699e7151e72d4d06bb782fbc4017c418a1c0d562c5d9bdc96c95e9c081",
+ "bytes": 3532,
+ "preview": "previews/ground-pathcorner.png",
+ "from": "Models/GLTF format/ground_pathCorner.glb; kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathcorner",
+ "tags": [
+  "ground",
+  "pathcorner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 22,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 22,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3532,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.745,
+    "value": 0.739,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.588
+     },
+     {
+      "hue": "cyan",
+      "share": 0.412
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "modified": "kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,6 +1,7 @@
 // The validator for each kind of asset, recorded in the manifest's `validated` list as { by, version, date, ok,
 // problems, warnings, facts }. A validator that is not on this machine is recorded as skipped (ok: null) with why.
 //   body (3D, gf-humanoid-1)   rig-check: bones, scale, skin, clips, budget, the model judge
+//   body (a creature standard) rig-check's creature judge: its standard's bones, scale, skin, every action's motion
 //   prop, viewmodel, sky       the model budget (a GLB, triangles for its role, bytes)
 //   clip                       a GLB with animations
 //   tile, sprite, sprite-sheet the flat judge (gf-flat-1: pixel or drawn) when the style is known; else a picture check
@@ -21,11 +22,13 @@ export async function pixels(bytes) {
 
 const small = f => Object.fromEntries(Object.entries(f ?? {}).filter(([, v]) => typeof v !== 'object' || v === null));
 
-export async function validateBody(file, { role = null } = {}) {
+/** rig: the body's standard (gf-humanoid-1, or a creature's: gf-blob-1, …); rig-check judges each by its own. */
+export async function validateBody(file, { role = null, rig = 'gf-humanoid-1' } = {}) {
+  const archetype = { 'gf-worm-1': 'worm', 'gf-blob-1': 'blob', 'gf-quadruped-1': 'quadruped', 'gf-flyer-1': 'flyer' }[rig] ?? null;
   const t = await loadTool('rigCheck');
-  if (!t) return { by: 'rig-check', version: 'gf-humanoid-1', date: today(), ok: null, problems: [], warnings: ['skipped: rig-check is not on this machine (XGAMES_RIG_CHECK)'] };
-  const r = await t.mod.rigCheck(file, { role });
-  return rec('rig-check', 'gf-humanoid-1', { ok: r.ok, problems: r.errors, warnings: r.warnings, facts: { height: r.metrics?.height, triangles: r.stats?.triangles, joints: r.stats?.joints, materials: r.stats?.materials } });
+  if (!t) return { by: 'rig-check', version: rig, date: today(), ok: null, problems: [], warnings: ['skipped: rig-check is not on this machine (XGAMES_RIG_CHECK)'] };
+  const r = await t.mod.rigCheck(file, { role, archetype: archetype ?? 'humanoid' });
+  return rec('rig-check', r.rig ?? rig, { ok: r.ok, problems: r.errors, warnings: r.warnings, facts: { height: r.metrics?.height, triangles: r.stats?.triangles, joints: r.stats?.joints, materials: r.stats?.materials } });
 }
 
 export function validateModel(bytes, { category = 'prop', size = null, measures = null } = {}) {

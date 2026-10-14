@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tool-axe",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-axe.glb",
+ "sha256": "69c0a2251a987aaa5e0cace2d3ec65cb0ab629764c1d1937c62090b1b06daa69",
+ "bytes": 11444,
+ "preview": "previews/tool-axe.png",
+ "from": "Models/GLB format/tool-axe.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool axe",
+ "tags": [
+  "tool",
+  "axe"
+ ],
+ "use": {
+  "size": [
+   0.114,
+   0.256,
+   0.031
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11444,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c77450",
+     "#d7815b",
+     "#979ebe",
+     "#a4acce",
+     "#aeb6da",
+     "#9ea5c6",
+     "#8a91ad",
+     "#b86746"
+    ],
+    "saturation": 0.424,
+    "value": 0.626,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.541
+     },
+     {
+      "hue": "blue",
+      "share": 0.364
+     },
+     {
+      "hue": "grey",
+      "share": 0.094
+     }
+    ],
+    "grey": 0.094
+   },
+   "trianglesPerMetre": 49.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "de5c6cc51cdb5bcfad8bd7128b7ff0e37a34e6f4f8deddec82bb8634c25cc20d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "track-narrow-straight-hill-end",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-narrow-straight-hill-end.glb",
+ "sha256": "cbc79bd683a30bf7d5e10945f925f39c580dc50aa0339d0ff6276e00a1a4fd0c",
+ "bytes": 16040,
+ "preview": "previews/track-narrow-straight-hill-end.png",
+ "from": "Models/GLB format/track-narrow-straight-hill-end.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track narrow straight hill end",
+ "tags": [
+  "track",
+  "narrow",
+  "straight",
+  "hill",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.441,
+   4.412
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16040,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff9a44",
+     "#ff8a44",
+     "#ff7944",
+     "#585abf"
+    ],
+    "saturation": 0.99,
+    "value": 0.632,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.98
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9ee56151e3a593f461d44a4ce2d306211fa6baf9507f60ae1e19d8ca27b9ba09",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

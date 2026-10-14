@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "structure-canvas",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-canvas.glb",
+ "sha256": "c81ce9f13ecadec488ad37cdee2ad736a5fe4852df3ee117f6779b07ff1390fc",
+ "bytes": 11796,
+ "preview": "previews/structure-canvas.png",
+ "from": "Models/GLB format/structure-canvas.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure canvas",
+ "tags": [
+  "structure",
+  "canvas"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11796,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c77450",
+     "#d7815b",
+     "#ff9d36",
+     "#ffa139",
+     "#cf7a55",
+     "#d37d58",
+     "#ffb449",
+     "#ffc254"
+    ],
+    "saturation": 0.728,
+    "value": 0.592,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f450f215599f8962b63737825c7d55d7be498742551ba21e5633d6459b194134",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

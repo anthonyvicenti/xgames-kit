@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "wheel",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wheel.glb",
+ "sha256": "f64db10ee6eeabc9c16edc85dd45a1bc7f47aec8a967e3ead537756e508159b2",
+ "bytes": 17552,
+ "preview": "previews/wheel.png",
+ "from": "Models/GLB format/wheel.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wheel",
+ "tags": [
+  "wheel"
+ ],
+ "use": {
+  "size": [
+   0.238,
+   0.483,
+   0.468
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 192,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 192,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17552,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#b6bee4",
+     "#acb4d7",
+     "#8e95b2",
+     "#848aa6",
+     "#8288a3",
+     "#b8c0e6",
+     "#a4abcd",
+     "#969dbd"
+    ],
+    "saturation": 0.358,
+    "value": 0.598,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.391
+     },
+     {
+      "hue": "blue",
+      "share": 0.311
+     },
+     {
+      "hue": "grey",
+      "share": 0.166
+     },
+     {
+      "hue": "brown",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.166
+   },
+   "trianglesPerMetre": 17.93,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c049e479d0fa31d7cae7a3f4fe239172e7117789fdd10be4be5bddde6239d59f",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

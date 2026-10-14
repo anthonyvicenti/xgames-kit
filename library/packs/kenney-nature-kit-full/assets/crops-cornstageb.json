@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "crops-cornstageb",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-cornstageb.glb",
+ "sha256": "8a882badb2fd24da836f8c9c33bff226e71858b612e07875ca51eadf621ce723",
+ "bytes": 3672,
+ "preview": "previews/crops-cornstageb.png",
+ "from": "Models/GLTF format/crops_cornStageB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops cornstageb",
+ "tags": [
+  "crops",
+  "cornstageb"
+ ],
+ "use": {
+  "size": [
+   0.304,
+   1,
+   0.304
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 116,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 116,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3672,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 17.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "509cec80fa70356fd65cac01eaf227bc775261ed6f3af426c64eea9b20e7d05c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

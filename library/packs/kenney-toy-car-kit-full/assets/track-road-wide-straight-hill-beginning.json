@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-hill-beginning",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-hill-beginning.glb",
+ "sha256": "486693c58508610e2f93e5e9321a243c2ad79d6eea0b095e5d84c6fa18c329fc",
+ "bytes": 18016,
+ "preview": "previews/track-road-wide-straight-hill-beginning.png",
+ "from": "Models/GLB format/track-road-wide-straight-hill-beginning.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight hill beginning",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "hill",
+  "beginning"
+ ],
+ "use": {
+  "size": [
+   2,
+   1.212,
+   4.341
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 352,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 352,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18016,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.342,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.373
+     },
+     {
+      "hue": "blue",
+      "share": 0.315
+     },
+     {
+      "hue": "red",
+      "share": 0.312
+     }
+    ],
+    "grey": 0.373
+   },
+   "trianglesPerMetre": 4.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3d3a9c364c71b9678b5bb500a902a355a3f4c932139b79a56761dcd26835ad37",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

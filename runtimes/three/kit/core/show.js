@@ -50,7 +50,7 @@ export async function runShow(ctx, subject, { spawnCharacter, characterFor, mech
     state.radius = Math.max(1.2, r * 2.2); state.height = size.y * 0.5; state.spin = 0; state.pitch = 0.32;
   } else if (subject === 'look') {
     for (let i = 0; i < 4; i++) {
-      const { bodySlot, height } = characterFor('player');
+      const { bodySlot, height } = characterFor('player', i);
       const c = await spawnCharacter(ctx, { player: { id: `show${i}`, name: '', color: palette[i % palette.length] }, bodySlot, tint: palette[i % palette.length], height });
       c.object3d.position.set((i - 1.5) * 1.3, 0, 0); c.object3d.rotation.y = 0.25 * (i - 1.5);
       scene.add(c.object3d); c.locomotion?.(0, true); ctx.onFrame.push(dt => c.update?.(dt));

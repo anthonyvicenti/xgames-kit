@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "wall-rounded",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-rounded.glb",
+ "sha256": "3f3319014739a4cb85d63ced3d8310a9ad8472c44b704fc9db0cc8852deca792",
+ "bytes": 15680,
+ "preview": "previews/wall-rounded.png",
+ "from": "Models/GLB format/wall-rounded.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall rounded",
+ "tags": [
+  "wall",
+  "rounded"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#989fbe",
+     "#a2aacc",
+     "#c3805f",
+     "#c78362",
+     "#8d93b1",
+     "#adb5d9",
+     "#cc8665",
+     "#be7c5d"
+    ],
+    "saturation": 0.303,
+    "value": 0.669,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.771
+     },
+     {
+      "hue": "orange",
+      "share": 0.21
+     }
+    ],
+    "grey": 0.019
+   },
+   "trianglesPerMetre": 5.83,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a09474e4d3992b5656e4999ceafa8c92500373b82c17f83216563c80dd6f6b54",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

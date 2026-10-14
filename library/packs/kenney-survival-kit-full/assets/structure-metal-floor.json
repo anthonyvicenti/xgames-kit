@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "structure-metal-floor",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-metal-floor.glb",
+ "sha256": "9aa9f1f9c92bb140d10bc6ed1d7921f8ec3a551d2a5c6bb565b16e292894568d",
+ "bytes": 16276,
+ "preview": "previews/structure-metal-floor.png",
+ "from": "Models/GLB format/structure-metal-floor.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure metal floor",
+ "tags": [
+  "structure",
+  "metal",
+  "floor"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.512,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 352,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 352,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16276,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#7d829a",
+     "#595f77",
+     "#81869c",
+     "#bfc8f0",
+     "#676c84",
+     "#747990",
+     "#979ebe",
+     "#a0a8c9"
+    ],
+    "saturation": 0.215,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.713
+     },
+     {
+      "hue": "blue",
+      "share": 0.287
+     }
+    ],
+    "grey": 0.713
+   },
+   "trianglesPerMetre": 12.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bdc18745841626540c9b47163e963df437dc2baf1c3f68da38d50bc4a2259cb1",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

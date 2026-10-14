@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "workbench-anvil",
+ "pack": "kenney-survival-kit-full",
+ "file": "workbench-anvil.glb",
+ "sha256": "949f327a3479070dfec6c961ec8944dabdf9083843f30e0338bca3e265f5868d",
+ "bytes": 17640,
+ "preview": "previews/workbench-anvil.png",
+ "from": "Models/GLB format/workbench-anvil.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "workbench anvil",
+ "tags": [
+  "workbench",
+  "anvil"
+ ],
+ "use": {
+  "size": [
+   0.323,
+   0.336,
+   0.296
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 298,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 298,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17640,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#b86746",
+     "#ea9167",
+     "#7d829a",
+     "#bfc8f0",
+     "#d7815b",
+     "#c77450",
+     "#c4714e",
+     "#8a91ad"
+    ],
+    "saturation": 0.466,
+    "value": 0.62,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.595
+     },
+     {
+      "hue": "blue",
+      "share": 0.249
+     },
+     {
+      "hue": "grey",
+      "share": 0.156
+     }
+    ],
+    "grey": 0.156
+   },
+   "trianglesPerMetre": 24.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a6253df726c1eba7cbaddf7e31cd5a4adfac31309894bf647e4b803d9d75c275",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

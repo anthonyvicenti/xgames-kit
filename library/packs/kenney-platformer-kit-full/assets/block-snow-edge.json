@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-edge",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-edge.glb",
+ "sha256": "a009d7c9cb3b742d86704caad6025102c67eff52dfa05767082361540f6548c9",
+ "bytes": 16488,
+ "preview": "previews/block-snow-edge.png",
+ "from": "Models/GLB format/block-snow-edge.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow edge",
+ "tags": [
+  "block",
+  "snow",
+  "edge"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 112,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 112,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16488,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#f8f8fb",
+     "#d7825b",
+     "#be6c4b",
+     "#c67350",
+     "#e18961",
+     "#ea9168",
+     "#e6e6ef",
+     "#d3d3e3"
+    ],
+    "saturation": 0.461,
+    "value": 0.722,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.611
+     },
+     {
+      "hue": "grey",
+      "share": 0.237
+     },
+     {
+      "hue": "blue",
+      "share": 0.152
+     }
+    ],
+    "grey": 0.237
+   },
+   "trianglesPerMetre": 4.82,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5ed06010d544fd7a6e0d1d5151bab5ab9552eb508854356fab21660c68f1f24a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

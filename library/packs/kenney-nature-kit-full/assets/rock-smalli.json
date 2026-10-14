@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "rock-smalli",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-smalli.glb",
+ "sha256": "d1fd914d1741ec10ab6288d4fd79ae465adbfe92ae2058f4d68610153a064e9d",
+ "bytes": 3696,
+ "preview": "previews/rock-smalli.png",
+ "from": "Models/GLTF format/rock_smallI.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock smalli",
+ "tags": [
+  "rock",
+  "smalli"
+ ],
+ "use": {
+  "size": [
+   0.358,
+   0.278,
+   0.414
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3696,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.764,
+    "value": 0.778,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.932
+     },
+     {
+      "hue": "cyan",
+      "share": 0.068
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f7bbf2f4efbfe63977c4c6520762143ede95c63bff6484b9719db5e666a618e4",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

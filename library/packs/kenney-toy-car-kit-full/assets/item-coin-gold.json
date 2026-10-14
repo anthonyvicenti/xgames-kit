@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "item-coin-gold",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "item-coin-gold.glb",
+ "sha256": "17c9fe6f9a47ebb59fe2160c62de50bf0d0463f820edd0b404511234e23dccf7",
+ "bytes": 13000,
+ "preview": "previews/item-coin-gold.png",
+ "from": "Models/GLB format/item-coin-gold.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "item coin gold",
+ "tags": [
+  "item",
+  "coin",
+  "gold"
+ ],
+ "use": {
+  "size": [
+   0.264,
+   0.264,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13000,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ff9b34",
+     "#ffba4e",
+     "#ffa63d",
+     "#ffcb5d",
+     "#ffab42",
+     "#ffb046",
+     "#ffc053",
+     "#ffa139"
+    ],
+    "saturation": 1,
+    "value": 0.638,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 21.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "80d4c5699bbdcb88c6efe51769ea8f5c4b641bb7fb2b3a384c5fedd68db2f69a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

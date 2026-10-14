@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tree-autumn-tall",
+ "pack": "kenney-survival-kit-full",
+ "file": "tree-autumn-tall.glb",
+ "sha256": "4be962361043a8295ab047eb597c191676ed6f5fbc46fc1ed8824ce7d49ca662",
+ "bytes": 14596,
+ "preview": "previews/tree-autumn-tall.png",
+ "from": "Models/GLB format/tree-autumn-tall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree autumn tall",
+ "tags": [
+  "tree",
+  "autumn",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   0.553,
+   1.711,
+   0.526
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 198,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 198,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14596,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ff8b44",
+     "#ff8744",
+     "#ff8644",
+     "#ff8144",
+     "#eab38d",
+     "#e7af89",
+     "#ff8e44",
+     "#dea27b"
+    ],
+    "saturation": 0.938,
+    "value": 0.646,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4d06aab26b6a4decf3888d637b6d3bb5199ecace33cb914fac1afdc2718ab2f9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

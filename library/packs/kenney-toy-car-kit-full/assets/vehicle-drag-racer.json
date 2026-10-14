@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-drag-racer",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-drag-racer.glb",
+ "sha256": "6d628b8d1597440e2dc0d485a12ad69a586d2711000db66023407f699353ab03",
+ "bytes": 41612,
+ "preview": "previews/vehicle-drag-racer.png",
+ "from": "Models/GLB format/vehicle-drag-racer.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle drag racer",
+ "tags": [
+  "vehicle",
+  "drag",
+  "racer"
+ ],
+ "use": {
+  "size": [
+   0.588,
+   0.606,
+   1.338
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1084,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1084,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41612,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#71778e",
+     "#ff7544",
+     "#5a6078",
+     "#696f86",
+     "#494c5a",
+     "#7f849c",
+     "#ff7e44",
+     "#505463"
+    ],
+    "saturation": 0.387,
+    "value": 0.516,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.64
+     },
+     {
+      "hue": "orange",
+      "share": 0.296
+     },
+     {
+      "hue": "blue",
+      "share": 0.064
+     }
+    ],
+    "grey": 0.64
+   },
+   "trianglesPerMetre": 18.7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e55cec7720744af6bdee05f0716c032dabede9d173a3629fd8af7ec58447ce1d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

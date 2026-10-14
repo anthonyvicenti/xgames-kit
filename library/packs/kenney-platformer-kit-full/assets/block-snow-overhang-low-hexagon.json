@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-low-hexagon",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-low-hexagon.glb",
+ "sha256": "bc83f375494bd4b56e1687bb5a500fbf064c6052279ae6c55e3761e42b8211e9",
+ "bytes": 15088,
+ "preview": "previews/block-snow-overhang-low-hexagon.png",
+ "from": "Models/GLB format/block-snow-overhang-low-hexagon.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang low hexagon",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "low",
+  "hexagon"
+ ],
+ "use": {
+  "size": [
+   1.1,
+   0.5,
+   1.27
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15088,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#cacade",
+     "#efeff5"
+    ],
+    "saturation": 0.436,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.458
+     },
+     {
+      "hue": "grey",
+      "share": 0.291
+     },
+     {
+      "hue": "blue",
+      "share": 0.251
+     }
+    ],
+    "grey": 0.291
+   },
+   "trianglesPerMetre": 4.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "133a080a006dbc854cc7cbffa56bb4d0fa7016a3ed119976245ce46fc89852e9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

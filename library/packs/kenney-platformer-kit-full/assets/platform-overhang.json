@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "platform-overhang",
+ "pack": "kenney-platformer-kit-full",
+ "file": "platform-overhang.glb",
+ "sha256": "67a19ee15a3f265578ea22bee4e9ef02ba92708558f81aea7108c3ce65ec80c8",
+ "bytes": 15056,
+ "preview": "previews/platform-overhang.png",
+ "from": "Models/GLB format/platform-overhang.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "platform overhang",
+ "tags": [
+  "platform",
+  "overhang"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.433,
+   0.458
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15056,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c3714e",
+     "#9f5b41",
+     "#d47f59",
+     "#d9835c",
+     "#925841",
+     "#d07c57",
+     "#865542",
+     "#ab5f41"
+    ],
+    "saturation": 0.489,
+    "value": 0.51,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.84
+     },
+     {
+      "hue": "brown",
+      "share": 0.16
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "931958fb216e81f928b795df910b8fc77000854367a21fbdac643e0c301194ea",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

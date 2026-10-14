@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "fence-bendcenter",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-bendcenter.glb",
+ "sha256": "0da406df0224c37d8c3e9e1c215d6974173429a58c01e13e5bd0e4d8521f4b53",
+ "bytes": 7524,
+ "preview": "previews/fence-bendcenter.png",
+ "from": "Models/GLTF format/fence_bendCenter.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence bendcenter",
+ "tags": [
+  "fence",
+  "bendcenter"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 298,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 298,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7524,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc5a7",
+     "#e3af94",
+     "#ffffff"
+    ],
+    "saturation": 0.816,
+    "value": 0.789,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.994
+     }
+    ],
+    "grey": 0.006
+   },
+   "trianglesPerMetre": 19.66,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "07963bccfd2f69aafdeb5165cfb0b20937cb390b9770a38c9b469ffd0f0dd745",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

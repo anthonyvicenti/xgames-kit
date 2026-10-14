@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-logs",
+ "pack": "kenney-nature-kit-full",
+ "file": "campfire-logs.glb",
+ "sha256": "8d19fa144b4e70e0d2a0db4e9b845242fe410cd07069cfd6b0f3b500a9ea2116",
+ "bytes": 4520,
+ "preview": "previews/campfire-logs.png",
+ "from": "Models/GLTF format/campfire_logs.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire logs",
+ "tags": [
+  "campfire",
+  "logs"
+ ],
+ "use": {
+  "size": [
+   0.292,
+   0.063,
+   0.292
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 112,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 112,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4520,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e3af94",
+     "#ffc5a7"
+    ],
+    "saturation": 0.642,
+    "value": 0.748,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 22.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "98d87cdcf9095b94fd348d0946e911dd4ca6c0956bac3318cfd2b0030b86055a",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "packVersion": 1,
+ "id": "kenney-toy-car-kit-full",
+ "title": "Kenney Toy Car Kit (all models)",
+ "describe": "Kenney's toy-car-kit, every model the curated kenney-toy-car-kit pack does not hold: low-poly, flat colours from one colour swatch texture, in Kenney's own units (not baked to metres).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/toy-car-kit",
+  "file": "library/packs/kenney-toy-car-kit-full/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/toy-car-kit",
+  "download": "https://kenney.nl/media/pages/assets/toy-car-kit/42e19cc426-1736346027/kenney_toy-car-kit.zip",
+  "sha256": "26c11bbb77102b8dd00cdaf7b2c7ab692416d750dd064de886d809acec346782",
+  "retrieved": "2026-10-14",
+  "rebuild": "art ingest kenney_toy-car-kit.zip --pack kenney-toy-car-kit-full --include 'Models/GLB format/*.glb'"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 8,
+   "hues": [
+    "#c1c1d8",
+    "#ff8144",
+    "#ff7544",
+    "#d3554e",
+    "#5a6078",
+    "#d1d1e2",
+    "#e25d49",
+    "#f16544",
+    "#e6e6ef",
+    "#ff8d44",
+    "#ff8f44",
+    "#617dcf"
+   ],
+   "saturation": 0.462,
+   "value": 0.633,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.293
+    },
+    {
+     "hue": "blue",
+     "share": 0.269
+    },
+    {
+     "hue": "red",
+     "share": 0.222
+    },
+    {
+     "hue": "grey",
+     "share": 0.19
+    }
+   ],
+   "grey": 0.077
+  },
+  "trianglesPerMetre": 4.34,
+  "texelsPerMetre": 1017,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 157,
+ "validators": [
+  "budget"
+ ]
+}

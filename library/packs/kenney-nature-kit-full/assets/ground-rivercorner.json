@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "ground-rivercorner",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-rivercorner.glb",
+ "sha256": "e6e1eece775ad0fd23bc60fe5d7094a792bef53de71e68790afac692f511edb9",
+ "bytes": 4844,
+ "preview": "previews/ground-rivercorner.png",
+ "from": "Models/GLTF format/ground_riverCorner.glb; kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground rivercorner",
+ "tags": [
+  "ground",
+  "rivercorner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 40,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 40,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4844,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#73eddd",
+     "#d8faff",
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.837,
+    "value": 0.795,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.392
+     },
+     {
+      "hue": "grey",
+      "share": 0.391
+     },
+     {
+      "hue": "orange",
+      "share": 0.217
+     }
+    ],
+    "grey": 0.391
+   },
+   "trianglesPerMetre": 6.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "modified": "kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

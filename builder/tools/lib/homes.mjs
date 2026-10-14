@@ -35,7 +35,7 @@ let cached = null;
 export function checkHome(n) { cached ??= loadHomes(); return cached.checks?.[String(n)] ?? null; }
 
 /** Every measure verify can record, in any flow: a round's, a world's, a forge game's and a vista game's, the judges
- *  (23), and 9 (the contact sheet). Each is a measure inside one gate (tools/lib/verdict.mjs MEASURES). */
+ *  (none today: the play-tester is not a measure), and 9 (the contact sheet). Each is a measure inside one gate (tools/lib/verdict.mjs MEASURES). */
 export const allChecks = () => [...new Set([...Object.values(MEASURES_OF).flat(), 9])].sort((a, b) => a - b);
 
 export const lineHash = text => createHash('sha256').update(text.trim()).digest('hex').slice(0, 12);

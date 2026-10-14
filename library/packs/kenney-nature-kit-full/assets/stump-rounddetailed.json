@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stump-rounddetailed",
+ "pack": "kenney-nature-kit-full",
+ "file": "stump-rounddetailed.glb",
+ "sha256": "c02f1c32a4b19513da155f529b5bca971a499347e248e798d5cf2d8fb78aedf7",
+ "bytes": 4416,
+ "preview": "previews/stump-rounddetailed.png",
+ "from": "Models/GLTF format/stump_roundDetailed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stump rounddetailed",
+ "tags": [
+  "stump",
+  "rounddetailed"
+ ],
+ "use": {
+  "size": [
+   0.357,
+   0.206,
+   0.371
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4416,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#fbedde"
+    ],
+    "saturation": 0.766,
+    "value": 0.799,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.898
+     },
+     {
+      "hue": "grey",
+      "share": 0.102
+     }
+    ],
+    "grey": 0.102
+   },
+   "trianglesPerMetre": 16.28,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3017359bd0bdf84fa137f8aca33b31b1a54c3a3f11d36e1d0995868dedd53768",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

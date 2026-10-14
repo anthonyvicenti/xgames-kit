@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinesmalla",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinesmalla.glb",
+ "sha256": "0d0e811827e4ca865f3284cf74ad298fab64a427b5eeebde74105b73208d1e1f",
+ "bytes": 5384,
+ "preview": "previews/tree-pinesmalla.png",
+ "from": "Models/GLTF format/tree_pineSmallA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinesmalla",
+ "tags": [
+  "tree",
+  "pinesmalla"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.967,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 164,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 164,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5384,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.546,
+    "value": 0.655,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.893
+     },
+     {
+      "hue": "orange",
+      "share": 0.107
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "be1a438bbb2e157266c1fb093b775bff8ce3e29a4c8f04aaf9d44c7a4e1f1ff0",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

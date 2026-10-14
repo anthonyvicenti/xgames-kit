@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-corner",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-corner.glb",
+ "sha256": "bc22f30fdef2ac7ab4c1c3c958bf2a18d63eb797c4a06f22625040c216244576",
+ "bytes": 15788,
+ "preview": "previews/block-grass-corner.png",
+ "from": "Models/GLB format/block-grass-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass corner",
+ "tags": [
+  "block",
+  "grass",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1.054,
+   1,
+   1.054
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15788,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#339c75",
+     "#47b07e",
+     "#50ba83",
+     "#299270"
+    ],
+    "saturation": 0.565,
+    "value": 0.562,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.662
+     },
+     {
+      "hue": "green",
+      "share": 0.242
+     },
+     {
+      "hue": "cyan",
+      "share": 0.096
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c24b9ae9c45dd441f6746689bfdd1ac42ebbccaf442acf82fbf75c435dab18d1",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

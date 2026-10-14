@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smalli",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smalli.glb",
+ "sha256": "d461a4595eed7aa0ff97ffab90f5e038d0714de5e1f80bccb92e56a579687e6d",
+ "bytes": 2704,
+ "preview": "previews/stone-smalli.png",
+ "from": "Models/GLTF format/stone_smallI.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smalli",
+ "tags": [
+  "stone",
+  "smalli"
+ ],
+ "use": {
+  "size": [
+   0.358,
+   0.278,
+   0.414
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2704,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f210ea4a4e60c3fa0b6d1601a33ef8efb6e1d0ea17121319c1c685ae72ac5a79",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

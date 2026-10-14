@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "fence-doorway",
+ "pack": "kenney-survival-kit-full",
+ "file": "fence-doorway.glb",
+ "sha256": "7f2ecd6b2bca2e10f93446c8637ca00d5ebedf28039abd47abd612e572aa4ffa",
+ "bytes": 13524,
+ "preview": "previews/fence-doorway.png",
+ "from": "Models/GLB format/fence-doorway.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence doorway",
+ "tags": [
+  "fence",
+  "doorway"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.517,
+   0.048
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13524,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c77450",
+     "#d7815b",
+     "#b86746",
+     "#ea9167",
+     "#cf7a55",
+     "#d37d58",
+     "#c4714e",
+     "#db845d"
+    ],
+    "saturation": 0.56,
+    "value": 0.571,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 16.41,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f52756aa5150704dba49ef4d4d179a20dfd333e4ce9a914a5e9b0088cf2db933",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

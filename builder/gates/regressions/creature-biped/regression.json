@@ -1,0 +1,13 @@
+{
+  "base": "critter-lob",
+  "why": "A biped skeleton in a blob's slot: the looks pilot's moss-mole came back from Meshy's auto-rig on a humanoid skeleton (a hand weighted to nothing, a face torn in two clips), the only rig a legless critter could get before the body archetypes (looks wave 2, 2026-10-14). Here the stand-in is the kit's own bean (gf-humanoid-1) put in the blob role's body slot. Gate A must fail it: the slot asks for gf-blob-1.",
+  "evidence": "builder/gates/evidence/2026-10-14-creature-bodies.json",
+  "files": {
+    "assets/models/body-player.glb": "bean-classic.glb"
+  },
+  "mustFail": [
+    "A"
+  ],
+  "measure": 19,
+  "detail": "missing required gf-blob-1 bones"
+}

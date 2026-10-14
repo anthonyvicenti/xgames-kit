@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "brick",
+ "pack": "kenney-platformer-kit-full",
+ "file": "brick.glb",
+ "sha256": "9ba98efc3199e4263b066fb4e611e52a3d30cd89d01bd4da7a5d95b703191764",
+ "bytes": 19124,
+ "preview": "previews/brick.png",
+ "from": "Models/GLB format/brick.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "brick",
+ "tags": [
+  "brick"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 188,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 188,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19124,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#cc7854",
+     "#d37e58",
+     "#949bba",
+     "#a9b0d3",
+     "#c3714e",
+     "#dd865f",
+     "#8086a1",
+     "#bdc6ee"
+    ],
+    "saturation": 0.47,
+    "value": 0.622,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.635
+     },
+     {
+      "hue": "blue",
+      "share": 0.304
+     },
+     {
+      "hue": "grey",
+      "share": 0.061
+     }
+    ],
+    "grey": 0.061
+   },
+   "trianglesPerMetre": 7.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b1638210ac5584f5d050654d3635b39834542b4121f6095f75b98e28745a23b3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

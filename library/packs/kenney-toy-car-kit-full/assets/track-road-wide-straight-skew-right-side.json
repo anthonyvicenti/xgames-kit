@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-skew-right-side",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-skew-right-side.glb",
+ "sha256": "4ec6bb389be84d111192d4225726ec2b4a265abebd22dd64906feae393e14884",
+ "bytes": 16892,
+ "preview": "previews/track-road-wide-straight-skew-right-side.png",
+ "from": "Models/GLB format/track-road-wide-straight-skew-right-side.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight skew right side",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "skew",
+  "right",
+  "side"
+ ],
+ "use": {
+  "size": [
+   2.042,
+   2.042,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16892,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#e6e6ef",
+     "#d1d1e2",
+     "#fa6b41"
+    ],
+    "saturation": 0.343,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.372
+     },
+     {
+      "hue": "blue",
+      "share": 0.314
+     },
+     {
+      "hue": "red",
+      "share": 0.313
+     }
+    ],
+    "grey": 0.372
+   },
+   "trianglesPerMetre": 3.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1c9e61346390af09e201f70f50d75c63fab3fa6517236cd70b02c18433dd1746",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

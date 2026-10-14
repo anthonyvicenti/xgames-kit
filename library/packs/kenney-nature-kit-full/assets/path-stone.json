@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "path-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-stone.glb",
+ "sha256": "c31d9ded69e6cbb055c78a5fe27df0bbe6fd5c4daf6318265886d48d0a279178",
+ "bytes": 5804,
+ "preview": "previews/path-stone.png",
+ "from": "Models/GLTF format/path_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path stone",
+ "tags": [
+  "path",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   0.577
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff",
+     "#ccdbde"
+    ],
+    "saturation": 0.273,
+    "value": 0.92,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.671
+     },
+     {
+      "hue": "grey",
+      "share": 0.329
+     }
+    ],
+    "grey": 0.329
+   },
+   "trianglesPerMetre": 13.67,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "06f2eb4f914df4dd419b7fb33e81059bc0b1a5b941a193b7c9f8ffd8851146c5",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "chimney",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "chimney.glb",
+ "sha256": "964f8b0857ac76a4e3ca0644faeb0c7f74c21976c9e7f740f39820fad83de3ac",
+ "bytes": 14196,
+ "preview": "previews/chimney.png",
+ "from": "Models/GLB format/chimney.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "chimney",
+ "tags": [
+  "chimney"
+ ],
+ "use": {
+  "size": [
+   0.212,
+   1,
+   0.34
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14196,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#6a7087",
+     "#71768d",
+     "#989fbe",
+     "#a2aacc",
+     "#adb5d9",
+     "#8d93b1",
+     "#646981",
+     "#777c93"
+    ],
+    "saturation": 0.16,
+    "value": 0.547,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.756
+     },
+     {
+      "hue": "blue",
+      "share": 0.244
+     }
+    ],
+    "grey": 0.756
+   },
+   "trianglesPerMetre": 4.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a15cdbd13860092f6d793e5b785043eb90a49cdaa725bb71df9fd154ca68dac6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

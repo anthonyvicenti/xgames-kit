@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "metal-panel-screws-half",
+ "pack": "kenney-survival-kit-full",
+ "file": "metal-panel-screws-half.glb",
+ "sha256": "19cabf4bb386498518f8c6203b2228bbabbd367b98f2f05e01430ce8df2c4822",
+ "bytes": 14628,
+ "preview": "previews/metal-panel-screws-half.png",
+ "from": "Models/GLB format/metal-panel-screws-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "metal panel screws half",
+ "tags": [
+  "metal",
+  "panel",
+  "screws",
+  "half"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.25,
+   0.063
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 320,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 320,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14628,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9197b6",
+     "#a9b1d4",
+     "#e15d49",
+     "#ec6246",
+     "#7d829a",
+     "#bfc8f0",
+     "#5c627a",
+     "#60657d"
+    ],
+    "saturation": 0.384,
+    "value": 0.67,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.731
+     },
+     {
+      "hue": "red",
+      "share": 0.217
+     },
+     {
+      "hue": "grey",
+      "share": 0.052
+     }
+    ],
+    "grey": 0.052
+   },
+   "trianglesPerMetre": 21.82,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "eb8834be52b9766a6a553799dfacaaff63e7fac191b9392c154725ff102faa91",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

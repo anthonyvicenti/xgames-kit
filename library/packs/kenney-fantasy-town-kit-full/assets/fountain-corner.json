@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "fountain-corner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fountain-corner.glb",
+ "sha256": "6ce019be010e687c95357338ecaf03f1771f793ce3e01f53a7a2cd59c9366f7a",
+ "bytes": 16008,
+ "preview": "previews/fountain-corner.png",
+ "from": "Models/GLB format/fountain-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fountain corner",
+ "tags": [
+  "fountain",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.28,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7d829c",
+     "#79dcff",
+     "#bdc6ee",
+     "#9299b7",
+     "#a8b0d3",
+     "#b6bee4",
+     "#bac2e9",
+     "#a4acce"
+    ],
+    "saturation": 0.463,
+    "value": 0.669,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.38
+     },
+     {
+      "hue": "blue",
+      "share": 0.349
+     },
+     {
+      "hue": "cyan",
+      "share": 0.272
+     }
+    ],
+    "grey": 0.38
+   },
+   "trianglesPerMetre": 4.08,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fb63467da36c0e14799ac2071791f9cb537eb2558206c81abf0e280753e19176",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

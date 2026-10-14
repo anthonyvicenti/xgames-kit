@@ -1,0 +1,258 @@
+{
+  "id": "carve",
+  "name": "Carve",
+  "describe": "Explosions carve smooth craters in the terrain world; the host keeps the ground the same everywhere",
+  "examples": [
+    "explosions blow smooth craters in the ground",
+    "dig tunnels through an island",
+    "artillery that reshapes the land"
+  ],
+  "rank": 34,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "fromProjectile": {
+        "type": "boolean",
+        "default": true,
+        "description": "Carve where the projectile mechanic's shots end, when they have a splash (splashRadius > 0)"
+      },
+      "radius": {
+        "type": "number",
+        "description": "Crater radius in metres (0: the shot's splash radius times scale)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 0
+      },
+      "scale": {
+        "type": "number",
+        "description": "Crater radius per metre of the shot's splash radius",
+        "minimum": 0.1,
+        "maximum": 4,
+        "default": 1
+      },
+      "minRadius": {
+        "type": "number",
+        "description": "Smallest crater (m)",
+        "minimum": 0.2,
+        "maximum": 10,
+        "default": 0.6
+      },
+      "maxRadius": {
+        "type": "number",
+        "description": "Largest crater (m)",
+        "minimum": 0.5,
+        "maximum": 20,
+        "default": 8
+      },
+      "keep": {
+        "type": "boolean",
+        "default": false,
+        "description": "Keep the craters from one round to the next (false: every round starts on the ground as it was made)"
+      },
+      "debris": {
+        "type": "boolean",
+        "default": true,
+        "description": "Lumps of ground thrown out of each crater"
+      },
+      "blastFx": {
+        "type": "string",
+        "description": "A vfx preset (kit/vfx: impact-flash, spark-burst, ...) at the heart of each blast; unset: none",
+        "default": ""
+      },
+      "dustFx": {
+        "type": "string",
+        "description": "A vfx preset (kit/vfx: smoke-puff, dust-kick, ...) rising from each crater; unset: none",
+        "default": ""
+      },
+      "splashFx": {
+        "type": "string",
+        "description": "A vfx preset (kit/vfx: smoke-puff, ...) where a blast lands in the sea and carves nothing; unset: none",
+        "default": ""
+      },
+      "splashSound": {
+        "type": "string",
+        "description": "A sound id played where a blast lands in the sea; unset: none",
+        "default": ""
+      },
+      "sound": {
+        "type": "string",
+        "description": "A sound id (assets.json \u2192 sounds) played at each crater; unset: none",
+        "default": ""
+      },
+      "shake": {
+        "type": "number",
+        "description": "Camera shake at a blast next to the camera (m)",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.25
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.carve.scale",
+        "label": "Crater size (per metre of blast)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/scale"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 46,
+        "constraints": {
+          "min": 0.1,
+          "max": 4
+        }
+      },
+      {
+        "id": "mechanic.carve.radius",
+        "label": "Crater size (fixed, 0: from the blast)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.carve.max-radius",
+        "label": "Largest crater",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/maxRadius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 20,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.carve.keep",
+        "label": "Craters stay between rounds",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/keep"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.carve.shake",
+        "label": "Blast camera shake",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/shake"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "constraints": {
+          "min": 0,
+          "max": 2,
+          "unit": "m"
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onCarve",
+      "on": "every copy",
+      "args": "{ op: 'carve' | 'add', at: {x, y, z}, r, normal, live, by }",
+      "when": "the ground changed here (live: false while a late copy catches up)"
+    }
+  ],
+  "counters": [],
+  "host": {
+    "owner": "host",
+    "how": "the host makes every edit and numbers it; every copy applies them in order on the same generated ground; a copy missing some asks the host for them",
+    "state": "carve",
+    "fields": {
+      "r": "the host's round count (a new round starts the ground again)",
+      "n": "how many edits the host has made this round"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": [
+      {
+        "id": "terrain",
+        "why": "it edits the smooth terrain's field (config/world.json template \"terrain\")"
+      }
+    ]
+  },
+  "uses": [
+    "projectile"
+  ],
+  "capabilities": [
+    "smooth-terrain"
+  ],
+  "gives": [
+    "destructible-ground"
+  ],
+  "bots": "no bot code (bots fire the projectile; the craters come by themselves)",
+  "notes": {
+    "lines": [
+      "With the projectile mechanic every shot with a splash (splashRadius > 0) carves where it ends by itself (fromProjectile); otherwise the host calls carve.carve({ x, y, z }, r).",
+      "Players fall when the ground under them goes, and into the sea past the land: the rules decide what the sea does (world.seaLevel)."
+    ],
+    "readme": "components/carve/README.md",
+    "stub": {
+      "as": "carve",
+      "worked": "carve.onCarve(c => { if (c.live) ctx.audio.play('explosion-small', { at: c.at, optional: true }); });",
+      "traps": [
+        "carve.carve and carve.add change the ground on the host only: keep them under if (ctx.host)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "players": 2,
+    "missing": "no k2 fixture folder: the two-player check is tests/terrain-two-players.mjs <game> (host + joiner over WebRTC, the same craters on both screens, a late joiner gets the edited ground)"
+  },
+  "impl": {
+    "three": {
+      "path": "components/carve/index.js",
+      "profiles": [
+        "standard-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/terrain.test.mjs pass; tests/terrain-two-players.mjs (crater-isles, WebRTC): same field hash on host and joiner after 6 real bombs, a late joiner caught up (6/6); verify 6/6 gates, 22/22 measures",
+            "date": "2026-10-14"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/terrain.test.mjs pass; tests/terrain-two-players.mjs (crater-isles, WebRTC): same field hash on host and joiner after 6 real bombs, a late joiner caught up (6/6); verify 6/6 gates, 22/22 measures",
+        "date": "2026-10-14"
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-large-slope-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-large-slope-narrow.glb",
+ "sha256": "00eb2d922bdaaf4acc56d1b7e8f96c5e7ca894fb907943d8f10ba6a39f185a40",
+ "bytes": 16136,
+ "preview": "previews/block-snow-large-slope-narrow.png",
+ "from": "Models/GLB format/block-snow-large-slope-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow large slope narrow",
+ "tags": [
+  "block",
+  "snow",
+  "large",
+  "slope",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   0.759,
+   2.011
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16136,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#c1c1d8",
+     "#ea9168",
+     "#d9835c",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#cacade",
+     "#efeff5"
+    ],
+    "saturation": 0.411,
+    "value": 0.795,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.374
+     },
+     {
+      "hue": "blue",
+      "share": 0.358
+     },
+     {
+      "hue": "grey",
+      "share": 0.268
+     }
+    ],
+    "grey": 0.268
+   },
+   "trianglesPerMetre": 3.46,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a3650362ad53c3086323fcf634f5cac7772cb0f8246615b0289db0cd22e857b9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "wall-block-half",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-block-half.glb",
+ "sha256": "b5f77ab0517e64508395739660ab885ae68ef7f3b6b0fb5ab25ef19c031404c1",
+ "bytes": 14940,
+ "preview": "previews/wall-block-half.png",
+ "from": "Models/GLB format/wall-block-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall block half",
+ "tags": [
+  "wall",
+  "block",
+  "half"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14940,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#adb5d9",
+     "#8d93b1",
+     "#989fbe",
+     "#a2aacc",
+     "#c3805f",
+     "#c78362",
+     "#be7c5d",
+     "#cc8665"
+    ],
+    "saturation": 0.296,
+    "value": 0.677,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.632
+     },
+     {
+      "hue": "grey",
+      "share": 0.226
+     },
+     {
+      "hue": "orange",
+      "share": 0.141
+     }
+    ],
+    "grey": 0.226
+   },
+   "trianglesPerMetre": 4.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c875a1d86faf9eab5af9152c0fd06b91cea4693e92780f949d505a5186925e32",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -15,6 +15,9 @@ addEventListener('unhandledrejection', e => B.errors.push(String(e.reason?.stack
 
 const kind = await (await fetch(`/xk/kinds/${Q.get('kind') ?? 'blocky'}.json`)).json();
 const L3 = kind.look.three, time = Q.get('time') ?? L3.time ?? 'day';
+// ?set={json}: look values over the kind's (a style target or a tuning run, as the kind sheet's page takes them)
+const merge = (a, b) => { for (const [k, v] of Object.entries(b)) a[k] = v && typeof v === 'object' && !Array.isArray(v) && a[k] && typeof a[k] === 'object' ? merge({ ...a[k] }, v) : v; return a; };
+if (Q.get('set')) L3.values = merge({ ...(L3.values ?? {}) }, JSON.parse(Q.get('set')));
 const lookCfg = { preset: L3.preset, ...(L3.values ?? {}), times: { [time]: L3.values ?? {} } };
 const W = kind.sheet?.world ?? kind.world?.three ?? {};
 const base = await (await fetch('/kit/world/voxel/default.json')).json();

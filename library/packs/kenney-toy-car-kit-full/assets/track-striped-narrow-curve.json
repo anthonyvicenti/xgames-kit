@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-curve",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-curve.glb",
+ "sha256": "96a0bfc6dbc408123c11239856210c3e969d0ce04dee2f767ae723f5486ddb9f",
+ "bytes": 16368,
+ "preview": "previews/track-striped-narrow-curve.png",
+ "from": "Models/GLB format/track-striped-narrow-curve.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow curve",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "curve"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16368,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#eb6246"
+    ],
+    "saturation": 0.471,
+    "value": 0.716,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.491
+     },
+     {
+      "hue": "blue",
+      "share": 0.425
+     },
+     {
+      "hue": "grey",
+      "share": 0.084
+     }
+    ],
+    "grey": 0.084
+   },
+   "trianglesPerMetre": 4.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3d9319d72e4ad9f2d826e0d0787f3922723b093c841a767022fe32dccd320862",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

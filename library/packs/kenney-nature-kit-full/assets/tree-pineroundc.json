@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pineroundc",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pineroundc.glb",
+ "sha256": "4432d6b652573f0c0ae4fdd4910d2aa27d6e929688c21e3f49b995cab10f8120",
+ "bytes": 6020,
+ "preview": "previews/tree-pineroundc.png",
+ "from": "Models/GLTF format/tree_pineRoundC.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pineroundc",
+ "tags": [
+  "tree",
+  "pineroundc"
+ ],
+ "use": {
+  "size": [
+   0.48,
+   1.253,
+   0.555
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 206,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 206,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6020,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.546,
+    "value": 0.655,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.898
+     },
+     {
+      "hue": "orange",
+      "share": 0.102
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "29080a4935bae6b4ab29066f22c99c58f88b23ce4e2f79b4dcbb5e76de73f69d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

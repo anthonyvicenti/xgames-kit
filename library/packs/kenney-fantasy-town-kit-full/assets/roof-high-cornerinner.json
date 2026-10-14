@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "roof-high-cornerinner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-high-cornerinner.glb",
+ "sha256": "79762d047943041286619b26d2b596bae07ca0bdd993e8731f89b66c42538684",
+ "bytes": 14264,
+ "preview": "previews/roof-high-cornerinner.png",
+ "from": "Models/GLB format/roof-high-cornerinner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof high cornerinner",
+ "tags": [
+  "roof",
+  "high",
+  "cornerinner"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.141,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 30,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 30,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14264,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#985c46",
+     "#885240",
+     "#de4f5b",
+     "#794939",
+     "#86513f",
+     "#ed525a",
+     "#ec525a",
+     "#955a45"
+    ],
+    "saturation": 0.453,
+    "value": 0.446,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.531
+     },
+     {
+      "hue": "red",
+      "share": 0.258
+     },
+     {
+      "hue": "orange",
+      "share": 0.211
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.24,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e1ab3e28f921d131c6f6ede216f6df1a0497ce1556fcfa94cacdce44b7ec31b3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

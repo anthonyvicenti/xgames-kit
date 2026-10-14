@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-curve",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-curve.glb",
+ "sha256": "afbd837ec7c138879462e12fcd227c8360760e08808454fbdb6585d0c1f1dbcb",
+ "bytes": 17772,
+ "preview": "previews/block-snow-curve.png",
+ "from": "Models/GLB format/block-snow-curve.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow curve",
+ "tags": [
+  "block",
+  "snow",
+  "curve"
+ ],
+ "use": {
+  "size": [
+   2,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17772,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#b66545",
+     "#e68e65",
+     "#e18a62",
+     "#d8825c",
+     "#f2f2f7",
+     "#d8d8e6",
+     "#c6c6db",
+     "#eeeef4"
+    ],
+    "saturation": 0.363,
+    "value": 0.743,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.454
+     },
+     {
+      "hue": "blue",
+      "share": 0.289
+     },
+     {
+      "hue": "grey",
+      "share": 0.257
+     }
+    ],
+    "grey": 0.257
+   },
+   "trianglesPerMetre": 5.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d413febeee77e865bc7c649f4fe0517a70950a3705013df2705686aaf95e2035",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

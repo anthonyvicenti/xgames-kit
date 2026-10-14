@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-stones",
+ "pack": "kenney-nature-kit-full",
+ "file": "campfire-stones.glb",
+ "sha256": "2aebf66214bc95dd1806ce968cb6132db4d73afb653e38b2f43145eefc145bc3",
+ "bytes": 5404,
+ "preview": "previews/campfire-stones.png",
+ "from": "Models/GLTF format/campfire_stones.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire stones",
+ "tags": [
+  "campfire",
+  "stones"
+ ],
+ "use": {
+  "size": [
+   0.541,
+   0.078,
+   0.515
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 264,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 264,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 26.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "54869db23243a3f4905bc00bd4cd93b1037b28556ab3ef93e7a893a093791e35",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

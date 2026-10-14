@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "kenney-platformer-kit-full",
+ "title": "Kenney Platformer Kit (all models)",
+ "describe": "Kenney's platformer-kit, every model the curated kenney-platformer-kit pack does not hold: low-poly, flat colours from one colour swatch texture, in Kenney's own units (not baked to metres).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/platformer-kit",
+  "file": "library/packs/kenney-platformer-kit-full/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "899605d237367688c6b42e41fff2206c0fb8d626163158294556353f7baa7c1b",
+  "retrieved": "2026-10-14",
+  "rebuild": "art ingest kenney_platformer-kit.zip --pack kenney-platformer-kit-full --include 'Models/GLB format/*.glb' (the models kenney-platformer-kit holds come back too and are dropped)"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 7,
+   "hues": [
+    "#ea9168",
+    "#d9835c",
+    "#c77451",
+    "#f8f8fb",
+    "#5ac487",
+    "#c1c1d8",
+    "#925841",
+    "#e6e6ef",
+    "#d3d3e3",
+    "#9f5b41",
+    "#20896b",
+    "#efeff5"
+   ],
+   "saturation": 0.483,
+   "value": 0.567,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.499
+    },
+    {
+     "hue": "grey",
+     "share": 0.164
+    },
+    {
+     "hue": "blue",
+     "share": 0.143
+    },
+    {
+     "hue": "green",
+     "share": 0.082
+    },
+    {
+     "hue": "cyan",
+     "share": 0.071
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 5.32,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 126,
+ "validators": [
+  "budget"
+ ]
+}

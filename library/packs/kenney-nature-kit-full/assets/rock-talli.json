@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "rock-talli",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-talli.glb",
+ "sha256": "b2f9ed97075f175b8ce40b58dbb24c060c7836b8fb8ce860d0b9b4a7df7e8a7e",
+ "bytes": 4584,
+ "preview": "previews/rock-talli.png",
+ "from": "Models/GLTF format/rock_tallI.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock talli",
+ "tags": [
+  "rock",
+  "talli"
+ ],
+ "use": {
+  "size": [
+   0.456,
+   0.812,
+   0.464
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4584,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#ffffff",
+     "#73eddd"
+    ],
+    "saturation": 0.655,
+    "value": 0.811,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.816
+     },
+     {
+      "hue": "grey",
+      "share": 0.142
+     },
+     {
+      "hue": "cyan",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.142
+   },
+   "trianglesPerMetre": 6.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "653ac732b440346ad7addd65e92caa54e34e150d78f0ea6fec8863a07cdb9e4c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

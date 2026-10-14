@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "rocks",
+ "pack": "kenney-platformer-kit-full",
+ "file": "rocks.glb",
+ "sha256": "e62ac6ec9aa2a301f3f7689ac31e4a7e97c8510b5d1fddb18ecf2ecf04194827",
+ "bytes": 15324,
+ "preview": "previews/rocks.png",
+ "from": "Models/GLB format/rocks.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rocks",
+ "tags": [
+  "rocks"
+ ],
+ "use": {
+  "size": [
+   0.653,
+   0.4,
+   0.662
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 100,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 100,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15324,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#6f7085",
+     "#82879d",
+     "#73768b",
+     "#65657a",
+     "#7d8197",
+     "#6a6b80",
+     "#696a7f",
+     "#797c91"
+    ],
+    "saturation": 0.101,
+    "value": 0.502,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 9.32,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "40a7cb558466510ca1976b0e007e351e53c89ac6b61f0b6a277b3226026c3326",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

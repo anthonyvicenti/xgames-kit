@@ -1,0 +1,218 @@
+{
+  "schema": "gf-look-target/1",
+  "from": "refs",
+  "confidence": 0.8,
+  "refsUsed": 3,
+  "palette": {
+    "colors": [
+      {
+        "hex": "#4aa3f0",
+        "share": 0.32
+      },
+      {
+        "hex": "#7cc84a",
+        "share": 0.21
+      },
+      {
+        "hex": "#8a5a32",
+        "share": 0.18
+      },
+      {
+        "hex": "#f0e2b0",
+        "share": 0.12
+      },
+      {
+        "hex": "#e8473c",
+        "share": 0.07
+      },
+      {
+        "hex": "#1e1a24",
+        "share": 0.1
+      }
+    ],
+    "value": {
+      "mean": 0.66,
+      "spread": 0.5,
+      "hist": [
+        0.02,
+        0.02,
+        0.03,
+        0.03,
+        0.04,
+        0.04,
+        0.05,
+        0.05,
+        0.07,
+        0.07,
+        0.1,
+        0.1,
+        0.11,
+        0.11,
+        0.08,
+        0.08
+      ]
+    },
+    "warmth": 0.05,
+    "chroma": {
+      "mean": 0.13,
+      "spread": 0.18,
+      "hist": [
+        0.05,
+        0.05,
+        0.075,
+        0.075,
+        0.1,
+        0.1,
+        0.1,
+        0.1,
+        0.075,
+        0.075,
+        0.05,
+        0.05,
+        0.03,
+        0.03,
+        0.02,
+        0.02
+      ]
+    }
+  },
+  "regions": {
+    "sky": {
+      "colors": [
+        {
+          "hex": "#4aa3f0",
+          "share": 0.8
+        }
+      ],
+      "value": 0.86,
+      "hue": 206,
+      "chroma": 0.155
+    },
+    "ground": {
+      "colors": [
+        {
+          "hex": "#7cc84a",
+          "share": 0.5
+        },
+        {
+          "hex": "#8a5a32",
+          "share": 0.4
+        }
+      ],
+      "value": 0.55,
+      "hue": 60,
+      "chroma": 0.15
+    }
+  },
+  "edges": {
+    "density": 0.09,
+    "dark": 0.04,
+    "outline": "high",
+    "outlineColor": "#1e1a24"
+  },
+  "lighting": {
+    "key": "#fff4dc",
+    "fill": "#8fb0d8",
+    "keyStrength": "high",
+    "contrast": 0.4,
+    "shadowSoftness": 0.6,
+    "fog": {
+      "density": 0.1,
+      "color": "#cfe6ff"
+    },
+    "time": "day"
+  },
+  "materials": {
+    "shading": "toon",
+    "bands": 2,
+    "roughness": 0.7,
+    "gloss": "mid",
+    "rim": "mid",
+    "texture": "painted"
+  },
+  "shapes": {
+    "chunkiness": 0.8,
+    "roundness": 0.85,
+    "detail": "mid",
+    "headToBody": 0.6,
+    "eyes": "huge",
+    "language": [
+      "rounded",
+      "bulbous",
+      "chunky"
+    ]
+  },
+  "camera": {
+    "view": "side",
+    "pitch": 5,
+    "distance": "mid",
+    "fov": 45,
+    "projection": "perspective",
+    "framings": [
+      {
+        "name": "gameplay",
+        "pitch": 4,
+        "distance": 14,
+        "fov": 45,
+        "frame": "gameplay"
+      },
+      {
+        "name": "close",
+        "pitch": 8,
+        "distance": 3,
+        "fov": 40,
+        "frame": "character"
+      }
+    ]
+  },
+  "ui": {
+    "style": "comic panels with thick ink and bold display type",
+    "font": [
+      "chunky rounded display"
+    ],
+    "accent": [
+      "#ffd21a",
+      "#e8473c"
+    ],
+    "panel": "#2a1f3a",
+    "corners": "irregular",
+    "ink": "high"
+  },
+  "vfx": {
+    "style": "oversized cartoon explosions with ink outlines",
+    "scale": "high",
+    "palette": [
+      "#ffd21a",
+      "#ff7a1a",
+      "#ffffff"
+    ]
+  },
+  "reads": [
+    "a candy-bright sky over chunky rounded land",
+    "soil shown as a cut cross-section under the grass",
+    "soft cartoon creatures with huge eyes",
+    "explosions far bigger than the characters",
+    "comic-book panels for the UI"
+  ],
+  "avoid": [
+    "the reference's own characters, names, logos or art"
+  ],
+  "sources": {
+    "measured": [
+      "palette",
+      "regions",
+      "edges"
+    ],
+    "judged": [
+      "lighting",
+      "materials",
+      "shapes",
+      "camera",
+      "ui",
+      "vfx",
+      "reads"
+    ],
+    "model": "claude-opus",
+    "at": "2026-10-14T00:00:00Z"
+  }
+}

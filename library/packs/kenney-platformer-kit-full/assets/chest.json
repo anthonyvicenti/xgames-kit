@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "chest",
+ "pack": "kenney-platformer-kit-full",
+ "file": "chest.glb",
+ "sha256": "7aef84255a0301300c9c1c3f3e8bd0ef3cd109be025b5bae6e8412663c742a22",
+ "bytes": 22956,
+ "preview": "previews/chest.png",
+ "from": "Models/GLB format/chest.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "chest",
+ "tags": [
+  "chest"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.45,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 232,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 232,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 22956,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#8d93b1",
+     "#cc7854",
+     "#d47f59",
+     "#989fbe",
+     "#a2aacc",
+     "#c3714e",
+     "#c77451",
+     "#a8b0d3"
+    ],
+    "saturation": 0.406,
+    "value": 0.628,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.405
+     },
+     {
+      "hue": "orange",
+      "share": 0.401
+     },
+     {
+      "hue": "grey",
+      "share": 0.193
+     }
+    ],
+    "grey": 0.193
+   },
+   "trianglesPerMetre": 11.28,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ba92d21be71649e608de4c76859f04e83308efc699508b2ddb1221678102e274",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

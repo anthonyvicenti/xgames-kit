@@ -1,0 +1,61 @@
+{
+ "packVersion": 1,
+ "id": "kenney-particle-pack",
+ "title": "Kenney Particle Pack (1.1)",
+ "describe": "Kenney's particle sprites: white shapes on transparency (smoke, fire, flame, spark, star, dirt, scorch, magic, muzzle flash, trails), made to be tinted by a particle system.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/particle-pack",
+  "file": "library/packs/kenney-particle-pack/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/particle-pack",
+  "download": "https://kenney.nl/media/pages/assets/particle-pack/f8fe0f8cb8-1677578741/kenney_particle-pack.zip",
+  "sha256": "b631d4b07f7002549fdcf155f01141ad482f79f3440e4e301eed49ce5f1d8958",
+  "retrieved": "2026-10-14",
+  "rebuild": "art ingest kenney_particle-pack.zip --pack kenney-particle-pack --include 'PNG (Transparent)/*.png' --category effect --tags particle,vfx,tintable"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#ffffff",
+    "#fbfffb",
+    "#a4a4a4",
+    "#f6f6f6",
+    "#fefefe",
+    "#a1a1a1",
+    "#a2a2a2",
+    "#a5a5a5",
+    "#a3a3a3",
+    "#aaaaaa",
+    "#a9a9a9",
+    "#aeaeae"
+   ],
+   "saturation": 0,
+   "value": 0.799,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 1
+    }
+   ],
+   "grey": 1
+  },
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 80,
+ "validators": [
+  "picture-check"
+ ]
+}

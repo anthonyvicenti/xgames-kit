@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palmshort",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palmshort.glb",
+ "sha256": "02866048ffde935e6d8acdab872436658a4bfc9f6d4e21e9702c4adab2549b4e",
+ "bytes": 6188,
+ "preview": "previews/tree-palmshort.png",
+ "from": "Models/GLTF format/tree_palmShort.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palmshort",
+ "tags": [
+  "tree",
+  "palmshort"
+ ],
+ "use": {
+  "size": [
+   1.034,
+   1.056,
+   1.034
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 190,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 190,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6188,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.723,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.655
+     },
+     {
+      "hue": "orange",
+      "share": 0.345
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.75,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d2526ca31c144a238820aa5c0f6183c5b9cf37fd3cc037932e637cf7c473ba27",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

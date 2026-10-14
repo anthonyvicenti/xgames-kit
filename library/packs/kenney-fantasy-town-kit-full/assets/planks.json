@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "planks",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "planks.glb",
+ "sha256": "0a7e7a095e0a9a1d38298c67034844596fd45ab565856a4375963613203a9121",
+ "bytes": 15024,
+ "preview": "previews/planks.png",
+ "from": "Models/GLB format/planks.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "planks",
+ "tags": [
+  "planks"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.06,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15024,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#be7c5d",
+     "#cc8665",
+     "#c3805f",
+     "#c78362"
+    ],
+    "saturation": 0.465,
+    "value": 0.576,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "619705afa7ad290bfa499a701fd7ea07210ad535126cb3abc245b6f16e1420ab",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

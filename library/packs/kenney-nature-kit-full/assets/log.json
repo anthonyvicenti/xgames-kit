@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "log",
+ "pack": "kenney-nature-kit-full",
+ "file": "log.glb",
+ "sha256": "2fafb49637a61523165347ecd0e55ef58bf75a22ca20ec8a9a313dbe59462b67",
+ "bytes": 5656,
+ "preview": "previews/log.png",
+ "from": "Models/GLTF format/log.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "log",
+ "tags": [
+  "log"
+ ],
+ "use": {
+  "size": [
+   0.234,
+   0.173,
+   0.71
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5656,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#fbedde",
+     "#f2be9e"
+    ],
+    "saturation": 0.774,
+    "value": 0.86,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.531
+     },
+     {
+      "hue": "orange",
+      "share": 0.469
+     }
+    ],
+    "grey": 0.531
+   },
+   "trianglesPerMetre": 14.2,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8c8fe8f6adfc03a3c0cd6cb24961ff74be96c2da284d70322f05797d049972d6",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

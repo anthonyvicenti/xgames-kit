@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "tree-autumn-trunk",
+ "pack": "kenney-survival-kit-full",
+ "file": "tree-autumn-trunk.glb",
+ "sha256": "22a11179b88f3b0b827539e4fd037eb019f29ab110afa21421d5f6e61afe5262",
+ "bytes": 11192,
+ "preview": "previews/tree-autumn-trunk.png",
+ "from": "Models/GLB format/tree-autumn-trunk.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree autumn trunk",
+ "tags": [
+  "tree",
+  "autumn",
+  "trunk"
+ ],
+ "use": {
+  "size": [
+   0.2,
+   0.261,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11192,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#e1a680",
+     "#e7af89",
+     "#dc9e77",
+     "#f3f3f7",
+     "#edb791",
+     "#eab38d"
+    ],
+    "saturation": 0.595,
+    "value": 0.718,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.919
+     },
+     {
+      "hue": "grey",
+      "share": 0.081
+     }
+    ],
+    "grey": 0.081
+   },
+   "trianglesPerMetre": 17.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "72815ab1b66d91c3f00f309d3715a10a3b202ef8fc86bef35ad6722a47d01aed",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

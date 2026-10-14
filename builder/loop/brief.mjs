@@ -66,10 +66,41 @@ function kindPreset(kind, spec) {
 }
 
 /**
+ * The look chosen before the build (builder/look): the style target in a few lines and the option picked. Never cut
+ * from the page: the levers are already set; what they cannot reach is the build's to make toward it.
+ */
+export function lookLines(look) {
+  const t = look?.target;
+  if (!t) return [];
+  const o = look.option, pal = t.palette?.colors?.slice(0, 6).map(c => `${c.hex}${c.role ? ` ${c.role}` : ''}`).join(', ');
+  const L = t.lighting ?? {}, M = t.materials ?? {}, sh = t.shapes ?? {};
+  return ['## The look (chosen before this round)', '',
+    `${o ? `The ${o.by === 'judge' ? 'judge' : 'person'} picked "${o.title}" (${o.reading})${o.words ? `: "${o.words}"` : ''}. ` : ''}Its light, sky, fog, grade, outline and materials are already in config/look.json${o?.world ? `, its world (${o.world}: the place the references show) in config/world.json` : ''}${o?.camera ? `, its camera in config/game.json (controller.camera.${o.camera.rig})` : ''}: keep them. What the levers cannot reach (shapes, characters, UI, effects) is yours to build toward the target, in our own art: never the reference's characters, names, logos or art. The target (${t.from}, confidence ${t.confidence}):`,
+    ...t.reads.map(r => `- ${r}`),
+    ...(t.world?.words ?? []).map(w => `- the place: ${w}`),
+    ...(t.world?.props?.dressing?.length ? [`- set dressing the references repeat (what the world does not place yet is yours to place or build): ${t.world.props.dressing.join(', ')}`] : []),
+    ...(pal ? [`- palette: ${pal}`] : []),
+    ...(L.key ? [`- light: key ${L.key}${L.fill ? `, fill ${L.fill}` : ''}${L.time ? `, ${L.time}` : ''}${L.local?.length ? `; local pools ${L.local.join(' ')}` : ''}`] : []),
+    ...(M.shading ? [`- materials: ${M.shading}${M.texture ? `, ${M.texture} surfaces` : ''}; outline ${t.edges?.outline ?? 'as measured'}`] : []),
+    ...(sh.language?.length || sh.headToBody ? [`- shapes: ${[...(sh.language ?? []), ...(sh.headToBody ? [`head ${Math.round(sh.headToBody * 100)}% of a body's height`] : []), ...(sh.eyes ? [`${sh.eyes} eyes`] : [])].join(', ')}`] : []),
+    ...(t.ui?.style ? [`- UI: ${t.ui.style}`] : []), ...(t.vfx?.style ? [`- effects: ${t.vfx.style}`] : []),
+    ...(t.avoid?.length ? [`- avoid: ${t.avoid.join('; ')}`] : []), ''];
+}
+
+/** The characters that are creatures (CREATURES.md): what their bodies answer, so a build drives them by the words they
+ *  know and never looks for clips or a hand they do not have. */
+export function bodyLines(spec) {
+  const list = (spec.characters ?? []).flatMap(c => [c.body, ...(c.seats ?? [])].map(b => ({ role: c.role, a: b?.archetype ?? 'humanoid' }))).filter(x => x.a !== 'humanoid');
+  if (!list.length) return [];
+  const roles = [...new Map(list.map(x => [`${x.role}:${x.a}`, x])).values()].map(x => `\`${x.role}\` ${x.a}`).join(', ');
+  return ['## Bodies that are not people', '', `This game's characters include ${roles} (runtimes/three/kit/character/CREATURES.md). The kit poses them by procedural motion from the same words a person's clips answer: walking, running and jumping come from movement; \`p.act('punch' | 'throw' | 'interact')\` is their attack or act, \`hit\` and a knock play as for anyone, \`p.act('emote_cheer', 1.6)\` is their celebration. They have no clip file and no hands: a held thing sits on the \`hand_r\` socket (a blob's side, a quadruped's mouth, a flyer's feet), a hat on \`head\`. Never draw a stand-in body in code; a missing creature is a body slot to fill (\`gamesfun art autorig\` rigs a plain mesh).`, ''];
+}
+
+/**
  * The brief for a round that writes the game. kind: 'build' | 'change' | 'migrate'. `request`: the person's words for a
  * change. `controlsTool` / `endTool` / `quickTool`: the host's tool names. → markdown, at most BRIEF_MAX characters
  */
-export function composeBrief({ kind = 'build', spec, ledger, promises, manifests, request = null, change = null, tools = {}, game = null, offers = {} }) {
+export function composeBrief({ kind = 'build', spec, ledger, promises, manifests, request = null, change = null, tools = {}, game = null, offers = {}, look = null }) {
   const T = { quick: 'gamesfun_verify', end: 'gamesfun_step_fix', remove: 'gamesfun_remove', ...tools };
   const head = kind === 'build' ? [`# Build round: ${spec.title}`, '', spec.hook ?? '', '', `The game folder was made from the locked spec (runtime ${rid(spec.runtime, spec.profile)}, loop ${spec.loop}, kind ${spec.kind}). This round is yours: write rules.js, the src/ modules and the overrides the list below needs, and tune config/, so the game plays as promised.`, ...(game ? ['', `The game's folder: \`${game}\`. Its AGENTS.md names its files and where the kit's rules API is described; rules.js starts as a stub that names each mechanic's callbacks.`] : [])]
     : kind === 'migrate' ? [`# Migration round: ${spec.title}`, '', `The game was made again on ${rid(spec.runtime, spec.profile)} from its spec, as the person agreed. Bring its rules, modules and build lines over; what the old runtime's engine code did is written again for this one.`]
@@ -86,7 +117,7 @@ export function composeBrief({ kind = 'build', spec, ledger, promises, manifests
     `3. Call \`${T.end}\` with \`summary\` (2–4 sentences on what the person will see) and \`controls\` (keys and touch, one line).`];
   const fixed = [...head, '', '## What the person asked for', '', ...asked, ...cut, '',
     ...(builds.length ? ['## What this game builds (each is a promise the play-tester checks on its own screen)', '', ...builds, ''] : []),
-    ...briefPartLines(spec, offers)];
+    ...briefPartLines(spec, offers), ...bodyLines(spec), ...lookLines(look)];
   const tail = [...rules, '## The six gates', '', ...gates, ...(skips.length ? ['', `On ${spec.runtime}, verify skips: ${skips.join('; ')}.`] : []), '', ...end];
   // the parts, cut down until the page fits: traps first, then note lines from the last part back. The person's words
   // and the build list are never cut.

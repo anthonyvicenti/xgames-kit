@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-window-glass",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-window-glass.glb",
+ "sha256": "4ac4bfe039cd3808e70c9739f885f8d54fb4594d1de17d858d8609437515d88f",
+ "bytes": 15392,
+ "preview": "previews/wall-wood-window-glass.png",
+ "from": "Models/GLB format/wall-wood-window-glass.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood window glass",
+ "tags": [
+  "wall",
+  "wood",
+  "window",
+  "glass"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 122,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 122,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#935944",
+     "#8e5642",
+     "#9a5d47",
+     "#86513f",
+     "#885240",
+     "#985c47"
+    ],
+    "saturation": 0.417,
+    "value": 0.498,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.757
+     },
+     {
+      "hue": "brown",
+      "share": 0.243
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e0bb383a908d473181ad89ad7c676a0632f7ecd0f23e5f912216391d3e62bb69",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

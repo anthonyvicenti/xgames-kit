@@ -26,8 +26,10 @@ import { adoptMaterials, material, setGroundPattern } from '../look/materials.js
 import { expandLayout, createRouter, entryPoint, roomAt } from './layout.js';
 import { collidersOf, buildColliders, MATERIALS } from './colliders.js';
 import { generateLayout } from './generate.js';
+import { drawIslands } from './islands.js';
+import { placeFor as seaPlace } from './sea-places.mjs';
 
-export const templates = ['backyard', 'office', 'plaza', 'arena', 'store'];
+export const templates = ['backyard', 'office', 'plaza', 'arena', 'store', 'sea-islands'];
 const DEG = Math.PI / 180;
 
 // ---------- slots ----------
@@ -62,6 +64,23 @@ export function slotsFor(cfg, catalog, licences = null) {
       generate: { prompt: `seamless top-down ${t} ground pattern, greyscale, light with darker joints`, style: 'tileable, flat, no lighting, no perspective' },
       ...(lic?.spdx || lic?.generated ? { license: { spdx: lic.spdx ?? 'CC0-1.0', author: lic.author ?? 'games.fun', url: lic.page ?? 'https://games.fun' } } : {}),
     });
+  }
+  // the sea-islands world's cliffs (the ground cut open: a strata picture over coloured bands), beaches and clouds
+  if (cfg.islands?.length) {
+    out.push({ id: `world.${t}.cliffs.color`, label: 'Cliff colour', group: 'world', type: 'color', facet: 'look', tier: 'advanced', source: { file: 'config/world.json', pointer: '/cliffs/color' } });
+    out.push({ id: `world.${t}.ground.beach`, label: 'Beach colour', group: 'world', type: 'color', facet: 'look', tier: 'advanced', source: { file: 'config/world.json', pointer: '/ground/beach' } });
+    out.push({ id: `world.${t}.clouds.color`, label: 'Cloud colour', group: 'world', type: 'color', facet: 'look', tier: 'advanced', source: { file: 'config/world.json', pointer: '/sky/clouds/color' } });
+    const cp = cfg.cliffs?.pattern;
+    if (cp?.file) {
+      const lic = licences?.files?.[`textures/${cp.file.split('/').pop()}`];
+      out.push({
+        id: `world.${t}.cliffs.pattern`, label: 'Cliff face', group: 'world', type: 'image', facet: 'look', tier: 'main',
+        source: { file: cp.file }, constraints: { tile: true, colorSpace: 'srgb', formats: ['png', 'jpg', 'webp'], tileMetres: cp.size ?? 5 },
+        description: `A seamless picture of the ground cut open (soil and rock in layers), ${cp.size ?? 5} m per tile, wrapped round the islands' cliffs over their coloured bands.`,
+        generate: { prompt: 'seamless cross-section of layered soil and rock strata, side view', style: 'tileable, painted, no perspective' },
+        ...(lic?.spdx || lic?.generated ? { license: { spdx: lic.spdx ?? 'CC0-1.0', author: lic.author ?? 'games.fun', url: lic.page ?? 'https://games.fun' } } : {}),
+      });
+    }
   }
   // an indoor world's ceiling (a kit primitive, drawn as a cutaway): its colours and its tile pattern
   if (cfg.ceiling?.height) {
@@ -188,13 +207,22 @@ export async function loadWorld(ctx, cfg, opts = {}) {
     const tex = await groundPattern(ctx, cfg.template, pat, opts).catch(e => { console.warn(`gf-three world: ground pattern ${pat.file} did not load (${e.message}); plain ground`); return null; });
     if (tex) setGroundPattern(groundMat, tex);
   }
-  const groundGeo = new THREE.PlaneGeometry(size[0] + (g.margin ?? 0), size[1] + (g.margin ?? 0));
-  groundGeo.rotateX(-Math.PI / 2);
-  const ground = new THREE.Mesh(groundGeo, groundMat);
-  ground.name = 'ground'; ground.receiveShadow = true;
-  ground.userData.gfSlot = `world.${cfg.template}.ground.color`;
-  root.add(ground);
-  if (g.outer) {
+  // islands in a sea (sea.js lays them out, islands.js draws them): the tops, cliffs, beaches, the sea and the clouds in
+  // place of the flat ground
+  let isles = null, groundGeo = null;
+  if (cfg.islands?.length) {
+    const cp = cfg.cliffs?.pattern?.file ? cfg.cliffs.pattern : null;
+    const cliffTexture = cp ? await groundPattern(ctx, cfg.template, cp, opts, 'cliffs').catch(e => { console.warn(`gf-three world: cliff pattern ${cp.file} did not load (${e.message}); coloured bands only`); return null; }) : null;
+    isles = drawIslands(root, cfg, { groundMat, cliffTexture, template: cfg.template });
+  } else {
+    groundGeo = new THREE.PlaneGeometry(size[0] + (g.margin ?? 0), size[1] + (g.margin ?? 0));
+    groundGeo.rotateX(-Math.PI / 2);
+    const ground = new THREE.Mesh(groundGeo, groundMat);
+    ground.name = 'ground'; ground.receiveShadow = true;
+    ground.userData.gfSlot = `world.${cfg.template}.ground.color`;
+    root.add(ground);
+  }
+  if (g.outer && !isles) {
     const outerMat = material('ground', { color: g.outer, color2: g.outer2 ?? g.color2 ?? g.outer });
     const outerGeo = new THREE.CircleGeometry(g.outerSize ?? 220, 48);
     outerGeo.rotateX(-Math.PI / 2);
@@ -303,7 +331,9 @@ export async function loadWorld(ctx, cfg, opts = {}) {
   const box = new THREE.Box3(new THREE.Vector3(-size[0] / 2, 0, -size[1] / 2), new THREE.Vector3(size[0] / 2, cfg.bounds?.height ?? 4, size[1] / 2));
   box.half = Math.max(size[0], size[1]) / 2;   // K1's stand-in API (world.bounds.half)
   const shadowBox = new THREE.Box3().setFromObject(root.children.find(o => o.name === 'ground'));
-  for (const c of root.children) if (c.isInstancedMesh && !(byId.get(c.userData.gfProp)?.tags ?? []).includes('cloud')) { c.computeBoundingBox?.(); if (c.boundingBox) shadowBox.union(c.boundingBox); }
+  // the sun's shadows cover the play island and what stands on it (the islands toward the horizon cast none worth the map)
+  for (const c of root.children) if (c.isInstancedMesh && !(byId.get(c.userData.gfProp)?.tags ?? []).includes('cloud') && c.name !== 'clouds') { c.computeBoundingBox?.(); if (c.boundingBox) shadowBox.union(c.boundingBox); }
+  if (isles) shadowBox.intersect(new THREE.Box3().setFromObject(isles.ground).expandByScalar(4));
   // an indoor world's street and skyline reach far out: the sun's shadows only need the building and its sidewalk
   if (cfg.ceiling?.height) shadowBox.intersect(new THREE.Box3(new THREE.Vector3(-size[0] / 2 - 6, -1, -size[1] / 2 - 6), new THREE.Vector3(size[0] / 2 + 6, cfg.ceiling.height + 1, size[1] / 2 + 6)));
   shadowBox.min.y = Math.min(shadowBox.min.y, 0);
@@ -321,6 +351,9 @@ export async function loadWorld(ctx, cfg, opts = {}) {
     template: cfg.template, layout: cfg, root, group: root, bounds: box, shadowBounds: shadowBox, lampPoints,
     kind: cfg.kind ?? (cfg.ceiling ? 'indoor' : 'outdoor'), sizeClass: cfg.sizeClass ?? null, ceiling,
     rooms: cfg.rooms ?? [], doors: cfg.doors ?? [], entries,
+    /** A camera place that shows one kind of view (a sea-islands world: sea-places.mjs; seat, day, cliff-edge, beach,
+     *  sea-view) or null (a yard or a building has none: the camera frames the player). */
+    place: where => (cfg.islands?.length ? seaPlace(cfg, where) : null),
     /** The room that holds (x, z), or null. */
     roomAt: (x, z) => roomAt(cfg, x, z),
     /** The next point to walk to from `from` toward `to` ({x, z}): a door when they are in different rooms, else null. */
@@ -356,6 +389,7 @@ export async function loadWorld(ctx, cfg, opts = {}) {
         ceiling.material.opacity = a; ceiling.visible = a > 0.02; ceiling.material.depthWrite = a > 0.98;
         for (const m of hung) m.visible = a > 0.5;
       }
+      isles?.update(dt);
       for (const d of drifting) {
         d.mats.forEach((m, k) => {
           m.elements[12] += d.speed * dt;
@@ -364,7 +398,7 @@ export async function loadWorld(ctx, cfg, opts = {}) {
         });
       }
     },
-    dispose() { ctx.scene?.remove(root); root.traverse(o => { if (o.isInstancedMesh) o.dispose(); }); groundGeo.dispose(); ceiling?.geometry.dispose(); },
+    dispose() { ctx.scene?.remove(root); root.traverse(o => { if (o.isInstancedMesh) o.dispose(); }); groundGeo?.dispose(); for (const m of isles?.meshes ?? []) m.geometry.dispose(); ceiling?.geometry.dispose(); },
   };
   ctx.world = world;
   return world;

@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "workbench-grind",
+ "pack": "kenney-survival-kit-full",
+ "file": "workbench-grind.glb",
+ "sha256": "9104b576a47ffafbaf72e5999953d878af8b3f65ebcf1569cf4c15bb3ed58fea",
+ "bytes": 16156,
+ "preview": "previews/workbench-grind.png",
+ "from": "Models/GLB format/workbench-grind.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "workbench grind",
+ "tags": [
+  "workbench",
+  "grind"
+ ],
+ "use": {
+  "size": [
+   0.26,
+   0.282,
+   0.329
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 232,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 232,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16156,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#c4714e",
+     "#c06e4c",
+     "#c77450",
+     "#b86746",
+     "#bc6a49",
+     "#7d829a",
+     "#cf7a55",
+     "#d37d58"
+    ],
+    "saturation": 0.459,
+    "value": 0.56,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.812
+     },
+     {
+      "hue": "grey",
+      "share": 0.131
+     },
+     {
+      "hue": "blue",
+      "share": 0.057
+     }
+    ],
+    "grey": 0.131
+   },
+   "trianglesPerMetre": 21.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "93aa1468ee12b16bd2a554e65eab2beebe7e14cf52ed5a35a9530c6123292773",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

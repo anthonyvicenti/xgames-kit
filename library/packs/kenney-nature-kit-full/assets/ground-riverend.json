@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "ground-riverend",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-riverend.glb",
+ "sha256": "28846e5c07cd80cad1d282a02b019f3e211a61076480c7d506f83f4d73d97252",
+ "bytes": 5404,
+ "preview": "previews/ground-riverend.png",
+ "from": "Models/GLTF format/ground_riverEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground riverend",
+ "tags": [
+  "ground",
+  "riverend"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#d8faff",
+     "#dbab8e"
+    ],
+    "saturation": 0.78,
+    "value": 0.767,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.5
+     },
+     {
+      "hue": "cyan",
+      "share": 0.341
+     },
+     {
+      "hue": "grey",
+      "share": 0.159
+     }
+    ],
+    "grey": 0.159
+   },
+   "trianglesPerMetre": 7.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b04a26243915db0feb3037b3777396dcefc8377bf6fe7989277c4e278ec32d23",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

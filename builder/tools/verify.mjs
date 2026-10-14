@@ -7,8 +7,8 @@
 //
 // The gates (tools/lib/verdict.mjs GATES and MEASURES): A integrity (1, 2, 4, 18, 19; 8 per release), B health (3, 9
 // when it ran; 20, 22, 24, 31 per release), C cause → effect (10, 13, 15, 16, 38; 7 and 21 per release), D the loop
-// closes (6, 12), E shared truth (5, 25; 34 per release), F matches the spec (11, 14, 17, 35, 39), and the judges,
-// advisory (23). Each numbered item below is now a MEASURE inside one gate; it keeps its number, which --check takes as
+// closes (6, 12), E shared truth (5, 25; 34 per release), F matches the spec (11, 14, 17, 23, 35, 39), and the judges,
+// advisory (the play-tester). Each numbered item below is now a MEASURE inside one gate; it keeps its number, which --check takes as
 // an alias for that one measure. --gate C runs one gate's measures (with --release its kit tests too).
 // What it prints: each FAILING gate with its failing measures, each with its rule and its fix (tools/lib/homes.json),
 // then one summary line. --all (or --verbose) prints every gate and measure and the progress lines as well.
@@ -86,12 +86,14 @@
 //     character body, posed by the game's own retarget through every clip, keeps its face, body, arms, hands, legs and
 //     feet (creator, Token Call Centre: "the models look good, but the hand is crooked")
 //  20–22 the home menu, the HUD and the wallet in the menu (tools/lib/menu-check.mjs, CONTRACT §6g)
-//  23 looks like the references (tools/lib/likeness-check.mjs): when the locked spec lists style or character reference
-//     images and the job has their files (refs.json beside the game, or --refs <folder>), a vision judge (Claude Opus,
-//     like the model judge's look) compares the game's own screenshots (and the contact sheet's, when 9 ran) with each
-//     picture on camera angle, palette, light and glow, environment shapes, character proportions and style, and vibe;
-//     it fails below the threshold and names what to change; without references it passes as "no references" (creator,
-//     the roguelike miss: "The game also doesn't have the right vibe at all")
+//  23 (gate F) looks like its target (tools/lib/look-check.mjs → builder/look/judge.mjs): when the locked spec has a look
+//     target (look.target) or reference frames (look.refs, the creator's style pictures, or --refs), the reference look
+//     judge scores the game 0–100 against them: measured (palette, value and saturation spread, edges and outlines,
+//     proportions) and judged (a pairwise vision judge on a fixed rubric); a three standard-3d game is rendered live at
+//     the target's framings, another from verify's own shots. A target held to frames fails below the bar and names the
+//     findings to fix (builder/look/tune.mjs moves the cheap levers first); a target from words is advisory; with no
+//     target it passes as "no look target" (the looks layer, 2026-10-14; before it, the roguelike miss: "The game also
+//     doesn't have the right vibe at all")
 //  24 plays inside a post (tools/lib/embed-check.mjs, CONTRACT §6d C5): framed 480×480 by a page that refuses the
 //     pointer lock (as a post on X does), the camera stays the game's own, the full-screen button works, and in full
 //     screen a drag turns the camera and W moves
@@ -159,13 +161,14 @@ import { profilePasses, requiredFor, measuresFor, runsHere, checkProfile, stampV
 import { checkHome } from './lib/homes.mjs';
 import { checkLooks } from './lib/looks-check.mjs';
 import { worldCheck } from './lib/world-check.mjs';
+import { isTerrain, terrainDressing, terrainWorld } from './lib/terrain-check.mjs';
 import { checkSounds } from './lib/sounds-check.mjs';
 import { checkMenu, checkHud, checkWallet } from './lib/menu-check.mjs';
 import { checkEmbed } from './lib/embed-check.mjs';
 import { checkScreens } from './lib/screens-check.mjs';
 import { checkFriends } from './lib/friends-check.mjs';
 import { checkFriendsWatch } from './lib/friends-watch-check.mjs';
-import { checkLikeness, likenessTargets } from './lib/likeness-check.mjs';
+import { checkLook, lookInputs } from './lib/look-check.mjs';
 import { STEP_PRE, STEP_POST } from './lib/stepped.mjs';
 import { lockFor } from './lib/lock.mjs';
 import { checkGameTests } from './lib/game-tests.mjs';
@@ -237,7 +240,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
     const run = profile ? (list ?? required).filter(n => !skip.some(s => s.check === n)) : only;
     const flow = kind === 'world' ? (await import('./verify-world.mjs')).verifyWorld : kind === 'vista' ? (await import('./verify-vista.mjs')).verifyVista : (await import('./verify-forge.mjs')).verifyForge;
     const r = await flow(dir, { rec, outDir, add, log: say, t0, lap, quick, only: run, release,
-      statics: { looks: () => looks(dir, rec, add), check18: () => check18(dir, { rec, add }), check19: () => check19(dir, { rec, add }), likeness: shots => likeness(dir, { rec, add, shots, refs }) } });
+      statics: { looks: () => looks(dir, rec, add), check18: () => check18(dir, { rec, add }), check19: () => check19(dir, { rec, add }), look: shots => look23(dir, { rec, add, shots, refs }) } });
     if (profile) {
       for (const s of skip) add(s.check, checkHome(s.check)?.name ?? `check ${s.check}`, null, `skipped by profile ${profile.name}: ${s.reason}`, { skippedBy: 'profile', reason: s.reason });
       stampVerdict(r, { kind, release, list });
@@ -254,7 +257,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
   if (one === 15) return aliveOnly(dir, A);
   if (list && list.every(n => [16, 39].includes(n))) return hitsOnly(dir, A, list);
   if ([20, 21, 22, 24, 31].includes(one)) return menuOnly(dir, one, A);
-  if (one === 23) return likenessOnly(dir, A);
+  if (one === 23) return lookOnly(dir, A);
   if (one === 25) return friendsOnly(dir, A);
   if (one === 34) return watchOnly(dir, A);
   if (one === 35) return ownTestsOnly(dir, A);
@@ -280,8 +283,9 @@ export async function verify(gameDir, { quick = false, out = null, log = console
   if (want(11)) {
     begin(11);
     try {
-      const dr = lintDressing(await loadSubject(dir));
-      const ls = dressingLines(dr);
+      // the terrain world has no props: its own rules (builder/tools/lib/terrain-check.mjs: nothing floating, clear spawns)
+      const terrain = await isTerrain(dir), dr = terrain ? await terrainDressing(dir) : lintDressing(await loadSubject(dir));
+      const ls = terrain ? dr.problems.map(p => `${p.severity === 'error' ? 'ERROR' : 'warn'} ${p.rule}: ${p.message} → ${p.fix}`) : dressingLines(dr);
       add(11, 'set dressing', dr.errors === 0, dr.errors === 0
         ? `clean: 0 errors, ${dr.warnings} warnings, open floor ${(dr.stats.openFloor * 100).toFixed(0)}%`
         : `${dr.errors} errors (fix in config/world.json and the slots named; node ${join(TOOLS, 'dressing.mjs')} <game> lists them all): ${ls.filter(l => l.startsWith('ERROR')).slice(0, 6).join(' | ')}`);
@@ -343,8 +347,9 @@ export async function verify(gameDir, { quick = false, out = null, log = console
   })() : null;
 
   // ---- 3, 4, 6 (alone), 7, 8, 10, 12, 13, 15: one solo session with bots, real input ----
-  // the solo round; check 23 looks at its screenshots, but only when the job has reference pictures to compare with
-  const refShots = want(23) && ((await likenessTargets(dir, { refs }).catch(() => null))?.targets?.length ?? 0) > 0;
+  // the solo round; measure 23 looks at its screenshots when the game has a look target and is not rendered live (a
+  // three standard-3d game is: look-check renders it at the target's own framings)
+  const refShots = want(23) && place.profile !== 'standard-3d' && !(await lookInputs(dir, { refs }).catch(() => ({ why: 'unreadable' }))).why;
   const needRound = [3, 4, 6, 7, 12, 15].some(want) || refShots;
   const needFair = [10, 12, 15].some(want);                       // check 10's two pages (12 and 15 read them too)
   const needBrowser = needRound || needFair || [8, 13, 16, 20, 21, 22, 24, 31, 38, 39].some(want) || (want(35) && ownTestFiles);
@@ -730,19 +735,19 @@ export async function verify(gameDir, { quick = false, out = null, log = console
     lap('contact sheet', t9);
   }
 
-  // ---- 23. looks like the references: the player's own view (and the contact sheet's wide shots) beside the creator's
-  // pictures (the roguelike miss, 2026-10-08: a flat green yard shipped against three pictures of floating islands) ----
+  // ---- 23. looks like its target: the game at the target's framings (or its own shots) beside the reference frames
+  // (the roguelike miss, 2026-10-08: a flat green yard shipped against three pictures of floating islands) ----
   if (want(23)) {
     const t23 = Date.now(); begin(23);
     const own = ['first-look', 'mid-round', 'playing'].map(n => rec.shots.find(f => f.endsWith(`-${n}.jpg`))).filter(Boolean).map(f => join(outDir, f));
     const sheet = await sheetShots(join(outDir, 'sheet'));
-    await likeness(dir, { rec, add, shots: [...own.slice(0, 2), ...sheet, ...own.slice(2)], refs });
-    lap('likeness', t23);
+    await look23(dir, { rec, add, shots: [...own.slice(0, 2), ...sheet, ...own.slice(2)], refs });
+    lap('look', t23);
   }
 
   // the pass rule (tools/lib/verdict.mjs passes, stampVerdict): every measure this kind of run requires ran and passed
   // (a build's list, or a release's with the kit's own tests), nothing failed, 9 counts only when it ran, and a judge
-  // (23) never fails it; the verdict also says it per gate (rec.gates). A list (--check, --gate) passes when each
+  // never fails it; the verdict also says it per gate (rec.gates). A list (--check, --gate) passes when each
   // measure asked for passed.
   stampVerdict(rec, { kind, release, list });
   if (profile) stampProfile(rec, profile, required);
@@ -813,7 +818,7 @@ async function check2(dir, { rec, add }) {
 // ---- 17. the world is complete (static, fast; creator on "Hang Up On Them", 2026-10-07) ----
 async function check17(dir, { rec, add }) {
   try {
-    const w = await worldCheck(dir);
+    const w = await isTerrain(dir) ? await terrainWorld(dir) : await worldCheck(dir);
     add(17, 'the world is complete', w.ok, w.detail);
     if (w.notes.length) rec.notes.push(`world notes: ${w.notes.slice(0, 4).join(' | ')}`);
     rec.world = { errors: w.report.errors, warnings: w.report.warnings, stats: w.report.stats };
@@ -854,7 +859,11 @@ async function staticOnly(dir, list, { rec, outDir, add, t0 }) {
   if (list.includes(2)) await check2(dir, { rec, add });
   if (list.includes(14)) await looks(dir, rec, add);
   if (list.includes(11)) {
-    try { const dr = lintDressing(await loadSubject(dir)); add(11, 'set dressing', dr.errors === 0, dr.errors === 0 ? `clean: 0 errors, ${dr.warnings} warnings` : `${dr.errors} errors: ${dressingLines(dr).filter(l => l.startsWith('ERROR')).slice(0, 6).join(' | ')}`); }
+    try {
+      const terrain = await isTerrain(dir), dr = terrain ? await terrainDressing(dir) : lintDressing(await loadSubject(dir));
+      const ls = terrain ? dr.problems.map(p => `${p.severity === 'error' ? 'ERROR' : 'warn'} ${p.rule}: ${p.message} → ${p.fix}`) : dressingLines(dr);
+      add(11, 'set dressing', dr.errors === 0, dr.errors === 0 ? `clean: 0 errors, ${dr.warnings} warnings` : `${dr.errors} errors: ${ls.filter(l => l.startsWith('ERROR')).slice(0, 6).join(' | ')}`);
+    }
     catch (e) { add(11, 'set dressing', false, `the lint could not run: ${e.message}`); }
   }
   if (list.includes(17)) await check17(dir, { rec, add });
@@ -887,13 +896,13 @@ async function fairOnly(dir, { rec, outDir, add, log, t0 }) {
   return finish(dir, rec, { outDir, t0 });
 }
 
-/** Check 23 (tools/lib/likeness-check.mjs): the game's shots against the creator's reference pictures. */
-async function likeness(dir, { rec, add, shots, refs }) {
+/** Measure 23 (tools/lib/look-check.mjs): the game against its look target and reference frames. */
+async function look23(dir, { rec, add, shots, refs }) {
   try {
-    const r = await checkLikeness(dir, { shots, refs });
-    rec.likeness = r.record; rec.notes.push(...r.notes);
-    add(23, 'looks like the references', r.ok, r.detail);
-  } catch (e) { add(23, 'looks like the references', false, `the check could not run: ${e.message}`); }
+    const r = await checkLook(dir, { shots, refs });
+    rec.look = r.record; rec.notes.push(...r.notes);
+    add(23, 'looks like its target', r.ok, r.detail);
+  } catch (e) { add(23, 'looks like its target', false, `the check could not run: ${e.message}`); }
 }
 /** The contact sheet's full-size wide and hero frames (lookdev/capture.mjs raw/), when check 9 ran. */
 async function sheetShots(sheetDir) {
@@ -904,13 +913,14 @@ async function sheetShots(sheetDir) {
 }
 
 /**
- * --check 23: looks like the references alone. With no references it answers at once (no browser); else a solo page
- * with 3 bots, Play, the first look, a walk, mid-round, then the judge (about a minute and one look).
+ * --check 23: looks like its target alone. With no target it answers at once (no browser); a three standard-3d game is
+ * rendered by the judge itself; another gets a solo page with 3 bots, Play, the first look, a walk, mid-round, then the
+ * judge (about a minute and one look).
  */
-async function likenessOnly(dir, { rec, outDir, add, log, t0, refs }) {
-  const t = await likenessTargets(dir, { refs });
+async function lookOnly(dir, { rec, outDir, add, log, t0, refs }) {
+  const t = await lookInputs(dir, { refs });
   const shots = [];
-  if (t.targets.length) {
+  if (!t.why && rec.place?.profile !== 'standard-3d') {
     const srv = await startParty({ dir, port: 0, overlay: await kitEditsOverlay(dir) });
     const { browser, gpu: usedGpu, note } = await launchForGame(launchChrome, dir);
     rec.chrome = browser.version(); rec.renderer = usedGpu; if (note) rec.notes.push(note);
@@ -929,10 +939,10 @@ async function likenessOnly(dir, { rec, outDir, add, log, t0, refs }) {
       await page.keyboard.down(fwd); await sleep(1500); await page.keyboard.up(fwd);
       await sleep(3000); await shot('mid-round');
       await ctx.close();
-    } catch (e) { rec.notes.push(`check 23's page stopped: ${e.message}`); log(`  likeness page: ${e.message}`); }
+    } catch (e) { rec.notes.push(`measure 23's page stopped: ${e.message}`); log(`  look page: ${e.message}`); }
     finally { await browser.close().catch(() => {}); await srv.close().catch(() => {}); }
   }
-  await likeness(dir, { rec, add, shots, refs });
+  await look23(dir, { rec, add, shots, refs });
   return finish(dir, rec, { outDir, t0 });
 }
 
@@ -1203,7 +1213,7 @@ if (isMain(import.meta)) {
   const a = process.argv.slice(2);
   const opt = (k, d) => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : d; };
   const dir = a.find((x, i) => !x.startsWith('--') && !['--out', '--check', '--gate', '--refs', '--profile', '--own-tests'].includes(a[i - 1]));
-  if (!dir) { console.error('usage: verify.mjs <game> [--quick] [--all] [--release] [--profile <file>] [--gate X[,Y…]] [--check N[,N…]] [--out <dir>] [--json] [--refs <folder with refs.json>] [--own-tests require]'); process.exit(2); }
+  if (!dir) { console.error('usage: verify.mjs <game> [--quick] [--all] [--release] [--profile <file>] [--gate X[,Y…]] [--check N[,N…]] [--out <dir>] [--json] [--refs <folder with refs.json, or a look manifest>] [--own-tests require]'); process.exit(2); }
   const json = a.includes('--json');
   const ck = opt('--check', null);
   if (ck !== null && !/^\d+(,\d+)*$/.test(ck ?? '')) { console.error('--check takes a measure number or a list of them (13 or 1,2 or 13,16)'); process.exit(2); }

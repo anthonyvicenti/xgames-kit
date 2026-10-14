@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "platform-fortified",
+ "pack": "kenney-platformer-kit-full",
+ "file": "platform-fortified.glb",
+ "sha256": "13c9ac219dbdd5dadff80fccd5fa06eaa41c5db6dbc2e31e2c4c0eba367fb108",
+ "bytes": 15536,
+ "preview": "previews/platform-fortified.png",
+ "from": "Models/GLB format/platform-fortified.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "platform fortified",
+ "tags": [
+  "platform",
+  "fortified"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.205,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15536,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c3714e",
+     "#d47f59",
+     "#d9835c",
+     "#d07c57",
+     "#925841",
+     "#9f5b41",
+     "#865542",
+     "#ab5f41"
+    ],
+    "saturation": 0.505,
+    "value": 0.528,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.867
+     },
+     {
+      "hue": "brown",
+      "share": 0.133
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5ac8247c4b572d42dbc8bcdf7e7c5835f0988131b49d18a435d91ad7cb1e521d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

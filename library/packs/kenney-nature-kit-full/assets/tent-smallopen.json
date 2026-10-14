@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tent-smallopen",
+ "pack": "kenney-nature-kit-full",
+ "file": "tent-smallopen.glb",
+ "sha256": "f83e678a9696276b2d469ebd4a4d51630fa332c30430d7123241349bfcdc6b2b",
+ "bytes": 6116,
+ "preview": "previews/tent-smallopen.png",
+ "from": "Models/GLTF format/tent_smallOpen.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tent smallopen",
+ "tags": [
+  "tent",
+  "smallopen"
+ ],
+ "use": {
+  "size": [
+   0.548,
+   0.561,
+   0.666
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 224,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 224,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6116,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f19398",
+     "#ffc5a7",
+     "#e27f84"
+    ],
+    "saturation": 0.782,
+    "value": 0.764,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.942
+     },
+     {
+      "hue": "orange",
+      "share": 0.058
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.97,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d32c3f7a5926de03521a012774316d38e09c27bd6dbae7cefdb01debe003ecdd",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

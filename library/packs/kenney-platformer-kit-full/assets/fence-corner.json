@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "fence-corner",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-corner.glb",
+ "sha256": "a4d03563167b5f0bf8314f8e195e4945041259c3eed5fb77acfab1170e417679",
+ "bytes": 15344,
+ "preview": "previews/fence-corner.png",
+ "from": "Models/GLB format/fence-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence corner",
+ "tags": [
+  "fence",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   0.99,
+   0.4,
+   0.99
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15344,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c77451",
+     "#d9835c",
+     "#9f5c41",
+     "#9d5b41",
+     "#925841",
+     "#955941",
+     "#975941",
+     "#905741"
+    ],
+    "saturation": 0.458,
+    "value": 0.477,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.712
+     },
+     {
+      "hue": "brown",
+      "share": 0.288
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.5,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "526215c26fa4fd14f8d001596801443405ed582810b15ff31c5a0d14634c2c32",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

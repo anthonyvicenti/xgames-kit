@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-detailed",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-detailed.glb",
+ "sha256": "eb36849c8cf2b7c72e4e95e14119806bc67c70a4213e0a2fc87474ef68cc59e9",
+ "bytes": 10936,
+ "preview": "previews/tree-detailed.png",
+ "from": "Models/GLTF format/tree_detailed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree detailed",
+ "tags": [
+  "tree",
+  "detailed"
+ ],
+ "use": {
+  "size": [
+   0.847,
+   1.332,
+   0.762
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 402,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 402,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 10936,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e",
+     "#ffffff"
+    ],
+    "saturation": 0.714,
+    "value": 0.696,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.776
+     },
+     {
+      "hue": "orange",
+      "share": 0.221
+     }
+    ],
+    "grey": 0.002
+   },
+   "trianglesPerMetre": 12.71,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c041daf2f0fb1d49e4325227cbcd58667adbe51e9b55e8c1f0a94b74cc521b3b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

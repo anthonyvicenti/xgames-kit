@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "fence-simplediagonalcenter",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-simplediagonalcenter.glb",
+ "sha256": "127099a03fe0512f137291366f04481a0dc7d2273ec8e91877341c1364e7a2aa",
+ "bytes": 5440,
+ "preview": "previews/fence-simplediagonalcenter.png",
+ "from": "Models/GLTF format/fence_simpleDiagonalCenter.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence simplediagonalcenter",
+ "tags": [
+  "fence",
+  "simplediagonalcenter"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 148,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 148,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5440,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc5a7",
+     "#e3af94",
+     "#ffffff"
+    ],
+    "saturation": 0.823,
+    "value": 0.791,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.993
+     }
+    ],
+    "grey": 0.007
+   },
+   "trianglesPerMetre": 14.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9b5cfd500250b7310f3cf94e1a395f6730d18bfa9239edc07ee44e12ef792ead",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

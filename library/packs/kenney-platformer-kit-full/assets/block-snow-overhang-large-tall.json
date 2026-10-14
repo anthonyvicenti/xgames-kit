@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-large-tall",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-large-tall.glb",
+ "sha256": "d6cd443905749dc0412ef5d7aa6e66c8ffbd599afc51442a30084142bb82c579",
+ "bytes": 16640,
+ "preview": "previews/block-snow-overhang-large-tall.png",
+ "from": "Models/GLB format/block-snow-overhang-large-tall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang large tall",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "large",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   2,
+   2.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16640,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.51,
+    "value": 0.693,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.718
+     },
+     {
+      "hue": "grey",
+      "share": 0.186
+     },
+     {
+      "hue": "blue",
+      "share": 0.097
+     }
+    ],
+    "grey": 0.186
+   },
+   "trianglesPerMetre": 2.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "91079e99f725f1e466a7ef5f81c0530925897fba2d9ad6598f96262dc263087f",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

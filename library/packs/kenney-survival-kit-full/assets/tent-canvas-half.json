@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tent-canvas-half",
+ "pack": "kenney-survival-kit-full",
+ "file": "tent-canvas-half.glb",
+ "sha256": "3abeced0c29f597d860edac54098910321a0d91110c3d8e5b2b632f6194d2338",
+ "bytes": 12936,
+ "preview": "previews/tent-canvas-half.png",
+ "from": "Models/GLB format/tent-canvas-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tent canvas half",
+ "tags": [
+  "tent",
+  "canvas",
+  "half"
+ ],
+ "use": {
+  "size": [
+   0.561,
+   0.491,
+   0.561
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12936,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#cf7a55",
+     "#c4714e",
+     "#ffb449",
+     "#ffa93f",
+     "#b86746",
+     "#ffc95b",
+     "#ffc658",
+     "#cb7753"
+    ],
+    "saturation": 0.73,
+    "value": 0.591,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f6e12c0de280a9d5e93e27652a3e80ea620374865a6053dbe6fd5fb7eaca9d93",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

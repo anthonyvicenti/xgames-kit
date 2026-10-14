@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "track-wide-straight-hill-complete-half",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-wide-straight-hill-complete-half.glb",
+ "sha256": "dd7f76b4aae64d83879afaa544b5c8bf67d570dce2b378501a78c315972d2f45",
+ "bytes": 15956,
+ "preview": "previews/track-wide-straight-hill-complete-half.png",
+ "from": "Models/GLB format/track-wide-straight-hill-complete-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track wide straight hill complete half",
+ "tags": [
+  "track",
+  "wide",
+  "straight",
+  "hill",
+  "complete",
+  "half"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.8,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 252,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 252,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15956,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff8144",
+     "#ff7544",
+     "#ff8d44",
+     "#ff8f44",
+     "#ff8a44",
+     "#ff9a44",
+     "#ff7944",
+     "#ff7e44"
+    ],
+    "saturation": 0.994,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.987
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.47,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "641224014d1c6803022c7b8768b3790ff5d5471c7201cadbf8c1fa5a53226cce",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

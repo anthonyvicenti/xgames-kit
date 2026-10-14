@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "fence-curved",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fence-curved.glb",
+ "sha256": "da76b002469cd7fcb8a0c2260d2126e5d7284211cad2d7151daf65700499adc9",
+ "bytes": 18452,
+ "preview": "previews/fence-curved.png",
+ "from": "Models/GLB format/fence-curved.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence curved",
+ "tags": [
+  "fence",
+  "curved"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.38,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 308,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 308,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18452,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ca8564",
+     "#c17e5e",
+     "#bf7c5d",
+     "#cc8665",
+     "#c27f5f",
+     "#c88363",
+     "#bd7b5c",
+     "#cd8866"
+    ],
+    "saturation": 0.467,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 17.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "be132586a950f4e4830815b909d9d53fb7e8653ff14c9f03c38c9fc550f4e797",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

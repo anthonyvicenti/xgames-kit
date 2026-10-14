@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "wall-window-glass",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-window-glass.glb",
+ "sha256": "7eedae97e90df693a8f1bc83c840282ddfc6fc06601d1b57cfd1b1091d81ce5f",
+ "bytes": 16076,
+ "preview": "previews/wall-window-glass.png",
+ "from": "Models/GLB format/wall-window-glass.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall window glass",
+ "tags": [
+  "wall",
+  "window",
+  "glass"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 178,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 178,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16076,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#a0a8c9",
+     "#99a1c1",
+     "#abb3d7",
+     "#8f95b3",
+     "#a9b0d3",
+     "#9198b6"
+    ],
+    "saturation": 0.369,
+    "value": 0.632,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.523
+     },
+     {
+      "hue": "blue",
+      "share": 0.404
+     },
+     {
+      "hue": "grey",
+      "share": 0.073
+     }
+    ],
+    "grey": 0.073
+   },
+   "trianglesPerMetre": 8.08,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b0d666b1850d0b92734bdea736a062b4424fd909d13495f4a73719eb51bb41f4",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

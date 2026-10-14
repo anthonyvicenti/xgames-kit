@@ -377,6 +377,62 @@
               "night"
             ]
           }
+        },
+        "reads": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "What kind of place a world reads as, in the look target's words (builder/spec/look-target.schema.json world): the look's world step ranks a runtime's worlds against a target's with these (builder/look/world.mjs).",
+          "properties": {
+            "setting": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              }
+            },
+            "land": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              }
+            },
+            "horizon": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              }
+            },
+            "water": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              }
+            },
+            "sky": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              }
+            },
+            "traits": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,30}$"
+              },
+              "description": "What the place does beyond its shape: destructible (the ground breaks), cross-section (soil and rock show cut open), blocky."
+            }
+          }
         }
       }
     },

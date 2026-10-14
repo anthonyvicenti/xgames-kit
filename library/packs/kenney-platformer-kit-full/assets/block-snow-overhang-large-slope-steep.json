@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-large-slope-steep",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-large-slope-steep.glb",
+ "sha256": "6d36e3f06e0d607d98715b75e5250f7eb32204af9bca093388f1bfed0c1292a6",
+ "bytes": 16928,
+ "preview": "previews/block-snow-overhang-large-slope-steep.png",
+ "from": "Models/GLB format/block-snow-overhang-large-slope-steep.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang large slope steep",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "large",
+  "slope",
+  "steep"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   1.367,
+   1.967
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 162,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 162,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f8f8fb",
+     "#c1c1d8",
+     "#ea9168",
+     "#d9835c",
+     "#da835d",
+     "#c77451",
+     "#db855e",
+     "#e6e6ef"
+    ],
+    "saturation": 0.412,
+    "value": 0.786,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.39
+     },
+     {
+      "hue": "blue",
+      "share": 0.357
+     },
+     {
+      "hue": "grey",
+      "share": 0.253
+     }
+    ],
+    "grey": 0.253
+   },
+   "trianglesPerMetre": 3.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "dfe0304dbf7dc93599f1bb6cc890136c282b639a6f084e8d3dd20f476bc42366",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

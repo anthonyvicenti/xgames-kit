@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "fish-large",
+ "pack": "kenney-survival-kit-full",
+ "file": "fish-large.glb",
+ "sha256": "2e5ddda5fad0655bbe5ff11838c42f123858c77276e754e9121cff0c28bb2963",
+ "bytes": 17972,
+ "preview": "previews/fish-large.png",
+ "from": "Models/GLB format/fish-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fish large",
+ "tags": [
+  "fish",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.307,
+   0.159,
+   0.098
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 233,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 233,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17972,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#6a7087",
+     "#636980",
+     "#d9584c",
+     "#676c84",
+     "#6e738a",
+     "#60657d",
+     "#71768d",
+     "#f36644"
+    ],
+    "saturation": 0.287,
+    "value": 0.498,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.731
+     },
+     {
+      "hue": "red",
+      "share": 0.269
+     }
+    ],
+    "grey": 0.731
+   },
+   "trianglesPerMetre": 54.41,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c8fc10fdf493cc21751bd5846ea5639268ecc064a82f3a050ee915fdbe2c45e3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

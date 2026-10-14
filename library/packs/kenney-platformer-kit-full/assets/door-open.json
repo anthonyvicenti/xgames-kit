@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "door-open",
+ "pack": "kenney-platformer-kit-full",
+ "file": "door-open.glb",
+ "sha256": "ba57d1b4909cf81734d4c745ed4a1eb5d2133a67b297a88ef437606585560ad5",
+ "bytes": 14828,
+ "preview": "previews/door-open.png",
+ "from": "Models/GLB format/door-open.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "door open",
+ "tags": [
+  "door",
+  "open"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   1,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14828,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#73758a",
+     "#6c6d82",
+     "#7f8399",
+     "#80849a",
+     "#7b7e94",
+     "#81869c",
+     "#7d8197",
+     "#65657a"
+    ],
+    "saturation": 0.099,
+    "value": 0.502,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 7.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a14487caa5adf4a5311669efb348700975c704a0ca1b129858f86bca1f7f1cfd",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

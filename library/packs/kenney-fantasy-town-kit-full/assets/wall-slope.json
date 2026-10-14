@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "wall-slope",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-slope.glb",
+ "sha256": "e45dc68523337bf768793dee9fe03135d88d68178ea8f48a93feeff3a3893114",
+ "bytes": 14196,
+ "preview": "previews/wall-slope.png",
+ "from": "Models/GLB format/wall-slope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall slope",
+ "tags": [
+  "wall",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14196,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9da5c5",
+     "#989fbe",
+     "#c3805f",
+     "#c78362",
+     "#9299b7",
+     "#8d93b1",
+     "#a2aacc",
+     "#a8b0d3"
+    ],
+    "saturation": 0.314,
+    "value": 0.644,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.647
+     },
+     {
+      "hue": "orange",
+      "share": 0.332
+     }
+    ],
+    "grey": 0.021
+   },
+   "trianglesPerMetre": 4.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a7a1ea684f57370a796009353fb469b3f8eb676be544b7980e1b1059ddb5d2af",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

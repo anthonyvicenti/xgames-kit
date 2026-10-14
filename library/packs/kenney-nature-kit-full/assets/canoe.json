@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "canoe",
+ "pack": "kenney-nature-kit-full",
+ "file": "canoe.glb",
+ "sha256": "dcd7b72f8b7d5ef40fd79d1bdaf0bc6866b14997cbd0279b11373694168a3313",
+ "bytes": 6388,
+ "preview": "previews/canoe.png",
+ "from": "Models/GLTF format/canoe.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "canoe",
+ "tags": [
+  "canoe"
+ ],
+ "use": {
+  "size": [
+   0.3,
+   0.183,
+   1.15
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6388,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc78a",
+     "#ffc5a7"
+    ],
+    "saturation": 1,
+    "value": 0.796,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ad9c7a315f55accbce8d1ee3dc853f919f01f97ab4e3096bb235d1815aed6941",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

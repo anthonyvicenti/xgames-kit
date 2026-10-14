@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "block-moving-blue",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-moving-blue.glb",
+ "sha256": "3f6494f5409b1ab4a101bf60b900afbdebba9f3b51643372cc381c6bc9091850",
+ "bytes": 18040,
+ "preview": "previews/block-moving-blue.png",
+ "from": "Models/GLB format/block-moving-blue.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block moving blue",
+ "tags": [
+  "block",
+  "moving",
+  "blue"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 256,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 256,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18040,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ffa63e",
+     "#ffb84d",
+     "#585abe",
+     "#617dce",
+     "#5d6bc6",
+     "#ffc154",
+     "#ffaf45",
+     "#ffac43"
+    ],
+    "saturation": 0.851,
+    "value": 0.617,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.714
+     },
+     {
+      "hue": "blue",
+      "share": 0.286
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.59,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4d6d946e31bcda0f4644ca7c1f2d7325c05db835c3ee072153380b37035bfaf7",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

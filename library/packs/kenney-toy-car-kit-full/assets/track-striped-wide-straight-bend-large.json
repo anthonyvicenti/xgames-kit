@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight-bend-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight-bend-large.glb",
+ "sha256": "7e45cbd9d90db6213f71224164d1c1a9998f95263251ce31fd829e50506818d3",
+ "bytes": 18008,
+ "preview": "previews/track-striped-wide-straight-bend-large.png",
+ "from": "Models/GLB format/track-striped-wide-straight-bend-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight bend large",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight",
+  "bend",
+  "large"
+ ],
+ "use": {
+  "size": [
+   2,
+   4.2,
+   4.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 316,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 316,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e6e6ef",
+     "#eb6246",
+     "#e2e2ed"
+    ],
+    "saturation": 0.461,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.496
+     },
+     {
+      "hue": "blue",
+      "share": 0.458
+     },
+     {
+      "hue": "grey",
+      "share": 0.046
+     }
+    ],
+    "grey": 0.046
+   },
+   "trianglesPerMetre": 3.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "65a76756be82a6fdf9c09e2a526a429af38df65c3f7faaf43550572ef5147639",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

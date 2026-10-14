@@ -97,6 +97,60 @@ export function runTree(file, args, { cwd = KIT_ROOT, env = process.env, signal 
  */
 export const gpuWrap = (env = process.env) => String(env.GAMESFUN_GPU_WRAP ?? '').trim().split(/\s+/).filter(Boolean);
 
+// ---------------------------------------------------------------- the look (builder/look)
+/**
+ * The look step's tools: the style target from the spec's references and the person's images and words (measured
+ * here, judged by the loop's round), its 2–3 options drawn as contact sheets on the game's own world (the GPU work
+ * through GAMESFUN_GPU_WRAP like verify), and the picked option written into config/look.json (an option with its own
+ * world and camera makes the game again from its spec, which the loop locks). GAMESFUN_LOOK=0 turns
+ * the step off.
+ */
+export function lookTools({ log = () => {}, env = process.env } = {}) {
+  const mod = name => import(pathToFileURL(path.join(BUILDER, 'look', name)).href);
+  return {
+    async lookTarget(spec, { references = [], words = '' }) {
+      const [{ extract }, { findRefs }] = await Promise.all([mod('target.mjs'), mod('refs.mjs')]);
+      const fromSpec = spec.look?.refs?.length ? (await findRefs(spec.look.refs)).frames : [];
+      const given = references.filter(r => r?.file && /\.(png|jpe?g|webp)$/i.test(r.file)).map(r => ({ file: r.file, frame: 'other', note: r.caption ?? null }));
+      const frames = [...fromSpec, ...given];
+      if (!frames.length && !String(words).trim()) return { why: 'no reference image and no words about the look' };
+      return extract({ refs: frames, words, kind: spec.kind });
+    },
+    async finishTarget(base, judged) {
+      const [{ finish, measureLooks }, { loadSchemas, SCHEMA }] = await Promise.all([mod('target.mjs'), import(pathToFileURL(path.join(KIT_ROOT, 'registry', 'schemas.mjs')).href)]);
+      // the references' looks (levels), each measured from its own frames
+      const target = await measureLooks(finish(base, judged), base);
+      const problems = (await loadSchemas()).validate(SCHEMA.lookTarget, target);
+      return problems.length ? { ok: false, problems } : { ok: true, target };
+    },
+    async lookOptions(spec, { game, target }) {
+      const { options, renderSheet } = await mod('pitch.mjs');
+      const wrap = gpuWrap(env), render = (g, out, o) => renderSheet(g, out, { ...o, wrap, env: { ...env, ...savedGpuEnv() } });
+      try { return await options(spec, { game, target, render, packs: spec.look?.packs ?? [], log }); } catch (e) { log(`look options: ${flat(e.message, 300)}`); return [{ ok: false, skipped: flat(e.message, 200) }]; }
+    },
+    async applyLook(game, option, { spec = null } = {}) {
+      // an option made from its own spec (its world and camera: builder/look/world.mjs) makes the game again from that
+      // spec first; the loop locks it in place of the old one
+      let made = null;
+      if (option.made && spec) {
+        made = { ...spec, world: option.made.world, look: { ...(spec.look ?? {}), target: option.made.target } };
+        const specFile = path.join(loopDir(game), 'spec.json');
+        await mkdir(path.dirname(specFile), { recursive: true });
+        await writeFile(specFile, JSON.stringify(made, null, 2) + '\n');
+        try { await createGame(game, { spec: specFile, force: true, cwd: KIT_ROOT, env }); }
+        catch (e) { return { ok: false, why: `the look's world could not be made: ${flat(e.message, 300)}` }; }
+      }
+      const file = path.join(game, 'config', 'look.json');
+      const { over } = await import(pathToFileURL(path.join(KIT_ROOT, 'kinds', 'apply.mjs')).href);
+      const look = JSON.parse(await readFile(file, 'utf8')), time = look.time ?? 'day';
+      let next = over(look, option.values ?? {});
+      if (next.times?.[time]) next.times[time] = over(next.times[time], option.values ?? {});
+      await writeFile(file, JSON.stringify(next, null, 2) + '\n');
+      return { ok: true, ...(made ? { spec: made } : {}) };
+    },
+  };
+}
+
 // ---------------------------------------------------------------- the tools of one game
 const readJson = async f => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return null; } };
 export const loopDir = game => path.join(game, STATE_DIR);
@@ -105,7 +159,7 @@ export const loopDir = game => path.join(game, STATE_DIR);
  * The kit's tools for one game, as openLoop takes them. `registry`: the loop's registry (for the kind's look).
  * `quick`: verify --quick (tests and dry runs; a delivery's verify is the full one). `timeoutMinutes`: verify's wall clock.
  */
-export function kitTools({ registry, log = () => {}, signal = null, quick = false, timeoutMinutes = 30, env = process.env } = {}) {
+export function kitTools({ registry, log = () => {}, signal = null, quick = false, timeoutMinutes = 30, env = process.env, look = env.GAMESFUN_LOOK !== '0' } = {}) {
   /** The locked spec v2, written where create reads it. → its path */
   const writeSpec = async (spec, dir) => {
     const file = path.join(dir, 'spec.json');
@@ -114,6 +168,7 @@ export function kitTools({ registry, log = () => {}, signal = null, quick = fals
     return file;
   };
   return {
+    ...(look ? lookTools({ log, env }) : {}),
     async create(spec, { game }) {
       try {
         const file = await writeSpec(spec, loopDir(game));
@@ -150,6 +205,25 @@ export function kitTools({ registry, log = () => {}, signal = null, quick = fals
       const v = verdictOf(raw, { runtime: spec?.runtime ?? null, profile: spec?.profile ?? null, loop: spec?.loop ?? null, code: r.timedOut ? 'timed out' : r.code, stderr: r.stderr || r.stdout.slice(-2000), outDir });
       await writeFile(path.join(outDir, 'gates.json'), JSON.stringify(v, null, 2) + '\n');
       return v;
+    },
+    /**
+     * The look's cheap levers (builder/look/tune.mjs), when only the look failed verify: a child process on the graphics
+     * card like verify. A SUGGESTION ONLY (the parent, 2026-10-14: the tuner pulled a daylight overworld toward cave
+     * frames while its score rose): the proposed values and the before/after sheet are written to `outDir`, never into
+     * the game, until the tune compares like with like per setting. → its record ({score, values, ladder, wrote: false,
+     * suggestion: {values, sheet}}) or {error}
+     */
+    async tuneLook(game, { n = 1 } = {}) {
+      const outDir = path.join(loopDir(game), 'look-tune', String(n));
+      const wrap = gpuWrap(env), argv = [path.join(KIT_ROOT, 'builder', 'look', 'tune.mjs'), game, '--out', outDir, '--json'];
+      const [cmd, ...args] = wrap.length ? [...wrap, process.execPath, ...argv] : [process.execPath, ...argv];
+      log(`look tune ${n}: ${path.basename(game)}`);
+      const runEnv = { ...env, ...TOOL_ENV, ...savedGpuEnv() };
+      await ensureBrowser({ log, env: runEnv });
+      const r = await runTree(cmd, args, { cwd: KIT_ROOT, env: runEnv, signal, timeoutMs: timeoutMinutes * 60000 });
+      if (r.aborted) { const e = new Error('the look tuning was stopped: the host aborted it'); e.name = 'AbortError'; throw e; }
+      const line = String(r.stdout ?? '').trim().split('\n').reverse().find(l => l.startsWith('{'));
+      try { const t = JSON.parse(line); return { ...t, wrote: false, suggestion: { values: path.join(outDir, 'look.json'), sheet: path.join(outDir, 'before-after.jpg') } }; } catch { return { error: flat(`tune.mjs wrote no record (exit ${r.timedOut ? 'timed out' : r.code}): ${String(r.stderr || r.stdout).trim().split('\n').slice(-2).join(' ')}`, 600) }; }
     },
     hash: game => filesHash(game),
     /** checkSpecV2 (version, schema, registry: its problems; findings are said, never refused), then create's own check. */

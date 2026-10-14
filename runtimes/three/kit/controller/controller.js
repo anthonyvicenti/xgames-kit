@@ -20,7 +20,7 @@
 // brain (player.input, world-space), both through the same `player.input` and `player.actions`.
 import * as THREE from 'three';
 import { createCapsule, capsuleConfig } from './capsule.mjs';
-import { createCameraRig } from './camera-rig.js';
+import { createCameraRig, RIG_DEFAULTS } from './camera-rig.js';
 import { crosshairPoint, aimFrom, AIM_HEIGHT } from '../core/aim.js';
 
 const r2 = v => Math.round(v * 100) / 100;
@@ -29,6 +29,10 @@ export function createController(ctx, { player, character = null, camera = null,
   const cfg = capsuleConfig({ move: { ...(speed ? { runSpeed: speed } : {}), ...(sprint ? { sprintSpeed: sprint } : {}) }, jump: jump ? { velocity: jump } : {} });
   const cap = createCapsule(ctx.RAPIER, ctx.physics, cfg, { x: spawn.x, y: spawn.y + 0, z: spawn.z, yaw: spawn.yaw ?? 0 }, { userData: { player: player.id } });
   cap.reset({ x: spawn.x, y: spawn.y + cap.feetOffset, z: spawn.z }, spawn.yaw ?? 0);
+  // over a small creature's shoulder (CREATURES.md), not a person's: the offset comes in with its size (create brings
+  // the distance and height in, as slots)
+  const small = character?.archetype && character.archetype !== 'humanoid' && character.height < 1.5;
+  if (small && camera === 'third' && settings.shoulder == null) settings = { ...settings, shoulder: +(RIG_DEFAULTS.third.shoulder * Math.max(0.45, character.height / 1.7)).toFixed(2) };
   const rig = camera ? createCameraRig({ camera: ctx.camera, mode: camera, physics: { RAPIER: ctx.RAPIER, world: ctx.physics }, exclude: cap.collider, settings, yaw: spawn.yaw ?? 0, pointer: () => ctx.input?.pointer, wheel: () => ctx.input?.wheel ?? 0, free: () => !!ctx.input?.aimFree }) : null;
   if (camera === 'follow' && ctx.input) ctx.input.cursorMode = true;
   if (camera === 'orbit' && ctx.input) ctx.input.cursorMode = 'drag';

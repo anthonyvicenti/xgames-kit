@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "road-edge-slope",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "road-edge-slope.glb",
+ "sha256": "868a761ad3ef2a62a556ab8a820dde80235fae1c0decbce18e74004930deaa34",
+ "bytes": 14156,
+ "preview": "previews/road-edge-slope.png",
+ "from": "Models/GLB format/road-edge-slope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "road edge slope",
+ "tags": [
+  "road",
+  "edge",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.25,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 38,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 38,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14156,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#a0a8c9",
+     "#868ba1",
+     "#9a5942",
+     "#f1976c"
+    ],
+    "saturation": 0.219,
+    "value": 0.658,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.619
+     },
+     {
+      "hue": "grey",
+      "share": 0.38
+     }
+    ],
+    "grey": 0.38
+   },
+   "trianglesPerMetre": 3.82,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "afbdfd9ef63c5c1dc9a99bb4f3ecbc94308300995b7958483014cd7f234484fc",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

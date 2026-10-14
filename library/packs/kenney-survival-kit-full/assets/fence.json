@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "kenney-survival-kit-full",
+ "file": "fence.glb",
+ "sha256": "1dd6728cb851ee93d8bcdd0f7e50e30cd6b82d96fe01efd99eb25669703ad972",
+ "bytes": 10876,
+ "preview": "previews/fence.png",
+ "from": "Models/GLB format/fence.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence",
+ "tags": [
+  "fence"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.517,
+   0.043
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10876,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c77450",
+     "#d7815b",
+     "#cf7a55",
+     "#d37d58",
+     "#db845d",
+     "#c4714e",
+     "#b86746",
+     "#ea9167"
+    ],
+    "saturation": 0.56,
+    "value": 0.572,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5d8050e39c8b83b5835ea38b9b17429b4a03e289b566a1db771b7e1d9c6e4050",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

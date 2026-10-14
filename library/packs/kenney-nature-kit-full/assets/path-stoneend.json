@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "path-stoneend",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-stoneend.glb",
+ "sha256": "81ade54a0b719e479c7ed85a2dc50ae829d428226875b9921739da5b587adfa9",
+ "bytes": 5288,
+ "preview": "previews/path-stoneend.png",
+ "from": "Models/GLTF format/path_stoneEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path stoneend",
+ "tags": [
+  "path",
+  "stoneend"
+ ],
+ "use": {
+  "size": [
+   0.618,
+   0.05,
+   0.571
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5288,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ddf2f5",
+     "#ccdbde",
+     "#ffffff"
+    ],
+    "saturation": 0.282,
+    "value": 0.913,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.712
+     },
+     {
+      "hue": "grey",
+      "share": 0.288
+     }
+    ],
+    "grey": 0.288
+   },
+   "trianglesPerMetre": 14.62,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0b07fd6ca7e5af705fa3c2e47e4a0453d8a8bdd8ca1d92ccbee8ccc9f5bfb22b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

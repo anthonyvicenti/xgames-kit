@@ -14,6 +14,8 @@
 //           below, gone when the camera is above it), lamps hang from it, and each room is dressed by its zone
 //           recipe from the template's furniture groups. Outside: a street (sidewalk, road, street lights) and city
 //           blocks all round, so every window and doorway shows a place, not a plain.
+//   sea     (sea-islands; recipe.generator 'sea', sea.js): islands in an open sea, shaped by the recipe's params (a look
+//           target sets them: builder/look/world.mjs).
 //   outdoor (backyard, plaza, arena): the template's own hand-dressed layout is the small world. Larger sizes push
 //           everything near an edge out with that edge (the middle keeps its set-pieces), fill the new floor with the
 //           recipe's groups, and close the edge again: the recipe's edge pieces run all round with gaps only at the
@@ -21,6 +23,7 @@
 import { rng as makeRng, turn } from './layout.js';
 import { buildPlace } from './places/index.js';
 import { fromYard } from './from-yard.js';
+import { seaLayout } from './sea.js';
 
 // ---------- size classes ----------
 // The play area per class, for 1–4 players (bots fill seats) and the third-person camera (5.2 m behind the shoulder,
@@ -49,7 +52,7 @@ const clone = v => JSON.parse(JSON.stringify(v));
 export function generateLayout(recipe, { size = 'small', seed = null } = {}) {
   if (!SIZE_CLASSES[size]) throw new Error(`gf-three world: unknown size "${size}" (${SIZES.join(', ')})`);
   const s = Number.isFinite(seed) ? seed >>> 0 : hash(`${recipe.template}|${size}`);
-  const out = recipe.kind === 'indoor' ? building(recipe, size, s) : yard(recipe, size, s);
+  const out = recipe.generator === 'sea' ? seaLayout(recipe, { size, seed: s }) : recipe.kind === 'indoor' ? building(recipe, size, s) : yard(recipe, size, s);
   out.generated = { by: 'kit/world/generate.js', recipe: recipe.template, size, seed: s };
   return out;
 }

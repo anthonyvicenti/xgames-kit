@@ -21,6 +21,10 @@
 //   remeshNow(x, y, z)    relight and re-mesh round a cell this frame (a player's own edit shows at once)
 //   store                 the world store client (kit/net/persist.js); loaded: {seq, mode, missing, error}
 //   onApply(fn)           fn(x, y, z, v, old) after every apply
+//   setLight(partial)     the cave's own light, live: { cave, block, spread, caveLight: {color, strength}, caveFog } over
+//                         config/world.json → voxel.light (the look judge's tuning loop moves them with the cave in view)
+// world.place(setting)    a camera place that shows 'cave' or 'day' (places.mjs: the voxel bench's finders) → { eye,
+//                         target, fov } | null (builder/look: a cave reference is judged against a frame in a cave)
 //
 // voxel.faces { size: 32, filter: 'pixel' | 'smooth' }: block faces drawn at `size` texels; 'pixel' keeps every texel a
 // crisp square up close (the kit's own faces), 'smooth' filters them (painted faces; 512 on high, 256 on low).
@@ -41,6 +45,7 @@ import { createSigns } from './signs.js';
 import { material } from '../../look/materials.js';
 import { WORLD_GROUPS } from '../../core/util.js';
 import { createWorldStore } from '../../net/persist.js';
+import { placeFor } from './places.mjs';
 
 export const templates = ['voxel'];
 // The size a smooth block face is drawn at, by quality tier (blocks.mjs FACE_SIZES: 512 high, 256 low). 32 faces at 512
@@ -436,6 +441,16 @@ export async function loadWorld(ctx, cfg) {
   // the fog underground: as the sky above the camera goes, the haze darkens to the cave's own colour and closes in, so a
   // tunnel's far end falls into the dark instead of a bright daytime haze
   const caveFog = new THREE.Color(LV.caveFog ?? '#07090d'), fogBase = new THREE.Color();
+  /** The cave's own light, live (shared uniforms, the bodies' light and the fog underground follow at once). */
+  function setLight(p = {}) {
+    for (const k of ['cave', 'block', 'spread']) if (typeof p[k] === 'number') LV[k] = p[k];
+    if (p.caveLight) LV.caveLight = { ...LV.caveLight, ...p.caveLight };
+    if (typeof p.caveFog === 'string') LV.caveFog = p.caveFog;
+    shared.uGfCave.value = LV.cave; shared.uGfBlockLight.value = LV.block; shared.uGfSpread.value = LV.spread;
+    caveLight.set(LV.caveLight?.color ?? '#4a5f86').multiplyScalar(LV.caveLight?.strength ?? 0); shared.uGfCaveLight.value = caveLight;
+    caveFog.set(LV.caveFog ?? '#07090d');
+    return JSON.parse(JSON.stringify(LV));
+  }
   let fogSky = null;
   function fogFor(cam) {
     const fog = ctx.scene?.fog, look = ctx.look?.values?.fog;
@@ -471,7 +486,9 @@ export async function loadWorld(ctx, cfg) {
       return { distance: t, point: new THREE.Vector3().copy(from).addScaledVector(d, t), normal: new THREE.Vector3(hit.normal.x, hit.normal.y, hit.normal.z), collider: hit.collider };
     },
     update, lightAt: worldLightAt,
+    place: setting => placeFor({ grid, light, terrain: T, table }, setting, { from: T.plaza?.at }),
     voxel: {
+      setLight, lightValues: () => JSON.parse(JSON.stringify(LV)),
       grid, table, light, signs, store, loaded, apply, pick, lightAt, heldMesh, protectedAt, remeshNow, floor, protect, signN, terrain: T, water: T.water,
       /** Is the column at (x, z) the open sea (outside the fence)? */
       seaAt: (x, z) => x >= 0 && z >= 0 && x < sx && z < sz && !!sea[Math.floor(z) * sx + Math.floor(x)],

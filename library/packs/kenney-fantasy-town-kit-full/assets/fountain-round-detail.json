@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "fountain-round-detail",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fountain-round-detail.glb",
+ "sha256": "838afc5fd9d9c9ac9aab3e28f76b93b584a95c7304c73dcd51057114d601a87c",
+ "bytes": 42384,
+ "preview": "previews/fountain-round-detail.png",
+ "from": "Models/GLB format/fountain-round-detail.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fountain round detail",
+ "tags": [
+  "fountain",
+  "round",
+  "detail"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.48,
+   2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1628,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1628,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 42384,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#7d829c",
+     "#79dcff",
+     "#a2aacc",
+     "#62677f",
+     "#696f86",
+     "#969dbc",
+     "#8990ac",
+     "#9ea5c6"
+    ],
+    "saturation": 0.304,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.54
+     },
+     {
+      "hue": "blue",
+      "share": 0.328
+     },
+     {
+      "hue": "cyan",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.54
+   },
+   "trianglesPerMetre": 12.34,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "05cdd740e3175c2d3208d4cb6630a279a9b4cbc48393b28c92e3e40cca2a5d6b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-corner-overhang-low",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-corner-overhang-low.glb",
+ "sha256": "68b72e23ff4cf51dacdd59efc9503d2940e150a1ac5b10e8c56542ac33e37ad9",
+ "bytes": 16292,
+ "preview": "previews/block-grass-corner-overhang-low.png",
+ "from": "Models/GLB format/block-grass-corner-overhang-low.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass corner overhang low",
+ "tags": [
+  "block",
+  "grass",
+  "corner",
+  "overhang",
+  "low"
+ ],
+ "use": {
+  "size": [
+   1.054,
+   0.5,
+   1.054
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 110,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 110,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16292,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#339c75",
+     "#47b07e",
+     "#50ba83",
+     "#299270"
+    ],
+    "saturation": 0.559,
+    "value": 0.529,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.413
+     },
+     {
+      "hue": "green",
+      "share": 0.314
+     },
+     {
+      "hue": "cyan",
+      "share": 0.273
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.62,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "453dacc0dea7fb65b3e17fabf84c7096bd2fc1c2bfe4461f2461f37fde6e68e8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

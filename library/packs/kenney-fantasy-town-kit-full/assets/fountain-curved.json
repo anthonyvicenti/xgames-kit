@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "fountain-curved",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fountain-curved.glb",
+ "sha256": "2c2f61a256553a0d9fe44f02371591467d4f8ed414203e6e6277d8add64fa4a1",
+ "bytes": 19912,
+ "preview": "previews/fountain-curved.png",
+ "from": "Models/GLB format/fountain-curved.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fountain curved",
+ "tags": [
+  "fountain",
+  "curved"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.28,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 266,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 266,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19912,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7d829c",
+     "#79dcff",
+     "#bdc6ee",
+     "#9299b7",
+     "#a8b0d3",
+     "#bac2e9",
+     "#b6bee4",
+     "#a4acce"
+    ],
+    "saturation": 0.46,
+    "value": 0.669,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.376
+     },
+     {
+      "hue": "blue",
+      "share": 0.356
+     },
+     {
+      "hue": "cyan",
+      "share": 0.268
+     }
+    ],
+    "grey": 0.376
+   },
+   "trianglesPerMetre": 9.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "aec3a6ebb4eda01f392054d3ee203d8cee74c9c45d584d3d9e5e2052949bca3e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

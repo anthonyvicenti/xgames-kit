@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "floor",
+ "pack": "kenney-survival-kit-full",
+ "file": "floor.glb",
+ "sha256": "d5d2a4769155aa3e153b529e7ef75a4c1733811868f17053b8e34d4973254908",
+ "bytes": 11344,
+ "preview": "previews/floor.png",
+ "from": "Models/GLB format/floor.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "floor",
+ "tags": [
+  "floor"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.051,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11344,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#b86746",
+     "#ea9167",
+     "#c77450",
+     "#d7815b",
+     "#d37d58",
+     "#c06e4c"
+    ],
+    "saturation": 0.572,
+    "value": 0.569,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f55838210cf23836db136de661ac260f7f667c277ed134a0faa8c2ca811db9ac",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

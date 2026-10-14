@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "rock-smallflata",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-smallflata.glb",
+ "sha256": "ee4e5cdf7ee9831bcde5716f5bda59aa654fa049feb63e8796c8fa3c954c5ce8",
+ "bytes": 3224,
+ "preview": "previews/rock-smallflata.png",
+ "from": "Models/GLTF format/rock_smallFlatA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock smallflata",
+ "tags": [
+  "rock",
+  "smallflata"
+ ],
+ "use": {
+  "size": [
+   0.496,
+   0.065,
+   0.43
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 20,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 20,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3224,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.766,
+    "value": 0.754,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.68
+     },
+     {
+      "hue": "cyan",
+      "share": 0.32
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "40ceafacfaabb0f04f93688fd8696c1464c65512bef219e1459c1f238cbbbe21",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "bottle-large",
+ "pack": "kenney-survival-kit-full",
+ "file": "bottle-large.glb",
+ "sha256": "b7e8fabeb4be7b36ec598cbdab39aa40ba9f5ac226934fa8d1982e8963bf099a",
+ "bytes": 12220,
+ "preview": "previews/bottle-large.png",
+ "from": "Models/GLB format/bottle-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bottle large",
+ "tags": [
+  "bottle",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.072,
+   0.144,
+   0.084
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12220,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#b86746",
+     "#d2d2e3",
+     "#e7e7f0",
+     "#d7815b",
+     "#c06e4c",
+     "#d37d58",
+     "#bc6a49",
+     "#c4714e"
+    ],
+    "saturation": 0.477,
+    "value": 0.64,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.764
+     },
+     {
+      "hue": "blue",
+      "share": 0.118
+     },
+     {
+      "hue": "grey",
+      "share": 0.118
+     }
+    ],
+    "grey": 0.118
+   },
+   "trianglesPerMetre": 53.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "be7c0c52633c76bb7d00fd23878726d40651e5b38a87f2d4c4a03b0b2ead749a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

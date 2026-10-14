@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-edge",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-edge.glb",
+ "sha256": "45d6b77ee6a4636bdc94b19750b48b76fed73b6e898e0e3da4dd189c1dd613a4",
+ "bytes": 17116,
+ "preview": "previews/block-grass-overhang-edge.png",
+ "from": "Models/GLB format/block-grass-overhang-edge.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang edge",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "edge"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17116,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5ac487",
+     "#d7825b",
+     "#be6c4b",
+     "#c67350",
+     "#e18961",
+     "#ea9168",
+     "#329b74",
+     "#2a9370"
+    ],
+    "saturation": 0.548,
+    "value": 0.532,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.529
+     },
+     {
+      "hue": "green",
+      "share": 0.25
+     },
+     {
+      "hue": "cyan",
+      "share": 0.221
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b9b8196a9e1df206b1bd81e79086d21e9ec64fe664a57f0806d6edc4239a52ee",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

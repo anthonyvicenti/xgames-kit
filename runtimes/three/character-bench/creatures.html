@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creature bench</title>
+<style>
+  :root { --bg: #e9eef5; --panel: #ffffffe6; --ink: #1d2230; --muted: #5b6475; --accent: #ff6f9c; --line: #d5dbe6; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--ink); font: 13px/1.35 system-ui, -apple-system, Segoe UI, sans-serif; overflow: hidden; }
+  canvas { display: block; }
+  #ui { position: fixed; top: 12px; left: 12px; width: 260px; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; }
+  #ui h1 { font-size: 14px; margin: 0 0 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 4px; margin: 6px 0; }
+  button { font: inherit; border: 1px solid var(--line); background: #fff; border-radius: 8px; padding: 4px 8px; cursor: pointer; }
+  button:hover { border-color: var(--accent); }
+  #status { color: var(--muted); font-size: 12px; margin-top: 8px; white-space: pre-wrap; }
+  body.clean #ui { display: none; }
+  #label { position: fixed; left: 0; right: 0; bottom: 10px; text-align: center; font: 600 18px system-ui, sans-serif; color: #1d2230; text-shadow: 0 1px 0 #fff; }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "/vendor/three/build/three.module.js",
+  "three/addons/": "/vendor/three/examples/jsm/",
+  "@dimforge/rapier3d-compat": "/vendor/rapier/rapier.mjs"
+} }
+</script>
+</head>
+<body>
+<div id="ui">
+  <h1>Creature bench</h1>
+  <div class="row" id="actions"></div>
+  <div id="status">loading…</div>
+</div>
+<div id="label"></div>
+<script type="module" src="./creatures.js"></script>
+</body>
+</html>

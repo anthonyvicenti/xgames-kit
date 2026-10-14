@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathrocks",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathrocks.glb",
+ "sha256": "9a51023e3bc23c0d04c0139bfb00ad78c330290e9c4e0b366ce7c75e8b9c255c",
+ "bytes": 4944,
+ "preview": "previews/ground-pathrocks.png",
+ "from": "Models/GLTF format/ground_pathRocks.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathrocks",
+ "tags": [
+  "ground",
+  "pathrocks"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4944,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.717,
+    "value": 0.747,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.77
+     },
+     {
+      "hue": "cyan",
+      "share": 0.23
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2447aca8c95d4d3583111e696056b024cb42c43290f8b0e7731b6486fc85f234",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

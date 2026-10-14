@@ -555,7 +555,15 @@
             "maxLength": 200
           },
           "body": {
-            "$ref": "#/$defs/fill"
+            "$ref": "#/$defs/body"
+          },
+          "seats": {
+            "type": "array",
+            "maxItems": 7,
+            "items": {
+              "$ref": "#/$defs/body"
+            },
+            "description": "Bodies for the other seats of this role, in seat order: seat 2 wears the first, and round again when there are more seats (each friend a different creature). Each is a body fill like `body`."
           },
           "hat": {
             "type": "string",
@@ -587,6 +595,165 @@
             "golden",
             "dusk",
             "night"
+          ]
+        },
+        "target": {
+          "$ref": "https://xgames.fun/schemas/look-target/1.json",
+          "description": "The style target, over the kind (builder/look/target.mjs): measured from the references and judged on a fixed rubric, or from words alone. The kind is only the start; create maps the target onto the runtime's look values (builder/look/apply.mjs) under this spec's own preset, palette and time. Never changes play."
+        },
+        "refs": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/look-target/1.json#/$defs/ref"
+          },
+          "description": "The local reference images the target was measured from, by sha256 and source URL. The images are never committed, never published, never an image-to-image source (builder/look/refs.mjs finds them in the reference folders)."
+        },
+        "values": {
+          "type": "object",
+          "description": "The runtime's look values over the kind's and the target's (the same shape as the runtime's look presets: sun, ambient, sky, fog, materials, post, renderer …). What the tuning loop (builder/look/tune.mjs) writes and what a person sets by hand; the spec's own values win over everything but its preset, palette and time. Never changes play."
+        },
+        "packs": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9.-]{0,39}$"
+          },
+          "description": "Packs a look option draws its art from first (builder/look/pitch.mjs artOf: a rigged body for the player, the other bodies, props, a ground top), such as a pack made for this look. The kind's packs stay the resolver's default."
+        },
+        "harmonize": {
+          "description": "The style pass over the target's (builder/look/harmonize.mjs; runtimes/three/kit/look/harmonize-core.js documents every field): mixed packs' models and pictures moved toward the look's own colours and materials at load time. false turns it off; an object's fields win over what the target asks (strength, palette, skip a slot such as a logo).",
+          "oneOf": [
+            {
+              "const": false
+            },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "strength": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "palette": {
+                  "type": "array",
+                  "maxItems": 12,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^#[0-9a-fA-F]{6}$"
+                  }
+                },
+                "weights": {
+                  "type": "array",
+                  "maxItems": 12,
+                  "items": {
+                    "type": "number",
+                    "minimum": 0
+                  }
+                },
+                "roles": {
+                  "type": "array",
+                  "maxItems": 12,
+                  "items": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "description": "What each look colour is the colour of (\"pine foliage\", \"sand\"): an asset whose own words name the same matter goes to it first."
+                },
+                "reach": {
+                  "type": "number",
+                  "minimum": 0.01,
+                  "maximum": 1,
+                  "description": "OKLab distance at which a colour group moves half as far as a near one."
+                },
+                "chroma": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1,
+                  "description": "How much of the chroma gap a colour group closes."
+                },
+                "value": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "roughness": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "metalness": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "emissiveMax": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "toon": {
+                  "type": "boolean"
+                },
+                "outline": {
+                  "enum": [
+                    "none",
+                    "post",
+                    "hull",
+                    "ink"
+                  ]
+                },
+                "outlineColor": {
+                  "type": "string",
+                  "pattern": "^(#[0-9a-fA-F]{6}|own)$"
+                },
+                "outlineWidth": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 8
+                },
+                "quantize": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "texelsPerMetre": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "skip": {
+                  "type": "array",
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "description": "Slot ids or patterns the pass leaves as they are ('prop.logo', 'ui.*'); UI, fonts and the look's own pictures are always left."
+                },
+                "only": {
+                  "type": "array",
+                  "maxItems": 40,
+                  "items": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                }
+              }
+            }
           ]
         }
       }
@@ -936,6 +1103,99 @@
       "additionalProperties": false,
       "description": "How a slot gets its file. The art order (DESIGN 'The asset library'): provided, library, connection, session, stand-ins. kind: the library resolver picks by need and fit, the kind's packs first.",
       "properties": {
+        "from": {
+          "enum": [
+            "kind",
+            "library",
+            "provided",
+            "generate",
+            "reference"
+          ],
+          "description": "kind: the resolver picks from the kind's packs (and its body set for a body). library: the asset named. provided: a file the creator gave (revisionId). generate: a model or picture made from prompt (a paid maker with a key and a yes). reference: made from the references[] image named."
+        },
+        "asset": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/assetRef"
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "reference": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "A references[] revisionId."
+        },
+        "standIn": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/assetRef",
+          "description": "For generate and reference: the library asset used until the made one lands, kept if making it fails (and said so in the delivery)."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "const": "library"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "asset"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "const": "generate"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "prompt"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "enum": [
+                  "reference",
+                  "provided"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reference"
+            ]
+          }
+        }
+      ]
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "from"
+      ],
+      "additionalProperties": false,
+      "description": "A character's body: how its slot gets its file (a fill) and the archetype it is. humanoid bodies are on gf-humanoid-1 and play the shared clips; worm, blob, quadruped and flyer bodies are on their own standards (runtimes/three/kit/character/CREATURES.md) and move by procedural motion from the same actions. A library or made body must be of that archetype (a plain mesh is rigged by gamesfun art autorig).",
+      "properties": {
+        "archetype": {
+          "enum": [
+            "humanoid",
+            "worm",
+            "blob",
+            "quadruped",
+            "flyer"
+          ],
+          "description": "The body's shape (default humanoid): worm (a worm standing up or a serpent lying down), blob (one round mass: a slime, an egg-shaped critter), quadruped (four legs), flyer (wings)."
+        },
         "from": {
           "enum": [
             "kind",

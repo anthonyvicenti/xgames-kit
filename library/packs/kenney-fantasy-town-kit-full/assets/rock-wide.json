@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "rock-wide",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "rock-wide.glb",
+ "sha256": "64de34fcf92da220d30755a49ec2aff7ad31603c4310cf01d1a0e48d187d2336",
+ "bytes": 16512,
+ "preview": "previews/rock-wide.png",
+ "from": "Models/GLB format/rock-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock wide",
+ "tags": [
+  "rock",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   1.093,
+   1.02,
+   1.567
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 156,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 156,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16512,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#8e95b2",
+     "#939ab9",
+     "#9197b5",
+     "#959cbb",
+     "#9da4c4",
+     "#8a91ae",
+     "#9299b7",
+     "#8c93b0"
+    ],
+    "saturation": 0.221,
+    "value": 0.656,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.605
+     },
+     {
+      "hue": "grey",
+      "share": 0.395
+     }
+    ],
+    "grey": 0.395
+   },
+   "trianglesPerMetre": 5.69,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "236082a8c9dec4cef61f00f7f77e4a2050d1083852af65d27dd3c16a53c54b64",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

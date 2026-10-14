@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-racer-low",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-racer-low.glb",
+ "sha256": "cf260a748bc7b083402d7850b176871c60513a57ed81dae156753ce5f33c0d90",
+ "bytes": 41508,
+ "preview": "previews/vehicle-racer-low.png",
+ "from": "Models/GLB format/vehicle-racer-low.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle racer low",
+ "tags": [
+  "vehicle",
+  "racer",
+  "low"
+ ],
+ "use": {
+  "size": [
+   0.525,
+   0.387,
+   0.875
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1072,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1072,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41508,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#de5b4a",
+     "#d3554e",
+     "#e65f48",
+     "#3e414d",
+     "#f56843",
+     "#e25d49",
+     "#fa6b41",
+     "#696f86"
+    ],
+    "saturation": 0.46,
+    "value": 0.495,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.521
+     },
+     {
+      "hue": "grey",
+      "share": 0.458
+     }
+    ],
+    "grey": 0.458
+   },
+   "trianglesPerMetre": 20.46,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d585746ad006094cf745630b2866af65c6c244589dab346179fd41007f9fac6e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

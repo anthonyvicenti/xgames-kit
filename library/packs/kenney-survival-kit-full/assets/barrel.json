@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "barrel",
+ "pack": "kenney-survival-kit-full",
+ "file": "barrel.glb",
+ "sha256": "0fde1e091a25d5f472176c4518b0db8b13fbc2f46ab5b8a3ba8a4847ff22ccd9",
+ "bytes": 16176,
+ "preview": "previews/barrel.png",
+ "from": "Models/GLB format/barrel.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "barrel",
+ "tags": [
+  "barrel"
+ ],
+ "use": {
+  "size": [
+   0.236,
+   0.344,
+   0.236
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 412,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 412,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16176,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#fa6a41",
+     "#d5564d",
+     "#d9584c",
+     "#f36644",
+     "#9ba2c2",
+     "#a0a8c9",
+     "#e15d49",
+     "#ec6246"
+    ],
+    "saturation": 0.701,
+    "value": 0.611,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.841
+     },
+     {
+      "hue": "blue",
+      "share": 0.159
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 31.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3a0d12f6bdd1badd361f64ce0fbbf878a4ccfc2de8ff1ac4ed4c1aea2a9ee04a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

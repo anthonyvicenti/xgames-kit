@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "soil-layers",
+ "pack": "xk-terrain",
+ "file": "soil-layers.png",
+ "sha256": "2201ec53848e15a09e8eca95c102407741268fcb86f51b3c80535a7ace96caa9",
+ "bytes": 551192,
+ "preview": "previews/soil-layers.png",
+ "from": "runtimes/three/tools/terrain-textures.mjs: soil-layers.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "the ground cut open: level layers of brown with wavy inked boundaries, pebbles and stones in them; seamless (layers run level)",
+ "tags": [
+  "terrain",
+  "tileable",
+  "cartoon",
+  "soil",
+  "layers"
+ ],
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#3a2212",
+     "#714126",
+     "#7d4a2d",
+     "#704026",
+     "#7b492c",
+     "#78472b",
+     "#6e3f25",
+     "#8a5431"
+    ],
+    "saturation": 0.462,
+    "value": 0.349,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.851
+     },
+     {
+      "hue": "orange",
+      "share": 0.121
+     }
+    ],
+    "exact": 3245,
+    "grey": 0.028
+   },
+   "outline": {
+    "present": false,
+    "share": 0.095
+   }
+  }
+ },
+ "source": {
+  "sha256": "ba7df447d7364b937fa277f75badb4cf909805f0cbb4d9ba6053fb6e23294468",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

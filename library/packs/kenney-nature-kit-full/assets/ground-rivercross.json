@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "ground-rivercross",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-rivercross.glb",
+ "sha256": "d2237ee376cffa204848c296d1741765afee74c1af750b0061e958870cf2855a",
+ "bytes": 5792,
+ "preview": "previews/ground-rivercross.png",
+ "from": "Models/GLTF format/ground_riverCross.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground rivercross",
+ "tags": [
+  "ground",
+  "rivercross"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 82,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 82,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5792,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d8faff",
+     "#dbab8e",
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.893,
+    "value": 0.864,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.685
+     },
+     {
+      "hue": "orange",
+      "share": 0.258
+     },
+     {
+      "hue": "cyan",
+      "share": 0.057
+     }
+    ],
+    "grey": 0.685
+   },
+   "trianglesPerMetre": 8.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "dcea9a91eb3117162ea70dd7f8718c1df7490d2eb27ed0a94e0f8f0d27f14033",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

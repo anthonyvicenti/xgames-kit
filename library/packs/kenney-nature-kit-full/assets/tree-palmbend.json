@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palmbend",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palmbend.glb",
+ "sha256": "06fc02b5fe75b98ca4295faa424d4c1ccbe042eb8fe68fed5daced36ee026b73",
+ "bytes": 5832,
+ "preview": "previews/tree-palmbend.png",
+ "from": "Models/GLTF format/tree_palmBend.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palmbend",
+ "tags": [
+  "tree",
+  "palmbend"
+ ],
+ "use": {
+  "size": [
+   0.935,
+   1.38,
+   1.013
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5832,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.724,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.646
+     },
+     {
+      "hue": "orange",
+      "share": 0.354
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8af9dae16ce3c03183f9457996ebdd135167199514e8f4f944ee2bd82828d5c9",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "bed",
+ "pack": "kenney-nature-kit-full",
+ "file": "bed.glb",
+ "sha256": "87364c1f403f9a0c8ff8923d82ee8a7c68613ed77dc099e597c986138cd80478",
+ "bytes": 7600,
+ "preview": "previews/bed.png",
+ "from": "Models/GLTF format/bed.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bed",
+ "tags": [
+  "bed"
+ ],
+ "use": {
+  "size": [
+   0.335,
+   0.274,
+   0.747
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 268,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 268,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7600,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#fff9f0",
+     "#72d3d5",
+     "#ffc5a7"
+    ],
+    "saturation": 0.864,
+    "value": 0.832,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.42
+     },
+     {
+      "hue": "cyan",
+      "share": 0.296
+     },
+     {
+      "hue": "orange",
+      "share": 0.284
+     }
+    ],
+    "grey": 0.42
+   },
+   "trianglesPerMetre": 17.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ed064d4d9e6cf0c87f9146cb38a652d0df5427b60d0486fed190ab74d9510df4",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

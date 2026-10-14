@@ -27,6 +27,15 @@ import * as SkeletonUtils from 'three/addons/utils/SkeletonUtils.js';
 import * as gf from '../../gf-assets.js';
 import { refuse } from '../core/refusals.js';
 import { assets as base, S, isUrl, slotOf } from './core.js';
+// The style pass (look/harmonize.js) is loaded only when the game's look turns it on: it lives in the standard look
+// (gf/three/look), which a scenic-3d game doesn't carry (its look is gf/scenic/look), and a static import there failed
+// the whole module graph (no lobby; regressions on the kart-loop base, 2026-10-14).
+let harmony = null;
+const harmonyFor = look => {
+  const h = look?.harmonize;
+  if (!h || h.off || h.enabled === false) return Promise.resolve(null);
+  return harmony ??= import('../look/harmonize.js').catch(e => { console.warn(`gf-three harmonize: the style pass isn't in this game (${e.message})`); return null; });
+};
 
 // A page that is going away cancels its own loads, and that is not a broken slot: the friends page gives the frame a
 // round's page while the lobby's backdrop is still loading (a late joiner's Join), and the backdrop's fetches reject with
@@ -140,7 +149,11 @@ export const assets = Object.assign(base, {
         if (s.optional && !(await gf.exists(file))) return null;
         const buf = await gf.bytes(file);
         const base = file.includes('/') ? file.slice(0, file.lastIndexOf('/') + 1) : '';
-        return gltfLoader().parseAsync(buf, new URL(base, globalThis.document?.baseURI ?? 'http://x/').href);
+        const gltf = await gltfLoader().parseAsync(buf, new URL(base, globalThis.document?.baseURI ?? 'http://x/').href);
+        // the look's style pass (config/look.json harmonize; look/harmonize.js), once, before any copy is made
+        { const look = S.configs.get('look'), H = await harmonyFor(look);
+          if (H) try { H.harmonizeModel(gltf.scene, id, { look, slot: s }); } catch (e) { console.warn(`gf-three harmonize: ${id}: ${e.message}`); } }
+        return gltf;
       })());
     }
     const gltf = await S.gltf.get(id).catch(e => failed(S.gltf, id, file, e));
@@ -172,6 +185,8 @@ export const assets = Object.assign(base, {
         tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
         tex.anisotropy = S.renderer?.capabilities?.getMaxAnisotropy?.() ?? 1;
         tex.userData.gfSlot = id;
+        { const look = S.configs.get('look'), H = await harmonyFor(look);
+          if (H) try { H.harmonizePicture(tex, id, { look, slot: s }); } catch (e) { console.warn(`gf-three harmonize: ${id}: ${e.message}`); } }
         return tex;
       })());
     }

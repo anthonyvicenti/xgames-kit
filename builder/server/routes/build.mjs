@@ -3,9 +3,11 @@
 //                      also → { loop, verdict, checkpoints, rollback, elsewhere }  elsewhere = the game a session is building when it is not this studio's
 //                      (each of)  loop = the loop state file as written (null when none),
 //                      verdict = the newest verify run summarised, checkpoints = what builder/lib/checkpoint.mjs lists (M2-G)
+//   GET  /look/:id   → a look option's contact sheet (the loop's look step), only a file inside the game the state names
 //   POST /rollback   { id } → restores that checkpoint through builder/lib/checkpoint.mjs; a run under way is cancelled (builder/lib/cancel.mjs)
 // The state file is written only by the loop library (through M2-G's tools). It is read here; never written.
-import { readFile } from 'node:fs/promises';
+import { createReadStream } from 'node:fs';
+import { readFile, stat } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { readCancel, writeCancel } from '../../lib/cancel.mjs';
@@ -13,6 +15,7 @@ import { latestVerdict } from '../../lib/games.mjs';
 import { gameReady } from '../index.mjs';
 import { KIT_ROOT } from '../../lib/paths.mjs';
 import { HttpError, openGame, readJson } from '../http.mjs';
+import { BASE_HEADERS } from '../security.mjs';
 
 // where the loop keeps its state (builder/loop/state.mjs): <game>/.gf-loop/state.json, schema gf-loop/2
 const STATE_FILES = ['.gf-loop/state.json'];
@@ -42,7 +45,15 @@ export function talkOf(loop) {
     offers: Object.fromEntries(Object.entries(p.offers ?? {}).filter(([k, o]) => ['economy', 'backend'].includes(k) && o && typeof o === 'object').map(([k, o]) => [k, { what: text(o.what, 240), price: text(o.price, 80), kind: text(o.kind, 20), needs: list(o.needs, 20), from: text(o.from, 120) }])),
     questions: (Array.isArray(p.questions) ? p.questions : []).slice(0, 3).map(q => ({ id: text(q?.id ?? q?.about, 32), text: text(q?.text, 160), default: text(q?.default, 32), options: (Array.isArray(q?.options) ? q.options : []).slice(0, 4).map(o => ({ id: text(o?.id, 32), label: text(o?.label, 60) })) })),
   } : null;
-  return { idea: typeof loop?.prompt === 'string' ? loop.prompt.slice(0, 2000) : null, pitch };
+  // the look options (builder/look/pitch.mjs), each with its contact sheet served by GET /look/:option
+  const L = loop?.look;
+  const looks = Array.isArray(L?.options) && L.options.length ? {
+    waiting: loop.status === 'waiting-on-creator' && loop.waiting?.about === 'looks',
+    pick: L.pick ? { option: text(L.pick.option, 40), by: text(L.pick.by, 12) } : null,
+    reads: list(L.target?.reads, 200),
+    options: L.options.slice(0, 3).map(o => ({ id: text(o?.id, 40), title: text(o?.title, 80), reading: text(o?.reading, 300), score: typeof o?.score === 'number' ? o.score : null, sheet: `/api/build/look/${encodeURIComponent(text(o?.id, 40))}` })),
+  } : null;
+  return { idea: typeof loop?.prompt === 'string' ? loop.prompt.slice(0, 2000) : null, pitch, looks };
 }
 
 async function checkpointLib() {
@@ -75,6 +86,17 @@ export default function register(router, ctx) {
     const made = gameReady(G());
     if (made) ctx.gameMade?.();                      // the folder the loop was making is a game now: the server watches it
     return { elsewhere, loop, said, verdict: await latestVerdict(G()), checkpoints, rollback: !!lib?.restoreCheckpoint, made, ...talkOf(loop) };
+  });
+
+  // a look option's contact sheet: only a file the loop's state names, and only inside the game's folder
+  router.get('/look/:option', async (req, res, { option }) => {
+    const loop = await readLoopFile(G());
+    const o = (loop?.look?.options ?? []).find(x => x?.id === option);
+    const file = o?.sheet ? path.resolve(G(), o.sheet) : null;
+    if (!file || !file.startsWith(path.resolve(G()) + path.sep) || !/\.(png|jpe?g)$/i.test(file)) throw new HttpError(404, 'no such look');
+    let st; try { st = await stat(file); } catch { throw new HttpError(404, 'no such look'); }
+    res.writeHead(200, { ...BASE_HEADERS, 'content-type': /\.png$/i.test(file) ? 'image/png' : 'image/jpeg', 'content-length': st.size, 'cache-control': 'no-store' });
+    createReadStream(file).pipe(res);
   });
 
   router.post('/rollback', async req => {

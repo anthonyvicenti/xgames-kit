@@ -13,8 +13,9 @@
 //                      control comes back within fair.downSeconds
 //   D The loop closes  a round can be won or lost, ends and replays, and every score change comes from a counted event
 //   E Shared truth     every player sees every other where they are; each player's own values are theirs
-//   F Matches the spec the game is what its locked spec says (world, looks, hits per kill, its own tests)
-//   J Judges           advisory: they give repair rounds and findings, never a failed verdict (23, the play-tester)
+//   F Matches the spec the game is what its locked spec says (world, looks, hits per kill, the look its target holds it
+//                      to (23), its own tests)
+//   J Judges           advisory: they give repair rounds and findings, never a failed verdict (the play-tester)
 //
 // A measure's `run`: 'build' (every verify), 'release' (the kit's own tests: `verify --release`, which regress.mjs
 // --corpus passes; a build's verify neither runs nor requires them), 'full' (9, the contact sheet: counts only when it
@@ -31,7 +32,7 @@ export const GATES = [
   { id: 'C', name: 'Cause → effect', question: 'Does every input and every event the kit logs (a hit, a kill, a pickup, a spawn, a sound) produce something the player it concerns can see or hear on their own screen, soon, and does control come back within the spec\'s fair.downSeconds?' },
   { id: 'D', name: 'The loop closes', question: 'Can a round be won or lost, does it end and replay, and does every score change come from a counted event in the kit\'s log (never a number that only ticks)?' },
   { id: 'E', name: 'Shared truth', question: 'Does every player see every other player where they really are, and does each player\'s own value (score, colour, loadout, name) belong to that player?' },
-  { id: 'F', name: 'Matches the spec', question: 'Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the game\'s own tests?' },
+  { id: 'F', name: 'Matches the spec', question: 'Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the look its target holds it to, the game\'s own tests?' },
 ];
 export const JUDGES = { id: 'J', name: 'Judges (advisory)', question: 'What does a judge that looks say? Findings and repair rounds, never a failed verdict.', advisory: true };
 export const GATE_IDS = [...GATES.map(g => g.id), JUDGES.id];
@@ -80,7 +81,9 @@ export const MEASURES = {
   35: { gate: 'F', name: 'the game\'s own tests', run: 'build' },
   37: { gate: 'F', name: 'the look is the config\'s', run: 'build' },
   39: { gate: 'F', name: 'hits per kill as the spec says', run: 'build' },
-  23: { gate: 'J', name: 'looks like the references', run: 'advisory' },
+  // the looks layer (2026-10-14): the reference look judge, held to a target that rests on frames (gate F's question: the
+  // look the locked spec promises); a target from words is scored and never fails (tools/lib/look-check.mjs)
+  23: { gate: 'F', name: 'looks like its target', run: 'build' },
 };
 export const gateOf = n => MEASURES[n]?.gate ?? null;
 export const isAdvisory = n => MEASURES[n]?.run === 'advisory';

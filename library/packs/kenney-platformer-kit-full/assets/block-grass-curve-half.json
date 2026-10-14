@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-curve-half",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-curve-half.glb",
+ "sha256": "7d0ba10b07e1a2e183aa737924181ae01bb0750db74cfcf301b3cda967881b04",
+ "bytes": 16028,
+ "preview": "previews/block-grass-curve-half.png",
+ "from": "Models/GLB format/block-grass-curve-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass curve half",
+ "tags": [
+  "block",
+  "grass",
+  "curve",
+  "half"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 112,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 112,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16028,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#b66545",
+     "#d9835c",
+     "#d47f59",
+     "#c77451",
+     "#56c086",
+     "#54bd84",
+     "#4fb982",
+     "#349d75"
+    ],
+    "saturation": 0.506,
+    "value": 0.514,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.508
+     },
+     {
+      "hue": "green",
+      "share": 0.291
+     },
+     {
+      "hue": "cyan",
+      "share": 0.201
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.81,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "42c26459b6c1a48e9f3aad9d00f84d8751cde76a19b4ed452681c5fee94c0858",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-bump-down",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-bump-down.glb",
+ "sha256": "a6f70d80a24f2456f9ab674f244ed58ce5060af0f63e4501f84697375732d02c",
+ "bytes": 17924,
+ "preview": "previews/track-road-wide-straight-bump-down.png",
+ "from": "Models/GLB format/track-road-wide-straight-bump-down.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight bump down",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "bump",
+  "down"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.8,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 352,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 352,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17924,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.343,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.376
+     },
+     {
+      "hue": "blue",
+      "share": 0.313
+     },
+     {
+      "hue": "red",
+      "share": 0.312
+     }
+    ],
+    "grey": 0.376
+   },
+   "trianglesPerMetre": 4.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9ebd86a4c5fa00c530209e934dc475df0fdbf94218b3bc45c8a641e5009b9027",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

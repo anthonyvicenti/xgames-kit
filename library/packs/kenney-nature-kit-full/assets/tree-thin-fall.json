@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-thin-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-thin-fall.glb",
+ "sha256": "88f4de95bc75e4769e06d24e443d2150705f9b76eaa758180006bdaafd0ad190",
+ "bytes": 6600,
+ "preview": "previews/tree-thin-fall.png",
+ "from": "Models/GLTF format/tree_thin_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree thin fall",
+ "tags": [
+  "tree",
+  "thin",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.68,
+   1.49,
+   0.617
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 228,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 228,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6600,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc78a",
+     "#fff9f0"
+    ],
+    "saturation": 1,
+    "value": 0.802,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.843
+     },
+     {
+      "hue": "grey",
+      "share": 0.157
+     }
+    ],
+    "grey": 0.157
+   },
+   "trianglesPerMetre": 11.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0820f6823774030e1ea646e974ab63d532643d3cc24f70a0cfbf898f1ec3b574",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

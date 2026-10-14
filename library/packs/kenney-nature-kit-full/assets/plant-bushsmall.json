@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "plant-bushsmall",
+ "pack": "kenney-nature-kit-full",
+ "file": "plant-bushsmall.glb",
+ "sha256": "a1d359e819d6c47b2a1fb6515e6f860e0436e9dde223bc67e91718b9405555bb",
+ "bytes": 2328,
+ "preview": "previews/plant-bushsmall.png",
+ "from": "Models/GLTF format/plant_bushSmall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant bushsmall",
+ "tags": [
+  "plant",
+  "bushsmall"
+ ],
+ "use": {
+  "size": [
+   0.383,
+   0.207,
+   0.336
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 16,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 16,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2328,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.29,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a9620a7d1fb165ae68d323676f80dbb2a9e3aafb21110d18d18d90b07026b91d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

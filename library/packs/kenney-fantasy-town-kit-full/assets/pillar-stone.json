@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "pillar-stone",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "pillar-stone.glb",
+ "sha256": "36e0e9a5fc778e1c18064814dc234b2867497ed584eb90c8f2492f7fe2e4910e",
+ "bytes": 15612,
+ "preview": "previews/pillar-stone.png",
+ "from": "Models/GLB format/pillar-stone.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "pillar stone",
+ "tags": [
+  "pillar",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   0.16,
+   1,
+   0.16
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15612,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#adb5d9",
+     "#a3aacc",
+     "#5d627a",
+     "#5f657d",
+     "#686e85",
+     "#6a6f87",
+     "#7e849a",
+     "#80859b"
+    ],
+    "saturation": 0.198,
+    "value": 0.575,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.676
+     },
+     {
+      "hue": "blue",
+      "share": 0.324
+     }
+    ],
+    "grey": 0.676
+   },
+   "trianglesPerMetre": 14.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1eda742ccbc67ead6edead25c687f55d8671b88786b9e23c08ae7982bccb4b7c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

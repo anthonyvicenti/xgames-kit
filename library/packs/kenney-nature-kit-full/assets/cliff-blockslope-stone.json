@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-blockslope-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-blockslope-stone.glb",
+ "sha256": "87d0032652d7296e23b24c176cce8cb5612d74d000956084a3d9d4962279116f",
+ "bytes": 4032,
+ "preview": "previews/cliff-blockslope-stone.png",
+ "from": "Models/GLTF format/cliff_blockSlope_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff blockslope stone",
+ "tags": [
+  "cliff",
+  "blockslope",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1.2,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 70,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 70,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4032,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.626,
+    "value": 0.835,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "88fbc6e54df6bff3793dd4b296471173220e0f88800c7cb744ce9747150a4c5b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

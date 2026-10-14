@@ -34,8 +34,8 @@ the measure, the rule and the fix (`tools/lib/homes.json`).
 | **C. Cause → effect** | Does every input, and every event the kit logs (a hit, a kill, a pickup, a spawn, a goal change, a sound), produce something the player it concerns can see or hear on their own screen, soon? Does control come back within the spec's `fair.downSeconds`? | 10, 13, 15, 16 (the visible half), 18 (heard), 21 |
 | **D. The loop closes** | Can a round be won or lost, does it end and replay, and does every score change come from a counted event in the kit's log (never a number that only ticks)? | 6, 12 |
 | **E. Shared truth** | Does every player see every other player where they really are, and does each player's own value (score, colour, loadout, name) belong to that player? | 5, 25 |
-| **F. Matches the spec** | Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the game's own tests? | 11 + 17 (one world lint), 14, 16 (the threshold, read from the spec), 35 |
-| *Judges (advisory)* | The black-box play-tester, the reference likeness (23), the look rubric. They give repair rounds and findings, never a rule. | 23, play-test |
+| **F. Matches the spec** | Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the look its target holds it to, the game's own tests? | 11 + 17 (one world lint), 14, 16 (the threshold, read from the spec), 23 (since 2026-10-14), 35 |
+| *Judges (advisory)* | The black-box play-tester. It gives repair rounds and findings, never a rule. | play-test |
 
 The kit's own tests leave a game's verify and run per kit release and in the kit's CI: 7 (bus loudness), 8 (swap
 proof), 20–22 (menu, HUD, wallet: kit-owned), 24 (in a post), 31 (sharp), 34 (watch then play). A game can only break
@@ -53,8 +53,8 @@ sit inside the gate whose question they answer.
 | **C** | 10, 13, 15, 16, 38 | + 7, 21 | 13, 30 (+ 7, 21) | 10, 13, 15, 16 (+ 7, 21) | 13, 15 (+ 21) |
 | **D** | 6, 12 | | 26 | 6, 12 | 6 |
 | **E** | 5, 25 | + 34 | 5, 25, 27, 28, 29 (+ 34) | 5, 25 (+ 34) | 5, 25 (+ 34) |
-| **F** | 11, 14, 17, 35, 39 | | 11, 14 | 11, 14, 17 | 14, 37 |
-| *J* | 23 (advisory) | | | 23 | 23 |
+| **F** | 11, 14, 17, 23, 35, 39 | | 11, 14 | 11, 14, 17, 23 | 14, 23, 37 |
+| *J* | play-test (advisory) | | | | |
 
 A build's round game requires 20 measures (it was 22 checks); a release 28 (it was 27). Where the build differs from the
 design above:
@@ -128,6 +128,33 @@ design above:
   anywhere in the world). No numbered check was added. Regressions `board-friend-unseen` and `own-board-unseen` (E),
   with the controls `table-four-friends-seen` and `lights-race-friends-seen`. The runner now also fingerprints the
   runtimes' verify flows, the flows' signs and the live gate.
+
+- **Gate F holds the look to its target** (the looks layer, 2026-10-14; the creator: "I am really worried about the looks
+  layer ... the looks can be very very off"). Measure 23 was the judges' advisory likeness; it is now the reference look
+  judge (`builder/look/judge.mjs`, through `builder/tools/lib/look-check.mjs`) and sits in F. **Why F and not a seventh
+  gate:** a style target that rests on reference frames is part of the locked spec (`look.target`, `look.refs`), so
+  "does the game look like it" is the question F already asks ("is the game what its locked spec says"), as it asks of
+  the world's size or hits per kill. A seventh gate would ask nothing new, and this file's rule is to widen the gate that
+  should have caught a class before adding one (the budget stays at six of eight). No number was added: 23 keeps its own.
+  **How it decides:** 0–100, measured parts (OKLab palette transport, value and saturation histograms, the sky, the
+  ground and the characters compared surface to surface, edges and outlines, head-to-body proportion; a weighted
+  geometric mean, so one collapsed part pulls the mark down) and, where frames are on file, a pairwise vision judge on a
+  fixed rubric (palette, lighting, materials, shape, characters, UI, VFX, weighted by the target's "what makes it read"
+  lines), blended 30/70. It fails below 55 when the target rests on frames (on this machine, or the measured numbers
+  the target carries); a target from words alone is scored and advisory; no target passes. The bar was calibrated on a
+  known pair (`builder/look/evidence/calibration-hollow-reach-2026-10-14.json`: our blocky world against Hollow Reach
+  before the voxel work 30, after voxel2 51, after voxel3 60 in the recorded run; in six runs the order held each
+  time, voxel2 scored 49–56 and voxel3 57–62 (the scoring changed between runs as the judge was built), the judge marked voxel2's caves worse on lighting ("far darker") and read
+  voxel3's land and caves as par or better, as the parent did; the bar sits between voxel2, which the parent sent back,
+  and voxel3, which it accepted). Look options are ranked side by side (`judge.mjs compare`): the artillery case's
+  options rank B (closest by eye) first. The loop runs the tuning loop (`builder/look/tune.mjs`, the cheap levers only) before any look repair.
+  Regressions `look-greyed` (F · 23: the colour grade turned to greys) and the control `look-yard-holds`.
+  **A verdict that does not depend on the judge's luck** (2026-10-14): the vision judge varies from call to call (on an
+  unchanged game the whole score moved 47–58 across the bar). Measure 23 averages three judge passes and puts an
+  interval round the score (two standard errors, never narrower than the noise measured on unchanged games,
+  `builder/look/noise.mjs`); it fails only when the whole interval is below the bar, and a game whose interval holds
+  the bar is "unsure": advisory, never a fail. The same game's verdict agreed in 10 of 10 verify runs, passing and
+  failing (`builder/look/evidence/stability-2026-10-14.json`).
 
 ## Rules that stay (prompt rules: at most five)
 

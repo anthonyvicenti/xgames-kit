@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-narrow.glb",
+ "sha256": "2bda2478cbdace196c959df9d1587199ab5e7e0999480cd59bdfab6baa6e8489",
+ "bytes": 16464,
+ "preview": "previews/block-grass-overhang-narrow.png",
+ "from": "Models/GLB format/block-grass-overhang-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang narrow",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   1,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16464,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#47b07e",
+     "#339c75",
+     "#2a9370",
+     "#50ba83"
+    ],
+    "saturation": 0.558,
+    "value": 0.538,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.586
+     },
+     {
+      "hue": "cyan",
+      "share": 0.213
+     },
+     {
+      "hue": "green",
+      "share": 0.201
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0997e53458ceafe7425b750877c2111d07bafa04c4cf951dca31bdc5125ab7cf",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

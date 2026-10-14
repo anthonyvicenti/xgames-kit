@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-cone-dark",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-cone-dark.glb",
+ "sha256": "15559a91529c0fe8c370962019bcd1b6e3881e02b21d2db436913efa96fa917b",
+ "bytes": 7104,
+ "preview": "previews/tree-cone-dark.png",
+ "from": "Models/GLTF format/tree_cone_dark.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree cone dark",
+ "tags": [
+  "tree",
+  "cone",
+  "dark"
+ ],
+ "use": {
+  "size": [
+   0.53,
+   1.43,
+   0.53
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 264,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 264,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7104,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e7b5a3",
+     "#72d3d5"
+    ],
+    "saturation": 0.567,
+    "value": 0.717,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.575
+     },
+     {
+      "hue": "cyan",
+      "share": 0.425
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b5c22416b8b37cfa9af04b89657a95c10a1ca45ff8e84afff3a19ae5a01c1ade",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

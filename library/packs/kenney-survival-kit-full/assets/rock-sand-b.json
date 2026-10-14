@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "rock-sand-b",
+ "pack": "kenney-survival-kit-full",
+ "file": "rock-sand-b.glb",
+ "sha256": "1a381c89a20f81974497205e96372ccf4ea1eedd8d5e6b9690c38b9a6baef061",
+ "bytes": 13296,
+ "preview": "previews/rock-sand-b.png",
+ "from": "Models/GLB format/rock-sand-b.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock sand",
+ "tags": [
+  "rock",
+  "sand"
+ ],
+ "use": {
+  "size": [
+   0.799,
+   0.449,
+   0.79
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13296,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e7af89",
+     "#d18f67",
+     "#cb865e",
+     "#e1a680",
+     "#edb791",
+     "#dea27b",
+     "#dc9e77",
+     "#e4ab84"
+    ],
+    "saturation": 0.599,
+    "value": 0.666,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "55fbc0ebb6c6cba3e62ac2592117b0033d0e4a90a3863b24339d5dcf1d347090",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

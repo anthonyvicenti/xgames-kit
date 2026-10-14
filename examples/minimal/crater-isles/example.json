@@ -1,0 +1,10 @@
+{
+  "title": "Crater Isles",
+  "summary": "An artillery party round on the terrain world: three grassy islands over sandstone cliffs in a sea; lobbed bombs carve round craters through the soil, the same on every screen, and knock friends into the water.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22",
+    "kit": "xgames-kit stream/terrain (worlds/terrain, components/carve, library pack xk-terrain of this branch)",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from crater-isles, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 176 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\"); tests/terrain-two-players.mjs <dir>: host and joiner over WebRTC hold the same ground after real bomb clicks, a late joiner gets it (6 of 6 steps)"
+  }
+}

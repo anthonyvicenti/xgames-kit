@@ -40,8 +40,8 @@ export const SCHEMAS = {
   report: PLAYTEST_REPORT,
   reading: READING,
 };
-const TALK = { ledger: 'ledger', amend: 'ledger', probe: 'probe', pitch: 'pitch', spec: 'spec', ask: 'ask' };
-const LOOP_TOOLS = ['gamesfun_next', 'gamesfun_step_ledger', 'gamesfun_step_foundation', 'gamesfun_step_pitch', 'gamesfun_step_spec', 'gamesfun_step_create', 'gamesfun_step_fix', 'gamesfun_step_economy', 'gamesfun_step_backend', 'gamesfun_step_verify', 'gamesfun_step_playtest', 'gamesfun_playtest_report', 'gamesfun_step_read', 'gamesfun_reader_report', 'gamesfun_step_repair', 'gamesfun_ask', 'gamesfun_step_deliver', 'gamesfun_change', 'gamesfun_rollback'].map(mcp);
+const TALK = { ledger: 'ledger', amend: 'ledger', probe: 'probe', pitch: 'pitch', spec: 'spec', look: 'look', ask: 'ask' };
+const LOOP_TOOLS = ['gamesfun_next', 'gamesfun_step_ledger', 'gamesfun_step_foundation', 'gamesfun_step_pitch', 'gamesfun_step_spec', 'gamesfun_step_create', 'gamesfun_step_look', 'gamesfun_step_fix', 'gamesfun_step_economy', 'gamesfun_step_backend', 'gamesfun_step_verify', 'gamesfun_step_playtest', 'gamesfun_playtest_report', 'gamesfun_step_read', 'gamesfun_reader_report', 'gamesfun_step_repair', 'gamesfun_ask', 'gamesfun_step_deliver', 'gamesfun_change', 'gamesfun_rollback'].map(mcp);
 
 /** What a headless round is told beside its message (the message itself is the loop's, word for word). */
 export const HEADLESS_WORDS = [
@@ -97,11 +97,16 @@ export async function answersOf(spec) {
  * `words` go with the choice. → answer({about, pitch | questions | migration, asked}) → the step's input
  */
 export function defaultAnswers({ cards = 0, words = null, maxAsks = 2, migration = 'approve' } = {}) {
-  return ({ about, pitch, questions, asked }) => {
+  return ({ about, pitch, questions, looks, asked }) => {
     if (about === 'cards') {
       const list = pitch?.cards ?? [], card = (typeof cards === 'number' ? list[cards] : list.find(c => c.id === cards)) ?? list[0];
       const answers = Object.fromEntries((pitch?.questions ?? []).map(q => [q.about ?? q.id, q.default]));
       return { choice: { card: card?.id, answers, ...(words ? { words } : {}) } };
+    }
+    // the look: the judge's best when it scored them, else the first (the faithful reading)
+    if (about === 'looks') {
+      const best = (looks ?? []).reduce((a, o) => ((o.score ?? -1) > (a?.score ?? -1) ? o : a), (looks ?? [])[0]);
+      return { pick: { option: best?.id, by: 'judge' } };
     }
     if (about === 'migration') return migration === 'decline' ? { decline: 'No, keep it where it is.' } : { approve: 'Yes, move it.' };
     if (asked > maxAsks) return { answer: { deliver: true, words: 'Deliver it as it is.' } };
@@ -158,6 +163,8 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
       const kind = TALK[o.kind] ? o.kind : 'build';
       const t = toolsFor(kind, { game: dir, playtest, kitRoot: KIT_ROOT, generate: o.kind === 'generate' });
       if (TALK[kind] && imageDirs.length) t.addDirs.push(...imageDirs);
+      // the look round reads the reference frames, wherever they are kept on this machine (never in the kit or the game)
+      if (o.kind === 'look' && o.dirs?.length) t.addDirs.push(...o.dirs.filter(d => !t.addDirs.includes(d)));
       log(`  round ${rounds.length + 1}: ${o.kind}${o.area ? ` (${o.area})` : ''} on ${m}${effort ? ` at ${effort} effort` : ''}`);
       // the loop's own output schema for the round when it gives one (the ledger's from the registry's words, the pitch v2 shape)
       const r = await run({ prompt: o.message, system: HEADLESS_WORDS, schema: o.schema ?? SCHEMAS[TALK[o.kind] ?? 'build'], model: m, effort, name: o.kind, signal, ...t });
@@ -189,9 +196,9 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
   try {
     r = await L.run({ idea: prompt, ...(references.length ? { references } : {}) });
     for (let guard = 0; r.waiting === 'creator' && guard < 40; guard++) {
-      const q = { about: r.about, pitch: r.pitch, questions: r.questions, migration: r.migration, asked: asked.filter(a => a.about === 'questions').length + 1 };
+      const q = { about: r.about, pitch: r.pitch, questions: r.questions, migration: r.migration, looks: r.looks, asked: asked.filter(a => a.about === 'questions').length + 1 };
       const input = await answer(q);
-      asked.push({ about: r.about, asked: r.about === 'cards' ? (r.pitch?.cards ?? []).map(c => c.title) : r.about === 'migration' ? r.migration : r.questions, answered: input });
+      asked.push({ about: r.about, asked: r.about === 'cards' ? (r.pitch?.cards ?? []).map(c => c.title) : r.about === 'looks' ? (r.looks ?? []).map(o => o.title) : r.about === 'migration' ? r.migration : r.questions, answered: input });
       log(`  the person (answers hook): ${r.about} → ${JSON.stringify(input).slice(0, 160)}`);
       r = await L.run(input);
     }

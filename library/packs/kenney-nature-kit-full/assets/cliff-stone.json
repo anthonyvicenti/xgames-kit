@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-stone.glb",
+ "sha256": "03378d1e2c4e687cbe4266b0aa523fc0147b324a523b42e0c1b58125661120e4",
+ "bytes": 2300,
+ "preview": "previews/cliff-stone.png",
+ "from": "Models/GLTF format/cliff_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff stone",
+ "tags": [
+  "cliff",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.168
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2300,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "226a8da66da4908835bcf1b6d8c51ed84ce2e546401def685ba491c65c7c71f7",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

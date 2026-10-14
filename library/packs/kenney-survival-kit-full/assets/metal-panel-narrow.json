@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "metal-panel-narrow",
+ "pack": "kenney-survival-kit-full",
+ "file": "metal-panel-narrow.glb",
+ "sha256": "bf54da7697dd3b5ca9c20a213e610a6607bd4b79afd64375de9c250d290f94f4",
+ "bytes": 11960,
+ "preview": "previews/metal-panel-narrow.png",
+ "from": "Models/GLB format/metal-panel-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "metal panel narrow",
+ "tags": [
+  "metal",
+  "panel",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.25,
+   0.5,
+   0.05
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#9197b6",
+     "#a9b1d4",
+     "#bfc8f0",
+     "#7d829a"
+    ],
+    "saturation": 0.272,
+    "value": 0.694,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.978
+     }
+    ],
+    "grey": 0.022
+   },
+   "trianglesPerMetre": 15.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "48a1589691274a4c6280a2873900e714e0f8f5e7c8ef877096af7bf56c2797d0",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -28,7 +28,7 @@ test('registry/catalog.json is the catalog the manifests build today (rebuild it
 test('today\'s registry: four runtimes, seven loops, the 18 mechanics, eight kinds', () => {
   assert.deepEqual(ids(catalog.runtimes), ['forge', 'godot', 'three', 'vista']);
   assert.deepEqual(ids(catalog.loops), ['endless', 'match', 'round', 'run', 'saved', 'turns', 'world']);
-  assert.equal(catalog.mechanics.length, 18);
+  assert.equal(catalog.mechanics.length, 19);
   assert.deepEqual(ids(catalog.kinds), ['blocky', 'calm', 'dark', 'drawn', 'lofi', 'pixel', 'scenic', 'silly']);
   const rt = id => catalog.runtimes.find(r => r.id === id);
   assert.deepEqual(ids(rt('three').profiles), ['flat-2d', 'scenic-3d', 'standard-3d']);

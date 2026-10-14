@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tree-tall",
+ "pack": "kenney-survival-kit-full",
+ "file": "tree-tall.glb",
+ "sha256": "f3cc6ac437315bc082cf9b1d04f1dc8b5df36c5325e368ac46578cf56bbeb4b0",
+ "bytes": 15656,
+ "preview": "previews/tree-tall.png",
+ "from": "Models/GLB format/tree-tall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree tall",
+ "tags": [
+  "tree",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   0.553,
+   1.711,
+   0.526
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 254,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 254,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15656,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#3ca579",
+     "#41ab7b",
+     "#37a177",
+     "#329c74",
+     "#47b17e",
+     "#df8860",
+     "#d37d58",
+     "#bc6a49"
+    ],
+    "saturation": 0.485,
+    "value": 0.463,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.759
+     },
+     {
+      "hue": "orange",
+      "share": 0.166
+     },
+     {
+      "hue": "green",
+      "share": 0.075
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c4822d1c6fc127701b2f7958c3e97c779103d6beaa19925ba439c99092ccea4c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

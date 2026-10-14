@@ -12,6 +12,7 @@ import RAPIER from '@dimforge/rapier3d-compat';
 import { createRenderer, applyLook, adoptMaterials, material } from '/kit/look/look.js';
 import { spawnCharacter } from '/kit/character/character.js';
 import { loadWorld, templateLayout } from '/kit/world/world.js';
+import { harmonizeModel, harmonizePicture } from '/kit/look/harmonize.js';
 
 const Q = new URLSearchParams(location.search);
 const SHOT = Q.get('shot') ?? 'world';
@@ -26,7 +27,7 @@ if (Q.get('set')) kind.look.three.values = merge({ ...(kind.look.three.values ??
 const sheet = { ...kind.sheet }, L3 = kind.look.three;
 // ?game=1: a game's sheet (verify's check 9): its own look (config/look.json, the kind already folded in by create), its
 // world's values and its bodies, served under /game/; the kind's props
-const GAME = Q.has('game') ? { look: await (await fetch('/game/config/look.json')).json(), world: await (await fetch('/game/config/world.json')).json(), chars: await (await fetch('/game/config/characters.json')).json() } : null;
+const GAME = Q.has('game') ? { look: await (await fetch('/game/config/look.json')).json(), world: await (await fetch('/game/config/world.json')).json(), chars: await (await fetch('/game/config/characters.json')).json(), props: await fetch('/game/config/props.json').then(r => (r.ok ? r.json() : null)).catch(() => null), game: await fetch('/game/config/game.json').then(r => (r.ok ? r.json() : null)).catch(() => null) } : null;
 const time = GAME ? GAME.look.time ?? 'day' : L3.time ?? 'day';
 // the kind's values win over the preset's time of day too (a preset's times.night block would shadow them): the
 // same fold create makes (kinds/apply.mjs)
@@ -56,10 +57,13 @@ ctx.physics = pworld;
 // ---- the asset library: the three and scenic packs' bodies, the three packs' props (served as /lib3/) ----
 const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
 const gltfs = new Map();
-const loadGltf = url => { if (!gltfs.has(url)) gltfs.set(url, loader.loadAsync(url)); return gltfs.get(url); };
+// a game's style pass (config/look.json harmonize: kit/look/harmonize.js) on every model and picture it draws, as the
+// runtime's assets do; ?harm=0 draws them as they are (a before and after of the same game)
+const HARM = GAME && Q.get('harm') !== '0' ? { look: GAME.look } : { settings: null };
+const loadGltf = (url, slot = null) => { if (!gltfs.has(url)) gltfs.set(url, loader.loadAsync(url).then(g => { if (slot) harmonizeModel(g.scene, slot, HARM); return g; })); return gltfs.get(url); };
 const lib = await (await fetch('/lib3/bodies.json')).json();
 const bodies = new Map(lib.bodies.map(b => [b.id, { ...b, url: `/lib3/${b.file}` }]));
-for (const [role, r] of Object.entries(GAME?.chars.roles ?? {})) bodies.set(`game-${role}`, { id: `game-${role}`, url: `/game/${r.body}` });
+for (const [role, r] of Object.entries(GAME?.chars.roles ?? {})) bodies.set(`game-${role}`, { id: `game-${role}`, url: `/game/${r.body}`, height: r.height ?? null });
 const props = new Map((await (await fetch('/lib3/props.json')).json()).props.map(p => [p.id, p]));
 const clipsUrl = `/lib3/${typeof lib.clips === 'string' ? lib.clips : lib.clips?.file ?? 'clips/gf-humanoid-1.glb'}`;
 
@@ -72,7 +76,7 @@ const assets = {
   tag(o, id) { o.userData.gfSlot = id; o.traverse(x => { if (x.isMesh) x.userData.gfSlot ??= id; }); return o; },
   async model(id) {
     const body = bodies.get(id.replace('character.body.', ''));
-    const g = await loadGltf(id === 'character.clips' ? clipsUrl : body.url);
+    const g = await loadGltf(id === 'character.clips' ? clipsUrl : body.url, id === 'character.clips' ? null : id);
     let skinned = false; g.scene.traverse(o => { if (o.isSkinnedMesh) skinned = true; });
     const sc = skinned ? SkeletonUtils.clone(g.scene) : g.scene.clone(true);
     if (body) adoptMaterials(sc, 'character');
@@ -100,24 +104,53 @@ if (W.template === 'voxel') {
   const { loadWorld: loadVoxel } = await import('/kit/world/voxel/world.js');
   world = await loadVoxel({ ...ctx, assets }, voxelCfg);       // the voxel world reads its block faces through assets
   for (let i = 0; i < 400 && world.voxel.grid.dirty.size; i++) world.update?.(1 / 60);
+} else if (GAME?.world?.template === 'terrain') {
+  // a game's terrain world (worlds/terrain: smooth ground blasts carve, its scenery) with the game's own pictures and
+  // the scenery's prop models, served under /game/
+  const W0 = GAME.world, loader = new THREE.TextureLoader();
+  const gameAssets = {
+    ...assets,
+    has: id => (/^world\.terrain\.(top|soil|cliff)$/.test(id) ? !!W0.materials?.[id.split('.')[2]]?.file : /^prop\./.test(id) ? (W0.scenery?.props ?? []).includes(id.slice(5)) : assets.has(id)),
+    async texture(id) { const t = await loader.loadAsync(`/game/${W0.materials[id.split('.')[2]].file}`); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; harmonizePicture(t, id, HARM); return t; },
+    async model(id) { if (!id.startsWith('prop.')) return assets.model(id); const g = await loadGltf(`/game/assets/models/${id.slice(5)}.glb`, id); return g.scene.clone(true); },
+    // the game's prop catalog: the scenery reads each prop's size (a set piece stands back from the seats) and collider
+    config: name => (name === 'props' ? GAME.props ?? {} : {}),
+  };
+  const { loadWorld: loadTerrain } = await import('/kit/world/terrain/world.js');
+  world = await loadTerrain({ ...ctx, assets: gameAssets }, W0);
 } else {
   // the kind's world values over the template's layout (its ceiling, its ground), as create writes config/world.json
   const wv = GAME ? Object.fromEntries(['ground', 'ceiling'].filter(k => GAME.world[k]).map(k => [k, GAME.world[k]])) : kind.world?.three?.values;
-  const wcfg = wv ? merge(await templateLayout(W.template ?? 'backyard', { size: 'small' }), wv) : { template: W.template ?? 'backyard' };
+  // a game whose world is generated from parameters (a sea-islands world: its islands, sea and clouds) is drawn as the
+  // game has it; a yard's small layout stands in for the others, with the game's ground
+  const own = GAME?.world?.islands?.length ? GAME.world : null;
+  const wcfg = own ?? (wv ? merge(await templateLayout(W.template ?? 'backyard', { size: 'small' }), wv) : { template: W.template ?? 'backyard' });
+  // the game's own textures (a ground or cliff pattern under assets/textures/) are served from the game
+  if (own) for (const part of [own.ground, own.cliffs]) if (part?.pattern?.file) part.pattern = { ...part.pattern };
   world = await loadWorld(ctx, wcfg, { library: new URL('/lib3/', location.href).href, textures: { noise } });
 }
 S.info.world = W.template;
 
-// ---- where things stand: the world's first spawn, facing the middle ----
-const spawn = world.spawn?.(0) ?? new THREE.Vector3();
+// ---- where things stand: the world's first spawn, facing the middle (a terrain world's flattest seat: its seats
+// stand on hills and slopes, and a sheet is drawn on level ground) ----
+let spawn = world.spawn?.(0) ?? new THREE.Vector3();
+if (world.terrain && world.spawns?.length) {
+  const rough = p => { let m = 0; for (let a = 0; a < 8; a++) { const y = world.groundAt(p.x + Math.cos(a * 0.785) * 3, p.z + Math.sin(a * 0.785) * 3); m = Math.max(m, Math.abs(y - p.y)); } return m; };
+  const best = world.spawns.reduce((a, b) => (rough(b) < rough(a) ? b : a));
+  spawn = best.clone(); spawn.yaw = best.yaw;
+}
 const yaw = Number.isFinite(spawn.yaw) ? spawn.yaw : 0;
 const fwd = new THREE.Vector3(Math.sin(yaw), 0, Math.cos(yaw)), side = new THREE.Vector3().crossVectors(fwd, new THREE.Vector3(0, 1, 0)).normalize();
 // a flat world's spawns sit near its edge: the stage moves toward the middle, so every camera stays inside the fence
 const mid = world.bounds?.getCenter?.(new THREE.Vector3()) ?? new THREE.Vector3();
 const stage = new THREE.Vector3(spawn.x, spawn.y ?? 0, spawn.z);
-if (!world.voxel) { stage.lerp(new THREE.Vector3(mid.x, 0, mid.z), Number(W.toward ?? 0.5)); stage.y = 0; }
+// a terrain world's seats stand on its islands: the stage is the seat itself
+if (!world.voxel && !world.terrain) { stage.lerp(new THREE.Vector3(mid.x, 0, mid.z), Number(W.toward ?? 0.5)); stage.y = 0; }
+const seaHeight = world.layout?.islands?.length ? (await import('/kit/world/sea.js')).heightAt : null;
 const groundAt = (x, z, near = stage.y) => {
-  // the voxel world's top cell under (x, z); a flat world's ground is y = 0
+  // the voxel world's top cell under (x, z); an island's top (worlds/sea.js); a flat world's ground is y = 0
+  if (seaHeight) return seaHeight(world.layout, x, z) ?? 0;
+  if (world.terrain) return world.groundAt(x, z);
   if (!world.voxel) return 0;
   const hit = world.voxel.pick(new THREE.Vector3(x, near + 6, z), new THREE.Vector3(0, -1, 0), 20);
   return hit ? hit.cell[1] + 1 : near;
@@ -128,7 +161,18 @@ const palette = look.values.palette.players;
 const cctx = { ...ctx, assets, time: { now: 0 }, look };
 async function spawnBody(id, i) {
   if (!bodies.has(id)) throw new Error(`no body ${id} in the library`);
-  const c = await spawnCharacter(cctx, { player: { id: `p${i}`, name: `P${i + 1}`, color: palette[i % palette.length] }, bodySlot: `character.body.${id}`, tint: palette[i % palette.length], plate: null });
+  let c;
+  try { c = await spawnCharacter(cctx, { player: { id: `p${i}`, name: `P${i + 1}`, color: palette[i % palette.length] }, bodySlot: `character.body.${id}`, tint: palette[i % palette.length], plate: null }); }
+  catch (e) {
+    // a body with no gf-humanoid-1 rig (a blob, a critter: no rig standard yet) stands as a static model, at its role's
+    // height, in the house character material: the look can be judged before its archetype is rigged
+    if (!/not rigged|body is missing/.test(String(e.message))) throw e;
+    const o = await assets.model(`character.body.${id}`), b = bodies.get(id);
+    const size = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
+    const h = b.height ?? size.y; o.scale.setScalar(size.y ? h / size.y : 1);
+    S.info.static = [...(S.info.static ?? []), id];
+    c = { object3d: o, height: h, clips: [], play() {}, update() {} };
+  }
   scene.add(c.object3d);
   return c;
 }
@@ -140,7 +184,20 @@ function hold(c, clip, t) {
 const has = (c, n) => (c.clips ?? []).includes(n);
 
 let cam = camera;
-const lookAt = (pos, target, fov = 40) => { cam.fov = fov; cam.position.copy(pos); cam.lookAt(target); cam.updateProjectionMatrix(); };
+// a camera never stands inside the ground, nor looks through a hill: on a terrain world (hills rise round its seats) it
+// rises until its line of sight to what it frames is clear
+const clearOf = (pos, target) => { for (let k = 1; k < 16; k++) { const p = pos.clone().lerp(target, k / 16); if (groundAt(p.x, p.z) > p.y - 0.3) return false; } return true; };
+const lookAt = (pos, target, fov = 40) => {
+  cam.fov = fov; cam.position.copy(pos);
+  if (world.terrain) {
+    cam.position.y = Math.max(cam.position.y, groundAt(pos.x, pos.z) + 1.2);
+    for (let k = 0; k < 24 && !clearOf(cam.position, target); k++) cam.position.y += 0.75;
+    // set dressing standing where the camera is (a pine's canopy round the lens) is left out of this shot
+    const zero = new THREE.Matrix4().makeScale(0, 0, 0);
+    for (const list of world.props?.values?.() ?? []) for (const p of list) if (p.meshes && Math.hypot(p.at[0] - cam.position.x, p.at[2] - cam.position.z) < 3) p.meshes.forEach(m => { m.setMatrixAt(p.instance, zero); m.instanceMatrix.needsUpdate = true; });
+  }
+  cam.lookAt(target); cam.updateProjectionMatrix();
+};
 const P = (o, a = 0, f = 0, up = 0) => o.clone().addScaledVector(side, a).addScaledVector(fwd, f).add(new THREE.Vector3(0, up, 0));
 
 if (SHOT === 'hero' || SHOT === 'world' || SHOT === 'hud') {
@@ -161,6 +218,16 @@ if (SHOT === 'hero' || SHOT === 'world' || SHOT === 'hud') {
     if (W.camera === 'eye') {
       // a first-person kind: the room at eye height, the group ahead
       lookAt(P(stage, 0.8, -7.5, 1.65), P(stage, 0, 1.5, 1.2), 70);
+    } else if (GAME?.game?.camera === 'third' || GAME?.game?.camera === 'orbit') {
+      // the game's own camera rig (config/game.json controller.camera, the look target's numbers when it set them):
+      // behind the last of the group at its pivot height, pitched and pulled back as a player first sees the world
+      const R0 = { third: { distance: 5.2, height: 1.7, pitchDeg: 16, fov: 60 }, orbit: { distance: 8, height: 1.45, pitchDeg: 26, fov: 55 } }[GAME.game.camera];
+      const C = { ...R0, ...(GAME.game.controller?.camera?.[GAME.game.camera] ?? {}) };
+      const feet = P(stage, 0.4, -3.2); feet.y = groundAt(feet.x, feet.z);
+      const pivot = feet.clone().add(new THREE.Vector3(0, C.height, 0)), pitch = C.pitchDeg * Math.PI / 180;
+      const eye = pivot.clone().addScaledVector(fwd, -Math.cos(pitch) * C.distance).add(new THREE.Vector3(0, Math.sin(pitch) * C.distance, 0));
+      lookAt(eye, pivot, C.fov);
+      S.info.camera = { rig: GAME.game.camera, ...C };
     } else {
       // the world: the group in the foreground, the place behind them, the sky above
       const target = P(stage, 0, -6, h * 1.6);
@@ -184,11 +251,14 @@ if (SHOT === 'hero' || SHOT === 'world' || SHOT === 'hud') {
 } else if (SHOT === 'props') {
   // the kind's props in two rows on the world's own ground, biggest at the back
   const list = [];
-  for (const id of sheet.props) {
-    const p = props.get(id); if (!p) { S.errors.push(`no prop ${id}`); continue; }
-    const g = await loadGltf(`/lib3/${p.file}`);
+  // a game's own props for its look (config/look-sheet.json {props: [{id, file, height}]}, a look option's art:
+  // builder/look/pitch.mjs) in place of the kind's
+  const own = GAME ? await fetch('/game/config/look-sheet.json').then(r => (r.ok ? r.json() : null)).catch(() => null) : null;
+  for (const id of own?.props?.length ? own.props.map(p => p.id) : sheet.props) {
+    const p = own?.props?.find(x => x.id === id) ?? props.get(id); if (!p) { S.errors.push(`no prop ${id}`); continue; }
+    const g = await loadGltf(own?.props?.length ? `/game/${p.file}` : `/lib3/${p.file}`, `prop.${id}`);
     const o = g.scene.clone(true); adoptMaterials(o, 'prop');
-    o.scale.setScalar(p.scale ?? 1);
+    if (p.height) { const y = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3()).y; o.scale.setScalar(y ? p.height / y : 1); } else o.scale.setScalar(p.scale ?? 1);
     o.traverse(x => { if (x.isMesh) { x.castShadow = true; x.receiveShadow = true; } });
     const size = new THREE.Box3().setFromObject(o).getSize(new THREE.Vector3());
     list.push({ id, o, size });

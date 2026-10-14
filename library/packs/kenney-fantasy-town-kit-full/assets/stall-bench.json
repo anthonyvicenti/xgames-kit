@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "stall-bench",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stall-bench.glb",
+ "sha256": "44d8b6d0d97ac6fa376d9aff36c390bb272d3c702b6167220553372e4f0e4104",
+ "bytes": 15976,
+ "preview": "previews/stall-bench.png",
+ "from": "Models/GLB format/stall-bench.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stall bench",
+ "tags": [
+  "stall",
+  "bench"
+ ],
+ "use": {
+  "size": [
+   0.26,
+   0.225,
+   0.94
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15976,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d38c6a",
+     "#cd8766",
+     "#c68261",
+     "#c38060",
+     "#cf8967",
+     "#d18a68",
+     "#c27f5f",
+     "#c88363"
+    ],
+    "saturation": 0.498,
+    "value": 0.595,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.35,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5a4b379488241394916991c4b482ec4863c05bb548ca8751f5c3935f1f6e5b9c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

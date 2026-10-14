@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-curve-half",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-curve-half.glb",
+ "sha256": "ffba6915f5bb326a9c9a7e354327b8c8bf6bc7d8c990eef1c46957192ef343b5",
+ "bytes": 16028,
+ "preview": "previews/block-snow-curve-half.png",
+ "from": "Models/GLB format/block-snow-curve-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow curve half",
+ "tags": [
+  "block",
+  "snow",
+  "curve",
+  "half"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 112,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 112,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16028,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#b66545",
+     "#d9835c",
+     "#d47f59",
+     "#c77451",
+     "#f4f4f8",
+     "#f2f2f7",
+     "#d8d8e6",
+     "#c6c6db"
+    ],
+    "saturation": 0.384,
+    "value": 0.73,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.508
+     },
+     {
+      "hue": "grey",
+      "share": 0.253
+     },
+     {
+      "hue": "blue",
+      "share": 0.239
+     }
+    ],
+    "grey": 0.253
+   },
+   "trianglesPerMetre": 4.81,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "03c3cb84a0d0b399d67a842c8069ffb92691d6b52c4dcdeaec3997f3de1bf073",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

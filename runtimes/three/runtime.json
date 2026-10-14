@@ -89,12 +89,14 @@
         },
         "capabilities": [
           "characters",
+          "creature-bodies",
           "physics-bodies",
           "ragdoll",
           "projectiles",
           "melee",
           "enemies",
           "voxel-world",
+          "smooth-terrain",
           "persistent-world",
           "ui-panels",
           "board-grid",
@@ -335,31 +337,148 @@
       "id": "arena",
       "profiles": [
         "standard-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "arena",
+          "yard"
+        ],
+        "land": [
+          "flat",
+          "terraces"
+        ],
+        "horizon": [
+          "walls",
+          "trees",
+          "sky"
+        ],
+        "water": [
+          "none"
+        ]
+      }
     },
     {
       "id": "backyard",
       "profiles": [
         "standard-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "yard",
+          "town"
+        ],
+        "land": [
+          "flat"
+        ],
+        "horizon": [
+          "trees",
+          "city"
+        ],
+        "water": [
+          "none",
+          "pools"
+        ]
+      }
     },
     {
       "id": "office",
       "profiles": [
         "standard-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "indoor"
+        ],
+        "land": [
+          "rooms",
+          "flat"
+        ],
+        "horizon": [
+          "walls",
+          "city"
+        ],
+        "water": [
+          "none"
+        ]
+      }
     },
     {
       "id": "plaza",
       "profiles": [
         "standard-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "town",
+          "yard"
+        ],
+        "land": [
+          "flat"
+        ],
+        "horizon": [
+          "city",
+          "trees"
+        ],
+        "water": [
+          "none",
+          "pools"
+        ]
+      }
     },
     {
       "id": "store",
       "profiles": [
         "standard-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "indoor"
+        ],
+        "land": [
+          "rooms",
+          "flat"
+        ],
+        "horizon": [
+          "walls",
+          "city"
+        ],
+        "water": [
+          "none"
+        ]
+      }
+    },
+    {
+      "id": "sea-islands",
+      "profiles": [
+        "standard-3d"
+      ],
+      "describe": "islands in an open sea: a main island with rolling hills and cut cliffs, beaches, more islands on the horizon, big clouds",
+      "reads": {
+        "setting": [
+          "islands",
+          "coast",
+          "hills",
+          "ruins",
+          "desert"
+        ],
+        "land": [
+          "islands",
+          "cliffs",
+          "hills",
+          "canyon",
+          "terraces"
+        ],
+        "horizon": [
+          "sea",
+          "sky"
+        ],
+        "water": [
+          "sea"
+        ],
+        "traits": [
+          "cross-section"
+        ]
+      }
     },
     {
       "id": "voxel",
@@ -369,45 +488,225 @@
       "loops": [
         "world"
       ],
-      "describe": "a generated block island players change, saved on the play host"
+      "describe": "a generated block island players change, saved on the play host",
+      "reads": {
+        "setting": [
+          "blocks",
+          "hills",
+          "cave",
+          "mountains",
+          "forest"
+        ],
+        "land": [
+          "blocky",
+          "hills",
+          "terraces",
+          "cliffs"
+        ],
+        "horizon": [
+          "hills",
+          "mountains",
+          "sky"
+        ],
+        "water": [
+          "lake",
+          "pools",
+          "none"
+        ],
+        "traits": [
+          "destructible",
+          "blocky",
+          "cross-section"
+        ]
+      }
+    },
+    {
+      "id": "terrain",
+      "profiles": [
+        "standard-3d"
+      ],
+      "describe": "smooth generated land in a sea (islands or a cliff shore) with a soil cross-section, which explosions carve into round craters (the carve mechanic)",
+      "reads": {
+        "setting": [
+          "islands",
+          "coast",
+          "hills",
+          "desert",
+          "ruins"
+        ],
+        "land": [
+          "islands",
+          "cliffs",
+          "hills",
+          "canyon",
+          "terraces"
+        ],
+        "horizon": [
+          "sea",
+          "sky"
+        ],
+        "water": [
+          "sea"
+        ],
+        "traits": [
+          "destructible",
+          "cross-section"
+        ]
+      }
     },
     {
       "id": "island",
       "profiles": [
         "scenic-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "islands",
+          "sky",
+          "forest"
+        ],
+        "land": [
+          "floating",
+          "cliffs",
+          "hills"
+        ],
+        "horizon": [
+          "void",
+          "sky"
+        ],
+        "water": [
+          "river",
+          "pools",
+          "none"
+        ]
+      }
     },
     {
       "id": "isles",
       "profiles": [
         "scenic-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "islands",
+          "sky"
+        ],
+        "land": [
+          "floating",
+          "islands",
+          "cliffs"
+        ],
+        "horizon": [
+          "void",
+          "sky"
+        ],
+        "water": [
+          "river",
+          "pools",
+          "none"
+        ]
+      }
     },
     {
       "id": "ruins",
       "profiles": [
         "scenic-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "ruins",
+          "islands"
+        ],
+        "land": [
+          "floating",
+          "cliffs",
+          "terraces"
+        ],
+        "horizon": [
+          "void",
+          "sky"
+        ],
+        "water": [
+          "none",
+          "pools"
+        ]
+      }
     },
     {
       "id": "dungeon",
       "profiles": [
         "scenic-3d"
-      ]
+      ],
+      "reads": {
+        "setting": [
+          "dungeon",
+          "cave",
+          "indoor"
+        ],
+        "land": [
+          "rooms",
+          "flat"
+        ],
+        "horizon": [
+          "walls",
+          "none"
+        ],
+        "water": [
+          "none"
+        ]
+      }
     },
     {
       "id": "field",
       "profiles": [
         "flat-2d"
       ],
-      "describe": "a tile map seen from above"
+      "describe": "a tile map seen from above",
+      "reads": {
+        "setting": [
+          "town",
+          "forest",
+          "plain",
+          "yard"
+        ],
+        "land": [
+          "flat"
+        ],
+        "horizon": [
+          "none"
+        ],
+        "water": [
+          "none",
+          "pools",
+          "river"
+        ]
+      }
     },
     {
       "id": "stage",
       "profiles": [
         "flat-2d"
       ],
-      "describe": "a tile map seen from the side, with gravity"
+      "describe": "a tile map seen from the side, with gravity",
+      "reads": {
+        "setting": [
+          "plain",
+          "cave",
+          "forest",
+          "sky"
+        ],
+        "land": [
+          "flat",
+          "terraces"
+        ],
+        "horizon": [
+          "sky",
+          "hills"
+        ],
+        "water": [
+          "none"
+        ]
+      }
     }
   ],
   "looks": [

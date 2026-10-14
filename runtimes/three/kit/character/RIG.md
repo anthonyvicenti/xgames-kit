@@ -1,6 +1,6 @@
 # gf-humanoid-1: the games.fun character standard
 
-Every player character is a GLB on one skeleton standard. Bodies swap freely, all bodies play the same clips, and any GLB that passes `tools/rig-check.mjs` is a valid body or skin. The data lives in `rig.js` (shared by the runtime and the tools), so this page and the code can't drift.
+Every person-shaped character is a GLB on one skeleton standard. Bodies swap freely, all bodies play the same clips, and any GLB that passes `tools/rig-check.mjs` is a valid body or skin. The data lives in `rig.js` (shared by the runtime and the tools), so this page and the code can't drift. A body that is not shaped like a person (a worm, a blob, four legs, wings) is on its own archetype's standard: [CREATURES.md](CREATURES.md).
 
 ## 1. Space and units
 

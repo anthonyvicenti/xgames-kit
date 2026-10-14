@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "structure-roof",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-roof.glb",
+ "sha256": "4abd6fb76a4b51f8f099a7bd88d4775524bcd653795fc0c3ff247824df34dd7b",
+ "bytes": 15280,
+ "preview": "previews/structure-roof.png",
+ "from": "Models/GLB format/structure-roof.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure roof",
+ "tags": [
+  "structure",
+  "roof"
+ ],
+ "use": {
+  "size": [
+   0.535,
+   0.657,
+   0.552
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 188,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 188,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15280,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c77450",
+     "#b86746",
+     "#d7815b",
+     "#ea9167",
+     "#d37d58",
+     "#cf7a55",
+     "#c06e4c",
+     "#db845d"
+    ],
+    "saturation": 0.561,
+    "value": 0.567,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "645e0454780d0b07084e3d5ffc6c5b164742f62b07b810e1cb838897c7ca83ac",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

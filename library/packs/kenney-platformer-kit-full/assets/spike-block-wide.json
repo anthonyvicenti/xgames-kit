@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "spike-block-wide",
+ "pack": "kenney-platformer-kit-full",
+ "file": "spike-block-wide.glb",
+ "sha256": "93536d4c3510456f6e143a4256493d0377f2fe87d2a0df9347ca128a92d5dbd0",
+ "bytes": 20100,
+ "preview": "previews/spike-block-wide.png",
+ "from": "Models/GLB format/spike-block-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "spike block wide",
+ "tags": [
+  "spike",
+  "block",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   2.4,
+   0.9,
+   0.9
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20100,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#5d6dc7",
+     "#617bcd",
+     "#a8b0d3",
+     "#585abe",
+     "#658ed6",
+     "#878eaa",
+     "#9299b7",
+     "#595ec0"
+    ],
+    "saturation": 0.424,
+    "value": 0.61,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.907
+     },
+     {
+      "hue": "grey",
+      "share": 0.093
+     }
+    ],
+    "grey": 0.093
+   },
+   "trianglesPerMetre": 6.03,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "57607a2d807c22eac82218223563cda7a333f3b983172687c8c2d013ce1674dc",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

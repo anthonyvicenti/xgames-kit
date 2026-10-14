@@ -31,14 +31,17 @@ export const MAKERS = {
     kinds: ['body', 'prop'],
     licence: { spdx: 'LicenseRef-Meshy-Paid', author: 'Meshy AI, generated on the creator\'s paid account', url: 'https://www.meshy.ai' },
     licenceText: 'Meshy output generated on the creator\'s paid Meshy plan (the creator, 2026-10-10: "They are paid"); under Meshy\'s paid-plan terms the output belongs to the account holder. A private pack: never pushed.',
-    async plan({ kind, words, size }) {
-      if (kind === 'body') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, out: path.join(os.tmpdir(), 'plan.glb'), dryRun: true }); }
+    // a creature's body (archetype worm, blob, quadruped or flyer: CREATURES.md) is made like a prop, unrigged (Meshy's
+    // rigging fits bipeds only), and rigged on its archetype's standard by the kit's autorig when it is taken in
+    async plan({ kind, words, size, archetype = 'humanoid' }) {
+      if (kind === 'body' && archetype === 'humanoid') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, out: path.join(os.tmpdir(), 'plan.glb'), dryRun: true }); }
       const { generateProp } = await import('../tools/meshy-prop.mjs');
       return generateProp({ prompt: words, out: path.join(os.tmpdir(), 'plan.glb'), size, dryRun: true });
     },
-    async make({ kind, words, size, out, log }) {
+    async make({ kind, words, size, out, log, archetype = 'humanoid' }) {
       const onProgress = m => log(m);
-      if (kind === 'body') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, describe: words, out, onProgress }); }
+      if (kind === 'body' && archetype === 'humanoid') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, describe: words, out, onProgress }); }
+      if (kind === 'body') { const { POSE_OF } = await import('./recipe.mjs'); words = `${words}, ${POSE_OF[archetype] ?? ''}`; }
       const { generateProp } = await import('../tools/meshy-prop.mjs');
       return generateProp({ prompt: words, describe: words, out, size, onProgress });
     },
@@ -63,8 +66,9 @@ export async function generateSlot({ game, slot: slotId, words, maker = 'meshy',
   const kind = kindOfSlot(slot);
   if (!kind || !m.kinds.includes(kind)) return { ok: false, paid: false, problems: [`${slotId} holds a ${slot.type}; ${m.name} makes ${m.kinds.join(' and ')} models`], next: 'Use another maker for this slot (gamesfun art makers), or a library asset (gamesfun art find).' };
   const sz = size ?? (Array.isArray(slot.constraints?.size) ? Math.max(...slot.constraints.size) : 1);
+  const archetype = kind === 'body' ? slot.constraints?.archetype ?? 'humanoid' : null;
   if (!yes) {
-    const plan = await m.plan({ kind, words, size: sz });
+    const plan = await m.plan({ kind, words, size: sz, archetype });
     return { ok: false, paid: false, plan, next: `Not run. ${m.name} makes this on the person's own key and costs about ${plan.estimate ?? '?'} credits. Run it again with yes once that is agreed.` };
   }
   config ??= loadConfig();
@@ -76,13 +80,14 @@ export async function generateSlot({ game, slot: slotId, words, maker = 'meshy',
     const id = slug(`${slotId.split('.').pop()}-${words}`).slice(0, 40);
     const out = path.join(tmp, `${id}.glb`);
     log(`${m.name}: making ${kind} "${words}" for ${slotId}`);
-    const made = await m.make({ kind, words, size: sz, out, log });
+    const made = await m.make({ kind, words, size: sz, out, log, archetype });
     if (!made?.file || !existsSync(made.file)) return { ok: false, paid: true, problems: [`${m.name} made no file`], next: 'Nothing was put in the slot. Try again, or another maker.' };
     // the game's private pack: generated, private, the maker's licence (a paid maker's output: policy class paid-maker)
     const pack = gamePack(game);
     const { ingest } = await import('./ingest.mjs');
     const r = await ingest(made.file, {
-      config, pack, renderer, category: kind, id, describe: words.slice(0, 200), tags: ['generated', maker, kind],
+      config, pack, renderer, category: kind, id, describe: words.slice(0, 200), tags: ['generated', maker, kind, ...(archetype && archetype !== 'humanoid' ? [archetype] : [])],
+      ...(archetype && archetype !== 'humanoid' ? { autorig: archetype } : {}),
       from: `${m.name}${made.tasks ? ` tasks ${Object.values(made.tasks).map(t => t.id).filter(Boolean).join(', ')}` : ''}`,
       licence: m.licence, licenceText: m.licenceText,
       newPack: { title: `${path.basename(path.resolve(game))}: generated art`, describe: `Art generated for the game ${path.basename(path.resolve(game))}, by slot.`, owner: 'generated', visibility: 'private', source: { kind: 'maker', maker } },

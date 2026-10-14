@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-center-wood",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-center-wood.glb",
+ "sha256": "ce3990f68657778519a9c401070be8a5c531fd59711b2ef5ff97a2cdf06f7f61",
+ "bytes": 4424,
+ "preview": "previews/bridge-center-wood.png",
+ "from": "Models/GLTF format/bridge_center_wood.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge center wood",
+ "tags": [
+  "bridge",
+  "center",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4424,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ddf2f5",
+     "#ffc5a7"
+    ],
+    "saturation": 0.731,
+    "value": 0.821,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.749
+     },
+     {
+      "hue": "cyan",
+      "share": 0.251
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ed9ede934d5be5737863713f4648d8ffaca48038d299442a2ae2c3a2b6b79984",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "structure-metal-wall",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-metal-wall.glb",
+ "sha256": "45d43e36f7dcde322e2ab0da00f459635ae7602b0a5b057bb5a8a0afb5a3585a",
+ "bytes": 11760,
+ "preview": "previews/structure-metal-wall.png",
+ "from": "Models/GLB format/structure-metal-wall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure metal wall",
+ "tags": [
+  "structure",
+  "metal",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   0.535,
+   0.5,
+   0.089
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11760,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#747990",
+     "#6a7087",
+     "#676c84",
+     "#71768d",
+     "#979ebe",
+     "#a0a8c9",
+     "#aeb6da",
+     "#8c93b0"
+    ],
+    "saturation": 0.161,
+    "value": 0.547,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.752
+     },
+     {
+      "hue": "blue",
+      "share": 0.248
+     }
+    ],
+    "grey": 0.752
+   },
+   "trianglesPerMetre": 15.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7577a371dde174ba48b59187f3ce0ed2dd9e20c1cca130f38cecafe2d485f5fb",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

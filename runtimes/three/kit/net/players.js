@@ -51,7 +51,7 @@ export function createPlayers(ctx, { spawnCharacter, characterFor, routeToOwner 
     map.set(p.id, p);
     const role = info.role ?? 'player';
     p.role = role;
-    const { bodySlot, height } = characterFor(role);
+    const { bodySlot, height } = characterFor(role, p.seat);
     // onState (track C): a ragdoll that gets up somewhere else moves this player's capsule there (owned players only;
     // the others follow their owner's pose)
     const onState = (state, info) => { if (state === 'getup' && p.owned && p.controller && info?.position) p.controller.teleport(info.position, info.yaw ?? p.yaw, { keepCamera: true }); };
@@ -92,7 +92,7 @@ export function createPlayers(ctx, { spawnCharacter, characterFor, routeToOwner 
   function wantLook(p) {
     const role = p.role ?? 'player', A = ctx.assets;
     return {
-      body: A.fileFor ? A.fileFor(`character.body.${role}`, p) : null,
+      body: A.fileFor ? A.fileFor(characterFor(role, p.seat).bodySlot ?? `character.body.${role}`, p) : null,
       hat: charMod().hatFileFor ? charMod().hatFileFor(ctx, role, p) : null,
       tint: A.own?.(`character.tint.${role}`, p) ?? null,
     };
@@ -117,7 +117,7 @@ export function createPlayers(ctx, { spawnCharacter, characterFor, routeToOwner 
     p._restyling = true;
     const old = p.character;
     try {
-      const { bodySlot, height } = characterFor(p.role ?? 'player');
+      const { bodySlot, height } = characterFor(p.role ?? 'player', p.seat);
       const nc = await spawnCharacter(ctx, { player: p, bodySlot, tint: old.tint ?? p.color, local: p.local, height, plate: null, onState: p._onState });
       if (!map.has(p.id) || p.character !== old) { nc.dispose?.(); return; }
       nc.nameplate?.(p.name, old.plate?.color ?? p.color);

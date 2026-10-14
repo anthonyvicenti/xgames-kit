@@ -15,6 +15,8 @@ import { attachLofi } from './lofi.js';
 import { frameShot, SHOTS } from './shots.js';
 import { createStream } from './liquid.js';
 import { installCaptureApi } from './capture-api.js';
+import { restyle as restyleHarmony } from './harmonize.js';
+import { settingsOfLook } from './harmonize-core.js';
 
 export { presets, material, adoptMaterials, setTint, setWorldLight, worldLightUniforms, createStream, frameShot, SHOTS, materialUniforms, sunDirection, installCaptureApi };
 export { slots, slotsFor } from './slots.js';
@@ -45,6 +47,19 @@ export function resolveLook(preset, time = 'day') {
   delete out.times;
   out.time = time;
   return out;
+}
+
+const over = (a, b) => { const out = { ...a }; for (const [k, x] of Object.entries(b ?? {})) out[k] = isObj(x) && isObj(out[k]) ? over(out[k], x) : x; return out; };
+/**
+ * A look with one of its levels (config/look.json levels.<id>: the references' looks, builder/look/looks.mjs) laid over
+ * it and over every time block, so a time of day never shadows the level. null when the look has no such level. Pure.
+ */
+export function levelPreset(base, id) {
+  const v = id ? base?.levels?.[id] : null;
+  if (!v) return null;
+  const next = over(base, v);
+  if (isObj(base.times)) next.times = Object.fromEntries(Object.entries(base.times).map(([k, b]) => [k, over(b ?? {}, v)]));
+  return next;
 }
 
 /** What `gf-three create` writes to config/look.json: the whole preset (every value a slot) plus the chosen time. */
@@ -90,6 +105,7 @@ export function applyLook(ctx, preset, opts = {}) {
   const { scene, camera, renderer } = ctx;
   if (!preset && ctx.assets?.config) { try { preset = ctx.assets.config('look'); } catch { /* no config/look.json */ } }
   let base = presetOf(preset ?? 'jelly-pastel');
+  let levelBase = null, levelNow = null;   // the look's levels (handle.level): the look as the game set it, and the level shown
   let time = opts.time ?? (isObj(preset) ? preset.time : null) ?? 'day';
   const quality = qualityName(opts.quality) ?? renderer.userData?.gfQuality ?? qualityName(ctx.quality) ?? urlQuality() ?? 'high';
   let tier = tierOf(base, quality);
@@ -225,6 +241,23 @@ export function applyLook(ctx, preset, opts = {}) {
       return handle;
     },
     setTime(t) { return handle.set({ time: t }); },
+    /**
+     * One of the look's levels (config/look.json levels: the references' looks, builder/look/looks.mjs): the game's
+     * look with that level's values over it, live, in every time of day. level(null) goes back to the game's own.
+     */
+    level(id) {
+      levelBase ??= base;
+      const next = levelPreset(levelBase, id);
+      if (!next) { levelNow = null; restyleHarmony(settingsOfLook({ harmonize: levelBase.harmonize })); return handle.set({ preset: levelBase }); }
+      levelNow = id;
+      handle.set({ preset: next });
+      // the style pass follows the level: every harmonised model and picture takes the level's settings
+      restyleHarmony(settingsOfLook({ harmonize: next.harmonize }));
+      return handle;
+    },
+    /** The levels this look has, and the one it shows. */
+    get levels() { return Object.keys((levelBase ?? base).levels ?? {}); },
+    get levelNow() { return levelNow; },
     fitShadows, setLamps,
     resize(w, h) {
       // under the lofi pass the renderer's pixel ratio is the pass's (whole screen pixels a lofi pixel)
@@ -266,6 +299,8 @@ export function applyLook(ctx, preset, opts = {}) {
     },
     dispose() { post?.dispose(); sky.dispose(); scene.remove(sky.dome, sun, sun.target, hemi, lamps.group); },
   };
+  // a look with levels starts in its own (config/look.json level)
+  if (base.level && base.levels?.[base.level]) handle.level(base.level);
   ctx.look = handle;
   if (typeof window !== 'undefined' && opts.captureApi !== false) { const api = installCaptureApi(ctx); if (api) api.ready = true; }
   return handle;

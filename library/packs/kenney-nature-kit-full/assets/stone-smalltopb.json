@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smalltopb",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smalltopb.glb",
+ "sha256": "7164eb7ab93bfacd38032fa92ba07fbbb303106bf4be9cf6aa0286d77a6dfc2a",
+ "bytes": 2984,
+ "preview": "previews/stone-smalltopb.png",
+ "from": "Models/GLTF format/stone_smallTopB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smalltopb",
+ "tags": [
+  "stone",
+  "smalltopb"
+ ],
+ "use": {
+  "size": [
+   0.622,
+   0.28,
+   0.646
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2984,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.83,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b9a2deeafdd2fa1e15cea0a9a37c5e1b70c74b58b21738202654aae5313a7fb0",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

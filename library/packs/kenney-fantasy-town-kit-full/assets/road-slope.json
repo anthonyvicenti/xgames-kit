@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "road-slope",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "road-slope.glb",
+ "sha256": "9cad747fc6ec0d1cc45d65b82c71af16032c5ed16c25c412a6faab0f45988db5",
+ "bytes": 13768,
+ "preview": "previews/road-slope.png",
+ "from": "Models/GLB format/road-slope.glb; its texture files packed inside, kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "road slope",
+ "tags": [
+  "road",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.225,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13768,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#a0a8c9"
+    ],
+    "saturation": 0.275,
+    "value": 0.708,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.18,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "97d7e6c5aa5762de408c2053ceed88b4be77ac6d3ca79588d11ab3e1e0fa9094",
+  "modified": "its texture files packed inside, kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

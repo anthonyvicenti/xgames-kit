@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "roof-corner-inner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-corner-inner.glb",
+ "sha256": "882ddc1690aa0d30ed8c07bd5ddd1bf9d36b3603fd63f03c86105ee63bcbfabd",
+ "bytes": 14276,
+ "preview": "previews/roof-corner-inner.png",
+ "from": "Models/GLB format/roof-corner-inner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof corner inner",
+ "tags": [
+  "roof",
+  "corner",
+  "inner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.626,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 30,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 30,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14276,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7d829c",
+     "#55b59d",
+     "#a8b0d3",
+     "#9299b7",
+     "#8e95b2",
+     "#60c2ad",
+     "#60c1ab",
+     "#5dbea8"
+    ],
+    "saturation": 0.267,
+    "value": 0.602,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.378
+     },
+     {
+      "hue": "blue",
+      "share": 0.321
+     },
+     {
+      "hue": "cyan",
+      "share": 0.302
+     }
+    ],
+    "grey": 0.378
+   },
+   "trianglesPerMetre": 2.7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2b2f61d1695b88acdef05f0263ed20fb3a4f8d5c6aee12d3f9e5cebe29e08d9c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

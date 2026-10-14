@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "hedge-gate",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "hedge-gate.glb",
+ "sha256": "9e396a843880beac1be502a1aa0d537185c2c12bbbfdaa2df850a39158d58af2",
+ "bytes": 15216,
+ "preview": "previews/hedge-gate.png",
+ "from": "Models/GLB format/hedge-gate.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "hedge gate",
+ "tags": [
+  "hedge",
+  "gate"
+ ],
+ "use": {
+  "size": [
+   0.25,
+   0.25,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15216,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7d829c",
+     "#bdc6ee",
+     "#9299b7",
+     "#a8b0d3",
+     "#41a478",
+     "#3b9d74",
+     "#3a9b73",
+     "#49af7f"
+    ],
+    "saturation": 0.358,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.477
+     },
+     {
+      "hue": "cyan",
+      "share": 0.219
+     },
+     {
+      "hue": "grey",
+      "share": 0.195
+     },
+     {
+      "hue": "green",
+      "share": 0.109
+     }
+    ],
+    "grey": 0.195
+   },
+   "trianglesPerMetre": 10.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "688772aecf1c61410bfe0a257f51082bccaabed65d1794bad04226d444e7629e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

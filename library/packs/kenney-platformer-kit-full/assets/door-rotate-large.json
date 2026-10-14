@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "door-rotate-large",
+ "pack": "kenney-platformer-kit-full",
+ "file": "door-rotate-large.glb",
+ "sha256": "a71038920b203f1fb61083afaf7f58f266a97174f0b3d4af9b64ae08e96b5585",
+ "bytes": 25920,
+ "preview": "previews/door-rotate-large.png",
+ "from": "Models/GLB format/door-rotate-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "door rotate large",
+ "tags": [
+  "door",
+  "rotate",
+  "large"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 380,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 380,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 25920,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#ffa13a",
+     "#ffaa41",
+     "#6281d0",
+     "#5c67c4",
+     "#e3e3ed",
+     "#dedeea",
+     "#5e70c8",
+     "#ff9832"
+    ],
+    "saturation": 0.738,
+    "value": 0.648,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.516
+     },
+     {
+      "hue": "blue",
+      "share": 0.471
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d704b85cce7faf7bd85af9fd8f4bbbe5b0fba393df7c236c9bba201abb9ae8a1",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

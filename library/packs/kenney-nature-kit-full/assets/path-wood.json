@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "path-wood",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-wood.glb",
+ "sha256": "c6fd21d6df199d30764867a6469cf5fd0ead169ad32b903146b49f2923247064",
+ "bytes": 3852,
+ "preview": "previews/path-wood.png",
+ "from": "Models/GLTF format/path_wood.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path wood",
+ "tags": [
+  "path",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   0.514
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3852,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#dbab8e",
+     "#f2be9e"
+    ],
+    "saturation": 0.609,
+    "value": 0.736,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "395f1d5972484f0ba96ef27446cc986b02245b1166c8681e566a3697f6a97688",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

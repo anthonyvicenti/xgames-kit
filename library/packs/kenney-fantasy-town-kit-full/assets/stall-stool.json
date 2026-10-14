@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "stall-stool",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stall-stool.glb",
+ "sha256": "6daea17ed293d535c0ba482133f79540bfb72bef6b8ceaf176b873f272356d04",
+ "bytes": 16024,
+ "preview": "previews/stall-stool.png",
+ "from": "Models/GLB format/stall-stool.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stall stool",
+ "tags": [
+  "stall",
+  "stool"
+ ],
+ "use": {
+  "size": [
+   0.26,
+   0.225,
+   0.26
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16024,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d38c6a",
+     "#c68261",
+     "#cd8766",
+     "#bf7c5d",
+     "#d18a68",
+     "#cf8967",
+     "#c27f5f",
+     "#c38060"
+    ],
+    "saturation": 0.485,
+    "value": 0.588,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 21.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "50c6b512d810687f40e27c7a43b2864e5f7bc84f16ff7a4112cea4807676c336",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

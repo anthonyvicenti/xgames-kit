@@ -98,6 +98,33 @@
     },
     "foundation": {
       "$ref": "#/$defs/foundation"
+    },
+    "references": {
+      "type": "array",
+      "maxItems": 40,
+      "description": "What the person gave to show the look or the play, carried with the ledger into the pitch: an image by its sha256 (the image stays local, never in a repository or a published game), a page by its URL, a game by its name. builder/look reads the images for the style target.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "sha256": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 400,
+            "pattern": "^https?://"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      }
     }
   },
   "$defs": {
@@ -282,6 +309,16 @@
             "other"
           ],
           "description": "about body."
+        },
+        "archetype": {
+          "enum": [
+            "humanoid",
+            "worm",
+            "blob",
+            "quadruped",
+            "flyer"
+          ],
+          "description": "about body, when the players (or a thing) are characters: the character's shape, a rig standard each (a worm or serpent, a blob or slime, a four-legged animal, a winged flyer; default humanoid)."
         },
         "camera": {
           "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",

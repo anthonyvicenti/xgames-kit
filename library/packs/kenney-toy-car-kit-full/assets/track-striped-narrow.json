@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow.glb",
+ "sha256": "19549f9093dcaa76beb14a13655f5cd50420141f0feb88d2fe788fd9ccc82477",
+ "bytes": 11792,
+ "preview": "previews/track-striped-narrow.png",
+ "from": "Models/GLB format/track-striped-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow",
+ "tags": [
+  "track",
+  "striped",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11792,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#eb6246",
+     "#e2e2ed"
+    ],
+    "saturation": 0.478,
+    "value": 0.723,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.5
+     },
+     {
+      "hue": "blue",
+      "share": 0.433
+     },
+     {
+      "hue": "grey",
+      "share": 0.067
+     }
+    ],
+    "grey": 0.067
+   },
+   "trianglesPerMetre": 3.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f8af1cdfc6b50a5f7249ac8429feda3f203f3ffae3da9706ad65d27f357e458c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

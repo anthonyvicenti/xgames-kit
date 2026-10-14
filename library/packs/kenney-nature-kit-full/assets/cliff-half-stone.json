@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-half-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-half-stone.glb",
+ "sha256": "c505f28f9eb2b19e9b6f9ece9345f6359052bd84bb0eec1cd22933166e556a9a",
+ "bytes": 3576,
+ "preview": "previews/cliff-half-stone.png",
+ "from": "Models/GLTF format/cliff_half_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff half stone",
+ "tags": [
+  "cliff",
+  "half",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   0.419
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 53,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 53,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3576,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.576,
+    "value": 0.884,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.09,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b78e96f149d349b11cea4d8cba50b8e1fd8a9e45d459d2c6cd3f3138b465772f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

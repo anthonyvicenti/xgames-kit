@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-center-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-center-stone.glb",
+ "sha256": "ad8cbfabe559effa030cd7d047f45a9dc1dfbf498d372e556e77051b5285f1c0",
+ "bytes": 3400,
+ "preview": "previews/bridge-center-stone.png",
+ "from": "Models/GLTF format/bridge_center_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge center stone",
+ "tags": [
+  "bridge",
+  "center",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3400,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ccdbde",
+     "#ddf2f5"
+    ],
+    "saturation": 0.328,
+    "value": 0.862,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f3681603a3d6523f8298da7d4c8d00e653c6028136c3427af07952fa3ca10519",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "wheel-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "wheel-large.glb",
+ "sha256": "08fcacd5b8cce00ed507e0988caab270645ce9d98b555c7db1c706576e099fea",
+ "bytes": 16308,
+ "preview": "previews/wheel-large.png",
+ "from": "Models/GLB format/wheel-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wheel large",
+ "tags": [
+  "wheel",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.188,
+   0.375,
+   0.375
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16308,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#494c5a",
+     "#505463",
+     "#464957",
+     "#4b4e5d",
+     "#3e414d",
+     "#4f5260",
+     "#424451",
+     "#4d505e"
+    ],
+    "saturation": 0.107,
+    "value": 0.332,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.977
+     }
+    ],
+    "grey": 0.977
+   },
+   "trianglesPerMetre": 23.71,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "abf7c3395ddf3bec08f8bc06e56cc7479a002870aca96f743ddec26c6445df8b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

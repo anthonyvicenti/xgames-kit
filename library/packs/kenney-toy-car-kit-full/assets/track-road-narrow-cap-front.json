@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-cap-front",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-cap-front.glb",
+ "sha256": "cbd3101ee3f73df739a6045393cc6702dba3f197fc7202e90c13df9580a8c97f",
+ "bytes": 12204,
+ "preview": "previews/track-road-narrow-cap-front.png",
+ "from": "Models/GLB format/track-road-narrow-cap-front.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow cap front",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "cap",
+  "front"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 56,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 56,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12204,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#3e414d",
+     "#505463",
+     "#6d738a",
+     "#71778e",
+     "#444754",
+     "#4b4e5d",
+     "#dadae7",
+     "#efeff5"
+    ],
+    "saturation": 0.142,
+    "value": 0.517,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.781
+     },
+     {
+      "hue": "blue",
+      "share": 0.219
+     }
+    ],
+    "grey": 0.781
+   },
+   "trianglesPerMetre": 14.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c257f35df1b649e8c89785209258ed312f89f44fb6604e2fadd21d6a3219a281",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

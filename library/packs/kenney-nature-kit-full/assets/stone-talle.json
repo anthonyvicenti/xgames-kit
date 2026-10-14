@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stone-talle",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-talle.glb",
+ "sha256": "fa66e4390e0b664b2ad731e8705ca7910227fd15731d795878d74a74f059673d",
+ "bytes": 3464,
+ "preview": "previews/stone-talle.png",
+ "from": "Models/GLTF format/stone_tallE.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone talle",
+ "tags": [
+  "stone",
+  "talle"
+ ],
+ "use": {
+  "size": [
+   0.456,
+   0.444,
+   0.527
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 38,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 38,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3464,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff"
+    ],
+    "saturation": 0.422,
+    "value": 0.933,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.774
+     },
+     {
+      "hue": "grey",
+      "share": 0.226
+     }
+    ],
+    "grey": 0.226
+   },
+   "trianglesPerMetre": 7.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "626eb1f842d8bdfe4c2be86dc7b469ebceadaed2402871c21a90324a0231a318",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

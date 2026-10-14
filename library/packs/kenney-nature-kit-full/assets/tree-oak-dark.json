@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-oak-dark",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-oak-dark.glb",
+ "sha256": "579ea899966b8dc5829acec595cdf0fee37daa68ee7fffe015dfbdf1d2b2c088",
+ "bytes": 5816,
+ "preview": "previews/tree-oak-dark.png",
+ "from": "Models/GLTF format/tree_oak_dark.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree oak dark",
+ "tags": [
+  "tree",
+  "oak",
+  "dark"
+ ],
+ "use": {
+  "size": [
+   0.641,
+   1.226,
+   0.74
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 196,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 196,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5816,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.548,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.845
+     },
+     {
+      "hue": "orange",
+      "share": 0.155
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f2c455bb433fe98522d1b9391d5b587e7324176ecaee29ceefe55350a7e3fd47",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

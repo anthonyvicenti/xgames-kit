@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-low",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-low.glb",
+ "sha256": "ff629c33087756e9bfeaffaf178260c23952ead9c4590d1d58061e1843b9ac2f",
+ "bytes": 15940,
+ "preview": "previews/block-snow-low.png",
+ "from": "Models/GLB format/block-snow-low.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow low",
+ "tags": [
+  "block",
+  "snow",
+  "low"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   0.5,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15940,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.451,
+    "value": 0.781,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.487
+     },
+     {
+      "hue": "grey",
+      "share": 0.312
+     },
+     {
+      "hue": "blue",
+      "share": 0.201
+     }
+    ],
+    "grey": 0.312
+   },
+   "trianglesPerMetre": 5.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3f83445126b93ac66b898b91ebc81069ecccec181dafc9943b6422922c1cea24",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

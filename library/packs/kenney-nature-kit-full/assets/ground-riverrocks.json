@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "ground-riverrocks",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-riverrocks.glb",
+ "sha256": "09cfc3c3af5020a8fcf3cfa7f4c86d61849c456da15fe470d81c32d29813329c",
+ "bytes": 7044,
+ "preview": "previews/ground-riverrocks.png",
+ "from": "Models/GLTF format/ground_riverRocks.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground riverrocks",
+ "tags": [
+  "ground",
+  "riverrocks"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 0,
+  "materials": 5
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7044,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d8faff",
+     "#73eddd",
+     "#f2be9e",
+     "#dbab8e",
+     "#ddf2f5"
+    ],
+    "saturation": 0.806,
+    "value": 0.81,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.377
+     },
+     {
+      "hue": "orange",
+      "share": 0.343
+     },
+     {
+      "hue": "cyan",
+      "share": 0.281
+     }
+    ],
+    "grey": 0.377
+   },
+   "trianglesPerMetre": 9.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "06e40c741da37f02070a9aca75e3ecb1051b3726dda4d5d4d1e3618abb4600de",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

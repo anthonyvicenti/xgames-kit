@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "rock-b",
+ "pack": "kenney-survival-kit-full",
+ "file": "rock-b.glb",
+ "sha256": "2fd6cae0306aa033d8607c2f6a53c42002db7fa5e468627a016d5e1110dbaf42",
+ "bytes": 12804,
+ "preview": "previews/rock-b.png",
+ "from": "Models/GLB format/rock-b.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock",
+ "tags": [
+  "rock"
+ ],
+ "use": {
+  "size": [
+   0.835,
+   0.419,
+   0.725
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 156,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 156,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#cb865e",
+     "#777c94",
+     "#747990",
+     "#d18f67",
+     "#81869c",
+     "#6e738a",
+     "#60657d",
+     "#7a7f97"
+    ],
+    "saturation": 0.25,
+    "value": 0.536,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.701
+     },
+     {
+      "hue": "orange",
+      "share": 0.299
+     }
+    ],
+    "grey": 0.701
+   },
+   "trianglesPerMetre": 10.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f0f4eec72f18722dee56f799c6045953835a91856929dff6fb71331602b12c2e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

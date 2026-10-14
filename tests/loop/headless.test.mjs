@@ -25,7 +25,7 @@ test('gamesfun build: the whole loop headless, one session per round, the result
   const reg = await kitRegistry();
   let n = 0;
   const game = path.join(root, 'yard-tag');
-  const r = await buildHeadless({ prompt: PROMPT, game, log: () => {}, kit: { registry: reg, tools: { ...kitTools({ registry: reg }), verify: async () => verdictOf(raw(++n === 1), { runtime: 'three' }) } } });
+  const r = await buildHeadless({ prompt: PROMPT, game, log: () => {}, kit: { registry: reg, tools: { ...kitTools({ registry: reg, look: false }), verify: async () => verdictOf(raw(++n === 1), { runtime: 'three' }) } } });
   assert.equal(r.delivered, true, JSON.stringify(r).slice(0, 800));
   assert.equal(r.outcome.outcome, 'delivered');
   for (const k of ['rescue', 'stopped', 'lastWords', 'game', 'questions', 'ladder', 'models', 'tokens', 'minutes', 'usd']) assert.ok(k in r, k);

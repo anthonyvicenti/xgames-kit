@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-block-half",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-block-half.glb",
+ "sha256": "847dd2bb626b0c3c37d98262218fb73534c3578119bd98a7ca4e981525864cec",
+ "bytes": 14952,
+ "preview": "previews/wall-wood-block-half.png",
+ "from": "Models/GLB format/wall-wood-block-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood block half",
+ "tags": [
+  "wall",
+  "wood",
+  "block",
+  "half"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14952,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9c5e48",
+     "#85503e",
+     "#8c5541",
+     "#945945",
+     "#c3805f",
+     "#c78362",
+     "#be7c5d",
+     "#cc8665"
+    ],
+    "saturation": 0.38,
+    "value": 0.437,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.571
+     },
+     {
+      "hue": "brown",
+      "share": 0.429
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8a31ac1fba82a195a02ef225f83e0bbe35208b604b4bd733142aa3c26810b490",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

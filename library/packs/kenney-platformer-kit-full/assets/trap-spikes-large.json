@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "trap-spikes-large",
+ "pack": "kenney-platformer-kit-full",
+ "file": "trap-spikes-large.glb",
+ "sha256": "835f89d70182c12ae4a29fc812135f990e863e9661acfb5d3e52c8071eb6ea07",
+ "bytes": 22348,
+ "preview": "previews/trap-spikes-large.png",
+ "from": "Models/GLB format/trap-spikes-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "trap spikes large",
+ "tags": [
+  "trap",
+  "spikes",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.765,
+   0.255,
+   0.765
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 282,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 282,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 22348,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#65657a",
+     "#82879d",
+     "#a0a8c9",
+     "#6f7085",
+     "#797c91",
+     "#afb7db",
+     "#bdc6ee"
+    ],
+    "saturation": 0.154,
+    "value": 0.556,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.745
+     },
+     {
+      "hue": "blue",
+      "share": 0.255
+     }
+    ],
+    "grey": 0.745
+   },
+   "trianglesPerMetre": 11.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "eb0eb736c04a5a8f8ae00486e9879f9441256f6db2ea2f53970578b29d87b027",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

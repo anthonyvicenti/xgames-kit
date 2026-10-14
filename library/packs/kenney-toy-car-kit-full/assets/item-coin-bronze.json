@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "item-coin-bronze",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "item-coin-bronze.glb",
+ "sha256": "ed10d7cdfb2cc0806f6981cad182ca1e93cbb2ac8460eedfc41b973e25a70e5b",
+ "bytes": 13004,
+ "preview": "previews/item-coin-bronze.png",
+ "from": "Models/GLB format/item-coin-bronze.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "item coin bronze",
+ "tags": [
+  "item",
+  "coin",
+  "bronze"
+ ],
+ "use": {
+  "size": [
+   0.264,
+   0.264,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#e78f65",
+     "#cb7752",
+     "#c6724f",
+     "#bc6a49",
+     "#d6805a",
+     "#b76646",
+     "#df8760",
+     "#c06e4c"
+    ],
+    "saturation": 0.569,
+    "value": 0.572,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 21.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "53d64ed0b2f004c9713c2dff1f4b27ccb86679efd04c32ee7461651d94d87b96",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

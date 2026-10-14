@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "cactus-short",
+ "pack": "kenney-nature-kit-full",
+ "file": "cactus-short.glb",
+ "sha256": "8a92f934b12c67c28f81fc13c46d64d47654fcfc3b1fd73f3ee93a8b0805f1d0",
+ "bytes": 3624,
+ "preview": "previews/cactus-short.png",
+ "from": "Models/GLTF format/cactus_short.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cactus short",
+ "tags": [
+  "cactus",
+  "short"
+ ],
+ "use": {
+  "size": [
+   0.342,
+   0.533,
+   0.297
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 116,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 116,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3624,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#70e6d6"
+    ],
+    "saturation": 0.702,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 16.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "81ac9fc4c66eacceaf4aebcb6df3468ea450a2f5081151bb11400282efbc51bd",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

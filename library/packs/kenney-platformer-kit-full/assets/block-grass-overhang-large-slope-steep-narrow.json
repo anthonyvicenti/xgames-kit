@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-large-slope-steep-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-large-slope-steep-narrow.glb",
+ "sha256": "625560c1017c8afe6bc0724fdc42c4caf22ecc2013634a2a211256d3dc023265",
+ "bytes": 17036,
+ "preview": "previews/block-grass-overhang-large-slope-steep-narrow.png",
+ "from": "Models/GLB format/block-grass-overhang-large-slope-steep-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang large slope steep narrow",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "large",
+  "slope",
+  "steep",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1.367,
+   1.967
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 142,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 142,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17036,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#da835d",
+     "#db855e",
+     "#329b74",
+     "#339c75",
+     "#47b07e"
+    ],
+    "saturation": 0.583,
+    "value": 0.508,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.385
+     },
+     {
+      "hue": "cyan",
+      "share": 0.362
+     },
+     {
+      "hue": "green",
+      "share": 0.253
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e2595478ed33c2bed83930339d92bb83402d52bbe833ed17ee13d5ab967c48d5",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "balcony-wall-fence",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "balcony-wall-fence.glb",
+ "sha256": "41a96a0fd7aa47073f4252fbb6e07e85a6194dc2b0dc1ff6ad22b2fc537f3ac5",
+ "bytes": 15516,
+ "preview": "previews/balcony-wall-fence.png",
+ "from": "Models/GLB format/balcony-wall-fence.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "balcony wall fence",
+ "tags": [
+  "balcony",
+  "wall",
+  "fence"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15516,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c17e5e",
+     "#ca8564",
+     "#8c5541",
+     "#945945",
+     "#be7c5d",
+     "#9c5e48",
+     "#85503e",
+     "#cc8665"
+    ],
+    "saturation": 0.452,
+    "value": 0.553,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.924
+     },
+     {
+      "hue": "brown",
+      "share": 0.076
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.02,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "16c43dfd257121fb93767e973b0fde09672502ca85383028c916e48126c049bc",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

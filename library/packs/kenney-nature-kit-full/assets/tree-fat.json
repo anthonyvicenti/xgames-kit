@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-fat",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-fat.glb",
+ "sha256": "e7dfc7e3dcdb30f1e4f55140569cf02fe348b45e3d3e24333eb2cf853ec59a08",
+ "bytes": 3816,
+ "preview": "previews/tree-fat.png",
+ "from": "Models/GLTF format/tree_fat.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree fat",
+ "tags": [
+  "tree",
+  "fat"
+ ],
+ "use": {
+  "size": [
+   0.755,
+   1.15,
+   0.654
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 50,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 50,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3816,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.706,
+    "value": 0.678,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.938
+     },
+     {
+      "hue": "orange",
+      "share": 0.062
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "84b262c5dda3a91ac6c95f9d8b23a0ebbb1951d678c0e1375d3e32623cc43ee2",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "base": "look-yard",
+ "why": "The looks layer (2026-10-14): the creator, \"I am really worried about the looks layer ... the looks can be very very off\". The class: a game whose look drifted from the target its spec locks, here its colour grade turned to greys, while every functional gate still passes. Gate F must fail it on measure 23: the look judge holds the game to its target and names the colour it lost.",
+ "evidence": "builder/look/evidence/calibration-hollow-reach-2026-10-14.json",
+ "patches": [
+  {
+   "file": "config/look.json",
+   "pointer": "/post/grade/saturation",
+   "value": 0
+  },
+  {
+   "file": "config/look.json",
+   "pointer": "/times/day/post/grade/saturation",
+   "value": 0
+  }
+ ],
+ "mustFail": [
+  "F"
+ ],
+ "measure": 23,
+ "detail": "less saturated"
+}

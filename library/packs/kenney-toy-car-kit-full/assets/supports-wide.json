@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "supports-wide",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "supports-wide.glb",
+ "sha256": "fcdcb538f2da9ade8632772a1b6258619d49a190ec3ba46ad5cabb2507c681fa",
+ "bytes": 12420,
+ "preview": "previews/supports-wide.png",
+ "from": "Models/GLB format/supports-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "supports wide",
+ "tags": [
+  "supports",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   2,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12420,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#617dcf",
+     "#5d6cc7",
+     "#6078cd",
+     "#5e70c9",
+     "#5b66c4",
+     "#585abf",
+     "#658dd6"
+    ],
+    "saturation": 0.51,
+    "value": 0.584,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.46,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0f3bf8d24a2a540fa3bfecc2bb011337fb4723f4424e1a46ab13423f7b01c533",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

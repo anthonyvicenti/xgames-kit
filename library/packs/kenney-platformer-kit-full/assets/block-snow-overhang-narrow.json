@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-narrow.glb",
+ "sha256": "0334f7c042dd9a069b6b1cfded913aef5dd609620a59dca2d0c321e3a449ed43",
+ "bytes": 16056,
+ "preview": "previews/block-snow-overhang-narrow.png",
+ "from": "Models/GLB format/block-snow-overhang-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang narrow",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   1,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16056,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.476,
+    "value": 0.708,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.648
+     },
+     {
+      "hue": "blue",
+      "share": 0.182
+     },
+     {
+      "hue": "grey",
+      "share": 0.17
+     }
+    ],
+    "grey": 0.17
+   },
+   "trianglesPerMetre": 5.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2b5ffced91880a31afe7e6cefe9f66e710b480b67929bf006d372eeceb91bce8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-bricks",
+ "pack": "kenney-nature-kit-full",
+ "file": "campfire-bricks.glb",
+ "sha256": "1079742c99eceae0ffe3547dc859069b7d804dafc571362a26e2dfe0d1325e8a",
+ "bytes": 3848,
+ "preview": "previews/campfire-bricks.png",
+ "from": "Models/GLTF format/campfire_bricks.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire bricks",
+ "tags": [
+  "campfire",
+  "bricks"
+ ],
+ "use": {
+  "size": [
+   0.469,
+   0.068,
+   0.469
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3848,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 20.96,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ecdca761c6c07ee417261140d5449872b7f51f3671df2d536e2a03b65480563f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

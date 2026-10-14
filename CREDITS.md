@@ -22,6 +22,14 @@ one of these files must keep its credit line.**
 - "Reel W/ Hose" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/qXBsZPAaYQ)
 - "Water Cooler" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/zWi9p5FSxD)
 
+## Art that asks for credit (CC BY 4.0)
+
+Two cartoon explosion flipbooks (pack `quiver-outpost-fx`) from Quiver's Outpost Assault tower-defence tutorial, shared
+under [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/); the colour table was flattened to
+RGBA for the kit. **A game that keeps one of them must keep this line:**
+
+- Explosion art from Quiver's Outpost Assault (github.com/quiver-dev/tower-defense-tutorial), CC BY 4.0
+
 ### An eleventh record: the Meshy gecko (not shipped)
 
 games.fun's library has a "Cyborg gecko" body generated with Meshy, recorded as CC BY 4.0 with Meshy AI credited because
@@ -32,7 +40,8 @@ carries it. If it is ever shipped, the credit line is:
 
 ## Art and sound given freely (CC0, credit not required, given anyway)
 
-- [Kenney](https://kenney.nl): 139 props and 28 textures (CC0).
+- [Kenney](https://kenney.nl): 139 props and 28 textures (CC0), and every model of five of his kits as the `kenney-*-full`
+  packs (nature, platformer, survival, toy car, fantasy town: 840 models) and the 80 sprites of his Particle Pack (CC0).
 - [Quaternius](https://quaternius.com): character bodies and the Universal Animation Library clips and mannequin (CC0).
 - [Kay Lousberg, KayKit](https://kaylousberg.com): the dungeon props, weapons and character bodies of the scenic
   library (CC0).
@@ -43,8 +52,8 @@ carries it. If it is ever shipped, the credit line is:
 - The forge library's sounds from [OpenGameArt](https://opengameart.org) and [Kenney](https://kenney.nl) (CC0), each with
   its author in its manifest in `library/packs/forge-sounds/` (Zane, rubberduck, artisticdude, thebardofblasphemy,
   congusbongus and others), and its Poly Haven textures by Rob Tuytel and Dimitrios Savva (CC0).
-- games.fun: the bean bodies and the procedural textures, and the forge engine's town street and pieces made from code
-  (CC0).
+- games.fun: the bean bodies and the procedural textures, the forge engine's town street and pieces made from code, and
+  the six weapon icons of its artillery game Crumble Cove (pack `xk-artillery-icons`) (CC0).
 
 ## Code and art under MIT and other permissive licences
 
@@ -62,6 +71,9 @@ carries it. If it is ever shipped, the credit line is:
   ones from the author's sky-pro-webgpu.
 - The forge core's Rust crates (wgpu, naga, rapier3d, hecs, glam, gltf, wasm-bindgen and the rest; MIT, Apache-2.0,
   BSD, Zlib), each with its version and licence text in `gf/forge/wasm/LICENSES.md` of every forge game.
+- [Bangers](https://github.com/googlefonts/bangers) by Vernon Adams and [Bungee](https://github.com/djrrb/Bungee) by
+  David Jonathan Ross (SIL Open Font License 1.1), the comic and signage display faces (packs `ofl-bangers`,
+  `ofl-bungee`).
 - The forge HUD's fonts: subsets of [Grenze Gotisch](https://github.com/Omnibus-Type/Grenze-Gotisch) and
   [Grenze](https://github.com/Omnibus-Type/Grenze) by Omnibus-Type (SIL Open Font License 1.1), renamed GF Grim Display
   and GF Grim Text.

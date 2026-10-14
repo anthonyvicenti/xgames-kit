@@ -213,7 +213,17 @@
         "rig": {
           "type": "string",
           "maxLength": 40,
-          "description": "A body: its rig standard (gf-humanoid-1)."
+          "description": "A body: its rig standard (gf-humanoid-1, or a creature's: gf-worm-1, gf-blob-1, gf-quadruped-1, gf-flyer-1; runtimes/three/kit/character/CREATURES.md)."
+        },
+        "archetype": {
+          "enum": [
+            "humanoid",
+            "worm",
+            "blob",
+            "quadruped",
+            "flyer"
+          ],
+          "description": "A body: the shape its rig standard is for (a creature's moves by procedural motion and plays no clip file). Missing means humanoid."
         },
         "clips": {
           "type": "string",
@@ -529,6 +539,57 @@
       "type": "string",
       "pattern": "^[a-z][a-z0-9-]{0,39}/[a-z0-9][a-z0-9._-]{0,79}$",
       "description": "A 2D sheet baked from a 3D asset: that asset."
+    },
+    "harmonized": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "sha256",
+        "look",
+        "tool",
+        "date"
+      ],
+      "description": "A copy made by the style pass (art harmonize): its colours, textures and materials moved toward one look, its shapes unchanged. The original stays where it was.",
+      "properties": {
+        "from": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9.-]{0,39}/[a-z0-9][a-z0-9._-]{0,79}$",
+          "description": "The original: <pack>/<id>."
+        },
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256",
+          "description": "The original's file."
+        },
+        "look": {
+          "type": "string",
+          "maxLength": 80,
+          "description": "The look's name (a level id, a game, a target file)."
+        },
+        "lookSha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256",
+          "description": "What was read as the look (its JSON), so the same look can be told from another."
+        },
+        "tool": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "date": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+        },
+        "did": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          }
+        },
+        "settings": {
+          "type": "object",
+          "description": "The pass's settings that made it (strength, the look's colours, quantize, outline, texels a metre)."
+        }
+      }
     },
     "source": {
       "type": "object",

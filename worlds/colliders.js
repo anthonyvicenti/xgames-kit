@@ -61,6 +61,20 @@ function partyColliders(cfg, catalog, { fit = () => 1 } = {}) {
   for (const p of expandLayout(cfg)) { if (!groups.has(p.prop)) groups.set(p.prop, []); groups.get(p.prop).push(p); }
   const out = [{ prop: '#ground', tag: 'ground', shape: 'box', size: [size[0] + 40, 1, size[1] + 40], position: [0, -0.5, 0], rotationY: 0 }];
   for (const [id, list] of groups) { const meta = byId.get(id), f = fit(id) ?? 1; for (const p of list) for (const part of colliderParts(meta)) out.push(partyCollider(id, part, p, f)); }
+  // a sea-islands world (sea.js): each hill of the play island that reaches the play area is a hull of its dome, so a
+  // player walks up what they see (the flat middle is the ground box)
+  const main = (cfg.islands ?? []).find(i => i.play);
+  for (const h of main?.hills ?? []) {
+    const r = h.r, [W, D] = size;
+    if (Math.abs(h.at[0]) - r > W / 2 + 1 || Math.abs(h.at[1]) - r > D / 2 + 1) continue;
+    const points = [];
+    for (let i = 0; i <= 4; i++) for (let j = 0; j < (i ? 12 : 1); j++) {
+      const q = i / 4, a = (j / 12) * Math.PI * 2, k = 1 - q * q;
+      points.push(+(h.at[0] + Math.cos(a) * q * r).toFixed(3), +(main.at[1] + h.h * k * k).toFixed(3), +(h.at[1] + Math.sin(a) * q * r).toFixed(3));
+    }
+    for (let j = 0; j < 12; j++) { const a = (j / 12) * Math.PI * 2; points.push(+(h.at[0] + Math.cos(a) * r).toFixed(3), main.at[1] - 0.5, +(h.at[1] + Math.sin(a) * r).toFixed(3)); }
+    out.push({ prop: '#ground', tag: 'ground', shape: 'hull', points, position: [0, 0, 0], rotationY: 0 });
+  }
   // invisible walls round the play area
   if (cfg.bounds?.walls !== false) {
     const h = cfg.bounds?.height ?? 4, t = 1, [w, d] = size, wall = (sz, position) => ({ prop: '#bounds', tag: 'bounds', shape: 'box', size: sz, position, rotationY: 0 });

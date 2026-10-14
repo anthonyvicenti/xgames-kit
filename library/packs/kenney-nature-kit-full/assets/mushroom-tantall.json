@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "mushroom-tantall",
+ "pack": "kenney-nature-kit-full",
+ "file": "mushroom-tantall.glb",
+ "sha256": "7cc0e8c48ecaad069dcb145d151c16b527ae9e98febe9b7c031d8cd2bf50943f",
+ "bytes": 3824,
+ "preview": "previews/mushroom-tantall.png",
+ "from": "Models/GLTF format/mushroom_tanTall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "mushroom tantall",
+ "tags": [
+  "mushroom",
+  "tantall"
+ ],
+ "use": {
+  "size": [
+   0.124,
+   0.25,
+   0.143
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3824,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#ffd7b0"
+    ],
+    "saturation": 0.337,
+    "value": 0.948,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.663
+     },
+     {
+      "hue": "orange",
+      "share": 0.337
+     }
+    ],
+    "grey": 0.663
+   },
+   "trianglesPerMetre": 28.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "58d0078e531d6118c0cb39110c77fe3d564398379bb7f2e3f5f572321c0fc4ff",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

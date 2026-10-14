@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "hanging-moss",
+ "pack": "kenney-nature-kit-full",
+ "file": "hanging-moss.glb",
+ "sha256": "c14669715e7605d87e5b927efdc72ed2746b86945803bb77365e5d1ec779e875",
+ "bytes": 2564,
+ "preview": "previews/hanging-moss.png",
+ "from": "Models/GLTF format/hanging_moss.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "hanging moss",
+ "tags": [
+  "hanging",
+  "moss"
+ ],
+ "use": {
+  "size": [
+   0.16,
+   0.478,
+   0.035
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2564,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 19.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2124c2d038054f1ea89d470a6095d35c2fbdb2674916db93400ea6ed5f499cb0",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

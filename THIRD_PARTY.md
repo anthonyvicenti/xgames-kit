@@ -87,6 +87,10 @@ every asset with its licence.
 | A9 | Microsoft Rocketbox avatars, six people rigged onto gf-humanoid-1 (pack `rocketbox-adults`) | MIT, (c) 2020 Microsoft, `library/packs/rocketbox-adults/LICENSE.txt` | 6 bodies (glb, sidecar, preview) | keep the notice | vista games (friends' bodies, `runtimes/vista/kit/bodies.json`) |
 | A10 | The forge's art (packs `forge-*`, `kaykit-*`, `quaternius-props`, `humanoid-clips`): KayKit dungeon pieces and spare skeletons (Kay Lousberg), Quaternius clips and pieces, Kenney textures and sounds, OpenGameArt sounds (Zane, rubberduck, artisticdude and others, each named in its record), Poly Haven textures (Rob Tuytel, Dimitrios Savva) and games.fun's own pieces and town made from code | CC0-1.0 | 258 files (bodies, ruins, world, town, sounds, textures, fx, clips) | no | forge games: the ones the game uses, each listed in its `ATTRIBUTION.md` |
 | A11 | The forge library's Meshy models: the four co-op hunters, the grim skeletons, the risen townsfolk, their held weapons, the first-person weapons and hands, the card pictures and props (generated on games.fun's paid Meshy plan) | LicenseRef-Meshy-Paid | **0 shipped**: their records are in `LICENSES.json`; the files are not in the kit (the kit never ships Meshy output, whose licence tier is unconfirmed). A forge game made here draws CC0 files of A10 in their place (games.fun's `library/stand-ins.json`) | no | no |
+| A12 | Kenney (kenney.nl): every model of the nature, platformer, survival, toy car and fantasy town kits (packs `kenney-*-full`, in Kenney's own units) and the Particle Pack's 80 sprites (`kenney-particle-pack`), each pack pinned to its zip | CC0-1.0 | 840 models + 80 sprites | no | the ones the game uses |
+| A13 | Quiver's Outpost Assault: two cartoon explosion flipbooks (pack `quiver-outpost-fx`, repository pinned to `9f5cc04`) | **CC-BY-4.0** | **2 effects** | **yes**: Explosion art from Quiver's Outpost Assault (github.com/quiver-dev/tower-defense-tutorial), CC BY 4.0 | the ones the game uses |
+| A14 | Bangers (Vernon Adams) and Bungee (David Jonathan Ross) from google/fonts, pinned commits (packs `ofl-bangers`, `ofl-bungee`) | OFL-1.1 | 2 fonts | keep the licence text with the font | the ones the game uses |
+| A15 | games.fun's Crumble Cove weapon icons (pack `xk-artillery-icons`), drawn as SVG for our own game | CC0-1.0 | 6 icons | no | the ones the game uses |
 | A8 | Meshy AI "Cyborg gecko" | recorded as CC-BY-4.0 (plan unconfirmed) | **0 shipped**: the file is not in this kit, and neither is its record | yes, if it is ever shipped | no |
 
 The ten CC-BY-3.0 props, each with the credit line exactly as the licence asks (author, title, a link to the work); the
@@ -103,6 +107,10 @@ material and meshopt-compressed (gltf-transform), which counts as a change:
 - "Red/White Beach Umbrella" by S. Paul Michael, CC BY 3.0 (https://poly.pizza/m/2li3sdSkmCI)
 - "Reel W/ Hose" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/qXBsZPAaYQ)
 - "Water Cooler" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/zWi9p5FSxD)
+
+The two CC-BY-4.0 explosion flipbooks (A13), with the credit line exactly as the licence asks:
+
+- Explosion art from Quiver's Outpost Assault (github.com/quiver-dev/tower-defense-tutorial), CC BY 4.0
 
 The Meshy gecko's credit line, kept for the day it ships:
 

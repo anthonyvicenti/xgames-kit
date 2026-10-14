@@ -56,7 +56,7 @@ test('the bound tools: the real registry, create and checkpoints, the sealed tok
   let verifies = 0;
   // the real tools, with verify's browser run stood in by its record (one fail, then passes)
   const reg = await kitRegistry();
-  loopMod.seams.tools = () => ({ ...kitTools({ registry: reg }), verify: async () => verdictOf(RAW(++verifies === 1), { runtime: 'three' }) });
+  loopMod.seams.tools = () => ({ ...kitTools({ registry: reg, look: false }), verify: async () => verdictOf(RAW(++verifies === 1), { runtime: 'three' }) });
   const by = Object.fromEntries(loopMod.tools.map(x => [x.name, x]));
   const ctx = { log: () => {}, progress: () => {} };
   const call = async (name, args = {}) => { const r = await by[name].handler({ game, ...args }, ctx); if (!r?.content) return r; const v = JSON.parse(r.content[0].text); if (r.isError) v.isError = true; return v; };

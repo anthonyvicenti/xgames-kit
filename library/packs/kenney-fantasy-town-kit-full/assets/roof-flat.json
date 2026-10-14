@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "roof-flat",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-flat.glb",
+ "sha256": "94b5495ab6a9ee536e917f6bfc6a33dd19edc12e345cb7bf26a0b401847f989e",
+ "bytes": 14032,
+ "preview": "previews/roof-flat.png",
+ "from": "Models/GLB format/roof-flat.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof flat",
+ "tags": [
+  "roof",
+  "flat"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.126,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 20,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 20,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14032,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#45a087",
+     "#56b59e",
+     "#4eac94",
+     "#58b8a1",
+     "#5dbfa8",
+     "#5abaa3",
+     "#4ba88f",
+     "#50ae96"
+    ],
+    "saturation": 0.395,
+    "value": 0.492,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "48bc045365398c92291f65ab80038670b14f85974aadedc3d17847254a0881b5",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

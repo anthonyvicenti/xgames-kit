@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-topdiagonal-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-topdiagonal-rock.glb",
+ "sha256": "6240735505343b089cc93280d9ef670ea8da6686cfdf2ec5c469e148ccfad925",
+ "bytes": 3884,
+ "preview": "previews/cliff-topdiagonal-rock.png",
+ "from": "Models/GLTF format/cliff_topDiagonal_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff topdiagonal rock",
+ "tags": [
+  "cliff",
+  "topdiagonal",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1.268,
+   1,
+   1.268
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 66,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 66,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3884,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.765,
+    "value": 0.774,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.891
+     },
+     {
+      "hue": "cyan",
+      "share": 0.109
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.99,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "005c3bf817333dc2e5e6e1bc08439641a8340ebb93f637208b6c1b00878f3b2e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

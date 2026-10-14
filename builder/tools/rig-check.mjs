@@ -1,7 +1,9 @@
 #!/usr/bin/env node
-// rig-check.mjs: does a GLB work as a gf-humanoid-1 body? Passes or fails it, with reasons.
+// rig-check.mjs: does a GLB work as a gf-humanoid-1 body, or as a body on one of the archetype standards beside it
+// (worm, blob, quadruped, flyer: kit/character/CREATURES.md, judged by tools/lib/creature-judge.mjs)? Passes or fails it,
+// with reasons.
 //
-//   node builder/tools/rig-check.mjs <body.glb> [--clips <clip file>] [--json]
+//   node builder/tools/rig-check.mjs <body.glb> [--clips <clip file>] [--archetype worm|blob|quadruped|flyer] [--json]
 //   import { rigCheck } from './rig-check.mjs'; const r = await rigCheck(path);   // { ok, errors, warnings, stats, metrics }
 //
 // It loads the body with three.js's own GLTFLoader (as the game will), then checks:
@@ -45,12 +47,31 @@ async function loadClips(path) {
   return clipCache.get(path);
 }
 
-export async function rigCheck(file, { clips = DEFAULT_CLIPS, judge = true, role = null } = {}) {
+/** The archetype a body file names (its gf_body node's extras gfArchetype or gfRig), else null (a gf-humanoid-1 body). */
+export function archetypeOfDoc(doc) {
+  const x = doc.getRoot().listNodes().find(n => n.getName() === 'gf_body')?.getExtras() ?? {};
+  const a = x.gfArchetype ?? (typeof x.gfRig === 'string' ? { 'gf-worm-1': 'worm', 'gf-blob-1': 'blob', 'gf-quadruped-1': 'quadruped', 'gf-flyer-1': 'flyer' }[x.gfRig] : null);
+  return a && a !== 'humanoid' ? a : null;
+}
+
+/**
+ * A body on one of the archetype standards beside gf-humanoid-1 (worm, blob, quadruped, flyer: CREATURES.md) is judged
+ * by the creature judge (tools/lib/creature-judge.mjs): its standard's bones, scale, skin, and every action posed by the
+ * runtime's own procedural motion. `archetype` names it; else the file's gf_body extras do.
+ */
+export async function rigCheck(file, { clips = DEFAULT_CLIPS, judge = true, role = null, archetype = null } = {}) {
   const errors = [], warnings = [], metrics = {};
   const err = m => errors.push(m), warn = m => warnings.push(m);
   const bytes = statSync(file).size;
   let doc;
   try { doc = await (await io()).read(file); } catch (e) { return { ok: false, file, errors: [`not a readable glTF/GLB: ${e.message}`], warnings, stats: { bytes }, metrics }; }
+  const arch = archetype && archetype !== 'humanoid' ? archetype : archetype === 'humanoid' ? null : archetypeOfDoc(doc);
+  if (arch) {
+    const { judgeCreature } = await import('./lib/creature-judge.mjs');
+    const r = await judgeCreature(file, { archetype: arch });
+    return { ok: r.ok, file, archetype: r.archetype, rig: r.rig, errors: r.errors, warnings: r.warnings, stats: r.stats ?? { bytes }, metrics: r.metrics ?? {},
+      judge: r.parts && Object.keys(r.parts).length ? { ok: r.ok, parts: Object.fromEntries(Object.entries(r.parts).map(([p, v]) => [p, v.na ? 'n/a' : v.ok ? 'pass' : 'fail'])) } : null, poses: r.poses };
+  }
   const stats = bodyStats(doc, bytes);
 
   // ---- budget
@@ -233,17 +254,17 @@ export async function rigCheck(file, { clips = DEFAULT_CLIPS, judge = true, role
 
 if (isMain(import.meta)) {
   const args = process.argv.slice(2);
-  const files = args.filter(a => !a.startsWith('--') && args[args.indexOf(a) - 1] !== '--clips');
-  const ci = args.indexOf('--clips');
+  const files = args.filter(a => !a.startsWith('--') && !['--clips', '--archetype'].includes(args[args.indexOf(a) - 1]));
+  const ci = args.indexOf('--clips'), ai = args.indexOf('--archetype');
   if (!files.length) { console.error('usage: rig-check.mjs <body.glb> [...] [--clips file] [--json]'); process.exit(2); }
   let fail = 0;
   const out = [];
   for (const f of files) {
-    const r = await rigCheck(resolve(f), ci > 0 ? { clips: resolve(args[ci + 1]) } : {});
+    const r = await rigCheck(resolve(f), { ...(ci > 0 ? { clips: resolve(args[ci + 1]) } : {}), ...(ai >= 0 ? { archetype: args[ai + 1] } : {}) });
     out.push(r);
     if (!r.ok) fail++;
     if (!args.includes('--json')) {
-      console.log(`${r.ok ? 'PASS' : 'FAIL'}  ${f}  ${(r.stats.bytes / 1e6).toFixed(2)} MB, ${Math.round(r.stats.triangles ?? 0)} tris, ${r.stats.joints ?? 0} joints${r.metrics.height ? `, ${r.metrics.height} m` : ''}`);
+      console.log(`${r.ok ? 'PASS' : 'FAIL'}  ${f}  ${r.rig ? `${r.rig}, ` : ''}${(r.stats.bytes / 1e6).toFixed(2)} MB, ${Math.round(r.stats.triangles ?? 0)} tris, ${r.stats.joints ?? 0} joints${r.metrics.height ? `, ${r.metrics.height} m` : ''}`);
       for (const e of r.errors) console.log(`  error: ${e}`);
       for (const w of r.warnings) console.log(`  warn:  ${w}`);
     }

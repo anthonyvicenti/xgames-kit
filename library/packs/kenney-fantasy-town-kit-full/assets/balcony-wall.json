@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "balcony-wall",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "balcony-wall.glb",
+ "sha256": "2ee94f7a027c9e6d04522e6d23ee5156cd63ee6b4ec77724e90e4d0769de4d16",
+ "bytes": 14824,
+ "preview": "previews/balcony-wall.png",
+ "from": "Models/GLB format/balcony-wall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "balcony wall",
+ "tags": [
+  "balcony",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14824,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c17e5e",
+     "#ca8564",
+     "#be7c5d",
+     "#cc8665",
+     "#c3805f",
+     "#b87758",
+     "#cb8665",
+     "#d38c6a"
+    ],
+    "saturation": 0.467,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3d504c3facb858d3110dcb2bba88af2c5be57d82bb07d52334a49195d022b84c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-planks",
+ "pack": "kenney-nature-kit-full",
+ "file": "campfire-planks.glb",
+ "sha256": "a5d840f2b12db75f8cf4025edf98946f73d6d16a326089bb549869ff21b05532",
+ "bytes": 3212,
+ "preview": "previews/campfire-planks.png",
+ "from": "Models/GLTF format/campfire_planks.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire planks",
+ "tags": [
+  "campfire",
+  "planks"
+ ],
+ "use": {
+  "size": [
+   0.35,
+   0.04,
+   0.35
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3212,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 22.84,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0d26e842f7f5cb607ad37205e930822656b7c6ba570f9d0ba6b039cea90f8ab7",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

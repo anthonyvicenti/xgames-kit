@@ -9,7 +9,7 @@ import { STANDIN_ASSETS, KIT, FORGE, FORGE_KIT, VISTA_KIT, importPart, kitPath, 
 import { playersModeOf, isMade } from './spec.mjs';
 import { createRng, hashString } from '../../../runtimes/three/kit/core/rng.js';
 import { FAIR_DEFAULTS } from '../../../runtimes/three/kit/core/fair-logic.js';
-import { assetsIn, bodiesIn, bodyEntry, findAsset, licenceOf, localFile, propEntry } from '../../art/views.mjs';
+import { assetsIn, bodiesIn, bodyEntry, findAsset, licenceOf, localFile, propEntry, scopePacks } from '../../art/views.mjs';
 import { importLayer } from './kit-import.mjs';
 // kit modules whose imports cross layers: through the hook (kit-import.mjs importLayer)
 const { generateLayout } = await importLayer(kitPath(KIT, 'world/generate.js'));
@@ -81,14 +81,20 @@ export function licenceUrl(spdx) {
  */
 async function libraryBody(body, { avoid = new Set() } = {}) {
   const local = b => (localFile(findAsset(b.ref)) ? { ...b, path: localFile(findAsset(b.ref)) } : null);
-  const bodies = bodiesIn('three').map(local).filter(Boolean);
+  // a body of the archetype the spec names (humanoid unless it says worm, blob, quadruped or flyer: CREATURES.md)
+  const archetype = body?.archetype ?? 'humanoid';
+  const bodies = bodiesIn('three', { archetype }).map(local).filter(Boolean);
   const wanted = body?.from === 'library' ? body.asset : isMade(body) ? body.standIn : null;
   if (wanted) {
-    // any library body on gf-humanoid-1 by <pack>/<asset> (a scenic KayKit adventurer, a kind's block body): every
-    // body plays the same clip file, so any game may wear it; one its validator failed is never worn
+    // any library body of that archetype by <pack>/<asset> (a scenic KayKit adventurer, a kind's block body, a made
+    // creature): every body on a standard moves the same way, so any game may wear it; one its validator failed is
+    // never worn, and one of another archetype is refused (its rig cannot play this role's motion)
     const a = findAsset(wanted);
-    if (a?.category === 'body' && (a.validated ?? []).every(v => v.ok !== false)) { const e = local(bodyEntry(a)); if (e) return e; }
+    const e = a?.category === 'body' && (a.validated ?? []).every(v => v.ok !== false) ? local(bodyEntry(a)) : null;
+    if (e && e.archetype === archetype) return e;
   }
+  // a creature: the first body of its archetype (the kit's stand-in creature set when nothing better is here)
+  if (archetype !== 'humanoid') return bodies.find(x => !avoid.has(x.id)) ?? bodies[0] ?? null;
   // the bean (the kind's body set today, or a stand-in for a body to be made): the first one no other role described
   // differently wears already (`avoid`), so two roles never share a body by construction (GATES.md: gate F confirms it)
   const beans = bodies.filter(x => x.from === 'bean' || (x.tags ?? []).includes('bean'));
@@ -220,8 +226,11 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
   // same words may share it. Measure 14 (gate F) confirms it on the built game.
   const worn = [];                                   // [{id, key}] the library bodies given so far, and to what
   const roleKey = c => JSON.stringify([String(c.describe ?? '').toLowerCase(), c.body ?? null]);
+  let humanoids = 0;
   for (const c of forge || flat || vista ? [] : spec.characters) {
     const to = `assets/models/body-${c.role}.glb`;
+    const archetype = c.body?.archetype ?? 'humanoid';
+    if (archetype === 'humanoid') humanoids++;
     const lib = modules.character ? await libraryBody(c.body, { avoid: new Set(worn.filter(w => w.key !== roleKey(c)).map(w => w.id)) }) : null;
     if (lib) worn.push({ id: lib.id, key: roleKey(c) });
     if (lib) {
@@ -231,11 +240,29 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
       assets.push({ to, from: lib.path, license }); bodies[c.role] = { file: to, from: `library:${lib.ref}`, ...(license ? { license } : {}) };
       if (isMade(c.body)) notes.push(`character "${c.role}": ${lib.id} stands in until the made body is placed in its slot (gamesfun art generate; verify check 14 fails while it stays unrecorded)`);
     }
+    else if (archetype !== 'humanoid') throw new Error(`character "${c.role}": no ${archetype} body in the asset library on this machine (the kit's creature set is library/packs/xk-creature-bodies; gamesfun art fetch brings it)`);
     else {
       const license = { spdx: 'CC0-1.0', author: 'Quaternius', url: 'https://quaternius.itch.io/universal-animation-library' };
       assets.push({ to, from: join(STANDIN_ASSETS, 'mannequin.glb'), license });
       bodies[c.role] = { file: to, from: 'standin:mannequin', license };
       notes.push(`character "${c.role}": body from ${c.body?.from ?? '?'} is not available yet, stand-in UAL mannequin${isMade(c.body) ? '; the made body goes into this slot' : ''}`);
+    }
+    if (lib && archetype !== 'humanoid') notes.push(`character "${c.role}": a ${archetype} (${lib.ref}, on ${lib.rig}): it moves by the kit's procedural motion for its archetype (CREATURES.md), no clips`);
+    // a body per seat (characters[].seats): seat 2 wears the first, and so on; each of the role's archetype unless it
+    // names its own
+    const seats = [];
+    for (const [k, sb] of (c.seats ?? []).entries()) {
+      const seatBody = { archetype, ...sb };
+      const seatLib = modules.character ? await libraryBody(seatBody, { avoid: new Set([...worn.map(w => w.id)]) }) : null;
+      if (!seatLib) { notes.push(`character "${c.role}" seat ${k + 2}: no ${seatBody.archetype} body here; the seat wears the role's`); continue; }
+      worn.push({ id: seatLib.id, key: `${roleKey(c)}#seat${k + 2}` });
+      const sto = `assets/models/body-${c.role}-seat${k + 2}.glb`;
+      const rec = licenceOf(findAsset(seatLib.ref));
+      const license = { ...rec, ...(licenceUrl(rec.spdx) ? { title: rec.title ?? seatLib.label ?? seatLib.id, credit: rec.credit ?? `"${rec.title ?? seatLib.label ?? seatLib.id}" by ${rec.author}, ${rec.spdx.replace(/^CC-BY-/, 'CC BY ')}${rec.url ? ` (${rec.url})` : ''}` } : {}) };
+      assets.push({ to: sto, from: seatLib.path, license });
+      bodies[`${c.role}.seat${k + 2}`] = { file: sto, from: `library:${seatLib.ref}`, license };
+      if (seatBody.archetype !== 'humanoid' && archetype !== seatBody.archetype) notes.push(`character "${c.role}" seat ${k + 2}: a ${seatBody.archetype} in a ${archetype} role (each seat moves by its own body's archetype)`);
+      seats.push({ body: sto, ...(seatBody.archetype !== 'humanoid' && seatLib.height ? { height: seatLib.height } : {}), ...(sb.archetype && sb.archetype !== archetype ? { archetype: sb.archetype } : {}) });
     }
     // a hat (character.hat.<role>, worn on the head socket): a stand-in cap until a library hat or a generated one exists
     let hat = null;
@@ -246,10 +273,13 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
       bodies[`${c.role}.hat`] = { file: hat, from: `standin:${variant}`, describe: c.hat, license: { spdx: 'CC0-1.0', author: 'games.fun (stand-in)', url: 'https://games.fun' } };
       notes.push(`character "${c.role}": hat "${c.hat}" is a stand-in ${variant}.glb (Studio generates or uploads into character.hat.${c.role})`);
     }
-    roles[c.role] = { body: to, height: 1.7, ...(hat ? { hat, hatDescribe: c.hat } : {}), ...(c.describe ? { describe: c.describe } : {}), ...(bodies[c.role].license ? { license: bodies[c.role].license } : {}) };
+    // a creature stands its own measured height (a 0.8 m critter is not stretched to a person's 1.7 m)
+    const height = archetype === 'humanoid' ? 1.7 : lib?.height ?? 1;
+    roles[c.role] = { body: to, height, ...(archetype !== 'humanoid' ? { archetype } : {}), ...(seats.length ? { seats } : {}), ...(hat ? { hat, hatDescribe: c.hat } : {}), ...(c.describe ? { describe: c.describe } : {}), ...(bodies[c.role].license ? { license: bodies[c.role].license } : {}) };
   }
+  // the shared clips, when some role is a humanoid (a game of creatures plays none)
   const clips = humanoidClips();
-  if (modules.character && !forge && !vista && clips) assets.push({ to: 'assets/clips/gf-humanoid-1.glb', from: clips.from, license: clips.license });
+  if (modules.character && !forge && !vista && clips && (humanoids > 0 || flat)) assets.push({ to: 'assets/clips/gf-humanoid-1.glb', from: clips.from, license: clips.license });
 
   // ---- the ground (stand-in world only: the real world draws its own from colour slots and a noise texture) ----
   if (!modules.world && !forge && !flat && !vista) assets.push({ to: 'assets/textures/ground.ktx2', from: join(STANDIN_ASSETS, 'grass.ktx2'), license: { spdx: 'CC0-1.0', author: 'Poly Haven', url: 'https://polyhaven.com/a/leafy_grass' } });
@@ -320,6 +350,7 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
   // the scenic-3d profile's world module writes its own config/world.json (CONTRACT §8): a generated island, ruins or isles;
   // a voxel world (CONTRACT §9) is the kit's default block island, seeded by the title
   let world = spec.world?.template === 'voxel' ? await voxelWorld(spec, { assets, notes })
+    : spec.world?.template === 'terrain' ? await terrainWorld(spec, { assets, notes })
     : worldConfig ? await worldConfig(spec, { spawns, layoutProps, rng, assets, propFiles, notes, named })
     : modules.world ? await realWorld(spec, { spawns, layoutProps, rng, assets, propFiles, notes, named }) : null;
   if (spec.loop === 'world') worldGame(spec, game, world, notes);
@@ -429,7 +460,19 @@ async function realWorld(spec, { spawns, layoutProps, rng, assets, propFiles, no
   // the props the template and the spec name, by their ids in the three runtime's packs (runtimes/three/art.json)
   const byId = new Map(assetsIn('three', { category: 'prop' }).filter(a => localFile(a)).map(a => [a.id, { ...propEntry(a), path: localFile(a) }]));
   const size = spec.world?.size ?? 'small';
-  const world = generateLayout(tpl, { size, seed: hashString(`${spec.title}|world`) });
+  // the spec's world.params over the template's own (a sea-islands world's relief, cliffs, clouds… set from the look
+  // target: builder/look/world.mjs)
+  const world = generateLayout(spec.world?.params ? { ...tpl, params: { ...(tpl.params ?? {}), ...spec.world.params } } : tpl, { size, seed: hashString(`${spec.title}|world`) });
+  // a picture the layout names from the library (library:<pack>/<asset>: a ground or cliff pattern) is copied into the game
+  for (const part of [world.ground, world.cliffs]) {
+    const f = part?.pattern?.file;
+    if (typeof f !== 'string' || !f.startsWith('library:')) continue;
+    const a = findAsset(f.slice('library:'.length)), from = a && localFile(a);
+    if (!from) { notes.push(`world: the picture ${f} is not in the library on this machine; left out`); delete part.pattern; continue; }
+    const to = `assets/textures/${a.id}${from.match(/\.[a-z0-9]+$/i)?.[0] ?? '.png'}`;
+    part.pattern = { ...part.pattern, file: to };
+    if (!assets.some(x => x.to === to)) assets.push({ to, from, license: licenceOf(a) });
+  }
   notes.push(`world: ${T} at size ${size}, ${world.size.join(' x ')} m${world.rooms?.length ? `, ${world.rooms.length} rooms (${world.rooms.map(r => r.id).join(', ')})` : ''}${world.entries?.length ? `, entries ${world.entries.map(e => e.name).join(', ')}` : ''}`);
   const [W, D] = world.size ?? [24, 24];
   const sp = (world.spawns ?? spawns).map(s => ({ x: s[0], z: s[2] }));
@@ -589,6 +632,45 @@ async function voxelWorld(spec, { assets, notes }) {
   V.protect ??= [{ min: [at[0] - half, V.floor ?? 1, at[1] - half], max: [at[0] + half, sy - 1, at[1] + half], why: 'spawn square' }];
   notes.push(`world: a voxel island ${sx} × ${sy} × ${sz}, seed ${V.terrain.seed}, ${V.blocks.length} blocks, spawn square protected`);
   return { template: 'voxel', voxel: V, __hotbar: spec.world?.params?.hotbar ?? hotbar };
+}
+
+/** config/world.json for world.template 'terrain' (worlds/terrain: smooth ground explosions carve): the kit's default
+ *  (kit/world/terrain/default.json) seeded by the title, the spec's world.params over it (its `materials`, `sea`,
+ *  `spawns` and `debris` keys go to those parts, every other key to the generator's `terrain`), and the top and soil
+ *  pictures copied from the library (`from: "library:<pack>/<id>"`) with their licences. */
+async function terrainWorld(spec, { assets, notes }) {
+  const D = JSON.parse(await readFile(kitPath(KIT, 'world/terrain/default.json'), 'utf8'));
+  const { materials, sea, spawns, debris, scenery, ...gen } = spec.world?.params ?? {};
+  const W = merge(D, { terrain: gen, ...(materials ? { materials } : {}), ...(sea ? { sea } : {}), ...(spawns !== undefined ? { spawns } : {}), ...(debris !== undefined ? { debris } : {}), ...(scenery ? { scenery } : {}) });
+  W.terrain.seed = gen.seed ?? (hashString(`${spec.title}|terrain`) % 1e9);
+  for (const layer of ['top', 'soil', 'cliff']) {
+    const L = W.materials?.[layer]; if (!L) continue;
+    const src = L.from;
+    delete L.from;
+    if (!src) continue;
+    const a = findAsset(src, 'three'), from = a && localFile(a);
+    if (!from) { notes.push(`world: terrain ${layer}: ${src} is not in the library on this machine; drawn in its colour (${L.color})`); delete L.file; continue; }
+    const to = L.file ?? `assets/textures/terrain-${layer}.png`;
+    assets.push({ to, from, license: licenceOf(a) });
+    L.file = to;
+  }
+  // the scenery's props (worlds/scenery.js: set dressing a look target asks for): their models and catalog entries
+  if (W.scenery?.props?.length) {
+    // the look's own packs first (spec look.packs: a wave made for this look), then the runtime's
+    const byId = new Map(assetsIn([...(spec.look?.packs ?? []), ...scopePacks('three')], { category: 'prop' }).filter(a => localFile(a)).map(a => [a.id, { ...propEntry(a), path: localFile(a) }]));
+    const catalog = { schema: 'gf-three-props/1', about: 'The asset library\'s props this game uses (library/packs, each named by its ref), for the world module.', props: [] };
+    W.scenery.props = W.scenery.props.filter(id => byId.has(id));
+    for (const id of W.scenery.props) {
+      const { path: from, ...entry } = byId.get(id);
+      catalog.props.push({ ...entry, id });
+      const to = `assets/models/${id}.glb`;
+      if (!assets.some(a => a.to === to)) assets.push({ to, from, license: licenceOf(findAsset(entry.ref, 'three')) });
+    }
+    W.__catalog = catalog;
+  }
+  const T = W.terrain;
+  notes.push(`world: smooth terrain (${T.shape}), ${T.size.join(' × ')} m at ${T.cell} m, seed ${T.seed}; top ${W.materials.top?.file ?? 'colour'}, soil ${W.materials.soil?.file ?? 'colour'}, cliffs ${W.materials.cliff?.file ?? 'the soil'}`);
+  return W;
 }
 
 /** A world game (the world loop): no clock, results or bots; first person (the creator, 2026-10-09: "Can we make it

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-large-slope-steep",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-large-slope-steep.glb",
+ "sha256": "580782e3a1dd7773d3c3e491ebe3d876f51dc0c72e64416526228bf90d1f903d",
+ "bytes": 16148,
+ "preview": "previews/block-grass-large-slope-steep.png",
+ "from": "Models/GLB format/block-grass-large-slope-steep.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass large slope steep",
+ "tags": [
+  "block",
+  "grass",
+  "large",
+  "slope",
+  "steep"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   1.217,
+   1.857
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16148,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#20896b",
+     "#ea9168",
+     "#d9835c",
+     "#da835d",
+     "#c77451",
+     "#db855e",
+     "#47b07e"
+    ],
+    "saturation": 0.592,
+    "value": 0.52,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.408
+     },
+     {
+      "hue": "green",
+      "share": 0.296
+     },
+     {
+      "hue": "cyan",
+      "share": 0.296
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8bd7ac8d7c4862a155677d11ed64e8f579dab8e7ce06a1e57a3bb0e9153496b6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

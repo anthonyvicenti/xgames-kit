@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "fence-bend",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-bend.glb",
+ "sha256": "e84360aa0e7ffbfaf4cddf7afa5a162bf3f3c207731b7be003e67d5390ab7012",
+ "bytes": 5964,
+ "preview": "previews/fence-bend.png",
+ "from": "Models/GLTF format/fence_bend.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence bend",
+ "tags": [
+  "fence",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 240,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 240,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5964,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc5a7",
+     "#e3af94"
+    ],
+    "saturation": 0.793,
+    "value": 0.782,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 18.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3f46171bdfbc8878b59216102bf4ac67f7ca35e9b66420604199b3e305321fef",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

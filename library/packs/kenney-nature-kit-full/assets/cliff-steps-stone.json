@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-steps-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-steps-stone.glb",
+ "sha256": "e16c0bae59bd409dca2ddbc7e962e1d639b39fc34aaff125970ab1fcd171a307",
+ "bytes": 5688,
+ "preview": "previews/cliff-steps-stone.png",
+ "from": "Models/GLTF format/cliff_steps_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff steps stone",
+ "tags": [
+  "cliff",
+  "steps",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1.05
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 219,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 219,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5688,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.599,
+    "value": 0.861,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "38dd9531a716738f5204e6f523d1bc2711b618daf3b34b02e6a39ff1db787793",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

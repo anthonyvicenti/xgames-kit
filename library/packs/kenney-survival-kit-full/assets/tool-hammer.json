@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tool-hammer",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-hammer.glb",
+ "sha256": "5e5e5b095076a3122e65e52ad08a29589f67ad61f4a067e2b4653ff8ac3e6609",
+ "bytes": 11156,
+ "preview": "previews/tool-hammer.png",
+ "from": "Models/GLB format/tool-hammer.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool hammer",
+ "tags": [
+  "tool",
+  "hammer"
+ ],
+ "use": {
+  "size": [
+   0.09,
+   0.153,
+   0.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11156,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#cf7a55",
+     "#949ab9",
+     "#db845d",
+     "#a9b1d4",
+     "#bfc8f0",
+     "#7d829a",
+     "#a0a8c9",
+     "#7f85a0"
+    ],
+    "saturation": 0.416,
+    "value": 0.648,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.479
+     },
+     {
+      "hue": "orange",
+      "share": 0.413
+     },
+     {
+      "hue": "grey",
+      "share": 0.108
+     }
+    ],
+    "grey": 0.108
+   },
+   "trianglesPerMetre": 37.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9b27f03c26dabd49a7ea358615e63fe65e1c3d0157887d4ee1ecdfa1f0e688f3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

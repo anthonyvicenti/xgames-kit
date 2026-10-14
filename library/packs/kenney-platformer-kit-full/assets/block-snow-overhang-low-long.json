@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-low-long",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-low-long.glb",
+ "sha256": "6a6679b210cd44062cf47f4d0b1290f542f7c0781f20fb171d5d892d7c54a7b8",
+ "bytes": 16324,
+ "preview": "previews/block-snow-overhang-low-long.png",
+ "from": "Models/GLB format/block-snow-overhang-low-long.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang low long",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "low",
+  "long"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   0.5,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 122,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 122,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16324,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f8f8fb",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.448,
+    "value": 0.789,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.464
+     },
+     {
+      "hue": "grey",
+      "share": 0.322
+     },
+     {
+      "hue": "blue",
+      "share": 0.214
+     }
+    ],
+    "grey": 0.322
+   },
+   "trianglesPerMetre": 4.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a3f5d2e916f8dc2f2b85c4ffd85e8b355afeb357778aa46a7e5cee1e10fcdf39",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -3,7 +3,7 @@
 // A tool called out of order is refused with the reason and the right tool.
 //
 //   gamesfun_step_ledger → gamesfun_step_foundation → gamesfun_step_pitch → gamesfun_step_spec → gamesfun_step_create
-//   → [the build round] → gamesfun_step_fix → [gamesfun_step_economy] → [gamesfun_step_backend] → gamesfun_step_verify
+//   → gamesfun_step_look (the look, before the build) → [the build round] → gamesfun_step_fix → [gamesfun_step_economy] → [gamesfun_step_backend] → gamesfun_step_verify
 //   → gamesfun_step_playtest → gamesfun_step_read (the second reader) → gamesfun_step_deliver
 //   a fail: gamesfun_step_repair (the stop rule and the ladder) → [the round] → gamesfun_step_fix → …
 //   the top of the ladder: gamesfun_ask; the person's answer: gamesfun_step_ledger {answer}; after delivery: gamesfun_change
@@ -84,12 +84,13 @@ function whereOf(S, game) {
   const base = { status: S.status, step: S.step, why: S.why, ...(S.ladder ? { ladder: { rung: S.ladder.rung, strong: S.ladder.strong, climbs: S.ladder.climbs, owed: S.ladder.queue } } : {}) };
   if (S.status === 'waiting-on-creator') {
     const a = S.waiting?.about;
-    const after = a === 'cards' ? call('gamesfun_step_pitch', { choice: { card: '<id>', answers: {}, words: '<their words>' } })
+    const after = a === 'looks' ? call('gamesfun_step_look', { pick: { option: '<id>', words: '<their words>' } })
+      : a === 'cards' ? call('gamesfun_step_pitch', { choice: { card: '<id>', answers: {}, words: '<their words>' } })
       : a === 'migration' ? { ...call('gamesfun_step_foundation', { approve: '<their words>' }), or: call('gamesfun_step_foundation', { decline: '<their words>' }) }
       : call('gamesfun_step_ledger', { answer: { words: '<their words>' } });
-    const show = a === 'cards' ? { pitch: S.pitch } : a === 'migration' ? { migration: S.change?.migration } : { questions: S.questions };
+    const show = a === 'looks' ? { looks: S.look?.options } : a === 'cards' ? { pitch: S.pitch } : a === 'migration' ? { migration: S.change?.migration } : { questions: S.questions };
     return { ...base, tool: null, args: null, waitingOn: 'the person', about: a, after, ...show,
-      do: a === 'cards' ? 'Show the person the cards (and the ledger\'s questions) and wait for their choice.' : a === 'migration' ? 'Show the person the migration and its consequences, in these words, and wait. Their yes goes in `approve`; their no in `decline` (the game stays on its runtime and the ledger is amended with their words).' : 'Ask the person these questions, plainly, and wait. Their answer re-enters at the ledger; "deliver it as it is" is an answer too ({deliver: true}).' };
+      do: a === 'looks' ? 'Show the person each look\'s contact sheet (`looks[].sheet`; a score when the judge gave one) and wait for their pick.' : a === 'cards' ? 'Show the person the cards (and the ledger\'s questions) and wait for their choice.' : a === 'migration' ? 'Show the person the migration and its consequences, in these words, and wait. Their yes goes in `approve`; their no in `decline` (the game stays on its runtime and the ledger is amended with their words).' : 'Ask the person these questions, plainly, and wait. Their answer re-enters at the ledger; "deliver it as it is" is an answer too ({deliver: true}).' };
   }
   if (S.step === 'done') return { ...base, tool: null, args: null, ...(S.outcome ? { outcome: S.outcome.outcome } : {}), after: call('gamesfun_change', { request: '<their words>' }), do: S.status === 'delivered' ? 'Delivered. Tell the person what is proven, failed and untested (the outcome\'s ledger). A change request starts with gamesfun_change.' : `This run ended (${S.status}). A new request starts with gamesfun_change.` };
   const h = S.handed;
@@ -235,10 +236,20 @@ export function loopTools(bind) {
         return serial(G.game, async () => {
           const L = await open(G);
           if (L.state.step !== 'create') return refusal('out-of-order', `the loop is at "${L.state.step}": ${where(L.state, G.arg).tool ?? where(L.state, G.arg).after?.tool} is next`, where(L.state, G.arg).tool);
-          const r = await L.step({}, { expect: 'create' });
+          let r = await L.step({}, { expect: 'create' });
+          if (r.next === 'look') r = await L.step({}, { expect: 'look' });
           return answer(G, L, r.next === 'build' ? await L.step({}, { expect: 'build' }) : r);
         });
       },
+    },
+    {
+      name: 'gamesfun_step_look',
+      description: 'The look, before the build round (builder/look). When the style target has to be read from the references and the person\'s words, the round hands you the frames and a fixed rubric: read every frame and pass your answer as `judged`. Then 2–3 readings of the target are drawn as contact sheets on the game\'s own world and bodies; show the person the sheets and pass their pick as `pick`: {option, words}. The pick goes into config/look.json and the build round follows.',
+      inputSchema: schema({ judged: { type: 'object', description: 'The rubric\'s answer: lighting, materials, shapes, camera, ui, vfx, reads, avoid, outline, roles.' }, pick: { type: 'object', properties: { option: { type: 'string' }, words: { type: 'string' } }, description: 'The look the person picked, and their words.' } }),
+      handler: stepTool(['look'], async (args, L, G) => {
+        if (L.state.status === 'waiting-on-creator' && !(L.state.waiting?.about === 'looks' && args.pick)) return { refusal: refusal('waiting-on-creator', 'the looks are with the person: call this tool with their pick', null, where(L.state, G.arg)) };
+        return { ...(args.judged ? { judged: args.judged } : {}), ...(args.pick ? { pick: args.pick } : {}) };
+      }, { then: ['look', 'build'] }),
     },
     {
       name: 'gamesfun_step_fix',

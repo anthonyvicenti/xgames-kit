@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-straight",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-straight.glb",
+ "sha256": "91d4b14c62d847c579101f8a1c80c4ee79b766db5c10ff13719e10aac98f6c8a",
+ "bytes": 14960,
+ "preview": "previews/track-striped-wide-straight.png",
+ "from": "Models/GLB format/track-striped-wide-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide straight",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#fa6b41"
+    ],
+    "saturation": 0.46,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.494
+     },
+     {
+      "hue": "blue",
+      "share": 0.454
+     },
+     {
+      "hue": "grey",
+      "share": 0.052
+     }
+    ],
+    "grey": 0.052
+   },
+   "trianglesPerMetre": 3.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "53ad46394703bde10261dacd6111f97ba8be62e048f7dfcacb9e0fc1edb6a44e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

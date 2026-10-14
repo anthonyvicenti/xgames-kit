@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "button-square",
+ "pack": "kenney-platformer-kit-full",
+ "file": "button-square.glb",
+ "sha256": "19fa68da00386e1807de1cd7e7b63949a809b26d9122b748f1056a1410404c65",
+ "bytes": 19908,
+ "preview": "previews/button-square.png",
+ "from": "Models/GLB format/button-square.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "button square",
+ "tags": [
+  "button",
+  "square"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.2,
+   0.6
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 3,
+     "images": 1,
+     "bytes": 19908,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#65657a",
+     "#797c91",
+     "#e76047",
+     "#6f7085",
+     "#fa6b41",
+     "#82879d",
+     "#7d8197",
+     "#f46743"
+    ],
+    "saturation": 0.383,
+    "value": 0.534,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.62
+     },
+     {
+      "hue": "red",
+      "share": 0.38
+     }
+    ],
+    "grey": 0.62
+   },
+   "trianglesPerMetre": 8.63,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e13067e31d726bbe8bc7e1a11fa9da90d0fa50027ae96772d47fd5c667985d7a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

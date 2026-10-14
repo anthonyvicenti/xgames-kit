@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "campfire-fishing-stand",
+ "pack": "kenney-survival-kit-full",
+ "file": "campfire-fishing-stand.glb",
+ "sha256": "2c19519730512a7e305c49e278d5f1ad351aeb9bb90c9ea1ff91ba5a6fc4ea7d",
+ "bytes": 11864,
+ "preview": "previews/campfire-fishing-stand.png",
+ "from": "Models/GLB format/campfire-fishing-stand.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "campfire fishing stand",
+ "tags": [
+  "campfire",
+  "fishing",
+  "stand"
+ ],
+ "use": {
+  "size": [
+   0.395,
+   0.276,
+   0.253
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 100,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 100,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11864,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c06e4c",
+     "#d37d58",
+     "#e48c63",
+     "#cf7a55",
+     "#b86746",
+     "#cb7753",
+     "#c77450",
+     "#df8860"
+    ],
+    "saturation": 0.549,
+    "value": 0.563,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 22.23,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7bb233454f69921f0eecfd8b5122eb19f0aae0d3740daa58075deab8cde461de",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

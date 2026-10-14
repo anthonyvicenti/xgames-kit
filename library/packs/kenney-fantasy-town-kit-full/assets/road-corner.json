@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "road-corner",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "road-corner.glb",
+ "sha256": "a5c3f048e76a4ca0d97ebed758aa8ba68df03ef4d910119fb95a1d63ba56eb26",
+ "bytes": 15968,
+ "preview": "previews/road-corner.png",
+ "from": "Models/GLB format/road-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "road corner",
+ "tags": [
+  "road",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 150,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 150,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15968,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#a0a8c9",
+     "#868ba1"
+    ],
+    "saturation": 0.249,
+    "value": 0.685,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.823
+     },
+     {
+      "hue": "grey",
+      "share": 0.177
+     }
+    ],
+    "grey": 0.177
+   },
+   "trianglesPerMetre": 8.34,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "96525a726a15410faf52bb4b813a985704fdbca37aec6d93808b8c18b9ec1e7d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

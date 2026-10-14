@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tool-hammer-upgraded",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-hammer-upgraded.glb",
+ "sha256": "080b991189c97e49e57e1170d36875ec9b07df783defe3450f0c94bea8bde143",
+ "bytes": 11704,
+ "preview": "previews/tool-hammer-upgraded.png",
+ "from": "Models/GLB format/tool-hammer-upgraded.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool hammer upgraded",
+ "tags": [
+  "tool",
+  "hammer",
+  "upgraded"
+ ],
+ "use": {
+  "size": [
+   0.116,
+   0.185,
+   0.052
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11704,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#949ab9",
+     "#6a7087",
+     "#a9b1d4",
+     "#777c94",
+     "#bfc8f0",
+     "#7d829a",
+     "#a0a8c9",
+     "#c77450"
+    ],
+    "saturation": 0.286,
+    "value": 0.619,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.471
+     },
+     {
+      "hue": "grey",
+      "share": 0.397
+     },
+     {
+      "hue": "orange",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.397
+   },
+   "trianglesPerMetre": 35.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "68a3d4330b79e027d0667e6426d4999fd0b818b84514ea0f3f76e7efaa5e7d57",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

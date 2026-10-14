@@ -11,14 +11,20 @@
 //
 // Bodies are GLB slots (any file that passes tools/rig-check.mjs); the clips come from the `character.clips` slot
 // (library/clips/gf-humanoid-1.glb) and drive a hidden standard skeleton, which rig.js maps onto each body.
+// A role whose archetype is not humanoid (config/characters.json → roles.<role>.archetype: worm, blob, quadruped,
+// flyer; CREATURES.md) is a creature: creature.js poses it by procedural motion from the same words, with the same
+// members, so nothing that drives a character needs to know.
 // No DOM is touched at import (slot declarations are read in Node).
 import * as THREE from 'three';
 import * as rig from './rig.js';
 import { createRagdoll, GROUPS } from './ragdoll.js';
 import { physicsOf } from '../core/util.js';
+import { RIG_OF, isCreature, archetypeOfModel } from './archetypes.js';
+import { spawnCreature } from './creature.js';
 
 export { CLIPS, RIG } from './rig.js';
 export { GROUPS } from './ragdoll.js';
+export { ARCHETYPES, RIG_OF, STANDARDS } from './archetypes.js';
 
 // ------------------------------------------------------------------ slot declarations (CONTRACT §2.2)
 const C = 'config/characters.json';
@@ -27,24 +33,37 @@ const human = r => (r === 'player' ? 'Player' : r.replace(/[-_]+/g, ' ').replace
 export function slotsFor(cfg = {}) {
   const roles = cfg.characters?.roles ?? { player: { body: 'assets/models/body-player.glb' } };
   const out = [];
+  let humans = false;
   for (const [role, r] of Object.entries(roles)) {
     // the player role's body, hat and tint are player looks (CONTRACT §6e): each player's loadout may replace them
     const look = role === 'player' ? { scope: 'player' } : {};
-    out.push({
-      id: `character.body.${role}`, group: 'characters', label: `${human(role)} character`, type: 'model',
-      source: { file: r.body ?? `assets/models/body-${role}.glb`, pathRef: { file: C, pointer: `/roles/${role}/body` } },
-      constraints: { rigged: true, rig: rig.RIG, animations: rig.CLIPS, maxBytes: 6000000, scale: 1 },
-      tier: 'main', facet: 'look', rank: 98, ...look,
-      description: r.describe ?? 'The body every player of this role wears. Any GLB that passes rig-check (gf-humanoid-1) works; the clips are shared.',
-      generate: { tool: 'research/gf-three/tools/meshy-character.mjs', prompt: r.describe ?? 'a friendly party-game character', style: 'full-body stylised game character, A-pose, front view' },
+    const arch = isCreature(r.archetype) ? r.archetype : 'humanoid';
+    if (arch === 'humanoid') humans = true;
+    const standard = RIG_OF[arch];
+    const bodySlot = (id, file, pointer, label, rank, describe) => ({
+      id, group: 'characters', label, type: 'model',
+      source: { file, pathRef: { file: C, pointer } },
+      constraints: arch === 'humanoid' ? { rigged: true, rig: rig.RIG, animations: rig.CLIPS, maxBytes: 6000000, scale: 1 }
+        : { rigged: true, rig: standard, archetype: arch, maxBytes: 6000000, scale: 1 },
+      tier: 'main', facet: 'look', rank, ...look,
+      description: describe ?? (arch === 'humanoid' ? 'The body every player of this role wears. Any GLB that passes rig-check (gf-humanoid-1) works; the clips are shared.'
+        : `The body every player of this role wears: a ${arch} on ${standard} (CREATURES.md). Any GLB that passes rig-check for ${standard} works (gamesfun art autorig <mesh.glb> --archetype ${arch} rigs a plain mesh); it moves by procedural motion, no clips.`),
+      generate: arch === 'humanoid' ? { tool: 'research/gf-three/tools/meshy-character.mjs', prompt: r.describe ?? 'a friendly party-game character', style: 'full-body stylised game character, A-pose, front view' }
+        : { tool: 'gamesfun art generate', archetype: arch, prompt: r.describe ?? `a friendly ${arch} creature`, style: 'a whole stylised game creature, neutral standing pose, three-quarter view' },
       ...(r.license ? { license: r.license } : {}),
     });
+    out.push(bodySlot(`character.body.${role}`, r.body ?? `assets/models/body-${role}.glb`, `/roles/${role}/body`, `${human(role)} character`, 98, r.describe));
+    // a body per seat (roles.<role>.seats: [{body, height, describe}]): seat 2 wears the first, and so on round
+    for (const [i, x] of (Array.isArray(r.seats) ? r.seats : []).entries()) {
+      const seat = typeof x === 'string' ? { body: x } : x ?? {};
+      out.push(bodySlot(`character.body.${role}.seat${i + 2}`, seat.body ?? `assets/models/body-${role}-seat${i + 2}.glb`, `/roles/${role}/seats/${i}${typeof x === 'string' ? '' : '/body'}`, `${human(role)} character (seat ${i + 2})`, 97 - i, seat.describe ?? r.describe));
+    }
     // seat colours live in config/characters.json → palette unless the look's palette owns them (look.palette.players)
     if (Array.isArray(cfg.characters?.palette) || !cfg.characters) out.push({ id: `character.tint.${role}`, group: 'characters', label: role === 'player' ? 'Player colours (one per seat)' : `${human(role)} colours`, type: 'colors',
       source: { file: C, pointer: '/palette' }, constraints: { min: 1, max: 8 }, tier: 'main', facet: 'look', rank: 90, ...look,
       description: 'Each player\'s body tint (materials named tint_*), ring and nameplate colour' });
     if (typeof r.height === 'number') out.push({ id: `character.height.${role}`, group: 'characters', label: `${human(role)} height`, type: 'number',
-      source: { file: C, pointer: `/roles/${role}/height` }, constraints: { min: 0.5, max: 3, unit: 'm' }, tier: 'advanced', facet: 'gameplay', rank: 21 });
+      source: { file: C, pointer: `/roles/${role}/height` }, constraints: arch === 'humanoid' ? { min: 0.5, max: 3, unit: 'm' } : { min: 0.1, max: 6, unit: 'm' }, tier: 'advanced', facet: 'gameplay', rank: 21 });
     if (r.hat) out.push({ id: `character.hat.${role}`, group: 'characters', label: `${human(role)} hat`, type: 'model', optional: true,
       source: { file: r.hat, pathRef: { file: C, pointer: `/roles/${role}/hat` } }, constraints: { maxBytes: 2000000, scale: 1 },
       tier: 'main', facet: 'look', rank: 84, ...look, description: 'Worn on the head socket; its origin sits on top of the head, +Z forward' });
@@ -54,7 +73,8 @@ export function slotsFor(cfg = {}) {
       editable: false, readonlyReason: 'This game gives its players no hat; a player who owns one (a loadout item) wears it on the head socket',
       description: 'Worn on the head socket; its origin sits on top of the head, +Z forward' });
   }
-  out.push({ id: 'character.clips', group: 'characters', label: 'Character animations', type: 'model', source: { file: 'assets/clips/gf-humanoid-1.glb' },
+  // the shared clips, when a role is humanoid (a game of creatures only plays none)
+  if (humans) out.push({ id: 'character.clips', group: 'characters', label: 'Character animations', type: 'model', source: { file: 'assets/clips/gf-humanoid-1.glb' },
     constraints: { rig: rig.RIG, animations: rig.CLIPS }, tier: 'advanced', facet: 'look', rank: 6, editable: false,
     readonlyReason: 'The shared gf-humanoid-1 clips every body plays; replaced as part of the character standard',
     license: { spdx: 'CC0-1.0', author: 'Quaternius (Universal Animation Library), retargeted and extended by games.fun', url: 'https://quaternius.itch.io/universal-animation-library' } });
@@ -138,6 +158,23 @@ function measureBody(model, found, rt) {
   return info;
 }
 
+/** The role a body slot belongs to: character.body.<role> or a seat's character.body.<role>.seat<n>. */
+export const roleOfSlot = slot => (String(slot).startsWith('character.body.') ? String(slot).slice(15).replace(/\.seat\d+$/, '') : null);
+/** A role's archetype from config/characters.json (null when it names none: humanoid, or the body file decides). */
+export function archetypeOfRole(ctx, role) {
+  try { const a = ctx.assets.config?.('characters')?.roles?.[role]?.archetype; return typeof a === 'string' ? a : null; } catch { return null; }
+}
+/**
+ * Which slot and height a player of a role wears in a seat (0-based): seat 0 the role's body, seat n its seats[n-1]
+ * (roles.<role>.seats), round again when there are more seats than bodies. → { bodySlot, height, role, archetype }
+ */
+export function bodyFor(cfg = {}, role = 'player', seat = 0) {
+  const r = cfg.roles?.[role] ?? {}, seats = Array.isArray(r.seats) ? r.seats : [];
+  const k = seats.length && Number.isInteger(seat) && seat > 0 ? seat % (seats.length + 1) : 0;
+  const x = k ? (typeof seats[k - 1] === 'string' ? { body: seats[k - 1] } : seats[k - 1] ?? {}) : r;
+  return { bodySlot: k ? `character.body.${role}.seat${k + 1}` : `character.body.${role}`, height: x.height ?? r.height ?? (isCreature(r.archetype) ? null : 1.7), role, archetype: r.archetype ?? 'humanoid' };
+}
+
 /** The game's hat for a role is worn when config/characters.json gives the role one (the slot is always declared for
  *  the player role, so a loadout's hat has somewhere to go, but the game's file may not exist). */
 function roleHasHat(ctx, role) {
@@ -170,8 +207,18 @@ const SWING = { head: 0.35, torso: 0.4, upperarm: 1.1, thigh: 0.9 };
 export async function spawnCharacter(ctx, opts = {}) {
   const { player = null, bodySlot = 'character.body.player', tint = player?.color ?? null, local = false, height = null, plate = null, onState = null } = opts;
   const A = ctx.assets;
+  const role = roleOfSlot(bodySlot);
+  // a creature (CREATURES.md): the role's archetype says so, or (no archetype written) the body file itself does
+  const arch = archetypeOfRole(ctx, role) ?? (opts.archetype ?? null);
+  if (isCreature(arch)) return spawnCreature(ctx, { ...opts, archetype: arch, role, loadHat });
+  // no archetype written: the body file says (its gf_body extras); the model loaded to ask is the one worn
+  let first = null;
+  if (!arch) {
+    first = await A.model(bodySlot).catch(() => null);
+    const own = first && archetypeOfModel(first);
+    if (isCreature(own)) return spawnCreature(ctx, { ...opts, archetype: own, role, loadHat, model: first });
+  }
   const cs = await clipSet(ctx, clipsSlotOf(ctx, opts.clipsSlot));
-  const role = bodySlot.startsWith('character.body.') ? bodySlot.slice(15) : null;
   // Player looks (CONTRACT §6e): a player's own body (their loadout) when it loads, fits the slot's budget and is a
   // gf-humanoid-1 rig; anything else is dropped for that player (never fatal) and the game's body is used.
   const prepare = (model, file) => {
@@ -192,7 +239,7 @@ export async function spawnCharacter(ctx, opts = {}) {
     try { const m = await A.model(bodySlot, { player, ownOnly: true }); if (m) body = prepare(m, ownBody); }
     catch (e) { A.reject?.(player, bodySlot, e.message); }
   }
-  body ??= prepare(await A.model(bodySlot), null);
+  body ??= prepare(first ?? await A.model(bodySlot), null);
   const { model, found, rt, info } = body;
   const bodyFile = model.userData?.gfFile ?? null;
   const k = rt.k;

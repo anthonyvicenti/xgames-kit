@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "path-woodend",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-woodend.glb",
+ "sha256": "ad9f2e10f740938dd93aac937f90571d5ad0bedd522de3c74ea66e16e9425ac0",
+ "bytes": 4544,
+ "preview": "previews/path-woodend.png",
+ "from": "Models/GLTF format/path_woodEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path woodend",
+ "tags": [
+  "path",
+  "woodend"
+ ],
+ "use": {
+  "size": [
+   0.615,
+   0.05,
+   0.514
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 36,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 36,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4544,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ffffff",
+     "#dbab8e"
+    ],
+    "saturation": 0.452,
+    "value": 0.828,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.691
+     },
+     {
+      "hue": "grey",
+      "share": 0.309
+     }
+    ],
+    "grey": 0.309
+   },
+   "trianglesPerMetre": 7.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "eeab39b94ee4f25f20abeb3932493e9a44eb6e5c10b77121cb97d90b8a028325",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "explosion-flipbook",
+ "pack": "quiver-outpost-fx",
+ "file": "explosion-flipbook.png",
+ "sha256": "d36b2af4f95a942555b7f64dae2248d3753a0abe1e9b97d2089c365b89a144aa",
+ "bytes": 517353,
+ "preview": "previews/explosion-flipbook.png",
+ "from": "die_fx_spritesheet.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a cartoon explosion flipbook seen from above: spark, yellow-orange fireball, a ring of purple smoke that thins out; 21 frames of 256 px on a 5x5 grid",
+ "tags": [
+  "explosion",
+  "fireball",
+  "smoke",
+  "flipbook",
+  "cartoon",
+  "vfx",
+  "die",
+  "fx",
+  "spritesheet"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1280
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 1280,
+     "height": 1280,
+     "seeThrough": 0.859
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 34,
+    "hues": [
+     "#93597d",
+     "#885b81",
+     "#b25665",
+     "#9f536f",
+     "#8b4060",
+     "#e8686d",
+     "#754d72",
+     "#805680"
+    ],
+    "saturation": 0.406,
+    "value": 0.479,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.392
+     },
+     {
+      "hue": "grey",
+      "share": 0.167
+     },
+     {
+      "hue": "purple",
+      "share": 0.14
+     },
+     {
+      "hue": "red",
+      "share": 0.138
+     },
+     {
+      "hue": "yellow",
+      "share": 0.105
+     },
+     {
+      "hue": "orange",
+      "share": 0.058
+     }
+    ],
+    "exact": 189,
+    "grey": 0.167
+   },
+   "outline": {
+    "present": false,
+    "share": 0.08
+   }
+  }
+ },
+ "source": {
+  "sha256": "5bfa2f4b4974b7c29e534f185dc92a3316831fbab97f962acb24c610255459d9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tool-axe-upgraded",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-axe-upgraded.glb",
+ "sha256": "9cbca4c51b69cc6c932ae85893a847fad048cce7ae5de0139b81acd0e792cfb9",
+ "bytes": 12392,
+ "preview": "previews/tool-axe-upgraded.png",
+ "from": "Models/GLB format/tool-axe-upgraded.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool axe upgraded",
+ "tags": [
+  "tool",
+  "axe",
+  "upgraded"
+ ],
+ "use": {
+  "size": [
+   0.147,
+   0.256,
+   0.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#676c84",
+     "#747990",
+     "#979ebe",
+     "#c77450",
+     "#d7815b",
+     "#a4acce",
+     "#aeb6da",
+     "#9ea5c6"
+    ],
+    "saturation": 0.283,
+    "value": 0.59,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.465
+     },
+     {
+      "hue": "blue",
+      "share": 0.317
+     },
+     {
+      "hue": "orange",
+      "share": 0.219
+     }
+    ],
+    "grey": 0.465
+   },
+   "trianglesPerMetre": 52.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "18ffed02c818a25bc0a87609ccebdf3c55e238131efa2c50bdd6991fc6a2d8f2",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

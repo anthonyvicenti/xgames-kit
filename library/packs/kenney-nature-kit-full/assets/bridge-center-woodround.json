@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-center-woodround",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-center-woodround.glb",
+ "sha256": "e4d2ec21e10f59cb50e6eff1825513f067b38676116f0dc8a8cbbd1592e8a968",
+ "bytes": 5468,
+ "preview": "previews/bridge-center-woodround.png",
+ "from": "Models/GLTF format/bridge_center_woodRound.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge center woodround",
+ "tags": [
+  "bridge",
+  "center",
+  "woodround"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.2,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5468,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#f2be9e",
+     "#ccdbde",
+     "#ffc5a7",
+     "#ddf2f5"
+    ],
+    "saturation": 0.661,
+    "value": 0.81,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.718
+     },
+     {
+      "hue": "cyan",
+      "share": 0.282
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "382c95860d1805457a77e43ae1e47cc77d7a05cb5b1921e5e0f44f6627d0e11f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

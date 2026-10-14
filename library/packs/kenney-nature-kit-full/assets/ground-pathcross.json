@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathcross",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathcross.glb",
+ "sha256": "345ba672e7298a3f814dcc689d12509bcb7467fafac49b9a2d0df52584279cf5",
+ "bytes": 4624,
+ "preview": "previews/ground-pathcross.png",
+ "from": "Models/GLTF format/ground_pathCross.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathcross",
+ "tags": [
+  "ground",
+  "pathcross"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 74,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 74,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4624,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e",
+     "#73eddd"
+    ],
+    "saturation": 0.734,
+    "value": 0.77,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.95
+     },
+     {
+      "hue": "cyan",
+      "share": 0.05
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.46,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6638d277b1fa06912d7fe2617f25507c14dfa7a39b16211d73bf4ae6ca79bb2f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "crate-item",
+ "pack": "kenney-platformer-kit-full",
+ "file": "crate-item.glb",
+ "sha256": "88607be5291430daa0358bc3a27d024743c9f0bbf6b0be9f20b29779358e7268",
+ "bytes": 16656,
+ "preview": "previews/crate-item.png",
+ "from": "Models/GLB format/crate-item.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crate item",
+ "tags": [
+  "crate",
+  "item"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.5,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16656,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#cc7854",
+     "#d47f59",
+     "#ffbb50",
+     "#ffae44",
+     "#ffcf60",
+     "#ff9832",
+     "#ffb94e",
+     "#e58d64"
+    ],
+    "saturation": 0.89,
+    "value": 0.626,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.952
+     },
+     {
+      "hue": "yellow",
+      "share": 0.048
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "77f1d71ae94d7912dc241978fb63f7fbc7ab97b74aee9adc004c7ee6f711a265",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

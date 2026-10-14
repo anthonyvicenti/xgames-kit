@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "rock-smalld",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-smalld.glb",
+ "sha256": "ad9c5c1f71ec2b853eafbfc529dcdda3b14e79e11a4abdf4dadc99d1e515ebac",
+ "bytes": 3396,
+ "preview": "previews/rock-smalld.png",
+ "from": "Models/GLTF format/rock_smallD.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock smalld",
+ "tags": [
+  "rock",
+  "smalld"
+ ],
+ "use": {
+  "size": [
+   0.426,
+   0.231,
+   0.369
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3396,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.764,
+    "value": 0.775,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.901
+     },
+     {
+      "hue": "cyan",
+      "share": 0.099
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d5a09ec917231fbaf5a0d6868e1c0320fd4cb139851dcefbe9e3794eec73ee6c",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-large-tall",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-large-tall.glb",
+ "sha256": "d82fd2d83df2c2d42c184bb9c5a2a71cec9f65d9984c3ab3b551dc4cddef12f1",
+ "bytes": 16916,
+ "preview": "previews/block-grass-overhang-large-tall.png",
+ "from": "Models/GLB format/block-grass-overhang-large-tall.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang large tall",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "large",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   2,
+   2.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#329b74",
+     "#47b07e",
+     "#339c75",
+     "#50ba83"
+    ],
+    "saturation": 0.573,
+    "value": 0.565,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.695
+     },
+     {
+      "hue": "green",
+      "share": 0.201
+     },
+     {
+      "hue": "cyan",
+      "share": 0.104
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1fba447e75fe001ac84911b57fe978ea4bb3a1f52a4ccaa522026782c211d544",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

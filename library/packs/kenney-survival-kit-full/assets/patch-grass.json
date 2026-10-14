@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "patch-grass",
+ "pack": "kenney-survival-kit-full",
+ "file": "patch-grass.glb",
+ "sha256": "9286fb72495237c123735536d51d6f89e99d4e08b59f58d1aa2196c7d71bfe0e",
+ "bytes": 10140,
+ "preview": "previews/patch-grass.png",
+ "from": "Models/GLB format/patch-grass.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "patch grass",
+ "tags": [
+  "patch",
+  "grass"
+ ],
+ "use": {
+  "size": [
+   1.2,
+   0,
+   1.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 33,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 33,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10140,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#20896b"
+    ],
+    "saturation": 0.621,
+    "value": 0.331,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ae22da8e00dfdf5c12969d9dc27bd0fad70d1c5dc2a8b32f8cf441833f0d203c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

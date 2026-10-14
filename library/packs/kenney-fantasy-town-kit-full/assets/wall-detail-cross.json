@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-detail-cross",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-detail-cross.glb",
+ "sha256": "41fd3169ae9bad462e1f93cc25cf7fb629c4c390878da315aed14def4fa3d872",
+ "bytes": 14924,
+ "preview": "previews/wall-detail-cross.png",
+ "from": "Models/GLB format/wall-detail-cross.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall detail cross",
+ "tags": [
+  "wall",
+  "detail",
+  "cross"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14924,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#989fbe",
+     "#a2aacc",
+     "#c78362",
+     "#c3805f",
+     "#c38060",
+     "#c88363",
+     "#c48060",
+     "#c37f5f"
+    ],
+    "saturation": 0.363,
+    "value": 0.635,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.505
+     },
+     {
+      "hue": "blue",
+      "share": 0.485
+     }
+    ],
+    "grey": 0.01
+   },
+   "trianglesPerMetre": 4.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7af8fba9e7022c500289bee84fcbe02a1fdad0c2afc0276155a82c1021d6456d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

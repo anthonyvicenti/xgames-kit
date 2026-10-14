@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine-snow-small",
+ "pack": "kenney-platformer-kit-full",
+ "file": "tree-pine-snow-small.glb",
+ "sha256": "330bcb6ed26dd023f2c9379646ebda8ff8b9309961bd6c5ca169de32e5944af0",
+ "bytes": 19116,
+ "preview": "previews/tree-pine-snow-small.png",
+ "from": "Models/GLB format/tree-pine-snow-small.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pine snow small",
+ "tags": [
+  "tree",
+  "pine",
+  "snow",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.664,
+   1.398,
+   0.664
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19116,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#cfcfe1",
+     "#d7d7e6",
+     "#dddde9",
+     "#dbdbe8",
+     "#e3e3ed",
+     "#e4e4ee",
+     "#d0d0e1",
+     "#cf7a56"
+    ],
+    "saturation": 0.298,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.822
+     },
+     {
+      "hue": "orange",
+      "share": 0.178
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "69a5456505ab7679fd1c9135af984bd65bd9c1c02e3c7a5a8f32c9fb2671eb86",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-fat-darkh",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-fat-darkh.glb",
+ "sha256": "111ec63cfb7800b59e98671308fa6f74be59567b2cc0923da42277b82a574445",
+ "bytes": 3824,
+ "preview": "previews/tree-fat-darkh.png",
+ "from": "Models/GLTF format/tree_fat_darkh.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree fat darkh",
+ "tags": [
+  "tree",
+  "fat",
+  "darkh"
+ ],
+ "use": {
+  "size": [
+   0.755,
+   1.15,
+   0.654
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 50,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 50,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3824,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.544,
+    "value": 0.649,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.938
+     },
+     {
+      "hue": "orange",
+      "share": 0.062
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "92674861d2055abeef856c7d7d69f3efcf79b10c13d1a5f780df09d7a289cf39",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

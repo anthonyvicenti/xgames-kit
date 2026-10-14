@@ -1,0 +1,192 @@
+{
+ "tool": "builder/look/tune.mjs",
+ "date": "2026-10-14",
+ "about": "The tuning loop on two cases with the final judge (surfaces, 30/70, bar 55), the vision judge before and after. The before-after sheets show our frames only; the side-by-side sheets with the reference frames stay local. Numbers only: the reference frames, their names and the judge's words about them are not kept here.",
+ "runs": [
+  {
+   "case": "hollow-reach: the block-valley example toward Hollow Reach (our own voxel trial, 11 frames)",
+   "game": "valley",
+   "references": 11,
+   "levers": 34,
+   "renders": 333,
+   "seconds": 270,
+   "measured": {
+    "before": 49.1,
+    "after": 66.1,
+    "renders": 333
+   },
+   "score": {
+    "before": 46,
+    "after": 56,
+    "bar": 55
+   },
+   "parts": {
+    "before": {
+     "measured": {
+      "palette": 59,
+      "value": 56,
+      "saturation": 30,
+      "sky": 58,
+      "ground": 39,
+      "characters": 59,
+      "edges": 53,
+      "proportion": 59
+     },
+     "judged": {
+      "palette": 19,
+      "lighting": 16,
+      "materials": 56,
+      "shape": 66,
+      "ui": 25
+     }
+    },
+    "after": {
+     "measured": {
+      "palette": 71,
+      "value": 67,
+      "saturation": 69,
+      "sky": 69,
+      "ground": 52,
+      "edges": 62,
+      "proportion": 58
+     },
+     "judged": {
+      "palette": 41,
+      "lighting": 25,
+      "materials": 63,
+      "shape": 38,
+      "ui": 25
+     }
+    }
+   },
+   "values": {
+    "renderer": {
+     "exposure": 0.4
+    },
+    "sun": {
+     "intensity": 3.7,
+     "elevation": 28
+    },
+    "post": {
+     "grade": {
+      "contrast": 0.92,
+      "saturation": 0.82
+     },
+     "bloom": {
+      "intensity": 0.3
+     }
+    },
+    "materials": {
+     "prop": {
+      "bands": 1
+     }
+    }
+   },
+   "ladder": {
+    "needed": false,
+    "art": 15,
+    "leversLeft": 6,
+    "parts": [
+     "ui",
+     "shape",
+     "materials",
+     "ground"
+    ]
+   },
+   "sheet": "tune-hollow-reach-valley-2026-10-14.jpg"
+  },
+  {
+   "case": "the proving case (a third-party cartoon artillery game, 18 published screenshots kept local): the Soak Squad example toward it",
+   "game": "soak",
+   "references": 18,
+   "levers": 34,
+   "renders": 259,
+   "seconds": 267,
+   "measured": {
+    "before": 49.4,
+    "after": 50.9,
+    "renders": 259
+   },
+   "score": {
+    "before": 35,
+    "after": 35,
+    "bar": 55
+   },
+   "parts": {
+    "before": {
+     "measured": {
+      "palette": 54,
+      "value": 58,
+      "saturation": 39,
+      "sky": 49,
+      "ground": 47,
+      "characters": 51,
+      "edges": 67,
+      "proportion": 0
+     },
+     "judged": {
+      "palette": 22,
+      "lighting": 28,
+      "materials": 25,
+      "shape": 34,
+      "characters": 25,
+      "ui": 25
+     }
+    },
+    "after": {
+     "measured": {
+      "palette": 55,
+      "value": 58,
+      "saturation": 42,
+      "sky": 49,
+      "ground": 47,
+      "characters": 51,
+      "edges": 76,
+      "proportion": 0
+     },
+     "judged": {
+      "palette": 22,
+      "lighting": 28,
+      "materials": 25,
+      "shape": 31,
+      "characters": 25,
+      "ui": 0
+     }
+    }
+   },
+   "values": {
+    "renderer": {
+     "exposure": 1.3
+    },
+    "fog": {
+     "near": 49.328
+    },
+    "post": {
+     "grade": {
+      "saturation": 1.12
+     }
+    },
+    "materials": {
+     "prop": {
+      "bands": 1
+     }
+    }
+   },
+   "ladder": {
+    "needed": true,
+    "art": 45,
+    "leversLeft": 6,
+    "parts": [
+     "ui",
+     "materials",
+     "characters",
+     "shape",
+     "ground",
+     "proportion"
+    ]
+   },
+   "sheet": "tune-artillery-case-soak-2026-10-14.jpg"
+  }
+ ],
+ "note": "Hollow Reach moves past the bar on light and grade alone (darker exposure, desaturated grade, softer sun): the references are mostly cave frames, so the overworld is pulled toward cave darkness too; a target camera places the camera around the player, not in the place a reference shows. The artillery case barely moves: the look is islands, sea, cartoon creatures and an inked HUD, which no lever reaches; the ladder names the art (shape, characters, materials, UI, effects)."
+}

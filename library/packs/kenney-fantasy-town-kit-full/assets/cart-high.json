@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "cart-high",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "cart-high.glb",
+ "sha256": "00631874609634fff2b8a34e3db5283c8dfccb9797663e41e0e12e3db1405c83",
+ "bytes": 30592,
+ "preview": "previews/cart-high.png",
+ "from": "Models/GLB format/cart-high.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cart high",
+ "tags": [
+  "cart",
+  "high"
+ ],
+ "use": {
+  "size": [
+   0.893,
+   0.861,
+   1.39
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1028,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 836,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 30592,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#d38c6a",
+     "#b87758",
+     "#efbc8c",
+     "#efc093",
+     "#f0c399",
+     "#c78362",
+     "#ce8867",
+     "#f0c8a3"
+    ],
+    "saturation": 0.524,
+    "value": 0.636,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.881
+     },
+     {
+      "hue": "blue",
+      "share": 0.059
+     },
+     {
+      "hue": "grey",
+      "share": 0.034
+     }
+    ],
+    "grey": 0.034
+   },
+   "trianglesPerMetre": 12.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4b0bce37e8645f3719a9032bf4d49048b7779ac891758ae6e2693238911c5eec",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "structure-metal-roof",
+ "pack": "kenney-survival-kit-full",
+ "file": "structure-metal-roof.glb",
+ "sha256": "14e703da7612e14a54a4999a606e7b4bb6e7a4d92967a497e1d9ad16758da94a",
+ "bytes": 17708,
+ "preview": "previews/structure-metal-roof.png",
+ "from": "Models/GLB format/structure-metal-roof.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "structure metal roof",
+ "tags": [
+  "structure",
+  "metal",
+  "roof"
+ ],
+ "use": {
+  "size": [
+   0.544,
+   0.5,
+   0.55
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 456,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 456,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17708,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#9197b6",
+     "#a9b1d4",
+     "#e15d49",
+     "#ec6246",
+     "#747990",
+     "#676c84",
+     "#6a7087",
+     "#71768d"
+    ],
+    "saturation": 0.313,
+    "value": 0.628,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.567
+     },
+     {
+      "hue": "grey",
+      "share": 0.273
+     },
+     {
+      "hue": "red",
+      "share": 0.16
+     }
+    ],
+    "grey": 0.273
+   },
+   "trianglesPerMetre": 14.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7dbcfa227640df53dcd2f54dd9198413b78d5cd26f3ea062c9371be4284709f3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

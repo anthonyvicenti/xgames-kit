@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathside",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathside.glb",
+ "sha256": "b2b71d110214958231ad3691ee491643b101b3329f83add48ce7c48d90be16d5",
+ "bytes": 4124,
+ "preview": "previews/ground-pathside.png",
+ "from": "Models/GLTF format/ground_pathSide.glb; kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathside",
+ "tags": [
+  "ground",
+  "pathside"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 34,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 34,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4124,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.745,
+    "value": 0.77,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.912
+     },
+     {
+      "hue": "cyan",
+      "share": 0.088
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.78,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "modified": "kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "packVersion": 1,
+ "id": "xk-terrain",
+ "title": "Terrain ground pictures (painted)",
+ "describe": "The terrain world's own ground pictures (worlds/terrain): painted cartoon textures drawn by code (runtimes/three/tools/terrain-textures.mjs), 1024 px, seamless by construction. A top surface (grass, sand) and a cross-section (soil, rock) whose layers run level.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by code: runtimes/three/tools/terrain-textures.mjs)",
+  "file": "library/packs/xk-terrain/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "retrieved": "2026-10-14"
+ },
+ "owner": "own",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 20,
+   "hues": [
+    "#ebd092",
+    "#ecd193",
+    "#3a2212",
+    "#e9ce91",
+    "#eed394",
+    "#e8cd90",
+    "#edd293",
+    "#eacf91",
+    "#66bb38",
+    "#eacf92",
+    "#68be39",
+    "#67bc39"
+   ],
+   "saturation": 0.544,
+   "value": 0.624,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.384
+    },
+    {
+     "hue": "green",
+     "share": 0.253
+    },
+    {
+     "hue": "brown",
+     "share": 0.216
+    },
+    {
+     "hue": "yellow",
+     "share": 0.147
+    }
+   ],
+   "grey": 0.001
+  },
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 4,
+ "validators": [
+  "picture-check"
+ ]
+}

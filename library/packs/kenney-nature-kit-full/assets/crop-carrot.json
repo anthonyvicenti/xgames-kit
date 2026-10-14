@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "crop-carrot",
+ "pack": "kenney-nature-kit-full",
+ "file": "crop-carrot.glb",
+ "sha256": "e0d4a9bb74c1bb142cda900904724eb40c7bb57e0cd7bc95e532926f05e77a6d",
+ "bytes": 5504,
+ "preview": "previews/crop-carrot.png",
+ "from": "Models/GLTF format/crop_carrot.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crop carrot",
+ "tags": [
+  "crop",
+  "carrot"
+ ],
+ "use": {
+  "size": [
+   0.343,
+   0.619,
+   0.343
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 148,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 148,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5504,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#73eddd",
+     "#ffc78a"
+    ],
+    "saturation": 0.858,
+    "value": 0.72,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.625
+     },
+     {
+      "hue": "orange",
+      "share": 0.375
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 23.32,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2a3641c609dd837a4feebb4f5c95d4cd43c3046e800acd416f4f6a3b923ba9d8",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

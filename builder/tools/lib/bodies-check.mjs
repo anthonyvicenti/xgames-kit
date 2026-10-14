@@ -14,6 +14,12 @@
 // role what enemies play (body-judge.mjs ENEMY_CLIPS); and for every role, the clips the game's own code plays
 // (clipsInCode: rules.js and the files beside it).
 //
+// A body on one of the archetype standards beside gf-humanoid-1 (its slot's constraints.archetype, or the file's own
+// gf_body extras: worm, blob, quadruped, flyer; kit/character/CREATURES.md) has no clips to be posed by: the creature
+// judge (creature-judge.mjs) poses it through every action with the kit's own procedural motion and measures its body,
+// head and limbs the same way (stretched, squeezed or folded skin, a part flying off, sinking or never touching the
+// ground). Gate A widened for the archetypes (2026-10-14), no new measure.
+//
 //   const r = await checkBodies('<game dir>');   // { ok, detail, bodies: [{role, file, ok, parts, errors}], notes }
 import { readFile, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
@@ -21,6 +27,18 @@ import { join } from 'node:path';
 import { judgeBody, judgeSummary, PARTS, PART_LABEL, DEV_RIG, DEFAULT_CLIPS } from './body-judge.mjs';
 import { flatOf } from './flat-reads.mjs';
 import { decodePng } from './flat-png.mjs';
+import { judgeCreature, creatureSummary } from './creature-judge.mjs';
+import { io } from './char-deps.mjs';
+
+/** The archetype a body file names in its gf_body extras (a creature), else null. */
+async function creatureOf(file) {
+  try {
+    const doc = await (await io()).read(file);
+    const x = doc.getRoot().listNodes().find(n => n.getName() === 'gf_body')?.getExtras() ?? {};
+    const a = x.gfArchetype ?? { 'gf-worm-1': 'worm', 'gf-blob-1': 'blob', 'gf-quadruped-1': 'quadruped', 'gf-flyer-1': 'flyer' }[x.gfRig];
+    return a && a !== 'humanoid' ? a : null;
+  } catch { return null; }
+}
 
 /**
  * The clip names the game's own code plays: in its top-level .js files (rules.js and its siblings) and src/ (never gf/, vendor/
@@ -67,6 +85,19 @@ export async function checkBodies(dir) {
       if (r.warnings.length) notes.push(`${role} (${rel}): ${r.warnings.slice(0, 3).join(' | ')}`);
       continue;
     }
+    // a creature: its slot says its archetype, or the body file does
+    const creature = s.constraints?.archetype && s.constraints.archetype !== 'humanoid' ? s.constraints.archetype : await creatureOf(join(dir, rel));
+    if (creature) {
+      const key = `${rel}|${creature}`;
+      if (!seen.has(key)) seen.set(key, await judgeCreature(join(dir, rel), { archetype: creature }));
+      const r = seen.get(key);
+      const warns = r.warnings ?? [];
+      out.push({ role, file: rel, ok: r.ok, creature: r.archetype, rig: r.rig, summary: r.ok ? '' : creatureSummary(r), errors: r.errors,
+        parts: Object.fromEntries(Object.entries(r.parts ?? {}).map(([p, v]) => [p, v.na ? 'n/a' : v.ok ? 'pass' : 'fail'])), worst: Object.fromEntries(Object.entries(r.parts ?? {}).filter(([, v]) => v.worst).map(([p, v]) => [p, v.worst])),
+        warnings: warns.length, stats: { poses: r.poses?.length ?? 0 } });
+      if (warns.length) notes.push(`${role} (${rel}): ${warns.slice(0, 3).join(' | ')}${warns.length > 3 ? ` (+${warns.length - 3} more)` : ''}`);
+      continue;
+    }
     const as = role === 'player' ? 'player' : 'enemy', key = `${rel}|${as}`;
     if (!seen.has(key)) seen.set(key, await judgeBody(join(dir, rel), { rig, clips, role: as, extraClips: named }));
     const r = seen.get(key);
@@ -78,6 +109,6 @@ export async function checkBodies(dir) {
     if (warns.length) notes.push(`${role} (${rel}): ${warns.slice(0, 3).join(' | ')}${warns.length > 3 ? ` (+${warns.length - 3} more)` : ''}`);
   }
   const ok = out.every(b => b.ok);
-  const detail = out.map(b => `${b.role} (${b.file}): ${b.ok && b.picture ? `a picture sheet of ${b.stats.frames} frames in ${b.stats.rows} row${b.stats.rows === 1 ? '' : 's'} (cells of ${[].concat(b.stats.cell).join(' x ')} px) that holds the gf-flat-1 standard` : b.ok ? `face, body, arms, hands, legs and feet hold their shape in the ${b.stats?.clips ?? '?'} clips it plays` : `FAIL ${b.summary || b.errors.join('; ')}`}`).join(' · ');
-  return { ok, detail: ok ? detail : `${detail} (${out.some(b => b.picture && !b.ok) ? 'node gf-three/tools/flat-judge.mjs <file.png> --kind body shows a picture body\'s rules; ' : ''}node gf-three/tools/model-judge.mjs <file> --rig gf/three/character/rig.js shows every part; a body from the library: pick one that passes, or the kit's retarget is wrong for it)`, bodies: out, notes };
+  const detail = out.map(b => `${b.role} (${b.file}): ${b.ok && b.creature ? `a ${b.creature} on ${b.rig} whose body, head and limbs hold their shape in all ${b.stats.poses} actions of its procedural motion` : b.ok && b.picture ? `a picture sheet of ${b.stats.frames} frames in ${b.stats.rows} row${b.stats.rows === 1 ? '' : 's'} (cells of ${[].concat(b.stats.cell).join(' x ')} px) that holds the gf-flat-1 standard` : b.ok ? `face, body, arms, hands, legs and feet hold their shape in the ${b.stats?.clips ?? '?'} clips it plays` : `FAIL ${b.summary || b.errors.join('; ')}`}`).join(' · ');
+  return { ok, detail: ok ? detail : `${detail} (${out.some(b => b.picture && !b.ok) ? 'node gf-three/tools/flat-judge.mjs <file.png> --kind body shows a picture body\'s rules; ' : ''}${out.some(b => b.creature && !b.ok) ? 'npx gamesfun rig-check <file> --archetype <its archetype> shows a creature\'s every action, and npx gamesfun art autorig <mesh.glb> --archetype <it> rigs a plain mesh again (CREATURES.md); ' : ''}${out.some(b => !b.creature && !b.picture && !b.ok) ? 'node gf-three/tools/model-judge.mjs <file> --rig gf/three/character/rig.js shows every part; a body from the library: pick one that passes, or the kit\'s retarget is wrong for it' : 'a body from the library: pick one that passes'})`, bodies: out, notes };
 }

@@ -18,7 +18,7 @@ export function newState(kind = 'build') {
     verify: null, verifies: 0, kept: null, playtest: null, playtests: 0,
     ladder: null, ladders: [], talk: { sets: [], strong: false },
     change: null, questions: null, waiting: null, answers: [], outcome: null, refusals: [], history: [], updated: null,
-    created: null, fresh: false, session: null,
+    created: null, fresh: false, session: null, look: null,
   };
 }
 

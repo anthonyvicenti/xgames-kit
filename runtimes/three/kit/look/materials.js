@@ -346,6 +346,8 @@ export function adoptMaterials(root, kind, opts = {}) {
         normalMap: k === 'water' ? null : (src.normalMap ?? null), tint,
       });
       m.name = src.name;
+      // the style pass's originals travel with the house copy, so a level's restyle reaches it (look/harmonize.js)
+      if (!replace && src.userData?.gfHarm) src.userData.gfHarm.copies.push(m);
       adoptCache.set(key, m);
       return m;
     });

@@ -1,0 +1,107 @@
+{
+ "assetVersion": 1,
+ "id": "roof-window",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-window.glb",
+ "sha256": "f2e18adce44abffbf564432dfffc7b23f2212007118e58e34149a5cb3ae97c2e",
+ "bytes": 16244,
+ "preview": "previews/roof-window.png",
+ "from": "Models/GLB format/roof-window.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof window",
+ "tags": [
+  "roof",
+  "window"
+ ],
+ "use": {
+  "size": [
+   1.067,
+   0.648,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 176,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 176,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16244,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#7d829c",
+     "#8e95b2",
+     "#a4abcd",
+     "#59b9a3",
+     "#55b59d",
+     "#57b7a0",
+     "#8c93b0",
+     "#8b5441"
+    ],
+    "saturation": 0.303,
+    "value": 0.555,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.416
+     },
+     {
+      "hue": "grey",
+      "share": 0.37
+     },
+     {
+      "hue": "blue",
+      "share": 0.086
+     },
+     {
+      "hue": "brown",
+      "share": 0.065
+     },
+     {
+      "hue": "orange",
+      "share": 0.063
+     }
+    ],
+    "grey": 0.37
+   },
+   "trianglesPerMetre": 6.36,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9c95c71b7ea2a284f9ea37d0f684fe5aa654cdff14815969bc97d234014bbd53",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

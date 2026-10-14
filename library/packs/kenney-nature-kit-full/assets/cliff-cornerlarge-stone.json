@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-cornerlarge-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-cornerlarge-stone.glb",
+ "sha256": "199bf8298f6002b7b90800b3a7e69f9c2f40cfda4a265d17dde6dbf6e1077dc0",
+ "bytes": 2204,
+ "preview": "previews/cliff-cornerlarge-stone.png",
+ "from": "Models/GLTF format/cliff_cornerLarge_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff cornerlarge stone",
+ "tags": [
+  "cliff",
+  "cornerlarge",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   0.419,
+   1,
+   0.419
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 24,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 24,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2204,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.61,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "14f4277abed51493896bbf223fbc9cda9d1813a6b34a6e6ccb859e00ac1dd38a",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

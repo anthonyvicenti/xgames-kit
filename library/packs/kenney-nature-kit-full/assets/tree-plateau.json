@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-plateau",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-plateau.glb",
+ "sha256": "f5e78374e9bb659a17d7911a8ea598aa9f63e425c2fcdcd95451f533f50b00dc",
+ "bytes": 6316,
+ "preview": "previews/tree-plateau.png",
+ "from": "Models/GLTF format/tree_plateau.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree plateau",
+ "tags": [
+  "tree",
+  "plateau"
+ ],
+ "use": {
+  "size": [
+   0.612,
+   1.249,
+   0.655
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 215,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 215,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6316,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.714,
+    "value": 0.691,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.817
+     },
+     {
+      "hue": "orange",
+      "share": 0.183
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.11,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7f19e347ff28703dd9e5fcce89b920156e291fbdb19331a57cb31a95c73e1322",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

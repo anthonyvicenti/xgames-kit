@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-small-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-small-fall.glb",
+ "sha256": "343717b0c625160038233dd3e2b132d5bc96e34a527945e48318f628e0121218",
+ "bytes": 4064,
+ "preview": "previews/tree-small-fall.png",
+ "from": "Models/GLTF format/tree_small_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree small fall",
+ "tags": [
+  "tree",
+  "small",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.355,
+   1.11,
+   0.41
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 62,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 62,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4064,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc78a",
+     "#fff9f0"
+    ],
+    "saturation": 1,
+    "value": 0.787,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.917
+     },
+     {
+      "hue": "grey",
+      "share": 0.083
+     }
+    ],
+    "grey": 0.083
+   },
+   "trianglesPerMetre": 7.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2203da5cdb52ed442760f96916a171628a70575a0a038531bfcaa12173241cb1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

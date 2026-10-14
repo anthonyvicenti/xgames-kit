@@ -394,6 +394,8 @@ export function vocabularyOf(catalog) {
     dimensions: uniq(all.map(l => l.dimension).filter(Boolean)),
     together: ['versus', 'coop', 'teams', 'turns', 'own-board', 'solo'],
     bodies: ['character', 'board', 'vehicle', 'cursor', 'cards', 'boat', 'other'],
+    // a character's shape: each is a rig standard (runtimes/three/kit/character/archetypes.js, CREATURES.md)
+    archetypes: ['humanoid', 'worm', 'blob', 'quadruped', 'flyer'],
     defaultDevices: ['desktop', 'phone'],
   };
 }

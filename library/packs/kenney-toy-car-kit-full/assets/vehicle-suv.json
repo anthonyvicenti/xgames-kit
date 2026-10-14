@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-suv",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-suv.glb",
+ "sha256": "39ae55a12b1d123d17659e3222625ba3309f93edfba24562acba816d59e36602",
+ "bytes": 41792,
+ "preview": "previews/vehicle-suv.png",
+ "from": "Models/GLB format/vehicle-suv.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle suv",
+ "tags": [
+  "vehicle",
+  "suv"
+ ],
+ "use": {
+  "size": [
+   0.525,
+   0.505,
+   0.875
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1110,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1110,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41792,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#71778e",
+     "#613ebb",
+     "#696f86",
+     "#3e414d",
+     "#8f63d8",
+     "#a172e4",
+     "#6b46c2",
+     "#494c5a"
+    ],
+    "saturation": 0.298,
+    "value": 0.483,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.582
+     },
+     {
+      "hue": "purple",
+      "share": 0.375
+     },
+     {
+      "hue": "blue",
+      "share": 0.031
+     }
+    ],
+    "grey": 0.582
+   },
+   "trianglesPerMetre": 19.58,
+   "texelsPerMetre": 1017,
+   "texturedShare": 0.01,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "31abd2c49ec052f193c6afacf801a0c997b79afc07cde1d1edea13dc33e1d501",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

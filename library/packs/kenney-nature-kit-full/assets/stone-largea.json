@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-largea",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-largea.glb",
+ "sha256": "3d93c44c4e66ab3ba8c52e1d5aa464f8a27bf975b810c7a47b64690b5653997d",
+ "bytes": 3308,
+ "preview": "previews/stone-largea.png",
+ "from": "Models/GLTF format/stone_largeA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone largea",
+ "tags": [
+  "stone",
+  "largea"
+ ],
+ "use": {
+  "size": [
+   0.785,
+   0.26,
+   1.015
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3308,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fe486a13775e833b1aca99413a89e013f300841de80f42ecd44ceaf43720f17b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "wall-doorway-round",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-doorway-round.glb",
+ "sha256": "ca27a9f64befb1e0124a0f118760750b118965a0d7ba81f3f3cbe455716c3f6d",
+ "bytes": 15944,
+ "preview": "previews/wall-doorway-round.png",
+ "from": "Models/GLB format/wall-doorway-round.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall doorway round",
+ "tags": [
+  "wall",
+  "doorway",
+  "round"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 172,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 172,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15944,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#a7aed1",
+     "#9da5c5",
+     "#acb4d7",
+     "#686d85",
+     "#686e85",
+     "#9399b8"
+    ],
+    "saturation": 0.298,
+    "value": 0.596,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.351
+     },
+     {
+      "hue": "blue",
+      "share": 0.334
+     },
+     {
+      "hue": "grey",
+      "share": 0.315
+     }
+    ],
+    "grey": 0.315
+   },
+   "trianglesPerMetre": 8.47,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "773ccde0f2b39d7fa61e5093fc4f11b137732a5becbe278c9dae03917895fe98",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-overhang-edge",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-overhang-edge.glb",
+ "sha256": "f8485c19c7eda0f30c7f7f53da1aa0bb54e64e607504499ebfb98f181a0ad6bc",
+ "bytes": 16788,
+ "preview": "previews/block-snow-overhang-edge.png",
+ "from": "Models/GLB format/block-snow-overhang-edge.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow overhang edge",
+ "tags": [
+  "block",
+  "snow",
+  "overhang",
+  "edge"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 132,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 132,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16788,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#f8f8fb",
+     "#d7825b",
+     "#be6c4b",
+     "#c67350",
+     "#e18961",
+     "#ea9168",
+     "#e6e6ef",
+     "#d3d3e3"
+    ],
+    "saturation": 0.453,
+    "value": 0.727,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.59
+     },
+     {
+      "hue": "grey",
+      "share": 0.229
+     },
+     {
+      "hue": "blue",
+      "share": 0.181
+     }
+    ],
+    "grey": 0.229
+   },
+   "trianglesPerMetre": 5.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d22d7caac1268799ba0eb8f3c8596521e9302a2c623274919c5471fc531ed0bf",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

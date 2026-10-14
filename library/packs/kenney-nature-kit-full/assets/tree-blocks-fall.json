@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-blocks-fall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-blocks-fall.glb",
+ "sha256": "9fc092f86ce35782f7b282ca69e08a78def8827ef8c2bcf212791e5003bf3f21",
+ "bytes": 5960,
+ "preview": "previews/tree-blocks-fall.png",
+ "from": "Models/GLTF format/tree_blocks_fall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree blocks fall",
+ "tags": [
+  "tree",
+  "blocks",
+  "fall"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   1.185,
+   0.6
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 264,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 264,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#fff9f0",
+     "#ffc78a"
+    ],
+    "saturation": 1,
+    "value": 0.882,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.555
+     },
+     {
+      "hue": "orange",
+      "share": 0.445
+     }
+    ],
+    "grey": 0.555
+   },
+   "trianglesPerMetre": 7.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0f79f7f11578cfb0e3669468f09c86f0953bceb1b2ced3cb8ed2a2bb4ff2021b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

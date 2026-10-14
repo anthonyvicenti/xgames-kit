@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "fence-planks",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-planks.glb",
+ "sha256": "5f588b002878f6290047833bf17bd174161e17d67050c180b783d3a7a1575377",
+ "bytes": 2928,
+ "preview": "previews/fence-planks.png",
+ "from": "Models/GLTF format/fence_planks.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence planks",
+ "tags": [
+  "fence",
+  "planks"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.345,
+   0.096
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffc5a7"
+    ],
+    "saturation": 1,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.37,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2db68f60d24443dbeab05dedd92fcc665d0e21bd261c6a668ea9022a732a06a9",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

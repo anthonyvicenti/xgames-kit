@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stone-larged",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-larged.glb",
+ "sha256": "c87585d36b4243753f415debdb2f054b9846c4d9356413e3ae42e4f33e8603a5",
+ "bytes": 4160,
+ "preview": "previews/stone-larged.png",
+ "from": "Models/GLTF format/stone_largeD.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone larged",
+ "tags": [
+  "stone",
+  "larged"
+ ],
+ "use": {
+  "size": [
+   1.069,
+   0.568,
+   1.03
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4160,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff"
+    ],
+    "saturation": 0.423,
+    "value": 0.933,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.776
+     },
+     {
+      "hue": "grey",
+      "share": 0.224
+     }
+    ],
+    "grey": 0.224
+   },
+   "trianglesPerMetre": 4.96,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "db945df5cc1fb3113777dc208bac3f46d3fb970aaf39f2c517612f99fbf3532b",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smalld",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smalld.glb",
+ "sha256": "89ecbff20bc98afbe1826984dd59e06734d373e6957e8fc52b4919d3d66ca805",
+ "bytes": 2372,
+ "preview": "previews/stone-smalld.png",
+ "from": "Models/GLTF format/stone_smallD.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smalld",
+ "tags": [
+  "stone",
+  "smalld"
+ ],
+ "use": {
+  "size": [
+   0.426,
+   0.231,
+   0.369
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2372,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0ef496ce0f17e18a12a66ba8ec69889fb5b5247fed04b58c0d417a0f5221f579",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

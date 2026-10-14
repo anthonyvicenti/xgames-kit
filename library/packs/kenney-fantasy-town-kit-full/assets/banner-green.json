@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "banner-green",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "banner-green.glb",
+ "sha256": "e6e3873d62d5b5c12aac73e8824a0b3d24b9915dbf9dccde656d47a6c14f8372",
+ "bytes": 15332,
+ "preview": "previews/banner-green.png",
+ "from": "Models/GLB format/banner-green.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "banner green",
+ "tags": [
+  "banner",
+  "green"
+ ],
+ "use": {
+  "size": [
+   0.05,
+   0.839,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15332,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#4daa91",
+     "#5abaa3",
+     "#49a68d",
+     "#5dbea8",
+     "#49a58c",
+     "#60c2ac",
+     "#45a087",
+     "#61c3ae"
+    ],
+    "saturation": 0.408,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.927
+     },
+     {
+      "hue": "orange",
+      "share": 0.073
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.32,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5c9a1bb7d564270306fe438fd4a141fc6de0d102b355bbd1d2710249c489868a",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

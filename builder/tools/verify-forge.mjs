@@ -28,7 +28,7 @@
 //      (tools/lib/forge-first-wave-check.mjs): the first wave can be fought (a player who stands and fights with a new
 //      player's hand is not felled by it, and something falls)
 //   20 the menu, and forge's own leg (tools/lib/forge-keys-check.mjs: How to play's keys do what the table says) · 21 the HUD, and forge's own leg (tools/lib/forge-hud-check.mjs: a player with hit points sees its
-//      health, and it follows the core's) · 22 the wallet · 23 looks like the references · 24 plays inside a post · 25 friends
+//      health, and it follows the core's) · 22 the wallet · 23 looks like its target · 24 plays inside a post · 25 friends
 //   31 screens
 //   32 one core, two builds (forge's own; track W, tools/lib/forge-webgl-check.mjs): no WebGPU and WebGL2 → the game
 //      plays on its WebGL2 build; neither → the kit's "open in your browser" screen, never a blank canvas; and the two
@@ -649,8 +649,8 @@ async function check19({ want, dir, add, rec, log }) {
     rec.bodies = r.bodies.map(b => ({ slot: b.slot, file: b.file, judge: b.judge, forge: b.forge && { ok: b.forge.ok, compared: b.forge.compared, worst: b.forge.worst } }));
   } catch (e) { add(19, 'bodies hold their shape', false, `the model judge could not run on forge: ${e.message}`); }
 }
-/** 23: looks like the references (no references → passes as "no references"). */
-async function check23({ want, statics, shotsForLikeness }) { if (want(23)) await statics.likeness(shotsForLikeness); }
+/** 23: looks like its target, from the solo round's shots (no look target → passes as "no look target"). */
+async function check23({ want, statics, shotsForLikeness }) { if (want(23)) await statics.look(shotsForLikeness); }
 
 // =====================================================================================================================
 // two players (their own browsers, beside the solo session)

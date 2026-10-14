@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "crops-bamboostageb",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-bamboostageb.glb",
+ "sha256": "e9e6b693602da34833bc0a19f05e5afa4b659b62d9bbce68cad3122af172f5b2",
+ "bytes": 10720,
+ "preview": "previews/crops-bamboostageb.png",
+ "from": "Models/GLTF format/crops_bambooStageB.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops bamboostageb",
+ "tags": [
+  "crops",
+  "bamboostageb"
+ ],
+ "use": {
+  "size": [
+   0.34,
+   0.89,
+   0.308
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 564,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 564,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 10720,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 28.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "238c4cbeedf747dea96d579cf63301d35bb8709310f0405596c8f988dcc366e6",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

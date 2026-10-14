@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-doorway-square-wide",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-doorway-square-wide.glb",
+ "sha256": "39c658e11aa9d1e521317a148fca3dd72f0bdd5ae0da0a69c79a34276c13f93a",
+ "bytes": 14480,
+ "preview": "previews/wall-wood-doorway-square-wide.png",
+ "from": "Models/GLB format/wall-wood-doorway-square-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood doorway square wide",
+ "tags": [
+  "wall",
+  "wood",
+  "doorway",
+  "square",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14480,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#9b5d47",
+     "#995d47",
+     "#935944",
+     "#6a7087",
+     "#767c92",
+     "#70758c"
+    ],
+    "saturation": 0.29,
+    "value": 0.498,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.526
+     },
+     {
+      "hue": "grey",
+      "share": 0.411
+     },
+     {
+      "hue": "brown",
+      "share": 0.063
+     }
+    ],
+    "grey": 0.411
+   },
+   "trianglesPerMetre": 5.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "572c223df38d8b1e206446983dd9e3c92c944e7719c655a65880690a78ae0b14",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

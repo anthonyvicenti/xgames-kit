@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-corner-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-corner-large.glb",
+ "sha256": "c46b924420dca6997f069752f64a68ffbe283ba65ac88d0ae3ef13747b0a267f",
+ "bytes": 17856,
+ "preview": "previews/track-striped-narrow-corner-large.png",
+ "from": "Models/GLB format/track-striped-narrow-corner-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow corner large",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "corner",
+  "large"
+ ],
+ "use": {
+  "size": [
+   4.7,
+   0.3,
+   4.7
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 316,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 316,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17856,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#eb6246"
+    ],
+    "saturation": 0.473,
+    "value": 0.718,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.493
+     },
+     {
+      "hue": "blue",
+      "share": 0.427
+     },
+     {
+      "hue": "grey",
+      "share": 0.08
+     }
+    ],
+    "grey": 0.08
+   },
+   "trianglesPerMetre": 4.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f75424b94ea81858f1cbc1111f4e38c125becade4df2b353ae277fbbbf3177ad",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

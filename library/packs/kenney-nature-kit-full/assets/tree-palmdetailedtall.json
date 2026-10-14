@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palmdetailedtall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palmdetailedtall.glb",
+ "sha256": "629e0b6918ab934ee8bea0e5c73f9582a3c75a81081596e7549cc756db289e54",
+ "bytes": 8780,
+ "preview": "previews/tree-palmdetailedtall.png",
+ "from": "Models/GLTF format/tree_palmDetailedTall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palmdetailedtall",
+ "tags": [
+  "tree",
+  "palmdetailedtall"
+ ],
+ "use": {
+  "size": [
+   1.034,
+   1.423,
+   1.034
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 336,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 336,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 8780,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.717,
+    "value": 0.698,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.762
+     },
+     {
+      "hue": "orange",
+      "share": 0.238
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.46,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2cbea0f9621cde884c63a7b4ad787bda1d051fa27ef3c66b9f2b65328dc53683",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

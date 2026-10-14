@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tool-pickaxe-upgraded",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-pickaxe-upgraded.glb",
+ "sha256": "2062e168eef99e378bd956aea694dc89d74948f6bcbcb353e06f480fa7f1edf2",
+ "bytes": 12004,
+ "preview": "previews/tool-pickaxe-upgraded.png",
+ "from": "Models/GLB format/tool-pickaxe-upgraded.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool pickaxe upgraded",
+ "tags": [
+  "tool",
+  "pickaxe",
+  "upgraded"
+ ],
+ "use": {
+  "size": [
+   0.179,
+   0.24,
+   0.04
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 110,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 110,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#676c84",
+     "#747990",
+     "#c77450",
+     "#d7815b",
+     "#a9b1d4",
+     "#979ebe",
+     "#7d829a",
+     "#9197b6"
+    ],
+    "saturation": 0.297,
+    "value": 0.593,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.454
+     },
+     {
+      "hue": "blue",
+      "share": 0.301
+     },
+     {
+      "hue": "orange",
+      "share": 0.244
+     }
+    ],
+    "grey": 0.454
+   },
+   "trianglesPerMetre": 43.18,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3a42ad099f37fc064e5c87c7331a4ef96e12b100d6c2e6dc69241085a94c2105",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-corner-large-ramp",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-corner-large-ramp.glb",
+ "sha256": "992a111ca3c923e186d61af5c08b58a26978134b48fa6c3300033c180da1baaf",
+ "bytes": 20308,
+ "preview": "previews/track-road-wide-corner-large-ramp.png",
+ "from": "Models/GLB format/track-road-wide-corner-large-ramp.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide corner large ramp",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "corner",
+  "large",
+  "ramp"
+ ],
+ "use": {
+  "size": [
+   5.2,
+   1.3,
+   5.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 448,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 448,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20308,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.345,
+    "value": 0.616,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.37
+     },
+     {
+      "hue": "blue",
+      "share": 0.315
+     },
+     {
+      "hue": "red",
+      "share": 0.315
+     }
+    ],
+    "grey": 0.37
+   },
+   "trianglesPerMetre": 3.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4b8a9cb2cad62f3e64bd5ded13548b42627624bd7e4c64b112555ec75d9b0510",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "resource-wood",
+ "pack": "kenney-survival-kit-full",
+ "file": "resource-wood.glb",
+ "sha256": "434ff17ddd2880e750c559cb56035d2a8262ea174fa8eedb10f2650eb2e115de",
+ "bytes": 11308,
+ "preview": "previews/resource-wood.png",
+ "from": "Models/GLB format/resource-wood.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "resource wood",
+ "tags": [
+  "resource",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   0.205,
+   0.062,
+   0.087
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11308,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c4714e",
+     "#bc6a49",
+     "#b86746",
+     "#cf7a55",
+     "#d7815b",
+     "#df8860",
+     "#c06e4c",
+     "#cb7753"
+    ],
+    "saturation": 0.504,
+    "value": 0.537,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 46.11,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1d5f559da9432f89bd323731ef76b60372e0deb261a96d0da8d5af570c485d80",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

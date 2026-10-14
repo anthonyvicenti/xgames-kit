@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tree-log-small",
+ "pack": "kenney-survival-kit-full",
+ "file": "tree-log-small.glb",
+ "sha256": "6516a16f8531abe42830f79c81247cf9ae161873a0ae12c1e2f42449122d5274",
+ "bytes": 11892,
+ "preview": "previews/tree-log-small.png",
+ "from": "Models/GLB format/tree-log-small.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree log small",
+ "tags": [
+  "tree",
+  "log",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.249,
+   0.277,
+   0.65
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 88,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 88,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11892,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#df8860",
+     "#d7815b",
+     "#c77450",
+     "#e78f65",
+     "#c06e4c",
+     "#b86746",
+     "#c4714e",
+     "#bc6a49"
+    ],
+    "saturation": 0.579,
+    "value": 0.582,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.67,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5b416addc4cb01d9d6ad30ec282606a8fefb018043d3253d5e42c1e353aab3c8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

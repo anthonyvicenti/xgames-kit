@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "platform-beach",
+ "pack": "kenney-nature-kit-full",
+ "file": "platform-beach.glb",
+ "sha256": "2822b99d2ffca8076a2490e56d296f2e56fe999d9eadb0c1da79b334793c8325",
+ "bytes": 4412,
+ "preview": "previews/platform-beach.png",
+ "from": "Models/GLTF format/platform_beach.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "platform beach",
+ "tags": [
+  "platform",
+  "beach"
+ ],
+ "use": {
+  "size": [
+   0.893,
+   0.083,
+   0.724
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 192,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 192,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4412,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#fbedde"
+    ],
+    "saturation": 0.784,
+    "value": 0.927,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 14.02,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4fa4a12535983be876098841c2114bfd755a590b0db84251f44a96cbd224bfe5",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

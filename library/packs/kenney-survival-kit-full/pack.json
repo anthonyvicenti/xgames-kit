@@ -1,0 +1,76 @@
+{
+ "packVersion": 1,
+ "id": "kenney-survival-kit-full",
+ "title": "Kenney Survival Kit (all models)",
+ "describe": "Kenney's survival kit, every model: low-poly, flat colours from one colour swatch texture, in Kenney's own units (not baked to metres).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/survival-kit",
+  "file": "library/packs/kenney-survival-kit-full/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/survival-kit",
+  "download": "https://kenney.nl/media/pages/assets/survival-kit/4065a8185b-1712149243/kenney_survival-kit.zip",
+  "sha256": "c3586341b5932c87eb43d75d915434f47daed168b17ed36a03e8ca9977c7443e",
+  "retrieved": "2026-10-14",
+  "rebuild": "art ingest kenney_survival-kit.zip --pack kenney-survival-kit-full --include 'Models/GLB format/*.glb' (the models kenney-survival-kit holds come back too and are dropped)"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 7,
+   "hues": [
+    "#c77450",
+    "#b86746",
+    "#d7815b",
+    "#a9b1d4",
+    "#9197b6",
+    "#cf7a55",
+    "#d37d58",
+    "#20896b",
+    "#c4714e",
+    "#ea9167",
+    "#cb865e",
+    "#676c84"
+   ],
+   "saturation": 0.534,
+   "value": 0.582,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.596
+    },
+    {
+     "hue": "blue",
+     "share": 0.139
+    },
+    {
+     "hue": "grey",
+     "share": 0.133
+    },
+    {
+     "hue": "cyan",
+     "share": 0.074
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 15.81,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 79,
+ "validators": [
+  "budget"
+ ]
+}

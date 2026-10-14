@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-doorway-base",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-doorway-base.glb",
+ "sha256": "ad51ed5fdf7dbd071e6cfd02899d54f4cc96845f52d801d470f09d17e98d0f85",
+ "bytes": 14720,
+ "preview": "previews/wall-doorway-base.png",
+ "from": "Models/GLB format/wall-doorway-base.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall doorway base",
+ "tags": [
+  "wall",
+  "doorway",
+  "base"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14720,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#989fbe",
+     "#a2aacc",
+     "#cc8665",
+     "#be7c5d",
+     "#adb5d9",
+     "#8d93b1"
+    ],
+    "saturation": 0.423,
+    "value": 0.599,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.8
+     },
+     {
+      "hue": "blue",
+      "share": 0.195
+     }
+    ],
+    "grey": 0.005
+   },
+   "trianglesPerMetre": 5.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4e2629d59e471e96c6661e29044cd32567191745671d00d75666328b2c7e1a05",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

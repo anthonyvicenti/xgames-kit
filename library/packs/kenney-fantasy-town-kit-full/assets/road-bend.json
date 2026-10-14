@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "road-bend",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "road-bend.glb",
+ "sha256": "f6826ee82ca70e19a8f3c279c89d6b578cec0cbe0836cd241b37a798ca5ac43d",
+ "bytes": 18152,
+ "preview": "previews/road-bend.png",
+ "from": "Models/GLB format/road-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "road bend",
+ "tags": [
+  "road",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.05,
+   3
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 280,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 280,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18152,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#a0a8c9",
+     "#868ba1"
+    ],
+    "saturation": 0.232,
+    "value": 0.67,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.711
+     },
+     {
+      "hue": "grey",
+      "share": 0.289
+     }
+    ],
+    "grey": 0.289
+   },
+   "trianglesPerMetre": 3.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a4d8fbe9080849dccb45de7ac5f5ded2e17a3d893b8c07338e24193b28e1f03f",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

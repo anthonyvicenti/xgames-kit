@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "fence-broken",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fence-broken.glb",
+ "sha256": "e971d0c14ded37fe06cefc75dae4dbcab923eb802c54103b20f5e4e4b4d24f3c",
+ "bytes": 15732,
+ "preview": "previews/fence-broken.png",
+ "from": "Models/GLB format/fence-broken.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence broken",
+ "tags": [
+  "fence",
+  "broken"
+ ],
+ "use": {
+  "size": [
+   0.255,
+   0.38,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c17e5e",
+     "#ca8564",
+     "#b97859",
+     "#b87758",
+     "#ba795a",
+     "#bf7d5d",
+     "#bf7c5d",
+     "#c27f5f"
+    ],
+    "saturation": 0.449,
+    "value": 0.567,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.996
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.29,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "caa25191602fd94389e022c8e1f6a4963dd3b1457768e3ccff1dc8dbf4671aa4",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

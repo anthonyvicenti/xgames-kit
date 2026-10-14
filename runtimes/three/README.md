@@ -25,14 +25,14 @@ runtimes/three/
 │   ├── net/                   live rounds over gf/mp/net.js, players, shared entities, events, persistence
 │   ├── bots/, vfx/            bot players; effects
 │   ├── look/                  renderer, lighting, post, materials, presets
-│   └── character/             the gf-humanoid-1 runtime
+│   └── character/             the gf-humanoid-1 runtime, and the creature archetypes (worm, blob, quadruped, flyer: CREATURES.md)
 ├── profiles/
 │   ├── standard-3d/           a README: the profile is kit/ itself
 │   ├── flat-2d/               2D seen from above or the side (a game's gf/three/flat/)
 │   └── scenic-3d/             the scenic look and world on WebGPU (a game's gf/scenic/), its art.json and specs
 ├── art.json                   the asset library's packs this runtime's own names resolve in (the art is in library/)
 ├── vendor/                    three.js 0.186.0, Rapier 0.19.2, postprocessing 6.39.5, N8AO, pinned
-└── character-bench/           the body bench (rig and look checks for gf-humanoid-1 bodies)
+└── character-bench/           the body bench (rig and look checks for gf-humanoid-1 bodies; creatures.html films creatures)
 components/<id>/               the mechanics (a game's gf/three/mechanics/<id>/)
 loops/<id>/                    round, turns, match, endless (a game's gf/three/loops/<id>/)
 worlds/                        layouts, places, templates, the voxel world (a game's gf/three/world/)

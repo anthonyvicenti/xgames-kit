@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stone-talli",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-talli.glb",
+ "sha256": "0e3fc90b5bce347d5168039682bc35370a8c972f6a8ae96c9e588b490d141ea4",
+ "bytes": 3600,
+ "preview": "previews/stone-talli.png",
+ "from": "Models/GLTF format/stone_tallI.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone talli",
+ "tags": [
+  "stone",
+  "talli"
+ ],
+ "use": {
+  "size": [
+   0.456,
+   0.812,
+   0.464
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3600,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff"
+    ],
+    "saturation": 0.468,
+    "value": 0.926,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.858
+     },
+     {
+      "hue": "grey",
+      "share": 0.142
+     }
+    ],
+    "grey": 0.142
+   },
+   "trianglesPerMetre": 6.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5667332535676fd95d23ea9be0da8b70af196fff7b648cddd26a3e8e4e9bee65",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

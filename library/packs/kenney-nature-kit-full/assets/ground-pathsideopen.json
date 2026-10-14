@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathsideopen",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathsideopen.glb",
+ "sha256": "9e6e985035dcdc03042afea3d7f673787f42589f38108682df7b21d8d692e16e",
+ "bytes": 4336,
+ "preview": "previews/ground-pathsideopen.png",
+ "from": "Models/GLTF format/ground_pathSideOpen.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathsideopen",
+ "tags": [
+  "ground",
+  "pathsideopen"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 40,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 40,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4336,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#dbab8e",
+     "#73eddd"
+    ],
+    "saturation": 0.748,
+    "value": 0.777,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.975
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4ae5f19361e3e8cacfe0940bd37802a85e46383a8f758ecae93e93b6542f67c1",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

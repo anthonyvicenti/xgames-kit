@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-rock.glb",
+ "sha256": "4a59d2b30845377705b743571b3a37aa9d8d221a763f1053ac1610fb47ae94a9",
+ "bytes": 2296,
+ "preview": "previews/cliff-rock.png",
+ "from": "Models/GLTF format/cliff_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff rock",
+ "tags": [
+  "cliff",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.168
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2296,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "64b555b394b4312938ccd389862d5c01beb3fc417100aa41bb1e5e96a9889de0",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

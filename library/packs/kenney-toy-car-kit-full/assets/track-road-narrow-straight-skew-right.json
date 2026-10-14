@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-straight-skew-right",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-straight-skew-right.glb",
+ "sha256": "4617fed4d750950b74613f3c6a01d1790536cf60bf1d26fad3cc16968375e45f",
+ "bytes": 16896,
+ "preview": "previews/track-road-narrow-straight-skew-right.png",
+ "from": "Models/GLB format/track-road-narrow-straight-skew-right.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow straight skew right",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "straight",
+  "skew",
+  "right"
+ ],
+ "use": {
+  "size": [
+   1.083,
+   0.919,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16896,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#efeff5"
+    ],
+    "saturation": 0.387,
+    "value": 0.659,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.357
+     },
+     {
+      "hue": "red",
+      "share": 0.356
+     },
+     {
+      "hue": "grey",
+      "share": 0.287
+     }
+    ],
+    "grey": 0.287
+   },
+   "trianglesPerMetre": 4.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "da057684427a555ca4f9791384ee5b9c4928aca8267100781ece7b1a50a885b5",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -56,19 +56,21 @@ async function loadModules(worldCfg = {}, used = null) {
   const scenic = PROFILE === 'scenic-3d';
   // a voxel world (CONTRACT §9, worlds) is its own world module, whichever profile draws the rest
   const voxel = worldCfg?.template === 'voxel';
+  // smooth terrain explosions carve (worlds/terrain) is its own world module too
+  const terrain = worldCfg?.template === 'terrain';
   // a flat (2D) game (kit.js modules.flat: 'top' | 'side') takes the flat look, world and body, and brings its own
   // controller (kit/flat/): everything else is this kit's, as for a 3D game
   const flat = m.flat ?? null;
   const [look, world, character, controller] = await Promise.all([
     flat ? import('../flat/look.js') : scenic ? import('../../scenic/look/look.js') : m.look ? import('../look/look.js') : import('./standins/look.js'),
-    flat ? import('../flat/world.js') : voxel ? import('../world/voxel/world.js') : scenic ? import('../../scenic/world/world.js') : m.world ? import('../world/world.js') : import('./standins/world.js'),
+    flat ? import('../flat/world.js') : voxel ? import('../world/voxel/world.js') : terrain ? import('../world/terrain/world.js') : scenic ? import('../../scenic/world/world.js') : m.world ? import('../world/world.js') : import('./standins/world.js'),
     flat ? import('../flat/character.js') : m.character ? import('../character/character.js') : import('./standins/character.js'),
     flat ? import('../flat/controller.js') : null,
   ]);
   const mechanics = new Map();
   // only the mechanics this game uses (kit.js lists every one the kit carries; a phone in a post loads less)
   for (const id of m.mechanics ?? []) if (!used || used.has(id)) mechanics.set(id, await import(`../mechanics/${id}/index.js`));
-  return { look, world, character, controller, flat, mechanics, runtime: RUNTIME, profile: PROFILE, voxel, standins: { look: !flat && !scenic && !m.look, world: !flat && !scenic && !voxel && !m.world, character: !flat && !m.character } };
+  return { look, world, character, controller, flat, mechanics, runtime: RUNTIME, profile: PROFILE, voxel, standins: { look: !flat && !scenic && !m.look, world: !flat && !scenic && !voxel && !terrain && !m.world, character: !flat && !m.character } };
 }
 
 export async function boot({ rules = {} } = {}) {
@@ -95,8 +97,8 @@ export async function boot({ rules = {} } = {}) {
       document.documentElement.dataset.gfBackdrop = 'off';
       return;
     }
-    // the prop catalog belongs to a layout world; a voxel world (CONTRACT §9) has none, so it is never asked for
-    if (KIT.modules?.world && assets.config('world')?.template !== 'voxel') await assets.addConfig('props');
+    // the prop catalog belongs to a layout world; a voxel world (CONTRACT §9) and the terrain world have none
+    if (KIT.modules?.world && !['voxel', 'terrain'].includes(assets.config('world')?.template)) await assets.addConfig('props');
     const game = assets.config('game'), lookCfg = assets.config('look'), charsCfg = assets.config('characters');
     ctx.config = game; ctx.assets = assets;
     // fair play (CONTRACT §6c): kit-owned and on by default; mechanics, players and bots ask it before a hit counts
@@ -157,7 +159,8 @@ export async function boot({ rules = {} } = {}) {
     ctx.physics = world; ctx.RAPIER = RAPIER;     // CONTRACT §3: physics is the Rapier world (the kit steps it)
     ctx.world = await mods.world.loadWorld(ctx, assets.config('world'));
 
-    const characterFor = role => ({ bodySlot: `character.body.${role}`, height: charsCfg.roles?.[role]?.height ?? 1.7 });
+    // a role's body (a seat may wear its own: roles.<role>.seats) and height; a creature's height is its own unless given
+    const characterFor = (role, seat = 0) => mods.character.bodyFor ? mods.character.bodyFor(charsCfg, role, seat) : { bodySlot: `character.body.${role}`, height: charsCfg.roles?.[role]?.height ?? 1.7 };
     // a preview subject wears the page's loadout, so Studio can render an item's look (?gf-show=character.player)
     if (subject) { if (pageLoadout().loadout != null) assets.setLoadout('show', pageLoadout().loadout); return await showMode(ctx, subject, mods, characterFor, look); }
 
@@ -408,6 +411,14 @@ export async function boot({ rules = {} } = {}) {
         build: () => JSON.parse(JSON.stringify(list.find(m => m.id === 'build')?.observe?.() ?? null)),
         shove: () => JSON.parse(JSON.stringify(list.find(m => m.id === 'shove')?.observe?.() ?? null)),
         world: () => JSON.parse(JSON.stringify(ctx.world.voxel.stats())),
+        project: (x, y, z) => screenOf({ x, y, z }),
+      } : {}),
+      // smooth terrain (worlds/terrain): its numbers, the carve mechanic's state, and a hash of the field (two copies with
+      // the same hash hold the same ground, every crater in the same place)
+      ...(ctx.world.terrain ? {
+        terrainAt: (x, z) => ctx.world.terrain.heightAt(x, z),
+        terrain: () => JSON.parse(JSON.stringify({ ...ctx.world.terrain.stats(), carve: list.find(m => m.id === 'carve')?.observe?.() ?? null, edits: ctx.world.terrain.edits.length, islands: ctx.world.terrain.info.islands, sea: ctx.world.seaLevel })),
+        terrainHash: () => { const d = new Uint32Array(ctx.world.terrain.field.d.buffer); let h = 2166136261; for (let i = 0; i < d.length; i++) h = Math.imul(h ^ d[i], 16777619); return (h >>> 0).toString(16); },
         project: (x, y, z) => screenOf({ x, y, z }),
       } : {}),
       // stepped time (QA only, kit/core/step.js): present only when the address carries ?gf-step=1 and the round is not live

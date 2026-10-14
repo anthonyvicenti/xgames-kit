@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palmtall",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palmtall.glb",
+ "sha256": "dabf3336591dc2beacee6f9f618ab6911a61256d016bef6e23e38bdd6984973e",
+ "bytes": 6184,
+ "preview": "previews/tree-palmtall.png",
+ "from": "Models/GLTF format/tree_palmTall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palmtall",
+ "tags": [
+  "tree",
+  "palmtall"
+ ],
+ "use": {
+  "size": [
+   1.034,
+   1.356,
+   1.034
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 190,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 190,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6184,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.727,
+    "value": 0.716,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.599
+     },
+     {
+      "hue": "orange",
+      "share": 0.401
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.23,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "cbd2c2ea7d0316be7514d44699527c566ce91e0542e8b6c6bf431a155e5655f6",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

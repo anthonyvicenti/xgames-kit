@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stone-tallh",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-tallh.glb",
+ "sha256": "6eb8bacf7c16c6b90bec81f3e9f34a700855f3a68ee8d9e4b39764276b8e5692",
+ "bytes": 4120,
+ "preview": "previews/stone-tallh.png",
+ "from": "Models/GLTF format/stone_tallH.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone tallh",
+ "tags": [
+  "stone",
+  "tallh"
+ ],
+ "use": {
+  "size": [
+   0.575,
+   0.711,
+   0.664
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 78,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 78,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4120,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff"
+    ],
+    "saturation": 0.428,
+    "value": 0.932,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.785
+     },
+     {
+      "hue": "grey",
+      "share": 0.215
+     }
+    ],
+    "grey": 0.215
+   },
+   "trianglesPerMetre": 7.65,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e00d9e5219f8caed495eb1594fa6eb39c9c9df7d4950e5b1945a89e0375cda00",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

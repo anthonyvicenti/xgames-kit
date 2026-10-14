@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "stone-talla",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-talla.glb",
+ "sha256": "6e42a1cb961f4004559d1d95726f73b3ee8fc958d2e445abf895303c645c568a",
+ "bytes": 5088,
+ "preview": "previews/stone-talla.png",
+ "from": "Models/GLTF format/stone_tallA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone talla",
+ "tags": [
+  "stone",
+  "talla"
+ ],
+ "use": {
+  "size": [
+   0.983,
+   0.996,
+   0.683
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5088,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff"
+    ],
+    "saturation": 0.432,
+    "value": 0.932,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.791
+     },
+     {
+      "hue": "grey",
+      "share": 0.209
+     }
+    ],
+    "grey": 0.209
+   },
+   "trianglesPerMetre": 7.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3070bd574104abce19f5e3c82c917cb7f52801720377beba7aad76058408d5db",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "tree",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "tree.glb",
+ "sha256": "f6c7f3657414f4b353d5063c0a0d12dad4f784658d8179b3123f593caeac3e75",
+ "bytes": 17960,
+ "preview": "previews/tree.png",
+ "from": "Models/GLB format/tree.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree",
+ "tags": [
+  "tree"
+ ],
+ "use": {
+  "size": [
+   1.023,
+   2.413,
+   1.023
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 168,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 168,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3b9c74",
+     "#3da076",
+     "#40a378",
+     "#46aa7c",
+     "#44a87b",
+     "#3d9f75",
+     "#41a478",
+     "#3fa277"
+    ],
+    "saturation": 0.445,
+    "value": 0.452,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.831
+     },
+     {
+      "hue": "orange",
+      "share": 0.092
+     },
+     {
+      "hue": "green",
+      "share": 0.077
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.81,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e8d81b97297de62699b92559cee7b247da84b1815df2515e42fd5a318a30b8d7",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

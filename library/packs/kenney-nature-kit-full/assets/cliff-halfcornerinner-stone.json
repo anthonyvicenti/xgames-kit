@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-halfcornerinner-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-halfcornerinner-stone.glb",
+ "sha256": "7858ed6e62b39c8b2b97e56b24d805d1d7efc310cd17621effbd5a6dbcb9d41c",
+ "bytes": 5112,
+ "preview": "previews/cliff-halfcornerinner-stone.png",
+ "from": "Models/GLTF format/cliff_halfCornerInner_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff halfcornerinner stone",
+ "tags": [
+  "cliff",
+  "halfcornerinner",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 89,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 89,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5112,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd",
+     "#ffffff"
+    ],
+    "saturation": 0.578,
+    "value": 0.881,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.998
+     }
+    ],
+    "grey": 0.002
+   },
+   "trianglesPerMetre": 5.21,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5fb3e4e213d082d829eb12486f5d28f373086fec74dce65056d4863f846c7fcf",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

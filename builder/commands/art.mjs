@@ -16,6 +16,14 @@ const usage = `Usage:
   gamesfun art ingest <file|folder|zip|url> --pack <id> [--licence <spdx> --author "…" to start a pack] [options]
   gamesfun art fetch <pack>/<asset> [--to <file>]  an asset's bytes: the store, the kit's default set, a mirror, or rebuilt
   gamesfun art check                               every manifest against the schemas, every binary on this machine
+  gamesfun art autorig <mesh.glb> --archetype worm|blob|quadruped|flyer --out <body.glb> [--height m] [--turn deg]
+                                                   a plain mesh (a made creature) rigged on that archetype's standard
+                                                   (CREATURES.md) and judged by rig-check
+  gamesfun art harmonize --pack <id> --look <target.json | config/look.json | game | kind> [--level <id>]
+                        [--style pixel|drawn] [--into <pack>] [--only a,b] [--public] [--dry] [--json]
+                                                   the style pass baked: the pack's assets moved toward one look as new
+                                                   assets in a derived pack (the originals untouched), measured before
+                                                   and after
   gamesfun art generate --slot <id> --words "<what to make>" [--game <dir>] [--maker meshy] [--yes]
                                                    a new model made for a slot (paid: only with --yes), kept in the
                                                    game's private pack and put in the slot
@@ -42,7 +50,7 @@ export default {
   run: args => guard(async () => {
     const [verb, ...rest] = args;
     // the library's own verbs: their command line is builder/art/cli.mjs's (the same flags as library/README.md)
-    if (['find', 'fill', 'ingest', 'fetch', 'check'].includes(verb)) {
+    if (['find', 'fill', 'ingest', 'fetch', 'check', 'autorig', 'harmonize'].includes(verb)) {
       const game = verb === 'fill' && (!rest[0] || rest[0].startsWith('--')) ? [await resolveGame(null)] : [];
       await libraryCli([verb, ...game, ...rest]);
       return process.exitCode ?? 0;

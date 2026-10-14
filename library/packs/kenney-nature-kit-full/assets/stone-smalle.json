@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "stone-smalle",
+ "pack": "kenney-nature-kit-full",
+ "file": "stone-smalle.glb",
+ "sha256": "0303a2d6a8f7fde45cff203fe9baf72632920083b7763a107895e133e00a52ac",
+ "bytes": 2812,
+ "preview": "previews/stone-smalle.png",
+ "from": "Models/GLTF format/stone_smallE.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stone smalle",
+ "tags": [
+  "stone",
+  "smalle"
+ ],
+ "use": {
+  "size": [
+   0.361,
+   0.256,
+   0.312
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2812,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "17cb3e6f6c58f5fdc0bf4080bbfb7c72c4fe1ddfc65682637f4b335ff98fa291",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

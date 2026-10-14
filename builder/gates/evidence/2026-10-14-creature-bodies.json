@@ -1,0 +1,31 @@
+{
+ "about": "The body archetypes (looks wave 2, stream bodies, 2026-10-14): what was built and how it was checked. Machine checks only: a green verify is not the creator's acceptance; nobody has played it.",
+ "brief": "Build body archetypes as standards beside gf-humanoid-1 (worm/serpent, blob, quadruped, flyer): rig standard, validator, procedural animation from the humanoid's actions, multiplayer, slot/body declaration; an auto-rig path; fix or redo the moss-mole glitch; the pilot creatures playable in a three standard-3d example with two players, passing the six gates.",
+ "standards": "runtimes/three/kit/character/CREATURES.md (archetypes.js, motion.js, creature.js)",
+ "autorig": "builder/art/rig/autorig.mjs; gamesfun art autorig; art ingest --autorig",
+ "judge": "builder/tools/lib/creature-judge.mjs, through rig-check and measure 19 (gate A widened; no new measure)",
+ "mossMole": "Meshy's biped rig of moss-mole (looks-pilot-artillery/moss-mole-rigged) still fails; redone as moss-mole-blob on gf-blob-1 by autorig, passes the creature judge (private pack, local).",
+ "standIns": "library/packs/xk-creature-bodies (worm-pink, snake-green, slime-blue, pup-tan, bird-red; CC0, made by runtimes/three/tools/creatures.mjs and rigged by autorig): all pass; strip stand-ins-strip.jpg (the creature bench's film timeline).",
+ "example": {
+  "id": "critter-lob",
+  "verify": {
+   "pass": true,
+   "gates": {
+    "A": true,
+    "B": true,
+    "C": true,
+    "D": true,
+    "E": true,
+    "F": true
+   },
+   "seconds": 180
+  },
+  "note": "two-player live gate (E 5) and friends (E 25) pass with the host an ember-newt and the joiner a moss-mole, each drawn on the other's screen; the pilot critters' screenshots and films stay local (private art)."
+ },
+ "regressions": [
+  "creature-biped (A 19)",
+  "creature-torn (A 19)",
+  "creature-holds (control)"
+ ],
+ "artilleryCase": "Re-rendered the artillery reference case (look-target's pitch, game puff-artillery, pack looks-pilot-artillery) with the creature lever: the hero is now the rigged ember-newt and all three critters stand posed, where wave 1 showed Meshy's torn moss-mole. By eye the characters move from about 7 to about 7.5 of 10 and the whole stays about 5 of 10: the world (a fenced yard), the camera and the HUD dominate. No measured score: the look judge (builder/look/judge.mjs) is not on this branch's base. Sheets kept in the private evaluation folder, never in a repository."
+}

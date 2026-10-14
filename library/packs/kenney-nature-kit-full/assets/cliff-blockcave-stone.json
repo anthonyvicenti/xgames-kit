@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-blockcave-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-blockcave-stone.glb",
+ "sha256": "5721520440507a0bf9f911076f7ea48c3222e10ab3be93c490644d265e5e5349",
+ "bytes": 3580,
+ "preview": "previews/cliff-blockcave-stone.png",
+ "from": "Models/GLTF format/cliff_blockCave_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff blockcave stone",
+ "tags": [
+  "cliff",
+  "blockcave",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 56,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 56,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.577,
+    "value": 0.882,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f02a4190d8428722f00583dc751168c84fb1227bac35c517f2dcad58cb327c7a",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

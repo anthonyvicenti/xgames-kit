@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-top-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-top-rock.glb",
+ "sha256": "089e6343dd0eef7009237dba729ee96326e99f274e831e8330150a66b838adad",
+ "bytes": 3584,
+ "preview": "previews/cliff-top-rock.png",
+ "from": "Models/GLTF format/cliff_top_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff top rock",
+ "tags": [
+  "cliff",
+  "top",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.268
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 53,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 53,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3584,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f2be9e",
+     "#73eddd"
+    ],
+    "saturation": 0.764,
+    "value": 0.775,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.903
+     },
+     {
+      "hue": "cyan",
+      "share": 0.097
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8c3b4d37fad0bacf39d0315a51850dfe9c55eea03de74854e3d92ce4157bbebb",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

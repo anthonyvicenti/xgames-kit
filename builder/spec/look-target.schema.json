@@ -1,0 +1,1299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/look-target/1.json",
+  "title": "xgames-kit look target",
+  "description": "A game's style target (spec.look.target, over its kind) and its reference manifest (spec.look.refs). The target holds facts a renderer or a judge can be held to: measured parts come from the reference images (palette, value and saturation, edges, regions), judged parts from a vision model reading them with a fixed rubric (lighting, materials, shapes, camera, UI, VFX, what makes it read). With no images it is written from words alone and says so (from: words, a lower confidence). A target never changes play. builder/look/target.mjs writes one; builder/look/apply.mjs maps one to a runtime's look values; the look judge (builder/look/judge.mjs) scores a game against it.",
+  "$defs": {
+    "hex": {
+      "type": "string",
+      "pattern": "^#[0-9a-fA-F]{6}$"
+    },
+    "unit": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "hist": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16,
+      "items": {
+        "$ref": "#/$defs/unit"
+      },
+      "description": "Sixteen even bins, each the share of pixels in it (the bins sum to 1): lightness over 0–1, chroma over 0–0.3 (stats.mjs, the look judge's own numbers)."
+    },
+    "spread": {
+      "type": "object",
+      "required": [
+        "mean",
+        "spread",
+        "hist"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mean": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "spread": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "The 10th to the 90th percentile, as one width."
+        },
+        "hist": {
+          "$ref": "#/$defs/hist"
+        }
+      }
+    },
+    "swatch": {
+      "type": "object",
+      "required": [
+        "hex",
+        "share"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "hex": {
+          "$ref": "#/$defs/hex"
+        },
+        "share": {
+          "$ref": "#/$defs/unit",
+          "description": "The share of the reference pixels nearest this colour."
+        },
+        "role": {
+          "type": "string",
+          "maxLength": 40,
+          "description": "What the colour is, when the judge says (sky, soil, grass, skin, ink, accent …)."
+        },
+        "words": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "The colour in words (stats.mjs colourWords): dark saturated blue, light grey …"
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "required": [
+        "colors"
+      ],
+      "additionalProperties": false,
+      "description": "One part of the frame (the top band for the sky, the bottom band for the ground, a saturated blob for characters), measured on its own when it can be told apart.",
+      "properties": {
+        "colors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/swatch"
+          }
+        },
+        "value": {
+          "$ref": "#/$defs/unit",
+          "description": "Mean OKLab lightness."
+        },
+        "hue": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "The mean hue angle in OKLab, degrees."
+        },
+        "chroma": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.5,
+          "description": "Mean OKLab chroma (about 0–0.32 on a screen)."
+        }
+      }
+    },
+    "level": {
+      "enum": [
+        "none",
+        "low",
+        "mid",
+        "high"
+      ]
+    },
+    "ref": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "description": "One reference image, by content. The image itself stays local (outside every repository, never in a published game, never an image-to-image source): builder/look/refs.mjs finds it by sha256 in the reference folders.",
+      "properties": {
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+        },
+        "url": {
+          "type": "string",
+          "maxLength": 400,
+          "pattern": "^https?://",
+          "description": "Where the image came from."
+        },
+        "frame": {
+          "enum": [
+            "gameplay",
+            "character",
+            "terrain",
+            "ui",
+            "vfx",
+            "scene",
+            "other"
+          ],
+          "description": "What the frame shows; the judge reads each kind of frame for its own parts."
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "size": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": [
+    "schema",
+    "from",
+    "confidence",
+    "reads"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "gf-look-target/1"
+    },
+    "from": {
+      "enum": [
+        "refs",
+        "words",
+        "refs+words"
+      ],
+      "description": "What it was read from. words: no image was measured, so the measured parts are the judge's guesses and confidence is lower."
+    },
+    "confidence": {
+      "$ref": "#/$defs/unit",
+      "description": "How far a build may lean on it: about 0.8 from several measured frames, 0.4 from words alone."
+    },
+    "words": {
+      "type": "string",
+      "maxLength": 600,
+      "description": "The person's own words about the look, verbatim."
+    },
+    "refsUsed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 40,
+      "description": "How many reference images were measured."
+    },
+    "palette": {
+      "type": "object",
+      "required": [
+        "colors"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "colors": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "items": {
+            "$ref": "#/$defs/swatch"
+          },
+          "description": "The palette clusters, largest share first."
+        },
+        "value": {
+          "$ref": "#/$defs/spread",
+          "description": "OKLab lightness."
+        },
+        "warmth": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Yellow–red against blue over the palette, -1 cold to 1 warm."
+        },
+        "chroma": {
+          "$ref": "#/$defs/spread",
+          "description": "OKLab chroma, binned over 0–0.3 (mean and spread in chroma units)."
+        },
+        "mean": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "L": {
+              "type": "number"
+            },
+            "C": {
+              "type": "number"
+            },
+            "contrast": {
+              "type": "number"
+            },
+            "litL": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "litC": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.5
+            }
+          },
+          "description": "Mean lightness, mean chroma and the lightness spread (standard deviation), averaged over the frames; litL and litC over the lit pixels only (OKLab L > 0.45, each frame weighed by its lit share): the light of the lit surfaces, whatever share of the frames is in shadow."
+        }
+      }
+    },
+    "regions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sky": {
+          "$ref": "#/$defs/region"
+        },
+        "ground": {
+          "$ref": "#/$defs/region"
+        },
+        "characters": {
+          "$ref": "#/$defs/region"
+        }
+      }
+    },
+    "edges": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "density": {
+          "$ref": "#/$defs/unit",
+          "description": "The share of pixels on an edge (Sobel on OKLab lightness)."
+        },
+        "dark": {
+          "$ref": "#/$defs/unit",
+          "description": "The share of pixels on a thin dark line: an outline drawn, not only a colour change."
+        },
+        "outline": {
+          "$ref": "#/$defs/level"
+        },
+        "outlineColor": {
+          "$ref": "#/$defs/hex"
+        }
+      }
+    },
+    "lighting": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "$ref": "#/$defs/hex",
+          "description": "The light over the open world (the sun or the moon), not a lamp's."
+        },
+        "fill": {
+          "$ref": "#/$defs/hex",
+          "description": "The shadow side's colour."
+        },
+        "keyStrength": {
+          "$ref": "#/$defs/level"
+        },
+        "contrast": {
+          "$ref": "#/$defs/unit",
+          "description": "Lit against shadow: 0 flat, 1 hard."
+        },
+        "shadowSoftness": {
+          "$ref": "#/$defs/unit",
+          "description": "0 crisp, 1 very soft or none to see."
+        },
+        "fog": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "density": {
+              "$ref": "#/$defs/unit"
+            },
+            "color": {
+              "$ref": "#/$defs/hex"
+            }
+          },
+          "description": "Haze over the open world: how far one sees outdoors (0 clear … 1 a few metres)."
+        },
+        "time": {
+          "enum": [
+            "day",
+            "golden",
+            "dusk",
+            "night"
+          ]
+        },
+        "local": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/hex"
+          },
+          "description": "Local light pools (lamps, lava, glowing things), the strongest first."
+        },
+        "sky": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/hex"
+          },
+          "description": "The sky over the open world, the main one first; references whose levels swing between skies list the others after it. Read by the judge (the measured sky band pools every frame's top fifth, a canyon wall as much as a sky)."
+        }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "shading": {
+          "enum": [
+            "flat",
+            "toon",
+            "soft-toon",
+            "painterly",
+            "pbr",
+            "unlit",
+            "pixel"
+          ]
+        },
+        "bands": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Light bands a toon ramp shows (0: smooth)."
+        },
+        "roughness": {
+          "$ref": "#/$defs/unit"
+        },
+        "gloss": {
+          "$ref": "#/$defs/level",
+          "description": "Highlights: none to glossy."
+        },
+        "rim": {
+          "$ref": "#/$defs/level"
+        },
+        "texture": {
+          "enum": [
+            "none",
+            "flat-colour",
+            "painted",
+            "pixel",
+            "photo"
+          ],
+          "description": "What surfaces carry."
+        }
+      }
+    },
+    "shapes": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chunkiness": {
+          "$ref": "#/$defs/unit",
+          "description": "0 thin and detailed, 1 big simple masses."
+        },
+        "roundness": {
+          "$ref": "#/$defs/unit",
+          "description": "0 blocky and angular, 1 soft and round."
+        },
+        "detail": {
+          "$ref": "#/$defs/level",
+          "description": "Triangles per metre, read by eye."
+        },
+        "headToBody": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 1.5,
+          "description": "A character's head height over its whole height (a realistic person ~0.13, a chibi ~0.5, a head with a tail ~1)."
+        },
+        "eyes": {
+          "enum": [
+            "none",
+            "dots",
+            "small",
+            "big",
+            "huge"
+          ]
+        },
+        "language": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "description": "Short words: rounded, chunky, soft bevels, wobbly outlines …"
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "view": {
+          "enum": [
+            "side",
+            "three-quarter",
+            "top-down",
+            "isometric",
+            "over-shoulder",
+            "first-person",
+            "free"
+          ]
+        },
+        "pitch": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90,
+          "description": "Degrees below the horizon the camera looks."
+        },
+        "distance": {
+          "enum": [
+            "close",
+            "mid",
+            "far"
+          ]
+        },
+        "fov": {
+          "type": "number",
+          "minimum": 10,
+          "maximum": 120
+        },
+        "projection": {
+          "enum": [
+            "perspective",
+            "orthographic"
+          ]
+        },
+        "horizon": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Where the horizon line sits in the usual play view, as a share of the frame height from the bottom (0.5: the middle; null: no horizon shows). With the fov it gives the pitch."
+        },
+        "groundShare": {
+          "$ref": "#/$defs/unit",
+          "description": "The share of the usual play view that is ground (land and water); the rest is sky and backdrop."
+        },
+        "eye": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 200,
+          "description": "Metres the camera sits above the ground under it in the usual play view."
+        },
+        "perspective": {
+          "$ref": "#/$defs/level",
+          "description": "How strong the perspective reads (wide-angle depth falloff): none (orthographic) to high."
+        },
+        "framings": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "pitch",
+              "distance",
+              "fov"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9-]{0,39}$"
+              },
+              "pitch": {
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90,
+                "description": "Degrees down from level."
+              },
+              "distance": {
+                "type": "number",
+                "minimum": 0.2,
+                "maximum": 500,
+                "description": "Metres from what it frames."
+              },
+              "fov": {
+                "type": "number",
+                "minimum": 10,
+                "maximum": 120
+              },
+              "height": {
+                "type": "number",
+                "minimum": -50,
+                "maximum": 500,
+                "description": "Metres above the ground, when it matters."
+              },
+              "frame": {
+                "enum": [
+                  "gameplay",
+                  "character",
+                  "terrain",
+                  "ui",
+                  "vfx",
+                  "scene",
+                  "other"
+                ],
+                "description": "The reference frames it matches."
+              },
+              "where": {
+                "type": "string",
+                "pattern": "^[a-z][a-z-]{0,23}$",
+                "description": "The kind of place the camera stands in, which a world is asked for (ctx.world.place: seat, day, night, cave, cliff-edge, beach, sea-view …); left out, the camera frames the player."
+              }
+            }
+          },
+          "description": "The reference's camera presets in metres, for the judge to render at (one per kind of frame that has its own camera)."
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What kind of place the references show (judged). The runtime picks and shapes its world from these (builder/look/world.mjs).",
+      "properties": {
+        "setting": {
+          "enum": [
+            "islands",
+            "coast",
+            "town",
+            "yard",
+            "arena",
+            "indoor",
+            "cave",
+            "dungeon",
+            "ruins",
+            "desert",
+            "forest",
+            "hills",
+            "mountains",
+            "plain",
+            "blocks",
+            "sky",
+            "space",
+            "other"
+          ],
+          "description": "The kind of place, the main one."
+        },
+        "also": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "islands",
+              "coast",
+              "town",
+              "yard",
+              "arena",
+              "indoor",
+              "cave",
+              "dungeon",
+              "ruins",
+              "desert",
+              "forest",
+              "hills",
+              "mountains",
+              "plain",
+              "blocks",
+              "sky",
+              "space",
+              "other"
+            ]
+          },
+          "description": "Other kinds of place the frames swing between (levels), most shown first."
+        },
+        "land": {
+          "enum": [
+            "floating",
+            "islands",
+            "cliffs",
+            "hills",
+            "canyon",
+            "flat",
+            "terraces",
+            "blocky",
+            "rooms"
+          ],
+          "description": "The shape of the ground players stand on."
+        },
+        "horizon": {
+          "enum": [
+            "sea",
+            "sky",
+            "mountains",
+            "hills",
+            "city",
+            "trees",
+            "walls",
+            "void",
+            "none"
+          ],
+          "description": "What the distance shows."
+        },
+        "water": {
+          "enum": [
+            "none",
+            "sea",
+            "lake",
+            "river",
+            "pools"
+          ]
+        },
+        "relief": {
+          "$ref": "#/$defs/unit",
+          "description": "How much the ground rises and falls where people play (0 flat to 1 steep hills)."
+        },
+        "destructible": {
+          "type": "boolean",
+          "description": "Whether the ground breaks in play: craters blown in it, holes dug, chunks knocked off."
+        },
+        "sky": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "clear",
+                "cumulus",
+                "gradient",
+                "overcast",
+                "storm",
+                "stars",
+                "none"
+              ]
+            },
+            "clouds": {
+              "$ref": "#/$defs/unit",
+              "description": "Cloud cover (0 none to 1 full)."
+            },
+            "cloudStyle": {
+              "enum": [
+                "none",
+                "puff",
+                "card",
+                "wisp",
+                "layer"
+              ],
+              "description": "puff: rounded masses that look volumetric; card: flat painted cut-outs; wisp: thin streaks; layer: a sheet."
+            },
+            "cloudColor": {
+              "$ref": "#/$defs/hex"
+            }
+          }
+        },
+        "props": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "density": {
+              "$ref": "#/$defs/unit",
+              "description": "How dressed the play space is (0 bare to 1 crowded)."
+            },
+            "dressing": {
+              "type": "array",
+              "maxItems": 8,
+              "items": {
+                "type": "string",
+                "maxLength": 40
+              },
+              "description": "The set dressing that recurs, in plain words (pine trees, crates, ruined walls), most seen first."
+            }
+          }
+        },
+        "ground": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tile": {
+              "type": "number",
+              "minimum": 0.25,
+              "maximum": 60,
+              "description": "Metres one repeat of the ground's painted pattern covers (a busy texture is small, a broad painted one large)."
+            },
+            "detail": {
+              "$ref": "#/$defs/level",
+              "description": "How much small detail the ground carries."
+            },
+            "crossSection": {
+              "type": "boolean",
+              "description": "Whether the ground shows its soil and rock cut open at edges and holes."
+            }
+          }
+        },
+        "words": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "description": "What makes the place read, in 2 to 6 short lines (never the reference game's names)."
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "A short line: comic panels with thick ink, flat minimal, diegetic …"
+        },
+        "font": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "description": "Font kinds, never a trade name: chunky rounded display, hand-lettered comic …"
+        },
+        "accent": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/hex"
+          }
+        },
+        "panel": {
+          "$ref": "#/$defs/hex"
+        },
+        "corners": {
+          "enum": [
+            "square",
+            "rounded",
+            "pill",
+            "irregular"
+          ]
+        },
+        "ink": {
+          "$ref": "#/$defs/level",
+          "description": "How heavy the UI's outlines are."
+        }
+      }
+    },
+    "vfx": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "style": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "scale": {
+          "$ref": "#/$defs/level",
+          "description": "How big effects are against a character."
+        },
+        "palette": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/$defs/hex"
+          }
+        }
+      }
+    },
+    "reads": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200
+      },
+      "description": "What makes it read, 3 to 6 short lines (1 from words alone is allowed), in the order they matter."
+    },
+    "avoid": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "string",
+        "maxLength": 160
+      },
+      "description": "What would break the look, and what the legal line keeps out (the reference's characters, names, logos, actual art)."
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Which parts were measured from pixels and which were judged; the judge's model and when.",
+      "properties": {
+        "measured": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          }
+        },
+        "judged": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          }
+        },
+        "model": {
+          "type": "string",
+          "maxLength": 80
+        },
+        "at": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "looks": {
+      "type": "array",
+      "maxItems": 4,
+      "description": "The references' distinct looks (the levels of one game: a desert, a sky level, a night level, a fortress at dusk), each with its own frames and what differs from the whole: a game takes one per level or round, or the pitch offers them as options, instead of one averaged look. Left out when the frames are one look.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "frames"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,39}$"
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 60,
+            "description": "A few words of our own (never the reference game's level names)."
+          },
+          "frames": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 40,
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "description": "The sha256 of each reference frame of this look (spec look.refs)."
+          },
+          "share": {
+            "$ref": "#/$defs/unit",
+            "description": "Its share of the reference frames."
+          },
+          "setting": {
+            "enum": [
+              "day",
+              "cave",
+              "night",
+              "close",
+              "ui"
+            ],
+            "description": "The frames' setting (the look judge's classifier, builder/look/settings.mjs, else the reader's)."
+          },
+          "palette": {
+            "type": "object",
+            "required": [
+              "colors"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "colors": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 12,
+                "items": {
+                  "$ref": "#/$defs/swatch"
+                },
+                "description": "The palette clusters, largest share first."
+              },
+              "value": {
+                "$ref": "#/$defs/spread",
+                "description": "OKLab lightness."
+              },
+              "warmth": {
+                "type": "number",
+                "minimum": -1,
+                "maximum": 1,
+                "description": "Yellow–red against blue over the palette, -1 cold to 1 warm."
+              },
+              "chroma": {
+                "$ref": "#/$defs/spread",
+                "description": "OKLab chroma, binned over 0–0.3 (mean and spread in chroma units)."
+              },
+              "mean": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "L": {
+                    "type": "number"
+                  },
+                  "C": {
+                    "type": "number"
+                  },
+                  "contrast": {
+                    "type": "number"
+                  },
+                  "litL": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  },
+                  "litC": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 0.5
+                  }
+                },
+                "description": "Mean lightness, mean chroma and the lightness spread (standard deviation), averaged over the frames; litL and litC over the lit pixels only (OKLab L > 0.45, each frame weighed by its lit share): the light of the lit surfaces, whatever share of the frames is in shadow."
+              }
+            }
+          },
+          "regions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "sky": {
+                "$ref": "#/$defs/region"
+              },
+              "ground": {
+                "$ref": "#/$defs/region"
+              },
+              "characters": {
+                "$ref": "#/$defs/region"
+              }
+            }
+          },
+          "edges": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "density": {
+                "$ref": "#/$defs/unit",
+                "description": "The share of pixels on an edge (Sobel on OKLab lightness)."
+              },
+              "dark": {
+                "$ref": "#/$defs/unit",
+                "description": "The share of pixels on a thin dark line: an outline drawn, not only a colour change."
+              },
+              "outline": {
+                "$ref": "#/$defs/level"
+              },
+              "outlineColor": {
+                "$ref": "#/$defs/hex"
+              }
+            }
+          },
+          "lighting": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "$ref": "#/$defs/hex",
+                "description": "The light over the open world (the sun or the moon), not a lamp's."
+              },
+              "fill": {
+                "$ref": "#/$defs/hex",
+                "description": "The shadow side's colour."
+              },
+              "keyStrength": {
+                "$ref": "#/$defs/level"
+              },
+              "contrast": {
+                "$ref": "#/$defs/unit",
+                "description": "Lit against shadow: 0 flat, 1 hard."
+              },
+              "shadowSoftness": {
+                "$ref": "#/$defs/unit",
+                "description": "0 crisp, 1 very soft or none to see."
+              },
+              "fog": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "density": {
+                    "$ref": "#/$defs/unit"
+                  },
+                  "color": {
+                    "$ref": "#/$defs/hex"
+                  }
+                },
+                "description": "Haze over the open world: how far one sees outdoors (0 clear … 1 a few metres)."
+              },
+              "time": {
+                "enum": [
+                  "day",
+                  "golden",
+                  "dusk",
+                  "night"
+                ]
+              },
+              "local": {
+                "type": "array",
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/hex"
+                },
+                "description": "Local light pools (lamps, lava, glowing things), the strongest first."
+              },
+              "sky": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/hex"
+                },
+                "description": "The sky over the open world, the main one first; references whose levels swing between skies list the others after it. Read by the judge (the measured sky band pools every frame's top fifth, a canyon wall as much as a sky)."
+              }
+            }
+          },
+          "world": {
+            "type": "object",
+            "additionalProperties": false,
+            "description": "What kind of place the references show (judged). The runtime picks and shapes its world from these (builder/look/world.mjs).",
+            "properties": {
+              "setting": {
+                "enum": [
+                  "islands",
+                  "coast",
+                  "town",
+                  "yard",
+                  "arena",
+                  "indoor",
+                  "cave",
+                  "dungeon",
+                  "ruins",
+                  "desert",
+                  "forest",
+                  "hills",
+                  "mountains",
+                  "plain",
+                  "blocks",
+                  "sky",
+                  "space",
+                  "other"
+                ],
+                "description": "The kind of place, the main one."
+              },
+              "also": {
+                "type": "array",
+                "maxItems": 4,
+                "items": {
+                  "enum": [
+                    "islands",
+                    "coast",
+                    "town",
+                    "yard",
+                    "arena",
+                    "indoor",
+                    "cave",
+                    "dungeon",
+                    "ruins",
+                    "desert",
+                    "forest",
+                    "hills",
+                    "mountains",
+                    "plain",
+                    "blocks",
+                    "sky",
+                    "space",
+                    "other"
+                  ]
+                },
+                "description": "Other kinds of place the frames swing between (levels), most shown first."
+              },
+              "land": {
+                "enum": [
+                  "floating",
+                  "islands",
+                  "cliffs",
+                  "hills",
+                  "canyon",
+                  "flat",
+                  "terraces",
+                  "blocky",
+                  "rooms"
+                ],
+                "description": "The shape of the ground players stand on."
+              },
+              "horizon": {
+                "enum": [
+                  "sea",
+                  "sky",
+                  "mountains",
+                  "hills",
+                  "city",
+                  "trees",
+                  "walls",
+                  "void",
+                  "none"
+                ],
+                "description": "What the distance shows."
+              },
+              "water": {
+                "enum": [
+                  "none",
+                  "sea",
+                  "lake",
+                  "river",
+                  "pools"
+                ]
+              },
+              "relief": {
+                "$ref": "#/$defs/unit",
+                "description": "How much the ground rises and falls where people play (0 flat to 1 steep hills)."
+              },
+              "destructible": {
+                "type": "boolean",
+                "description": "Whether the ground breaks in play: craters blown in it, holes dug, chunks knocked off."
+              },
+              "sky": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "enum": [
+                      "clear",
+                      "cumulus",
+                      "gradient",
+                      "overcast",
+                      "storm",
+                      "stars",
+                      "none"
+                    ]
+                  },
+                  "clouds": {
+                    "$ref": "#/$defs/unit",
+                    "description": "Cloud cover (0 none to 1 full)."
+                  },
+                  "cloudStyle": {
+                    "enum": [
+                      "none",
+                      "puff",
+                      "card",
+                      "wisp",
+                      "layer"
+                    ],
+                    "description": "puff: rounded masses that look volumetric; card: flat painted cut-outs; wisp: thin streaks; layer: a sheet."
+                  },
+                  "cloudColor": {
+                    "$ref": "#/$defs/hex"
+                  }
+                }
+              },
+              "props": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "density": {
+                    "$ref": "#/$defs/unit",
+                    "description": "How dressed the play space is (0 bare to 1 crowded)."
+                  },
+                  "dressing": {
+                    "type": "array",
+                    "maxItems": 8,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 40
+                    },
+                    "description": "The set dressing that recurs, in plain words (pine trees, crates, ruined walls), most seen first."
+                  }
+                }
+              },
+              "ground": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "tile": {
+                    "type": "number",
+                    "minimum": 0.25,
+                    "maximum": 60,
+                    "description": "Metres one repeat of the ground's painted pattern covers (a busy texture is small, a broad painted one large)."
+                  },
+                  "detail": {
+                    "$ref": "#/$defs/level",
+                    "description": "How much small detail the ground carries."
+                  },
+                  "crossSection": {
+                    "type": "boolean",
+                    "description": "Whether the ground shows its soil and rock cut open at edges and holes."
+                  }
+                }
+              },
+              "words": {
+                "type": "array",
+                "maxItems": 6,
+                "items": {
+                  "type": "string",
+                  "maxLength": 80
+                },
+                "description": "What makes the place read, in 2 to 6 short lines (never the reference game's names)."
+              }
+            }
+          },
+          "reads": {
+            "type": "array",
+            "maxItems": 6,
+            "items": {
+              "type": "string",
+              "maxLength": 200
+            }
+          }
+        }
+      }
+    },
+    "level": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "frames"
+      ],
+      "description": "When this target is one look of a larger one (target.mjs targetOfLook): which, and the frames it is held to.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]{0,39}$"
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "A few words of our own (never the reference game's level names)."
+        },
+        "frames": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 40,
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "description": "The sha256 of each reference frame of this look (spec look.refs)."
+        },
+        "setting": {
+          "enum": [
+            "day",
+            "cave",
+            "night",
+            "close",
+            "ui"
+          ],
+          "description": "The frames' setting (the look judge's classifier, builder/look/settings.mjs, else the reader's)."
+        }
+      }
+    }
+  }
+}

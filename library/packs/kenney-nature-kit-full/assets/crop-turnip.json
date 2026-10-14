@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "crop-turnip",
+ "pack": "kenney-nature-kit-full",
+ "file": "crop-turnip.glb",
+ "sha256": "9e03b0599e2d8ba17da504ab893029f82f0b045f7c4728f0450845c86821c0e7",
+ "bytes": 5852,
+ "preview": "previews/crop-turnip.png",
+ "from": "Models/GLTF format/crop_turnip.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crop turnip",
+ "tags": [
+  "crop",
+  "turnip"
+ ],
+ "use": {
+  "size": [
+   0.343,
+   0.661,
+   0.343
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 168,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 168,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5852,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#73eddd",
+     "#fff9f0"
+    ],
+    "saturation": 0.876,
+    "value": 0.818,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.543
+     },
+     {
+      "hue": "grey",
+      "share": 0.457
+     }
+    ],
+    "grey": 0.457
+   },
+   "trianglesPerMetre": 22.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5e121c6042742497ed02081a7c62fc80aec2191f04e22a57d81d02130689f71d",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "rock-flat",
+ "pack": "kenney-survival-kit-full",
+ "file": "rock-flat.glb",
+ "sha256": "b29e409a5d13a9cfd0304e448a00c428204b23533f8b252d3a27ddec097a240d",
+ "bytes": 14520,
+ "preview": "previews/rock-flat.png",
+ "from": "Models/GLB format/rock-flat.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock flat",
+ "tags": [
+  "rock",
+  "flat"
+ ],
+ "use": {
+  "size": [
+   1.786,
+   0.195,
+   1.448
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 274,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 274,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14520,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#edb791",
+     "#eab38d",
+     "#e1a680",
+     "#d7966f",
+     "#e7af89",
+     "#dea27b",
+     "#d18f67",
+     "#dc9e77"
+    ],
+    "saturation": 0.667,
+    "value": 0.716,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "350f6440743ed400728d8889d711e0eb3eed56e8d7389e386352d9d98411a49d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

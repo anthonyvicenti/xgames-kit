@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "fence-fortified",
+ "pack": "kenney-survival-kit-full",
+ "file": "fence-fortified.glb",
+ "sha256": "debe0a3a993980e305fa6737d1b0b68be095711dbec41cbf942dffa9d9a1c713",
+ "bytes": 12352,
+ "preview": "previews/fence-fortified.png",
+ "from": "Models/GLB format/fence-fortified.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence fortified",
+ "tags": [
+  "fence",
+  "fortified"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.517,
+   0.053
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12352,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c77450",
+     "#c06e4c",
+     "#d7815b",
+     "#c4714e",
+     "#bc6a49",
+     "#cf7a55",
+     "#d37d58",
+     "#db845d"
+    ],
+    "saturation": 0.522,
+    "value": 0.55,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c50f420e9ebf0f1383a9f95766d47f377b19852651760b8223219cc2be850ece",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

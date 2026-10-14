@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "fence-low-broken",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-low-broken.glb",
+ "sha256": "d99196c3bb64a7e6e8f838bd38cc8eec8f7d16262591106f4e96d9c6e4983964",
+ "bytes": 15760,
+ "preview": "previews/fence-low-broken.png",
+ "from": "Models/GLB format/fence-low-broken.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence low broken",
+ "tags": [
+  "fence",
+  "low",
+  "broken"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   0.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 100,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 100,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15760,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#9f5b41",
+     "#925841",
+     "#9d5b41",
+     "#865542",
+     "#ea9168",
+     "#a35c41",
+     "#a55d41",
+     "#aa5e41"
+    ],
+    "saturation": 0.443,
+    "value": 0.457,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.733
+     },
+     {
+      "hue": "brown",
+      "share": 0.267
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "66dba1e1a7dac0678906f40f8d3bed103276067ac5e1362e16b047954182818f",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

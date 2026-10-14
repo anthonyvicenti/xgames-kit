@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-wide-wood-handrail",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-wide-wood-handrail.glb",
+ "sha256": "76adaea34df0174dd888a89d0250e3a4a7ce8526d26497fb2a734aa396b45606",
+ "bytes": 20956,
+ "preview": "previews/stairs-wide-wood-handrail.png",
+ "from": "Models/GLB format/stairs-wide-wood-handrail.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs wide wood handrail",
+ "tags": [
+  "stairs",
+  "wide",
+  "wood",
+  "handrail"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1.445,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 560,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 560,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20956,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c27f5f",
+     "#ca8564",
+     "#c58161",
+     "#c38060",
+     "#c07d5d",
+     "#c88463",
+     "#cc8665",
+     "#cb8665"
+    ],
+    "saturation": 0.469,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "474816e2464c0a4a2e0b1d15ac999b9aa4b4f9a47a3521342cd8fdb77599a872",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

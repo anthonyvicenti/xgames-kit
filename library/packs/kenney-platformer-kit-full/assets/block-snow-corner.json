@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-corner",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-corner.glb",
+ "sha256": "b369bc3ae94606ceee2f004f9166b5ea6e5c0d08884b8fbd59d5f09aacd5dfcb",
+ "bytes": 15784,
+ "preview": "previews/block-snow-corner.png",
+ "from": "Models/GLB format/block-snow-corner.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow corner",
+ "tags": [
+  "block",
+  "snow",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1.054,
+   1,
+   1.054
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15784,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.486,
+    "value": 0.708,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.662
+     },
+     {
+      "hue": "grey",
+      "share": 0.191
+     },
+     {
+      "hue": "blue",
+      "share": 0.146
+     }
+    ],
+    "grey": 0.191
+   },
+   "trianglesPerMetre": 4.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0dd6e2de95c357eee8b05b7bed1b646e96cb54b28c998bd30695d29d0eb1f222",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

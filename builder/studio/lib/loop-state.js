@@ -4,7 +4,7 @@
 
 const STEP_WORDS = {
   ledger: 'Writing down what you asked for', foundation: 'Choosing what runs it, how it plays and how it feels',
-  pitch: 'Choosing a pitch', spec: 'Checking the plan', create: 'Making the game folder', build: 'Your session is writing the game',
+  pitch: 'Choosing a pitch', spec: 'Checking the plan', create: 'Making the game folder', look: 'Choosing the look', build: 'Your session is writing the game',
   fix: 'Applying automatic fixes', economy: 'Checking the economy', backend: 'Checking the backend', verify: 'Running the six gates',
   playtest: 'The play-tester is playing', read: 'A second reader is reading it against your words',
   repair: 'Your session is repairing what failed', ask: 'Questions for you', deliver: 'Handing the game over', done: 'Finished',
@@ -24,6 +24,7 @@ export const STAGES = [
   { id: 'foundation', label: 'Foundation', steps: ['foundation'] },
   { id: 'pitch', label: 'Pitch', steps: ['pitch'] },
   { id: 'spec', label: 'Spec', steps: ['spec'] },
+  { id: 'look', label: 'Look', steps: ['look'] },
   { id: 'build', label: 'Build', steps: ['create', 'build', 'fix', 'repair', 'ask'] },
   { id: 'gates', label: 'Gates', steps: ['economy', 'backend', 'verify'] },
   { id: 'playtest', label: 'Play-test', steps: ['playtest'] },
@@ -33,7 +34,7 @@ export const STAGES = [
 /** Where a loop state stands among STAGES: {index, waiting, done} (index -1: no loop here, an example or a game made by hand). */
 export function stageOf(raw) {
   if (!raw || typeof raw !== 'object') return { index: -1, waiting: false, done: false };
-  const at = raw.waiting?.about === 'cards' ? 'pitch' : raw.waiting?.about === 'migration' ? 'foundation' : raw.step;
+  const at = raw.waiting?.about === 'cards' ? 'pitch' : raw.waiting?.about === 'looks' ? 'look' : raw.waiting?.about === 'migration' ? 'foundation' : raw.step;
   const index = Math.max(0, STAGES.findIndex(s => s.steps.includes(at)));
   return { index, waiting: raw.status === 'waiting-on-creator', done: raw.status === 'delivered' };
 }

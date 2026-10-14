@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-window-shutters",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-window-shutters.glb",
+ "sha256": "99f9dde0283abac11f66661f36a09cb1a4d588320eb85794e9857d3e551a72a5",
+ "bytes": 15292,
+ "preview": "previews/wall-wood-window-shutters.png",
+ "from": "Models/GLB format/wall-wood-window-shutters.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood window shutters",
+ "tags": [
+  "wall",
+  "wood",
+  "window",
+  "shutters"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 122,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 122,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15292,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#9a5d47",
+     "#86513f",
+     "#935944",
+     "#8e5642",
+     "#c88463",
+     "#c27f5f"
+    ],
+    "saturation": 0.423,
+    "value": 0.508,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.791
+     },
+     {
+      "hue": "brown",
+      "share": 0.209
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c45a63690760cd5de3842ffbe222092e8cd483524679c4ba92fef4d1e52f7248",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

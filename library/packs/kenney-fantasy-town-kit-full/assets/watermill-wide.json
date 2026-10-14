@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "watermill-wide",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "watermill-wide.glb",
+ "sha256": "985b04a7717772089d84e200c434daa8623b40afd5412b22d0015ea07306e3e5",
+ "bytes": 24928,
+ "preview": "previews/watermill-wide.png",
+ "from": "Models/GLB format/watermill-wide.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "watermill wide",
+ "tags": [
+  "watermill",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   1.05,
+   1.799,
+   1.799
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 600,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 600,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 24928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c58262",
+     "#794939",
+     "#905743",
+     "#8e5642",
+     "#885240",
+     "#985c46",
+     "#c78362",
+     "#c38060"
+    ],
+    "saturation": 0.41,
+    "value": 0.503,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.656
+     },
+     {
+      "hue": "brown",
+      "share": 0.308
+     },
+     {
+      "hue": "blue",
+      "share": 0.034
+     }
+    ],
+    "grey": 0.003
+   },
+   "trianglesPerMetre": 6.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3644d4092799f5ff672a5b07ff124f68259c8c9bd45d37f9659eea4426534b7d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

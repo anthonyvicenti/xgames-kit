@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-narrow-looping",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-narrow-looping.glb",
+ "sha256": "b9b1554cd3dfcbd31aacd8db7826d559c6f179b7333aafea19589d59e1fcfc23",
+ "bytes": 26720,
+ "preview": "previews/track-road-narrow-looping.png",
+ "from": "Models/GLB format/track-road-narrow-looping.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road narrow looping",
+ "tags": [
+  "track",
+  "road",
+  "narrow",
+  "looping"
+ ],
+ "use": {
+  "size": [
+   2,
+   4,
+   3.981
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 736,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 736,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 26720,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c1c1d8",
+     "#5a6078",
+     "#d3554e",
+     "#f16544",
+     "#d1d1e2",
+     "#e25d49",
+     "#e6e6ef",
+     "#e2e2ed"
+    ],
+    "saturation": 0.389,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.37
+     },
+     {
+      "hue": "red",
+      "share": 0.362
+     },
+     {
+      "hue": "grey",
+      "share": 0.268
+     }
+    ],
+    "grey": 0.268
+   },
+   "trianglesPerMetre": 4.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4ab6342ea9e4431ff3063b1b5aa82d676daa5eb9948294ba0d774f386223907e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

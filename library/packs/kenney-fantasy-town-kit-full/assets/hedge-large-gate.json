@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "hedge-large-gate",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "hedge-large-gate.glb",
+ "sha256": "9bd9a0513ff876707fa6154609f683c4620236ddd7d6f78eaf0a0f160ce597fb",
+ "bytes": 17972,
+ "preview": "previews/hedge-large-gate.png",
+ "from": "Models/GLB format/hedge-large-gate.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "hedge large gate",
+ "tags": [
+  "hedge",
+  "large",
+  "gate"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.6,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 164,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 164,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17972,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#3d9f75",
+     "#42a67a",
+     "#7d829c",
+     "#8d93b1",
+     "#9da4c4",
+     "#bdc6ee",
+     "#b3bbe0",
+     "#49af7f"
+    ],
+    "saturation": 0.36,
+    "value": 0.573,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.334
+     },
+     {
+      "hue": "blue",
+      "share": 0.28
+     },
+     {
+      "hue": "grey",
+      "share": 0.242
+     },
+     {
+      "hue": "green",
+      "share": 0.144
+     }
+    ],
+    "grey": 0.242
+   },
+   "trianglesPerMetre": 9.38,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "22525eeeb1075a220d552085100620b8f0de6877bb903e3407c455d365d89a33",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

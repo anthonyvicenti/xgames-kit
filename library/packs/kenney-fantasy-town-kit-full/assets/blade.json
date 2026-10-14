@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "blade",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "blade.glb",
+ "sha256": "155aec57adeeb438adac53307e5a637536d8e0a2dc0a9ccf9f7cae76b87f70bd",
+ "bytes": 16892,
+ "preview": "previews/blade.png",
+ "from": "Models/GLB format/blade.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "blade",
+ "tags": [
+  "blade"
+ ],
+ "use": {
+  "size": [
+   0.111,
+   2,
+   0.43
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16892,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c3805f",
+     "#f0c7a0",
+     "#f0c49a",
+     "#cb8665",
+     "#f0c8a3",
+     "#f0c297",
+     "#c78362",
+     "#b97859"
+    ],
+    "saturation": 0.612,
+    "value": 0.687,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.94,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ef54ee87322191f18f7bf93d065add896fc584578c4c913eb99ea0bb18495a14",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

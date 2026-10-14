@@ -98,7 +98,7 @@ export async function analyze(bytes, { path: file, category, renderer, hints = {
     }
     const texMax = Math.max(0, ...m.textures.map(t => Math.max(...t.split('x').map(Number))));
     out.budgets = { triangles: m.triangles, textures: m.textures.length, ...(texMax ? { textureMax: texMax } : {}), materials: m.materials, ...(m.joints ? { joints: m.joints } : {}) };
-    if (category === 'body') out.validated.push(await validateBody(file, { role: hints.role ?? null }));
+    if (category === 'body') out.validated.push(await validateBody(file, { role: hints.role ?? null, rig: hints.rig ?? 'gf-humanoid-1' }));
     else out.validated.push(validateModel(bytes, { category, size: m.size, measures: m }));
     if (category === 'clip') out.use.seconds = round(Math.max(0, ...(m.clipSeconds ?? [0])));
     out.facts.clips = m.clips;

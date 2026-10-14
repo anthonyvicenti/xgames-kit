@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "ladder-broken",
+ "pack": "kenney-platformer-kit-full",
+ "file": "ladder-broken.glb",
+ "sha256": "91e597caebad97502d4db75c9c12900986364dfccc1edbf9dbaf39309f7e1b5e",
+ "bytes": 15856,
+ "preview": "previews/ladder-broken.png",
+ "from": "Models/GLB format/ladder-broken.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ladder broken",
+ "tags": [
+  "ladder",
+  "broken"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   1,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15856,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#9a5a41",
+     "#9c5b41",
+     "#965941",
+     "#945941",
+     "#955941",
+     "#905741"
+    ],
+    "saturation": 0.53,
+    "value": 0.542,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.902
+     },
+     {
+      "hue": "brown",
+      "share": 0.098
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "88731a591564260295d773c500b9b39cf02cf8882f5ab921f2764314716359fe",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fence.glb",
+ "sha256": "fa9ef894bb9d44a5c2d5fd35ebb46dc6869d6e18eb717eb1f55bc0be1fd90025",
+ "bytes": 14732,
+ "preview": "previews/fence.png",
+ "from": "Models/GLB format/fence.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence",
+ "tags": [
+  "fence"
+ ],
+ "use": {
+  "size": [
+   0.075,
+   0.38,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ca8564",
+     "#c17e5e",
+     "#bf7c5d",
+     "#cc8665",
+     "#c27f5f",
+     "#bd7b5c",
+     "#cd8866",
+     "#c88363"
+    ],
+    "saturation": 0.467,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "92261b9419108d84f3db0def5eadeffa783032029897562b1f512e4a7570ef48",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

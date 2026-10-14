@@ -239,7 +239,8 @@ export function needFromSlot(slot) {
   const base = [slot.label, desc, slot.generate?.prompt].filter(Boolean).join(' ');
   const head = slot.label ?? null; // its last meaningful word is the thing the slot names
   if (slot.type === 'model') {
-    if (id.startsWith('character.body.')) { const role = id.split('.').pop(); return { slot: id, category: 'body', dimension: '3d', rig: c.rig ?? 'gf-humanoid-1', role, words: `${base} ${role}` }; }
+    // a body: its rig standard (gf-humanoid-1, or a creature's: CREATURES.md) and role (a seat's body is its role's)
+    if (id.startsWith('character.body.')) { const role = id.slice(15).replace(/\.seat\d+$/, ''); return { slot: id, category: 'body', dimension: '3d', rig: c.rig ?? 'gf-humanoid-1', ...(c.archetype ? { archetype: c.archetype } : {}), role, words: `${base} ${role}` }; }
     if (id === 'character.clips' || /\.clips$/.test(id)) return { slot: id, category: 'clip', dimension: '3d', rig: c.rig ?? 'gf-humanoid-1', words: 'clips animation' };
     if (id.startsWith('character.hat')) return { slot: id, category: 'prop', dimension: '3d', words: `hat cap ${base}`, tags: ['wearable'] };
     return { slot: id, category: 'prop', dimension: '3d', words: `${base} ${tail}`, head, size: Array.isArray(c.size) ? c.size : null };

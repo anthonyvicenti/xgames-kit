@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-narrow-straight",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-narrow-straight.glb",
+ "sha256": "e7118c302e8b1b1f939ecf7125bb0899d50ce2bf3ba42e18ef6927bd39a7c5f0",
+ "bytes": 15020,
+ "preview": "previews/track-striped-narrow-straight.png",
+ "from": "Models/GLB format/track-striped-narrow-straight.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped narrow straight",
+ "tags": [
+  "track",
+  "striped",
+  "narrow",
+  "straight"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   4.4
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 220,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 220,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15020,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#e25d49",
+     "#d1d1e2",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#f8f8fb"
+    ],
+    "saturation": 0.47,
+    "value": 0.715,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.489
+     },
+     {
+      "hue": "blue",
+      "share": 0.424
+     },
+     {
+      "hue": "grey",
+      "share": 0.087
+     }
+    ],
+    "grey": 0.087
+   },
+   "trianglesPerMetre": 4.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3b97d0a3762f91ba5663920e8c6ce4d0e9f45abf4aac9a986e90acb0d95a7497",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

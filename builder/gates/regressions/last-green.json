@@ -1,8 +1,8 @@
 {
  "schema": "xgk-regress/1",
- "date": "2026-10-14T07:53:26.388Z",
+ "date": "2026-10-14T15:10:21.211Z",
  "ok": true,
- "seconds": 581,
+ "seconds": 576,
  "results": [
   {
    "id": "board-friend-unseen",
@@ -24,7 +24,7 @@
    "measure": 13,
    "ok": true,
    "why": "gate C failed, measure 13: Q E (\"turn the camera\"): DEAD, held 1.2 s: the camera turned 2° (needs 10°). The HUD lists W / ↑ \"speed up\" (does go), A D / ← → \"steer the car left and right\" (does turn), S / ↓ \"brake and reverse\" (does stop), Q E \"turn the camera\" (does look); every listed control must do on the player's own scre",
-   "seconds": 8
+   "seconds": 7
   },
   {
    "id": "car-controls-unshown",
@@ -46,7 +46,7 @@
    "measure": 13,
    "ok": true,
    "why": "passes measure 13: W / ↑ (\"speed up\"): ok, held 1.2 s: the player moved 4.02 m; A D / ← → (\"steer the car left and right\"): ok, KeyA: the path turned 27° while it was held, 18° of it after the first 200 ms (judged until the player was stopped, 500 ms into the hold); KeyD: the path turned 47° while it was held, 38° of ",
-   "seconds": 7
+   "seconds": 6
   },
   {
    "id": "car-strafes",
@@ -57,7 +57,40 @@
    "measure": 13,
    "ok": true,
    "why": "gate C failed, measure 13: A D / ← → (\"steer the car left and right\"): DEAD, KeyA: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player slid sideways, as a walker strafes, instead of turning; KeyD: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player sl",
-   "seconds": 7
+   "seconds": 6
+  },
+  {
+   "id": "creature-biped",
+   "kind": "broken",
+   "gates": [
+    "A"
+   ],
+   "measure": 19,
+   "ok": true,
+   "why": "gate A failed, measure 19: player (assets/models/body-player.glb): FAIL blob: missing required gf-blob-1 bones: Root, Body, Top (npx gamesfun rig-check <file> --archetype <its archetype> shows a creature's every action, and npx gamesfun art autorig <mesh.glb> --archetype <it> rigs a plain mesh again (CREATURES.md); a body fro",
+   "seconds": 1
+  },
+  {
+   "id": "creature-holds",
+   "kind": "control",
+   "gates": [
+    "A"
+   ],
+   "measure": 19,
+   "ok": true,
+   "why": "passes measure 19: player (assets/models/body-player.glb): a blob on gf-blob-1 whose body, head and limbs hold their shape in all 13 actions of its procedural motion",
+   "seconds": 1
+  },
+  {
+   "id": "creature-torn",
+   "kind": "broken",
+   "gates": [
+    "A"
+   ],
+   "measure": 19,
+   "ok": true,
+   "why": "gate A failed, measure 19: player (assets/models/body-player.glb): FAIL blob: bone Top sits off the body (at 0.00, 3.00, 0.00 m, the body's box is -0.97, 0.00, -1.00 to 0.97, 1.28, 1.00): fit the skeleton again (autorig) (npx gamesfun rig-check <file> --archetype <its archetype> shows a creature's every action, and npx gamesf",
+   "seconds": 1
   },
   {
    "id": "lights-race-friends-seen",
@@ -68,7 +101,29 @@
    "measure": 5,
    "ok": true,
    "why": "passes measure 5: pass 20/20 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (board): boards shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner",
-   "seconds": 98
+   "seconds": 100
+  },
+  {
+   "id": "look-greyed",
+   "kind": "broken",
+   "gates": [
+    "F"
+   ],
+   "measure": 23,
+   "ok": true,
+   "why": "gate F failed, measure 23: 48/100 like its look target (held to the target's measured numbers; needs 55). pooled: less saturated than the reference overall (mean chroma 0.001 against 0.102); pooled: the reference's light yellow-green (#8fae4c, 54% of its frame) has no close colour in ours. Tune the look first (node builder/lo",
+   "seconds": 3
+  },
+  {
+   "id": "look-yard-holds",
+   "kind": "control",
+   "gates": [
+    "F"
+   ],
+   "measure": 23,
+   "ok": true,
+   "why": "passes measure 23: 84/100 like its look target (held to the target's measured numbers; needs 55); closer still: pooled: upper frame (sky) more saturated than the reference (chroma 0.057 against 0.019)",
+   "seconds": 3
   },
   {
    "id": "own-board-unseen",
@@ -79,7 +134,7 @@
    "measure": 5,
    "ok": true,
    "why": "gate E failed, measure 5: no player is a character here (board), so each friend's own board is drawn live beside yours, framed in their colour, with their name, their avatar on its rim and their score: the host shows the boards shape: this screen shows seats; the game must show boards (each friend's own board is drawn live b",
-   "seconds": 119
+   "seconds": 115
   },
   {
    "id": "slow-bots-race",
@@ -90,7 +145,7 @@
    "measure": 12,
    "ok": true,
    "why": "passes measure 12: scores moved: solo round 0/0/0/0; fair-play pages max score 3, 3, held moved 0.1 s, 0.1 s; every score change came from a counted event (2 of 2 changes over 3 pages: race.onCheckpoint 2)",
-   "seconds": 44
+   "seconds": 45
   },
   {
    "id": "table-four-friends-seen",
@@ -101,7 +156,7 @@
    "measure": 5,
    "ok": true,
    "why": "passes measure 5: pass 24/24 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (mark): seats shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner's",
-   "seconds": 98
+   "seconds": 97
   },
   {
    "id": "vista-fewer-islands",
@@ -112,7 +167,7 @@
    "measure": 17,
    "ok": true,
    "why": "gate F failed, measure 17: config/world.json lists 1 island, the spec 2; the game sails between 1 island; the spec lists 2",
-   "seconds": 12
+   "seconds": 10
   },
   {
    "id": "vista-own-islands",
@@ -122,8 +177,8 @@
    ],
    "measure": 17,
    "ok": true,
-   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 8.1 s); none is the reference island (ffca9377)",
-   "seconds": 20
+   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.1 s); none is the reference island (ffca9377)",
+   "seconds": 17
   },
   {
    "id": "vista-reference-island",
@@ -134,13 +189,16 @@
    "measure": 17,
    "ok": true,
    "why": "gate F failed, measure 17: config/world.json lists 0 islands, the spec 2; the game is on the reference island (place ffca9377): every vista game has its own islands (world.islands); the game sails between 1 island; the spec lists 2",
-   "seconds": 12
+   "seconds": 10
   }
  ],
- "fingerprint": "16694cf2033eb6b83f11071c06db3f1d311a5069471ba7a5de354b3e26afb289",
+ "fingerprint": "afee897118c22c5709cfcae1d50044b035bcc1e79679ee70f869958d8acc0219",
  "files": {
-  "builder/gates/regress.mjs": "a58629725ee00b822d84c4239e9d2d26e675802645a9a528cc7c2106d286b1c1",
-  "builder/gates/regressions/README.md": "04346ce3004598dd4c4c3f6dc4727015de201c6857e7f404ac3b5de392352557",
+  "builder/gates/regress.mjs": "2e6b9b3d58381943d12e9440ded8d615d4bfd76ec51b1525f91dd6f0188f7cb4",
+  "builder/gates/regressions/README.md": "29f7caa60ccd04afddf0abcca8136f68872e12ff4d42c137ea15d055ce3b1bdf",
+  "builder/gates/regressions/bases/critter-lob/base.json": "4ab2288f9233685aa4ecdd6f2a0d4b01eae93b1a739814d1c03c63e03f4f8c66",
+  "builder/gates/regressions/bases/critter-lob/rules.js": "9fd65892a0dec9c05a71eff540f4e9ae61a7ae8fb99f786917a210896a736dd8",
+  "builder/gates/regressions/bases/critter-lob/spec.json": "d609600d1b81d9419c88e45c76602399c79e05b6a254587cdbbf39bbe2ddb935",
   "builder/gates/regressions/bases/kart-loop/base.json": "c14d7b3b8900ad9b331432cc7d80778ba637f8755ce2a40c906072bc408fbcdc",
   "builder/gates/regressions/bases/kart-loop/rules.js": "f06d90b54b50f54581ce437c151e6dba7a7c9b5e377bab304c5a63f097da2c9f",
   "builder/gates/regressions/bases/kart-loop/spec.json": "fe350effe19d631e33f4e9cdd740cd003cb6f289c800fc0b8363b7c5d67a111d",
@@ -149,6 +207,9 @@
   "builder/gates/regressions/bases/lights-race/base.json": "7ce6f07a6edafe76fae786294c7d4583147fc5151bc865719603acd383a8f290",
   "builder/gates/regressions/bases/lights-race/rules.js": "f3a19e62a8e25547ac2e872c2ed1c79550b4a637cb0bcde0fc84cc6f255a8c68",
   "builder/gates/regressions/bases/lights-race/spec.json": "7904aa07eb3d4536fa75ae32d5034b6d1bfd73d015076fbffa528e3089dfebc6",
+  "builder/gates/regressions/bases/look-yard/base.json": "0c3516bf8628145774ba28272677661859a0cc6ac541ffdd614630898701fb92",
+  "builder/gates/regressions/bases/look-yard/rules.js": "16cd2141ee45a137e0b8bc51e62d4884e9162ca8fea86026434b5daec3f807c0",
+  "builder/gates/regressions/bases/look-yard/spec.json": "94027a902bbb6bb1cb1a275e4ad42869b51edab8065bd8fe872060f1420a5c89",
   "builder/gates/regressions/bases/table-four/base.json": "1357c99f886a7063f5324e0afdbad9cca5cad279ceed5a06f5158b37a0131139",
   "builder/gates/regressions/bases/table-four/rules.js": "29c34339ace38db3abbc26220694616b4549b8734c33da7ca75ab564f07a63ec",
   "builder/gates/regressions/bases/table-four/spec.json": "1888a2b3f247bc19231b05ed70ab396e0c70998987550ee7a09bea92817de2fa",
@@ -161,17 +222,31 @@
   "builder/gates/regressions/car-drives/regression.json": "c802cbfe6570d7a45a9ed7ed86c60d4cdb2472400641b203370b61b4197cf197",
   "builder/gates/regressions/car-strafes/car.js": "5f53e0e7db4dbbbe5069b34d881bb46e6da9404615674d71c11300cfe8b01568",
   "builder/gates/regressions/car-strafes/regression.json": "735fd6deb3057c3a788fe5ad51aa8a1bb6830c67f64e0727585be8d6cc266ff2",
+  "builder/gates/regressions/creature-biped/bean-classic.glb": "390aa30d84030de4b15604ddb28d3eee60e575cb1ee068f1f7dda26677a37de8",
+  "builder/gates/regressions/creature-biped/regression.json": "b5818e660dff9887a8e18276454d8af41e218ea35ec7b898d2d40c1dacecf057",
+  "builder/gates/regressions/creature-holds/regression.json": "e04f9d8a55bbb5371af8234e972dbdad5d290b47744d62958677c5181c6ede0e",
+  "builder/gates/regressions/creature-torn/regression.json": "756f5f437c53c5e6797af95f4d9ef535df15c58948f5ba56909cc5608c2294cb",
+  "builder/gates/regressions/creature-torn/slime-top-off.glb": "e508a187da5a32f2add484f980c0d5b909b141c3955e41a8eac1a787eb39625b",
   "builder/gates/regressions/lights-race-friends-seen/regression.json": "493ed7d39ef241dd702c985311e6de8c6b13b52620457102528268f3551c8822",
+  "builder/gates/regressions/look-greyed/regression.json": "4d10f9fdcc93e263b4abb5c657755e6f410d94d63f4873c7f63685e1b7679e5e",
+  "builder/gates/regressions/look-yard-holds/regression.json": "77b84dcf8e6b5032043978cacf9c41b943b6186d08548216136724ed8dc40097",
   "builder/gates/regressions/own-board-unseen/regression.json": "ac52bbfef06e636caed2a86c50056cf89cabecfdde6a0eeddc22aa7a8643fac2",
   "builder/gates/regressions/slow-bots-race/regression.json": "8e1c0d8899099a2dff284d049d486c5e755a1748576e1e6cc9d7641de5e1125e",
   "builder/gates/regressions/table-four-friends-seen/regression.json": "c6d15b3ebb279cc82912d614d8ee1b7f5a8874fc31aca8a4f03b77db81796a17",
   "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
   "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
   "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
+  "builder/look/judge.mjs": "330740878cebfb098584d56d77773ed0a7a1d2db01aa2a7cb2b80cbbdab491e3",
+  "builder/look/measure.mjs": "340a06b4b2fa3521b09dd991cbe725feb7110c5727e614ec95b18d298d446194",
+  "builder/look/pixels.mjs": "eaca86dc6b84e9010edb10d7e36b83c1cec889ac840d6397234919f09f804274",
+  "builder/look/render.mjs": "af48af37c93f5fb9b0c3f56caaf3ce902046cb915da74fa19c0afb8ac4573113",
+  "builder/look/settings.mjs": "c8938cac003b344725d5d7b914e66c083adfcc9ac3e64d3cfbaef0214dfe087d",
+  "builder/look/stats.mjs": "52df835f4ec00ee6c8355577e2b0d9ee65278052dac7970efdacc8b90a7b76e3",
+  "builder/look/vision.mjs": "94fdaeb84154f5ad4fa1645af2e9b90ab8070b7c3bc9e979568f8706f45364cb",
   "builder/multiplayer/party/gate-live.mjs": "465a511d6ea717f5eafa4a80ee969a7b99111bffe91f74b77ddf92d5af169596",
   "builder/multiplayer/party/gate.mjs": "9f54772c860e07c022b63b4e5f69c8398a791d92cca1b3667712fa1ab91020fd",
   "builder/tools/lib/alive-check.mjs": "52ffa1cc82a3984c9d013c179474886ee7f9d490cc649da85d15273293c13509",
-  "builder/tools/lib/bodies-check.mjs": "6e2a2670e4172427f91dd150c1973ba3cea5f356a7e505849e427d02ca967343",
+  "builder/tools/lib/bodies-check.mjs": "8f9c37ac644e190041ed91934b2a436e10537ee7517403a4c91a59050abe70b4",
   "builder/tools/lib/controls-check.mjs": "457985506dffc33b09f87958b30aa0ce39c2006f7369455b88f8288fab699312",
   "builder/tools/lib/embed-check.mjs": "5ebc6a5984f5d59e3b7d5a0634ffbc790ec23953e7e8cdd01d7da01b38b17f29",
   "builder/tools/lib/events-check.mjs": "ac814f6008648f924f2461fa49641ecff97a73a520b0a1931384322d94f7bd0a",
@@ -194,8 +269,8 @@
   "builder/tools/lib/hits-check.mjs": "768a4b3a482b8de1357b9816cdeabdf13a274b416ef8317616aa75c7cc4d06de",
   "builder/tools/lib/improvised-check.mjs": "dd309201627d4452a97c53e1ddf14f9a8aa323b2515724bae37e736279c4961b",
   "builder/tools/lib/kit-check.mjs": "30f92a78b903e93246e64a6d7864c572099e6b69e7694341ad9d2469a3c759fb",
-  "builder/tools/lib/likeness-check.mjs": "4b4684c1711eef5fc211ed17bbc6f6fb83d020fb7ea72285eff2591e36836823",
   "builder/tools/lib/loadout-check.mjs": "6df2ae727c6302789a3596c489c1afee1f52e6860acef8692500b48e614f7a0b",
+  "builder/tools/lib/look-check.mjs": "f05e1406577925df9fc42d5d517dad8316bb9c21d37f9d46a93ea7c4f14aa753",
   "builder/tools/lib/looks-check.mjs": "a751d31b15ec347ac277da0a73e22892a2213c7645fa18afdd03f2823063497b",
   "builder/tools/lib/manifest-check.mjs": "881b36fc7a0d667be49a01244be90a7cc2ada1501297d75d511083fe1f006638",
   "builder/tools/lib/menu-check.mjs": "c011e65493350868260d0756930713457f44817f3bc0f14770f13d19b379ea97",
@@ -205,7 +280,8 @@
   "builder/tools/lib/sheet-check.mjs": "6ba0651b86b81f0c5faa1e0537e29d5451411b95ca6a7a280fbe939c895cc66e",
   "builder/tools/lib/sounds-check.mjs": "a1b3bf30e85b99803fc35469d790e670e9775976c21ef9d871dcf8a65a70b626",
   "builder/tools/lib/stepped.mjs": "b734ebd7cd5792dcfc5706532938e045649cda9ce0df7d747b1dda48971330bc",
-  "builder/tools/lib/verdict.mjs": "912cd0c4f85330c8d0743d0a7f14d05783b7336e66a593666df7b5796a038df9",
+  "builder/tools/lib/terrain-check.mjs": "c41d75633fe6c6dc6417cf2589755d60f6541ed64bd20b7a81dec17a3c46b021",
+  "builder/tools/lib/verdict.mjs": "4a5d79abd1c0605d27cad2cb8fddfd47c7e20c2f2f043d80b729c81f9c15e49d",
   "builder/tools/lib/vista-sight-check.mjs": "5d1a193a7641ee3e5be1357fb15dcf57b5fa2f8ac4551db90cbc7ffd40f9ddc5",
   "builder/tools/lib/voice-chat-check.mjs": "eb362061c40b256b2d4d1712c147be2fb7be81b53507b81492acb0dfeb3b6218",
   "builder/tools/lib/world-check.mjs": "e84f30100c609b68a923f6565a2ef9dd631cdbd8f597b388008efbb046dfdc12",
@@ -213,10 +289,10 @@
   "builder/tools/lib/worlds-net-check.mjs": "01075d040a2a7f695710fc11662710f9f3fe22e3421fb32f8cb3ae24cc21cc43",
   "builder/tools/lib/worlds-room-check.mjs": "0490ff4756cd7b4ce20d1405980fe8e5576917ce4720537fc887c013a9f1767e",
   "builder/tools/lib/worlds-watch-check.mjs": "de72125f7a1733a66290c27426da7a401e5ec9a3b986f5a819e52c476feb9011",
-  "builder/tools/verify-forge.mjs": "90eb1d8199cc1ef123a1b7bd5809d45b88f2f25ce030d1e547eafc51004267dd",
-  "builder/tools/verify-vista.mjs": "0308bcdd82c79fb3b1388cc9a34f58af789631ed330a0ee9dd1862180163392a",
+  "builder/tools/verify-forge.mjs": "d374a578935cccb5afa52e5d30dd6aecf1a7b66280ef084cfdfe71b54b678b7f",
+  "builder/tools/verify-vista.mjs": "d4312877fae15fc92636b8e63aa1d132fdd836140766c07a693786e3207e2c1c",
   "builder/tools/verify-world.mjs": "efdd835f291dbd67c3f68d8c8b344c991bca20e05a65eb6f2f3ca6348f61e8c5",
-  "builder/tools/verify.mjs": "b9ddc862a214bc72a4db0ab02e081421b65bf54a0849630b8edf4b1f14ce6ac6"
+  "builder/tools/verify.mjs": "67853c82e43a097c9e4784bc5e671f1267bf22581de2d902c30f0f9e72dc0387"
  },
  "machine": {
   "node": "v24.19.0",

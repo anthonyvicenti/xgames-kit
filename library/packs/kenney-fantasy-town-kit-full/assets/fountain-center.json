@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "fountain-center",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fountain-center.glb",
+ "sha256": "85f1c45e1313ffd383bb7ce14c1253f36debe3756b0cf8103e9ffb0f3f21bc72",
+ "bytes": 13836,
+ "preview": "previews/fountain-center.png",
+ "from": "Models/GLB format/fountain-center.glb; its texture files packed inside, kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fountain center",
+ "tags": [
+  "fountain",
+  "center"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.14,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 4,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 4,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13836,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#7d829c",
+     "#79dcff"
+    ],
+    "saturation": 0.568,
+    "value": 0.644,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.5
+     },
+     {
+      "hue": "cyan",
+      "share": 0.5
+     }
+    ],
+    "grey": 0.5
+   },
+   "trianglesPerMetre": 1.41,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bd2337361b7ce93c73b69d2a8d6fbf4fe6bcffea6469f16d1643c960781fa2ba",
+  "modified": "its texture files packed inside, kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-low-long",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-low-long.glb",
+ "sha256": "9b3238fdde6a64a2b4ddd7b4e2b3bb243415a27a83b6a386743f3d9384c4d17c",
+ "bytes": 16732,
+ "preview": "previews/block-grass-overhang-low-long.png",
+ "from": "Models/GLB format/block-grass-overhang-low-long.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang low long",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "low",
+  "long"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   0.5,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 132,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 132,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#329b74",
+     "#47b07e",
+     "#339c75",
+     "#50ba83"
+    ],
+    "saturation": 0.569,
+    "value": 0.541,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.419
+     },
+     {
+      "hue": "green",
+      "share": 0.339
+     },
+     {
+      "hue": "cyan",
+      "share": 0.242
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "df69e67ae9441f2f50dd22550d72114ec29490a37dbc3053e354eb8d6aa20013",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

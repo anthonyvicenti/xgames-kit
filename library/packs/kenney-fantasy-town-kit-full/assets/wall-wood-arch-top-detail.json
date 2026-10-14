@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-arch-top-detail",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-arch-top-detail.glb",
+ "sha256": "bb298e21f51c78f530768c789023266973fb678fc47158ad0fee803ad7318f37",
+ "bytes": 16604,
+ "preview": "previews/wall-wood-arch-top-detail.png",
+ "from": "Models/GLB format/wall-wood-arch-top-detail.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood arch top detail",
+ "tags": [
+  "wall",
+  "wood",
+  "arch",
+  "top",
+  "detail"
+ ],
+ "use": {
+  "size": [
+   0.16,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 168,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 168,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16604,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#995c47",
+     "#9b5d47",
+     "#757b91",
+     "#935944",
+     "#985b46",
+     "#985c46"
+    ],
+    "saturation": 0.288,
+    "value": 0.484,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.496
+     },
+     {
+      "hue": "grey",
+      "share": 0.396
+     },
+     {
+      "hue": "brown",
+      "share": 0.108
+     }
+    ],
+    "grey": 0.396
+   },
+   "trianglesPerMetre": 9.17,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6ad402b907878ba59bb148610eb50fa8439ac27b78eb3ede2e621f2d12235621",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow.glb",
+ "sha256": "2f5eaefb00f0bb7b8322dc2f2c9a65125163559ae8e25e029836c36d6182d7c5",
+ "bytes": 15932,
+ "preview": "previews/block-snow.png",
+ "from": "Models/GLB format/block-snow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow",
+ "tags": [
+  "block",
+  "snow"
+ ],
+ "use": {
+  "size": [
+   1.082,
+   1,
+   1.082
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15932,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#f8f8fb",
+     "#ea9168",
+     "#e6e6ef",
+     "#d3d3e3",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.489,
+    "value": 0.715,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.653
+     },
+     {
+      "hue": "grey",
+      "share": 0.212
+     },
+     {
+      "hue": "blue",
+      "share": 0.136
+     }
+    ],
+    "grey": 0.212
+   },
+   "trianglesPerMetre": 4.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0b6f71d245ef08584f6a5766eaf2d18f1f17aaa0d52b766ae9fd9eaf0a0db964",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

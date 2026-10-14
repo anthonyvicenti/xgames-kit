@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-wide-wood",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-wide-wood.glb",
+ "sha256": "d62b0cc930d75dcc8c4b2bdf141f3178295b86f6c014d5e53281ecbc1c6e2607",
+ "bytes": 18996,
+ "preview": "previews/stairs-wide-wood.png",
+ "from": "Models/GLB format/stairs-wide-wood.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs wide wood",
+ "tags": [
+  "stairs",
+  "wide",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 424,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 424,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18996,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c88463",
+     "#cc8665",
+     "#c58161",
+     "#c07d5d",
+     "#c27f5f",
+     "#b97859",
+     "#c38060",
+     "#ca8564"
+    ],
+    "saturation": 0.469,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "33f06f1d5f926997e2709741884fd1f4bd86ce4cfc753a74257d2a9e3efffdb6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

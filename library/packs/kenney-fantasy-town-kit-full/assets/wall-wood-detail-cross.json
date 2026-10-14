@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-wood-detail-cross",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-wood-detail-cross.glb",
+ "sha256": "08f315bd73cb4fdf752f6807a17869f809076d9d0587cbdc82fd7e2c111c6ebb",
+ "bytes": 14936,
+ "preview": "previews/wall-wood-detail-cross.png",
+ "from": "Models/GLB format/wall-wood-detail-cross.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall wood detail cross",
+ "tags": [
+  "wall",
+  "wood",
+  "detail",
+  "cross"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14936,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8c5541",
+     "#945945",
+     "#c78362",
+     "#c3805f",
+     "#c38060",
+     "#c88363",
+     "#c48060",
+     "#c37f5f"
+    ],
+    "saturation": 0.415,
+    "value": 0.496,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.753
+     },
+     {
+      "hue": "brown",
+      "share": 0.247
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0335f9f55d541a2c044d11242103d5de70359ca5758e6734c8936ec27ab58043",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

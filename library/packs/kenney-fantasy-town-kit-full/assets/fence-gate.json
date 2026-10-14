@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "fence-gate",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "fence-gate.glb",
+ "sha256": "280781b74294d2ef4115be96d475c3a40a5620d02c0440ff90177f7966ca8342",
+ "bytes": 23188,
+ "preview": "previews/fence-gate.png",
+ "from": "Models/GLB format/fence-gate.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence gate",
+ "tags": [
+  "fence",
+  "gate"
+ ],
+ "use": {
+  "size": [
+   0.075,
+   0.38,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 560,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 560,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 23188,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ca8564",
+     "#c17e5e",
+     "#b87758",
+     "#c27f5f",
+     "#794939",
+     "#bf7c5d",
+     "#bd7b5c",
+     "#cc8665"
+    ],
+    "saturation": 0.447,
+    "value": 0.548,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.877
+     },
+     {
+      "hue": "brown",
+      "share": 0.117
+     }
+    ],
+    "grey": 0.003
+   },
+   "trianglesPerMetre": 24.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "cee58694ea5fdcca18e01318b355bfcd38eac6fad21b83f860039c287b150cc6",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

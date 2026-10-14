@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "roof-gable-top",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-gable-top.glb",
+ "sha256": "f8b66b3b88f1b628726c59e366f4b7e706fc14e266c2f5199fa3776caf41ed35",
+ "bytes": 14620,
+ "preview": "previews/roof-gable-top.png",
+ "from": "Models/GLB format/roof-gable-top.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof gable top",
+ "tags": [
+  "roof",
+  "gable",
+  "top"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.376,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 56,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 56,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14620,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#7d829c",
+     "#5bbba5",
+     "#55b49c",
+     "#48a48b",
+     "#4ba88f",
+     "#969dbd",
+     "#9299b7",
+     "#53b19a"
+    ],
+    "saturation": 0.293,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.578
+     },
+     {
+      "hue": "grey",
+      "share": 0.34
+     },
+     {
+      "hue": "blue",
+      "share": 0.076
+     }
+    ],
+    "grey": 0.34
+   },
+   "trianglesPerMetre": 4.41,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "584761438f511db6c0c36a602b0cb7a84484acaebf94b96c722d6c8f188d57e9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

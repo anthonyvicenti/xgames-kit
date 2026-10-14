@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "bed-floor",
+ "pack": "kenney-nature-kit-full",
+ "file": "bed-floor.glb",
+ "sha256": "1fe656413481989c1b9d4fa2e5bb2b0f0558f9bbc223232f48de527b26afa372",
+ "bytes": 5784,
+ "preview": "previews/bed-floor.png",
+ "from": "Models/GLTF format/bed_floor.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bed floor",
+ "tags": [
+  "bed",
+  "floor"
+ ],
+ "use": {
+  "size": [
+   0.32,
+   0.092,
+   0.747
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5784,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#ffffff",
+     "#fff9f0"
+    ],
+    "saturation": 0.454,
+    "value": 0.845,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.587
+     },
+     {
+      "hue": "cyan",
+      "share": 0.413
+     }
+    ],
+    "grey": 0.587
+   },
+   "trianglesPerMetre": 13.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a59c8878186ab180f43e55249184b5c8e6af7d6501f908898202ac14c474a05f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

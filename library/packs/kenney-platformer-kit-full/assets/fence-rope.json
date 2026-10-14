@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "fence-rope",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-rope.glb",
+ "sha256": "016d9ff95d89c2d8bae30264dd82f91c15f43ef41e80e05a39071f21f395e89b",
+ "bytes": 17848,
+ "preview": "previews/fence-rope.png",
+ "from": "Models/GLB format/fence-rope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence rope",
+ "tags": [
+  "fence",
+  "rope"
+ ],
+ "use": {
+  "size": [
+   0.95,
+   0.3,
+   0.21
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17848,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#9f5b41",
+     "#925841",
+     "#dfa47d",
+     "#ea9168",
+     "#cc875f",
+     "#eeb993",
+     "#865542",
+     "#e2a881"
+    ],
+    "saturation": 0.517,
+    "value": 0.559,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.765
+     },
+     {
+      "hue": "brown",
+      "share": 0.235
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 15.18,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "589a777cd88bd301dfc86de01fa7821ebbd4c6aff82f3c59e2c09076506ccd37",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

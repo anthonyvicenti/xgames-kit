@@ -45,12 +45,20 @@ patches, then the change, then verify. So it runs from any checkout, on the kit 
 | `own-board-unseen` | E · 5 | an own-boards game shown as seats: the friend's board, the thing they play, is on no screen but theirs |
 | `table-four-friends-seen` | control | the same board with its default (seats): each screen shows the other's seat card, pointer and every disc they drop |
 | `lights-race-friends-seen` | control | own boards with their default (boards): each screen shows the other's board live |
+| `look-greyed` | F · 23 | a game whose colour grade drifted to greys while every functional gate passes: the look judge holds it to the look target its spec locks and names the colour it lost (the looks layer, 2026-10-14) |
+| `look-yard-holds` | control | the same game with the look its target was measured from: 23 passes |
+| `creature-biped` | A · 19 | a biped skeleton in a blob's body slot (the looks pilot's moss-mole on Meshy's humanoid rig, 2026-10-14; the stand-in is the kit's bean): the slot asks for gf-blob-1 |
+| `creature-torn` | A · 19 | a blob whose skeleton was fitted off the body (its Top joint metres above it): the creature judge refuses a joint off the body |
+| `creature-holds` | control | the kit's slime on gf-blob-1 passes 19: the creature judge poses it through every action |
 
 The base `kart-loop` is PA10's Island Circuit (builder/loop/evidence/2026-10-13-pa10-headless.json): made by the kit's
 own build loop, no upstream code; its art comes from the library when `create` fills its slots.
 
-The bases `table-four` and `lights-race` are the kit's own examples of the same names (examples/minimal), written for
-this kit with no upstream code.
+The base `look-yard` is the kit's Soak Squad example with a look target measured from its own sheet framings (no reference art).
+
+The bases `table-four`, `lights-race` and `critter-lob` are the kit's own examples of the same names (examples/minimal),
+written for this kit with no upstream code (`critter-lob` here wears the kit's CC0 slime, so it is made the same on any
+checkout). `creature-biped/bean-classic.glb` is the kit's own CC0 bean (library pack gf-beans).
 
 The games.fun regressions (research/gf-three/regressions, 88 of them) stay there as history: they are run by games.fun's
 `regress.mjs` on its own kit, never from here.

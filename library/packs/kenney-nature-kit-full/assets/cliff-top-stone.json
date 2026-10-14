@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-top-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-top-stone.glb",
+ "sha256": "98531d4005412e104ae915b0214e6f73c1ce9af1f239142136b175b42ffeb2fd",
+ "bytes": 3588,
+ "preview": "previews/cliff-top-stone.png",
+ "from": "Models/GLTF format/cliff_top_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff top stone",
+ "tags": [
+  "cliff",
+  "top",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.268
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 53,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 53,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3588,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ddf2f5",
+     "#73eddd"
+    ],
+    "saturation": 0.567,
+    "value": 0.892,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0327759fe95f6be7e263a2f07bf72f212a8df3e16ef1240643f5641a76ec0ec7",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

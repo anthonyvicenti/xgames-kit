@@ -254,12 +254,12 @@
       "note": "A kit test in practice (the only way a game fails it is by sabotaging the kit's own page). Moved to the release run on 2026-10-11 (the creator's question 18, on the parent's recommendation): a build's verify neither runs nor requires it; verify --release and regress.mjs --corpus do."
     },
     "23": {
-      "name": "looks like the references",
-      "gate": "J",
+      "name": "looks like its target",
+      "gate": "F",
       "home": "game",
-      "run": "advisory",
-      "rule": "The game's own screen matches the creator's reference pictures on camera, palette, light, shapes, proportions and vibe.",
-      "fix": "The detail names what to change. Move config/look.json values and slots toward the pictures (the preset id stays), then re-run --check 23."
+      "run": "build",
+      "rule": "A game whose look target rests on reference frames is not clearly below the bar (55 of 100: the whole interval of three averaged judge passes below it fails; an interval that holds the bar is unsure and advisory) against them on the reference look judge: palette, value and saturation spread, edges and outlines, proportions, and a vision judge's rubric (palette, lighting, materials, shape, characters, UI, VFX). A target from words is advisory.",
+      "fix": "The detail names the findings. Run node builder/look/tune.mjs <game> --refs <manifest> --write first (light, sky, fog, grade, outlines, material values; it never changes play), then replace what its ladder says the levers cannot reach (a library swap, then generated art), then re-run --check 23."
     },
     "24": {
       "name": "plays inside a post",

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tree-high-crooked",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "tree-high-crooked.glb",
+ "sha256": "62886488e8351446744989a2286896fc6a79366459870c39177844d66b2fc06e",
+ "bytes": 18960,
+ "preview": "previews/tree-high-crooked.png",
+ "from": "Models/GLB format/tree-high-crooked.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree high crooked",
+ "tags": [
+  "tree",
+  "high",
+  "crooked"
+ ],
+ "use": {
+  "size": [
+   1.023,
+   2.973,
+   1.023
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 210,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 210,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18960,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3b9c74",
+     "#3d9f76",
+     "#40a277",
+     "#44a87b",
+     "#3c9e75",
+     "#3da076",
+     "#41a478",
+     "#46aa7c"
+    ],
+    "saturation": 0.446,
+    "value": 0.462,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.791
+     },
+     {
+      "hue": "orange",
+      "share": 0.155
+     },
+     {
+      "hue": "green",
+      "share": 0.053
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a9af8768a5328c62694a42f67858a88eea974ad4540c5c3c54a7a70fdead7505",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

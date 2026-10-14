@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "metal-panel-screws",
+ "pack": "kenney-survival-kit-full",
+ "file": "metal-panel-screws.glb",
+ "sha256": "7451b4d082e0d213d52f8f0ff041eedc495e128e33dd450772c6d11cc0e0cdc2",
+ "bytes": 14408,
+ "preview": "previews/metal-panel-screws.png",
+ "from": "Models/GLB format/metal-panel-screws.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "metal panel screws",
+ "tags": [
+  "metal",
+  "panel",
+  "screws"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.5,
+   0.063
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 320,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 320,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14408,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9197b6",
+     "#a9b1d4",
+     "#e15d49",
+     "#ec6246",
+     "#7d829a",
+     "#bfc8f0",
+     "#5c627a",
+     "#81869c"
+    ],
+    "saturation": 0.385,
+    "value": 0.67,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.745
+     },
+     {
+      "hue": "red",
+      "share": 0.228
+     }
+    ],
+    "grey": 0.027
+   },
+   "trianglesPerMetre": 15.81,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c7b5bcea3aa19ebbcfdbfdc2d52cbb0120176f798186b137231d3f9102e75932",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

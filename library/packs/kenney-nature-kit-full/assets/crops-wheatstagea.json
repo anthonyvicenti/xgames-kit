@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "crops-wheatstagea",
+ "pack": "kenney-nature-kit-full",
+ "file": "crops-wheatstagea.glb",
+ "sha256": "de8ce0fafcd6b705ddfff09d1f0e8f0caac456063b5d1292a4d793d73aa02455",
+ "bytes": 14588,
+ "preview": "previews/crops-wheatstagea.png",
+ "from": "Models/GLTF format/crops_wheatStageA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crops wheatstagea",
+ "tags": [
+  "crops",
+  "wheatstagea"
+ ],
+ "use": {
+  "size": [
+   0.54,
+   0.335,
+   0.447
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 720,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 720,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 14588,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 32.03,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d8c690d473a230741cf4d03fa6a69a405f0ae6a246847a2a72e7f50dd5bebc08",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

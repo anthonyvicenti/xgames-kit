@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "wall-doorway-square",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-doorway-square.glb",
+ "sha256": "6dd3dc9e59b379cd5bfce2b2d82d959b9dd3cbb586420b09d6e969a765e542cb",
+ "bytes": 14736,
+ "preview": "previews/wall-doorway-square.png",
+ "from": "Models/GLB format/wall-doorway-square.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall doorway square",
+ "tags": [
+  "wall",
+  "doorway",
+  "square"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 70,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 70,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14736,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#a0a8c9",
+     "#c27f5f",
+     "#acb4d7",
+     "#989fbe",
+     "#cb8665",
+     "#aab2d5"
+    ],
+    "saturation": 0.418,
+    "value": 0.614,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.73
+     },
+     {
+      "hue": "blue",
+      "share": 0.266
+     }
+    ],
+    "grey": 0.004
+   },
+   "trianglesPerMetre": 5.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ad6ca0f201c602d7ead56f395744ffd87ba8e5d6e16148d60d0c13e31cf85f3",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

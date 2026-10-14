@@ -56,7 +56,7 @@ export function plan(report, world, game, subject) {
       }
       case 'pickup-size': {
         const pk = (game?.mechanics ?? []).find(x => x.id === 'pickup'); if (!pk) break;
-        const h = Object.values(subject.characters?.roles ?? {})[0]?.height ?? 1.7, k = h / 1.75;
+        const h = Object.values(subject.characters?.roles ?? {}).find(r => !r?.archetype || r.archetype === 'humanoid')?.height ?? 1.7, k = h / 1.75;   // a person's height (a creature is its own size)
         const to = Math.max(0.6, r2(0.35 * k));
         edit({ rule: 'pickup-size', file: 'config/game.json', pointer: '/mechanics/[id=pickup]/params/size', before: pk.params?.size, after: to, why: 'pickups were too small to read at play distance', set: [pk.params ??= {}, 'size', to] });
         break;

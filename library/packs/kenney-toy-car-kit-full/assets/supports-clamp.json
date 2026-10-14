@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "supports-clamp",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "supports-clamp.glb",
+ "sha256": "d1bc64062c16fb3fdb9963a1008670b9cfe8b930dc6844e5a1aead719739c8a0",
+ "bytes": 12640,
+ "preview": "previews/supports-clamp.png",
+ "from": "Models/GLB format/supports-clamp.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "supports clamp",
+ "tags": [
+  "supports",
+  "clamp"
+ ],
+ "use": {
+  "size": [
+   1.2,
+   0.35,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 64,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 64,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12640,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#5d6cc7",
+     "#6282d1",
+     "#617dcf",
+     "#5f74cb",
+     "#658dd6",
+     "#5e70c9",
+     "#595dc0",
+     "#5b66c4"
+    ],
+    "saturation": 0.514,
+    "value": 0.586,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3e396d18184e8178b26e830845a3179d02896dc58ece14afcf1cf474679d2f98",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

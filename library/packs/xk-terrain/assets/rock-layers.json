@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "rock-layers",
+ "pack": "xk-terrain",
+ "file": "rock-layers.png",
+ "sha256": "96f4090fdfcf26268be9d5492d28282fe54ec9a48577d5931fd724b61357847d",
+ "bytes": 560904,
+ "preview": "previews/rock-layers.png",
+ "from": "runtimes/three/tools/terrain-textures.mjs: rock-layers.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a cliff cross-section: pale sandstone strata with cracks and lit ledges; seamless (layers run level)",
+ "tags": [
+  "terrain",
+  "tileable",
+  "cartoon",
+  "rock",
+  "layers"
+ ],
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 22,
+    "hues": [
+     "#b78c61",
+     "#b88d62",
+     "#bf966a",
+     "#c8a372",
+     "#d0ad7d",
+     "#bc9064",
+     "#be9569",
+     "#d1ae7e"
+    ],
+    "saturation": 0.45,
+    "value": 0.624,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.972
+     }
+    ],
+    "exact": 6975,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2b896dac85762520a9e7029eaf4f9390bcc7023fcbf91df37f0b5c1573ba89d0",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

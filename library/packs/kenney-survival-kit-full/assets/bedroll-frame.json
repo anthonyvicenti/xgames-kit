@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "bedroll-frame",
+ "pack": "kenney-survival-kit-full",
+ "file": "bedroll-frame.glb",
+ "sha256": "9f9d48d05f729035fe6affca5417c4bccde2f8d54adf672f18564d68664332c4",
+ "bytes": 11664,
+ "preview": "previews/bedroll-frame.png",
+ "from": "Models/GLB format/bedroll-frame.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bedroll frame",
+ "tags": [
+  "bedroll",
+  "frame"
+ ],
+ "use": {
+  "size": [
+   0.272,
+   0.148,
+   0.608
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 100,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 100,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11664,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c06e4c",
+     "#df8860",
+     "#d7815b",
+     "#c4714e",
+     "#b86746",
+     "#c77450",
+     "#ca7652",
+     "#d37d58"
+    ],
+    "saturation": 0.556,
+    "value": 0.567,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 23.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e1b311123e23b7bc5b724a818baaa45aab8401599781564aa4b0621aefcfcfbf",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

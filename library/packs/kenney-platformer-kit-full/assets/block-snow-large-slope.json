@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "block-snow-large-slope",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-snow-large-slope.glb",
+ "sha256": "b82c0382d287cf7c8503c02247c9056b319f9d624b265a8b6bd92d2632de211e",
+ "bytes": 16140,
+ "preview": "previews/block-snow-large-slope.png",
+ "from": "Models/GLB format/block-snow-large-slope.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block snow large slope",
+ "tags": [
+  "block",
+  "snow",
+  "large",
+  "slope"
+ ],
+ "use": {
+  "size": [
+   2.082,
+   0.759,
+   2.011
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16140,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f8f8fb",
+     "#c1c1d8",
+     "#ea9168",
+     "#d9835c",
+     "#d3d3e3",
+     "#e6e6ef",
+     "#efeff5",
+     "#cacade"
+    ],
+    "saturation": 0.411,
+    "value": 0.799,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.363
+     },
+     {
+      "hue": "blue",
+      "share": 0.352
+     },
+     {
+      "hue": "grey",
+      "share": 0.285
+     }
+    ],
+    "grey": 0.285
+   },
+   "trianglesPerMetre": 2.57,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9bd6f2f658b1c85ee54d4062cc95f54eafacae07d62becae04c40133315d27f4",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

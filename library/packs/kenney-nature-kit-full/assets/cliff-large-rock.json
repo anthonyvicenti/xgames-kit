@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-large-rock",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-large-rock.glb",
+ "sha256": "40d01f4cd94820f3a2f07d076eafd451e403710fc5b28474432c97e585a34cc0",
+ "bytes": 2248,
+ "preview": "previews/cliff-large-rock.png",
+ "from": "Models/GLTF format/cliff_large_rock.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff large rock",
+ "tags": [
+  "cliff",
+  "large",
+  "rock"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.419
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2248,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f2be9e"
+    ],
+    "saturation": 0.764,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "f9bf79cd3a76bbe11f4887053655585e467e14f2528678215a820896669e4e8e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

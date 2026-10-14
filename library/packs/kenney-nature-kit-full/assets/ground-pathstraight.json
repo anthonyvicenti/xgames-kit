@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathstraight",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathstraight.glb",
+ "sha256": "a29f036a36432f436421a1858ffce5bfb8ee36216ba5e82953e834e2b6894b27",
+ "bytes": 4480,
+ "preview": "previews/ground-pathstraight.png",
+ "from": "Models/GLTF format/ground_pathStraight.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathstraight",
+ "tags": [
+  "ground",
+  "pathstraight"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 62,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 62,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4480,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.727,
+    "value": 0.751,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.766
+     },
+     {
+      "hue": "cyan",
+      "share": 0.234
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "86a1e88aaa028ccdfb98b6653c282c6aadb0fbccf9c4de00a834516b9bf79d37",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

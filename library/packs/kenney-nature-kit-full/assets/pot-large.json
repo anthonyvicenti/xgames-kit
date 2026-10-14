@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "pot-large",
+ "pack": "kenney-nature-kit-full",
+ "file": "pot-large.glb",
+ "sha256": "4ebdb5e08f41bdcec2b7f1b7709e4b1e731dc3d78e4a257536ba41b987baddab",
+ "bytes": 3804,
+ "preview": "previews/pot-large.png",
+ "from": "Models/GLTF format/pot_large.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "pot large",
+ "tags": [
+  "pot",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.564,
+   0.2,
+   0.488
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffc5a7",
+     "#e7b5a3"
+    ],
+    "saturation": 0.928,
+    "value": 0.818,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "57e60214bc6ab1dc3764c9ffe80091ff45f2bfd49fbc313c1b68dcaab1537aef",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

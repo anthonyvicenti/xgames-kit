@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "resource-stone-large",
+ "pack": "kenney-survival-kit-full",
+ "file": "resource-stone-large.glb",
+ "sha256": "e5f5e1faa6fa7a051b582d4824947f953fbac3b684ba80323577119963a3e780",
+ "bytes": 12752,
+ "preview": "previews/resource-stone-large.png",
+ "from": "Models/GLB format/resource-stone-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "resource stone large",
+ "tags": [
+  "resource",
+  "stone",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.376,
+   0.16,
+   0.337
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 132,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 132,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12752,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#cb865e",
+     "#d7966f",
+     "#d18f67",
+     "#e1a680",
+     "#dc9e77",
+     "#edb791",
+     "#e7af89",
+     "#ce8a63"
+    ],
+    "saturation": 0.565,
+    "value": 0.635,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 20.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6faf73c4998d253f944c0f2372cbd770b2780dd45248221537bf9983d55e0323",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

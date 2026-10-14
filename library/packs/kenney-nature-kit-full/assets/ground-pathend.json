@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathend",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathend.glb",
+ "sha256": "e488b1a3b99d14e81d144009835ff6462ea100043e3d3a07fa889147dba779a5",
+ "bytes": 4376,
+ "preview": "previews/ground-pathend.png",
+ "from": "Models/GLTF format/ground_pathEnd.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathend",
+ "tags": [
+  "ground",
+  "pathend"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4376,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#73eddd",
+     "#dbab8e"
+    ],
+    "saturation": 0.742,
+    "value": 0.745,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.659
+     },
+     {
+      "hue": "cyan",
+      "share": 0.341
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 7.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2682ba6e407dd86227550fe1c4f5f4940d033e532140787a5d5838c4e5eca610",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

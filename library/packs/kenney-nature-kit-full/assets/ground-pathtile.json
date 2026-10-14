@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "ground-pathtile",
+ "pack": "kenney-nature-kit-full",
+ "file": "ground-pathtile.glb",
+ "sha256": "3d69445f4edc9d20711d25ec64f65704913cb7519484df2ed5a78f74487a9089",
+ "bytes": 4804,
+ "preview": "previews/ground-pathtile.png",
+ "from": "Models/GLTF format/ground_pathTile.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "ground pathtile",
+ "tags": [
+  "ground",
+  "pathtile"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 86,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 86,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#73eddd",
+     "#f2be9e",
+     "#dbab8e"
+    ],
+    "saturation": 0.744,
+    "value": 0.721,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.593
+     },
+     {
+      "hue": "orange",
+      "share": 0.407
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.11,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b169d96d4143d8dd00ef074b8beb5395d8743b73bbafb88506512c1270075b42",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "signpost",
+ "pack": "kenney-survival-kit-full",
+ "file": "signpost.glb",
+ "sha256": "b77243d0db1ecfc6448bbe739efdac9f4beb82c97924257cc3b6edf61a6936b6",
+ "bytes": 10908,
+ "preview": "previews/signpost.png",
+ "from": "Models/GLB format/signpost.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "signpost",
+ "tags": [
+  "signpost"
+ ],
+ "use": {
+  "size": [
+   0.214,
+   0.46,
+   0.043
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10908,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d7815b",
+     "#c77450",
+     "#cf7a55",
+     "#d37d58",
+     "#db845d",
+     "#c4714e",
+     "#cb7753",
+     "#ea9167"
+    ],
+    "saturation": 0.573,
+    "value": 0.579,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 17.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "6d33757888c4ec9249610266ca8d60532b1138ae28fd37e93fa843ec4856fd25",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "fence-low-corner-curved",
+ "pack": "kenney-platformer-kit-full",
+ "file": "fence-low-corner-curved.glb",
+ "sha256": "6b39fc46045a805082cec1f9b5a145d02fbbad16178105fa772e19f04b2dd548",
+ "bytes": 18644,
+ "preview": "previews/fence-low-corner-curved.png",
+ "from": "Models/GLB format/fence-low-corner-curved.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence low corner curved",
+ "tags": [
+  "fence",
+  "low",
+  "corner",
+  "curved"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.3,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 216,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 216,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18644,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#9f5b41",
+     "#925841",
+     "#9d5b41",
+     "#ab5f41",
+     "#a25c41",
+     "#a65d41",
+     "#aa5e41",
+     "#865542"
+    ],
+    "saturation": 0.434,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.799
+     },
+     {
+      "hue": "brown",
+      "share": 0.201
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "57d2237532a55f3a4870ac7db93456a99f24f5069f2474f7243b3783c18fea7c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

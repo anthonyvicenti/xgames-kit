@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "cliff-large-stone",
+ "pack": "kenney-nature-kit-full",
+ "file": "cliff-large-stone.glb",
+ "sha256": "ab06e69960b4d0099548e9932ddd6a988e60bea05c3175d25b274068b9038105",
+ "bytes": 2252,
+ "preview": "previews/cliff-large-stone.png",
+ "from": "Models/GLTF format/cliff_large_stone.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cliff large stone",
+ "tags": [
+  "cliff",
+  "large",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1,
+   1,
+   0.419
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 32,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 32,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2252,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ddf2f5"
+    ],
+    "saturation": 0.545,
+    "value": 0.914,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d63595d0a8727a7a339dd315117fbb85e000224c0add26b6cc907054df046dac",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

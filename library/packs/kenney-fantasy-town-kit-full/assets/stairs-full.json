@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "stairs-full",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "stairs-full.glb",
+ "sha256": "f7a5e16cf8294cd05a01bc662b78fa5b426310212515531893d16f8561f1dbf9",
+ "bytes": 14732,
+ "preview": "previews/stairs-full.png",
+ "from": "Models/GLB format/stairs-full.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stairs full",
+ "tags": [
+  "stairs",
+  "full"
+ ],
+ "use": {
+  "size": [
+   1.02,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7d829c",
+     "#bdc6ee",
+     "#9299b7",
+     "#a8b0d3",
+     "#989fbe",
+     "#adb5d9",
+     "#8d93b1",
+     "#9da5c5"
+    ],
+    "saturation": 0.288,
+    "value": 0.679,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.645
+     },
+     {
+      "hue": "grey",
+      "share": 0.355
+     }
+    ],
+    "grey": 0.355
+   },
+   "trianglesPerMetre": 4.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d2ebf8c1ec86f75024d9f7931951d7e8fc4665349365b9e6886fadebbd108e9d",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

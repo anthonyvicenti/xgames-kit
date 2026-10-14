@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-road-wide-straight-bend",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-road-wide-straight-bend.glb",
+ "sha256": "7bf53be912b012547d1db0b63782bdcb6a30450838ec1c1c6eeaa9086d1825e8",
+ "bytes": 17256,
+ "preview": "previews/track-road-wide-straight-bend.png",
+ "from": "Models/GLB format/track-road-wide-straight-bend.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track road wide straight bend",
+ "tags": [
+  "track",
+  "road",
+  "wide",
+  "straight",
+  "bend"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.2,
+   2.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 304,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 304,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17256,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#5a6078",
+     "#c1c1d8",
+     "#d3554e",
+     "#f16544",
+     "#e25d49",
+     "#d1d1e2",
+     "#e6e6ef",
+     "#e2e2ed"
+    ],
+    "saturation": 0.339,
+    "value": 0.613,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.375
+     },
+     {
+      "hue": "blue",
+      "share": 0.315
+     },
+     {
+      "hue": "red",
+      "share": 0.31
+     }
+    ],
+    "grey": 0.375
+   },
+   "trianglesPerMetre": 4.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "584a9c66483099ac8adfb48a418ef54edfbbd44cf23b2542b2750b3ffd295213",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

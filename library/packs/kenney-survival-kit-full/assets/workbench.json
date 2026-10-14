@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "workbench",
+ "pack": "kenney-survival-kit-full",
+ "file": "workbench.glb",
+ "sha256": "e710cb96264901732475b2ba58902694e1299d953c4cf65e1d05f02dab42eb49",
+ "bytes": 17880,
+ "preview": "previews/workbench.png",
+ "from": "Models/GLB format/workbench.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "workbench",
+ "tags": [
+  "workbench"
+ ],
+ "use": {
+  "size": [
+   0.326,
+   0.287,
+   0.296
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 236,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 236,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17880,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ea9167",
+     "#d7815b",
+     "#c77450",
+     "#b86746",
+     "#c4714e",
+     "#e1a680",
+     "#bc6a49",
+     "#cb7753"
+    ],
+    "saturation": 0.571,
+    "value": 0.587,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.968
+     }
+    ],
+    "grey": 0.009
+   },
+   "trianglesPerMetre": 18.8,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bf72d2d535fa29127e5078a6c4c2023a74fa5cd7d02d91ad550e897e088e1dc8",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

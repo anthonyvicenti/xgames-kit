@@ -1,5 +1,6 @@
 // The four contact-sheet cameras (PLAN §2.5): hero close-up, four players, wide, action; plus 'top', a plan view for
-// judging a layout (not on the contact sheet).
+// judging a layout (not on the contact sheet), and 'view', a framing given by numbers ({ view: { pitch, distance, fov,
+// yaw } }: a style target's camera, builder/look/judge.mjs).
 // frameShot(name, camera, { subjects, bounds, focus, raycast, occluders }) places a PerspectiveCamera from generic
 // inputs, so the same shots work on the lookdev bench and in any kit game (capture.mjs calls window.__gfLook.shot(name)).
 //   subjects:  [{ position: Vector3 (feet), yaw: radians (facing; 0 = +Z), height: metres, down?: bool }]  (players, first = "me")
@@ -12,7 +13,7 @@
 import * as THREE from 'three';
 
 export const SHOTS = ['hero', 'four', 'wide', 'action'];   // the contact sheet's cameras
-export const EXTRA_SHOTS = ['top'];                         // frameShot also takes these (capture.mjs --shots top)
+export const EXTRA_SHOTS = ['top', 'view'];                         // frameShot also takes these (capture.mjs --shots top)
 const v = () => new THREE.Vector3();
 const NEAR_CLEAR = 0.45;   // metres of free space the camera keeps in front of it
 
@@ -119,7 +120,7 @@ function keepInside(pos, target, bounds, margin = 1.2) {
   return t < 1 ? target.clone().addScaledVector(dir, Math.max(t, 0.25)) : pos;
 }
 
-export function frameShot(name, cam, { subjects = [], bounds, focus, raycast, occluders } = {}) {
+export function frameShot(name, cam, { subjects = [], bounds, focus, raycast, occluders, view = null } = {}) {
   const box = bounds ?? new THREE.Box3(v().set(-10, 0, -10), v().set(10, 3, 10));
   const center = focus?.clone?.() ?? box.getCenter(v());
   const portrait = cam.aspect < 1;
@@ -148,6 +149,20 @@ export function frameShot(name, cam, { subjects = [], bounds, focus, raycast, oc
     const inside = keepInside(pos, target, box);
     if (inside !== pos) pos = inside;
     if (Math.abs(pos.distanceTo(target) - d) > 0.05) cam.fov = fitFov(r, pos.distanceTo(target), cam.aspect);
+  } else if (name === 'view' && view) {
+    // a framing named by numbers (a style target's camera: builder/look): pitch degrees down from level, distance in
+    // metres from the subject's middle, vertical fov, yaw degrees around the subject from behind it (0 behind, 90 its
+    // right side); with no subject, around the play area's centre. Turned around its subject until the view is clear.
+    const s = s0 ?? null;
+    const f = s ? facing(s) : v().set(0, 0, 1);
+    target = s ? s.position.clone().add(v().set(0, h(s) * (view.aim ?? 0.5), 0)) : center.clone();
+    cam.fov = view.fov ?? 50;
+    const el = THREE.MathUtils.degToRad(view.pitch ?? 20), d = view.distance ?? 8;
+    const back = f.clone().negate().applyAxisAngle(v().set(0, 1, 0), THREE.MathUtils.degToRad(view.yaw ?? 0));
+    pos = target.clone().addScaledVector(back, d * Math.cos(el)).add(v().set(0, d * Math.sin(el), 0));
+    const others = subjects.filter(x => x !== s);
+    const occ = occluders && (others.length ? (from, to) => occluders(from, to) ?? subjectHit(from, to, others, h) : occluders);
+    if (!clearView(pos, target, occ)) pos = orbitClear(pos, target, occ);
   } else if (name === 'top') {
     // a plan view: straight down on the play area (a hair of tilt keeps lookAt stable), fitted to the bounds
     cam.fov = 40;
@@ -188,7 +203,7 @@ export function frameShot(name, cam, { subjects = [], bounds, focus, raycast, oc
     pos = target.clone().add(v().set(Math.sin(az) * Math.cos(el) * d, Math.sin(el) * d, Math.cos(az) * Math.cos(el) * d));
   }
   if (name === 'action') pos = keepInside(pos, target, box);
-  if (name !== 'wide' && name !== 'top') {
+  if (name !== 'wide' && name !== 'top' && name !== 'view') {
     const meant = pos.clone();
     pos = unblock(pos, target, raycast);
     // pulled far in by a wall behind it: turn around the target at the intended distance instead, when that is clear

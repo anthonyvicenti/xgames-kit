@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-stoneroundnarrow",
+ "pack": "kenney-nature-kit-full",
+ "file": "bridge-stoneroundnarrow.glb",
+ "sha256": "1e3ded004e785b5b7343dd2171bd9302938f0dd50330d84721d01915318fbf5a",
+ "bytes": 7084,
+ "preview": "previews/bridge-stoneroundnarrow.png",
+ "from": "Models/GLTF format/bridge_stoneRoundNarrow.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "bridge stoneroundnarrow",
+ "tags": [
+  "bridge",
+  "stoneroundnarrow"
+ ],
+ "use": {
+  "size": [
+   1.04,
+   0.4,
+   0.84
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 360,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 360,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7084,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ccdbde",
+     "#ddf2f5"
+    ],
+    "saturation": 0.334,
+    "value": 0.864,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b29d3c2a235861651296e5fb4be6bde4f17b3206d452a83cdafe6e4d90dcffda",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

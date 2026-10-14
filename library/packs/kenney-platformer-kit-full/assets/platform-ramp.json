@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "platform-ramp",
+ "pack": "kenney-platformer-kit-full",
+ "file": "platform-ramp.glb",
+ "sha256": "fda0e74ff54b3850e44eb6b5e0a34cc2d2e1768706a161d5b6744a269af7eedf",
+ "bytes": 15528,
+ "preview": "previews/platform-ramp.png",
+ "from": "Models/GLB format/platform-ramp.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "platform ramp",
+ "tags": [
+  "platform",
+  "ramp"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.57,
+   1.027
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15528,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c3714e",
+     "#d47f59",
+     "#d9835c",
+     "#d07c57",
+     "#995a41",
+     "#cc7854",
+     "#905741",
+     "#a25c41"
+    ],
+    "saturation": 0.503,
+    "value": 0.524,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.918
+     },
+     {
+      "hue": "brown",
+      "share": 0.082
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.99,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5989b271dfb32d44acb6d896df17fbad2009e3fcbb5f4171ef1f1f38f59d5b33",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

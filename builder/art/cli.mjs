@@ -7,11 +7,24 @@
 //   art fetch <pack>/<asset> [--to <file>]              the asset's bytes: the store, the kit's default set, a mirror, or
 //                                                      rebuilt from the pack's pinned source
 //   art check                                          every manifest against the schemas, every binary on this machine
+//   art autorig <mesh.glb> --archetype worm|blob|quadruped|flyer --out <body.glb> [--height m] [--turn deg] [--id id]
+//                                                      a plain mesh rigged on that archetype's standard, then judged
+//                                                      (builder/art/rig/autorig.mjs, rig-check; CREATURES.md)
+//   art coverage [--case <file>] [--kind <k>] [--json]   what the library holds for a look: by pack, then every need of
+//                                                      library/coverage/needs.json (or a case's) as have / off-style /
+//                                                      missing / code, against a case's look target or a kind
+//   art harmonize --pack <id> --look <target.json | config/look.json | game | kind> [--level <id>] [--style pixel|drawn]
+//                 [--into <pack>] [--only a,b] [--public] [--dry] [--json]
+//                                                      the style pass baked: the pack's assets moved toward one look as NEW
+//                                                      assets in a derived pack (provenance in each one's `harmonized`),
+//                                                      the originals untouched; before and after measured (harmonize.mjs)
 //
 // ingest options: --include <glob> (repeat) --exclude <glob> --category <c> --style pixel|drawn --plane side|top
 //   --tile-set blend|connect|dress (a 2D tile that is a kind's 16 edges or its dressing strip, gf-flat-1 §4b)
 //   --texels <n> --tags a,b --describe "…" --from "…" --id <id> --id-from name|path --as-is --ktx2 --max-texture <px>
 //   --replace (make an asset of the same id again in place) --retarget <id> --fix <id> (builder/art/rig) --peak <dBFS>
+//   --autorig worm|blob|quadruped|flyer (a plain mesh rigged on that archetype's standard; --height m, --turn deg)
+//   --collider box|cylinder|trunk|none (a prop's collider fitted to its measured size)
 //   to start a pack: --licence <spdx> --author "…" --url <u> --credit "…" --licence-file <f> --title "…"
 //   --owner own|third-party|generated --private --source-kind zip|git|maker|own|collection --download <u> --zip-sha256 <h>
 //   --repo <u> --commit <c> --page <u> --maker <m>
@@ -34,7 +47,7 @@ export function parse(argv) {
     const a = argv[i];
     if (!a.startsWith('--')) { pos.push(a); continue; }
     const k = a.slice(2), v = argv[i + 1];
-    if (['3d', '2d', 'audio', 'all', 'json', 'as-is', 'ktx2', 'private', 'write', 'replace'].includes(k) || v === undefined || v.startsWith('--')) { o[k] = true; continue; }
+    if (['3d', '2d', 'audio', 'all', 'json', 'as-is', 'ktx2', 'private', 'write', 'replace', 'public', 'dry'].includes(k) || v === undefined || v.startsWith('--')) { o[k] = true; continue; }
     if (k === 'include' || k === 'exclude') (o[k] ??= []).push(v); else o[k] = v;
     i++;
   }
@@ -48,6 +61,8 @@ export function ingestOptions(o) {
     pack: o.pack, include: o.include, exclude: o.exclude, category: o.category, style: o.style, plane: o.plane, tileSet: o['tile-set'],
     texelsPerMetre: o.texels ? Number(o.texels) : undefined, tags: o.tags?.split(','), describe: o.describe, from: o.from, rig: o.rig, role: o.role, id: o.id, idFrom: o['id-from'],
     replace: !!o.replace, retarget: o.retarget, fix: o.fix, peak: o.peak !== undefined ? Number(o.peak) : undefined,
+    autorig: o.autorig, height: o.height ? Number(o.height) : undefined, turn: o.turn ? Number(o.turn) : undefined,
+    collider: o.collider,
     asIs: !!o['as-is'], ktx2: !!o.ktx2, maxTexture: o['max-texture'] ? Number(o['max-texture']) : undefined,
     licence: o.licence ? Object.fromEntries(Object.entries({ spdx: o.licence, author: o.author, url: o.url, credit: o.credit }).filter(([, v]) => v)) : null,
     licenceFile: o['licence-file'], licenceText: o['licence-text'],
@@ -123,11 +138,48 @@ async function cmdCheck(pos, o, config) {
   if (problems.length) process.exitCode = 1;
 }
 
-const COMMANDS = { ingest: cmdIngest, find: cmdFind, fill: cmdFill, fetch: cmdFetch, check: cmdCheck };
+async function cmdCoverage(pos, o, config) {
+  const { coverageReport } = await import('./coverage.mjs');
+  const r = coverageReport({ config, kind: o.kind ?? null, casePath: o.case ?? null });
+  out(o, r, () => [`art coverage: ${r.inventory.totals.packs} packs, ${r.inventory.totals.assets} assets (${Object.entries(r.inventory.totals.byVisibility).map(([k, n]) => `${n} ${k}`).join(', ')})`,
+    ...r.views.flatMap(v => [`\n${v.title}: ${Object.entries(v.totals).map(([k, n]) => `${n} ${k}`).join(', ')}`,
+      ...v.needs.map(n => `  ${n.status.padEnd(9)} ${n.id.padEnd(20)} ${n.have}/${n.count}${n.best[0] ? `  ${n.best[0].ref}` : ''}${n.gap ? `  — ${n.gap}` : ''}`)])].join('\n'));
+}
+
+async function cmdAutorig(pos, o) {
+  if (!pos[0] || !o.archetype || !o.out) throw new Error('usage: art autorig <mesh.glb> --archetype worm|blob|quadruped|flyer --out <body.glb> [--height m] [--turn deg] [--id id]');
+  const { autorig } = await import('./rig/autorig.mjs');
+  const r = await autorig(readFileSync(pos[0]), { archetype: o.archetype, id: o.id ?? path.basename(o.out).replace(/\.glb$/i, ''), height: o.height ? Number(o.height) : null, turn: o.turn ? Number(o.turn) : 0 });
+  await mkdir(path.dirname(path.resolve(o.out)), { recursive: true });
+  const { writeFile } = await import('node:fs/promises');
+  await writeFile(o.out, r.bytes);
+  const { rigCheck } = await import('../tools/rig-check.mjs');
+  const j = await rigCheck(path.resolve(o.out), { archetype: o.archetype });
+  out(o, { file: o.out, ...r, bytes: r.bytes.length, check: { ok: j.ok, errors: j.errors, warnings: j.warnings } }, () => [`art autorig → ${o.out}: ${r.report.rig}, ${r.report.bones.length} bones (${r.report.bones.join(', ')}), ${(r.bytes.length / 1024).toFixed(0)} KB`,
+    `  ${j.ok ? 'PASS' : 'FAIL'} rig-check${j.errors.length ? `: ${j.errors.slice(0, 4).join('; ')}` : ''}`, ...j.warnings.slice(0, 4).map(w => `  warn: ${w}`)].join('\n'));
+  if (!j.ok) process.exitCode = 1;
+}
+
+async function cmdHarmonize(pos, o, config) {
+  if (!o.pack || !o.look) throw new Error('usage: art harmonize --pack <id> --look <target.json | config/look.json | game folder | kind> [--level <id>] [--style pixel|drawn] [--into <pack>] [--only a,b] [--public] [--dry] [--json]');
+  const { harmonizePack } = await import('./harmonize.mjs');
+  const renderer = o['no-render'] ? null : lazyRenderer();
+  try {
+    const r = await harmonizePack(config, o.pack, o.look, { level: o.level, style: o.style, into: o.into, only: o.only?.split(','), visibility: o.public ? 'public' : 'private', renderer, dry: !!o.dry, log: o.json ? null : console.log });
+    const n = x => (x == null ? '—' : x);
+    out(o, { ...r, added: r.added.map(({ files, ...a }) => ({ ...a, before: a.before && { distance: a.before.distance, fit: a.before.fit }, after: a.after && { distance: a.after.distance, fit: a.after.fit } })) }, () => [
+      `art harmonize ${o.pack} → ${r.pack} (look ${r.look})${r.dry ? ' (dry: nothing written)' : ''}: ${r.added.length} harmonised, ${r.skipped.length} skipped`,
+      ...r.added.map(a => `  ${a.from.padEnd(40)} ${a.did.join(', ')}; distance to the look ${n(a.before?.distance?.palette)} → ${n(a.after?.distance?.palette)}; style fit ${n(a.before?.fit?.fit)} → ${n(a.after?.fit?.fit)}`),
+      ...r.skipped.slice(0, 12).map(x => `  skipped ${x.ref}: ${x.why}`),
+      ...[...new Set(r.findings)].slice(0, 12).map(f => `  finding: ${f}`)].join('\n'));
+  } finally { await renderer?.close(); }
+}
+
+const COMMANDS = { harmonize: cmdHarmonize, ingest: cmdIngest, find: cmdFind, fill: cmdFill, fetch: cmdFetch, check: cmdCheck, coverage: cmdCoverage, autorig: cmdAutorig };
 
 export async function main(argv = process.argv.slice(2)) {
   const [cmd, ...rest] = argv;
-  if (!COMMANDS[cmd]) { console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 17).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exitCode = cmd ? 1 : 0; return; }
+  if (!COMMANDS[cmd]) { console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 25).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exitCode = cmd ? 1 : 0; return; }
   const { pos, o } = parse(rest);
   await COMMANDS[cmd](pos, o, loadConfig());
 }

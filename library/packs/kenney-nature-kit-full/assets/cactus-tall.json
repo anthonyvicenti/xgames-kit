@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "cactus-tall",
+ "pack": "kenney-nature-kit-full",
+ "file": "cactus-tall.glb",
+ "sha256": "9430bf50612b2cca1eb9b812c49f2a66c0c1a91e265b5ce517029960cf243ce4",
+ "bytes": 3816,
+ "preview": "previews/cactus-tall.png",
+ "from": "Models/GLTF format/cactus_tall.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "cactus tall",
+ "tags": [
+  "cactus",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   0.396,
+   0.75,
+   0.339
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 122,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 122,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3816,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#70e6d6"
+    ],
+    "saturation": 0.702,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d43a1aca5952e1f8a104d64a0edfec09c39f15102ca6bdc531460dd5a2c53d25",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

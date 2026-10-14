@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "overhang",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "overhang.glb",
+ "sha256": "ec9f3decc8957c4f412815d314a4baa430eb410374f88cc4daa892e61ec88bdd",
+ "bytes": 14820,
+ "preview": "previews/overhang.png",
+ "from": "Models/GLB format/overhang.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "overhang",
+ "tags": [
+  "overhang"
+ ],
+ "use": {
+  "size": [
+   0.285,
+   0.33,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14820,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d38c6a",
+     "#a5634c",
+     "#d28b69",
+     "#d18a69",
+     "#d08968",
+     "#be7c5c",
+     "#c78362",
+     "#ca8564"
+    ],
+    "saturation": 0.486,
+    "value": 0.576,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "515edba27d8c6326cee6f5912b7270224672f9f3dd61e43e85e1d504913ef19c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

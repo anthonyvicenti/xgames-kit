@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "wall-window-shutters",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-window-shutters.glb",
+ "sha256": "532efde49f87ab22e5fbfe5e50794718635d4726a1ccc99f8532084555a791cd",
+ "bytes": 17676,
+ "preview": "previews/wall-window-shutters.png",
+ "from": "Models/GLB format/wall-window-shutters.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall window shutters",
+ "tags": [
+  "wall",
+  "window",
+  "shutters"
+ ],
+ "use": {
+  "size": [
+   0.175,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 286,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 286,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17676,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#c78362",
+     "#c3805f",
+     "#abb3d7",
+     "#8f95b3",
+     "#a0a8c9",
+     "#99a1c1",
+     "#bf7d5d",
+     "#a9b0d3"
+    ],
+    "saturation": 0.388,
+    "value": 0.616,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.637
+     },
+     {
+      "hue": "blue",
+      "share": 0.295
+     },
+     {
+      "hue": "grey",
+      "share": 0.068
+     }
+    ],
+    "grey": 0.068
+   },
+   "trianglesPerMetre": 9.79,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "58a641a03fc4a5a225663969cc257fcf4f2fc63c199b4aca16b612142ff9eed0",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

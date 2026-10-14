@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "hedge",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "hedge.glb",
+ "sha256": "a1fc9d099764b2d57a7ec6f3343814e7a8ac5c8b31491e62056b648df96adcf8",
+ "bytes": 14816,
+ "preview": "previews/hedge.png",
+ "from": "Models/GLB format/hedge.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "hedge",
+ "tags": [
+  "hedge"
+ ],
+ "use": {
+  "size": [
+   0.25,
+   0.25,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 54,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 54,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14816,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bdc6ee",
+     "#7d829c",
+     "#9299b7",
+     "#a8b0d3",
+     "#41a478",
+     "#3b9d74",
+     "#4bb180",
+     "#3a9b73"
+    ],
+    "saturation": 0.365,
+    "value": 0.612,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.434
+     },
+     {
+      "hue": "grey",
+      "share": 0.217
+     },
+     {
+      "hue": "cyan",
+      "share": 0.213
+     },
+     {
+      "hue": "green",
+      "share": 0.136
+     }
+    ],
+    "grey": 0.217
+   },
+   "trianglesPerMetre": 6.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "12001b57dbd3ccaddd217c49e541620137d3e835d873ce0bcedc0e01180a08a9",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

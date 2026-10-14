@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "windmill",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "windmill.glb",
+ "sha256": "e9ef544b695edde914f3f807bbfffb983394c57334e86042751480e24954ae34",
+ "bytes": 28644,
+ "preview": "previews/windmill.png",
+ "from": "Models/GLB format/windmill.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "windmill",
+ "tags": [
+  "windmill"
+ ],
+ "use": {
+  "size": [
+   0.471,
+   3.113,
+   3.113
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 732,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 732,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 28644,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c3805f",
+     "#f0c7a0",
+     "#f0c49a",
+     "#cb8665",
+     "#f0c297",
+     "#f0c8a3",
+     "#c78362",
+     "#b97859"
+    ],
+    "saturation": 0.613,
+    "value": 0.687,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "72562df164f5fd36670521462da8f4161cf2c4c1c889799443f0fb44532ad5db",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

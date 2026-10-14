@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "wall-corner-diagonal-half",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-corner-diagonal-half.glb",
+ "sha256": "9edf1d7a780526764fb9448c4eb0897dd175cf5a007072b37eb56b16c5f1fb0d",
+ "bytes": 14232,
+ "preview": "previews/wall-corner-diagonal-half.png",
+ "from": "Models/GLB format/wall-corner-diagonal-half.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall corner diagonal half",
+ "tags": [
+  "wall",
+  "corner",
+  "diagonal",
+  "half"
+ ],
+ "use": {
+  "size": [
+   0.55,
+   1,
+   0.975
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 34,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 34,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14232,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#a2aacc",
+     "#989fbe",
+     "#c3805f",
+     "#c78362",
+     "#8d93b1",
+     "#adb5d9",
+     "#cc8665",
+     "#be7c5d"
+    ],
+    "saturation": 0.292,
+    "value": 0.676,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.825
+     },
+     {
+      "hue": "orange",
+      "share": 0.155
+     }
+    ],
+    "grey": 0.02
+   },
+   "trianglesPerMetre": 3.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3e689a3e266865a44030d22fd645dd7605a1b6e7fb679bbb2355c18da6258344",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

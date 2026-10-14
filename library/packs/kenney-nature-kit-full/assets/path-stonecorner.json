@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "path-stonecorner",
+ "pack": "kenney-nature-kit-full",
+ "file": "path-stonecorner.glb",
+ "sha256": "9d2d33913490aeb9e59edca1e959777717b4c48a1e394412a5be04911b0acdfe",
+ "bytes": 5520,
+ "preview": "previews/path-stonecorner.png",
+ "from": "Models/GLTF format/path_stoneCorner.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "path stonecorner",
+ "tags": [
+  "path",
+  "stonecorner"
+ ],
+ "use": {
+  "size": [
+   0.738,
+   0.05,
+   0.778
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 112,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 112,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5520,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ddf2f5",
+     "#ffffff",
+     "#ccdbde"
+    ],
+    "saturation": 0.261,
+    "value": 0.931,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.606
+     },
+     {
+      "hue": "grey",
+      "share": 0.394
+     }
+    ],
+    "grey": 0.394
+   },
+   "trianglesPerMetre": 14.2,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "50f977934adfc20bb70dc647a618a9227516391ac40bfa26e07b4207c5ae222e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

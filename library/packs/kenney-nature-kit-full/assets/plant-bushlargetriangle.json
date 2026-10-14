@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "plant-bushlargetriangle",
+ "pack": "kenney-nature-kit-full",
+ "file": "plant-bushlargetriangle.glb",
+ "sha256": "25ee9c608f849e672aca5ba9792ebf748154a6b92a7fe77ea4e409e17275bd57",
+ "bytes": 2684,
+ "preview": "previews/plant-bushlargetriangle.png",
+ "from": "Models/GLTF format/plant_bushLargeTriangle.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "plant bushlargetriangle",
+ "tags": [
+  "plant",
+  "bushlargetriangle"
+ ],
+ "use": {
+  "size": [
+   0.408,
+   0.169,
+   0.471
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 39,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 39,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2684,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "098af3618e20e5a2cb5f6e24a7c67c0a80663f989137d86430bc9e2b1b2d52e4",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

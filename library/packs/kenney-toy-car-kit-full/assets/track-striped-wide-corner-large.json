@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "track-striped-wide-corner-large",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "track-striped-wide-corner-large.glb",
+ "sha256": "941c8ef6dc13a62efbf8f8f9c9ea2da3d4bb342a1eb3b5b114a77d3248e507d6",
+ "bytes": 17808,
+ "preview": "previews/track-striped-wide-corner-large.png",
+ "from": "Models/GLB format/track-striped-wide-corner-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "track striped wide corner large",
+ "tags": [
+  "track",
+  "striped",
+  "wide",
+  "corner",
+  "large"
+ ],
+ "use": {
+  "size": [
+   5.2,
+   0.3,
+   5.2
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 316,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 316,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17808,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#d1d1e2",
+     "#e25d49",
+     "#d3554e",
+     "#c1c1d8",
+     "#f16544",
+     "#e6e6ef",
+     "#efeff5",
+     "#e2e2ed"
+    ],
+    "saturation": 0.462,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.496
+     },
+     {
+      "hue": "blue",
+      "share": 0.456
+     },
+     {
+      "hue": "grey",
+      "share": 0.048
+     }
+    ],
+    "grey": 0.048
+   },
+   "trianglesPerMetre": 3.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "bb6d7c530d02ceaa7d0c8f1779a7245a7bafdfbb0815c0c0695c83a4491ad33c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

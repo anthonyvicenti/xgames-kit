@@ -1,0 +1,84 @@
+{
+ "packVersion": 1,
+ "id": "xk-creature-bodies",
+ "title": "Creature bodies",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/xk-creature-bodies/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set",
+  "retrieved": "2026-10-14"
+ },
+ "owner": "own",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 3,
+   "hues": [
+    "#128b20",
+    "#ff4471",
+    "#ff2016",
+    "#bf5d15",
+    "#127bff",
+    "#ffc5a1",
+    "#ffffff",
+    "#ff5806",
+    "#000000",
+    "#b21131",
+    "#ff7204"
+   ],
+   "saturation": 0.893,
+   "value": 0.59,
+   "families": [
+    {
+     "hue": "red",
+     "share": 0.345
+    },
+    {
+     "hue": "green",
+     "share": 0.19
+    },
+    {
+     "hue": "brown",
+     "share": 0.141
+    },
+    {
+     "hue": "blue",
+     "share": 0.14
+    },
+    {
+     "hue": "orange",
+     "share": 0.12
+    },
+    {
+     "hue": "grey",
+     "share": 0.063
+    }
+   ],
+   "grey": 0.048
+  },
+  "trianglesPerMetre": 38.52,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  },
+  "proportions": "bodies: median 3.1 heads tall",
+  "body": {
+   "headsTall": 3.1,
+   "hipShare": 0.505
+  }
+ },
+ "assets": 5,
+ "validators": [
+  "rig-check"
+ ],
+ "describe": "One stand-in body for each archetype beside gf-humanoid-1 (a worm standing, a snake lying, a slime, a pup, a bird): round toy shapes with big eyes, rigged by the kit's autorig, the body in the player's colour."
+}

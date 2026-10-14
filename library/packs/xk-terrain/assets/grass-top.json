@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "grass-top",
+ "pack": "xk-terrain",
+ "file": "grass-top.png",
+ "sha256": "5d2e32b8ba00bce8808295b8185d69ee0b8d8c07cd2c4c53945b82205cdc7318",
+ "bytes": 888074,
+ "preview": "previews/grass-top.png",
+ "from": "runtimes/three/tools/terrain-textures.mjs: grass-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "painted cartoon turf seen from above: soft patches of light and shade, tufts of blades, a few flowers; seamless",
+ "tags": [
+  "terrain",
+  "tileable",
+  "cartoon",
+  "grass",
+  "top"
+ ],
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#66bb38",
+     "#68be39",
+     "#67bc39",
+     "#67bd39",
+     "#69c03a",
+     "#66ba38",
+     "#69bf3a",
+     "#66bc38"
+    ],
+    "saturation": 0.544,
+    "value": 0.478,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.998
+     }
+    ],
+    "exact": 3869,
+    "grey": 0.001
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ab835da674e83d24757069df2cf7ae12692b7ac81821dba13828cab48bdc3d74",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

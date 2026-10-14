@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "rock-talle",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-talle.glb",
+ "sha256": "cc8410c7216d8823b67fed6a80ac21168c32f88743c1f188444d8dcdb5b4787f",
+ "bytes": 4496,
+ "preview": "previews/rock-talle.png",
+ "from": "Models/GLTF format/rock_tallE.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock talle",
+ "tags": [
+  "rock",
+  "talle"
+ ],
+ "use": {
+  "size": [
+   0.456,
+   0.444,
+   0.527
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 38,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 38,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4496,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ffffff",
+     "#73eddd"
+    ],
+    "saturation": 0.592,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.708
+     },
+     {
+      "hue": "grey",
+      "share": 0.226
+     },
+     {
+      "hue": "cyan",
+      "share": 0.067
+     }
+    ],
+    "grey": 0.226
+   },
+   "trianglesPerMetre": 7.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "21f135fa85c5fde5f1136ceefe7f9c9103f292109a5b1d77a6675e97d7a782fb",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

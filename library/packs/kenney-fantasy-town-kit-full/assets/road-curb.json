@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "road-curb",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "road-curb.glb",
+ "sha256": "89244eeed7fe5d0a564f702d043ef0f0845fa03558138135e8c91224fc621943",
+ "bytes": 13768,
+ "preview": "previews/road-curb.png",
+ "from": "Models/GLB format/road-curb.glb; its texture files packed inside, kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "road curb",
+ "tags": [
+  "road",
+  "curb"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.05,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13768,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#868ba1"
+    ],
+    "saturation": 0.126,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 2.34,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "236faeba46e3a0f5e3ec2b80f8ed57048e5b95a1a407526ebda35a3da143317c",
+  "modified": "its texture files packed inside, kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-14"
+ }
+}

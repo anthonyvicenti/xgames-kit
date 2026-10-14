@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "vehicle-truck",
+ "pack": "kenney-toy-car-kit-full",
+ "file": "vehicle-truck.glb",
+ "sha256": "8afa055775ebe8ab765de0a255968d0363f86c843b2a32a0f5422ff9a0a6e7f3",
+ "bytes": 41136,
+ "preview": "previews/vehicle-truck.png",
+ "from": "Models/GLB format/vehicle-truck.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "vehicle truck",
+ "tags": [
+  "vehicle",
+  "truck"
+ ],
+ "use": {
+  "size": [
+   0.525,
+   0.525,
+   0.863
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1090,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 1090,
+     "meshes": 5,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 41136,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#d1d1e2",
+     "#e2e2ed",
+     "#c1c1d8",
+     "#3e414d",
+     "#f8f8fb",
+     "#4b4e5d",
+     "#494c5a",
+     "#f4f4f8"
+    ],
+    "saturation": 0.297,
+    "value": 0.606,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.574
+     },
+     {
+      "hue": "blue",
+      "share": 0.277
+     },
+     {
+      "hue": "orange",
+      "share": 0.15
+     }
+    ],
+    "grey": 0.574
+   },
+   "trianglesPerMetre": 18.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7de382da801189fcbf8672ae18ac97af6aa3e248234d9e50cd7debe16475e69b",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

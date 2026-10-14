@@ -3,7 +3,11 @@
   "capabilities": [
     {
       "id": "characters",
-      "describe": "players and others drawn as gf-humanoid-1 bodies (or picture bodies in 2D) that walk"
+      "describe": "players and others drawn as bodies that walk: gf-humanoid-1 bodies, creature bodies (creature-bodies), or picture bodies in 2D"
+    },
+    {
+      "id": "creature-bodies",
+      "describe": "players and others as a worm or serpent, a blob, a four-legged animal or a winged flyer (each archetype a rig standard beside gf-humanoid-1), moved by procedural motion from the same actions (move, jump, act, hit, down, celebrate) and seen by friends like any body; a plain mesh is rigged by autorig"
     },
     {
       "id": "physics-bodies",
@@ -28,6 +32,10 @@
     {
       "id": "voxel-world",
       "describe": "a block island players change"
+    },
+    {
+      "id": "smooth-terrain",
+      "describe": "smooth ground explosions carve into round craters, with a soil cross-section"
     },
     {
       "id": "persistent-world",
@@ -112,6 +120,10 @@
     {
       "id": "block-building",
       "describe": "place, break and paint blocks"
+    },
+    {
+      "id": "destructible-ground",
+      "describe": "blasts carve round craters in the ground, the same on every screen"
     },
     {
       "id": "checkpoints",

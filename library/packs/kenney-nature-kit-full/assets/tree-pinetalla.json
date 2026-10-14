@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pinetalla",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-pinetalla.glb",
+ "sha256": "f8baecaab5df211b61f308b731ae10825ab21b3982c4d74f880233dba8909a60",
+ "bytes": 4200,
+ "preview": "previews/tree-pinetalla.png",
+ "from": "Models/GLTF format/tree_pineTallA.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pinetalla",
+ "tags": [
+  "tree",
+  "pinetalla"
+ ],
+ "use": {
+  "size": [
+   0.386,
+   1.53,
+   0.392
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 78,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 78,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4200,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#72d3d5",
+     "#e7b5a3"
+    ],
+    "saturation": 0.548,
+    "value": 0.663,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.837
+     },
+     {
+      "hue": "orange",
+      "share": 0.163
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 8.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e0a56eb196d8a64ba86c7304d607136e17e6f9ad748dffcf86bd53b18b91b196",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

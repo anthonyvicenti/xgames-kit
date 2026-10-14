@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "crop-melon",
+ "pack": "kenney-nature-kit-full",
+ "file": "crop-melon.glb",
+ "sha256": "c6d4d4ceac2fede46d6b6039048a6c06ae9a72da81eab65a2f006bf4a305f84a",
+ "bytes": 7032,
+ "preview": "previews/crop-melon.png",
+ "from": "Models/GLTF format/crop_melon.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "crop melon",
+ "tags": [
+  "crop",
+  "melon"
+ ],
+ "use": {
+  "size": [
+   0.418,
+   0.348,
+   0.362
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 236,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 236,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7032,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#73eddd",
+     "#72d3d5",
+     "#f2be9e"
+    ],
+    "saturation": 0.675,
+    "value": 0.67,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.993
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 20.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "4296c5fc07c4d0707ab11b9d97d2978132f4bf525a00ccd20e463fdcf04a5e5f",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

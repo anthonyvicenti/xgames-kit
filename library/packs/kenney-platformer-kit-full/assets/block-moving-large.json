@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "block-moving-large",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-moving-large.glb",
+ "sha256": "7e30e7bf889c4120ded326e59dd466b5a93805ecc20085991f5f59e356e887c2",
+ "bytes": 15980,
+ "preview": "previews/block-moving-large.png",
+ "from": "Models/GLB format/block-moving-large.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block moving large",
+ "tags": [
+  "block",
+  "moving",
+  "large"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.5,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 136,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 136,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15980,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ffa63e",
+     "#ffc154",
+     "#d9835c",
+     "#c77451",
+     "#ffaf45",
+     "#ffb84d",
+     "#ff9832"
+    ],
+    "saturation": 0.922,
+    "value": 0.628,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "760a672e21d6ac7f802115c77526f3bf3f7159ebab469f3f1b1a288f63d3e667",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

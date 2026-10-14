@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine-small",
+ "pack": "kenney-platformer-kit-full",
+ "file": "tree-pine-small.glb",
+ "sha256": "ca41eb6bcd10056abd6ec18b6fcf297decbed292c78eca4ec9982b91f48ed65a",
+ "bytes": 19100,
+ "preview": "previews/tree-pine-small.png",
+ "from": "Models/GLB format/tree-pine-small.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree pine small",
+ "tags": [
+  "tree",
+  "pine",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.664,
+   1.398,
+   0.664
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19100,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#2e9872",
+     "#37a076",
+     "#3da679",
+     "#3ba579",
+     "#44ad7d",
+     "#44ae7d",
+     "#cf7a56",
+     "#319a73"
+    ],
+    "saturation": 0.515,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.755
+     },
+     {
+      "hue": "orange",
+      "share": 0.178
+     },
+     {
+      "hue": "green",
+      "share": 0.067
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "951e285d4f49f0863cc8ca2c6dc0fecbd4c25632405c9fe6d6784cd8fdc8928c",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

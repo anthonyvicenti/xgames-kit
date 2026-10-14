@@ -32,7 +32,18 @@ gamesfun art ingest <file|folder|zip|url> --pack <id> [--include <glob>] [--styl
 gamesfun art fetch <pack>/<asset> [--to <file>]           bytes from the store, the default set, a mirror, or rebuilt
 gamesfun art check                                        every manifest against the schemas, every binary on this machine
 gamesfun art generate --slot <id> --words "…" [--yes]     a model made for a slot (paid: only with --yes)
+gamesfun art coverage [--kind <k>] [--case <file>] [--json]   what the library holds for a look: have / off-style / missing / code
+gamesfun art harmonize --pack <id> --look <target | config/look.json | game | kind> [--level <id>] [--style pixel|drawn] [--dry]
+                                                          the style pass baked: a pack's assets moved toward one look as
+                                                          NEW assets in a derived pack (`harmonized` names each original);
+                                                          the originals are never written (builder/look/README.md)
 ```
+
+`COVERAGE.md` is the coverage report: everything we own or may use and its licence, the matrix of what each kind's look
+asks for against what is in its style, the artillery proving case, the Meshy pilot judged and the Meshy plan with
+credits. `coverage/needs.json` lists what a look asks for; `coverage/cases/*.json` hold a case (a look target, its
+needs and its Meshy wave). `builder/art/wave.mjs` makes a case's wave with Meshy, concept art first from one style anchor
+(`builder/art/recipe.mjs`), into a private pack.
 
 The MCP server offers the same as `gamesfun_art_find`, `gamesfun_art_fill`, `gamesfun_art_ingest` and
 `gamesfun_art_generate`.
@@ -95,7 +106,17 @@ Choices for the creator:
 
 Until then the default set ships in git and `art fetch` rebuilds what has a rebuild line.
 
-## Gaps (2026-10-13)
+## Gaps (2026-10-13, and 2026-10-14 from the coverage audit: `COVERAGE.md` §6)
+
+- Body archetypes (2026-10-14, closed): a worm, blob, four-legged or flying body is on its own rig standard
+  (`runtimes/three/kit/character/CREATURES.md`; a body manifest's `use.rig` and `use.archetype`). rig-check judges it with
+  the creature judge, `art ingest --autorig <archetype>` (or `gamesfun art autorig`) rigs a plain mesh, and
+  `xk-creature-bodies` holds one stand-in of each. The pilot's three critters are rigged as blobs in
+  `looks-pilot-artillery` (`*-blob`, private); Meshy's own rig of the moss-mole (`moss-mole-rigged`) stays failed.
+- The style measures in `builder/art/coverage.mjs` read grey or white objects as off-style and a words-only target as
+  more saturated than any rendered asset: a guide for where to look, not a verdict.
+- `quiver-outpost-fx` and `xk-artillery-icons` are reachable only from the store that ingested them until a mirror exists;
+  the `kenney-*-full` packs and the particle pack rebuild from their pinned zips, the two fonts fetch from GitHub.
 
 - `kenney-background-elements-remastered`: nine small trees are under gf-flat-1's 64 px floor for a drawn prop and fail
   the flat judge; the resolver never offers them.

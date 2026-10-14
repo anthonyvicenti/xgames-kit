@@ -19,7 +19,7 @@
 //      specIslands), the core built island 1's place (its key, never the reference island's), and each other island is
 //      reached and built in turn (window.__game.vista.hop, a joiner's way: no sail-out), filmed on arrival
 //   20 the menu (the shared DOM check) · 21 the HUD (the shared DOM check: the player card, the menu button, the goal)
-//   23 looks like the references (the shared judge; no references: passes as "no references")
+//   23 looks like its target (the shared judge; no references: passes as "no references")
 //   25 playing with friends (the shared friends-page check: names, colours, no bots, each one's own score)
 //   32 no WebGPU: a Chrome without WebGPU shows the kit's screen with the game's link, never a blank canvas (vista's own)
 //   36 the sea is drawn and moving: a band of open sea under the horizon, read back from the screen twice, is not flat and
@@ -665,7 +665,7 @@ async function check32(env) {
 // =====================================================================================================================
 // after the solo session
 
-async function check23({ want, statics, shotsForLikeness }) { if (want(23)) await statics.likeness(shotsForLikeness); }
+async function check23({ want, statics, shotsForLikeness }) { if (want(23)) await statics.look(shotsForLikeness); }
 
 // =====================================================================================================================
 // two players (their own browsers, beside the solo session)

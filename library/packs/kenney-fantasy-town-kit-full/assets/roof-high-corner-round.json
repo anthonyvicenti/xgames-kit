@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "roof-high-corner-round",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-high-corner-round.glb",
+ "sha256": "8da968046a87106c23543f85abdf05f145b9d6ca3ca91bdf0aa200a9d04a1524",
+ "bytes": 14872,
+ "preview": "previews/roof-high-corner-round.png",
+ "from": "Models/GLB format/roof-high-corner-round.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof high corner round",
+ "tags": [
+  "roof",
+  "high",
+  "corner",
+  "round"
+ ],
+ "use": {
+  "size": [
+   1.071,
+   1.176,
+   1.071
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14872,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d24c5b",
+     "#794939",
+     "#87523f",
+     "#86513f",
+     "#c74a5c",
+     "#d84e5b",
+     "#dd4f5b",
+     "#de4f5b"
+    ],
+    "saturation": 0.469,
+    "value": 0.456,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.531
+     },
+     {
+      "hue": "red",
+      "share": 0.435
+     },
+     {
+      "hue": "orange",
+      "share": 0.034
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.65,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa4736aa73d17b55b20b5cfcbfc83160c4a18a4e9563ede334d0c7d2327ed727",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

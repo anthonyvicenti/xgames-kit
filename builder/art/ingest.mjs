@@ -121,7 +121,8 @@ async function quarantine(config, bytes, rel, why, origin) {
  *   licence { spdx, author, url, credit } + newPack { title, owner, visibility, describe, source } to start a pack,
  *   asIs (keep bytes as they are), ktx2, maxTexture, policy,
  *   replace (make the asset of the same id again in place, keeping its words), retarget / fix (rig/index.mjs: a body
- *   put on gf-humanoid-1, or corrected), peak (dBFS: a sound lowered to peak there, sound/peak.mjs)
+ *   put on gf-humanoid-1, or corrected), peak (dBFS: a sound lowered to peak there, sound/peak.mjs), collider ('box' |
+ *   'cylinder' | 'trunk' | 'none': a prop's collider fitted to its measured size, colliderFor)
  */
 export async function ingest(input, opts) {
   const { config, pack: packId, renderer = null } = opts;
@@ -178,6 +179,13 @@ export async function ingest(input, opts) {
         if (!RETARGETS[opts.retarget]) throw new Error(`no retarget "${opts.retarget}" (have ${Object.keys(RETARGETS).join(', ')})`);
         const r = await RETARGETS[opts.retarget](bytes, { id }); bytes = r.bytes; did.push(...r.did);
       }
+      // a plain mesh rigged on an archetype's standard (worm, blob, quadruped, flyer: builder/art/rig/autorig.mjs)
+      if (opts.autorig && kind.format === 'glb') {
+        const { autorig, RIG_OF } = await import('./rig/autorig.mjs');
+        const r = await autorig(bytes, { archetype: opts.autorig, id, height: opts.height ?? null, turn: opts.turn ?? 0, tint: opts.tint ?? null, tintMix: opts.tintMix ?? null });
+        bytes = r.bytes; did.push(...r.did);
+        opts = { ...opts, rig: opts.rig ?? RIG_OF[opts.autorig], category: opts.category ?? 'body' };
+      }
       if (opts.fix && kind.format === 'glb') {
         const { FIXES } = await import('./rig/index.mjs');
         if (!FIXES[opts.fix]) throw new Error(`no fix "${opts.fix}" (have ${Object.keys(FIXES).join(', ')})`);
@@ -204,14 +212,18 @@ export async function ingest(input, opts) {
       await writeFile(tmp, bytes); // the renderer and rig-check read a file with its extension
       let r;
       try {
-        r = await analyze(bytes, { path: tmp, category, renderer, hints: { style: opts.style, plane: opts.plane, tileSet: opts.tileSet, texelsPerMetre: opts.texelsPerMetre, poseBody: opts.poseBody, role: opts.role, ambient: opts.ambient, solid: opts.solid ?? false } });
+        r = await analyze(bytes, { path: tmp, category, renderer, hints: { style: opts.style, plane: opts.plane, tileSet: opts.tileSet, texelsPerMetre: opts.texelsPerMetre, poseBody: opts.poseBody, role: opts.role, ambient: opts.ambient, solid: opts.solid ?? false, rig: opts.rig ?? 'gf-humanoid-1' } });
       } finally { await rm(tmp, { force: true }); }
       const words = stem.split(/[\/_\-\s.]+/).filter(w => w.length > 1 && !/^\d+$/.test(w));
       const folders = path.dirname(f.rel).split('/').flatMap(d => d.split(/[_\-\s.]+/)).map(w => w.toLowerCase()).filter(w => w.length > 1 && !FOLDER_NOISE.has(w));
       // a body on the standard plays the shared clips and carries the standard's sockets (RIG.md); a replaced asset
       // keeps what its manifest said that this run does not measure
-      const standard = category === 'body' && (opts.rig ?? 'gf-humanoid-1') === 'gf-humanoid-1' ? { clips: 'humanoid-clips/gf-humanoid-1', sockets: ['head', 'hand_r', 'hand_l', 'back'] } : {};
-      const use = clean({ ...(replacing?.use ?? {}), ...standard, ...r.use, ...(opts.style ? { style: opts.style } : {}), ...(category === 'tile' ? (opts.tileSet ? { tile: false, tileSet: opts.tileSet } : { tile: true }) : {}), ...(category === 'sprite-sheet' && opts.plane ? { plane: opts.plane } : {}), ...(category === 'body' ? { rig: opts.rig ?? 'gf-humanoid-1', origin: 'feet', facing: '+z' } : {}), ...(category === 'prop' ? { origin: 'feet', facing: '+z' } : {}) });
+      // a creature's body (CREATURES.md) plays no clip file: its archetype says how it moves
+      const creature = { 'gf-worm-1': 'worm', 'gf-blob-1': 'blob', 'gf-quadruped-1': 'quadruped', 'gf-flyer-1': 'flyer' }[opts.rig ?? ''] ?? null;
+      const standard = category === 'body' && (opts.rig ?? 'gf-humanoid-1') === 'gf-humanoid-1' ? { clips: 'humanoid-clips/gf-humanoid-1', sockets: ['head', 'hand_r', 'hand_l', 'back'] }
+        : category === 'body' && creature ? { archetype: creature, sockets: ['head', 'hand_r', 'hand_l', 'back'] } : {};
+      const collider = category === 'prop' && opts.collider ? colliderFor(opts.collider, r.use?.size) : null;
+      const use = clean({ ...(replacing?.use ?? {}), ...standard, ...r.use, ...(collider ? { collider } : {}), ...(opts.style ? { style: opts.style } : {}), ...(category === 'tile' ? (opts.tileSet ? { tile: false, tileSet: opts.tileSet } : { tile: true }) : {}), ...(category === 'sprite-sheet' && opts.plane ? { plane: opts.plane } : {}), ...(category === 'body' ? { rig: opts.rig ?? 'gf-humanoid-1', origin: 'feet', facing: '+z' } : {}), ...(category === 'prop' ? { origin: 'feet', facing: '+z' } : {}) });
       const describe = opts.describe && chosen.length === 1 ? opts.describe : replacing?.describe ?? `${words.join(' ').toLowerCase() || id}${category === 'tile' ? ' tile' : ''}`;
       const manifest = clean({
         assetVersion: 1, id, pack: def.id, file: `${id}.${extensionOf(kind.format)}`, sha256: hash, bytes: bytes.length, preview: `previews/${id}.png`,
@@ -239,3 +251,19 @@ export async function ingest(input, opts) {
 }
 
 export const INGEST_TOOL = TOOL;
+
+/**
+ * A prop's collider from its measured size (metres, base at y = 0, centred over x = z = 0, as fitProp and the library's
+ * props are): 'box' (a building, a wall, a crate: its footprint a little inside the model), 'cylinder' (a tower, a
+ * mesa, a drum), 'trunk' (a tree: the trunk only; the scenery adds a ball for the canopy), 'none' (held things, grass).
+ * → use.collider, or null when there is no size to fit it to.
+ */
+export function colliderFor(shape, size) {
+  if (shape === 'none') return { shape: 'none' };
+  if (!Array.isArray(size) || size.length !== 3 || !size.every(n => n > 0)) return null;
+  const [x, y, z] = size, r3 = n => +n.toFixed(3), wide = Math.max(x, z);
+  if (shape === 'box') return { shape: 'box', size: [r3(x * 0.9), r3(y), r3(z * 0.9)], offset: [0, r3(y / 2), 0] };
+  if (shape === 'cylinder') return { shape: 'cylinder', radius: r3(wide * 0.45), height: r3(y), offset: [0, r3(y / 2), 0] };
+  if (shape === 'trunk') return { shape: 'cylinder', radius: r3(Math.max(0.12, wide * 0.08)), height: r3(y * 0.6), offset: [0, r3(y * 0.3), 0] };
+  throw new Error(`no collider shape "${shape}" (box, cylinder, trunk, none)`);
+}

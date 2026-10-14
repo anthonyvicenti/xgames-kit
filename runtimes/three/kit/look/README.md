@@ -53,6 +53,16 @@ Each preset has `quality.high|low` and `times.day|golden|night` (deep-merged ove
 - **Ground pattern**: `material('ground', { color, color2, patternSize, pattern })` and `setGroundPattern(mat, texture)`;
   the pattern multiplies over the ground colour in world space (the world's `ground.pattern`, kit/world/README.md).
 
+## The style pass (`harmonize.js`, `harmonize-core.js`)
+
+Mixed packs made one look at load time: `kit/assets/assets.js` passes every parsed GLB (once, before its clones) and
+every texture slot's picture through `harmonizeModel` / `harmonizePicture`, driven by `config/look.json` `harmonize`
+(a level's own under `levels.<id>.harmonize`; `look.level(id)` restyles them live). Colours move toward the look's
+colours of things, roughness and metalness toward its own, the toon material and an inverted-hull outline when the look
+asks; a flat game's pictures get the look's ramp, an ink edge and whole texels. Geometry and alpha never change; UI,
+fonts and the look's own pictures are left. `window.__gfHarmony.report()` says what it did. Builder side and the library
+bake: `builder/look/README.md` ("The style pass").
+
 ## Slots it tags
 
 `look.sky.top` (sky dome), `look.lamps.color` (glow orbs), `look.materials.liquid.core` (a stream with no slot of its

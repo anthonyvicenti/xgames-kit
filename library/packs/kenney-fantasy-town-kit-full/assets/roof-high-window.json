@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "roof-high-window",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "roof-high-window.glb",
+ "sha256": "9ec983dad2c46bb91cac55c8883027c360bac5237007cc59f2db4150bb1e4f20",
+ "bytes": 17220,
+ "preview": "previews/roof-high-window.png",
+ "from": "Models/GLB format/roof-high-window.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "roof high window",
+ "tags": [
+  "roof",
+  "high",
+  "window"
+ ],
+ "use": {
+  "size": [
+   1.071,
+   1.176,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 258,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 258,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17220,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#794939",
+     "#885240",
+     "#965a45",
+     "#e2505b",
+     "#86513f",
+     "#de4f5b",
+     "#85513e",
+     "#d94e5b"
+    ],
+    "saturation": 0.488,
+    "value": 0.476,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.451
+     },
+     {
+      "hue": "red",
+      "share": 0.369
+     },
+     {
+      "hue": "orange",
+      "share": 0.18
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b5bea885f9dc0a2b1195748a1c4b9994e16256ab740b6cdc6783ebbcf8b96946",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

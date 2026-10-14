@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "wall-broken",
+ "pack": "kenney-fantasy-town-kit-full",
+ "file": "wall-broken.glb",
+ "sha256": "df2681a339ff017009ae3521ee987b21a1d1780c21a35cb113a2e32b1d47d48d",
+ "bytes": 16304,
+ "preview": "previews/wall-broken.png",
+ "from": "Models/GLB format/wall-broken.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wall broken",
+ "tags": [
+  "wall",
+  "broken"
+ ],
+ "use": {
+  "size": [
+   0.117,
+   1,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 166,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 166,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16304,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#c3805f",
+     "#c78362",
+     "#9ba2c2",
+     "#9299b7",
+     "#8e94b2",
+     "#9097b5",
+     "#9da5c5",
+     "#9ba3c3"
+    ],
+    "saturation": 0.301,
+    "value": 0.648,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.618
+     },
+     {
+      "hue": "orange",
+      "share": 0.26
+     },
+     {
+      "hue": "grey",
+      "share": 0.121
+     }
+    ],
+    "grey": 0.121
+   },
+   "trianglesPerMetre": 10.14,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "043f74b83254c32379d0fe60b066c5ded7f3396ccc91df443aea1763d492fa23",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

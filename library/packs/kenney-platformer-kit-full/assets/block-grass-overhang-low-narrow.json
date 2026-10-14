@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "block-grass-overhang-low-narrow",
+ "pack": "kenney-platformer-kit-full",
+ "file": "block-grass-overhang-low-narrow.glb",
+ "sha256": "5182a6c991c580ec035a9d4a7691d1708b41ef89b237c1aa1005b4f8ef3831e8",
+ "bytes": 16612,
+ "preview": "previews/block-grass-overhang-low-narrow.png",
+ "from": "Models/GLB format/block-grass-overhang-low-narrow.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "block grass overhang low narrow",
+ "tags": [
+  "block",
+  "grass",
+  "overhang",
+  "low",
+  "narrow"
+ ],
+ "use": {
+  "size": [
+   0.782,
+   0.5,
+   0.782
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16612,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#339c75",
+     "#47b07e",
+     "#2a9370",
+     "#50ba83"
+    ],
+    "saturation": 0.553,
+    "value": 0.52,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.399
+     },
+     {
+      "hue": "cyan",
+      "share": 0.309
+     },
+     {
+      "hue": "green",
+      "share": 0.292
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.94,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "84ae746b53e34df9230279b0bba5ccab6d5d45a1e18bb898d6188a5924daab39",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

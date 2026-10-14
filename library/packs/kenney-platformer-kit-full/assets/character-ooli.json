@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "character-ooli",
+ "pack": "kenney-platformer-kit-full",
+ "file": "character-ooli.glb",
+ "sha256": "149de113381ef2143f7b1f3193b4c678cdc6a5f99e8c08a179a899785d9b7243",
+ "bytes": 71176,
+ "preview": "previews/character-ooli.png",
+ "from": "Models/GLB format/character-ooli.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "character ooli",
+ "tags": [
+  "character",
+  "ooli"
+ ],
+ "use": {
+  "size": [
+   0.868,
+   0.907,
+   0.603
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 918,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1,
+  "joints": 6
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 918,
+     "meshes": 1,
+     "skins": 1,
+     "animations": 25,
+     "images": 1,
+     "bytes": 71176,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#e2ad41",
+     "#dca53e",
+     "#e0e0eb",
+     "#ecba45",
+     "#d4993a",
+     "#edbc46",
+     "#c8c8dc",
+     "#eab844"
+    ],
+    "saturation": 0.432,
+    "value": 0.65,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.374
+     },
+     {
+      "hue": "grey",
+      "share": 0.275
+     },
+     {
+      "hue": "blue",
+      "share": 0.261
+     },
+     {
+      "hue": "yellow",
+      "share": 0.09
+     }
+    ],
+    "grey": 0.275
+   },
+   "trianglesPerMetre": 7.66,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa500369104ed72b784f7acecb3cece397cb9198d3530606e8833ae84a639ba5",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

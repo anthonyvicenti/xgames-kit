@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "character-oopi",
+ "pack": "kenney-platformer-kit-full",
+ "file": "character-oopi.glb",
+ "sha256": "6f28f565cb90c6c36055a2519c900ec44b371bf13c575b7ec15c324aeee80197",
+ "bytes": 72060,
+ "preview": "previews/character-oopi.png",
+ "from": "Models/GLB format/character-oopi.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "character oopi",
+ "tags": [
+  "character",
+  "oopi"
+ ],
+ "use": {
+  "size": [
+   0.868,
+   0.907,
+   0.603
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 938,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1,
+  "joints": 6
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 938,
+     "meshes": 1,
+     "skins": 1,
+     "animations": 25,
+     "images": 1,
+     "bytes": 72060,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#51a997",
+     "#4a9d8d",
+     "#51aa97",
+     "#e0e0eb",
+     "#4a9e8d",
+     "#5cbea7",
+     "#5abaa4",
+     "#408c7f"
+    ],
+    "saturation": 0.271,
+    "value": 0.611,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.463
+     },
+     {
+      "hue": "grey",
+      "share": 0.275
+     },
+     {
+      "hue": "blue",
+      "share": 0.262
+     }
+    ],
+    "grey": 0.275
+   },
+   "trianglesPerMetre": 7.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "faaecd9c4a9648c8c51115cf09e3b3895685f30edaf57a298a768471f5355e2e",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

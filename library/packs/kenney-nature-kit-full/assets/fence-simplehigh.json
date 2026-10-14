@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "fence-simplehigh",
+ "pack": "kenney-nature-kit-full",
+ "file": "fence-simplehigh.glb",
+ "sha256": "dbbd6306af7b17992aa032372205214cafc7d3b4e9d9cc7647f0ecee894f3519",
+ "bytes": 2456,
+ "preview": "previews/fence-simplehigh.png",
+ "from": "Models/GLTF format/fence_simpleHigh.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "fence simplehigh",
+ "tags": [
+  "fence",
+  "simplehigh"
+ ],
+ "use": {
+  "size": [
+   1.041,
+   0.345,
+   0.111
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2456,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffc5a7"
+    ],
+    "saturation": 1,
+    "value": 0.827,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "12fec55c302bdcfc7d67946e8c4bed8d96bcb2a8d42817c3021cc94b7272891e",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

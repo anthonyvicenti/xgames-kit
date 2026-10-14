@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "lily-large",
+ "pack": "kenney-nature-kit-full",
+ "file": "lily-large.glb",
+ "sha256": "af8dd9d696f3e027b346568cce8246b7ef5ce61ea6f5d1f30235e0de7379b159",
+ "bytes": 5188,
+ "preview": "previews/lily-large.png",
+ "from": "Models/GLTF format/lily_large.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "lily large",
+ "tags": [
+  "lily",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.272,
+   0.098,
+   0.314
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 86,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 86,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5188,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#70e6d6",
+     "#72d3d5",
+     "#f19398"
+    ],
+    "saturation": 0.667,
+    "value": 0.672,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.899
+     },
+     {
+      "hue": "red",
+      "share": 0.101
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 22.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c8f7080df0ae3166e9d33f523b66360c2ac7556dff36cc9c8ee78b6a676c7db2",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

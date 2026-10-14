@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tool-shovel",
+ "pack": "kenney-survival-kit-full",
+ "file": "tool-shovel.glb",
+ "sha256": "275927f9fc78e4531b42eaba4444f682fab1dab32a37aab14fd83dda168cf968",
+ "bytes": 12216,
+ "preview": "previews/tool-shovel.png",
+ "from": "Models/GLB format/tool-shovel.glb; its texture files packed inside, dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tool shovel",
+ "tags": [
+  "tool",
+  "shovel"
+ ],
+ "use": {
+  "size": [
+   0.071,
+   0.29,
+   0.031
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12216,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#c77450",
+     "#9ba2c2",
+     "#d7815b",
+     "#8c93b0",
+     "#aeb6da",
+     "#b3bce1",
+     "#7d829a",
+     "#949ab9"
+    ],
+    "saturation": 0.342,
+    "value": 0.646,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.429
+     },
+     {
+      "hue": "grey",
+      "share": 0.294
+     },
+     {
+      "hue": "orange",
+      "share": 0.277
+     }
+    ],
+    "grey": 0.294
+   },
+   "trianglesPerMetre": 53.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "20abb2420f0215c59694287207b7a6324114552b9f59846ab2a2673e3a7c1147",
+  "modified": "its texture files packed inside, dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

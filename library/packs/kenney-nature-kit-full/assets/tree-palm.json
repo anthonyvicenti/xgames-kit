@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tree-palm",
+ "pack": "kenney-nature-kit-full",
+ "file": "tree-palm.glb",
+ "sha256": "87e45be965c30a24d8f1fe01236b92f7ba0e5c577cca121e14eaeea3716689ad",
+ "bytes": 5480,
+ "preview": "previews/tree-palm.png",
+ "from": "Models/GLTF format/tree_palm.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "tree palm",
+ "tags": [
+  "tree",
+  "palm"
+ ],
+ "use": {
+  "size": [
+   0.935,
+   1.515,
+   1.013
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 186,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 186,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5480,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.72,
+    "value": 0.703,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.714
+     },
+     {
+      "hue": "orange",
+      "share": 0.286
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "27bbb23d26ed788d84de6df2f7fab0acc3fe0ff16c7d08cdcfa1fffcb11de324",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}

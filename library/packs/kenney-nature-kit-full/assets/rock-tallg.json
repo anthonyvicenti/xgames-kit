@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "rock-tallg",
+ "pack": "kenney-nature-kit-full",
+ "file": "rock-tallg.glb",
+ "sha256": "679cf1fd2f2ebcb2eb37766f56fce3dfe221236dbc053f35d02b29532c88f4d4",
+ "bytes": 4912,
+ "preview": "previews/rock-tallg.png",
+ "from": "Models/GLTF format/rock_tallG.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "rock tallg",
+ "tags": [
+  "rock",
+  "tallg"
+ ],
+ "use": {
+  "size": [
+   0.425,
+   0.783,
+   0.491
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 62,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "triangles": 62,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4912,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f2be9e",
+     "#ffffff",
+     "#73eddd"
+    ],
+    "saturation": 0.653,
+    "value": 0.808,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.777
+     },
+     {
+      "hue": "grey",
+      "share": 0.146
+     },
+     {
+      "hue": "cyan",
+      "share": 0.077
+     }
+    ],
+    "grey": 0.146
+   },
+   "trianglesPerMetre": 7.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "831683e6f920d0d6156132f73a1078ed4d0470bc3e862eff4436763898c68a96",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-14"
+ }
+}
