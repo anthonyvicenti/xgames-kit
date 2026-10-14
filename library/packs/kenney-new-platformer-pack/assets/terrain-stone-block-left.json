@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-block-left",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-block-left.png",
+ "sha256": "adf0beecd78a9339beac880e5ef00e71f2e385e171bfe5122108982c9a31dd80",
+ "bytes": 1710,
+ "preview": "previews/terrain-stone-block-left.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_block_left.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone block left tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "block",
+  "left",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 60.1 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 3.8 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#a6b2bb",
+     "#cfd5da",
+     "#353541",
+     "#afb9c2",
+     "#abb6bf",
+     "#adb8c1",
+     "#b8c1c9"
+    ],
+    "saturation": 0.131,
+    "value": 0.72,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 40,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "7d4c0e4d7593ae5e819c4ed8af956c63669b7265c4c6d523ffca7eeacdaea07b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

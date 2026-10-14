@@ -1,0 +1,12 @@
+{
+  "name": "gamesfun-kit",
+  "owner": { "name": "games.fun" },
+  "metadata": { "description": "The games.fun kit's own plugin, installed from this checkout by `gamesfun connect`." },
+  "plugins": [
+    {
+      "name": "gamesfun",
+      "source": "./plugin",
+      "description": "The local studio page in front of your session: page requests reach the session, the session's steps show in the page, and a build is not left half done."
+    }
+  ]
+}

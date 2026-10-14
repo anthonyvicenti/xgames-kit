@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "rock-large",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "rock-large.glb",
+ "sha256": "604e8a7e0d3915d10a7a1ec1d4560dfd8737eed27dab33abcbc89ca8c735984f",
+ "bytes": 21560,
+ "preview": "previews/rock-large.png",
+ "from": "kenney:fantasy-town-kit/rock-large; baked to metres (x1.37599), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large rock pile",
+ "tags": [
+  "nature",
+  "rock",
+  "cover",
+  "large"
+ ],
+ "use": {
+  "size": [
+   2.298,
+   1.6,
+   2.131
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.298,
+    1.6,
+    2.131
+   ],
+   "offset": [
+    0,
+    0.8,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21560,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#a2a9cb",
+     "#a5add0",
+     "#acb4d7",
+     "#aab2d6",
+     "#8d93b1",
+     "#b2badf",
+     "#9399b8",
+     "#969dbd"
+    ],
+    "saturation": 0.297,
+    "value": 0.715,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.865
+     },
+     {
+      "hue": "grey",
+      "share": 0.135
+     }
+    ],
+    "grey": 0.135
+   },
+   "trianglesPerMetre": 4.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "425bea0dd3c8d9198a067a2faad1df8860c5b9eb53560ce5c67347a79852b9d1",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.37599), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

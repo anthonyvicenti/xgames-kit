@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "swing-2",
+ "pack": "forge-sounds",
+ "file": "swing-2.ogg",
+ "sha256": "b2e6d605e93ca072d6526035e1b45f0d63885f8709d76177249720c3255fdd16",
+ "bytes": 5075,
+ "preview": "previews/swing-2.png",
+ "from": "https://opengameart.org/content/swishes-sound-pack swishes/swish-9.wav; cut to 0.033-0.193 s of the source (0.16 s), 2 ms fade-in and 40 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.7 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "melee swing (swing 2)",
+ "tags": [
+  "sounds",
+  "swing",
+  "melee"
+ ],
+ "use": {
+  "seconds": 0.176,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16,
+     "samplePeakDb": -3.1,
+     "truePeakDb": -3.1,
+     "hfRatio": 0.002
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.176,
+    "peakDbfs": -3.1,
+    "soundMaxLufs": -16
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/swishes-sound-pack",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.033-0.193 s of the source (0.16 s), 2 ms fade-in and 40 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.7 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "artisticdude (OpenGameArt)"
+ }
+}

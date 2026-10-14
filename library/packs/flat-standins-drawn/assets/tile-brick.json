@@ -1,0 +1,76 @@
+{
+ "assetVersion": 1,
+ "id": "tile-brick",
+ "pack": "flat-standins-drawn",
+ "file": "tile-brick.png",
+ "sha256": "905ca81f9131fa8707b8a2ce51db6e4a5061840f8b749f4eda752595eb0bce3b",
+ "bytes": 471,
+ "preview": "previews/tile-brick.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn brick ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "brick"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#b5654a",
+     "#ecd9c6",
+     "#dab29d",
+     "#c97a5e",
+     "#bc6c51",
+     "#e6ccb8",
+     "#b7674c"
+    ],
+    "saturation": 0.431,
+    "value": 0.546,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,334 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/kind/1.json",
+  "title": "Kind preset (kinds/<id>.json)",
+  "description": "How a game feels: one JSON preset. Per runtime: its look, world, camera, bodies and props; then the audio character, the HUD, suggested mechanics, the packs the resolver ranks first, and the runtimes it is proven on. A kind changes no rule of play (changesPlay is always false); the look judge's contact sheet (sheet) is its only check. A taste change from the creator changes a default here, never a check. Keys of the per-runtime objects are runtime ids (three, forge, vista, godot); the profile is inside. The per-runtime keys of world, camera and bodies are the four runtime ids (a new runtime adds its id here).",
+  "type": "object",
+  "required": [
+    "id",
+    "label",
+    "feel",
+    "changesPlay",
+    "look",
+    "runtimes",
+    "state"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "feel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 400,
+      "description": "The look in plain words (never a genre: racing or tycoon is a loop with mechanics)."
+    },
+    "references": {
+      "type": "array",
+      "maxItems": 12,
+      "description": "Games it looks like (names, or objects with a year and a note).",
+      "items": {
+        "anyOf": [
+          {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "year": {
+                "type": "integer",
+                "minimum": 1970,
+                "maximum": 2100
+              },
+              "note": {
+                "type": "string",
+                "maxLength": 200
+              }
+            }
+          }
+        ]
+      }
+    },
+    "changesPlay": {
+      "const": false
+    },
+    "look": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "$ref": "#/$defs/runtimeKey"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "preset"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "profile": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "preset": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+            "description": "A look the runtime lists."
+          },
+          "time": {
+            "enum": [
+              "day",
+              "golden",
+              "dusk",
+              "night"
+            ]
+          },
+          "style": {
+            "enum": [
+              "pixel",
+              "drawn"
+            ],
+            "description": "flat-2d: the picture standard."
+          },
+          "plane": {
+            "enum": [
+              "top",
+              "side"
+            ],
+            "description": "flat-2d: the default plane."
+          },
+          "alternates": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "required": [
+                "preset"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "preset": {
+                  "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+                },
+                "time": {
+                  "enum": [
+                    "day",
+                    "golden",
+                    "dusk",
+                    "night"
+                  ]
+                },
+                "why": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              }
+            }
+          },
+          "values": {
+            "type": "object",
+            "description": "Look values over the preset's (each a look.* slot)."
+          }
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "type": "string",
+          "maxLength": 60
+        }
+      },
+      "patternProperties": {
+        "^(three|forge|vista|godot)$": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "templates": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+              }
+            },
+            "default": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+            },
+            "preset": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "A world preset file in the runtime."
+            },
+            "values": {
+              "type": "object",
+              "description": "World values over the template's layout (config/world.json: its ceiling, ground, sky band), each a world.* slot. Create merges them as it writes the game's world."
+            },
+            "notes": {
+              "type": "string",
+              "maxLength": 400
+            }
+          }
+        }
+      }
+    },
+    "camera": {
+      "type": "object",
+      "required": [
+        "default"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "default": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "The rig this kind defaults to when the creator's words and the runtime leave it open."
+        }
+      },
+      "patternProperties": {
+        "^(three|forge|vista|godot)$": {
+          "type": "object",
+          "description": "The runtime's camera values for this kind (distance, height, fov)."
+        }
+      }
+    },
+    "bodies": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "set": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "physics": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "enemies": {
+          "description": "The enemy bodies, per runtime or as a list."
+        }
+      },
+      "patternProperties": {
+        "^(three|forge|vista|godot)$": {
+          "type": "array",
+          "maxItems": 24,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "description": "Body ids (library assets) per runtime."
+        }
+      }
+    },
+    "props": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "maxItems": 40,
+        "items": {
+          "type": "string",
+          "maxLength": 120
+        }
+      },
+      "description": "Prop ids per runtime."
+    },
+    "audio": {
+      "type": "object",
+      "description": "Audio character: words, gf-audio presets per sound, ambient, bus levels (never louder than the creator-approved levels).",
+      "properties": {
+        "character": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "hud": {
+      "type": "object",
+      "description": "The HUD's theme values (accent, panel, text, font, radius)."
+    },
+    "mechanics": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Suggestions a pitch starts from when the creator's actions leave room; never imposed over their words.",
+      "properties": {
+        "suggested": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          }
+        },
+        "why": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "packs": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9.-]{0,39}$"
+      },
+      "description": "The packs the resolver ranks first."
+    },
+    "runtimes": {
+      "type": "object",
+      "description": "Where it is proven, per runtime: state.tested means a verified example (the evidence), exists means the look is there but no game proves it. A runtime missing here has no look for this kind: allowed, said as a finding, proven by the game that wants it.",
+      "propertyNames": {
+        "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "state"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "profile": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "state": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state"
+          },
+          "toProve": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "sheet": {
+      "type": "object",
+      "description": "What the look judge's contact sheet renders for this kind."
+    },
+    "state": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state",
+      "description": "The preset as a whole: exists when it has a look on a runtime, tested when one runtime proves it, open when a pitch may offer it. The creator's review of the initial eight is recorded in note and does not close a kind."
+    }
+  },
+  "$defs": {
+    "runtimeKey": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "A runtime id (never a profile's name: the profile goes inside)."
+    }
+  }
+}

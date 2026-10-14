@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "block-hex",
+ "pack": "kenney-platformer-kit",
+ "file": "block-hex.glb",
+ "sha256": "cff9b55c2c2ae5bdee1954699e89dcd1ddea4f14f51bbad6615f310c304591ff",
+ "bytes": 19672,
+ "preview": "previews/block-hex.png",
+ "from": "kenney:platformer-kit/block-grass-low-hexagon; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low hexagon stepping stone",
+ "tags": [
+  "arena",
+  "block",
+  "platform",
+  "hex"
+ ],
+ "use": {
+  "size": [
+   2.2,
+   1,
+   2.54
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 1,
+   "height": 1,
+   "offset": [
+    0,
+    0.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19672,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5ac487",
+     "#ea9168",
+     "#d9835c",
+     "#c77451",
+     "#47b07e",
+     "#339c75",
+     "#50ba83",
+     "#299270"
+    ],
+    "saturation": 0.567,
+    "value": 0.558,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.484
+     },
+     {
+      "hue": "green",
+      "share": 0.379
+     },
+     {
+      "hue": "cyan",
+      "share": 0.137
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.75,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "c52c1b2d57e9e962821b8e5933e3e865f0bedaa576f9af88874840f8c20ed093",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

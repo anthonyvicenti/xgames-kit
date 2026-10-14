@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "tv",
+ "pack": "kenney-furniture-kit",
+ "file": "tv.glb",
+ "sha256": "f953f035c3a6a7e2cda47914bc8aaba20564b8db3e094236cee5a8d20d653392",
+ "bytes": 3724,
+ "preview": "previews/tv.png",
+ "from": "kenney:furniture-kit/televisionModern; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a flat-screen television",
+ "tags": [
+  "office",
+  "screen",
+  "tv"
+ ],
+ "use": {
+  "size": [
+   1.37,
+   0.909,
+   0.257
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.37,
+    0.91,
+    0.257
+   ],
+   "offset": [
+    0,
+    0.455,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3724,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#96a7a7",
+     "#dfeaec"
+    ],
+    "saturation": 0.143,
+    "value": 0.714,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.67
+     },
+     {
+      "hue": "cyan",
+      "share": 0.33
+     }
+    ],
+    "grey": 0.67
+   },
+   "trianglesPerMetre": 4.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "d89519ad0a5f28b5b0dccb0d83209dccf610cda959578238dd21bbf9e219cfc6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

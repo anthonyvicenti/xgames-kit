@@ -1,0 +1,127 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-shield-round",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-shield-round.glb",
+ "sha256": "cba1eb80a04fbe351f8f912cb698379d4d11852fe26069cd5a5361661d8a250f",
+ "bytes": 45392,
+ "preview": "previews/kaykit-shield-round.png",
+ "from": "shield_round.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Round_Shield (handslot.l)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round wooden shield with a steel rim",
+ "tags": [
+  "shield",
+  "offhand",
+  "block",
+  "kaykit",
+  "round"
+ ],
+ "use": {
+  "size": [
+   0.662,
+   0.662,
+   0.249
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.331,
+   -0.331,
+   -0.109
+  ],
+  "grip": {
+   "position": [
+    -0.0073,
+    0.0738,
+    0.078
+   ],
+   "quaternion": [
+    -0.4909,
+    0.5089,
+    0.5089,
+    0.4909
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 284,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 284,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 45392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#788287",
+     "#818b90",
+     "#747d82",
+     "#70797e",
+     "#7b858b",
+     "#7b8589",
+     "#727b7f",
+     "#899499"
+    ],
+    "saturation": 0.143,
+    "value": 0.495,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.798
+     },
+     {
+      "hue": "orange",
+      "share": 0.111
+     },
+     {
+      "hue": "brown",
+      "share": 0.091
+     }
+    ],
+    "grey": 0.798
+   },
+   "trianglesPerMetre": 17.84,
+   "texelsPerMetre": 98,
+   "texturedShare": 0.733,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/shield_round.gltf",
+  "sha256": "ac502d8b193da7b1224139e3b825f856ec9fa15cd5aa6ca10295cc927402c275",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Round_Shield (handslot.l)"
+ }
+}

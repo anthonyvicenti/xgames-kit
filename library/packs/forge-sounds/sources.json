@@ -1,0 +1,2349 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "bell-toll": {
+   "origin": "gf-forge library sounds/bell-toll.ogg",
+   "ids": [
+    "wave-start"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.763,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.2,
+     "soundMaxLufs": -12.6,
+     "activeLufs": -21.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.6,
+      "samplePeakDb": -1.2,
+      "truePeakDb": -1.2,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "body-fall": {
+   "origin": "gf-forge library sounds/body-fall.ogg",
+   "ids": [
+    "player-death"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.527,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -10,
+     "activeLufs": -16.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -10,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "bone-crack-0": {
+   "origin": "gf-forge library sounds/bone-crack-0.ogg",
+   "ids": [
+    "bone-break",
+    "bone-shatter"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.251,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -5.3,
+     "soundMaxLufs": -16.8,
+     "activeLufs": -18.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.8,
+      "samplePeakDb": -5.3,
+      "truePeakDb": -4.3,
+      "hfRatio": 0.227
+     }
+    }
+   ]
+  },
+  "bone-crack-1": {
+   "origin": "gf-forge library sounds/bone-crack-1.ogg",
+   "ids": [
+    "bone-break"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.242,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.5,
+     "soundMaxLufs": -17.7,
+     "activeLufs": -19.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 30% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -17.7,
+      "samplePeakDb": -3.5,
+      "truePeakDb": -3.5,
+      "hfRatio": 0.304
+     }
+    }
+   ]
+  },
+  "bone-crunch-0": {
+   "origin": "gf-forge library sounds/bone-crunch-0.ogg",
+   "ids": [
+    "bone-break",
+    "bone-shatter"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.335,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.9,
+     "soundMaxLufs": -16.1,
+     "activeLufs": -18.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.1,
+      "samplePeakDb": -2.9,
+      "truePeakDb": -2.9,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "bone-crunch-1": {
+   "origin": "gf-forge library sounds/bone-crunch-1.ogg",
+   "ids": [
+    "bone-break",
+    "bone-shatter"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.321,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.7,
+     "soundMaxLufs": -16.8,
+     "activeLufs": -20.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.8,
+      "samplePeakDb": -2.7,
+      "truePeakDb": -2.7,
+      "hfRatio": 0.004
+     }
+    }
+   ]
+  },
+  "bone-knock-0": {
+   "origin": "gf-forge library sounds/bone-knock-0.ogg",
+   "ids": [
+    "melee-hit",
+    "bone-break"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.318,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -14.5,
+     "activeLufs": -20.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.5,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "bone-knock-1": {
+   "origin": "gf-forge library sounds/bone-knock-1.ogg",
+   "ids": [
+    "melee-hit"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.318,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -14.4,
+     "activeLufs": -20.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.4,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "bone-rattle-0": {
+   "origin": "gf-forge library sounds/bone-rattle-0.ogg",
+   "ids": [
+    "bone-shatter",
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.142,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.4,
+     "soundMaxLufs": -20.7,
+     "activeLufs": -24.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 26% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -20.7,
+      "samplePeakDb": -1.4,
+      "truePeakDb": -1.3,
+      "hfRatio": 0.256
+     }
+    }
+   ]
+  },
+  "bone-rattle-2": {
+   "origin": "gf-forge library sounds/bone-rattle-2.ogg",
+   "ids": [
+    "bone-break",
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.138,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -18.2,
+     "activeLufs": -21.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 46% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.2,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0.461
+     }
+    }
+   ]
+  },
+  "bone-rattle-3": {
+   "origin": "gf-forge library sounds/bone-rattle-3.ogg",
+   "ids": [
+    "bone-break",
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.141,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.8,
+     "soundMaxLufs": -20.8,
+     "activeLufs": -26.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 41% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -20.8,
+      "samplePeakDb": -1.8,
+      "truePeakDb": -1.5,
+      "hfRatio": 0.413
+     }
+    }
+   ]
+  },
+  "bone-rattle-4": {
+   "origin": "gf-forge library sounds/bone-rattle-4.ogg",
+   "ids": [
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.112,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.4,
+     "soundMaxLufs": -23.3,
+     "activeLufs": -26.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -23.3,
+      "samplePeakDb": -1.4,
+      "truePeakDb": -1.4,
+      "hfRatio": 0.146
+     }
+    }
+   ]
+  },
+  "bone-rattle-8": {
+   "origin": "gf-forge library sounds/bone-rattle-8.ogg",
+   "ids": [
+    "bone-break",
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.119,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -21.5,
+     "activeLufs": -24.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 49% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -21.5,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0.485
+     }
+    }
+   ]
+  },
+  "bone-rattle-9": {
+   "origin": "gf-forge library sounds/bone-rattle-9.ogg",
+   "ids": [
+    "bone-shatter",
+    "enemy-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.102,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.4,
+     "soundMaxLufs": -20.3,
+     "activeLufs": -21.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 38% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -20.3,
+      "samplePeakDb": -1.4,
+      "truePeakDb": -1.4,
+      "hfRatio": 0.378
+     }
+    }
+   ]
+  },
+  "bone-snap": {
+   "origin": "gf-forge library sounds/bone-snap.ogg",
+   "ids": [
+    "bone-break",
+    "bone-shatter"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.155,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.4,
+     "soundMaxLufs": -17.6,
+     "activeLufs": -18.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 28% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -17.6,
+      "samplePeakDb": -3.4,
+      "truePeakDb": -3.2,
+      "hfRatio": 0.276
+     }
+    }
+   ]
+  },
+  "bones-rattle-long": {
+   "origin": "gf-forge library sounds/bones-rattle-long.ogg",
+   "ids": [
+    "enemy-emerge",
+    "enemy-windup"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.457,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.1,
+     "soundMaxLufs": -21.1,
+     "activeLufs": -22.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -21.1,
+      "samplePeakDb": -4.1,
+      "truePeakDb": -3.9,
+      "hfRatio": 0.19
+     }
+    }
+   ]
+  },
+  "boss-roar": {
+   "origin": "gf-forge library sounds/boss-roar.ogg",
+   "ids": [
+    "boss-roar"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.901,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.1,
+     "soundMaxLufs": -12.8,
+     "activeLufs": -16.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.8,
+      "samplePeakDb": -3.1,
+      "truePeakDb": -3,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "boss-slam-boom": {
+   "origin": "gf-forge library sounds/boss-slam-boom.ogg",
+   "ids": [
+    "boss-slam"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.901,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.3,
+     "soundMaxLufs": -14.3,
+     "activeLufs": -17.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.3,
+      "samplePeakDb": -3.3,
+      "truePeakDb": -3.3,
+      "hfRatio": 0.064
+     }
+    }
+   ]
+  },
+  "card-fan": {
+   "origin": "gf-forge library sounds/card-fan.ogg",
+   "ids": [
+    "card-reveal"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.736,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -14.5,
+     "activeLufs": -18.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.5,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.068
+     }
+    }
+   ]
+  },
+  "card-place": {
+   "origin": "gf-forge library sounds/card-place.ogg",
+   "ids": [
+    "card-select"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.71,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.2,
+     "soundMaxLufs": -16,
+     "activeLufs": -18
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16,
+      "samplePeakDb": -1.2,
+      "truePeakDb": -1.1,
+      "hfRatio": 0.087
+     }
+    }
+   ]
+  },
+  "card-slide": {
+   "origin": "gf-forge library sounds/card-slide.ogg",
+   "ids": [
+    "card-hover"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.611,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.5,
+     "soundMaxLufs": -17,
+     "activeLufs": -17.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -17,
+      "samplePeakDb": -1.5,
+      "truePeakDb": -1.5,
+      "hfRatio": 0.043
+     }
+    }
+   ]
+  },
+  "cloth": {
+   "origin": "gf-forge library sounds/cloth.ogg",
+   "ids": [
+    "weapon-switch"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.436,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -7.9,
+     "soundMaxLufs": -22.7,
+     "activeLufs": -25.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -22.7,
+      "samplePeakDb": -7.9,
+      "truePeakDb": -7.9,
+      "hfRatio": 0.014
+     }
+    }
+   ]
+  },
+  "coin-0": {
+   "origin": "gf-forge library sounds/coin-0.ogg",
+   "ids": [
+    "pickup-coin"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.379,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.5,
+     "soundMaxLufs": -19.9,
+     "activeLufs": -23.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 47% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -19.9,
+      "samplePeakDb": -3.5,
+      "truePeakDb": -3.3,
+      "hfRatio": 0.473
+     }
+    }
+   ]
+  },
+  "coin-1": {
+   "origin": "gf-forge library sounds/coin-1.ogg",
+   "ids": [
+    "pickup-coin"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.475,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.7,
+     "soundMaxLufs": -18.7,
+     "activeLufs": -22
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 59% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.7,
+      "samplePeakDb": -3.7,
+      "truePeakDb": -3.4,
+      "hfRatio": 0.59
+     }
+    }
+   ]
+  },
+  "death-grunt": {
+   "origin": "gf-forge library sounds/death-grunt.ogg",
+   "ids": [
+    "player-death"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.25,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -6.8,
+     "soundMaxLufs": -13.2,
+     "activeLufs": -17.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.2,
+      "samplePeakDb": -6.8,
+      "truePeakDb": -6.8,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "emerge-dirt": {
+   "origin": "gf-forge library sounds/emerge-dirt.ogg",
+   "ids": [
+    "enemy-emerge"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.742,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.2,
+     "soundMaxLufs": -14.8,
+     "activeLufs": -19.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 81% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -14.8,
+      "samplePeakDb": -4.2,
+      "truePeakDb": -3.5,
+      "hfRatio": 0.807
+     }
+    }
+   ]
+  },
+  "emerge-rubble": {
+   "origin": "gf-forge library sounds/emerge-rubble.ogg",
+   "ids": [
+    "enemy-emerge",
+    "boss-slam"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.614,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.2,
+     "soundMaxLufs": -22.3,
+     "activeLufs": -27.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -22.3,
+      "samplePeakDb": -4.2,
+      "truePeakDb": -4.2,
+      "hfRatio": 0.215
+     }
+    }
+   ]
+  },
+  "enemy-cast": {
+   "origin": "gf-forge library sounds/enemy-cast.ogg",
+   "ids": [
+    "enemy-cast"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.504,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -7,
+     "soundMaxLufs": -16.8,
+     "activeLufs": -19.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.8,
+      "samplePeakDb": -7,
+      "truePeakDb": -6.9,
+      "hfRatio": 0.045
+     }
+    }
+   ]
+  },
+  "evade-whoosh": {
+   "origin": "gf-forge library sounds/evade-whoosh.ogg",
+   "ids": [
+    "player-evade"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.408,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.1,
+     "soundMaxLufs": -16.6,
+     "activeLufs": -19.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.6,
+      "samplePeakDb": -3.1,
+      "truePeakDb": -3,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "grunt-0": {
+   "origin": "gf-forge library sounds/grunt-0.ogg",
+   "ids": [
+    "player-hurt"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.46,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -8.1,
+     "soundMaxLufs": -15.9,
+     "activeLufs": -18.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.9,
+      "samplePeakDb": -8.1,
+      "truePeakDb": -8,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "grunt-1": {
+   "origin": "gf-forge library sounds/grunt-1.ogg",
+   "ids": [
+    "player-hurt"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.48,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -7.8,
+     "soundMaxLufs": -16.4,
+     "activeLufs": -19.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.4,
+      "samplePeakDb": -7.8,
+      "truePeakDb": -7.8,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "grunt-2": {
+   "origin": "gf-forge library sounds/grunt-2.ogg",
+   "ids": [
+    "player-hurt"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.492,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -5.5,
+     "soundMaxLufs": -15.2,
+     "activeLufs": -19.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.2,
+      "samplePeakDb": -5.5,
+      "truePeakDb": -5.4,
+      "hfRatio": 0.046
+     }
+    }
+   ]
+  },
+  "heartbeat": {
+   "origin": "gf-forge library sounds/heartbeat.ogg",
+   "ids": [
+    "player-lowhealth"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.821,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.8,
+     "soundMaxLufs": -15.5,
+     "activeLufs": -20
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.5,
+      "samplePeakDb": -3.8,
+      "truePeakDb": -3.8,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "impact-bone-0": {
+   "origin": "gf-forge library sounds/impact-bone-0.ogg",
+   "ids": [
+    "impact-bone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.274,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -16,
+     "activeLufs": -21.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "impact-bone-1": {
+   "origin": "gf-forge library sounds/impact-bone-1.ogg",
+   "ids": [
+    "impact-bone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.274,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -15.9,
+     "activeLufs": -21
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.9,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "impact-bone-2": {
+   "origin": "gf-forge library sounds/impact-bone-2.ogg",
+   "ids": [
+    "impact-bone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.341,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -15.8,
+     "activeLufs": -22.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.8,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "impact-stone-0": {
+   "origin": "gf-forge library sounds/impact-stone-0.ogg",
+   "ids": [
+    "impact-stone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.951,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -10.5,
+     "activeLufs": -19.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -10.5,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1,
+      "hfRatio": 0.002
+     }
+    }
+   ]
+  },
+  "impact-stone-1": {
+   "origin": "gf-forge library sounds/impact-stone-1.ogg",
+   "ids": [
+    "impact-stone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.892,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -10.9,
+     "activeLufs": -20
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -10.9,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "impact-stone-2": {
+   "origin": "gf-forge library sounds/impact-stone-2.ogg",
+   "ids": [
+    "impact-stone"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.852,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -11.5,
+     "activeLufs": -19.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11.5,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "jump-push": {
+   "origin": "gf-forge library sounds/jump-push.ogg",
+   "ids": [
+    "player-jump"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.118,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -18.6,
+     "activeLufs": -22.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -18.6,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "land-thud": {
+   "origin": "gf-forge library sounds/land-thud.ogg",
+   "ids": [
+    "player-land",
+    "enemy-orb-impact"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.132,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -13.2,
+     "activeLufs": -17.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.2,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "metal-click": {
+   "origin": "gf-forge library sounds/metal-click.ogg",
+   "ids": [
+    "weapon-pistol-dry",
+    "weapon-mg-dry"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.457,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -6.9,
+     "soundMaxLufs": -24.5,
+     "activeLufs": -26.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 51% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -24.5,
+      "samplePeakDb": -6.9,
+      "truePeakDb": -6.8,
+      "hfRatio": 0.513
+     }
+    }
+   ]
+  },
+  "metal-latch": {
+   "origin": "gf-forge library sounds/metal-latch.ogg (re-ingested 2026-10-13: node builder/art/cli.mjs ingest <the kit's old metal-latch.ogg, sha256 ba9ba60b…> --pack forge-sounds --category sound --replace --peak -1)",
+   "ids": [
+    "weapon-pistol-reload",
+    "weapon-shotgun-dry",
+    "weapon-mg-shot",
+    "weapon-switch"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.276,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.2,
+     "soundMaxLufs": -14.2,
+     "activeLufs": -16.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 79% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -14.2,
+      "samplePeakDb": -1.2,
+      "truePeakDb": -0.5,
+      "hfRatio": 0.785
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "ba9ba60b172b3ebc131a940f25793cd2e207aca7af73dc80d637277f060f1708",
+    "date": "2026-10-13"
+   }
+  },
+  "mg-reload": {
+   "origin": "gf-forge library sounds/mg-reload.ogg",
+   "ids": [
+    "weapon-mg-reload"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.351,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.3,
+     "soundMaxLufs": -16.5,
+     "activeLufs": -22.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 30% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -16.5,
+      "samplePeakDb": -4.3,
+      "truePeakDb": -3.7,
+      "hfRatio": 0.3
+     }
+    }
+   ]
+  },
+  "mg-shot": {
+   "origin": "gf-forge library sounds/mg-shot.ogg",
+   "ids": [
+    "weapon-mg-shot"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.187,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.9,
+     "soundMaxLufs": -15.9,
+     "activeLufs": -18.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.9,
+      "samplePeakDb": -2.9,
+      "truePeakDb": -2.9,
+      "hfRatio": 0.114
+     }
+    }
+   ]
+  },
+  "night-crickets": {
+   "origin": "gf-forge library sounds/night-crickets.ogg",
+   "ids": [
+    "ambient-night"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 7.001,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -14.8,
+     "soundMaxLufs": -22.5,
+     "activeLufs": -26.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 44% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -22.5,
+      "samplePeakDb": -14.8,
+      "truePeakDb": -14.6,
+      "hfRatio": 0.435
+     }
+    }
+   ]
+  },
+  "night-wind": {
+   "origin": "gf-forge library sounds/night-wind.ogg",
+   "ids": [
+    "ambient-night"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 7.005,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -5.8,
+     "soundMaxLufs": -14.9,
+     "activeLufs": -19.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.9,
+      "samplePeakDb": -5.8,
+      "truePeakDb": -5.8,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "orb-impact": {
+   "origin": "gf-forge library sounds/orb-impact.ogg",
+   "ids": [
+    "enemy-orb-impact"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.451,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -6,
+     "soundMaxLufs": -18.3,
+     "activeLufs": -21.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 58% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.3,
+      "samplePeakDb": -6,
+      "truePeakDb": -5.8,
+      "hfRatio": 0.579
+     }
+    }
+   ]
+  },
+  "pistol-mag": {
+   "origin": "gf-forge library sounds/pistol-mag.ogg",
+   "ids": [
+    "weapon-pistol-reload"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.239,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.3,
+     "soundMaxLufs": -16.1,
+     "activeLufs": -17.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.1,
+      "samplePeakDb": -4.3,
+      "truePeakDb": -4.2,
+      "hfRatio": 0.13
+     }
+    }
+   ]
+  },
+  "pistol-shot": {
+   "origin": "gf-forge library sounds/pistol-shot.ogg",
+   "ids": [
+    "weapon-pistol-shot"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.443,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.9,
+     "soundMaxLufs": -13.6,
+     "activeLufs": -18.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.6,
+      "samplePeakDb": -2.9,
+      "truePeakDb": -2.9,
+      "hfRatio": 0.022
+     }
+    }
+   ]
+  },
+  "punch-heavy-0": {
+   "origin": "gf-forge library sounds/punch-heavy-0.ogg",
+   "ids": [
+    "boss-slam"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.666,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -9.6,
+     "activeLufs": -14.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -9.6,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "punch-heavy-1": {
+   "origin": "gf-forge library sounds/punch-heavy-1.ogg",
+   "ids": [
+    "melee-hit"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.541,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.2,
+     "soundMaxLufs": -9.6,
+     "activeLufs": -14.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -9.6,
+      "samplePeakDb": -1.2,
+      "truePeakDb": -1.2,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "punch-heavy-2": {
+   "origin": "gf-forge library sounds/punch-heavy-2.ogg",
+   "ids": [
+    "melee-hit"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.472,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -9.3,
+     "activeLufs": -14.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -9.3,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "shotgun-body": {
+   "origin": "gf-forge library sounds/shotgun-body.ogg",
+   "ids": [
+    "weapon-shotgun-shot"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.62,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.8,
+     "soundMaxLufs": -12.7,
+     "activeLufs": -18.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.7,
+      "samplePeakDb": -2.8,
+      "truePeakDb": -2.8,
+      "hfRatio": 0.04
+     }
+    }
+   ]
+  },
+  "shotgun-boom": {
+   "origin": "gf-forge library sounds/shotgun-boom.ogg",
+   "ids": [
+    "weapon-shotgun-shot"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.273,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.8,
+     "soundMaxLufs": -12.2,
+     "activeLufs": -18.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.2,
+      "samplePeakDb": -2.8,
+      "truePeakDb": -2.8,
+      "hfRatio": 0.024
+     }
+    }
+   ]
+  },
+  "shotgun-shell-0": {
+   "origin": "gf-forge library sounds/shotgun-shell-0.ogg",
+   "ids": [
+    "weapon-shotgun-reload"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.602,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.7,
+     "soundMaxLufs": -18.2,
+     "activeLufs": -21.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 73% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.2,
+      "samplePeakDb": -3.7,
+      "truePeakDb": -3.2,
+      "hfRatio": 0.73
+     }
+    }
+   ]
+  },
+  "shotgun-shell-1": {
+   "origin": "gf-forge library sounds/shotgun-shell-1.ogg",
+   "ids": [
+    "weapon-shotgun-reload"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.681,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.7,
+     "soundMaxLufs": -18.2,
+     "activeLufs": -21.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 69% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.2,
+      "samplePeakDb": -4.7,
+      "truePeakDb": -4.5,
+      "hfRatio": 0.694
+     }
+    }
+   ]
+  },
+  "skeleton-roar": {
+   "origin": "gf-forge library sounds/skeleton-roar.ogg",
+   "ids": [
+    "boss-roar"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.736,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.1,
+     "soundMaxLufs": -16.8,
+     "activeLufs": -19.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.8,
+      "samplePeakDb": -4.1,
+      "truePeakDb": -4.1,
+      "hfRatio": 0.056
+     }
+    }
+   ]
+  },
+  "step-stone-0": {
+   "origin": "gf-forge library sounds/step-stone-0.ogg",
+   "ids": [
+    "player-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.112,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -19.5,
+     "activeLufs": -22.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -19.5,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.9,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "step-stone-1": {
+   "origin": "gf-forge library sounds/step-stone-1.ogg",
+   "ids": [
+    "player-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.118,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -21,
+     "activeLufs": -25.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -21,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "step-stone-2": {
+   "origin": "gf-forge library sounds/step-stone-2.ogg",
+   "ids": [
+    "player-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.132,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -21,
+     "activeLufs": -25.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -21,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0.002
+     }
+    }
+   ]
+  },
+  "step-stone-3": {
+   "origin": "gf-forge library sounds/step-stone-3.ogg",
+   "ids": [
+    "player-step",
+    "player-land"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.112,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -20.2,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -20.2,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "step-stone-4": {
+   "origin": "gf-forge library sounds/step-stone-4.ogg",
+   "ids": [
+    "player-step"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.132,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1,
+     "soundMaxLufs": -19.4,
+     "activeLufs": -22.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -19.4,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "swing-0": {
+   "origin": "gf-forge library sounds/swing-0.ogg",
+   "ids": [
+    "melee-swing"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.178,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -2.9,
+     "soundMaxLufs": -14.3,
+     "activeLufs": -16.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.3,
+      "samplePeakDb": -2.9,
+      "truePeakDb": -2.9,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "swing-1": {
+   "origin": "gf-forge library sounds/swing-1.ogg",
+   "ids": [
+    "melee-swing"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.123,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.2,
+     "soundMaxLufs": -15.9,
+     "activeLufs": -16.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.9,
+      "samplePeakDb": -3.2,
+      "truePeakDb": -3.2,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "swing-2": {
+   "origin": "gf-forge library sounds/swing-2.ogg",
+   "ids": [
+    "melee-swing"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.176,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.1,
+     "soundMaxLufs": -16,
+     "activeLufs": -18.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16,
+      "samplePeakDb": -3.1,
+      "truePeakDb": -3.1,
+      "hfRatio": 0.002
+     }
+    }
+   ]
+  },
+  "swing-light-0": {
+   "origin": "gf-forge library sounds/swing-light-0.ogg",
+   "ids": [
+    "enemy-attack"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.12,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3,
+     "soundMaxLufs": -18.5,
+     "activeLufs": -19.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -18.5,
+      "samplePeakDb": -3,
+      "truePeakDb": -3,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "swing-light-1": {
+   "origin": "gf-forge library sounds/swing-light-1.ogg",
+   "ids": [
+    "enemy-attack"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.068,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.3,
+     "soundMaxLufs": -19.2,
+     "activeLufs": -20.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -19.2,
+      "samplePeakDb": -3.3,
+      "truePeakDb": -3.3,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "thud-0": {
+   "origin": "gf-forge library sounds/thud-0.ogg",
+   "ids": [
+    "player-hurt"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.451,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -10.7,
+     "activeLufs": -14.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -10.7,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "thud-1": {
+   "origin": "gf-forge library sounds/thud-1.ogg",
+   "ids": [
+    "player-hurt"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.405,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -10.6,
+     "activeLufs": -14.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -10.6,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "ui-click": {
+   "origin": "gf-forge library sounds/ui-click.ogg",
+   "ids": [
+    "ui-click"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.012,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -23.5,
+     "activeLufs": -23.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -23.5,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.024
+     }
+    }
+   ]
+  },
+  "wand-cast": {
+   "origin": "gf-forge library sounds/wand-cast.ogg",
+   "ids": [
+    "weapon-wand-cast"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.506,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -3.1,
+     "soundMaxLufs": -15,
+     "activeLufs": -19.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15,
+      "samplePeakDb": -3.1,
+      "truePeakDb": -3.1,
+      "hfRatio": 0.225
+     }
+    }
+   ]
+  },
+  "wave-clear": {
+   "origin": "gf-forge library sounds/wave-clear.ogg",
+   "ids": [
+    "wave-end"
+   ],
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.177,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -4.1,
+     "soundMaxLufs": -12.1,
+     "activeLufs": -15.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.1,
+      "samplePeakDb": -4.1,
+      "truePeakDb": -4.1,
+      "hfRatio": 0.024
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 73,
+   "outlineShare": 0
+  },
+  "licenceText": "Every file is CC0 1.0: Kenney's packs (License.txt in each zip) and OpenGameArt pages that list CC0. Each asset names its page and author."
+ }
+}

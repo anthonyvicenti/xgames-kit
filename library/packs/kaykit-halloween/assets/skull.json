@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "skull",
+ "pack": "kaykit-halloween",
+ "file": "skull.glb",
+ "sha256": "8336e5f7e8109454aae156309a60a8f4d55ee69ed82f2fa44131fcda2d7a2e6f",
+ "bytes": 13220,
+ "preview": "previews/skull.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.2475 to metres (KayKit units ×0.75 × 0.33), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skull",
+ "tags": [
+  "ruins",
+  "skull",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.227,
+   0.222,
+   0.225
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.114,
+   0,
+   -0.112
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.227,
+    0.222,
+    0.225
+   ],
+   "offset": [
+    0,
+    0.111,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 344,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 344,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13220,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#ebd4be",
+     "#eedac7",
+     "#e8cfb6",
+     "#d9af86",
+     "#fbf4ef",
+     "#e6c9ad",
+     "#f1e1d1",
+     "#f7ede4"
+    ],
+    "saturation": 0.537,
+    "value": 0.816,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.851
+     },
+     {
+      "hue": "grey",
+      "share": 0.149
+     }
+    ],
+    "grey": 0.149
+   },
+   "trianglesPerMetre": 41.7,
+   "texelsPerMetre": 196,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/skull.gltf",
+  "sha256": "d8660d809db38d5b8279e01b1014eb58a2302e3d18316dd4ce784eb7431ef36e",
+  "retrieved": "2026-10-09",
+  "modified": "×0.2475 to metres (KayKit units ×0.75 × 0.33), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

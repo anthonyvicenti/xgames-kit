@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-torch-wall",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-torch-wall.glb",
+ "sha256": "6bf9b9fe9823340c0f7601f5a779faf5f4058cf0abfd02beac25dbf6382c1412",
+ "bytes": 55816,
+ "preview": "previews/dungeon-torch-wall.png",
+ "from": "torch_mounted.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a torch in a wall mount",
+ "tags": [
+  "dungeon",
+  "torch",
+  "light",
+  "fire",
+  "wall-decor",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   0.413,
+   0.797,
+   0.462
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -0.206,
+   -0.286,
+   0
+  ],
+  "light": {
+   "at": [
+    0,
+    0.448,
+    0.231
+   ],
+   "color": "#ffb259",
+   "range": 4
+  },
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 278,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 278,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 55816,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#899499",
+     "#838e94",
+     "#98a4a9",
+     "#767f84",
+     "#7b8589",
+     "#737c81",
+     "#8a959b",
+     "#7e888d"
+    ],
+    "saturation": 0.113,
+    "value": 0.504,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.895
+     },
+     {
+      "hue": "orange",
+      "share": 0.08
+     }
+    ],
+    "grey": 0.895
+   },
+   "trianglesPerMetre": 19.55,
+   "texelsPerMetre": 110,
+   "texturedShare": 0.657,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/torch_mounted.gltf.glb",
+  "sha256": "a617c159e02932db48ca81ec46f1f100acc8904fb6ece43e919d2f93c13950e9",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B09",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "battle-royale",
+  "rank": 9,
+  "row": "Battle royale",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "battle royale for like 20 people, parachute in, loot guns and armor, the storm closes in, last squad standing wins",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "twenty",
+   "type": "players",
+   "must": "about twenty players in one match"
+  },
+  {
+   "id": "drop",
+   "type": "mechanic",
+   "must": "parachuting in"
+  },
+  {
+   "id": "loot",
+   "type": "mechanic",
+   "must": "guns and armour found on the ground"
+  },
+  {
+   "id": "storm",
+   "type": "rule",
+   "must": "a storm that closes in"
+  },
+  {
+   "id": "last-squad",
+   "type": "rule",
+   "must": "the last squad standing wins"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

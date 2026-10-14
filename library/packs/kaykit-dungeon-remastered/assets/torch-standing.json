@@ -1,0 +1,139 @@
+{
+ "assetVersion": 1,
+ "id": "torch-standing",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "torch-standing.glb",
+ "sha256": "b103dcd86fe828d877bd86baa297bb7dbe905779f76166e77372a1bb41fd4195",
+ "bytes": 12020,
+ "preview": "previews/torch-standing.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; ×1.8 to metres (KayKit units ×0.75 × 2.4), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 1.945, 0…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a lit torch on a tall pole (the dungeon torch at 2.4×, about 2 m)",
+ "tags": [
+  "ruins",
+  "torch",
+  "standing"
+ ],
+ "use": {
+  "size": [
+   0.991,
+   2.026,
+   0.991
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.495,
+   0,
+   -0.495
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.991,
+    2.026,
+    0.991
+   ],
+   "offset": [
+    0,
+    1.013,
+    0
+   ]
+  },
+  "sockets": [
+   {
+    "name": "flame",
+    "node": "socket_flame",
+    "position": [
+     0,
+     1.945,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 270,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 270,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12020,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#8e999f",
+     "#838e93",
+     "#7a8388",
+     "#747d82",
+     "#65574e",
+     "#6d5f58",
+     "#95a4ae",
+     "#6e777c"
+    ],
+    "saturation": 0.206,
+    "value": 0.528,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.855
+     },
+     {
+      "hue": "orange",
+      "share": 0.096
+     },
+     {
+      "hue": "yellow",
+      "share": 0.049
+     }
+    ],
+    "grey": 0.855
+   },
+   "trianglesPerMetre": 7.75,
+   "texelsPerMetre": 54,
+   "texturedShare": 0.734,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/torch_lit.gltf.glb",
+  "sha256": "45fcfeb3b129722019d42aef0acae8f6c5f8f6dbdf5d3346ceea1f084b69b396",
+  "retrieved": "2026-10-09",
+  "modified": "×1.8 to metres (KayKit units ×0.75 × 2.4), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 1.945, 0 (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

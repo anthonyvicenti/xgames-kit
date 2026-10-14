@@ -1,0 +1,69 @@
+{
+ "packVersion": 1,
+ "id": "kaykit-halloween",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "KayKit Halloween Bits 1.0",
+ "describe": "KayKit Halloween Bits 1.0: chunky stylised low-poly with one shared texture per set.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kay Lousberg (www.kaylousberg.com)",
+  "url": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "file": "library/packs/kaykit-halloween/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0",
+  "commit": "6dc69bf6b2fa766a985754f35ec6a0324090e6c6",
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "rebuild": "the old kit's scenic art tool (art-kaykit.mjs --fetch) or the forge library tools: KayKit units x 0.75 = metres"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 8,
+   "hues": [
+    "#798388",
+    "#66584f",
+    "#808b90",
+    "#707a7e",
+    "#5c4f48",
+    "#596065",
+    "#6e6059",
+    "#e3c3a4",
+    "#889398",
+    "#f1e1d1",
+    "#e6c9ad",
+    "#e0bc9a"
+   ],
+   "saturation": 0.117,
+   "value": 0.505,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.763
+    },
+    {
+     "hue": "orange",
+     "share": 0.227
+    }
+   ],
+   "grey": 1
+  },
+  "trianglesPerMetre": 8.68,
+  "texelsPerMetre": 47,
+  "texturedShare": 0.538,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 24,
+ "validators": [
+  "budget",
+  "picture-check"
+ ]
+}

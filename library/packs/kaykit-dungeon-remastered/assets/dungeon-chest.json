@@ -1,0 +1,141 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-chest",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-chest.glb",
+ "sha256": "c91d551349290e74ae95b0081003d0e3ad40536cb722f4e41e1ccd60a9dc6ef6",
+ "bytes": 66508,
+ "preview": "previews/dungeon-chest.png",
+ "from": "chest.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, its lid kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden treasure chest whose lid opens on its hinge",
+ "tags": [
+  "dungeon",
+  "chest",
+  "loot",
+  "treasure",
+  "container"
+ ],
+ "use": {
+  "size": [
+   1.275,
+   0.975,
+   1.084
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.5,
+   1
+  ],
+  "parts": [
+   {
+    "node": "chest_lid",
+    "hinge": [
+     0,
+     0.375,
+     -0.441
+    ],
+    "axis": [
+     1,
+     0,
+     0
+    ],
+    "range": [
+     0,
+     -110
+    ]
+   }
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.275,
+    0.975,
+    1.084
+   ],
+   "offset": [
+    0,
+    0.488,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 728,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 728,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 66508,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#93533f",
+     "#965541",
+     "#854533",
+     "#9a5944",
+     "#92513d",
+     "#596064",
+     "#a15f48",
+     "#a26149"
+    ],
+    "saturation": 0.32,
+    "value": 0.45,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.424
+     },
+     {
+      "hue": "brown",
+      "share": 0.332
+     },
+     {
+      "hue": "grey",
+      "share": 0.24
+     }
+    ],
+    "grey": 0.24
+   },
+   "trianglesPerMetre": 8.18,
+   "texelsPerMetre": 51,
+   "texturedShare": 0.395,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/chest.glb",
+  "sha256": "f72fd2201cd42ad399928a0b7bcc34d5b0e6d0624aeaf824fef81852109955f8",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, its lid kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

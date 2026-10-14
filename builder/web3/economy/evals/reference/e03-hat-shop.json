@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Hat Shop",
+  "prompt": "A shop that sells three hats for 0.05 SOL each; the gold one is limited to 100.",
+  "currency": "sol",
+  "tokens": [{ "key": "sol", "source": "sol" }],
+  "collection": { "name": "Hat Shop" },
+  "items": [
+    { "key": "red-hat", "name": "Red Hat", "price": 0.05 },
+    { "key": "blue-hat", "name": "Blue Hat", "price": 0.05 },
+    { "key": "gold-hat", "name": "Gold Hat", "price": 0.05, "supply": 100, "rarity": "Legendary" }
+  ],
+  "scenario": { "days": 30, "perDay": { "item:red-hat": 20, "item:blue-hat": 20, "item:gold-hat": 3 } }
+}

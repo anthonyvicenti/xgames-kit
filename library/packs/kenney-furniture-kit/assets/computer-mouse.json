@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "computer-mouse",
+ "pack": "kenney-furniture-kit",
+ "file": "computer-mouse.glb",
+ "sha256": "473c8d67482c93b3482cc4dcf379c2d691e58ad012447db44414e2ddfe2db733",
+ "bytes": 2616,
+ "preview": "previews/computer-mouse.png",
+ "from": "kenney:furniture-kit/computerMouse; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a computer mouse",
+ "tags": [
+  "office",
+  "decor",
+  "computer",
+  "mouse"
+ ],
+ "use": {
+  "size": [
+   0.099,
+   0.047,
+   0.17
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 71,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 71,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2616,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#96a7a7"
+    ],
+    "saturation": 0.088,
+    "value": 0.622,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 38.03,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "d3ad1a923f0f7707ef367bb969eb94c9076e211c98c830ba52e133fadc5cdfc0",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

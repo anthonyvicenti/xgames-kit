@@ -1,0 +1,11 @@
+hero.glb — Quaternius "Universal Animation Library" mannequin and animations
+License: CC0 1.0 Universal (public domain dedication). https://creativecommons.org/publicdomain/zero/1.0/
+Source page (states "Free to use in personal, educational and commercial projects. (CC0 License)"):
+  https://quaternius.itch.io/universal-animation-library
+  https://quaternius.com/packs/universalanimationlibrary.html
+File used: public/AnimationLibrary.glb from https://github.com/pmndrs/ecctrl at commit
+  e2cab804f9f15661a642e76f52d09f0b2db63f35 (sha256 1b7bf67866360665426bb99e4c71bd619f19b408453c24e30f0c3071601eee5c),
+  whose NOTICE says: "Character animations in the example are based on Universal Animation Library by Quaternius, released under CC0."
+Processing (tools/build-character.mjs): kept 14 of 46 clips, resampled/deduplicated keyframes, meshopt compression.
+Materials in the file are replaced at runtime (src/hero.js); no textures are shipped.
+Credit (not required): Quaternius.

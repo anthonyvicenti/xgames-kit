@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-view="loading">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>XGames.fun Studio</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<script>
+  // The theme before the first paint: ?theme=light|dark wins, then the person's choice (the header's switch), else dark.
+  try { const q = new URLSearchParams(location.search).get('theme'), s = localStorage.getItem('gamesfun.theme'), t = q || s; if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch {}
+</script>
+<link rel="stylesheet" href="studio.css">
+<script type="module" src="studio.js"></script>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">
+    <span class="xg-mark" aria-label="XGames.fun">XGames<span>.fun</span></span>
+    <span class="brand-label">Studio</span>
+  </div>
+  <div class="project">
+    <button type="button" id="home-btn" class="ghost small" title="Your games, and a new one">All games</button>
+    <div class="game-title" id="game-title">Loading…</div>
+  </div>
+  <nav class="links" aria-label="Game">
+    <span class="badge" id="network" title="Solana network for this game (gamesfun.json)" hidden></span>
+    <a id="open-game" class="btn ghost game-only" href="/game/" target="_blank" rel="noopener">Open game<span class="ext" aria-hidden="true">↗</span></a>
+    <a id="open-friends" class="btn ghost game-only" href="/game/gf/mp/" target="_blank" rel="noopener">Play with friends<span class="ext" aria-hidden="true">↗</span></a>
+    <button type="button" id="wallet-btn" class="ghost" hidden>Connect wallet</button>
+    <button type="button" id="theme-btn" class="ghost icon" title="Switch to the light theme" aria-label="Switch to the light theme"><span aria-hidden="true">◐</span></button>
+  </nav>
+</header>
+<main class="layout">
+  <!-- no game open: the start page (builder/studio/start.js) -->
+  <section class="start" id="start" aria-label="Start"></section>
+  <!-- a game open: the conversation on the left (builder/studio/chat.js), the game and its tools on the right -->
+  <section class="chat" id="chat" aria-label="Conversation"></section>
+  <section class="product" aria-label="Your game">
+    <div class="product-bar">
+      <div class="tabs" role="tablist" id="tabs" aria-label="Tools"></div>
+      <!-- the flow's last step: a tool that declares `action` (e.g. Publish) gets a primary button here -->
+      <div class="product-actions" id="product-actions"></div>
+      <div class="preview-bar">
+        <label class="preview-pick"><span class="preview-label">Preview</span>
+          <select id="preview-mode">
+            <option value="/game/">The game (alone, with bots)</option>
+            <option value="/game/gf/mp/">Friends lobby (host here)</option>
+          </select>
+        </label>
+        <button type="button" id="preview-reload" class="ghost small" title="Reload the preview">Reload</button>
+        <span class="hint" id="preview-hint">Saves reload the game by themselves.</span>
+      </div>
+    </div>
+    <div class="product-body">
+      <div class="preview">
+        <div class="frame-wrap"><iframe id="preview" title="Game preview" src="about:blank" allow="autoplay; fullscreen; gamepad; clipboard-write"></iframe></div>
+        <div class="product-empty" id="product-empty" hidden></div>
+        <button type="button" class="preview-cover" title="Back to the game" aria-label="Back to the game"></button>
+      </div>
+      <aside class="inspector side" id="inspector" aria-label="Tool" hidden><!-- .side: the name tests/economy-shots.mjs scrolls to on a phone -->
+        <div class="inspector-head"><h2 id="inspector-title"></h2><button type="button" id="inspector-close" class="ghost icon small" title="Close the tool (the game gets the room)" aria-label="Close the tool">×</button></div>
+        <div class="panels" id="panels"></div>
+      </aside>
+    </div>
+  </section>
+</main>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+</body>
+</html>

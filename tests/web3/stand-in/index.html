@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stand-in game</title>
+<style>
+  body { margin: 0; font: 15px system-ui, sans-serif; background: #15171d; color: #eee; padding: 16px; }
+  .gf-econ { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+  .gf-econ button { padding: 8px 14px; border-radius: 8px; border: 0; background: #ff7a59; color: #111; font: inherit; }
+  .gf-econ button:disabled { opacity: .6; }
+  .gf-line em { opacity: .7; margin-right: 6px; } .err { color: #ff8a8a; }
+</style>
+</head>
+<body>
+<!-- A stand-in for a gf-three game's side of the host protocol (gf-three kit/net/host.js, CONTRACT §6g W2) until the
+     kit's kits/ carries it: it says gf:host-ready to its ancestors, takes gf:host / gf:wallet / gf:economy only from an
+     ancestor (and then only from the window that said gf:host), draws each offered action where its `where` says
+     (menu, pause, results as buttons; hud as lines with the gf:economy entry of the same id), and a click posts
+     gf:econ-action with its id. window.__seen keeps what it heard, for the tests. -->
+<h1>Stand-in game</h1>
+<section id="menu"><h2>Menu</h2><div class="gf-econ" data-where="menu"></div></section>
+<section id="hud"><h2>HUD</h2><div class="gf-econ" data-where="hud"></div></section>
+<section id="results"><h2>Results</h2><div class="gf-econ" data-where="results"></div></section>
+<p id="error" class="err"></p>
+<script>
+  const seen = window.__seen = { host: null, wallet: null, economy: null, hosts: 0, sent: [], from: null };
+  const ancestors = () => { const out = []; let w = window; for (let i = 0; i < 8 && w.parent && w.parent !== w; i++) { out.push(w.parent); w = w.parent; } return out; };
+  let hostWin = null;
+  addEventListener('message', (e) => {
+    const d = e.data;
+    if (!d || typeof d !== 'object' || !['gf:host', 'gf:wallet', 'gf:economy'].includes(d.type)) return;
+    if (!ancestors().includes(e.source)) return;
+    if (d.type === 'gf:host') { hostWin = e.source; seen.host = d; seen.hosts++; seen.from = e.origin; }
+    else if (e.source !== hostWin) return;
+    else if (d.type === 'gf:economy') seen.economy = d;
+    else seen.wallet = d;
+    draw();
+  });
+  const value = (id) => { const s = seen.economy; if (!s) return null; for (const k of ['balances', 'tickets', 'stakes', 'claimable']) { const x = (s[k] || []).find((v) => v.id === id); if (x) return x; } return null; };
+  function draw() {
+    const pending = new Set(seen.economy?.pending ?? []);
+    for (const strip of document.querySelectorAll('.gf-econ')) {
+      strip.textContent = '';
+      for (const a of (seen.host?.economy?.actions ?? []).filter((x) => x.where === strip.dataset.where)) {
+        if (a.where === 'hud') {
+          const v = value(a.id); if (!v) continue;
+          const row = document.createElement('div'); row.className = 'gf-line'; row.dataset.econ = a.id;
+          row.innerHTML = '<em></em><b></b>'; row.firstChild.textContent = a.label; row.lastChild.textContent = v.text || `${v.amount} ${v.symbol || ''}`;
+          strip.append(row); continue;
+        }
+        const b = document.createElement('button'); b.type = 'button'; b.dataset.econ = a.id; b.dataset.kind = a.kind;
+        b.textContent = pending.has(a.id) ? `${a.label}…` : a.price ? `${a.label} · ${a.price.amount} ${a.price.currency}` : a.label;
+        b.disabled = pending.has(a.id);
+        b.addEventListener('click', () => { seen.sent.push(a.id); hostWin.postMessage({ type: 'gf:econ-action', id: a.id }, '*'); });
+        strip.append(b);
+      }
+    }
+    document.getElementById('error').textContent = seen.economy?.error ?? '';
+  }
+  const hello = () => { for (const w of ancestors()) { try { w.postMessage({ type: 'gf:host-ready', v: 1 }, '*'); } catch {} } };
+  hello();
+  let n = 0; const t = setInterval(() => { if (hostWin || ++n > 40) clearInterval(t); else hello(); }, 1000);
+</script>
+</body>
+</html>

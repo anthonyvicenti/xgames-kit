@@ -1,0 +1,11 @@
+{
+  "base": "kart-loop",
+  "why": "The same class as car-strafes, for a camera: a row says Q and E turn the camera, and nothing turns it. Before gate C was widened (2026-10-13) a game's own row was never pressed, so a camera, cursor or mount row that did nothing passed like a car that strafed.",
+  "evidence": "builder/loop/evidence/2026-10-13-pa10-headless.json",
+  "patches": [
+    { "file": "config/game.json", "pointer": "/controls/more/3", "value": ["Q E", "turn the camera", "", "look"] }
+  ],
+  "mustFail": ["C"],
+  "measure": 13,
+  "detail": "the camera turned [0-9]°"
+}

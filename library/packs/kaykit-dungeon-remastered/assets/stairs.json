@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "stairs",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "stairs.glb",
+ "sha256": "d29e45106385e01581cf13629d98f3081aed2ffb8bf319661f0ea2d349f005d6",
+ "bytes": 17028,
+ "preview": "previews/stairs.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a flight of stone stairs",
+ "tags": [
+  "ruins",
+  "stairs"
+ ],
+ "use": {
+  "size": [
+   3.75,
+   3.825,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.875,
+   0,
+   0
+  ]
+ },
+ "budgets": {
+  "triangles": 358,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 358,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17028,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#7a8388",
+     "#838e93",
+     "#747d82",
+     "#8e999f",
+     "#6e777c",
+     "#4e5559",
+     "#545b5f",
+     "#677074"
+    ],
+    "saturation": 0.063,
+    "value": 0.505,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 2.66,
+   "texelsPerMetre": 28,
+   "texturedShare": 0.445,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/stairs.gltf.glb",
+  "sha256": "5ba16e5d919aaa8958435c4b73c1f8a94c98febeacf716faa1359f24e6b27d70",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

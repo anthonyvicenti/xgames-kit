@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Founder Passes",
+  "prompt": "Sell 1,000 soulbound founder passes at 0.5 USDC each; a pass lets its holder claim 5 GEMS a day from a rewards pool that mints 10,000 GEMS every week.",
+  "currency": "usdc",
+  "tokens": [
+    { "key": "usdc", "source": "existing", "name": "USDC (devnet)", "symbol": "USDC", "decimals": 6, "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU", "venue": "other", "powers": { "mintAuthority": "someone else", "freeze": true } },
+    { "key": "gems", "source": "game", "name": "Gems", "symbol": "GEMS", "decimals": 0 }
+  ],
+  "collection": { "name": "Founders" },
+  "items": [{ "key": "founder-pass", "name": "Founder Pass", "price": 0.5, "supply": 1000, "soulbound": true, "rarity": "Rare", "life": { "cooldown": "1d" } }],
+  "pools": [{ "key": "gems-pool", "currency": "gems", "about": "10,000 GEMS minted each week; passes claim from it." }],
+  "schedules": [{ "key": "weekly-gems", "name": "Weekly gems", "does": "issue", "pool": "gems-pool", "amount": 10000, "every": "7d" }],
+  "recipes": [
+    { "key": "daily-claim", "name": "Daily claim", "in": [{ "takes": "use", "item": "founder-pass" }], "out": [{ "gives": "tokens", "amount": 5, "currency": "gems", "from": "pool:gems-pool" }] }
+  ],
+  "scenario": { "days": 30, "perDay": { "item:founder-pass": 30, "recipe:daily-claim": 200 } }
+}

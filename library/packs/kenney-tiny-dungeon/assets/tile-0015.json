@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0015",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0015.png",
+ "sha256": "ec428fa8f230cf60685226e7fc45c07f80d928f084eec3c89a1972593ff2c1bb",
+ "bytes": 130,
+ "preview": "previews/tile-0015.png",
+ "from": "Tiles/tile_0015.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the right (east) wall of a room: the stone rim running down the left side, earth on the right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "stone",
+  "rim",
+  "edge",
+  "edge-east",
+  "room",
+  "vertical"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#763b36",
+     "#3f2631",
+     "#c0cbdc"
+    ],
+    "saturation": 0.33,
+    "value": 0.361,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.625
+     },
+     {
+      "hue": "pink",
+      "share": 0.25
+     },
+     {
+      "hue": "blue",
+      "share": 0.125
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.367
+   }
+  }
+ },
+ "source": {
+  "sha256": "fdee6e6ccd725ae07348d4da5740b5837bf516a4e519f55cc6b5c566b5f5aa4d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,131 @@
+{
+  "template": "store",
+  "label": "Supermarket",
+  "kind": "indoor",
+  "describe": "A closed supermarket on a city street: tiled floor, a ceiling with hanging lamps, aisles of stocked shelves round an open middle, freezers along the walls, checkouts and trolleys by the entrance, a store room with a loading door and a staff room behind.",
+  "setPieces": [
+    "the open middle of the shop floor between the aisles (zone centre), where the thing players defend or gather at stands",
+    "the checkouts and trolleys by the entrance",
+    "the doors to the street: the entrance at the front and the loading door in the store room, where enemies and shoppers come in (entries)"
+  ],
+  "sizes": { "small": [24, 24], "medium": [40, 32], "large": [48, 40] },
+  "grid": 2,
+  "shell": {
+    "wall": "office-wall", "window": "office-wall-window", "door": "office-wall-doorway-wide", "corner": "office-wall-corner",
+    "wallHeight": 2.579, "wallScale": [1, 1.3, 1], "windows": [1, 0, 0], "doorWidth": 1.71
+  },
+  "ceiling": {
+    "height": 3.9, "lamp": "ceiling-lamp", "lampEvery": 6, "lampDrop": 0.69, "lampScale": 0.7,
+    "look": { "color": "#f4f2ee", "color2": "#ebe8e1", "glow": 0.45, "band": "#e9e4da", "pattern": { "file": "assets/textures/ceiling-tiles.png", "size": 2.4 } }
+  },
+  "ground": { "kind": "floor", "color": "#9fa9b2", "color2": "#96a0aa", "outer": "#a9a59e", "outer2": "#a19d95", "outerSize": 200, "pattern": { "file": "assets/textures/carpet-tiles.png", "size": 2 } },
+  "spawnRing": 3.2,
+  "centreRadius": 1.4,
+  "program": {
+    "small": {
+      "main": { "kind": "shop-floor", "entry": "front" },
+      "bands": [ { "side": "back", "depth": 6, "rooms": [ { "kind": "storeroom", "weight": 1.3, "entry": "back" }, { "kind": "staff", "weight": 1 } ] } ]
+    },
+    "medium": {
+      "main": { "kind": "shop-floor", "entry": "front" },
+      "loops": 1,
+      "bands": [
+        { "side": "back", "depth": 8, "rooms": [ { "kind": "storeroom", "weight": 1.4, "entry": "back" }, { "kind": "staff", "weight": 1 }, { "kind": "office", "weight": 0.8 } ] },
+        { "side": "left", "depth": 8, "rooms": [ { "kind": "cold-room", "weight": 1 } ] }
+      ]
+    },
+    "large": {
+      "main": { "kind": "shop-floor", "entry": "front" },
+      "loops": 2,
+      "bands": [
+        { "side": "back", "depth": 8, "rooms": [ { "kind": "storeroom", "weight": 1.4, "entry": "back" }, { "kind": "staff", "weight": 1 }, { "kind": "office", "weight": 0.8 } ] },
+        { "side": "left", "depth": 8, "rooms": [ { "kind": "cold-room", "weight": 1 }, { "kind": "storeroom", "weight": 1, "entry": "side" } ] },
+        { "side": "right", "depth": 8, "rooms": [ { "kind": "bakery", "weight": 1 } ] }
+      ]
+    }
+  },
+  "rooms": {
+    "shop-floor": { "label": "Shop floor", "keepClear": 5, "fill": [
+      { "group": "checkouts", "where": "wall", "side": "front", "count": 1 },
+      { "group": "carts", "where": "wall", "side": "front", "count": 1 },
+      { "group": "aisle", "where": "grid", "per100": 1.0, "aisle": 2.4, "gap": 0.6, "yaw": 0 },
+      { "group": "freezers", "where": "wall", "count": [2, 3], "spread": true },
+      { "group": "produce", "where": "wall", "count": [1, 2], "spread": true },
+      { "group": "bottle-return", "where": "wall", "count": 1 }
+    ] },
+    "storeroom": { "label": "Store room", "fill": [
+      { "group": "shelf-boxes", "where": "wall", "count": [3, 5], "spread": true },
+      { "group": "box-stack", "where": "wall", "count": [1, 3], "spread": true },
+      { "group": "trashcan", "where": "wall", "count": 1 }
+    ] },
+    "staff": { "label": "Staff room", "fill": [
+      { "group": "lunch", "where": "centre", "count": 1 },
+      { "group": "vending", "where": "wall", "count": 1 },
+      { "group": "kitchen", "where": "wall", "count": 1 },
+      { "group": "coat-rack", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 1 }
+    ] },
+    "office": { "label": "Manager's office", "fill": [
+      { "group": "manager", "where": "wall", "count": 1 },
+      { "group": "bookshelf", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 1 }
+    ] },
+    "cold-room": { "label": "Cold room", "fill": [
+      { "group": "freezers", "where": "wall", "count": [3, 5], "spread": true },
+      { "group": "chest-freezers", "where": "centre", "count": 1 }
+    ] },
+    "bakery": { "label": "Bakery", "fill": [
+      { "group": "bread", "where": "wall", "count": [2, 3], "spread": true },
+      { "group": "kitchen", "where": "wall", "count": 1 },
+      { "group": "lunch", "where": "centre", "count": 1 }
+    ] }
+  },
+  "groups": {
+    "aisle": { "size": [6.8, 1.6], "props": [
+      { "prop": "shelf-end", "at": [-2.94, 0, 0], "rot": 270 }, { "prop": "store-shelf", "at": [-1.68, 0, 0], "rot": 0 }, { "prop": "store-shelf-b", "at": [0, 0, 0], "rot": 0 }, { "prop": "store-shelf", "at": [1.68, 0, 0], "rot": 0 }, { "prop": "shelf-end", "at": [2.94, 0, 0], "rot": 90 }
+    ] },
+    "checkouts": { "size": [4.6, 1.9], "props": [ { "prop": "checkout", "at": [-1.2, 0, 0], "rot": 0 }, { "prop": "checkout", "at": [1.2, 0, 0], "rot": 0 } ] },
+    "carts": { "size": [2.4, 1.1], "props": [ { "prop": "shopping-cart", "at": [-0.75, 0, 0], "rot": 0 }, { "prop": "shopping-cart", "at": [0, 0, 0], "rot": 0 }, { "prop": "shopping-cart", "at": [0.75, 0, 0], "rot": 0 } ] },
+    "freezers": { "size": [4.3, 1.1], "props": [ { "prop": "freezer-tall", "at": [-1.08, 0, 0], "rot": 0 }, { "prop": "freezer-tall", "at": [1.08, 0, 0], "rot": 0 } ] },
+    "chest-freezers": { "size": [3.5, 1.4], "props": [ { "prop": "freezer-chest", "at": [-0.86, 0, 0], "rot": 0 }, { "prop": "freezer-chest", "at": [0.86, 0, 0], "rot": 0 } ] },
+    "produce": { "size": [4.2, 1.4], "props": [ { "prop": "fruit-stand", "at": [-1.4, 0, 0], "rot": 0 }, { "prop": "fruit-stand", "at": [0, 0, 0], "rot": 0 }, { "prop": "bread-stand", "at": [1.45, 0, 0], "rot": 0 } ] },
+    "bread": { "size": [3.2, 1.4], "props": [ { "prop": "bread-stand", "at": [-0.8, 0, 0], "rot": 0 }, { "prop": "bread-stand", "at": [0.8, 0, 0], "rot": 0 } ] },
+    "bottle-return": { "size": [1.1, 1.1], "props": [ { "prop": "bottle-return", "at": [0, 0, 0], "rot": 0 } ] },
+    "manager": { "size": [1.8, 2.4], "props": [
+      { "prop": "bookcase", "at": [0, 0, -0.95], "rot": 0 }, { "prop": "chair-office", "at": [0, 0, -0.15], "rot": 0 },
+      { "prop": "desk", "at": [0, 0, 0.75], "rot": 180 }, { "prop": "monitor", "at": [0, 0.77, 0.99], "rot": 180 }, { "prop": "keyboard", "at": [0, 0.77, 0.61], "rot": 180 },
+      { "prop": "desk-lamp", "at": [0.5, 0.77, 0.95], "rot": 210 }, { "prop": "plant-small", "at": [-0.55, 0.77, 0.95], "rot": 0 }
+    ] },
+    "lunch": { "size": [2.0, 2.0], "props": [
+      { "prop": "table", "at": [0, 0, 0], "rot": 0 },
+      { "prop": "chair", "at": [-0.5, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [0, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [0.5, 0, -0.7], "rot": 0 },
+      { "prop": "chair", "at": [-0.5, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [0, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [0.5, 0, 0.7], "rot": 180 }
+    ] },
+    "kitchen": { "size": [4.0, 1.0], "props": [
+      { "prop": "kitchen-counter", "at": [-1.6, 0, 0], "rot": 0 }, { "prop": "kitchen-counter", "at": [-0.74, 0, 0], "rot": 0 }, { "prop": "coffee-machine", "at": [-1.6, 0.9, 0], "rot": 0 },
+      { "prop": "fridge", "at": [0.4, 0, -0.16], "rot": 0 }, { "prop": "water-cooler", "at": [1.6, 0, -0.27], "rot": 0 }
+    ] },
+    "vending": { "size": [1.4, 1.3], "props": [ { "prop": "vending-machine", "at": [0, 0, 0], "rot": 0 } ] },
+    "bookshelf": { "size": [3.4, 0.6], "props": [ { "prop": "bookcase", "at": [-0.85, 0, 0], "rot": 0 }, { "prop": "bookcase", "at": [0.85, 0, 0], "rot": 0 } ] },
+    "plant": { "size": [0.6, 0.6], "props": [ { "prop": "plant-potted", "at": [0, 0, 0], "rot": 0 } ] },
+    "trashcan": { "size": [0.5, 0.5], "props": [ { "prop": "trashcan", "at": [0, 0, 0], "rot": 0 } ] },
+    "coat-rack": { "size": [0.6, 0.6], "props": [ { "prop": "coat-rack", "at": [0, 0, 0], "rot": 0 } ] },
+    "shelf-boxes": { "size": [2.2, 0.8], "props": [
+      { "prop": "bookcase-open", "at": [-0.6, 0, -0.1], "rot": 0 }, { "prop": "box-closed", "at": [0.35, 0, 0], "rot": 10 }, { "prop": "box-closed", "at": [0.35, 0.56, 0], "rot": 0, "scale": 0.9 }, { "prop": "box-open", "at": [0.75, 0, 0.12], "rot": -10 }, { "prop": "plant-small", "at": [0.75, 0.562, 0.12], "rot": 0 }
+    ] },
+    "box-stack": { "size": [1.6, 1.0], "props": [
+      { "prop": "box-closed", "at": [-0.5, 0, 0], "rot": 5 }, { "prop": "box-closed", "at": [0, 0, 0.05], "rot": -8 }, { "prop": "box-open", "at": [0.5, 0, -0.05], "rot": 3 },
+      { "prop": "box-closed", "at": [-0.25, 0.56, 0.02], "rot": 12, "scale": 0.9 }
+    ] }
+  },
+  "outside": {
+    "kind": "street",
+    "sidewalk": { "prop": "sidewalk", "width": 4 },
+    "road": { "prop": "road", "cross": "road-crossing", "width": 8 },
+    "lights": { "prop": "street-light", "every": 12 },
+    "buildings": ["city-block", "city-block-b", "city-block-c", "city-block-wide", "shop"],
+    "towers": ["skyscraper", "skyscraper-b"],
+    "skyline": { "count": 10, "distance": 50, "props": ["skyscraper", "skyscraper-b", "city-block-c"] },
+    "sizes": { "city-block": [6.8, 7.3], "city-block-b": [7.5, 7.1], "city-block-c": [10.6, 10.8], "city-block-wide": [17.9, 14.1], "shop": [14.7, 9.1], "skyscraper": [10.5, 10.5], "skyscraper-b": [9.1, 8.7] }
+  }
+}

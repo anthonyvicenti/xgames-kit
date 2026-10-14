@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "ual-mannequin-standin",
+ "pack": "quaternius-ual-bodies",
+ "file": "ual-mannequin-standin.glb",
+ "sha256": "5d85c3ff031d2df91a5755c80bc99641787e83e4868c9515228c7e4f1ebe90bc",
+ "bytes": 2720448,
+ "preview": "previews/ual-mannequin-standin.png",
+ "from": "research/foundations/trials/third-person-adventure/source/assets/hero/hero.glb, byte for byte (see LICENSE-mannequin.txt: 14 of the 46 UAL clips, meshopt-compressed)",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "character body stand-in (character.body.<role>)",
+ "tags": [
+  "mannequin"
+ ],
+ "use": {
+  "size": [
+   1.944,
+   1.829,
+   0.37
+  ],
+  "height": 1.829,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1"
+ },
+ "budgets": {
+  "triangles": 13744,
+  "textures": 0,
+  "materials": 2,
+  "joints": 53
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": false,
+   "date": "2026-10-13",
+   "report": {
+    "problems": [
+     "missing required bones: Hips, Spine, Head, LeftArm, LeftForeArm, LeftHand, LeftUpLeg, LeftLeg, LeftFoot, RightArm, RightForeArm, RightHand, RightUpLeg, RightLeg, RightFoot"
+    ],
+    "warnings": [
+     "file size 2720448 B is over the target 2500000 B",
+     "the body carries 14 animation(s) of its own; the kit ignores them (clips come from the shared clip file)"
+    ],
+    "facts": {
+     "triangles": 13744,
+     "joints": 53,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e7aa3a",
+     "#aa66db"
+    ],
+    "saturation": 0.765,
+    "value": 0.573,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.894
+     },
+     {
+      "hue": "purple",
+      "share": 0.106
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 74.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://quaternius.itch.io/universal-animation-library",
+  "author": "Quaternius"
+ }
+}

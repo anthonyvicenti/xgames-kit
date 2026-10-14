@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-purple-vertical-bottom",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-purple-vertical-bottom.png",
+ "sha256": "43c35f8943a2ae93574bdb33d34ca666ca52b703e09aac53743b0c70cc703b7f",
+ "bytes": 2529,
+ "preview": "previews/terrain-purple-vertical-bottom.png",
+ "from": "Sprites/Tiles/Double/terrain_purple_vertical_bottom.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain purple vertical bottom tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "purple",
+  "vertical",
+  "bottom",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 54.7 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#353541",
+     "#b9c2ca",
+     "#a8b4bc",
+     "#cdd3d9",
+     "#ccd2d8"
+    ],
+    "saturation": 0.127,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 58,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "b7de0d42b695039b0c11dd0776276816df43d906204984afcc34d5fea41bd452",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

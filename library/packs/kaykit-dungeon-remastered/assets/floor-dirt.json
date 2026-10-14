@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "floor-dirt",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "floor-dirt.glb",
+ "sha256": "c9cdf03362694518d508adbe1c4188e81c11d300a8a2eb090fe7d0c8788283ff",
+ "bytes": 10236,
+ "preview": "previews/floor-dirt.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large packed-dirt floor tile",
+ "tags": [
+  "ruins",
+  "floor",
+  "dirt"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.156,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   -0.075,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    0.156,
+    3
+   ],
+   "offset": [
+    0,
+    0.003,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10236,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#8c837b",
+     "#a8a19c",
+     "#a39c96",
+     "#978e85"
+    ],
+    "saturation": 0.069,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.15,
+   "texelsPerMetre": 215,
+   "texturedShare": 0.039,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/floor_dirt_large.gltf.glb",
+  "sha256": "48cc8018237fbdca3f7fccef95c93ef32e877d8fc59f481b9369fed71fec895b",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

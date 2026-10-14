@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0081",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0081.png",
+ "sha256": "8c7fe4af7a6134916aa3dfec7f02d0b74af69ac66652b6d20391c956676fc31b",
+ "bytes": 227,
+ "preview": "previews/tile-0081.png",
+ "from": "Tiles/tile_0081.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a straight vertical piece of mine-cart track; repeats up and down (the same picture as tile 83)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "track",
+  "rails",
+  "mine",
+  "minecart",
+  "railway",
+  "straight",
+  "vertical",
+  "middle",
+  "loop"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#eaa56c",
+     "#bd6c4a"
+    ],
+    "saturation": 0.355,
+    "value": 0.46,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.484
+     },
+     {
+      "hue": "orange",
+      "share": 0.258
+     },
+     {
+      "hue": "blue",
+      "share": 0.258
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.6
+   }
+  }
+ },
+ "source": {
+  "sha256": "92edb7e7a7b658e00d2c983d9526ffa5f868071b72f98a645f48fac2b33eb377",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

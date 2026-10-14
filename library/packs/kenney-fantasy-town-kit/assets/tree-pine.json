@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "tree-pine.glb",
+ "sha256": "ae6bb027d2e454dbc44f582e8b5d10ea5b39789b420a57cddf22b66cd187ac7b",
+ "bytes": 21184,
+ "preview": "previews/tree-pine.png",
+ "from": "kenney:fantasy-town-kit/tree-high; baked to metres (x1.85013), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tall stylised pine tree",
+ "tags": [
+  "nature",
+  "tree",
+  "pine"
+ ],
+ "use": {
+  "size": [
+   1.893,
+   5.5,
+   1.893
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.35,
+   "height": 3,
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21184,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3b9c74",
+     "#3da076",
+     "#40a378",
+     "#46aa7c",
+     "#44a87b",
+     "#3d9f75",
+     "#41a478",
+     "#c48060"
+    ],
+    "saturation": 0.443,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.775
+     },
+     {
+      "hue": "orange",
+      "share": 0.153
+     },
+     {
+      "hue": "green",
+      "share": 0.072
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.31,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "2dbb718a81d9c3697c069495f58840f6c2002c8cdd13388be560c2199f6d03e7",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.85013), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

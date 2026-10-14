@@ -1,0 +1,54 @@
+{
+  "specVersion": 2,
+  "title": "Coin Hop",
+  "hook": "A side-on scramble: jump the ledges and grab more coins than your friends.",
+  "prompt": "a 2D side-on platformer coin grab with friends, pixel art",
+  "runtime": "godot",
+  "profile": "2d",
+  "loop": "round",
+  "kind": "pixel",
+  "players": { "min": 1, "max": 4, "bots": true },
+  "multiplayer": { "mode": "live", "together": "versus", "watch": false, "voice": false },
+  "devices": { "targets": ["desktop"], "inputs": ["keyboard-mouse"] },
+  "camera": "side",
+  "controls": { "jump": "jump (hold Down on a ledge to drop through)" },
+  "round": { "seconds": 60, "winBy": "most coins when the time runs out", "replay": true },
+  "world": {
+    "template": "stage",
+    "map": {
+      "legend": { "o": "mark:coin" },
+      "rows": [
+        "B............................B",
+        "B............................B",
+        "B............o..o............B",
+        "B............................B",
+        "B..o........======........o..B",
+        "B............................B",
+        "B.===..====..o..o..====..===.B",
+        "B............................B",
+        "B....====..========..====....B",
+        "B..o......................o..B",
+        "B.1...BB..1...BB...1..BB...1.B",
+        "##############################"
+      ]
+    }
+  },
+  "mechanics": [],
+  "rules": {
+    "summary": "Run and jump into a coin to take it. Each coin is a point and comes back a few seconds later. Most coins when the time runs out wins.",
+    "scoring": "+1 per coin",
+    "params": { "coinPoints": 1, "respawnSeconds": 4, "coinSize": 0.6 }
+  },
+  "characters": [{ "role": "player", "describe": "a round kid in a cap, seen from the side", "body": { "from": "kind" } }],
+  "slots": [{ "id": "game.coin", "category": "prop", "describe": "a shiny gold coin, one picture" }],
+  "sounds": [{ "id": "coin", "describe": "a bright coin chime", "preset": "coin" }],
+  "build": [
+    { "what": "coins to grab, gone for everyone when one player takes one", "how": "rules.js owns the coins in ctx.shared and gives the points; project/main.gd draws them from the map's coin marks and reports a touch with GF.event", "where": "rules", "row": "coins", "accept": "a coin you touch disappears on both screens and your score goes up by one" }
+  ],
+  "accept": [
+    "friends see each other on the stage",
+    "you can jump up through a ledge and stand on it",
+    "a coin taken by one player is gone for everyone",
+    "the coin, the kid and every tile are pictures that can be replaced"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+ "assetVersion": 1,
+ "id": "shrine",
+ "pack": "kaykit-halloween",
+ "file": "shrine.glb",
+ "sha256": "3fa99617287c71085a092241c0a2b2d0d790ea1129698ae8f79e5077c179602d",
+ "bytes": 15112,
+ "preview": "previews/shrine.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 1.288, 0…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small shrine with candles (a landmark)",
+ "tags": [
+  "ruins",
+  "shrine"
+ ],
+ "use": {
+  "size": [
+   0.824,
+   1.342,
+   0.824
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.412,
+   0,
+   -0.412
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.824,
+    1.342,
+    0.824
+   ],
+   "offset": [
+    0,
+    0.671,
+    0
+   ]
+  },
+  "sockets": [
+   {
+    "name": "flame",
+    "node": "socket_flame",
+    "position": [
+     0,
+     1.288,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 360,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 360,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15112,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#798388",
+     "#808b90",
+     "#596065",
+     "#707a7e",
+     "#687075",
+     "#dee0e1",
+     "#c7d0d4",
+     "#889398"
+    ],
+    "saturation": 0.064,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 8.8,
+   "texelsPerMetre": 112,
+   "texturedShare": 0.416,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/shrine_candles.gltf",
+  "sha256": "21bc3c39fc773b4ee0e09813d8dd242dd9ba35dac2c53c53755e9888c073d1e0",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 1.288, 0 (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

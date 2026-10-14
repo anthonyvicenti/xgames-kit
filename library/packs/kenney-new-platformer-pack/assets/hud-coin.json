@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "hud-coin",
+ "pack": "kenney-new-platformer-pack",
+ "file": "hud-coin.png",
+ "sha256": "7b028479f4c9f2a3cac8b27a8cb3b16c703bc2ca248f9b330658c5f6453e7b51",
+ "bytes": 3254,
+ "preview": "previews/hud-coin.png",
+ "from": "Sprites/Tiles/Double/hud_coin.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "hud coin",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "hud",
+  "coin",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#ffffff",
+     "#353541",
+     "#ea9e2b",
+     "#eb9f2b",
+     "#f1ab2c",
+     "#f1aa2c",
+     "#faba2d",
+     "#f2ac2c"
+    ],
+    "saturation": 0.355,
+    "value": 0.619,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.583
+     },
+     {
+      "hue": "orange",
+      "share": 0.401
+     }
+    ],
+    "exact": 240,
+    "grey": 0.583
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "58a3602b79489dade5451302e35e969cea6d80db9013478e4f01f9261e5b3e96",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

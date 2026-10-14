@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "rock-3",
+ "pack": "folio-nature",
+ "file": "rock-3.glb",
+ "sha256": "c51a4f66d9945f3ef17638c66be0ed137b3fe2fc215ecb39baf09cddd31862b6",
+ "bytes": 10836,
+ "preview": "previews/rock-3.png",
+ "from": "static/scenery/scenery.glb node basaltRocksPhysicalStatic; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low basalt rock",
+ "tags": [
+  "rock",
+  "nature",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   8.965,
+   3.499,
+   5.377
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.4,
+   4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    6.724,
+    3.499,
+    4.033
+   ],
+   "offset": [
+    0,
+    1.75,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 128,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 128,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10836,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#7c7691"
+    ],
+    "saturation": 0.109,
+    "value": 0.516,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 1.13,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

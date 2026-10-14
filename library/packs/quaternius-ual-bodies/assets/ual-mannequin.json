@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "ual-mannequin",
+ "pack": "quaternius-ual-bodies",
+ "file": "ual-mannequin.glb",
+ "sha256": "54385184d8920ce98e2feb2717b7dc973a08d68b5b64577ca3562e7254f3a4a2",
+ "bytes": 121168,
+ "preview": "previews/ual-mannequin.png",
+ "from": "pmndrs/ecctrl@e2cab804f9f15661a642e76f52d09f0b2db63f35 public/AnimationLibrary.glb (sha256 1b7bf678…ee5c); renamed onto gf-humanoid-1 by tools/retarget.mjs; materials renamed (tint_main, joints)",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "Quaternius UAL mannequin, the skeleton the clips come from",
+ "tags": [
+  "mannequin",
+  "neutral",
+  "human",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.944,
+   1.829,
+   0.37
+  ],
+  "height": 1.829,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_main"
+  ]
+ },
+ "budgets": {
+  "triangles": 13744,
+  "textures": 0,
+  "materials": 2,
+  "joints": 52
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, right hand: aim_up at 0 s: the right pinky bends 107° at its knuckle (a finger bends -35° to 105°)"
+    ],
+    "facts": {
+     "height": 1.829,
+     "triangles": 13744,
+     "joints": 52,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f6c481",
+     "#767381"
+    ],
+    "saturation": 0.781,
+    "value": 0.708,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.894
+     },
+     {
+      "hue": "grey",
+      "share": 0.106
+     }
+    ],
+    "grey": 0.106
+   },
+   "trianglesPerMetre": 74.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.35 heads tall; hips at 50% of the height; shoulders 21% of it",
+   "body": {
+    "headsTall": 5.35,
+    "hipShare": 0.501,
+    "shoulderShare": 0.21,
+    "widthShare": 1.063
+   }
+  }
+ },
+ "source": {
+  "page": "https://quaternius.itch.io/universal-animation-library"
+ }
+}

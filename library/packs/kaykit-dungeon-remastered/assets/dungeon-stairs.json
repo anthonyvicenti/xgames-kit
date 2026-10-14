@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-stairs",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-stairs.glb",
+ "sha256": "228f1bba191e61700e12abf6c32dc4f6a0f0f6c2e104ecf15126b682cde3905a",
+ "bytes": 59784,
+ "preview": "previews/dungeon-stairs.png",
+ "from": "stairs.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a flight of stone stairs",
+ "tags": [
+  "dungeon",
+  "stairs",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3.75,
+   3.825,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.875,
+   0,
+   0
+  ]
+ },
+ "budgets": {
+  "triangles": 358,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 358,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 59784,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7f8a8f",
+     "#7d888d",
+     "#7b8589",
+     "#727c80",
+     "#818b90",
+     "#8a969b",
+     "#778185",
+     "#7a8489"
+    ],
+    "saturation": 0.064,
+    "value": 0.503,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 2.66,
+   "texelsPerMetre": 28,
+   "texturedShare": 0.445,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/stairs.gltf.glb",
+  "sha256": "5ba16e5d919aaa8958435c4b73c1f8a94c98febeacf716faa1359f24e6b27d70",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

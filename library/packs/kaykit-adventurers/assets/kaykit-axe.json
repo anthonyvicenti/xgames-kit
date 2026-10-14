@@ -1,0 +1,135 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-axe",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-axe.glb",
+ "sha256": "8cd1ebe7498351e97e87daf484f0448565b43d6ef1683184476f7bc8f83ffdb0",
+ "bytes": 49680,
+ "preview": "previews/kaykit-axe.png",
+ "from": "axe_1handed.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Barbarian 1H_Axe (handslot.r)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a one-handed axe",
+ "tags": [
+  "weapon",
+  "axe",
+  "melee",
+  "one-handed",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.536,
+   0.933,
+   0.139
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.442,
+   -0.205,
+   -0.069
+  ],
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 274,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 274,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 49680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#70797e",
+     "#747e82",
+     "#557690",
+     "#788286",
+     "#98a4a9",
+     "#8c979d",
+     "#747d82",
+     "#9aa7ad"
+    ],
+    "saturation": 0.156,
+    "value": 0.488,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.661
+     },
+     {
+      "hue": "blue",
+      "share": 0.099
+     },
+     {
+      "hue": "orange",
+      "share": 0.088
+     },
+     {
+      "hue": "brown",
+      "share": 0.078
+     },
+     {
+      "hue": "cyan",
+      "share": 0.074
+     }
+    ],
+    "grey": 0.661
+   },
+   "trianglesPerMetre": 20.13,
+   "texelsPerMetre": 63,
+   "texturedShare": 0.799,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/axe_1handed.gltf",
+  "sha256": "dbe0ba59abcae66a464809ee281179b10f85e41ef0d69786d39627472ca7e5dd",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Barbarian 1H_Axe (handslot.r)"
+ }
+}

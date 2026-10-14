@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0005",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0005.png",
+ "sha256": "c1ce6cc4aaab2a0dff11fbd82c6a8825793a2a2f0d844e8e11b5970ee6655305",
+ "bytes": 257,
+ "preview": "previews/tile-0005.png",
+ "from": "Tiles/tile_0005.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round leafy green bush",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "bush",
+  "shrub",
+  "green",
+  "nature",
+  "plant"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#84c669",
+     "#479f4a"
+    ],
+    "saturation": 0.355,
+    "value": 0.407,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.615
+     },
+     {
+      "hue": "pink",
+      "share": 0.385
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.875
+   }
+  }
+ },
+ "source": {
+  "sha256": "5c09569d7e0351146e194d9beb7b573e0869978334cc9e093a57dea8705e81da",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

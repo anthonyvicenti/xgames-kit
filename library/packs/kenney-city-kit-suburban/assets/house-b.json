@@ -1,0 +1,121 @@
+{
+ "assetVersion": 1,
+ "id": "house-b",
+ "pack": "kenney-city-kit-suburban",
+ "file": "house-b.glb",
+ "sha256": "5e45071b69e55543c824850bc721ecc7302eb7964ee038453dbacdf9ba56a12b",
+ "bytes": 34216,
+ "preview": "previews/house-b.png",
+ "from": "kenney:city-kit-suburban/building-type-s; baked to metres (x7.03297), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a two-storey suburban house",
+ "tags": [
+  "backyard",
+  "building",
+  "backdrop",
+  "house"
+ ],
+ "use": {
+  "size": [
+   9.889,
+   8.001,
+   7.641
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    9.889,
+    8,
+    7.64
+   ],
+   "offset": [
+    0,
+    4,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1212,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1212,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 34216,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#595e76",
+     "#e6e6ef",
+     "#53be84",
+     "#d6d6e5",
+     "#4cb581",
+     "#47b17e",
+     "#5f647c",
+     "#4fba82"
+    ],
+    "saturation": 0.274,
+    "value": 0.62,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.378
+     },
+     {
+      "hue": "green",
+      "share": 0.29
+     },
+     {
+      "hue": "blue",
+      "share": 0.287
+     },
+     {
+      "hue": "cyan",
+      "share": 0.041
+     }
+    ],
+    "grey": 0.378
+   },
+   "trianglesPerMetre": 1.58,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "56dfd278f10bea2546cb0946f48659dde5876bc9ce100ea1fbe37c0cc94bf9e6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x7.03297), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

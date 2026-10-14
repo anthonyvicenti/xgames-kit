@@ -1,0 +1,22 @@
+gf-three melee: ported logic
+
+kit/mechanics/melee/logic.js takes its combat model from BUDDY: ROLLBACK
+(https://github.com/octobooth-4/buddy-rollback, commit db51978, "Release v1.3.1"), MIT License,
+Copyright (c) 2026 BUDDY: ROLLBACK contributors. The licence text is in LICENSE-buddy-rollback beside
+this file.
+
+What was taken, rewritten as data and a step function (no code copied line for line):
+- src/weapons.js: a weapon is a combo chain of swings, each with an arc, a range, damage, a duration,
+  the moment it hits, a lunge, a knock and a finisher flag, plus a dash strike.
+- src/player.js: startSwing / updateSwing (a press during a swing is queued and chains the next step;
+  a short combo window after a swing continues the chain), hitArc (the angle test that widens by the
+  target's radius, and a point-blank pass), startDash (a dash with invulnerable frames and a cooldown,
+  an attack right after a dash becomes a dash strike).
+
+What was left out: Buddy and everything about him, Visual Studio Code's chat pet and any Microsoft
+material, the game's art, models, textures, sounds, names and text. BUDDY: ROLLBACK is an unofficial
+fan project; nothing here is affiliated with or endorsed by Microsoft.
+
+Also drawn on (games.fun's own code): research/foundations/trials/brawler/source/src/model.mjs
+(Knuckle Row: attack tokens, telegraphed windups, hit-stop per move) for the enemy side in
+kit/mechanics/waves.

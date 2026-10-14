@@ -1,0 +1,81 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA09",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "creator-prompt",
+  "verbatim": true,
+  "where": "games.fun research/super-scenic/evidence/creator-keys-to-the-cove-2026-10-12.json (typed into live Studio 2026-10-12; the creator objected that the pitch cut three islands to one and kept the demo's setting)"
+ },
+ "prompt": "Create a scenic, high quality, high definition fishing game. People start on a small beach and have to earn enough money from fishing every round to get the keys to the boat. Then they can boat to the next island. Repeat this for 3 islands",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "action",
+   "core": true,
+   "words": "fishing game",
+   "means": "Players fish: cast, a bite, a catch",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "other",
+   "core": true,
+   "words": "People start on a small beach",
+   "means": "Each game starts on a small beach",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "goal",
+   "core": true,
+   "words": "earn enough money from fishing every round to get the keys to the boat",
+   "means": "Catches earn money; enough of it in a round gets the boat's keys",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "action",
+   "core": true,
+   "words": "Then they can boat to the next island",
+   "means": "With the keys, players take the boat to the next island",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "goal",
+   "core": true,
+   "words": "Repeat this for 3 islands",
+   "means": "Three islands in a row, each its own place",
+   "source": "prompt"
+  },
+  {
+   "id": "r6",
+   "about": "players",
+   "core": true,
+   "words": "People start",
+   "means": "Several people play the same game together",
+   "source": "prompt"
+  },
+  {
+   "id": "r7",
+   "about": "feel",
+   "core": true,
+   "words": "a scenic, high quality, high definition",
+   "means": "A scenic, sharp, high-quality look",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

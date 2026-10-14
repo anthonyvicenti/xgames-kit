@@ -1,0 +1,60 @@
+{
+ "assetVersion": 1,
+ "id": "bones-rattle-long",
+ "pack": "forge-sounds",
+ "file": "bones-rattle-long.ogg",
+ "sha256": "fb0ef91eabbafbd71576c7b7ab88949927b7c35e9cfff805d896ed0e395b1b0d",
+ "bytes": 8139,
+ "preview": "previews/bones-rattle-long.png",
+ "from": "https://opengameart.org/content/bones-2 bones-2.ogg; cut to 0.05-0.5 s of the source (0.45 s), 20 ms fade-in and 120 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 2.2 dB (loudest 400 ms toward -22 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton rises from the ground (bones rattle long)",
+ "tags": [
+  "sounds",
+  "bones",
+  "rattle",
+  "long",
+  "enemy",
+  "emerge",
+  "windup"
+ ],
+ "use": {
+  "seconds": 0.457,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -21.1,
+     "samplePeakDb": -4.1,
+     "truePeakDb": -3.9,
+     "hfRatio": 0.19
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.457,
+    "peakDbfs": -4.1,
+    "soundMaxLufs": -21.1
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/bones-2",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.05-0.5 s of the source (0.45 s), 20 ms fade-in and 120 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 2.2 dB (loudest 400 ms toward -22 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "AntumDeluge (OpenGameArt)"
+ }
+}

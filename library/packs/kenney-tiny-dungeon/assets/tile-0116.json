@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0116",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0116.png",
+ "sha256": "4a5bcc3cb053dca43deba0c40728db8b68146657194b13cd88571e083f1b8eb4",
+ "bytes": 220,
+ "preview": "previews/tile-0116.png",
+ "from": "Tiles/tile_0116.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round flask of blue potion (a mana potion)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "potion",
+  "flask",
+  "bottle",
+  "blue",
+  "mana",
+  "item",
+  "consumable"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#0099db",
+     "#75e3ff",
+     "#bd6c4a",
+     "#eaa56c",
+     "#8b9bb4",
+     "#c0cbdc"
+    ],
+    "saturation": 0.452,
+    "value": 0.322,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.655
+     },
+     {
+      "hue": "cyan",
+      "share": 0.236
+     },
+     {
+      "hue": "orange",
+      "share": 0.073
+     },
+     {
+      "hue": "blue",
+      "share": 0.036
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "610de03ee2d2a7d452159a885707217ccb17c6c18444418d7f21496d76a65f76",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

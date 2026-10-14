@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "dress-path",
+ "pack": "xk-pixel-town",
+ "file": "dress-path.png",
+ "sha256": "f79ad3682a824c6a4490bdce05613ee1006285bf7c18fcc91bd3c20b27e11a25",
+ "bytes": 266,
+ "preview": "previews/dress-path.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): dress-path.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "pebbles and a crack on a path (3)",
+ "tags": [
+  "pixel",
+  "path",
+  "pebbles",
+  "dressing",
+  "dress"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "dress"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 48
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#4a4053",
+     "#675d6e",
+     "#6f6a78",
+     "#8a6038",
+     "#766d7b",
+     "#a9a4ae",
+     "#c8c4c8"
+    ],
+    "saturation": 0.129,
+    "value": 0.427,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.87
+     },
+     {
+      "hue": "brown",
+      "share": 0.13
+     }
+    ],
+    "exact": 7,
+    "grey": 0.87
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "9358f7b0be68959226c14c484dc582721890329b3d8e2229c100cb22020578f9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

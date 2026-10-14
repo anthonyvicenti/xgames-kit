@@ -1,0 +1,158 @@
+# Tests, then a real game of each engine: create from the example and verify it in real Chrome with the CI profile.
+# Read docs/CI.md first: what a runner cannot check, the profile, the cost per run, and what the first runs on
+# Windows and macOS found (2026-10-11).
+#
+# Pushes to main, pull requests and runs by hand all run Linux only (about 6 plan minutes a run, against about 53 for
+# all three systems; docs/CI.md section 5). Windows (two times the minutes) and macOS (ten times) run only by hand:
+#   gh workflow run check.yml --ref <branch> -f system=windows        # or macos, linux-windows, all
+#   gh workflow run check.yml --ref <branch> -f system=windows -f job=scenic
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      system:
+        description: Which system to run on
+        type: choice
+        default: linux
+        options: [linux, windows, macos, linux-windows, all]
+      job:
+        description: Which job to run
+        type: choice
+        default: all
+        options: [all, party, scenic]
+
+permissions:
+  contents: read
+
+# A newer push replaces the run of an older one; runs started by hand never cancel each other.
+concurrency:
+  group: check-${{ github.ref }}-${{ github.event_name == 'workflow_dispatch' && github.run_id || 'push' }}
+  cancel-in-progress: true
+
+env:
+  FORCE_COLOR: "0"
+  GAMESFUN_NO_UPDATE_CHECK: "1"
+  # The profile (.github/ci-profile.json) sets this too; here it also covers `doctor` and the tests.
+  GF_VERIFY_SOFTWARE: "1"   # runners have no graphics card: Chrome draws with SwiftShader (docs/CI.md)
+
+jobs:
+  # A party (WebGL) game: install, tests, create from the example, the checks a runner can run.
+  party:
+    name: party (${{ matrix.os }})
+    if: github.event_name != 'workflow_dispatch' || inputs.job == 'all' || inputs.job == 'party'
+    strategy:
+      fail-fast: false
+      matrix:
+        # push and pull_request: Linux only. By hand: the chosen system (default linux).
+        os: ${{ fromJSON(github.event_name != 'workflow_dispatch' && '["ubuntu-latest"]'
+          || inputs.system == 'windows' && '["windows-latest"]' || inputs.system == 'macos' && '["macos-latest"]'
+          || inputs.system == 'linux-windows' && '["ubuntu-latest","windows-latest"]'
+          || inputs.system == 'all' && '["ubuntu-latest","windows-latest","macos-latest"]'
+          || '["ubuntu-latest"]') }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      # where each image keeps Google Chrome
+      CHROME_PATH: ${{ fromJSON('{"ubuntu-latest":"/usr/bin/google-chrome","windows-latest":"C:/Program Files/Google/Chrome/Application/chrome.exe","macos-latest":"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}')[matrix.os] }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0 (what v4 pointed to on 2026-10-12)
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0 (what v4 pointed to on 2026-10-12)
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Runner facts (processors, memory, Chrome; docs/CI.md reads them)
+        shell: node {0}
+        run: |
+          const os = require('node:os'), { existsSync } = require('node:fs'), { execFileSync } = require('node:child_process');
+          const chrome = process.env.CHROME_PATH;
+          console.log(`${os.platform()} ${os.release()} ${os.arch()}, ${os.cpus().length} x ${os.cpus()[0]?.model}, ${(os.totalmem() / 2 ** 30).toFixed(1)} GB, node ${process.version}`);
+          if (!existsSync(chrome)) { console.error('no Chrome at ' + chrome); process.exit(1); }
+          // Chrome on Windows opens a window for --version instead of printing it; its folder holds the version as a name
+          const version = process.platform === 'win32' ? require('node:fs').readdirSync(require('node:path').dirname(chrome)).filter(n => /^\d+\./.test(n)).join(' ') : execFileSync(chrome, ['--version'], { encoding: 'utf8' }).trim();
+          console.log(`Chrome at ${chrome}: ${version}`);
+      - name: Tests (no browser)
+        run: npm test
+      - name: Skills mirrors in sync
+        run: node scripts/sync-skills.mjs --check
+      - name: Doctor (everything but the graphics probe; agents are only notes)
+        run: node bin/gamesfun.mjs doctor --skip-graphics
+      - name: Examples and catalog
+        run: |
+          node bin/gamesfun.mjs examples
+          node bin/gamesfun.mjs catalog --all
+      - name: Create a party game from the example
+        run: node bin/gamesfun.mjs create games/ci --from soak-squad
+      - name: Verify --quick under the CI profile (docs/CI.md)
+        # A hard failure on every system since 2026-10-11 (three green runs on Linux, Windows and macOS; docs/CI.md section 7).
+        timeout-minutes: 12
+        run: node bin/gamesfun.mjs verify games/ci --quick --profile .github/ci-profile.json
+      # A turn-based board game (the turns loop and the board mechanic): not a party round, same checks.
+      - name: Create a board game from the example
+        run: node bin/gamesfun.mjs create games/ci-board --from giant-four
+      - name: Verify the board game --quick under the CI profile
+        timeout-minutes: 12
+        run: node bin/gamesfun.mjs verify games/ci-board --quick --profile .github/ci-profile.json
+      - name: Keep the verify evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2 (what v4 pointed to on 2026-10-12)
+        with:
+          name: verify-party-${{ matrix.os }}
+          path: |
+            games/ci/evidence/
+            games/ci-board/evidence/
+          if-no-files-found: ignore
+          retention-days: 14
+
+  # A scenic (WebGPU) game. A runner has no WebGPU adapter, so the engine runs on WebGL2 inside WebGPURenderer.
+  scenic:
+    name: scenic (${{ matrix.os }})
+    if: github.event_name != 'workflow_dispatch' || inputs.job == 'all' || inputs.job == 'scenic'
+    strategy:
+      fail-fast: false
+      matrix:
+        # push and pull_request: Linux only. By hand: the chosen system (default linux).
+        os: ${{ fromJSON(github.event_name != 'workflow_dispatch' && '["ubuntu-latest"]'
+          || inputs.system == 'windows' && '["windows-latest"]' || inputs.system == 'macos' && '["macos-latest"]'
+          || inputs.system == 'linux-windows' && '["ubuntu-latest","windows-latest"]'
+          || inputs.system == 'all' && '["ubuntu-latest","windows-latest","macos-latest"]'
+          || '["ubuntu-latest"]') }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    env:
+      # where each image keeps Google Chrome
+      CHROME_PATH: ${{ fromJSON('{"ubuntu-latest":"/usr/bin/google-chrome","windows-latest":"C:/Program Files/Google/Chrome/Application/chrome.exe","macos-latest":"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}')[matrix.os] }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0 (what v4 pointed to on 2026-10-12)
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0 (what v4 pointed to on 2026-10-12)
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Runner facts (processors, memory, Chrome; docs/CI.md reads them)
+        shell: node {0}
+        run: |
+          const os = require('node:os'), { existsSync } = require('node:fs'), { execFileSync } = require('node:child_process');
+          const chrome = process.env.CHROME_PATH;
+          console.log(`${os.platform()} ${os.release()} ${os.arch()}, ${os.cpus().length} x ${os.cpus()[0]?.model}, ${(os.totalmem() / 2 ** 30).toFixed(1)} GB, node ${process.version}`);
+          if (!existsSync(chrome)) { console.error('no Chrome at ' + chrome); process.exit(1); }
+          // Chrome on Windows opens a window for --version instead of printing it; its folder holds the version as a name
+          const version = process.platform === 'win32' ? require('node:fs').readdirSync(require('node:path').dirname(chrome)).filter(n => /^\d+\./.test(n)).join(' ') : execFileSync(chrome, ['--version'], { encoding: 'utf8' }).trim();
+          console.log(`Chrome at ${chrome}: ${version}`);
+      - name: Create a scenic game from the example
+        run: node bin/gamesfun.mjs create games/ci-scenic --from isle-run
+      - name: Verify --quick under the CI profile (no WebGPU on a runner, so WebGL2 inside WebGPURenderer)
+        timeout-minutes: 12
+        run: node bin/gamesfun.mjs verify games/ci-scenic --quick --profile .github/ci-profile.json
+      - name: Keep the verify evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2 (what v4 pointed to on 2026-10-12)
+        with:
+          name: verify-scenic-${{ matrix.os }}
+          path: games/ci-scenic/evidence/
+          if-no-files-found: ignore
+          retention-days: 14

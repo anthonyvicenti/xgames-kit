@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-arrow",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-arrow.glb",
+ "sha256": "468ad052298f21bdbcebef5f5b495ad70e4534b9ff60347d6303868988fb5037",
+ "bytes": 51732,
+ "preview": "previews/kaykit-arrow.png",
+ "from": "arrow.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a single arrow (a projectile model)",
+ "tags": [
+  "arrow",
+  "ammo",
+  "projectile",
+  "ranged",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.088,
+   0.561,
+   0.076
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.044,
+   -0.287,
+   -0.025
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 52,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 52,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 51732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ae6c50",
+     "#b97756",
+     "#8a969b",
+     "#009457",
+     "#008955",
+     "#008353",
+     "#008654",
+     "#009257"
+    ],
+    "saturation": 0.549,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.536
+     },
+     {
+      "hue": "cyan",
+      "share": 0.33
+     },
+     {
+      "hue": "grey",
+      "share": 0.135
+     }
+    ],
+    "grey": 0.135
+   },
+   "trianglesPerMetre": 29.24,
+   "texelsPerMetre": 315,
+   "texturedShare": 0.997,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/arrow.gltf",
+  "sha256": "316d885d2377b8d389edab91df4fc2797264beff317adfd66bc88357d68f6b8c",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

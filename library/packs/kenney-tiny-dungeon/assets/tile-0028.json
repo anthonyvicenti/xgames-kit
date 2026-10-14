@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0028",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0028.png",
+ "sha256": "8e02fee04acb92b79627551e2ae6503d066ac94fa7f658b4473d62c0637e7464",
+ "bytes": 232,
+ "preview": "previews/tile-0028.png",
+ "from": "Tiles/tile_0028.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone brick wall with a small barred window (a cell grate)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "brick",
+  "stone",
+  "window",
+  "bars",
+  "grate",
+  "prison"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#52607c",
+     "#262b44",
+     "#c0cbdc"
+    ],
+    "saturation": 0.229,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7a67b0ec169f8a967906b2272927f4d4dd34ee60e0e066ad1544deaa9cf86d08",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

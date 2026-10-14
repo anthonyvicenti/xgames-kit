@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "rod-swish",
+ "pack": "vista-sounds",
+ "file": "rod-swish.ogg",
+ "sha256": "5637f21cc6d11e6e16f1806997267117bb34e0a190277f2569c5ba8f1f234184",
+ "bytes": 24086,
+ "preview": "previews/rod-swish.png",
+ "from": "5 rod swishes (the cast)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Rod swish (cast)",
+ "tags": [
+  "coast",
+  "calm",
+  "rod",
+  "swish"
+ ],
+ "use": {
+  "seconds": 2.981,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 62% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -12.1,
+     "samplePeakDb": -0.6,
+     "truePeakDb": -0.4,
+     "hfRatio": 0.621
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 2.981,
+    "peakDbfs": -0.6,
+    "soundMaxLufs": -12.1
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/Mrthenoronha/sounds/371313/",
+  "author": "Mrthenoronha, mwchristian95"
+ }
+}

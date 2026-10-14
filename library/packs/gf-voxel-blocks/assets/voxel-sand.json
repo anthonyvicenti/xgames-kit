@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-sand",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-sand.png",
+ "sha256": "fd8113d7f6073be33806842c2a7ad7fc50c2afae3f42843b5a023dfa97c38350",
+ "bytes": 32533,
+ "preview": "previews/voxel-sand.png",
+ "from": "kenney:voxel-pack/sand; PNG/Tiles/sand.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 602,10; mean difference 3.6 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "sand (Voxel Pack)",
+ "tags": [
+  "sand",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.013
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e0d1af",
+     "#ecdcb8",
+     "#d7c9a8",
+     "#f3e2be",
+     "#ecdbb8",
+     "#ecdcb7",
+     "#ebdbb7",
+     "#ecdbb7"
+    ],
+    "saturation": 0.505,
+    "value": 0.801,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.975
+     }
+    ],
+    "exact": 289,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "0aee535d03a084d00fd6b80aaa7f09b644e677106caef65c227c4664a15ea14b",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

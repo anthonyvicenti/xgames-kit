@@ -1,0 +1,1976 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "office-wall": {
+   "origin": "gf-three library props/office-wall.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.964
+      },
+      {
+       "hue": "orange",
+       "share": 0.036
+      }
+     ],
+     "grey": 0.964,
+     "lightness": 0.819,
+     "saturation": 0.067,
+     "top": [
+      {
+       "colour": "#ffffff",
+       "share": 0.505
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.459
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.036
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.03,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 12,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4040,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "office-wall-window": {
+   "origin": "gf-three library props/office-wall-window.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.624
+      },
+      {
+       "hue": "orange",
+       "share": 0.278
+      },
+      {
+       "hue": "green",
+       "share": 0.098
+      }
+     ],
+     "grey": 0.624,
+     "lightness": 0.825,
+     "saturation": 0.266,
+     "top": [
+      {
+       "colour": "#ffffff",
+       "share": 0.332
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.291
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.278
+      },
+      {
+       "colour": "#daebe3",
+       "share": 0.098
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.91,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 108,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 6272,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "office-wall-doorway": {
+   "origin": "gf-three library props/office-wall-doorway.glb",
+   "door": {
+    "width": 0.86,
+    "height": 1.99
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.765
+      },
+      {
+       "hue": "orange",
+       "share": 0.235
+      }
+     ],
+     "grey": 0.765,
+     "lightness": 0.82,
+     "saturation": 0.209,
+     "top": [
+      {
+       "colour": "#ffffff",
+       "share": 0.411
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.354
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.235
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.58,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4556,
+      "role": "prop"
+     }
+    }
+   ],
+   "use": {
+    "collider": {
+     "shape": "compound",
+     "parts": [
+      {
+       "shape": "box",
+       "size": [
+        0.57,
+        2.579,
+        0.178
+       ],
+       "offset": [
+        -0.715,
+        1.29,
+        0
+       ]
+      },
+      {
+       "shape": "box",
+       "size": [
+        0.57,
+        2.579,
+        0.178
+       ],
+       "offset": [
+        0.715,
+        1.29,
+        0
+       ]
+      },
+      {
+       "shape": "box",
+       "size": [
+        2,
+        0.59,
+        0.178
+       ],
+       "offset": [
+        0,
+        2.285,
+        0
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "office-wall-half": {
+   "origin": "gf-three library props/office-wall-half.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.966
+      },
+      {
+       "hue": "orange",
+       "share": 0.034
+      }
+     ],
+     "grey": 0.966,
+     "lightness": 0.827,
+     "saturation": 0.064,
+     "top": [
+      {
+       "colour": "#ffffff",
+       "share": 0.527
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.439
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.034
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.43,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 12,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4048,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "office-wall-corner": {
+   "origin": "gf-three library props/office-wall-corner.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.965
+      },
+      {
+       "hue": "orange",
+       "share": 0.035
+      }
+     ],
+     "grey": 0.965,
+     "lightness": 0.825,
+     "saturation": 0.065,
+     "top": [
+      {
+       "colour": "#ffffff",
+       "share": 0.522
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.444
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.035
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.58,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 28,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4232,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "office-wall-doorway-wide": {
+   "origin": "gf-three library props/office-wall-doorway-wide.glb",
+   "door": {
+    "width": 1.71,
+    "height": 1.99
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.594
+      },
+      {
+       "hue": "orange",
+       "share": 0.406
+      }
+     ],
+     "grey": 0.594,
+     "lightness": 0.826,
+     "saturation": 0.33,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.406
+      },
+      {
+       "colour": "#ffffff",
+       "share": 0.341
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.252
+      }
+     ]
+    },
+    "trianglesPerMetre": 3.22,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4572,
+      "role": "prop"
+     }
+    }
+   ],
+   "use": {
+    "collider": {
+     "shape": "compound",
+     "parts": [
+      {
+       "shape": "box",
+       "size": [
+        0.142,
+        2.579,
+        0.178
+       ],
+       "offset": [
+        -0.929,
+        1.29,
+        0
+       ]
+      },
+      {
+       "shape": "box",
+       "size": [
+        0.142,
+        2.579,
+        0.178
+       ],
+       "offset": [
+        0.929,
+        1.29,
+        0
+       ]
+      },
+      {
+       "shape": "box",
+       "size": [
+        2,
+        0.59,
+        0.178
+       ],
+       "offset": [
+        0,
+        2.285,
+        0
+       ]
+      }
+     ]
+    }
+   }
+  },
+  "ceiling-lamp": {
+   "origin": "gf-three library props/ceiling-lamp.glb",
+   "shadow": false,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.809
+      },
+      {
+       "hue": "cyan",
+       "share": 0.191
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.897,
+     "saturation": 0.858,
+     "top": [
+      {
+       "colour": "#fff5ca",
+       "share": 0.809
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.191
+      }
+     ]
+    },
+    "trianglesPerMetre": 6.31,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3632,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "desk": {
+   "origin": "gf-three library props/desk.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.999
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.757,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.999
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.001
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.17,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 198,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5376,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "desk-corner": {
+   "origin": "gf-three library props/desk-corner.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.999
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.757,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.999
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.001
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.32,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 250,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5908,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "chair-office": {
+   "origin": "gf-three library props/chair-office.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.63
+      },
+      {
+       "hue": "grey",
+       "share": 0.37
+      }
+     ],
+     "grey": 0.37,
+     "lightness": 0.753,
+     "saturation": 0.599,
+     "top": [
+      {
+       "colour": "#f9a39e",
+       "share": 0.63
+      },
+      {
+       "colour": "#a3b6b6",
+       "share": 0.37
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.87,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 588,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 8856,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "monitor": {
+   "origin": "gf-three library props/monitor.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.685
+      },
+      {
+       "hue": "cyan",
+       "share": 0.315
+      }
+     ],
+     "grey": 0.685,
+     "lightness": 0.709,
+     "saturation": 0.141,
+     "top": [
+      {
+       "colour": "#96a7a7",
+       "share": 0.685
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.315
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.01,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 72,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3892,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "keyboard": {
+   "origin": "gf-three library props/keyboard.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.631,
+     "saturation": 0.093,
+     "top": [
+      {
+       "colour": "#96a7a7",
+       "share": 0.821
+      },
+      {
+       "colour": "#a3b6b6",
+       "share": 0.179
+      }
+     ]
+    },
+    "trianglesPerMetre": 9.9,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 32,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3284,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "computer-mouse": {
+   "origin": "gf-three library props/computer-mouse.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.622,
+     "saturation": 0.088,
+     "top": [
+      {
+       "colour": "#96a7a7",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 38.03,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 71,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 2616,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "laptop": {
+   "origin": "gf-three library props/laptop.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.848
+      },
+      {
+       "hue": "cyan",
+       "share": 0.152
+      }
+     ],
+     "grey": 0.848,
+     "lightness": 0.668,
+     "saturation": 0.116,
+     "top": [
+      {
+       "colour": "#96a7a7",
+       "share": 0.766
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.152
+      },
+      {
+       "colour": "#a3b6b6",
+       "share": 0.081
+      }
+     ]
+    },
+    "trianglesPerMetre": 9.44,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 68,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4712,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "desk-lamp": {
+   "origin": "gf-three library props/desk-lamp.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.744
+      },
+      {
+       "hue": "cyan",
+       "share": 0.256
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.897,
+     "saturation": 0.809,
+     "top": [
+      {
+       "colour": "#fff5ca",
+       "share": 0.744
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.256
+      }
+     ]
+    },
+    "trianglesPerMetre": 9.08,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3644,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "plant-potted": {
+   "origin": "gf-three library props/plant-potted.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.554
+      },
+      {
+       "hue": "orange",
+       "share": 0.446
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.738,
+     "saturation": 0.734,
+     "top": [
+      {
+       "colour": "#76eac8",
+       "share": 0.554
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.41
+      },
+      {
+       "colour": "#d7b495",
+       "share": 0.035
+      }
+     ]
+    },
+    "trianglesPerMetre": 6.06,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5248,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "plant-small": {
+   "origin": "gf-three library props/plant-small.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.745
+      },
+      {
+       "hue": "cyan",
+       "share": 0.255
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.776,
+     "saturation": 0.752,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.745
+      },
+      {
+       "colour": "#76eac8",
+       "share": 0.255
+      }
+     ]
+    },
+    "trianglesPerMetre": 22.26,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 102,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4356,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "bookcase": {
+   "origin": "gf-three library props/bookcase.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.26,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 372,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5632,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "bookcase-open": {
+   "origin": "gf-three library props/bookcase-open.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 7.93,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 320,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4468,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "trashcan": {
+   "origin": "gf-three library props/trashcan.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.79
+      },
+      {
+       "hue": "grey",
+       "share": 0.21
+      }
+     ],
+     "grey": 0.21,
+     "lightness": 0.841,
+     "saturation": 0.22,
+     "top": [
+      {
+       "colour": "#dfeaec",
+       "share": 0.79
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.21
+      }
+     ]
+    },
+    "trianglesPerMetre": 7.26,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 68,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4012,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "box-closed": {
+   "origin": "gf-three library props/box-closed.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.804,
+     "saturation": 0.751,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.98
+      },
+      {
+       "colour": "#d7b495",
+       "share": 0.02
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.15,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3560,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "box-open": {
+   "origin": "gf-three library props/box-open.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.804,
+     "saturation": 0.751,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.98
+      },
+      {
+       "colour": "#d7b495",
+       "share": 0.02
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.22,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 60,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3580,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "coffee-machine": {
+   "origin": "gf-three library props/coffee-machine.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.765
+      },
+      {
+       "hue": "cyan",
+       "share": 0.235
+      }
+     ],
+     "grey": 0.765,
+     "lightness": 0.756,
+     "saturation": 0.222,
+     "top": [
+      {
+       "colour": "#a3b6b6",
+       "share": 0.681
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.235
+      },
+      {
+       "colour": "#fcffff",
+       "share": 0.084
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.04,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 166,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 6392,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "sofa": {
+   "origin": "gf-three library props/sofa.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.98
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.798,
+     "saturation": 0.881,
+     "top": [
+      {
+       "colour": "#f9a39e",
+       "share": 0.98
+      },
+      {
+       "colour": "#f3cca8",
+       "share": 0.02
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.05,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 128,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4532,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "coffee-table": {
+   "origin": "gf-three library props/coffee-table.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.68,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 124,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3004,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "rug": {
+   "origin": "gf-three library props/rug.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "red",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.791,
+     "saturation": 0.85,
+     "top": [
+      {
+       "colour": "#f9a39e",
+       "share": 0.934
+      },
+      {
+       "colour": "#cd9491",
+       "share": 0.066
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.29,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 28,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3172,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "tv": {
+   "origin": "gf-three library props/tv.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.67
+      },
+      {
+       "hue": "cyan",
+       "share": 0.33
+      }
+     ],
+     "grey": 0.67,
+     "lightness": 0.714,
+     "saturation": 0.143,
+     "top": [
+      {
+       "colour": "#96a7a7",
+       "share": 0.67
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.33
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.92,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 72,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3724,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "fridge": {
+   "origin": "gf-three library props/fridge.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.93
+      },
+      {
+       "hue": "green",
+       "share": 0.067
+      }
+     ],
+     "grey": 0.93,
+     "lightness": 0.959,
+     "saturation": 0.516,
+     "top": [
+      {
+       "colour": "#f8fdfa",
+       "share": 0.885
+      },
+      {
+       "colour": "#daebe3",
+       "share": 0.067
+      },
+      {
+       "colour": "#96a7a7",
+       "share": 0.046
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.002
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.4,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 250,
+      "meshes": 3,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 8048,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kitchen-counter": {
+   "origin": "gf-three library props/kitchen-counter.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.875
+      },
+      {
+       "hue": "cyan",
+       "share": 0.125
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.817,
+     "saturation": 0.692,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 0.865
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.125
+      },
+      {
+       "colour": "#d7b495",
+       "share": 0.011
+      }
+     ]
+    },
+    "trianglesPerMetre": 3.51,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 114,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5496,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "floor-lamp": {
+   "origin": "gf-three library props/floor-lamp.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.644
+      },
+      {
+       "hue": "cyan",
+       "share": 0.356
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.897,
+     "saturation": 0.735,
+     "top": [
+      {
+       "colour": "#fff5ca",
+       "share": 0.644
+      },
+      {
+       "colour": "#dfeaec",
+       "share": 0.356
+      }
+     ]
+    },
+    "trianglesPerMetre": 9.07,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 76,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3876,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "coat-rack": {
+   "origin": "gf-three library props/coat-rack.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 13.63,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 190,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4188,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "table": {
+   "origin": "gf-three library props/table.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.73,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 120,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3024,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "chair": {
+   "origin": "gf-three library props/chair.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 10.69,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 170,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3528,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "table-round": {
+   "origin": "gf-three library props/table-round.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.806,
+     "saturation": 0.758,
+     "top": [
+      {
+       "colour": "#f3cca8",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.15,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 80,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 2828,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 34,
+   "paletteSize": 2,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.415
+    },
+    {
+     "hue": "grey",
+     "share": 0.334
+    },
+    {
+     "hue": "cyan",
+     "share": 0.105
+    },
+    {
+     "hue": "red",
+     "share": 0.077
+    },
+    {
+     "hue": "yellow",
+     "share": 0.065
+    }
+   ],
+   "lightness": 0.806,
+   "saturation": 0.735,
+   "trianglesPerMetre": 5.26,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0
+  },
+  "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
+ }
+}

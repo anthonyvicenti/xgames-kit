@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0089",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0089.png",
+ "sha256": "e2bae5b93f2b74bef0671d6e33a12eeef3d77ea82fa24ef8fa01404bf23dfa58",
+ "bytes": 225,
+ "preview": "previews/tile-0089.png",
+ "from": "Tiles/tile_0089.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone house wall with a closed wooden door",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "stone",
+  "grey",
+  "door",
+  "entrance",
+  "house",
+  "building"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c0cbdc",
+     "#3f2631",
+     "#763b36",
+     "#8b9bb4",
+     "#bd6c4a"
+    ],
+    "saturation": 0.304,
+    "value": 0.49,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.414
+     },
+     {
+      "hue": "pink",
+      "share": 0.266
+     },
+     {
+      "hue": "red",
+      "share": 0.195
+     },
+     {
+      "hue": "orange",
+      "share": 0.125
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.067
+   }
+  }
+ },
+ "source": {
+  "sha256": "245aefd71d4c720401c6c33181266cc9da920a802cc275ee2da0c39a240bbc2b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

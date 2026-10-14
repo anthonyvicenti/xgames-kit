@@ -1,0 +1,121 @@
+{
+  "specVersion": 2,
+  "title": "Gaslight Hold",
+  "hook": "Hold a gaslit street with friends against waves of the risen that never stop.",
+  "runtime": "forge",
+  "loop": "endless",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ],
+    "inputs": [
+      "keyboard-mouse",
+      "touch"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "primary": "fire",
+    "jump": "jump",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "winBy": "Hold out as long as you can.",
+    "loseBy": "Everyone falls."
+  },
+  "world": {
+    "template": "town-street",
+    "seed": 7,
+    "size": "medium",
+    "props": [
+      {
+        "name": "pump",
+        "describe": "the town pump, the last thing still working",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "waves": {
+      "endless": true
+    },
+    "shop": {
+      "cartOnly": true
+    }
+  },
+  "rules": {
+    "summary": "Waves rise from cellars and drains; kills drop coins; after each wave the barrow opens for two minutes and you buy cards that stack into builds."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a night watchman in your colour",
+      "body": {
+        "from": "kind"
+      }
+    },
+    {
+      "role": "enemy",
+      "describe": "a risen townsperson",
+      "body": {
+        "from": "library",
+        "asset": "forge-town/townsfolk-risen"
+      }
+    }
+  ],
+  "build": [
+    {
+      "what": "a scoreboard of the best nights across all players",
+      "how": "a module in src/best-nights.js that posts each night's score to the game's backend and draws the board through a panel slot",
+      "where": "module",
+      "row": "best",
+      "accept": "after a run, the board lists the night with the player's name"
+    }
+  ],
+  "src": [
+    {
+      "path": "src/best-nights.js",
+      "for": [
+        "build.1"
+      ],
+      "describe": "posts and reads the best nights"
+    }
+  ],
+  "slots": [
+    {
+      "id": "game.board.frame",
+      "category": "picture",
+      "describe": "the frame around the best-nights board",
+      "fill": {
+        "from": "kind"
+      },
+      "for": [
+        "build.1"
+      ]
+    }
+  ],
+  "backend": {
+    "kind": "database",
+    "provider": "supabase",
+    "needs": [
+      "leaderboard"
+    ]
+  },
+  "content": {
+    "rating": "T",
+    "notes": "No gore: dark scraps and bones."
+  }
+}

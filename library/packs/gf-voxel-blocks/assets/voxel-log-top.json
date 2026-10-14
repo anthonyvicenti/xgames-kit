@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-log-top",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-log-top.png",
+ "sha256": "acdfedef3382535cd011084fed1a3d6731a3c3192227f0d7c209b7f0cb8682bf",
+ "bytes": 27008,
+ "preview": "previews/voxel-log-top.png",
+ "from": "kenney:voxel-pack/trunk_top; PNG/Tiles/trunk_top.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 750,158; mean difference 2.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "trunk_top (Voxel Pack)",
+ "tags": [
+  "log",
+  "top",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.017
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#91673f",
+     "#c28954",
+     "#db9a5f",
+     "#7b5632",
+     "#815a35",
+     "#ce9258",
+     "#aa784a",
+     "#d5965c"
+    ],
+    "saturation": 0.46,
+    "value": 0.472,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.563
+     },
+     {
+      "hue": "orange",
+      "share": 0.437
+     }
+    ],
+    "exact": 239,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "e846c2b2f1c404f155264a1a50b8a9cfbeb8d6b3815afa01a43bb97b548a0323",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

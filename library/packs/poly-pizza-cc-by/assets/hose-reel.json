@@ -1,0 +1,109 @@
+{
+ "assetVersion": 1,
+ "id": "hose-reel",
+ "pack": "poly-pizza-cc-by",
+ "file": "hose-reel.glb",
+ "sha256": "cc8d61881a03e0c11278b72646b946dd8acef994325a02b2c588e4bb3e0913e9",
+ "bytes": 36772,
+ "preview": "previews/hose-reel.png",
+ "from": "polypizza:qXBsZPAaYQ; baked to metres (x0.44179), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a garden hose on a reel",
+ "tags": [
+  "backyard",
+  "hose",
+  "reel"
+ ],
+ "use": {
+  "size": [
+   0.814,
+   0.8,
+   1.115
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.814,
+    0.8,
+    1.115
+   ],
+   "offset": [
+    0,
+    0.4,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 2036,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2036,
+     "meshes": 4,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 36772,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#a8a8a8",
+     "#353535",
+     "#c9b26e",
+     "#b9a059"
+    ],
+    "saturation": 0.005,
+    "value": 0.568,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.989
+     }
+    ],
+    "grey": 0.989
+   },
+   "trianglesPerMetre": 21.39,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "J-Toastie",
+  "url": "https://poly.pizza/m/qXBsZPAaYQ",
+  "credit": "\"Reel W/ Hose\" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/qXBsZPAaYQ)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/qXBsZPAaYQ",
+  "download": "https://static.poly.pizza/bfe7fd55-27df-4681-bf9d-ff103ca4911a.glb",
+  "sha256": "45e5d8a05e971368df2f23546a2fe8812681f4c843ef837c72ca973b2d8dc57d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.44179), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "J-Toastie"
+ }
+}

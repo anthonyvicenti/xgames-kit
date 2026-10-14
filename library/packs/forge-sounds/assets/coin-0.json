@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "coin-0",
+ "pack": "forge-sounds",
+ "file": "coin-0.ogg",
+ "sha256": "684fa050c5124847173435cf2c053021f41484889ad46788f35071b57b595d1f",
+ "bytes": 6931,
+ "preview": "previews/coin-0.png",
+ "from": "https://opengameart.org/content/80-cc0-rpg-sfx item_coins_01.ogg; cut to 0.007-0.367 s of the source (0.36 s), 2 ms fade-in and 80 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 8 dB (look-ahead limiter, 8 ms release), gain 4.3 dB (loudest 400 ms toward -21 LUFS, true peak…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "gold coin picked up (coin 0)",
+ "tags": [
+  "sounds",
+  "coin",
+  "pickup"
+ ],
+ "use": {
+  "seconds": 0.379,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 47% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -19.9,
+     "samplePeakDb": -3.5,
+     "truePeakDb": -3.3,
+     "hfRatio": 0.473
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.379,
+    "peakDbfs": -3.5,
+    "soundMaxLufs": -19.9
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.007-0.367 s of the source (0.36 s), 2 ms fade-in and 80 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 8 dB (look-ahead limiter, 8 ms release), gain 4.3 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

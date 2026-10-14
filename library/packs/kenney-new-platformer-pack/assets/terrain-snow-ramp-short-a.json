@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-ramp-short-a",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-ramp-short-a.png",
+ "sha256": "e1fce15515cb1238ceb0d6d952638c05733a2107c4a1a7adbf6ab2d1e2c1c77b",
+ "bytes": 2666,
+ "preview": "previews/terrain-snow-ramp-short-a.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_ramp_short_a.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow ramp short tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "ramp",
+  "short",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 18.2 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 9.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#e5f0ff",
+     "#c8dbf5",
+     "#ffffff",
+     "#c0c8ce",
+     "#abb6bf"
+    ],
+    "saturation": 0.17,
+    "value": 0.779,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.978
+     }
+    ],
+    "exact": 56,
+    "grey": 0.978
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.026
+   }
+  }
+ },
+ "source": {
+  "sha256": "cb71889119da0ab4913a8981039343f79fbb0ae50df477f78e4eaf3df2357041",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

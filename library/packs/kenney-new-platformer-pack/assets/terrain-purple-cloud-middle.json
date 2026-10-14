@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-purple-cloud-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-purple-cloud-middle.png",
+ "sha256": "f1b37bb60d200312837aa099e0cdd98ad9e6f2de0268b71461d2a51157774a6a",
+ "bytes": 2519,
+ "preview": "previews/terrain-purple-cloud-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_purple_cloud_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain purple cloud middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "purple",
+  "cloud",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 26.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ba6be9",
+     "#cfd5da",
+     "#353541",
+     "#d699fa",
+     "#a452d4",
+     "#bbc4cb",
+     "#a6b2bb",
+     "#343440"
+    ],
+    "saturation": 0.403,
+    "value": 0.637,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.544
+     },
+     {
+      "hue": "purple",
+      "share": 0.456
+     }
+    ],
+    "exact": 79,
+    "grey": 0.544
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.66
+   }
+  }
+ },
+ "source": {
+  "sha256": "bb26e8e93266b64ecc3c84a70483abe05dd536e9d82615fe63c326397a975563",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

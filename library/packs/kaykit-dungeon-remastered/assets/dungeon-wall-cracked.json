@@ -1,0 +1,121 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-wall-cracked",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-wall-cracked.glb",
+ "sha256": "ce8e12c0af7e96e91317e03411558295a92ac8bf07a4025423ece8f93eaa6961",
+ "bytes": 91756,
+ "preview": "previews/dungeon-wall-cracked.png",
+ "from": "wall_cracked.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cracked stone wall section",
+ "tags": [
+  "dungeon",
+  "wall",
+  "ruin",
+  "modular",
+  "stone",
+  "cracked"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   0.945
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.472
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    0.945
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 2010,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2010,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 91756,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#7f8a8f",
+     "#7b8589",
+     "#828d92",
+     "#4b5256",
+     "#596064",
+     "#788287",
+     "#4a5155",
+     "#40464a"
+    ],
+    "saturation": 0.09,
+    "value": 0.444,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.939
+     },
+     {
+      "hue": "cyan",
+      "share": 0.061
+     }
+    ],
+    "grey": 0.939
+   },
+   "trianglesPerMetre": 8.34,
+   "texelsPerMetre": 65,
+   "texturedShare": 0.812,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_cracked.gltf.glb",
+  "sha256": "344fb9a709a51b7f04131fded75a5ad38e829d74fcf1784d848f3df0703f804c",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

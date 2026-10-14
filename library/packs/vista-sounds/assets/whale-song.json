@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "whale-song",
+ "pack": "vista-sounds",
+ "file": "whale-song.ogg",
+ "sha256": "5452f85dda448630503eacee842737b72a6731bfa4989edd7e4df7e6eb8de45f",
+ "bytes": 373991,
+ "preview": "previews/whale-song.png",
+ "from": "humpback whale song, recorded diving (French Polynesia), low-passed 2.6 kHz (divers' regulator hiss) — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Whale song (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "whale",
+  "song",
+  "loop"
+ ],
+ "use": {
+  "seconds": 50,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -14.1,
+     "samplePeakDb": -4.3,
+     "truePeakDb": -4.3,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 50,
+    "peakDbfs": -4.3,
+    "soundMaxLufs": -14.1
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/KEVOY/sounds/82325/",
+  "author": "KEVOY"
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "stall-red",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "stall-red.glb",
+ "sha256": "17820e4c08fb36954f9fad5e7fab677e844608fb1c101c3dddb345e0bd824c43",
+ "bytes": 22180,
+ "preview": "previews/stall-red.png",
+ "from": "kenney:fantasy-town-kit/stall-red; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a market stall with a red awning",
+ "tags": [
+  "plaza",
+  "stall",
+  "cover",
+  "red"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.474,
+   2
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2,
+    2.474,
+    2
+   ],
+   "offset": [
+    0,
+    1.237,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 270,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 270,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 22180,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#cc8665",
+     "#be7c5d",
+     "#d54d5b",
+     "#d34d5b",
+     "#d84e5b",
+     "#db4e5b",
+     "#c3805f",
+     "#c78362"
+    ],
+    "saturation": 0.566,
+    "value": 0.581,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.51
+     },
+     {
+      "hue": "red",
+      "share": 0.49
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "aa20a630f417032c46aaefbc779fd2b3355b451bf05d31acc36fd664146866b1",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

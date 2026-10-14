@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "heart",
+ "pack": "flat-standins-pixel",
+ "file": "heart.png",
+ "sha256": "f53e69689bb3a68735d06d8d853d377c279ba0e0306509ce598b8cd5fbd2e940",
+ "bytes": 284,
+ "preview": "previews/heart.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): heart.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a red heart",
+ "tags": [
+  "pixel",
+  "heart",
+  "health",
+  "pickup",
+  "flat",
+  "2d"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#e84868",
+     "#6e2944",
+     "#ff8aa0",
+     "#774259",
+     "#c02848",
+     "#5f1d38",
+     "#ffffff"
+    ],
+    "saturation": 0.667,
+    "value": 0.53,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.674
+     },
+     {
+      "hue": "pink",
+      "share": 0.302
+     }
+    ],
+    "exact": 7,
+    "grey": 0.023
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.731
+   }
+  }
+ },
+ "source": {
+  "sha256": "4c4a48acff03ff3003d70accf5272b0b0963efaab87cebaf1de03bb55f9c24fb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

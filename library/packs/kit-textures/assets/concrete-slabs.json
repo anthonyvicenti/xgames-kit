@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "concrete-slabs",
+ "pack": "kit-textures",
+ "file": "concrete-slabs.png",
+ "sha256": "b9800402d901c39b0a023e24d1bb61107961b4cce3d96a89cc51f9a8be48b3cd",
+ "bytes": 19232,
+ "preview": "previews/concrete-slabs.png",
+ "from": "research/gf-three/lookdev/tools/bake-patterns.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "poured concrete in 2 m bays with saw cuts, 4 m per tile",
+ "tags": [
+  "concrete",
+  "slabs",
+  "ground",
+  "pattern",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb",
+  "tileMetres": 4
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f5f5f5",
+     "#f6f6f6",
+     "#f4f4f4",
+     "#f7f7f7",
+     "#f8f8f8",
+     "#f3f3f3",
+     "#f9f9f9",
+     "#f2f2f2"
+    ],
+    "saturation": 0,
+    "value": 0.962,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 35,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

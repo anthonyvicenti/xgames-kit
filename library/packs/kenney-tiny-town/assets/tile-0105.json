@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0105",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0105.png",
+ "sha256": "2dd580bbe4bd84fa86159e283a14beae353e16e910b1de061af8d4bbd57e21b3",
+ "bytes": 260,
+ "preview": "previews/tile-0105.png",
+ "from": "Tiles/tile_0105.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round black bomb with a lit fuse",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "bomb",
+  "explosive",
+  "black",
+  "fuse",
+  "item",
+  "weapon"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#52607c",
+     "#eaa56c",
+     "#8c9cb5",
+     "#bd6c4a"
+    ],
+    "saturation": 0.267,
+    "value": 0.289,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.684
+     },
+     {
+      "hue": "blue",
+      "share": 0.253
+     },
+     {
+      "hue": "orange",
+      "share": 0.063
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "6a8405b5a036ca3ca902a500b74a4bfcf8a71eb5b343e45303a6949b0d67d36d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

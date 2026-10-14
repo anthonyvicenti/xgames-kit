@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "cedar-a",
+ "pack": "forge-world",
+ "file": "cedar-a.glb",
+ "sha256": "ea73e1ff3c38e724b12d456a9879d23aee38c51ac433b1af38931835059505cc",
+ "bytes": 30784,
+ "preview": "previews/cedar-a.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (world/night-bark.png, world/night-yew.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a 12.5 m cedar for the backdrop: a trunk forking low, 8 wide flat tiers of boughs, the crown about 15 m across",
+ "tags": [
+  "world",
+  "cedar",
+  "a"
+ ],
+ "use": {
+  "size": [
+   17.188,
+   13.025,
+   12.213
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -8.683,
+   -0.115,
+   -5.565
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.2,
+    12.5,
+    1.2
+   ],
+   "offset": [
+    0,
+    6.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 262,
+  "textures": 2,
+  "textureMax": 64,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 262,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 2,
+     "bytes": 30784,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#0b1616",
+     "#142725",
+     "#18302e",
+     "#162d2b",
+     "#122422",
+     "#152b29",
+     "#172f2d",
+     "#10211f"
+    ],
+    "saturation": 0.313,
+    "value": 0.12,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.669
+     },
+     {
+      "hue": "grey",
+      "share": 0.304
+     }
+    ],
+    "grey": 0.304
+   },
+   "trianglesPerMetre": 0.76,
+   "texelsPerMetre": 33,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (world/night-bark.png, world/night-yew.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

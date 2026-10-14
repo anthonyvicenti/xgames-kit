@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "plant-potted",
+ "pack": "kenney-furniture-kit",
+ "file": "plant-potted.glb",
+ "sha256": "cbe67599939623b76ba2754a02639ab299ef4124a477d6d3582170a7511282dd",
+ "bytes": 5248,
+ "preview": "previews/plant-potted.png",
+ "from": "kenney:furniture-kit/pottedPlant; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a potted office plant",
+ "tags": [
+  "office",
+  "plant",
+  "potted"
+ ],
+ "use": {
+  "size": [
+   0.424,
+   1.308,
+   0.483
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.25,
+   "height": 1,
+   "offset": [
+    0,
+    0.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5248,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#76eac8",
+     "#f3cca8",
+     "#d7b495"
+    ],
+    "saturation": 0.734,
+    "value": 0.738,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.554
+     },
+     {
+      "hue": "orange",
+      "share": 0.446
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.06,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "5b760eda2766f75fda36b2c5df652a1662f82981ef64cd8fa7fe7bcd386b3a15",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

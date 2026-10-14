@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "fly-b",
+ "pack": "kenney-new-platformer-pack",
+ "file": "fly-b.png",
+ "sha256": "e01b163ccd845b87b418d143117615d1a81e5620c301fb18b46afb16ce68b913",
+ "bytes": 5201,
+ "preview": "previews/fly-b.png",
+ "from": "Sprites/Enemies/Double/fly_b.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "fly",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "fly",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#353541",
+     "#ffffff",
+     "#474758",
+     "#525262",
+     "#faba2d",
+     "#343440",
+     "#353540",
+     "#444455"
+    ],
+    "saturation": 0.099,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.976
+     }
+    ],
+    "exact": 242,
+    "grey": 0.976
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "16e1f9434f2c363012284aa1dd33759e5e080055b2bb0d697084cf3720d9bc09",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

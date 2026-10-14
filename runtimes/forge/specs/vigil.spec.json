@@ -1,0 +1,369 @@
+{
+  "specVersion": 2,
+  "title": "Bone Vigil",
+  "hook": "Keep the vigil in a moonlit ruin: three waves of the risen dead, one relic from the reliquary, then the bone lord.",
+  "prompt": "gf-forge wave 2, the first playable (research/rust-engine/PLAN.md \u00a74 wave 2): a dark retro first-person roguelite slice in one moonlit ruin arena. Start with a sidearm, a quick melee and an evade; three waves growing in number (grunts and skirmishers, then casters among them); a three-card reward with a full inspector; then a boss wave; win, lose and replay; live co-op for 2-4 with down and revive.",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 900,
+    "winBy": "Hold the ruin through three waves, then break the bone lord.",
+    "loseBy": "Everyone falls.",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "medium",
+    "seed": 11,
+    "props": [
+      {
+        "name": "chest",
+        "describe": "the reliquary the dead come for: an iron-bound chest of relics",
+        "role": "what you guard",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "player": {
+      "health": 100,
+      "armor": 20
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Vigil sidearm"
+      },
+      {
+        "id": "scatter",
+        "preset": "shotgun",
+        "name": "Gravedigger's scattergun",
+        "slot": 2,
+        "start": false
+      },
+      {
+        "id": "repeater",
+        "preset": "repeater",
+        "name": "Bellringer's repeater",
+        "slot": 3,
+        "start": false
+      },
+      {
+        "id": "blade",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 4,
+        "start": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Bone grunt",
+        "archetype": "chaser"
+      },
+      {
+        "id": "skirmisher",
+        "name": "Skirmisher",
+        "archetype": "runner",
+        "health": 22
+      },
+      {
+        "id": "caster",
+        "name": "Grave caster",
+        "archetype": "caster"
+      },
+      {
+        "id": "lord",
+        "name": "The bone lord",
+        "archetype": "boss",
+        "health": 800,
+        "boss": {
+          "summon": "grunt",
+          "summonCount": 2
+        }
+      }
+    ],
+    "waves": [
+      {
+        "id": "first",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 7
+          },
+          {
+            "type": "skirmisher",
+            "count": 1
+          }
+        ],
+        "delay": 2.4,
+        "spawnEvery": 1.4,
+        "maxAlive": 4,
+        "attackers": 2,
+        "friends": 0.5
+      },
+      {
+        "id": "second",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 10
+          },
+          {
+            "type": "skirmisher",
+            "count": 4
+          },
+          {
+            "type": "caster",
+            "count": 1
+          }
+        ],
+        "spawnEvery": 0.9,
+        "maxAlive": 6,
+        "friends": 0.5
+      },
+      {
+        "id": "third",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 16
+          },
+          {
+            "type": "skirmisher",
+            "count": 9
+          },
+          {
+            "type": "caster",
+            "count": 3
+          }
+        ],
+        "maxAlive": 9,
+        "friends": 0.5,
+        "reward": true
+      },
+      {
+        "id": "lord",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 6
+          },
+          {
+            "type": "caster",
+            "count": 1
+          },
+          {
+            "type": "lord",
+            "count": 1
+          }
+        ],
+        "maxAlive": 8,
+        "boss": true,
+        "friends": 0.5
+      }
+    ],
+    "cards": [
+      {
+        "id": "scattergun",
+        "name": "Gravedigger's Scattergun",
+        "kind": "weapon",
+        "weapon": "scatter",
+        "rarity": "epic",
+        "stack": 1,
+        "text": "A second weapon: two shells, eight pellets each. Key 2."
+      },
+      {
+        "id": "repeater",
+        "name": "Bellringer's Repeater",
+        "kind": "weapon",
+        "weapon": "repeater",
+        "rarity": "epic",
+        "stack": 1,
+        "text": "A second weapon that fires for as long as you hold it. Key 3."
+      },
+      {
+        "id": "sextons-hands",
+        "name": "Sexton's Hands",
+        "rarity": "common",
+        "stat": "weapons.*.reload",
+        "mul": 0.7,
+        "text": "Every reload is nearly a third shorter."
+      },
+      {
+        "id": "long-bandolier",
+        "name": "Long Bandolier",
+        "rarity": "common",
+        "stat": "weapons.sidearm.magazine",
+        "add": 4,
+        "text": "Four more rounds in the sidearm."
+      },
+      {
+        "id": "pilgrims-stride",
+        "name": "Pilgrim's Stride",
+        "rarity": "common",
+        "stat": "player.walk",
+        "mul": 1.12,
+        "text": "You cover ground faster."
+      },
+      {
+        "id": "light-feet",
+        "name": "Light Feet",
+        "rarity": "common",
+        "stat": "player.stamina.evadeCost",
+        "mul": 0.6,
+        "stat2": "player.evade.cooldown",
+        "mul2": 0.75,
+        "text": "An evade costs less breath and is ready sooner."
+      },
+      {
+        "id": "second-wind",
+        "name": "Second Wind",
+        "rarity": "common",
+        "stat": "player.stamina.regen",
+        "mul": 1.6,
+        "stat2": "player.stamina.max",
+        "add2": 1,
+        "text": "Your breath comes back faster, and you hold more of it."
+      },
+      {
+        "id": "bitter-draught",
+        "name": "Bitter Draught",
+        "kind": "heal",
+        "rarity": "common",
+        "share": 0.6,
+        "stack": 9,
+        "text": "Drink. Most of your health comes back, now."
+      },
+      {
+        "id": "reapers-reach",
+        "name": "Reaper's Reach",
+        "rarity": "common",
+        "stat": "weapons.blade.damage",
+        "mul": 1.6,
+        "stat2": "weapons.blade.melee.reach",
+        "add2": 0.6,
+        "text": "Your quick cut bites deeper and reaches further."
+      },
+      {
+        "id": "keen-eye",
+        "name": "Keen Eye",
+        "rarity": "rare",
+        "stat": "weapons.*.critMultiplier",
+        "add": 0.75,
+        "text": "A shot to the skull does far more."
+      },
+      {
+        "id": "heavy-rounds",
+        "name": "Heavy Rounds",
+        "rarity": "rare",
+        "stat": "weapons.sidearm.damage",
+        "mul": 1.4,
+        "stat2": "weapons.sidearm.fireInterval",
+        "mul2": 1.2,
+        "text": "The sidearm hits harder and fires a little slower."
+      },
+      {
+        "id": "iron-heart",
+        "name": "Iron Heart",
+        "rarity": "rare",
+        "stat": "player.health",
+        "add": 30,
+        "text": "Thirty more health, given at once."
+      },
+      {
+        "id": "keepers-oath",
+        "name": "Keeper's Oath",
+        "rarity": "rare",
+        "stat": "player.revive.time",
+        "mul": 0.5,
+        "stat2": "player.armor",
+        "add2": 25,
+        "text": "You raise a fallen friend in half the time, and wear more armour."
+      },
+      {
+        "id": "sawn-barrels",
+        "name": "Sawn Barrels",
+        "rarity": "rare",
+        "stat": "weapons.scatter.pellets",
+        "add": 4,
+        "stat2": "weapons.scatter.spread",
+        "mul2": 1.5,
+        "text": "The scattergun throws more shot, wider."
+      },
+      {
+        "id": "glass-saint",
+        "name": "Glass Saint",
+        "rarity": "epic",
+        "stack": 1,
+        "stat": "weapons.*.damage",
+        "mul": 1.5,
+        "stat2": "player.health",
+        "mul2": 0.7,
+        "text": "Every weapon hits half as hard again. You are easier to break."
+      }
+    ]
+  },
+  "rules": {
+    "summary": "The dead rise from the graves of a moonlit ruin in three waves, more of them each time. Shoot, cut and dodge. After the third the reliquary opens: choose one of three relics, each changing how you fight. Then the bone lord comes. With friends, a fallen hunter can be brought back: hold E beside them. Shift evades, V is a quick cut, R reloads, 1-3 pick a weapon you have earned.",
+    "scoring": "each kill scores the enemy's points to whoever landed it, and each coin a point to whoever it reaches",
+    "params": {
+      "mend": 25
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "content": {
+    "rating": "T",
+    "notes": "Skeletons fight and break apart; no blood."
+  },
+  "accept": [
+    "three waves rise, more of the dead each time, and the count grows with friends",
+    "after the third wave three cards are dealt and flipped, and the inspector shows exactly what the chosen one will change",
+    "the card taken changes how the player fights for the rest of the run",
+    "the bone lord comes with a few grunts; the run is won when it falls and lost when every hunter does",
+    "with friends, a fallen hunter is brought back by a friend holding E beside them",
+    "Play again starts a new run"
+  ],
+  "notInV1": [
+    "a shop and more than one reward",
+    "more than one arena"
+  ]
+}

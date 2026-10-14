@@ -1,0 +1,448 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/pack/1.json",
+  "title": "Asset pack (library/packs/<id>/pack.json)",
+  "description": "Every asset belongs to a pack (a Kenney kit, a KayKit set, a Meshy wave, 'your props v1'). A pack carries one licence and attribution, one pinned source, one owner, one visibility and one style signature (measured at ingest, never declared). Manifests and previews live in git; binaries are content-addressed outside it and fetched from the pinned source. Public packs push; private packs never do.",
+  "type": "object",
+  "required": [
+    "packVersion",
+    "id",
+    "title",
+    "licence",
+    "source",
+    "owner",
+    "visibility",
+    "dimension"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "packVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{0,39}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "describe": {
+      "type": "string",
+      "maxLength": 400
+    },
+    "licence": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/licence"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "additionalProperties": false,
+      "description": "Where the binaries come from, pinned: a zip by URL and hash, a repository at a commit, a maker's job ids, or the owner's own store.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "zip",
+            "git",
+            "maker",
+            "own",
+            "collection"
+          ],
+          "description": "collection: assets from many pages, each pinned in its own manifest's source."
+        },
+        "page": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "download": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256",
+          "description": "zip: the zip's hash."
+        },
+        "repo": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{7,40}$"
+        },
+        "maker": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "maker: the generator (meshy, an image model)."
+        },
+        "store": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "own: the name of the store the binaries are kept in (never a local path)."
+        },
+        "retrieved": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+        },
+        "rebuild": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "The tool and command that rebuilds the baked files from the pinned source."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "zip"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "download",
+              "sha256"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "git"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "repo",
+              "commit"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "kind": {
+                "const": "maker"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "maker"
+            ]
+          }
+        }
+      ]
+    },
+    "owner": {
+      "enum": [
+        "own",
+        "third-party",
+        "generated"
+      ]
+    },
+    "visibility": {
+      "enum": [
+        "public",
+        "private"
+      ]
+    },
+    "dimension": {
+      "enum": [
+        "3d",
+        "2d",
+        "audio",
+        "mixed"
+      ]
+    },
+    "signature": {
+      "$ref": "#/$defs/signature"
+    },
+    "fits": {
+      "type": "array",
+      "maxItems": 12,
+      "description": "The kinds the look judge rendered the pack's assets on and what it found (most assets fit: the pack's verdict; outliers are per asset).",
+      "items": {
+        "$ref": "#/$defs/fit"
+      }
+    },
+    "assets": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "How many asset manifests the pack has (the index counts them; a check, not the source)."
+    },
+    "validators": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "string",
+        "maxLength": 60
+      },
+      "description": "The validators every asset of the pack must pass (rig-check, flat-judge, sound-gate)."
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 600
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "owner": {
+            "const": "own"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "enum": [
+                  "own",
+                  "maker",
+                  "git"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "signature": {
+      "type": "object",
+      "required": [
+        "measured"
+      ],
+      "additionalProperties": false,
+      "description": "The style signature ingest computes. Bridges: material, palette and light cross a style line (a kind can re-tint, quantize or outline at load); geometry does not. Measured per asset as well as per pack (asset fits.signature).",
+      "properties": {
+        "measured": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+        },
+        "tool": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "The ingest tool and version that measured it."
+        },
+        "palette": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "size": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4096,
+              "description": "Distinct colours after a small merge."
+            },
+            "hues": {
+              "type": "array",
+              "maxItems": 16,
+              "items": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              }
+            },
+            "saturation": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "families": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "required": [
+                  "hue",
+                  "share"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "hue": {
+                    "enum": [
+                      "red",
+                      "orange",
+                      "yellow",
+                      "green",
+                      "cyan",
+                      "blue",
+                      "purple",
+                      "pink",
+                      "brown",
+                      "grey"
+                    ]
+                  },
+                  "share": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
+                  }
+                }
+              }
+            },
+            "exact": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Exact colours in a picture (pixel art keeps to 32)."
+            },
+            "grey": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Share of grey, near-black and near-white."
+            }
+          }
+        },
+        "trianglesPerMetre": {
+          "type": "number",
+          "minimum": 0,
+          "description": "3D: sqrt(triangles / surface m²): edges a metre, scale-free, comparable with texelsPerMetre."
+        },
+        "texelsPerMetre": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Texture density for 3D; picture density for 2D (pixel 16, drawn 128)."
+        },
+        "textured": {
+          "type": "boolean",
+          "description": "3D: uses image textures (else flat vertex or material colours)."
+        },
+        "outline": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "object",
+              "required": [
+                "present"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "present": {
+                  "type": "boolean"
+                },
+                "how": {
+                  "enum": [
+                    "hull",
+                    "ink"
+                  ]
+                },
+                "share": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            }
+          ]
+        },
+        "proportions": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "Bodies: head to height and similar (chibi, stylised, realistic)."
+        },
+        "texturedShare": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Share of surface with real image detail (a colour-swatch atlas counts as flat)."
+        },
+        "body": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "headsTall": {
+              "type": "number",
+              "minimum": 0
+            },
+            "hipShare": {
+              "type": "number",
+              "minimum": 0
+            },
+            "shoulderShare": {
+              "type": "number",
+              "minimum": 0
+            },
+            "widthShare": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "sound": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "seconds": {
+              "type": "number",
+              "minimum": 0
+            },
+            "peakDbfs": {
+              "type": "number",
+              "maximum": 0
+            },
+            "soundMaxLufs": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "fit": {
+      "type": "object",
+      "required": [
+        "kind",
+        "fits",
+        "judged"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "fits": {
+          "enum": [
+            "yes",
+            "with-bridge",
+            "no"
+          ],
+          "description": "with-bridge: fits once the kind re-tints, quantizes or outlines it at load."
+        },
+        "judged": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+        },
+        "by": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "The judge and version (look judge contact sheet)."
+        },
+        "sheet": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "The contact sheet it judged."
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA10",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "gauntlet",
+  "verbatim": true,
+  "archetype": "racing",
+  "where": "games.fun research/studio-v2/evals/gauntlet/kinds.json (2026-10-11), \"racing\": pitched as something else (no car to drive)"
+ },
+ "prompt": "A racing game where my friends and I drive cars around a track for three laps and the first one over the line wins.",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "body",
+   "core": true,
+   "words": "drive cars",
+   "means": "Each player drives a car",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "other",
+   "core": true,
+   "words": "around a track",
+   "means": "A track with a road to follow",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "goal",
+   "core": true,
+   "words": "for three laps",
+   "means": "The race is three laps, counted",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "goal",
+   "core": true,
+   "words": "the first one over the line wins",
+   "means": "A finish order; the first over the line wins",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "players",
+   "core": true,
+   "words": "my friends and I",
+   "means": "Friends race each other in one race",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

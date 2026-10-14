@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "reel-wind",
+ "pack": "vista-sounds",
+ "file": "reel-wind.ogg",
+ "sha256": "6783e26b193865bf0c143e61c0b1c63a18f554fd21e9ef6f4b9f5997fde0d61f",
+ "bytes": 70632,
+ "preview": "previews/reel-wind.png",
+ "from": "spinning reel cranked steadily (gear ticking) — loop, rate follows the crank",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Reel winding (loop)",
+ "tags": [
+  "coast",
+  "calm",
+  "reel",
+  "wind",
+  "loop"
+ ],
+ "use": {
+  "seconds": 6.2,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 91% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -18.7,
+     "samplePeakDb": -0.9,
+     "truePeakDb": -0.7,
+     "hfRatio": 0.905
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 6.2,
+    "peakDbfs": -0.9,
+    "soundMaxLufs": -18.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/tosha73/sounds/509902/",
+  "author": "tosha73"
+ }
+}

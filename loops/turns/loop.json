@@ -1,0 +1,150 @@
+{
+  "id": "turns",
+  "name": "taking turns",
+  "describe": "One player acts at a time, in order; a move out of turn is refused with a reason; a clock for each turn; bots act on theirs.",
+  "pick": "only one player may act at a time: board and card games, puzzles played in moves",
+  "acts": "one-at-a-time",
+  "near": [
+    "round"
+  ],
+  "clock": "cap",
+  "ends": "the rules or a board say who won",
+  "seats": {
+    "alone": "min",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "turnSeconds": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 300,
+        "default": 20,
+        "description": "Seconds a turn may take before the host ends it: rules.turnTimeout may play a move for that player, else the turn passes (0: no limit)"
+      },
+      "botThink": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1.1,
+        "description": "Seconds a bot waits on its turn before it acts"
+      },
+      "first": {
+        "enum": [
+          "rotate",
+          "seat",
+          "random"
+        ],
+        "default": "rotate",
+        "description": "Who goes first: rotate (the lowest seat, then the next seat each replay), seat (always the lowest seat), random"
+      },
+      "late": {
+        "enum": [
+          "join",
+          "wait"
+        ],
+        "default": "join",
+        "description": "A player who arrives mid-game: join (the end of the order) or wait (the next game)"
+      },
+      "show": {
+        "type": "boolean",
+        "default": true,
+        "description": "The goal line says whose turn it is (off when a mechanic shows it itself)"
+      },
+      "textYourTurn": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "Your turn",
+        "description": "Goal line on your turn"
+      },
+      "textTheirTurn": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "{name}'s turn",
+        "description": "Goal line on another player's turn ({name})"
+      },
+      "textNotYourTurn": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "Not your turn",
+        "description": "Refusal when it is not your turn"
+      }
+    }
+  },
+  "hooks": [
+    {
+      "name": "move",
+      "on": "host",
+      "args": "(ctx, player, move) → nothing | the reason it is refused | { again: true }",
+      "when": "the player whose turn it is asked for a move (ctx.turns.submit(move) on their copy): play it here"
+    },
+    {
+      "name": "turnStart",
+      "on": "every copy",
+      "args": "(ctx, player)",
+      "when": "a turn began"
+    },
+    {
+      "name": "turnTimeout",
+      "on": "host",
+      "args": "(ctx, player) → a move | nothing",
+      "when": "the turn clock ran out: a move to play for them, or nothing and the turn passes"
+    },
+    {
+      "name": "botMove",
+      "on": "host",
+      "args": "(ctx, bot) → a move | nothing",
+      "when": "a bot's turn, after it has thought: the move it plays"
+    }
+  ],
+  "notes": [
+    "The kit keeps the order, whose turn it is, the turn clock, the \"not your turn\" refusal, the goal line and the bots' waiting: write move(ctx, player, move) and call ctx.turns.submit(move) from the player's input.",
+    "Keep the game's state in ctx.shared and draw from it on every copy; play each sound where the state changes (in update), so every screen hears a move.",
+    "round.seconds is a cap on the whole game, not its length: end it in check(ctx) when the game is decided."
+  ],
+  "promise": "Players take turns, a move out of turn is refused, and the game ends with a winner and plays again.",
+  "impl": {
+    "three": {
+      "by": "flow",
+      "path": "loops/turns/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+            "date": "2026-10-13"
+          },
+          {
+            "what": "tests/k2-board.test.mjs pass",
+            "date": "2026-10-13"
+          }
+        ]
+      },
+      "note": "flat-2d: proven with the board on the top plane"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+        "date": "2026-10-13"
+      },
+      {
+        "what": "tests/k2-board.test.mjs pass",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

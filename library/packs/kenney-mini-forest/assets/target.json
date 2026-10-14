@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "target",
+ "pack": "kenney-mini-forest",
+ "file": "target.glb",
+ "sha256": "5bc0538fbf7e38cefdefeb2c0e46868a533565a0a643c017858442d7b740a61b",
+ "bytes": 19752,
+ "preview": "previews/target.png",
+ "from": "kenney:mini-forest/target; baked to metres (x2.41131), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an archery target on a stand",
+ "tags": [
+  "arena",
+  "target"
+ ],
+ "use": {
+  "size": [
+   1.326,
+   1.4,
+   1.136
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.326,
+    1.4,
+    1.136
+   ],
+   "offset": [
+    0,
+    0.7,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 188,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 188,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19752,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#84879f",
+     "#71678e",
+     "#e28b62",
+     "#dd865f",
+     "#777293",
+     "#7d7c99"
+    ],
+    "saturation": 0.524,
+    "value": 0.599,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.574
+     },
+     {
+      "hue": "grey",
+      "share": 0.215
+     },
+     {
+      "hue": "red",
+      "share": 0.173
+     },
+     {
+      "hue": "blue",
+      "share": 0.038
+     }
+    ],
+    "grey": 0.215
+   },
+   "trianglesPerMetre": 5.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-forest",
+  "download": "https://kenney.nl/media/pages/assets/mini-forest/44a89aed7f-1784024079/kenney_mini-forest_1.0.zip",
+  "sha256": "b336de802798e481291486a7a7de587aa2a229fffb4fc5f3d226e9873d96c3b6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.41131), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

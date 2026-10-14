@@ -1,0 +1,599 @@
+{
+  "runtime": {
+    "id": "godot",
+    "version": "0.1.0",
+    "godot": "4.6.stable"
+  },
+  "at": "2026-10-13T22:21:01.005Z",
+  "chrome": "148.0.7778.96",
+  "checks": [
+    {
+      "gate": "A",
+      "measure": 1,
+      "name": "manifests",
+      "ok": true,
+      "detail": "22 slots; missing files: none; unresolved pointers: none; multiplayer.json valid (live)"
+    },
+    {
+      "gate": "A",
+      "measure": 2,
+      "name": "kit-copies-unedited",
+      "ok": true,
+      "detail": "55 kit files and the addon checked against runtime godot 0.1.0 and the shared kit's sources; edited: none; missing: none; not the kit's: none"
+    },
+    {
+      "gate": "A",
+      "measure": 18,
+      "name": "sounds-listed",
+      "ok": true,
+      "detail": "0 sound ids played by the game (none); unlisted: none"
+    },
+    {
+      "gate": "A",
+      "measure": 19,
+      "name": "pictures-pass-the-judge",
+      "ok": true,
+      "detail": "4 pictures judged as gf-flat-1 (character.body.player, world.tiles.ground, world.tiles.brick, world.tiles.ledge); failing: none"
+    },
+    {
+      "gate": "A",
+      "measure": 2,
+      "name": "the-build-is-the-project",
+      "ok": true,
+      "detail": "build/ was exported from project/ as it is now; game.js and game.wasm are the pinned Godot 4.6.stable template's; the files on disk match the record"
+    },
+    {
+      "gate": "F",
+      "measure": 17,
+      "name": "the-world-is-complete",
+      "ok": true,
+      "detail": "the map (28×11, 4 spawns, marks: none) reads; every ledge and mark is within a jump of a spawn; kinds with no picture slot: none"
+    },
+    {
+      "gate": "A",
+      "measure": 4,
+      "name": "every-picture-slot-is-read",
+      "ok": true,
+      "detail": "4 picture slots; read by the game at boot: 4; never read: none (the other half of measure 4, that nothing is drawn from outside a slot, is not proven on godot)"
+    },
+    {
+      "gate": "B",
+      "name": "boots-to-the-menu",
+      "ok": true,
+      "detail": "the kit's menu is up over the Godot canvas in 1276 ms (Godot 4.6-stable (official), addon 0.1.0, 18 game frames)",
+      "measure": 3
+    },
+    {
+      "gate": "B",
+      "name": "observation-answers",
+      "ok": true,
+      "detail": "window.__game answers all 23 names; snapshot() has 28 keys, godot: addon, godot, style, ppm, background, frames, pulls, fps, input, me, view, friends, game, panel, files, errors",
+      "measure": 3
+    },
+    {
+      "gate": "A",
+      "name": "pictures-read-through-slots",
+      "ok": true,
+      "detail": "the game read 4 picture slots through gf-assets: world.tiles.ground, world.tiles.brick, world.tiles.ledge, character.body.player",
+      "measure": 4
+    },
+    {
+      "gate": "F",
+      "name": "look-background-honoured",
+      "ok": true,
+      "detail": "look.background is #8fd3ff; the sky on screen is rgb(143, 211, 255)",
+      "measure": 14
+    },
+    {
+      "gate": "C",
+      "name": "D-runs-right",
+      "ok": true,
+      "detail": "holding D for 0.9 s moved the player 4.59 m (x -11.5 → -6.91)",
+      "measure": 13
+    },
+    {
+      "gate": "C",
+      "name": "Space-jumps",
+      "ok": true,
+      "detail": "Space lifted the player 2.85 m",
+      "measure": 13
+    },
+    {
+      "gate": "C",
+      "name": "menu-holds-input",
+      "ok": true,
+      "detail": "Esc opened \"pause\"; D under it moved the player 0 m",
+      "measure": 13
+    },
+    {
+      "gate": "B",
+      "name": "esc-resumes",
+      "ok": true,
+      "detail": "a second Esc left the pause menu (view null, input true); A then moved the player 2.43 m left",
+      "measure": 20
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors",
+      "ok": true,
+      "detail": "no console error, page error or failed request",
+      "measure": 3
+    },
+    {
+      "gate": "D",
+      "name": "round-reaches-results",
+      "ok": true,
+      "detail": "the 20 s round ended (time); the results list You 0",
+      "measure": 6
+    },
+    {
+      "gate": "D",
+      "name": "plays-again",
+      "ok": true,
+      "detail": "Play again started round 2 (countdown)",
+      "measure": 6
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-round",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "D",
+      "name": "bots-fill-the-seats",
+      "ok": true,
+      "detail": "alone with ?bots=2: 3 players, bots Pip (drawn true), Bo (drawn true)",
+      "measure": 6
+    },
+    {
+      "gate": "D",
+      "name": "bots-move",
+      "ok": true,
+      "detail": "in 3.5 s the bots moved 6.41 m and 6.7 m",
+      "measure": 6
+    },
+    {
+      "gate": "C",
+      "name": "bots-hold-under-the-menu",
+      "ok": true,
+      "detail": "under the pause menu for 1.2 s the bots moved 0 m and 0 m",
+      "measure": 13
+    },
+    {
+      "gate": "D",
+      "name": "bots-in-the-results",
+      "ok": true,
+      "detail": "the results list You 0, Pip 0, Bo 0",
+      "measure": 6
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-bots",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "B",
+      "name": "panel-covers-the-game",
+      "ok": true,
+      "detail": "open: choice \"Pick a boost\" (2 cards, modal true); the game's input held; D under it moved the player 0 m",
+      "measure": 20
+    },
+    {
+      "gate": "B",
+      "name": "panel-answer-reaches-the-game",
+      "ok": true,
+      "detail": "a click on the second card: Godot got {\"refused\":false,\"req\":9001,\"result\":{\"id\":\"high\",\"index\":1}}; panels open after: 0; the game's input back",
+      "measure": 20
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-panels",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "E",
+      "name": "joiner-joins",
+      "ok": true,
+      "detail": "room BMQABS: Hosta hosts, Joan joined by the invite link over WebRTC",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "one-host",
+      "ok": true,
+      "detail": "host copy p1, joiner copy p2",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "each-draws-the-other-where-they-are",
+      "ok": true,
+      "detail": "the host ran right: the joiner draws the host 0 m from where the host is (-6.82, 0); the host draws the joiner 0 m off (-6.5, 0); the joiner ran left: the joiner draws the host 0 m from where the host is (-6.82, 0); the host draws the joiner 0 m off (-10.23, 0)",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "each-sees-the-other-on-screen",
+      "ok": true,
+      "detail": "in view: the host on the joiner's screen true, the joiner on the host's true",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "names-are-the-players-own",
+      "ok": true,
+      "detail": "the joiner's copy calls the host \"Hosta\", the host's calls the joiner \"Joan\"",
+      "measure": 25
+    },
+    {
+      "gate": "E",
+      "name": "name-tag-over-the-friend",
+      "ok": true,
+      "detail": "tags shown on the joiner's screen: [\"Hosta\"]",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "shared-world-agrees",
+      "ok": true,
+      "detail": "host \"playing|1|p1:0,p2:0\" / joiner \"playing|1|p1:0,p2:0\"",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "shared-clock-runs",
+      "ok": true,
+      "detail": "the joiner's shared clock reads 8.59 s (the host's 8.6 s)",
+      "measure": 5
+    },
+    {
+      "gate": "E",
+      "name": "both-reach-the-results",
+      "ok": true,
+      "detail": "the host ended the round; both copies show the results",
+      "measure": 25
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-live",
+      "ok": true,
+      "detail": "no console error on either player's page",
+      "measure": 3
+    },
+    {
+      "gate": "B",
+      "name": "phone-menu-fits",
+      "ok": true,
+      "detail": "390x844 at 3x (emulated): page 390 px wide; Play at [19,513,372,577]; Godot's canvas 1170x2532 device px",
+      "measure": 3
+    },
+    {
+      "gate": "C",
+      "name": "phone-stick-moves",
+      "ok": true,
+      "detail": "the kit's touch controls are up; the stick held right for 0.9 s moved the player 5.76 m",
+      "measure": 13
+    },
+    {
+      "gate": "C",
+      "name": "phone-jump-button-jumps",
+      "ok": true,
+      "detail": "the Jump button lifted the player 2.8 m",
+      "measure": 13
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-phone",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "B",
+      "name": "firefox-boots",
+      "ok": true,
+      "detail": "firefox 155.0 (headless, Playwright's build; WebGL2 renderer: NVIDIA GeForce GTX 980, or similar): the menu in 811 ms",
+      "measure": 3
+    },
+    {
+      "gate": "C",
+      "name": "firefox-D-runs-right",
+      "ok": true,
+      "detail": "firefox: holding D for 0.9 s moved the player 4.51 m",
+      "measure": 13
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-firefox",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "E",
+      "name": "watch: the pause menu offers Go live in a round with friends",
+      "ok": true,
+      "detail": "#gf-live in the kit's pause menu over the Godot canvas",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: Go live: LIVE for everyone in the room",
+      "ok": true,
+      "detail": "link http://127.0.0.1:42677/gf/mp/?watch=d8wpn6241qap; H sees \"LIVE Jules is live · 0 watching\"",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: a viewer tunes in: this round's game page, the streamer followed",
+      "ok": true,
+      "detail": "following Jules (p2); 2 in the stream",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the stream panel offers Turn on mic, which opens Studio's mic window",
+      "ok": true,
+      "detail": "\"🎤 Turn on mic\" opened /play/game/voice?s=d8wpn6241qap",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the streamer talks: a viewer taps for sound and hears them",
+      "ok": true,
+      "detail": "mic on; 5 voice frames sent; the viewer's button \"🔇 Tap for sound\"; 20 packets played, 0 late, peak 0.2758",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: only the page above the streamer's friends page may hand it voice (not the game below it)",
+      "ok": true,
+      "detail": "the game's frame tried: refused",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the panel shows the mic on; closing the mic window turns it off",
+      "ok": true,
+      "detail": "the panel's button pressed while on; after the window closed off",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer draws the streamer where they really are (after a run)",
+      "ok": true,
+      "detail": "J ran 6.24 m to -0.26, 0.003, 0; V draws [[\"Hosta\",-11.5,0,0],[\"Jules\",-0.26,0,0]]",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer has no player of its own, and its game follows the streamer",
+      "ok": true,
+      "detail": "players [\"Hosta\",\"Jules\"]; the game follows p2",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer sees what the streamer sees",
+      "ok": true,
+      "detail": "side cameras 0.01 m apart (J at -0.26,4.63, V at -0.27,4.63)",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer sees the round's clock and scores, not a player's own card or menu",
+      "ok": true,
+      "detail": "{\"timer\":true,\"scores\":true,\"card\":false,\"menu\":false}",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: a viewer's name tags sit over the characters",
+      "ok": true,
+      "detail": "[{\"name\":\"Jules\",\"dx\":0,\"dy\":-5}]",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: the streamer sees how many watch",
+      "ok": true,
+      "detail": "LIVE You’re live · 1 watching",
+      "measure": 34
+    },
+    {
+      "gate": "E",
+      "name": "watch: no page error or console error on any screen",
+      "ok": true,
+      "detail": "none",
+      "measure": 34
+    },
+    {
+      "gate": "A",
+      "name": "value-slot-shows-live",
+      "ok": true,
+      "detail": "the page set look.background to #ff00ff (ok true, on-use); the sky went from 0/3200 to 3200/3200 magenta pixels",
+      "measure": 8
+    },
+    {
+      "gate": "A",
+      "name": "picture-slot-replaced",
+      "ok": true,
+      "detail": "the game was handed 8fb1c9ad for character.body.player (its own file is f92810d3); red pixels where the player stands: 0 before, 4656 with the replaced picture (of 6976)",
+      "measure": 8
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-swap",
+      "ok": true,
+      "detail": "none",
+      "measure": 3
+    },
+    {
+      "gate": "E",
+      "measure": 5,
+      "name": "shared-multiplayer-gate",
+      "ok": true,
+      "detail": "gf/mp's gate: pass (24/24 checks)"
+    }
+  ],
+  "shots": [
+    "boot-home.png",
+    "boot-playing.png",
+    "boot-paused.png",
+    "round-results.png",
+    "bots-playing.png",
+    "bots-results.png",
+    "panel-choice-open.png",
+    "live-lobby-host.png",
+    "live-host-sees-joiner.png",
+    "live-joiner-sees-host.png",
+    "live-results-host.png",
+    "live-results-joiner.png",
+    "phone-home.png",
+    "phone-playing.png",
+    "browser-firefox.png",
+    "watch-streamer-live.png",
+    "watch-viewer.png",
+    "watch-streamer.png",
+    "swap-background-live.png",
+    "swap-body-replaced.png"
+  ],
+  "live": {
+    "samples": [
+      {
+        "label": "the host ran right",
+        "host": {
+          "x": -6.82,
+          "y": 0,
+          "z": 0
+        },
+        "joiner": {
+          "x": -6.5,
+          "y": 0,
+          "z": 0
+        },
+        "hostOnJoiner": {
+          "id": "p1",
+          "name": "Hosta",
+          "x": -6.82,
+          "y": 0,
+          "z": 0,
+          "onScreen": true
+        },
+        "joinerOnHost": {
+          "id": "p2",
+          "name": "Joan",
+          "x": -6.5,
+          "y": 0,
+          "z": 0,
+          "onScreen": true
+        },
+        "dHost": 0,
+        "dJoin": 0,
+        "names": {
+          "onJoiner": "Hosta",
+          "onHost": "Joan"
+        }
+      },
+      {
+        "label": "the joiner ran left",
+        "host": {
+          "x": -6.82,
+          "y": 0,
+          "z": 0
+        },
+        "joiner": {
+          "x": -10.23,
+          "y": 0,
+          "z": 0
+        },
+        "hostOnJoiner": {
+          "id": "p1",
+          "name": "Hosta",
+          "x": -6.82,
+          "y": 0,
+          "z": 0,
+          "onScreen": true
+        },
+        "joinerOnHost": {
+          "id": "p2",
+          "name": "Joan",
+          "x": -10.23,
+          "y": 0,
+          "z": 0,
+          "onScreen": true
+        },
+        "dHost": 0,
+        "dJoin": 0,
+        "names": {
+          "onJoiner": "Hosta",
+          "onHost": "Joan"
+        }
+      }
+    ]
+  },
+  "swap": {
+    "slot": "character.body.player",
+    "baseHash": "f92810d3",
+    "hash2": "8fb1c9ad",
+    "basePx": {
+      "n": 6976,
+      "red": 0,
+      "magenta": 2256,
+      "blueish": 2240
+    },
+    "px2": {
+      "n": 6976,
+      "red": 4656,
+      "magenta": 0,
+      "blueish": 2256
+    },
+    "baseBox": {
+      "x0": 128,
+      "x1": 192,
+      "y0": 547.52,
+      "y1": 656.3199999999999
+    },
+    "box2": {
+      "x0": 128,
+      "x1": 192,
+      "y0": 547.52,
+      "y1": 656.3199999999999
+    }
+  },
+  "read": [
+    "world.tiles.ground",
+    "world.tiles.brick",
+    "world.tiles.ledge",
+    "character.body.player"
+  ],
+  "phone": {
+    "emulated": "Chrome (Playwright) at 390x844 CSS px, device scale 3, isMobile, hasTouch, an Android user agent: no real phone"
+  },
+  "browsers": {
+    "firefox": {
+      "launched": true,
+      "version": "155.0",
+      "phase": "lobby",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "gl": "NVIDIA GeForce GTX 980, or similar",
+      "bootMs": 811
+    },
+    "webkit": {
+      "launched": false,
+      "why": "browserType.launch: Host system is missing dependencies to run browsers. Please install them with the following command: sudo npx playwright install-deps Alternatively, use apt: sudo apt-get install libavif16 Playwright Team"
+    }
+  },
+  "notRun": [
+    "webkit: did not launch on this machine (browserType.launch: Host system is missing dependencies to run browsers. Please install them with the following command: sudo npx playwright install-deps Alternatively, use apt: sudo apt-get install libavif16 Playwright Team)"
+  ],
+  "mpGate": {
+    "verdict": "pass"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://games.fun/schemas/gamesfun.json/1",
+  "title": "gamesfun.json",
+  "description": "A game's public web3 settings, read by the in-game kit gf-web3 and written by the kit's web3 layer. Public data only: addresses, names, prices, links and looks. Never a key, a token or a keyed RPC URL. builder/web3/gf-web3/config.js enforces this schema (unknown or invalid fields are dropped; anything that looks like a secret is refused).",
+  "type": "object",
+  "required": ["version", "network"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "network": { "const": "devnet", "description": "Devnet only. There is no mainnet in this kit." },
+    "creator": { "$ref": "#/$defs/address", "description": "The creator's wallet: pool creator, collection update authority, and the loot game's owner and authority." },
+    "token": {
+      "type": "object",
+      "description": "The game's token: launched here (a Meteora curve of its own; games.fun gets 5% of its fees), or an existing mint the creator linked (launched anywhere; games.fun gets nothing from it).",
+      "required": ["mint", "name", "symbol", "decimals", "program", "source"],
+      "additionalProperties": false,
+      "properties": {
+        "mint": { "$ref": "#/$defs/address" },
+        "name": { "type": "string", "description": "At most 32 bytes." },
+        "symbol": { "type": "string", "description": "At most 10 bytes." },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 18 },
+        "program": { "enum": ["spl-token", "token-2022"] },
+        "source": { "enum": ["launched", "linked"] },
+        "image": { "$ref": "#/$defs/link" },
+        "metadataUri": { "$ref": "#/$defs/link" },
+        "pool": { "$ref": "#/$defs/address", "description": "The Meteora DBC pool (launched tokens)." },
+        "config": { "$ref": "#/$defs/address", "description": "The DBC config it launched on: its own since 2026-10-12 (before, games.fun's shared antisnipe-v1 on MAIN-dev)." },
+        "quoteMint": { "$ref": "#/$defs/address", "description": "What it trades against (the pair)." },
+        "quoteSymbol": { "type": "string", "description": "The pair's ticker, e.g. SOL." },
+        "split": {
+          "type": "object",
+          "description": "The fee split its config carries, as read back from chain at launch: the creator's share of trading fees and the graduated pool's locked LP for the partner (games.fun) and the creator, in whole percents.",
+          "additionalProperties": false,
+          "properties": {
+            "creatorTradingFeePercentage": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "partnerLockedLp": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "creatorLockedLp": { "type": "integer", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "signature": { "type": "string", "description": "The launch transaction (the last one, when there were two)." },
+        "signatures": { "type": "array", "items": { "type": "string" }, "description": "Both launch transactions, in order, when the launch took two." }
+      }
+    },
+    "economy": {
+      "$ref": "https://games.fun/schemas/economy/1",
+      "description": "The game's economy on loot program 0.3: currencies, collectibles, pools, boxes, recipes, schedules, lotteries, stakes, contests, holds and the authority's rules. Schema: builder/web3/economy/economy.schema.json. It replaces `shop` (builder/web3/economy/migrate.mjs)."
+    },
+    "shop": {
+      "type": "object",
+      "description": "Items and loot boxes on games.fun's loot program. Drafts until put on sale; collection, game and treasury appear once it is live.",
+      "required": ["name", "items", "boxes"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "description": "The Core collection's name, at most 32 bytes." },
+        "description": { "type": "string" },
+        "royaltyBps": { "type": "integer", "minimum": 0, "maximum": 2500, "default": 500 },
+        "currency": {
+          "type": "object",
+          "description": "What players pay in: SOL (wrapped for them), any classic SPL token or any Token-2022 token. Fixed once the shop is live.",
+          "required": ["mint", "symbol", "decimals", "native"],
+          "additionalProperties": false,
+          "properties": {
+            "mint": { "$ref": "#/$defs/address" },
+            "symbol": { "type": "string" },
+            "decimals": { "type": "integer", "minimum": 0, "maximum": 18 },
+            "native": { "type": "boolean", "description": "true for SOL" },
+            "program": { "enum": ["spl-token", "token-2022"], "default": "spl-token", "description": "The token program that owns the mint." }
+          }
+        },
+        "collection": { "$ref": "#/$defs/address" },
+        "game": { "$ref": "#/$defs/address", "description": "The loot program's Game PDA for the collection." },
+        "treasury": { "$ref": "#/$defs/address", "description": "The creator's token account that receives sales." },
+        "image": { "$ref": "#/$defs/link" },
+        "metadataUri": { "$ref": "#/$defs/link" },
+        "metaHash": { "$ref": "#/$defs/hash" },
+        "items": { "type": "array", "maxItems": 50, "items": { "$ref": "#/$defs/item" } },
+        "boxes": { "type": "array", "maxItems": 20, "items": { "$ref": "#/$defs/box" } }
+      }
+    }
+  },
+  "$defs": {
+    "address": { "type": "string", "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$" },
+    "link": { "type": "string", "pattern": "^https://", "maxLength": 512, "description": "https, no credentials, no query string." },
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "units": { "type": "string", "pattern": "^[0-9]{1,20}$", "description": "An amount in the currency's base units." },
+    "look": {
+      "type": "object",
+      "description": "A gf-three loadout fragment (gf-three CONTRACT §6e): what owning the item changes for its player.",
+      "additionalProperties": false,
+      "properties": {
+        "values": { "type": "object", "additionalProperties": { "type": ["string", "number", "boolean"] } },
+        "files": { "type": "object", "additionalProperties": { "type": "string", "description": "An https URL or a path inside the game." } }
+      }
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "name", "rarity", "price", "maxSupply", "soulbound", "listed"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "description": "At most 32 bytes." },
+        "description": { "type": "string" },
+        "rarity": { "enum": ["Common", "Uncommon", "Rare", "Epic", "Legendary"] },
+        "price": { "$ref": "#/$defs/units", "description": "\"0\" means loot boxes only." },
+        "maxSupply": { "type": "integer", "minimum": 0, "description": "0 means unlimited." },
+        "soulbound": { "type": "boolean" },
+        "picture": { "type": "string", "description": "The game picture it is made from (a path inside the game)." },
+        "look": { "$ref": "#/$defs/look" },
+        "image": { "$ref": "#/$defs/link" },
+        "imageHash": { "$ref": "#/$defs/hash" },
+        "uri": { "$ref": "#/$defs/link", "description": "The Metaplex metadata JSON on Arweave." },
+        "metaHash": { "$ref": "#/$defs/hash" },
+        "listed": { "type": "boolean", "description": "On the loot program as configured at the last publish." }
+      }
+    },
+    "box": {
+      "type": "object",
+      "required": ["id", "name", "price", "entries", "listed"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "maxLength": 40 },
+        "price": { "$ref": "#/$defs/units" },
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": ["item", "weight"],
+            "additionalProperties": false,
+            "properties": { "item": { "type": "integer", "minimum": 1 }, "weight": { "type": "integer", "minimum": 1, "maximum": 1000000 } }
+          }
+        },
+        "listed": { "type": "boolean" }
+      }
+    }
+  }
+}

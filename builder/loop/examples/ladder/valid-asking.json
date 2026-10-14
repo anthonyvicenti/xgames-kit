@@ -1,0 +1,16 @@
+{
+  "schema": "gf-ladder/1",
+  "rung": "ask",
+  "strong": true,
+  "sets": [
+    { "key": "gate E:5", "items": [ { "key": "gate E:5", "area": "netcode" } ], "round": 4 },
+    { "key": "gate E:5", "items": [ { "key": "gate E:5", "area": "netcode" } ], "round": 5, "unchanged": true }
+  ],
+  "climbs": [
+    { "rung": "model", "reason": "repeat", "set": "gate E:5" },
+    { "rung": "specialist", "reason": "repeat", "set": "gate E:5", "areas": ["netcode"] },
+    { "rung": "generate", "reason": "unchanged", "set": "gate E:5", "skipped": "nothing in the stuck set is art or sound a generator can make" },
+    { "rung": "ask", "reason": "unchanged", "set": "gate E:5" }
+  ],
+  "queue": [ { "kind": "ask" } ]
+}

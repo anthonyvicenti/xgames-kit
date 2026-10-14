@@ -1,0 +1,109 @@
+{
+  "specVersion": 2,
+  "title": "Seam Test Isle",
+  "hook": "The wave-0 seam check: a scenic game made by create runs through gf-three's boot.",
+  "prompt": "profile seam test (not a game for anyone; gf-scenic/PLAN.md wave 0)",
+  "runtime": "three",
+  "profile": "scenic-3d",
+  "loop": "round",
+  "kind": "scenic",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "follow",
+  "controls": {
+    "primary": "cast a bolt",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 180,
+    "winBy": "Clear every wave together.",
+    "loseBy": "Everyone is down at once.",
+    "replay": true
+  },
+  "world": {
+    "template": "island",
+    "size": "medium"
+  },
+  "mechanics": [
+    {
+      "id": "waves",
+      "as": "skeletons come in waves",
+      "params": {
+        "enemyRole": "monster",
+        "startCount": 3,
+        "growth": 2,
+        "maxWaves": 3,
+        "hp": 3,
+        "speed": 2.6
+      }
+    },
+    {
+      "id": "projectile",
+      "as": "a bolt",
+      "params": {
+        "kind": "discrete",
+        "speed": 20,
+        "arc": 0,
+        "cooldown": 0.3,
+        "damage": 1
+      }
+    },
+    {
+      "id": "health",
+      "as": "hearts",
+      "params": {
+        "hp": 6,
+        "respawnSeconds": 5
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Monsters come in three waves. Hit them with bolts until every wave is down.",
+    "scoring": "+10 per kill"
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "an adventurer",
+      "body": {
+        "from": "library",
+        "asset": "quaternius-ual-bodies/quaternius-adventurer-woman"
+      }
+    },
+    {
+      "role": "monster",
+      "describe": "a chunky zombie",
+      "body": {
+        "from": "library",
+        "asset": "quaternius-ual-bodies/quaternius-zombie"
+      }
+    }
+  ],
+  "look": {
+    "preset": "dusk-isle",
+    "time": "dusk"
+  },
+  "sounds": [
+    {
+      "id": "bolt",
+      "describe": "a magic bolt whoosh"
+    }
+  ],
+  "build": [],
+  "content": {
+    "rating": "E"
+  }
+}

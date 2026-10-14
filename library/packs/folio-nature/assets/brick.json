@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "brick",
+ "pack": "folio-nature",
+ "file": "brick.glb",
+ "sha256": "93295d4744f5104b6f133ee7ede59962b52dc5f5be9ebc9f168567d5342636c6",
+ "bytes": 4220,
+ "preview": "previews/brick.png",
+ "from": "static/bricks/bricks.glb node Cube.042; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large stone brick",
+ "tags": [
+  "stone",
+  "ruin",
+  "brick",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   1.589,
+   0.753,
+   1.248
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.3,
+   1
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.589,
+    0.753,
+    1.248
+   ],
+   "offset": [
+    0,
+    0.377,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 4220,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffe9d7"
+    ],
+    "saturation": 1,
+    "value": 0.922,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

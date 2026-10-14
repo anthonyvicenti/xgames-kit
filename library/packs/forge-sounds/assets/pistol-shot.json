@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "pistol-shot",
+ "pack": "forge-sounds",
+ "file": "pistol-shot.ogg",
+ "sha256": "00632c64c001183c425f9d1e082e9018cce3e89e0346af6f947ee68c7db76b84",
+ "bytes": 7152,
+ "preview": "previews/pistol-shot.png",
+ "from": "https://opengameart.org/content/25-cc0-bang-firework-sfx bang_07.ogg; cut to 0.023-0.443 s of the source (0.42 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 20 ms release), gain 0.7 dB (loudest 400 ms toward -18 LUFS…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "pistol shot (pistol shot)",
+ "tags": [
+  "sounds",
+  "pistol",
+  "shot",
+  "weapon"
+ ],
+ "use": {
+  "seconds": 0.443,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -13.6,
+     "samplePeakDb": -2.9,
+     "truePeakDb": -2.9,
+     "hfRatio": 0.022
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.443,
+    "peakDbfs": -2.9,
+    "soundMaxLufs": -13.6
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/25-cc0-bang-firework-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.023-0.443 s of the source (0.42 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 20 ms release), gain 0.7 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

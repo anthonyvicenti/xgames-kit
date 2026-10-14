@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "rock-2",
+ "pack": "folio-nature",
+ "file": "rock-2.glb",
+ "sha256": "d8885f48283aa89371054c248564c0a9324ded4aa4a24c350aba45a78358453d",
+ "bytes": 15072,
+ "preview": "previews/rock-2.png",
+ "from": "static/scenery/scenery.glb node basaltRocksPhysicalStatic.001; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cluster of basalt rock columns",
+ "tags": [
+  "rock",
+  "nature",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   5.419,
+   4.317,
+   7.46
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.4,
+   4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    4.064,
+    4.317,
+    5.595
+   ],
+   "offset": [
+    0,
+    2.159,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 192,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 192,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15072,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#7c7691"
+    ],
+    "saturation": 0.109,
+    "value": 0.516,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 0.96,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

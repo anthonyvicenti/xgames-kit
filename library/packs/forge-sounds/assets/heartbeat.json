@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "heartbeat",
+ "pack": "forge-sounds",
+ "file": "heartbeat.ogg",
+ "sha256": "f6a6d92958f3fd3164b6b8eb9984414bc142a7058bd0ef76e9fb3858bbec3780",
+ "bytes": 8604,
+ "preview": "previews/heartbeat.png",
+ "from": "https://opengameart.org/content/heartbeat-sounds heartbeat_slow_0.wav; cut to 0-1.8 s of the source (1.8 s), no fades, downmixed to mono, resampled to 44.1 kHz, gain 9.7 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "low health heartbeat (loop) (heartbeat)",
+ "tags": [
+  "sounds",
+  "heartbeat",
+  "player",
+  "lowhealth"
+ ],
+ "use": {
+  "seconds": 1.821,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -15.5,
+     "samplePeakDb": -3.8,
+     "truePeakDb": -3.8,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.821,
+    "peakDbfs": -3.8,
+    "soundMaxLufs": -15.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/heartbeat-sounds",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0-1.8 s of the source (1.8 s), no fades, downmixed to mono, resampled to 44.1 kHz, gain 9.7 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "bart (OpenGameArt)"
+ }
+}

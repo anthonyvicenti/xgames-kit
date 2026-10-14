@@ -1,0 +1,156 @@
+{
+  "specVersion": 2,
+  "title": "Recess Rumble",
+  "hook": "Playground dodgeball where getting bonked sends you ragdolling across the sandbox.",
+  "prompt": "dodgeball / tag with friends in a playground",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "throw the ball you hold",
+    "interact": "pick up a ball",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 120,
+    "winBy": "most bonks when the bell rings",
+    "replay": true
+  },
+  "world": {
+    "template": "backyard",
+    "size": "small",
+    "props": [
+      {
+        "name": "ball",
+        "size": 0.44,
+        "describe": "a soft red rubber dodgeball",
+        "count": 6,
+        "role": "thrown by players",
+        "kind": "gameplay"
+      },
+      {
+        "name": "slide",
+        "radius": 2.2,
+        "describe": "a small playground slide",
+        "count": 1,
+        "role": "cover",
+        "kind": "scenery"
+      },
+      {
+        "name": "bench",
+        "describe": "a wooden bench",
+        "count": 2,
+        "role": "cover",
+        "kind": "scenery"
+      }
+    ],
+    "notes": "Balls respawn at the centre circle."
+  },
+  "mechanics": [
+    {
+      "id": "carry",
+      "as": "pick up and hold a ball",
+      "params": {
+        "maxHeld": 1
+      }
+    },
+    {
+      "id": "projectile",
+      "as": "dodgeball throw",
+      "params": {
+        "kind": "discrete",
+        "speed": 18,
+        "arc": 0.25,
+        "knockback": 6
+      }
+    },
+    {
+      "id": "health",
+      "as": "bonked: knocked over, gets up",
+      "params": {
+        "hp": 0,
+        "ragdollOnHit": true,
+        "getUpSeconds": 1.5
+      }
+    },
+    {
+      "id": "pickup",
+      "as": "balls respawn",
+      "params": {
+        "respawnSeconds": 4
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Pick up a ball and throw it at a friend. A hit knocks them over and scores you a bonk. A caught ball (interact just before it hits) scores the catcher instead. Most bonks when time runs out wins.",
+    "scoring": "+1 per bonk, +2 per catch",
+    "params": {
+      "bonkPoints": 1,
+      "catchPoints": 2,
+      "catchWindowMs": 250
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid",
+      "body": {
+        "from": "kind"
+      },
+      "hat": "a backwards cap"
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [
+    {
+      "id": "throw",
+      "describe": "whoosh of a thrown ball"
+    },
+    {
+      "id": "bonk",
+      "describe": "rubbery bonk"
+    },
+    {
+      "id": "catch",
+      "describe": "satisfying slap catch"
+    },
+    {
+      "id": "bell",
+      "describe": "school bell ends the round"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other",
+    "a hit ragdolls the target",
+    "the ball and the kid's body can be swapped in Studio"
+  ],
+  "notInV1": [
+    "teams",
+    "power-ups",
+    "more maps"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B25",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "asymmetric-chase",
+  "rank": 25,
+  "row": "Asymmetric 1-vs-all chase",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "one player is a ghost who can turn invisible, everyone else has to find 5 relics and get out of the mansion before the ghost catches them",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "one-vs-all",
+   "type": "players",
+   "must": "one player against the rest"
+  },
+  {
+   "id": "invisible",
+   "type": "mechanic",
+   "must": "the ghost can turn invisible"
+  },
+  {
+   "id": "relics",
+   "type": "rule",
+   "must": "five relics to find"
+  },
+  {
+   "id": "escape",
+   "type": "rule",
+   "must": "an exit to escape through once the relics are found"
+  },
+  {
+   "id": "mansion",
+   "type": "world",
+   "must": "a mansion"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

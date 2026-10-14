@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0103",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0103.png",
+ "sha256": "122ac3f2ed7464b9c78e9ca12f01b275b636c6d2c87d39d384fb0e07f291a219",
+ "bytes": 267,
+ "preview": "previews/tile-0103.png",
+ "from": "Tiles/tile_0103.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a wooden ladder set in an opening of a grey stone wall",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "ladder",
+  "wooden",
+  "stone",
+  "wall",
+  "castle",
+  "climb"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#262b44",
+     "#bd6c4a",
+     "#5a6988",
+     "#eaa56c",
+     "#8b9bb4",
+     "#763b36"
+    ],
+    "saturation": 0.312,
+    "value": 0.402,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.441
+     },
+     {
+      "hue": "pink",
+      "share": 0.339
+     },
+     {
+      "hue": "orange",
+      "share": 0.173
+     },
+     {
+      "hue": "red",
+      "share": 0.047
+     }
+    ],
+    "exact": 9,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.793
+   }
+  }
+ },
+ "source": {
+  "sha256": "af835af3f3f517b324cd363460cef7eeff4f97d6db834627e6c945d2c92d87aa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

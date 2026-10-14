@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0040",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0040.png",
+ "sha256": "338eb95eec35cbb00ea4ca4b37fcc51624cb0b0464c551c37dcd3ba9ac4a92d3",
+ "bytes": 165,
+ "preview": "previews/tile-0040.png",
+ "from": "Tiles/tile_0040.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone brick wall face, repeats in every direction (the dungeon's main wall)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "brick",
+  "stone",
+  "grey",
+  "fill",
+  "face"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#8b9bb4",
+     "#52607c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.217,
+    "value": 0.564,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7541f8325e46dc4d5f0707819c0b6cbf48dab832727c2bca54a4380991b6cf10",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

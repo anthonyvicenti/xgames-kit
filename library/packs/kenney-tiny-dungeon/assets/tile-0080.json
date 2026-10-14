@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0080",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0080.png",
+ "sha256": "4fd16391d447108e65798f809109e7cd2eec470d561c70d4ee2915b73516bd80",
+ "bytes": 231,
+ "preview": "previews/tile-0080.png",
+ "from": "Tiles/tile_0080.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the right end of a horizontal mine-cart track",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "track",
+  "rails",
+  "mine",
+  "minecart",
+  "railway",
+  "end",
+  "end-east",
+  "horizontal"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#eaa56c",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#bd6c4a"
+    ],
+    "saturation": 0.345,
+    "value": 0.44,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.496
+     },
+     {
+      "hue": "blue",
+      "share": 0.292
+     },
+     {
+      "hue": "orange",
+      "share": 0.212
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.778
+   }
+  }
+ },
+ "source": {
+  "sha256": "0151695f2890361f16ae4ea585e8f5d80fe0b6c2e82593f5e2ad336fbb7360fe",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

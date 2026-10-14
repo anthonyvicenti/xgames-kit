@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-yew",
+ "pack": "forge-world",
+ "file": "world-night-yew.png",
+ "sha256": "294bdb1cc7241f687c19c8deef4603cc563fc2121152378196d6a85a884df263",
+ "bytes": 693,
+ "preview": "previews/world-night-yew.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a cedar's flat boughs of dark blue-green needles (drawn); tiles; 1 m across",
+ "tags": [
+  "texture",
+  "night",
+  "yew",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#0b1616",
+     "#142725",
+     "#152b29",
+     "#162d2b",
+     "#122422",
+     "#112221",
+     "#132624",
+     "#2c463c"
+    ],
+    "saturation": 0.331,
+    "value": 0.114,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.818
+     },
+     {
+      "hue": "grey",
+      "share": 0.182
+     }
+    ],
+    "exact": 16,
+    "grey": 0.182
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

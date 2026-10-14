@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "present",
+ "pack": "kenney-holiday-kit",
+ "file": "present.glb",
+ "sha256": "a2abf459587103faf3fac9469bcd8cb5790e3b4b3fd6290dc43f435155be24d0",
+ "bytes": 22944,
+ "preview": "previews/present.png",
+ "from": "kenney:holiday-kit/present-a-cube; baked to metres (x0.8761), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wrapped present",
+ "tags": [
+  "item",
+  "pickup",
+  "box",
+  "present"
+ ],
+ "use": {
+  "size": [
+   0.394,
+   0.5,
+   0.394
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.394,
+    0.5,
+    0.394
+   ],
+   "offset": [
+    0,
+    0.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 238,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 238,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 22944,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#cecee0",
+     "#e6e6ef",
+     "#d8d8e7",
+     "#d3d3e4",
+     "#f7f7fa",
+     "#eaeaf2",
+     "#c54246",
+     "#e34e43"
+    ],
+    "saturation": 0.353,
+    "value": 0.808,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.594
+     },
+     {
+      "hue": "red",
+      "share": 0.25
+     },
+     {
+      "hue": "grey",
+      "share": 0.155
+     }
+    ],
+    "grey": 0.155
+   },
+   "trianglesPerMetre": 13.38,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/holiday-kit",
+  "download": "https://kenney.nl/media/pages/assets/holiday-kit/3976a6496a-1733923970/kenney_holiday-kit.zip",
+  "sha256": "6b41be140855d42aeda4bde41fa4eaaea19fb1f2d36289cd10fcd742f2003423",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.8761), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

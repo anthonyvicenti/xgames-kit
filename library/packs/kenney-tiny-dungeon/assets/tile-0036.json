@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0036",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0036.png",
+ "sha256": "e505c8a2093426c1632845373a76623475a4c4ed1b25fc07f78f1dd54c2bbf40",
+ "bytes": 164,
+ "preview": "previews/tile-0036.png",
+ "from": "Tiles/tile_0036.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the left end of a flight of grey stone steps running left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "stairs",
+  "steps",
+  "stone",
+  "grey",
+  "end",
+  "end-west"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c",
+     "#262b44"
+    ],
+    "saturation": 0.238,
+    "value": 0.568,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.3
+   }
+  }
+ },
+ "source": {
+  "sha256": "d0be450733fad7bb93599113861381e3caedb8e0fbf30bd4e120024547689582",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-water",
+ "pack": "flat-standins-drawn",
+ "file": "tile-water.png",
+ "sha256": "56040f596f03eb9a2f64b279a20336c12dc52e77a96d2ae37ad250975be2bd5d",
+ "bytes": 972,
+ "preview": "previews/tile-water.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn water ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "water"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#4aa8e8",
+     "#3b93d6",
+     "#8fd0ff",
+     "#45a1e2",
+     "#409adc",
+     "#61b5f0",
+     "#78c3f7",
+     "#52aceb"
+    ],
+    "saturation": 0.777,
+    "value": 0.604,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.921
+     },
+     {
+      "hue": "blue",
+      "share": 0.079
+     }
+    ],
+    "exact": 19,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

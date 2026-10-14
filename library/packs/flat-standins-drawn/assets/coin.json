@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "coin",
+ "pack": "flat-standins-drawn",
+ "file": "coin.png",
+ "sha256": "92eef5a111ea59a8d0b3cd5953bc1303adb6012778ac28bd00bad7e9f5364d90",
+ "bytes": 1866,
+ "preview": "previews/coin.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn coin",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "coin"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ffd23f",
+     "#ffe680",
+     "#2a2440",
+     "#e0a81c",
+     "#ffffff",
+     "#f5d15f",
+     "#715e40",
+     "#e7bf3f"
+    ],
+    "saturation": 0.866,
+    "value": 0.609,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.846
+     },
+     {
+      "hue": "purple",
+      "share": 0.121
+     }
+    ],
+    "exact": 38,
+    "grey": 0.023
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Play</title>
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin: 0; height: 100%; background: #0d0e12; overflow: hidden; }
+  iframe { display: block; width: 100%; height: 100%; border: 0; }
+  #none { color: #b7bcc8; font: 16px/1.5 system-ui, sans-serif; text-align: center; margin: 30vh 16px 0; }
+</style>
+</head>
+<body>
+<!-- The game in its own tab, hosted the way games.fun's /play page hosts it: this page offers the game its economy's
+     buttons and signs with the player's wallet (builder/studio/host-bridge.js). The game alone is at /game/. -->
+<iframe id="game" title="Game" src="about:blank" allow="autoplay; fullscreen; gamepad; clipboard-write"></iframe>
+<script type="module">
+  import { hostBridge, inside } from './host-bridge.js';
+  const frame = document.getElementById('game');
+  const want = new URLSearchParams(location.search).get('game');
+  const path = want === 'friends' ? '/game/gf/mp/' : '/game/';
+  window.__gamesfunHostBridge = hostBridge({ win: window, accept: (src) => inside(frame.contentWindow, src) });
+  // only a game that is made: with none open, or one the build loop is still making, nothing is loaded here
+  fetch('/api/studio/project', { cache: 'no-store' }).then((r) => r.json()).then(({ project }) => {
+    if (!project?.made) { document.body.replaceChildren(Object.assign(document.createElement('p'), { id: 'none', textContent: project ? 'Your game is still being made. It appears here when its first build is done.' : 'No game is open. Describe one on the studio\'s start page.' })); return; }
+    frame.src = path;
+    fetch('/api/game/info', { cache: 'no-store' }).then((r) => r.json()).then((g) => { document.title = g.title || 'Play'; }).catch(() => {});
+  }).catch(() => {});
+</script>
+</body>
+</html>

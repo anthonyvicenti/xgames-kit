@@ -1,0 +1,709 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "soda-can": {
+   "origin": "gf-three library props/soda-can.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.603
+      },
+      {
+       "hue": "grey",
+       "share": 0.278
+      },
+      {
+       "hue": "blue",
+       "share": 0.12
+      }
+     ],
+     "grey": 0.278,
+     "lightness": 0.595,
+     "saturation": 0.571,
+     "top": [
+      {
+       "colour": "#ee6445",
+       "share": 0.301
+      },
+      {
+       "colour": "#e45e48",
+       "share": 0.301
+      },
+      {
+       "colour": "#7f849c",
+       "share": 0.113
+      },
+      {
+       "colour": "#595f77",
+       "share": 0.09
+      },
+      {
+       "colour": "#bbc3ea",
+       "share": 0.046
+      },
+      {
+       "colour": "#b4bde2",
+       "share": 0.039
+      },
+      {
+       "colour": "#b7c0e6",
+       "share": 0.034
+      },
+      {
+       "colour": "#8187a2",
+       "share": 0.032
+      }
+     ]
+    },
+    "trianglesPerMetre": 28.02,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 164,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 19576,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "soda-bottle": {
+   "origin": "gf-three library props/soda-bottle.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.376
+      },
+      {
+       "hue": "red",
+       "share": 0.348
+      },
+      {
+       "hue": "orange",
+       "share": 0.276
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.48,
+     "saturation": 0.515,
+     "top": [
+      {
+       "colour": "#8e5641",
+       "share": 0.245
+      },
+      {
+       "colour": "#e15d49",
+       "share": 0.161
+      },
+      {
+       "colour": "#e45e48",
+       "share": 0.158
+      },
+      {
+       "colour": "#a55d41",
+       "share": 0.074
+      },
+      {
+       "colour": "#9f5b41",
+       "share": 0.07
+      },
+      {
+       "colour": "#a25c41",
+       "share": 0.067
+      },
+      {
+       "colour": "#845442",
+       "share": 0.047
+      },
+      {
+       "colour": "#885541",
+       "share": 0.047
+      }
+     ]
+    },
+    "trianglesPerMetre": 24.86,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 100,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18896,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "cup-coffee": {
+   "origin": "gf-three library props/cup-coffee.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.528
+      },
+      {
+       "hue": "grey",
+       "share": 0.472
+      }
+     ],
+     "grey": 0.472,
+     "lightness": 0.818,
+     "saturation": 0.213,
+     "top": [
+      {
+       "colour": "#ebebf2",
+       "share": 0.167
+      },
+      {
+       "colour": "#e5e5ee",
+       "share": 0.156
+      },
+      {
+       "colour": "#cfcfe1",
+       "share": 0.121
+      },
+      {
+       "colour": "#51413d",
+       "share": 0.121
+      },
+      {
+       "colour": "#c1c1d8",
+       "share": 0.112
+      },
+      {
+       "colour": "#f1f1f6",
+       "share": 0.11
+      },
+      {
+       "colour": "#cacade",
+       "share": 0.107
+      },
+      {
+       "colour": "#f5f5f9",
+       "share": 0.072
+      }
+     ]
+    },
+    "trianglesPerMetre": 15.27,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 108,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18928,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "watermelon": {
+   "origin": "gf-three library props/watermelon.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 20,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.403
+      },
+      {
+       "hue": "cyan",
+       "share": 0.367
+      },
+      {
+       "hue": "green",
+       "share": 0.104
+      },
+      {
+       "hue": "orange",
+       "share": 0.101
+      }
+     ],
+     "grey": 0.024,
+     "lightness": 0.513,
+     "saturation": 0.632,
+     "top": [
+      {
+       "colour": "#e96147",
+       "share": 0.119
+      },
+      {
+       "colour": "#e45e48",
+       "share": 0.088
+      },
+      {
+       "colour": "#f46743",
+       "share": 0.068
+      },
+      {
+       "colour": "#359e75",
+       "share": 0.052
+      },
+      {
+       "colour": "#53bd84",
+       "share": 0.05
+      },
+      {
+       "colour": "#de5b4a",
+       "share": 0.045
+      },
+      {
+       "colour": "#da594b",
+       "share": 0.043
+      },
+      {
+       "colour": "#4db781",
+       "share": 0.036
+      }
+     ]
+    },
+    "trianglesPerMetre": 31.07,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1376,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 32684,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "burger": {
+   "origin": "gf-three library props/burger.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 13,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.687
+      },
+      {
+       "hue": "brown",
+       "share": 0.129
+      },
+      {
+       "hue": "red",
+       "share": 0.121
+      },
+      {
+       "hue": "cyan",
+       "share": 0.064
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.556,
+     "saturation": 0.56,
+     "top": [
+      {
+       "colour": "#cd8860",
+       "share": 0.149
+      },
+      {
+       "colour": "#995941",
+       "share": 0.109
+      },
+      {
+       "colour": "#efba94",
+       "share": 0.109
+      },
+      {
+       "colour": "#845442",
+       "share": 0.099
+      },
+      {
+       "colour": "#ab5e41",
+       "share": 0.099
+      },
+      {
+       "colour": "#3fa87a",
+       "share": 0.064
+      },
+      {
+       "colour": "#d3554d",
+       "share": 0.054
+      },
+      {
+       "colour": "#ffcd5e",
+       "share": 0.053
+      }
+     ]
+    },
+    "trianglesPerMetre": 16.61,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 294,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 20912,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "donut": {
+   "origin": "gf-three library props/donut.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.672
+      },
+      {
+       "hue": "pink",
+       "share": 0.318
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.687,
+     "saturation": 0.65,
+     "top": [
+      {
+       "colour": "#cd8860",
+       "share": 0.149
+      },
+      {
+       "colour": "#f8a3e2",
+       "share": 0.149
+      },
+      {
+       "colour": "#d08d66",
+       "share": 0.131
+      },
+      {
+       "colour": "#dc9e76",
+       "share": 0.128
+      },
+      {
+       "colour": "#f19be0",
+       "share": 0.113
+      },
+      {
+       "colour": "#e8b08a",
+       "share": 0.079
+      },
+      {
+       "colour": "#d79770",
+       "share": 0.076
+      },
+      {
+       "colour": "#e5ac85",
+       "share": 0.045
+      }
+     ]
+    },
+    "trianglesPerMetre": 20.92,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 180,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 20380,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "ice-cream": {
+   "origin": "gf-three library props/ice-cream.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.466
+      },
+      {
+       "hue": "pink",
+       "share": 0.373
+      },
+      {
+       "hue": "purple",
+       "share": 0.161
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.701,
+     "saturation": 0.63,
+     "top": [
+      {
+       "colour": "#d79770",
+       "share": 0.385
+      },
+      {
+       "colour": "#e088da",
+       "share": 0.14
+      },
+      {
+       "colour": "#e891dd",
+       "share": 0.105
+      },
+      {
+       "colour": "#f49fe1",
+       "share": 0.1
+      },
+      {
+       "colour": "#ed96de",
+       "share": 0.092
+      },
+      {
+       "colour": "#e2a781",
+       "share": 0.077
+      },
+      {
+       "colour": "#e48ddb",
+       "share": 0.042
+      },
+      {
+       "colour": "#f8a3e2",
+       "share": 0.034
+      }
+     ]
+    },
+    "trianglesPerMetre": 23.43,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 80,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18352,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "pizza": {
+   "origin": "gf-three library props/pizza.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.885
+      },
+      {
+       "hue": "red",
+       "share": 0.101
+      }
+     ],
+     "grey": 0.006,
+     "lightness": 0.577,
+     "saturation": 0.683,
+     "top": [
+      {
+       "colour": "#b56545",
+       "share": 0.366
+      },
+      {
+       "colour": "#ffcd5e",
+       "share": 0.23
+      },
+      {
+       "colour": "#fd6c40",
+       "share": 0.071
+      },
+      {
+       "colour": "#e68d64",
+       "share": 0.066
+      },
+      {
+       "colour": "#da835c",
+       "share": 0.037
+      },
+      {
+       "colour": "#d37e58",
+       "share": 0.033
+      },
+      {
+       "colour": "#c87450",
+       "share": 0.03
+      },
+      {
+       "colour": "#ba6948",
+       "share": 0.029
+      }
+     ]
+    },
+    "trianglesPerMetre": 47.72,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1208,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 31684,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 8,
+   "paletteSize": 9,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.388
+    },
+    {
+     "hue": "red",
+     "share": 0.198
+    },
+    {
+     "hue": "grey",
+     "share": 0.094
+    },
+    {
+     "hue": "pink",
+     "share": 0.087
+    },
+    {
+     "hue": "blue",
+     "share": 0.081
+    },
+    {
+     "hue": "brown",
+     "share": 0.063
+    },
+    {
+     "hue": "cyan",
+     "share": 0.054
+    }
+   ],
+   "lightness": 0.595,
+   "saturation": 0.63,
+   "trianglesPerMetre": 24.86,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.006
+  },
+  "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
+ }
+}

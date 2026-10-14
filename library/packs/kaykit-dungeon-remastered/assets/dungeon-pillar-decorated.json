@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-pillar-decorated",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-pillar-decorated.glb",
+ "sha256": "53280e5cd5dfb831881bab321df7341ebd75915ff3f9388713861bea591eb35b",
+ "bytes": 66940,
+ "preview": "previews/dungeon-pillar-decorated.png",
+ "from": "pillar_decorated.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a carved stone pillar",
+ "tags": [
+  "dungeon",
+  "pillar",
+  "column",
+  "stone",
+  "ruin",
+  "decorated"
+ ],
+ "use": {
+  "size": [
+   1.674,
+   3,
+   1.283
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.674,
+    3,
+    1.283
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 761,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 761,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 66940,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 22,
+    "hues": [
+     "#7a8388",
+     "#4b5256",
+     "#596064",
+     "#7b8589",
+     "#7f8a8f",
+     "#828d92",
+     "#4a5155",
+     "#747e82"
+    ],
+    "saturation": 0.095,
+    "value": 0.508,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.892
+     },
+     {
+      "hue": "orange",
+      "share": 0.104
+     }
+    ],
+    "grey": 0.892
+   },
+   "trianglesPerMetre": 7.01,
+   "texelsPerMetre": 46,
+   "texturedShare": 0.724,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/pillar_decorated.gltf.glb",
+  "sha256": "eecf7d454a1b6767a113e2490cb1536134abea0b57329a50cf2250d3ed8e2f65",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

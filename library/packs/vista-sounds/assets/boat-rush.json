@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "boat-rush",
+ "pack": "vista-sounds",
+ "file": "boat-rush.ogg",
+ "sha256": "c5ea66614be5bce2787ba4ee8478433c18fd3e80e7b2bafa5365664ecf72ca5e",
+ "bytes": 318170,
+ "preview": "previews/boat-rush.png",
+ "from": "bow wave / water past the hull — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Water rushing past the hull (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "boat",
+  "rush",
+  "loop"
+ ],
+ "use": {
+  "seconds": 45,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -17.8,
+     "samplePeakDb": -6.5,
+     "truePeakDb": -6.4,
+     "hfRatio": 0.185
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 45,
+    "peakDbfs": -6.5,
+    "soundMaxLufs": -17.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/Pfannkuchn/sounds/360631/",
+  "author": "Pfannkuchn"
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T3",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-06",
+  "where": "games.fun research/studio-v2/evals/cases/T3.json"
+ },
+ "prompt": "token vs jeets, defend the token price",
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "standard-3d",
+    "flat-2d"
+   ],
+   "loop": [
+    "round",
+    "endless"
+   ],
+   "kind": [
+    "silly",
+    "blocky",
+    "pixel",
+    "drawn"
+   ]
+  },
+  "why": "Waves against a shared price: a round (or endless waves) of a few minutes. The prompt names no look, so any light kind is accepted; a dark or photoreal one is not what a meme prompt asks for."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, in the same round or run",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A round (or a run of waves) ends on a results screen and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one prop swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "defend",
+   "text": "Waves of attackers try to dump the price; players defend a price chart that is the shared health",
+   "how": "human"
+  },
+  {
+   "id": "jeets-ok",
+   "text": "Jeets are non-ethnic paper-hand creatures (no nationality or ethnicity)",
+   "how": "human"
+  },
+  {
+   "id": "mascot",
+   "text": "The token mascot is a player-body or hat slot",
+   "how": "probe:slot"
+  },
+  {
+   "id": "looks-good",
+   "text": "The contact sheet looks like a game people would share (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "fun",
+   "text": "Two people playing for 3 minutes laugh at least once (creator's judgement)",
+   "how": "human"
+  }
+ ],
+ "probes": {
+  "slot": {
+   "match": "/character\\.(body|hat)/"
+  }
+ },
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "Re-created for spec v2 on 2026-10-13. The creator dropped an ethnic framing on 2026-10-06; the prompt is as frozen after it."
+}

@@ -1,0 +1,122 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-woman-dress",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-woman-dress.glb",
+ "sha256": "147748af447fa4074982b9db8509658578053899769e398f0721d56a7dce14e9",
+ "bytes": 173920,
+ "preview": "previews/quaternius-woman-dress.png",
+ "from": "https://poly.pizza/m/nIItLV9nxS \"Animated Woman\" (Ultimate Modular Women Pack), https://static.poly.pizza/46d6db5a-3c9f-4238-8cdf-8eb7194498dc.glb (sha256 a6522fe5…2d17, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (42 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a red-haired woman in a sleeveless dress with a gold belt; the dress takes the player colour",
+ "tags": [
+  "human",
+  "woman",
+  "dress",
+  "party",
+  "formal",
+  "wedding",
+  "modern",
+  "civilian",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.649,
+   1.843,
+   0.372
+  ],
+  "height": 1.843,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_LimeGreen"
+  ]
+ },
+ "budgets": {
+  "triangles": 6108,
+  "textures": 0,
+  "materials": 5,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+     "model judge, right hand: idle at 0 s: 7.2% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.843,
+     "triangles": 6108,
+     "joints": 58,
+     "materials": 5
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#68220c",
+     "#cead86",
+     "#466843",
+     "#31251c",
+     "#af8749"
+    ],
+    "saturation": 0.658,
+    "value": 0.349,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.679
+     },
+     {
+      "hue": "orange",
+      "share": 0.264
+     },
+     {
+      "hue": "green",
+      "share": 0.057
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 12.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.53 heads tall; hips at 54% of the height; shoulders 13% of it",
+   "body": {
+    "headsTall": 5.53,
+    "hipShare": 0.543,
+    "shoulderShare": 0.127,
+    "widthShare": 0.895
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/nIItLV9nxS"
+ }
+}

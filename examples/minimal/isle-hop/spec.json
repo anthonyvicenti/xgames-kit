@@ -1,0 +1,215 @@
+{
+  "specVersion": 2,
+  "title": "Three Harbours",
+  "hook": "Sail a small boat between three islands with friends, landing a fish at every harbour.",
+  "prompt": "An original calm sailing and fishing game of our own on the vista runtime: three different islands to sail between with friends, a fish to land at each harbour before you sail on",
+  "runtime": "vista",
+  "loop": "round",
+  "kind": "calm",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "primary": "cast, strike and reel",
+    "interact": "board the boat, take the helm, trade at a stall"
+  },
+  "round": {
+    "seconds": 900,
+    "winBy": "Land a fish at all three harbours.",
+    "replay": true
+  },
+  "world": {
+    "template": "islands",
+    "islands": [
+      {
+        "name": "Fern Key",
+        "seed": 811,
+        "words": {
+          "size": "medium",
+          "shape": "single",
+          "coast": "rugged",
+          "vegetation": "jungle",
+          "sand": "white",
+          "pier": "pier",
+          "village": "hamlet",
+          "houses": "pastel",
+          "reef": "large",
+          "time": "morning"
+        }
+      },
+      {
+        "name": "Table Rock",
+        "seed": 2207,
+        "words": {
+          "size": "large",
+          "shape": "plateau",
+          "vegetation": "scrub",
+          "sand": "golden",
+          "rock": "limestone",
+          "pier": "jetty",
+          "village": "town",
+          "houses": "terracotta",
+          "river": "yes",
+          "time": "golden"
+        }
+      },
+      {
+        "name": "Ember Reach",
+        "seed": 5309,
+        "words": {
+          "size": "small",
+          "shape": "volcano",
+          "sand": "dark",
+          "rock": "basalt",
+          "cliffs": "sheer",
+          "pier": "dock",
+          "village": "none",
+          "weather": "overcast"
+        }
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "species": {
+      "sergeant": {
+        "name": "Banded perch",
+        "habitat": [
+          "pier",
+          "reef"
+        ],
+        "minKg": 0.1,
+        "maxKg": 0.35,
+        "value": 6
+      },
+      "grunt": {
+        "name": "Blue-lined grunt",
+        "habitat": [
+          "pier",
+          "reef"
+        ],
+        "minKg": 0.3,
+        "maxKg": 1.2,
+        "value": 7
+      },
+      "yellowtail": {
+        "name": "Sunset snapper",
+        "habitat": [
+          "reef",
+          "pier",
+          "bay"
+        ],
+        "minKg": 0.4,
+        "maxKg": 1.6,
+        "value": 12
+      },
+      "jack": {
+        "name": "Pier runner",
+        "habitat": [
+          "pier",
+          "bay"
+        ],
+        "minKg": 1,
+        "maxKg": 9,
+        "value": 6
+      }
+    },
+    "gear": {
+      "line-0": {
+        "name": "Light line",
+        "kind": "line",
+        "price": 0,
+        "lineKg": 7
+      },
+      "line-1": {
+        "name": "Braided line",
+        "kind": "line",
+        "price": 40,
+        "lineKg": 14
+      },
+      "reel-0": {
+        "name": "Basic reel",
+        "kind": "reel",
+        "price": 0,
+        "reelSpeed": 1.1
+      },
+      "reel-1": {
+        "name": "Smooth reel",
+        "kind": "reel",
+        "price": 60,
+        "reelSpeed": 1.6
+      },
+      "rod-0": {
+        "name": "Short rod",
+        "kind": "rod",
+        "price": 0,
+        "castM": 22
+      },
+      "hold-0": {
+        "name": "Cooler",
+        "kind": "hold",
+        "price": 0,
+        "holdKg": 30
+      }
+    },
+    "vendors": {
+      "buyer": {
+        "name": "The fish stall",
+        "greeting": "Fresh off the pier? Let's weigh it."
+      },
+      "shop": {
+        "name": "The tackle hut",
+        "greeting": "Line, reels, bait and fuel for the crossing."
+      }
+    },
+    "economy": {
+      "startMoney": 20,
+      "fuelPrice": 2
+    },
+    "start": "pier"
+  },
+  "rules": {
+    "summary": "Start at Fern Key. Land a fish at the harbour, take the helm and sail out past the reef toward the next island on the horizon; the boat takes you there. A harbour counts once someone lands a fish there; the voyage ends when all three have.",
+    "scoring": "+1 for every fish landed, +3 for the first fish at a harbour",
+    "params": {
+      "harbours": 3
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see each other as people in their own colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "clear-morning"
+  },
+  "build": [],
+  "accept": [
+    "three islands that look like three different places",
+    "you sail from one to the next and arrive at its harbour together",
+    "friends see each other on every island"
+  ],
+  "notInV1": [
+    "a chart screen to pick an island (the next island is the one the bow points at)"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "A calm voyage between islands: no violence, no names of any real game, person or place."
+  }
+}

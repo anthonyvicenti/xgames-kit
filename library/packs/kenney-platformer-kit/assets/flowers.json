@@ -1,0 +1,106 @@
+{
+ "assetVersion": 1,
+ "id": "flowers",
+ "pack": "kenney-platformer-kit",
+ "file": "flowers.glb",
+ "sha256": "d71884f478cc272b26488173d9e43bb88bd0735311f6b3fe11ec40bea073b2e1",
+ "bytes": 23412,
+ "preview": "previews/flowers.png",
+ "from": "kenney:platformer-kit/flowers; baked to metres (x2.55384), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cluster of small flowers",
+ "tags": [
+  "nature",
+  "flowers",
+  "decor"
+ ],
+ "use": {
+  "size": [
+   1.983,
+   0.35,
+   2.006
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 264,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 264,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 23412,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#5a60c1",
+     "#5c69c5",
+     "#585abe",
+     "#5d6bc6",
+     "#ff9832",
+     "#617bce",
+     "#5d6ec8",
+     "#ffaa41"
+    ],
+    "saturation": 0.586,
+    "value": 0.59,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.829
+     },
+     {
+      "hue": "orange",
+      "share": 0.137
+     },
+     {
+      "hue": "yellow",
+      "share": 0.034
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "c4d459bf014a534a79a6763e59d9c548902600fe0e0e025654bd58a979139be6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.55384), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

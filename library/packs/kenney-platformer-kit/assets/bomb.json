@@ -1,0 +1,109 @@
+{
+ "assetVersion": 1,
+ "id": "bomb",
+ "pack": "kenney-platformer-kit",
+ "file": "bomb.glb",
+ "sha256": "f8ce0537668f83cf3813d445a76e6af58c9d8e7c0f872bcac57e103b6d9750fd",
+ "bytes": 20484,
+ "preview": "previews/bomb.png",
+ "from": "kenney:platformer-kit/bomb; baked to metres (x1.10695), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cartoon bomb",
+ "tags": [
+  "item",
+  "hazard",
+  "throw",
+  "bomb"
+ ],
+ "use": {
+  "size": [
+   0.546,
+   0.6,
+   0.546
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "sphere",
+   "radius": 0.3,
+   "offset": [
+    0,
+    0.3,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 148,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 148,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20484,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#9097b5",
+     "#adb5d9",
+     "#5f74ca",
+     "#607acd",
+     "#5c69c5",
+     "#6384d2",
+     "#9ca3c4",
+     "#a1a9ca"
+    ],
+    "saturation": 0.374,
+    "value": 0.631,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.907
+     },
+     {
+      "hue": "grey",
+      "share": 0.075
+     }
+    ],
+    "grey": 0.075
+   },
+   "trianglesPerMetre": 10.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "7ad6652d9f2837d6c2fe1c40ca779afff85c6b58eee7b4a58d1acd8864c873ea",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.10695), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

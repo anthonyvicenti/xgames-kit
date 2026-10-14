@@ -1,0 +1,70 @@
+{
+ "packVersion": 1,
+ "id": "poly-pizza-cc-by",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Poly Pizza models under CC BY 3.0",
+ "describe": "Single models from Poly Pizza by several authors (Poly by Google and others); each carries its own credit line, which a game must show.",
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "several authors (see each asset's credit)",
+  "url": "https://creativecommons.org/licenses/by/3.0/",
+  "file": "library/packs/poly-pizza-cc-by/LICENSE.txt"
+ },
+ "source": {
+  "kind": "collection",
+  "page": "https://poly.pizza",
+  "rebuild": "gf-three lookdev curate.mjs --fetch (polypizza:<id>), baked to metres"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 3,
+   "hues": [
+    "#ffffff",
+    "#e7e7e7",
+    "#f53f30",
+    "#a8a8a8",
+    "#dd9358",
+    "#997857",
+    "#a0a0a0",
+    "#79909e",
+    "#ffcd89",
+    "#191919",
+    "#353535",
+    "#67b4e7"
+   ],
+   "saturation": 0.27,
+   "value": 0.636,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.56
+    },
+    {
+     "hue": "orange",
+     "share": 0.216
+    },
+    {
+     "hue": "red",
+     "share": 0.152
+    }
+   ],
+   "grey": 0.816
+  },
+  "trianglesPerMetre": 7.86,
+  "texelsPerMetre": 166,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 10,
+ "validators": [
+  "budget"
+ ]
+}

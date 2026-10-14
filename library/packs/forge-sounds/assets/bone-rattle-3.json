@@ -1,0 +1,61 @@
+{
+ "assetVersion": 1,
+ "id": "bone-rattle-3",
+ "pack": "forge-sounds",
+ "file": "bone-rattle-3.ogg",
+ "sha256": "2e06f7663fa3ea8e14f9ee3b3f2106f15716a82e83dee4a408b2d2c35929d560",
+ "bytes": 5842,
+ "preview": "previews/bone-rattle-3.png",
+ "from": "https://opengameart.org/content/bones-rattle 3.ogg; unmodified",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton killed (bones break) (bone rattle 3)",
+ "tags": [
+  "sounds",
+  "bone",
+  "rattle",
+  "break",
+  "enemy",
+  "step"
+ ],
+ "use": {
+  "seconds": 0.141,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 41% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -20.8,
+     "samplePeakDb": -1.8,
+     "truePeakDb": -1.5,
+     "hfRatio": 0.413
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.141,
+    "peakDbfs": -1.8,
+    "soundMaxLufs": -20.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/bones-rattle",
+  "retrieved": "2026-10-09",
+  "author": "congusbongus (OpenGameArt), adapted from blukotek (Freesound 249319, CC0)"
+ }
+}

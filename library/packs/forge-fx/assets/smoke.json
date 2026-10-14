@@ -1,0 +1,75 @@
+{
+ "assetVersion": 1,
+ "id": "smoke",
+ "pack": "forge-fx",
+ "file": "smoke.png",
+ "sha256": "90877f9f10d9eb6f2d097560d9a789f0575bbb89631ef5db97c301cedd93076c",
+ "bytes": 16456,
+ "preview": "previews/smoke.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a soft billowing smoke puff (white; the particle tints it grey)",
+ "tags": [
+  "fx",
+  "smoke"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f5f5f5",
+     "#f6f6f6",
+     "#f4f4f4",
+     "#f3f3f3",
+     "#f2f2f2",
+     "#f7f7f7",
+     "#f1f1f1",
+     "#efefef"
+    ],
+    "saturation": 0,
+    "value": 0.958,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 14,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

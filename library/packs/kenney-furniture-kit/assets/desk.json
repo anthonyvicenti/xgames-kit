@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "desk",
+ "pack": "kenney-furniture-kit",
+ "file": "desk.glb",
+ "sha256": "08106aea9f6b8fbb786b94c054e802f80f59410cc534ee9730c459f6b96bd776",
+ "bytes": 5376,
+ "preview": "previews/desk.png",
+ "from": "kenney:furniture-kit/desk; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden office desk",
+ "tags": [
+  "office",
+  "desk",
+  "station",
+  "cover"
+ ],
+ "use": {
+  "size": [
+   1.469,
+   0.769,
+   0.785
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.469,
+    0.769,
+    0.785
+   ],
+   "offset": [
+    0,
+    0.385,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 198,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 198,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5376,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8",
+     "#dfeaec"
+    ],
+    "saturation": 0.757,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.999
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.17,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "0164fe828f028b321730fb8c74502e353583f751be74da1682d42fff7d3c5a42",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

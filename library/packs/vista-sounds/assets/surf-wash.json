@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "surf-wash",
+ "pack": "vista-sounds",
+ "file": "surf-wash.ogg",
+ "sha256": "cad02b8c23a584290da4a7e73742e9477d4088d927aae19c1b852f1cf53619c7",
+ "bytes": 75291,
+ "preview": "previews/surf-wash.png",
+ "from": "6 uprushes (swash running up the sand), close mic",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Wave running up the sand",
+ "tags": [
+  "coast",
+  "calm",
+  "surf",
+  "wash"
+ ],
+ "use": {
+  "seconds": 9.954,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "true peak 0.4 dBTP is over 0"
+    ],
+    "facts": {
+     "soundMaxLufs": -10.5,
+     "samplePeakDb": -0.6,
+     "truePeakDb": 0.4,
+     "hfRatio": 0.191
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 9.954,
+    "peakDbfs": -0.6,
+    "soundMaxLufs": -10.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/Alex_hears_things/sounds/352356/",
+  "author": "Alex_hears_things"
+ }
+}

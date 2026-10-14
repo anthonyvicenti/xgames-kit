@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "folio-nature",
+ "file": "crate.glb",
+ "sha256": "42b1bee2421b202e2715b6d4ca849ea2bf8a95ee5f83035fbee58fb91a5996a3",
+ "bytes": 23244,
+ "preview": "previews/crate.png",
+ "from": "static/explosiveCrates/explosiveCrates.glb node explosiveCrates.001; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden crate",
+ "tags": [
+  "crate",
+  "container",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   1.107,
+   1.063,
+   1.107
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.6,
+   1.2
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.107,
+    1.063,
+    1.107
+   ],
+   "offset": [
+    0,
+    0.532,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 308,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 308,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 23244,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f8a658",
+     "#ed3f1c",
+     "#988165"
+    ],
+    "saturation": 0.741,
+    "value": 0.584,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.722
+     },
+     {
+      "hue": "red",
+      "share": 0.278
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.33,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

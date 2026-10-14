@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "lock-red",
+ "pack": "kenney-new-platformer-pack",
+ "file": "lock-red.png",
+ "sha256": "f83644f471ba51fca877340b0e35c067b8a9b4ca244f8cde39a4c30cbd103fcc",
+ "bytes": 2525,
+ "preview": "previews/lock-red.png",
+ "from": "Sprites/Tiles/Double/lock_red.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "lock red tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "lock",
+  "red",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#e54341",
+     "#353541",
+     "#781a19",
+     "#f17575",
+     "#bc2423",
+     "#343440",
+     "#cb2f2e",
+     "#c62b2a"
+    ],
+    "saturation": 0.598,
+    "value": 0.475,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.772
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     }
+    ],
+    "exact": 76,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "ff47b96be1e4b6c3b47d4126841bbef18d1fa8c2a9a34919d41b0b06aa018f63",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

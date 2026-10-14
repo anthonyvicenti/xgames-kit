@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "paving-slabs",
+ "pack": "kit-textures",
+ "file": "paving-slabs.png",
+ "sha256": "6da0241c05f9fd552c0fddd6d2b1cd61306ac8cee3437e865c96b0e6b8d9efe6",
+ "bytes": 28721,
+ "preview": "previews/paving-slabs.png",
+ "from": "research/gf-three/lookdev/tools/bake-patterns.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "square-edged paving slabs in a random ashlar, 4 m per tile",
+ "tags": [
+  "paving",
+  "slabs",
+  "ground",
+  "pattern",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb",
+  "tileMetres": 4
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c8c8c8",
+     "#f8f8f8",
+     "#ebebeb",
+     "#ececec",
+     "#f5f5f5",
+     "#efefef",
+     "#f6f6f6",
+     "#f9f9f9"
+    ],
+    "saturation": 0,
+    "value": 0.93,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 43,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

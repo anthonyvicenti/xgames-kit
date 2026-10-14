@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "tree-oak",
+ "pack": "kenney-nature-kit",
+ "file": "tree-oak.glb",
+ "sha256": "687e3c01deace90aaf38433c089d5212dedcc7e326b595d610dd6a933cd86325",
+ "bytes": 5808,
+ "preview": "previews/tree-oak.png",
+ "from": "kenney:nature-kit/tree_oak; baked to metres (x3.91441), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low-poly oak tree",
+ "tags": [
+  "nature",
+  "tree",
+  "oak"
+ ],
+ "use": {
+  "size": [
+   2.508,
+   4.8,
+   2.895
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.35,
+   "height": 3,
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 196,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 196,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5808,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#70e6d6",
+     "#f2be9e"
+    ],
+    "saturation": 0.712,
+    "value": 0.688,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.845
+     },
+     {
+      "hue": "orange",
+      "share": 0.155
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "sha256": "d7fd8773674928c50c11b66d12c636d49bdcc15a8b1c7fbb98e6f63a3439a3f3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x3.91441), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

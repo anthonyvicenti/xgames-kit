@@ -1,0 +1,109 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-barrier",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-barrier.glb",
+ "sha256": "9b41689927b35d9abdfe0cde8fe77de9387170d140a36143c87187cd74c77025",
+ "bytes": 51856,
+ "preview": "previews/dungeon-barrier.png",
+ "from": "barrier.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low wooden barrier",
+ "tags": [
+  "dungeon",
+  "barrier",
+  "fence",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.825,
+   0.375
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    0.825,
+    0.375
+   ],
+   "offset": [
+    0,
+    0.413,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 90,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 90,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 51856,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#7b858b",
+     "#6e767a",
+     "#747e82",
+     "#8a969b",
+     "#70797e",
+     "#6a7377",
+     "#929ea3",
+     "#687175"
+    ],
+    "saturation": 0.062,
+    "value": 0.495,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.54,
+   "texelsPerMetre": 69,
+   "texturedShare": 0.066,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/barrier.gltf.glb",
+  "sha256": "2c6a1b89de1c87778c7ae9afc17fa9eabc4aa4148f3b8748f062b5c8ec7f6c00",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

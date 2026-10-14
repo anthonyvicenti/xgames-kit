@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "spike-block",
+ "pack": "kenney-platformer-kit",
+ "file": "spike-block.glb",
+ "sha256": "1a193d6717effb7cef78fa6b738017fb4bc59138b4a2ed78cf9b1b0f6f86e186",
+ "bytes": 21164,
+ "preview": "previews/spike-block.png",
+ "from": "kenney:platformer-kit/spike-block; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a block covered in spikes",
+ "tags": [
+  "arena",
+  "hazard",
+  "spike",
+  "block"
+ ],
+ "use": {
+  "size": [
+   1.8,
+   1.8,
+   1.8
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.8,
+    1.8,
+    1.8
+   ],
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 116,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 116,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21164,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#617bcd",
+     "#5d6dc7",
+     "#a8b0d3",
+     "#9299b7",
+     "#878eaa",
+     "#658ed6",
+     "#585abe",
+     "#648ad4"
+    ],
+    "saturation": 0.406,
+    "value": 0.616,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.888
+     },
+     {
+      "hue": "grey",
+      "share": 0.112
+     }
+    ],
+    "grey": 0.112
+   },
+   "trianglesPerMetre": 3.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "a6c881c26140888ae1325c2e191c31a048fa3b49826af9a0b584e7b5fe9de2cb",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

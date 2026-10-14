@@ -1,0 +1,328 @@
+{
+ "about": "The blocky kind's voxel world against Hollow Reach (games.fun's DVE trial, qa-16 shots) at the same framings, and its frame cost. Made by runtimes/three/tools/voxel-shots.mjs on the real graphics card (gpu-run.sh), the frame cap off; the picture is blocky-vs-hollow-reach.jpg (ours cropped from 1920x1080 to Hollow Reach's 1120x720 aspect; a held cobble in first-person shots, as the build mechanic draws it). Round 3 (stream voxel3): caves readable by sight (a cool cave glow where no sky reaches, wider, softer block light, amber kept yellow and glowcaps teal so their light no longer mixes to magenta). Round 2 (stream voxel2): caves with pools of coloured light, bodies lit by world.lightAt (the 'friends' shot), the held block, the kind's fog. The frame-cost runs are from the same code one tuning pass earlier (cave fill 0.035, now 0.08: a uniform, no cost change). The machine was shared with other jobs (load 15-30), so slow tails are partly theirs.",
+ "date": "2026-10-14",
+ "chrome": "148.0.7778.96",
+ "shots": [
+  {
+   "shot": "horizon",
+   "frame": {
+    "at": [
+     79,
+     59,
+     58
+    ],
+    "yaw": 4.32,
+    "score": 105.3
+   },
+   "loadMs": 830,
+   "world": {
+    "generate": 129,
+    "light": 72,
+    "mesh": 397,
+    "physics": 119,
+    "workers": 4,
+    "scenery": 56
+   }
+  },
+  {
+   "shot": "cave",
+   "frame": {
+    "found": true,
+    "at": [
+     136,
+     4,
+     34
+    ],
+    "score": 244
+   },
+   "loadMs": 857,
+   "world": {
+    "generate": 120,
+    "light": 92,
+    "mesh": 420,
+    "physics": 115,
+    "workers": 4,
+    "scenery": 56
+   }
+  },
+  {
+   "shot": "friends",
+   "frame": {
+    "found": true,
+    "at": [
+     136,
+     4,
+     34
+    ],
+    "score": 244,
+    "friends": [
+     {
+      "id": "blocky-classic",
+      "at": [
+       134.4,
+       4,
+       37.3
+      ],
+      "light": {
+       "sky": 0,
+       "ambient": 0.06,
+       "block": [
+        0.28732646201692924,
+        0.3456539189173297,
+        0.27455431551418435
+       ]
+      }
+     },
+     {
+      "id": "blocky-cap",
+      "at": [
+       132,
+       3,
+       35.8
+      ],
+      "light": {
+       "sky": 0,
+       "ambient": 0.06,
+       "block": [
+        0.6363481837438212,
+        0.4603787672661773,
+        0.3195161018363717
+       ]
+      }
+     },
+     {
+      "id": "blocky-tall",
+      "at": [
+       129.9,
+       3,
+       38.1
+      ],
+      "light": {
+       "sky": 0,
+       "ambient": 0.06,
+       "block": [
+        0.22442787181032603,
+        0.4160450665246985,
+        0.3369384263643322
+       ]
+      }
+     }
+    ]
+   },
+   "loadMs": 857,
+   "world": {
+    "generate": 122,
+    "light": 91,
+    "mesh": 408,
+    "physics": 115,
+    "workers": 4,
+    "scenery": 56
+   }
+  },
+  {
+   "shot": "pit",
+   "frame": {
+    "at": [
+     106,
+     39,
+     73
+    ]
+   },
+   "loadMs": 848,
+   "world": {
+    "generate": 118,
+    "light": 92,
+    "mesh": 410,
+    "physics": 118,
+    "workers": 4,
+    "scenery": 56
+   }
+  },
+  {
+   "shot": "build",
+   "frame": {
+    "at": [
+     91,
+     32,
+     91
+    ]
+   },
+   "loadMs": 818,
+   "world": {
+    "generate": 122,
+    "light": 93,
+    "mesh": 376,
+    "physics": 123,
+    "workers": 4,
+    "scenery": 56
+   }
+  },
+  {
+   "shot": "third",
+   "frame": {},
+   "loadMs": 841,
+   "world": {
+    "generate": 117,
+    "light": 91,
+    "mesh": 418,
+    "physics": 116,
+    "workers": 4,
+    "scenery": 56
+   }
+  }
+ ],
+ "perf": {
+  "how": "the camera flies a 34-cell loop round the spawn square at 9 m/s, 2.2 m over the ground, looking ahead; rAF intervals and render CPU time per frame (ms)",
+  "chromeArgs": "--use-gl=angle --use-angle=gl-egl --disable-gpu-vsync --disable-frame-rate-limit",
+  "runs": [
+   {
+    "w": 3840,
+    "h": 2160,
+    "quality": "high",
+    "frames": 2713,
+    "fps": 271.7,
+    "p50": 1.7,
+    "p95": 9.4,
+    "p99": 32.7,
+    "max": 105.3,
+    "cpuP50": 1.4,
+    "cpuP95": 7.1,
+    "calls": 389,
+    "triangles": 502438,
+    "size": [
+     3840,
+     2160
+    ],
+    "loadMs": 851,
+    "world": {
+     "generate": 131,
+     "light": 83,
+     "mesh": 399,
+     "physics": 126,
+     "workers": 4,
+     "scenery": 56
+    }
+   },
+   {
+    "w": 3840,
+    "h": 2160,
+    "quality": "high",
+    "frames": 2767,
+    "fps": 277.7,
+    "p50": 2.7,
+    "p95": 8.3,
+    "p99": 11.4,
+    "max": 20,
+    "cpuP50": 1.9,
+    "cpuP95": 5.8,
+    "calls": 389,
+    "triangles": 502438,
+    "size": [
+     3840,
+     2160
+    ],
+    "loadMs": 2331,
+    "world": {
+     "generate": 253,
+     "light": 145,
+     "mesh": 1275,
+     "physics": 183,
+     "workers": 4,
+     "scenery": 56
+    }
+   },
+   {
+    "w": 1920,
+    "h": 1080,
+    "quality": "high",
+    "frames": 2596,
+    "fps": 260.2,
+    "p50": 3,
+    "p95": 8.6,
+    "p99": 11.2,
+    "max": 19.8,
+    "cpuP50": 1.9,
+    "cpuP95": 5.2,
+    "calls": 389,
+    "triangles": 502438,
+    "size": [
+     1920,
+     1080
+    ],
+    "loadMs": 1670,
+    "world": {
+     "generate": 250,
+     "light": 79,
+     "mesh": 933,
+     "physics": 136,
+     "workers": 4,
+     "scenery": 56
+    }
+   },
+   {
+    "w": 1170,
+    "h": 2532,
+    "quality": "low",
+    "frames": 5694,
+    "fps": 570.3,
+    "p50": 1.2,
+    "p95": 4.7,
+    "p99": 7.1,
+    "max": 14.1,
+    "cpuP50": 0.7,
+    "cpuP95": 1.4,
+    "calls": 191,
+    "triangles": 241200,
+    "size": [
+     1170,
+     2532
+    ],
+    "loadMs": 1477,
+    "world": {
+     "generate": 231,
+     "light": 58,
+     "mesh": 731,
+     "physics": 147,
+     "workers": 4,
+     "scenery": 48
+    }
+   },
+   {
+    "w": 3840,
+    "h": 2160,
+    "quality": "high",
+    "frames": 2833,
+    "fps": 354.7,
+    "p50": 1,
+    "p95": 1.8,
+    "p99": 102.4,
+    "max": 124.1,
+    "cpuP50": 0.9,
+    "cpuP95": 1.5,
+    "calls": 392,
+    "triangles": 477160,
+    "size": [
+     3840,
+     2160
+    ],
+    "loadMs": 841,
+    "world": {
+     "generate": 126,
+     "light": 92,
+     "mesh": 397,
+     "physics": 123,
+     "workers": 4,
+     "scenery": 56
+    },
+    "round": 3
+   }
+  ]
+ },
+ "hollowReachShots": [
+  "b03c-horizon.jpg",
+  "a03-start.jpg",
+  "a05-lamp-light.jpg",
+  "b03b-rim-into-reach.jpg",
+  "b03-rim.jpg"
+ ]
+}

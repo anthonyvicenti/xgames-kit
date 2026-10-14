@@ -1,0 +1,172 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T6",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-10",
+  "where": "games.fun research/studio-v2/evals/cases/T6.json"
+ },
+ "private": {
+  "sha256": "7d9e1ff7bbdd66689d5898dd1b2a1ed8b285f3d9f09e71229954ea8385b9e9bb",
+  "holds": [
+   "prompt",
+   "ownWords"
+  ],
+  "why": "The prompt names a private reference game, and the own-words list holds its names. Neither may appear in a public file. The runner reads both from the private refs folder by this hash (canonical JSON, RUNNER.md); a run without it stops before the loop starts. Paired case PA06 is this case restated without the name."
+ },
+ "prompt": null,
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "forge",
+    "three"
+   ],
+   "profile": [
+    "standard-3d"
+   ],
+   "loop": [
+    "run",
+    "endless"
+   ],
+   "kind": [
+    "dark",
+    "lofi"
+   ]
+  },
+  "why": "First person with weight, on phones, co-op 2-4: the forge runtime was built for it; three in first person is accepted when it meets the same feel targets (feel-tables item). Profile applies to three only."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "research",
+   "text": "The pitch looked the named game up (its store page and a gameplay description from another site) and the ledger carries its signature as reference lines",
+   "how": "judge"
+  },
+  {
+   "id": "own-words",
+   "text": "The game is our own design in our own words: the named game's title and names are in no card's spec, the locked spec, the build brief, a file of the game or an asset prompt",
+   "how": "probe:own-words"
+  },
+  {
+   "id": "feel-tables",
+   "text": "The delivered game keeps the measured feel: how fast the player walks and stops, the jump, the evade, each gun's kick and muzzle light, the enemies' tell, the hurt tint, what a kill breaks into",
+   "how": "probe:feel-targets"
+  },
+  {
+   "id": "first-person-fight",
+   "text": "It is a first-person fight with weight: a weapon in the hand that kicks and flashes, an evade, a quick melee, enemies that rise and come in waves and tell before they hit",
+   "how": "human"
+  },
+  {
+   "id": "hits-read",
+   "text": "A hit that does not kill reads (the body flashes, a number pops) and no weapon a player can hold kills a basic enemy with every hit",
+   "how": "gate:C"
+  },
+  {
+   "id": "run",
+   "text": "A run has a shape: waves that grow, a choice of one card from three that changes how the player fights for the rest of the run, then one big enemy with its own health bar; won when it falls, lost when everyone has",
+   "how": "human"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A run ends on a results screen, won or lost, and replays; a player who falls alone is not left lying until the clock runs out",
+   "how": "gate:D"
+  },
+  {
+   "id": "controls",
+   "text": "Every control the HUD lists does what it says on the player's own screen",
+   "how": "gate:C"
+  },
+  {
+   "id": "health",
+   "text": "The player's health is on the HUD and follows the hits",
+   "how": "gate:C"
+  },
+  {
+   "id": "fair",
+   "text": "The player is never out of control for seconds at a time while alive",
+   "how": "gate:C"
+  },
+  {
+   "id": "frame-rate",
+   "text": "60 frames a second at 1080p on the high tier and above 30 on the low tier at four times slower, with the look inside its measured brightness",
+   "how": "gate:B"
+  },
+  {
+   "id": "phones",
+   "text": "It plays on a phone with touch controls; the device claim names the browser and hardware it was tested on (emulated is said as emulated)",
+   "how": "gate:B"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other as a body in their colour, holding their weapon, where they really are, in the same run",
+   "how": "gate:E"
+  },
+  {
+   "id": "swap",
+   "text": "A model and a texture swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Everything the runtime draws is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "no-gpu",
+   "text": "A browser the runtime cannot draw in gets a screen that says where the game plays, never a blank canvas",
+   "how": "gate:B"
+  },
+  {
+   "id": "feels-like",
+   "text": "Played beside the game the creator named, the creator says it plays and feels like that kind of game (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "looks-like",
+   "text": "Beside it, the creator says it looks like the same kind of place: dark, moonlit, fog and firelight, a retro grain (creator's judgement)",
+   "how": "human"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "The forge runtime's acceptance, re-created for spec v2 on 2026-10-13. The prompt is the plan of record's wording of the creator's goal, kept privately because it names the reference. Builders work from measured feel targets and never get the reference's code, files or names."
+}

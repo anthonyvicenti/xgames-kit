@@ -1,0 +1,341 @@
+{
+  "id": "build",
+  "name": "Build",
+  "describe": "Place, break and paint blocks in a shared voxel world; signs and boom blocks; saved on the play host",
+  "examples": [
+    "build houses with friends in a block world",
+    "a sandbox island anyone can change",
+    "paint and sign your builds"
+  ],
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "hotbar": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 20,
+        "default": [],
+        "description": "Block ids on the hotbar, in order (keys 1-9 and 0 pick the first ten). Empty: every block players may place"
+      },
+      "reach": {
+        "type": "number",
+        "description": "How far a player reaches, in blocks from their head",
+        "minimum": 3,
+        "maximum": 14,
+        "default": 7
+      },
+      "rate": {
+        "type": "number",
+        "description": "Edits a player may make per second (the host refuses more)",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 8
+      },
+      "burst": {
+        "type": "number",
+        "description": "Edits a player may make at once before the rate applies",
+        "minimum": 1,
+        "maximum": 60,
+        "default": 20
+      },
+      "paint": {
+        "type": "boolean",
+        "default": true,
+        "description": "The paint tool"
+      },
+      "signs": {
+        "type": "boolean",
+        "default": true,
+        "description": "Signs (the world needs a sign block: voxel.signBlock)"
+      },
+      "boomFuse": {
+        "type": "number",
+        "description": "Seconds from placing a boom block to its pop",
+        "minimum": 0.5,
+        "maximum": 10,
+        "default": 3
+      },
+      "boomRadius": {
+        "type": "number",
+        "description": "Radius of a boom's crater, in blocks",
+        "minimum": 1,
+        "maximum": 5,
+        "default": 2.6
+      },
+      "boomCooldown": {
+        "type": "number",
+        "description": "Seconds before the same player can place another boom block",
+        "minimum": 0,
+        "maximum": 120,
+        "default": 10
+      },
+      "boomPush": {
+        "type": "number",
+        "description": "How hard a boom pushes players near it (m/s)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 8
+      },
+      "boomChain": {
+        "type": "boolean",
+        "default": true,
+        "description": "A boom inside a crater goes off at once"
+      },
+      "saveEvery": {
+        "type": "number",
+        "description": "Seconds between the host's saves to the play host",
+        "minimum": 1,
+        "maximum": 10,
+        "default": 2
+      },
+      "pollEvery": {
+        "type": "number",
+        "description": "Seconds between the host's looks at the play host for other writers",
+        "minimum": 5,
+        "maximum": 120,
+        "default": 15
+      },
+      "soundPlace": {
+        "type": "string",
+        "default": "block-place"
+      },
+      "soundBreak": {
+        "type": "string",
+        "default": "block-break"
+      },
+      "soundPaint": {
+        "type": "string",
+        "default": "paint"
+      },
+      "soundSign": {
+        "type": "string",
+        "default": "sign"
+      },
+      "soundFuse": {
+        "type": "string",
+        "default": "fuse"
+      },
+      "soundBoom": {
+        "type": "string",
+        "default": "boom"
+      },
+      "soundDenied": {
+        "type": "string",
+        "default": "denied"
+      },
+      "highlight": {
+        "type": "string",
+        "default": "#ffffff",
+        "description": "Colour of the outline round the block under the cursor"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.build.reach",
+        "label": "How far a player reaches",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/reach"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 50,
+        "constraints": {
+          "min": 3,
+          "max": 14,
+          "unit": "blocks"
+        }
+      },
+      {
+        "id": "mechanic.build.boom-radius",
+        "label": "Boom crater size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/boomRadius"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 51,
+        "constraints": {
+          "min": 1,
+          "max": 5,
+          "unit": "blocks"
+        }
+      },
+      {
+        "id": "mechanic.build.boom-fuse",
+        "label": "Boom fuse",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/boomFuse"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.build.boom-cooldown",
+        "label": "Time between a player's booms",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/boomCooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 120,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.build.rate",
+        "label": "Edits per second per player",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/rate"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 30
+        }
+      },
+      {
+        "id": "mechanic.build.highlight",
+        "label": "Block outline colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/highlight"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.build.hotbar",
+        "label": "Hotbar blocks",
+        "group": "mechanics",
+        "type": "json",
+        "source": {
+          "pointer": "{base}/hotbar"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 52
+      }
+    ]
+  },
+  "events": [],
+  "host": {
+    "owner": "host",
+    "how": "the host orders, checks and saves every edit; a copy shows its own edits at once and waits for the host's word",
+    "state": "build",
+    "fields": {
+      "s": "the room's last saved edit number",
+      "g": "the world sequence the host has"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.primary",
+      "why": "a click uses the tool: places a block, paints, or opens a sign"
+    },
+    {
+      "res": "input.secondary",
+      "why": "a right click (a long press) breaks a block"
+    },
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "E changes the sign aimed at"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": [
+      {
+        "id": "voxel",
+        "why": "it edits the voxel grid (config/world.json template \"voxel\")"
+      }
+    ]
+  },
+  "uses": [
+    "shove"
+  ],
+  "capabilities": [
+    "voxel-world"
+  ],
+  "gives": [
+    "block-building"
+  ],
+  "bots": "a world has no bots",
+  "notes": {
+    "lines": [
+      "A world game (round.mode \"world\", world.template \"voxel\"): the hotbar, placing, breaking, painting, signs and saving are all the kit's.",
+      "rules.js has no round to run: use it for what this world adds, and make an edit as the player would with build.edit(x, y, z, block).",
+      "Edits reach the shared world only in a room; the bare page alone is a practice copy."
+    ],
+    "readme": "components/build/README.md",
+    "stub": {
+      "as": "build",
+      "worked": "setup(ctx) { ctx.ui.toast('Build something together'); }",
+      "traps": [
+        "never write to the voxel grid from rules.js on a guest copy: every edit goes through the host (build.edit asks it)",
+        "there are no rounds, scores, bots or results in a world: check(ctx) stays null"
+      ]
+    }
+  },
+  "signs": "reported: its sign of life is reported, not judged",
+  "fixture": {
+    "players": 2,
+    "missing": "no two-player fixture: played through the world flow (session mode world); logic in tests/w-voxel.test.mjs"
+  },
+  "impl": {
+    "three": {
+      "path": "components/build/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "played through the world flow (session mode world); logic in tests/w-voxel.test.mjs pass (40 of 40, run by the contracts stream)",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "played through the world flow (session mode world); logic in tests/w-voxel.test.mjs pass (40 of 40, run by the contracts stream)",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

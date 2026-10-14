@@ -1,0 +1,80 @@
+{
+ "assetVersion": 1,
+ "id": "muzzle-flash",
+ "pack": "forge-fx",
+ "file": "muzzle-flash.png",
+ "sha256": "6ca2ebe51651ea6054f7b470effe0562622858590ccae752bfec44fc6a61267d",
+ "bytes": 8249,
+ "preview": "previews/muzzle-flash.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a star-shaped flash: yellow-white core, orange rays (front view, for the first-person muzzle)",
+ "tags": [
+  "fx",
+  "muzzle",
+  "flash"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 0.948
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#ff8c1f",
+     "#ff8d1f",
+     "#ff8e21",
+     "#ffc17d",
+     "#ffb567",
+     "#ff9025",
+     "#ff942c",
+     "#ff8e22"
+    ],
+    "saturation": 1,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.955
+     },
+     {
+      "hue": "grey",
+      "share": 0.035
+     }
+    ],
+    "exact": 135,
+    "grey": 0.035
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "shop",
+ "pack": "xk-pixel-town",
+ "file": "shop.png",
+ "sha256": "5e5385e7d5294a06696883ea4f8683e8f6beaea5ffce2fec7fb8fcb18e8fd4f9",
+ "bytes": 1319,
+ "preview": "previews/shop.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): shop.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a shop with a striped awning, 6 m across",
+ "tags": [
+  "pixel",
+  "shop",
+  "store",
+  "market",
+  "building",
+  "set-piece"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 96
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#dacab2",
+     "#57a26a",
+     "#3c855a",
+     "#24503e",
+     "#2f6a4c",
+     "#80c084",
+     "#7a4a2a",
+     "#7a4428"
+    ],
+    "saturation": 0.364,
+    "value": 0.505,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.414
+     },
+     {
+      "hue": "orange",
+      "share": 0.28
+     },
+     {
+      "hue": "cyan",
+      "share": 0.1
+     },
+     {
+      "hue": "brown",
+      "share": 0.082
+     },
+     {
+      "hue": "grey",
+      "share": 0.062
+     },
+     {
+      "hue": "red",
+      "share": 0.039
+     }
+    ],
+    "exact": 32,
+    "grey": 0.062
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.242
+   }
+  }
+ },
+ "source": {
+  "sha256": "aea047da48dccf7336c582841ab375bee14d83e29e39c726d9e93f4d9962a17c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

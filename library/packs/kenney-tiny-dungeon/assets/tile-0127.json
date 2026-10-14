@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0127",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0127.png",
+ "sha256": "4a455eebb61bf27b652b053185a8f818ae8ac39e15537717bf5e1dfd9392179a",
+ "bytes": 222,
+ "preview": "previews/tile-0127.png",
+ "from": "Tiles/tile_0127.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a slim vial of red potion (a health potion)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "potion",
+  "vial",
+  "bottle",
+  "red",
+  "health",
+  "heal",
+  "item",
+  "consumable"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#e84537",
+     "#bd6c4a",
+     "#eaa56c",
+     "#c0cbdc",
+     "#ff706d",
+     "#8b9bb4"
+    ],
+    "saturation": 0.355,
+    "value": 0.323,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.721
+     },
+     {
+      "hue": "red",
+      "share": 0.116
+     },
+     {
+      "hue": "orange",
+      "share": 0.093
+     },
+     {
+      "hue": "blue",
+      "share": 0.07
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "4ae08fffdd99c4e14a941e664de4cf9ecba0064cd94e5caae9d4a82a10fe120c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

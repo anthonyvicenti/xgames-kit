@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "edges-fence",
+ "pack": "xk-pixel-town",
+ "file": "edges-fence.png",
+ "sha256": "733e12750aa891da0616ade5bb60959831bc535f9b8c0a2af93ce9b2e62f346c",
+ "bytes": 565,
+ "preview": "previews/edges-fence.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): edges-fence.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a wooden fence that joins its neighbours (16, connect)",
+ "tags": [
+  "pixel",
+  "fence",
+  "wood",
+  "edges"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "connect"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#9a6236",
+     "#7a4a2a",
+     "#b97c45",
+     "#d39a5c",
+     "#5d3d37",
+     "#452a2c",
+     "#67483f",
+     "#513331"
+    ],
+    "saturation": 0.439,
+    "value": 0.397,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.531
+     },
+     {
+      "hue": "orange",
+      "share": 0.302
+     },
+     {
+      "hue": "red",
+      "share": 0.167
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.157
+   }
+  }
+ },
+ "source": {
+  "sha256": "3ed73d575159d6888cd5a6f80d3db7a8be81f34a8212c4cd2ef5368f8f4b9877",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

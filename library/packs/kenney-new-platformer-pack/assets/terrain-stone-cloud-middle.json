@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-cloud-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-cloud-middle.png",
+ "sha256": "31381222aabb054b8dde1a5f54c2322f74ac5d096c393ca2669eeac4dfe2bd74",
+ "bytes": 1453,
+ "preview": "previews/terrain-stone-cloud-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_cloud_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone cloud middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "cloud",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 28.5 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#5e5e6d",
+     "#bbc4cb",
+     "#353541",
+     "#a6b2bb",
+     "#cfd5da",
+     "#424251",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.105,
+    "value": 0.521,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 79,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.617
+   }
+  }
+ },
+ "source": {
+  "sha256": "fba82836d43d5b2fe517be4b045d2af8da131afb08f1c672e270d04885fe0446",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "coins",
+ "pack": "vista-sounds",
+ "file": "coins.ogg",
+ "sha256": "caf26599903959eb27f5b3660e8c6f3c9d317917848a86174e16f4b465ab5e92",
+ "bytes": 15872,
+ "preview": "previews/coins.png",
+ "from": "coins dropped in a bowl (selling fish)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Coins (sold, bought)",
+ "tags": [
+  "coast",
+  "calm",
+  "coins"
+ ],
+ "use": {
+  "seconds": 1.784,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 97% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -13.7,
+     "samplePeakDb": -1.4,
+     "truePeakDb": -1.4,
+     "hfRatio": 0.973
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.784,
+    "peakDbfs": -1.4,
+    "soundMaxLufs": -13.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/Anthousai/sounds/336585/",
+  "author": "Anthousai"
+ }
+}

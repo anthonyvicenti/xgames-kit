@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-quiver",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-quiver.glb",
+ "sha256": "12df883970185edfa08b37a25dc31cc67836b42e9b4eda388078fda26889c0d8",
+ "bytes": 56428,
+ "preview": "previews/kaykit-quiver.png",
+ "from": "quiver.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a quiver of arrows (worn on the back socket)",
+ "tags": [
+  "quiver",
+  "arrows",
+  "back",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.229,
+   0.697,
+   0.146
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.115,
+   -0.381,
+   -0.055
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 255,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 255,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 56428,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#904f3c",
+     "#91503d",
+     "#8f4f3b",
+     "#8e4d3a",
+     "#814230",
+     "#bb7958",
+     "#8c4b39",
+     "#008554"
+    ],
+    "saturation": 0.497,
+    "value": 0.394,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.63
+     },
+     {
+      "hue": "orange",
+      "share": 0.227
+     },
+     {
+      "hue": "cyan",
+      "share": 0.14
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 24.4,
+   "texelsPerMetre": 180,
+   "texturedShare": 0.723,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/quiver.gltf",
+  "sha256": "9d209d5e66037e713393f648c7ae8815687c23d63779e40b17d7917d7e45e015",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

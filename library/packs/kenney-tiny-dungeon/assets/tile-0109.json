@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0109",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0109.png",
+ "sha256": "eb3a6208a2ee3a68269d69fd5403c74eae050f01237a05926133a730eac95b8a",
+ "bytes": 337,
+ "preview": "previews/tile-0109.png",
+ "from": "Tiles/tile_0109.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a one-eyed cyclops with tan skin",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "cyclops",
+  "giant",
+  "one-eye",
+  "ogre"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#f7c282",
+     "#bd6c4a",
+     "#e19a65",
+     "#763b36",
+     "#ffffff",
+     "#262b44"
+    ],
+    "saturation": 0.48,
+    "value": 0.442,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.472
+     },
+     {
+      "hue": "pink",
+      "share": 0.468
+     }
+    ],
+    "exact": 7,
+    "grey": 0.023
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.923
+   }
+  }
+ },
+ "source": {
+  "sha256": "f344d22151345f81fe1b95fdb03cf007747042670bda1540192c14853f35b94a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

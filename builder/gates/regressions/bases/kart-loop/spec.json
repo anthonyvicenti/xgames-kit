@@ -1,0 +1,113 @@
+{
+  "specVersion": 2,
+  "title": "Island Circuit",
+  "hook": "Race your friends three laps around an island; first over the line wins.",
+  "prompt": "drive cars around a track for three laps and the first one over the line wins",
+  "runtime": "three",
+  "profile": "scenic-3d",
+  "loop": "round",
+  "kind": "scenic",
+  "players": {
+    "min": 2,
+    "max": 8,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "laptop",
+      "phone",
+      "x-post"
+    ]
+  },
+  "camera": "follow",
+  "controls": {
+    "steer": "steer the car left and right",
+    "accelerate": "speed up",
+    "brake": "brake and reverse"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "The first car to finish three laps wins; the finish order is shown."
+  },
+  "world": {
+    "template": "island",
+    "size": "medium"
+  },
+  "mechanics": [
+    {
+      "id": "race",
+      "as": "three laps through the track's gates",
+      "params": {
+        "checkpoints": [],
+        "laps": 3,
+        "ending": "first"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Everyone drives a car around a closed track. Pass the gates in order and finish three laps; the first car over the line wins and the finish order is shown.",
+    "params": {
+      "maxSpeed": 22,
+      "accel": 14,
+      "brake": 20,
+      "turnRate": 2.2,
+      "grip": 0.9,
+      "trackWidth": 12
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a small car in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "build": [
+    {
+      "what": "each player is a car",
+      "how": "a module in src/car.js that gives each player a car body (a slot model) in their colour, with its pose sent like any player's",
+      "where": "module",
+      "row": "body",
+      "accept": "each player sees their own car and every friend's car on the track"
+    },
+    {
+      "what": "steer, speed up and brake with grippy arcade handling",
+      "how": "src/car.js drives the car from the steer, accelerate and brake controls with speed, grip and turn rate from rules.params",
+      "where": "module",
+      "row": "action-drive",
+      "accept": "holding accelerate moves the car forward, steering turns it, and braking slows it to a stop"
+    },
+    {
+      "what": "a wide closed track with edges that keep cars on it",
+      "how": "a module in src/track.js that lays a closed road loop on the island from rules.params, sets the race gates along it, and pushes cars back from its edges",
+      "where": "module",
+      "row": "track",
+      "accept": "a car driven into the edge stays on the road, and the road leads back to the start line"
+    }
+  ],
+  "src": [
+    {
+      "path": "src/car.js",
+      "for": [
+        "build.1",
+        "build.2"
+      ]
+    },
+    {
+      "path": "src/track.js",
+      "for": [
+        "build.3"
+      ]
+    }
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "specVersion": 2,
+  "title": "Pickup Fixture (forge)",
+  "hook": "Two players to check the pickup mechanic on forge.",
+  "prompt": "mechanic fixture: pickup on forge",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Nobody wins: a fixture",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "small",
+    "seed": 11
+  },
+  "mechanics": [
+    {
+      "id": "pickup",
+      "params": {
+        "count": 2,
+        "effect": "score",
+        "value": 1,
+        "respawnSeconds": 3
+      }
+    }
+  ],
+  "tables": {
+    "player": {
+      "health": 100,
+      "armor": 0
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Sidearm"
+      },
+      {
+        "id": "hatchet",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 2,
+        "start": false
+      }
+    ],
+    "enemies": [],
+    "waves": []
+  },
+  "rules": {
+    "summary": "Two spots round the middle of the ruin; walk into one to score; it comes back."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "accept": [
+    "both screens show the same two spots",
+    "a spot the joiner takes is gone on both and the joiner scores on both",
+    "it comes back on both"
+  ]
+}

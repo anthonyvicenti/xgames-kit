@@ -1,0 +1,65 @@
+{
+ "packVersion": 1,
+ "id": "kenney-nature-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Nature Kit (2.1)",
+ "describe": "Kenney's nature kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/nature-kit",
+  "file": "library/packs/kenney-nature-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 2,
+   "hues": [
+    "#73eddd",
+    "#70e6d6",
+    "#ffd990",
+    "#f19398",
+    "#f2be9e"
+   ],
+   "saturation": 0.772,
+   "value": 0.69,
+   "families": [
+    {
+     "hue": "cyan",
+     "share": 0.781
+    },
+    {
+     "hue": "orange",
+     "share": 0.127
+    },
+    {
+     "hue": "red",
+     "share": 0.092
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 10.28,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 6,
+ "validators": [
+  "budget"
+ ]
+}

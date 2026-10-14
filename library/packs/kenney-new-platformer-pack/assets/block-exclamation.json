@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "block-exclamation",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-exclamation.png",
+ "sha256": "bd6c8dc1b5454863c9ec635ffd48cef1dc3845d82a62edaa372896bddd1def53",
+ "bytes": 3068,
+ "preview": "previews/block-exclamation.png",
+ "from": "Sprites/Tiles/Double/block_exclamation.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block exclamation tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "exclamation",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#fa9f72",
+     "#bd6341",
+     "#c56944",
+     "#c96d46",
+     "#343440",
+     "#db7c4e"
+    ],
+    "saturation": 0.555,
+    "value": 0.511,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.771
+     },
+     {
+      "hue": "grey",
+      "share": 0.229
+     }
+    ],
+    "exact": 58,
+    "grey": 0.229
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "89d41ddc0726f53cd5c38f3ad8e79420c9ea07c52532ac70850d6436099633eb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

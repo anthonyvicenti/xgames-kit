@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "banner-red",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "banner-red.glb",
+ "sha256": "59c8b0d1651d511109e8f0174476b05e7c849d268b9538eae56394c6829dd6a5",
+ "bytes": 20008,
+ "preview": "previews/banner-red.png",
+ "from": "kenney:fantasy-town-kit/banner-red; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red hanging banner",
+ "tags": [
+  "plaza",
+  "decor",
+  "banner",
+  "red"
+ ],
+ "use": {
+  "size": [
+   0.1,
+   1.679,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 98,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 98,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#cd4b5c",
+     "#d24c5b",
+     "#e3505b",
+     "#e7515b",
+     "#ec525a",
+     "#ed525a",
+     "#d44d5b",
+     "#e1505b"
+    ],
+    "saturation": 0.649,
+    "value": 0.581,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.926
+     },
+     {
+      "hue": "orange",
+      "share": 0.074
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.11,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "4e4a83de16e5979d2b34bb206d3bf3703a9039711bc658b37e3738d43090703d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

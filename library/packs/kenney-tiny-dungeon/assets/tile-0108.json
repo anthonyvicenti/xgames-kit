@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0108",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0108.png",
+ "sha256": "8903669bc22dc496613e88d495db8288551afe01d0fe991e78df42948ca7e1d0",
+ "bytes": 215,
+ "preview": "previews/tile-0108.png",
+ "from": "Tiles/tile_0108.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a green slime blob with a face",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "slime",
+  "blob",
+  "green",
+  "ooze"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#43e1b3",
+     "#69ffd4",
+     "#25956a"
+    ],
+    "saturation": 0.47,
+    "value": 0.361,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.552
+     },
+     {
+      "hue": "cyan",
+      "share": 0.448
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.895
+   }
+  }
+ },
+ "source": {
+  "sha256": "f15c964db469039861f70bdc75cc5b02ba9351eaa5d7421a85d028131eb12f4d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

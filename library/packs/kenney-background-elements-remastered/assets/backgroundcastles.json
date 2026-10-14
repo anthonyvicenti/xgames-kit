@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "backgroundcastles",
+ "pack": "kenney-background-elements-remastered",
+ "file": "backgroundcastles.png",
+ "sha256": "aeb5f3613cf4a779ddd9be12916c04b4bbdbde4959028a9f1a0e441d73c924be",
+ "bytes": 26911,
+ "preview": "previews/backgroundcastles.png",
+ "from": "Backgrounds/backgroundCastles.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "backgroundcastles",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "backgroundcastles",
+  "backgrounds"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x1024: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#b7e7fa",
+     "#cfeffc",
+     "#def5ff",
+     "#eaf8fd",
+     "#eff9fe",
+     "#ebf8fd",
+     "#e8f7fd",
+     "#ecf8fd"
+    ],
+    "saturation": 0.876,
+    "value": 0.888,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.802
+     },
+     {
+      "hue": "grey",
+      "share": 0.198
+     }
+    ],
+    "exact": 224,
+    "grey": 0.198
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "debf2eb44ebc59eaa840275a2367ede555067f8cb450ecccdc441d3c345617aa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

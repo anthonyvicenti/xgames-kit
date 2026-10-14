@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "night-wind",
+ "pack": "forge-sounds",
+ "file": "night-wind.ogg",
+ "sha256": "f541b9cc9a1cd0c918d1447fb21fe7044ab3bd284c3b35ec457f0818f4afeff9",
+ "bytes": 65512,
+ "preview": "previews/night-wind.png",
+ "from": "https://opengameart.org/content/loopable-dungeon-ambience dungeon_ambient_1_0.ogg; cut to 33-40.6 s of the source, made a seamless 7 s loop (the last 0.6 s cross-faded into the start, equal power), downmixed to mono, resampled to 44.1 kHz, gain 11.8 dB (integrated toward -19.5 LUFS), encoded Ogg…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "night wind and crickets (loop) (night wind)",
+ "tags": [
+  "sounds",
+  "night",
+  "wind",
+  "ambient"
+ ],
+ "use": {
+  "seconds": 7.005,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -14.9,
+     "samplePeakDb": -5.8,
+     "truePeakDb": -5.8,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 7.005,
+    "peakDbfs": -5.8,
+    "soundMaxLufs": -14.9
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/loopable-dungeon-ambience",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 33-40.6 s of the source, made a seamless 7 s loop (the last 0.6 s cross-faded into the start, equal power), downmixed to mono, resampled to 44.1 kHz, gain 11.8 dB (integrated toward -19.5 LUFS), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "JaggedStone (OpenGameArt)"
+ }
+}

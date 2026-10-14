@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-banner-red",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-banner-red.glb",
+ "sha256": "90d643e82277c623c65ff4babee94cc9a92a8df4cb9a1ae84233e27c39b81b06",
+ "bytes": 52876,
+ "preview": "previews/dungeon-banner-red.png",
+ "from": "banner_patternA_red.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red patterned banner that hangs on a wall",
+ "tags": [
+  "dungeon",
+  "banner",
+  "red",
+  "wall-decor",
+  "cloth"
+ ],
+ "use": {
+  "size": [
+   1.125,
+   2.397,
+   0.234
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -0.562,
+   0.399,
+   0.283
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 110,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 110,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 52876,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#db363a",
+     "#d62c30",
+     "#dae0e3",
+     "#e0e5e8",
+     "#d72e32",
+     "#db373c",
+     "#dce1e4",
+     "#e1e6e8"
+    ],
+    "saturation": 0.409,
+    "value": 0.689,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.518
+     },
+     {
+      "hue": "red",
+      "share": 0.482
+     }
+    ],
+    "grey": 0.518
+   },
+   "trianglesPerMetre": 6.25,
+   "texelsPerMetre": 61,
+   "texturedShare": 0.827,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternA_red.gltf.glb",
+  "sha256": "64243b0a8110bbc6e5a02f5c0acbe447dc7ea65319123319c402dd26486dad25",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

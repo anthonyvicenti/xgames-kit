@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-floor-wood",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-floor-wood.glb",
+ "sha256": "5490c7e207d09416b0fbb3ecb04249dc86d562f804f4264dc594d02f8f1e5091",
+ "bytes": 55552,
+ "preview": "previews/dungeon-floor-wood.png",
+ "from": "floor_wood_large.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large wooden plank floor tile",
+ "tags": [
+  "dungeon",
+  "floor",
+  "wood",
+  "planks",
+  "modular"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.112,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   -0.075,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    0.112,
+    3
+   ],
+   "offset": [
+    0,
+    -0.019,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 272,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 272,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 55552,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9b5a45",
+     "#a26149",
+     "#7d3d2c",
+     "#92513d",
+     "#aa684d",
+     "#965541",
+     "#92513e",
+     "#8f4e3b"
+    ],
+    "saturation": 0.401,
+    "value": 0.425,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.565
+     },
+     {
+      "hue": "brown",
+      "share": 0.388
+     },
+     {
+      "hue": "red",
+      "share": 0.046
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.05,
+   "texelsPerMetre": 38,
+   "texturedShare": 0.921,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/floor_wood_large.gltf.glb",
+  "sha256": "d22eb1c1fb6ab434e8c9599ecb2cd00c2e34a713783603ba7a3e2cbb1611709d",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

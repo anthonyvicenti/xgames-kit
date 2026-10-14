@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "desk-lamp",
+ "pack": "kenney-furniture-kit",
+ "file": "desk-lamp.glb",
+ "sha256": "4330d7c8a237a9230340684af4416f1ec8b30363eed6203a45efaac9afb58db0",
+ "bytes": 3644,
+ "preview": "previews/desk-lamp.png",
+ "from": "kenney:furniture-kit/lampSquareTable; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a square desk lamp",
+ "tags": [
+  "office",
+  "lamp",
+  "decor",
+  "desk"
+ ],
+ "use": {
+  "size": [
+   0.24,
+   0.58,
+   0.24
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "light": {
+   "at": [
+    0,
+    0.48,
+    0
+   ],
+   "range": 0.5
+  },
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3644,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#fff5ca",
+     "#dfeaec"
+    ],
+    "saturation": 0.809,
+    "value": 0.897,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.744
+     },
+     {
+      "hue": "cyan",
+      "share": 0.256
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.08,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "70ec9211af336b1ef3b4da32590b8737b4facf219348c22e6533a1e898cdb13d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

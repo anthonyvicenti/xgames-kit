@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-drain",
+ "pack": "forge-town",
+ "file": "town-town-drain.png",
+ "sha256": "78405fe24db16feec9d64ff488e0ba52e767ee2559a764acf25e2126a5e501ae",
+ "bytes": 733,
+ "preview": "previews/town-town-drain.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 38 × 38 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 12 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a street drain: stone slabs round a round iron grate broken open in the middle, black below (drawn)",
+ "tags": [
+  "texture",
+  "town",
+  "drain"
+ ],
+ "use": {
+  "texelsPerMetre": 31.667,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 38
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "38x38 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 38,
+     "height": 38,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#323238",
+     "#6d6f6b",
+     "#070709",
+     "#6a6c68",
+     "#0a0a0c",
+     "#2a2a30",
+     "#343533",
+     "#686966"
+    ],
+    "saturation": 0.049,
+    "value": 0.274,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.986
+     }
+    ],
+    "exact": 16,
+    "grey": 0.986
+   },
+   "texelsPerMetre": 31.667,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 38 × 38 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 12 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

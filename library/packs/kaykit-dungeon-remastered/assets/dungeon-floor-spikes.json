@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-floor-spikes",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-floor-spikes.glb",
+ "sha256": "e1378393e3acf47bb32540d6d7062133e46a21567b438121f5f8ae20accf9ea9",
+ "bytes": 64584,
+ "preview": "previews/dungeon-floor-spikes.png",
+ "from": "floor_tile_big_spikes.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a floor tile with a spike trap",
+ "tags": [
+  "dungeon",
+  "floor",
+  "trap",
+  "spikes",
+  "modular"
+ ],
+ "use": {
+  "size": [
+   3,
+   1.575,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   -0.075,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    1.575,
+    3
+   ],
+   "offset": [
+    0,
+    0.712,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 638,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 638,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 64584,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#958d84",
+     "#bbc6ca",
+     "#b6c2c7",
+     "#887e77",
+     "#d0d7db",
+     "#989087",
+     "#7f746e",
+     "#847a73"
+    ],
+    "saturation": 0.09,
+    "value": 0.607,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 6.1,
+   "texelsPerMetre": 75,
+   "texturedShare": 0.403,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_big_spikes.glb",
+  "sha256": "7a4e94decf860b64456a45cc1c2d7bb26f0b3ca75824ccf2c4d0addee088d9ad",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

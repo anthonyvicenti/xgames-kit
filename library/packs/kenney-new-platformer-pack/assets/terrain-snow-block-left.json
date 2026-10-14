@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-block-left",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-block-left.png",
+ "sha256": "1c96252c915e60f11e58ea4d2806a1de5ebc6d7a6cc60f4f5fa086c0a5f349c4",
+ "bytes": 2206,
+ "preview": "previews/terrain-snow-block-left.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_block_left.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow block left tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "block",
+  "left",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 65.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#353541",
+     "#b0bbc3",
+     "#abb6bf",
+     "#c5ccd2",
+     "#ccd2d8"
+    ],
+    "saturation": 0.13,
+    "value": 0.736,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 46,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "e0ec8161484ceba82c97abf7e20467800a9903de877c842690a2f1b60d7edc32",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

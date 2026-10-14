@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine",
+ "pack": "xk-pixel-town",
+ "file": "tree-pine.png",
+ "sha256": "9f557b4532b78bac19043700f71ef940900c3df0d0924e087e055c23fdab3bfb",
+ "bytes": 971,
+ "preview": "previews/tree-pine.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tree-pine.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a tall pine tree",
+ "tags": [
+  "pixel",
+  "tree",
+  "pine",
+  "forest",
+  "set-piece"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 56
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 56
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#1d4035",
+     "#3f8752",
+     "#2f6d48",
+     "#25553f",
+     "#212631",
+     "#5aa45e",
+     "#2e413c",
+     "#242e34"
+    ],
+    "saturation": 0.353,
+    "value": 0.276,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.448
+     },
+     {
+      "hue": "cyan",
+      "share": 0.392
+     },
+     {
+      "hue": "grey",
+      "share": 0.117
+     }
+    ],
+    "exact": 17,
+    "grey": 0.117
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.992
+   }
+  }
+ },
+ "source": {
+  "sha256": "f742a97623dab564a16296ddde0295bd0eb459b418177a7d82f115f19f69e594",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

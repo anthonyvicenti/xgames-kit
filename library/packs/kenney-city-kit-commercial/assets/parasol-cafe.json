@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "parasol-cafe",
+ "pack": "kenney-city-kit-commercial",
+ "file": "parasol-cafe.glb",
+ "sha256": "90303983f4b53157fc224e711667c09330d0858ce31d2da04b9742e2b6b202b8",
+ "bytes": 19732,
+ "preview": "previews/parasol-cafe.png",
+ "from": "kenney:city-kit-commercial/detail-parasol-a; baked to metres (x5.33333), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cafe table under a green parasol",
+ "tags": [
+  "plaza",
+  "cafe",
+  "parasol"
+ ],
+ "use": {
+  "size": [
+   1.847,
+   2.4,
+   2.133
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.5,
+   "height": 0.8,
+   "offset": [
+    0,
+    0.4,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 96,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 96,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#40a97b",
+     "#20896b",
+     "#646981",
+     "#eaeaf2",
+     "#2d9671",
+     "#27906e",
+     "#4db681",
+     "#777c93"
+    ],
+    "saturation": 0.362,
+    "value": 0.485,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.507
+     },
+     {
+      "hue": "grey",
+      "share": 0.451
+     },
+     {
+      "hue": "green",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.451
+   },
+   "trianglesPerMetre": 2.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-commercial",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-commercial/a742d900eb-1753115042/kenney_city-kit-commercial_2.1.zip",
+  "sha256": "70e636bea8dc67c3bfd19b163333e824356118458c8c401017322ec43c10a7f7",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x5.33333), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

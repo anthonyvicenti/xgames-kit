@@ -1,0 +1,54 @@
+{
+ "assetVersion": 1,
+ "id": "submerge",
+ "pack": "vista-sounds",
+ "file": "submerge.ogg",
+ "sha256": "56b2f265bb453da7daf1775ca9d2a9c3e6366758d0c0d906b791c4996bdd36c2",
+ "bytes": 15989,
+ "preview": "previews/submerge.png",
+ "from": "2 short underwater water-rushes (hydrophone)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Going under",
+ "tags": [
+  "coast",
+  "calm",
+  "submerge"
+ ],
+ "use": {
+  "seconds": 1.818,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -20.6,
+     "samplePeakDb": -1,
+     "truePeakDb": -0.9,
+     "hfRatio": 0.008
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.818,
+    "peakDbfs": -1,
+    "soundMaxLufs": -20.6
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/felix.blume/sounds/384218/",
+  "author": "felix.blume"
+ }
+}

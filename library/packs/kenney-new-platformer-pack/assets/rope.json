@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "rope",
+ "pack": "kenney-new-platformer-pack",
+ "file": "rope.png",
+ "sha256": "5520fb673ca979b443f4fee6b5425a421dce2f8b77f7cf470ee3b1d8b09bafdc",
+ "bytes": 482,
+ "preview": "previews/rope.png",
+ "from": "Sprites/Tiles/Double/rope.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "rope",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "rope",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#353541",
+     "#ee9366",
+     "#de7e4f",
+     "#e88b5d",
+     "#e48557"
+    ],
+    "saturation": 0.422,
+    "value": 0.43,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.5
+     },
+     {
+      "hue": "orange",
+      "share": 0.5
+     }
+    ],
+    "exact": 5,
+    "grey": 0.5
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.899
+   }
+  }
+ },
+ "source": {
+  "sha256": "8666d0fcc554b368c04d6890f2de145577e4afd5ba913c15e8e69f4a79237239",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "bone-c",
+ "pack": "kaykit-halloween",
+ "file": "bone-c.glb",
+ "sha256": "dbc2b64bd90bc7c056729bfcaa321daf59040fd810abbbceb55506240d426d66",
+ "bytes": 10996,
+ "preview": "previews/bone-c.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.3375 to metres (KayKit units ×0.75 × 0.45), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a bone",
+ "tags": [
+  "ruins",
+  "bones",
+  "kaykit",
+  "c",
+  "bone"
+ ],
+ "use": {
+  "size": [
+   0.374,
+   0.093,
+   0.068
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.187,
+   0,
+   -0.034
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.374,
+    0.093,
+    0.068
+   ],
+   "offset": [
+    0,
+    0.047,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10996,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#f1e1d1",
+     "#e3c3a4",
+     "#e0bc9a",
+     "#e6c9ad",
+     "#eedac7",
+     "#ebd4be"
+    ],
+    "saturation": 0.532,
+    "value": 0.812,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 52.19,
+   "texelsPerMetre": 182,
+   "texturedShare": 0.402,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/bone_C.gltf",
+  "sha256": "09c0af1e0805eedddea6029a8a24aceb8a3a4570f66df6f629ca82928829d90d",
+  "retrieved": "2026-10-09",
+  "modified": "×0.3375 to metres (KayKit units ×0.75 × 0.45), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

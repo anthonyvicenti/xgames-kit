@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0031",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0031.png",
+ "sha256": "6e9573cd7626b17c64e194578989e5d98cbaa18e46e10cc8ca0415bd914cc46c",
+ "bytes": 252,
+ "preview": "previews/tile-0031.png",
+ "from": "Tiles/tile_0031.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "an empty stone basin at the foot of a wall fountain",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "basin",
+  "dry",
+  "empty",
+  "bottom"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#262b44",
+     "#eaa56c",
+     "#8b9bb4",
+     "#52607c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.355,
+    "value": 0.505,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.789
+     },
+     {
+      "hue": "orange",
+      "share": 0.211
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.4
+   }
+  }
+ },
+ "source": {
+  "sha256": "3cde5a77140e4d8ed160e37cd14789aa9901c4808e2a6b0c109fd1502ca8deb2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

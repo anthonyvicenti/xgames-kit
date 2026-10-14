@@ -1,0 +1,78 @@
+{
+ "packVersion": 1,
+ "id": "kenney-background-elements-remastered",
+ "title": "Kenney Background Elements Remastered",
+ "describe": "Cartoon backdrops and parallax elements: hills, clouds, trees, castles, mountains.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/background-elements-remastered",
+  "file": "library/packs/kenney-background-elements-remastered/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/background-elements-remastered",
+  "download": "https://kenney.nl/media/pages/assets/background-elements-remastered/7b034822ed-1774771758/kenney_background-elements-remastered.zip",
+  "sha256": "9c904f0b7c52a15aeb2cbf454de641620cfb9025b1611a0a21bd8c46992f4568",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_background-elements-remastered.zip --pack kenney-background-elements-remastered --include 'PNG/Retina/*.png' --include 'Backgrounds/*.png' --include 'Backgrounds/Elements/*.png' --style drawn"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 4,
+   "hues": [
+    "#23bf76",
+    "#f78d3b",
+    "#1ebc9e",
+    "#b7e7fa",
+    "#f0f9fb",
+    "#def5ff",
+    "#ffffff",
+    "#cfeffc",
+    "#cbf5ff",
+    "#add0d7",
+    "#19a389",
+    "#c9764d"
+   ],
+   "saturation": 0.692,
+   "value": 0.665,
+   "families": [
+    {
+     "hue": "cyan",
+     "share": 0.352
+    },
+    {
+     "hue": "grey",
+     "share": 0.211
+    },
+    {
+     "hue": "green",
+     "share": 0.161
+    },
+    {
+     "hue": "orange",
+     "share": 0.149
+    },
+    {
+     "hue": "yellow",
+     "share": 0.087
+    }
+   ],
+   "grey": 0.061
+  },
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 89,
+ "validators": [
+  "picture-check",
+  "flat-judge"
+ ]
+}

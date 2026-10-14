@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B14",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "war-strategy",
+  "rank": 14,
+  "row": "Territory / war strategy",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a strategy game seen from above: build up a base, train soldiers, select them and send them to capture points on the map, wipe out the other player's base",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "above",
+   "type": "camera",
+   "must": "a view from above"
+  },
+  {
+   "id": "orders",
+   "type": "mechanic",
+   "must": "selecting units and giving them orders"
+  },
+  {
+   "id": "base-train",
+   "type": "mechanic",
+   "must": "building a base and training soldiers"
+  },
+  {
+   "id": "points",
+   "type": "world",
+   "must": "points on the map to capture"
+  },
+  {
+   "id": "wipe-out",
+   "type": "rule",
+   "must": "destroying the other base wins"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

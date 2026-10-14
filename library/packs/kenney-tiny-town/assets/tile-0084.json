@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0084",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0084.png",
+ "sha256": "72e00cb1f05c3a72a938bd3be1561d7dd486db3a2377d539afc1117af880b320",
+ "bytes": 264,
+ "preview": "previews/tile-0084.png",
+ "from": "Tiles/tile_0084.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a wooden house wall with a shuttered window",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "wooden",
+  "window",
+  "shutters",
+  "house",
+  "building"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bd6c4a",
+     "#3f2631",
+     "#763b36",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#eaa56c"
+    ],
+    "saturation": 0.359,
+    "value": 0.399,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.414
+     },
+     {
+      "hue": "pink",
+      "share": 0.359
+     },
+     {
+      "hue": "red",
+      "share": 0.133
+     },
+     {
+      "hue": "blue",
+      "share": 0.094
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "a652e2b1fbf1cff607f83db9c810a9fa65c794c55bebef5cb07658d960b6b219",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0043",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0043.png",
+ "sha256": "efd44cbb2b7f583f07d32d87919dcac524e8fe6586a677f5e3dd1e41c83d2769",
+ "bytes": 255,
+ "preview": "previews/tile-0043.png",
+ "from": "Tiles/tile_0043.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "grass with grey stepping stones: a stone path across a lawn",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "path",
+  "stones",
+  "stepping-stones",
+  "grass",
+  "ground",
+  "cobble",
+  "fill"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#84c669",
+     "#c0cbdc",
+     "#65a556"
+    ],
+    "saturation": 0.395,
+    "value": 0.635,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.758
+     },
+     {
+      "hue": "blue",
+      "share": 0.242
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "1e4364629573e4cf27c3ce616e3003cf1a3fd5ba2928bc46b2aa47070b0a0d41",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "block-green",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-green.png",
+ "sha256": "5f3ca54be644c3147f5ac8fdb1e9722cd13f945293b18a447d5adc11e3362085",
+ "bytes": 1794,
+ "preview": "previews/block-green.png",
+ "from": "Sprites/Tiles/Double/block_green.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block green tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "green",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#2cc987",
+     "#353541",
+     "#59f0b0",
+     "#1aa074",
+     "#343440",
+     "#20af7b",
+     "#1eaa78",
+     "#1fac79"
+    ],
+    "saturation": 0.532,
+    "value": 0.427,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.772
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     }
+    ],
+    "exact": 41,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "ac9bf0717991b50763446248344cd87fcf3fdab8b3b70814216fff8813f81bb3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

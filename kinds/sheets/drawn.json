@@ -1,0 +1,100 @@
+{
+ "tool": "builder/look-judge/kind-sheet.mjs",
+ "kind": "drawn",
+ "runtime": "three/flat-2d",
+ "made": "2026-10-13T21:57:48.123Z",
+ "size": [
+  1280,
+  720
+ ],
+ "chrome": "148.0.7778.96",
+ "tiles": [
+  {
+   "name": "world",
+   "file": "tiles/drawn/world.png",
+   "info": {
+    "shot": "world",
+    "style": "drawn",
+    "ppm": 128,
+    "sprites": 74
+   },
+   "errors": []
+  },
+  {
+   "name": "hero",
+   "file": "tiles/drawn/hero.png",
+   "info": {
+    "shot": "hero",
+    "captions": [
+     "baked gf-flat-1 frames at 128 texels a metre"
+    ],
+    "style": "drawn",
+    "ppm": 128,
+    "sprites": 20
+   },
+   "errors": []
+  },
+  {
+   "name": "bodies",
+   "file": "tiles/drawn/bodies.png",
+   "info": {
+    "shot": "bodies",
+    "captions": [
+     "5 bodies, frames idle \u00b7 walk1 \u00b7 air \u00b7 act \u00b7 down (each a 6-frame sheet that passes the flat judge)"
+    ],
+    "style": "drawn",
+    "ppm": 128,
+    "sprites": 29,
+    "judged": [
+     {
+      "id": "np-beige",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "np-green",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "np-pink",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "np-purple",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "np-yellow",
+      "ok": true,
+      "errors": 0
+     }
+    ]
+   },
+   "errors": []
+  },
+  {
+   "name": "props",
+   "file": "tiles/drawn/props.png",
+   "info": {
+    "shot": "props",
+    "style": "drawn",
+    "ppm": 128,
+    "sprites": 50
+   },
+   "errors": []
+  },
+  {
+   "name": "hud",
+   "file": "tiles/drawn/hud.png",
+   "info": {
+    "font": true
+   },
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "sheet": "drawn.png"
+}

@@ -1,0 +1,272 @@
+{
+  "about": "Twenty frozen prompts for the economy agent (15 of the 20 must pass). Each is one sentence a creator might type. An agent with the gamesfun-economy skill and the economy_* tools writes a spec for each; save the spec it settles on as <out>/<id>.json (the economy section alone, or a whole gamesfun.json), then score the folder: node builder/web3/economy/evals/score.mjs <out>. Every case first needs the spec to be valid, to check with no refusals, to simulate and to cost; then its own checks, which read the spec, the checker's warnings, the quick simulation and the play-time steps (score.mjs says how). `reference` is a spec that passes the case (tests/economy-evals.test.mjs proves each one does): a fixture, or one written for the case. `ideas` are the entries of builder/web3/economy/ideas.json the prompt comes from. Frozen: change a case only by adding a new one with a new id.",
+  "version": 1,
+  "cases": [
+    {
+      "id": "e01-coin-flip-arena",
+      "prompt": "Make me a coin-flip arena: 2% house edge to people who stake, and a weekly lottery with three places fed by 10% of every flip.",
+      "fit": "Alone",
+      "ideas": [61],
+      "reference": "fixtures/coin-flip-arena.json",
+      "checks": [
+        { "says": "a flip box that pays a prize about half the time", "some": "boxes", "where": { "outcomes[]": { "gives": "pay", "chance": { "min": 40, "max": 55 } } } },
+        { "says": "a flip gives back most of its price on average (80 to 99%)", "some": "sim.boxes", "where": { "returnPercent": { "min": 80, "max": 99 } } },
+        { "says": "players can stake", "some": "stakes" },
+        { "says": "about 2% of every flip goes to the stakers", "feeds": { "from": ["boxes"], "into": "stake", "percent": { "min": 1, "max": 5 } } },
+        { "says": "a weekly lottery with three places", "some": "lotteries", "where": { "places.length": 3, "every": { "duration": "7d" } } },
+        { "says": "about 10% of every flip fills the lottery's pot", "feeds": { "from": ["boxes"], "into": "lottery", "percent": { "min": 5, "max": 15 } } },
+        { "says": "chance that pays money is flagged", "warns": "W-CHANCE-PRIZE" }
+      ]
+    },
+    {
+      "id": "e02-mystery-box-drop",
+      "prompt": "A drop of mystery boxes with a 60/25/10/4/1 rarity table where each box costs 0.5% more than the last, and the one mythic is 1-of-1.",
+      "fit": "Alone",
+      "ideas": [1, 8],
+      "reference": "fixtures/blind-forge.json",
+      "checks": [
+        { "says": "a box with five item outcomes", "some": "boxes", "where": { "outcomes.length": { "min": 5 }, "outcomes[].gives": "item" } },
+        { "says": "each box costs about 0.5% more than the last", "some": "boxes", "where": { "rise.growthPercent": { "min": 0.4, "max": 0.6 } } },
+        { "says": "the most common tier comes about 60% of the time", "some": "sim.boxes", "where": { "outcomes[]": { "gives": "item", "chance": { "min": 55, "max": 65 } } } },
+        { "says": "the mythic is one of one", "some": "items", "where": { "supply": 1 } }
+      ]
+    },
+    {
+      "id": "e03-hat-shop",
+      "prompt": "A shop that sells three hats for 0.05 SOL each; the gold one is limited to 100.",
+      "fit": "Alone",
+      "ideas": [],
+      "reference": "evals/reference/e03-hat-shop.json",
+      "checks": [
+        { "says": "three hats at about 0.05", "some": "items", "atLeast": 3, "where": { "price": { "min": 0.04, "max": 0.06 } } },
+        { "says": "one of them is limited to 100", "some": "items", "where": { "supply": 100 } },
+        { "says": "priced in SOL", "some": "currency", "where": { "source": "sol" } },
+        { "says": "a plain shop has no chance in it", "none": "warnings", "where": { "code": "W-CHANCE-PRIZE" } }
+      ]
+    },
+    {
+      "id": "e04-daily-lottery",
+      "prompt": "A daily lottery: tickets cost 0.01 SOL, 5% of ticket sales go to me, and each draw has one grand prize and seven smaller ones.",
+      "fit": "Alone",
+      "ideas": [67],
+      "reference": "evals/reference/e04-daily-lottery.json",
+      "checks": [
+        { "says": "a lottery drawn every day with 0.01 SOL tickets", "some": "lotteries", "where": { "every": { "duration": "1d" }, "price": { "min": 0.008, "max": 0.012 }, "$ticket.source": "sol" } },
+        { "says": "5% of ticket money goes to the creator", "some": "lotteries", "where": { "cutPercent": { "min": 4, "max": 6 } } },
+        { "says": "one grand prize and seven smaller ones", "some": "lotteries", "where": { "places.length": 8 } },
+        { "says": "chance that pays money is flagged", "warns": "W-CHANCE-PRIZE" }
+      ]
+    },
+    {
+      "id": "e05-stake-to-earn",
+      "prompt": "Players stake our game token and earn SOL from 20% of every item sale in the shop.",
+      "fit": "Alone",
+      "ideas": [75],
+      "reference": "evals/reference/e05-stake-to-earn.json",
+      "checks": [
+        { "says": "players stake the game's own token, not SOL", "some": "stakes", "where": { "$stakes.source": { "in": ["curve", "game", "existing"] } } },
+        { "says": "stakers earn SOL", "some": "stakes", "where": { "$rewards.$token.source": "sol" } },
+        { "says": "the shop sells something", "some": "items", "where": { "price": { "min": 0.000001 } } },
+        { "says": "about 20% of every sale goes to the stakers", "feeds": { "from": ["items", "boxes"], "into": "stake", "percent": { "min": 15, "max": 25 } } }
+      ]
+    },
+    {
+      "id": "e06-merge-tiers",
+      "prompt": "Two of the same tier merge into the next tier, up to tier 4; making the tier-4 piece also pays half of a prize pool that 20% of sales fill.",
+      "fit": "Alone",
+      "ideas": [21],
+      "reference": "fixtures/merge-2048.json",
+      "checks": [
+        { "says": "four tiers", "some": "items", "atLeast": 4 },
+        { "says": "three merges, each burning two of a tier for one of the next", "some": "recipes", "atLeast": 3, "where": { "in[]": { "takes": "burn", "count": 2 }, "out[].gives": "item" } },
+        { "says": "the top merge pays about half of the prize pool", "some": "recipes", "where": { "out[]": { "gives": "share", "percent": { "min": 40, "max": 60 } } } },
+        { "says": "about 20% of sales fill the prize pool", "feeds": { "from": ["items", "boxes"], "into": "pool", "percent": { "min": 15, "max": 25 } } }
+      ]
+    },
+    {
+      "id": "e07-spark-pity",
+      "prompt": "A gacha where every pull also gives you a Spark token, and 90 Sparks craft the legendary of your choice.",
+      "fit": "Alone",
+      "ideas": [2],
+      "reference": "fixtures/spark-pity.json",
+      "checks": [
+        { "says": "Spark is a token the game mints", "some": "tokens", "where": { "source": "game" } },
+        { "says": "every pull mints Sparks", "some": "recipes", "where": { "out[]": { "gives": "tokens", "from": "mint" } } },
+        { "says": "a gacha box rolls items", "some": "boxes", "where": { "outcomes[].gives": "item" } },
+        { "says": "90 Sparks craft the legendary", "some": "recipes", "where": { "in[]": { "takes": "pay", "amount": { "min": 85, "max": 95 } }, "out[].gives": "item" } }
+      ]
+    },
+    {
+      "id": "e08-halving-seasons",
+      "prompt": "Rewards mint into a play pool every day and halve every 30 days; a soulbound season pass claims 10 PLAY a day from it, and 10% of the play pool drips into interest for everyone who stakes PLAY.",
+      "fit": "Alone",
+      "ideas": [81, 6, 96],
+      "reference": "fixtures/halving-seasons.json",
+      "checks": [
+        { "says": "a daily mint that halves every 30 days", "some": "schedules", "where": { "does": "issue", "every": { "duration": "1d" }, "halveEvery": 30 } },
+        { "says": "a soulbound season pass usable once a day", "some": "items", "where": { "soulbound": true, "life.cooldown": { "duration": "1d" } } },
+        { "says": "the pass claims 10 PLAY", "some": "recipes", "where": { "in[].takes": "use", "out[]": { "gives": "tokens", "amount": 10 } } },
+        { "says": "about 10% of the play pool moves into interest", "some": "schedules", "where": { "does": "move", "percent": { "min": 9, "max": 11 } } },
+        { "says": "players stake PLAY for the interest", "some": "stakes", "where": { "$stakes.source": "game" } }
+      ]
+    },
+    {
+      "id": "e09-duel-stakes",
+      "prompt": "Two players each put up the same stake for a duel; the winner takes the pot, minus a 5% rake for the arena.",
+      "fit": "Key",
+      "ideas": [69],
+      "reference": "fixtures/duel-arena.json",
+      "checks": [
+        { "says": "a contest with two sides", "some": "contests", "where": { "sides": 2 } },
+        { "says": "a rake of about 5%", "some": "contests", "where": { "split[].percent": { "$sum": { "min": 3, "max": 7 } } } },
+        { "says": "the authority names the winner", "some": "play", "where": { "ix": "decide", "signer": "authority" } },
+        { "says": "the creator is told the economy needs the authority", "warns": "W-AUTHORITY" },
+        { "says": "betting is flagged", "warns": "W-CHANCE-PRIZE" }
+      ]
+    },
+    {
+      "id": "e10-token-2022-box",
+      "prompt": "Price everything in our Token-2022 coin (mint 7MJWx2uTWn8ZHFda1WUpW46SgWb5UyAjjFrYjjSsSYHA, 6 decimals, a 1% transfer fee): a 10-coin box with common, rare and epic hats.",
+      "fit": "Alone",
+      "ideas": [10],
+      "reference": "evals/reference/e10-token-2022-box.json",
+      "checks": [
+        { "says": "the game's currency is that Token-2022 mint", "some": "currency", "where": { "source": "existing", "program": "token-2022", "mint": "7MJWx2uTWn8ZHFda1WUpW46SgWb5UyAjjFrYjjSsSYHA", "decimals": 6 } },
+        { "says": "its 1% transfer fee is written down", "some": "currency", "where": { "powers.transferFeePercent": 1 } },
+        { "says": "a 10-coin box of at least three hats", "some": "boxes", "where": { "price": { "min": 9, "max": 11 }, "outcomes.length": { "min": 3 }, "outcomes[].gives": "item" } },
+        { "says": "the creator hears what the mint's owner can do", "warns": "W-MINT-POWERS" }
+      ]
+    },
+    {
+      "id": "e11-pump-coin-shop",
+      "prompt": "Use my pump.fun coin (mint 75C3pLRUXZxMAyuF1xj7MzvPjEfyoDV6A2QB2f51QXHH, 6 decimals) as the shop's currency: sell a sword for 1,000 coins and burn 10% of every sale.",
+      "fit": "Alone",
+      "ideas": [20],
+      "reference": "evals/reference/e11-pump-coin-shop.json",
+      "checks": [
+        { "says": "the game's currency is that existing mint", "some": "currency", "where": { "source": "existing", "mint": "75C3pLRUXZxMAyuF1xj7MzvPjEfyoDV6A2QB2f51QXHH", "decimals": 6 } },
+        { "says": "it is marked as a pump.fun coin", "some": "currency", "where": { "venue": "pump.fun" } },
+        { "says": "a sword for about 1,000", "some": "items", "where": { "price": { "min": 900, "max": 1100 } } },
+        { "says": "about 10% of every sale is burned", "some": "items", "where": { "split[]": { "to": "burn", "percent": { "min": 9, "max": 11 } } } }
+      ]
+    },
+    {
+      "id": "e12-scorched-treasury",
+      "prompt": "Burn 1% of the treasury pool every day; players can slow it down by paying into a flame-guard pool that the next season pays back.",
+      "fit": "Key",
+      "ideas": [14],
+      "reference": "fixtures/scorched-treasury.json",
+      "checks": [
+        { "says": "a schedule burns about 1% of a pool every day", "some": "schedules", "where": { "does": "burn", "percent": { "min": 0.9, "max": 1.1 }, "every": { "duration": "1d" } } },
+        { "says": "players pay into a guard pool", "feeds": { "from": ["payments", "items", "recipes"], "into": "pool" } },
+        { "says": "the payback is a payout the authority signs", "some": "decisions", "where": { "does": "payout" } }
+      ]
+    },
+    {
+      "id": "e13-sacrifice-raffle",
+      "prompt": "Burn an NFT for raffle tickets (more tickets for rarer ones); a weekly draw with one grand prize and seven minor ones, its pot filled by a share of sales.",
+      "fit": "Alone",
+      "ideas": [15, 67],
+      "reference": "fixtures/sacrifice-raffle.json",
+      "checks": [
+        { "says": "burning collectibles gives tickets, by at least two recipes", "some": "recipes", "atLeast": 2, "where": { "in[].takes": "burn", "out[].gives": "tokens" } },
+        { "says": "a weekly draw with eight places", "some": "lotteries", "where": { "places.length": 8, "every": { "duration": "7d" } } },
+        { "says": "the tickets are a token of their own", "some": "lotteries", "where": { "ticketCurrency": { "exists": true } } },
+        { "says": "a share of sales fills the pot", "feeds": { "from": ["items", "boxes"], "into": "lottery" } }
+      ]
+    },
+    {
+      "id": "e14-falling-price",
+      "prompt": "A drop of 100 heroes whose price starts at 2 SOL and falls 0.05 SOL every minute until one sells, never below 0.2 SOL.",
+      "fit": "Alone",
+      "ideas": [92],
+      "reference": "fixtures/falling-drop.json",
+      "checks": [
+        { "says": "100 heroes at 2 SOL", "some": "items", "where": { "price": 2, "supply": 100 } },
+        { "says": "the price falls about 0.05 every minute, never below 0.2", "some": "items", "where": { "fall.step": { "min": 0.04, "max": 0.06 }, "fall.every": { "duration": "1m" }, "fall.floor": { "min": 0.19, "max": 0.21 } } },
+        { "says": "priced in SOL", "some": "currency", "where": { "source": "sol" } }
+      ]
+    },
+    {
+      "id": "e15-level-ladder",
+      "prompt": "Players pay 0.02 SOL for each attempt at a level; failed attempts grow the pot, and whoever clears the final level wins the whole pot.",
+      "fit": "Key",
+      "ideas": [52],
+      "reference": "evals/reference/e15-level-ladder.json",
+      "checks": [
+        { "says": "an attempt costs about 0.02", "some": "payments", "where": { "amount": { "min": 0.015, "max": 0.025 } } },
+        { "says": "most of each attempt grows the pot", "feeds": { "from": ["payments"], "into": "pool", "percent": { "min": 50 } } },
+        { "says": "clearing pays out of the pot", "some": "decisions", "where": { "does": "payout", "pool": { "exists": true } } },
+        { "says": "the authority signs the payout", "some": "play", "where": { "ix": "payout", "signer": "authority" } }
+      ]
+    },
+    {
+      "id": "e16-plinko",
+      "prompt": "A plinko drop for 0.1 SOL: the slots pay 0.2x, 0.5x, 1x, 3x, 10x and 100x, with a house edge of about 3%.",
+      "fit": "Alone",
+      "ideas": [62],
+      "reference": "evals/reference/e16-plinko.json",
+      "checks": [
+        { "says": "a 0.1 drop with at least six slots", "some": "boxes", "where": { "price": { "min": 0.09, "max": 0.11 }, "outcomes.length": { "min": 6 } } },
+        { "says": "the top slot pays about 100 times the price", "some": "boxes", "where": { "outcomes[]": { "gives": "pay", "amount": { "min": 9, "max": 11 } } } },
+        { "says": "the house keeps about 3%", "some": "sim.boxes", "where": { "returnPercent": { "min": 95, "max": 98.5 } } },
+        { "says": "chance that pays money is flagged", "warns": "W-CHANCE-PRIZE" }
+      ]
+    },
+    {
+      "id": "e17-stud-farm",
+      "prompt": "Studs earn a 5 USDC cover fee for whoever holds the stud; foals are ready 7 days after breeding, mares have 6 foals in their life, and hay rots in 3 days.",
+      "fit": "Alone",
+      "ideas": [31, 19, 26],
+      "reference": "fixtures/stud-farm.json",
+      "checks": [
+        { "says": "breeding pays about 5 to the stud's holder", "some": "recipes", "where": { "in[]": { "takes": "pay", "to": { "match": "^holder:" }, "amount": { "min": 4, "max": 6 } } } },
+        { "says": "foals are ready 7 days after they are made", "some": "items", "where": { "life.readyAfter": { "duration": "7d" } } },
+        { "says": "a mare has 6 uses", "some": "items", "where": { "life.uses": 6 } },
+        { "says": "hay lasts 3 days", "some": "items", "where": { "life.lasts": { "duration": "3d" } } },
+        { "says": "paid in USDC-dev", "some": "currency", "where": { "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU" } }
+      ]
+    },
+    {
+      "id": "e18-starforce",
+      "prompt": "Enhance a sword: each try burns it and pays a 0.02 SOL fee into a jackpot; 40% it goes up a level, 45% it stays, 14.5% it is destroyed, and 0.5% wins a tenth of the jackpot.",
+      "fit": "Alone",
+      "ideas": [22],
+      "reference": "fixtures/starforce.json",
+      "checks": [
+        { "says": "a try burns the sword and pays about 0.02", "some": "recipes", "where": { "$all": [{ "in[]": { "takes": "burn" } }, { "in[]": { "takes": "pay", "amount": { "min": 0.015, "max": 0.025 } } }] } },
+        { "says": "about 40% goes up a level", "some": "sim.boxes", "where": { "outcomes[]": { "gives": "item", "chance": { "min": 35, "max": 45 } } } },
+        { "says": "a roll can destroy it", "some": "boxes", "where": { "outcomes[].gives": { "in": ["burn", "nothing"] } } },
+        { "says": "a lucky roll wins about a tenth of the jackpot", "some": "boxes", "where": { "outcomes[]": { "gives": "share", "percent": { "min": 8, "max": 12 } } } },
+        { "says": "chance that pays money is flagged", "warns": "W-CHANCE-PRIZE" }
+      ]
+    },
+    {
+      "id": "e19-weekly-ladder",
+      "prompt": "Every week, move 5% of the treasury pool into a prize pool and pay the top three on the leaderboard 50%, 30% and 20% of it.",
+      "fit": "Key",
+      "ideas": [51],
+      "reference": "evals/reference/e19-weekly-ladder.json",
+      "checks": [
+        { "says": "a weekly schedule moves about 5% into the prize pool", "some": "schedules", "where": { "does": "move", "percent": { "min": 4, "max": 6 }, "every": { "duration": "7d" } } },
+        { "says": "the prizes are payouts", "some": "decisions", "where": { "does": "payout", "pool": { "exists": true } } },
+        { "says": "the authority signs them", "some": "play", "where": { "signer": "authority" } },
+        { "says": "the creator is told the economy needs the authority", "warns": "W-AUTHORITY" }
+      ]
+    },
+    {
+      "id": "e20-founder-passes",
+      "prompt": "Sell 1,000 soulbound founder passes at 0.5 USDC each; a pass lets its holder claim 5 GEMS a day from a rewards pool that mints 10,000 GEMS every week.",
+      "fit": "Alone",
+      "ideas": [84, 6],
+      "reference": "evals/reference/e20-founder-passes.json",
+      "checks": [
+        { "says": "1,000 soulbound passes at about 0.5", "some": "items", "where": { "supply": 1000, "price": { "min": 0.45, "max": 0.55 }, "soulbound": true } },
+        { "says": "priced in USDC-dev", "some": "currency", "where": { "mint": "4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU" } },
+        { "says": "a pass can claim once a day", "some": "items", "where": { "life.cooldown": { "duration": "1d" } } },
+        { "says": "a claim uses the pass and gives 5 GEMS", "some": "recipes", "where": { "in[].takes": "use", "out[]": { "gives": "tokens", "amount": 5 } } },
+        { "says": "about 10,000 GEMS are minted into the pool each week", "some": "schedules", "where": { "does": "issue", "amount": { "min": 9000, "max": 11000 }, "every": { "duration": "7d" } } }
+      ]
+    }
+  ]
+}

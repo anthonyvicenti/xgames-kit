@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-mage",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-mage.glb",
+ "sha256": "270be1f3961695633a9d812eee29ff780f28af85681810f18a0b8408af2d6ee6",
+ "bytes": 106156,
+ "preview": "previews/kaykit-mage.png",
+ "from": "Mage.glb (KayKit Character Pack: Adventurers 1.0); held items taken off (Spellbook, Spellbook_open, 1H_Wand, 2H_Staff: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a stylised mage in a pointed hat and robes",
+ "tags": [
+  "mage",
+  "wizard",
+  "fantasy",
+  "player",
+  "hero",
+  "kaykit",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.57,
+   2.037,
+   1.53
+  ],
+  "height": 2.037,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 4509,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 1,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.652,
+     "triangles": 4509,
+     "joints": 22,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 39,
+    "hues": [
+     "#81412f",
+     "#343157",
+     "#4b4774",
+     "#1e1c3a",
+     "#1f1d3c",
+     "#1c1a37",
+     "#4c4875",
+     "#555080"
+    ],
+    "saturation": 0.33,
+    "value": 0.374,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.442
+     },
+     {
+      "hue": "orange",
+      "share": 0.218
+     },
+     {
+      "hue": "grey",
+      "share": 0.199
+     },
+     {
+      "hue": "brown",
+      "share": 0.119
+     }
+    ],
+    "grey": 0.199
+   },
+   "trianglesPerMetre": 9.11,
+   "texelsPerMetre": 75,
+   "texturedShare": 0.827,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Mage.glb",
+  "sha256": "cf898585da33fab50c724d31605fb931eb2912e6d2280092141e98ca81ad507d",
+  "retrieved": "2026-10-08",
+  "modified": "held items taken off (Spellbook, Spellbook_open, 1H_Wand, 2H_Staff: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm…"
+ }
+}

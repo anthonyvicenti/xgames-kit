@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "tern",
+ "pack": "vista-sounds",
+ "file": "tern.ogg",
+ "sha256": "981c538c1db50380f3a7afe04656f7b08d60ebd1c1be84fcc6052f70d7175559",
+ "bytes": 108719,
+ "preview": "previews/tern.png",
+ "from": "6 common tern calls (high-passed 2 kHz)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Tern call",
+ "tags": [
+  "coast",
+  "calm",
+  "tern"
+ ],
+ "use": {
+  "seconds": 11.305,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 42% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -6.3,
+     "samplePeakDb": 0,
+     "truePeakDb": 0,
+     "hfRatio": 0.422
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 11.305,
+    "peakDbfs": 0,
+    "soundMaxLufs": -6.3
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/LaScienceMusicale/sounds/648386/",
+  "author": "LaScienceMusicale"
+ }
+}

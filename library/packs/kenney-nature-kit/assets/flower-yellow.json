@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "flower-yellow",
+ "pack": "kenney-nature-kit",
+ "file": "flower-yellow.glb",
+ "sha256": "e6be72060745ba50b4a4361f221e23ed0995ad0a6f7147a3b68971ff6807d0f6",
+ "bytes": 4116,
+ "preview": "previews/flower-yellow.png",
+ "from": "kenney:nature-kit/flower_yellowA; baked to metres (x2.33766), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "yellow garden flowers",
+ "tags": [
+  "nature",
+  "flowers",
+  "decor",
+  "flower",
+  "yellow"
+ ],
+ "use": {
+  "size": [
+   0.372,
+   0.45,
+   0.423
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4116,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffd990",
+     "#73eddd"
+    ],
+    "saturation": 0.911,
+    "value": 0.746,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.608
+     },
+     {
+      "hue": "cyan",
+      "share": 0.392
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.28,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "sha256": "8a3b08cd2ca411c21f9c581d5bda651d78b13c50cba45ad8fa0389398ead6d1d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.33766), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

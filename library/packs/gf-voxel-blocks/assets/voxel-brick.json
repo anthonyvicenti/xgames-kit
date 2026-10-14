@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-brick",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-brick.png",
+ "sha256": "ed14b9646734e1877c506e38fe4a191a1d20004d0a183a2d471c892758c65f73",
+ "bytes": 45092,
+ "preview": "previews/voxel-brick.png",
+ "from": "kenney:voxel-pack/brick_red; PNG/Tiles/brick_red.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1120,158; mean difference 5.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "brick_red (Voxel Pack)",
+ "tags": [
+  "brick",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.022
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#e07b51",
+     "#89a4a6",
+     "#d77147",
+     "#ec855b",
+     "#819a9c",
+     "#8eabad",
+     "#e07a50",
+     "#df7a50"
+    ],
+    "saturation": 0.565,
+    "value": 0.596,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.763
+     },
+     {
+      "hue": "grey",
+      "share": 0.237
+     }
+    ],
+    "exact": 1474,
+    "grey": 0.237
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "12ea2e07af0fb20b6b4890738ccf9e45334f804f1896be7a4a77000eab5208d3",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

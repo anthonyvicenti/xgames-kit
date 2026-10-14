@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-block-center",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-block-center.png",
+ "sha256": "a7ca44fd0b4cdead2c68804842f95a4fcc5d32925c1dbe40ef9e5e83b68c34cb",
+ "bytes": 1634,
+ "preview": "previews/terrain-stone-block-center.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_block_center.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone block center tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "block",
+  "center",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 4.7 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#bbc4cb",
+     "#a6b2bb",
+     "#cfd5da",
+     "#abb6bf",
+     "#afb9c2",
+     "#adb8c1",
+     "#acb7c0",
+     "#b8c1c9"
+    ],
+    "saturation": 0.133,
+    "value": 0.755,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 37,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "df193bc836acba7577de2157d5c6411e57ace2a2285ac626b2e1b79d476219eb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

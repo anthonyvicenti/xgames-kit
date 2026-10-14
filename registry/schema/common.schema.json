@@ -1,0 +1,276 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/common/1.json",
+  "title": "xgames-kit shared definitions",
+  "description": "Definitions every other schema refers to. The $id is a name, not a URL that resolves: load every schema through registry/schemas.mjs.",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,39}$",
+      "description": "A registry id: lower case, digits and dashes. Runtimes, profiles (2d, flat-2d), loops, mechanics, kinds, worlds, looks and camera rigs all use it."
+    },
+    "assetRef": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{0,39}/[a-z0-9][a-z0-9._-]{0,79}$",
+      "description": "An asset in the library: <pack id>/<asset id>."
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "A day, YYYY-MM-DD."
+    },
+    "words": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "pattern": "^(?!/)(?!.*\\.\\./)[^\\\\]+$",
+      "description": "A path relative to the repository root (or, inside a game, to the game's folder). Never absolute, never climbing out with ../."
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "what"
+      ],
+      "additionalProperties": false,
+      "description": "One piece of proof: a file in the repository (an evidence folder, a verdict.json, a test) or an outside record, with the day it was made.",
+      "properties": {
+        "what": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "What it shows, in plain words."
+        },
+        "ref": {
+          "$ref": "#/$defs/path"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "date": {
+          "$ref": "#/$defs/date"
+        },
+        "browser": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "For a device claim: the browser and version it ran in."
+        },
+        "hardware": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "For a device claim: the hardware class (e.g. 'desktop, discrete GPU', 'phone emulated in headless Chrome')."
+        }
+      }
+    },
+    "state": {
+      "type": "object",
+      "required": [
+        "exists",
+        "tested",
+        "open"
+      ],
+      "additionalProperties": false,
+      "description": "Three separate facts (DESIGN 'Adding a runtime, a mechanic or a kind'). exists: it is in code. tested: it passed its tests, with evidence. open: a pitch may offer it. open needs exists; tested needs evidence. A thing that does not exist is never open.",
+      "properties": {
+        "exists": {
+          "type": "boolean"
+        },
+        "tested": {
+          "type": "boolean"
+        },
+        "open": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 400
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "open": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "exists": {
+                "const": true
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "tested": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "evidence"
+            ],
+            "properties": {
+              "exists": {
+                "const": true
+              },
+              "evidence": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "device": {
+      "enum": [
+        "desktop",
+        "laptop",
+        "tablet",
+        "phone",
+        "x-post"
+      ],
+      "description": "Where a game is played. x-post: inside a post on X (a sandboxed frame with no pointer lock, 480x480 at the smallest). A claim about one names the browser and hardware it was tested on (state evidence)."
+    },
+    "input": {
+      "enum": [
+        "keyboard-mouse",
+        "touch",
+        "gamepad"
+      ]
+    },
+    "graphicsApi": {
+      "enum": [
+        "webgpu",
+        "webgl2"
+      ]
+    },
+    "jsonSchema": {
+      "type": "object",
+      "description": "A JSON Schema (2020-12) object. Its own validity is checked by the tool that compiles it, not here."
+    },
+    "licence": {
+      "type": "object",
+      "required": [
+        "spdx"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "spdx": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 80,
+          "description": "An SPDX id (MIT, CC0-1.0, CC-BY-4.0, Apache-2.0), or LicenseRef-<name> for our own or a paid licence."
+        },
+        "author": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "file": {
+          "$ref": "#/$defs/path",
+          "description": "The licence text beside the code or the pack."
+        },
+        "credit": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "The credit line a game must carry (CC-BY and the like)."
+        }
+      }
+    },
+    "slotTemplate": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "description": "A gf-assets/1 slot template (CONTRACT §2.2): id may hold {base}, {i}, {id}, {as} and {<param>}; the rest is the slot as gf-assets/1 defines it.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z{][a-zA-Z0-9_.{}-]{0,119}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "group": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "type": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "source": {
+          "type": "object"
+        },
+        "constraints": {
+          "type": "object"
+        },
+        "tier": {
+          "enum": [
+            "main",
+            "advanced"
+          ]
+        },
+        "facet": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "rank": {
+          "type": "number"
+        }
+      }
+    },
+    "capability": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,39}$",
+      "description": "Something a runtime profile can do that an idea may need (registry/capabilities.json lists them: characters, voxel-world, tilemap, photoreal-water, …). What no profile has is built in the game."
+    },
+    "fidelity": {
+      "enum": [
+        "standard",
+        "stylised-scenic",
+        "photoreal"
+      ],
+      "description": "How far the picture goes, as a hard limit: standard (toon, low-poly, flat 2D), stylised-scenic (painterly light, living grass, fog, a day cycle), photoreal (physical sky, simulated sea)."
+    },
+    "rowId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,31}$",
+      "description": "A requirements ledger row's id."
+    },
+    "buildId": {
+      "type": "string",
+      "pattern": "^build\\.[1-9][0-9]?$",
+      "description": "A build promise: build.<n>, the spec's build[n-1]."
+    }
+  }
+}

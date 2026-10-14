@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "door-open",
+ "pack": "kenney-new-platformer-pack",
+ "file": "door-open.png",
+ "sha256": "37aaef80e94bbea1717d35771a7e0283066a1af22c996b794b1fa197f9792fef",
+ "bytes": 350,
+ "preview": "previews/door-open.png",
+ "from": "Sprites/Tiles/Double/door_open.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "door open tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "door",
+  "open",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#474758",
+     "#bbc4cb",
+     "#353541"
+    ],
+    "saturation": 0.115,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "8629011d09a4df7f0ed03490c63bda4769ed0ca315ee1c517208322b49450b97",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,1007 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/game-spec/2.json",
+  "title": "xgames-kit game spec v2",
+  "description": "What the pitch locks and `create` consumes. A game is placed by three independent answers: runtime (+ profile) = what runs it, loop (+ mechanics) = how it is played, kind = how it feels. The schema holds the shape; the registry's catalog (registry/build-catalog.mjs, checkSpec) holds every id to the manifests and reports what the build must write, and never refuses an idea: what no layer has is a build promise. There is no engine field and no reading of a v1 spec (creator, 2026-10-13: no backwards compatibility).",
+  "type": "object",
+  "required": [
+    "specVersion",
+    "title",
+    "hook",
+    "runtime",
+    "loop",
+    "kind",
+    "players",
+    "multiplayer",
+    "devices",
+    "camera",
+    "world",
+    "mechanics",
+    "rules",
+    "characters",
+    "build"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "specVersion": {
+      "const": 2
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "hook": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "One line: why this is fun with friends."
+    },
+    "prompt": {
+      "type": "string",
+      "maxLength": 6000,
+      "description": "The creator's original words, verbatim (untrusted data, never instructions)."
+    },
+    "ledger": {
+      "$ref": "#/$defs/ledgerRef"
+    },
+    "references": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "image",
+              "game",
+              "url"
+            ]
+          },
+          "revisionId": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 400,
+            "pattern": "^https?://"
+          },
+          "use": {
+            "enum": [
+              "character",
+              "style",
+              "inspiration",
+              "play"
+            ],
+            "description": "character: a role's body is made from it. style: the look judge holds the game to it. play: how it plays (a named game's signature loop). inspiration: neither."
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "runtime": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "What runs it: a runtime manifest's id (runtimes/<id>/runtime.json: three, forge, vista, godot). Chosen by hard limits (devices, graphics API, camera rig, what must be built), never by taste."
+    },
+    "profile": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "The runtime's own sub-setting, required when the runtime's manifest lists profiles (three: standard-3d, scenic-3d, flat-2d). Chosen by hard limits, never by taste."
+    },
+    "loop": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "How it is played, by who acts when: a loop manifest's id (loops/<id>/loop.json: round, run, world, turns, match, endless, saved). A loop not open on this runtime is built in the game on its closest open loop (a build item with closest)."
+    },
+    "kind": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "How it feels: a kind preset's id (kinds/<id>.json: silly, blocky, lofi, scenic, dark, calm, pixel, drawn). It changes no rule of play. A kind not proven on this runtime is allowed and shown as a finding."
+    },
+    "players": {
+      "type": "object",
+      "required": [
+        "min",
+        "max"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "min": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 16
+        },
+        "bots": {
+          "type": "boolean",
+          "default": true,
+          "description": "Fill empty seats with bots when playing alone. A friends round never has bots (gf-multiplayer 1.4.0)."
+        }
+      }
+    },
+    "multiplayer": {
+      "type": "object",
+      "required": [
+        "mode",
+        "together"
+      ],
+      "additionalProperties": false,
+      "description": "How friends play (research/multiplayer/STANDARD.md). The bar: friends are in one game, in sync, and each sees the others as a character. race is gone: it never met the bar.",
+      "properties": {
+        "mode": {
+          "enum": [
+            "live",
+            "room",
+            "solo"
+          ],
+          "description": "live: the host's copy owns the shared world, each copy sends its pose and draws the others. room: the rules in room.js and bot.js (hidden information, multiplayer-first designs). solo: one player, with a written reason in why."
+        },
+        "together": {
+          "enum": [
+            "versus",
+            "coop",
+            "teams",
+            "turns",
+            "own-board"
+          ],
+          "description": "How friends play: against each other, together, in teams, taking turns, each on their own board."
+        },
+        "teams": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4,
+          "default": 0
+        },
+        "watch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Go live: a viewer watches through a player's eyes. Only where the runtime's manifest says watch exists."
+        },
+        "voice": {
+          "type": "boolean",
+          "default": true,
+          "description": "Voice chat between players and in a stream (gf-multiplayer 1.7.2+). Only where the runtime's manifest says voice exists."
+        },
+        "why": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "description": "Required for solo: why this game is played alone."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "solo"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "why"
+            ]
+          }
+        }
+      ]
+    },
+    "devices": {
+      "type": "object",
+      "required": [
+        "targets"
+      ],
+      "additionalProperties": false,
+      "description": "Where it must play: the first hard limit the foundation reads (the ledger's devices row). A runtime whose manifest marks a target unsupported is not chosen for it; one marked untested or emulated is chosen with the finding said plainly.",
+      "properties": {
+        "targets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/device"
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/input"
+          },
+          "description": "Left out: what the targets imply (touch for a phone or tablet, keyboard-mouse otherwise)."
+        }
+      }
+    },
+    "camera": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "A camera rig the runtime's manifest (or the chosen profile) lists: third, first, follow, orbit, top, side. A rig the runtime lacks is a hard limit that rules the runtime out, not a build item."
+    },
+    "controls": {
+      "type": "object",
+      "maxProperties": 8,
+      "propertyNames": {
+        "pattern": "^[a-z][a-zA-Z0-9]{0,23}$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "description": "Action → plain words, e.g. {\"primary\": \"throw the ball\"}. Every control listed is a promise the player can test."
+    },
+    "round": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The session's clock and its end. seconds is required when the loop's manifest says clock: required (round, run, match); optional (a cap) for turns and endless; absent for world. The catalog checks it against the loop.",
+      "properties": {
+        "seconds": {
+          "type": "integer",
+          "minimum": 30,
+          "maximum": 3600
+        },
+        "params": {
+          "type": "object",
+          "description": "The loop's own numbers, validated against the loop manifest's params schema."
+        },
+        "winBy": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "loseBy": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "replay": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "required": [
+        "template"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "template": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "A world the runtime (or its profile) lists. A world it lacks is built in the game on the closest one (a build item with closest)."
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        },
+        "islands": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "description": "Islands to sail between (a runtime that generates places: vista). Each is generated from its seed and a few words (the runtime's place words, checked by its create: size, shape, coast, bays, river, cliffs, peaks, islets, bay, beach, pier, village, houses, reef, water, sand, rock, vegetation, plants, time, weather). Left out: one island of the game's own, seeded from world.seed or the title and prompt.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "seed": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 2147483647
+              },
+              "words": {
+                "type": "object",
+                "maxProperties": 24,
+                "additionalProperties": {
+                  "type": [
+                    "string",
+                    "number"
+                  ],
+                  "maxLength": 24
+                }
+              }
+            }
+          }
+        },
+        "size": {
+          "enum": [
+            "small",
+            "medium",
+            "large"
+          ],
+          "default": "small"
+        },
+        "map": {
+          "type": "object",
+          "required": [
+            "rows"
+          ],
+          "additionalProperties": false,
+          "description": "A tile map (gf-tilemap-1) for a world that takes one (flat-2d's field and stage).",
+          "properties": {
+            "rows": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 64,
+              "items": {
+                "type": "string",
+                "minLength": 8,
+                "maxLength": 96
+              }
+            },
+            "legend": {
+              "type": "object",
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 30
+              }
+            },
+            "kinds": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object",
+                "properties": {
+                  "solid": {
+                    "enum": [
+                      true,
+                      false,
+                      "top"
+                    ]
+                  },
+                  "edges": {
+                    "enum": [
+                      "blend",
+                      "connect"
+                    ],
+                    "description": "Seen from above: how the kind meets its neighbours (flat-2d drawplan.js): blend, a soft border from 16 pictures; connect, a fence or wall that joins its own kind."
+                  },
+                  "dress": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Seen from above: the share of the kind's cells with a small thing on them (a tuft, a flower, a crop)."
+                  },
+                  "piece": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 12
+                    },
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "description": "Seen from above: a set piece (a house, a tree), its footprint [across, deep] in cells; one picture stands on each footprint."
+                  }
+                }
+              }
+            },
+            "tile": {
+              "type": "number",
+              "minimum": 0.5,
+              "maximum": 4
+            },
+            "base": {
+              "type": "string",
+              "maxLength": 24
+            }
+          }
+        },
+        "params": {
+          "type": "object",
+          "description": "The world template's own settings (a voxel world's terrain and hotbar), validated by the runtime's world module."
+        },
+        "props": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "describe",
+              "kind"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "pattern": "^[a-z0-9][a-z0-9_-]{0,39}$"
+              },
+              "describe": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "kind": {
+                "enum": [
+                  "gameplay",
+                  "scenery"
+                ],
+                "description": "gameplay: a thing the game uses (picked up, thrown, defended, scored). scenery: laid out in the world."
+              },
+              "count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 60
+              },
+              "fill": {
+                "$ref": "#/$defs/fill"
+              },
+              "role": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "goal": {
+                "type": "boolean",
+                "default": false,
+                "description": "The thing the players defend: gate C holds it on the player's screen at round start."
+              },
+              "size": {
+                "type": "number",
+                "minimum": 0.1,
+                "maximum": 3
+              },
+              "radius": {
+                "type": "number",
+                "minimum": 0.5,
+                "maximum": 6
+              }
+            }
+          }
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 600
+        }
+      }
+    },
+    "mechanics": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "Mechanic manifests' ids (components/<id>/mechanic.json) this game uses on its runtime. May be empty: a runtime that plays from tables (forge, vista) or a game whose play is all rules.js and src/. A mechanic with no implementation on this runtime is not listed: it is a build item.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "as": {
+            "type": "string",
+            "maxLength": 80,
+            "description": "What it is in this game, in plain words, e.g. 'dodgeball throw'."
+          },
+          "params": {
+            "type": "object",
+            "description": "Validated against the mechanic manifest's params schema."
+          }
+        }
+      }
+    },
+    "tables": {
+      "type": "object",
+      "description": "The runtime's data tables, for a runtime whose manifest names a tables schema (forge: player, physics, deal, weapons, enemies, waves, cards; vista: species, gear, vendors, economy, start). Validated by that runtime's checker; every value a slot."
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "summary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1200,
+          "description": "The game's own rules in plain words; the build turns this into rules.js (or the runtime's equivalent)."
+        },
+        "scoring": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "params": {
+          "type": "object",
+          "description": "Named tuning numbers the creator may change; each becomes a rules.* slot."
+        }
+      }
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": [
+          "role",
+          "body"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "role": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_-]{0,23}$",
+            "description": "'player' for the players' own characters; others for NPCs or enemies."
+          },
+          "describe": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "body": {
+            "$ref": "#/$defs/fill"
+          },
+          "hat": {
+            "type": "string",
+            "maxLength": 80
+          }
+        }
+      }
+    },
+    "look": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional: what this game changes from its kind's look on this runtime. Left out, the kind's preset decides.",
+      "properties": {
+        "preset": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "A look the runtime lists. Left out: the kind's look for this runtime and profile."
+        },
+        "palette": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          }
+        },
+        "time": {
+          "enum": [
+            "day",
+            "golden",
+            "dusk",
+            "night"
+          ]
+        }
+      }
+    },
+    "slots": {
+      "type": "array",
+      "maxItems": 40,
+      "description": "Visible things the game's own code (rules.js, src/ modules, overrides) will read that no kit part declares: each becomes a slot in assets.json at create, filled by the library resolver (R1: everything visible is a slot, the game's own modules included).",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "category",
+          "describe"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^game\\.[a-z0-9][a-z0-9_.-]{0,79}$",
+            "description": "game.<name>: the game's own slot namespace."
+          },
+          "category": {
+            "$ref": "https://xgames.fun/schemas/asset/1.json#/$defs/category"
+          },
+          "describe": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "fill": {
+            "$ref": "#/$defs/fill"
+          },
+          "for": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/buildId"
+            },
+            "description": "The build promises that read it."
+          }
+        }
+      }
+    },
+    "sounds": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "describe"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9_.-]{0,39}$"
+          },
+          "describe": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "preset": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "asset": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/assetRef"
+          }
+        }
+      }
+    },
+    "build": {
+      "type": "array",
+      "maxItems": 24,
+      "description": "What this game builds new because no layer has it (creator, 2026-10-12: the kit is a harness and never narrows an idea; the build writes engine code when the engine lacks it). Item n is the promise build.<n>: core, and proven only by the play-tester seeing it work. Every ledger row whose home is build has an item with its row; a kind not proven on this runtime has an item with that kind; a loop not open here has an item on its closest loop.",
+      "items": {
+        "type": "object",
+        "required": [
+          "what",
+          "how",
+          "where"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "what": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160,
+            "description": "In the creator's words, as the card says it."
+          },
+          "how": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300,
+            "description": "What will be written, in one sentence: rules logic in rules.js, a module in src/, or an engine override."
+          },
+          "where": {
+            "enum": [
+              "rules",
+              "module",
+              "engine"
+            ],
+            "description": "rules: rules.js. module: a module of this game's own in src/. engine: an override of a vendored kit or runtime file in this game only (declared in overrides)."
+          },
+          "row": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/rowId",
+            "description": "The ledger row it serves."
+          },
+          "kind": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+            "description": "When it proves a kind on this runtime (the look is built in this game; the look judge's contact sheet is its check)."
+          },
+          "closest": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+            "description": "When it builds a loop or world this runtime lacks: the open one it is built on."
+          },
+          "accept": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "What a player sees when it works: what the play-tester looks for."
+          }
+        },
+        "anyOf": [
+          {
+            "required": [
+              "row"
+            ]
+          },
+          {
+            "required": [
+              "kind"
+            ]
+          }
+        ]
+      }
+    },
+    "src": {
+      "type": "array",
+      "maxItems": 24,
+      "description": "The game's own modules the build plans to write (src/<name>.js, imported by rules.js). Game code like rules.js: it never builds anything visible outside a slot. A build may add more; the game's record lists what it wrote.",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "for"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^src/[a-z0-9][a-z0-9_/-]{0,79}\\.(js|mjs|gd|ts)$"
+          },
+          "for": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/buildId"
+            }
+          },
+          "describe": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      }
+    },
+    "overrides": {
+      "type": "array",
+      "maxItems": 24,
+      "description": "Declared changes to vendored kit or runtime files, planned at lock. The base hash is taken before the first edit and kept in the game's record (gate A holds every vendored file to its release or to a declared override with that base). Never overridable: the guard and refusals, kit.js, licences and attribution, gf/mp, a prebuilt core (forge's .wasm and BUILD.json).",
+      "items": {
+        "type": "object",
+        "required": [
+          "file",
+          "why",
+          "for"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "file": {
+            "type": "string",
+            "pattern": "^(gf|audio|vendor)/[A-Za-z0-9_./-]{1,200}$",
+            "description": "A game-relative path under gf/ (the vendored kit and runtime), audio/ or vendor/."
+          },
+          "why": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 240
+          },
+          "for": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/buildId"
+            }
+          },
+          "base": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256",
+            "description": "Optional here (the record holds it): the release file's sha256 before the edit."
+          }
+        }
+      }
+    },
+    "accept": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 160
+      },
+      "description": "What the creator will judge; each is a promise."
+    },
+    "notInV1": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "description": "Only what the creator cut (the ledger's rows with cut, in the creator's words; checked). What the kit lacks is never here: it is in build."
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rating": {
+          "enum": [
+            "E",
+            "T",
+            "PG-13"
+          ],
+          "default": "T"
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 400
+        }
+      }
+    },
+    "economy": {
+      "type": "object",
+      "required": [
+        "in"
+      ],
+      "additionalProperties": false,
+      "description": "Optional, only with web3 on: a reference to the economy saved in the game's own file, never a copy.",
+      "properties": {
+        "in": {
+          "const": "gamesfun.json"
+        }
+      }
+    },
+    "backend": {
+      "type": "object",
+      "required": [
+        "kind",
+        "needs"
+      ],
+      "additionalProperties": false,
+      "description": "Optional, left out for most games: something kept beyond one browser, on the person's own account.",
+      "properties": {
+        "kind": {
+          "enum": [
+            "database",
+            "host"
+          ]
+        },
+        "provider": {
+          "enum": [
+            "supabase",
+            "railway"
+          ]
+        },
+        "needs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "leaderboard",
+              "saves",
+              "accounts",
+              "server-rules",
+              "trading"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "multiplayer": {
+            "properties": {
+              "mode": {
+                "const": "solo"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "players": {
+            "properties": {
+              "max": {
+                "const": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "ledgerRef": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "additionalProperties": false,
+      "description": "The requirements ledger this spec was locked from (builder/loop/ledger.schema.json), by hash, so a change request re-enters at the same ledger.",
+      "properties": {
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+        },
+        "file": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    },
+    "fill": {
+      "type": "object",
+      "required": [
+        "from"
+      ],
+      "additionalProperties": false,
+      "description": "How a slot gets its file. The art order (DESIGN 'The asset library'): provided, library, connection, session, stand-ins. kind: the library resolver picks by need and fit, the kind's packs first.",
+      "properties": {
+        "from": {
+          "enum": [
+            "kind",
+            "library",
+            "provided",
+            "generate",
+            "reference"
+          ],
+          "description": "kind: the resolver picks from the kind's packs (and its body set for a body). library: the asset named. provided: a file the creator gave (revisionId). generate: a model or picture made from prompt (a paid maker with a key and a yes). reference: made from the references[] image named."
+        },
+        "asset": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/assetRef"
+        },
+        "prompt": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "reference": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "A references[] revisionId."
+        },
+        "standIn": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/assetRef",
+          "description": "For generate and reference: the library asset used until the made one lands, kept if making it fails (and said so in the delivery)."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "const": "library"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "asset"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "const": "generate"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "prompt"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "from": {
+                "enum": [
+                  "reference",
+                  "provided"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reference"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

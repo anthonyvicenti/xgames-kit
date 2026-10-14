@@ -1,0 +1,15 @@
+{
+  "name": "gamesfun-game-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A games.fun game's own server: leaderboards, saves and a live score feed. No dependencies.",
+  "license": "MIT",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}

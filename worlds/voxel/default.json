@@ -1,0 +1,554 @@
+{
+ "about": "The kit's default voxel world (CONTRACT §9): create writes it to config/world.json for a spec with world.template 'voxel', with the terrain seeded from the title and the spec's world.params merged over it. Block ids are numbered in order and saved worlds keep the numbers: only ever add blocks at the end. Block faces come from the asset library's xk-voxel-blocks pack (the kit's own pixel faces, CC0).",
+ "size": [
+  192,
+  96,
+  192
+ ],
+ "floor": 1,
+ "signBlock": "sign",
+ "signInk": "#2b1d12",
+ "signPaper": "#f6ecd6",
+ "glow": 1.8,
+ "faces": {
+  "size": 32,
+  "filter": "pixel"
+ },
+ "light": {
+  "cave": 0.05,
+  "block": 1.3,
+  "spread": 1.8,
+  "caveLight": {
+   "color": "#4a5f86",
+   "strength": 0.06
+  },
+  "haze": [
+   16,
+   1
+  ],
+  "caveFog": "#10161f"
+ },
+ "blocks": [
+  {
+   "id": "grass",
+   "label": "Grass",
+   "tex": {
+    "top": "grass-top",
+    "side": "grass-side",
+    "bottom": "dirt"
+   },
+   "place": true,
+   "tint": "grass"
+  },
+  {
+   "id": "dirt",
+   "label": "Dirt",
+   "tex": "dirt",
+   "place": true
+  },
+  {
+   "id": "stone",
+   "label": "Stone",
+   "tex": "stone",
+   "place": true
+  },
+  {
+   "id": "sand",
+   "label": "Sand",
+   "tex": "sand",
+   "place": true
+  },
+  {
+   "id": "seabed",
+   "label": "Grey sand",
+   "tex": "seabed",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "cobble",
+   "label": "Cobbles",
+   "tex": "cobble"
+  },
+  {
+   "id": "stone-brick",
+   "label": "Stone bricks",
+   "tex": "stone-brick"
+  },
+  {
+   "id": "planks",
+   "label": "Planks",
+   "tex": "planks"
+  },
+  {
+   "id": "red-planks",
+   "label": "Red planks",
+   "tex": "red-planks"
+  },
+  {
+   "id": "log",
+   "label": "Log",
+   "tex": {
+    "top": "log-top",
+    "side": "log-side",
+    "bottom": "log-top"
+   }
+  },
+  {
+   "id": "leaves",
+   "label": "Leaves",
+   "kind": "cutout",
+   "tex": "leaves",
+   "tint": "foliage"
+  },
+  {
+   "id": "brick",
+   "label": "Bricks",
+   "tex": "brick"
+  },
+  {
+   "id": "glass",
+   "label": "Glass",
+   "kind": "glass",
+   "tex": "glass"
+  },
+  {
+   "id": "snow",
+   "label": "Snow",
+   "tex": "snow"
+  },
+  {
+   "id": "ice",
+   "label": "Ice",
+   "tex": "ice"
+  },
+  {
+   "id": "cloth-blue",
+   "label": "Blue cloth",
+   "tex": "cloth-blue"
+  },
+  {
+   "id": "cloth-green",
+   "label": "Green cloth",
+   "tex": "cloth-green"
+  },
+  {
+   "id": "cloth-red",
+   "label": "Red cloth",
+   "tex": "cloth-red"
+  },
+  {
+   "id": "cloth-tan",
+   "label": "Tan cloth",
+   "tex": "cloth-tan"
+  },
+  {
+   "id": "lamp",
+   "label": "Lamp",
+   "kind": "glow",
+   "tex": "lamp",
+   "light": true
+  },
+  {
+   "id": "sign",
+   "label": "Sign",
+   "kind": "sign",
+   "tex": "planks"
+  },
+  {
+   "id": "boom",
+   "label": "Boom block",
+   "tex": {
+    "top": "boom-top",
+    "side": "boom-side",
+    "bottom": "boom-side"
+   },
+   "boom": true
+  },
+  {
+   "id": "bedrock",
+   "label": "Bedrock",
+   "tex": "bedrock",
+   "natural": true,
+   "place": false,
+   "break": false
+  },
+  {
+   "id": "tuft-a",
+   "label": "Grass tuft",
+   "kind": "plant",
+   "tex": "tuft-a",
+   "natural": true,
+   "place": true,
+   "tint": "grass"
+  },
+  {
+   "id": "tuft-b",
+   "label": "Leafy tuft",
+   "kind": "plant",
+   "tex": "tuft-b",
+   "natural": true,
+   "place": true,
+   "tint": "grass"
+  },
+  {
+   "id": "tuft-c",
+   "label": "Reeds",
+   "kind": "plant",
+   "tex": "tuft-c",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "tuft-d",
+   "label": "Tall grass",
+   "kind": "plant",
+   "tex": "tuft-d",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "mushroom-red",
+   "label": "Red mushroom",
+   "kind": "plant",
+   "tex": "mushroom-red",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "mushroom-brown",
+   "label": "Brown mushroom",
+   "kind": "plant",
+   "tex": "mushroom-brown",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "mushroom-tan",
+   "label": "Pale mushroom",
+   "kind": "plant",
+   "tex": "mushroom-tan",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "snow-grass",
+   "label": "Snowy grass",
+   "tex": {
+    "top": "snow",
+    "side": "snow-grass-side",
+    "bottom": "dirt"
+   },
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "birch-log",
+   "label": "Birch log",
+   "tex": {
+    "top": "birch-log-top",
+    "side": "birch-log-side",
+    "bottom": "birch-log-top"
+   }
+  },
+  {
+   "id": "birch-leaves",
+   "label": "Birch leaves",
+   "kind": "cutout",
+   "tex": "birch-leaves"
+  },
+  {
+   "id": "spruce-log",
+   "label": "Spruce log",
+   "tex": {
+    "top": "spruce-log-top",
+    "side": "spruce-log-side",
+    "bottom": "spruce-log-top"
+   }
+  },
+  {
+   "id": "spruce-leaves",
+   "label": "Spruce leaves",
+   "kind": "cutout",
+   "tex": "spruce-leaves"
+  },
+  {
+   "id": "sandstone",
+   "label": "Sandstone",
+   "tex": {
+    "top": "sandstone-top",
+    "side": "sandstone-side",
+    "bottom": "sandstone-top"
+   }
+  },
+  {
+   "id": "gravel",
+   "label": "Gravel",
+   "tex": "gravel"
+  },
+  {
+   "id": "clay",
+   "label": "Clay",
+   "tex": "clay"
+  },
+  {
+   "id": "coal-ore",
+   "label": "Coal",
+   "tex": "coal-ore"
+  },
+  {
+   "id": "iron-ore",
+   "label": "Iron ore",
+   "tex": "iron-ore"
+  },
+  {
+   "id": "gold-ore",
+   "label": "Gold ore",
+   "tex": "gold-ore"
+  },
+  {
+   "id": "crystal",
+   "label": "Amber crystal",
+   "kind": "glow",
+   "tex": "crystal",
+   "light": {
+    "color": "#ffd24a",
+    "level": 12
+   }
+  },
+  {
+   "id": "glowcap",
+   "label": "Glowcap",
+   "kind": "plant",
+   "tex": "glowcap",
+   "light": {
+    "color": "#3ff2e0",
+    "level": 10
+   },
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "cactus",
+   "label": "Cactus",
+   "tex": {
+    "top": "cactus-top",
+    "side": "cactus-side",
+    "bottom": "cactus-top"
+   }
+  },
+  {
+   "id": "dead-bush",
+   "label": "Dead bush",
+   "kind": "plant",
+   "tex": "dead-bush",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "fern",
+   "label": "Fern",
+   "kind": "plant",
+   "tex": "fern",
+   "tint": "grass",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "flower-red",
+   "label": "Red flower",
+   "kind": "plant",
+   "tex": "flower-red",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "flower-yellow",
+   "label": "Yellow flower",
+   "kind": "plant",
+   "tex": "flower-yellow",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "flower-blue",
+   "label": "Blue flower",
+   "kind": "plant",
+   "tex": "flower-blue",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "flower-white",
+   "label": "White flower",
+   "kind": "plant",
+   "tex": "flower-white",
+   "natural": true,
+   "place": true
+  },
+  {
+   "id": "lantern",
+   "label": "Lantern",
+   "kind": "glow",
+   "tex": "lantern",
+   "light": {
+    "color": "#ffb45c",
+    "level": 15
+   }
+  },
+  {
+   "id": "water",
+   "label": "Water",
+   "kind": "liquid",
+   "tex": "water",
+   "natural": true
+  },
+  {
+   "id": "amber-shard",
+   "label": "Amber shards",
+   "kind": "plant",
+   "tex": "amber-shard",
+   "light": {
+    "color": "#ffdc80",
+    "level": 8
+   },
+   "natural": true,
+   "place": true
+  }
+ ],
+ "textures": {
+  "grass-top": "library:xk-voxel-blocks/grass-top",
+  "grass-side": "library:xk-voxel-blocks/grass-side",
+  "dirt": "library:xk-voxel-blocks/dirt",
+  "stone": "library:xk-voxel-blocks/stone",
+  "sand": "library:xk-voxel-blocks/sand",
+  "seabed": "library:xk-voxel-blocks/seabed",
+  "cobble": "library:xk-voxel-blocks/cobble",
+  "stone-brick": "library:xk-voxel-blocks/stone-brick",
+  "planks": "library:xk-voxel-blocks/planks",
+  "red-planks": "library:xk-voxel-blocks/red-planks",
+  "log-top": "library:xk-voxel-blocks/log-top",
+  "log-side": "library:xk-voxel-blocks/log-side",
+  "leaves": "library:xk-voxel-blocks/leaves",
+  "brick": "library:xk-voxel-blocks/brick",
+  "glass": "library:xk-voxel-blocks/glass",
+  "snow": "library:xk-voxel-blocks/snow",
+  "ice": "library:xk-voxel-blocks/ice",
+  "cloth-blue": "library:xk-voxel-blocks/cloth-blue",
+  "cloth-green": "library:xk-voxel-blocks/cloth-green",
+  "cloth-red": "library:xk-voxel-blocks/cloth-red",
+  "cloth-tan": "library:xk-voxel-blocks/cloth-tan",
+  "lamp": "library:xk-voxel-blocks/lamp",
+  "boom-top": "library:xk-voxel-blocks/boom-top",
+  "boom-side": "library:xk-voxel-blocks/boom-side",
+  "bedrock": "library:xk-voxel-blocks/bedrock",
+  "tuft-a": "library:xk-voxel-blocks/tuft-a",
+  "tuft-b": "library:xk-voxel-blocks/tuft-b",
+  "tuft-c": "library:xk-voxel-blocks/tuft-c",
+  "tuft-d": "library:xk-voxel-blocks/tuft-d",
+  "mushroom-red": "library:xk-voxel-blocks/mushroom-red",
+  "mushroom-brown": "library:xk-voxel-blocks/mushroom-brown",
+  "mushroom-tan": "library:xk-voxel-blocks/mushroom-tan",
+  "snow-grass-side": "library:xk-voxel-blocks/snow-grass-side",
+  "birch-log-top": "library:xk-voxel-blocks/birch-log-top",
+  "birch-log-side": "library:xk-voxel-blocks/birch-log-side",
+  "birch-leaves": "library:xk-voxel-blocks/birch-leaves",
+  "spruce-log-top": "library:xk-voxel-blocks/spruce-log-top",
+  "spruce-log-side": "library:xk-voxel-blocks/spruce-log-side",
+  "spruce-leaves": "library:xk-voxel-blocks/spruce-leaves",
+  "sandstone-top": "library:xk-voxel-blocks/sandstone-top",
+  "sandstone-side": "library:xk-voxel-blocks/sandstone-side",
+  "gravel": "library:xk-voxel-blocks/gravel",
+  "clay": "library:xk-voxel-blocks/clay",
+  "coal-ore": "library:xk-voxel-blocks/coal-ore",
+  "iron-ore": "library:xk-voxel-blocks/iron-ore",
+  "gold-ore": "library:xk-voxel-blocks/gold-ore",
+  "crystal": "library:xk-voxel-blocks/crystal",
+  "glowcap": "library:xk-voxel-blocks/glowcap",
+  "cactus-top": "library:xk-voxel-blocks/cactus-top",
+  "cactus-side": "library:xk-voxel-blocks/cactus-side",
+  "dead-bush": "library:xk-voxel-blocks/dead-bush",
+  "fern": "library:xk-voxel-blocks/fern",
+  "flower-red": "library:xk-voxel-blocks/flower-red",
+  "flower-yellow": "library:xk-voxel-blocks/flower-yellow",
+  "flower-blue": "library:xk-voxel-blocks/flower-blue",
+  "flower-white": "library:xk-voxel-blocks/flower-white",
+  "lantern": "library:xk-voxel-blocks/lantern",
+  "water": "library:xk-voxel-blocks/water",
+  "amber-shard": "library:xk-voxel-blocks/amber-shard"
+ },
+ "paint": [
+  "#e8483f",
+  "#f28c28",
+  "#f5d33f",
+  "#8ad13f",
+  "#2fa84f",
+  "#2bb3a8",
+  "#3fa9f5",
+  "#3d5be0",
+  "#8a4fd6",
+  "#f06aa8",
+  "#f5f3ee",
+  "#b8bcc2",
+  "#555b63",
+  "#2a2b2e",
+  "#8a5a36"
+ ],
+ "terrain": {
+  "generator": 2,
+  "kind": "land",
+  "water": 30,
+  "ground": 34,
+  "hills": 9,
+  "mountains": 0.45,
+  "beach": 2,
+  "trees": 1,
+  "plants": 1,
+  "caves": 1,
+  "ores": 1,
+  "far": 48,
+  "plaza": {
+   "at": [
+    96,
+    96
+   ],
+   "half": 6,
+   "floor": "cobble",
+   "edge": "stone-brick",
+   "sign": true,
+   "signText": "Welcome to {title}!\nBuild anything.\nIt all stays."
+  }
+ },
+ "hotbar": [
+  "planks",
+  "brick",
+  "glass",
+  "sign",
+  "boom",
+  "lamp",
+  "lantern",
+  "stone-brick",
+  "log",
+  "birch-log",
+  "spruce-log",
+  "red-planks",
+  "cobble",
+  "stone",
+  "sandstone",
+  "grass",
+  "dirt",
+  "sand",
+  "gravel",
+  "leaves",
+  "snow",
+  "ice",
+  "cloth-red",
+  "cloth-blue",
+  "cloth-green",
+  "cloth-tan",
+  "flower-red",
+  "flower-yellow",
+  "mushroom-red",
+  "tuft-d"
+ ]
+}

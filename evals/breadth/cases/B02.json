@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B02",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "racing",
+  "rank": 2,
+  "row": "Racing / driving",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "kart racing with my friends on a twisty beach track, you can grab item boxes and throw stuff at whoever is in front of you",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "kart",
+   "type": "body",
+   "must": "a kart each player drives"
+  },
+  {
+   "id": "track",
+   "type": "world",
+   "must": "a twisty track with a road, raced in laps"
+  },
+  {
+   "id": "items",
+   "type": "mechanic",
+   "must": "item boxes that give something to throw at the racers ahead"
+  },
+  {
+   "id": "order",
+   "type": "rule",
+   "must": "positions during the race and a finish order"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

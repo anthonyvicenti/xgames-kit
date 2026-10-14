@@ -1,0 +1,314 @@
+/* games.fun multiplayer kit: party shell. Kit-owned (never edit a copy). The game's frame and the standings rail sit
+   side by side, so the kit never draws over the game's own HUD (a game that draws everyone's scores itself,
+   live.hud "game", gets the whole stage). Colours come from multiplayer.json "theme". Kit 1.4.0: the waiting room
+   stands left of the stage like a game's home menu, over the game's own world when live.backdrop loads it. Kit 1.5.0:
+   a world's card stands there too (low on a phone, centred in a post's small card), with a pill and a toast. */
+:root {
+  --mp-font: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mp-bg: #0d0f15; --mp-panel: #1b1e27; --mp-fg: #eef0f6; --mp-muted: #b8bfd2; --mp-faint: #8a90a2;
+  --mp-line: #333a4d; --mp-row: #232735; --mp-button: #262a37; --mp-accent: #4f7cff; --mp-accent-fg: #fff;
+  --mp-code: #ffd166; --mp-ok: #3ddc84; --mp-radius: 12px; --mp-rail: 248px;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; background: var(--mp-bg); color: var(--mp-fg); font: 15px/1.4 var(--mp-font); overflow: hidden; }
+#party { display: grid; grid-template-columns: minmax(0, 1fr) var(--mp-rail); height: 100dvh; }
+#party[data-phase="boot"], #party[data-phase="home"], #party[data-rail="off"] { grid-template-columns: minmax(0, 1fr); }
+
+#stage { position: relative; min-width: 0; min-height: 0; background: radial-gradient(120% 90% at 70% 40%, #1d2340 0%, var(--mp-bg) 70%); }
+#game { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+#game[hidden] { display: none; }
+/* the lobby's backdrop: the game's own page, to look at only */
+#game.backdrop { pointer-events: none; }
+
+#rail { display: flex; flex-direction: column; gap: 10px; min-height: 0; padding: 14px 12px 12px; background: var(--mp-panel); border-left: 1px solid var(--mp-line); overflow: auto; }
+#rail[hidden] { display: none; }
+#rail header h1 { margin: 0; font-size: 16px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#rail header p { margin: 2px 0 0; color: var(--mp-faint); font-size: 12px; }
+#racers { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+#racers li { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; gap: 4px 6px; align-items: center; padding: 7px 8px; border-radius: 9px; background: var(--mp-row); }
+#racers li.me { outline: 1px solid var(--mp-accent); }
+#racers .place { color: var(--mp-faint); font-size: 12px; font-variant-numeric: tabular-nums; }
+#racers .dot { justify-self: center; }
+#racers .name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 600; }
+#racers .val { font-variant-numeric: tabular-nums; color: var(--mp-muted); font-size: 13px; }
+#racers li.done .val { color: var(--mp-ok); font-weight: 700; }
+#racers li.away .name { color: var(--mp-faint); }
+#racers .bar { grid-column: 1 / -1; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .09); overflow: hidden; }
+#racers .bar i { display: block; height: 100%; background: var(--mp-accent); transition: width .25s linear; }
+#racers li.done .bar i { background: var(--mp-ok); }
+#racers li.out .val { color: var(--mp-faint); }
+#status { margin: 0; color: var(--mp-muted); font-size: 13px; min-height: 1.4em; }
+#controls { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+#room-controls { display: flex; gap: 8px; flex-wrap: wrap; border-top: 1px solid var(--mp-line); padding-top: 10px; }
+#room-controls button { padding: 6px 10px; font-size: 13px; }
+
+button { cursor: pointer; font: inherit; font-weight: 600; color: var(--mp-fg); background: var(--mp-button); border: 1px solid var(--mp-line); border-radius: 9px; padding: 9px 14px; }
+button.primary { background: var(--mp-accent); border-color: var(--mp-accent); color: var(--mp-accent-fg); }
+button.big { flex: 1 1 auto; padding: 13px 18px; font-size: 17px; font-weight: 750; border-radius: 12px; box-shadow: 0 4px 0 rgba(0, 0, 0, .28); }
+button.big:disabled { box-shadow: none; }
+button.quiet, a.quiet { background: transparent; border-color: transparent; color: var(--mp-muted); padding: 6px 8px; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+button.quiet:hover, a.quiet:hover { color: var(--mp-fg); }
+button:disabled { opacity: .5; cursor: default; }
+button[hidden] { display: none; }
+:focus-visible { outline: 2px solid var(--mp-accent); outline-offset: 2px; }
+.dot { display: inline-block; width: 12px; height: 12px; flex: none; border-radius: 50%; background: var(--mp-faint); box-shadow: 0 0 0 2px rgba(0, 0, 0, .35); }
+
+/* ---- cards over the stage ---- */
+.card { position: absolute; inset: 0; display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); place-items: center; padding: 16px; background: rgba(8, 10, 16, .78); backdrop-filter: blur(3px); overflow: auto; }
+.card[hidden] { display: none; }
+.card .panel { width: min(440px, 100%); max-height: 100%; overflow: auto; overscroll-behavior: contain; background: var(--mp-panel); border: 1px solid var(--mp-line); border-radius: calc(var(--mp-radius) + 4px); padding: 20px 22px; box-shadow: 0 18px 50px rgba(0, 0, 0, .45); }
+.card h2 { margin: 0 0 6px; font-size: 20px; }
+.card h2.title { font-size: 26px; font-weight: 850; letter-spacing: -.01em; line-height: 1.1; margin: 2px 0 12px; }
+.card .eyebrow { font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; color: var(--mp-accent); }
+.card p { margin: 6px 0; color: var(--mp-muted); }
+.card p.center { text-align: center; }
+.card .muted { color: var(--mp-faint); font-size: 13px; }
+.card .err { color: #ffb3bf; font-size: 13px; }
+.card .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
+.card .row.foot { margin-top: 8px; justify-content: space-between; }
+.card .count { font: 800 88px/1 var(--mp-font); text-align: center; color: var(--mp-code); margin: 8px 0; font-variant-numeric: tabular-nums; }
+
+/* the waiting room: a column on the left (a game's home menu stands there too), the world on the right */
+.card.lobby { place-items: center start; padding: 16px clamp(16px, 6vw, 72px); }
+#party[data-backdrop="1"] .card.lobby { background: linear-gradient(90deg, rgba(8, 10, 16, .88) 0%, rgba(8, 10, 16, .6) 38%, rgba(8, 10, 16, 0) 66%); backdrop-filter: none; }
+.card.lobby .panel { width: min(420px, 100%); background: color-mix(in srgb, var(--mp-panel) 94%, transparent); }
+.share { display: grid; gap: 8px; padding: 12px; border-radius: 12px; background: rgba(0, 0, 0, .22); border: 1px solid var(--mp-line); }
+.codebox { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.codebox .label { color: var(--mp-faint); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.codebox .code { font: 800 32px/1 ui-monospace, Menlo, Consolas, monospace; letter-spacing: .16em; color: var(--mp-code); }
+.card .link { display: flex; gap: 6px; }
+.card .link input { flex: 1 1 auto; min-width: 0; font: 12px var(--mp-font); color: var(--mp-muted); background: var(--mp-bg); border: 1px solid var(--mp-line); border-radius: 9px; padding: 8px 10px; }
+.card .link button { white-space: nowrap; }
+.card .hint { font-size: 13px; color: var(--mp-faint); margin: 8px 2px 12px; }
+.listhead { display: flex; align-items: center; justify-content: space-between; margin: 4px 2px 6px; font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--mp-faint); }
+.count-pill { padding: 2px 8px; border-radius: 999px; background: var(--mp-row); color: var(--mp-muted); letter-spacing: 0; font-variant-numeric: tabular-nums; }
+ul.players, ol.standings { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+ul.players li, ol.standings li { display: flex; align-items: center; gap: 10px; min-height: 42px; padding: 7px 10px; border-radius: 10px; background: var(--mp-row); }
+ul.players li.me, ol.standings li.me { box-shadow: inset 0 0 0 1.5px var(--mp-accent); }
+ul.players li.empty { background: transparent; border: 1.5px dashed var(--mp-line); color: var(--mp-faint); }
+ul.players li.empty .dot { background: transparent; box-shadow: inset 0 0 0 2px var(--mp-line); }
+ul.players .name, ol.standings .name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+ul.players .tag { flex: none; font-size: 12px; color: var(--mp-faint); }
+ul.players .tag.ok { color: var(--mp-ok); }
+.name-wrap { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 6px; cursor: text; }
+.name-edit { flex: 1 1 auto; min-width: 0; font: 650 15px/1.2 var(--mp-font); color: var(--mp-fg); background: transparent; border: 1px solid transparent; border-radius: 7px; padding: 5px 6px; margin: -5px 0 -5px -6px; }
+.name-edit:hover { border-color: var(--mp-line); }
+.name-edit:focus { outline: none; border-color: var(--mp-accent); background: var(--mp-bg); }
+.name-wrap .pen { color: var(--mp-faint); font-size: 14px; }
+.name-edit:focus + .pen { visibility: hidden; }
+.card .tip { font-size: 12px; color: var(--mp-faint); margin: 6px 2px 0; }
+.waiting { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--mp-muted); font-weight: 600; }
+.pulse { width: 10px; height: 10px; border-radius: 50%; background: var(--mp-ok); animation: mp-pulse 1.4s ease-in-out infinite; flex: none; }
+@keyframes mp-pulse { 0%, 100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.1); } }
+
+/* results */
+ol.standings .place { width: 18px; flex: none; text-align: center; color: var(--mp-faint); font-variant-numeric: tabular-nums; font-weight: 700; }
+ol.standings .val { flex: none; font-variant-numeric: tabular-nums; }
+ol.standings li.top { background: linear-gradient(90deg, color-mix(in srgb, var(--mp-code) 22%, var(--mp-row)), var(--mp-row)); }
+ol.standings li.top .place, ol.standings li.top .val { color: var(--mp-code); }
+
+/* ---- worlds (kit 1.5.0): the world card over the live world, the pill, the reconnecting toast ---- */
+#party[data-mode="world"] .card.lobby { background: linear-gradient(90deg, rgba(8, 10, 16, .86) 0%, rgba(8, 10, 16, .55) 40%, rgba(8, 10, 16, 0) 70%); backdrop-filter: none; }
+.card.world .panel { width: min(400px, 100%); }
+.card .eyebrow .live-dot { margin-right: 7px; vertical-align: 1px; }
+.live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--mp-ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--mp-ok) 60%, transparent); animation: mp-live 1.8s ease-out infinite; }
+@keyframes mp-live { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--mp-ok) 55%, transparent); } 80%, 100% { box-shadow: 0 0 0 7px transparent; } }
+.card.world h2.title { margin-bottom: 6px; }
+.card .tagline { margin: 0 0 12px; color: var(--mp-muted); font-size: 15px; }
+.world-count { display: flex; align-items: center; gap: 9px; margin: 0 0 14px !important; padding: 9px 12px; border-radius: 10px; background: rgba(0, 0, 0, .22); border: 1px solid var(--mp-line); color: var(--mp-fg) !important; font-weight: 650; font-size: 14px; }
+.world-count .dot { width: 10px; height: 10px; }
+.world-count.live .dot { background: var(--mp-ok); }
+.world-count.empty .dot { background: var(--mp-code); }
+.world-count.full .dot { background: #ff8a65; }
+.world-count.wait .dot, .world-count.off .dot { background: var(--mp-faint); }
+.world-count.full { color: #ffcdb8 !important; }
+.field-label { display: block; margin: 0 2px 6px; font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; color: var(--mp-faint); }
+.namebox { display: flex; gap: 8px; align-items: stretch; }
+.name-field { flex: 1 1 auto; min-width: 0; font: 700 17px/1.2 var(--mp-font); color: var(--mp-fg); background: var(--mp-bg); border: 1px solid var(--mp-line); border-radius: 10px; padding: 11px 12px; }
+.name-field:focus { outline: none; border-color: var(--mp-accent); }
+.name-field:disabled { opacity: .6; }
+output.name-field { display: block; }
+button.dice { flex: none; padding: 0 13px; font-size: 20px; line-height: 1; border-radius: 10px; }
+.card.world .row { margin-top: 12px; }
+.card.world .hint { margin: 10px 2px 0; }
+.world-pill { position: absolute; top: 10px; left: 10px; z-index: 5; display: flex; align-items: center; gap: 7px; padding: 5px 11px 5px 9px; border-radius: 999px; background: rgba(13, 15, 21, .72); border: 1px solid var(--mp-line); color: var(--mp-fg); font-size: 13px; font-weight: 650; pointer-events: none; backdrop-filter: blur(4px); }
+.world-pill[hidden], .world-toast[hidden] { display: none; }
+.world-toast { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; align-items: center; gap: 9px; padding: 8px 15px; border-radius: 999px; background: rgba(13, 15, 21, .86); border: 1px solid var(--mp-line); color: var(--mp-fg); font-weight: 650; font-size: 14px; pointer-events: none; box-shadow: 0 8px 26px rgba(0, 0, 0, .4); }
+.spin { width: 13px; height: 13px; border-radius: 50%; border: 2px solid var(--mp-line); border-top-color: var(--mp-accent); animation: mp-spin .8s linear infinite; }
+@keyframes mp-spin { to { transform: rotate(360deg); } }
+
+/* Narrow screens: the standings become a strip above the game; the waiting room is centred. */
+@media (max-width: 760px) {
+  #party { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  #party[data-rail="off"] { grid-template-rows: minmax(0, 1fr); }
+  #rail { order: -1; flex-direction: row; align-items: center; gap: 8px; padding: 6px 8px; border-left: 0; border-bottom: 1px solid var(--mp-line); overflow-x: auto; overflow-y: hidden; }
+  #rail header, #status { display: none; }
+  #racers { display: flex; gap: 6px; }
+  #racers li { grid-template-columns: auto auto auto; white-space: nowrap; padding: 5px 8px; flex: 0 0 auto; }
+  #racers .name { max-width: 11ch; }
+  #racers .bar { display: none; }
+  #controls, #room-controls { margin: 0; flex-wrap: nowrap; border: 0; padding: 0; }
+  #controls button, #room-controls button { padding: 5px 10px; font-size: 13px; white-space: nowrap; }
+  .card.lobby { place-items: center; padding: 12px; }
+  #party[data-backdrop="1"] .card.lobby { background: rgba(8, 10, 16, .55); }
+  /* a world on a phone: the card sits low, so the world shows above it */
+  #party[data-mode="world"] .card.lobby { place-items: end center; background: linear-gradient(180deg, rgba(8, 10, 16, 0) 0%, rgba(8, 10, 16, .35) 35%, rgba(8, 10, 16, .82) 100%); padding: 12px 12px max(12px, env(safe-area-inset-bottom)); }
+}
+/* Small frames (a post's 480 x 480 card, a phone held sideways): everything tighter */
+@media (max-height: 600px), (max-width: 520px) {
+  .card { padding: 8px; }
+  .card .panel { padding: 14px 14px 12px; }
+  .card h2.title { font-size: 21px; margin-bottom: 8px; }
+  .codebox .code { font-size: 26px; }
+  .share { padding: 9px; gap: 6px; }
+  .card .hint, .card .tip, .card.lobby .muted { display: none; }
+  ul.players li, ol.standings li { padding: 5px 9px; }
+  .card .row { margin-top: 10px; }
+  button.big { padding: 11px 14px; font-size: 16px; }
+  .card .tagline { font-size: 13px; margin-bottom: 8px; }
+  .world-count { margin-bottom: 10px !important; padding: 7px 10px; font-size: 13px; }
+  .name-field { font-size: 16px; padding: 9px 10px; }
+  .card.world .field-label { display: none; }
+  .card.world .hint { display: block; font-size: 12px; margin-top: 8px; }
+}
+/* A post's 480 x 480 card: just the world, the count, the name and Enter */
+@media (max-height: 520px) {
+  #party[data-mode="world"] .card.lobby { place-items: center; background: rgba(8, 10, 16, .5); }
+  .card.world .panel { padding: 12px 14px 12px; }
+  .card.world .eyebrow { display: none; }
+  .card.world h2.title { font-size: 19px; margin: 0 0 4px; }
+  .card.world .tagline { display: none; }
+  .card.world .hint { display: none; }
+}
+/* Kit 1.6.0, watch then play: the LIVE badge everyone in a streamed room sees, the streamer's share sheet, and a
+   viewer's bar (research/watch/PLAN.md). Kit 1.6.2: top left under the game's menu button (top centre covered a round's
+   clock, play-test 1). */
+.live-badge { position: absolute; top: 58px; left: 10px; z-index: 7; display: flex; align-items: center; gap: 7px; padding: 5px 12px 5px 10px; border-radius: 999px;
+  background: rgba(13, 15, 21, .8); border: 1px solid rgba(255, 77, 94, .55); color: var(--mp-fg); font: 650 13px var(--mp-font); white-space: nowrap; max-width: calc(100% - 24px); overflow: hidden; text-overflow: ellipsis; backdrop-filter: blur(4px); cursor: pointer; }
+.live-badge[data-state="other"] { cursor: default; }
+.live-badge[hidden], .live-share[hidden], .watch-bar[hidden] { display: none; }
+.live-badge b, .watch-bar .live-tag b { color: #ff4d5e; letter-spacing: .08em; font-weight: 850; }
+.rec { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #ff4d5e; flex: 0 0 auto; animation: mp-rec 1.4s ease-in-out infinite; }
+@keyframes mp-rec { 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) { .rec { animation: none; } }
+.rec.off { background: #8a8f9c; animation: none; }
+.live-share { position: absolute; top: 96px; left: 10px; z-index: 8; width: min(380px, calc(100% - 20px)); padding: 12px 14px 14px; border-radius: calc(var(--mp-radius) + 4px);
+  background: var(--mp-panel); border: 1px solid var(--mp-line); box-shadow: 0 18px 50px rgba(0, 0, 0, .5); color: var(--mp-fg); }
+.live-share .live-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 16px; }
+.live-share .x { padding: 2px 10px; font-size: 18px; line-height: 1; }
+.live-share p { margin: 6px 0 10px; color: var(--mp-muted); font-size: 13px; }
+.live-share p.err { color: #ffb3bf; }
+.live-share .link { display: flex; gap: 6px; }
+.live-share .link input { flex: 1 1 auto; min-width: 0; font: 12px var(--mp-font); color: var(--mp-muted); background: var(--mp-bg); border: 1px solid var(--mp-line); border-radius: 9px; padding: 8px 10px; }
+.live-share .row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+.live-share .mic { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--mp-line); }
+.live-share .mic button { width: 100%; }
+.live-share .mic button.on { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+.live-share .mic p { margin: 6px 0 0; }
+.live-share a.button { display: inline-flex; align-items: center; text-decoration: none; padding: 8px 14px; border-radius: var(--mp-radius); font-weight: 700; background: var(--mp-accent); color: var(--mp-accent-fg); border: 1px solid var(--mp-accent); }
+/* one row where it fits; on a narrow screen the buttons (kit 1.6.3: Join, Start a room, Play solo) take a row of their own under the line */
+.watch-bar { position: absolute; left: 50%; bottom: max(12px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 7; display: flex; flex-wrap: wrap; align-items: center; gap: 7px 10px;
+  max-width: calc(100% - 24px); padding: 7px; border-radius: 23px; background: rgba(13, 15, 21, .82); border: 1px solid var(--mp-line); color: var(--mp-fg); font: 650 14px var(--mp-font);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .4); backdrop-filter: blur(4px); }
+.watch-bar .live-tag { display: flex; align-items: center; gap: 6px; flex: 0 0 auto; }
+.watch-bar > :first-child { margin-left: 6px; }
+.watch-bar .watch-line { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.watch-bar[data-waiting="true"] .watch-line { white-space: normal; overflow-wrap: anywhere; }
+.watch-bar .watch-acts { display: flex; flex: 1 0 auto; gap: 6px; margin-left: 0; }
+.watch-bar button { flex: 1 0 auto; padding: 7px 15px; border-radius: 999px; white-space: nowrap; }
+.watch-bar button:not(.primary) { background: rgba(255, 255, 255, .08); }
+.watch-bar button:not(.primary):not(:disabled):hover { background: rgba(255, 255, 255, .16); }
+/* a viewer asked to join: the world card over the live stream, which keeps playing behind it */
+#party[data-world="watch"] .card.lobby { background: rgba(8, 10, 16, .45); }
+@media (max-height: 520px), (max-width: 520px) {
+  .live-badge { font-size: 12px; padding: 4px 10px 4px 8px; }
+  /* left of the game's full-screen button (bottom right) */
+  .watch-bar { font-size: 13px; gap: 6px 8px; left: 10px; transform: none; max-width: calc(100% - 74px); }
+  .watch-bar button { padding: 7px 12px; }
+  .live-share { top: 90px; }
+}
+/* kit 1.6.5: the streamer link (keep the same link next time), and the note on a page opened from it */
+.live-share .keep { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--mp-line); }
+.live-share .keep p { margin: 0 0 8px; font-size: 12px; }
+.live-saved { position: absolute; top: 10px; left: 10px; z-index: 8; display: flex; align-items: center; gap: 8px; max-width: calc(100% - 20px); padding: 5px 6px 5px 12px;
+  border-radius: 999px; background: rgba(13, 15, 21, .85); border: 1px solid var(--mp-line); color: var(--mp-fg); font: 600 13px var(--mp-font); backdrop-filter: blur(4px); }
+.live-saved[hidden] { display: none; }
+.live-saved span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.live-saved .x { padding: 2px 9px; font-size: 16px; line-height: 1; }
+/* kit 1.6.6: a locked waiting room */
+.players li.empty.locked .name { color: var(--mp-fg); }
+.players li.empty.locked .dot { background: #8a8f9c; border-color: #8a8f9c; }
+/* kit 1.7.0: the streamer's voice. A viewer's sound button leads the bar's buttons; on, it reads as on. */
+.watch-bar button.sound { flex: 0 0 auto; }
+.watch-bar button.sound.on { background: #2b7a4b; border-color: #3ddc84; color: #fff; }
+
+/* the host's Remove beside a player (kit 1.7.2): a first press asks, a second removes */
+.players li .kick { margin-left: auto; min-height: 32px; padding: 4px 10px; font-size: 12px; }
+.players li .kick.asking { color: #fff; background: #c2413b; border-color: #c2413b; }
+/* Kit 1.7.3, phones (the creator, 2026-10-12, on the forge zombie game: "Review mobile, especially around the pre-game
+   lobby. Looks like some of the buttons run off the screen"). Everything a finger presses is at least 44 px each way
+   and on the screen at every phone size, upright and held sideways (568 x 320 up). The waiting room is two parts: the
+   room's facts (code, invite, players), which scroll inside the card when the screen is short, and its actions (Start
+   or the waiting line, then Play alone, Lock, Go live, Close), which always show: under the facts, or beside them on a
+   phone held sideways. The secondary actions are buttons, not underlined words. The stream panel holds to the screen
+   and, held sideways, puts the mic and Post / Stop beside the link. (A viewer's bar and the race rail are as before.) */
+.card button, .live-share button, .live-saved button { min-height: 44px; }
+.card button.quiet, .card a.quiet, .live-share button.quiet, .live-saved button.quiet { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 12px; border: 1px solid var(--mp-line); border-radius: 9px;
+  background: transparent; color: var(--mp-muted); font: inherit; font-size: 14px; font-weight: 650; text-decoration: none; text-align: center; line-height: 1.2; }
+.card button.quiet:hover, .card a.quiet:hover, .live-share button.quiet:hover { color: var(--mp-fg); border-color: var(--mp-muted); }
+.live-share button.quiet.x, .live-saved button.quiet.x { min-width: 44px; padding: 0 10px; border-color: transparent; }
+.card .link input, .live-share .link input { min-height: 44px; }
+ul.players, ol.standings { grid-template-columns: minmax(0, 1fr); }
+ul.players li { min-height: 48px; }
+.players li .kick { min-height: 44px; min-width: 44px; padding: 6px 12px; font-size: 13px; flex: none; }
+.name-edit { min-height: 44px; margin: -8px 0 -8px -6px; }
+.card.lobby .panel[data-view="lobby"] { display: flex; flex-direction: column; padding: 0; overflow: hidden; }
+.lobby-main { flex: 0 1 auto; min-height: 0; min-width: 0; overflow: hidden auto; overscroll-behavior: contain; padding: 20px 22px 4px; }
+.card .codebox { flex-wrap: wrap; }
+.card .link { flex-wrap: wrap; }
+.card .link input { flex: 1 1 150px; }
+.card .link button { flex: 1 0 auto; }
+.lobby-acts { flex: none; display: flex; flex-direction: column; gap: 8px; padding: 12px 22px 18px; }
+.lobby-acts .row { margin-top: 0; }
+.lobby-acts .row.foot { display: grid; grid-template-columns: repeat(auto-fit, minmax(118px, 1fr)); gap: 8px; margin-top: 0; }
+.lobby-acts .row.foot > * { width: 100%; }
+.lobby-acts .waiting { min-height: 44px; }
+.row.foot .live, #mp-alone { color: var(--mp-fg); }
+/* the LIVE badge: a 44 px target round the pill it draws (its transparent border is part of the button) */
+.live-badge { top: 52px; left: 4px; min-height: 44px; border: 6px solid transparent; background-clip: padding-box; background-color: rgba(13, 15, 21, .86);
+  box-shadow: inset 0 0 0 1px rgba(255, 77, 94, .55); backdrop-filter: none; max-width: calc(100% - 12px); }
+/* the stream panel: never past the screen; its × and every button a thumb's size */
+.live-share { max-height: calc(100% - 106px); overflow: auto; overscroll-behavior: contain; }
+.live-share .x { min-width: 44px; min-height: 44px; padding: 0 10px; }
+.live-share a.button { min-height: 44px; justify-content: center; }
+.live-share .row > * { flex: 1 1 auto; }
+.live-saved .x { min-width: 44px; min-height: 44px; }
+@media (max-height: 600px), (max-width: 520px) {
+  .lobby-main { padding: 14px 14px 2px; }
+  .lobby-acts { padding: 10px 14px 12px; gap: 6px; }
+  .lobby-acts .row.foot { gap: 6px; }
+}
+/* kit 1.7.4: voice chat in the waiting room. Under Studio's page a full-width button (Join voice chat, then In voice · mic
+   on); on the game's own link a line that opens Studio's page in this room. Both at least 44 px. */
+.voice-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; padding: 10px 14px; font-size: 16px; font-weight: 750;
+  color: var(--mp-fg); background: color-mix(in srgb, #3ddc84 16%, var(--mp-button)); border: 1.5px solid #3ddc84; border-radius: 12px; }
+.voice-cta.on { background: #1f9d55; border-color: #1f9d55; color: #fff; }
+.voice-hint { display: flex; align-items: center; min-height: 44px; padding: 6px 10px; border-radius: 9px; border: 1px dashed var(--mp-line);
+  color: var(--mp-muted); font-size: 13px; line-height: 1.3; text-decoration: none; overflow-wrap: anywhere; }
+.voice-hint:hover { color: var(--mp-fg); border-color: var(--mp-muted); }
+/* a phone held sideways (and any short, wide frame): the room's facts on the left, its actions on the right */
+@media (max-height: 540px) and (min-width: 560px) {
+  .card.lobby .panel[data-view="lobby"] { flex-direction: row; width: min(800px, 100%); }
+  .card.lobby .panel[data-view="lobby"] .lobby-main { flex: 1 1 56%; padding: 12px 10px 10px 16px; }
+  .card.lobby .panel[data-view="lobby"] .lobby-acts { flex: 1 1 44%; justify-content: center; padding: 12px 16px 12px 10px; overflow: auto; }
+  .card.lobby .panel[data-view="lobby"] .lobby-acts .row.foot { grid-template-columns: 1fr 1fr; }
+  .card.lobby .panel[data-view="lobby"] .lobby-acts .row.foot > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .live-share { top: 8px; left: auto; right: 8px; width: min(640px, calc(100% - 16px)); max-height: calc(100% - 16px); padding: 10px 14px 12px;
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 14px; align-content: start; }
+  .live-share > * { grid-column: 1; }
+  .live-share > .live-head { grid-column: 1 / -1; }
+  .live-share > .mic { grid-column: 2; grid-row: 2 / span 2; margin-top: 6px; padding-top: 0; border-top: 0; }
+  .live-share > .row { grid-column: 2; align-self: end; }
+  .live-share p { margin: 4px 0 8px; }
+  .live-share .keep { margin-top: 8px; }
+}

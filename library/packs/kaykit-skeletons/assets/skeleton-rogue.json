@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-rogue",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-rogue.glb",
+ "sha256": "3e0a13fef409596e72735573f5a28de08f04be57b707cc3787aa650d5a78387d",
+ "bytes": 127320,
+ "preview": "previews/skeleton-rogue.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a hooded skeleton rogue with a short cape, glowing eyes (a spare: a fast skirmisher or crossbow archer)",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "skirmisher",
+  "bodies",
+  "rogue"
+ ],
+ "use": {
+  "size": [
+   1.457,
+   1.731,
+   0.865
+  ],
+  "height": 1.731,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/forge-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 5278,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.625,
+     "triangles": 5278,
+     "joints": 22,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 38,
+    "hues": [
+     "#d6a778",
+     "#d8ab80",
+     "#deba96",
+     "#565c60",
+     "#dbb186",
+     "#e5c8ab",
+     "#675951",
+     "#6f7475"
+    ],
+    "saturation": 0.34,
+    "value": 0.542,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.477
+     },
+     {
+      "hue": "grey",
+      "share": 0.417
+     },
+     {
+      "hue": "pink",
+      "share": 0.076
+     }
+    ],
+    "grey": 0.417
+   },
+   "trianglesPerMetre": 8.74,
+   "texelsPerMetre": 65,
+   "texturedShare": 0.575,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Rogue.glb",
+  "sha256": "4003f2b77891bb56f7e0de7d555abcb497aebbcaee35b614211f16275f9ccae3",
+  "retrieved": "2026-10-09",
+  "modified": "held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm, lowerarm.l→LeftForeArm, wrist.l→LeftHand…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

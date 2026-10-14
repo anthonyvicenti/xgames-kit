@@ -1,0 +1,11 @@
+{
+  "id": "calm",
+  "label": "Calm",
+  "feel": "Photoreal light, sea and sky; the place is the point.",
+  "references": ["Dredge", { "name": "Webfishing", "year": 2024, "note": "fishing with friends" }],
+  "changesPlay": false,
+  "look": { "vista": { "preset": "golden-hour", "alternates": [ { "preset": "clear-morning", "why": "fresh morning light" } ] } },
+  "camera": { "default": "first" },
+  "runtimes": { "vista": { "state": { "exists": true, "tested": true, "open": true, "evidence": [ { "what": "a calm fishing example passes verify-vista", "date": "2026-10-12" } ] } } },
+  "state": { "exists": true, "tested": true, "open": true, "evidence": [ { "what": "a calm fishing example passes verify-vista", "date": "2026-10-12" } ] }
+}

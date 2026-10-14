@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-horizontal-overhang-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-horizontal-overhang-right.png",
+ "sha256": "ced77172d427cca19fa35a4f8aa787cb0c4f556e66dc031d63845a211e7b9b5a",
+ "bytes": 3332,
+ "preview": "previews/terrain-dirt-horizontal-overhang-right.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_horizontal_overhang_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt horizontal overhang right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "horizontal",
+  "overhang",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 67.5 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 17.0 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#cfd5da",
+     "#bbc4cb",
+     "#353541",
+     "#de7e4f",
+     "#ee9366",
+     "#c66a3e",
+     "#a6b2bb",
+     "#db7b4c"
+    ],
+    "saturation": 0.302,
+    "value": 0.625,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.676
+     },
+     {
+      "hue": "orange",
+      "share": 0.323
+     }
+    ],
+    "exact": 119,
+    "grey": 0.676
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.751
+   }
+  }
+ },
+ "source": {
+  "sha256": "f174ab1dd4d1d617970321f3d5f4bccc9675d97b4174e65e0b2c6abc0a2b03b5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

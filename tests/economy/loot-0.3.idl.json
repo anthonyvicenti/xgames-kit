@@ -1,0 +1,8285 @@
+{
+  "address": "GVzbAquLbqGxWzzjEAYvGyj1a3SHEcBr3gM9fseTg73o",
+  "metadata": {
+    "name": "loot",
+    "version": "0.3.2",
+    "spec": "0.1.0",
+    "description": "Economy for Anything: one program every coin of a project passes through"
+  },
+  "instructions": [
+    {
+      "name": "attach_token",
+      "discriminator": [
+        142,
+        89,
+        224,
+        67,
+        115,
+        211,
+        99,
+        110
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "docs": [
+            "The game's owner. Pays the 33 bytes of rent the record takes."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "launcher",
+          "docs": [
+            "The wallet that launched the token: the Meteora pool's creator, or the pump.fun coin's",
+            "shareholder that is not the partner. Its signature is the proof that the launcher",
+            "agrees this game is the token's game. May be the same key as `owner`."
+          ],
+          "signer": true
+        },
+        {
+          "name": "game",
+          "writable": true
+        },
+        {
+          "name": "platform"
+        },
+        {
+          "name": "venue_a",
+          "docs": [
+            "Owner, discriminator, length and address are checked in `venue::judge`."
+          ]
+        },
+        {
+          "name": "venue_b",
+          "docs": [
+            "Checked in `venue::judge`."
+          ]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "venue",
+          "type": {
+            "defined": {
+              "name": "Venue"
+            }
+          }
+        },
+        {
+          "name": "mint",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "award",
+      "docs": [
+        "While a hold runs, the authority gives the held collectible to `to`."
+      ],
+      "discriminator": [
+        180,
+        74,
+        165,
+        67,
+        179,
+        135,
+        27,
+        202
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "docs": [
+            "The game's authority."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "hold",
+          "writable": true
+        },
+        {
+          "name": "asset",
+          "writable": true,
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "to"
+        },
+        {
+          "name": "collection"
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "burn",
+      "docs": [
+        "The authority destroys `amount` of what a pool holds."
+      ],
+      "discriminator": [
+        116,
+        110,
+        29,
+        56,
+        107,
+        219,
+        42,
+        93
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "pool",
+          "writable": true
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "buy_item",
+      "docs": [
+        "Buy an item from the shop. Opens an order."
+      ],
+      "discriminator": [
+        80,
+        82,
+        193,
+        201,
+        216,
+        27,
+        70,
+        184
+      ],
+      "accounts": [
+        {
+          "name": "item",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  116,
+                  101,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "checkout.game",
+                "account": "Checkout"
+              },
+              {
+                "kind": "arg",
+                "path": "item_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "checkout",
+          "accounts": [
+            {
+              "name": "player",
+              "writable": true,
+              "signer": true
+            },
+            {
+              "name": "game",
+              "docs": [
+                "Only read: a purchase writes nothing every other purchase of the game also writes."
+              ]
+            },
+            {
+              "name": "platform"
+            },
+            {
+              "name": "order",
+              "docs": [
+                "Any `nonce` the player has no open order at in this game."
+              ],
+              "writable": true,
+              "pda": {
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "value": [
+                      111,
+                      114,
+                      100,
+                      101,
+                      114
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "game"
+                  },
+                  {
+                    "kind": "account",
+                    "path": "player"
+                  },
+                  {
+                    "kind": "arg",
+                    "path": "nonce"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "escrow",
+              "writable": true,
+              "pda": {
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "value": [
+                      101,
+                      115,
+                      99,
+                      114,
+                      111,
+                      119
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "order"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "mint"
+            },
+            {
+              "name": "player_token",
+              "writable": true
+            },
+            {
+              "name": "vault",
+              "docs": [
+                "nowhere else. Created on the first sale in that mint; that first player pays its rent."
+              ],
+              "writable": true
+            },
+            {
+              "name": "token_program",
+              "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+            },
+            {
+              "name": "token_2022_program",
+              "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+            },
+            {
+              "name": "associated_token_program",
+              "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "item_id",
+          "type": "u32"
+        },
+        {
+          "name": "nonce",
+          "type": "u64"
+        },
+        {
+          "name": "max_price",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "buy_tickets",
+      "docs": [
+        "A player buys lottery tickets."
+      ],
+      "discriminator": [
+        48,
+        16,
+        122,
+        137,
+        24,
+        214,
+        198,
+        58
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "lottery"
+          ]
+        },
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "player_token",
+          "writable": true
+        },
+        {
+          "name": "pot",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "mint",
+          "docs": [
+            "tickets are burned (checked below; the token program checks the rest)."
+          ],
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "count",
+          "type": "u64"
+        },
+        {
+          "name": "max_price",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "call_off",
+      "docs": [
+        "Anyone calls off a contest whose result is overdue (its authority, at any time)."
+      ],
+      "discriminator": [
+        92,
+        176,
+        48,
+        107,
+        235,
+        52,
+        246,
+        81
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "contest",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "callback_lottery",
+      "docs": [
+        "The oracle's answer: picks the winning ticket."
+      ],
+      "discriminator": [
+        177,
+        95,
+        170,
+        205,
+        202,
+        136,
+        78,
+        28
+      ],
+      "accounts": [
+        {
+          "name": "vrf_program_identity",
+          "docs": [
+            "Scoped VRF identity PDA, bound to this program. Its presence as a signer proves",
+            "the callback was issued by the VRF program for this program."
+          ],
+          "signer": true
+        },
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "ticket"
+        }
+      ],
+      "args": [
+        {
+          "name": "randomness",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "callback_random",
+      "docs": [
+        "The oracle's answer, written as a receipt."
+      ],
+      "discriminator": [
+        64,
+        93,
+        248,
+        223,
+        247,
+        90,
+        38,
+        224
+      ],
+      "accounts": [
+        {
+          "name": "vrf_program_identity",
+          "docs": [
+            "Scoped VRF identity PDA, bound to this program. Its presence as a signer proves",
+            "the callback was issued by the VRF program for this program."
+          ],
+          "signer": true
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "reference"
+        }
+      ],
+      "args": [
+        {
+          "name": "randomness",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "callback_roll",
+      "docs": [
+        "The oracle's answer: picks the box order's outcome."
+      ],
+      "discriminator": [
+        104,
+        43,
+        141,
+        38,
+        167,
+        29,
+        52,
+        209
+      ],
+      "accounts": [
+        {
+          "name": "vrf_program_identity",
+          "docs": [
+            "Scoped VRF identity PDA, bound to this program. Its presence as a signer proves",
+            "the callback was issued by the VRF program for this program."
+          ],
+          "signer": true
+        },
+        {
+          "name": "order",
+          "writable": true
+        },
+        {
+          "name": "loot_box"
+        },
+        {
+          "name": "ticket"
+        }
+      ],
+      "args": [
+        {
+          "name": "randomness",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "claim",
+      "docs": [
+        "Anyone pays a decided contest's entry to its player."
+      ],
+      "discriminator": [
+        62,
+        198,
+        214,
+        193,
+        213,
+        159,
+        108,
+        210
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "contest",
+          "writable": true,
+          "relations": [
+            "entry"
+          ]
+        },
+        {
+          "name": "entry",
+          "writable": true
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "entry"
+          ]
+        },
+        {
+          "name": "pot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "contest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_contest",
+      "docs": [
+        "Anyone closes a contest whose entries are all claimed."
+      ],
+      "discriminator": [
+        139,
+        238,
+        103,
+        40,
+        217,
+        73,
+        90,
+        72
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "contest",
+          "writable": true
+        },
+        {
+          "name": "opener",
+          "writable": true,
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "pot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "contest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_pool",
+      "discriminator": [
+        140,
+        189,
+        209,
+        23,
+        239,
+        62,
+        239,
+        11
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "pool",
+          "writable": true
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "collect_fees",
+      "discriminator": [
+        164,
+        152,
+        207,
+        99,
+        30,
+        186,
+        19,
+        182
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "platform"
+          ]
+        },
+        {
+          "name": "platform",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "craft",
+      "docs": [
+        "A player crafts a recipe, at the version they saw, `times` over."
+      ],
+      "discriminator": [
+        161,
+        233,
+        177,
+        214,
+        243,
+        109,
+        161,
+        224
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "docs": [
+            "Owns what is handed in, pays the rent of what is made and gets the rent of what is burned."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "recipe"
+          ]
+        },
+        {
+          "name": "recipe"
+        },
+        {
+          "name": "collection",
+          "writable": true
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "version",
+          "type": "u32"
+        },
+        {
+          "name": "times",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "create_game",
+      "discriminator": [
+        124,
+        69,
+        75,
+        66,
+        184,
+        220,
+        72,
+        206
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  103,
+                  97,
+                  109,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "collection"
+              }
+            ]
+          }
+        },
+        {
+          "name": "fees",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  101,
+                  101,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              }
+            ]
+          }
+        },
+        {
+          "name": "collection"
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "treasury"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "authority",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "decide",
+      "docs": [
+        "The authority names the side of a contest that won."
+      ],
+      "discriminator": [
+        123,
+        125,
+        184,
+        125,
+        249,
+        43,
+        113,
+        15
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game",
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "contest",
+          "writable": true
+        },
+        {
+          "name": "mint",
+          "writable": true,
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "pot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "contest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "deposit",
+      "docs": [
+        "Put tokens into one of the game's pools."
+      ],
+      "discriminator": [
+        242,
+        35,
+        198,
+        137,
+        82,
+        225,
+        242,
+        182
+      ],
+      "accounts": [
+        {
+          "name": "depositor",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "pool",
+          "writable": true
+        },
+        {
+          "name": "from",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "draw_lottery",
+      "docs": [
+        "Anyone asks the oracle for a lottery's draw once it is due."
+      ],
+      "discriminator": [
+        17,
+        188,
+        124,
+        77,
+        90,
+        34,
+        97,
+        19
+      ],
+      "accounts": [
+        {
+          "name": "payer",
+          "docs": [
+            "Pays the oracle."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "oracle_queue",
+          "docs": [
+            "whoever MagicBlock lets serve it could answer."
+          ],
+          "writable": true,
+          "address": "Cuj97ggrhhidhbu39TijNVqE74xvKJ69gDervRUXAxGh"
+        },
+        {
+          "name": "program_identity",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  100,
+                  101,
+                  110,
+                  116,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vrf_program",
+          "address": "Vrf1RNUjXmQGjmQrQLvJHs9SNkvDJEsRVFPkfSQUwGz"
+        },
+        {
+          "name": "slot_hashes",
+          "address": "SysvarS1otHashes111111111111111111111111111"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "enter",
+      "docs": [
+        "A player puts `amount` on one side of a contest."
+      ],
+      "discriminator": [
+        139,
+        49,
+        209,
+        114,
+        88,
+        91,
+        77,
+        134
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "contest"
+          ]
+        },
+        {
+          "name": "contest",
+          "writable": true
+        },
+        {
+          "name": "entry",
+          "writable": true
+        },
+        {
+          "name": "pot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "contest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "player_token",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "side",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "terms",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "hold",
+      "docs": [
+        "A player hands a collectible to the game for `seconds`."
+      ],
+      "discriminator": [
+        83,
+        159,
+        208,
+        118,
+        203,
+        182,
+        239,
+        221
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "hold",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  104,
+                  111,
+                  108,
+                  100
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "asset"
+              }
+            ]
+          }
+        },
+        {
+          "name": "asset",
+          "writable": true
+        },
+        {
+          "name": "collection"
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "seconds",
+          "type": "i64"
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "init_platform",
+      "discriminator": [
+        29,
+        22,
+        210,
+        225,
+        219,
+        114,
+        193,
+        169
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "platform",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  108,
+                  97,
+                  116,
+                  102,
+                  111,
+                  114,
+                  109
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "program_data"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "fees",
+          "type": {
+            "defined": {
+              "name": "Fees"
+            }
+          }
+        },
+        {
+          "name": "partner",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "issue",
+      "docs": [
+        "The authority mints tokens of a mint the game controls."
+      ],
+      "discriminator": [
+        190,
+        1,
+        98,
+        214,
+        81,
+        99,
+        222,
+        247
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "make",
+      "docs": [
+        "The authority mints a collectible without a sale."
+      ],
+      "discriminator": [
+        138,
+        227,
+        232,
+        77,
+        223,
+        166,
+        96,
+        197
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "docs": [
+            "Pays the new asset's rent."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game",
+          "relations": [
+            "item"
+          ]
+        },
+        {
+          "name": "item",
+          "writable": true
+        },
+        {
+          "name": "collection",
+          "writable": true
+        },
+        {
+          "name": "asset",
+          "docs": [
+            "A new key the caller made for this asset."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "open_box",
+      "docs": [
+        "Buy a loot box and ask the oracle for its roll. Opens an order."
+      ],
+      "discriminator": [
+        225,
+        220,
+        10,
+        104,
+        173,
+        151,
+        214,
+        199
+      ],
+      "accounts": [
+        {
+          "name": "loot_box",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  111,
+                  120
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "checkout.game",
+                "account": "Checkout"
+              },
+              {
+                "kind": "arg",
+                "path": "box_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "checkout",
+          "accounts": [
+            {
+              "name": "player",
+              "writable": true,
+              "signer": true
+            },
+            {
+              "name": "game",
+              "docs": [
+                "Only read: a purchase writes nothing every other purchase of the game also writes."
+              ]
+            },
+            {
+              "name": "platform"
+            },
+            {
+              "name": "order",
+              "docs": [
+                "Any `nonce` the player has no open order at in this game."
+              ],
+              "writable": true,
+              "pda": {
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "value": [
+                      111,
+                      114,
+                      100,
+                      101,
+                      114
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "game"
+                  },
+                  {
+                    "kind": "account",
+                    "path": "player"
+                  },
+                  {
+                    "kind": "arg",
+                    "path": "nonce"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "escrow",
+              "writable": true,
+              "pda": {
+                "seeds": [
+                  {
+                    "kind": "const",
+                    "value": [
+                      101,
+                      115,
+                      99,
+                      114,
+                      111,
+                      119
+                    ]
+                  },
+                  {
+                    "kind": "account",
+                    "path": "order"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "mint"
+            },
+            {
+              "name": "player_token",
+              "writable": true
+            },
+            {
+              "name": "vault",
+              "docs": [
+                "nowhere else. Created on the first sale in that mint; that first player pays its rent."
+              ],
+              "writable": true
+            },
+            {
+              "name": "token_program",
+              "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+            },
+            {
+              "name": "token_2022_program",
+              "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+            },
+            {
+              "name": "associated_token_program",
+              "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        },
+        {
+          "name": "oracle_queue",
+          "docs": [
+            "whoever MagicBlock lets serve it could answer."
+          ],
+          "writable": true,
+          "address": "Cuj97ggrhhidhbu39TijNVqE74xvKJ69gDervRUXAxGh"
+        },
+        {
+          "name": "program_identity",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  100,
+                  101,
+                  110,
+                  116,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vrf_program",
+          "address": "Vrf1RNUjXmQGjmQrQLvJHs9SNkvDJEsRVFPkfSQUwGz"
+        },
+        {
+          "name": "slot_hashes",
+          "address": "SysvarS1otHashes111111111111111111111111111"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "box_id",
+          "type": "u32"
+        },
+        {
+          "name": "nonce",
+          "type": "u64"
+        },
+        {
+          "name": "client_seed",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        },
+        {
+          "name": "max_price",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "open_contest",
+      "docs": [
+        "The authority opens a contest: sides to back, and a pot."
+      ],
+      "discriminator": [
+        54,
+        94,
+        57,
+        118,
+        71,
+        166,
+        26,
+        165
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "contest",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  99,
+                  111,
+                  110,
+                  116,
+                  101,
+                  115,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "pot",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "contest"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ContestArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "open_pool",
+      "discriminator": [
+        96,
+        215,
+        110,
+        61,
+        1,
+        246,
+        205,
+        228
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "pool",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "open_stake",
+      "docs": [
+        "Open a stake: players lock a token and share what flows into a rewards pool."
+      ],
+      "discriminator": [
+        136,
+        215,
+        163,
+        130,
+        234,
+        194,
+        229,
+        229
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "stake",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  97,
+                  107,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "rewards_mint"
+        },
+        {
+          "name": "staked_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  97,
+                  107,
+                  101,
+                  100
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewards_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  119,
+                  97,
+                  114,
+                  100,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u32"
+        },
+        {
+          "name": "rewards_pool",
+          "type": "u8"
+        },
+        {
+          "name": "lock",
+          "type": "i64"
+        }
+      ]
+    },
+    {
+      "name": "pay",
+      "docs": [
+        "Pay `amount`, split at once into pools, burn and the game's treasury."
+      ],
+      "discriminator": [
+        119,
+        18,
+        216,
+        65,
+        192,
+        117,
+        122,
+        220
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "player_token",
+          "docs": [
+            "The token program checks that the player may spend it."
+          ],
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "shares",
+          "type": {
+            "vec": {
+              "defined": {
+                "name": "Share"
+              }
+            }
+          }
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "pay_lottery",
+      "docs": [
+        "Anyone pays one place of a drawn lottery. The last place paid opens the next round."
+      ],
+      "discriminator": [
+        6,
+        175,
+        47,
+        106,
+        152,
+        221,
+        34,
+        110
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "relations": [
+            "lottery"
+          ]
+        },
+        {
+          "name": "lottery",
+          "writable": true
+        },
+        {
+          "name": "first_place",
+          "docs": [
+            "round ends, whichever place is paid last."
+          ],
+          "writable": true
+        },
+        {
+          "name": "pot",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": [
+        {
+          "name": "place",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "payout",
+      "docs": [
+        "The authority pays `amount` from a pool to any token account."
+      ],
+      "discriminator": [
+        149,
+        140,
+        194,
+        236,
+        174,
+        189,
+        6,
+        239
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "pool",
+          "writable": true
+        },
+        {
+          "name": "to",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "index",
+          "type": "u8"
+        },
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "recheck_token",
+      "discriminator": [
+        196,
+        211,
+        144,
+        204,
+        205,
+        241,
+        179,
+        47
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "writable": true
+        },
+        {
+          "name": "platform"
+        },
+        {
+          "name": "venue_a"
+        },
+        {
+          "name": "venue_b"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "refund",
+      "docs": [
+        "Give an order's payment back to its player."
+      ],
+      "discriminator": [
+        2,
+        96,
+        183,
+        251,
+        63,
+        208,
+        46,
+        46
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "docs": [
+            "Pays for the player's token account if they closed it."
+          ],
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "order",
+          "writable": true
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "order"
+          ]
+        },
+        {
+          "name": "game",
+          "relations": [
+            "order"
+          ]
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "order"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "player_token",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "associated_token_program",
+          "address": "ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "roll",
+      "docs": [
+        "The authority asks the oracle for a random number, labelled `reference`."
+      ],
+      "discriminator": [
+        143,
+        143,
+        93,
+        91,
+        13,
+        254,
+        64,
+        93
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "docs": [
+            "Pays the platform's fee and the oracle's."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "oracle_queue",
+          "docs": [
+            "whoever MagicBlock lets serve it could answer."
+          ],
+          "writable": true,
+          "address": "Cuj97ggrhhidhbu39TijNVqE74xvKJ69gDervRUXAxGh"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        },
+        {
+          "name": "program_identity",
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  100,
+                  101,
+                  110,
+                  116,
+                  105,
+                  116,
+                  121
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "vrf_program",
+          "address": "Vrf1RNUjXmQGjmQrQLvJHs9SNkvDJEsRVFPkfSQUwGz"
+        },
+        {
+          "name": "slot_hashes",
+          "address": "SysvarS1otHashes111111111111111111111111111"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "run_schedule",
+      "docs": [
+        "Anyone runs a schedule that is due."
+      ],
+      "discriminator": [
+        179,
+        112,
+        243,
+        195,
+        32,
+        69,
+        224,
+        206
+      ],
+      "accounts": [
+        {
+          "name": "game",
+          "relations": [
+            "schedule"
+          ]
+        },
+        {
+          "name": "schedule",
+          "writable": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "set",
+      "docs": [
+        "The authority rewrites a collectible's attributes."
+      ],
+      "discriminator": [
+        198,
+        51,
+        53,
+        241,
+        116,
+        29,
+        126,
+        194
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "docs": [
+            "Pays for a longer attribute list, or gets the rent of a burned asset."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "asset",
+          "writable": true
+        },
+        {
+          "name": "collection",
+          "writable": true
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "attributes",
+          "type": {
+            "vec": {
+              "defined": {
+                "name": "Attribute"
+              }
+            }
+          }
+        },
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_platform",
+      "discriminator": [
+        14,
+        33,
+        2,
+        169,
+        153,
+        155,
+        180,
+        248
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "platform"
+          ]
+        },
+        {
+          "name": "platform",
+          "writable": true
+        },
+        {
+          "name": "next_admin",
+          "docs": [
+            "Who signs for the platform from now on: the current admin to keep it. It signs, so a",
+            "mistyped key can never take the platform over."
+          ],
+          "signer": true
+        }
+      ],
+      "args": [
+        {
+          "name": "fees",
+          "type": {
+            "defined": {
+              "name": "Fees"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "set_suspended",
+      "discriminator": [
+        240,
+        182,
+        200,
+        60,
+        209,
+        54,
+        180,
+        240
+      ],
+      "accounts": [
+        {
+          "name": "admin",
+          "signer": true,
+          "relations": [
+            "platform"
+          ]
+        },
+        {
+          "name": "platform"
+        },
+        {
+          "name": "game",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "suspended",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "settle",
+      "docs": [
+        "Deliver an order's item and split its payment."
+      ],
+      "discriminator": [
+        175,
+        42,
+        185,
+        87,
+        144,
+        131,
+        102,
+        212
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "signer": true
+        },
+        {
+          "name": "order",
+          "writable": true
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "order"
+          ]
+        },
+        {
+          "name": "game",
+          "relations": [
+            "order",
+            "item"
+          ]
+        },
+        {
+          "name": "item",
+          "docs": [
+            "The item the order gives."
+          ]
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "order"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "collection",
+          "writable": true
+        },
+        {
+          "name": "asset",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  97,
+                  115,
+                  115,
+                  101,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "order"
+              },
+              {
+                "kind": "account",
+                "path": "order.requested_slot",
+                "account": "Order"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fees",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  101,
+                  101,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "settle_prize",
+      "docs": [
+        "Carry out a box order whose roll was not an item: a prize from a pool, a burn, nothing."
+      ],
+      "discriminator": [
+        88,
+        60,
+        162,
+        50,
+        219,
+        244,
+        96,
+        201
+      ],
+      "accounts": [
+        {
+          "name": "order",
+          "writable": true
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "order"
+          ]
+        },
+        {
+          "name": "game",
+          "relations": [
+            "order"
+          ]
+        },
+        {
+          "name": "escrow",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  101,
+                  115,
+                  99,
+                  114,
+                  111,
+                  119
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "order"
+              }
+            ]
+          }
+        },
+        {
+          "name": "mint",
+          "writable": true
+        },
+        {
+          "name": "vault",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "writable": true
+        },
+        {
+          "name": "prize_pool",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "prize_to",
+          "writable": true,
+          "optional": true
+        },
+        {
+          "name": "prize_mint",
+          "optional": true
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fees",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  102,
+                  101,
+                  101,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "stake",
+      "docs": [
+        "A player stakes, and is paid the rewards owed so far."
+      ],
+      "discriminator": [
+        206,
+        176,
+        202,
+        18,
+        200,
+        209,
+        179,
+        108
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "stake"
+          ]
+        },
+        {
+          "name": "stake",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  115,
+                  105,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "staked_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  97,
+                  107,
+                  101,
+                  100
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewards_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  119,
+                  97,
+                  114,
+                  100,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewards_pool",
+          "writable": true
+        },
+        {
+          "name": "player_tokens",
+          "writable": true
+        },
+        {
+          "name": "player_rewards",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "rewards_mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "take_back",
+      "docs": [
+        "Anyone sends a collectible back to its player once its hold is over."
+      ],
+      "discriminator": [
+        99,
+        255,
+        183,
+        133,
+        153,
+        30,
+        12,
+        32
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "hold",
+          "writable": true
+        },
+        {
+          "name": "asset",
+          "writable": true,
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "player",
+          "writable": true,
+          "relations": [
+            "hold"
+          ]
+        },
+        {
+          "name": "collection"
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "unmake",
+      "docs": [
+        "The authority burns a burnable collectible."
+      ],
+      "discriminator": [
+        56,
+        40,
+        134,
+        46,
+        168,
+        248,
+        120,
+        254
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "docs": [
+            "Pays for a longer attribute list, or gets the rent of a burned asset."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "asset",
+          "writable": true
+        },
+        {
+          "name": "collection",
+          "writable": true
+        },
+        {
+          "name": "mpl_core_program",
+          "address": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "reference",
+          "type": {
+            "array": [
+              "u8",
+              32
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "unstake",
+      "docs": [
+        "A player unstakes, and is paid the rewards owed so far. Zero only collects rewards.",
+        "`forfeit` gives up the rewards owed instead, for when they cannot be paid."
+      ],
+      "discriminator": [
+        90,
+        95,
+        107,
+        42,
+        205,
+        124,
+        50,
+        225
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game",
+          "relations": [
+            "stake"
+          ]
+        },
+        {
+          "name": "stake",
+          "writable": true
+        },
+        {
+          "name": "position",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  111,
+                  115,
+                  105,
+                  116,
+                  105,
+                  111,
+                  110
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              },
+              {
+                "kind": "account",
+                "path": "player"
+              }
+            ]
+          }
+        },
+        {
+          "name": "staked_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  116,
+                  97,
+                  107,
+                  101,
+                  100
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewards_vault",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  119,
+                  97,
+                  114,
+                  100,
+                  115
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "stake"
+              }
+            ]
+          }
+        },
+        {
+          "name": "rewards_pool",
+          "writable": true
+        },
+        {
+          "name": "player_tokens",
+          "writable": true
+        },
+        {
+          "name": "player_rewards",
+          "writable": true
+        },
+        {
+          "name": "mint"
+        },
+        {
+          "name": "rewards_mint"
+        },
+        {
+          "name": "token_program",
+          "address": "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
+        },
+        {
+          "name": "token_2022_program",
+          "address": "TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb"
+        },
+        {
+          "name": "fee",
+          "accounts": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "fees",
+              "writable": true
+            },
+            {
+              "name": "system_program",
+              "address": "11111111111111111111111111111111"
+            }
+          ]
+        }
+      ],
+      "args": [
+        {
+          "name": "amount",
+          "type": "u64"
+        },
+        {
+          "name": "forfeit",
+          "type": "bool"
+        }
+      ]
+    },
+    {
+      "name": "update_game",
+      "discriminator": [
+        159,
+        61,
+        132,
+        131,
+        3,
+        234,
+        209,
+        220
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "docs": [
+            "Gets back the rent of an official token's record once the token was cleared."
+          ],
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game",
+          "writable": true
+        },
+        {
+          "name": "treasury",
+          "docs": [
+            "account of the game's mint (checked below)."
+          ]
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        },
+        {
+          "name": "new_owner",
+          "docs": [
+            "The owner from now on, when it changes. It signs, so a mistyped key can never take the",
+            "game over."
+          ],
+          "signer": true,
+          "optional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "update",
+          "type": {
+            "defined": {
+              "name": "GameUpdate"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upsert_box",
+      "discriminator": [
+        19,
+        118,
+        81,
+        232,
+        2,
+        212,
+        86,
+        66
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "loot_box",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  98,
+                  111,
+                  120
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "box_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "box_id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "BoxArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upsert_item",
+      "discriminator": [
+        162,
+        170,
+        209,
+        51,
+        242,
+        20,
+        147,
+        84
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "item",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  105,
+                  116,
+                  101,
+                  109
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "item_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "item_id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ItemArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upsert_lottery",
+      "docs": [
+        "Write a lottery: tickets into a pot, a draw on a timer."
+      ],
+      "discriminator": [
+        80,
+        72,
+        253,
+        39,
+        70,
+        179,
+        125,
+        9
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "lottery",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  108,
+                  111,
+                  116,
+                  116,
+                  101,
+                  114,
+                  121
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "LotteryArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upsert_recipe",
+      "docs": [
+        "Write a recipe: collectibles and tokens in, collectibles and tokens out."
+      ],
+      "discriminator": [
+        241,
+        40,
+        22,
+        234,
+        190,
+        226,
+        128,
+        91
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "recipe",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  114,
+                  101,
+                  99,
+                  105,
+                  112,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "RecipeArgs"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "upsert_schedule",
+      "docs": [
+        "Write a schedule: mint, burn or move on a timer."
+      ],
+      "discriminator": [
+        48,
+        45,
+        188,
+        74,
+        1,
+        74,
+        50,
+        122
+      ],
+      "accounts": [
+        {
+          "name": "owner",
+          "writable": true,
+          "signer": true,
+          "relations": [
+            "game"
+          ]
+        },
+        {
+          "name": "game"
+        },
+        {
+          "name": "schedule",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  115,
+                  99,
+                  104,
+                  101,
+                  100,
+                  117,
+                  108,
+                  101
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "game"
+              },
+              {
+                "kind": "arg",
+                "path": "id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "id",
+          "type": "u32"
+        },
+        {
+          "name": "args",
+          "type": {
+            "defined": {
+              "name": "ScheduleArgs"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Contest",
+      "discriminator": [
+        13
+      ]
+    },
+    {
+      "name": "Entry",
+      "discriminator": [
+        14
+      ]
+    },
+    {
+      "name": "Game",
+      "discriminator": [
+        2
+      ]
+    },
+    {
+      "name": "Hold",
+      "discriminator": [
+        12
+      ]
+    },
+    {
+      "name": "Item",
+      "discriminator": [
+        3
+      ]
+    },
+    {
+      "name": "LootBox",
+      "discriminator": [
+        4
+      ]
+    },
+    {
+      "name": "Lottery",
+      "discriminator": [
+        8
+      ]
+    },
+    {
+      "name": "Order",
+      "discriminator": [
+        5
+      ]
+    },
+    {
+      "name": "Platform",
+      "discriminator": [
+        1
+      ]
+    },
+    {
+      "name": "Recipe",
+      "discriminator": [
+        11
+      ]
+    },
+    {
+      "name": "Schedule",
+      "discriminator": [
+        6
+      ]
+    },
+    {
+      "name": "Stake",
+      "discriminator": [
+        9
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "AttributesSet",
+      "discriminator": [
+        152,
+        104,
+        86,
+        110,
+        13,
+        115,
+        157,
+        163
+      ]
+    },
+    {
+      "name": "Awarded",
+      "discriminator": [
+        255,
+        24,
+        226,
+        21,
+        157,
+        74,
+        108,
+        62
+      ]
+    },
+    {
+      "name": "Burned",
+      "discriminator": [
+        207,
+        37,
+        251,
+        154,
+        239,
+        229,
+        14,
+        67
+      ]
+    },
+    {
+      "name": "CalledOff",
+      "discriminator": [
+        244,
+        32,
+        35,
+        93,
+        211,
+        114,
+        75,
+        209
+      ]
+    },
+    {
+      "name": "Claimed",
+      "discriminator": [
+        217,
+        192,
+        123,
+        72,
+        108,
+        150,
+        248,
+        33
+      ]
+    },
+    {
+      "name": "Crafted",
+      "discriminator": [
+        169,
+        195,
+        232,
+        146,
+        229,
+        14,
+        57,
+        149
+      ]
+    },
+    {
+      "name": "Decided",
+      "discriminator": [
+        137,
+        200,
+        62,
+        254,
+        141,
+        53,
+        205,
+        172
+      ]
+    },
+    {
+      "name": "Deposited",
+      "discriminator": [
+        111,
+        141,
+        26,
+        45,
+        161,
+        35,
+        100,
+        57
+      ]
+    },
+    {
+      "name": "Entered",
+      "discriminator": [
+        247,
+        164,
+        21,
+        222,
+        219,
+        178,
+        237,
+        160
+      ]
+    },
+    {
+      "name": "FeeChanged",
+      "discriminator": [
+        103,
+        252,
+        132,
+        250,
+        1,
+        49,
+        116,
+        145
+      ]
+    },
+    {
+      "name": "GameSuspended",
+      "discriminator": [
+        84,
+        155,
+        95,
+        35,
+        245,
+        14,
+        207,
+        199
+      ]
+    },
+    {
+      "name": "Held",
+      "discriminator": [
+        46,
+        8,
+        96,
+        23,
+        131,
+        53,
+        182,
+        98
+      ]
+    },
+    {
+      "name": "Issued",
+      "discriminator": [
+        13,
+        203,
+        75,
+        37,
+        35,
+        96,
+        248,
+        250
+      ]
+    },
+    {
+      "name": "LotteryDrawn",
+      "discriminator": [
+        38,
+        250,
+        156,
+        196,
+        171,
+        79,
+        154,
+        208
+      ]
+    },
+    {
+      "name": "LotteryPaid",
+      "discriminator": [
+        187,
+        208,
+        228,
+        188,
+        26,
+        6,
+        174,
+        127
+      ]
+    },
+    {
+      "name": "Made",
+      "discriminator": [
+        240,
+        91,
+        7,
+        65,
+        219,
+        115,
+        50,
+        224
+      ]
+    },
+    {
+      "name": "OrderFailed",
+      "discriminator": [
+        60,
+        179,
+        157,
+        0,
+        164,
+        131,
+        38,
+        236
+      ]
+    },
+    {
+      "name": "OrderRefunded",
+      "discriminator": [
+        120,
+        155,
+        10,
+        169,
+        7,
+        98,
+        202,
+        187
+      ]
+    },
+    {
+      "name": "OrderRolled",
+      "discriminator": [
+        91,
+        246,
+        84,
+        1,
+        21,
+        64,
+        240,
+        229
+      ]
+    },
+    {
+      "name": "OrderSettled",
+      "discriminator": [
+        32,
+        21,
+        123,
+        33,
+        68,
+        59,
+        136,
+        131
+      ]
+    },
+    {
+      "name": "Paid",
+      "discriminator": [
+        240,
+        193,
+        17,
+        238,
+        238,
+        210,
+        129,
+        235
+      ]
+    },
+    {
+      "name": "PaidOut",
+      "discriminator": [
+        6,
+        137,
+        209,
+        225,
+        252,
+        53,
+        249,
+        252
+      ]
+    },
+    {
+      "name": "Returned",
+      "discriminator": [
+        10,
+        240,
+        87,
+        178,
+        40,
+        21,
+        158,
+        220
+      ]
+    },
+    {
+      "name": "Rolled",
+      "discriminator": [
+        243,
+        213,
+        137,
+        215,
+        92,
+        162,
+        11,
+        192
+      ]
+    },
+    {
+      "name": "ScheduleRan",
+      "discriminator": [
+        145,
+        158,
+        228,
+        183,
+        251,
+        229,
+        1,
+        242
+      ]
+    },
+    {
+      "name": "Staked",
+      "discriminator": [
+        11,
+        146,
+        45,
+        205,
+        230,
+        58,
+        213,
+        240
+      ]
+    },
+    {
+      "name": "TicketsBought",
+      "discriminator": [
+        204,
+        103,
+        221,
+        60,
+        70,
+        142,
+        88,
+        233
+      ]
+    },
+    {
+      "name": "TokenAttached",
+      "discriminator": [
+        28,
+        49,
+        174,
+        154,
+        20,
+        29,
+        239,
+        201
+      ]
+    },
+    {
+      "name": "TokenCleared",
+      "discriminator": [
+        127,
+        39,
+        52,
+        188,
+        238,
+        72,
+        238,
+        44
+      ]
+    },
+    {
+      "name": "Unmade",
+      "discriminator": [
+        123,
+        51,
+        157,
+        99,
+        253,
+        186,
+        107,
+        99
+      ]
+    },
+    {
+      "name": "Unstaked",
+      "discriminator": [
+        27,
+        179,
+        156,
+        215,
+        47,
+        71,
+        195,
+        7
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "NotOwner",
+      "msg": "Signer is not the game's owner"
+    },
+    {
+      "code": 6001,
+      "name": "NotTheGames",
+      "msg": "Signer is not the game's owner or its authority"
+    },
+    {
+      "code": 6002,
+      "name": "NotAuthority",
+      "msg": "Signer is not the game's authority"
+    },
+    {
+      "code": 6003,
+      "name": "NotPlatform",
+      "msg": "Signer is not the platform admin or the program's upgrade authority"
+    },
+    {
+      "code": 6004,
+      "name": "BadCollection",
+      "msg": "Collection is not a Core collection this signer controls"
+    },
+    {
+      "code": 6005,
+      "name": "CollectionCanSeize",
+      "msg": "This collection can freeze, move or burn its assets whoever holds them"
+    },
+    {
+      "code": 6006,
+      "name": "FeeAboveCap",
+      "msg": "Fee is above the cap"
+    },
+    {
+      "code": 6007,
+      "name": "StringTooLong",
+      "msg": "Name or URI too long"
+    },
+    {
+      "code": 6008,
+      "name": "BadEntries",
+      "msg": "Box needs 1 to 8 entries with non-zero weights and non-zero prizes (none that burns in wrapped SOL)"
+    },
+    {
+      "code": 6009,
+      "name": "BadShares",
+      "msg": "A split takes at most 4 shares that add up to 100% or less (exactly 100% for a box in another mint; none that burns in wrapped SOL)"
+    },
+    {
+      "code": 6010,
+      "name": "SupplyBelowIssued",
+      "msg": "Max supply is below the units already out (issued, less voided)"
+    },
+    {
+      "code": 6011,
+      "name": "PoolNotEmpty",
+      "msg": "A pool that still holds tokens can't be closed"
+    },
+    {
+      "code": 6012,
+      "name": "KindLocked",
+      "msg": "An item's kind, name, life, soulbound and burnable flags can't change once one is issued"
+    },
+    {
+      "code": 6013,
+      "name": "Paused",
+      "msg": "Game is paused by its owner"
+    },
+    {
+      "code": 6014,
+      "name": "Suspended",
+      "msg": "Game is suspended by the platform"
+    },
+    {
+      "code": 6015,
+      "name": "ZeroAmount",
+      "msg": "Amount must be above zero"
+    },
+    {
+      "code": 6016,
+      "name": "NotForSale",
+      "msg": "Box, item or recipe is not on offer"
+    },
+    {
+      "code": 6017,
+      "name": "SoldOut",
+      "msg": "Item is sold out"
+    },
+    {
+      "code": 6018,
+      "name": "PriceAboveMax",
+      "msg": "The price is above the most the buyer agreed to pay"
+    },
+    {
+      "code": 6019,
+      "name": "WrongPool",
+      "msg": "A share names an account that was not passed, or the wrong account was"
+    },
+    {
+      "code": 6020,
+      "name": "NotTheHolders",
+      "msg": "A share for whoever holds a collectible must go to a token account of that mint that the holder owns"
+    },
+    {
+      "code": 6021,
+      "name": "WrongMint",
+      "msg": "This is not the mint the price is in"
+    },
+    {
+      "code": 6022,
+      "name": "BadOrderState",
+      "msg": "Order is not in the right state"
+    },
+    {
+      "code": 6023,
+      "name": "NotStale",
+      "msg": "Order is not stale yet"
+    },
+    {
+      "code": 6024,
+      "name": "ItemMismatch",
+      "msg": "Item or pool accounts don't match the box or the order"
+    },
+    {
+      "code": 6025,
+      "name": "WrongSettle",
+      "msg": "This order's outcome is settled by the other settle instruction"
+    },
+    {
+      "code": 6026,
+      "name": "NotThePlayers",
+      "msg": "The prize must go to a token account the order's player owns"
+    },
+    {
+      "code": 6027,
+      "name": "NotCollectible",
+      "msg": "Only a collectible item can be made as an asset"
+    },
+    {
+      "code": 6028,
+      "name": "BadSchedule",
+      "msg": "A schedule needs a period above zero, a share of 100% or less, and a move between two different pools"
+    },
+    {
+      "code": 6029,
+      "name": "NotDue",
+      "msg": "This is not due yet"
+    },
+    {
+      "code": 6030,
+      "name": "ScheduleOver",
+      "msg": "This schedule is switched off or has done its last run"
+    },
+    {
+      "code": 6031,
+      "name": "BadLottery",
+      "msg": "A lottery needs a price and a period above zero, a period of at most 1,000 years and a first draw between 1970 and 1,000 years later, a cut of 100% or less, and at most 8 places that each take something and together 100% or less"
+    },
+    {
+      "code": 6032,
+      "name": "RoundRunning",
+      "msg": "A lottery can't be changed while tickets of its round are sold"
+    },
+    {
+      "code": 6033,
+      "name": "SalesClosed",
+      "msg": "Ticket sales are closed for this round"
+    },
+    {
+      "code": 6034,
+      "name": "StillLocked",
+      "msg": "This stake can't be taken out yet: its lock has not run"
+    },
+    {
+      "code": 6035,
+      "name": "MoreThanStaked",
+      "msg": "That is more than this position holds"
+    },
+    {
+      "code": 6036,
+      "name": "BadRecipe",
+      "msg": "A recipe has up to 8 lines a side, takes up to 8 collectibles, no line of it is zero, and its needs and keeps name collectibles it has"
+    },
+    {
+      "code": 6037,
+      "name": "OnceAtATime",
+      "msg": "A recipe that takes or makes a collectible is crafted once at a time"
+    },
+    {
+      "code": 6038,
+      "name": "NeedNotMet",
+      "msg": "A collectible handed in does not have the number this recipe asks for"
+    },
+    {
+      "code": 6039,
+      "name": "RecipeChanged",
+      "msg": "This recipe was edited since the player saw it"
+    },
+    {
+      "code": 6040,
+      "name": "NotReady",
+      "msg": "This collectible is not ready yet: it is too new, or it was used too recently"
+    },
+    {
+      "code": 6041,
+      "name": "Expired",
+      "msg": "This collectible has expired"
+    },
+    {
+      "code": 6042,
+      "name": "UsedUp",
+      "msg": "This collectible has no uses left"
+    },
+    {
+      "code": 6043,
+      "name": "Held",
+      "msg": "The game is holding this collectible for a player"
+    },
+    {
+      "code": 6044,
+      "name": "TermsChanged",
+      "msg": "These are not the terms this contest has"
+    },
+    {
+      "code": 6045,
+      "name": "ResultOverdue",
+      "msg": "This contest's result was due: it can only be called off"
+    },
+    {
+      "code": 6046,
+      "name": "StillHeld",
+      "msg": "This collectible is held until its time is up"
+    },
+    {
+      "code": 6047,
+      "name": "HoldOver",
+      "msg": "The hold on this collectible is over: it can only go back to its player"
+    },
+    {
+      "code": 6048,
+      "name": "BadContest",
+      "msg": "A contest needs 2 or more sides, entries that close no later than its result is due, and a side that exists"
+    },
+    {
+      "code": 6049,
+      "name": "ContestNotOpen",
+      "msg": "This contest is not open"
+    },
+    {
+      "code": 6050,
+      "name": "ContestOpen",
+      "msg": "This contest has no result yet"
+    },
+    {
+      "code": 6051,
+      "name": "NoWinner",
+      "msg": "Nobody backed that side: call the contest off instead"
+    },
+    {
+      "code": 6052,
+      "name": "EntriesLeft",
+      "msg": "This contest still has entries to claim"
+    },
+    {
+      "code": 6053,
+      "name": "NotATokenAccount",
+      "msg": "Not a token account"
+    },
+    {
+      "code": 6054,
+      "name": "Overflow",
+      "msg": "Arithmetic overflow"
+    },
+    {
+      "code": 6055,
+      "name": "NoToken",
+      "msg": "Game has no official token"
+    },
+    {
+      "code": 6056,
+      "name": "VenueAccounts",
+      "msg": "These are not the venue's own accounts for this mint"
+    },
+    {
+      "code": 6057,
+      "name": "VenueLayout",
+      "msg": "Venue account layout is not one this program knows"
+    },
+    {
+      "code": 6058,
+      "name": "LauncherMustSign",
+      "msg": "The wallet that launched the token must sign"
+    },
+    {
+      "code": 6059,
+      "name": "FeeClaimerNotPartner",
+      "msg": "Meteora config: the fee claimer is not the games.fun partner"
+    },
+    {
+      "code": 6060,
+      "name": "CreatorFeeTooHigh",
+      "msg": "Meteora config: the creator's trading fee share is above 95%"
+    },
+    {
+      "code": 6061,
+      "name": "PartnerLockTooLow",
+      "msg": "Meteora config: the partner's permanently locked liquidity is below 5%"
+    },
+    {
+      "code": 6062,
+      "name": "CreatorMigrationFeeTooHigh",
+      "msg": "Meteora config: the creator takes more than 95% of the migration fee"
+    },
+    {
+      "code": 6063,
+      "name": "CompoundingFees",
+      "msg": "Meteora config: the migrated pool compounds its fees instead of paying them out"
+    },
+    {
+      "code": 6064,
+      "name": "NoBondingCurve",
+      "msg": "pump.fun: no bonding curve for this mint"
+    },
+    {
+      "code": 6065,
+      "name": "NoFeeSharing",
+      "msg": "pump.fun: no fee-sharing config for this mint"
+    },
+    {
+      "code": 6066,
+      "name": "CurveNotSharing",
+      "msg": "pump.fun: the bonding curve does not pay the fee-sharing config"
+    },
+    {
+      "code": 6067,
+      "name": "SharingNotActive",
+      "msg": "pump.fun: fee sharing is not active"
+    },
+    {
+      "code": 6068,
+      "name": "SharingAdminNotRevoked",
+      "msg": "pump.fun: the fee-sharing admin is not revoked"
+    },
+    {
+      "code": 6069,
+      "name": "ShareholdersMismatch",
+      "msg": "pump.fun: shareholders are not the launcher and the partner with at least 5%, together 100%"
+    },
+    {
+      "code": 6070,
+      "name": "CreatorFeeDiverted",
+      "msg": "pump.fun: this coin's creator fee goes to traders or holders, not to the fee-sharing config"
+    },
+    {
+      "code": 6071,
+      "name": "BadPrice",
+      "msg": "A falling price needs a step and a period above zero, and a start that is not before 1970"
+    },
+    {
+      "code": 6072,
+      "name": "PlacePaid",
+      "msg": "This place has no winner this round, or was paid already"
+    },
+    {
+      "code": 6073,
+      "name": "NotAMint",
+      "msg": "Not a mint of the SPL Token program or of Token-2022"
+    },
+    {
+      "code": 6074,
+      "name": "MemoNeeded",
+      "msg": "A destination requires a memo: pass the Memo program with the hook's accounts"
+    },
+    {
+      "code": 6075,
+      "name": "SameAccount",
+      "msg": "The game can't pay into the account it pays from"
+    },
+    {
+      "code": 6076,
+      "name": "SameSlot",
+      "msg": "An order closes in a later slot than the one it was opened in"
+    },
+    {
+      "code": 6077,
+      "name": "ToTheGame",
+      "msg": "The game can't be given a collectible: nothing could ever move it again"
+    }
+  ],
+  "types": [
+    {
+      "name": "Action",
+      "docs": [
+        "What a schedule does each time it runs."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Issue",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "pubkey"
+              },
+              {
+                "name": "pool",
+                "type": "u8"
+              },
+              {
+                "name": "amount",
+                "type": "u64"
+              },
+              {
+                "name": "halve_every",
+                "type": "u32"
+              }
+            ]
+          },
+          {
+            "name": "Burn",
+            "fields": [
+              {
+                "name": "pool",
+                "type": "u8"
+              },
+              {
+                "name": "bps",
+                "type": "u16"
+              }
+            ]
+          },
+          {
+            "name": "Move",
+            "fields": [
+              {
+                "name": "from",
+                "type": "u8"
+              },
+              {
+                "name": "to",
+                "type": "u8"
+              },
+              {
+                "name": "bps",
+                "type": "u16"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Attribute",
+      "docs": [
+        "One line on a collectible: \"level\" = \"7\"."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "AttributesSet",
+      "docs": [
+        "The game's authority rewrote a collectible's attributes. The new values are the",
+        "instruction's own arguments, in the same transaction."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Awarded",
+      "docs": [
+        "The authority gave a held collectible to `to`, while its hold ran."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BoxArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "currency",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "rise",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Rise"
+                }
+              }
+            }
+          },
+          {
+            "name": "fall",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Fall"
+                }
+              }
+            }
+          },
+          {
+            "name": "stock_odds",
+            "type": "bool"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "shares",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "entries",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "DropEntry"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Burned",
+      "docs": [
+        "The game's authority burned tokens out of a pool."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool",
+            "type": "u8"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "CalledOff",
+      "docs": [
+        "A contest was called off: every entry gets its own money back."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Claimed",
+      "docs": [
+        "An entry was paid `amount` and closed."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Contest",
+      "docs": [
+        "At `[\"contest\", game, id]`. Its pot is the token account at `[\"pot\", contest]`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "opener",
+            "docs": [
+              "The authority that opened it. Paid its rent, and gets it back when it closes."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "docs": [
+              "The token it is played in."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "closes_at",
+            "docs": [
+              "Unix time entries stop."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "result_by",
+            "docs": [
+              "Unix time a result is due. After it, no result is taken and anyone can call the contest off."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "terms",
+            "docs": [
+              "A hash of what an entry agrees to (`terms`). A player signs it, so an entry never lands",
+              "in another contest opened at the same id."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "verdict",
+            "type": {
+              "defined": {
+                "name": "Verdict"
+              }
+            }
+          },
+          {
+            "name": "winner",
+            "docs": [
+              "The side that won, once the verdict is `Won`."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "entries",
+            "docs": [
+              "Entries not yet claimed."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "prize",
+            "docs": [
+              "What the winning side shares, set when the result is named."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "unclaimed",
+            "docs": [
+              "What the winning side put in and has not yet claimed for."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "docs": [
+              "The parts of the pot taken when the result is named."
+            ],
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "sides",
+            "docs": [
+              "What each side has put in."
+            ],
+            "type": {
+              "vec": "u64"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ContestArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "sides",
+            "docs": [
+              "How many sides there are to back."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "closes_at",
+            "type": "i64"
+          },
+          {
+            "name": "result_by",
+            "type": "i64"
+          },
+          {
+            "name": "shares",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Crafted",
+      "docs": [
+        "A player crafted a recipe. The tokens it took and gave are the recipe's own lines."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "version",
+            "docs": [
+              "The recipe's version: its lines, as they were, say what tokens moved."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "times",
+            "docs": [
+              "How many times over: every token line moved its amount times this."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "burned",
+            "docs": [
+              "The collectibles burned, used and kept, and made."
+            ],
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "used",
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "made",
+            "type": {
+              "vec": "pubkey"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Decided",
+      "docs": [
+        "The authority named the side that won. `prize` is what its backers share."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "pot",
+            "type": "u64"
+          },
+          {
+            "name": "prize",
+            "type": "u64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Deposited",
+      "docs": [
+        "Someone funded a pool."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool",
+            "type": "u8"
+          },
+          {
+            "name": "depositor",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "docs": [
+              "What arrived in the pool: what was sent, less any transfer fee."
+            ],
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "DropEntry",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "outcome",
+            "type": {
+              "defined": {
+                "name": "Outcome"
+              }
+            }
+          },
+          {
+            "name": "weight",
+            "docs": [
+              "The chance of this entry is its weight over the sum of the weights still in stock (each",
+              "first scaled by what is left of its item, when the box says `stock_odds`)."
+            ],
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Entered",
+      "docs": [
+        "A player put `amount` on one side of a contest."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Entry",
+      "docs": [
+        "At `[\"entry\", contest, player, side]`: what one player put on one side. They pay its rent",
+        "and get it back when it is claimed."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "contest",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "side",
+            "type": "u8"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fall",
+      "docs": [
+        "A price that falls with time: a drop whose price comes down until it sells, a seat that",
+        "cools off between buyers. It falls by `step` every `every` seconds counted from `since`,",
+        "and never below `floor` (a price already below the floor stays where it is).",
+        "",
+        "The owner sets `since`: the price holds until then. Each sale after it sets it to the time",
+        "of the sale, so the price starts falling again from what was paid, after any `Rise`. A price that",
+        "falls to 0 is no longer for sale."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "step",
+            "type": "u64"
+          },
+          {
+            "name": "every",
+            "type": "u32"
+          },
+          {
+            "name": "floor",
+            "type": "u64"
+          },
+          {
+            "name": "since",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "FeeChanged",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "fees",
+            "docs": [
+              "The fees in force now, in lamports."
+            ],
+            "type": {
+              "defined": {
+                "name": "Fees"
+              }
+            }
+          },
+          {
+            "name": "pending",
+            "docs": [
+              "A raise waiting out its notice period, and when it applies (0: none)."
+            ],
+            "type": {
+              "defined": {
+                "name": "Fees"
+              }
+            }
+          },
+          {
+            "name": "pending_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Fees",
+      "docs": [
+        "The platform's two flat fees, in lamports. A player's few transactions carry the larger",
+        "one; a project's many (an airdrop to ten thousand players) carry the smaller."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player",
+            "docs": [
+              "What a player pays when they sign for something of their own: a payment, a purchase,",
+              "a craft, tickets, a stake or an unstake, a hold, an entry."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "project",
+            "docs": [
+              "What every other charged instruction costs: a deposit, a payout, a burn, an issue, a",
+              "make, a roll, an award, a contest opened or decided."
+            ],
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Game",
+      "docs": [
+        "One per project, at `[\"game\", collection]`. It is also the signer the program uses for the",
+        "project: it owns the pools and the order vault, mints the project's tokens and collectibles.",
+        "Only `create_game` creates one, at that address, so an account this program owns with this",
+        "tag is a game at its own address: instructions check the owner and the tag (Anchor's",
+        "`Account`) and do not derive the address again. Signing still uses the stored `bump`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "owner",
+            "docs": [
+              "Signs the settings, the catalog and every mechanic. Can hand the game to another key.",
+              "A project has two keys, this one and `authority`, and both are trusted."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "docs": [
+              "Signs what leaves a pool, what gets made and what only the game knows (`payout`, `burn`,",
+              "`issue`, `make`, `unmake`, `set`, `roll`, `award`, `open_contest`, `decide`). A wallet, a multisig, a server's key or another program's address. The program",
+              "checks this signature and nothing else. It pays the flat fee in SOL, so it must be a",
+              "plain address that holds some."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "collection",
+            "docs": [
+              "The Metaplex Core collection the game's collectibles are minted into."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "docs": [
+              "The currency of the shop: every item's price is in this mint, and a box's unless it",
+              "names another."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "treasury",
+            "docs": [
+              "Token account that receives whatever a split leaves over."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "fees_bump",
+            "docs": [
+              "The bump of the game's fee box, `[\"fees\", game]`."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "paused",
+            "docs": [
+              "The owner's switch: stops what comes in (`pay`, `buy_item`, `open_box`, `craft`,",
+              "`buy_tickets`, `stake`, `hold`, `enter`)."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "suspended",
+            "docs": [
+              "The platform's switch: stops the same. Never what is owed (settle, refund, payout,",
+              "unstake, a lottery's draw and payment, a held collectible going home, a contest's claim)."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "official",
+            "docs": [
+              "The game's official token: one launched with games.fun that pays its share. Written only",
+              "by `attach_token`, a record and not a gate: no economy instruction reads it."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "OfficialToken"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "GameSuspended",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "suspended",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "GameUpdate",
+      "docs": [
+        "What to change. `None` leaves a setting as it is."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "paused",
+            "type": {
+              "option": "bool"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Held",
+      "docs": [
+        "A player handed a collectible to the game until `free_at`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "free_at",
+            "type": "i64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hold",
+      "docs": [
+        "At `[\"hold\", asset]`. The player pays its rent and gets it back when the hold ends."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "docs": [
+              "Who handed it in, and who it goes back to."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "free_at",
+            "docs": [
+              "Unix time the authority's say ends."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "reference",
+            "docs": [
+              "The game's own label: the raid, the borrower."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Input",
+      "docs": [
+        "One thing a recipe takes."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Burn",
+            "fields": [
+              {
+                "name": "item",
+                "type": "u32"
+              },
+              {
+                "name": "count",
+                "type": "u8"
+              }
+            ]
+          },
+          {
+            "name": "Use",
+            "fields": [
+              {
+                "name": "item",
+                "type": "u32"
+              }
+            ]
+          },
+          {
+            "name": "Renew",
+            "fields": [
+              {
+                "name": "item",
+                "type": "u32"
+              }
+            ]
+          },
+          {
+            "name": "Pay",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "pubkey"
+              },
+              {
+                "name": "amount",
+                "type": "u64"
+              },
+              {
+                "name": "to",
+                "type": {
+                  "defined": {
+                    "name": "To"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Issued",
+      "docs": [
+        "The game's authority minted tokens of a mint the game controls."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "to",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Item",
+      "docs": [
+        "Something the game sells, drops from a box, or makes. The fixed fields come first so a box",
+        "roll can read them at fixed places (`ItemView`)."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "item_id",
+            "type": "u32"
+          },
+          {
+            "name": "kind",
+            "type": {
+              "defined": {
+                "name": "ItemKind"
+              }
+            }
+          },
+          {
+            "name": "rarity",
+            "type": "u8"
+          },
+          {
+            "name": "soulbound",
+            "docs": [
+              "Collectibles only: frozen for good at mint, so it can't be transferred."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "burnable",
+            "docs": [
+              "Collectibles only: the game's authority can burn it later (`unmake`)."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "max_supply",
+            "docs": [
+              "0 means unlimited."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "issued",
+            "docs": [
+              "Handed out so far, by sales, boxes and `make`. Also the last serial number used."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "voided",
+            "docs": [
+              "Serials of refunded orders that could not be taken back (`ItemView::release`). They stay",
+              "gaps in the numbering, and the units they stood for can be sold again under new numbers.",
+              "So once a serial is voided, a later one can be above `max_supply`: a serial is a number,",
+              "not a count. The count of units out is `issued - voided`, and it never passes the supply."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "price",
+            "docs": [
+              "Shop price in the game's mint. 0 means it is not sold directly."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "active",
+            "docs": [
+              "Switched off, it is not sold, dropped from a box or made by a recipe. The authority's",
+              "own `make` still works."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "rise",
+            "docs": [
+              "Makes the shop price rise with every sale."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Rise"
+                }
+              }
+            }
+          },
+          {
+            "name": "fall",
+            "docs": [
+              "Makes the shop price fall with time."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Fall"
+                }
+              }
+            }
+          },
+          {
+            "name": "life",
+            "docs": [
+              "Collectibles only: when a recipe can take one, and how often."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Life"
+                }
+              }
+            }
+          },
+          {
+            "name": "shares",
+            "docs": [
+              "Where a shop sale of this item sends its money."
+            ],
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "uri",
+            "type": "string"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ItemArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "kind",
+            "type": {
+              "defined": {
+                "name": "ItemKind"
+              }
+            }
+          },
+          {
+            "name": "rarity",
+            "type": "u8"
+          },
+          {
+            "name": "soulbound",
+            "type": "bool"
+          },
+          {
+            "name": "burnable",
+            "type": "bool"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "uri",
+            "type": "string"
+          },
+          {
+            "name": "max_supply",
+            "type": "u32"
+          },
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "rise",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Rise"
+                }
+              }
+            }
+          },
+          {
+            "name": "fall",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Fall"
+                }
+              }
+            }
+          },
+          {
+            "name": "life",
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Life"
+                }
+              }
+            }
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "shares",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ItemKind",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Normal"
+          },
+          {
+            "name": "Collectible"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Keep",
+      "docs": [
+        "An attribute a new collectible takes from one handed in."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "docs": [
+              "Which collectible handed in it comes from, and which collectible made it goes to: the",
+              "first of each is 0."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "to",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Life",
+      "docs": [
+        "How a collectible lives, for the recipes that take it (`craft.rs`). Every time is in",
+        "seconds, and 0 switches that rule off."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "ready_after",
+            "docs": [
+              "It can't go into a recipe until this long after it was made: an egg that incubates, a",
+              "crop that grows."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "lasts",
+            "docs": [
+              "It can't go into a recipe once this long has passed since it was made: food that rots,",
+              "a pet that dies."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "uses",
+            "docs": [
+              "The times a recipe can use it without burning it: a breed count, a tool that wears out,",
+              "a mine that runs dry."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "cooldown",
+            "docs": [
+              "The wait between two uses: a cooldown, a daily turn."
+            ],
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LootBox",
+      "docs": [
+        "A loot box: a price and a drop table. The odds on a page are these bytes."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "box_id",
+            "type": "u32"
+          },
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "currency",
+            "docs": [
+              "The mint the price is in. `None` is the game's own. A box in another mint has shares",
+              "that take the whole payment, because the treasury only holds the game's mint."
+            ],
+            "type": {
+              "option": "pubkey"
+            }
+          },
+          {
+            "name": "rise",
+            "docs": [
+              "Makes the price rise with every box opened."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Rise"
+                }
+              }
+            }
+          },
+          {
+            "name": "fall",
+            "docs": [
+              "Makes the price fall with time."
+            ],
+            "type": {
+              "option": {
+                "defined": {
+                  "name": "Fall"
+                }
+              }
+            }
+          },
+          {
+            "name": "stock_odds",
+            "docs": [
+              "Each item's weight shrinks with its stock: it is multiplied by the share of the item's",
+              "supply still left, rounded up. The last mythic of 100 is a hundred times rarer than the",
+              "first. Items with no supply limit and the other outcomes keep their weight."
+            ],
+            "type": "bool"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "opened",
+            "docs": [
+              "Times opened."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "version",
+            "docs": [
+              "Counts its edits. An order remembers the version it paid for, and is not rolled on any",
+              "other: it fails and refunds."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "shares",
+            "docs": [
+              "Where a sale of this box sends its money."
+            ],
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "entries",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "DropEntry"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Lottery",
+      "docs": [
+        "At `[\"lottery\", game, id]`. The list of purchases follows these fields in the same account."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "price",
+            "docs": [
+              "The price of one ticket, in the mint of the pot (or in `ticket_mint`)."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "pot",
+            "docs": [
+              "The pool that holds the pot."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "cut_bps",
+            "docs": [
+              "The share of ticket money that goes to the game's treasury instead of the pot."
+            ],
+            "type": "u16"
+          },
+          {
+            "name": "places",
+            "docs": [
+              "What each place wins, in basis points of the pot: first place first. Unused places are 0."
+            ],
+            "type": {
+              "array": [
+                "u16",
+                8
+              ]
+            }
+          },
+          {
+            "name": "ticket_mint",
+            "docs": [
+              "When set, a ticket costs `price` of this mint and is burned, and no ticket money",
+              "reaches the pot. The default address means there is none: tickets pay into the pot."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "every",
+            "docs": [
+              "Seconds from one draw to the next."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "draws_at",
+            "docs": [
+              "Unix time this round's draw is due. Sales stop then."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "round",
+            "docs": [
+              "Counts up by one each time a winner is paid."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "Round"
+              }
+            }
+          },
+          {
+            "name": "sold",
+            "docs": [
+              "Tickets sold this round. They are numbered from 0."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "asked_slot",
+            "docs": [
+              "The slot the draw was asked in."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "winner",
+            "docs": [
+              "Who holds first place, once drawn."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "first_ticket",
+            "docs": [
+              "The ticket that won first place."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "paid",
+            "docs": [
+              "The places paid this round, one bit each."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "pot_at_payout",
+            "docs": [
+              "What the pot held when the first place of this round was paid. The shares are of this."
+            ],
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "price",
+            "type": "u64"
+          },
+          {
+            "name": "pot",
+            "type": "u8"
+          },
+          {
+            "name": "cut_bps",
+            "type": "u16"
+          },
+          {
+            "name": "places",
+            "docs": [
+              "What each place wins, in basis points of the pot, first place first. Empty means one",
+              "winner who takes all."
+            ],
+            "type": {
+              "vec": "u16"
+            }
+          },
+          {
+            "name": "ticket_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "every",
+            "type": "i64"
+          },
+          {
+            "name": "draws_at",
+            "type": "i64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryDrawn",
+      "docs": [
+        "A lottery's round was drawn."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "round",
+            "type": "u32"
+          },
+          {
+            "name": "winning_ticket",
+            "docs": [
+              "First place's ticket. The others follow at even steps (`Lottery::ticket_of_place`)."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "winners",
+            "docs": [
+              "Each place's winner, first place first."
+            ],
+            "type": {
+              "vec": "pubkey"
+            }
+          },
+          {
+            "name": "randomness",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "LotteryPaid",
+      "docs": [
+        "One place of a lottery was paid its share of the pot."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "round",
+            "type": "u32"
+          },
+          {
+            "name": "place",
+            "type": "u8"
+          },
+          {
+            "name": "winner",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Made",
+      "docs": [
+        "The game's authority minted a collectible without a sale."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "item_id",
+            "type": "u32"
+          },
+          {
+            "name": "serial",
+            "type": "u32"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "owner",
+            "type": "pubkey"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Need",
+      "docs": [
+        "A number a recipe asks of a collectible handed in: the game's authority wrote `key` on it",
+        "(`set`), and it must be `at_least` this much."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "place",
+            "docs": [
+              "Which collectible: the first handed in is 0, in the recipe's order."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "key",
+            "type": "string"
+          },
+          {
+            "name": "at_least",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OfficialToken",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "venue",
+            "type": {
+              "defined": {
+                "name": "Venue"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Order",
+      "docs": [
+        "One purchase from the shop or a box, held until it is settled or refunded. The player pays",
+        "its rent and gets it back either way."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "mint",
+            "docs": [
+              "The mint the player paid in."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "loot_box",
+            "docs": [
+              "The box opened and its version then, or the default key for a shop purchase."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "box_version",
+            "type": "u32"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "OrderStatus"
+              }
+            }
+          },
+          {
+            "name": "outcome",
+            "docs": [
+              "What the order gives, once it is rolled."
+            ],
+            "type": {
+              "defined": {
+                "name": "Outcome"
+              }
+            }
+          },
+          {
+            "name": "serial",
+            "docs": [
+              "The item's serial number, for an item."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "paid",
+            "docs": [
+              "What the player paid, held in the game's vault until settle or refund."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "fee",
+            "docs": [
+              "The platform's fee and the split, fixed at purchase so later edits don't touch a paid",
+              "order. The fee waits in the escrow."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "requested_slot",
+            "docs": [
+              "The slot of the purchase. Refund deadlines count from it."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderFailed",
+      "docs": [
+        "A box order could not be rolled: nothing in it could be won, or the box was edited after",
+        "the purchase. The order can be refunded."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "order",
+            "type": "pubkey"
+          },
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderRefunded",
+      "docs": [
+        "An order's payment went back to its player."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "order",
+            "type": "pubkey"
+          },
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "serial_released",
+            "docs": [
+              "Whether the order's serial number went back to its item."
+            ],
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderRolled",
+      "docs": [
+        "An order has its outcome: an item bought from the shop, or whatever a box rolled."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "order",
+            "type": "pubkey"
+          },
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "loot_box",
+            "docs": [
+              "The box, or the default key for a shop purchase."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "outcome",
+            "type": {
+              "defined": {
+                "name": "Outcome"
+              }
+            }
+          },
+          {
+            "name": "serial",
+            "docs": [
+              "The item's serial number, for an item."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "randomness",
+            "docs": [
+              "The oracle's random bytes the item was picked with. Zeros for a shop purchase."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderSettled",
+      "docs": [
+        "An order was delivered and its payment split."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "order",
+            "type": "pubkey"
+          },
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "outcome",
+            "docs": [
+              "What the player got."
+            ],
+            "type": {
+              "defined": {
+                "name": "Outcome"
+              }
+            }
+          },
+          {
+            "name": "serial",
+            "type": "u32"
+          },
+          {
+            "name": "asset",
+            "docs": [
+              "The minted collectible, or the default key when nothing was minted."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "docs": [
+              "What the player paid."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "burned",
+            "docs": [
+              "How much of it was burned because the outcome was `Burn`. Then nothing was split."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "to_treasury",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OrderStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "Rolled"
+          },
+          {
+            "name": "Failed"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Origin",
+      "docs": [
+        "Where tokens a recipe gives come from."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Issue"
+          },
+          {
+            "name": "Pool",
+            "fields": [
+              "u8"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Outcome",
+      "docs": [
+        "What a box can give."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Item",
+            "fields": [
+              "u32"
+            ]
+          },
+          {
+            "name": "Pay",
+            "fields": [
+              {
+                "name": "pool",
+                "type": "u8"
+              },
+              {
+                "name": "amount",
+                "type": "u64"
+              }
+            ]
+          },
+          {
+            "name": "Share",
+            "fields": [
+              {
+                "name": "pool",
+                "type": "u8"
+              },
+              {
+                "name": "bps",
+                "type": "u16"
+              }
+            ]
+          },
+          {
+            "name": "Burn"
+          },
+          {
+            "name": "Nothing"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Output",
+      "docs": [
+        "One thing a recipe gives."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Item",
+            "fields": [
+              "u32"
+            ]
+          },
+          {
+            "name": "Tokens",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "pubkey"
+              },
+              {
+                "name": "amount",
+                "type": "u64"
+              },
+              {
+                "name": "from",
+                "type": {
+                  "defined": {
+                    "name": "Origin"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "Share",
+            "fields": [
+              {
+                "name": "mint",
+                "type": "pubkey"
+              },
+              {
+                "name": "pool",
+                "type": "u8"
+              },
+              {
+                "name": "bps",
+                "type": "u16"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Paid",
+      "docs": [
+        "A player paid, and the payment was split at once."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "docs": [
+              "What the player sent, the amount they signed. A mint with a transfer fee takes its fee",
+              "out of each part on the way, so each place gets its part less that fee."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "shares",
+            "docs": [
+              "Where the shares went. Each was sent `amount * bps / 10,000`, rounded down."
+            ],
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Share"
+                }
+              }
+            }
+          },
+          {
+            "name": "to_treasury",
+            "docs": [
+              "What was sent to the treasury."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "PaidOut",
+      "docs": [
+        "The game's authority paid from a pool."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "pool",
+            "type": "u8"
+          },
+          {
+            "name": "to",
+            "docs": [
+              "The token account that received it."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Platform",
+      "docs": [
+        "One for the whole program, at `[\"platform\"]`: our fees. Only `init_platform` creates one, at",
+        "that address, so an account this program owns with this tag is the platform: instructions",
+        "check the owner and the tag (Anchor's `Account`) and do not derive the address again.",
+        "",
+        "The fees themselves collect in each game's fee box (`FEES_SEED`) until the admin takes them",
+        "out, so this account is only ever read by a game's transactions and never holds them up."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "admin",
+            "type": "pubkey"
+          },
+          {
+            "name": "partner",
+            "docs": [
+              "The launch partner an official token pays at its venue (the registry, `venue.rs`).",
+              "Set once: venue accounts that name it can never change."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "fees",
+            "docs": [
+              "The fees in force."
+            ],
+            "type": {
+              "defined": {
+                "name": "Fees"
+              }
+            }
+          },
+          {
+            "name": "pending",
+            "docs": [
+              "A raise waiting out its notice period. Meaningless while `pending_at` is 0."
+            ],
+            "type": {
+              "defined": {
+                "name": "Fees"
+              }
+            }
+          },
+          {
+            "name": "pending_at",
+            "docs": [
+              "Unix time the pending fees apply from. 0 means there are none."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Recipe",
+      "docs": [
+        "At `[\"recipe\", game, id]`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "version",
+            "docs": [
+              "Counts its edits. A player signs the version they saw, and crafts no other."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "inputs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Input"
+                }
+              }
+            }
+          },
+          {
+            "name": "outputs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Output"
+                }
+              }
+            }
+          },
+          {
+            "name": "needs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Need"
+                }
+              }
+            }
+          },
+          {
+            "name": "keeps",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Keep"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "RecipeArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "inputs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Input"
+                }
+              }
+            }
+          },
+          {
+            "name": "outputs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Output"
+                }
+              }
+            }
+          },
+          {
+            "name": "needs",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Need"
+                }
+              }
+            }
+          },
+          {
+            "name": "keeps",
+            "type": {
+              "vec": {
+                "defined": {
+                  "name": "Keep"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Returned",
+      "docs": [
+        "A held collectible went back to its player."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rise",
+      "docs": [
+        "A price that rises with every sale: a bonding curve, a throne that costs 10% more each time.",
+        "After a sale the price becomes `price + step + price * growth_bps / 10,000`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "step",
+            "type": "u64"
+          },
+          {
+            "name": "growth_bps",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Rolled",
+      "docs": [
+        "The oracle answered a `roll`. What the number decides is the game's own rule."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "reference",
+            "docs": [
+              "The label the authority gave the request."
+            ],
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          },
+          {
+            "name": "randomness",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Round",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Drawing"
+          },
+          {
+            "name": "Drawn"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Schedule",
+      "docs": [
+        "At `[\"schedule\", game, id]`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "action",
+            "type": {
+              "defined": {
+                "name": "Action"
+              }
+            }
+          },
+          {
+            "name": "every",
+            "docs": [
+              "Seconds between runs."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "next_at",
+            "docs": [
+              "Unix time of the next run."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "runs",
+            "docs": [
+              "Runs so far."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "max_runs",
+            "docs": [
+              "Stops after this many runs. 0: never stops."
+            ],
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ScheduleArgs",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "name": "action",
+            "type": {
+              "defined": {
+                "name": "Action"
+              }
+            }
+          },
+          {
+            "name": "every",
+            "type": "i64"
+          },
+          {
+            "name": "next_at",
+            "type": "i64"
+          },
+          {
+            "name": "max_runs",
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ScheduleRan",
+      "docs": [
+        "A schedule ran: it minted, burned or moved `amount`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "run",
+            "docs": [
+              "Which run this was, counted from 1."
+            ],
+            "type": "u32"
+          },
+          {
+            "name": "action",
+            "type": {
+              "defined": {
+                "name": "Action"
+              }
+            }
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Share",
+      "docs": [
+        "A part of a payment, in basis points of the whole (10,000 = 100%)."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "to",
+            "type": {
+              "defined": {
+                "name": "To"
+              }
+            }
+          },
+          {
+            "name": "bps",
+            "type": "u16"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Stake",
+      "docs": [
+        "At `[\"stake\", game, id]`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          },
+          {
+            "name": "mint",
+            "docs": [
+              "The token players stake."
+            ],
+            "type": "pubkey"
+          },
+          {
+            "name": "rewards_pool",
+            "docs": [
+              "The pool rewards arrive in, and the mint it had when the stake was opened."
+            ],
+            "type": "u8"
+          },
+          {
+            "name": "rewards_mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "lock",
+            "docs": [
+              "Seconds a position must wait, after its last stake, before any of it can be taken out."
+            ],
+            "type": "i64"
+          },
+          {
+            "name": "total",
+            "docs": [
+              "Staked by everyone, right now."
+            ],
+            "type": "u64"
+          },
+          {
+            "name": "reward_per_token",
+            "docs": [
+              "Rewards credited so far for each staked token, times `PRECISION`."
+            ],
+            "type": "u128"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Staked",
+      "docs": [
+        "A player staked `amount` more and was paid `rewards`. `staked` is their position now."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "rewards",
+            "type": "u64"
+          },
+          {
+            "name": "staked",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TicketsBought",
+      "docs": [
+        "A player bought lottery tickets `first_ticket .. first_ticket + count`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "round",
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "first_ticket",
+            "type": "u64"
+          },
+          {
+            "name": "count",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "To",
+      "docs": [
+        "Where a share of a payment goes."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Burn"
+          },
+          {
+            "name": "Pool",
+            "fields": [
+              "u8"
+            ]
+          },
+          {
+            "name": "Account",
+            "fields": [
+              "pubkey"
+            ]
+          },
+          {
+            "name": "Holder",
+            "fields": [
+              "pubkey"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "TokenAttached",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "venue",
+            "type": {
+              "defined": {
+                "name": "Venue"
+              }
+            }
+          },
+          {
+            "name": "launcher",
+            "type": "pubkey"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TokenCleared",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "mint",
+            "type": "pubkey"
+          },
+          {
+            "name": "venue",
+            "type": {
+              "defined": {
+                "name": "Venue"
+              }
+            }
+          },
+          {
+            "name": "reason",
+            "docs": [
+              "The `LootError` code of the rule that no longer holds."
+            ],
+            "type": "u32"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unmade",
+      "docs": [
+        "The game's authority burned a collectible."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "asset",
+            "type": "pubkey"
+          },
+          {
+            "name": "reference",
+            "type": {
+              "array": [
+                "u8",
+                32
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unstaked",
+      "docs": [
+        "A player took `amount` out of their stake and was paid `rewards`."
+      ],
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "game",
+            "type": "pubkey"
+          },
+          {
+            "name": "id",
+            "type": "u32"
+          },
+          {
+            "name": "player",
+            "type": "pubkey"
+          },
+          {
+            "name": "amount",
+            "type": "u64"
+          },
+          {
+            "name": "rewards",
+            "type": "u64"
+          },
+          {
+            "name": "staked",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Venue",
+      "docs": [
+        "Where an official token was launched."
+      ],
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Meteora"
+          },
+          {
+            "name": "PumpFun"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Verdict",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Open"
+          },
+          {
+            "name": "Won"
+          },
+          {
+            "name": "Off"
+          }
+        ]
+      }
+    }
+  ],
+  "constants": [
+    {
+      "name": "ASSET_SEED",
+      "docs": [
+        "`[\"asset\", order, slot of the purchase]`: the collectible an order mints. The slot keeps a",
+        "later order that reuses the same nonce from landing on an address already taken: an order",
+        "never closes in the slot it was opened in (`settle.rs`)."
+      ],
+      "type": "bytes",
+      "value": "[97, 115, 115, 101, 116]"
+    },
+    {
+      "name": "BOX_SEED",
+      "docs": [
+        "`[\"box\", game, box id]`"
+      ],
+      "type": "bytes",
+      "value": "[98, 111, 120]"
+    },
+    {
+      "name": "CONTEST_SEED",
+      "docs": [
+        "`[\"contest\", game, id]`, its pot at `[\"pot\", contest]`, and one player's stake on one side",
+        "at `[\"entry\", contest, player, side]`."
+      ],
+      "type": "bytes",
+      "value": "[99, 111, 110, 116, 101, 115, 116]"
+    },
+    {
+      "name": "ENTRY_SEED",
+      "type": "bytes",
+      "value": "[101, 110, 116, 114, 121]"
+    },
+    {
+      "name": "ESCROW_LAMPORTS",
+      "docs": [
+        "Put in the escrow on every purchase. A Core asset with our plugins costs about 0.004 SOL."
+      ],
+      "type": "u64",
+      "value": "6000000"
+    },
+    {
+      "name": "ESCROW_SEED",
+      "docs": [
+        "`[\"escrow\", order]`: holds the SOL an order needs (the collectible's rent and the fee), so",
+        "anyone can settle without the player signing twice. What is left goes back to the player."
+      ],
+      "type": "bytes",
+      "value": "[101, 115, 99, 114, 111, 119]"
+    },
+    {
+      "name": "FEES_SEED",
+      "docs": [
+        "`[\"fees\", game]`: the game's fee box, an account of this program that holds nothing but",
+        "SOL. The platform's fees on that game's transactions wait there until it collects them, so",
+        "one game's traffic never queues behind another's on a shared account."
+      ],
+      "type": "bytes",
+      "value": "[102, 101, 101, 115]"
+    },
+    {
+      "name": "GAME_SEED",
+      "docs": [
+        "`[\"game\", collection]`"
+      ],
+      "type": "bytes",
+      "value": "[103, 97, 109, 101]"
+    },
+    {
+      "name": "HOLD_SEED",
+      "docs": [
+        "`[\"hold\", asset]`: a collectible the game is holding for a player."
+      ],
+      "type": "bytes",
+      "value": "[104, 111, 108, 100]"
+    },
+    {
+      "name": "ITEM_SEED",
+      "docs": [
+        "`[\"item\", game, item id]`"
+      ],
+      "type": "bytes",
+      "value": "[105, 116, 101, 109]"
+    },
+    {
+      "name": "LOTTERY_SEED",
+      "type": "bytes",
+      "value": "[108, 111, 116, 116, 101, 114, 121]"
+    },
+    {
+      "name": "MAX_FEE_LAMPORTS",
+      "docs": [
+        "The most either flat fee can ever be: 0.01 SOL."
+      ],
+      "type": "u64",
+      "value": "10000000"
+    },
+    {
+      "name": "NOTICE_SECONDS",
+      "docs": [
+        "A fee raise waits this long before it applies (7 days). A cut applies at once."
+      ],
+      "type": "i64",
+      "value": "604800"
+    },
+    {
+      "name": "ORDER_SEED",
+      "docs": [
+        "`[\"order\", game, player, nonce]`"
+      ],
+      "type": "bytes",
+      "value": "[111, 114, 100, 101, 114]"
+    },
+    {
+      "name": "PLATFORM_SEED",
+      "type": "bytes",
+      "value": "[112, 108, 97, 116, 102, 111, 114, 109]"
+    },
+    {
+      "name": "PLAYER_FEE_LAMPORTS",
+      "docs": [
+        "The fees the platform starts with: 0.002 SOL when a player signs for something of their own,",
+        "0.00001 SOL for everything else, so a project paying out to ten thousand players pays 0.1 SOL",
+        "in fees, not 20."
+      ],
+      "type": "u64",
+      "value": "2000000"
+    },
+    {
+      "name": "POOL_SEED",
+      "docs": [
+        "`[\"pool\", game, index]`: a token account the game owns."
+      ],
+      "type": "bytes",
+      "value": "[112, 111, 111, 108]"
+    },
+    {
+      "name": "POSITION_SEED",
+      "docs": [
+        "`[\"position\", stake, player]`: one player's stake."
+      ],
+      "type": "bytes",
+      "value": "[112, 111, 115, 105, 116, 105, 111, 110]"
+    },
+    {
+      "name": "POT_SEED",
+      "type": "bytes",
+      "value": "[112, 111, 116]"
+    },
+    {
+      "name": "PROJECT_FEE_LAMPORTS",
+      "type": "u64",
+      "value": "10000"
+    },
+    {
+      "name": "RECIPE_SEED",
+      "type": "bytes",
+      "value": "[114, 101, 99, 105, 112, 101]"
+    },
+    {
+      "name": "REWARDS_SEED",
+      "type": "bytes",
+      "value": "[114, 101, 119, 97, 114, 100, 115]"
+    },
+    {
+      "name": "ROLLED_REFUND_SLOTS",
+      "docs": [
+        "An order that is rolled and still not settled after this many slots (7 days at 400 ms a slot,",
+        "counted from the purchase) can be refunded. It is the deadline a game has to settle, and the",
+        "way out when a settle cannot succeed."
+      ],
+      "type": "u64",
+      "value": "1512000"
+    },
+    {
+      "name": "SCHEDULE_SEED",
+      "docs": [
+        "`[\"schedule\", game, id]`, `[\"lottery\", game, id]`,",
+        "`[\"stake\", game, id]`, `[\"recipe\", game, id]`: the mechanics a game runs without its",
+        "authority."
+      ],
+      "type": "bytes",
+      "value": "[115, 99, 104, 101, 100, 117, 108, 101]"
+    },
+    {
+      "name": "STAKED_SEED",
+      "docs": [
+        "`[\"staked\", stake]` and `[\"rewards\", stake]`: the two vaults of a stake."
+      ],
+      "type": "bytes",
+      "value": "[115, 116, 97, 107, 101, 100]"
+    },
+    {
+      "name": "STAKE_SEED",
+      "type": "bytes",
+      "value": "[115, 116, 97, 107, 101]"
+    },
+    {
+      "name": "STALE_SLOTS",
+      "docs": [
+        "A box still waiting for its roll after this many slots (about 10 minutes) can be refunded."
+      ],
+      "type": "u64",
+      "value": "1500"
+    }
+  ]
+}

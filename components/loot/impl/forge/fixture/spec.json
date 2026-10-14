@@ -1,0 +1,124 @@
+{
+  "specVersion": 2,
+  "title": "Loot Fixture (forge)",
+  "hook": "Two players to check the loot mechanic on forge.",
+  "prompt": "mechanic fixture: loot on forge",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Nobody wins: a fixture",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "small",
+    "seed": 11
+  },
+  "mechanics": [
+    {
+      "id": "loot",
+      "params": {
+        "potionChance": 1,
+        "potionHeal": 25,
+        "weaponChance": 1,
+        "touch": 1.2,
+        "dropSeconds": 120
+      }
+    }
+  ],
+  "tables": {
+    "player": {
+      "health": 100,
+      "armor": 0
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Sidearm"
+      },
+      {
+        "id": "hatchet",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 2,
+        "start": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Grunt",
+        "archetype": "chaser",
+        "health": 30,
+        "coins": 2
+      }
+    ],
+    "waves": [
+      {
+        "id": "one",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 1
+          }
+        ],
+        "delay": 1
+      },
+      {
+        "id": "two",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 1
+          }
+        ],
+        "delay": 30
+      }
+    ]
+  },
+  "rules": {
+    "summary": "A kill drops coins, a potion and a weapon; the joiner takes the potion and the weapon."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "accept": [
+    "coins counted the same on both screens",
+    "the potion lies in the same place on both",
+    "the joiner takes it: gone on both, healed on both",
+    "the weapon lies on both and the joiner takes it"
+  ]
+}

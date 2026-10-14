@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0032",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0032.png",
+ "sha256": "8e3fb4680003cce2d1f2527397457d933d92a41f6b2829b86de2d0983dc6255b",
+ "bytes": 312,
+ "preview": "previews/tile-0032.png",
+ "from": "Tiles/tile_0032.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a stone basin filling with green water at the foot of a running wall fountain",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "basin",
+  "water",
+  "green",
+  "pool",
+  "running",
+  "bottom"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#262b44",
+     "#eaa56c",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#43e1b3",
+     "#25956a",
+     "#69ffd4",
+     "#52607c"
+    ],
+    "saturation": 0.445,
+    "value": 0.526,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.617
+     },
+     {
+      "hue": "orange",
+      "share": 0.211
+     },
+     {
+      "hue": "cyan",
+      "share": 0.172
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.4
+   }
+  }
+ },
+ "source": {
+  "sha256": "82ee687a8c6b7929ad25f4f9497a2e96b54b00c68cf174c405b77b74b456df33",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

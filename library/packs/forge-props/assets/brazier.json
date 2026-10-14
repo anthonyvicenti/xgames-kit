@@ -1,0 +1,125 @@
+{
+ "assetVersion": 1,
+ "id": "brazier",
+ "pack": "forge-props",
+ "file": "brazier.glb",
+ "sha256": "2821da3129e595bf174f294163a1300cc1e759c94aed31ef436bb28895c1c5e3",
+ "bytes": 7092,
+ "preview": "previews/brazier.png",
+ "from": "research/gf-forge/library/tools/props.mjs brazierDoc(); made here: an 8-sided lathe bowl, coals, three legs and a tie ring; flat shaded; three materials (iron, iron_rim, glow_coals emissive at strength 2.0); socket_flame above the coals",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an iron brazier on three legs with glowing coals (made by tools/props.mjs)",
+ "tags": [
+  "ruins",
+  "brazier",
+  "code"
+ ],
+ "use": {
+  "size": [
+   0.698,
+   0.97,
+   0.665
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.333,
+   0,
+   -0.333
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.72,
+    0.97,
+    0.72
+   ],
+   "offset": [
+    0,
+    0.485,
+    0
+   ]
+  },
+  "sockets": [
+   {
+    "name": "flame",
+    "node": "socket_flame",
+    "position": [
+     0,
+     1.02,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 7092,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#6f6c69",
+     "#957c65",
+     "#a05027"
+    ],
+    "saturation": 0.141,
+    "value": 0.433,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.864
+     },
+     {
+      "hue": "brown",
+      "share": 0.136
+     }
+    ],
+    "grey": 0.864
+   },
+   "trianglesPerMetre": 9.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "made here: an 8-sided lathe bowl, coals, three legs and a tie ring; flat shaded; three materials (iron, iron_rim, glow_coals emissive at strength 2.0); socket_flame above the coals",
+  "author": "games.fun"
+ }
+}

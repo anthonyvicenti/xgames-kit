@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-flagstone",
+ "pack": "forge-world",
+ "file": "world-night-flagstone.png",
+ "sha256": "5417b0e7ade757bc62e828a2bcef66cdae9aab8e39a4498d5bc30d0b77f467f7",
+ "bytes": 4722,
+ "preview": "previews/world-night-flagstone.png",
+ "from": "research/gf-forge/library/tools/world.mjs; the photo resized to 64 × 64 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 24 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "one flagstone's face: cool grey worn stone, paler in the middle, a dark chipped rim, moss at the edge (a slab maps its top from the picture's middle out to its edge)",
+ "tags": [
+  "texture",
+  "night",
+  "flagstone",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 53.333,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#1a251d",
+     "#1b261e",
+     "#19241c",
+     "#19231b",
+     "#2e3335",
+     "#1a241d",
+     "#2a2f31",
+     "#2d3234"
+    ],
+    "saturation": 0.115,
+    "value": 0.253,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 256,
+    "grey": 1
+   },
+   "texelsPerMetre": 53.333,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "the photo resized to 64 × 64 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 24 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Coin Hop (Godot)",
+  "summary": "A side-on coin grab on runtime godot: the host owns the coins, each coin is gone for everyone when one player takes it.",
+  "runtime": "godot",
+  "candidate": "a showcase candidate: no reference game has been named for it and no person has played it",
+  "verified": {
+    "result": "PASS all six gates, 64/64 checks, shared multiplayer gate 24/24 (verify --release)",
+    "date": "2026-10-13",
+    "how": "npx gamesfun create games/godot-coin-hop --from godot-coin-hop, npx gamesfun verify games/godot-coin-hop --release (Linux, headless Chrome on the graphics card, a phone emulated in Chrome, Firefox; WebKit could not start there): runtimes/godot/evidence/2026-10-13-run4/coin-hop"
+  }
+}

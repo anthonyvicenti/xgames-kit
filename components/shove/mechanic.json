@@ -1,0 +1,189 @@
+{
+  "id": "shove",
+  "name": "Shove",
+  "describe": "A key or a touch button pushes the nearest player in front of you a few blocks away; a push, never a knock-down",
+  "examples": [
+    "push a friend off a ledge",
+    "nudge people out of the way",
+    "a playful shove"
+  ],
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "key": {
+        "type": "string",
+        "default": "KeyF",
+        "description": "The key (KeyboardEvent.code)"
+      },
+      "reach": {
+        "type": "number",
+        "description": "How far a shove reaches, in metres",
+        "minimum": 1,
+        "maximum": 5,
+        "default": 2.4
+      },
+      "arc": {
+        "type": "number",
+        "description": "How wide in front of you it reaches, in degrees",
+        "minimum": 20,
+        "maximum": 180,
+        "default": 70
+      },
+      "force": {
+        "type": "number",
+        "description": "How hard the push is (m/s)",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 7.5
+      },
+      "lift": {
+        "type": "number",
+        "description": "How much it lifts (m/s up)",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 3.5
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds between shoves",
+        "minimum": 0.2,
+        "maximum": 10,
+        "default": 1.1
+      },
+      "sound": {
+        "type": "string",
+        "default": "shove"
+      },
+      "label": {
+        "type": "string",
+        "default": "Shove",
+        "description": "The touch button's word"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.shove.force",
+        "label": "Shove strength",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/force"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 55,
+        "constraints": {
+          "min": 1,
+          "max": 20,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.shove.cooldown",
+        "label": "Time between shoves",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.2,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.shove.reach",
+        "label": "Shove reach",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/reach"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 5,
+          "unit": "m"
+        }
+      }
+    ]
+  },
+  "events": [],
+  "host": {
+    "owner": "copy",
+    "how": "each copy picks its own player's target where it draws them and asks that player's owner to push",
+    "state": null
+  },
+  "owns": [
+    {
+      "res": "input.key.KeyF",
+      "why": "the KeyF key shoves (params.key)"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "shoving"
+  ],
+  "bots": "never used to move bots",
+  "notes": {
+    "lines": [
+      "F (or the touch button) pushes the nearest player in front: nothing to wire, and fair play decides who can be pushed.",
+      "It is a nudge with a cooldown, not an attack: it never damages, knocks over or scores.",
+      "shove.shove() pushes as the local player would."
+    ],
+    "stub": {
+      "as": "shove",
+      "worked": "shove.shove();   // pushes as the local player would; the kit already reads the key and the touch button",
+      "traps": [
+        "a shove reaches only players this copy draws within reach and in front: do not use it to move bots or props"
+      ]
+    }
+  },
+  "signs": "reported: its sign of life is reported, not judged",
+  "fixture": {
+    "players": 2,
+    "missing": "no two-player fixture: tests/f-fair.test.mjs and tests/p-parts.test.mjs"
+  },
+  "impl": {
+    "three": {
+      "path": "components/shove/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/f-fair.test.mjs and tests/p-parts.test.mjs pass (40 of 40, run by the contracts stream)",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/f-fair.test.mjs and tests/p-parts.test.mjs pass (40 of 40, run by the contracts stream)",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-ice",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-ice.png",
+ "sha256": "64c80358a3779cb9d0abd37662ef0378ab44d38400d2f7b806384ae323cc019d",
+ "bytes": 24773,
+ "preview": "previews/voxel-ice.png",
+ "from": "kenney:voxel-pack/ice; PNG/Tiles/ice.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1194,10; mean difference 3.8 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "ice (Voxel Pack)",
+ "tags": [
+  "ice",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.016
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#b8ebfc",
+     "#b0e9fc",
+     "#a6e6fc",
+     "#bfedfc",
+     "#c6effc",
+     "#b6eafc",
+     "#afe8fc",
+     "#afe9fc"
+    ],
+    "saturation": 0.924,
+    "value": 0.844,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 181,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "6b276bff1230d6131dd49bc013b01c4b2fe247c27577b1121b6e04e633f7c358",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

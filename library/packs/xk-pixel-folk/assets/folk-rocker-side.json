@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "folk-rocker-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-rocker-side.png",
+ "sha256": "13e8c1cb0f38115c40a0fc26eba28eec51ddf20267094ff18ca1236fc722c472",
+ "bytes": 1907,
+ "preview": "previews/folk-rocker-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-rocker-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a rocker in a black tee, spiky pink hair; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "rocker",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#eeb88f",
+     "#e05aa0",
+     "#68335f",
+     "#7c4232",
+     "#3a3446",
+     "#302740",
+     "#363459",
+     "#e985ab"
+    ],
+    "saturation": 0.429,
+    "value": 0.497,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.319
+     },
+     {
+      "hue": "orange",
+      "share": 0.207
+     },
+     {
+      "hue": "grey",
+      "share": 0.198
+     },
+     {
+      "hue": "blue",
+      "share": 0.13
+     },
+     {
+      "hue": "brown",
+      "share": 0.063
+     },
+     {
+      "hue": "purple",
+      "share": 0.06
+     }
+    ],
+    "exact": 23,
+    "grey": 0.198
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.316
+   }
+  }
+ },
+ "source": {
+  "sha256": "8210578c1acbc41f096d1a8854b2ae7f8cdb0d8ff52d45d78757a9ee3921371f",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

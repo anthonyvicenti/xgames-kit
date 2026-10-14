@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kind sheet: flat</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">
+    { "imports": {
+      "three": "/vendor/three/build/three.module.js",
+      "three/addons/": "/vendor/three/examples/jsm/",
+      "three/examples/jsm/": "/vendor/three/examples/jsm/",
+      "postprocessing": "/vendor/postprocessing/postprocessing.module.js",
+      "n8ao": "/vendor/n8ao/N8AO.js",
+      "@dimforge/rapier3d-compat": "/vendor/rapier/rapier.mjs"
+    } }
+  </script>
+  <style>html, body { margin: 0; height: 100%; overflow: hidden; background: #111; } #view { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }</style>
+</head>
+<body>
+  <canvas id="view"></canvas>
+  <script type="module" src="./flat.js"></script>
+</body>
+</html>

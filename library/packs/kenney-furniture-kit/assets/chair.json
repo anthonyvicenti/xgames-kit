@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "chair",
+ "pack": "kenney-furniture-kit",
+ "file": "chair.glb",
+ "sha256": "3f072829b1e51365bf0a5a5d8b3dda729569e9022a6355301221eeeb77c321fd",
+ "bytes": 3528,
+ "preview": "previews/chair.png",
+ "from": "kenney:furniture-kit/chair; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden chair",
+ "tags": [
+  "office",
+  "plaza",
+  "chair"
+ ],
+ "use": {
+  "size": [
+   0.4,
+   0.94,
+   0.4
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.4,
+    0.94,
+    0.4
+   ],
+   "offset": [
+    0,
+    0.47,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 170,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 170,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3528,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8"
+    ],
+    "saturation": 0.758,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.69,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "c8a11eec93e89e31250ba91afc1b8d56c3bec7ae86640fd1239f595ff4180883",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

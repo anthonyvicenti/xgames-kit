@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0065",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0065.png",
+ "sha256": "24612f0de45ba64e521e36ef280633fe2c9353f67f422b1c946d7ddbf4f767e1",
+ "bytes": 242,
+ "preview": "previews/tile-0065.png",
+ "from": "Tiles/tile_0065.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the bottom edge of a red tiled roof with its eave; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "roof",
+  "red",
+  "tiles",
+  "eave",
+  "house",
+  "building",
+  "edge",
+  "edge-south"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c34b35",
+     "#f28462",
+     "#fcbc8f",
+     "#5a6988"
+    ],
+    "saturation": 0.672,
+    "value": 0.569,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.527
+     },
+     {
+      "hue": "orange",
+      "share": 0.41
+     },
+     {
+      "hue": "blue",
+      "share": 0.063
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3436ff701d93e7d8c2cdb28e169c8707f544a36c626dd73d8025396cf5988ef0",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-horizontal-overhang-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-horizontal-overhang-right.png",
+ "sha256": "2718d010715ef3e41e7d01c2a8e106b06e06ea74a027d864677b6f68961cf694",
+ "bytes": 2890,
+ "preview": "previews/terrain-stone-horizontal-overhang-right.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_horizontal_overhang_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone horizontal overhang right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "horizontal",
+  "overhang",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 64.7 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 18.4 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#5e5e6d",
+     "#353541",
+     "#a6b2bb",
+     "#cfd5da",
+     "#424251",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.107,
+    "value": 0.535,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 123,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.751
+   }
+  }
+ },
+ "source": {
+  "sha256": "52ff6b434fb7be38e7764790d4b42035c45a3e137d04a93d1d44f9caa7138907",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

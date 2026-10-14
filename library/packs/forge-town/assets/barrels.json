@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "barrels",
+ "pack": "forge-town",
+ "file": "barrels.glb",
+ "sha256": "8434ed0c437a6e70a1f82764e0e72a6fdf9fdd0061d9bf1f487b715f9f34480b",
+ "bytes": 13636,
+ "preview": "previews/barrels.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-barrel.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "three barrels standing together",
+ "tags": [
+  "town",
+  "barrels"
+ ],
+ "use": {
+  "size": [
+   1.435,
+   0.92,
+   1.301
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.712,
+   0,
+   -0.542
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.42,
+    0.92,
+    1.3
+   ],
+   "offset": [
+    0,
+    0.46,
+    0.06
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13636,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#4f3926",
+     "#282626",
+     "#5e432c",
+     "#664930",
+     "#785538",
+     "#63462e",
+     "#543c27",
+     "#705034"
+    ],
+    "saturation": 0.291,
+    "value": 0.247,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.796
+     },
+     {
+      "hue": "grey",
+      "share": 0.204
+     }
+    ],
+    "grey": 0.204
+   },
+   "trianglesPerMetre": 4.48,
+   "texelsPerMetre": 33,
+   "texturedShare": 0.875,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-barrel.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

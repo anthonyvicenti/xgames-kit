@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "rug",
+ "pack": "kenney-furniture-kit",
+ "file": "rug.glb",
+ "sha256": "8ee38ef26debab839e1a4a83dbe1cf0af19f075ba7acb284934d24047c72f47c",
+ "bytes": 3172,
+ "preview": "previews/rug.png",
+ "from": "kenney:furniture-kit/rugRectangle; baked to metres (x2.4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a rectangular rug",
+ "tags": [
+  "office",
+  "rug",
+  "decor"
+ ],
+ "use": {
+  "size": [
+   3.768,
+   0.024,
+   2.208
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 28,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 28,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3172,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f9a39e",
+     "#cd9491"
+    ],
+    "saturation": 0.85,
+    "value": 0.791,
+    "families": [
+     {
+      "hue": "red",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.29,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "a989d2d59c04e3071e0c90388b113a9a8f339ce1814ef984c51cb6dcd7c8e0eb",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

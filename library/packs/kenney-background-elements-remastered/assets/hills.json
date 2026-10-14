@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "hills",
+ "pack": "kenney-background-elements-remastered",
+ "file": "hills.png",
+ "sha256": "8dd498dfa1a8c926996f1d81d2442715b24bb866140a1006df7b71d759beaf57",
+ "bytes": 7727,
+ "preview": "previews/hills.png",
+ "from": "Backgrounds/Elements/hills.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "hills",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "hills",
+  "backgrounds",
+  "elements"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x400: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 400,
+     "seeThrough": 0.143
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#b7e7fa",
+     "#c9efff",
+     "#c8efff",
+     "#c4edfd",
+     "#c0ebfc",
+     "#bbe9fb",
+     "#b8e7fa",
+     "#c7eefe"
+    ],
+    "saturation": 0.884,
+    "value": 0.854,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 19,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3ab7cec63df2e28379c6dfd9e64dff358607a707a19042cba7dd81a8a13bf5cd",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

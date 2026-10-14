@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "lock-yellow",
+ "pack": "kenney-new-platformer-pack",
+ "file": "lock-yellow.png",
+ "sha256": "a3bc477b62aa0c5098954bd36e895f3731f26f20e53b353c9d9b9143cea65cee",
+ "bytes": 2723,
+ "preview": "previews/lock-yellow.png",
+ "from": "Sprites/Tiles/Double/lock_yellow.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "lock yellow tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "lock",
+  "yellow",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#faba2d",
+     "#353541",
+     "#b76019",
+     "#ffd751",
+     "#e28f2b",
+     "#9f4f0e",
+     "#343440",
+     "#eb9f2b"
+    ],
+    "saturation": 0.735,
+    "value": 0.487,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.623
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     },
+     {
+      "hue": "brown",
+      "share": 0.081
+     },
+     {
+      "hue": "yellow",
+      "share": 0.068
+     }
+    ],
+    "exact": 106,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f74626a373b6f50b360c2c9526005a00a88999e1fc39bbd9c71193ca6919a636",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

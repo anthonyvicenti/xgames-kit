@@ -1,0 +1,129 @@
+{
+  "id": "drawn",
+  "label": "Drawn",
+  "feel": "2D hand-drawn cartoon at 128 texels a metre: smooth shapes with thick dark ink, soft edges, bright flat colour, squashy characters with big expressions. A side-on stage you read like a cartoon panel.",
+  "references": ["Hollow Knight: Silksong", "Cuphead", "Pizza Tower", "Slay the Spire 2"],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "flat-2d",
+      "style": "drawn",
+      "preset": "drawn-day",
+      "plane": "side",
+      "alternates": [
+        { "preset": "drawn-dusk", "why": "a peach and violet dusk" }
+      ],
+      "values": { "background": "#cdeaf5", "view": 9 }
+    },
+    "godot": {
+      "profile": "2d",
+      "preset": "drawn-day",
+      "style": "drawn",
+      "plane": "side",
+      "values": { "background": "#c3e3ff" }
+    }
+  },
+  "world": {
+    "family": "stage",
+    "three": {
+      "templates": ["stage", "field"],
+      "default": "stage",
+      "notes": "a side-on stage of platforms and ledges (gf-tilemap-1)"
+    },
+    "godot": {
+      "templates": ["stage", "field"],
+      "default": "stage",
+      "notes": "side-on stages and fields seen from above (gf-tilemap-1 read from slots); this kind's Godot look is side-on, so a field keeps the runtime's own background"
+    }
+  },
+  "camera": { "three": { "plane": "side" }, "default": "side", "godot": { "plane": "side" } },
+  "bodies": {
+    "set": "toon-folk",
+    "notes": "6-frame body sheets baked from the platformer pack's poses (idle, walk a, walk b, jump, hit, duck), judged by the flat judge. Standard gf-flat-1, 128 texels a metre, 256 px cells.",
+    "three": ["np-beige", "np-green", "np-pink", "np-purple", "np-yellow"]
+  },
+  "props": {
+    "three": ["coin_gold", "gem_blue", "heart", "key_yellow", "star", "mushroom_red", "sign", "spring", "bush", "fence"]
+  },
+  "audio": {
+    "character": "cartoon: boings, pops and slide whistles; bright and a little rubbery",
+    "sounds": {
+      "jump": { "preset": "jump", "pitch": 1.1 },
+      "land": { "preset": "bounce" },
+      "pickup": { "preset": "coin", "pitch": 1.05 },
+      "hit": { "preset": "hit-soft", "pitch": 1.1 },
+      "hurt": { "preset": "hurt", "pitch": 1.2 },
+      "win": { "preset": "win" }
+    },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#ff9f1c",
+    "panel": "#fffaf0f2",
+    "text": "#2a2440",
+    "font": "Lilita One",
+    "radius": "14px",
+    "weight": 400,
+    "ink": "#2a2440"
+  },
+  "mechanics": {
+    "suggested": ["pickup", "levels", "melee", "panels"],
+    "why": "a stage at a time, collectables, a hit, cards picked between rooms. Suggestions only."
+  },
+  "packs": [
+    "kenney-new-platformer-pack", "kenney-toon-characters", "kenney-background-elements-remastered",
+    "flat-standins-drawn", "ofl-lilita-one"
+  ],
+  "runtimes": {
+    "three": {
+      "profile": "flat-2d",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "the flat examples pass verify in the drawn style (stand-in art); 5 baked body sheets pass the flat judge"
+          },
+          {
+            "what": "the look judge's contact sheet for drawn, rendered on the graphics card (its only check)",
+            "ref": "kinds/sheets/drawn.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "godot": {
+      "profile": "2d",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": false,
+        "note": "Godot 2D reads gf-flat-1 pictures and gf-tilemap-1 maps (side-on and seen from above), and create takes the drawn stand-ins (flat-standins-drawn) for a drawn game; no drawn game has been verified there yet and no sheet on Godot"
+      },
+      "toProve": "a Godot 2D example in the drawn style (the platformer pack's stage, bodies baked to gf-flat-1)"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "flat-2d",
+    "style": "drawn",
+    "plane": "side",
+    "map": "stage",
+    "packs": ["kenney-new-platformer-pack"]
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for drawn, rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/drawn.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

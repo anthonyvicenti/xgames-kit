@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "flower-pot",
+ "pack": "xk-pixel-town",
+ "file": "flower-pot.png",
+ "sha256": "100e92879768a18539c5c60a9b924a0b6ec3ad60f6ffb45cf83abd9c2d859577",
+ "bytes": 426,
+ "preview": "previews/flower-pot.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): flower-pot.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a clay pot of flowers",
+ "tags": [
+  "pixel",
+  "flowers",
+  "pot",
+  "plant",
+  "flower"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#b05c3a",
+     "#26522f",
+     "#7ec152",
+     "#593133",
+     "#468a3c",
+     "#336b34",
+     "#46573c",
+     "#5ca546"
+    ],
+    "saturation": 0.404,
+    "value": 0.378,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.362
+     },
+     {
+      "hue": "orange",
+      "share": 0.283
+     },
+     {
+      "hue": "red",
+      "share": 0.145
+     },
+     {
+      "hue": "grey",
+      "share": 0.118
+     },
+     {
+      "hue": "pink",
+      "share": 0.053
+     },
+     {
+      "hue": "brown",
+      "share": 0.033
+     }
+    ],
+    "exact": 22,
+    "grey": 0.118
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.625
+   }
+  }
+ },
+ "source": {
+  "sha256": "c305257c842a9ab37c2d1c971561c88502dcd0bfb4f97814cf0f5bc9607ab9f6",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-horizontal-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-horizontal-right.png",
+ "sha256": "d95047b23aa5db82b158579a4fbf3ed4a7652232c06e71d3831daece1b8f7ea2",
+ "bytes": 2320,
+ "preview": "previews/terrain-stone-horizontal-right.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_horizontal_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone horizontal right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "horizontal",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 53.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#5e5e6d",
+     "#353541",
+     "#a6b2bb",
+     "#cfd5da",
+     "#424251",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.109,
+    "value": 0.547,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 118,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "4c77c73526fe86d3ca5595dcf1f161de9ea4931789be1a2a9b7c66f114a5983d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,3 @@
+{ "about": "The documented response shape of POST https://api.openai.com/v1/images/generations for a GPT image model (https://developers.openai.com/api/reference/resources/images, read 2026-10-11). NOT a recording of a real call: no key was on the build machine. b64_json is filled in by the test with a PNG it makes.",
+  "response": { "created": 0, "background": "transparent", "data": [{ "b64_json": "" }], "output_format": "png", "quality": "low", "size": "1024x1024", "usage": { "input_tokens": 60, "input_tokens_details": { "image_tokens": 0, "text_tokens": 60 }, "output_tokens": 272, "total_tokens": 332 } },
+  "error": { "error": { "message": "Incorrect API key provided.", "type": "invalid_request_error", "code": "invalid_api_key" } } }

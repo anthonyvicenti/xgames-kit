@@ -1,0 +1,98 @@
+{
+  "specVersion": 2,
+  "title": "Feel Room",
+  "hook": "gf-forge track F's test room: every weapon and move against target dummies that break into bones.",
+  "prompt": "gf-forge track F feel test room (research/rust-engine/PLAN.md \u00a74, not a game for anyone): hello forge's crypt room with target dummies and a weapon pickup cycle, so every weapon and move can be tried in a browser",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "primary": "fire (hold for the repeater)",
+    "secondary": "nothing yet",
+    "interact": "nothing yet",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 600,
+    "winBy": "Nothing to win: break dummies with every weapon and move.",
+    "loseBy": "The time runs out (a dummy never hits back).",
+    "replay": true
+  },
+  "world": {
+    "template": "crypt-room",
+    "size": "large",
+    "props": []
+  },
+  "mechanics": [],
+  "tables": {
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol"
+      },
+      {
+        "id": "scatter",
+        "preset": "shotgun",
+        "start": false
+      },
+      {
+        "id": "repeater",
+        "preset": "repeater",
+        "start": false
+      },
+      {
+        "id": "blade",
+        "preset": "blade",
+        "start": false
+      }
+    ]
+  },
+  "rules": {
+    "summary": "Walk the crypt, pick up the scattergun, repeater and blade from the floor, and break the dummies: shots, the quick melee (V), the evade (Shift), reloads (R), keys 1-4.",
+    "scoring": "+1 for each broken dummy, times the combo multiplier, and +1 for each coin",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "ember-crypt"
+  },
+  "build": [],
+  "content": {
+    "rating": "T",
+    "notes": "Shooting skeleton training dummies that break into bones; no blood, no people."
+  },
+  "accept": [
+    "each weapon fires with its own kick, light and sound",
+    "a dummy flashes, shows numbers and breaks into bones that knock its neighbours down",
+    "the evade, jump, quick melee, reloads and switching all work"
+  ],
+  "notInV1": [
+    "enemies that fight back (forge-ai, track A)",
+    "the viewmodel, particles, event lights and hit flash by the renderer (track R): this room draws stand-ins",
+    "friends in the room (track S)"
+  ]
+}

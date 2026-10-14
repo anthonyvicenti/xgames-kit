@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/catalog/1.json",
+  "title": "Registry catalog (registry/catalog.json)",
+  "description": "What registry/build-catalog.mjs emits from the manifests, and the only thing a pitch, a brief or a host reads to learn what the kit has. Each entry is its manifest plus what the catalog derived (where it is open, conflicts, the runtime x kind matrix). Never edited by hand: rebuild it.",
+  "type": "object",
+  "required": [
+    "catalogVersion",
+    "inputs",
+    "runtimes",
+    "loops",
+    "mechanics",
+    "capabilities",
+    "kinds",
+    "conflicts",
+    "matrix",
+    "problems"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "catalogVersion": {
+      "const": 1
+    },
+    "inputs": {
+      "type": "object",
+      "required": [
+        "sha256",
+        "files"
+      ],
+      "additionalProperties": false,
+      "description": "The manifests it was built from: their paths and one hash over their bytes, so a stale catalog is seen.",
+      "properties": {
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "loops": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "mechanics": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "kinds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "description": "Pairs of mechanics that claim one resource without sharing it, with default params.",
+      "items": {
+        "type": "object",
+        "required": [
+          "a",
+          "b",
+          "res"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "res": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "matrix": {
+      "type": "object",
+      "required": [
+        "rows",
+        "cols",
+        "cells"
+      ],
+      "additionalProperties": false,
+      "description": "The runtime x kind view: a row per runtime (and profile), a column per kind. A cell is proven (a verified example), look (the kind has a look here, unproven), or empty (no look here: a game that wants it builds the look, shown as a finding). A cell is filled only when a game needs it.",
+      "properties": {
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "key",
+              "runtime"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "runtime": {
+                "type": "string"
+              },
+              "profile": {
+                "type": "string"
+              },
+              "open": {
+                "type": "boolean"
+              }
+            }
+          }
+        },
+        "cols": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cells": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "required": [
+                "cell"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "cell": {
+                  "enum": [
+                    "proven",
+                    "look",
+                    "empty"
+                  ]
+                },
+                "preset": {
+                  "type": "string"
+                },
+                "example": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "What the manifests get wrong (a look that names no world of its runtime, a mechanic impl on a runtime that does not exist). Empty for a good registry; the tests hold it empty."
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "describe"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "describe": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "state"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "state": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

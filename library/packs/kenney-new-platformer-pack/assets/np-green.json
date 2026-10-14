@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "np-green",
+ "pack": "kenney-new-platformer-pack",
+ "file": "np-green.png",
+ "sha256": "9ac4185cb4761aba5ccf511a4b71cb51fc92c643b0eee987f83523ed55431699",
+ "bytes": 68123,
+ "preview": "previews/np-green.png",
+ "from": "baked by the kinds stream's flat bake (bake-flat.mjs) from the pack's character poses: body-np-green.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "the green platformer character as a gf-flat-1 side body sheet (idle, walk, walk, jump, hit, duck), baked from the pack's poses",
+ "tags": [
+  "kenney",
+  "drawn",
+  "body",
+  "player",
+  "character",
+  "green",
+  "np"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "frames": {
+   "cell": [
+    256,
+    256
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "drawn",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1536
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 256,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#353541",
+     "#5dd4aa",
+     "#7ddcbb",
+     "#5d5d67",
+     "#54b395",
+     "#fbfdfe",
+     "#c7e8f3",
+     "#f8fcfd"
+    ],
+    "saturation": 0.393,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.5
+     },
+     {
+      "hue": "cyan",
+      "share": 0.5
+     }
+    ],
+    "exact": 674,
+    "grey": 0.5
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "1580f3675953ece6f0ad6831e3a6b8182ddbf1f281991277823fcbca3c995943",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

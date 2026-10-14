@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "edges-cobble",
+ "pack": "xk-pixel-town",
+ "file": "edges-cobble.png",
+ "sha256": "68a41e7759d243993936e56aa3c5456e1d515a71f8a8b85499db6d3b07fb2f97",
+ "bytes": 871,
+ "preview": "previews/edges-cobble.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): edges-cobble.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "cobblestone edges over grass (16, blend)",
+ "tags": [
+  "pixel",
+  "cobble",
+  "stone",
+  "edges"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "blend"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#6a6470",
+     "#bbb3b6",
+     "#a19aa2",
+     "#4f9443",
+     "#857e88",
+     "#d2cbc9"
+    ],
+    "saturation": 0.086,
+    "value": 0.529,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.901
+     },
+     {
+      "hue": "green",
+      "share": 0.099
+     }
+    ],
+    "exact": 6,
+    "grey": 0.901
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "23094cd01ee5e0ee0993f3f4434e532c343faa7a127d95fb774f3ab12423b900",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

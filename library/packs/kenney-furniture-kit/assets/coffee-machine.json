@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "coffee-machine",
+ "pack": "kenney-furniture-kit",
+ "file": "coffee-machine.glb",
+ "sha256": "8e50eaee39053728e701e4acbc6cb06b090fbcdcf9fc98e67a5528218126c07b",
+ "bytes": 6392,
+ "preview": "previews/coffee-machine.png",
+ "from": "kenney:furniture-kit/kitchenCoffeeMachine; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a coffee machine",
+ "tags": [
+  "office",
+  "kitchen",
+  "station",
+  "coffee",
+  "machine"
+ ],
+ "use": {
+  "size": [
+   0.379,
+   0.355,
+   0.48
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 166,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 166,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#a3b6b6",
+     "#dfeaec",
+     "#fcffff"
+    ],
+    "saturation": 0.222,
+    "value": 0.756,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.765
+     },
+     {
+      "hue": "cyan",
+      "share": 0.235
+     }
+    ],
+    "grey": 0.765
+   },
+   "trianglesPerMetre": 14.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "063f582c6fa0f00a9f24e3393dac2295491c4becdaf5513c893ab1a2826b6ec3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

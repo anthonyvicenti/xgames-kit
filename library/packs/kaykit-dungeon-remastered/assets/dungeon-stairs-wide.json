@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-stairs-wide",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-stairs-wide.glb",
+ "sha256": "e771278d04e7af5c82a6ea1170c0c276d012efc3ebf1842fbca34a80d7c5f82c",
+ "bytes": 59680,
+ "preview": "previews/dungeon-stairs-wide.png",
+ "from": "stairs_wide.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wide flight of stone stairs",
+ "tags": [
+  "dungeon",
+  "stairs",
+  "modular",
+  "stone",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   5.25,
+   3.825,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -2.625,
+   0,
+   0
+  ]
+ },
+ "budgets": {
+  "triangles": 358,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 358,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 59680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7f8a8f",
+     "#7b8589",
+     "#7d888d",
+     "#818b90",
+     "#727c80",
+     "#8a969b",
+     "#778185",
+     "#7a8489"
+    ],
+    "saturation": 0.064,
+    "value": 0.503,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 2.37,
+   "texelsPerMetre": 28,
+   "texturedShare": 0.354,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wide.gltf.glb",
+  "sha256": "f3301f11a6bb6d9e64fbe625fbc2f0b61ba4f7e1de1ceba348d53c93325d4754",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

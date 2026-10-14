@@ -1,0 +1,219 @@
+{
+  "specVersion": 2,
+  "title": "Forge Room",
+  "hook": "gf-forge's integrated test room: the ruins arena, the wave director, every weapon, the grim skeletons, and a friend beside you.",
+  "prompt": "gf-forge wave 1b integration test room (gf-forge/INTEGRATION.md, not a game for anyone yet): tracks R, F, A and S in one game: the moonlit ruins arena, every enemy archetype in waves, every weapon in hand, live co-op for 2-4",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire (hold for the repeater, hold and release the focus)"
+  },
+  "round": {
+    "seconds": 420,
+    "winBy": "Clear every wave and break the lord.",
+    "loseBy": "Everyone falls.",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "medium",
+    "seed": 7,
+    "props": [
+      {
+        "name": "chest",
+        "describe": "an iron-bound chest the ruin's dead guard",
+        "role": "what they guard",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol"
+      },
+      {
+        "id": "scatter",
+        "preset": "shotgun",
+        "slot": 2
+      },
+      {
+        "id": "repeater",
+        "preset": "repeater",
+        "slot": 3
+      },
+      {
+        "id": "blade",
+        "preset": "blade",
+        "slot": 4,
+        "damage": 14
+      },
+      {
+        "id": "focus",
+        "name": "Focus",
+        "kind": "charge",
+        "slot": 1,
+        "damage": 24,
+        "fireInterval": 0.7
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Bone grunt",
+        "archetype": "chaser"
+      },
+      {
+        "id": "skirmisher",
+        "name": "Skirmisher",
+        "archetype": "runner"
+      },
+      {
+        "id": "caster",
+        "name": "Grave caster",
+        "archetype": "caster"
+      },
+      {
+        "id": "soldier",
+        "name": "Shield soldier",
+        "archetype": "shield"
+      },
+      {
+        "id": "brute",
+        "name": "Brute",
+        "archetype": "brute"
+      },
+      {
+        "id": "lord",
+        "name": "The bone lord",
+        "archetype": "boss",
+        "health": 900,
+        "boss": {
+          "summon": "grunt",
+          "summonCount": 3
+        }
+      }
+    ],
+    "waves": [
+      {
+        "id": "first",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 6
+          },
+          {
+            "type": "skirmisher",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "id": "second",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 4
+          },
+          {
+            "type": "caster",
+            "count": 2
+          },
+          {
+            "type": "soldier",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "id": "third",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 3
+          },
+          {
+            "type": "soldier",
+            "count": 2
+          },
+          {
+            "type": "caster",
+            "count": 2
+          },
+          {
+            "type": "brute",
+            "count": 1
+          }
+        ],
+        "reward": true
+      },
+      {
+        "id": "lord",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 4
+          },
+          {
+            "type": "lord",
+            "count": 1
+          }
+        ],
+        "boss": true
+      }
+    ]
+  },
+  "rules": {
+    "summary": "Skeletons rise from the graves of a moonlit ruin in waves; shoot, cut and dodge, and break the lord who comes last. Keys 1-4 and the wheel pick a weapon, V is a quick melee, Shift evades, R reloads.",
+    "scoring": "each kill scores the enemy's points to whoever landed it, and each coin a point",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "content": {
+    "rating": "T",
+    "notes": "Skeletons fight and break apart; no blood."
+  },
+  "accept": [
+    "a shot shows its flash, the hit's white flash and number, the kill's burst into bones and a coin",
+    "enemies rise, chase, tell with their eyes and hurt you with a red edge and a thud",
+    "every weapon is in hand and fires its own way",
+    "a friend joins and is seen as their hunter in their colour, holding their weapon"
+  ],
+  "notInV1": [
+    "the three-card reward screen (rules.js + the kit's UI): a banner stands in",
+    "tracers and severed limbs as their own models"
+  ]
+}

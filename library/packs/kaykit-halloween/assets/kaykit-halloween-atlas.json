@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-halloween-atlas",
+ "pack": "kaykit-halloween",
+ "file": "kaykit-halloween-atlas.png",
+ "sha256": "c7367e7b2e5c8fe3d1641d811f2b67ccd38769efacf1e3f4eec8b94a3042ea1a",
+ "bytes": 5328,
+ "preview": "previews/kaykit-halloween-atlas.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; resized to 512 px, 256-colour palette PNG (the size every baked piece embeds)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "the KayKit Halloween Bits atlas: every ruins piece from that pack (arch, gate, graves, fence, lanterns, trees, bones) samples it, so one slot repaints them all",
+ "tags": [
+  "texture",
+  "atlas",
+  "halloween",
+  "textures",
+  "kaykit"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 148,
+    "hues": [
+     "#191b1c",
+     "#222221",
+     "#2f2f2d",
+     "#030404",
+     "#282827",
+     "#596065",
+     "#fbfbfa",
+     "#3a3a39"
+    ],
+    "saturation": 0.426,
+    "value": 0.505,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.451
+     },
+     {
+      "hue": "orange",
+      "share": 0.287
+     },
+     {
+      "hue": "red",
+      "share": 0.086
+     },
+     {
+      "hue": "cyan",
+      "share": 0.086
+     },
+     {
+      "hue": "yellow",
+      "share": 0.04
+     },
+     {
+      "hue": "brown",
+      "share": 0.034
+     }
+    ],
+    "exact": 252,
+    "grey": 0.451
+   },
+   "outline": {
+    "present": false,
+    "share": 0.343
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/halloweenbits_texture.png",
+  "sha256": "1e671e9b176b290a35ce8f5f22c773b3f5e9c7a9cf0e1991de51e44dd3a23e7c",
+  "retrieved": "2026-10-09",
+  "modified": "resized to 512 px, 256-colour palette PNG (the size every baked piece embeds)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

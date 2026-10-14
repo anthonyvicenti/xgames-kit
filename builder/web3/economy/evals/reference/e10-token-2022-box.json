@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Forge Hats",
+  "prompt": "Price everything in our Token-2022 coin (mint 7MJWx2uTWn8ZHFda1WUpW46SgWb5UyAjjFrYjjSsSYHA, 6 decimals, a 1% transfer fee): a 10-coin box with common, rare and epic hats.",
+  "currency": "forge",
+  "tokens": [
+    {
+      "key": "forge",
+      "source": "existing",
+      "name": "Forge test coin",
+      "symbol": "FORGE",
+      "decimals": 6,
+      "program": "token-2022",
+      "mint": "7MJWx2uTWn8ZHFda1WUpW46SgWb5UyAjjFrYjjSsSYHA",
+      "venue": "other",
+      "powers": { "mintAuthority": "someone else", "freeze": false, "transferFeePercent": 1 }
+    }
+  ],
+  "collection": { "name": "Forge Hats" },
+  "items": [
+    { "key": "common-hat", "name": "Common Hat", "rarity": "Common", "value": 5 },
+    { "key": "rare-hat", "name": "Rare Hat", "rarity": "Rare", "supply": 300, "value": 25 },
+    { "key": "epic-hat", "name": "Epic Hat", "rarity": "Epic", "supply": 50, "value": 80 }
+  ],
+  "boxes": [
+    {
+      "key": "hat-box",
+      "name": "Hat box",
+      "price": 10,
+      "outcomes": [
+        { "gives": "item", "item": "common-hat", "chance": 80 },
+        { "gives": "item", "item": "rare-hat", "chance": 17 },
+        { "gives": "item", "item": "epic-hat", "chance": 3 }
+      ]
+    }
+  ],
+  "scenario": { "days": 30, "perDay": { "box:hat-box": 100 } }
+}

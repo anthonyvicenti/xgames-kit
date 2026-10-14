@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "bone-crack-0",
+ "pack": "forge-sounds",
+ "file": "bone-crack-0.ogg",
+ "sha256": "52a8b0493dedf30bc30cd3867e15b80aef3709971446a2906185850b4cb4f61f",
+ "bytes": 6874,
+ "preview": "previews/bone-crack-0.png",
+ "from": "https://opengameart.org/content/fleshy-bone-breaksnap-sfx Wet Break 2.wav; cut to 0.015-0.25 s of the source (0.235 s), 2 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 8 ms release), gain -0.1 dB (loudest 400 ms toward -18 LUFS…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton killed (bones break) (bone crack 0)",
+ "tags": [
+  "sounds",
+  "bone",
+  "crack",
+  "break",
+  "shatter"
+ ],
+ "use": {
+  "seconds": 0.251,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16.8,
+     "samplePeakDb": -5.3,
+     "truePeakDb": -4.3,
+     "hfRatio": 0.227
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.251,
+    "peakDbfs": -5.3,
+    "soundMaxLufs": -16.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/fleshy-bone-breaksnap-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.015-0.25 s of the source (0.235 s), 2 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 8 ms release), gain -0.1 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "Zane (OpenGameArt)"
+ }
+}

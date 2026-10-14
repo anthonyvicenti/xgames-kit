@@ -1,0 +1,156 @@
+{
+ "assetVersion": 1,
+ "id": "machinegun",
+ "pack": "quaternius-props",
+ "file": "machinegun.glb",
+ "sha256": "672ab5f01fc778a59804deb9d25dc027acd995c77522d634daa27c930b675a36",
+ "bytes": 22640,
+ "preview": "previews/machinegun.png",
+ "from": "https://poly.pizza/m/7ehatxr7FY; normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis x+ → +Z, y → +Y, the grip to the origin, ×0.1286 to 0.52 m long; primitives joined per material; sockets grip, muzzle, grip_l; meshopt (from Poly Pizza 7ehatxr7FY)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a compact submachine gun",
+ "tags": [
+  "weapon",
+  "mg",
+  "quaternius",
+  "weapons",
+  "machinegun",
+  "held",
+  "gun"
+ ],
+ "use": {
+  "size": [
+   0.041,
+   0.238,
+   0.52
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    -0.01,
+    -0.043,
+    0
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.7071,
+    0.7071
+   ],
+   "scale": 1.7
+  },
+  "hands": 2,
+  "sockets": [
+   {
+    "name": "grip",
+    "node": "socket_grip",
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   {
+    "name": "muzzle",
+    "node": "socket_muzzle",
+    "position": [
+     0,
+     0.1124,
+     0.2288
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   {
+    "name": "grip_l",
+    "node": "socket_grip_l",
+    "position": [
+     0,
+     0.0594,
+     0.1248
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 1374,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1374,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 22640,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#373736",
+     "#414241",
+     "#333435",
+     "#28292a"
+    ],
+    "saturation": 0.009,
+    "value": 0.231,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 87.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/7ehatxr7FY",
+  "download": "https://static.poly.pizza/fb8ae707-d5b9-4eb8-ab8c-1c78d3c1f710.glb",
+  "sha256": "69df22d1aa8603d66366d20c46755cca2a19e1cabe8c1db1b72edb491ae48699",
+  "retrieved": "2026-10-09",
+  "modified": "normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis x+ → +Z, y → +Y, the grip to the origin, ×0.1286 to 0.52 m long; primitives joined per material; sockets grip, muzzle, grip_l; meshopt (from Poly Pizza 7ehatxr7FY)",
+  "author": "Quaternius"
+ }
+}

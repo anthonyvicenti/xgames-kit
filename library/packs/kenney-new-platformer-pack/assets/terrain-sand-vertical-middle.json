@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-sand-vertical-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-sand-vertical-middle.png",
+ "sha256": "8bf1622d69ae94de855b0a2a272c8eb43cc14ac06189752addd728306e7ab3ec",
+ "bytes": 2336,
+ "preview": "previews/terrain-sand-vertical-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_sand_vertical_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain sand vertical middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "sand",
+  "vertical",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#c66a3e",
+     "#353541",
+     "#d27446",
+     "#c96c40",
+     "#e6885a",
+     "#d97a4b"
+    ],
+    "saturation": 0.614,
+    "value": 0.55,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.875
+     },
+     {
+      "hue": "grey",
+      "share": 0.125
+     }
+    ],
+    "exact": 49,
+    "grey": 0.125
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "9ff664bb6c5859f690fe7a6cb4c40d841a7bf8521f3dc2533c4d51e26f781ccb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

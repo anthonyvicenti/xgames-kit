@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0128",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0128.png",
+ "sha256": "c1a597a1b841b06234587e5ff9c5c4bde74c0f6e45aa349e6d790d4500c07742",
+ "bytes": 223,
+ "preview": "previews/tile-0128.png",
+ "from": "Tiles/tile_0128.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a slim vial of blue potion (a mana potion)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "potion",
+  "vial",
+  "bottle",
+  "blue",
+  "mana",
+  "item",
+  "consumable"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#0099db",
+     "#bd6c4a",
+     "#eaa56c",
+     "#c0cbdc",
+     "#75e3ff",
+     "#8b9bb4"
+    ],
+    "saturation": 0.37,
+    "value": 0.314,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.721
+     },
+     {
+      "hue": "cyan",
+      "share": 0.116
+     },
+     {
+      "hue": "orange",
+      "share": 0.093
+     },
+     {
+      "hue": "blue",
+      "share": 0.07
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f9d1c49865855dece38e496cdb68458040facf8256831751f4b0ab695a193be9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

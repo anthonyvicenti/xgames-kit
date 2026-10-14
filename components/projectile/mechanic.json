@@ -1,0 +1,724 @@
+{
+  "id": "projectile",
+  "name": "Projectile",
+  "describe": "Discrete and continuous streams, arcs, hits, splash",
+  "examples": [
+    "dodgeball throw",
+    "water-gun stream",
+    "paint sprayer",
+    "fire hose"
+  ],
+  "rank": 10,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "kind": {
+        "type": "string",
+        "enum": [
+          "discrete",
+          "continuous"
+        ],
+        "default": "discrete",
+        "description": "discrete: one thrown shot per fire(); continuous: a held stream"
+      },
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Name of a prop.* slot to draw each shot with (\"\" draws a coloured ball)"
+      },
+      "color": {
+        "type": "string",
+        "default": "#ff6a3d",
+        "description": "Colour of the ball or the stream"
+      },
+      "size": {
+        "type": "number",
+        "description": "Shot radius in metres",
+        "minimum": 0.05,
+        "maximum": 1,
+        "default": 0.22
+      },
+      "speed": {
+        "type": "number",
+        "description": "Launch speed in m/s (capped at 45)",
+        "minimum": 2,
+        "maximum": 45,
+        "default": 18
+      },
+      "arc": {
+        "type": "number",
+        "description": "Upward bias of the launch direction: 0 flat, 0.25 a gentle lob",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.25
+      },
+      "gravity": {
+        "type": "number",
+        "description": "Gravity on a shot in m/s²",
+        "minimum": 0,
+        "maximum": 40,
+        "default": 14
+      },
+      "lifetime": {
+        "type": "number",
+        "description": "Seconds before a shot gives up",
+        "minimum": 0.5,
+        "maximum": 10,
+        "default": 3
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds between one player's shots",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0.45
+      },
+      "maxActive": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 12,
+        "description": "Shots in flight at once (each costs about 45 bytes of the world message)"
+      },
+      "damage": {
+        "type": "number",
+        "description": "Damage a hit passes to the health mechanic and onHit",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 1
+      },
+      "knockback": {
+        "type": "number",
+        "description": "Horizontal knock a hit gives (m/s)",
+        "minimum": 0,
+        "maximum": 40,
+        "default": 6
+      },
+      "knockUp": {
+        "type": "number",
+        "description": "Upward knock a hit gives (m/s)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 3
+      },
+      "knockSeconds": {
+        "type": "number",
+        "description": "Seconds a knocked player is down",
+        "minimum": 0,
+        "maximum": 6,
+        "default": 1.2
+      },
+      "splashRadius": {
+        "type": "number",
+        "description": "Splash radius in metres (0: none)",
+        "minimum": 0,
+        "maximum": 8,
+        "default": 0
+      },
+      "splashKnockback": {
+        "type": "number",
+        "description": "Knock at the centre of a splash (m/s)",
+        "minimum": 0,
+        "maximum": 40,
+        "default": 5
+      },
+      "friendlyFire": {
+        "type": "boolean",
+        "default": true,
+        "description": "Whether teammates (the teams mechanic) can hit each other"
+      },
+      "selfHit": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether a shot can hit its own shooter"
+      },
+      "bounces": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 6,
+        "default": 0,
+        "description": "Bounces off the world before a shot ends"
+      },
+      "bounceRestitution": {
+        "type": "number",
+        "description": "Speed kept after a bounce",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.6
+      },
+      "autoHealth": {
+        "type": "boolean",
+        "default": true,
+        "description": "A hit calls health.damage when the health mechanic is present (else it knocks directly)"
+      },
+      "fireAnim": {
+        "type": "string",
+        "default": "aim",
+        "description": "Animation word the shooter holds for a moment"
+      },
+      "soundFire": {
+        "type": "string",
+        "default": "throw",
+        "description": "Sound id played at the muzzle"
+      },
+      "soundHit": {
+        "type": "string",
+        "default": "bonk",
+        "description": "Sound id played where a shot hits"
+      },
+      "hitFx": {
+        "type": "string",
+        "description": "Name of a vfx preset (kit/vfx: spark-burst, impact-flash, smoke-puff, dust-kick, confetti, ...) drawn where a shot hits; unset: none. create copies the preset into config/game.json → vfx, where its colour, sprite and numbers are slots"
+      },
+      "streamSpeed": {
+        "type": "number",
+        "description": "Stream speed in m/s",
+        "minimum": 3,
+        "maximum": 40,
+        "default": 14
+      },
+      "streamGravity": {
+        "type": "number",
+        "description": "Gravity on the stream (its arc)",
+        "minimum": 0,
+        "maximum": 30,
+        "default": 9
+      },
+      "streamReach": {
+        "type": "number",
+        "description": "Longest stream in metres",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 9
+      },
+      "streamWidth": {
+        "type": "number",
+        "description": "Drop radius in metres",
+        "minimum": 0.02,
+        "maximum": 0.4,
+        "default": 0.09
+      },
+      "streamRate": {
+        "type": "number",
+        "description": "Drops per second",
+        "minimum": 5,
+        "maximum": 90,
+        "default": 36
+      },
+      "streamSpread": {
+        "type": "number",
+        "description": "Random spread of the aim",
+        "minimum": 0,
+        "maximum": 0.4,
+        "default": 0.05
+      },
+      "streamDamage": {
+        "type": "number",
+        "description": "Damage per stream hit tick",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 0.5
+      },
+      "streamKnock": {
+        "type": "number",
+        "description": "Push per stream hit tick (m/s, never knocks over)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 1.2
+      },
+      "streamHitInterval": {
+        "type": "number",
+        "description": "Seconds between stream hits on one target",
+        "minimum": 0.05,
+        "maximum": 2,
+        "default": 0.2
+      },
+      "streamTank": {
+        "type": "number",
+        "description": "Seconds of spraying one tank holds (0: unlimited)",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 0
+      },
+      "streamRefill": {
+        "type": "number",
+        "description": "Tank refilled per second while not spraying (fraction)",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0.4
+      },
+      "surfaceHz": {
+        "type": "number",
+        "description": "Surface hit callbacks per second while a stream touches the world",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 10
+      },
+      "bodyHeight": {
+        "type": "number",
+        "description": "Height of a player body for hit tests (m)",
+        "minimum": 0.5,
+        "maximum": 3,
+        "default": 1.7
+      },
+      "muzzle": {
+        "type": "string",
+        "enum": [
+          "chest",
+          "hips"
+        ],
+        "default": "chest",
+        "description": "Where shots and the stream leave the body: 'chest' (1.2 m up: a throw, a water gun, a hose) or 'hips' (the character's hip height, just ahead of the body: a pee stream)"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.projectile.color",
+        "label": "Shot or stream colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 70,
+        "scope": "player"
+      },
+      {
+        "id": "mechanic.projectile.speed",
+        "label": "Throw speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/speed"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 66,
+        "constraints": {
+          "min": 2,
+          "max": 45,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.knockback",
+        "label": "Knock on a hit",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/knockback"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 64,
+        "constraints": {
+          "min": 0,
+          "max": 40,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.cooldown",
+        "label": "Time between shots",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 62,
+        "constraints": {
+          "min": 0,
+          "max": 5,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.prop",
+        "label": "Prop drawn for each shot",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.projectile.size",
+        "label": "Shot radius",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/size"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.05,
+          "max": 1,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.projectile.arc",
+        "label": "Arc (upward lob)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/arc"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 2
+        }
+      },
+      {
+        "id": "mechanic.projectile.gravity",
+        "label": "Shot gravity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/gravity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 40
+        }
+      },
+      {
+        "id": "mechanic.projectile.damage",
+        "label": "Damage per hit",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/damage"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.projectile.knock-up",
+        "label": "Upward knock",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/knockUp"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.knock-seconds",
+        "label": "Seconds knocked down",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/knockSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 6,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.splash-radius",
+        "label": "Splash radius",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/splashRadius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 8,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-speed",
+        "label": "Stream speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamSpeed"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 3,
+          "max": 40,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-gravity",
+        "label": "Stream arc (gravity)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamGravity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 30
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-reach",
+        "label": "Stream reach",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamReach"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 30,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-width",
+        "label": "Stream drop size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamWidth"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.02,
+          "max": 0.4,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-damage",
+        "label": "Damage per stream tick",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamDamage"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-knock",
+        "label": "Stream push",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamKnock"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.stream-tank",
+        "label": "Seconds of spray per tank",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamTank"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.projectile.sound-fire",
+        "label": "Fire sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundFire"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.projectile.sound-hit",
+        "label": "Hit sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundHit"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ],
+    "items": [
+      "0"
+    ]
+  },
+  "events": [
+    {
+      "name": "onHit",
+      "on": "host",
+      "args": "{ kind: 'discrete' | 'stream' | 'splash', shooter, target | null, point, dir, damage, counted, projectile }",
+      "when": "a hit that counted (fair play let it through)"
+    },
+    {
+      "name": "onBlocked",
+      "on": "host",
+      "args": "{ kind, shooter, target, why, projectile }",
+      "when": "fair play refused a hit",
+      "quiet": true
+    },
+    {
+      "name": "onEnd",
+      "on": "host",
+      "args": "{ projectile: { id, tag, meta }, shooter, reason, point }",
+      "when": "a shot ended (hit, wall, lifetime)",
+      "quiet": true
+    },
+    {
+      "name": "onSurface",
+      "on": "host",
+      "args": "{ kind: 'discrete' | 'stream', shooter, point, normal, projectile }",
+      "when": "the world was hit (paint listens)",
+      "quiet": true
+    },
+    {
+      "name": "onFire",
+      "on": "every copy",
+      "args": "{ shooter, projectile, point }",
+      "when": "a shot left a muzzle"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns every shot and every hit; a copy owns its own aim, trigger and tank",
+    "state": "prj",
+    "fields": {
+      "l": "[[id, x, y, z, vx, vy, vz, seat]] shots in flight",
+      "st": "bots that are streaming"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "health",
+    "teams",
+    "paint",
+    "waves",
+    "boss",
+    "carry"
+  ],
+  "gives": [
+    "projectiles"
+  ],
+  "bots": "the rules must call prj.fire(p) for each bot",
+  "notes": {
+    "lines": [
+      "Nothing fires by itself: rules.js calls prj.fire(p) on a press, or prj.stream(p, down) every frame for a stream, for the player and for each bot.",
+      "Shots land on the crosshair point. With the health mechanic a hit damages and knocks; waves and the boss register themselves as targets.",
+      "Score in onHit (host): it hears counted hits only, so a helpless player is never farmed."
+    ],
+    "readme": "components/projectile/README.md",
+    "stub": {
+      "as": "prj",
+      "worked": "update(ctx) { if (ctx.me.actions.primary.pressed) prj.fire(ctx.me); }   // continuous: prj.stream(ctx.me, ctx.me.actions.primary.down)",
+      "traps": [
+        "prj.stream(p, on) is called every frame for an owned player, with on false too: a stream nobody turns off keeps running",
+        "a bot fires only when the rules make it: in bot(ctx, p) use ctx.bots.attack(p, target)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/projectile/fixture",
+    "players": 2,
+    "with": [
+      "health"
+    ]
+  },
+  "impl": {
+    "three": {
+      "path": "components/projectile/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-projectile.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-projectile.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "background-color-hills",
+ "pack": "kenney-new-platformer-pack",
+ "file": "background-color-hills.png",
+ "sha256": "5af79ea9497ca432a163e5a1dd4366f892c920595ec634fe6f8c3184e8011e4b",
+ "bytes": 7453,
+ "preview": "previews/background-color-hills.png",
+ "from": "Sprites/Backgrounds/Double/background_color_hills.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "background color hills",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "background",
+  "color",
+  "hills",
+  "backgrounds"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 512
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ffffff",
+     "#2ecc71",
+     "#ddefff",
+     "#46e087",
+     "#20b860",
+     "#eef7ff",
+     "#29c269",
+     "#2ac76c"
+    ],
+    "saturation": 0.353,
+    "value": 0.784,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.581
+     },
+     {
+      "hue": "green",
+      "share": 0.418
+     }
+    ],
+    "exact": 80,
+    "grey": 0.581
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "edeabb1090639058b60c8b109cfe6f5eb0866447fc7235d44ef930ea6f1927fe",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

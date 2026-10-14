@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "slide",
+ "pack": "kit-standins",
+ "file": "slide.glb",
+ "sha256": "3f1560296335468aab298c4b792cf11986c712ee24a6c5e0d5913575aadb7ca3",
+ "bytes": 13568,
+ "preview": "previews/slide.png",
+ "from": "games.fun (baked by tools/lib/standin-bake.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "prop stand-in for a playground slide",
+ "tags": [
+  "slide"
+ ],
+ "use": {
+  "size": [
+   1,
+   1.622,
+   3.326
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 260,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 260,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 13568,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff7a59",
+     "#4f7cff",
+     "#ffd166"
+    ],
+    "saturation": 1,
+    "value": 0.676,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.523
+     },
+     {
+      "hue": "blue",
+      "share": 0.243
+     },
+     {
+      "hue": "yellow",
+      "share": 0.234
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.47,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://games.fun",
+  "author": "games.fun (baked by tools/lib/standin-bake.mjs)"
+ }
+}

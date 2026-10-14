@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0092",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0092.png",
+ "sha256": "ccf933d58913a60760f05de0a923c4b38423f3375a780605eb7be60c72af61a8",
+ "bytes": 435,
+ "preview": "previews/tile-0092.png",
+ "from": "Tiles/tile_0092.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a mimic: a treasure chest with teeth and a red tongue",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "mimic",
+  "chest",
+  "treasure",
+  "trap",
+  "teeth"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#763b36",
+     "#ff706d",
+     "#8b9bb4",
+     "#eaa56c",
+     "#5a6988"
+    ],
+    "saturation": 0.345,
+    "value": 0.433,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.449
+     },
+     {
+      "hue": "blue",
+      "share": 0.252
+     },
+     {
+      "hue": "orange",
+      "share": 0.157
+     },
+     {
+      "hue": "red",
+      "share": 0.126
+     }
+    ],
+    "exact": 11,
+    "grey": 0.016
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.793
+   }
+  }
+ },
+ "source": {
+  "sha256": "357e08bc52b8dc318ce003681196dce6d2de41298b6253bbcc9bd10283785b37",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

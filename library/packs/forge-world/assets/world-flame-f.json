@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "world-flame-f",
+ "pack": "forge-world",
+ "file": "world-flame-f.png",
+ "sha256": "dc25d715002d17b410b7b35eb12e2b5fd9da189a31df344ea1843b04a3b0223b",
+ "bytes": 249,
+ "preview": "previews/world-flame-f.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a fire's flame, frame 6 of 6 (drawn): a pale core, yellow, orange, a red rim; alpha is its shape",
+ "tags": [
+  "texture",
+  "night",
+  "flame-f",
+  "world",
+  "flame"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 40
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "24x40 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 24,
+     "height": 40,
+     "seeThrough": 0.632
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#fff4be",
+     "#ff8420",
+     "#ffcc50",
+     "#ce3e10"
+    ],
+    "saturation": 0.974,
+    "value": 0.651,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.547
+     },
+     {
+      "hue": "orange",
+      "share": 0.453
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

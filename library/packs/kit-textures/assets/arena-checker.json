@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "arena-checker",
+ "pack": "kit-textures",
+ "file": "arena-checker.png",
+ "sha256": "4155fd8efe3f214eab746385af340797a6c6c225fab9310c10fadef1953fd96d",
+ "bytes": 21664,
+ "preview": "previews/arena-checker.png",
+ "from": "research/gf-three/lookdev/tools/bake-patterns.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "soft 2 m checker (a mown party pitch), 4 m per tile",
+ "tags": [
+  "arena",
+  "checker",
+  "ground",
+  "pattern",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb",
+  "tileMetres": 4
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ededed",
+     "#fafafa",
+     "#ececec",
+     "#fbfbfb",
+     "#eeeeee",
+     "#f9f9f9",
+     "#fcfcfc",
+     "#ebebeb"
+    ],
+    "saturation": 0,
+    "value": 0.955,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 24,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

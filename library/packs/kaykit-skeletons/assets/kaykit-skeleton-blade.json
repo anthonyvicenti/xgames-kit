@@ -1,0 +1,130 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-skeleton-blade",
+ "pack": "kaykit-skeletons",
+ "file": "kaykit-skeleton-blade.glb",
+ "sha256": "1b5d3d9920994412e2fffb8aaafcbb42b106b75fd38df5d7a9643cad4ebacf38",
+ "bytes": 60944,
+ "preview": "previews/kaykit-skeleton-blade.png",
+ "from": "Skeleton_Blade.gltf (KayKit Character Pack: Skeletons 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Knight 1H_Sword (handslot.r) (bounds…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skeleton's rusty notched blade",
+ "tags": [
+  "weapon",
+  "sword",
+  "blade",
+  "melee",
+  "one-handed",
+  "skeleton",
+  "rusty",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.429,
+   1.123,
+   0.167
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.215,
+   -0.247,
+   -0.083
+  ],
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 457,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 457,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 60944,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#818b90",
+     "#7b858b",
+     "#9b5a45",
+     "#8d999e",
+     "#a05f48",
+     "#8a959b",
+     "#98a4aa",
+     "#98a4a9"
+    ],
+    "saturation": 0.151,
+    "value": 0.49,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.77
+     },
+     {
+      "hue": "orange",
+      "share": 0.169
+     },
+     {
+      "hue": "brown",
+      "share": 0.06
+     }
+    ],
+    "grey": 0.77
+   },
+   "trianglesPerMetre": 24.17,
+   "texelsPerMetre": 109,
+   "texturedShare": 0.766,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Blade.gltf",
+  "sha256": "682a1df2eecb93dea35de628d6b93ca40d1b83586422356f3c1956741f2abf76",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Knight 1H_Sword (handslot.r) (bounds -0.286,-0.329,-0.111..0.286,1.168,0.111 vs -0.252,-0.366,-0.065..0.252,1.409,0.065); the…"
+ }
+}

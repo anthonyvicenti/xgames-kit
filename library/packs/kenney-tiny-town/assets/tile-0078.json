@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0078",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0078.png",
+ "sha256": "19701f1f9fab4cb67a998b8e9fb1363498751b05c1d8211e05d5abf66a95c8fc",
+ "bytes": 173,
+ "preview": "previews/tile-0078.png",
+ "from": "Tiles/tile_0078.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone house wall with an open dark doorway",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "stone",
+  "grey",
+  "doorway",
+  "entrance",
+  "opening",
+  "house",
+  "building"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c0cbdc",
+     "#3f2631",
+     "#8b9bb4"
+    ],
+    "saturation": 0.256,
+    "value": 0.531,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.607
+     },
+     {
+      "hue": "pink",
+      "share": 0.393
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.4
+   }
+  }
+ },
+ "source": {
+  "sha256": "fe06ebf43b8efaec63c05bd9f690f2c36a33bd9eba327fc721d445e4f6745f2e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "lava-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "lava-top.png",
+ "sha256": "2bf1e38589e8f255102466ffd96eda3e5f6bbf89d3f148a8bd43a858ac748252",
+ "bytes": 2794,
+ "preview": "previews/lava-top.png",
+ "from": "Sprites/Tiles/Double/lava_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "lava top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "lava",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 59.8 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ff9935",
+     "#fa7f20",
+     "#353541",
+     "#db6226",
+     "#fc8c2a",
+     "#fd922f",
+     "#fb8525",
+     "#fe9733"
+    ],
+    "saturation": 0.906,
+    "value": 0.555,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.933
+     },
+     {
+      "hue": "grey",
+      "share": 0.064
+     }
+    ],
+    "exact": 66,
+    "grey": 0.064
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.288
+   }
+  }
+ },
+ "source": {
+  "sha256": "41e4c0a7b8a8d67833a3b192a76959c468e9fb784420cd1d8f916edec3b1557f",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

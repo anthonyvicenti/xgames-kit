@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-window-dark",
+ "pack": "forge-town",
+ "file": "town-town-window-dark.png",
+ "sha256": "88e074c94f5c054894ad782784ce6741e2954cce20346f2142b991e295a55867",
+ "bytes": 462,
+ "preview": "previews/town-town-window-dark.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a six-pane casement window, dark, the sky faint in its glass, on a stone sill (drawn)",
+ "tags": [
+  "texture",
+  "town",
+  "window-dark",
+  "window",
+  "dark"
+ ],
+ "use": {
+  "texelsPerMetre": 32.5,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 38
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "26x38 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 26,
+     "height": 38,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#2c221c",
+     "#131822",
+     "#2a3648",
+     "#141a24",
+     "#161d28",
+     "#6a6861",
+     "#141b25",
+     "#121720"
+    ],
+    "saturation": 0.246,
+    "value": 0.158,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.628
+     },
+     {
+      "hue": "brown",
+      "share": 0.294
+     },
+     {
+      "hue": "grey",
+      "share": 0.079
+     }
+    ],
+    "exact": 16,
+    "grey": 0.079
+   },
+   "texelsPerMetre": 32.5,
+   "outline": {
+    "present": false,
+    "share": 0.758
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

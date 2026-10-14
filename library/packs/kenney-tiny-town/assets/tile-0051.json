@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0051",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0051.png",
+ "sha256": "cbe5b2282ba01f79bd1d4e8e61916976b3902b71e5d7bd59ed75b7c3ab8bb932",
+ "bytes": 287,
+ "preview": "previews/tile-0051.png",
+ "from": "Tiles/tile_0051.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey slate roof with a stone chimney on it",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "roof",
+  "grey",
+  "slate",
+  "chimney",
+  "house",
+  "building"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#5a6988",
+     "#8b9bb4",
+     "#c0cbdc"
+    ],
+    "saturation": 0.235,
+    "value": 0.456,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.648
+     },
+     {
+      "hue": "pink",
+      "share": 0.352
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.3
+   }
+  }
+ },
+ "source": {
+  "sha256": "8b6383707b4648aef99273bab8be3623866cc2781f9793ca8335c61513381eeb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

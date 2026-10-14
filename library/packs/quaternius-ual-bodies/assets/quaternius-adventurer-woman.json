@@ -1,0 +1,121 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-adventurer-woman",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-adventurer-woman.glb",
+ "sha256": "08b8647c2b3a1c37cb54b39c55d3b7b16325fef8303277b997c4e7265ebf4aad",
+ "bytes": 199760,
+ "preview": "previews/quaternius-adventurer-woman.png",
+ "from": "https://poly.pizza/m/ZwF0K7WBmu \"Adventurer\" (Ultimate Modular Women Pack), https://static.poly.pizza/69689495-028d-4b81-8678-792338a5693e.glb (sha256 38e4e642…cf31, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (42 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "an explorer in a khaki shirt, shorts, belts and boots; the shirt takes the player colour",
+ "tags": [
+  "human",
+  "woman",
+  "adventurer",
+  "explorer",
+  "jungle",
+  "treasure",
+  "outdoors",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.649,
+   1.828,
+   0.46
+  ],
+  "height": 1.828,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_LightGreen"
+  ]
+ },
+ "budgets": {
+  "triangles": 6808,
+  "textures": 0,
+  "materials": 9,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "materials 9 is over the target 8",
+     "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+     "model judge, right hand: idle at 0 s: 7.1% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.828,
+     "triangles": 6808,
+     "joints": 58,
+     "materials": 9
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#756440",
+     "#cead86",
+     "#3e3429",
+     "#5c4e32",
+     "#585236",
+     "#464025",
+     "#b4b4b4",
+     "#31251c"
+    ],
+    "saturation": 0.302,
+    "value": 0.388,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.734
+     },
+     {
+      "hue": "orange",
+      "share": 0.251
+     }
+    ],
+    "grey": 0.015
+   },
+   "trianglesPerMetre": 15.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.77 heads tall; hips at 55% of the height; shoulders 13% of it",
+   "body": {
+    "headsTall": 5.77,
+    "hipShare": 0.549,
+    "shoulderShare": 0.128,
+    "widthShare": 0.902
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/ZwF0K7WBmu"
+ }
+}

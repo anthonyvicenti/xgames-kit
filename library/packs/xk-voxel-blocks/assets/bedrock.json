@@ -1,0 +1,76 @@
+{
+ "assetVersion": 1,
+ "id": "bedrock",
+ "pack": "xk-voxel-blocks",
+ "file": "bedrock.png",
+ "sha256": "bed793bed156f22a065a3d1af4524206baf960f18b34b27399229a74985c4888",
+ "bytes": 7128,
+ "preview": "previews/bedrock.png",
+ "from": "bedrock.png",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "bedrock",
+ "tags": [
+  "voxel",
+  "block",
+  "pixel",
+  "tileable",
+  "bedrock"
+ ],
+ "use": {
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#4b4b4f",
+     "#3a3a3d",
+     "#5c5c60",
+     "#6a6a70",
+     "#1a1a1c",
+     "#2a2a2c"
+    ],
+    "saturation": 0.025,
+    "value": 0.29,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 6,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0.445
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-14"
+ }
+}

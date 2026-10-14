@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B08",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "casual-puzzle",
+  "rank": 8,
+  "row": "Casual puzzle (match, merge, sort, blocks)",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a merge game: drop fruit into a jar, two of the same merge into a bigger one, don't let it overflow. me and a friend go head to head and see who scores more",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "drop-merge",
+   "type": "mechanic",
+   "must": "dropping fruit; two of the same merge into a bigger one"
+  },
+  {
+   "id": "jar",
+   "type": "body",
+   "must": "fruit that rolls and stacks in a jar"
+  },
+  {
+   "id": "overflow",
+   "type": "rule",
+   "must": "overflowing the jar ends it; merges score"
+  },
+  {
+   "id": "head-to-head",
+   "type": "players",
+   "must": "two players at once, each seeing the other's jar or score"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

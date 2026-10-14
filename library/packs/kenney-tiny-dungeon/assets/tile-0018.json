@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0018",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0018.png",
+ "sha256": "63d6f6f3b726c81ffb591b2a5575a2ecf3b1fd0c9d7682a67f6ac101ab725423",
+ "bytes": 313,
+ "preview": "previews/tile-0018.png",
+ "from": "Tiles/tile_0018.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the shaft of a grey stone pillar (tile 6 is its top, tile 30 its base)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "pillar",
+  "column",
+  "stone",
+  "middle",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#3f2631",
+     "#52607c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.23,
+    "value": 0.503,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.734
+     },
+     {
+      "hue": "pink",
+      "share": 0.266
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.167
+   }
+  }
+ },
+ "source": {
+  "sha256": "b331519c825010a8d061b740a1127e3d711c2b447d6db1fad27f371acd1a1870",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

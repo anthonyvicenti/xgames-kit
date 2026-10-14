@@ -1,0 +1,109 @@
+{
+ "assetVersion": 1,
+ "id": "keeper-joe",
+ "pack": "vista-core-world",
+ "file": "keeper-joe.glb",
+ "sha256": "da3efce5a452d3c17f40b8d33bf449f565c0a6bef93602dc3e74364fb64081ca",
+ "bytes": 4743204,
+ "preview": "previews/keeper-joe.png",
+ "from": "Microsoft Rocketbox avatar as the core ships it",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "the fish stand keeper (a Rocketbox adult on the core's own rig)",
+ "tags": [
+  "keeper",
+  "npc",
+  "human",
+  "realistic",
+  "calm"
+ ],
+ "use": {
+  "size": [
+   1.35,
+   1.814,
+   0.332
+  ],
+  "height": 1.814,
+  "rig": "rocketbox",
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 7108,
+  "textures": 2,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": false,
+   "date": "2026-10-13",
+   "report": {
+    "problems": [
+     "missing required bones: Hips, Spine, Head, LeftArm, LeftForeArm, LeftHand, LeftUpLeg, LeftLeg, LeftFoot, RightArm, RightForeArm, RightHand, RightUpLeg, RightLeg, RightFoot"
+    ],
+    "warnings": [
+     "file size 4743204 B is over the target 2500000 B",
+     "the body carries 7 animation(s) of its own; the kit ignores them (clips come from the shared clip file)"
+    ],
+    "facts": {
+     "triangles": 7108,
+     "joints": 80,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#a4b2b5",
+     "#7e8f96",
+     "#a2b0b3",
+     "#98a7ac",
+     "#3d576e",
+     "#96a7ae",
+     "#98a9b0",
+     "#90a1a8"
+    ],
+    "saturation": 0.177,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.633
+     },
+     {
+      "hue": "blue",
+      "share": 0.283
+     },
+     {
+      "hue": "cyan",
+      "share": 0.067
+     }
+    ],
+    "grey": 0.633
+   },
+   "trianglesPerMetre": 5961.54,
+   "texelsPerMetre": 77876,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "author": "Microsoft",
+  "url": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

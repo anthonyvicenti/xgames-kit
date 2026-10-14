@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "house",
+ "pack": "kenney-city-kit-suburban",
+ "file": "house.glb",
+ "sha256": "c93cd4bde1f8f8c5b4c9362e6997a4e184320f046167179e12ba2278f2345c05",
+ "bytes": 33428,
+ "preview": "previews/house.png",
+ "from": "kenney:city-kit-suburban/building-type-c; baked to metres (x7.25661), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a suburban house with a green roof",
+ "tags": [
+  "backyard",
+  "building",
+  "backdrop",
+  "house"
+ ],
+ "use": {
+  "size": [
+   9.335,
+   7.5,
+   7.461
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    9.335,
+    7.5,
+    7.461
+   ],
+   "offset": [
+    0,
+    3.75,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1196,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1196,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 33428,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#595e76",
+     "#e6e6ef",
+     "#4cb581",
+     "#4fba82",
+     "#47b17e",
+     "#53be84",
+     "#d6d6e5",
+     "#5f647c"
+    ],
+    "saturation": 0.283,
+    "value": 0.6,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.364
+     },
+     {
+      "hue": "grey",
+      "share": 0.347
+     },
+     {
+      "hue": "blue",
+      "share": 0.266
+     }
+    ],
+    "grey": 0.347
+   },
+   "trianglesPerMetre": 1.65,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "86a69f30f1a09461283e158514945ae5cc9d56357b0ddc83a9a3f0eecd113591",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x7.25661), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

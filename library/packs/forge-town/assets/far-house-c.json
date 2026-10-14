@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "far-house-c",
+ "pack": "forge-town",
+ "file": "far-house-c.glb",
+ "sha256": "2f5cbb6cf59d7ca994fd42364ced313b4eaa0468755185bfb70c9c2bef8be9b2",
+ "bytes": 12420,
+ "preview": "previews/far-house-c.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-far.png, town/town-roof.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a far house for the backdrop, 9 m wide and 9.1 m to its ridge, a long low row: dark plaster and dark windows under a tiled roof",
+ "tags": [
+  "town",
+  "far",
+  "house",
+  "c"
+ ],
+ "use": {
+  "size": [
+   9.4,
+   10.16,
+   6.8
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -4.7,
+   0,
+   -3.4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    9,
+    6,
+    6
+   ],
+   "offset": [
+    0,
+    3,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 26,
+  "textures": 2,
+  "textureMax": 96,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 26,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 2,
+     "bytes": 12420,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#514942",
+     "#595148",
+     "#23221a",
+     "#422f29",
+     "#301d19",
+     "#4b2f2a",
+     "#2f201d",
+     "#452c22"
+    ],
+    "saturation": 0.169,
+    "value": 0.232,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.679
+     },
+     {
+      "hue": "brown",
+      "share": 0.19
+     },
+     {
+      "hue": "red",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.679
+   },
+   "trianglesPerMetre": 0.27,
+   "texelsPerMetre": 23,
+   "texturedShare": 0.822,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-far.png, town/town-roof.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

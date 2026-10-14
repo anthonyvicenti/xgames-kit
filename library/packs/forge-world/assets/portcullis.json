@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "portcullis",
+ "pack": "forge-world",
+ "file": "portcullis.glb",
+ "sha256": "faba5297330253180b5a0b1660f107ba97ca3a346d10f6b0c8dca76975e4e6df",
+ "bytes": 1720,
+ "preview": "previews/portcullis.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/portcullis.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "the gate's iron grille, 2 m by 2.5 m (alpha mask: the night shows between its bars)",
+ "tags": [
+  "world",
+  "gate",
+  "grille",
+  "portcullis"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.5,
+   0
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1,
+   0,
+   0
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 2,
+  "textures": 1,
+  "textureMax": 40,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 1720,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#000000"
+    ],
+    "saturation": 0,
+    "value": 0,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 0.63,
+   "texelsPerMetre": 16,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/portcullis.png) inside",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-door",
+ "pack": "forge-town",
+ "file": "town-town-door.png",
+ "sha256": "da8cd776de2c5ab5f46fdbf9e2bb290ed2a47c35b4cd65d6aa95ac6f220adc60",
+ "bytes": 1980,
+ "preview": "previews/town-town-door.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 20 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a plank door painted dark blue-green with iron straps and a brass ring, a small light over it, in a stone frame on a step (drawn)",
+ "tags": [
+  "texture",
+  "town",
+  "door"
+ ],
+ "use": {
+  "texelsPerMetre": 32.727,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 68
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "36x68 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 36,
+     "height": 68,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#706e66",
+     "#1c1c1e",
+     "#2e3a3e",
+     "#ba8042",
+     "#6f6d65",
+     "#2f3b3f",
+     "#2d393d",
+     "#716f67"
+    ],
+    "saturation": 0.137,
+    "value": 0.26,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.936
+     },
+     {
+      "hue": "orange",
+      "share": 0.059
+     }
+    ],
+    "exact": 117,
+    "grey": 0.936
+   },
+   "texelsPerMetre": 32.727,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 20 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "gf-ledger/1",
+  "prompt": "A co-op zombie defence on my phone where me and my friends hold the gate in first person with real weight, waves of zombies, a boss at the end, and a grappling hook to get onto the walls. Grim and dark, like moonlit ruins.",
+  "rows": [
+    { "id": "hold", "about": "action", "what": "Players hold a gate against attackers", "words": "hold the gate", "home": "exists", "by": "mechanic:waves", "core": true },
+    { "id": "hook", "about": "action", "what": "A grappling hook pulls a player onto the walls", "words": "a grappling hook to get onto the walls", "home": "build", "how": "a module in src/hook.js that casts a ray and pulls the body", "where": "module", "needs": ["grappling-hook"], "core": true },
+    { "id": "acts", "about": "acts", "what": "Waves until everyone falls", "words": "waves of zombies", "acts": "until-you-fall", "home": "exists" },
+    { "id": "view", "about": "perspective", "what": "First person, with weight", "words": "in first person with real weight", "camera": "first", "dimension": "3d", "home": "exists", "needs": ["first-person-weight"] },
+    { "id": "friends", "about": "players", "what": "Friends play together", "words": "me and my friends", "together": "coop", "home": "exists" },
+    { "id": "body", "about": "body", "what": "Each player is a character", "words": null, "body": "character", "home": "exists" },
+    { "id": "phone", "about": "devices", "what": "It plays on a phone", "words": "on my phone", "devices": ["phone"], "home": "exists" },
+    { "id": "feel", "about": "feel", "what": "Grim and dark, moonlit ruins", "words": "Grim and dark, like moonlit ruins", "kind": "dark", "home": "exists" }
+  ],
+  "asks": [],
+  "foundation": {
+    "runtime": "forge",
+    "loop": "endless",
+    "kind": "dark",
+    "why": { "runtime": "forge: meets devices phone, camera first; builds 1 thing it lacks", "loop": "endless: \"waves of zombies\": play until everyone falls", "kind": "dark: \"Grim and dark, like moonlit ruins\"" },
+    "said": ["forge has no grappling-hook: this game builds it (a promise in spec.build)."],
+    "builds": [ { "capability": "grappling-hook", "row": "hook" } ],
+    "loopBuild": null,
+    "kindProof": null
+  }
+}

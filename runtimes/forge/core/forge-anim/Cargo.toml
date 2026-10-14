@@ -1,0 +1,12 @@
+[package]
+name = "forge-anim"
+description = "gf-forge's animation, shared by the core and the renderer: glTF skins and clips from bytes, sampling, crossfades and additive per-bone impulses, the gf-humanoid-1 bone map and retarget, bone world matrices as structure-of-arrays. CPU only (GPU skinning is the renderer's)."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+
+[dependencies]
+glam = { workspace = true }
+gltf = { workspace = true, features = ["names", "extras"] }
+serde_json = { workspace = true }

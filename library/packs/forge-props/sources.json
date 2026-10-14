@@ -1,0 +1,268 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "brazier": {
+   "origin": "gf-forge library ruins/brazier.glb",
+   "roles": [
+    "ruins.brazier.code",
+    "ruins.brazier.code"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.864
+      },
+      {
+       "hue": "brown",
+       "share": 0.136
+      }
+     ],
+     "grey": 0.864,
+     "lightness": 0.433,
+     "saturation": 0.141,
+     "top": [
+      {
+       "colour": "#6f6c69",
+       "share": 0.657
+      },
+      {
+       "colour": "#957c65",
+       "share": 0.207
+      },
+      {
+       "colour": "#a05027",
+       "share": 0.136
+      }
+     ]
+    },
+    "trianglesPerMetre": 9.6,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 144,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 7092,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "emerge-mound": {
+   "origin": "gf-forge library ruins/emerge-mound.glb",
+   "roles": [
+    "ruins.mound.code",
+    "ruins.mound.code"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.431,
+     "saturation": 0.151,
+     "top": [
+      {
+       "colour": "#897965",
+       "share": 0.798
+      },
+      {
+       "colour": "#554b3f",
+       "share": 0.202
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.92,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 77,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4856,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "town-bile": {
+   "origin": "gf-forge library held/town-bile.glb",
+   "roles": [
+    "enemy.zombie.ranged",
+    "held.town.bile",
+    "held.town.bile"
+   ],
+   "glow": true,
+   "track": "Z",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "green",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.492,
+     "saturation": 0.498,
+     "top": [
+      {
+       "colour": "#59bc3f",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 44.79,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 280,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 9944,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "arms": {
+   "origin": "gf-forge library fp/arms.glb",
+   "roles": [
+    "fp.arms.gloves",
+    "fp.arms.gloves"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.726
+      },
+      {
+       "hue": "brown",
+       "share": 0.274
+      }
+     ],
+     "grey": 0.726,
+     "lightness": 0.615,
+     "saturation": 0.126,
+     "top": [
+      {
+       "colour": "#cecbc5",
+       "share": 0.58
+      },
+      {
+       "colour": "#7c6552",
+       "share": 0.274
+      },
+      {
+       "colour": "#5d5045",
+       "share": 0.146
+      }
+     ]
+    },
+    "trianglesPerMetre": 26.6,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 312,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 14224,
+      "role": "small"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 4,
+   "paletteSize": 3,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.647
+    },
+    {
+     "hue": "green",
+     "share": 0.25
+    },
+    {
+     "hue": "brown",
+     "share": 0.103
+    }
+   ],
+   "lightness": 0.492,
+   "saturation": 0.151,
+   "trianglesPerMetre": 26.6,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.864
+  },
+  "licenceText": "Made by the kit's own tools from code, with no upstream art (unless an asset names the CC0 texture it was drawn over). Released under CC0 1.0."
+ }
+}

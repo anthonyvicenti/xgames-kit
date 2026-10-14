@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "flagstone-a",
+ "pack": "forge-world",
+ "file": "flagstone-a.glb",
+ "sha256": "4a966173c58405df0be92b2f426bfb67a1376568e13fd196214f98684a8b56e4",
+ "bytes": 7680,
+ "preview": "previews/flagstone-a.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-flagstone.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a loose paving slab, about 1.1 m across and 5 cm thick",
+ "tags": [
+  "world",
+  "flagstone",
+  "a"
+ ],
+ "use": {
+  "size": [
+   1.092,
+   0.05,
+   0.918
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.471,
+   0,
+   -0.423
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 18,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 18,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 7680,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#576865",
+     "#5b666a",
+     "#475a51",
+     "#41554a",
+     "#42544b",
+     "#415649",
+     "#243328",
+     "#42524c"
+    ],
+    "saturation": 0.111,
+    "value": 0.311,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.71,
+   "texelsPerMetre": 62,
+   "texturedShare": 0.811,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-flagstone.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

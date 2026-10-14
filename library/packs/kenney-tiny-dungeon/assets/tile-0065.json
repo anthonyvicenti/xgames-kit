@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0065",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0065.png",
+ "sha256": "4ba56ed4e23323196d46f9a8b9caeb1addf7368b5cccd660e4f5dee64ed8fcab",
+ "bytes": 209,
+ "preview": "previews/tile-0065.png",
+ "from": "Tiles/tile_0065.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a grey stone tombstone with a carved inscription",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "grave",
+  "tombstone",
+  "gravestone",
+  "headstone",
+  "stone",
+  "graveyard",
+  "cemetery"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#262b44",
+     "#c0cbdc",
+     "#5a6988"
+    ],
+    "saturation": 0.248,
+    "value": 0.473,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.792
+   }
+  }
+ },
+ "source": {
+  "sha256": "cb304f8bfba830e8213f357e0ad9b255e63aed2574cf5a2b3c351490d28dabf3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-brick",
+ "pack": "flat-standins-pixel",
+ "file": "tile-brick.png",
+ "sha256": "0a99cf697288240bfd56d3534a635a06ae66db364da48c8945105f770b6e0c5d",
+ "bytes": 182,
+ "preview": "previews/tile-brick.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-brick.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "red brick tile",
+ "tags": [
+  "pixel",
+  "brick",
+  "wall",
+  "side",
+  "flat",
+  "2d",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#a85a3e",
+     "#6e3426",
+     "#c47652",
+     "#8c4430"
+    ],
+    "saturation": 0.479,
+    "value": 0.41,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.578
+     },
+     {
+      "hue": "brown",
+      "share": 0.422
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.483
+   }
+  }
+ },
+ "source": {
+  "sha256": "0ee0669bd84991937a1ad3c9cee39aa544874c0fbbc21fb821742b8e07ac0310",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

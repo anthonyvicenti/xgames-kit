@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0028",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0028.png",
+ "sha256": "fcf51e5aa4f266e321d338dd6123e504f24534c1cb1935b09ac6dc03ee9f3d77",
+ "bytes": 236,
+ "preview": "previews/tile-0028.png",
+ "from": "Tiles/tile_0028.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a small green tree, one tile tall",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "tree",
+  "green",
+  "small",
+  "nature"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#479f4a",
+     "#84c669",
+     "#bd6c4a"
+    ],
+    "saturation": 0.335,
+    "value": 0.365,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.506
+     },
+     {
+      "hue": "pink",
+      "share": 0.481
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.952
+   }
+  }
+ },
+ "source": {
+  "sha256": "a8b6bdb8954e01dbe6abebaec6d3eedf4fcfeb825b7d982ed488c57a573fdaac",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

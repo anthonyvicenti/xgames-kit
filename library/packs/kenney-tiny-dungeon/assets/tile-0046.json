@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0046",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0046.png",
+ "sha256": "6319abeefed93bfa6ee9c123b4d773c645285e95d1b45d70b9704e4fe5cd7708",
+ "bytes": 271,
+ "preview": "previews/tile-0046.png",
+ "from": "Tiles/tile_0046.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the left half of a closed wooden double door in a stone wall (tile 47 is the right half)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "wooden",
+  "closed",
+  "double-door",
+  "left"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#763b36",
+     "#3f2631",
+     "#262b44",
+     "#bd6c4a",
+     "#52607c",
+     "#8b9bb4",
+     "#c0cbdc"
+    ],
+    "saturation": 0.314,
+    "value": 0.34,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.359
+     },
+     {
+      "hue": "red",
+      "share": 0.262
+     },
+     {
+      "hue": "pink",
+      "share": 0.234
+     },
+     {
+      "hue": "orange",
+      "share": 0.145
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.733
+   }
+  }
+ },
+ "source": {
+  "sha256": "acc19c7eee1b0c89dc9bacda260c7678490967389e41cdd8186c2fe82cee78c5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "coin",
+ "pack": "forge-world",
+ "file": "coin.glb",
+ "sha256": "af2009f6a8fde83b2ac56194d3089a5d94246b31b087ad54c4d9ca05190a4257",
+ "bytes": 5124,
+ "preview": "previews/coin.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/gold.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small gold coin on its edge with a cross struck on each face (material glow_gold: it glows, so it reads in the dark); a game draws it about 11 cm across",
+ "tags": [
+  "fight",
+  "coin",
+  "world"
+ ],
+ "use": {
+  "size": [
+   1,
+   0.951,
+   0.12
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.5,
+   -0.476,
+   -0.06
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 36,
+  "textures": 1,
+  "textureMax": 16,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 36,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 5124,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#f6c43e",
+     "#9c6418",
+     "#b0761e",
+     "#af701b"
+    ],
+    "saturation": 0.784,
+    "value": 0.452,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.681
+     },
+     {
+      "hue": "yellow",
+      "share": 0.319
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.42,
+   "texelsPerMetre": 16,
+   "texturedShare": 0.799,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/gold.png) inside",
+  "author": "games.fun"
+ }
+}

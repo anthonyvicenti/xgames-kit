@@ -1,0 +1,81 @@
+{
+ "packVersion": 1,
+ "id": "flat-standins-drawn",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Flat drawn stand-ins",
+ "describe": "The drawn art a flat 2D game starts with (gf-flat-1): ground tiles, a side and a top body sheet, pickups.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/flat-standins-drawn/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "validators": [
+  "flat-judge"
+ ],
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 4,
+   "hues": [
+    "#2a2440",
+    "#ffd23f",
+    "#c98f4e",
+    "#d9b98a",
+    "#4aa8e8",
+    "#7cc267",
+    "#b5654a",
+    "#9a6b4a",
+    "#ff5a7a",
+    "#ffe680",
+    "#f2f0ec",
+    "#a8a1ba"
+   ],
+   "saturation": 0.51,
+   "value": 0.58,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.313
+    },
+    {
+     "hue": "grey",
+     "share": 0.145
+    },
+    {
+     "hue": "yellow",
+     "share": 0.145
+    },
+    {
+     "hue": "cyan",
+     "share": 0.116
+    },
+    {
+     "hue": "purple",
+     "share": 0.114
+    },
+    {
+     "hue": "green",
+     "share": 0.078
+    },
+    {
+     "hue": "red",
+     "share": 0.056
+    }
+   ],
+   "grey": 0.012
+  },
+  "texelsPerMetre": 128,
+  "outline": {
+   "present": true,
+   "share": 0.533
+  }
+ },
+ "assets": 15
+}

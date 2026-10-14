@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "boss-roar",
+ "pack": "forge-sounds",
+ "file": "boss-roar.ogg",
+ "sha256": "71ce57f810fc2979cde85553c14f0e7c5a820e3a9721af13f35cdeb99da13728",
+ "bytes": 8722,
+ "preview": "previews/boss-roar.png",
+ "from": "https://opengameart.org/content/80-cc0-rpg-sfx creature_roar_03.ogg; cut to 0.031-0.931 s of the source (0.9 s), 2 ms fade-in and 250 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -3 dB (loudest 400 ms toward -15 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "boss roar (boss roar)",
+ "tags": [
+  "sounds",
+  "boss",
+  "roar"
+ ],
+ "use": {
+  "seconds": 0.901,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -12.8,
+     "samplePeakDb": -3.1,
+     "truePeakDb": -3,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.901,
+    "peakDbfs": -3.1,
+    "soundMaxLufs": -12.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.031-0.931 s of the source (0.9 s), 2 ms fade-in and 250 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -3 dB (loudest 400 ms toward -15 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

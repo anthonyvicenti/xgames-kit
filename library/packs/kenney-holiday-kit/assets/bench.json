@@ -1,0 +1,121 @@
+{
+ "assetVersion": 1,
+ "id": "bench",
+ "pack": "kenney-holiday-kit",
+ "file": "bench.glb",
+ "sha256": "b82009be6bafa31b6cf7cbfdc169c3f5e48bcbcb9034ceb3bdb82f9d1025dbd5",
+ "bytes": 22580,
+ "preview": "previews/bench.png",
+ "from": "kenney:holiday-kit/bench; baked to metres (x1.25936), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden park bench",
+ "tags": [
+  "backyard",
+  "plaza",
+  "bench",
+  "cover"
+ ],
+ "use": {
+  "size": [
+   1.412,
+   0.92,
+   0.796
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.75,
+   1
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.412,
+    0.92,
+    0.796
+   ],
+   "offset": [
+    0,
+    0.46,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 160,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 160,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 22580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#b86747",
+     "#d17c57",
+     "#c6724f",
+     "#be6c4b",
+     "#989fbf",
+     "#b6bfe5",
+     "#abb3d6",
+     "#a6add0"
+    ],
+    "saturation": 0.445,
+    "value": 0.601,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.668
+     },
+     {
+      "hue": "blue",
+      "share": 0.283
+     },
+     {
+      "hue": "grey",
+      "share": 0.049
+     }
+    ],
+    "grey": 0.049
+   },
+   "trianglesPerMetre": 5.65,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/holiday-kit",
+  "download": "https://kenney.nl/media/pages/assets/holiday-kit/3976a6496a-1733923970/kenney_holiday-kit.zip",
+  "sha256": "e37ffcbb074679098d16db68aa50ce34a3ca2f1900a20110da9509d312039554",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.25936), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

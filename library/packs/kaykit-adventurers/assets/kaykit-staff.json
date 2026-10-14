@@ -1,0 +1,139 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-staff",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-staff.glb",
+ "sha256": "3ca7f279ae10e8cac59f52319ecdfe73c0d3d574e01992f083a77b0f43952360",
+ "bytes": 59448,
+ "preview": "previews/kaykit-staff.png",
+ "from": "staff.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Mage 2H_Staff (handslot.r)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a mage's tall wooden staff with a gem",
+ "tags": [
+  "weapon",
+  "staff",
+  "magic",
+  "caster",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.432,
+   1.616,
+   0.219
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.184,
+   -0.675,
+   -0.11
+  ],
+  "grip": {
+   "position": [
+    -0.0055,
+    -0.0431,
+    0.0776
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 2,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 440,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 440,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 59448,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 26,
+    "hues": [
+     "#9f5e48",
+     "#92513d",
+     "#a26149",
+     "#995944",
+     "#767f84",
+     "#316069",
+     "#60b968",
+     "#778185"
+    ],
+    "saturation": 0.325,
+    "value": 0.473,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.289
+     },
+     {
+      "hue": "green",
+      "share": 0.225
+     },
+     {
+      "hue": "cyan",
+      "share": 0.209
+     },
+     {
+      "hue": "orange",
+      "share": 0.151
+     },
+     {
+      "hue": "yellow",
+      "share": 0.074
+     },
+     {
+      "hue": "brown",
+      "share": 0.052
+     }
+    ],
+    "grey": 0.289
+   },
+   "trianglesPerMetre": 22.73,
+   "texelsPerMetre": 125,
+   "texturedShare": 0.913,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/staff.gltf",
+  "sha256": "eb2e277510325a242974ee842453882de2d55b09ec94a43148aff1dd4237c67a",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Mage 2H_Staff (handslot.r)"
+ }
+}

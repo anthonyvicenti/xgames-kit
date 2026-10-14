@@ -1,0 +1,88 @@
+{
+ "packVersion": 1,
+ "id": "kenney-food-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Food Kit (2.0)",
+ "describe": "Kenney's food kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/food-kit",
+  "file": "library/packs/kenney-food-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "cdad90853682499b94c9fda2f87678b24bfd8f3264e0ed323f6b6a27fd7c6f6f",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 9,
+   "hues": [
+    "#e45e48",
+    "#d79770",
+    "#b56545",
+    "#ee6445",
+    "#cd8860",
+    "#ffcd5e",
+    "#8e5641",
+    "#f8a3e2",
+    "#ebebf2",
+    "#e15d49",
+    "#e5e5ee",
+    "#845442"
+   ],
+   "saturation": 0.63,
+   "value": 0.595,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.388
+    },
+    {
+     "hue": "red",
+     "share": 0.198
+    },
+    {
+     "hue": "grey",
+     "share": 0.094
+    },
+    {
+     "hue": "pink",
+     "share": 0.087
+    },
+    {
+     "hue": "blue",
+     "share": 0.081
+    },
+    {
+     "hue": "brown",
+     "share": 0.063
+    },
+    {
+     "hue": "cyan",
+     "share": 0.054
+    }
+   ],
+   "grey": 0.006
+  },
+  "trianglesPerMetre": 24.86,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 8,
+ "validators": [
+  "budget"
+ ]
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "door",
+ "pack": "forge-town",
+ "file": "door.glb",
+ "sha256": "85f55df09dcf9610da86c7a2e56da57214bc245111e23be6308170a06389565d",
+ "bytes": 3916,
+ "preview": "previews/door.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-door.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a house door, 1.1 m by 2.1 m, in its stone frame: planks, iron straps, a small light over it; its back is the wall (z = 0)",
+ "tags": [
+  "town",
+  "door"
+ ],
+ "use": {
+  "size": [
+   1.1,
+   2.1,
+   0.07
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.55,
+   0,
+   0
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 8,
+  "textures": 1,
+  "textureMax": 68,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 8,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 3916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#2b363a",
+     "#2f3b3f",
+     "#706e66"
+    ],
+    "saturation": 0.133,
+    "value": 0.236,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 1.73,
+   "texelsPerMetre": 33,
+   "texturedShare": 0.862,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-door.png) inside",
+  "author": "games.fun"
+ }
+}

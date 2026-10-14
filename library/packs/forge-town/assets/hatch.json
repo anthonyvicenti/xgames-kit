@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "hatch",
+ "pack": "forge-town",
+ "file": "hatch.glb",
+ "sha256": "4853a61cb6ada5f0280116dc36dd1393ef23ec03c0ad18abc8eaa4ed1ef2ac4f",
+ "bytes": 21284,
+ "preview": "previews/hatch.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-stone.png, town/town-wood.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an open cellar hatch at a house's foot: a stone kerb 1.5 m by 1.9 m round a black opening, its two plank doors flung open (where the dead come up: nothing here stops a body)",
+ "tags": [
+  "town",
+  "hatch"
+ ],
+ "use": {
+  "size": [
+   1.72,
+   0.76,
+   1.9
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.86,
+   0,
+   -0.95
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 46,
+  "textures": 2,
+  "textureMax": 96,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 46,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 2,
+     "bytes": 21284,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#0a0a0d",
+     "#4d3827",
+     "#423223",
+     "#5d615f",
+     "#4e5250",
+     "#5a5d5b",
+     "#4c504e",
+     "#7e7e78"
+    ],
+    "saturation": 0.136,
+    "value": 0.232,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.715
+     },
+     {
+      "hue": "brown",
+      "share": 0.285
+     }
+    ],
+    "grey": 0.715
+   },
+   "trianglesPerMetre": 2.56,
+   "texelsPerMetre": 32,
+   "texturedShare": 0.727,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-stone.png, town/town-wood.png) inside",
+  "author": "games.fun over Dimitrios Savva, Dimitrios Savva (Poly Haven)"
+ }
+}

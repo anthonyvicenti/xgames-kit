@@ -1,0 +1,54 @@
+{
+ "assetVersion": 1,
+ "id": "wind",
+ "pack": "vista-sounds",
+ "file": "wind.ogg",
+ "sha256": "3e5d45f75364bf797f375061ed0232724e0570c1ff8f64c4c97498093e1789ec",
+ "bytes": 415921,
+ "preview": "previews/wind.png",
+ "from": "coastal wind through bushes — loop, gust-modulated",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Coastal wind (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "wind",
+  "loop"
+ ],
+ "use": {
+  "seconds": 60,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -17.9,
+     "samplePeakDb": -9.4,
+     "hfRatio": 0.031
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 60,
+    "peakDbfs": -9.4,
+    "soundMaxLufs": -17.9
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/bruno.auzet/sounds/706471/",
+  "author": "bruno.auzet"
+ }
+}

@@ -1,0 +1,189 @@
+{
+  "specVersion": 2,
+  "title": "Isle Run",
+  "hook": "Knights fight skeletons across floating isles joined by portals, then face the Bone Sorcerer.",
+  "prompt": "gf-scenic wave 2 sandbox (gf-scenic/PLAN.md §4): a co-op action roguelite of three floating isles and a boss, made by create alone (no hand-staged files)",
+  "runtime": "three",
+  "profile": "scenic-3d",
+  "loop": "run",
+  "kind": "scenic",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "follow",
+  "controls": {
+    "primary": "slash (hold for a combo)",
+    "secondary": "heavy strike",
+    "interact": "open chests, take weapons",
+    "jump": "dodge roll"
+  },
+  "round": {
+    "seconds": 600,
+    "winBy": "Clear all three isles and beat the boss.",
+    "loseBy": "Everyone is down at once.",
+    "replay": true
+  },
+  "world": {
+    "template": "isles",
+    "size": "small"
+  },
+  "mechanics": [
+    {
+      "id": "melee",
+      "as": "a sword you swing in combos, a heavy strike and a dodge roll",
+      "params": {
+        "weapon": "sword"
+      }
+    },
+    {
+      "id": "waves",
+      "as": "skeleton warriors, archers and brutes on every isle",
+      "params": {
+        "enemyRole": "monster",
+        "maxAlive": 12,
+        "spawnEvery": 0.8,
+        "attackTokens": 2,
+        "hp": 5,
+        "types": [
+          {
+            "id": "warrior",
+            "name": "Warrior",
+            "role": "monster",
+            "behaviour": "chaser",
+            "hp": 5,
+            "speed": 2.8,
+            "score": 10,
+            "weight": 3,
+            "from": 1,
+            "weapon": "kaykit-skeleton-axe"
+          },
+          {
+            "id": "archer",
+            "name": "Archer",
+            "role": "archer",
+            "behaviour": "ranged",
+            "hp": 3,
+            "speed": 2.4,
+            "score": 12,
+            "weight": 1.2,
+            "from": 1,
+            "weapon": "kaykit-skeleton-crossbow"
+          },
+          {
+            "id": "brute",
+            "name": "Brute",
+            "role": "monster",
+            "behaviour": "brute",
+            "hp": 12,
+            "height": 2.3,
+            "color": "#c9b8a0",
+            "score": 25,
+            "weight": 0.8,
+            "from": 2,
+            "weapon": "kaykit-greataxe"
+          }
+        ]
+      }
+    },
+    {
+      "id": "health",
+      "as": "hearts",
+      "params": {
+        "hp": 6,
+        "respawnSeconds": 6
+      }
+    },
+    {
+      "id": "levels",
+      "as": "three floating isles joined by portals, the last one the boss's",
+      "params": {
+        "count": 3,
+        "wavesPerLevel": 3,
+        "startCount": 3,
+        "levelGrowth": 1,
+        "chests": 1
+      }
+    },
+    {
+      "id": "boss",
+      "as": "a giant king with a slam, a charge, a volley and summons",
+      "params": {
+        "name": "The Bone Sorcerer",
+        "role": "boss",
+        "hp": 120,
+        "height": 3.2,
+        "summon": {
+          "count": 3,
+          "types": [
+            "warrior"
+          ]
+        },
+        "weapon": "kaykit-staff",
+        "color": "#d8c8ff"
+      }
+    },
+    {
+      "id": "loot",
+      "as": "coins, potions, chests, weapon drops and an upgrade card after each isle",
+      "params": {}
+    }
+  ],
+  "rules": {
+    "summary": "Clear each isle of skeletons, step into its portal together, and beat the Bone Sorcerer on the last isle.",
+    "scoring": "+10 a warrior, +12 an archer, +25 a brute, +100 the boss"
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a knight in armour",
+      "body": {
+        "from": "library",
+        "asset": "kaykit-adventurers/kaykit-knight"
+      }
+    },
+    {
+      "role": "monster",
+      "describe": "a skeleton warrior",
+      "body": {
+        "from": "library",
+        "asset": "kaykit-skeletons/kaykit-skeleton-warrior"
+      }
+    },
+    {
+      "role": "archer",
+      "describe": "a skeleton archer with a crossbow",
+      "body": {
+        "from": "library",
+        "asset": "kaykit-skeletons/kaykit-skeleton-rogue"
+      }
+    },
+    {
+      "role": "boss",
+      "describe": "a giant skeleton sorcerer",
+      "body": {
+        "from": "library",
+        "asset": "kaykit-skeletons/kaykit-skeleton-mage"
+      }
+    }
+  ],
+  "look": {
+    "preset": "dusk-isle",
+    "time": "dusk"
+  },
+  "build": [],
+  "content": {
+    "rating": "E"
+  }
+}

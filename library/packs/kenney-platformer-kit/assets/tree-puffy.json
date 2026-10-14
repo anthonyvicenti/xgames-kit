@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "tree-puffy",
+ "pack": "kenney-platformer-kit",
+ "file": "tree-puffy.glb",
+ "sha256": "18f41135a96d9b787eae9cf9a03d9159ee89d272965ceb2507f8dd51fda14276",
+ "bytes": 24868,
+ "preview": "previews/tree-puffy.png",
+ "from": "kenney:platformer-kit/tree; baked to metres (x1.96801), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a chunky cartoon tree with a puffy crown",
+ "tags": [
+  "nature",
+  "tree",
+  "arena",
+  "cute",
+  "puffy"
+ ],
+ "use": {
+  "size": [
+   2.143,
+   3.8,
+   2.182
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.3,
+   "height": 2.5,
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 408,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 408,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 24868,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#43ad7c",
+     "#36a076",
+     "#4ab480",
+     "#309973",
+     "#cf7a56",
+     "#20896b",
+     "#5ac487",
+     "#55be85"
+    ],
+    "saturation": 0.517,
+    "value": 0.477,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.414
+     },
+     {
+      "hue": "green",
+      "share": 0.39
+     },
+     {
+      "hue": "orange",
+      "share": 0.195
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "632eb83a4359afd110594ea6f69db4db0c9512c79ae2c88741cf68e527253e41",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.96801), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

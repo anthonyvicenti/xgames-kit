@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "slide",
+ "pack": "poly-pizza-cc-by",
+ "file": "slide.glb",
+ "sha256": "1c61dfb60f3dc9e28d499d1a75ae7644c82ac1994f41c57e27f67a61ee7f0fa6",
+ "bytes": 193348,
+ "preview": "previews/slide.png",
+ "from": "polypizza:dDe3njWPbg0; baked to metres (x0.50883), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red playground slide with a ladder",
+ "tags": [
+  "backyard",
+  "playground",
+  "cover",
+  "slide"
+ ],
+ "use": {
+  "size": [
+   0.562,
+   2.4,
+   3.404
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.562,
+    2.4,
+    3.404
+   ],
+   "offset": [
+    0,
+    1.2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 695,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 695,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 193348,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#c61012",
+     "#032f95",
+     "#fa681c",
+     "#c51012",
+     "#eed9d9",
+     "#efd8d8",
+     "#f5661b",
+     "#032d91"
+    ],
+    "saturation": 0.84,
+    "value": 0.445,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.476
+     },
+     {
+      "hue": "blue",
+      "share": 0.281
+     },
+     {
+      "hue": "orange",
+      "share": 0.216
+     }
+    ],
+    "grey": 0.004
+   },
+   "trianglesPerMetre": 7.86,
+   "texelsPerMetre": 166,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "Poly by Google",
+  "url": "https://poly.pizza/m/dDe3njWPbg0",
+  "credit": "\"Slide\" by Poly by Google, CC BY 3.0 (https://poly.pizza/m/dDe3njWPbg0)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/dDe3njWPbg0",
+  "download": "https://static.poly.pizza/3a8b471c-4e8d-4270-822f-7243a45604a3.glb",
+  "sha256": "e4812925fa8a38a7b0bec04133d33144535ccd563c5ec3009292963745fde33c",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.50883), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Poly by Google"
+ }
+}

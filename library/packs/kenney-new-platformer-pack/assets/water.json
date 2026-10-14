@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "water",
+ "pack": "kenney-new-platformer-pack",
+ "file": "water.png",
+ "sha256": "dfc94174e644fe0fa2a50ab795f8ee5bbc85dc0e259c5f2df7238dcb5222240c",
+ "bytes": 2355,
+ "preview": "previews/water.png",
+ "from": "Sprites/Tiles/Double/water.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "water tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "water",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#5baee7",
+     "#82ceff",
+     "#b4dfff",
+     "#64b6ed",
+     "#78c6f9",
+     "#6ebef3",
+     "#7fccfd",
+     "#5db0e8"
+    ],
+    "saturation": 0.884,
+    "value": 0.711,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.877
+     },
+     {
+      "hue": "blue",
+      "share": 0.123
+     }
+    ],
+    "exact": 33,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "53c1ea699bc2e8bd45e083a70736c658ac71efde43e616f4748e3b351602c2fa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

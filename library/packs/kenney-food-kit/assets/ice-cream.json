@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "ice-cream",
+ "pack": "kenney-food-kit",
+ "file": "ice-cream.glb",
+ "sha256": "c624bb4be9a7cd46e0c20cb2e1620b3b2e9e89b534009406192b8eb97168fe2c",
+ "bytes": 18352,
+ "preview": "previews/ice-cream.png",
+ "from": "kenney:food-kit/ice-cream; baked to metres (x0.75558), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an ice cream cone",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "ice",
+  "cream"
+ ],
+ "use": {
+  "size": [
+   0.178,
+   0.35,
+   0.205
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.1,
+   "height": 0.35,
+   "offset": [
+    0,
+    0.175,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18352,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#d79770",
+     "#e088da",
+     "#e891dd",
+     "#f49fe1",
+     "#ed96de",
+     "#e2a781",
+     "#e48ddb",
+     "#f8a3e2"
+    ],
+    "saturation": 0.63,
+    "value": 0.701,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.466
+     },
+     {
+      "hue": "pink",
+      "share": 0.373
+     },
+     {
+      "hue": "purple",
+      "share": 0.161
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 23.43,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "6258b20c40102ec4e86679e39a0618e1a025f302bf7bc8fdc618ebdd520cf83e",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.75558), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

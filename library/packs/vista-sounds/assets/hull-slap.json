@@ -1,0 +1,55 @@
+{
+ "assetVersion": 1,
+ "id": "hull-slap",
+ "pack": "vista-sounds",
+ "file": "hull-slap.ogg",
+ "sha256": "a0d74ee5d1dc174de4a2806090bfa4005999dfa9a038cb2067bd85f1ec1ef0f9",
+ "bytes": 27436,
+ "preview": "previews/hull-slap.png",
+ "from": "5 water knocks on the hull",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Hull slamming a wave",
+ "tags": [
+  "coast",
+  "calm",
+  "hull",
+  "slap"
+ ],
+ "use": {
+  "seconds": 3.127,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -11,
+     "samplePeakDb": -0.8,
+     "truePeakDb": -0.8,
+     "hfRatio": 0.006
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 3.127,
+    "peakDbfs": -0.8,
+    "soundMaxLufs": -11
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/kyles/sounds/637206/",
+  "author": "kyles"
+ }
+}

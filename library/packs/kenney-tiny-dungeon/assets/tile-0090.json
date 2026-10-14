@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0090",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0090.png",
+ "sha256": "85eb973c4df0784606f7d6e082dac8323575ef75ac9b999ef815810b69b4fd9d",
+ "bytes": 332,
+ "preview": "previews/tile-0090.png",
+ "from": "Tiles/tile_0090.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a closed wooden treasure chest with iron bands and a lock, from the front",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "chest",
+  "treasure",
+  "loot",
+  "closed",
+  "wooden",
+  "lock",
+  "container"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#763b36",
+     "#8b9bb4",
+     "#eaa56c",
+     "#5a6988",
+     "#262b44"
+    ],
+    "saturation": 0.312,
+    "value": 0.412,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.468
+     },
+     {
+      "hue": "blue",
+      "share": 0.27
+     },
+     {
+      "hue": "orange",
+      "share": 0.198
+     },
+     {
+      "hue": "red",
+      "share": 0.063
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.778
+   }
+  }
+ },
+ "source": {
+  "sha256": "fb4aa142cbbba7d9504ed3ff0d989069e8f1974feb76f25906efd9901d4f9ef4",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,314 @@
+{
+  "id": "vista",
+  "name": "vista (a vendored WebGPU core)",
+  "version": "0.3.0-places",
+  "describe": "A vendored WebGPU core (MIT, pinned at its commit) that draws islands in the open sea: a physical sky, a simulated ocean, volumetric clouds, a walker, a boat and fishing. Every game's islands are generated from its own seeds and words (1 to 5 to sail between). Everything above the core is the shared system's.",
+  "for": "calm games where the place is the point: a coast, the sea, the sky, light and weather; fishing, sailing, exploring, cosy co-op for 1-4",
+  "rank": 3,
+  "defaultKind": "calm",
+  "says": "plays only in a desktop browser with WebGPU and a graphics card; not on phones or tablets and not inside a post on X; the first visit compiles its shaders (about 10 s)",
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "a calm fishing game passes verify-vista's 16 required measures; the frozen eval T7 ran twice",
+        "date": "2026-10-12"
+      }
+    ],
+    "note": "opened to pitches by the creator on 2026-10-13: \"We can open forge and vista.\""
+  },
+  "limits": {
+    "dimension": "3d",
+    "inputs": [
+      "keyboard-mouse"
+    ],
+    "graphics": {
+      "apis": [
+        "webgpu"
+      ],
+      "fidelity": [
+        "photoreal"
+      ],
+      "noApi": "the kit's screen with the game's link; none of the core is downloaded (measure 32)"
+    },
+    "cameraRigs": [
+      "first"
+    ],
+    "cameraDefault": "first",
+    "players": {
+      "min": 1,
+      "max": 4
+    },
+    "bots": false,
+    "watch": true,
+    "voice": true,
+    "packedHtml": false,
+    "devices": {
+      "desktop": {
+        "status": "emulated",
+        "note": "headless Chrome on a desktop GPU with WebGPU; no person has played a vista game yet"
+      },
+      "laptop": {
+        "status": "untested",
+        "note": "needs WebGPU limits a laptop GPU may not give"
+      },
+      "tablet": {
+        "status": "unsupported",
+        "note": "the core needs WebGPU limits a mobile GPU does not give"
+      },
+      "phone": {
+        "status": "unsupported",
+        "note": "the core needs WebGPU limits a phone does not give"
+      },
+      "x-post": {
+        "status": "unsupported",
+        "note": "WebGPU only, desktop; never offered for a post"
+      }
+    },
+    "firstLoad": "about 50 MB of core files, then a shader compile of about 10 s",
+    "capabilities": [
+      "characters",
+      "photoreal-water",
+      "boats",
+      "fishing",
+      "swimming",
+      "weather",
+      "generated-places",
+      "island-hopping"
+    ]
+  },
+  "toolchain": {
+    "game": [],
+    "build": []
+  },
+  "core": {
+    "kind": "vendored",
+    "pins": [
+      {
+        "name": "Tidewater",
+        "repo": "https://github.com/dgreenheck/tidewater",
+        "commit": "4811ba48d795197de5621985f404e765c0b7c0ef",
+        "licence": "MIT",
+        "note": "pinned file by file in kit.js; delivered games never use its name or its people"
+      }
+    ],
+    "licences": [
+      "core/LICENSE",
+      "core/ATTRIBUTION.md",
+      "core/CREDITS.md",
+      "core/PATCHES.md",
+      "UPSTREAM.json"
+    ],
+    "neverOverride": [
+      "gf/vista/core/LICENSE",
+      "gf/vista/core/ATTRIBUTION.md"
+    ]
+  },
+  "play": {
+    "by": [
+      "tables",
+      "rules"
+    ],
+    "rules": "rules.js with ctx.vista (state, sell, buy, look, tables, on) and the core's events",
+    "tables": "runtimes/vista/kit/tables/index.js",
+    "loops": "the session's round; the host's copy owns the hour and the sea state"
+  },
+  "worlds": [
+    {
+      "id": "islands",
+      "describe": "1 to 5 islands in the open sea, each generated from a seed and a few words (world.islands): its shape, coast, coves, a river mouth, cliffs, sand, rock, plants, reef, a pier, a village or none, the time of day and the weather"
+    }
+  ],
+  "looks": [
+    {
+      "id": "clear-morning",
+      "times": [
+        "day"
+      ]
+    },
+    {
+      "id": "bright-noon",
+      "times": [
+        "day"
+      ]
+    },
+    {
+      "id": "golden-hour",
+      "times": [
+        "golden"
+      ]
+    },
+    {
+      "id": "sunset-glow",
+      "times": [
+        "golden"
+      ]
+    },
+    {
+      "id": "moonlit-night",
+      "times": [
+        "night"
+      ]
+    },
+    {
+      "id": "storm-swell",
+      "times": [
+        "day"
+      ]
+    }
+  ],
+  "admission": {
+    "create": {
+      "meets": "yes",
+      "how": "create refuses what the core cannot do (tables check)"
+    },
+    "slots": {
+      "meets": "partly",
+      "how": "the core's public files (stall props, driftwood and shells, the whale, the vendors, the anti-aliasing tables) are slots (kit/core-files.js); the look values, tables and friends' bodies too",
+      "gaps": [
+        "what the core builds in code from a place's words (the ground, rocks, palms, village, reef, the boat, wildlife) is not a file: the place's seed and words are its slots",
+        "props.bin and humpback.bin travel with their .json slot (no binary slot type)"
+      ]
+    },
+    "multiplayer": {
+      "meets": "partly",
+      "gaps": [
+        "a viewer sees through the streamer's eyes but not the streamer's rod, line or catch (the core draws one rod, the local player's: CORE-NOTES.md)"
+      ],
+      "how": "live co-op 1-4, friends drawn as gf-humanoid-1 bodies where they really are; Go live from the menu, a viewer's copy looks out of the streamer's eyes (kit/watch.js: the core's own free camera, the streamer's boat with them); voice chat from the menu under Studio's page; the shared measure 34 passes 42 of 42 steps run by hand on Lantern Cove (2026-10-13)"
+    },
+    "hostBridge": {
+      "meets": "partly",
+      "gaps": [
+        "a worn loadout is not drawn on vista bodies"
+      ],
+      "how": "menu, HUD and wallet in the shared UI layer"
+    },
+    "observation": {
+      "meets": "yes",
+      "how": "window.__game on runtimes/CONTRACT.md §6: runtime/profile/quality, coverage() and slots() from what each core module added, sight() depth-tested by the core's own drawing (real time), events() (the game's events as part vista), sounds(), panels(), stepped time, camera() and screen() in the contract's shapes, controls() with aim, the cast float as landing and the stall or boat in reach"
+    },
+    "measures": {
+      "meets": "partly",
+      "gaps": [
+        "7, 8, 9, 10, 11, 16, 19, 22, 24, 33, 34, 39 not run (each reason in measures.skipped)"
+      ]
+    },
+    "examples": {
+      "meets": "partly",
+      "gaps": [
+        "no minimal example in examples/; the calm fishing sandbox and T7 are the evidence"
+      ]
+    },
+    "pinned": {
+      "meets": "yes",
+      "how": "the core pinned file by file with its licence"
+    },
+    "toolchainOnDemand": {
+      "meets": "yes",
+      "how": "a game build needs nothing"
+    }
+  },
+  "measures": {
+    "build": {
+      "A": [
+        1,
+        2,
+        4,
+        18
+      ],
+      "B": [
+        3,
+        31,
+        32,
+        36
+      ],
+      "C": [
+        13,
+        15,
+        38
+      ],
+      "D": [
+        6,
+        12
+      ],
+      "E": [
+        5,
+        25
+      ],
+      "F": [
+        14,
+        17,
+        35,
+        37
+      ]
+    },
+    "release": {
+      "B": [
+        20
+      ],
+      "C": [
+        21
+      ]
+    },
+    "skipped": [
+      {
+        "measure": 9,
+        "why": "the contact sheet tool drives three.js scenes"
+      },
+      {
+        "measure": 10,
+        "why": "nothing in a vista game can knock or hurt a player"
+      },
+      {
+        "measure": 11,
+        "why": "the world's props are each place's own (its words lay out the village, the harbour and the beach); nothing is placed from spec.world.props"
+      },
+      {
+        "measure": 16,
+        "why": "nothing is hit in a vista game"
+      },
+      {
+        "measure": 19,
+        "why": "the friends' bodies are library bodies the model judge already passed"
+      },
+      {
+        "measure": 33,
+        "why": "the vista core does not recover from a lost GPU device yet"
+      },
+      {
+        "measure": 39,
+        "why": "nothing is hit in a vista game"
+      },
+      {
+        "measure": 7,
+        "why": "release: the audio gate is not wired for vista yet"
+      },
+      {
+        "measure": 8,
+        "why": "release: the core's files are slots now, but the swap leg is not written for vista yet"
+      },
+      {
+        "measure": 22,
+        "why": "release: a loadout is not drawn on vista bodies yet"
+      },
+      {
+        "measure": 24,
+        "why": "release: a vista game is never offered for a post on X"
+      },
+      {
+        "measure": 34,
+        "why": "release: verify-vista does not run the shared watch check yet (it passes 42 of 42 steps when run by hand on Lantern Cove, 2026-10-13)"
+      }
+    ]
+  },
+  "examples": {
+    "minimal": [],
+    "showcase": [
+      "a calm fishing game on its own island (Lantern Cove)",
+      "three islands to sail between (examples/minimal/isle-hop)"
+    ]
+  }
+}

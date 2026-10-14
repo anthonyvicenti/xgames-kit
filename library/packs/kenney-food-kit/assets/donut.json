@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "donut",
+ "pack": "kenney-food-kit",
+ "file": "donut.glb",
+ "sha256": "709b43a0c775bf653997be436b4d4451319eeccdd0d2dc54ea702221f0603cd9",
+ "bytes": 20380,
+ "preview": "previews/donut.png",
+ "from": "kenney:food-kit/donut-sprinkles; baked to metres (x1.57908), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a donut with sprinkles",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "donut"
+ ],
+ "use": {
+  "size": [
+   0.387,
+   0.15,
+   0.447
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.15,
+   "height": 0.15,
+   "offset": [
+    0,
+    0.075,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 180,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 180,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20380,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#cd8860",
+     "#f8a3e2",
+     "#d08d66",
+     "#dc9e76",
+     "#f19be0",
+     "#e8b08a",
+     "#d79770",
+     "#e5ac85"
+    ],
+    "saturation": 0.65,
+    "value": 0.687,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.672
+     },
+     {
+      "hue": "pink",
+      "share": 0.318
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 20.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "f45946b7e81221e9d45fdfab45ee89eeb095ff0d7fb6a3ad9988919cf587d3b7",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.57908), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

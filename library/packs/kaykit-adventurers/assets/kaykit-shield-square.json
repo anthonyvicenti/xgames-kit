@@ -1,0 +1,127 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-shield-square",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-shield-square.glb",
+ "sha256": "25de0786e53f3400c8cc8c3938f6519861e106757e41120f99c0769c4cbd74ab",
+ "bytes": 44848,
+ "preview": "previews/kaykit-shield-square.png",
+ "from": "shield_square.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Rectangle_Shield (handslot.l)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tall rectangular knight's shield",
+ "tags": [
+  "shield",
+  "offhand",
+  "block",
+  "kaykit",
+  "square"
+ ],
+ "use": {
+  "size": [
+   0.662,
+   0.895,
+   0.226
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.331,
+   -0.447,
+   -0.109
+  ],
+  "grip": {
+   "position": [
+    -0.0073,
+    0.0738,
+    0.078
+   ],
+   "quaternion": [
+    -0.4909,
+    0.5089,
+    0.5089,
+    0.4909
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 262,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 262,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 44848,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#7f898e",
+     "#788286",
+     "#747e82",
+     "#828d92",
+     "#838e92",
+     "#747d82",
+     "#596064",
+     "#9d5c46"
+    ],
+    "saturation": 0.129,
+    "value": 0.488,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.824
+     },
+     {
+      "hue": "brown",
+      "share": 0.088
+     },
+     {
+      "hue": "orange",
+      "share": 0.071
+     }
+    ],
+    "grey": 0.824
+   },
+   "trianglesPerMetre": 13.67,
+   "texelsPerMetre": 87,
+   "texturedShare": 0.617,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/shield_square.gltf",
+  "sha256": "d2af4fbe4c0e8b93f3c88594b99ab601d5589920d4b0b8dc629143413e7c66c1",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Rectangle_Shield (handslot.l)"
+ }
+}

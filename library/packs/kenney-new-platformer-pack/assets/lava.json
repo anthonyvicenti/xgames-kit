@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "lava",
+ "pack": "kenney-new-platformer-pack",
+ "file": "lava.png",
+ "sha256": "acbf28b97366f1a4098f7dd6726c1fe1fc54d3f41cacc2c59426764f2fb71499",
+ "bytes": 2444,
+ "preview": "previews/lava.png",
+ "from": "Sprites/Tiles/Double/lava.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "lava tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "lava",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#db6226",
+     "#fa7f20",
+     "#ff9935",
+     "#e26924",
+     "#f27721",
+     "#ea7023",
+     "#f87d20",
+     "#dc6325"
+    ],
+    "saturation": 0.852,
+    "value": 0.537,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 33,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3d45397095f0d579d44403670bbf5169d08bbdc8b2b7d9d9a07e2f6a2e6d1a60",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

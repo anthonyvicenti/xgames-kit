@@ -1,0 +1,34 @@
+{
+  "base": "vista-isles",
+  "why": "A vista game with fewer islands than its spec: the spec lists two, config/world.json one, so there is nowhere to sail to. The creator, 2026-10-12, on Keys to the Cove, whose prompt asked for three islands and got one: \"No island hop as well\". Gate F must fail it.",
+  "evidence": "games.fun research/super-scenic/evidence/creator-keys-to-the-cove-2026-10-12.json",
+  "patches": [
+    {
+      "file": "config/world.json",
+      "pointer": "/islands",
+      "value": [
+        {
+          "name": "Fern Key",
+          "seed": 811,
+          "words": {
+            "size": "medium",
+            "shape": "single",
+            "coast": "rugged",
+            "vegetation": "jungle",
+            "sand": "white",
+            "pier": "pier",
+            "village": "hamlet",
+            "houses": "pastel",
+            "reef": "large",
+            "time": "morning"
+          }
+        }
+      ]
+    }
+  ],
+  "mustFail": [
+    "F"
+  ],
+  "measure": 17,
+  "detail": "sails between 1 island; the spec lists 2"
+}

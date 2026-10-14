@@ -1,0 +1,783 @@
+{
+  "id": "waves",
+  "name": "Waves",
+  "describe": "Host-owned enemies, spawners, a target to defend",
+  "examples": [
+    "zombies in waves",
+    "defend the core",
+    "enemy blobs chase the players",
+    "skeleton warriors, archers and a brute on each island"
+  ],
+  "rank": 60,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "enemyRole": {
+        "type": "string",
+        "default": "enemy",
+        "description": "Character role whose body (character.body.<role>) draws the enemies when the game has one"
+      },
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Prop slot to draw enemies with when there is no character body (\"\": a coloured capsule)"
+      },
+      "color": {
+        "type": "string",
+        "default": "#7a5cff",
+        "description": "Colour of the stand-in capsule and of the character tint"
+      },
+      "height": {
+        "type": "number",
+        "description": "Enemy height in metres",
+        "minimum": 0.4,
+        "maximum": 4,
+        "default": 1.5
+      },
+      "startCount": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 3,
+        "description": "Enemies in wave 1"
+      },
+      "growth": {
+        "type": "number",
+        "description": "Extra enemies each wave",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 2
+      },
+      "maxAlive": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 24,
+        "default": 14,
+        "description": "Enemies alive at once (each costs about 25 bytes of the world message)"
+      },
+      "hp": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 200,
+        "default": 2,
+        "description": "Hit points in wave 1. Keep it above the weapon's damage: a basic enemy takes 2–4 hits (verify check 16 fails one-hit kills unless the spec sets oneHitKills)"
+      },
+      "hpGrowth": {
+        "type": "number",
+        "description": "Extra hit points each wave",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 0.5
+      },
+      "speed": {
+        "type": "number",
+        "description": "Enemy speed in wave 1 (m/s)",
+        "minimum": 0.5,
+        "maximum": 8,
+        "default": 2.6
+      },
+      "speedGrowth": {
+        "type": "number",
+        "description": "Speed gained each wave (fraction)",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.12
+      },
+      "firstDelay": {
+        "type": "number",
+        "description": "Seconds before wave 1",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 3
+      },
+      "restSeconds": {
+        "type": "number",
+        "description": "Seconds between waves",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 4
+      },
+      "spawnEvery": {
+        "type": "number",
+        "description": "Seconds between enemies of a wave coming out",
+        "minimum": 0.05,
+        "maximum": 10,
+        "default": 0.6
+      },
+      "nextWave": {
+        "type": "string",
+        "enum": [
+          "clear",
+          "timer"
+        ],
+        "default": "clear",
+        "description": "clear: the next wave comes when all are dead; timer: after `interval` seconds either way"
+      },
+      "interval": {
+        "type": "number",
+        "description": "Seconds a wave lasts at most in timer mode",
+        "minimum": 5,
+        "maximum": 300,
+        "default": 20
+      },
+      "maxWaves": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 99,
+        "default": 0,
+        "description": "Waves in the round (0: endless); state().cleared is true after the last is beaten"
+      },
+      "aggro": {
+        "type": "string",
+        "enum": [
+          "nearest",
+          "players",
+          "target"
+        ],
+        "default": "nearest",
+        "description": "Who enemies go for: the nearest of players and target, only players, or only the target"
+      },
+      "attackRange": {
+        "type": "number",
+        "description": "Reach of an enemy attack (m)",
+        "minimum": 0.3,
+        "maximum": 4,
+        "default": 1.2
+      },
+      "attackInterval": {
+        "type": "number",
+        "description": "Seconds between one enemy's attacks",
+        "minimum": 0.2,
+        "maximum": 10,
+        "default": 1
+      },
+      "damage": {
+        "type": "number",
+        "description": "Damage of an attack to a player or the target",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 1
+      },
+      "contactKnock": {
+        "type": "number",
+        "description": "Knock an attack gives a player (m/s)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 5
+      },
+      "hittable": {
+        "type": "boolean",
+        "default": true,
+        "description": "The projectile mechanic's shots and streams hit enemies"
+      },
+      "target": {
+        "type": "string",
+        "default": "",
+        "description": "World zone that holds the thing to defend (\"\": no target, enemies only chase players)"
+      },
+      "targetHp": {
+        "type": "number",
+        "description": "Hit points of the target",
+        "minimum": 1,
+        "maximum": 1000,
+        "default": 20
+      },
+      "targetLabel": {
+        "type": "string",
+        "default": "Core",
+        "description": "HUD label of the target's health bar"
+      },
+      "killPoints": {
+        "type": "number",
+        "description": "Score a player gets for a kill they caused",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 1
+      },
+      "banner": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show a banner when a wave starts"
+      },
+      "bannerText": {
+        "type": "string",
+        "default": "Wave {n}",
+        "description": "Banner text; {n} is the wave number"
+      },
+      "oneHitKills": {
+        "type": "boolean",
+        "default": false,
+        "description": "Any hit kills. Only when the creator asked for enemies that drop in one hit: verify check 16 honours it only when the game's locked spec sets it"
+      },
+      "hitsPerKill": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 12,
+        "default": 2,
+        "description": "The fewest hits a basic wave-1 enemy takes from the game's weapon (the median over the kills verify measures). A matter of taste, so a spec value: 2 when unset (the creator: \"The zombies are instant killed to I couldn't even tell what was happened\"); 1 allows one-hit kills (oneHitKills makes every hit kill). verify gate F (measure 39) holds the game to the locked spec's number, and create raises the enemies' hit points to meet it"
+      },
+      "barColor": {
+        "type": "string",
+        "default": "#ff4d5e",
+        "description": "Colour of the health bar over a hit enemy"
+      },
+      "flashColor": {
+        "type": "string",
+        "default": "#ffffff",
+        "description": "Colour a hit enemy flashes"
+      },
+      "hitKnock": {
+        "type": "number",
+        "description": "How far a hit pushes an enemy back (m)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 0.35
+      },
+      "stagger": {
+        "type": "number",
+        "description": "Seconds a hit enemy stops before it comes on again",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.3
+      },
+      "deathSeconds": {
+        "type": "number",
+        "description": "Seconds a downed enemy takes to fall and sink away",
+        "minimum": 0.6,
+        "maximum": 4,
+        "default": 1.6
+      },
+      "soundKill": {
+        "type": "string",
+        "default": "enemy-down",
+        "description": "Sound id played where an enemy goes down (\"\" for none)"
+      },
+      "types": {
+        "type": "array",
+        "default": [],
+        "description": "Enemy types (empty: the classic waves). Each {id, role (character.body.<role>), behaviour: chaser|lunger|ranged|brute|shielded, hp, speed, damage, reach, arc, windup, active, recover, cooldown, knock, knockdown, telegraph: sector|ring|lane|line, score, height, color, weight, from (first level)}; kit/mechanics/waves/types.js has each behaviour's defaults",
+        "items": {
+          "type": "object"
+        }
+      },
+      "hpPerPlayer": {
+        "type": "number",
+        "description": "Typed enemies: extra hit points per player beyond the first (fraction; co-op stays a fight)",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.3
+      },
+      "attackTokens": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 12,
+        "default": 2,
+        "description": "Typed enemies winding up or swinging at once (plus half a token per extra player)"
+      },
+      "tokenCooldown": {
+        "type": "number",
+        "description": "Seconds between two enemies starting an attack",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 0.3
+      },
+      "telegraphColor": {
+        "type": "string",
+        "default": "#ff4a3d",
+        "description": "Colour of an enemy's windup on the ground and its glow"
+      },
+      "boltColor": {
+        "type": "string",
+        "default": "#ffa04a",
+        "description": "Colour of a ranged enemy's bolt"
+      },
+      "shieldColor": {
+        "type": "string",
+        "default": "#8ea7c9",
+        "description": "Colour of a shielded enemy's stand-in shield"
+      },
+      "keepOff": {
+        "type": "number",
+        "description": "Typed enemies keep this far from a player's middle (m)",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.85
+      },
+      "soundWindup": {
+        "type": "string",
+        "default": "enemy-windup",
+        "description": "Sound id as a typed enemy winds up (\"\" for none)"
+      },
+      "soundSwing": {
+        "type": "string",
+        "default": "enemy-swing",
+        "description": "Sound id as a typed enemy swings (\"\" for none)"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.waves.start-count",
+        "label": "Enemies in the first wave",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/startCount"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 62,
+        "constraints": {
+          "min": 1,
+          "max": 30
+        }
+      },
+      {
+        "id": "mechanic.waves.growth",
+        "label": "Extra enemies per wave",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/growth"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 58,
+        "constraints": {
+          "min": 0,
+          "max": 20
+        }
+      },
+      {
+        "id": "mechanic.waves.speed",
+        "label": "Enemy speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/speed"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 0.5,
+          "max": 8,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.waves.hp",
+        "label": "Enemy hit points",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/hp"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 50,
+        "constraints": {
+          "min": 1,
+          "max": 200
+        }
+      },
+      {
+        "id": "mechanic.waves.color",
+        "label": "Stand-in enemy colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.waves.target-hp",
+        "label": "Target hit points",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/targetHp"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 44,
+        "constraints": {
+          "min": 1,
+          "max": 1000
+        }
+      },
+      {
+        "id": "mechanic.waves.banner-text",
+        "label": "Wave banner text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/bannerText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.waves.target-label",
+        "label": "Target health label",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/targetLabel"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 24
+        }
+      },
+      {
+        "id": "mechanic.waves.height",
+        "label": "Enemy height",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/height"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.4,
+          "max": 4,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.waves.damage",
+        "label": "Enemy attack damage",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/damage"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.waves.rest-seconds",
+        "label": "Rest between waves",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/restSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.waves.max-alive",
+        "label": "Most enemies alive",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/maxAlive"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 24
+        }
+      },
+      {
+        "id": "mechanic.waves.max-waves",
+        "label": "Waves in the round (0 endless)",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/maxWaves"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 99
+        }
+      },
+      {
+        "id": "mechanic.waves.interval",
+        "label": "Wave length in timer mode",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/interval"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 5,
+          "max": 300,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.waves.contact-knock",
+        "label": "Attack knock",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/contactKnock"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.waves.prop",
+        "label": "Enemy prop",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.waves.bar-color",
+        "label": "Enemy health bar colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/barColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 28
+      },
+      {
+        "id": "mechanic.waves.flash-color",
+        "label": "Enemy hit flash colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/flashColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 26
+      },
+      {
+        "id": "mechanic.waves.hit-knock",
+        "label": "Enemy push-back on a hit",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/hitKnock"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 3,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.waves.stagger",
+        "label": "Enemy stagger on a hit",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/stagger"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 2,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.waves.death-seconds",
+        "label": "Enemy fall and sink time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/deathSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.6,
+          "max": 4,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.waves.sound-kill",
+        "label": "Enemy down sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundKill"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ],
+    "dynamic": "more slots follow from params (slotsFor in the implementation): one per table row or per configured kind"
+  },
+  "events": [
+    {
+      "name": "onKill",
+      "on": "host",
+      "args": "{ enemy: { id, x, z, hp, wave }, from }",
+      "when": "an enemy went down (from: the player who did it, or null)"
+    },
+    {
+      "name": "onSpawn",
+      "on": "host",
+      "args": "{ enemy }",
+      "when": "an enemy came in"
+    },
+    {
+      "name": "onPlayerHit",
+      "on": "host",
+      "args": "{ enemy, player }",
+      "when": "an enemy hit a player"
+    },
+    {
+      "name": "onTargetHit",
+      "on": "host",
+      "args": "{ enemy, hp }",
+      "when": "an enemy hit the target"
+    },
+    {
+      "name": "onTargetDown",
+      "on": "host",
+      "args": "{}",
+      "when": "the target ran out of health"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns every enemy, the wave plan and the target's health; copies draw from the shared rows",
+    "state": "waves",
+    "fields": {
+      "e": "[[id, x, z, hp, max]] per enemy (a typed row adds type, state, yaw)",
+      "w": "[wave, kills, targetHp, phase] (levels add level, encounter on, cleared, tokens)",
+      "k": "[[enemyId, killerId]] the last 6 kills"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "projectile",
+    "melee",
+    "health",
+    "levels",
+    "boss",
+    "loot"
+  ],
+  "gives": [
+    "enemies"
+  ],
+  "bots": "enemies chase players; the rules make bots shoot",
+  "notes": {
+    "lines": [
+      "target is the name of a zone in config/world.json (never a prop's name): the enemies go for it and the HUD shows its health; put the thing to defend in that zone.",
+      "A kill already scores killPoints for the player who did it, and shots and swings already hurt enemies: nothing to wire.",
+      "A basic enemy takes 2 to 4 hits; one-hit kills only when the spec sets oneHitKills."
+    ],
+    "readme": "components/waves/README.md",
+    "stub": {
+      "as": "waves",
+      "worked": "check(ctx) { return waves.state().targetHp <= 0 ? { winners: [], reason: 'lost' } : null; }",
+      "traps": [
+        "adding score in onKill counts every kill twice (killPoints is already added): set killPoints to 0 first, or score something else there",
+        "with aggro \"target\" and a target that is not a zone, the enemies stand where they came in"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/waves/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/waves/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-waves.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "forge": {
+      "path": "components/waves/impl/forge/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "the two-player forge fixture (runtimes/forge/tools/fixture.mjs waves): a host and a joiner over WebRTC, 9 of 9 checks on both screens; passed in every run that day (six), the last two on the final code; the shared state has three's keys and shapes (what the gates read)",
+            "ref": "components/waves/impl/forge/evidence/2026-10-13/checks.json",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 151.0.7922.34 (Playwright, WebGPU)",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "note": "writes the wave plan into the core's tables when the spec has none; the enemies are the tables' rows; no target to defend"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-waves.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

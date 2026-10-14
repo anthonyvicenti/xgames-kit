@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-glass",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-glass.png",
+ "sha256": "fc46afbc06cf856acd94b16f2f332c1b403b87f4a9274e7d15cf3cd9a4733e9a",
+ "bytes": 20230,
+ "preview": "previews/voxel-glass.png",
+ "from": "kenney:voxel-pack/glass_frame; PNG/Tiles/glass_frame.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1268,232; mean difference 1.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "glass_frame (Voxel Pack)",
+ "tags": [
+  "glass",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.651
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#c48647",
+     "#b47b41",
+     "#a6c9cb",
+     "#ad763e",
+     "#b3d7d9",
+     "#aa743d",
+     "#cb8b49",
+     "#c38646"
+    ],
+    "saturation": 0.433,
+    "value": 0.563,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.725
+     },
+     {
+      "hue": "cyan",
+      "share": 0.275
+     }
+    ],
+    "exact": 229,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "8ca6f1a2f8afd8440e7cb0e803f854c0489eac4b407f7c2d786af8b578b2851e",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

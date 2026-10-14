@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "step-grass",
+ "pack": "vista-sounds",
+ "file": "step-grass.ogg",
+ "sha256": "31be902e1ddf2530867d447cc3ae602a03c9aa60293d515f27359dbafd5ceb87",
+ "bytes": 19268,
+ "preview": "previews/step-grass.png",
+ "from": "5 steps, grass",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Footstep: grass",
+ "tags": [
+  "coast",
+  "calm",
+  "step",
+  "grass"
+ ],
+ "use": {
+  "seconds": 1.945,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 28% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -13.7,
+     "samplePeakDb": -1,
+     "truePeakDb": -0.9,
+     "hfRatio": 0.283
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.945,
+    "peakDbfs": -1,
+    "soundMaxLufs": -13.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/SilentStrikeZ/sounds/389625/",
+  "author": "SilentStrikeZ"
+ }
+}

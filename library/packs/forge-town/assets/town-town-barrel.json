@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-barrel",
+ "pack": "forge-town",
+ "file": "town-town-barrel.png",
+ "sha256": "362b9fb1b2bad76a4287d73f9c070887383c5f8fe02bfef73890e23b3b8c4a94",
+ "bytes": 912,
+ "preview": "previews/town-town-barrel.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 64 × 32 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 16 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a barrel's staves and three iron hoops, once round it; the top row is its lid (drawn)",
+ "tags": [
+  "texture",
+  "town",
+  "barrel"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 32,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#282626",
+     "#4f3926",
+     "#5e432c",
+     "#63462e",
+     "#6b4c32",
+     "#543c27",
+     "#664930",
+     "#593f2a"
+    ],
+    "saturation": 0.299,
+    "value": 0.239,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.813
+     },
+     {
+      "hue": "grey",
+      "share": 0.188
+     }
+    ],
+    "exact": 16,
+    "grey": 0.188
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.686
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 64 × 32 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 16 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

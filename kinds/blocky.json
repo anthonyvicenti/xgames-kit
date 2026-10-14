@@ -1,0 +1,238 @@
+{
+  "id": "blocky",
+  "label": "Blocky",
+  "feel": "Pixel-textured blocks under a real sun, lanterns glowing in the caves, and block people in saturated colours: a world you build cube by cube, from the hilltops down into the dark.",
+  "references": [
+    "Grow a Garden",
+    "Steal a Brainrot",
+    "Brookhaven",
+    "Minecraft"
+  ],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "standard-3d",
+      "preset": "toon-lowpoly",
+      "time": "day",
+      "alternates": [
+        {
+          "preset": "toon-lowpoly",
+          "time": "golden",
+          "why": "an evening build"
+        }
+      ],
+      "values": {
+        "materials": {
+          "character": {
+            "bands": 2,
+            "toonSpecular": 0,
+            "rim": 0.15
+          },
+          "prop": {
+            "bands": 0,
+            "wrap": 0.15,
+            "shadowFloor": 0.3,
+            "rim": 0,
+            "saturation": 1
+          },
+          "ground": {
+            "bands": 0,
+            "detail": 0
+          }
+        },
+        "post": {
+          "outline": {
+            "strength": 0.3,
+            "thickness": 1.1,
+            "creaseThreshold": 1,
+            "depthThreshold": 0.08
+          },
+          "grade": {
+            "saturation": 1.12,
+            "contrast": 1.08,
+            "vibrance": 0.1,
+            "vignette": 0.14
+          },
+          "bloom": {
+            "intensity": 0.7,
+            "threshold": 0.9,
+            "smoothing": 0.3,
+            "radius": 0.7
+          }
+        },
+        "sky": {
+          "top": "#3d8bff",
+          "horizon": "#bcd8ee",
+          "bottom": "#dff3ff"
+        },
+        "fog": {
+          "color": "#bcd8ee",
+          "near": 45,
+          "far": 200
+        },
+        "sun": {
+          "intensity": 2.7
+        },
+        "renderer": {
+          "toneMapping": "AgX",
+          "exposure": 1.1
+        }
+      }
+    }
+  },
+  "world": {
+    "family": "voxel",
+    "three": {
+      "templates": [
+        "voxel"
+      ],
+      "default": "voxel",
+      "preset": "runtimes/three/worlds/blocky-land.json",
+      "notes": "the voxel world as a world only: generated land with biomes, caves and light (worlds/voxel), the kit's own pixel faces; no saved edits unless the game turns the world store on"
+    }
+  },
+  "camera": {
+    "default": "third",
+    "three": {
+      "distance": 8,
+      "height": 3.6,
+      "fov": 55
+    }
+  },
+  "bodies": {
+    "set": "blocky",
+    "three": [
+      "blocky-classic",
+      "blocky-cap",
+      "blocky-tall",
+      "blocky-chunky"
+    ],
+    "physics": "ragdoll",
+    "notes": "Block avatars on gf-humanoid-1 (runtimes/three/tools/blocky.mjs): rigid boxes that swing from the joint like a toy's, a printed face, the shirt in the player's colour."
+  },
+  "props": {
+    "three": [
+      "block-hex",
+      "platform",
+      "crate",
+      "barrel",
+      "flag",
+      "trophy",
+      "coin",
+      "jewel",
+      "key",
+      "star"
+    ]
+  },
+  "audio": {
+    "character": "plinky and clean: short clicks, coins and pops, the place sound of a block a little lower",
+    "sounds": {
+      "jump": {
+        "preset": "jump",
+        "pitch": 1.05
+      },
+      "place": {
+        "preset": "click",
+        "pitch": 0.8,
+        "gainDb": -2
+      },
+      "break": {
+        "preset": "hit-crunch",
+        "pitch": 1.2
+      },
+      "pickup": {
+        "preset": "coin"
+      },
+      "hit": {
+        "preset": "hit-soft"
+      },
+      "win": {
+        "preset": "level-up"
+      }
+    },
+    "ambient": {
+      "preset": "wind-loop",
+      "gainDb": -10
+    },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#36c95a",
+    "panel": "#15171dd9",
+    "text": "#ffffff",
+    "font": "Lilita One",
+    "radius": "8px",
+    "weight": 400
+  },
+  "mechanics": {
+    "suggested": [
+      "build",
+      "pickup",
+      "carry",
+      "station"
+    ],
+    "why": "placing and breaking blocks, growing and carrying things to a stall. Suggestions only."
+  },
+  "packs": [
+    "xk-blocky-bodies",
+    "xk-voxel-blocks",
+    "kenney-platformer-kit",
+    "kenney-mini-arena",
+    "kenney-blocky-characters",
+    "ofl-lilita-one"
+  ],
+  "runtimes": {
+    "three": {
+      "profile": "standard-3d",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": true,
+        "note": "the voxel world (Blockhaven) is verified as a game; the blocky body set passes rig-check and the model judge; no game on this kind yet"
+      }
+    },
+    "godot": {
+      "profile": "3d",
+      "state": {
+        "exists": false,
+        "tested": false,
+        "open": false
+      },
+      "toProve": "block bodies and a block world on Godot 3D"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "world": {
+      "template": "voxel",
+      "preset": "runtimes/three/worlds/blocky-land.json"
+    },
+    "hero": "blocky-classic",
+    "bodies": [
+      "blocky-classic",
+      "blocky-cap",
+      "blocky-tall",
+      "blocky-chunky"
+    ],
+    "props": [
+      "block-hex",
+      "platform",
+      "crate",
+      "barrel",
+      "flag",
+      "trophy",
+      "coin",
+      "jewel",
+      "key",
+      "star"
+    ]
+  },
+  "state": {
+    "exists": true,
+    "tested": false,
+    "open": true,
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

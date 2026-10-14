@@ -1,0 +1,135 @@
+{
+ "assetVersion": 1,
+ "id": "rocketbox-tee-woman",
+ "pack": "rocketbox-adults",
+ "file": "rocketbox-tee-woman.glb",
+ "sha256": "239be30d5c1f6b84317ca87331b6de309ff1d9b50edb5bc1ee4fc463ac104ba3",
+ "bytes": 800796,
+ "preview": "previews/rocketbox-tee-woman.png",
+ "from": "https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9 Assets/Avatars/Adults/Female_Adult_17/Export/Female_Adult_17.fbx (git blob a3c97794…, sha256 77712530…831f) and Assets/Avatars/Adults/Female_Adult_17/Textures/f006_*.tga, retrieved 2026-10-12; licence…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a young woman with fair hair tied up, in a green T-shirt, light jeans and flat shoes (realistic)",
+ "tags": [
+  "human",
+  "woman",
+  "casual",
+  "realistic",
+  "summer",
+  "beach",
+  "coastal",
+  "modern",
+  "player",
+  "f",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.253,
+   1.751,
+   0.321
+  ],
+  "height": 1.751,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 8516,
+  "textures": 3,
+  "textureMax": 1024,
+  "materials": 3,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: sprint at 0.13 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1) (+1 more)",
+     "model judge, right hand: sprint at 0.27 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)",
+     "model judge, left leg: roll at 0 s: its edges stretch or crush ×4.1 (99th percentile; limit ×4.1)",
+     "model judge, right leg: run at 0.19 s: its edges stretch or crush ×4.6 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.751,
+     "triangles": 8516,
+     "joints": 80,
+     "materials": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 105,
+    "hues": [
+     "#000000",
+     "#70ac86",
+     "#71ad87",
+     "#66a47d",
+     "#698a99",
+     "#589971",
+     "#9eb9c4",
+     "#5fa078"
+    ],
+    "saturation": 0.272,
+    "value": 0.522,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.284
+     },
+     {
+      "hue": "green",
+      "share": 0.252
+     },
+     {
+      "hue": "orange",
+      "share": 0.225
+     },
+     {
+      "hue": "cyan",
+      "share": 0.188
+     },
+     {
+      "hue": "brown",
+      "share": 0.041
+     }
+    ],
+    "grey": 0.284
+   },
+   "trianglesPerMetre": 58.34,
+   "texelsPerMetre": 1039,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.89 heads tall; hips at 53% of the height; shoulders 20% of it",
+   "body": {
+    "headsTall": 5.89,
+    "hipShare": 0.527,
+    "shoulderShare": 0.197,
+    "widthShare": 0.715
+   }
+  }
+ },
+ "source": {
+  "page": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

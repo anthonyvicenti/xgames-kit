@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "wall-brick",
+ "pack": "forge-town",
+ "file": "wall-brick.glb",
+ "sha256": "3dc6fcf12fcbc9936413230ee0867e8ae2eb5a3d11ca36ef8fc308eea2ed2f62",
+ "bytes": 11352,
+ "preview": "previews/wall-brick.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-brick.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "one bay of a house's ground storey: a 3 m block of brick, a wall on each side",
+ "tags": [
+  "town",
+  "wall",
+  "brick"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    3
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 10,
+  "textures": 1,
+  "textureMax": 96,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 10,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11352,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#7b4637",
+     "#543931",
+     "#795342",
+     "#5a3730"
+    ],
+    "saturation": 0.318,
+    "value": 0.308,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 0.47,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-brick.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "office-wall-window",
+ "pack": "kenney-furniture-kit",
+ "file": "office-wall-window.glb",
+ "sha256": "cefb9e44809a5ecc981784e0649dbb6e1da387e00c8aadda71403f3d316341bf",
+ "bytes": 6272,
+ "preview": "previews/office-wall-window.png",
+ "from": "kenney:furniture-kit/wallWindow; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an office wall panel with a window",
+ "tags": [
+  "office",
+  "wall",
+  "window"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.579,
+   0.178
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2,
+    2.579,
+    0.178
+   ],
+   "offset": [
+    0,
+    1.29,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 6272,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ffffff",
+     "#96a7a7",
+     "#f3cca8",
+     "#daebe3"
+    ],
+    "saturation": 0.266,
+    "value": 0.825,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.624
+     },
+     {
+      "hue": "orange",
+      "share": 0.278
+     },
+     {
+      "hue": "green",
+      "share": 0.098
+     }
+    ],
+    "grey": 0.624
+   },
+   "trianglesPerMetre": 2.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "166a10fddb8a78d942bc2791186913f7015dfee8501d20efd7a7b8f196fc5c3e",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

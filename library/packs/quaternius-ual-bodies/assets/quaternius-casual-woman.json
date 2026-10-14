@@ -1,0 +1,123 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-casual-woman",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-casual-woman.glb",
+ "sha256": "e9b1caa5bb3fb9586f75cbf712e3e3882e5236156e0465bf44a776e5c65d665a",
+ "bytes": 180128,
+ "preview": "previews/quaternius-casual-woman.png",
+ "from": "https://poly.pizza/m/qJ2gsTUBHL \"Animated Woman\" (Ultimate Modular Women Pack), https://static.poly.pizza/ba7a1955-ea51-4cb9-a561-188bdef0a6c7.glb (sha256 a2212729…dca8, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (42 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a woman in a fitted white top, orange trousers and trainers; the top takes the player colour",
+ "tags": [
+  "human",
+  "woman",
+  "casual",
+  "everyday",
+  "modern",
+  "civilian",
+  "town",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.65,
+   1.852,
+   0.37
+  ],
+  "height": 1.852,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_White"
+  ]
+ },
+ "budgets": {
+  "triangles": 6424,
+  "textures": 0,
+  "materials": 7,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 7.7% of its triangles fold inside out (limit 4%) (+1 more)",
+     "model judge, right hand: idle at 0 s: 7.6% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.852,
+     "triangles": 6424,
+     "joints": 58,
+     "materials": 7
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b7547",
+     "#3f3f3f",
+     "#cead86",
+     "#9e6238",
+     "#b4b4b4",
+     "#31251c",
+     "#3e3429"
+    ],
+    "saturation": 0.29,
+    "value": 0.419,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.698
+     },
+     {
+      "hue": "grey",
+      "share": 0.175
+     },
+     {
+      "hue": "orange",
+      "share": 0.127
+     }
+    ],
+    "grey": 0.175
+   },
+   "trianglesPerMetre": 11.52,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.56 heads tall; hips at 55% of the height; shoulders 13% of it",
+   "body": {
+    "headsTall": 5.56,
+    "hipShare": 0.546,
+    "shoulderShare": 0.127,
+    "widthShare": 0.891
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/qJ2gsTUBHL"
+ }
+}

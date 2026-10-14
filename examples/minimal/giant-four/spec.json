@@ -1,0 +1,98 @@
+{
+  "specVersion": 2,
+  "title": "Giant Four",
+  "hook": "Giant four in a row on the town square: walk to a column, press E, your disc slides in. Four in a row wins.",
+  "prompt": "giant four in a row with friends",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "turns",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "interact": "drop your disc in the column you stand in (on your turn)",
+    "jump": "jump"
+  },
+  "round": {
+    "winBy": "first to line up four discs",
+    "replay": true,
+    "params": {
+      "turnSeconds": 25
+    }
+  },
+  "world": {
+    "template": "plaza",
+    "size": "medium",
+    "props": [],
+    "notes": "A seven by six board lies flat on the paving in the middle of the square."
+  },
+  "mechanics": [
+    {
+      "id": "board",
+      "as": "a giant four in a row on the floor",
+      "params": {
+        "cols": 7,
+        "rows": 6,
+        "cell": 1.5,
+        "input": "drop",
+        "presence": "walk",
+        "piece": "disc",
+        "cellShape": "round",
+        "checker": false,
+        "boardColor": "#2f63c9",
+        "cellColor": "#1c2a4a",
+        "cellColorB": "#1c2a4a",
+        "turnSeconds": 0
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Players take turns. On your turn walk to a column of the floor board and press E: your disc slides to the far free cell. Four discs of one colour in a row, column or diagonal win. A full board is a draw. Alone, bots take the other seats.",
+    "scoring": "+1 for a win",
+    "params": {
+      "need": 4
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [],
+  "build": [],
+  "accept": [
+    "friends see each other",
+    "turn order is the same on every screen",
+    "a move out of turn is refused"
+  ],
+  "notInV1": [
+    "undo",
+    "teams",
+    "more boards"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

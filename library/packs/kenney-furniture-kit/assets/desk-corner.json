@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "desk-corner",
+ "pack": "kenney-furniture-kit",
+ "file": "desk-corner.glb",
+ "sha256": "6d3dd94ae9f30c2636aab4dfb45fc4d0370851c3d7eae89bd201508d45648b4f",
+ "bytes": 5908,
+ "preview": "previews/desk-corner.png",
+ "from": "kenney:furniture-kit/deskCorner; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an L-shaped office desk",
+ "tags": [
+  "office",
+  "desk",
+  "station",
+  "cover",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   1.949,
+   0.769,
+   1.949
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.949,
+    0.769,
+    1.949
+   ],
+   "offset": [
+    0,
+    0.385,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 250,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 250,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5908,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8",
+     "#dfeaec"
+    ],
+    "saturation": 0.757,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.999
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.32,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "a6a77ba0083d5ecd34ad50f738867b03ed7b7f469429bb1acc78f423bcc3f034",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

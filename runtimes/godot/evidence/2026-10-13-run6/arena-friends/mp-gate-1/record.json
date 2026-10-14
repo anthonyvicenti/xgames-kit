@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "kind": "mp-gate",
+  "game": "games/godot-arena-friends",
+  "started": "2026-10-14T02:48:05.222Z",
+  "kit": {
+    "name": "gf-multiplayer",
+    "version": "1.7.8",
+    "source": "gf/mp/ in the game"
+  },
+  "signal": "default (the WebSocket on 127.0.0.1)",
+  "draft": false,
+  "seconds": 75,
+  "mode": "live",
+  "verdict": "pass",
+  "checks": [
+    {
+      "name": "manifest-valid",
+      "ok": true,
+      "detail": "mode live"
+    },
+    {
+      "name": "kit-identical",
+      "ok": true,
+      "detail": "gf/mp/ is kit 1.7.8"
+    },
+    {
+      "name": "entry-exists",
+      "ok": true,
+      "detail": "index.html"
+    },
+    {
+      "name": "solo-untouched",
+      "ok": true,
+      "detail": "played alone, the game loads no kit file and opens no connection"
+    },
+    {
+      "name": "shell-boots",
+      "ok": true,
+      "detail": "the Host / Join lobby is up"
+    },
+    {
+      "name": "host-opens-room",
+      "ok": true,
+      "detail": "room WB2T7A"
+    },
+    {
+      "name": "joiner-joins-over-webrtc",
+      "ok": true,
+      "detail": "host p1 \"Hosta\", joiner p2 \"Joan\""
+    },
+    {
+      "name": "both-games-ready",
+      "ok": true,
+      "detail": "both games loaded, attached to the round and called net.ready()"
+    },
+    {
+      "name": "everyone-starts-together",
+      "ok": true,
+      "detail": "the two games started 0 ms apart"
+    },
+    {
+      "name": "one-host",
+      "ok": true,
+      "detail": "host copy: p1, the other: p2"
+    },
+    {
+      "name": "each-draws-the-other",
+      "ok": true,
+      "detail": "the joiner draws \"Hosta\", the host draws \"Joan\""
+    },
+    {
+      "name": "host-movement-shows-on-the-joiner",
+      "ok": true,
+      "detail": "the host moved 9.2 units; the joiner drew the host 0.00 units from where the host was (allowed 5)"
+    },
+    {
+      "name": "a-friend-is-on-screen",
+      "ok": true,
+      "detail": "the other player's character was inside the view in 31 of the joiner's samples and 20 of the host's (screenshots: *-sees-the-*)"
+    },
+    {
+      "name": "both-see-each-other-on-screen",
+      "ok": true,
+      "soft": true,
+      "detail": "joiner saw the host 31 times, host saw the joiner 20 times"
+    },
+    {
+      "name": "the-shared-world-matches",
+      "ok": true,
+      "detail": "113 of 113 samples had the same shared world on both copies"
+    },
+    {
+      "name": "a-background-host-does-not-stop-the-world",
+      "ok": true,
+      "detail": "the shared clock went 43.31 → 45.31 on the joiner in 2 s while the host's tab was in the background (the game runs its frame through net.loop). Headless Chrome does not slow a background tab the way a real one does, so this proves the frames kept coming, not that a real hidden tab is safe"
+    },
+    {
+      "name": "the-games-know-the-round-is-over",
+      "ok": true,
+      "soft": true,
+      "detail": "net.over on the host's copy: true, on the joiner's: true (the game stops its world and sound from net.onEnd, and reports net.over in snapshot().net)"
+    },
+    {
+      "name": "both-see-the-same-results",
+      "ok": true,
+      "detail": "round 1"
+    },
+    {
+      "name": "scripted-play-stayed-in-round-1",
+      "ok": true,
+      "detail": "the room is at round 1"
+    },
+    {
+      "name": "play-again-starts-a-new-round",
+      "ok": true,
+      "detail": "both games are playing round 2"
+    },
+    {
+      "name": "reload-drops-back-into-the-round",
+      "ok": true,
+      "detail": "seat p2 again, playing, and drawing the host"
+    },
+    {
+      "name": "host-ends-the-round",
+      "ok": true,
+      "detail": "both pages show round 2 results"
+    },
+    {
+      "name": "host-leaving-closes-the-room",
+      "ok": true,
+      "detail": "the joiner sees: The host closed the game."
+    },
+    {
+      "name": "no-kit-errors",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "timeline": [
+    [
+      "manifest-valid",
+      0
+    ],
+    [
+      "kit-identical",
+      0
+    ],
+    [
+      "entry-exists",
+      0
+    ],
+    [
+      "solo-untouched",
+      3.1
+    ],
+    [
+      "shell-boots",
+      3.3
+    ],
+    [
+      "host-opens-room",
+      3.5
+    ],
+    [
+      "joiner-joins-over-webrtc",
+      3.8
+    ],
+    [
+      "both-games-ready",
+      4.6
+    ],
+    [
+      "everyone-starts-together",
+      7.7
+    ],
+    [
+      "one-host",
+      7.7
+    ],
+    [
+      "each-draws-the-other",
+      7.8
+    ],
+    [
+      "host-movement-shows-on-the-joiner",
+      48.1
+    ],
+    [
+      "a-friend-is-on-screen",
+      48.1
+    ],
+    [
+      "both-see-each-other-on-screen",
+      48.1
+    ],
+    [
+      "the-shared-world-matches",
+      48.1
+    ],
+    [
+      "a-background-host-does-not-stop-the-world",
+      50.1
+    ],
+    [
+      "the-games-know-the-round-is-over",
+      51.4
+    ],
+    [
+      "both-see-the-same-results",
+      51.4
+    ],
+    [
+      "scripted-play-stayed-in-round-1",
+      51.4
+    ],
+    [
+      "play-again-starts-a-new-round",
+      56.1
+    ],
+    [
+      "reload-drops-back-into-the-round",
+      57.2
+    ],
+    [
+      "host-ends-the-round",
+      58.4
+    ],
+    [
+      "host-leaving-closes-the-room",
+      58.4
+    ],
+    [
+      "no-kit-errors",
+      58.4
+    ]
+  ],
+  "notes": [],
+  "players": {},
+  "shots": [
+    "01-host-lobby.jpg",
+    "02-joiner-sees-the-host.jpg",
+    "03-host-sees-the-joiner.jpg",
+    "04-host-playing.jpg",
+    "05-joiner-playing.jpg",
+    "06-host-results.jpg",
+    "07-joiner-after-reload.jpg"
+  ],
+  "manifestSha256": "8e564204ab58aba6bb16befd0f80a9ec56d1996ae8b7c7bd6d5060cefddfbccc",
+  "outDir": "runtimes/godot/evidence/2026-10-13-run6/arena-friends/mp-gate-1",
+  "run": "mp-gate-1",
+  "chrome": "148.0.7778.96",
+  "renderer": "webgl",
+  "graphics": {
+    "renderer": "ANGLE (NVIDIA Corporation, NVIDIA GPU/PCIe/SSE2, OpenGL ES 3.2)",
+    "card": true,
+    "processors": 24
+  },
+  "transport": {
+    "host": "ws",
+    "joiner": "ws",
+    "why": "localhost",
+    "server": {
+      "webSockets": 1,
+      "wsRooms": 1,
+      "httpRequests": 0,
+      "httpRooms": 0,
+      "httpJoins": 0,
+      "httpRelayed": 0
+    }
+  },
+  "live": {
+    "onScreen": {
+      "host": 20,
+      "joiner": 31
+    },
+    "sharedSame": 113,
+    "sharedSamples": 113,
+    "sharedDiff": [],
+    "hostMoved": 9.213034245024817,
+    "drawnGap": [
+      0,
+      0.9600000000000004,
+      1.04,
+      0.009999999999999787,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.5162363799656119,
+      1.0536128321162386,
+      0.2707397274136178,
+      0.7000000000000002,
+      1,
+      0.15000000000000036,
+      0,
+      0,
+      0,
+      0,
+      0.2600000000000007,
+      0.05999999999999961,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.16000000000000014,
+      0,
+      0,
+      0.16999999999999993,
+      0.4632493928760185,
+      1.116154111222998,
+      0.99,
+      0.02,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.3799999999999999,
+      0.9904039579888604,
+      0.3699999999999999,
+      0.24,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.93,
+      0.040000000000000036,
+      0.74,
+      0,
+      0.16999999999999993,
+      1.0499999999999998,
+      0.13000000000000078,
+      0,
+      0.6799999999999988,
+      1.08,
+      0.019999999999999574,
+      0,
+      1.0299999999999994,
+      1.08,
+      0.05999999999999872,
+      0.7446475676452587,
+      0.39000000000000057,
+      0,
+      0,
+      1.0699999999999998,
+      0.8899999999999999,
+      1.2044085685513868,
+      0.8030566605165541,
+      0.02,
+      0,
+      0,
+      0,
+      0.8786353054595519,
+      0.6794115100585205,
+      0.12,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.8800000000000008,
+      0.009999999999999787,
+      0,
+      0,
+      0,
+      0.69,
+      0.21999999999999997,
+      0.22999999999999865,
+      0,
+      0,
+      0,
+      0.13,
+      0.42999999999999994,
+      0.97,
+      1.0401922899156675,
+      1.08,
+      0.03000000000000025,
+      0,
+      0,
+      0.019999999999999574,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0.019999999999999574,
+      0.9700000000000006,
+      1.0799999999999992
+    ],
+    "firstShot": true,
+    "hostShot": true,
+    "near": 2.5
+  },
+  "round1": {
+    "round": 1,
+    "seed": "1234890044",
+    "cfg": {
+      "metric": "score",
+      "direction": "higher",
+      "maxSeconds": 60,
+      "live": true,
+      "team": false,
+      "minPlayers": 2
+    },
+    "ranking": [
+      "p1",
+      "p2"
+    ],
+    "results": [
+      {
+        "id": "p1",
+        "value": 0,
+        "won": null,
+        "ms": 43628,
+        "dnf": false
+      },
+      {
+        "id": "p2",
+        "value": 0,
+        "won": null,
+        "ms": 43715,
+        "dnf": false
+      }
+    ]
+  },
+  "signaling": {
+    "rooms": 1,
+    "joins": 2,
+    "relayed": 12,
+    "rejected": 0,
+    "worldRooms": 0,
+    "finds": 0,
+    "rateLimited": 0,
+    "openRooms": 0,
+    "sockets": 0,
+    "httpRequests": 0,
+    "httpRooms": 0,
+    "httpJoins": 0,
+    "httpRelayed": 0,
+    "httpSessions": 0,
+    "httpFinds": 0,
+    "httpWorldRooms": 0,
+    "httpRejected": 0,
+    "httpRateLimited": 0
+  },
+  "passed": 24,
+  "total": 24,
+  "finished": "2026-10-14T02:49:03.640Z"
+}

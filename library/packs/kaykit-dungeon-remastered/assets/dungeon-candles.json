@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-candles",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-candles.glb",
+ "sha256": "9d838e42000d7cb7a1bbf39480e4bbc97dadbf6df01f7822c8735e5d491353ee",
+ "bytes": 53836,
+ "preview": "previews/dungeon-candles.png",
+ "from": "candle_triple.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "three lit candles",
+ "tags": [
+  "dungeon",
+  "candle",
+  "light",
+  "candles"
+ ],
+ "use": {
+  "size": [
+   0.376,
+   0.655,
+   0.292
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "light": {
+   "at": [
+    0,
+    0.603,
+    0
+   ],
+   "color": "#ffcc80",
+   "range": 2
+  },
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 198,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 198,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 53836,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#d6c6b7",
+     "#e2d7cc",
+     "#bda48b",
+     "#e3d9cf",
+     "#f5f2ee",
+     "#5b4f47",
+     "#f6f4f0",
+     "#61534b"
+    ],
+    "saturation": 0.268,
+    "value": 0.792,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.904
+     },
+     {
+      "hue": "grey",
+      "share": 0.096
+     }
+    ],
+    "grey": 0.096
+   },
+   "trianglesPerMetre": 14.1,
+   "texelsPerMetre": 139,
+   "texturedShare": 0.907,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/candle_triple.gltf.glb",
+  "sha256": "3536f0a55df50c728ec9c369c4a6a81c913b33a507ac4a192d418d28fd6677c2",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

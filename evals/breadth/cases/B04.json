@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B04",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "sports",
+  "rank": 4,
+  "row": "Sports",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "3v3 basketball in a park, dunk on your friends, first to 21",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "ball",
+   "type": "body",
+   "must": "a ball that bounces, is dribbled, passed and shot"
+  },
+  {
+   "id": "court",
+   "type": "world",
+   "must": "a court with two hoops"
+  },
+  {
+   "id": "dunk",
+   "type": "mechanic",
+   "must": "a dunk"
+  },
+  {
+   "id": "to-21",
+   "type": "rule",
+   "must": "baskets score; first team to 21 wins"
+  },
+  {
+   "id": "teams",
+   "type": "players",
+   "must": "two teams of three"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "ramp",
+ "pack": "kenney-new-platformer-pack",
+ "file": "ramp.png",
+ "sha256": "12fb724861ee398de3fd6c1031c3a1ac770dda3d0498b8aafc1aa50695edf7c1",
+ "bytes": 1737,
+ "preview": "previews/ramp.png",
+ "from": "Sprites/Tiles/Double/ramp.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "ramp",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "ramp",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#419fdd",
+     "#353541",
+     "#8fcaf0",
+     "#366fbf",
+     "#353540",
+     "#566c82",
+     "#71b9e8",
+     "#343440"
+    ],
+    "saturation": 0.503,
+    "value": 0.468,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.646
+     },
+     {
+      "hue": "grey",
+      "share": 0.319
+     },
+     {
+      "hue": "blue",
+      "share": 0.036
+     }
+    ],
+    "exact": 48,
+    "grey": 0.319
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "430cd1111bc636cc86e286b37be020fe1ae68ce55652cd7cad024b1dc2f5a39d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

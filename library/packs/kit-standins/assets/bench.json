@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "bench",
+ "pack": "kit-standins",
+ "file": "bench.glb",
+ "sha256": "7dff4979057e53070f46e82f8eeb5aac27723e884c9a0c704becb3502ea354dd",
+ "bytes": 5692,
+ "preview": "previews/bench.png",
+ "from": "games.fun (baked by tools/lib/standin-bake.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "prop stand-in for a bench",
+ "tags": [
+  "bench"
+ ],
+ "use": {
+  "size": [
+   1.6,
+   0.872,
+   0.453
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5692,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#c98b55",
+     "#4a4a55"
+    ],
+    "saturation": 0.444,
+    "value": 0.52,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.836
+     },
+     {
+      "hue": "grey",
+      "share": 0.164
+     }
+    ],
+    "grey": 0.164
+   },
+   "trianglesPerMetre": 4.66,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://games.fun",
+  "author": "games.fun (baked by tools/lib/standin-bake.mjs)"
+ }
+}

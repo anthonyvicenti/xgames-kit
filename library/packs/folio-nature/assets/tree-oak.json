@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "tree-oak",
+ "pack": "folio-nature",
+ "file": "tree-oak.glb",
+ "sha256": "0a0f7036430a731efe4af1625687752a4cb703f95d4331808f400f30d9df4f14",
+ "bytes": 16256,
+ "preview": "previews/tree-oak.png",
+ "from": "static/oakTrees/oakTreesVisual.glb; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round leafy oak tree",
+ "tags": [
+  "tree",
+  "nature",
+  "oak",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   3.743,
+   8.313,
+   4.564
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   3,
+   12
+  ],
+  "collider": {
+   "shape": "cylinder",
+   "size": [
+    0.6,
+    4,
+    0.6
+   ],
+   "offset": [
+    0,
+    2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 504,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 404,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16256,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#9eaf33",
+     "#b76b31"
+    ],
+    "saturation": 0.551,
+    "value": 0.444,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.912
+     },
+     {
+      "hue": "orange",
+      "share": 0.088
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

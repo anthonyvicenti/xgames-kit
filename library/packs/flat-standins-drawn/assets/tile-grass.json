@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "tile-grass",
+ "pack": "flat-standins-drawn",
+ "file": "tile-grass.png",
+ "sha256": "a5c127f72f86ee2444460fc69d13b855ceb2eb6d23a95c96c3744c6322c4e364",
+ "bytes": 1616,
+ "preview": "previews/tile-grass.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn grass ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "grass"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#7cc267",
+     "#6ab357",
+     "#93d47d",
+     "#76bd62",
+     "#70b85c",
+     "#7ac065",
+     "#6cb559",
+     "#78bf63"
+    ],
+    "saturation": 0.426,
+    "value": 0.58,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 28,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

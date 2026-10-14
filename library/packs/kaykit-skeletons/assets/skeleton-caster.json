@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-caster",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-caster.glb",
+ "sha256": "0b1c2b45bf9fe17cb8fa6a0454ef6d8f413632a8a2e07b22bd1ff9147fc81121",
+ "bytes": 104620,
+ "preview": "previews/skeleton-caster.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a skeleton mage in a pointed hat, glowing eyes (the ranged caster)",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "ranged",
+  "kaykit",
+  "bodies",
+  "caster"
+ ],
+ "use": {
+  "size": [
+   1.454,
+   1.973,
+   1.302
+  ],
+  "height": 1.973,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/forge-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 4588,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+     "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.625,
+     "triangles": 4588,
+     "joints": 22,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 28,
+    "hues": [
+     "#5d4f48",
+     "#d6a778",
+     "#d8ab80",
+     "#deba96",
+     "#782540",
+     "#e1be9d",
+     "#dbb186",
+     "#70243f"
+    ],
+    "saturation": 0.449,
+    "value": 0.556,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.572
+     },
+     {
+      "hue": "pink",
+      "share": 0.202
+     },
+     {
+      "hue": "grey",
+      "share": 0.196
+     }
+    ],
+    "grey": 0.196
+   },
+   "trianglesPerMetre": 8.1,
+   "texelsPerMetre": 55,
+   "texturedShare": 0.756,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Mage.glb",
+  "sha256": "e05b0f5cfa395271c9f75fd07c0a0613c56f401ece4ab644e080001a79971075",
+  "retrieved": "2026-10-09",
+  "modified": "held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm, lowerarm.l→LeftForeArm, wrist.l→LeftHand…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-log-side",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-log-side.png",
+ "sha256": "6b16f79740d352cdc3610aa098b5b51725c5f158f285115c5342f93987505690",
+ "bytes": 16852,
+ "preview": "previews/voxel-log-side.png",
+ "from": "kenney:voxel-pack/trunk_side; PNG/Tiles/trunk_side.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 750,84; mean difference 5.0 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "trunk_side (Voxel Pack)",
+ "tags": [
+  "log",
+  "side",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.018
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#91673f",
+     "#8a6038",
+     "#7b5632",
+     "#9c7249",
+     "#8b6039",
+     "#8f643c",
+     "#8a5f37",
+     "#946940"
+    ],
+    "saturation": 0.4,
+    "value": 0.401,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.946
+     },
+     {
+      "hue": "orange",
+      "share": 0.054
+     }
+    ],
+    "exact": 131,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "3456fc479616c151cfd89cb1a3573aaf3f776ed8734ad52c3b9efdce1622be4f",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

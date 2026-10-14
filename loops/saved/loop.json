@@ -1,0 +1,30 @@
+{
+  "id": "saved",
+  "name": "saved progress",
+  "describe": "Progress kept from one session to the next for each player (levels unlocked, things owned).",
+  "pick": "a player comes back and carries on where they were",
+  "acts": "progress-kept",
+  "near": [
+    "world",
+    "run"
+  ],
+  "clock": "cap",
+  "ends": "each session ends as its own loop says; progress stays",
+  "seats": {
+    "alone": "fill",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "promise": "What I earned is still mine when I come back.",
+  "impl": {},
+  "state": {
+    "exists": false,
+    "tested": false,
+    "open": false,
+    "note": "planned: needs the play host to keep each player's progress; a game that needs it builds it on world or run"
+  }
+}

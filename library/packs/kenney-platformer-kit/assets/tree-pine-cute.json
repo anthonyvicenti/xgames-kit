@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "tree-pine-cute",
+ "pack": "kenney-platformer-kit",
+ "file": "tree-pine-cute.glb",
+ "sha256": "e98ba89041ffe4477cc331f5e11f25807ceca9ad94d6733256fae7ffdf75d678",
+ "bytes": 21332,
+ "preview": "previews/tree-pine-cute.png",
+ "from": "kenney:platformer-kit/tree-pine; baked to metres (x2.10349), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a chunky cartoon pine tree",
+ "tags": [
+  "nature",
+  "tree",
+  "arena",
+  "cute",
+  "pine"
+ ],
+ "use": {
+  "size": [
+   1.995,
+   4.2,
+   1.995
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.3,
+   "height": 2.5,
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21332,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#2e9872",
+     "#37a076",
+     "#3da679",
+     "#3ba579",
+     "#44ad7d",
+     "#44ae7d",
+     "#cf7a56",
+     "#319a73"
+    ],
+    "saturation": 0.515,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.755
+     },
+     {
+      "hue": "orange",
+      "share": 0.178
+     },
+     {
+      "hue": "green",
+      "share": 0.067
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "520ddf910ae7904871fc906169d5e76364d5ff643a92cb983563c1a24d995ebb",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.10349), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

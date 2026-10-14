@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0105",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0105.png",
+ "sha256": "e2b979709a9881467998ed23a607202cca99838c9331b36f25757ee1d2ea0679",
+ "bytes": 225,
+ "preview": "previews/tile-0105.png",
+ "from": "Tiles/tile_0105.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a broad iron blade with a hooked tip: a cleaver or falchion",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "cleaver",
+  "falchion",
+  "blade",
+  "sword",
+  "weapon",
+  "melee",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#52607c"
+    ],
+    "saturation": 0.252,
+    "value": 0.329,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.706
+     },
+     {
+      "hue": "blue",
+      "share": 0.257
+     },
+     {
+      "hue": "orange",
+      "share": 0.037
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "e6ce715420b033cc4b0eb6b26255996a919ef721c0081388d3fa6a964047630d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

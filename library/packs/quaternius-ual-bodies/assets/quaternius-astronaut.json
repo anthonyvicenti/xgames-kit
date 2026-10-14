@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-astronaut",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-astronaut.glb",
+ "sha256": "2411d9eb0dea0aac3d2af502ef1b51441f56606a449e3dcd32a31de65e81ea08",
+ "bytes": 265608,
+ "preview": "previews/quaternius-astronaut.png",
+ "from": "research/foundations/trials/fps-arena/source/assets/models/operative.glb (sha256 c825fb5d…7758, Poly Pizza, retrieved 2026-09-23); normalised onto gf-humanoid-1 by tools/optimize.mjs --normalize --tint SciFi_Light_Accent; its own clips dropped",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "Quaternius astronaut in a space suit",
+ "tags": [
+  "astronaut",
+  "space",
+  "sci-fi",
+  "human",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.675,
+   1.886,
+   0.413
+  ],
+  "height": 1.886,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_SciFi_Light_Accent"
+  ]
+ },
+ "budgets": {
+  "triangles": 10558,
+  "textures": 0,
+  "materials": 5,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.886,
+     "triangles": 10558,
+     "joints": 58,
+     "materials": 5
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#93542b",
+     "#a19893",
+     "#383838",
+     "#2a3538",
+     "#3b4b49"
+    ],
+    "saturation": 0.267,
+    "value": 0.382,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.582
+     },
+     {
+      "hue": "brown",
+      "share": 0.418
+     }
+    ],
+    "grey": 0.582
+   },
+   "trianglesPerMetre": 18.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.03 heads tall; hips at 47% of the height; shoulders 16% of it",
+   "body": {
+    "headsTall": 5.03,
+    "hipShare": 0.474,
+    "shoulderShare": 0.162,
+    "widthShare": 0.888
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/3hC2i0CTuO"
+ }
+}

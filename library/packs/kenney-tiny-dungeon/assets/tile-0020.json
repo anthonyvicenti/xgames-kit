@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0020",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0020.png",
+ "sha256": "2d95755c45ebdb74fd4f6d6fb72039a6f0e341ccd367eaa8275f9ee14a289523",
+ "bytes": 415,
+ "preview": "previews/tile-0020.png",
+ "from": "Tiles/tile_0020.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a carved stone face (a gargoyle) in a brick wall pouring green water from its mouth",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "gargoyle",
+  "face",
+  "water",
+  "green",
+  "running",
+  "middle"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#8b9bb4",
+     "#52607c",
+     "#c0cbdc",
+     "#43e1b3",
+     "#69ffd4",
+     "#25956a"
+    ],
+    "saturation": 0.274,
+    "value": 0.439,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.953
+     },
+     {
+      "hue": "cyan",
+      "share": 0.047
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.167
+   }
+  }
+ },
+ "source": {
+  "sha256": "8ed3c08b77ef4e6ead26858f95efcaa302f5f014aaf3b26b49dd2bea991eecce",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

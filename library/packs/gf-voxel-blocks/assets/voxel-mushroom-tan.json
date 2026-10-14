@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-mushroom-tan",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-mushroom-tan.png",
+ "sha256": "7541e3bd2af780dc0837e0d49ec03591e9daccc94dcdc8216446b89ac24af6f6",
+ "bytes": 21980,
+ "preview": "previews/voxel-mushroom-tan.png",
+ "from": "kenney:voxel-pack/mushroom_tan; PNG/Tiles/mushroom_tan.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 676,528; mean difference 5.8 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "mushroom_tan (Voxel Pack)",
+ "tags": [
+  "mushroom",
+  "tan",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.835
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d4c4a0",
+     "#e2d1ab",
+     "#efebdc",
+     "#c4b594",
+     "#e1d7bf",
+     "#e2d1aa",
+     "#e2d0aa",
+     "#e1d0aa"
+    ],
+    "saturation": 0.391,
+    "value": 0.76,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.678
+     },
+     {
+      "hue": "orange",
+      "share": 0.322
+     }
+    ],
+    "exact": 326,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "88bf90708ed1bf2f3790fb3366e8992d69555d7caf4754665461282e41d18ab4",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

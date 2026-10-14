@@ -1,0 +1,64 @@
+{
+ "schema": "xgames-forge-fixture/1",
+ "mechanic": "waves",
+ "runtime": "forge",
+ "at": "2026-10-14T01:34:54.018Z",
+ "renderer": "webgpu",
+ "browser": "headless Chrome 151.0.7922.34",
+ "seconds": 13,
+ "pass": true,
+ "checks": [
+  {
+   "name": "two-players-in-one-game",
+   "ok": true,
+   "detail": "webgpu; the mechanic runs: host [{\"id\":\"waves\",\"standin\":false}]"
+  },
+  {
+   "name": "the-plan-is-the-params",
+   "ok": true,
+   "detail": "host [2,3], joiner [2,3] (startCount 2, growth 1, maxWaves 2)"
+  },
+  {
+   "name": "wave-1-with-two-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "kills-count-on-both",
+   "ok": true,
+   "detail": "2 kills, none standing, on both"
+  },
+  {
+   "name": "kills-score-for-the-killer-on-both",
+   "ok": true,
+   "detail": "killPoints 1 a kill to the joiner"
+  },
+  {
+   "name": "wave-2-comes-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "all-cleared-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "the-host-hears-each-wave",
+   "ok": true,
+   "detail": "{\"start\":[1,2],\"clear\":[1,2],\"all\":1,\"kills\":5}"
+  },
+  {
+   "name": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "shots": [
+  "host-wave-1.jpg",
+  "joiner-wave-1.jpg",
+  "host-end.jpg",
+  "joiner-end.jpg"
+ ],
+ "errors": []
+}

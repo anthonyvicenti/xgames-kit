@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "spring",
+ "pack": "kenney-platformer-kit",
+ "file": "spring.glb",
+ "sha256": "39353fca8c98605ab3eb63f45fcb9aa9478425d0d297126ca615b4d4cdbf7482",
+ "bytes": 22092,
+ "preview": "previews/spring.png",
+ "from": "kenney:platformer-kit/spring; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a bouncy spring pad",
+ "tags": [
+  "arena",
+  "jump",
+  "pad",
+  "spring"
+ ],
+ "use": {
+  "size": [
+   1.5,
+   0.936,
+   1.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.5,
+    0.936,
+    1.5
+   ],
+   "offset": [
+    0,
+    0.468,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 356,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 356,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 22092,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#fa6b41",
+     "#6c6e83",
+     "#d4564e",
+     "#7b7e94",
+     "#e55f48",
+     "#ed6445",
+     "#da594c",
+     "#6f7186"
+    ],
+    "saturation": 0.446,
+    "value": 0.585,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.451
+     },
+     {
+      "hue": "grey",
+      "share": 0.381
+     },
+     {
+      "hue": "blue",
+      "share": 0.168
+     }
+    ],
+    "grey": 0.381
+   },
+   "trianglesPerMetre": 5.89,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "c43a2165319ebcf1d33c44ce401a78d79a5380d0888168d88fb1fc6abd089480",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

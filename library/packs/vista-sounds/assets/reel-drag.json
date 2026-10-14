@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "reel-drag",
+ "pack": "vista-sounds",
+ "file": "reel-drag.ogg",
+ "sha256": "e22d713852e49557b535b9e08cb35911a696935eb87e67ee7b1e9490d0ed3085",
+ "bytes": 38165,
+ "preview": "previews/reel-drag.png",
+ "from": "reel ratchet screaming as line is pulled off (a fish running against the drag) — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Reel drag screaming (loop)",
+ "tags": [
+  "coast",
+  "calm",
+  "reel",
+  "drag",
+  "loop"
+ ],
+ "use": {
+  "seconds": 3.2,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 96% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -21.4,
+     "samplePeakDb": -8.5,
+     "truePeakDb": -8.5,
+     "hfRatio": 0.956
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 3.2,
+    "peakDbfs": -8.5,
+    "soundMaxLufs": -21.4
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/paulprit/sounds/507070/",
+  "author": "paulprit"
+ }
+}

@@ -1,0 +1,1744 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "kaykit-skeleton-warrior": {
+   "origin": "gf-scenic library bodies/kaykit-skeleton-warrior.glb",
+   "label": "Skeleton warrior",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 45,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.446
+      },
+      {
+       "hue": "grey",
+       "share": 0.416
+      },
+      {
+       "hue": "pink",
+       "share": 0.122
+      }
+     ],
+     "grey": 0.416,
+     "lightness": 0.546,
+     "saturation": 0.317,
+     "top": [
+      {
+       "colour": "#5a5c5e",
+       "share": 0.023
+      },
+      {
+       "colour": "#dab188",
+       "share": 0.021
+      },
+      {
+       "colour": "#d8ad83",
+       "share": 0.019
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.019
+      },
+      {
+       "colour": "#d19f6e",
+       "share": 0.018
+      },
+      {
+       "colour": "#797d7e",
+       "share": 0.015
+      },
+      {
+       "colour": "#ecd8c3",
+       "share": 0.014
+      },
+      {
+       "colour": "#ffffff",
+       "share": 0.013
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.86,
+    "texelsPerMetre": 64,
+    "texturedShare": 0.54,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.625,
+      "triangles": 5934,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-mage": {
+   "origin": "gf-scenic library bodies/kaykit-skeleton-mage.glb",
+   "label": "Skeleton mage",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 32,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.572
+      },
+      {
+       "hue": "grey",
+       "share": 0.211
+      },
+      {
+       "hue": "pink",
+       "share": 0.204
+      }
+     ],
+     "grey": 0.211,
+     "lightness": 0.562,
+     "saturation": 0.431,
+     "top": [
+      {
+       "colour": "#dab188",
+       "share": 0.025
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.024
+      },
+      {
+       "colour": "#d8ad83",
+       "share": 0.023
+      },
+      {
+       "colour": "#ce9a69",
+       "share": 0.02
+      },
+      {
+       "colour": "#d4a577",
+       "share": 0.02
+      },
+      {
+       "colour": "#d19f6e",
+       "share": 0.02
+      },
+      {
+       "colour": "#c89666",
+       "share": 0.02
+      },
+      {
+       "colour": "#5b4e47",
+       "share": 0.017
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.1,
+    "texelsPerMetre": 55,
+    "texturedShare": 0.756,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+      "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.625,
+      "triangles": 4588,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-rogue": {
+   "origin": "gf-scenic library bodies/kaykit-skeleton-rogue.glb",
+   "label": "Skeleton rogue (archer)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 39,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.479
+      },
+      {
+       "hue": "grey",
+       "share": 0.429
+      },
+      {
+       "hue": "pink",
+       "share": 0.077
+      }
+     ],
+     "grey": 0.429,
+     "lightness": 0.549,
+     "saturation": 0.32,
+     "top": [
+      {
+       "colour": "#5a5c5e",
+       "share": 0.029
+      },
+      {
+       "colour": "#dab188",
+       "share": 0.024
+      },
+      {
+       "colour": "#d8ad83",
+       "share": 0.022
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.02
+      },
+      {
+       "colour": "#d19f6e",
+       "share": 0.02
+      },
+      {
+       "colour": "#534741",
+       "share": 0.019
+      },
+      {
+       "colour": "#797d7e",
+       "share": 0.017
+      },
+      {
+       "colour": "#65574f",
+       "share": 0.015
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.74,
+    "texelsPerMetre": 65,
+    "texturedShare": 0.575,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.625,
+      "triangles": 5278,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-minion": {
+   "origin": "gf-scenic library bodies/kaykit-skeleton-minion.glb",
+   "label": "Skeleton minion",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 27,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.851
+      },
+      {
+       "hue": "grey",
+       "share": 0.135
+      }
+     ],
+     "grey": 0.135,
+     "lightness": 0.635,
+     "saturation": 0.442,
+     "top": [
+      {
+       "colour": "#d4a577",
+       "share": 0.027
+      },
+      {
+       "colour": "#ce9a69",
+       "share": 0.022
+      },
+      {
+       "colour": "#d19f6e",
+       "share": 0.022
+      },
+      {
+       "colour": "#dab188",
+       "share": 0.022
+      },
+      {
+       "colour": "#d8ad83",
+       "share": 0.021
+      },
+      {
+       "colour": "#e1c09f",
+       "share": 0.021
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.02
+      },
+      {
+       "colour": "#c89666",
+       "share": 0.019
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.8,
+    "texelsPerMetre": 59,
+    "texturedShare": 0.65,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+      "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.625,
+      "triangles": 5288,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-blade": {
+   "origin": "gf-scenic library props/kaykit-skeleton-blade.glb",
+   "kind": "sword",
+   "gripSocket": "hand_r",
+   "gripFrom": "Knight 1H_Sword (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 18,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.77
+      },
+      {
+       "hue": "orange",
+       "share": 0.169
+      },
+      {
+       "hue": "brown",
+       "share": 0.06
+      }
+     ],
+     "grey": 0.77,
+     "lightness": 0.49,
+     "saturation": 0.151,
+     "top": [
+      {
+       "colour": "#818b90",
+       "share": 0.06
+      },
+      {
+       "colour": "#7b858b",
+       "share": 0.059
+      },
+      {
+       "colour": "#9b5a45",
+       "share": 0.043
+      },
+      {
+       "colour": "#8d999e",
+       "share": 0.038
+      },
+      {
+       "colour": "#a05f48",
+       "share": 0.034
+      },
+      {
+       "colour": "#8a959b",
+       "share": 0.034
+      },
+      {
+       "colour": "#98a4aa",
+       "share": 0.033
+      },
+      {
+       "colour": "#98a4a9",
+       "share": 0.033
+      }
+     ]
+    },
+    "trianglesPerMetre": 24.17,
+    "texelsPerMetre": 109,
+    "texturedShare": 0.766,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 457,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 60944,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-axe": {
+   "origin": "gf-scenic library props/kaykit-skeleton-axe.glb",
+   "kind": "axe",
+   "gripSocket": "hand_r",
+   "gripFrom": "Barbarian 1H_Axe (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 16,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.902
+      },
+      {
+       "hue": "brown",
+       "share": 0.08
+      }
+     ],
+     "grey": 0.902,
+     "lightness": 0.45,
+     "saturation": 0.075,
+     "top": [
+      {
+       "colour": "#75787a",
+       "share": 0.066
+      },
+      {
+       "colour": "#6e7273",
+       "share": 0.057
+      },
+      {
+       "colour": "#717576",
+       "share": 0.046
+      },
+      {
+       "colour": "#92523e",
+       "share": 0.031
+      },
+      {
+       "colour": "#91503d",
+       "share": 0.031
+      },
+      {
+       "colour": "#6f7274",
+       "share": 0.028
+      },
+      {
+       "colour": "#696d6e",
+       "share": 0.028
+      },
+      {
+       "colour": "#6e7172",
+       "share": 0.026
+      }
+     ]
+    },
+    "trianglesPerMetre": 23.73,
+    "texelsPerMetre": 74,
+    "texturedShare": 0.845,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 534,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 62580,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-staff": {
+   "origin": "gf-scenic library props/kaykit-skeleton-staff.glb",
+   "kind": "staff",
+   "gripSocket": "hand_r",
+   "gripFrom": "Mage 2H_Staff (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 30,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.637
+      },
+      {
+       "hue": "grey",
+       "share": 0.243
+      },
+      {
+       "hue": "blue",
+       "share": 0.104
+      }
+     ],
+     "grey": 0.243,
+     "lightness": 0.595,
+     "saturation": 0.378,
+     "top": [
+      {
+       "colour": "#ce9a69",
+       "share": 0.024
+      },
+      {
+       "colour": "#5e5149",
+       "share": 0.019
+      },
+      {
+       "colour": "#d4a577",
+       "share": 0.019
+      },
+      {
+       "colour": "#e8ceb5",
+       "share": 0.017
+      },
+      {
+       "colour": "#565783",
+       "share": 0.015
+      },
+      {
+       "colour": "#c29164",
+       "share": 0.015
+      },
+      {
+       "colour": "#d6a97d",
+       "share": 0.015
+      },
+      {
+       "colour": "#f5e9dd",
+       "share": 0.014
+      }
+     ]
+    },
+    "trianglesPerMetre": 36.63,
+    "texelsPerMetre": 135,
+    "texturedShare": 0.775,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1519,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 81064,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-crossbow": {
+   "origin": "gf-scenic library props/kaykit-skeleton-crossbow.glb",
+   "kind": "crossbow",
+   "gripSocket": "hand_r",
+   "gripFrom": "Rogue 2H_Crossbow (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 15,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.941
+      },
+      {
+       "hue": "brown",
+       "share": 0.042
+      }
+     ],
+     "grey": 0.941,
+     "lightness": 0.463,
+     "saturation": 0.069,
+     "top": [
+      {
+       "colour": "#8a8f90",
+       "share": 0.047
+      },
+      {
+       "colour": "#7a7f81",
+       "share": 0.044
+      },
+      {
+       "colour": "#7f8485",
+       "share": 0.042
+      },
+      {
+       "colour": "#7a7d7f",
+       "share": 0.036
+      },
+      {
+       "colour": "#686a6c",
+       "share": 0.035
+      },
+      {
+       "colour": "#7b7f81",
+       "share": 0.027
+      },
+      {
+       "colour": "#7a7e80",
+       "share": 0.026
+      },
+      {
+       "colour": "#75797b",
+       "share": 0.026
+      }
+     ]
+    },
+    "trianglesPerMetre": 22.91,
+    "texelsPerMetre": 107,
+    "texturedShare": 0.759,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 584,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 64672,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-shield": {
+   "origin": "gf-scenic library props/kaykit-skeleton-shield.glb",
+   "kind": "shield",
+   "gripSocket": "hand_l",
+   "gripFrom": "Knight Round_Shield (handslot.l)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.639
+      },
+      {
+       "hue": "orange",
+       "share": 0.189
+      },
+      {
+       "hue": "brown",
+       "share": 0.17
+      }
+     ],
+     "grey": 0.639,
+     "lightness": 0.49,
+     "saturation": 0.19,
+     "top": [
+      {
+       "colour": "#955440",
+       "share": 0.027
+      },
+      {
+       "colour": "#919da2",
+       "share": 0.024
+      },
+      {
+       "colour": "#6c767a",
+       "share": 0.023
+      },
+      {
+       "colour": "#747d82",
+       "share": 0.023
+      },
+      {
+       "colour": "#778185",
+       "share": 0.021
+      },
+      {
+       "colour": "#a26149",
+       "share": 0.02
+      },
+      {
+       "colour": "#8e9a9f",
+       "share": 0.02
+      },
+      {
+       "colour": "#7b8589",
+       "share": 0.019
+      }
+     ]
+    },
+    "trianglesPerMetre": 24.89,
+    "texelsPerMetre": 96,
+    "texturedShare": 0.829,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 500,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 61552,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "kaykit-skeleton-shield-large": {
+   "origin": "gf-scenic library props/kaykit-skeleton-shield-large.glb",
+   "kind": "shield",
+   "gripSocket": "hand_l",
+   "gripFrom": "Knight Rectangle_Shield (handslot.l)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 19,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.936
+      },
+      {
+       "hue": "orange",
+       "share": 0.041
+      }
+     ],
+     "grey": 0.936,
+     "lightness": 0.449,
+     "saturation": 0.073,
+     "top": [
+      {
+       "colour": "#7a7d7f",
+       "share": 0.051
+      },
+      {
+       "colour": "#75797b",
+       "share": 0.051
+      },
+      {
+       "colour": "#6e7172",
+       "share": 0.038
+      },
+      {
+       "colour": "#575a5b",
+       "share": 0.037
+      },
+      {
+       "colour": "#696d6e",
+       "share": 0.032
+      },
+      {
+       "colour": "#6a6d6e",
+       "share": 0.027
+      },
+      {
+       "colour": "#6c6f71",
+       "share": 0.024
+      },
+      {
+       "colour": "#808486",
+       "share": 0.021
+      }
+     ]
+    },
+    "trianglesPerMetre": 20.06,
+    "texelsPerMetre": 79,
+    "texturedShare": 0.823,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 626,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 66804,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "skeleton-caster": {
+   "origin": "gf-forge library bodies/skeleton-caster.glb",
+   "roles": [
+    "enemy.skeleton.ranged.kaykit",
+    "enemy"
+   ],
+   "glow": true,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 28,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.572
+      },
+      {
+       "hue": "pink",
+       "share": 0.202
+      },
+      {
+       "hue": "grey",
+       "share": 0.196
+      }
+     ],
+     "grey": 0.196,
+     "lightness": 0.556,
+     "saturation": 0.449,
+     "top": [
+      {
+       "colour": "#5d4f48",
+       "share": 0.069
+      },
+      {
+       "colour": "#d6a778",
+       "share": 0.054
+      },
+      {
+       "colour": "#d8ab80",
+       "share": 0.054
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.042
+      },
+      {
+       "colour": "#782540",
+       "share": 0.04
+      },
+      {
+       "colour": "#e1be9d",
+       "share": 0.035
+      },
+      {
+       "colour": "#dbb186",
+       "share": 0.034
+      },
+      {
+       "colour": "#70243f",
+       "share": 0.033
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.1,
+    "texelsPerMetre": 55,
+    "texturedShare": 0.756,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+      "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.625,
+      "triangles": 4588,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "skeleton-champion": {
+   "origin": "gf-forge library bodies/skeleton-champion.glb",
+   "roles": [
+    "enemy.skeleton.boss.kaykit",
+    "enemy"
+   ],
+   "glow": true,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 38,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.468
+      },
+      {
+       "hue": "grey",
+       "share": 0.393
+      },
+      {
+       "hue": "pink",
+       "share": 0.123
+      }
+     ],
+     "grey": 0.393,
+     "lightness": 0.544,
+     "saturation": 0.339,
+     "top": [
+      {
+       "colour": "#6f7475",
+       "share": 0.042
+      },
+      {
+       "colour": "#592138",
+       "share": 0.04
+      },
+      {
+       "colour": "#d8ab80",
+       "share": 0.037
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.037
+      },
+      {
+       "colour": "#d6a778",
+       "share": 0.036
+      },
+      {
+       "colour": "#74797b",
+       "share": 0.036
+      },
+      {
+       "colour": "#dbb186",
+       "share": 0.033
+      },
+      {
+       "colour": "#7a7e80",
+       "share": 0.032
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.68,
+    "texelsPerMetre": 61,
+    "texturedShare": 0.539,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.625,
+      "triangles": 5584,
+      "joints": 22,
+      "materials": 3
+     }
+    }
+   ]
+  },
+  "skeleton-grunt": {
+   "origin": "gf-forge library bodies/skeleton-grunt.glb",
+   "roles": [
+    "enemy.skeleton.chaser.kaykit",
+    "enemy"
+   ],
+   "glow": true,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 23,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.867
+      },
+      {
+       "hue": "grey",
+       "share": 0.12
+      }
+     ],
+     "grey": 0.12,
+     "lightness": 0.629,
+     "saturation": 0.462,
+     "top": [
+      {
+       "colour": "#d8ab80",
+       "share": 0.065
+      },
+      {
+       "colour": "#d6a778",
+       "share": 0.058
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.056
+      },
+      {
+       "colour": "#e1be9d",
+       "share": 0.051
+      },
+      {
+       "colour": "#e5c8ab",
+       "share": 0.046
+      },
+      {
+       "colour": "#dbb186",
+       "share": 0.041
+      },
+      {
+       "colour": "#dcb58f",
+       "share": 0.037
+      },
+      {
+       "colour": "#e7ceb4",
+       "share": 0.033
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.8,
+    "texelsPerMetre": 59,
+    "texturedShare": 0.65,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+      "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.625,
+      "triangles": 5288,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "skeleton-rogue": {
+   "origin": "gf-forge library bodies/skeleton-rogue.glb",
+   "roles": [
+    "enemy.skeleton.skirmisher",
+    "enemy"
+   ],
+   "glow": true,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 38,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.477
+      },
+      {
+       "hue": "grey",
+       "share": 0.417
+      },
+      {
+       "hue": "pink",
+       "share": 0.076
+      }
+     ],
+     "grey": 0.417,
+     "lightness": 0.542,
+     "saturation": 0.34,
+     "top": [
+      {
+       "colour": "#d6a778",
+       "share": 0.04
+      },
+      {
+       "colour": "#d8ab80",
+       "share": 0.034
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.033
+      },
+      {
+       "colour": "#565c60",
+       "share": 0.033
+      },
+      {
+       "colour": "#dbb186",
+       "share": 0.033
+      },
+      {
+       "colour": "#e5c8ab",
+       "share": 0.033
+      },
+      {
+       "colour": "#675951",
+       "share": 0.032
+      },
+      {
+       "colour": "#6f7475",
+       "share": 0.031
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.74,
+    "texelsPerMetre": 65,
+    "texturedShare": 0.575,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.625,
+      "triangles": 5278,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "skeleton-warrior": {
+   "origin": "gf-forge library bodies/skeleton-warrior.glb",
+   "roles": [
+    "enemy.skeleton.brute.kaykit",
+    "enemy.skeleton.shield.kaykit",
+    "enemy"
+   ],
+   "glow": true,
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 39,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.447
+      },
+      {
+       "hue": "grey",
+       "share": 0.403
+      },
+      {
+       "hue": "pink",
+       "share": 0.122
+      }
+     ],
+     "grey": 0.403,
+     "lightness": 0.539,
+     "saturation": 0.334,
+     "top": [
+      {
+       "colour": "#6f7475",
+       "share": 0.042
+      },
+      {
+       "colour": "#592138",
+       "share": 0.04
+      },
+      {
+       "colour": "#74797b",
+       "share": 0.037
+      },
+      {
+       "colour": "#d8ab80",
+       "share": 0.037
+      },
+      {
+       "colour": "#deba96",
+       "share": 0.036
+      },
+      {
+       "colour": "#d6a778",
+       "share": 0.036
+      },
+      {
+       "colour": "#7a7e80",
+       "share": 0.034
+      },
+      {
+       "colour": "#dbb186",
+       "share": 0.032
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.86,
+    "texelsPerMetre": 64,
+    "texturedShare": 0.54,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.625,
+      "triangles": 5934,
+      "joints": 22,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "skeleton-axe": {
+   "origin": "gf-forge library held/skeleton-axe.glb",
+   "roles": [
+    "enemy.skeleton.skirmisher",
+    "held.axe",
+    "held.axe"
+   ],
+   "gripFrom": "Barbarian 1H_Axe (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 16,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.902
+      },
+      {
+       "hue": "brown",
+       "share": 0.08
+      }
+     ],
+     "grey": 0.902,
+     "lightness": 0.449,
+     "saturation": 0.078,
+     "top": [
+      {
+       "colour": "#707272",
+       "share": 0.163
+      },
+      {
+       "colour": "#72787a",
+       "share": 0.132
+      },
+      {
+       "colour": "#797e7f",
+       "share": 0.066
+      },
+      {
+       "colour": "#93523e",
+       "share": 0.061
+      },
+      {
+       "colour": "#868989",
+       "share": 0.058
+      },
+      {
+       "colour": "#7a8386",
+       "share": 0.057
+      },
+      {
+       "colour": "#696f72",
+       "share": 0.05
+      },
+      {
+       "colour": "#616567",
+       "share": 0.046
+      }
+     ]
+    },
+    "trianglesPerMetre": 23.73,
+    "texelsPerMetre": 74,
+    "texturedShare": 0.845,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 534,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18432,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "skeleton-blade": {
+   "origin": "gf-forge library held/skeleton-blade.glb",
+   "roles": [
+    "enemy.skeleton.shield.kaykit",
+    "held.blade.kaykit",
+    "held.blade.kaykit"
+   ],
+   "gripFrom": "Knight 1H_Sword (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 16,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.77
+      },
+      {
+       "hue": "orange",
+       "share": 0.17
+      },
+      {
+       "hue": "brown",
+       "share": 0.06
+      }
+     ],
+     "grey": 0.77,
+     "lightness": 0.491,
+     "saturation": 0.147,
+     "top": [
+      {
+       "colour": "#90989c",
+       "share": 0.086
+      },
+      {
+       "colour": "#9b5944",
+       "share": 0.085
+      },
+      {
+       "colour": "#98a5aa",
+       "share": 0.079
+      },
+      {
+       "colour": "#7b868a",
+       "share": 0.063
+      },
+      {
+       "colour": "#93523e",
+       "share": 0.06
+      },
+      {
+       "colour": "#828c91",
+       "share": 0.06
+      },
+      {
+       "colour": "#77685e",
+       "share": 0.055
+      },
+      {
+       "colour": "#a26049",
+       "share": 0.053
+      }
+     ]
+    },
+    "trianglesPerMetre": 24.17,
+    "texelsPerMetre": 109,
+    "texturedShare": 0.766,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 457,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 16856,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "skeleton-crossbow": {
+   "origin": "gf-forge library held/skeleton-crossbow.glb",
+   "roles": [
+    "held.crossbow",
+    "held.crossbow"
+   ],
+   "gripFrom": "Rogue 2H_Crossbow (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 13,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.941
+      },
+      {
+       "hue": "brown",
+       "share": 0.048
+      }
+     ],
+     "grey": 0.941,
+     "lightness": 0.461,
+     "saturation": 0.073,
+     "top": [
+      {
+       "colour": "#797e7f",
+       "share": 0.182
+      },
+      {
+       "colour": "#868989",
+       "share": 0.112
+      },
+      {
+       "colour": "#8b9193",
+       "share": 0.088
+      },
+      {
+       "colour": "#7a8386",
+       "share": 0.088
+      },
+      {
+       "colour": "#72787a",
+       "share": 0.087
+      },
+      {
+       "colour": "#666a6b",
+       "share": 0.085
+      },
+      {
+       "colour": "#665850",
+       "share": 0.055
+      },
+      {
+       "colour": "#726357",
+       "share": 0.052
+      }
+     ]
+    },
+    "trianglesPerMetre": 22.91,
+    "texelsPerMetre": 107,
+    "texturedShare": 0.759,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 584,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 20548,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "skeleton-shield-large": {
+   "origin": "gf-forge library held/skeleton-shield-large.glb",
+   "roles": [
+    "enemy.skeleton.shield.kaykit",
+    "held.shield.kaykit",
+    "held.shield.kaykit"
+   ],
+   "gripFrom": "Knight Rectangle_Shield (handslot.l)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.936
+      },
+      {
+       "hue": "orange",
+       "share": 0.041
+      }
+     ],
+     "grey": 0.936,
+     "lightness": 0.448,
+     "saturation": 0.077,
+     "top": [
+      {
+       "colour": "#696f72",
+       "share": 0.1
+      },
+      {
+       "colour": "#72787a",
+       "share": 0.093
+      },
+      {
+       "colour": "#797e7f",
+       "share": 0.09
+      },
+      {
+       "colour": "#707272",
+       "share": 0.068
+      },
+      {
+       "colour": "#6b5d54",
+       "share": 0.067
+      },
+      {
+       "colour": "#726357",
+       "share": 0.063
+      },
+      {
+       "colour": "#7a8386",
+       "share": 0.06
+      },
+      {
+       "colour": "#868989",
+       "share": 0.052
+      }
+     ]
+    },
+    "trianglesPerMetre": 20.06,
+    "texelsPerMetre": 79,
+    "texturedShare": 0.823,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 626,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 22696,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "skeleton-staff": {
+   "origin": "gf-forge library held/skeleton-staff.glb",
+   "roles": [
+    "enemy.skeleton.ranged.kaykit",
+    "held.staff.kaykit",
+    "held.staff.kaykit"
+   ],
+   "gripFrom": "Mage 2H_Staff (handslot.r)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 26,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.639
+      },
+      {
+       "hue": "grey",
+       "share": 0.246
+      },
+      {
+       "hue": "blue",
+       "share": 0.107
+      }
+     ],
+     "grey": 0.246,
+     "lightness": 0.595,
+     "saturation": 0.382,
+     "top": [
+      {
+       "colour": "#726357",
+       "share": 0.054
+      },
+      {
+       "colour": "#d5a675",
+       "share": 0.049
+      },
+      {
+       "colour": "#5d5048",
+       "share": 0.044
+      },
+      {
+       "colour": "#e4c6a9",
+       "share": 0.044
+      },
+      {
+       "colour": "#565784",
+       "share": 0.043
+      },
+      {
+       "colour": "#e8ceb4",
+       "share": 0.042
+      },
+      {
+       "colour": "#e0be9c",
+       "share": 0.04
+      },
+      {
+       "colour": "#deb995",
+       "share": 0.037
+      }
+     ]
+    },
+    "trianglesPerMetre": 36.63,
+    "texelsPerMetre": 135,
+    "texturedShare": 0.775,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1519,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 36928,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 20,
+   "paletteSize": 26,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.556
+    },
+    {
+     "hue": "orange",
+     "share": 0.359
+    }
+   ],
+   "lightness": 0.542,
+   "saturation": 0.32,
+   "trianglesPerMetre": 20.06,
+   "texelsPerMetre": 74,
+   "texturedShare": 0.759,
+   "outlineShare": 0,
+   "grey": 0.429
+  },
+  "licenceText": "LICENSE.txt in the repository: Creative Commons Zero, CC0. \"This content is free to use in personal, educational and commercial projects. Support me by using a brand resource provided in this pack or by crediting Kay Lousberg, www.kaylousberg.com (this is not mandatory).\""
+ }
+}

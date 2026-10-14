@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0127",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0127.png",
+ "sha256": "23eee8d99f1658a428ccaaf04342388d3a452cc70c081fd1d456304a2208824b",
+ "bytes": 253,
+ "preview": "previews/tile-0127.png",
+ "from": "Tiles/tile_0127.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a woodcutter's axe with an iron head and a wooden handle",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "axe",
+  "tool",
+  "weapon",
+  "woodcutting",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c",
+     "#eaa56c"
+    ],
+    "saturation": 0.29,
+    "value": 0.354,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.617
+     },
+     {
+      "hue": "blue",
+      "share": 0.213
+     },
+     {
+      "hue": "orange",
+      "share": 0.17
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "22dc3bd37cc7419f14b51f81e7e2b26794a4143b239c35d9d4288d69dc987432",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

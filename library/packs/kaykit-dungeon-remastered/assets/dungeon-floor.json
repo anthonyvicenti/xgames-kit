@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-floor",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-floor.glb",
+ "sha256": "7c9344c97cddef46b255ca287d7be6322cdee43b49fa9e379d7fbc336873ad59",
+ "bytes": 53404,
+ "preview": "previews/dungeon-floor.png",
+ "from": "floor_tile_large.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large stone floor tile (3 x 3 m)",
+ "tags": [
+  "dungeon",
+  "floor",
+  "tile",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.112,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   -0.075,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    0.112,
+    3
+   ],
+   "offset": [
+    0,
+    -0.019,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 188,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 188,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 53404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#958d84",
+     "#887e77",
+     "#898078",
+     "#8c837b",
+     "#989087",
+     "#7f746e",
+     "#847a73",
+     "#9a928a"
+    ],
+    "saturation": 0.073,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.23,
+   "texelsPerMetre": 87,
+   "texturedShare": 0.105,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_large.gltf.glb",
+  "sha256": "5b6bbbc683f6729d094732056f157a928435de97ec3cf94c341c7465907fe17b",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

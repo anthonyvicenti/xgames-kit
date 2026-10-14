@@ -1,0 +1,210 @@
+{
+  "id": "example-web",
+  "name": "A profiled web runtime",
+  "version": "1.2.0",
+  "describe": "A browser runtime with two profiles.",
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "its minimal example passes verify",
+        "ref": "examples/minimal/a/evidence/verify-1/verdict.json",
+        "date": "2026-10-13"
+      }
+    ]
+  },
+  "profiles": [
+    {
+      "id": "standard-3d",
+      "describe": "3D",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": true
+      },
+      "limits": {
+        "dimension": "3d",
+        "cameraRigs": [
+          "third",
+          "first"
+        ]
+      }
+    },
+    {
+      "id": "flat-2d",
+      "describe": "2D",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": false,
+        "note": "not reviewed"
+      },
+      "limits": {
+        "dimension": "2d",
+        "cameraRigs": [
+          "top"
+        ]
+      }
+    }
+  ],
+  "limits": {
+    "devices": {
+      "desktop": {
+        "status": "tested",
+        "evidence": [
+          {
+            "what": "played",
+            "browser": "Chrome 141",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "phone": {
+        "status": "emulated"
+      },
+      "x-post": {
+        "status": "emulated"
+      }
+    },
+    "graphics": {
+      "apis": [
+        "webgl2"
+      ],
+      "fidelity": [
+        "standard"
+      ]
+    },
+    "cameraRigs": [
+      "third",
+      "first",
+      "top"
+    ],
+    "cameraDefault": "third",
+    "players": {
+      "min": 1,
+      "max": 8
+    },
+    "bots": true,
+    "watch": true,
+    "voice": true,
+    "packedHtml": true,
+    "capabilities": [
+      "characters",
+      "projectiles"
+    ]
+  },
+  "toolchain": {
+    "game": [],
+    "build": []
+  },
+  "core": {
+    "kind": "js",
+    "pins": [
+      {
+        "name": "three",
+        "version": "0.186.0",
+        "licence": "MIT"
+      }
+    ],
+    "licences": [
+      "LICENSE",
+      "THIRD_PARTY.md"
+    ]
+  },
+  "play": {
+    "by": [
+      "mechanics",
+      "rules"
+    ]
+  },
+  "worlds": [
+    {
+      "id": "arena",
+      "profiles": [
+        "standard-3d"
+      ]
+    }
+  ],
+  "looks": [
+    {
+      "id": "toon-lowpoly",
+      "profiles": [
+        "standard-3d"
+      ],
+      "times": [
+        "day",
+        "night"
+      ]
+    }
+  ],
+  "admission": {
+    "create": {
+      "meets": "yes"
+    },
+    "slots": {
+      "meets": "yes"
+    },
+    "multiplayer": {
+      "meets": "yes"
+    },
+    "hostBridge": {
+      "meets": "yes"
+    },
+    "observation": {
+      "meets": "yes"
+    },
+    "measures": {
+      "meets": "yes"
+    },
+    "examples": {
+      "meets": "partly",
+      "gaps": [
+        "no showcase"
+      ]
+    },
+    "pinned": {
+      "meets": "yes"
+    },
+    "toolchainOnDemand": {
+      "meets": "yes"
+    }
+  },
+  "measures": {
+    "build": {
+      "A": [
+        1,
+        2,
+        4
+      ],
+      "B": [
+        3
+      ],
+      "C": [
+        13,
+        15
+      ],
+      "D": [
+        6,
+        12
+      ],
+      "E": [
+        5,
+        25
+      ],
+      "F": [
+        14
+      ]
+    },
+    "skipped": [
+      {
+        "measure": 16,
+        "why": "nothing to hit"
+      }
+    ]
+  },
+  "rank": 1,
+  "defaultKind": "silly",
+  "says": "WebGL2 on desktops and phones"
+}

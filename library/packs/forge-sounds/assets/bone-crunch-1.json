@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "bone-crunch-1",
+ "pack": "forge-sounds",
+ "file": "bone-crunch-1.ogg",
+ "sha256": "ec2fdda2600820f7c0cced6e0f18e14ed8ca825045aa42a20e136ca98a399f2b",
+ "bytes": 6497,
+ "preview": "previews/bone-crunch-1.png",
+ "from": "https://opengameart.org/content/deep-bone-crackbreak-sfx Deep Break 6.wav; cut to 0.116-0.436 s of the source (0.32 s), 2 ms fade-in and 80 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 8 ms release), gain 3.8 dB (loudest 400 ms toward -19 LUFS…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton killed (bones break) (bone crunch 1)",
+ "tags": [
+  "sounds",
+  "bone",
+  "crunch",
+  "break",
+  "shatter"
+ ],
+ "use": {
+  "seconds": 0.321,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16.8,
+     "samplePeakDb": -2.7,
+     "truePeakDb": -2.7,
+     "hfRatio": 0.004
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.321,
+    "peakDbfs": -2.7,
+    "soundMaxLufs": -16.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/deep-bone-crackbreak-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.116-0.436 s of the source (0.32 s), 2 ms fade-in and 80 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 4 dB (look-ahead limiter, 8 ms release), gain 3.8 dB (loudest 400 ms toward -19 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "Zane (OpenGameArt)"
+ }
+}

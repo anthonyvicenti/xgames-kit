@@ -1,0 +1,577 @@
+{
+  "id": "boss",
+  "name": "Boss",
+  "describe": "A boss with phases and telegraphed attacks (slam, charge, volley, summon) and its health bar on the HUD",
+  "examples": [
+    "a giant skeleton king on the last island",
+    "a boss with a slam, a charge and a volley",
+    "a final guardian that calls minions"
+  ],
+  "rank": 130,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "name": {
+        "type": "string",
+        "default": "The Warden",
+        "description": "The boss's name on its HUD bar"
+      },
+      "role": {
+        "type": "string",
+        "default": "boss",
+        "description": "Character role whose body (character.body.<role>) draws it; else the waves enemy body, scaled; else a stand-in"
+      },
+      "height": {
+        "type": "number",
+        "description": "Height (m)",
+        "minimum": 1,
+        "maximum": 10,
+        "default": 3.4
+      },
+      "radius": {
+        "type": "number",
+        "description": "Body radius for hits (m)",
+        "minimum": 0.4,
+        "maximum": 4,
+        "default": 1
+      },
+      "hp": {
+        "type": "number",
+        "description": "Hit points (alone)",
+        "minimum": 1,
+        "maximum": 2000,
+        "default": 60
+      },
+      "hpPerPlayer": {
+        "type": "number",
+        "description": "Extra hit points per player beyond the first (fraction)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 0.6
+      },
+      "speed": {
+        "type": "number",
+        "description": "Walking speed (m/s)",
+        "minimum": 0.3,
+        "maximum": 10,
+        "default": 2.5
+      },
+      "color": {
+        "type": "string",
+        "default": "#b8413a",
+        "description": "Tint (and the stand-in's colour)"
+      },
+      "phases": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "default": [
+          0.6,
+          0.3
+        ],
+        "description": "Hit-point shares where it changes phase (0.6, 0.3: three phases)"
+      },
+      "attacks": {
+        "type": "array",
+        "default": [
+          [
+            "slam",
+            "charge"
+          ],
+          [
+            "slam",
+            "volley",
+            "charge",
+            "summon"
+          ],
+          [
+            "volley",
+            "slam",
+            "charge",
+            "summon"
+          ]
+        ],
+        "description": "Each phase's attacks in order: slam, charge, volley, summon"
+      },
+      "slam": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {
+          "windup": 1,
+          "radius": 3.3,
+          "ahead": 2,
+          "damage": 2,
+          "knock": 9,
+          "recover": 0.9
+        },
+        "description": "{windup, radius, ahead, damage, knock, recover}"
+      },
+      "charge": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {
+          "windup": 0.95,
+          "speed": 13,
+          "length": 12,
+          "width": 2.4,
+          "damage": 2,
+          "knock": 10,
+          "recover": 1.3
+        },
+        "description": "{windup, speed, length, width, damage, knock, recover}"
+      },
+      "volley": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {
+          "windup": 0.85,
+          "count": 7,
+          "spread": 70,
+          "speed": 7,
+          "damage": 1,
+          "recover": 0.7
+        },
+        "description": "{windup, count, spread (degrees), speed, damage, recover}"
+      },
+      "summon": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {
+          "windup": 1.1,
+          "count": 3,
+          "types": [],
+          "recover": 0.9
+        },
+        "description": "{windup, count, types (the waves mechanic's type ids), recover}"
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds between attacks",
+        "minimum": 0.2,
+        "maximum": 10,
+        "default": 1.3
+      },
+      "phaseSpeed": {
+        "type": "number",
+        "description": "Speed gained each phase (fraction)",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.15
+      },
+      "phaseWindup": {
+        "type": "number",
+        "description": "Windup shortened each phase (fraction)",
+        "minimum": 0,
+        "maximum": 0.5,
+        "default": 0.12
+      },
+      "maxMinions": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 16,
+        "default": 4,
+        "description": "No summon while this many enemies are up"
+      },
+      "introSeconds": {
+        "type": "number",
+        "description": "Seconds it stands before it fights",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1.8
+      },
+      "roarSeconds": {
+        "type": "number",
+        "description": "Seconds it roars (and takes no hits) as a phase begins",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 1.4
+      },
+      "startDelay": {
+        "type": "number",
+        "description": "Without the levels mechanic: seconds into the round before it comes",
+        "minimum": 0,
+        "maximum": 600,
+        "default": 3
+      },
+      "auto": {
+        "type": [
+          "string",
+          "boolean"
+        ],
+        "enum": [
+          "auto",
+          true,
+          false
+        ],
+        "default": "auto",
+        "description": "auto: it comes by itself when the game has no levels mechanic"
+      },
+      "killPoints": {
+        "type": "number",
+        "description": "Score for the player who brings it down",
+        "minimum": 0,
+        "maximum": 10000,
+        "default": 100
+      },
+      "weapon": {
+        "type": "string",
+        "default": "",
+        "description": "A file in assets/models/ it holds on hand_r (slot mechanic.boss.weapon), e.g. a KayKit staff"
+      },
+      "weaponGrip": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "default": null,
+        "description": "The weapon's place on the hand_r socket {position, quaternion} (research/gf-scenic/library/props.json)"
+      },
+      "barColor": {
+        "type": "string",
+        "default": "#ff5a4a"
+      },
+      "telegraphColor": {
+        "type": "string",
+        "default": "#ff3b2f"
+      },
+      "flashColor": {
+        "type": "string",
+        "default": "#ffffff"
+      },
+      "deathSeconds": {
+        "type": "number",
+        "description": "Seconds it takes to fall and sink away",
+        "minimum": 1,
+        "maximum": 8,
+        "default": 3
+      },
+      "soundRoar": {
+        "type": "string",
+        "default": "boss-roar"
+      },
+      "soundSlam": {
+        "type": "string",
+        "default": "boss-slam"
+      },
+      "soundDown": {
+        "type": "string",
+        "default": "boss-down"
+      },
+      "soundWindup": {
+        "type": "string",
+        "default": "enemy-windup"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.boss.name",
+        "label": "Boss name",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/name"
+        },
+        "tier": "main",
+        "facet": "text",
+        "rank": 72,
+        "constraints": {
+          "maxLength": 32
+        }
+      },
+      {
+        "id": "mechanic.boss.hp",
+        "label": "Boss hit points",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/hp"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 70,
+        "constraints": {
+          "min": 1,
+          "max": 2000
+        }
+      },
+      {
+        "id": "mechanic.boss.height",
+        "label": "Boss height",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/height"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 62,
+        "constraints": {
+          "min": 1,
+          "max": 10,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.boss.color",
+        "label": "Boss tint",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 58
+      },
+      {
+        "id": "mechanic.boss.bar-color",
+        "label": "Boss health bar colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/barColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 44
+      },
+      {
+        "id": "mechanic.boss.telegraph-color",
+        "label": "Boss attack warning colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/telegraphColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 42
+      },
+      {
+        "id": "mechanic.boss.flash-color",
+        "label": "Boss hit flash colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/flashColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 20
+      },
+      {
+        "id": "mechanic.boss.speed",
+        "label": "Boss speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/speed"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.3,
+          "max": 10,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.boss.cooldown",
+        "label": "Seconds between boss attacks",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.2,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.boss.kill-points",
+        "label": "Score for the boss",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/killPoints"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10000
+        }
+      },
+      {
+        "id": "mechanic.boss.roar-seconds",
+        "label": "Boss roar between phases",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/roarSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 5,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.boss.sound-roar",
+        "label": "Boss roar sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundRoar"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.boss.sound-slam",
+        "label": "Boss slam sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundSlam"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.boss.sound-down",
+        "label": "Boss down sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundDown"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ],
+    "dynamic": "more slots follow from params (slotsFor in the implementation): one per table row or per configured kind"
+  },
+  "events": [
+    {
+      "name": "onPhase",
+      "on": "host",
+      "args": "{ phase }",
+      "when": "its hit points crossed a phase threshold"
+    },
+    {
+      "name": "onDown",
+      "on": "host",
+      "args": "{ from, x, z }",
+      "when": "it went down (from: the player who did it, or null)"
+    },
+    {
+      "name": "onHit",
+      "on": "host",
+      "args": "{ amount, from, hp }",
+      "when": "it was hurt"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the boss; every copy draws it, its telegraphs and its bar from the shared row",
+    "state": "boss",
+    "fields": {
+      "a": "[active, x, z, hp, max, phase, state, attack, yaw°, tx, tz, attack yaw°]"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "melee",
+    "projectile",
+    "waves",
+    "levels",
+    "health",
+    "loot"
+  ],
+  "gives": [
+    "enemies",
+    "boss"
+  ],
+  "bots": "no bot code",
+  "notes": {
+    "lines": [
+      "Give it its own body: a character role \"boss\" in the spec (else it wears the minions' body, which the creator rejected).",
+      "Melee swings and shots hurt it by themselves, its name and health are a bar across the top of the HUD, and bringing it down already scores killPoints.",
+      "With the levels mechanic it comes on the last level; without one it comes startDelay s into the round."
+    ],
+    "readme": "components/boss/README.md",
+    "stub": {
+      "as": "boss",
+      "worked": "boss.onDown(() => ctx.round.end('won', ctx.players.list().map(p => p.id)));   // only without the levels mechanic, which ends the run itself",
+      "traps": [
+        "a game with neither melee nor projectile has nothing that hurts it: the rules must call boss.damage(n, { from }) on the host",
+        "its attacks are telegraphed on the ground for a reason: do not shorten windups until nobody can step out"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/boss/fixture",
+    "players": 2,
+    "with": [
+      "melee",
+      "waves",
+      "health"
+    ]
+  },
+  "impl": {
+    "three": {
+      "path": "components/boss/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-boss.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-boss.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

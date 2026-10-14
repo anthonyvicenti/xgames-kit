@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "bench",
+ "pack": "folio-nature",
+ "file": "bench.glb",
+ "sha256": "848951524f75230de7616adec6fa55922e72c8666c228f78e634ab3e63ebf5cf",
+ "bytes": 10804,
+ "preview": "previews/bench.png",
+ "from": "static/benches/benches.glb node benchPhysicalDynamic; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden park bench",
+ "tags": [
+  "furniture",
+  "seat",
+  "bench",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   2.57,
+   1.56,
+   1.762
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.7,
+   1.1
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.57,
+    1.56,
+    1.762
+   ],
+   "offset": [
+    0,
+    0.78,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 10804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f8a658",
+     "#7c7691"
+    ],
+    "saturation": 0.628,
+    "value": 0.607,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.64
+     },
+     {
+      "hue": "grey",
+      "share": 0.36
+     }
+    ],
+    "grey": 0.36
+   },
+   "trianglesPerMetre": 3.16,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

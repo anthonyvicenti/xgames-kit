@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "kenney-new-platformer-pack",
+ "file": "fence.png",
+ "sha256": "d7c3cc1b0e6f1f72c958be092e2fc64f015595552036f9a83880e8256e1a3ce1",
+ "bytes": 1233,
+ "preview": "previews/fence.png",
+ "from": "Sprites/Tiles/Double/fence.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "fence",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "fence",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#bd6341",
+     "#9f5438",
+     "#fa9f72",
+     "#353540",
+     "#df8051",
+     "#ef9264"
+    ],
+    "saturation": 0.475,
+    "value": 0.462,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.696
+     },
+     {
+      "hue": "grey",
+      "share": 0.302
+     }
+    ],
+    "exact": 23,
+    "grey": 0.302
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.844
+   }
+  }
+ },
+ "source": {
+  "sha256": "82f59c74c07622cbf230e7c5f9e88598a8c1e3aed1508475b13fb44ed2e5d4cc",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

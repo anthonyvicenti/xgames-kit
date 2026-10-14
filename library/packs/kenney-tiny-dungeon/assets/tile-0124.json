@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0124",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0124.png",
+ "sha256": "d9b9acd90ded3f9426f56e9e992fdc98940f62e042338769ef6a3b4fabad86b0",
+ "bytes": 279,
+ "preview": "previews/tile-0124.png",
+ "from": "Tiles/tile_0124.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a grey rat with a curled tail",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "rat",
+  "grey",
+  "rodent",
+  "vermin"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#eaa56c"
+    ],
+    "saturation": 0.274,
+    "value": 0.374,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.641
+     },
+     {
+      "hue": "blue",
+      "share": 0.302
+     },
+     {
+      "hue": "orange",
+      "share": 0.057
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.956
+   }
+  }
+ },
+ "source": {
+  "sha256": "cda39a2ba32af6935e106b5c243ba5ca813a8b2566855b94524485463883196a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-rubble",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-rubble.glb",
+ "sha256": "8fc43114afeac5e1e5e1e4c3838a212e82cd7c6a592c681b14890cff3c61969a",
+ "bytes": 66920,
+ "preview": "previews/dungeon-rubble.png",
+ "from": "rubble_large.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a pile of stone rubble",
+ "tags": [
+  "dungeon",
+  "rubble",
+  "rocks",
+  "ruin"
+ ],
+ "use": {
+  "size": [
+   6.097,
+   2.622,
+   2.387
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    6.097,
+    2.622,
+    2.387
+   ],
+   "offset": [
+    0,
+    1.311,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 788,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 788,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 66920,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#534741",
+     "#544842",
+     "#5d5049",
+     "#6e5f55",
+     "#61534b",
+     "#5c4f48",
+     "#5f524a",
+     "#65574f"
+    ],
+    "saturation": 0.124,
+    "value": 0.332,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.5,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/rubble_large.gltf.glb",
+  "sha256": "0292da1b5788a5a52b616d5d27d3270c676a5fbf9e921b6dd3dc30364d355b54",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "cone",
+ "pack": "kenney-car-kit",
+ "file": "cone.glb",
+ "sha256": "0bb3ab79b5c7058f8f2736d2c975fd9dab56c82ccea518b24652c236851595a8",
+ "bytes": 21916,
+ "preview": "previews/cone.png",
+ "from": "kenney:car-kit/cone; baked to metres (x1.00799), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an orange traffic cone",
+ "tags": [
+  "marker",
+  "plaza",
+  "arena",
+  "cone"
+ ],
+ "use": {
+  "size": [
+   0.48,
+   0.6,
+   0.48
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.2,
+   "height": 0.6,
+   "offset": [
+    0,
+    0.3,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 172,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 172,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ff7544",
+     "#d3d3e3",
+     "#ff7c44",
+     "#ff7844",
+     "#ff7a44",
+     "#ff8f44",
+     "#e6e6ef",
+     "#ff9444"
+    ],
+    "saturation": 0.806,
+    "value": 0.696,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.751
+     },
+     {
+      "hue": "blue",
+      "share": 0.249
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 13.37,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/car-kit",
+  "download": "https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip",
+  "sha256": "d6659fc365de47c5d056b14f3d3fb3e191d3a5b869c43171753621dcf14b76bd",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.00799), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

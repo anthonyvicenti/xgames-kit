@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "shopfront",
+ "pack": "forge-town",
+ "file": "shopfront.glb",
+ "sha256": "ec5d44c3ff9adbdf2efbc9f233a8bf08f9452c4b68ce9658f8d1c45f43a89aed",
+ "bytes": 5452,
+ "preview": "previews/shopfront.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-shopfront.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a shop front, 2 m by 1.5 m and 12 cm proud of its wall: small lamp-lit panes in painted wood under a blank fascia board (material glow_window; it casts no light)",
+ "tags": [
+  "town",
+  "shopfront"
+ ],
+ "use": {
+  "size": [
+   2,
+   1.5,
+   0.12
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1,
+   0,
+   0
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 10,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 10,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 5452,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ce944e",
+     "#d49850",
+     "#233930"
+    ],
+    "saturation": 0.51,
+    "value": 0.481,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.781
+     },
+     {
+      "hue": "cyan",
+      "share": 0.219
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.61,
+   "texelsPerMetre": 32,
+   "texturedShare": 0.781,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-shopfront.png) inside",
+  "author": "games.fun"
+ }
+}

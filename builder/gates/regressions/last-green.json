@@ -1,0 +1,151 @@
+{
+ "schema": "xgk-regress/1",
+ "date": "2026-10-14T03:18:32.607Z",
+ "ok": true,
+ "seconds": 57,
+ "results": [
+  {
+   "id": "camera-keys-dead",
+   "kind": "broken",
+   "gates": [
+    "C"
+   ],
+   "measure": 13,
+   "ok": true,
+   "why": "gate C failed, measure 13: Q E (\"turn the camera\"): DEAD, held 1.2 s: the camera turned 2° (needs 10°). The HUD lists W / ↑ \"speed up\" (does go), A D / ← → \"steer the car left and right\" (does turn), S / ↓ \"brake and reverse\" (does stop), Q E \"turn the camera\" (does look); every listed control must do on the player's own scre",
+   "seconds": 7
+  },
+  {
+   "id": "car-controls-unshown",
+   "kind": "broken",
+   "gates": [
+    "C"
+   ],
+   "measure": 13,
+   "ok": true,
+   "why": "gate C failed, measure 13: steer (\"A / D or ← / →: steer the car left and right\"): DEAD, \"steer\" is listed in config/game.json → controls but no screen shows it (How to play and the help line show primary, secondary, interact, jump, the words move and aim, and the rows of controls.more), so a player never learns its keys and ",
+   "seconds": 1
+  },
+  {
+   "id": "car-drives",
+   "kind": "control",
+   "gates": [
+    "C"
+   ],
+   "measure": 13,
+   "ok": true,
+   "why": "passes measure 13: W / ↑ (\"speed up\"): ok, held 1.2 s: the player moved 4.02 m; A D / ← → (\"steer the car left and right\"): ok, KeyA: the path turned 27° while it was held, 18° of it after the first 200 ms (judged until the player was stopped, 500 ms into the hold); KeyD: the path turned 47° while it was held, 38° of ",
+   "seconds": 6
+  },
+  {
+   "id": "car-strafes",
+   "kind": "broken",
+   "gates": [
+    "C"
+   ],
+   "measure": 13,
+   "ok": true,
+   "why": "gate C failed, measure 13: A D / ← → (\"steer the car left and right\"): DEAD, KeyA: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player slid sideways, as a walker strafes, instead of turning; KeyD: the path turned 38° at once and then ran straight (0° after the first 200 ms): the player sl",
+   "seconds": 6
+  },
+  {
+   "id": "vista-fewer-islands",
+   "kind": "broken",
+   "gates": [
+    "F"
+   ],
+   "measure": 17,
+   "ok": true,
+   "why": "gate F failed, measure 17: config/world.json lists 1 island, the spec 2; the game sails between 1 island; the spec lists 2",
+   "seconds": 10
+  },
+  {
+   "id": "vista-own-islands",
+   "kind": "control",
+   "gates": [
+    "F"
+   ],
+   "measure": 17,
+   "ok": true,
+   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.2 s); none is the reference island (ffca9377)",
+   "seconds": 17
+  },
+  {
+   "id": "vista-reference-island",
+   "kind": "broken",
+   "gates": [
+    "F"
+   ],
+   "measure": 17,
+   "ok": true,
+   "why": "gate F failed, measure 17: config/world.json lists 0 islands, the spec 2; the game is on the reference island (place ffca9377): every vista game has its own islands (world.islands); the game sails between 1 island; the spec lists 2",
+   "seconds": 10
+  }
+ ],
+ "fingerprint": "531aa3f6ae34c0d3c1efc36f7ad3ec6f9eafc20ae82e5daecee2e9d7d298126c",
+ "files": {
+  "builder/gates/regress.mjs": "b54d85d580250714c55bcb86f39757461e80f58ca80839551ad1f9f8fa2187a4",
+  "builder/gates/regressions/README.md": "9e5e46dbeb2f6468e9c38194b71da6cfd614bf2166ff75b480bfa8dfe1518bd8",
+  "builder/gates/regressions/bases/kart-loop/base.json": "c14d7b3b8900ad9b331432cc7d80778ba637f8755ce2a40c906072bc408fbcdc",
+  "builder/gates/regressions/bases/kart-loop/rules.js": "f06d90b54b50f54581ce437c151e6dba7a7c9b5e377bab304c5a63f097da2c9f",
+  "builder/gates/regressions/bases/kart-loop/spec.json": "fe350effe19d631e33f4e9cdd740cd003cb6f289c800fc0b8363b7c5d67a111d",
+  "builder/gates/regressions/bases/kart-loop/src/car.js": "fb79212e9afca74b10815a552494e081ccdef9d1eb802b3d60d94e2984f460f7",
+  "builder/gates/regressions/bases/kart-loop/src/track.js": "19b3f3cff42990d76958f35a05fe3bd3f7568e1ecc1ef2053d3f76b78c8657c4",
+  "builder/gates/regressions/bases/vista-isles/base.json": "e472b5722f8eb422c96ee1778960e8b57f1306b610fd021249514f9bbf553b64",
+  "builder/gates/regressions/bases/vista-isles/rules.js": "be669f50f8689cc677f9a581ea5358b522f1b928cbdbad56f578c5b776cedcb8",
+  "builder/gates/regressions/bases/vista-isles/spec.json": "72b123642124033ebd078fd89d585e0f1452dfe98b192e9b402d47953ed2911b",
+  "builder/gates/regressions/camera-keys-dead/regression.json": "3a89ae2d8a7e1476f3d1c38699a5308ebfae17a78859107a9515afefcf6f048d",
+  "builder/gates/regressions/car-controls-unshown/regression.json": "df6764bf22111736e0ff5958c1773db5d290b68ff22192d1037ef29cb34ad147",
+  "builder/gates/regressions/car-drives/regression.json": "c802cbfe6570d7a45a9ed7ed86c60d4cdb2472400641b203370b61b4197cf197",
+  "builder/gates/regressions/car-strafes/car.js": "5f53e0e7db4dbbbe5069b34d881bb46e6da9404615674d71c11300cfe8b01568",
+  "builder/gates/regressions/car-strafes/regression.json": "735fd6deb3057c3a788fe5ad51aa8a1bb6830c67f64e0727585be8d6cc266ff2",
+  "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
+  "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
+  "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
+  "builder/tools/lib/alive-check.mjs": "52ffa1cc82a3984c9d013c179474886ee7f9d490cc649da85d15273293c13509",
+  "builder/tools/lib/bodies-check.mjs": "6e2a2670e4172427f91dd150c1973ba3cea5f356a7e505849e427d02ca967343",
+  "builder/tools/lib/controls-check.mjs": "457985506dffc33b09f87958b30aa0ce39c2006f7369455b88f8288fab699312",
+  "builder/tools/lib/embed-check.mjs": "5ebc6a5984f5d59e3b7d5a0634ffbc790ec23953e7e8cdd01d7da01b38b17f29",
+  "builder/tools/lib/events-check.mjs": "ac814f6008648f924f2461fa49641ecff97a73a520b0a1931384322d94f7bd0a",
+  "builder/tools/lib/fair-check.mjs": "a0fdff3fb6d491751e3479e706683347facc20216651653433b6c6f2dcdd2be4",
+  "builder/tools/lib/forge-cart-check.mjs": "52e5f987d408e63d328d61b874b1c20ee79d60739b61a9d42332d3bdf0fc62d0",
+  "builder/tools/lib/forge-controls-check.mjs": "ec711c9b96acbdb9cc38046d690b05090fb70f4220300fd6767570bfac76180e",
+  "builder/tools/lib/forge-feel-check.mjs": "faa3916aba65c124ecf9d4abf0735b5208e1e1df33fd8cc4f498c462ed6006dc",
+  "builder/tools/lib/forge-first-wave-check.mjs": "6d2328d715bf3b753b6d8b865f1302289a0f4a2ea0a61615b2369b0ec3dca54d",
+  "builder/tools/lib/forge-hud-check.mjs": "e0f9edb2e77678a77a9e6b78db0071c016b1905b121df36ac1d1330e29ee585f",
+  "builder/tools/lib/forge-keys-check.mjs": "bcbd006a5f47f7a0ed8cb517e7628180bdee2ef076753a7e9f77aeee9779e273",
+  "builder/tools/lib/forge-pickup-check.mjs": "49ef5944acf1ace845d22ef5824aba55f7dde798abdfafefb2d5be7be5d7ca80",
+  "builder/tools/lib/forge-round-check.mjs": "f6df155011443100ba4ac545c01adb86331ebf334c83ee7d0904802248c07ec3",
+  "builder/tools/lib/forge-sight-check.mjs": "e8c3d49e88d1ee93ddc6b5f3d013bb13755c91255d8fd89859a1e45117c91b00",
+  "builder/tools/lib/forge-touch-check.mjs": "efea3c18bb70518dc10022771f854ac5c3d412544a2f8c3a8f95508903f0e29c",
+  "builder/tools/lib/forge-webgl-check.mjs": "af2dfa1f26a5ce672b59bd4bb5f047ef0afc1978849e41e7aa1036ea641f7ce6",
+  "builder/tools/lib/forge-world-check.mjs": "48ec01d7691bd0628d286c6147dc3bcadfdf31a4017de2c203eff91a28241a32",
+  "builder/tools/lib/friends-check.mjs": "56eb777b154c6bdd993a251eb6200806f5c29a8bad370021650adb56fb5329d0",
+  "builder/tools/lib/friends-watch-check.mjs": "b5cc6eb76a044846ffddb53062467219db2ddaf83f6f90ff5257ac963db33a82",
+  "builder/tools/lib/hits-check.mjs": "768a4b3a482b8de1357b9816cdeabdf13a274b416ef8317616aa75c7cc4d06de",
+  "builder/tools/lib/improvised-check.mjs": "dd309201627d4452a97c53e1ddf14f9a8aa323b2515724bae37e736279c4961b",
+  "builder/tools/lib/kit-check.mjs": "30f92a78b903e93246e64a6d7864c572099e6b69e7694341ad9d2469a3c759fb",
+  "builder/tools/lib/likeness-check.mjs": "4b4684c1711eef5fc211ed17bbc6f6fb83d020fb7ea72285eff2591e36836823",
+  "builder/tools/lib/loadout-check.mjs": "6df2ae727c6302789a3596c489c1afee1f52e6860acef8692500b48e614f7a0b",
+  "builder/tools/lib/looks-check.mjs": "a751d31b15ec347ac277da0a73e22892a2213c7645fa18afdd03f2823063497b",
+  "builder/tools/lib/manifest-check.mjs": "881b36fc7a0d667be49a01244be90a7cc2ada1501297d75d511083fe1f006638",
+  "builder/tools/lib/menu-check.mjs": "c011e65493350868260d0756930713457f44817f3bc0f14770f13d19b379ea97",
+  "builder/tools/lib/screens-check.mjs": "2dd8dbd34e36b715a0e10f0ac30f9b6f37f70915a59f5591658ef1a5b2d98a31",
+  "builder/tools/lib/sheet-check.mjs": "6ba0651b86b81f0c5faa1e0537e29d5451411b95ca6a7a280fbe939c895cc66e",
+  "builder/tools/lib/sounds-check.mjs": "a1b3bf30e85b99803fc35469d790e670e9775976c21ef9d871dcf8a65a70b626",
+  "builder/tools/lib/stepped.mjs": "b734ebd7cd5792dcfc5706532938e045649cda9ce0df7d747b1dda48971330bc",
+  "builder/tools/lib/verdict.mjs": "912cd0c4f85330c8d0743d0a7f14d05783b7336e66a593666df7b5796a038df9",
+  "builder/tools/lib/vista-sight-check.mjs": "5d1a193a7641ee3e5be1357fb15dcf57b5fa2f8ac4551db90cbc7ffd40f9ddc5",
+  "builder/tools/lib/voice-chat-check.mjs": "eb362061c40b256b2d4d1712c147be2fb7be81b53507b81492acb0dfeb3b6218",
+  "builder/tools/lib/world-check.mjs": "c47a7ed1fe92597bb2c02616fc2ea843bca308b76945d5bcde661f7ab5f13623",
+  "builder/tools/lib/worlds-check.mjs": "c7b814b1022baf37f6fb3785fa024fd0a14a73e92fe41a8cf25383b59136a97f",
+  "builder/tools/lib/worlds-net-check.mjs": "01075d040a2a7f695710fc11662710f9f3fe22e3421fb32f8cb3ae24cc21cc43",
+  "builder/tools/lib/worlds-room-check.mjs": "0490ff4756cd7b4ce20d1405980fe8e5576917ce4720537fc887c013a9f1767e",
+  "builder/tools/lib/worlds-watch-check.mjs": "de72125f7a1733a66290c27426da7a401e5ec9a3b986f5a819e52c476feb9011",
+  "builder/tools/verify.mjs": "ca1627046e92327c86b351c6bfe2e0056745cbbe5802175e1ae463ad031acd07"
+ },
+ "machine": {
+  "node": "v24.19.0",
+  "platform": "linux"
+ }
+}

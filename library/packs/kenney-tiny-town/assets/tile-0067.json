@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0067",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0067.png",
+ "sha256": "4daaa6a8f1bb471d276ca5277909748e05d34d9cf640ba2bd04906b98490fac3",
+ "bytes": 375,
+ "preview": "previews/tile-0067.png",
+ "from": "Tiles/tile_0067.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the gable end of a red tiled roof: its pointed peak over the front of the house",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "roof",
+  "red",
+  "tiles",
+  "gable",
+  "peak",
+  "house",
+  "building"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#f28462",
+     "#c34b35",
+     "#fcbc8f",
+     "#3f2631",
+     "#8b9bb4",
+     "#5a6988",
+     "#c0cbdc"
+    ],
+    "saturation": 0.569,
+    "value": 0.561,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.402
+     },
+     {
+      "hue": "blue",
+      "share": 0.227
+     },
+     {
+      "hue": "red",
+      "share": 0.207
+     },
+     {
+      "hue": "pink",
+      "share": 0.164
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.033
+   }
+  }
+ },
+ "source": {
+  "sha256": "48919b108e67e1601e12b737e026c1c73e6f95fa1f1231483efe23f31e125cec",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

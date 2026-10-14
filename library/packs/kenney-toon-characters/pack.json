@@ -1,0 +1,73 @@
+{
+ "packVersion": 1,
+ "id": "kenney-toon-characters",
+ "title": "Kenney Toon Characters",
+ "describe": "Six cartoon characters, 45 poses each (single pictures, not yet baked into gf-flat-1 body sheets).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/toon-characters",
+  "file": "library/packs/kenney-toon-characters/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/toon-characters",
+  "download": "https://kenney.nl/media/pages/assets/toon-characters/4e8a6e4e53-1774770819/kenney_toon-characters.zip",
+  "sha256": "d4c0eb31f9d9af074315af251a53e8c74925dec84fbd53703c91c9ed4a4cace9",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_toon-characters.zip --pack kenney-toon-characters --include '*/PNG/Poses/*.png' --style drawn"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 37,
+   "hues": [
+    "#bf7958",
+    "#3c3e41",
+    "#ffd7b1",
+    "#5393c5",
+    "#3dbf9e",
+    "#3b3d40",
+    "#71a2be",
+    "#be7857",
+    "#bc7756",
+    "#3a3c3f",
+    "#db855c",
+    "#bfd4e5"
+   ],
+   "saturation": 0.372,
+   "value": 0.487,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.431
+    },
+    {
+     "hue": "blue",
+     "share": 0.215
+    },
+    {
+     "hue": "grey",
+     "share": 0.201
+    },
+    {
+     "hue": "cyan",
+     "share": 0.103
+    }
+   ],
+   "grey": 0.305
+  },
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 270,
+ "validators": [
+  "flat-judge"
+ ]
+}

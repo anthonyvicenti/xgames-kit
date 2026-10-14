@@ -1,0 +1,86 @@
+{
+  "id": "endless",
+  "name": "endless",
+  "describe": "No end clock: it goes on until the game says it is over, and the score only grows.",
+  "pick": "play until you fall; the score is how far you got",
+  "acts": "until-you-fall",
+  "near": [
+    "round"
+  ],
+  "clock": "cap",
+  "ends": "the rules' check (everyone down, a target reached)",
+  "seats": {
+    "alone": "fill",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "hooks": [
+    {
+      "name": "check",
+      "on": "host",
+      "args": "(ctx) → null | { winners: [playerId], reason }",
+      "when": "ten times a second: is it over? Nothing else ends an endless session"
+    }
+  ],
+  "notes": [
+    "There is no clock: check(ctx) is the only end. Return { winners, reason } when everyone is down, a target is reached or nobody is left; never return null for ever.",
+    "ctx.time.left is Infinity and the HUD shows no timer; ctx.time.round still counts the seconds played (make it harder with it)."
+  ],
+  "promise": "It goes on until everyone falls, the score shows how far we got, and it plays again.",
+  "impl": {
+    "three": {
+      "by": "flow",
+      "path": "loops/endless/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "forge": {
+      "by": "flow",
+      "path": "loops/endless/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "an endless gaslit-street wave game passes verify --release",
+            "date": "2026-10-12"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+        "date": "2026-10-13"
+      },
+      {
+        "what": "an endless gaslit-street wave game passes verify --release",
+        "date": "2026-10-12"
+      }
+    ]
+  }
+}

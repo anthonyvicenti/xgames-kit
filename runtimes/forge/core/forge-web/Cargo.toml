@@ -1,0 +1,36 @@
+[package]
+name = "forge-web"
+description = "gf-forge's wasm host exports (wasm-bindgen): the canvas surface, the boundary's typed-array views, the tables, animation, the scene calls and the observation interface's readbacks. Installs the feel, AI and play plugins (forge-play) and carries the per-frame glue between the core and the renderer."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+forge-core = { workspace = true }
+forge-feel = { workspace = true }
+forge-ai = { workspace = true }
+forge-play = { workspace = true }
+forge-render = { path = "../forge-render", default-features = false }
+wgpu = { workspace = true }
+wasm-bindgen = { workspace = true }
+wasm-bindgen-futures = { workspace = true }
+js-sys = { workspace = true }
+web-sys = { workspace = true }
+# Nothing in the page reads the `log` crate's records (no logger is installed), so its calls are compiled out of the
+# release wasm: wgpu-core, wgpu-hal and naga carry many, with their format strings (the WebGL2 build's size).
+log = { version = "=0.4.34", features = ["release_max_level_off"] }
+
+# One core, two builds (research/gf-forge/tools/build.mjs makes both; kit/host.js loads one per device):
+#   webgpu  wgpu's WebGPU backend: the browser's own WebGPU compiles the WGSL; no wgpu-core, no naga in the wasm
+#           (kit/wasm/)
+#   webgl2  wgpu's GL backend on a WebGL2 context: wgpu-core, wgpu-hal, and of naga the validator and the GLSL writer
+#           (the shaders arrive as naga's IR, parsed at build time: forge-render's `naga-ir`) (kit/wasm-webgl2/);
+#           built with --no-default-features --features webgl2
+[features]
+default = ["webgpu"]
+webgpu = ["wgpu/webgpu", "forge-render/wgsl"]
+webgl2 = ["wgpu/webgl", "forge-render/naga-ir"]

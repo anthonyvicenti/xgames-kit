@@ -1,0 +1,129 @@
+{
+ "assetVersion": 1,
+ "id": "rocketbox-angler-man",
+ "pack": "rocketbox-adults",
+ "file": "rocketbox-angler-man.glb",
+ "sha256": "03b73216550c21737725ebd57181a8e94c4e917ac7eab661709705fa7302706e",
+ "bytes": 858704,
+ "preview": "previews/rocketbox-angler-man.png",
+ "from": "https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9 Assets/Avatars/Adults/Male_Adult_05/Export/Male_Adult_05.fbx (git blob 41ae8205…, sha256 cd0e1750…52d0) and Assets/Avatars/Adults/Male_Adult_05/Textures/m009_*.tga, retrieved 2026-10-12; licence LICENSE.md…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "an older man with grey hair and a grey beard in a khaki multi-pocket vest over a green shirt, brown trousers and boots (realistic)",
+ "tags": [
+  "human",
+  "man",
+  "outdoors",
+  "realistic",
+  "fishing",
+  "angler",
+  "older",
+  "coastal",
+  "player",
+  "m",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.381,
+   1.812,
+   0.368
+  ],
+  "height": 1.812,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 7836,
+  "textures": 3,
+  "textureMax": 1024,
+  "materials": 3,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×5.4 (99th percentile; limit ×4.1)",
+     "model judge, right leg: push at 2.13 s: its edges stretch or crush ×4.4 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.812,
+     "triangles": 7836,
+     "joints": 80,
+     "materials": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 48,
+    "hues": [
+     "#2f2317",
+     "#2d2115",
+     "#454a34",
+     "#2f3420",
+     "#d1b087",
+     "#40452f",
+     "#463629",
+     "#cdac81"
+    ],
+    "saturation": 0.32,
+    "value": 0.309,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.454
+     },
+     {
+      "hue": "orange",
+      "share": 0.295
+     },
+     {
+      "hue": "grey",
+      "share": 0.14
+     },
+     {
+      "hue": "yellow",
+      "share": 0.106
+     }
+    ],
+    "grey": 0.14
+   },
+   "trianglesPerMetre": 46.25,
+   "texelsPerMetre": 818,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "6.24 heads tall; hips at 49% of the height; shoulders 23% of it",
+   "body": {
+    "headsTall": 6.24,
+    "hipShare": 0.494,
+    "shoulderShare": 0.232,
+    "widthShare": 0.762
+   }
+  }
+ },
+ "source": {
+  "page": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

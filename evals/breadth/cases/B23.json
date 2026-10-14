@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B23",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "horde-shooter",
+  "rank": 23,
+  "row": "Co-op PvE shooter / horde",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "4 player co-op defending a farmhouse from waves of zombies, board up the windows, buy better guns between waves",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "guns",
+   "type": "mechanic",
+   "must": "guns"
+  },
+  {
+   "id": "waves",
+   "type": "mechanic",
+   "must": "waves of zombies"
+  },
+  {
+   "id": "board-up",
+   "type": "mechanic",
+   "must": "boarding up windows"
+  },
+  {
+   "id": "buy",
+   "type": "panel",
+   "must": "buying better guns between waves"
+  },
+  {
+   "id": "farmhouse",
+   "type": "rule",
+   "must": "a farmhouse to defend"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

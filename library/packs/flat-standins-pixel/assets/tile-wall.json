@@ -1,0 +1,78 @@
+{
+ "assetVersion": 1,
+ "id": "tile-wall",
+ "pack": "flat-standins-pixel",
+ "file": "tile-wall.png",
+ "sha256": "75a1a20dc2c0d9a16b54a8702861a76ad1ad320bb0c9324cf231c148d8ad6c55",
+ "bytes": 182,
+ "preview": "previews/tile-wall.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-wall.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "stone wall tile seen from above (cap, fill)",
+ "tags": [
+  "pixel",
+  "wall",
+  "stone",
+  "flat",
+  "2d",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#b3acb5",
+     "#7a7484",
+     "#cfc9cd"
+    ],
+    "saturation": 0.06,
+    "value": 0.645,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 1
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8c098c4aa391421ac338f885ed857ab4dec8aac4e03383f3f425160e402e659c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

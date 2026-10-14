@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "hill",
+ "pack": "kenney-new-platformer-pack",
+ "file": "hill.png",
+ "sha256": "422631b0bc83e4c152c465a3214173ee7d3bd805265b7b53ea3c30eb610dfd29",
+ "bytes": 906,
+ "preview": "previews/hill.png",
+ "from": "Sprites/Tiles/Double/hill.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "hill tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "hill",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#23b67e",
+     "#2cc987",
+     "#353541",
+     "#2bc786",
+     "#26bd81",
+     "#24b87f",
+     "#28c083",
+     "#2ac585"
+    ],
+    "saturation": 0.589,
+    "value": 0.425,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.875
+     },
+     {
+      "hue": "grey",
+      "share": 0.125
+     }
+    ],
+    "exact": 18,
+    "grey": 0.125
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "1252260bdeb27c60e5518c34b2b3ef0c15783c504f0722072ad773de1c98aa93",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

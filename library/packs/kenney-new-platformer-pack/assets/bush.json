@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "bush",
+ "pack": "kenney-new-platformer-pack",
+ "file": "bush.png",
+ "sha256": "f66bff88954270f743d8c7cf06be3c095e2fc4ffdf5e9596f3a105e6123759bd",
+ "bytes": 3390,
+ "preview": "previews/bush.png",
+ "from": "Sprites/Tiles/Double/bush.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "bush",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "bush",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#2cc987",
+     "#353541",
+     "#343440",
+     "#353540",
+     "#2ea475",
+     "#42dc9b",
+     "#40da99",
+     "#3ad594"
+    ],
+    "saturation": 0.514,
+    "value": 0.426,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.763
+     },
+     {
+      "hue": "grey",
+      "share": 0.237
+     }
+    ],
+    "exact": 154,
+    "grey": 0.237
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.692
+   }
+  }
+ },
+ "source": {
+  "sha256": "db6409462946d9289ac2f3663cee9d5429ff3e0ef2f1ec86d709729925683065",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

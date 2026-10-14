@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-snow",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-snow.png",
+ "sha256": "52100643cbafe8f52682f303c69ea4fd18c5dc99bd038b24def7643203001b20",
+ "bytes": 32253,
+ "preview": "previews/voxel-snow.png",
+ "from": "kenney:voxel-pack/snow; PNG/Tiles/snow.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 676,10; mean difference 4.0 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "snow (Voxel Pack)",
+ "tags": [
+  "snow",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.013
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e7f9ff",
+     "#ffffff",
+     "#f5fcff",
+     "#eefaff",
+     "#d9f5ff",
+     "#feffff",
+     "#e8f9ff",
+     "#fafeff"
+    ],
+    "saturation": 0.579,
+    "value": 0.974,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 113,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "9b863378ecc4f807a72120fcbbacdc26fbf9dcf11573769a0d2e3aff4d014200",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

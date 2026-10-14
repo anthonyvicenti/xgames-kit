@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0052",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0052.png",
+ "sha256": "5dec83b2b994ae278aad47303065d3b6308ad528792a9bec8f6ddc41283db6ef",
+ "bytes": 233,
+ "preview": "previews/tile-0052.png",
+ "from": "Tiles/tile_0052.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the top-left corner of a red tiled roof seen from above",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "roof",
+  "red",
+  "tiles",
+  "house",
+  "building",
+  "corner",
+  "corner-outer-nw"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c34b35",
+     "#3f2631",
+     "#f28462",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#fcbc8f"
+    ],
+    "saturation": 0.531,
+    "value": 0.492,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.422
+     },
+     {
+      "hue": "pink",
+      "share": 0.234
+     },
+     {
+      "hue": "orange",
+      "share": 0.234
+     },
+     {
+      "hue": "blue",
+      "share": 0.109
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.55
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ef23eadba9701c44658f19569d6f27322d497ef5c03c4b5dd9dfe793091be53",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

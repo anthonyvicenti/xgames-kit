@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B18",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "io-arena",
+  "rank": 18,
+  "row": ".io arena (grow and eat)",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a snake game in one big arena with loads of players: eat glowing dots to grow longer, if your head hits someone's body you die and drop your dots",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "snake",
+   "type": "body",
+   "must": "a snake that grows longer"
+  },
+  {
+   "id": "dots",
+   "type": "mechanic",
+   "must": "glowing dots to eat"
+  },
+  {
+   "id": "head-hits",
+   "type": "rule",
+   "must": "a head hitting another body dies and drops its dots"
+  },
+  {
+   "id": "loads",
+   "type": "players",
+   "must": "many players in one arena, joining any time"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

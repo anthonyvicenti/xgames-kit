@@ -1,0 +1,130 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-zombie",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-zombie.glb",
+ "sha256": "a0392373398f103fb1dabbdce22929de04747c3c963ecca8a71ac4a96b712638",
+ "bytes": 86624,
+ "preview": "previews/quaternius-zombie.png",
+ "from": "https://poly.pizza/m/VlXjG0N8Eg \"Zombie\" (Quaternius, Post-Apocalypse Pack), as normalised onto gf-humanoid-1 on import (sha256 cfd53028b88b…, sources.json has the whole record): quaternius-zombie.glb; thumbs re-rested along the standard's (left 64.5°, right 64.5°; builder/art/rig/thumbs.mjs)…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a chunky cartoon zombie: green skin, big bald head, lolling tongue, a belt, torn trousers and one red trainer",
+ "tags": [
+  "zombie",
+  "undead",
+  "monster",
+  "horror",
+  "halloween",
+  "chunky",
+  "toon",
+  "enemy",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.888,
+   1.361,
+   0.683
+  ],
+  "height": 1.361,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 7822,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1,
+  "joints": 48
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, body: getup at 0.78 s: 8.3% of its triangles fold inside out (limit 8%)",
+     "model judge, right hand: aim_up at 0 s: the right pinky bends 123° at its knuckle (a finger bends -35° to 105°)",
+     "model judge, right leg: getup_front at 0.8 s: 8.8% of its triangles fold inside out (limit 8%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.361,
+     "triangles": 7822,
+     "joints": 48,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#779851",
+     "#415463",
+     "#151515",
+     "#664631",
+     "#823a3b",
+     "#642226",
+     "#979870",
+     "#994871"
+    ],
+    "saturation": 0.286,
+    "value": 0.424,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.789
+     },
+     {
+      "hue": "grey",
+      "share": 0.071
+     },
+     {
+      "hue": "blue",
+      "share": 0.065
+     },
+     {
+      "hue": "red",
+      "share": 0.032
+     }
+    ],
+    "grey": 0.071
+   },
+   "trianglesPerMetre": 37.37,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "2.82 heads tall; hips at 37% of the height; shoulders 31% of it",
+   "body": {
+    "headsTall": 2.82,
+    "hipShare": 0.373,
+    "shoulderShare": 0.31,
+    "widthShare": 1.387
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/VlXjG0N8Eg",
+  "sha256": "cfd53028b88b355016ceaa42b94018cc0720b901acb2c89584cd0354e8f71a0d",
+  "modified": "thumbs re-rested along the standard's (left 64.5°, right 64.5°; builder/art/rig/thumbs.mjs), dedup and prune, meshopt compression",
+  "retrieved": "2026-10-13"
+ }
+}

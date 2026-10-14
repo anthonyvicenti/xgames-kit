@@ -1,0 +1,68 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "gf-humanoid-1": {
+   "origin": "gf-three library clips/gf-humanoid-1.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 0
+    },
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "clips",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "clips": 40
+     }
+    }
+   ]
+  },
+  "forge-humanoid-1": {
+   "origin": "gf-forge library clips/forge-humanoid-1.glb",
+   "roles": [
+    "clips.humanoid"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 0
+    },
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "clips",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "clips": 55
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 2,
+   "paletteSize": 0,
+   "texturedShare": 0,
+   "outlineShare": 0
+  },
+  "licenceText": "CC0 1.0. Quaternius (Universal Animation Library); the melee clips Kay Lousberg (KayKit Character Pack: Adventurers 1.0); carry, emotes and get-ups authored by games.fun. Sources: pmndrs/ecctrl@e2cab804f9f15661a642e76f52d09f0b2db63f35 public/AnimationLibrary.glb (sha256 1b7bf678…ee5c); melee clips: https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0 @672074b73ba276876a19e8816ecdc5241817ab47 addons/kaykit_character_pack_adventures/Characters/gltf/Knight.glb (sha256 60428e3a…5168), licence https://kaylousberg.itch.io/kaykit-adventurers"
+ }
+}

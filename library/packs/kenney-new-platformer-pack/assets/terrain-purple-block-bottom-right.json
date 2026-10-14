@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-purple-block-bottom-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-purple-block-bottom-right.png",
+ "sha256": "97ceb713d8bc2036085e6e99ccb54325d93181388f387e656948c8c299fa6b79",
+ "bytes": 2336,
+ "preview": "previews/terrain-purple-block-bottom-right.png",
+ "from": "Sprites/Tiles/Double/terrain_purple_block_bottom_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain purple block bottom right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "purple",
+  "block",
+  "bottom",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 62.8 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 51.4 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#353541",
+     "#b9c2ca",
+     "#a8b4bc",
+     "#cdd3d9",
+     "#ccd2d8"
+    ],
+    "saturation": 0.129,
+    "value": 0.702,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 58,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.518
+   }
+  }
+ },
+ "source": {
+  "sha256": "ec1b147874d1212ac64b7bee6acd4b8842d7401893337315dc854137fb158727",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

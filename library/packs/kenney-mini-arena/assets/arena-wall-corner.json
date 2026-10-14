@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "arena-wall-corner",
+ "pack": "kenney-mini-arena",
+ "file": "arena-wall-corner.glb",
+ "sha256": "8542a19da304e100221bd8d1519162d4ea57ebd76e98f1828e8e93b042a1c6e3",
+ "bytes": 18256,
+ "preview": "previews/arena-wall-corner.png",
+ "from": "kenney:mini-arena/wall-corner; baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an arena wall corner",
+ "tags": [
+  "arena",
+  "wall",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.5,
+   2
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2,
+    2.5,
+    2
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 226,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 226,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18256,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#afb7dc",
+     "#6d728a",
+     "#757a91",
+     "#8b92af",
+     "#7e849b",
+     "#7b8198",
+     "#a7afd2",
+     "#9da4c5"
+    ],
+    "saturation": 0.193,
+    "value": 0.593,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.69
+     },
+     {
+      "hue": "blue",
+      "share": 0.31
+     }
+    ],
+    "grey": 0.69
+   },
+   "trianglesPerMetre": 2.95,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "556a59221b677a46ce7c91822c951de715c091121069ee4b4902d9b831a92b12",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

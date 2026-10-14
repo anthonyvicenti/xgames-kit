@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "ruin-wall",
+ "pack": "forge-world",
+ "file": "ruin-wall.glb",
+ "sha256": "c2b83434431fb397fa41f839b216a8dff494b784df705401fcd0fdd2c32a4b7e",
+ "bytes": 29948,
+ "preview": "previews/ruin-wall.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-blocks.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a long stretch of ruined wall for the backdrop: 9 m of blocks up to 6 m tall with three window holes",
+ "tags": [
+  "world",
+  "ruin",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   9,
+   6,
+   1
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -4.5,
+   0,
+   -0.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    9,
+    6,
+    1
+   ],
+   "offset": [
+    0,
+    3,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 200,
+  "textures": 1,
+  "textureMax": 96,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 200,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 29948,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 27,
+    "hues": [
+     "#84988f",
+     "#74766e",
+     "#abb6b5",
+     "#3f5d48",
+     "#858c86",
+     "#9da9a8",
+     "#5b6974",
+     "#738288"
+    ],
+    "saturation": 0.09,
+    "value": 0.431,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.978
+     }
+    ],
+    "grey": 0.978
+   },
+   "trianglesPerMetre": 1.39,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-blocks.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

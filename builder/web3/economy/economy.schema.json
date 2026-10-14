@@ -1,0 +1,514 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://games.fun/schemas/economy/1",
+  "title": "economy",
+  "description": "The `economy` section of a game's gamesfun.json: what the game's money and collectibles are, where they flow, and which rules run by themselves on games.fun's loot program 0.3. Amounts are in whole units of their currency (0.1 SOL, not lamports), shares are percents (2.5 is 2.5%), times are durations like \"7d\". Every number here is a value slot (builder/web3/economy/slots.mjs). Public data only: never a key or a seed phrase (the checker refuses one). builder/web3/economy/check.mjs checks what a schema cannot (references, the program's own limits) and README.md explains it in words.",
+  "type": "object",
+  "required": ["version"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "const": 1 },
+    "network": { "const": "devnet", "description": "Devnet only, like the rest of the kit." },
+    "name": { "type": "string", "maxLength": 80 },
+    "prompt": { "type": "string", "maxLength": 2000, "description": "The creator's own words for this economy, kept as they wrote them." },
+    "keys": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A game has two keys. The owner (the creator's wallet) signs the setup and every mechanic. The authority signs what only the game knows: who won, who cleared the level.",
+      "properties": {
+        "authority": {
+          "anyOf": [{ "const": "owner" }, { "$ref": "#/$defs/address" }],
+          "default": "owner",
+          "description": "\"owner\": the creator's wallet is both keys. Or the public address of another plain wallet (a server's key, the local keeper). Never a private key."
+        }
+      }
+    },
+    "currency": {
+      "$ref": "#/$defs/key",
+      "description": "The game's own currency: the token every shop item is priced in and the treasury holds. A key from `tokens`."
+    },
+    "tokens": { "type": "array", "maxItems": 16, "items": { "$ref": "#/$defs/token" } },
+    "collection": { "$ref": "#/$defs/collection" },
+    "items": { "type": "array", "maxItems": 64, "items": { "$ref": "#/$defs/item" } },
+    "pools": { "type": "array", "maxItems": 256, "items": { "$ref": "#/$defs/pool" } },
+    "boxes": { "type": "array", "maxItems": 32, "items": { "$ref": "#/$defs/box" } },
+    "payments": { "type": "array", "maxItems": 32, "items": { "$ref": "#/$defs/payment" } },
+    "recipes": { "type": "array", "maxItems": 64, "items": { "$ref": "#/$defs/recipe" } },
+    "schedules": { "type": "array", "maxItems": 32, "items": { "$ref": "#/$defs/schedule" } },
+    "lotteries": { "type": "array", "maxItems": 16, "items": { "$ref": "#/$defs/lottery" } },
+    "stakes": { "type": "array", "maxItems": 16, "items": { "$ref": "#/$defs/stake" } },
+    "contests": { "type": "array", "maxItems": 16, "items": { "$ref": "#/$defs/contest" } },
+    "holds": { "type": "array", "maxItems": 16, "items": { "$ref": "#/$defs/hold" } },
+    "decisions": { "type": "array", "maxItems": 32, "items": { "$ref": "#/$defs/decision" } },
+    "scenario": { "$ref": "#/$defs/scenario" },
+    "live": { "$ref": "#/$defs/live" },
+    "previous": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A shop that ran on an older loot program, kept for the record by the migration. Program 0.3 starts fresh.",
+      "properties": {
+        "program": { "type": "string", "maxLength": 20 },
+        "collection": { "$ref": "#/$defs/address" },
+        "game": { "$ref": "#/$defs/address" },
+        "treasury": { "$ref": "#/$defs/address" }
+      }
+    }
+  },
+  "$defs": {
+    "key": { "type": "string", "pattern": "^[a-z][a-z0-9-]{0,31}$", "description": "A short name for this part, used by the other parts and by its slots: lower case, digits and dashes." },
+    "address": { "type": "string", "pattern": "^[1-9A-HJ-NP-Za-km-z]{32,44}$" },
+    "link": { "type": "string", "pattern": "^https://", "maxLength": 200 },
+    "words": { "type": "string", "maxLength": 1000 },
+    "amount": {
+      "description": "An amount in whole units of its currency: 0.1, or \"0.1\" when it must be exact.",
+      "anyOf": [
+        { "type": "number", "minimum": 0 },
+        { "type": "string", "pattern": "^[0-9]{1,20}(\\.[0-9]{1,18})?$" }
+      ]
+    },
+    "percent": { "type": "number", "minimum": 0, "maximum": 100, "description": "A percent with at most two decimals (the program counts in hundredths of a percent)." },
+    "duration": {
+      "description": "Seconds, or a number and a unit: \"45s\", \"30m\", \"6h\", \"7d\", \"2w\".",
+      "anyOf": [
+        { "type": "integer", "minimum": 0 },
+        { "type": "string", "pattern": "^[0-9]+(\\.[0-9]+)?(s|m|h|d|w)$" }
+      ]
+    },
+    "time": {
+      "type": "string",
+      "description": "\"publish\" (the moment it goes live), \"publish+7d\", or a date and time like \"2026-11-01T18:00:00Z\".",
+      "pattern": "^(publish(\\+[0-9]+(\\.[0-9]+)?(s|m|h|d|w))?|[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}(:[0-9]{2}(\\.[0-9]+)?)?(Z|[+-][0-9]{2}:[0-9]{2}))$"
+    },
+    "destination": {
+      "type": "string",
+      "description": "Where a share goes: \"burn\", \"pool:<key>\", \"account:<token account address>\" (a partner, a creator) or \"holder:<collectible address>\" (whoever holds that collectible at the time).",
+      "pattern": "^(burn|pool:[a-z][a-z0-9-]{0,31}|account:[1-9A-HJ-NP-Za-km-z]{32,44}|holder:[1-9A-HJ-NP-Za-km-z]{32,44})$"
+    },
+    "share": {
+      "type": "object",
+      "required": ["to", "percent"],
+      "additionalProperties": false,
+      "properties": { "to": { "$ref": "#/$defs/destination" }, "percent": { "$ref": "#/$defs/percent" } }
+    },
+    "split": {
+      "type": "array",
+      "maxItems": 4,
+      "items": { "$ref": "#/$defs/share" },
+      "description": "Up to four shares of each payment. What they leave goes to the game's treasury."
+    },
+    "rise": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The price rises after every sale: price + step + price × growthPercent.",
+      "properties": { "step": { "$ref": "#/$defs/amount" }, "growthPercent": { "$ref": "#/$defs/percent" } }
+    },
+    "fall": {
+      "type": "object",
+      "required": ["step", "every"],
+      "additionalProperties": false,
+      "description": "The price falls by `step` every `every`, from `start`, never below `floor`. Each sale starts the fall again.",
+      "properties": {
+        "step": { "$ref": "#/$defs/amount" },
+        "every": { "$ref": "#/$defs/duration" },
+        "floor": { "$ref": "#/$defs/amount" },
+        "start": { "$ref": "#/$defs/time" }
+      }
+    },
+    "life": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "When a recipe may take a collectible of this item. 0 switches a rule off. Fixed once one is issued.",
+      "properties": {
+        "readyAfter": { "$ref": "#/$defs/duration" },
+        "lasts": { "$ref": "#/$defs/duration" },
+        "uses": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+        "cooldown": { "$ref": "#/$defs/duration" }
+      }
+    },
+    "token": {
+      "type": "object",
+      "required": ["key", "source"],
+      "additionalProperties": false,
+      "description": "A currency. `sol`: SOL (players pay in wrapped SOL). `curve`: the game's token, launched with games.fun on a Meteora curve of its own (the creator keeps 95% of its trading fees, games.fun 5%). `existing`: any mint by address, launched anywhere, classic or Token-2022, pump.fun included (games.fun takes no share of its fees). `game`: a token the game itself mints (points, tickets, shards), made when the economy goes live.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "source": { "enum": ["sol", "curve", "existing", "game"] },
+        "name": { "type": "string", "maxLength": 32 },
+        "symbol": { "type": "string", "maxLength": 10 },
+        "decimals": { "type": "integer", "minimum": 0, "maximum": 18 },
+        "program": { "enum": ["spl-token", "token-2022"], "default": "spl-token" },
+        "mint": { "$ref": "#/$defs/address" },
+        "venue": { "enum": ["games.fun", "pump.fun", "meteora", "other"] },
+        "pair": { "type": "string", "minLength": 1, "maxLength": 44, "description": "`curve` only: what the token trades against at launch: \"SOL\" (the default), \"USDC\" (USDC-dev on devnet), or any SPL mint address Meteora takes." },
+        "uri": { "$ref": "#/$defs/link" },
+        "image": { "$ref": "#/$defs/link" },
+        "powers": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "What the mint's own keys can do, as far as the creator knows. The checker warns about each one.",
+          "properties": {
+            "mintAuthority": { "enum": ["game", "someone else", "none"] },
+            "freeze": { "type": "boolean" },
+            "permanentDelegate": { "type": "boolean" },
+            "transferHook": { "type": "boolean" },
+            "transferFeePercent": { "$ref": "#/$defs/percent" },
+            "pausable": { "type": "boolean" },
+            "defaultFrozen": { "type": "boolean" },
+            "nonTransferable": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "collection": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "description": "The Metaplex Core collection the game's collectibles are minted into.",
+      "properties": {
+        "name": { "type": "string", "maxLength": 32 },
+        "description": { "$ref": "#/$defs/words" },
+        "royaltyPercent": { "type": "number", "minimum": 0, "maximum": 25, "default": 5 },
+        "uri": { "$ref": "#/$defs/link" },
+        "image": { "$ref": "#/$defs/link" }
+      }
+    },
+    "item": {
+      "type": "object",
+      "required": ["key", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295, "description": "The program's number for it. Written when it goes live; never change it after." },
+        "name": { "type": "string", "maxLength": 32 },
+        "description": { "$ref": "#/$defs/words" },
+        "kind": { "enum": ["collectible", "normal"], "default": "collectible", "description": "A collectible is minted to the player's wallet; a normal item lives in the game's own backend and the chain only records the sale." },
+        "rarity": {
+          "anyOf": [
+            { "enum": ["Common", "Uncommon", "Rare", "Epic", "Legendary", "Mythic"] },
+            { "type": "integer", "minimum": 0, "maximum": 255 }
+          ],
+          "default": "Common"
+        },
+        "soulbound": { "type": "boolean", "default": false },
+        "burnable": { "type": "boolean", "default": false, "description": "The authority may burn it later (unmake)." },
+        "supply": { "type": "integer", "minimum": 0, "maximum": 4294967295, "default": 0, "description": "0 is unlimited." },
+        "price": { "$ref": "#/$defs/amount", "description": "In the game's currency. 0: not sold in the shop (boxes, recipes or the authority give it)." },
+        "rise": { "$ref": "#/$defs/rise" },
+        "fall": { "$ref": "#/$defs/fall" },
+        "life": { "$ref": "#/$defs/life" },
+        "active": { "type": "boolean", "default": true },
+        "split": { "$ref": "#/$defs/split" },
+        "value": { "$ref": "#/$defs/amount", "description": "What the creator thinks one is worth in the game's currency, for the simulation only." },
+        "uri": { "$ref": "#/$defs/link" },
+        "image": { "$ref": "#/$defs/link" },
+        "picture": { "type": "string", "maxLength": 300, "description": "The game picture it is made from (a path inside the game)." },
+        "look": { "type": "object", "description": "A gf-three loadout fragment: what owning it changes for its player." }
+      }
+    },
+    "pool": {
+      "type": "object",
+      "required": ["key", "currency"],
+      "additionalProperties": false,
+      "description": "A vault only the game can spend from: a prize pool, a lottery's pot, stakers' rewards.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "index": { "type": "integer", "minimum": 0, "maximum": 255, "description": "The program's number for it. Written when it goes live." },
+        "currency": { "$ref": "#/$defs/key" },
+        "seed": { "$ref": "#/$defs/amount", "description": "What the creator puts in when it goes live." },
+        "about": { "$ref": "#/$defs/words" }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["gives"],
+      "additionalProperties": false,
+      "description": "One way a box can land. Give every outcome a `chance` (percents that add up to 100) or every one a `weight`.",
+      "properties": {
+        "gives": { "enum": ["item", "pay", "share", "burn", "nothing"] },
+        "chance": { "type": "number", "exclusiveMinimum": 0, "maximum": 100 },
+        "weight": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "item": { "$ref": "#/$defs/key" },
+        "pool": { "$ref": "#/$defs/key" },
+        "amount": { "$ref": "#/$defs/amount" },
+        "percent": { "$ref": "#/$defs/percent" }
+      }
+    },
+    "box": {
+      "type": "object",
+      "required": ["key", "name", "price", "outcomes"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "name": { "type": "string", "maxLength": 40 },
+        "price": { "$ref": "#/$defs/amount" },
+        "currency": { "$ref": "#/$defs/key", "description": "Default: the game's currency. A box in another one must send all of each payment somewhere (its split adds up to 100%)." },
+        "rise": { "$ref": "#/$defs/rise" },
+        "fall": { "$ref": "#/$defs/fall" },
+        "stockOdds": { "type": "boolean", "default": false, "description": "Each item's chance shrinks with what is left of its supply." },
+        "active": { "type": "boolean", "default": true },
+        "split": { "$ref": "#/$defs/split" },
+        "outcomes": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "$ref": "#/$defs/outcome" } }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "required": ["key", "name", "amount"],
+      "additionalProperties": false,
+      "description": "A payment a player signs for something the game gives off chain: an entry fee, an attempt at a level.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "name": { "type": "string", "maxLength": 40 },
+        "amount": { "$ref": "#/$defs/amount" },
+        "currency": { "$ref": "#/$defs/key" },
+        "split": { "$ref": "#/$defs/split" }
+      }
+    },
+    "input": {
+      "type": "object",
+      "required": ["takes"],
+      "additionalProperties": false,
+      "description": "burn: `count` collectibles of `item`, burned. use: one collectible of `item`, kept (counts a use). renew: one kept, its uses counted from zero again. pay: `amount` of `currency`, sent `to` a destination.",
+      "properties": {
+        "takes": { "enum": ["burn", "use", "renew", "pay"] },
+        "item": { "$ref": "#/$defs/key" },
+        "count": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "amount": { "$ref": "#/$defs/amount" },
+        "currency": { "$ref": "#/$defs/key" },
+        "to": { "$ref": "#/$defs/destination" }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["gives"],
+      "additionalProperties": false,
+      "description": "item: one new collectible. tokens: `amount` of `currency`, newly minted (`from`: \"mint\") or paid from a pool (\"pool:<key>\"). share: `percent` of what a pool holds.",
+      "properties": {
+        "gives": { "enum": ["item", "tokens", "share"] },
+        "item": { "$ref": "#/$defs/key" },
+        "amount": { "$ref": "#/$defs/amount" },
+        "currency": { "$ref": "#/$defs/key" },
+        "from": { "type": "string", "pattern": "^(mint|pool:[a-z][a-z0-9-]{0,31})$" },
+        "pool": { "$ref": "#/$defs/key" },
+        "percent": { "$ref": "#/$defs/percent" }
+      }
+    },
+    "recipe": {
+      "type": "object",
+      "required": ["key", "name", "in", "out"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "name": { "type": "string", "maxLength": 40 },
+        "active": { "type": "boolean", "default": true },
+        "in": { "type": "array", "maxItems": 8, "items": { "$ref": "#/$defs/input" } },
+        "out": { "type": "array", "maxItems": 8, "items": { "$ref": "#/$defs/output" } },
+        "needs": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": ["place", "key", "atLeast"],
+            "additionalProperties": false,
+            "description": "The collectible handed in at `place` (the first is 0) must carry a number `key` the authority wrote of at least `atLeast`.",
+            "properties": {
+              "place": { "type": "integer", "minimum": 0, "maximum": 7 },
+              "key": { "type": "string", "minLength": 1, "maxLength": 32 },
+              "atLeast": { "type": "integer", "minimum": 0, "maximum": 4294967295 }
+            }
+          }
+        },
+        "keeps": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "required": ["key", "from", "to"],
+            "additionalProperties": false,
+            "description": "The new collectible `to` (the first made is 0) takes attribute `key` from the one handed in at `from`.",
+            "properties": {
+              "key": { "type": "string", "minLength": 1, "maxLength": 32 },
+              "from": { "type": "integer", "minimum": 0, "maximum": 7 },
+              "to": { "type": "integer", "minimum": 0, "maximum": 7 }
+            }
+          }
+        }
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "required": ["key", "does", "every"],
+      "additionalProperties": false,
+      "description": "issue: mint `amount` of a game token into `pool`, halving every `halveEvery` runs. burn: burn `percent` of what `pool` holds. move: move `percent` of what pool `from` holds into pool `to`. Anyone may run it when it is due.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "name": { "type": "string", "maxLength": 40 },
+        "does": { "enum": ["issue", "burn", "move"] },
+        "currency": { "$ref": "#/$defs/key" },
+        "pool": { "$ref": "#/$defs/key" },
+        "from": { "$ref": "#/$defs/key" },
+        "to": { "$ref": "#/$defs/key" },
+        "amount": { "$ref": "#/$defs/amount" },
+        "halveEvery": { "type": "integer", "minimum": 0, "maximum": 4294967295 },
+        "percent": { "$ref": "#/$defs/percent" },
+        "every": { "$ref": "#/$defs/duration" },
+        "start": { "$ref": "#/$defs/time" },
+        "maxRuns": { "type": "integer", "minimum": 0, "maximum": 4294967295, "default": 0 },
+        "active": { "type": "boolean", "default": true }
+      }
+    },
+    "lottery": {
+      "type": "object",
+      "required": ["key", "name", "pot", "price", "every"],
+      "additionalProperties": false,
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "name": { "type": "string", "maxLength": 40 },
+        "pot": { "$ref": "#/$defs/key", "description": "The pool the prize is paid from. Give it a pot of its own." },
+        "price": { "$ref": "#/$defs/amount", "description": "One ticket, in the pot's currency (or in `ticketCurrency`)." },
+        "ticketCurrency": { "$ref": "#/$defs/key", "description": "Tickets paid in another token are burned, and the pot is filled from elsewhere." },
+        "cutPercent": { "$ref": "#/$defs/percent", "description": "The share of ticket money that goes to the treasury instead of the pot." },
+        "places": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": "number", "exclusiveMinimum": 0, "maximum": 100 }, "description": "What each place wins, in percent of the pot, first place first. Default: one winner takes all." },
+        "every": { "$ref": "#/$defs/duration" },
+        "firstDraw": { "$ref": "#/$defs/time" }
+      }
+    },
+    "stake": {
+      "type": "object",
+      "required": ["key", "name", "stakes", "rewards"],
+      "additionalProperties": false,
+      "description": "Players lock a token and share whatever arrives in the rewards pool. It cannot be edited once open.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "id": { "type": "integer", "minimum": 1, "maximum": 4294967295 },
+        "name": { "type": "string", "maxLength": 40 },
+        "stakes": { "$ref": "#/$defs/key", "description": "The token players lock." },
+        "rewards": { "$ref": "#/$defs/key", "description": "The pool rewards arrive in. The stake takes all of it, so it must be this stake's alone." },
+        "lock": { "$ref": "#/$defs/duration", "description": "How long a position waits after its last stake before anything comes out." }
+      }
+    },
+    "contest": {
+      "type": "object",
+      "required": ["key", "name", "sides"],
+      "additionalProperties": false,
+      "description": "Players put money on a side; the side the authority names shares the pot. The authority opens each one while the game runs.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "name": { "type": "string", "maxLength": 40 },
+        "currency": { "$ref": "#/$defs/key" },
+        "sides": { "type": "integer", "minimum": 2, "maximum": 255 },
+        "sideNames": { "type": "array", "maxItems": 255, "items": { "type": "string", "maxLength": 40 } },
+        "entriesClose": { "$ref": "#/$defs/duration", "description": "How long after opening entries stop." },
+        "resultDue": { "$ref": "#/$defs/duration", "description": "How long after opening the result must be named. After it anyone can call the contest off and every entry gets its money back." },
+        "every": { "$ref": "#/$defs/duration", "description": "How often the authority opens one, for the simulation." },
+        "split": { "$ref": "#/$defs/split" },
+        "decidedBy": { "$ref": "#/$defs/words" }
+      }
+    },
+    "hold": {
+      "type": "object",
+      "required": ["key", "name", "item"],
+      "additionalProperties": false,
+      "description": "A player hands a collectible to the game for a time they choose; until it is up the authority says where it goes, after it anyone can send it home.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "name": { "type": "string", "maxLength": 40 },
+        "item": { "$ref": "#/$defs/key" },
+        "for": { "$ref": "#/$defs/duration", "description": "The time the game asks the player to choose." },
+        "decidedBy": { "$ref": "#/$defs/words" }
+      }
+    },
+    "decision": {
+      "type": "object",
+      "required": ["key", "when", "does"],
+      "additionalProperties": false,
+      "description": "A rule only the game can carry out, signed by the authority while the game runs.",
+      "properties": {
+        "key": { "$ref": "#/$defs/key" },
+        "when": { "$ref": "#/$defs/words" },
+        "does": { "enum": ["payout", "burn", "issue", "make", "unmake", "set", "award", "decide", "roll", "open_contest"] },
+        "pool": { "$ref": "#/$defs/key" },
+        "currency": { "$ref": "#/$defs/key" },
+        "amount": { "$ref": "#/$defs/amount" },
+        "percent": { "$ref": "#/$defs/percent", "description": "For a payout or a burn: a share of what the pool holds, instead of an amount." },
+        "item": { "$ref": "#/$defs/key" },
+        "contest": { "$ref": "#/$defs/key" },
+        "hold": { "$ref": "#/$defs/key" },
+        "to": { "$ref": "#/$defs/words" },
+        "perDay": { "type": "number", "minimum": 0, "description": "How often it happens, for the simulation." },
+        "signedBy": { "enum": ["page", "keeper", "server"], "default": "page" },
+        "proof": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["payment"],
+          "description": "What a claim must show before the keeper or the page acts on it: a payment the receiver made on chain (an attempt), not claimed before, at least `after` and at most `within` before the claim. The game's word alone is never proof: it runs in the player's browser.",
+          "properties": {
+            "payment": { "$ref": "#/$defs/key", "description": "The payment (one of \"payments\") a claim must name, paid by the receiver." },
+            "after": { "$ref": "#/$defs/duration", "description": "The least time between that payment and the claim (no one clears the ladder in less)." },
+            "within": { "$ref": "#/$defs/duration", "description": "The most time between that payment and the claim." }
+          }
+        },
+        "caps": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Limits the keeper and the page keep, in whole units of the pool's (or the token's) currency. Their own rules, not the program's: the program trusts the authority.",
+          "properties": {
+            "each": { "$ref": "#/$defs/amount", "description": "The most one decision moves." },
+            "perPlayerPerDay": { "$ref": "#/$defs/amount", "description": "The most one receiver gets in 24 hours." },
+            "perDay": { "$ref": "#/$defs/amount", "description": "The most everyone together gets in 24 hours." }
+          }
+        }
+      }
+    },
+    "scenario": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What the quick simulation assumes: how often players do each thing.",
+      "properties": {
+        "days": { "type": "number", "minimum": 0, "default": 30 },
+        "perDay": {
+          "type": "object",
+          "description": "Keys are \"<kind>:<key>\" (box:flip, lottery:weekly, recipe:merge, payment:entry, item:sword, stake:house, contest:duel, hold:raid); values how many a day.",
+          "propertyNames": { "pattern": "^(box|item|payment|recipe|lottery|stake|contest|hold):[a-z][a-z0-9-]{0,31}$" },
+          "additionalProperties": { "type": "number", "minimum": 0 }
+        },
+        "staked": {
+          "type": "object",
+          "description": "Stake key → how much is staked, for rewards per token.",
+          "additionalProperties": { "$ref": "#/$defs/amount" }
+        },
+        "players": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "live": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Written when the economy goes live (builder/web3/node/economy.mjs): public addresses and signatures only.",
+      "properties": {
+        "program": { "$ref": "#/$defs/address" },
+        "game": { "$ref": "#/$defs/address" },
+        "collection": { "$ref": "#/$defs/address" },
+        "treasury": { "$ref": "#/$defs/address" },
+        "authority": { "$ref": "#/$defs/address" },
+        "at": { "type": "string", "maxLength": 40, "description": "When it went live. \"publish\" in the spec means this moment." },
+        "published": { "type": "object", "description": "The spec as it is on chain: each part as it was when it landed. A change publishes only what differs from it." },
+        "transactions": {
+          "type": "array",
+          "maxItems": 60,
+          "description": "The latest transactions that set it up, newest last.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "signature": { "type": "string", "pattern": "^[1-9A-HJ-NP-Za-km-z]{64,90}$" },
+              "parts": { "type": "array", "items": { "type": "string", "maxLength": 80 } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

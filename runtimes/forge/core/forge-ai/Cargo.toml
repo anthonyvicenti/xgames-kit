@@ -1,0 +1,14 @@
+[package]
+name = "forge-ai"
+description = "gf-forge's enemies and encounters (track A): archetypes, telegraphs, crowds, attack tokens, the wave director, plugged into forge-core's schedule. A stub in wave 1a."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+
+[dependencies]
+forge-core = { workspace = true }
+
+# The fixture runner with this crate's plugin: cargo run -p forge-ai --example ai-fixture -- <script.json>
+[[example]]
+name = "ai-fixture"

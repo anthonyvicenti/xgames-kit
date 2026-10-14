@@ -1,0 +1,69 @@
+{
+ "packVersion": 1,
+ "id": "kaykit-skeletons",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "KayKit Character Pack: Skeletons 1.0",
+ "describe": "KayKit Character Pack: Skeletons 1.0: chunky stylised low-poly with one shared texture per set.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kay Lousberg (www.kaylousberg.com)",
+  "url": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "file": "library/packs/kaykit-skeletons/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0",
+  "commit": "15b62b9bad122f72926c10fb14d622c73819fa54",
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "rebuild": "the old kit's scenic art tool (art-kaykit.mjs --fetch) or the forge library tools: KayKit units x 0.75 = metres"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 26,
+   "hues": [
+    "#797e7f",
+    "#72787a",
+    "#deba96",
+    "#707272",
+    "#d8ab80",
+    "#d6a778",
+    "#868989",
+    "#7a8386",
+    "#dbb186",
+    "#726357",
+    "#696f72",
+    "#93523e"
+   ],
+   "saturation": 0.32,
+   "value": 0.542,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.556
+    },
+    {
+     "hue": "orange",
+     "share": 0.359
+    }
+   ],
+   "grey": 0.429
+  },
+  "trianglesPerMetre": 20.06,
+  "texelsPerMetre": 74,
+  "texturedShare": 0.759,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 20,
+ "validators": [
+  "budget",
+  "rig-check"
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "sign",
+ "pack": "xk-pixel-town",
+ "file": "sign.png",
+ "sha256": "3b5255ea723c2cf7f8df607fd4f589cc1d2096c9de6a0441e5ebf4efe7732c21",
+ "bytes": 243,
+ "preview": "previews/sign.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): sign.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a wooden signpost",
+ "tags": [
+  "pixel",
+  "sign",
+  "wood"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 18
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 18
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#9a6236",
+     "#7a4a2a",
+     "#452a2c",
+     "#67483f",
+     "#d39a5c",
+     "#5d3d37",
+     "#b97c45",
+     "#5a3620"
+    ],
+    "saturation": 0.42,
+    "value": 0.365,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.664
+     },
+     {
+      "hue": "red",
+      "share": 0.2
+     },
+     {
+      "hue": "orange",
+      "share": 0.136
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.467
+   }
+  }
+ },
+ "source": {
+  "sha256": "cf4f8fef53d1a9fb79c9d32472c2f1c26d372d3db8c63299091c5933bc4c4906",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

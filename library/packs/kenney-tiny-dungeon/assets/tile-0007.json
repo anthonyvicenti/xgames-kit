@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0007",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0007.png",
+ "sha256": "59c1665967f22e5bd69c16d9e17bfa23d16b0a7111cf6c5c38ff6b9d14cdad9d",
+ "bytes": 301,
+ "preview": "previews/tile-0007.png",
+ "from": "Tiles/tile_0007.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a dry stone spout in a brick wall: the top of a wall fountain (tiles 19, 31, 43 below it)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "spout",
+  "dry",
+  "wall",
+  "top"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#262b44",
+     "#52607c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.236,
+    "value": 0.506,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "883ba3a3fb022b373db047b9dd19ae67f2611e584190a82d45d2b8d3f21dfad2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

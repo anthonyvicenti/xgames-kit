@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "plant-small",
+ "pack": "kenney-furniture-kit",
+ "file": "plant-small.glb",
+ "sha256": "ff486b793b6d6a673d0de8672402ce1aaad99d751d2f5433d27bba330d497c99",
+ "bytes": 4356,
+ "preview": "previews/plant-small.png",
+ "from": "kenney:furniture-kit/plantSmall1; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small desk plant",
+ "tags": [
+  "office",
+  "plant",
+  "decor",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.189,
+   0.28,
+   0.189
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 102,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 102,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4356,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f3cca8",
+     "#76eac8"
+    ],
+    "saturation": 0.752,
+    "value": 0.776,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.745
+     },
+     {
+      "hue": "cyan",
+      "share": 0.255
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 22.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "2b9c022feb47be857b2c4fdc29f36522766ba9b70c578c31d7c05d71b4377d15",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

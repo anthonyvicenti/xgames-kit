@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-block-bottom-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-block-bottom-right.png",
+ "sha256": "26537a28f7a8c1f8736bd136d95d0149e9096b485b1753bad27b438cd55c7137",
+ "bytes": 1859,
+ "preview": "previews/terrain-stone-block-bottom-right.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_block_bottom_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone block bottom right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "block",
+  "bottom",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 63.7 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 58.8 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#a6b2bb",
+     "#cfd5da",
+     "#353541",
+     "#abb6bf",
+     "#afb9c2",
+     "#adb8c1",
+     "#acb7c0"
+    ],
+    "saturation": 0.129,
+    "value": 0.694,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 55,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.518
+   }
+  }
+ },
+ "source": {
+  "sha256": "881d9bef493f8fdf8fcfc6a7ec84f8456e14d9bef2ff644b19e0398bb66c00b6",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

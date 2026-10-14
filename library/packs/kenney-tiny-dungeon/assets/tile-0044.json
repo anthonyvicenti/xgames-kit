@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0044",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0044.png",
+ "sha256": "a55137809d09430749ff0bb809392ad67c6e99213a9c7f6546cd4894947b0ebd",
+ "bytes": 267,
+ "preview": "previews/tile-0044.png",
+ "from": "Tiles/tile_0044.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the front rim of a stone fountain basin with green water in it",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "basin",
+  "water",
+  "green",
+  "rim",
+  "bottom"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#eaa56c",
+     "#262b44",
+     "#c0cbdc",
+     "#43e1b3",
+     "#cf8254",
+     "#52607c",
+     "#69ffd4",
+     "#8b9bb4"
+    ],
+    "saturation": 0.571,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.586
+     },
+     {
+      "hue": "blue",
+      "share": 0.367
+     },
+     {
+      "hue": "cyan",
+      "share": 0.047
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.1
+   }
+  }
+ },
+ "source": {
+  "sha256": "e4deaf3ebddc654a8e3d075e41cc78a29fd5e5635b3d6646e6b36da10d63ea20",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

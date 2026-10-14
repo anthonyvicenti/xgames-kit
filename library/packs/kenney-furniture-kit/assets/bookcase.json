@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "bookcase",
+ "pack": "kenney-furniture-kit",
+ "file": "bookcase.glb",
+ "sha256": "251dcded67cbf25226ea207fef258407e2f6840d883f34c58a3e7ac23e350932",
+ "bytes": 5632,
+ "preview": "previews/bookcase.png",
+ "from": "kenney:furniture-kit/bookcaseClosedWide; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wide closed bookcase",
+ "tags": [
+  "office",
+  "shelf",
+  "bookcase"
+ ],
+ "use": {
+  "size": [
+   1.6,
+   1.58,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.6,
+    1.58,
+    0.5
+   ],
+   "offset": [
+    0,
+    0.79,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 372,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 372,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5632,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8"
+    ],
+    "saturation": 0.758,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "55b9903e9646dc407ed5237a1c41c1f0a14f9edc22e3392bdb9a4804d846af6a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

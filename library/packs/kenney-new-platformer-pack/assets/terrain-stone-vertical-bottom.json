@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-vertical-bottom",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-vertical-bottom.png",
+ "sha256": "bb2cbe65bdbb9dbbe96fe6509b646a2fc02127745dc05d5279174cad9e6ec2ab",
+ "bytes": 2223,
+ "preview": "previews/terrain-stone-vertical-bottom.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_vertical_bottom.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone vertical bottom tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "vertical",
+  "bottom",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 62.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#a6b2bb",
+     "#353541",
+     "#cfd5da",
+     "#abb6bf",
+     "#353540",
+     "#afb9c2",
+     "#adb8c1"
+    ],
+    "saturation": 0.127,
+    "value": 0.662,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 56,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "4e1f416704e74949f628421defd63b05fde9a1e5f94859f03223730ccf5ec8e4",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

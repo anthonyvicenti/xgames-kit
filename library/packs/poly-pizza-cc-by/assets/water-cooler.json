@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "water-cooler",
+ "pack": "poly-pizza-cc-by",
+ "file": "water-cooler.glb",
+ "sha256": "341c61bd582534232fb8e8057540b916ddf2b83d2bc37f8efca7af0b37c4b50d",
+ "bytes": 17928,
+ "preview": "previews/water-cooler.png",
+ "from": "polypizza:zWi9p5FSxD; baked to metres (x0.34181), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an office water cooler",
+ "tags": [
+  "office",
+  "drink",
+  "station",
+  "water",
+  "cooler"
+ ],
+ "use": {
+  "size": [
+   0.311,
+   1.35,
+   0.364
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.311,
+    1.35,
+    0.364
+   ],
+   "offset": [
+    0,
+    0.675,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1566,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1566,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 17928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#e7e7e7",
+     "#67b4e7",
+     "#53b4e7",
+     "#e76643"
+    ],
+    "saturation": 0.134,
+    "value": 0.86,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.816
+     },
+     {
+      "hue": "cyan",
+      "share": 0.183
+     }
+    ],
+    "grey": 0.816
+   },
+   "trianglesPerMetre": 28.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "J-Toastie",
+  "url": "https://poly.pizza/m/zWi9p5FSxD",
+  "credit": "\"Water Cooler\" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/zWi9p5FSxD)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/zWi9p5FSxD",
+  "download": "https://static.poly.pizza/a410e1d9-246d-4613-89a3-90001853c6a2.glb",
+  "sha256": "6825ad350f0a4ee4604a2d5ca8c30cd1ae65b7fb9be6c0280410824a7b77889e",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.34181), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "J-Toastie"
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0073",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0073.png",
+ "sha256": "9f66085499475043454a529db745d9eed9b3d643069ab461c54ffef39cfd84eb",
+ "bytes": 166,
+ "preview": "previews/tile-0073.png",
+ "from": "Tiles/tile_0073.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a wooden plank house wall; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "wooden",
+  "planks",
+  "house",
+  "building",
+  "middle"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#bd6c4a",
+     "#eaa56c",
+     "#763b36"
+    ],
+    "saturation": 0.504,
+    "value": 0.531,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.957
+     },
+     {
+      "hue": "red",
+      "share": 0.043
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b20e305ce6c9c9b6e2d0cfec786fa45814d0a635b477d2084e2df0d31273ae8a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

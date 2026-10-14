@@ -1,0 +1,211 @@
+{
+  "specVersion": 2,
+  "title": "Ruin Watch",
+  "hook": "gf-forge track A's encounter room: hold a moonlit ruin against skeletons rising from the graves, wave after wave, then their lord.",
+  "prompt": "gf-forge wave 1 track A test room (research/rust-engine/PLAN.md \u00a74, not a game for anyone yet): the ruins arena with every enemy archetype, the wave director running, bots, first-person walk",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire (hold for the repeater)",
+    "secondary": "nothing yet",
+    "interact": "nothing yet"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Clear every wave and break the lord.",
+    "loseBy": "Everyone falls.",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "medium",
+    "seed": 7,
+    "props": [
+      {
+        "name": "chest",
+        "describe": "an iron-bound chest the ruin's dead guard",
+        "role": "what they guard",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol"
+      },
+      {
+        "id": "scatter",
+        "preset": "shotgun",
+        "slot": 2
+      },
+      {
+        "id": "repeater",
+        "preset": "repeater",
+        "slot": 3
+      },
+      {
+        "id": "blade",
+        "preset": "blade",
+        "slot": 4,
+        "damage": 14
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Bone grunt",
+        "archetype": "chaser"
+      },
+      {
+        "id": "skirmisher",
+        "name": "Skirmisher",
+        "archetype": "runner"
+      },
+      {
+        "id": "caster",
+        "name": "Grave caster",
+        "archetype": "caster"
+      },
+      {
+        "id": "soldier",
+        "name": "Shield soldier",
+        "archetype": "shield"
+      },
+      {
+        "id": "brute",
+        "name": "Brute",
+        "archetype": "brute"
+      },
+      {
+        "id": "lord",
+        "name": "The bone lord",
+        "archetype": "boss",
+        "health": 900,
+        "boss": {
+          "summon": "grunt",
+          "summonCount": 3
+        }
+      }
+    ],
+    "waves": [
+      {
+        "id": "first",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 6
+          },
+          {
+            "type": "skirmisher",
+            "count": 2
+          }
+        ]
+      },
+      {
+        "id": "second",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 4
+          },
+          {
+            "type": "caster",
+            "count": 2
+          },
+          {
+            "type": "soldier",
+            "count": 1
+          }
+        ]
+      },
+      {
+        "id": "third",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 3
+          },
+          {
+            "type": "soldier",
+            "count": 2
+          },
+          {
+            "type": "caster",
+            "count": 2
+          },
+          {
+            "type": "brute",
+            "count": 1
+          }
+        ],
+        "reward": true
+      },
+      {
+        "id": "lord",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 4
+          },
+          {
+            "type": "lord",
+            "count": 1
+          }
+        ],
+        "boss": true
+      }
+    ]
+  },
+  "rules": {
+    "summary": "Skeletons rise from the graves of a moonlit ruin in waves; hold out, kill them, and break the lord who comes last.",
+    "scoring": "each kill scores the enemy's points to whoever landed it",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "content": {
+    "rating": "T",
+    "notes": "Skeletons fight and break apart; no blood."
+  },
+  "accept": [
+    "enemies rise from the graves 7-10 m away and chase",
+    "their eyes ramp before a lunge you can step away from",
+    "waves change without stopping, the third waits for its reward, the lord comes last with phases"
+  ],
+  "notInV1": [
+    "the three-card reward screen (rules.js + the kit's UI): a banner stands in"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-sign-b",
+ "pack": "forge-town",
+ "file": "town-town-sign-b.png",
+ "sha256": "2262546af1c26fd84c6c0d01d281664b8cb6ccfd03a44154f5fd899abb7b5a66",
+ "bytes": 247,
+ "preview": "previews/town-town-sign-b.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a hanging shop sign: a wooden board on an iron bracket with a tankard painted on it, no words (drawn; alpha round the board)",
+ "tags": [
+  "texture",
+  "town",
+  "sign-b",
+  "sign"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 24
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "24x24 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 24,
+     "height": 24,
+     "seeThrough": 0.406
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#32241a",
+     "#d6be7e",
+     "#1e1e20",
+     "#533b28",
+     "#5a412b",
+     "#62462f",
+     "#5e432d",
+     "#563e29"
+    ],
+    "saturation": 0.327,
+    "value": 0.304,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.64
+     },
+     {
+      "hue": "yellow",
+      "share": 0.202
+     },
+     {
+      "hue": "grey",
+      "share": 0.158
+     }
+    ],
+    "exact": 9,
+    "grey": 0.158
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

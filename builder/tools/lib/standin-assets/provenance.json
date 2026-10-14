@@ -1,0 +1,79 @@
+{
+  "what": "Stand-in art for gf-three games until track L's curated props (library/props.json) and track C's bodies (library/bodies.json) exist. create.mjs copies one into a game's assets/ as an ordinary slot file; every one can be swapped in Studio.",
+  "files": {
+    "mannequin.glb": {
+      "use": "character body stand-in (character.body.<role>)",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://quaternius.itch.io/universal-animation-library"
+      },
+      "source": "research/foundations/trials/third-person-adventure/source/assets/hero/hero.glb, byte for byte (see LICENSE-mannequin.txt: 14 of the 46 UAL clips, meshopt-compressed)",
+      "sha256": "5d85c3ff031d2df91a5755c80bc99641787e83e4868c9515228c7e4f1ebe90bc"
+    },
+    "grass.ktx2": {
+      "use": "ground texture stand-in (world.<template>.ground)",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Poly Haven",
+        "url": "https://polyhaven.com/a/leafy_grass"
+      },
+      "source": "research/foundations/trials/third-person-adventure/source/assets/tex/leafy_grass_diff.ktx2, byte for byte (converted to KTX2 by trials/scenic-valley; download URL and hashes in research/foundations/trials/scenic-valley/provenance.json)",
+      "sha256": "f2fe8e722d534bdd101155f8cc7ac5b7edfc345284a8dea706d3c817d7cc634f"
+    },
+    "ball.glb": {
+      "use": "prop stand-in for a ball",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "31dbb456cc0e118b91fed390c2c21fdc28d9e9b65ee0d29cd6fb801f4e5ea0dd"
+    },
+    "slide.glb": {
+      "use": "prop stand-in for a playground slide",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "3f1560296335468aab298c4b792cf11986c712ee24a6c5e0d5913575aadb7ca3"
+    },
+    "bench.glb": {
+      "use": "prop stand-in for a bench",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "7dff4979057e53070f46e82f8eeb5aac27723e884c9a0c704becb3502ea354dd"
+    },
+    "crate.glb": {
+      "use": "prop stand-in for any prop with no closer match",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "4468360121b5f23b960cbd9c03b78f6ec75ad2f30a09c4c1ff66983094f41998"
+    },
+    "cap.glb": {
+      "use": "hat stand-in (character.hat.<role>): a cap, brim forward; origin on top of the head, +Z forward",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "97d737eb7c630c89ff84c9e28f03eee8d467cc5c5c71206d251991e2c01d9010"
+    },
+    "cap-backwards.glb": {
+      "use": "hat stand-in: a cap worn backwards",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun (baked by tools/lib/standin-bake.mjs)",
+        "url": "https://games.fun"
+      },
+      "sha256": "b6106d7692a7818940643cc800848e2643cdd682f96e9ef9c932cd96a81f98c3"
+    }
+  }
+}

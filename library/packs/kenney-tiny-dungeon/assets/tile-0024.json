@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0024",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0024.png",
+ "sha256": "6f836738f614635a57a25c9085f655745f8417e4b8e044e7e798a24044725315",
+ "bytes": 287,
+ "preview": "previews/tile-0024.png",
+ "from": "Tiles/tile_0024.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "dark brown earth scattered with grey stones",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "earth",
+  "dirt",
+  "rock",
+  "ground",
+  "stones",
+  "rubble",
+  "fill"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#763b36",
+     "#c0cbdc",
+     "#3f2631",
+     "#8b9bb4",
+     "#bd6c4a"
+    ],
+    "saturation": 0.345,
+    "value": 0.417,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.723
+     },
+     {
+      "hue": "blue",
+      "share": 0.199
+     },
+     {
+      "hue": "pink",
+      "share": 0.07
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "3f4d77da84e948836c16d2c81f2812b7805e76147921f0ea9f047705f709a62a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

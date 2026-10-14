@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-block-top-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-block-top-right.png",
+ "sha256": "515f6a42f6901ebc95dc8f5571a661eca3d2775c8730fe15028684afc2897484",
+ "bytes": 2047,
+ "preview": "previews/terrain-stone-block-top-right.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_block_top_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone block top right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "block",
+  "top",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 49.2 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 51.6 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#5e5e6d",
+     "#a6b2bb",
+     "#353541",
+     "#cfd5da",
+     "#424251",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.111,
+    "value": 0.575,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 105,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.518
+   }
+  }
+ },
+ "source": {
+  "sha256": "bb98bceb6549a5daedfe8d0dc97d3c80c0cb86700554e942b77d8793fce6d83c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

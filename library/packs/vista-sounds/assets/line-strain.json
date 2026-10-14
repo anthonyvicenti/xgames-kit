@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "line-strain",
+ "pack": "vista-sounds",
+ "file": "line-strain.ogg",
+ "sha256": "4f7e9604609b4d2daed797d85894f0c1f68b0242f34c980e4687664686a965d1",
+ "bytes": 9264,
+ "preview": "previews/line-strain.png",
+ "from": "nylon line under strain (creak near the breaking point) — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Line straining (loop)",
+ "tags": [
+  "coast",
+  "calm",
+  "line",
+  "strain",
+  "loop"
+ ],
+ "use": {
+  "seconds": 0.95,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 58% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -21.8,
+     "samplePeakDb": -1.1,
+     "truePeakDb": -0.8,
+     "hfRatio": 0.582
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.95,
+    "peakDbfs": -1.1,
+    "soundMaxLufs": -21.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/kyles/sounds/450849/",
+  "author": "kyles"
+ }
+}

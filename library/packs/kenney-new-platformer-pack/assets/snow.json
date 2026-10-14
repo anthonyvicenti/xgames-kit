@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "snow",
+ "pack": "kenney-new-platformer-pack",
+ "file": "snow.png",
+ "sha256": "d670bad613f72d331b4885199f82aea60bfbd3d584fb926283bf94ff3d8fdaaa",
+ "bytes": 1314,
+ "preview": "previews/snow.png",
+ "from": "Sprites/Tiles/Double/snow.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "snow",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "snow",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#e5f0ff",
+     "#e4f0ff",
+     "#fdfeff",
+     "#e6f0ff",
+     "#f8fbff",
+     "#e8f1ff",
+     "#e5f1ff"
+    ],
+    "saturation": 0.405,
+    "value": 0.98,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 20,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "783bee3c46ebcc60b5046e1be8e14f4c3fa911648ffd3311c7d4b32af3538a62",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

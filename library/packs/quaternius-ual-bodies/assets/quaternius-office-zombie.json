@@ -1,0 +1,127 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-office-zombie",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-office-zombie.glb",
+ "sha256": "a228ca24d18647c8293e6f53c00b78eba22255e37446477d0624e7b4fd675c5f",
+ "bytes": 171492,
+ "preview": "previews/quaternius-office-zombie.png",
+ "from": "https://poly.pizza/m/kZ3DmIoGip \"Casual Character\" (Ultimate Modular Men Pack), https://static.poly.pizza/90a9e2d4-053f-42f1-99a2-8f5e1180ea7f.glb (sha256 fea7e712…46b4, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (45 joints reset); recoloured Skin…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a zombie office worker: grey-green skin, pale eyes, a light-blue short-sleeve work shirt and dark trousers",
+ "tags": [
+  "zombie",
+  "undead",
+  "office",
+  "worker",
+  "call-centre",
+  "short-sleeves",
+  "horror",
+  "enemy",
+  "human",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.675,
+   1.858,
+   0.455
+  ],
+  "height": 1.858,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 5776,
+  "textures": 0,
+  "materials": 9,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "materials 9 is over the target 8",
+     "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%)"
+    ],
+    "facts": {
+     "height": 1.858,
+     "triangles": 5776,
+     "joints": 58,
+     "materials": 9
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#412914",
+     "#8fae7a",
+     "#3d4656",
+     "#71222e",
+     "#a3a3a3",
+     "#7ea6d8",
+     "#6d8a5c",
+     "#d9e8a0"
+    ],
+    "saturation": 0.371,
+    "value": 0.341,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.433
+     },
+     {
+      "hue": "grey",
+      "share": 0.241
+     },
+     {
+      "hue": "green",
+      "share": 0.19
+     },
+     {
+      "hue": "red",
+      "share": 0.108
+     }
+    ],
+    "grey": 0.241
+   },
+   "trianglesPerMetre": 12.99,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.37 heads tall; hips at 48% of the height; shoulders 16% of it",
+   "body": {
+    "headsTall": 5.37,
+    "hipShare": 0.482,
+    "shoulderShare": 0.164,
+    "widthShare": 0.902
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/kZ3DmIoGip"
+ }
+}

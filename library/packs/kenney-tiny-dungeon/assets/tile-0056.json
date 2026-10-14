@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0056",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0056.png",
+ "sha256": "200573211b183b2ca666ec8944630f627de25d184c3d997416c93e41ff0313ae",
+ "bytes": 304,
+ "preview": "previews/tile-0056.png",
+ "from": "Tiles/tile_0056.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round grey stone ring seen from above: a well mouth or the rim of a pit",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "well",
+  "pit",
+  "hole",
+  "ring",
+  "stone",
+  "grey"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#52607c",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#e4edf9"
+    ],
+    "saturation": 0.266,
+    "value": 0.369,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.988
+     }
+    ],
+    "exact": 5,
+    "grey": 0.012
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.947
+   }
+  }
+ },
+ "source": {
+  "sha256": "3dce1fb1d0ab8ecc5b168449b9cac11709a221f53d7dc49d31c4c7c96bd5ea2f",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

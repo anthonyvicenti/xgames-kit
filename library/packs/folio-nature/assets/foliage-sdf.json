@@ -1,0 +1,74 @@
+{
+ "assetVersion": 1,
+ "id": "foliage-sdf",
+ "pack": "folio-nature",
+ "file": "foliage-sdf.png",
+ "sha256": "b73a07a219d1ecd284dedbea65d729b4fa68457947555f07fbdf6bfcc85f3fc3",
+ "bytes": 10950,
+ "preview": "previews/foliage-sdf.png",
+ "from": "cut by the old kit's world-folio tool",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a leaf shape mask (signed distance) for foliage cards",
+ "tags": [
+  "foliage",
+  "leaf",
+  "mask",
+  "sdf"
+ ],
+ "use": {
+  "colorSpace": "linear"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#000000",
+     "#0d0d0d",
+     "#ffffff",
+     "#010101",
+     "#464646",
+     "#050505",
+     "#636363",
+     "#555555"
+    ],
+    "saturation": 0,
+    "value": 0.283,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 256,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0.921
+   }
+  }
+ }
+}

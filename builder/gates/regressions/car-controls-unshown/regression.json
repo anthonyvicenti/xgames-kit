@@ -1,0 +1,11 @@
+{
+  "base": "kart-loop",
+  "why": "PA10's controls as it was delivered: steer, accelerate and brake listed by name in config/game.json, keys written into their words. The kit shows a named control only for primary, secondary, interact and jump, so How to play and the help line said \"WASD move · mouse aim\", and verify skipped the three as \"not kit actions\" while the car could not be driven (builder/loop/evidence/2026-10-13-pa10-headless.json). Gate C must fail a control no screen shows and no check presses.",
+  "evidence": "builder/loop/evidence/2026-10-13-pa10-headless.json",
+  "patches": [
+    { "file": "config/game.json", "pointer": "/controls", "value": { "steer": "A / D or ← / →: steer the car left and right", "accelerate": "W or ↑: speed up", "brake": "S or ↓: brake and reverse" } }
+  ],
+  "mustFail": ["C"],
+  "measure": 13,
+  "detail": "no screen shows it"
+}

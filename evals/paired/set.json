@@ -1,0 +1,69 @@
+{
+ "schema": "xgk-eval-set/1",
+ "set": "paired",
+ "frozen": "2026-10-13",
+ "title": "Paired eval: the phase 5 gate",
+ "question": "Does the new loop keep more of what the creator asked for than the old loop, without finishing fewer games or breaking multiplayer?",
+ "cases": [
+  "PA01",
+  "PA02",
+  "PA03",
+  "PA04",
+  "PA05",
+  "PA06",
+  "PA07",
+  "PA08",
+  "PA09",
+  "PA10",
+  "PA11",
+  "PA12"
+ ],
+ "mix": {
+  "frozen cases T1-T7 (T6 and T7 restated without the name they carry)": [
+   "PA01",
+   "PA02",
+   "PA03",
+   "PA04",
+   "PA05",
+   "PA06",
+   "PA07"
+  ],
+  "real creator prompts typed into live Studio, verbatim": [
+   "PA08",
+   "PA09"
+  ],
+  "gauntlet prompts of 2026-10-11, verbatim": [
+   "PA10",
+   "PA11",
+   "PA12"
+  ]
+ },
+ "arms": {
+  "old": {
+   "what": "The loop before xgames-kit: games.fun's Studio v2 worker (pitch, lock, create, build, verify, play-test, deliver) on the kits it served on 2026-10-13, with the forge and vista engines open (the creator opened them on 2026-10-13).",
+   "pin": "the games.fun commit and every kit release it served, recorded in plan.json"
+  },
+  "new": {
+   "what": "xgames-kit's loop: requirements ledger, foundation, build round, six gates, play-test of promises, stop rule and ladder.",
+   "pin": "the xgames-kit commit, recorded in plan.json"
+  }
+ },
+ "reps": 3,
+ "order": "Every run of both arms in one list shuffled by the plan's seed, so machine load and time of day fall on both arms alike.",
+ "model": "Both arms build with the same base model, named in plan.json. The new loop may climb its ladder to a stronger model: that is part of the loop being measured, and the record names every model used.",
+ "answers": "When a loop asks the creator a question, the runner answers with the case's answers (default: accept the loop's own recommendation) and records the question.",
+ "budget": "None. Cost never stops a build (the creator, 2026-10-13). Time, tokens and money are recorded for information. The only stop is the runner's wall clock, the same for both arms.",
+ "wallClockHours": 8,
+ "measures": {
+  "intent": "Intent kept, per run: the share of the case's core ledger lines (core: true) a second reader judges kept, from the witness bundle alone (kept 1, partly 0.5, lost or cannot tell 0). Secondary lines and policy lines are reported, not scored. RUBRIC.md, JUDGE.md.",
+  "completion": "Completed, per run: a game was delivered with no human touch, boots, and the witness played it to the end of its loop (results shown, or for a world or endless loop, 10 minutes of play with no blocker).",
+  "multiplayer": "Multiplayer working, per run: the runner's own two-player probe passes the bar in each case's multiplayer.bar. A run that delivered nothing counts as not working."
+ },
+ "pass": {
+  "intent": "The new arm's mean intent over its 36 runs is higher than the old arm's, AND the new arm wins more prompts than it loses (a prompt's score is the mean of its 3 runs; ties count for neither).",
+  "completion": "The new arm completes at least as many of its 36 runs as the old arm.",
+  "multiplayer": "The new arm has multiplayer working in at least as many of its 36 runs as the old arm.",
+  "gate": "The gate passes only when all three hold. Reported beside it, never part of it: the per-prompt table, a bootstrap 90% interval for the intent difference, the judges' guesses of the arm (the blinding check), time, tokens and models."
+ },
+ "judges": "A second reader per run: a fresh model session that never saw the build, reading one blind bundle against the frozen ledger (JUDGE.md). A person audits five bundles of each arm chosen by the plan's seed; their verdicts are recorded beside the reader's and change nothing."
+}

@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-punk-woman",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-punk-woman.glb",
+ "sha256": "4352f2955fa5e74a0da9a18890343979b5d33012ee8dd4f7fdf48d3b8c92f15a",
+ "bytes": 178936,
+ "preview": "previews/quaternius-punk-woman.png",
+ "from": "https://poly.pizza/m/djXoqejw6w \"Punk\" (Ultimate Modular Women Pack), https://static.poly.pizza/1d368679-1d9a-4d5c-9095-877144b02d00.glb (sha256 77cbb683…8c52, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (42 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a punk with a mohawk, crop top and ripped black trousers; the top and the mohawk take the player colour",
+ "tags": [
+  "human",
+  "woman",
+  "punk",
+  "rocker",
+  "street",
+  "music",
+  "rebel",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.649,
+   1.958,
+   0.383
+  ],
+  "height": 1.958,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_Pink"
+  ]
+ },
+ "budgets": {
+  "triangles": 5956,
+  "textures": 0,
+  "materials": 6,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+     "model judge, right hand: idle at 0 s: 7.1% of its triangles fold inside out (limit 4%) (+1 more)",
+     "model judge, left foot: getup_front at 0.8 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)",
+     "model judge, right foot: getup_front at 0.8 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.958,
+     "triangles": 5956,
+     "joints": 58,
+     "materials": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#312e2b",
+     "#681d65",
+     "#3f3f3f",
+     "#cead86",
+     "#31251c",
+     "#3e3429"
+    ],
+    "saturation": 0.223,
+    "value": 0.272,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.624
+     },
+     {
+      "hue": "purple",
+      "share": 0.237
+     },
+     {
+      "hue": "orange",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.624
+   },
+   "trianglesPerMetre": 15.65,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "4.36 heads tall; hips at 51% of the height; shoulders 12% of it",
+   "body": {
+    "headsTall": 4.36,
+    "hipShare": 0.511,
+    "shoulderShare": 0.12,
+    "widthShare": 0.842
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/djXoqejw6w"
+ }
+}

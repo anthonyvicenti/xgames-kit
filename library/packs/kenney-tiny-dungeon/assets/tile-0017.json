@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0017",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0017.png",
+ "sha256": "4aecedc84f9d6b89c3dee837b5e40a37e1a0a84cbd202d7835e5544a79a8dbfd",
+ "bytes": 191,
+ "preview": "previews/tile-0017.png",
+ "from": "Tiles/tile_0017.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "an inner corner of a stone wall rim: the rim down the right and along the bottom",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "stone",
+  "rim",
+  "corner",
+  "corner-inner-se"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#763b36",
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#52607c"
+    ],
+    "saturation": 0.29,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.387
+     },
+     {
+      "hue": "red",
+      "share": 0.32
+     },
+     {
+      "hue": "pink",
+      "share": 0.293
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.367
+   }
+  }
+ },
+ "source": {
+  "sha256": "714b92d97d613bbcf4d15c553a0c85fa29a2807a2601ac1395b8f45da6575deb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

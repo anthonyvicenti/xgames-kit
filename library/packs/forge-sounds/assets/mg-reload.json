@@ -1,0 +1,60 @@
+{
+ "assetVersion": 1,
+ "id": "mg-reload",
+ "pack": "forge-sounds",
+ "file": "mg-reload.ogg",
+ "sha256": "d99f358d75008b38f818bbb2626044d14454e96554568e41485fb9d8c5101470",
+ "bytes": 15789,
+ "preview": "previews/mg-reload.png",
+ "from": "https://opengameart.org/content/gun-reload-sounds assaultriflereload1_0.wav; cut to 0.13-1.48 s of the source (1.35 s), 5 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -4.9 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "machine gun reload (mg reload)",
+ "tags": [
+  "sounds",
+  "mg",
+  "reload",
+  "weapon"
+ ],
+ "use": {
+  "seconds": 1.351,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 30% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -16.5,
+     "samplePeakDb": -4.3,
+     "truePeakDb": -3.7,
+     "hfRatio": 0.3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.351,
+    "peakDbfs": -4.3,
+    "soundMaxLufs": -16.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/gun-reload-sounds",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.13-1.48 s of the source (1.35 s), 5 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -4.9 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "SpringySpringo (OpenGameArt)"
+ }
+}

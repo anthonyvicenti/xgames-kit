@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-ramp-long-c",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-ramp-long-c.png",
+ "sha256": "ea3d9e9df82f20d7645b558ac5bb7e412ac19e2488145571539f9f2a432c5fbb",
+ "bytes": 2261,
+ "preview": "previews/terrain-dirt-ramp-long-c.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_ramp_long_c.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt ramp long tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "ramp",
+  "long",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 23.2 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 29.6 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#cfd5da",
+     "#bbc4cb",
+     "#a6b2bb",
+     "#de7e4f",
+     "#c66a3e",
+     "#ee9366",
+     "#abb6be",
+     "#bfc7ce"
+    ],
+    "saturation": 0.229,
+    "value": 0.739,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.811
+     },
+     {
+      "hue": "orange",
+      "share": 0.189
+     }
+    ],
+    "exact": 66,
+    "grey": 0.811
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.039
+   }
+  }
+ },
+ "source": {
+  "sha256": "46955a74dbaa1409c61eaa9145692ef9e8f823598a8a73f8265e7ea3112bf4bf",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

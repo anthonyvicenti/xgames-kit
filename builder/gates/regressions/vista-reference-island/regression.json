@@ -1,0 +1,17 @@
+{
+  "base": "vista-isles",
+  "why": "A vista game on the reference island: config/world.json lists no islands, so the core builds its own island, the one every calm game started on before 2026-10-12. The creator, 2026-10-12, after playing Keys to the Cove: \"We kept the exact same setting as the demo, we should work on unique setting every time.\" Gate F must fail it: the core built the reference island and the spec asks for two of its own.",
+  "evidence": "games.fun research/super-scenic/evidence/creator-keys-to-the-cove-2026-10-12.json",
+  "patches": [
+    {
+      "file": "config/world.json",
+      "pointer": "/islands",
+      "value": []
+    }
+  ],
+  "mustFail": [
+    "F"
+  ],
+  "measure": 17,
+  "detail": "reference island"
+}

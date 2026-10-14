@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-dirt",
+ "pack": "forge-world",
+ "file": "world-night-dirt.png",
+ "sha256": "1acd64e550473e280e488c9089aa9a4212dc6cf0fff14c5fc4c91c445f8493a5",
+ "bytes": 5929,
+ "preview": "previews/world-night-dirt.png",
+ "from": "research/gf-forge/library/tools/world.mjs; the photo resized to 128 × 128 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 32 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a ragged patch of dark earth with a little green in it (alpha: the patch's shape); 4 m across",
+ "tags": [
+  "texture",
+  "night",
+  "dirt",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 0.714
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#282726",
+     "#272626",
+     "#242422",
+     "#232424",
+     "#262525",
+     "#262524",
+     "#252524",
+     "#252424"
+    ],
+    "saturation": 0.068,
+    "value": 0.147,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.968
+     }
+    ],
+    "exact": 253,
+    "grey": 0.968
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "the photo resized to 128 × 128 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 32 colours (palette PNG, no dither)",
+  "author": "games.fun over Rob Tuytel (Poly Haven)"
+ }
+}

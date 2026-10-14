@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-ledge",
+ "pack": "flat-standins-drawn",
+ "file": "tile-ledge.png",
+ "sha256": "9aa40b314a438838d736f2dadb4dad6e730aa34cfe82774a4397fdc7da6652b5",
+ "bytes": 305,
+ "preview": "previews/tile-ledge.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn ledge ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "ledge"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c98f4e",
+     "#8a5a28",
+     "#e0ab6c",
+     "#a8733a",
+     "#9f6c35",
+     "#b37c41",
+     "#a7753f",
+     "#bb864b"
+    ],
+    "saturation": 0.559,
+    "value": 0.51,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.724
+     },
+     {
+      "hue": "brown",
+      "share": 0.276
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

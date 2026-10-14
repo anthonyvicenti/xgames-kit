@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-horizontal-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-horizontal-middle.png",
+ "sha256": "0529fb36db5211bb5e871fea08800517cc52665b82f840ba110ac46bf4176a3c",
+ "bytes": 1884,
+ "preview": "previews/terrain-grass-horizontal-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_horizontal_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass horizontal middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "horizontal",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#2ecc71",
+     "#353541",
+     "#46e087",
+     "#20b860",
+     "#c66a3e",
+     "#2cc96e"
+    ],
+    "saturation": 0.621,
+    "value": 0.528,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.559
+     },
+     {
+      "hue": "green",
+      "share": 0.313
+     },
+     {
+      "hue": "grey",
+      "share": 0.125
+     }
+    ],
+    "exact": 70,
+    "grey": 0.125
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "597a504b48f0851fd59f2bc76d01582776b111971682275e768c13cb42e64e6c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

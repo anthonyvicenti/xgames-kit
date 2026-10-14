@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "backgrounddesert",
+ "pack": "kenney-background-elements-remastered",
+ "file": "backgrounddesert.png",
+ "sha256": "1eafb5cd53691a3e0f31c177f9073be6e040da1c4149203551a9e9266aa9d2e1",
+ "bytes": 32442,
+ "preview": "previews/backgrounddesert.png",
+ "from": "Backgrounds/backgroundDesert.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "backgrounddesert",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "backgrounddesert",
+  "backgrounds"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x1024: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#b7e7fa",
+     "#cfeffc",
+     "#def5ff",
+     "#eaf8fd",
+     "#c9efff",
+     "#eff9fe",
+     "#f2fafe",
+     "#f0fafe"
+    ],
+    "saturation": 0.895,
+    "value": 0.894,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.688
+     },
+     {
+      "hue": "grey",
+      "share": 0.312
+     }
+    ],
+    "exact": 243,
+    "grey": 0.312
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d5cd917e993261f8ad7be10cff9d09832f694351ea8326fd07dbbf2cfd8eab01",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

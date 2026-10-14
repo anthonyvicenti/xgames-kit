@@ -1,0 +1,131 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-spellbook",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-spellbook.glb",
+ "sha256": "bff6416144ff5540e59a5f2bd95bd91e889f5e73b28639c38184dfdf820c97cb",
+ "bytes": 58024,
+ "preview": "previews/kaykit-spellbook.png",
+ "from": "spellbook_open.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Mage Spellbook_open (handslot.l)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an open spellbook",
+ "tags": [
+  "spellbook",
+  "book",
+  "magic",
+  "offhand",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.621,
+   0.427,
+   0.166
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.311,
+   -0.213,
+   -0.066
+  ],
+  "grip": {
+   "position": [
+    -0.1035,
+    -0.0431,
+    0.0815
+   ],
+   "quaternion": [
+    0,
+    -0.6942,
+    0,
+    0.7197
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 292,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 292,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 58024,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#ced6d9",
+     "#dae0e2",
+     "#a51a5a",
+     "#911b54",
+     "#b91961",
+     "#b0195e",
+     "#9f1a58",
+     "#f1f3f4"
+    ],
+    "saturation": 0.429,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.455
+     },
+     {
+      "hue": "grey",
+      "share": 0.429
+     },
+     {
+      "hue": "orange",
+      "share": 0.062
+     },
+     {
+      "hue": "brown",
+      "share": 0.054
+     }
+    ],
+    "grey": 0.429
+   },
+   "trianglesPerMetre": 20.17,
+   "texelsPerMetre": 198,
+   "texturedShare": 0.523,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/spellbook_open.gltf",
+  "sha256": "5a7891f8fe12a0c84dfbb64454b0b6b51328894011021e5c664bc8701aaf40ad",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Mage Spellbook_open (handslot.l)"
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0123",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0123.png",
+ "sha256": "13f21b6a74d9e7d19af76185aff535aa928e24d3da23952f1380e51213778b7b",
+ "bytes": 281,
+ "preview": "previews/tile-0123.png",
+ "from": "Tiles/tile_0123.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a brown rat with a curled tail",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "rat",
+  "brown",
+  "rodent",
+  "vermin"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#eaa56c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.368,
+    "value": 0.339,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.641
+     },
+     {
+      "hue": "orange",
+      "share": 0.349
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.956
+   }
+  }
+ },
+ "source": {
+  "sha256": "16d8f777b329a6516f32d790b389fd5072622195152680c298d2caf8d723ef8b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

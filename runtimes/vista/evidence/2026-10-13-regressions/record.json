@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-14T02:43:08.371Z",
+  "results": [
+    {
+      "id": "vista-reference-island",
+      "ok": true,
+      "expected": "fail F (reference island)",
+      "measure": 17,
+      "got": {
+        "ok": false,
+        "gate": "F",
+        "detail": "config/world.json lists 0 islands, the spec 2; the game is on the reference island (place ffca9377): every vista game has its own islands (world.islands); the game sails between 1 island; the spec lists 2"
+      },
+      "failedGates": [
+        "F"
+      ],
+      "seconds": 10
+    },
+    {
+      "id": "vista-fewer-islands",
+      "ok": true,
+      "expected": "fail F (sails between 1 island; the spec lists 2)",
+      "measure": 17,
+      "got": {
+        "ok": false,
+        "gate": "F",
+        "detail": "config/world.json lists 1 island, the spec 2; the game sails between 1 island; the spec lists 2"
+      },
+      "failedGates": [
+        "F"
+      ],
+      "seconds": 10
+    },
+    {
+      "id": "vista-own-islands",
+      "ok": true,
+      "expected": "pass F",
+      "measure": 17,
+      "got": {
+        "ok": true,
+        "gate": "F",
+        "detail": "the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.5 s); none is the reference island (ffca9377)"
+      },
+      "failedGates": [],
+      "seconds": 17
+    }
+  ]
+}

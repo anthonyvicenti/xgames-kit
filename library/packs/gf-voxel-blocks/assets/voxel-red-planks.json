@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-red-planks",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-red-planks.png",
+ "sha256": "c0773463161350dd628e77cc7f3e5ba9c12e1dc1b63b94849a3cab6377223685",
+ "bytes": 43301,
+ "preview": "previews/voxel-red-planks.png",
+ "from": "kenney:voxel-pack/wood_red; PNG/Tiles/wood_red.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1046,158; mean difference 6.6 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "wood_red (Voxel Pack)",
+ "tags": [
+  "red",
+  "planks",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.024
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#e07b51",
+     "#ce714a",
+     "#e98053",
+     "#c36b45",
+     "#df7a50",
+     "#e07a50",
+     "#da774d",
+     "#e88052"
+    ],
+    "saturation": 0.663,
+    "value": 0.583,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 358,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "1c9473f822776cf0fc25332326d0d10a246b7e6608176db419fd294bd12ac533",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

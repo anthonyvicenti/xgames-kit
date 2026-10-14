@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-block",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-block.png",
+ "sha256": "cf01e1b81ac596115ffe0ee4f166136eb78c6e869fabe8219326b2c16effaceb",
+ "bytes": 3484,
+ "preview": "previews/terrain-dirt-block.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_block.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt block tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "block",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#bbc4cb",
+     "#cfd5da",
+     "#de7e4f",
+     "#c66a3e",
+     "#a6b2bb",
+     "#ee9366",
+     "#cf7144"
+    ],
+    "saturation": 0.27,
+    "value": 0.606,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.727
+     },
+     {
+      "hue": "orange",
+      "share": 0.273
+     }
+    ],
+    "exact": 103,
+    "grey": 0.727
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "bff2570c42767302fe0df89e7828e78195abbcceb1186751d36063abd9df0a7e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

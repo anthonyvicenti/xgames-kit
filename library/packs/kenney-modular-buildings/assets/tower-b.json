@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "tower-b",
+ "pack": "kenney-modular-buildings",
+ "file": "tower-b.glb",
+ "sha256": "322b5831d40e77fe60a053fa97bc56aa12c14ed8ee424c8aebbcec2dc5fcfe42",
+ "bytes": 17872,
+ "preview": "previews/tower-b.png",
+ "from": "kenney:modular-buildings/building-sample-tower-b; baked to metres (x6.88742), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wide brick apartment block",
+ "tags": [
+  "plaza",
+  "building",
+  "backdrop",
+  "tower"
+ ],
+ "use": {
+  "size": [
+   7.577,
+   13,
+   8.61
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    7.576,
+    13,
+    8.609
+   ],
+   "offset": [
+    0,
+    6.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 326,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 326,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17872,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#f9dab5",
+     "#f8d5ac",
+     "#ce8962",
+     "#edb892",
+     "#f7d2a7",
+     "#fce1c1",
+     "#fadcb8",
+     "#f4ca98"
+    ],
+    "saturation": 0.751,
+    "value": 0.773,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.959
+     },
+     {
+      "hue": "blue",
+      "share": 0.034
+     }
+    ],
+    "grey": 0.007
+   },
+   "trianglesPerMetre": 0.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/modular-buildings",
+  "download": "https://kenney.nl/media/pages/assets/modular-buildings/3253b4219a-1707397411/kenney_modular-buildings.zip",
+  "sha256": "b7360904ab4a6e26098b4ae6f761a6a98022c851faf04ea7760a0ef11328c704",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x6.88742), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "bail-click",
+ "pack": "vista-sounds",
+ "file": "bail-click.ogg",
+ "sha256": "42236eb210ce7a0cc54b28c13e5d5dd00e0782ecde3b3a61561a177bb0f5cabc",
+ "bytes": 13369,
+ "preview": "previews/bail-click.png",
+ "from": "4 small sprung-metal clicks (the bail opening / snapping shut)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Bail click",
+ "tags": [
+  "coast",
+  "calm",
+  "bail",
+  "click"
+ ],
+ "use": {
+  "seconds": 1.086,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 68% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -23.4,
+     "samplePeakDb": -0.9,
+     "truePeakDb": -0.5,
+     "hfRatio": 0.682
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.086,
+    "peakDbfs": -0.9,
+    "soundMaxLufs": -23.4
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/MrFossy/sounds/523282/",
+  "author": "MrFossy"
+ }
+}

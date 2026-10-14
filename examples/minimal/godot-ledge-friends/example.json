@@ -1,0 +1,10 @@
+{
+  "title": "Ledge Friends (Godot)",
+  "summary": "The smallest Godot game the kit makes: a side-on stage to run and jump on, and your friends on it with you.",
+  "runtime": "godot",
+  "verified": {
+    "result": "PASS all six gates, 62/62 checks, shared multiplayer gate 24/24 (verify --release)",
+    "date": "2026-10-13",
+    "how": "npx gamesfun create games/godot-ledge-friends --from godot-ledge-friends, npx gamesfun verify games/godot-ledge-friends --release (Linux, headless Chrome on the graphics card, a phone emulated in Chrome, Firefox; WebKit could not start there): runtimes/godot/evidence/2026-10-13-run4/ledge-friends"
+  }
+}

@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "ball-red",
+ "pack": "kenney-minigolf-kit",
+ "file": "ball-red.glb",
+ "sha256": "677b31dc73c8479e9b2e1e3b70984fb95a81bb61d9f34917541cdf72bf4c2b36",
+ "bytes": 19516,
+ "preview": "previews/ball-red.png",
+ "from": "kenney:minigolf-kit/ball-red; baked to metres (x4.59138), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a soft red rubber ball",
+ "tags": [
+  "item",
+  "ball",
+  "red"
+ ],
+ "use": {
+  "size": [
+   0.321,
+   0.32,
+   0.321
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "sphere",
+   "radius": 0.16,
+   "offset": [
+    0,
+    0.16,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 572,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 572,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19516,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#d3554e",
+     "#d6574d",
+     "#eb6246",
+     "#f56843",
+     "#da594b",
+     "#de5b4a",
+     "#e25d49",
+     "#fa6b41"
+    ],
+    "saturation": 0.689,
+    "value": 0.58,
+    "families": [
+     {
+      "hue": "red",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 42.09,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/minigolf-kit",
+  "download": "https://kenney.nl/media/pages/assets/minigolf-kit/3ae60d8b01-1741163874/kenney_minigolf-kit.zip",
+  "sha256": "37f1d03972f29dcba708f6fcf2fbc186292200fd8774ca1fee85ffbb266a53be",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x4.59138), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

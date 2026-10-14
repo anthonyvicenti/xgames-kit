@@ -1,0 +1,171 @@
+{
+  "verdictVersion": 1,
+  "game": "village-walk",
+  "runtime": "godot",
+  "profile": "2d",
+  "loop": "round",
+  "run": "build",
+  "spec": "ff76555d35d2a9584e59a003e681522e3ac733b9f811239528ed2e6b043abc32",
+  "environment": {
+    "browser": "148.0.7778.96",
+    "api": "webgl2"
+  },
+  "gates": {
+    "A": {
+      "gate": "A",
+      "ran": [
+        1,
+        2,
+        4,
+        8,
+        18,
+        19
+      ],
+      "passed": [
+        1,
+        2,
+        4,
+        8,
+        18,
+        19
+      ],
+      "skipped": [],
+      "failed": [],
+      "ok": true
+    },
+    "B": {
+      "gate": "B",
+      "ran": [
+        3,
+        20
+      ],
+      "passed": [
+        3,
+        20
+      ],
+      "skipped": [
+        {
+          "measure": 9,
+          "why": "contact sheet and frame cost: the capture tool drives three.js scenes; a Godot capture with frame times is not written"
+        },
+        {
+          "measure": 22,
+          "why": "the wallet in the menu: the kit's own, unchanged here; not run on godot yet"
+        },
+        {
+          "measure": 24,
+          "why": "plays inside a post on X: not tried with a Godot export"
+        },
+        {
+          "measure": 31,
+          "why": "sharp on every screen: the canvas is Godot's (canvas_resize_policy 2, device pixels); not measured"
+        },
+        {
+          "measure": 32,
+          "why": "the no-WebGL2 screen: written (boot.js unsupported) but not driven by a browser without WebGL2"
+        }
+      ],
+      "failed": [],
+      "ok": true
+    },
+    "C": {
+      "gate": "C",
+      "ran": [
+        13
+      ],
+      "passed": [
+        13
+      ],
+      "skipped": [
+        {
+          "measure": 7,
+          "why": "audio gate: gf-audio plays every sound (GF.sound), so the kit's loudness gate applies unchanged, but it was not run on a Godot game"
+        },
+        {
+          "measure": 10,
+          "why": "fair play: nothing in the starter knocks a player down"
+        },
+        {
+          "measure": 15,
+          "why": "the loop is alive (a slot-ID sight pass): not built for godot"
+        },
+        {
+          "measure": 16,
+          "why": "hits read: nothing is hit in the starter"
+        },
+        {
+          "measure": 21,
+          "why": "the HUD shows your state: the kit's HUD, not run per release on godot"
+        },
+        {
+          "measure": 38,
+          "why": "every event answered: GF events are in events() but the answered-on-screen check is the gf-three boot's"
+        }
+      ],
+      "failed": [],
+      "ok": true
+    },
+    "D": {
+      "gate": "D",
+      "ran": [
+        6
+      ],
+      "passed": [
+        6
+      ],
+      "skipped": [
+        {
+          "measure": 12,
+          "why": "scores come from counted events: events() logs scores and game events, but the one-to-one trace is not wired"
+        }
+      ],
+      "failed": [],
+      "ok": true
+    },
+    "E": {
+      "gate": "E",
+      "ran": [
+        5,
+        25,
+        34
+      ],
+      "passed": [
+        5,
+        25,
+        34
+      ],
+      "skipped": [],
+      "failed": [],
+      "ok": true
+    },
+    "F": {
+      "gate": "F",
+      "ran": [
+        14,
+        17
+      ],
+      "passed": [
+        14,
+        17
+      ],
+      "skipped": [
+        {
+          "measure": 11,
+          "why": "set dressing: the stage is the map; no props are laid out from the spec"
+        },
+        {
+          "measure": 35,
+          "why": "the game has no tests/*.play.mjs: nothing of its own to run"
+        },
+        {
+          "measure": 39,
+          "why": "hits per kill: nothing is hit"
+        }
+      ],
+      "failed": [],
+      "ok": true
+    }
+  },
+  "failed": [],
+  "pass": true
+}

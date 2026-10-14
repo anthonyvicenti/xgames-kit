@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "rocketbox-denim-man",
+ "pack": "rocketbox-adults",
+ "file": "rocketbox-denim-man.glb",
+ "sha256": "9ea5d62105693ef36f0d6d616813b7c374eb6e095a08f40bebf2e20e18f67c18",
+ "bytes": 608316,
+ "preview": "previews/rocketbox-denim-man.png",
+ "from": "https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9 Assets/Avatars/Adults/Male_Adult_12/Export/Male_Adult_12.fbx (git blob 15d4f850…, sha256 b44fa601…4014) and Assets/Avatars/Adults/Male_Adult_12/Textures/m007_*.tga, retrieved 2026-10-12; licence LICENSE.md…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a Black man with close-cropped hair in a denim jacket over a white T-shirt, jeans and white trainers (realistic)",
+ "tags": [
+  "human",
+  "man",
+  "casual",
+  "realistic",
+  "everyday",
+  "town",
+  "coastal",
+  "modern",
+  "player",
+  "m",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.381,
+   1.807,
+   0.36
+  ],
+  "height": 1.807,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 6722,
+  "textures": 2,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, right leg: push at 2.13 s: its edges stretch or crush ×4.4 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.807,
+     "triangles": 6722,
+     "joints": 80,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 52,
+    "hues": [
+     "#cacaca",
+     "#cbcbcb",
+     "#4a5c6a",
+     "#516473",
+     "#38393e",
+     "#455056",
+     "#5e6b74",
+     "#36434c"
+    ],
+    "saturation": 0.137,
+    "value": 0.337,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.869
+     },
+     {
+      "hue": "brown",
+      "share": 0.064
+     },
+     {
+      "hue": "blue",
+      "share": 0.048
+     }
+    ],
+    "grey": 0.869
+   },
+   "trianglesPerMetre": 47.46,
+   "texelsPerMetre": 661,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "6.34 heads tall; hips at 50% of the height; shoulders 23% of it",
+   "body": {
+    "headsTall": 6.34,
+    "hipShare": 0.496,
+    "shoulderShare": 0.233,
+    "widthShare": 0.764
+   }
+  }
+ },
+ "source": {
+  "page": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

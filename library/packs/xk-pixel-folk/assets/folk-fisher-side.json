@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "folk-fisher-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-fisher-side.png",
+ "sha256": "c1dede3adaef26976276da4784eddd625528c10208d2b7b3e1f0c87a8e72008f",
+ "bytes": 1860,
+ "preview": "previews/folk-fisher-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-fisher-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a fisher in a yellow cap and a teal jumper; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "fisher",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#a96b41",
+     "#f0c040",
+     "#2c4b5e",
+     "#2f9a9a",
+     "#71593e",
+     "#3a2a22",
+     "#39364f",
+     "#4a2618"
+    ],
+    "saturation": 0.387,
+    "value": 0.366,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.261
+     },
+     {
+      "hue": "brown",
+      "share": 0.194
+     },
+     {
+      "hue": "cyan",
+      "share": 0.192
+     },
+     {
+      "hue": "orange",
+      "share": 0.189
+     },
+     {
+      "hue": "yellow",
+      "share": 0.118
+     },
+     {
+      "hue": "purple",
+      "share": 0.035
+     }
+    ],
+    "exact": 26,
+    "grey": 0.261
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.607
+   }
+  }
+ },
+ "source": {
+  "sha256": "e596b67f1571fcfc0f1a8ca10dec0b068462e483d6a7e6c8e0ffa070876071aa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

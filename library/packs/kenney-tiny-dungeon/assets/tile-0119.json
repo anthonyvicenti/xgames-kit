@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0119",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0119.png",
+ "sha256": "f32742b280860623136479fb0ae58ec298b2080d9c35dde8860786a916c37603",
+ "bytes": 262,
+ "preview": "previews/tile-0119.png",
+ "from": "Tiles/tile_0119.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a single-bladed iron axe",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "axe",
+  "hatchet",
+  "weapon",
+  "melee",
+  "tool",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c",
+     "#eaa56c"
+    ],
+    "saturation": 0.291,
+    "value": 0.348,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.631
+     },
+     {
+      "hue": "blue",
+      "share": 0.199
+     },
+     {
+      "hue": "orange",
+      "share": 0.17
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "c1a5fcc94e0557e04615186966d5ded2a7b590985f03c4a564de6801aeea4acf",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

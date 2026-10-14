@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "bone-chip",
+ "pack": "forge-fx",
+ "file": "bone-chip.png",
+ "sha256": "df159f8a71b24f2af9e5cd1fc5e4f45de07d31a6cac0d0a64f66c37df72fdc5e",
+ "bytes": 3704,
+ "preview": "previews/bone-chip.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a bone chip (bone white, a dark edge): a cheap sprite debris beside the 3D bone pieces",
+ "tags": [
+  "fx",
+  "bone",
+  "chip"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0.623
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#9f947a",
+     "#aca084",
+     "#ab9f83",
+     "#9e9379",
+     "#ada185",
+     "#a0957b",
+     "#9b9077",
+     "#a79b80"
+    ],
+    "saturation": 0.166,
+    "value": 0.494,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.81
+     },
+     {
+      "hue": "yellow",
+      "share": 0.132
+     },
+     {
+      "hue": "orange",
+      "share": 0.058
+     }
+    ],
+    "exact": 271,
+    "grey": 0.81
+   },
+   "outline": {
+    "present": false,
+    "share": 0.39
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

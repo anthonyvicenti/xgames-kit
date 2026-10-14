@@ -1,0 +1,61 @@
+{
+ "assetVersion": 1,
+ "id": "shotgun-shell-1",
+ "pack": "forge-sounds",
+ "file": "shotgun-shell-1.ogg",
+ "sha256": "2e9b06ca98dc17752f0c01a74e0ab2558a22efc33135ed28da444a6ffe95876b",
+ "bytes": 11041,
+ "preview": "previews/shotgun-shell-1.png",
+ "from": "https://opengameart.org/content/shotgun-reload-sound-effects ShotgunSounds/Subsequent Shells.mp3; cut to 0.64-1.32 s of the source (0.68 s), 5 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -6.6 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "shotgun shell loaded (shotgun shell 1)",
+ "tags": [
+  "sounds",
+  "shotgun",
+  "shell",
+  "weapon",
+  "reload"
+ ],
+ "use": {
+  "seconds": 0.681,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 69% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -18.2,
+     "samplePeakDb": -4.7,
+     "truePeakDb": -4.5,
+     "hfRatio": 0.694
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.681,
+    "peakDbfs": -4.7,
+    "soundMaxLufs": -18.2
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/shotgun-reload-sound-effects",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.64-1.32 s of the source (0.68 s), 5 ms fade-in and 60 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -6.6 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "zer0_sol (OpenGameArt)"
+ }
+}

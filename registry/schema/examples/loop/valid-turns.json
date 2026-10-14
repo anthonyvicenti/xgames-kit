@@ -1,0 +1,57 @@
+{
+  "id": "turns",
+  "name": "taking turns",
+  "describe": "One player acts at a time, in order; a clock for each turn.",
+  "pick": "only one player may act at a time",
+  "clock": "cap",
+  "seats": {
+    "alone": "min",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "properties": {
+      "turnSeconds": {
+        "type": "number",
+        "default": 20
+      }
+    }
+  },
+  "hooks": [
+    {
+      "name": "move",
+      "on": "host",
+      "args": "(ctx, player, move)",
+      "when": "a player acts on their turn"
+    }
+  ],
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the board fixture's two players take turns",
+        "ref": "components/board/fixture/spec.json"
+      }
+    ]
+  },
+  "impl": {
+    "three": {
+      "by": "flow",
+      "path": "loops/turns/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "turns test",
+            "ref": "tests/m4b-loops.test.mjs"
+          }
+        ]
+      }
+    }
+  },
+  "acts": "one-at-a-time"
+}

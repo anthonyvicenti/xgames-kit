@@ -1,0 +1,33 @@
+{
+ "schema": "vista-places-review/2",
+ "at": "2026-10-13",
+ "by": "the vista-places stream (an agent) looking at its own gallery, every strip at full width; not the creator and not an independent reviewer",
+ "question": "Does each place read as its own place, at the reference island's quality, in every one of the five shots? (the creator, 2026-10-13: \"Being able to create any island/setting with similar quality is the goal.\")",
+ "how": "24 generated places (20 with words, 4 from the seed alone: 201, 206, 210, 216) and the reference island through its recipe, built by the core in headless WebGPU Chrome on a desktop graphics card and filmed from five fixed shots each at the place's own hour and sea; the kit's MIT clouds (no sky-pro clouds).",
+ "count": {
+  "new_place_in_every_shot": 20,
+  "of": 24,
+  "one_far_shot_still_like_the_reference": {
+   "seed-201": "seed alone: from the back, one green summit over the sea (no spire)",
+   "seed-207": "large island, one summit: from the sea and the back a single big green mountain over white sand; its start and village (a river mouth beside the beach) are its own",
+   "seed-212": "shape=volcano, asked for: a green cone with its summit spire is the reference's own kind of picture from the sea",
+   "seed-218": "shape=ridge: from the back one dark peak dominates, reading like the reference's summit; from the sea and the air it is its own"
+  },
+  "starts_that_read_as_the_reference": 0
+ },
+ "distinct_by_what": "silhouettes (twin peaks, crags, a table mountain, archipelagos, atolls with motus, low dry islands), colour of the land (jungle, palms, scrub, dark sand, limestone), harbours turned to every bearing with their own pier, jetty or dock, villages in five palettes or none, river mouths, coves, and time and weather",
+ "quality_findings": [
+  "night places (217, 224) are as dark as the night look always was: the island is a silhouette under the moon",
+  "seed-211 (golden hour, its harbour facing away from the sun): the village shot is in shadow and underexposed",
+  "overcast and storm (205, 214, 220, 223) read as haze, whitecaps and more cumulus; the kit's MIT clouds draw no grey sky",
+  "seed-204 (shape=plateau): from these five shots the flat top does not read as a table mountain (a separate test place, seed 311, did from the back)",
+  "the volcano word gives the reference's summit spire on purpose; a spec that names no shape never gets it (one summit is a dome or crags, off centre)"
+ ],
+ "place_checker": "see after_the_gallery",
+ "verdict": "20 of 24 generated places read as a place of their own in all five shots; the other 4 are their own in their starts and villages but keep one far shot that reads like the reference's single green summit (one of them, 212, because the words asked for a volcano). 0 of 24 starts read as the reference. Not creator-reviewed.",
+ "after_the_gallery": [
+  "the weather haze was lowered after this gallery (overcast 4.2 to 2.8, storm 5.5 to 3.6): at 4.2 a dark-sand beach 80 m off read pale in the isle-hop verify; re-filmed on two places (5309 overcast, 220 storm), the dark sand now shows and the sea reads rough; the sky is still fair-weather cumulus",
+  "far islands on the horizon were drawn near white (they read as icebergs); their albedo was lowered and they now read as grey-blue silhouettes (isle-hop verify, island 1)",
+  "place checker after the last fixes: seeds 1-50 x 5 word sets 251/251; seeds 51-100 x 5 248/251 (a trail touching the water on one atoll, a boathouse fallback on a slope on one archipelago, three texels of land past the scans on one rugged small island)"
+ ]
+}

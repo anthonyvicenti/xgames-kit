@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-block-bottom-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-block-bottom-right.png",
+ "sha256": "ca2f2a1bcd9b2bfdbabd4e3dbbe9fc30f0bf5a01cc52a15169ffe031f9f2d130",
+ "bytes": 2301,
+ "preview": "previews/terrain-grass-block-bottom-right.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_block_bottom_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass block bottom right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "block",
+  "bottom",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 49.2 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 36.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#c66a3e",
+     "#353541",
+     "#cb6f43",
+     "#df8357",
+     "#db7b4c",
+     "#ec9063"
+    ],
+    "saturation": 0.617,
+    "value": 0.552,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.882
+     },
+     {
+      "hue": "grey",
+      "share": 0.118
+     }
+    ],
+    "exact": 63,
+    "grey": 0.118
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.518
+   }
+  }
+ },
+ "source": {
+  "sha256": "995e708be85242358521a0b9e04d68037a8914452ef7be7b7520caa609963145",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

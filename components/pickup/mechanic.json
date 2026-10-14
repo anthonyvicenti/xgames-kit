@@ -1,0 +1,451 @@
+{
+  "id": "pickup",
+  "name": "Pickup",
+  "describe": "Consumables that refill or modify a player's meters; respawn",
+  "examples": [
+    "balls respawn",
+    "health hearts around the arena",
+    "coins to collect"
+  ],
+  "rank": 30,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Name of the prop.* slot to draw (\"\": the first gameplay prop of the game, else a coloured gem)"
+      },
+      "count": {
+        "type": "integer",
+        "minimum": -1,
+        "maximum": 40,
+        "default": -1,
+        "description": "Spots placed at the start (-1: the game prop's count; 0: none, the rules call spawnAt)"
+      },
+      "zone": {
+        "type": "string",
+        "default": "",
+        "description": "World zone the spots go in (\"\": scattered around the play area)"
+      },
+      "size": {
+        "type": "number",
+        "description": "Drawn size in metres",
+        "minimum": 0.1,
+        "maximum": 3,
+        "default": 0.5
+      },
+      "color": {
+        "type": "string",
+        "default": "#ffd23f",
+        "description": "Colour of the stand-in gem and the ring under it"
+      },
+      "effect": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "carry",
+          "heal",
+          "score",
+          "none"
+        ],
+        "default": "auto",
+        "description": "What a touch does by itself: carry (hand the player a carried item), heal (health.heal), score (+value), none (rules only); auto: carry when the carry mechanic is there, else score"
+      },
+      "value": {
+        "type": "number",
+        "description": "Amount for heal and score",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 1
+      },
+      "radius": {
+        "type": "number",
+        "description": "Touch distance in metres",
+        "minimum": 0.3,
+        "maximum": 5,
+        "default": 1
+      },
+      "collect": {
+        "type": "string",
+        "enum": [
+          "touch",
+          "press",
+          "both"
+        ],
+        "default": "both",
+        "description": "How a spot is taken: walking into it (touch), pressing `action` within `reach` (press), or either (both)"
+      },
+      "reach": {
+        "type": "number",
+        "description": "Press distance in metres (collect press or both)",
+        "minimum": 0.5,
+        "maximum": 6,
+        "default": 2
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "interact",
+          "primary",
+          "secondary"
+        ],
+        "default": "interact",
+        "description": "The input that takes a spot within reach"
+      },
+      "prompt": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show \"E: <controls.interact>\" when a spot is within reach"
+      },
+      "respawnSeconds": {
+        "type": "number",
+        "description": "Seconds until a taken spot returns (0: never)",
+        "minimum": 0,
+        "maximum": 120,
+        "default": 8
+      },
+      "bob": {
+        "type": "boolean",
+        "default": true,
+        "description": "Float up and down"
+      },
+      "spin": {
+        "type": "boolean",
+        "default": true,
+        "description": "Turn slowly"
+      },
+      "maxSpots": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 40,
+        "default": 24,
+        "description": "Spots alive at once (each costs about 20 bytes of the world message)"
+      },
+      "soundCollect": {
+        "type": "string",
+        "default": "coin",
+        "description": "Sound id when a spot is taken"
+      },
+      "marker": {
+        "type": "string",
+        "enum": [
+          "auto",
+          "ring",
+          "none"
+        ],
+        "default": "auto",
+        "description": "A faint ring on the ground under each spot. auto: only under the stand-in gem (a real prop model reads by itself); ring: always; none: never"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.pickup.respawn-seconds",
+        "label": "Respawn time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/respawnSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 54,
+        "constraints": {
+          "min": 0,
+          "max": 120,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.pickup.color",
+        "label": "Stand-in colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 28
+      },
+      {
+        "id": "mechanic.pickup.value",
+        "label": "Value of a pickup",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/value"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 40,
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.pickup.count",
+        "label": "Spots at the start",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/count"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": -1,
+          "max": 40
+        }
+      },
+      {
+        "id": "mechanic.pickup.radius",
+        "label": "Touch distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.3,
+          "max": 5,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.pickup.collect",
+        "label": "How a pickup is taken (touch | press | both)",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/collect"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "enum": [
+            "touch",
+            "press",
+            "both"
+          ]
+        }
+      },
+      {
+        "id": "mechanic.pickup.reach",
+        "label": "Press distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/reach"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 6,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.pickup.size",
+        "label": "Drawn size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/size"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.1,
+          "max": 3,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.pickup.prop",
+        "label": "Pickup prop",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.pickup.bob",
+        "label": "Bobs up and down",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/bob"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.pickup.spin",
+        "label": "Turns slowly",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/spin"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.pickup.sound-collect",
+        "label": "Collect sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundCollect"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.pickup.marker",
+        "label": "Ring under each pickup (auto | ring | none)",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/marker"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "enum": [
+            "auto",
+            "ring",
+            "none"
+          ]
+        }
+      }
+    ],
+    "items": [
+      "0"
+    ]
+  },
+  "events": [
+    {
+      "name": "onCollect",
+      "on": "host",
+      "args": "{ player, index, effect, value, point, how: 'touch' | 'press' | 'rules' }",
+      "when": "a player took a spot"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the spots and who takes them; a guest's press goes to the host",
+    "state": "pk",
+    "fields": {
+      "p": "[[x, y, z, state]] per spot: state 1 = out, 0 = taken and waiting to come back"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "a press of interact within reach takes a spot (params.action, collect \"both\")"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "carry",
+    "health"
+  ],
+  "gives": [
+    "pickups"
+  ],
+  "bots": "its API accepts a bot on the host",
+  "notes": {
+    "lines": [
+      "A spot is taken by walking into it or by a press of interact within reach; it comes back after respawnSeconds.",
+      "effect says what a collect does by itself: auto (hand a carried item when the game has carry, else +value score), heal, score, carry, or none (your onCollect alone).",
+      "Name the pickup's prop in the spec (a prop whose role says players pick it up): without one it is a stand-in gem, which the set-dressing lint fails."
+    ],
+    "readme": "components/pickup/README.md",
+    "stub": {
+      "as": "pk",
+      "worked": "pk.onCollect(({ player }) => { player.data.ammo = (player.data.ammo ?? 0) + 5; });",
+      "traps": [
+        "with effect \"score\" (or auto without carry) a collect already adds value to the score: adding it again in onCollect counts it twice",
+        "bots take pickups only when the rules send them: in bot(ctx, p) use p.bot.seek(pk.nearest(p.position))"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/pickup/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/pickup/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-pickup.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      },
+      "note": "flat-2d: run on both planes (top and side)"
+    },
+    "forge": {
+      "path": "components/pickup/impl/forge/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "the two-player forge fixture (runtimes/forge/tools/fixture.mjs pickup): a host and a joiner over WebRTC, 9 of 9 checks on both screens; passed in every run that day (six), the last two on the final code; the shared state has three's keys and shapes (what the gates read)",
+            "ref": "components/pickup/impl/forge/evidence/2026-10-13/checks.json",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 151.0.7922.34 (Playwright, WebGPU)",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "note": "on the core's players and health; spots drawn as renderer instances of a prop or the kit's coin; walked into, never pressed"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-pickup.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

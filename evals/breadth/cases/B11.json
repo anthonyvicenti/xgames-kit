@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B11",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "arena-brawler",
+  "rank": 11,
+  "row": "Arena brawler / battlegrounds",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a wacky brawler where you grab your friends and throw them off a spinning platform, last one standing wins the round",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "grab-throw",
+   "type": "mechanic",
+   "must": "grabbing another player and throwing them"
+  },
+  {
+   "id": "spinning",
+   "type": "world",
+   "must": "a spinning platform players fall off"
+  },
+  {
+   "id": "last-standing",
+   "type": "rule",
+   "must": "the last one on the platform wins the round"
+  },
+  {
+   "id": "wacky",
+   "type": "feel",
+   "must": "wacky, floppy, silly"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

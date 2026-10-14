@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0064",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0064.png",
+ "sha256": "6802dba3f7e21fa3fe99de26063af40229872191b18cc8869f2e440ad33af074",
+ "bytes": 197,
+ "preview": "previews/tile-0064.png",
+ "from": "Tiles/tile_0064.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a grey stone grave cross",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "grave",
+  "cross",
+  "gravestone",
+  "tomb",
+  "stone",
+  "graveyard",
+  "cemetery"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#262b44",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#5a6988"
+    ],
+    "saturation": 0.26,
+    "value": 0.422,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.905
+   }
+  }
+ },
+ "source": {
+  "sha256": "b2ddf6178c613f3725e1e28830514d378649238e695b0d0b74ca5b471f880fa5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

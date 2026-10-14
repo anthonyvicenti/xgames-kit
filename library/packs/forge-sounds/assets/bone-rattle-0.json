@@ -1,0 +1,61 @@
+{
+ "assetVersion": 1,
+ "id": "bone-rattle-0",
+ "pack": "forge-sounds",
+ "file": "bone-rattle-0.ogg",
+ "sha256": "979aef9bca51ed0aab0d21585ce979ca0a98da42b694b76b12c6b24a06e999c7",
+ "bytes": 5650,
+ "preview": "previews/bone-rattle-0.png",
+ "from": "https://opengameart.org/content/bones-rattle 0.ogg; unmodified",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton shatters (big kill burst) (bone rattle 0)",
+ "tags": [
+  "sounds",
+  "bone",
+  "rattle",
+  "shatter",
+  "enemy",
+  "step"
+ ],
+ "use": {
+  "seconds": 0.142,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 26% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -20.7,
+     "samplePeakDb": -1.4,
+     "truePeakDb": -1.3,
+     "hfRatio": 0.256
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.142,
+    "peakDbfs": -1.4,
+    "soundMaxLufs": -20.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/bones-rattle",
+  "retrieved": "2026-10-09",
+  "author": "congusbongus (OpenGameArt), adapted from blukotek (Freesound 249319, CC0)"
+ }
+}

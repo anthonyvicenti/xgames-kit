@@ -1,0 +1,114 @@
+{
+  "specVersion": 2,
+  "title": "Coin Hop",
+  "hook": "A side-on scramble: jump the ledges and grab more coins than your friends.",
+  "prompt": "a 2D side-on platformer coin grab with friends, drawn cartoon art",
+  "runtime": "three",
+  "profile": "flat-2d",
+  "loop": "round",
+  "kind": "drawn",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "side",
+  "controls": {
+    "interact": "grab a coin",
+    "jump": "jump (hold Down on a ledge to drop through it)"
+  },
+  "round": {
+    "seconds": 60,
+    "winBy": "most coins when the time runs out",
+    "replay": true
+  },
+  "world": {
+    "template": "stage",
+    "size": "small",
+    "props": [
+      {
+        "name": "coin",
+        "describe": "a shiny gold coin",
+        "count": 12,
+        "role": "collected by players",
+        "kind": "gameplay"
+      }
+    ],
+    "map": {
+      "legend": {
+        "o": "mark:coin"
+      },
+      "rows": [
+        "B............................B",
+        "B............................B",
+        "B............o..o............B",
+        "B............................B",
+        "B..o........======........o..B",
+        "B............................B",
+        "B.===..====..o..o..====..===.B",
+        "B............................B",
+        "B....====..========..====....B",
+        "B..o......................o..B",
+        "B.1...BB..1...BB...1..BB...1.B",
+        "##############################"
+      ]
+    }
+  },
+  "mechanics": [
+    {
+      "id": "pickup",
+      "as": "coins to collect",
+      "params": {
+        "prop": "coin",
+        "count": 0,
+        "effect": "score",
+        "value": 1,
+        "respawnSeconds": 4,
+        "size": 0.8,
+        "collect": "both"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Run and jump into a coin to take it. Coins sit on the ledges and in the air above them. Each coin is a point. Most coins when the time runs out wins.",
+    "scoring": "+1 per coin"
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round kid in a cap, seen from the side",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "drawn-day"
+  },
+  "sounds": [
+    {
+      "id": "coin",
+      "describe": "a bright coin chime"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other on the stage",
+    "you can jump up through a ledge and stand on it",
+    "a coin taken by one player is gone for everyone",
+    "the coin, the kid and every tile are pictures that can be replaced"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

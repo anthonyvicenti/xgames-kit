@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "np-pink",
+ "pack": "kenney-new-platformer-pack",
+ "file": "np-pink.png",
+ "sha256": "78b79acfa97d51d982e8f8c656f9b8738081c369bf6cc0bada87d2fa6637c2ae",
+ "bytes": 72028,
+ "preview": "previews/np-pink.png",
+ "from": "baked by the kinds stream's flat bake (bake-flat.mjs) from the pack's character poses: body-np-pink.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "the pink platformer character as a gf-flat-1 side body sheet (idle, walk, walk, jump, hit, duck), baked from the pack's poses",
+ "tags": [
+  "kenney",
+  "drawn",
+  "body",
+  "player",
+  "character",
+  "pink",
+  "np"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "frames": {
+   "cell": [
+    256,
+    256
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "drawn",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1536
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 256,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#353541",
+     "#ff8aae",
+     "#ffa1be",
+     "#ffffff",
+     "#5d5d67",
+     "#af4d62",
+     "#d67898",
+     "#fbfdfe"
+    ],
+    "saturation": 0.531,
+    "value": 0.622,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.504
+     },
+     {
+      "hue": "pink",
+      "share": 0.375
+     },
+     {
+      "hue": "cyan",
+      "share": 0.101
+     }
+    ],
+    "exact": 747,
+    "grey": 0.504
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "32a14219d47b58d3784fe7df26e42e9f60fcb3c39df5173f252c50d15b8aabe9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

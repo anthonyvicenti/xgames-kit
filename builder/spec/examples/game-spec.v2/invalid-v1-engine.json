@@ -1,0 +1,19 @@
+{
+  "specVersion": 2,
+  "title": "Old Shape",
+  "hook": "A v1 spec with the engine field is never read.",
+  "engine": "party",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": { "min": 1, "max": 4 },
+  "multiplayer": { "mode": "live", "together": "versus" },
+  "devices": { "targets": ["desktop"] },
+  "camera": "third",
+  "world": { "template": "arena" },
+  "mechanics": [],
+  "rules": { "summary": "Anything." },
+  "characters": [ { "role": "player", "body": { "from": "kind" } } ],
+  "build": []
+}

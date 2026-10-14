@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-block",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-block.png",
+ "sha256": "c10375ac7c979bd5c2efeb66336abf128a04b3a4707e32eb6099dc67de936af7",
+ "bytes": 3452,
+ "preview": "previews/terrain-grass-block.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_block.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass block tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "block",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#de7e4f",
+     "#ee9366",
+     "#2ecc71",
+     "#20b860",
+     "#c66a3e",
+     "#46e087",
+     "#25bf66"
+    ],
+    "saturation": 0.562,
+    "value": 0.494,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.502
+     },
+     {
+      "hue": "green",
+      "share": 0.269
+     },
+     {
+      "hue": "grey",
+      "share": 0.224
+     }
+    ],
+    "exact": 106,
+    "grey": 0.224
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "7f642df5fbb74cba27dadf24657b2df21de025c60d1d5c4f9a2157d03aa7fcac",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

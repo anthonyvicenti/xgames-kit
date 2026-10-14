@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "door-closed",
+ "pack": "kenney-new-platformer-pack",
+ "file": "door-closed.png",
+ "sha256": "ea4216125b7972be74a5bb91bc54602a00ba3add7c6dac53b67d9191c8696cea",
+ "bytes": 1134,
+ "preview": "previews/door-closed.png",
+ "from": "Sprites/Tiles/Double/door_closed.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "door closed tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "door",
+  "closed",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bbc4cb",
+     "#de7e4f",
+     "#bd6341",
+     "#353541",
+     "#474758",
+     "#9f5438",
+     "#574041",
+     "#9f5c46"
+    ],
+    "saturation": 0.355,
+    "value": 0.557,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.501
+     },
+     {
+      "hue": "orange",
+      "share": 0.497
+     }
+    ],
+    "exact": 51,
+    "grey": 0.501
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "a6ff91862f81635286e53c4f18e85ec8078b8f9568dde4f25114129591d7bed3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

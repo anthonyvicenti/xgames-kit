@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-axe",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-axe.glb",
+ "sha256": "7b4af09f11198eeaf88bf42ff69c3ec608983c875bf452290e514571ee20da4a",
+ "bytes": 18432,
+ "preview": "previews/skeleton-axe.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Barbarian…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skeleton's rusty axe",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "skirmisher",
+  "held",
+  "axe",
+  "weapon"
+ ],
+ "use": {
+  "size": [
+   0.741,
+   0.939,
+   0.211
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 1
+ },
+ "budgets": {
+  "triangles": 534,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 534,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18432,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#707272",
+     "#72787a",
+     "#797e7f",
+     "#93523e",
+     "#868989",
+     "#7a8386",
+     "#696f72",
+     "#616567"
+    ],
+    "saturation": 0.078,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.902
+     },
+     {
+      "hue": "brown",
+      "share": 0.08
+     }
+    ],
+    "grey": 0.902
+   },
+   "trianglesPerMetre": 23.73,
+   "texelsPerMetre": 74,
+   "texturedShare": 0.845,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Axe.gltf",
+  "sha256": "44c8b65942cbb573c99dc14c2a188fad8c47e29ad9764d27b47e6f57bb7e4ebd",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Barbarian 1H_Axe (handslot.r) (bounds -0.494,-0.251,-0.141..0.494,1.001,0.141 vs -0.589,-0.273,-0.092..0.125,0.971,0.092); the…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

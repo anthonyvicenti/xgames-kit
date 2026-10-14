@@ -1,0 +1,383 @@
+{
+  "id": "race",
+  "name": "Race",
+  "describe": "Checkpoints, laps, a finish order",
+  "examples": [
+    "three laps around the yard",
+    "checkpoint dash",
+    "obstacle course to the flag"
+  ],
+  "rank": 80,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "checkpoints": {
+        "type": "array",
+        "default": [],
+        "items": {
+          "type": "array"
+        },
+        "description": "The course: [[x, z], ...] in order, or [] for a ring of ringCount gates"
+      },
+      "ringCount": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 24,
+        "default": 6,
+        "description": "Gates in the automatic ring course"
+      },
+      "ringRadius": {
+        "type": "number",
+        "description": "Radius of the ring course in metres (0: 60% of the play area)",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 0
+      },
+      "laps": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 3,
+        "description": "Laps to finish"
+      },
+      "radius": {
+        "type": "number",
+        "description": "How close counts as passing a gate (m)",
+        "minimum": 0.5,
+        "maximum": 10,
+        "default": 2.4
+      },
+      "color": {
+        "type": "string",
+        "default": "#ffd23f",
+        "description": "Gate colour"
+      },
+      "nextColor": {
+        "type": "string",
+        "default": "#4be0a8",
+        "description": "Colour of the gate you are heading for"
+      },
+      "gateSize": {
+        "type": "number",
+        "description": "Gate ring diameter in metres",
+        "minimum": 0.5,
+        "maximum": 8,
+        "default": 2.6
+      },
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Prop slot to stand at each gate instead of the ring (\"\": a ring)"
+      },
+      "placePoints": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "default": [
+          3,
+          2,
+          1
+        ],
+        "description": "Score for finishing 1st, 2nd, ..."
+      },
+      "ending": {
+        "type": "string",
+        "enum": [
+          "first",
+          "all",
+          "never"
+        ],
+        "default": "first",
+        "description": "What check() waits for: the first finisher, everyone, or nothing (time decides)"
+      },
+      "toast": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show a line when you finish a lap"
+      },
+      "lapText": {
+        "type": "string",
+        "default": "Lap {lap}/{laps}",
+        "description": "That line; {lap} and {laps}"
+      },
+      "soundCheckpoint": {
+        "type": "string",
+        "default": "coin",
+        "description": "Sound id at a gate"
+      },
+      "soundLap": {
+        "type": "string",
+        "default": "win",
+        "description": "Sound id at the end of a lap"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.race.laps",
+        "label": "Laps",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/laps"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 1,
+          "max": 20
+        }
+      },
+      {
+        "id": "mechanic.race.color",
+        "label": "Gate colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 50
+      },
+      {
+        "id": "mechanic.race.next-color",
+        "label": "Next gate colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/nextColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 44
+      },
+      {
+        "id": "mechanic.race.ring-count",
+        "label": "Gates in the ring course",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/ringCount"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 40,
+        "constraints": {
+          "min": 2,
+          "max": 24
+        }
+      },
+      {
+        "id": "mechanic.race.radius",
+        "label": "Gate pass distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 10,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.race.gate-size",
+        "label": "Gate size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/gateSize"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 8,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.race.ring-radius",
+        "label": "Ring course radius",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/ringRadius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.race.place-points",
+        "label": "Score for each place",
+        "group": "mechanics",
+        "type": "json",
+        "source": {
+          "pointer": "{base}/placePoints"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.race.lap-text",
+        "label": "Lap line",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/lapText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.race.prop",
+        "label": "Gate prop",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.race.sound-checkpoint",
+        "label": "Gate sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundCheckpoint"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.race.sound-lap",
+        "label": "Lap sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundLap"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onCheckpoint",
+      "on": "host",
+      "args": "{ player, index }",
+      "when": "a player passed a gate"
+    },
+    {
+      "name": "onLap",
+      "on": "host",
+      "args": "{ player, lap }",
+      "when": "a player finished a lap"
+    },
+    {
+      "name": "onFinish",
+      "on": "host",
+      "args": "{ player, place, points }",
+      "when": "a player finished the race"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host judges every crossing and the finish order",
+    "state": "race",
+    "fields": {
+      "r": "{ playerId: [lap, checkpoint, place] }",
+      "o": "the finish order (player ids)"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "checkpoints"
+  ],
+  "bots": "the rules steer bots with race.botStep(p) in rules.bot",
+  "notes": {
+    "lines": [
+      "The gates are drawn and judged by the kit: params.checkpoints is [[x, z], …], or leave it empty for a ring of ringCount gates.",
+      "The race ends the round only when rules.check returns race.check(); a finish already scores placePoints.",
+      "race.standings() and race.progress(p) are the same on every copy."
+    ],
+    "readme": "components/race/README.md",
+    "stub": {
+      "as": "race",
+      "worked": "check(ctx) { return race.check(); }   // null, or { winners: [first to finish], reason: 'finished' }",
+      "traps": [
+        "bots stand still unless the rules steer them: in bot(ctx, p) call race.botStep(p)",
+        "adding score in onFinish counts a place twice (placePoints is already added)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/race/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/race/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-race.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-race.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

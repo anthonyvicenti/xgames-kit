@@ -1,0 +1,474 @@
+{
+ "about": "Island Circuit, the car game of the first real end-to-end build (PA10, 2026-10-13: builder/loop/evidence/2026-10-13-pa10-headless.json), as it was delivered: the locked spec, its rules.js and src/ as the build wrote them, and the config the build tuned (the camera, the race's gates, the car and track numbers, the starting grid and the road drawn on the island). Its controls are the game's own rows of controls.more, each with what it does (the form gate C reads since 2026-10-13; the delivered game listed them as named controls no screen showed: regression car-controls-unshown). Made by the kit's own build loop; no upstream code.",
+ "patches": [
+  {
+   "file": "config/game.json",
+   "pointer": "/controller/camera/follow",
+   "value": {
+    "distance": 9,
+    "minDistance": 6,
+    "maxDistance": 20,
+    "pitchDeg": 30,
+    "yawDeg": 0,
+    "fov": 55
+   }
+  },
+  {
+   "file": "config/game.json",
+   "pointer": "/controls",
+   "value": {
+    "more": [
+     [
+      "W / ↑",
+      "speed up",
+      "",
+      "go"
+     ],
+     [
+      "A D / ← →",
+      "steer the car left and right",
+      "",
+      "turn"
+     ],
+     [
+      "S / ↓",
+      "brake and reverse",
+      "",
+      "stop"
+     ]
+    ]
+   }
+  },
+  {
+   "file": "config/game.json",
+   "pointer": "/mechanics/0/params",
+   "value": {
+    "checkpoints": [
+     [
+      7.05,
+      6.48
+     ],
+     [
+      -0.45,
+      10.68
+     ],
+     [
+      -8.04,
+      8.41
+     ],
+     [
+      -9,
+      0
+     ],
+     [
+      -8.04,
+      -8.41
+     ],
+     [
+      -0.45,
+      -10.68
+     ],
+     [
+      7.05,
+      -6.48
+     ],
+     [
+      12,
+      0
+     ]
+    ],
+    "ringCount": 6,
+    "ringRadius": 0,
+    "laps": 3,
+    "radius": 4,
+    "color": "#ffd23f",
+    "nextColor": "#4be0a8",
+    "gateSize": 6.5,
+    "prop": "",
+    "placePoints": [
+     3,
+     2,
+     1
+    ],
+    "ending": "first",
+    "toast": true,
+    "lapText": "Lap {lap}/{laps}",
+    "soundCheckpoint": "coin",
+    "soundLap": "win"
+   }
+  },
+  {
+   "file": "config/game.json",
+   "pointer": "/rules/params",
+   "value": {
+    "maxSpeed": 12,
+    "accel": 10,
+    "brake": 20,
+    "turnRate": 2.4,
+    "grip": 0.85,
+    "trackWidth": 7,
+    "trackRadius": 10.5,
+    "trackWave": 1.5,
+    "trackLobes": 3,
+    "trackStart": 0,
+    "gates": 8,
+    "coneSpacing": 2,
+    "edgeBounce": 0.35,
+    "edgeSteer": 4,
+    "chaseTurn": 5,
+    "reverse": 0.4,
+    "coast": 3,
+    "botPace": 0.8,
+    "botLook": 6,
+    "carLength": 2.4,
+    "carTint": 0.6,
+    "carYaw": 0
+   }
+  },
+  {
+   "file": "config/world.json",
+   "pointer": "/spawns",
+   "value": [
+    [
+     12.15,
+     0,
+     -4.06
+    ],
+    [
+     9.8,
+     0,
+     -2.53
+    ],
+    [
+     9.31,
+     0,
+     -6.81
+    ],
+    [
+     7.78,
+     0,
+     -4.46
+    ],
+    [
+     6.18,
+     0,
+     -8.48
+    ],
+    [
+     4.91,
+     0,
+     -5.98
+    ],
+    [
+     3.42,
+     0,
+     -10.15
+    ],
+    [
+     1.86,
+     0,
+     -7.83
+    ]
+   ]
+  },
+  {
+   "file": "config/world.json",
+   "pointer": "/levels/0/spawns",
+   "value": [
+    [
+     12.15,
+     0,
+     -4.06
+    ],
+    [
+     9.8,
+     0,
+     -2.53
+    ],
+    [
+     9.31,
+     0,
+     -6.81
+    ],
+    [
+     7.78,
+     0,
+     -4.46
+    ],
+    [
+     6.18,
+     0,
+     -8.48
+    ],
+    [
+     4.91,
+     0,
+     -5.98
+    ],
+    [
+     3.42,
+     0,
+     -10.15
+    ],
+    [
+     1.86,
+     0,
+     -7.83
+    ]
+   ]
+  },
+  {
+   "file": "config/world.json",
+   "pointer": "/levels/0/paths/2",
+   "value": {
+    "width": 8.4,
+    "points": [
+     [
+      12,
+      0
+     ],
+     [
+      11.86,
+      1.25
+     ],
+     [
+      11.46,
+      2.44
+     ],
+     [
+      10.82,
+      3.52
+     ],
+     [
+      10.02,
+      4.46
+     ],
+     [
+      9.09,
+      5.25
+     ],
+     [
+      8.12,
+      5.9
+     ],
+     [
+      7.15,
+      6.44
+     ],
+     [
+      6.21,
+      6.9
+     ],
+     [
+      5.33,
+      7.34
+     ],
+     [
+      4.5,
+      7.79
+     ],
+     [
+      3.69,
+      8.29
+     ],
+     [
+      2.87,
+      8.83
+     ],
+     [
+      2,
+      9.41
+     ],
+     [
+      1.05,
+      9.98
+     ],
+     [
+      0,
+      10.5
+     ],
+     [
+      -1.15,
+      10.9
+     ],
+     [
+      -2.37,
+      11.13
+     ],
+     [
+      -3.62,
+      11.14
+     ],
+     [
+      -4.85,
+      10.9
+     ],
+     [
+      -6,
+      10.39
+     ],
+     [
+      -7.01,
+      9.65
+     ],
+     [
+      -7.84,
+      8.7
+     ],
+     [
+      -8.46,
+      7.62
+     ],
+     [
+      -8.87,
+      6.44
+     ],
+     [
+      -9.09,
+      5.25
+     ],
+     [
+      -9.17,
+      4.08
+     ],
+     [
+      -9.15,
+      2.97
+     ],
+     [
+      -9.08,
+      1.93
+     ],
+     [
+      -9.02,
+      0.95
+     ],
+     [
+      -9,
+      0
+     ],
+     [
+      -9.02,
+      -0.95
+     ],
+     [
+      -9.08,
+      -1.93
+     ],
+     [
+      -9.15,
+      -2.97
+     ],
+     [
+      -9.17,
+      -4.08
+     ],
+     [
+      -9.09,
+      -5.25
+     ],
+     [
+      -8.87,
+      -6.44
+     ],
+     [
+      -8.46,
+      -7.62
+     ],
+     [
+      -7.84,
+      -8.7
+     ],
+     [
+      -7.01,
+      -9.65
+     ],
+     [
+      -6,
+      -10.39
+     ],
+     [
+      -4.85,
+      -10.9
+     ],
+     [
+      -3.62,
+      -11.14
+     ],
+     [
+      -2.37,
+      -11.13
+     ],
+     [
+      -1.15,
+      -10.9
+     ],
+     [
+      0,
+      -10.5
+     ],
+     [
+      1.05,
+      -9.98
+     ],
+     [
+      2,
+      -9.41
+     ],
+     [
+      2.87,
+      -8.83
+     ],
+     [
+      3.69,
+      -8.29
+     ],
+     [
+      4.5,
+      -7.79
+     ],
+     [
+      5.33,
+      -7.34
+     ],
+     [
+      6.21,
+      -6.9
+     ],
+     [
+      7.15,
+      -6.44
+     ],
+     [
+      8.12,
+      -5.9
+     ],
+     [
+      9.09,
+      -5.25
+     ],
+     [
+      10.02,
+      -4.46
+     ],
+     [
+      10.82,
+      -3.52
+     ],
+     [
+      11.46,
+      -2.44
+     ],
+     [
+      11.86,
+      -1.25
+     ],
+     [
+      12,
+      0
+     ]
+    ]
+   }
+  }
+ ]
+}

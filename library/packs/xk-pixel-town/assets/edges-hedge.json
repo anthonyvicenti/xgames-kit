@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "edges-hedge",
+ "pack": "xk-pixel-town",
+ "file": "edges-hedge.png",
+ "sha256": "a9fc0e0f27a49b90b0ffb9681c2254b4f64675a8dc4bf42a800998ecd92c4e49",
+ "bytes": 988,
+ "preview": "previews/edges-hedge.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): edges-hedge.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a clipped hedge that joins its neighbours (16, connect)",
+ "tags": [
+  "pixel",
+  "hedge",
+  "bush",
+  "edges"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "connect"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7ec152",
+     "#468a3c",
+     "#5ca546",
+     "#a6d867",
+     "#336b34",
+     "#46573c",
+     "#556044",
+     "#2a3630"
+    ],
+    "saturation": 0.413,
+    "value": 0.456,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.773
+     },
+     {
+      "hue": "yellow",
+      "share": 0.114
+     },
+     {
+      "hue": "grey",
+      "share": 0.112
+     }
+    ],
+    "exact": 10,
+    "grey": 0.112
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.257
+   }
+  }
+ },
+ "source": {
+  "sha256": "73070b48e08c632e65deb36c88148be5c7125aa97b4a2d598376deaabcfdf81a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

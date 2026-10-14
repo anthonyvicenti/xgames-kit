@@ -1,0 +1,71 @@
+{
+ "packVersion": 1,
+ "id": "kenney-new-platformer-pack",
+ "title": "Kenney New Platformer Pack 1.1",
+ "describe": "128 px cartoon platformer art: terrain, platforms, water, ladders, blocks, pickups, enemies, backgrounds and five characters in poses.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/new-platformer-pack",
+  "file": "library/packs/kenney-new-platformer-pack/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/new-platformer-pack",
+  "download": "https://kenney.nl/media/pages/assets/new-platformer-pack/1896103897-1764756702/kenney_new-platformer-pack-1.1.zip",
+  "sha256": "553b907f3f0e505ab65f56f245ccaff3123c8fe3f3a0dfce9373b996bfc18cc2",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_new-platformer-pack-1.1.zip --pack kenney-new-platformer-pack --include 'Sprites/*/Double/*.png' --style drawn --texels 128 (np-* sheets: the kinds stream's bake-flat from the character poses)"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 7,
+   "hues": [
+    "#353541",
+    "#bbc4cb",
+    "#de7e4f",
+    "#cfd5da",
+    "#ffffff",
+    "#ee9366",
+    "#a6b2bb",
+    "#faba2d",
+    "#2cc987",
+    "#ba6be9",
+    "#c66a3e",
+    "#e54341"
+   ],
+   "saturation": 0.422,
+   "value": 0.573,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.555
+    },
+    {
+     "hue": "orange",
+     "share": 0.241
+    },
+    {
+     "hue": "cyan",
+     "share": 0.081
+    }
+   ],
+   "grey": 0.502
+  },
+  "texelsPerMetre": 128,
+  "outline": {
+   "present": true,
+   "share": 0.637
+  }
+ },
+ "assets": 438,
+ "validators": [
+  "flat-judge",
+  "picture-check"
+ ]
+}

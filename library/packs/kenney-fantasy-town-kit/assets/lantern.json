@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "lantern",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "lantern.glb",
+ "sha256": "6ec7d37ad77b32cc4df7f35378eb77f248126fc770da5664c07075ce9c1a98e7",
+ "bytes": 20488,
+ "preview": "previews/lantern.png",
+ "from": "kenney:fantasy-town-kit/lantern; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an old-fashioned street lantern",
+ "tags": [
+  "plaza",
+  "lamp",
+  "light",
+  "lantern"
+ ],
+ "use": {
+  "size": [
+   0.433,
+   3.112,
+   0.449
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "light": {
+   "at": [
+    0,
+    2.75,
+    0
+   ],
+   "range": 1
+  },
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.12,
+   "height": 3,
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 158,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 158,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20488,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#676c84",
+     "#747990",
+     "#a3aacc",
+     "#d3d3e3",
+     "#8b92ae",
+     "#7d829c",
+     "#b0b8dd",
+     "#5a6078"
+    ],
+    "saturation": 0.219,
+    "value": 0.639,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.569
+     },
+     {
+      "hue": "blue",
+      "share": 0.431
+     }
+    ],
+    "grey": 0.569
+   },
+   "trianglesPerMetre": 7.24,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "f270637e3083d6e84a30626ee05df2b09597a642985a7f5c3e4ab5bb1c7a8d55",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

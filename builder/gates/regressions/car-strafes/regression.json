@@ -1,0 +1,9 @@
+{
+  "base": "kart-loop",
+  "why": "A car whose steering slides it sideways, as a walker strafes. PA10, the first real end-to-end build (2026-10-13): verify passed all six gates three times while the play-tester could not drive the car; on the third play-test it still read \"A and D move the car left and right, though it feels like strafing\" (builder/loop/evidence/2026-10-13-pa10-headless.json). Gate C must fail it: the row says A and D turn the car, and its path never bends while they are held.",
+  "evidence": "builder/loop/evidence/2026-10-13-pa10-headless.json",
+  "files": { "src/car.js": "car.js" },
+  "mustFail": ["C"],
+  "measure": 13,
+  "detail": "slid sideways"
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "groundlayer1",
+ "pack": "kenney-background-elements-remastered",
+ "file": "groundlayer1.png",
+ "sha256": "7842a21ed280553523b74d29db8723f4c38418abdd0fc636593ea4837a4cd0fe",
+ "bytes": 4618,
+ "preview": "previews/groundlayer1.png",
+ "from": "Backgrounds/Elements/groundLayer1.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "groundlayer1",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "groundlayer1",
+  "backgrounds",
+  "elements"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x400: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 400,
+     "seeThrough": 0.043
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#b7e7fa",
+     "#c9efff",
+     "#c8efff",
+     "#c0ebfc",
+     "#bbe9fb",
+     "#c4edfd",
+     "#bce9fb",
+     "#caefff"
+    ],
+    "saturation": 0.874,
+    "value": 0.85,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 19,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "23c66df5812b9395466644d4dcc5c7bcabe81d3ef68d1e3ee166a47971869e1f",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

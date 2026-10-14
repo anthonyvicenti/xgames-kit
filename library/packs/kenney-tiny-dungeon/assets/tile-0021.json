@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0021",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0021.png",
+ "sha256": "810bf4fc7908f54be64897ef841bae451b320d3f0b6d2535d65aa93631d7287c",
+ "bytes": 298,
+ "preview": "previews/tile-0021.png",
+ "from": "Tiles/tile_0021.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a doorway in a stone wall with its wooden door swung wide open",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "wooden",
+  "open",
+  "single"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#262b44",
+     "#3f2631",
+     "#8b9bb4",
+     "#52607c",
+     "#bd6c4a",
+     "#c0cbdc"
+    ],
+    "saturation": 0.265,
+    "value": 0.313,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.746
+     },
+     {
+      "hue": "pink",
+      "share": 0.211
+     },
+     {
+      "hue": "orange",
+      "share": 0.043
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.833
+   }
+  }
+ },
+ "source": {
+  "sha256": "9def7eb7a3b00190148a55367c08ecfd4a03b66096e585b0c07b6f21277bb4fd",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

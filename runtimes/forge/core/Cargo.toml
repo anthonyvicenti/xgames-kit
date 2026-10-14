@@ -1,0 +1,89 @@
+# gf-forge core (research/rust-engine/PLAN.md §2): the Rust half of the third engine.
+# Pinned toolchain: rust-toolchain.toml (rustc 1.97.1 + wasm32-unknown-unknown). Every crate is pinned exactly here and in
+# Cargo.lock; every crate's licence is in LICENSES.md (MIT, Apache-2.0, BSD, zlib only).
+# Build: node research/gf-forge/tools/build.mjs (release: LTO, -Oz, explicit wasm features); the target dir lives
+# outside git (~/.cache/gf-forge/target unless CARGO_TARGET_DIR says otherwise).
+# The crates and who owns them: core/ARCHITECTURE.md.
+[workspace]
+resolver = "3"
+members = ["forge-core", "forge-anim", "forge-render", "forge-web", "forge-feel", "forge-ai", "forge-play"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+publish = false
+rust-version = "1.97"
+
+[workspace.dependencies]
+hecs = { version = "=0.11.2" }
+glam = { version = "=0.33.12", default-features = false, features = ["std"] }
+gltf = { version = "=1.4.1", default-features = false }
+bytemuck = { version = "=1.25.2", features = ["derive"] }
+# the backend is forge-web's choice, one a build (wave 3, track W: `webgpu` for the WebGPU build, `webgl2` for wgpu's GL
+# backend on a WebGL2 context), and how the shaders reach it is forge-render's (`wgsl` text, or `naga-ir` for the
+# WebGL2 build); native tests draw nothing and need no backend
+wgpu = { version = "=30.0.1", default-features = false, features = ["std"] }
+wasm-bindgen = { version = "=0.2.129" }
+wasm-bindgen-futures = { version = "=0.4.79" }
+js-sys = { version = "=0.3.106" }
+web-sys = { version = "=0.3.106", features = ["HtmlCanvasElement", "Window", "console"] }
+# wave 1a, the core game model: physics (rapier3d, Apache-2.0; it does its math in glam 0.33, the same glam as ours)
+# and the data tables' JSON (serde_json is already in the wasm through gltf-json)
+rapier3d = { version = "=0.36.0", default-features = false, features = ["dim3", "f32", "std"] }
+serde_json = { version = "=1.0.151" }
+# the workspace's own crates (forge-feel and forge-ai plug into forge-core's schedule; forge-anim is shared by the
+# core and the renderer)
+forge-core = { path = "forge-core" }
+forge-anim = { path = "forge-anim" }
+forge-feel = { path = "forge-feel" }
+forge-ai = { path = "forge-ai" }
+forge-play = { path = "forge-play" }
+
+# The dev loop (cargo build): no LTO, no debuginfo, dependencies optimised so the game is playable.
+[profile.dev]
+debug = false
+opt-level = 1
+incremental = true
+
+[profile.dev.package."*"]
+opt-level = 2
+
+# rapier 0.36's own debug checks are off in the dev and test builds (ours stay on). Its island manager checks, in debug
+# builds only, that every touching pair is linked into its "persistent islands". A pair of kill debris that starts to
+# touch in the collision pass the core runs between steps for queries (Physics::refresh) is left unlinked, and the
+# check panics once enough pieces fly at once: "touching pair (edge N) not linked in the persistent islands". Found
+# 2026-10-11 by forge-play's four-player wave when the enemies grew a tenth taller (more rounds land, more pieces);
+# the pair it named was two pieces of debris, and without the between-steps pass the same run does not trip it. The
+# release build never had the check, and a piece cannot sleep (forge-feel kills::awake), so which island it is in
+# decides nothing. Earlier trips of the same checks: physics.rs (place, fresh) and kills.rs (awake).
+[profile.dev.package.rapier3d]
+opt-level = 2
+debug-assertions = false
+
+# The kit release (build.mjs): smallest code, one codegen unit, stripped, panics abort.
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+debug = false
+incremental = false
+
+# Hot crates at opt-level 3 (PLAN §5: the wave-0 bench measured its crowd sim at "z" 27% slower than the same JS, and
+# at 3 14% faster, at no size cost): the simulation, physics, animation, and the feel and AI systems. The rest is "z".
+[profile.release.package.forge-core]
+opt-level = 3
+[profile.release.package.forge-anim]
+opt-level = 3
+[profile.release.package.forge-feel]
+opt-level = 3
+[profile.release.package.forge-ai]
+opt-level = 3
+[profile.release.package.forge-play]
+opt-level = 3
+[profile.release.package.rapier3d]
+opt-level = 3
+[profile.release.package.parry3d]
+opt-level = 3

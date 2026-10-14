@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-dungeon-atlas",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "kaykit-dungeon-atlas.png",
+ "sha256": "421379f42b5bd7cccedb3553248cb0343e312e28261593cce50abe8c5caae9aa",
+ "bytes": 47494,
+ "preview": "previews/kaykit-dungeon-atlas.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; taken byte for byte out of research/gf-scenic/library/props/dungeon-wall.glb (sha256 19347905482a6969e432ece331e85fc7e7395776520f139b64379cc6ce1a148c), image \"dungeon_texture\"",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "the KayKit Dungeon Remastered atlas (wave 0, research/gf-forge/tools/library.mjs): every dungeon piece samples it",
+ "tags": [
+  "texture",
+  "atlas",
+  "dungeon",
+  "textures",
+  "kaykit"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 227,
+    "hues": [
+     "#596064",
+     "#b27052",
+     "#9b5a45",
+     "#736357",
+     "#13191b",
+     "#837265",
+     "#978f86",
+     "#a8a29d"
+    ],
+    "saturation": 0.378,
+    "value": 0.533,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.444
+     },
+     {
+      "hue": "orange",
+      "share": 0.199
+     },
+     {
+      "hue": "cyan",
+      "share": 0.091
+     },
+     {
+      "hue": "red",
+      "share": 0.083
+     },
+     {
+      "hue": "yellow",
+      "share": 0.049
+     },
+     {
+      "hue": "green",
+      "share": 0.034
+     },
+     {
+      "hue": "purple",
+      "share": 0.031
+     },
+     {
+      "hue": "pink",
+      "share": 0.031
+     }
+    ],
+    "exact": 11398,
+    "grey": 0.444
+   },
+   "outline": {
+    "present": false,
+    "share": 0.26
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall.gltf.glb",
+  "sha256": "f2f343a7bdf2d45947e3f354494e16095a923485e05637e3804e3b81ce11d921",
+  "retrieved": "2026-10-08",
+  "modified": "taken byte for byte out of research/gf-scenic/library/props/dungeon-wall.glb (sha256 19347905482a6969e432ece331e85fc7e7395776520f139b64379cc6ce1a148c), image \"dungeon_texture\"",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

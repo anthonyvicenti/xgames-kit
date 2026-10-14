@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "background-clouds",
+ "pack": "kenney-new-platformer-pack",
+ "file": "background-clouds.png",
+ "sha256": "8e63b6e0bf4ccaf3e5f7a5832dd8413e5fa86adfd77a33c4d5d4f90594c33772",
+ "bytes": 6904,
+ "preview": "previews/background-clouds.png",
+ "from": "Sprites/Backgrounds/Double/background_clouds.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "background clouds",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "background",
+  "clouds",
+  "backgrounds"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 512
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#c3e3ff",
+     "#ffffff",
+     "#ddefff",
+     "#c4e3ff",
+     "#d6ecff",
+     "#dff0ff",
+     "#eef7ff",
+     "#f6fbff"
+    ],
+    "saturation": 0.731,
+    "value": 0.923,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.563
+     },
+     {
+      "hue": "grey",
+      "share": 0.437
+     }
+    ],
+    "exact": 43,
+    "grey": 0.437
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c3edc09ffe6a2883fb2bdb3984e34d1d69ddcdc7f5253711b20c1ac4630551c3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

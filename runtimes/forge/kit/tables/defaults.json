@@ -1,0 +1,418 @@
+{
+  "player": {
+    "walk": 7.8,
+    "accelTime": 0.1,
+    "stopTime": 0.09,
+    "burst": {
+      "share": 0.66,
+      "time": 0.025
+    },
+    "airControl": 0.3,
+    "jump": 7,
+    "gravity": 21.6,
+    "maxFall": 40,
+    "coyote": 0.1,
+    "jumpBuffer": 0.12,
+    "radius": 0.3,
+    "height": 1.8,
+    "eye": 1.74,
+    "stepHeight": 0.35,
+    "slopeMax": 46,
+    "snap": 0.25,
+    "stepEvery": 2.2,
+    "health": 100,
+    "armor": 20,
+    "fov": 68,
+    "evade": {
+      "distance": 3,
+      "time": 0.17,
+      "peak": 18,
+      "rise": 0.035,
+      "cooldown": 1.4,
+      "fovPunch": 2.6,
+      "fovTime": 0.165,
+      "dip": 0.09
+    },
+    "stamina": {
+      "max": 2,
+      "regen": 0.7,
+      "jumpCost": 0,
+      "evadeCost": 1
+    },
+    "bob": {
+      "amount": 0.01,
+      "rate": 4.2,
+      "landDip": 0.014,
+      "landTime": 0.15,
+      "jumpLift": 0.045
+    },
+    "hurt": {
+      "tint": 0.6,
+      "fade": 1.5,
+      "shake": 0.016,
+      "shakeRate": 12,
+      "shakeTime": 0.25
+    },
+    "revive": {
+      "time": 2,
+      "range": 2,
+      "health": 0.4,
+      "look": 0.35,
+      "grace": 1.5,
+      "text": {
+        "down": "You are down",
+        "wait": "A friend can bring you back",
+        "being": "{name} is bringing you back",
+        "hold": "Hold {key} to revive {name}",
+        "doing": "Reviving {name}",
+        "mark": "down",
+        "key": "E",
+        "downThem": "{name} is down",
+        "waitThem": "A friend can bring them back",
+        "beingThem": "{name} is bringing them back"
+      }
+    },
+    "sounds": {
+      "step": "step",
+      "jump": "jump",
+      "land": "land",
+      "evade": "evade",
+      "hurt": "hurt",
+      "switch": "weapon-switch",
+      "death": "player-death",
+      "down": "player-down",
+      "revive": "player-revive"
+    }
+  },
+  "physics": {
+    "gravity": 18,
+    "debrisLife": 4
+  },
+  "deal": {
+    "tick": 0.14,
+    "flip": 0.2,
+    "flipEvery": 0.215,
+    "hoverLift": 0.01,
+    "pickLift": 0.033,
+    "seconds": 20,
+    "linger": 0.6,
+    "common": 60,
+    "rare": 30,
+    "epic": 10,
+    "familyBias": 2,
+    "text": {
+      "title": "Choose one",
+      "wave": "Wave {wave} is cleared",
+      "take": "Take {name}",
+      "pick": "Choose a card",
+      "pass": "Pass",
+      "waiting": "Waiting for {names}",
+      "choosing": "choosing",
+      "picked": "chose",
+      "passed": "passed",
+      "seconds": "{n} s",
+      "now": "now",
+      "then": "with it",
+      "weapon": "A new weapon in your hands",
+      "heal": "Health",
+      "held": "You can hold up to {max} of this card (you hold {n})",
+      "common": "Common",
+      "rare": "Rare",
+      "epic": "Epic",
+      "keys": "1 2 3 choose · Enter takes · Esc passes",
+      "family": "{label} {n}/{at}",
+      "unlocks": "Completes the {label} set: {bonus}",
+      "toward": "{label} set: you hold {n} of {at} {label} cards, this one makes {next}",
+      "setBonus": "Hold {at} {label} cards: {bonus}. {text}",
+      "perk": "Perk",
+      "bonus": "{bonus}",
+      "bonusSub": "{label} set bonus · {text}",
+      "friendBonus": "{player}: {bonus}"
+    },
+    "sounds": {
+      "tick": "card-deal",
+      "flip": "card-flip",
+      "chime": "card-reveal",
+      "pick": "card-pick",
+      "pass": "card-pass"
+    }
+  },
+  "weapons": [],
+  "enemies": [],
+  "waves": [],
+  "cards": [],
+  "feel": {
+    "combo": {
+      "window": 2.5,
+      "step": 0.1,
+      "max": 5
+    },
+    "regions": {
+      "body": 1,
+      "arms": 0.8,
+      "legs": 0.8
+    },
+    "hits": {
+      "flash": 0.042,
+      "flashColor": "#ffffff",
+      "numbers": true
+    },
+    "kill": {
+      "pieces": 48,
+      "budget": 160,
+      "rest": 400,
+      "restFade": 0.6,
+      "burst": 4.5,
+      "knockSpeed": 4,
+      "knockTime": 1.2,
+      "knockDamage": 10,
+      "shed": 30,
+      "coins": true,
+      "coinValue": 1,
+      "sounds": {
+        "crack": "bone-break",
+        "shatter": "bone-shatter",
+        "knock": "impact-bone",
+        "coin": "pickup-coin"
+      }
+    },
+    "aimAssist": {
+      "touch": true,
+      "mouse": false,
+      "cone": 6,
+      "pull": 3,
+      "range": 30
+    },
+    "gyro": {
+      "sensitivity": 1
+    },
+    "touch": {
+      "size": 46,
+      "fire": 60,
+      "gap": 10,
+      "edge": 12,
+      "lift": 30,
+      "rest": 0.6,
+      "discs": false,
+      "words": false,
+      "hint": 6,
+      "tip": "Left thumb moves, right thumb looks",
+      "autoTip": "Aim at an enemy and it fires by itself",
+      "always": false,
+      "autoFire": {
+        "on": true,
+        "cone": 2.5,
+        "delay": 0.12,
+        "range": 30
+      }
+    },
+    "lowHealth": {
+      "stage1": 0.15,
+      "stage2": 0.1,
+      "stage3": 0.05,
+      "sound": "player-lowhealth"
+    },
+    "death": {
+      "recap": 8
+    }
+  },
+  "endless": {
+    "on": false,
+    "from": 1,
+    "grow": {
+      "enemies": 0.25,
+      "alive": 0.15,
+      "health": 0.2,
+      "damage": 0.1,
+      "speed": 0.04
+    },
+    "aliveMost": 16,
+    "speedMost": 1.3
+  },
+  "families": [],
+  "elites": {
+    "on": false,
+    "lap": 1,
+    "wave": 0,
+    "chance": 0.12,
+    "grow": 0.04,
+    "chanceMost": 0.4,
+    "perWave": 4,
+    "health": 1.5,
+    "coins": 3,
+    "boss": false,
+    "kinds": [],
+    "burning": {
+      "on": true,
+      "weight": 1,
+      "name": "Burning",
+      "line": "Its blows set you alight",
+      "color": "#ff6a1a",
+      "glow": 2.6,
+      "tint": "#ffffff",
+      "dps": 5,
+      "seconds": 3,
+      "tick": 0.5,
+      "patch": {
+        "seconds": 3,
+        "radius": 1.4,
+        "dps": 6
+      },
+      "sounds": {
+        "ignite": "elite-ignite",
+        "burn": "elite-burn"
+      }
+    },
+    "armoured": {
+      "on": true,
+      "weight": 1,
+      "name": "Armoured",
+      "line": "Iron-hard: it takes half of every hit",
+      "color": "#8fb4dc",
+      "glow": 1.4,
+      "tint": "#5a5e66",
+      "damage": 0.5,
+      "knock": 0.35
+    },
+    "splitting": {
+      "on": true,
+      "weight": 1,
+      "name": "Splitting",
+      "line": "Fell it and two smaller ones crawl out",
+      "color": "#a4ff4f",
+      "glow": 2.2,
+      "tint": "#ffffff",
+      "into": "",
+      "count": 2,
+      "health": 0.35,
+      "scale": 0.7,
+      "sounds": {
+        "split": "elite-split"
+      }
+    },
+    "fast": {
+      "on": true,
+      "weight": 1,
+      "name": "Fast",
+      "line": "Quicker on its feet and in its blows",
+      "color": "#c9a4ff",
+      "glow": 2.2,
+      "tint": "#ffffff",
+      "speed": 1.45,
+      "attack": 1.35
+    }
+  },
+  "shop": {
+    "on": false,
+    "seconds": 20,
+    "every": 1,
+    "from": 1,
+    "items": [
+      {
+        "kind": "card",
+        "name": "Cards",
+        "text": "Three cards on show: buy the one you want",
+        "price": 8,
+        "perLap": 1.3,
+        "perBuy": 1.4,
+        "stock": 0,
+        "share": 0.4,
+        "by": 0.5,
+        "rare": 1.5,
+        "epic": 2.2,
+        "id": "card"
+      },
+      {
+        "kind": "reroll",
+        "name": "Fresh deal",
+        "text": "The three cards dealt again",
+        "price": 5,
+        "perLap": 1.25,
+        "perBuy": 1.5,
+        "stock": 3,
+        "share": 0.4,
+        "by": 0.5,
+        "rare": 1.5,
+        "epic": 2.2,
+        "id": "reroll"
+      },
+      {
+        "kind": "heal",
+        "name": "Tonic",
+        "text": "Back 40% of your health",
+        "price": 6,
+        "perLap": 1.3,
+        "perBuy": 1.5,
+        "stock": 2,
+        "share": 0.4,
+        "by": 0.5,
+        "rare": 1.5,
+        "epic": 2.2,
+        "id": "heal"
+      },
+      {
+        "kind": "hone",
+        "name": "Whetstone",
+        "text": "One of your cards a rarity higher",
+        "price": 15,
+        "perLap": 1.3,
+        "perBuy": 1.6,
+        "stock": 1,
+        "share": 0.4,
+        "by": 0.5,
+        "rare": 1.5,
+        "epic": 2.2,
+        "id": "hone"
+      },
+      {
+        "kind": "revive",
+        "name": "Smelling salts",
+        "text": "A fallen friend up at once, from anywhere",
+        "price": 10,
+        "perLap": 1.3,
+        "perBuy": 1.5,
+        "stock": 0,
+        "share": 0.4,
+        "by": 0.5,
+        "rare": 1.5,
+        "epic": 2.2,
+        "id": "revive"
+      }
+    ],
+    "text": {
+      "title": "The pedlar's cart",
+      "sub": "Coins buy what the road ahead needs",
+      "leave": "Done",
+      "left": "You left the cart",
+      "waiting": "Waiting for {names}",
+      "coins": "{n}",
+      "stockLeft": "{n} left",
+      "soldOut": "Sold out",
+      "poor": "Not enough coins",
+      "none": "Nothing to use it on",
+      "hone": "Hone which card?",
+      "buy": "Buy",
+      "sold": "Sold",
+      "score": "Score",
+      "timeLeft": "Time left",
+      "purse": "Coins",
+      "pickHint": "Choose a card to see what it changes",
+      "back": "Back",
+      "raise": "Pay to raise {name}",
+      "keys": "1–3 choose a card, again to buy · {a}–{b} buy · Enter: buy the chosen card, or Done · Esc: let go of it",
+      "need": "Need {n} more",
+      "full": "Full health",
+      "noHone": "Nothing to hone",
+      "noneDown": "No friend is down",
+      "handFull": "Your hand is full",
+      "rise": "Each card bought here raises the next one's price",
+      "packing": "The cart leaves in {n}…",
+      "honeTitle": "{name} · {price} coins: make one of your cards a rarity higher"
+    },
+    "sounds": {
+      "open": "shop-open",
+      "buy": "shop-buy",
+      "deny": "shop-deny"
+    }
+  }
+}

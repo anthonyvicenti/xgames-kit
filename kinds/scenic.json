@@ -1,0 +1,108 @@
+{
+  "id": "scenic",
+  "label": "Scenic",
+  "feel": "Painterly stylised 3D where the light does the work: one house material, living grass and leaves in the wind, coloured shade instead of grey, fog that melts the distance, and a sky that moves through the day.",
+  "references": ["Tunic", "Hades II", "Dredge", "Valheim", "Sea of Thieves"],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "scenic-3d",
+      "preset": "golden-meadow",
+      "time": "golden",
+      "alternates": [
+        { "preset": "clear-day", "why": "day: cyan to lilac sky, crisp coloured shade" },
+        { "preset": "dusk-isle", "why": "dusk: lavender light, a violet void with stars, warm lanterns" },
+        { "preset": "night-ruins", "why": "night: moonlit blue, amber runes and braziers" },
+        { "preset": "storm-coast", "why": "weather: slate light, rain lines and lightning" }
+      ],
+      "values": {}
+    }
+  },
+  "world": { "family": "isles", "three": { "templates": ["isles", "island", "ruins", "dungeon"], "default": "isles" } },
+  "camera": {
+    "default": "follow",
+    "three": { "pitch": 38, "distance": 11, "fov": 50, "notes": "the three-quarter follow camera" }
+  },
+  "bodies": {
+    "set": "kaykit-adventurers",
+    "three": ["kaykit-knight", "kaykit-barbarian", "kaykit-mage", "kaykit-rogue"],
+    "enemies": ["kaykit-skeleton-warrior", "kaykit-skeleton-mage", "kaykit-skeleton-rogue", "kaykit-skeleton-minion"],
+    "physics": "animated"
+  },
+  "props": {
+    "three": ["tree-oak", "tree-birch", "tree-cherry", "lantern", "pole-light", "bench", "fence", "crate", "rock-1", "bridge"]
+  },
+  "audio": {
+    "character": "airy and warm: soft whooshes and chimes over a wind bed, hits with weight but no crunch",
+    "sounds": {
+      "swing": { "preset": "arrow-whoosh", "pitch": 0.9 },
+      "hit": { "preset": "hit-soft", "pitch": 0.85 },
+      "pickup": { "preset": "gem", "pitch": 0.9 },
+      "heal": { "preset": "heal" },
+      "door": { "preset": "door", "pitch": 0.9 },
+      "win": { "preset": "level-up", "pitch": 0.9 }
+    },
+    "ambient": { "preset": "wind-loop", "gainDb": -4 },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#ffd36b",
+    "panel": "#221d33c7",
+    "text": "#fff8ec",
+    "font": "Fredoka",
+    "radius": "14px",
+    "weight": 600
+  },
+  "mechanics": {
+    "suggested": ["melee", "health", "waves", "loot", "levels"],
+    "why": "an adventure through islands: fights, loot and a level at a time. Suggestions only."
+  },
+  "packs": ["folio-nature", "kaykit-dungeon-remastered", "kaykit-adventurers", "kaykit-skeletons", "ofl-fredoka"],
+  "runtimes": {
+    "three": {
+      "profile": "scenic-3d",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "Isle Run and the scenic look bench (dusk-isle, night-ruins, golden-meadow) pass verify on WebGPU"
+          },
+          {
+            "what": "the look judge's contact sheet for scenic, rendered on the graphics card (its only check)",
+            "ref": "kinds/sheets/scenic.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "godot": {
+      "profile": "3d",
+      "state": { "exists": false, "tested": false, "open": false },
+      "toProve": "the painterly house material on Godot 3D"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "scenic-3d",
+    "preset": "golden-meadow",
+    "template": "isles",
+    "hero": "kaykit-knight",
+    "bodies": ["kaykit-knight", "kaykit-barbarian", "kaykit-mage", "kaykit-rogue"]
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for scenic, rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/scenic.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

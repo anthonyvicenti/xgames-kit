@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "cloud-small",
+ "pack": "poly-pizza-cc-by",
+ "file": "cloud-small.glb",
+ "sha256": "94141817cb766317c60b3397c63ce56382dada63d0e40001dd9d839f40676d73",
+ "bytes": 3868,
+ "preview": "previews/cloud-small.png",
+ "from": "polypizza:44cGXp6_8WD; baked to metres (x1.42583), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small low-poly cloud",
+ "tags": [
+  "sky",
+  "cloud",
+  "decor",
+  "small"
+ ],
+ "use": {
+  "size": [
+   8.299,
+   3,
+   2.634
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 602,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 602,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3868,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.25,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "Poly by Google",
+  "url": "https://poly.pizza/m/44cGXp6_8WD",
+  "credit": "\"Cloud\" by Poly by Google, CC BY 3.0 (https://poly.pizza/m/44cGXp6_8WD)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/44cGXp6_8WD",
+  "download": "https://static.poly.pizza/1c700295-38f5-44f1-9681-a13ef3e5aa7b.glb",
+  "sha256": "054b2743a8f825c0fb489da3157a0b1328e6b0f6efe75780240dc02fb706c856",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.42583), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Poly by Google"
+ }
+}

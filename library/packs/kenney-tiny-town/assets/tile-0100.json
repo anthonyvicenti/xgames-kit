@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0100",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0100.png",
+ "sha256": "30f802edb81fb6c3ac0ca75784b6823aa974cc7dd3d3327560ec7dc654642f94",
+ "bytes": 159,
+ "preview": "previews/tile-0100.png",
+ "from": "Tiles/tile_0100.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the middle of a crenellated castle wall top, seen from above; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "castle",
+  "wall",
+  "battlements",
+  "crenellations",
+  "stone",
+  "rampart",
+  "middle"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c0cbdc",
+     "#8b9bb4",
+     "#3f2631",
+     "#5a6988"
+    ],
+    "saturation": 0.244,
+    "value": 0.553,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.75
+     },
+     {
+      "hue": "pink",
+      "share": 0.25
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.333
+   }
+  }
+ },
+ "source": {
+  "sha256": "535aef9ec659d745835aa54be8ed322642f8397183a52af2e9fb902c21a2deed",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

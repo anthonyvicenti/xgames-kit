@@ -1,0 +1,125 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-worker",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-worker.glb",
+ "sha256": "3a5699cc133681edfa5b679f70c648f3d2d89c73a408fe5c8996ab5e35991825",
+ "bytes": 166744,
+ "preview": "previews/quaternius-worker.png",
+ "from": "https://poly.pizza/m/Yg2bQZO6Hj \"Worker\" (Ultimate Modular Men Pack), https://static.poly.pizza/3a5f3056-ffe6-42eb-bd52-122afcbd22b2.glb (sha256 9c28614f…d38d, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (45 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a moustached builder in a hard hat, hi-vis vest and work boots; the vest takes the player colour",
+ "tags": [
+  "human",
+  "man",
+  "worker",
+  "construction",
+  "builder",
+  "hard-hat",
+  "job",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.675,
+   1.866,
+   0.389
+  ],
+  "height": 1.866,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_Worker_Vest"
+  ]
+ },
+ "budgets": {
+  "triangles": 5240,
+  "textures": 0,
+  "materials": 11,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "materials 11 is over the target 8",
+     "model judge, left hand: idle at 0 s: 6.6% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.866,
+     "triangles": 5240,
+     "joints": 58,
+     "materials": 11
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#a38610",
+     "#383838",
+     "#6a5a39",
+     "#ba9c79",
+     "#202020",
+     "#372e24",
+     "#52462c",
+     "#a75a25"
+    ],
+    "saturation": 0.325,
+    "value": 0.316,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.532
+     },
+     {
+      "hue": "grey",
+      "share": 0.318
+     },
+     {
+      "hue": "orange",
+      "share": 0.15
+     }
+    ],
+    "grey": 0.318
+   },
+   "trianglesPerMetre": 14.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.3 heads tall; hips at 48% of the height; shoulders 16% of it",
+   "body": {
+    "headsTall": 5.3,
+    "hipShare": 0.481,
+    "shoulderShare": 0.163,
+    "widthShare": 0.898
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/Yg2bQZO6Hj"
+ }
+}

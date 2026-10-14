@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0122",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0122.png",
+ "sha256": "9ac145e4f35ba316e8e950ca34918bb8934af358605072c33b0a89a4ca85cf7b",
+ "bytes": 384,
+ "preview": "previews/tile-0122.png",
+ "from": "Tiles/tile_0122.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a big brown spider with grey legs",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "spider",
+  "brown",
+  "legs",
+  "arachnid"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#763b36",
+     "#52607c",
+     "#eaa56c",
+     "#ffffff"
+    ],
+    "saturation": 0.29,
+    "value": 0.346,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.635
+     },
+     {
+      "hue": "blue",
+      "share": 0.165
+     },
+     {
+      "hue": "orange",
+      "share": 0.157
+     },
+     {
+      "hue": "red",
+      "share": 0.035
+     }
+    ],
+    "exact": 8,
+    "grey": 0.009
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "2cb76164d899e3a5eb42d7cd23ffe8defae130f6ce702a35926cbf61d2d1b569",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

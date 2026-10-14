@@ -1,0 +1,60 @@
+{
+ "assetVersion": 1,
+ "id": "emerge-dirt",
+ "pack": "forge-sounds",
+ "file": "emerge-dirt.ogg",
+ "sha256": "ca44573fe3dc6611723e734a57401edd2f2dbab31aa3edf397c110cf79755ff0",
+ "bytes": 10250,
+ "preview": "previews/emerge-dirt.png",
+ "from": "https://opengameart.org/content/shovel-sound shovel_0.ogg; cut to 0.003-0.743 s of the source (0.74 s), 2 ms fade-in and 100 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.4 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton rises from the ground (emerge dirt)",
+ "tags": [
+  "sounds",
+  "emerge",
+  "dirt",
+  "enemy"
+ ],
+ "use": {
+  "seconds": 0.742,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 81% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -14.8,
+     "samplePeakDb": -4.2,
+     "truePeakDb": -3.5,
+     "hfRatio": 0.807
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.742,
+    "peakDbfs": -4.2,
+    "soundMaxLufs": -14.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/shovel-sound",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.003-0.743 s of the source (0.74 s), 2 ms fade-in and 100 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.4 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "themightyglider (OpenGameArt), derived from RavenWolfProds (Freesound 503672, CC0)"
+ }
+}

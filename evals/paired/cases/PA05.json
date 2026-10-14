@@ -1,0 +1,76 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA05",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "frozen-case",
+  "case": "T5",
+  "verbatim": true,
+  "where": "games.fun research/studio-v2/evals/cases/T5.json (frozen 2026-10-10): the creator's prompt, verbatim, the one they named as the bridge to cross"
+ },
+ "prompt": "Build a minecraft based world where we attack giants by swinging through the air with swords",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "reference",
+   "core": true,
+   "words": "minecraft based world",
+   "means": "The world is built of blocks (ground, cliffs, trees, buildings) whose faces stay crisp near, far and at speed",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "action",
+   "core": true,
+   "words": "swinging through the air",
+   "means": "Players fly by swinging: hooks fired at the world, a rope that swings them; chained swings cross the map without touching the ground",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "action",
+   "core": true,
+   "words": "with swords",
+   "means": "Players strike with swords from the air; a strike at speed hurts a giant, and a giant can be killed",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "goal",
+   "core": true,
+   "words": "attack giants",
+   "means": "The enemies are giants, many times a player's height, more than one, and they come at the players",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "players",
+   "core": true,
+   "words": "we attack",
+   "means": "Friends attack together in one game",
+   "source": "prompt"
+  },
+  {
+   "id": "r6",
+   "about": "body",
+   "core": false,
+   "words": "minecraft based",
+   "means": "The players' characters are block-built too and match the world",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [
+  "Nothing on screen names or copies the named block game or any other franchise: the block look is ours"
+ ],
+ "control": {
+  "text": "The game includes a working fishing minigame",
+  "how": "judge"
+ }
+}

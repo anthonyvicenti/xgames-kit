@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "np-purple",
+ "pack": "kenney-new-platformer-pack",
+ "file": "np-purple.png",
+ "sha256": "946a6d15ba8a69a074f2f2731f9cb2d5f860c2dc8fc2e2a70280bcb2c5145620",
+ "bytes": 71715,
+ "preview": "previews/np-purple.png",
+ "from": "baked by the kinds stream's flat bake (bake-flat.mjs) from the pack's character poses: body-np-purple.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "the purple platformer character as a gf-flat-1 side body sheet (idle, walk, walk, jump, hit, duck), baked from the pack's poses",
+ "tags": [
+  "kenney",
+  "drawn",
+  "body",
+  "player",
+  "character",
+  "purple",
+  "np"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "frames": {
+   "cell": [
+    256,
+    256
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "drawn",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1536
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 256,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#353541",
+     "#c7b6ff",
+     "#d2c4ff",
+     "#5d5d67",
+     "#a99bd9",
+     "#fbfdfe",
+     "#c7e8f3",
+     "#f8fcfd"
+    ],
+    "saturation": 0.534,
+    "value": 0.633,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.512
+     },
+     {
+      "hue": "purple",
+      "share": 0.373
+     },
+     {
+      "hue": "cyan",
+      "share": 0.101
+     }
+    ],
+    "exact": 703,
+    "grey": 0.512
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f6f259fce7c8ddf49d25db4f78cf8eccd8f4d1bc4b785411b8458adcefb47b79",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

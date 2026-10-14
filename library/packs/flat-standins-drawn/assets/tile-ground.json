@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-ground",
+ "pack": "flat-standins-drawn",
+ "file": "tile-ground.png",
+ "sha256": "54c2bf59d45cea9fc34ea9b7d105252005b45ac17751ccaaf28a6317cebc752f",
+ "bytes": 1926,
+ "preview": "previews/tile-ground.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn ground ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "ground"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#9a6b4a",
+     "#6fbf5a",
+     "#93d47d",
+     "#8a5d3f",
+     "#a97858",
+     "#4f9a3f",
+     "#5aa648",
+     "#817b46"
+    ],
+    "saturation": 0.367,
+    "value": 0.466,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.816
+     },
+     {
+      "hue": "green",
+      "share": 0.161
+     }
+    ],
+    "exact": 41,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

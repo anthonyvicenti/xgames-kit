@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "grass",
+ "pack": "kenney-new-platformer-pack",
+ "file": "grass.png",
+ "sha256": "93be9bc420563c608d0dcb6cca19fa8790f3db2090df62bb44340b12b4779e2f",
+ "bytes": 3912,
+ "preview": "previews/grass.png",
+ "from": "Sprites/Tiles/Double/grass.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "grass",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "grass",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#353541",
+     "#2cc987",
+     "#343440",
+     "#2bc584",
+     "#353540",
+     "#2bc685",
+     "#2ac181",
+     "#2bc886"
+    ],
+    "saturation": 0.438,
+    "value": 0.398,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.611
+     },
+     {
+      "hue": "grey",
+      "share": 0.389
+     }
+    ],
+    "exact": 242,
+    "grey": 0.389
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.87
+   }
+  }
+ },
+ "source": {
+  "sha256": "43010738253232dc2905d9759a2291a27e10abeac0ce2cbafa6048008ef44359",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

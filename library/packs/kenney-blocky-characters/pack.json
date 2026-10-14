@@ -1,0 +1,86 @@
+{
+ "packVersion": 1,
+ "id": "kenney-blocky-characters",
+ "title": "Kenney Blocky Characters 2.0",
+ "describe": "Kenney's 18 block characters on gf-humanoid-1: Kenney's own boxes and texture, T-posed and cut into rigid toy segments at the elbows, wrists, knees and ankles (builder/art/rig/kenney-blocky.mjs), 1.62 m; the shared clips play on them.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/blocky-characters",
+  "file": "library/packs/kenney-blocky-characters/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/blocky-characters",
+  "download": "https://kenney.nl/media/pages/assets/blocky-characters/8369c0cf30-1749547469/kenney_blocky-characters_20.zip",
+  "sha256": "5e123859aa0c1598342b600c6db197024a1d63eb9ec531398b310725f589887e",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_blocky-characters_20.zip --pack kenney-blocky-characters --include '**/*.glb' --category body --replace --retarget kenney-blocky"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 13,
+   "hues": [
+    "#1abc9c",
+    "#4d505e",
+    "#f6d1a5",
+    "#969dbc",
+    "#3c3c44",
+    "#ffc044",
+    "#ffffff",
+    "#cd8961",
+    "#d0e8ff",
+    "#cb4248",
+    "#444c66",
+    "#8d5641"
+   ],
+   "saturation": 0.456,
+   "value": 0.529,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.322
+    },
+    {
+     "hue": "grey",
+     "share": 0.24
+    },
+    {
+     "hue": "blue",
+     "share": 0.19
+    },
+    {
+     "hue": "cyan",
+     "share": 0.086
+    },
+    {
+     "hue": "red",
+     "share": 0.051
+    }
+   ],
+   "grey": 0.186
+  },
+  "trianglesPerMetre": 7.31,
+  "texelsPerMetre": 221,
+  "texturedShare": 0.877,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0
+  },
+  "proportions": "bodies: median 3.29 heads tall",
+  "body": {
+   "headsTall": 3.29,
+   "hipShare": 0.37
+  }
+ },
+ "assets": 18,
+ "validators": [
+  "rig-check"
+ ]
+}

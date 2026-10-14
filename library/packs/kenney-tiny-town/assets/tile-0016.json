@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0016",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0016.png",
+ "sha256": "b3cec1469d1ee7f3416849ff5b5ee6123f4bdfb511f4ff2a9746303400ea0892",
+ "bytes": 243,
+ "preview": "previews/tile-0016.png",
+ "from": "Tiles/tile_0016.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the trunk and lower leaves of a tall green tree (tile 4 is its top)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "tree",
+  "green",
+  "tall",
+  "trunk",
+  "bottom",
+  "nature",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#479f4a",
+     "#84c669",
+     "#eaa56c",
+     "#bd6c4a"
+    ],
+    "saturation": 0.355,
+    "value": 0.387,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.552
+     },
+     {
+      "hue": "pink",
+      "share": 0.404
+     },
+     {
+      "hue": "orange",
+      "share": 0.044
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.792
+   }
+  }
+ },
+ "source": {
+  "sha256": "e491cc2d756b0fe14c19c1484fd79fe086621d2a21fd59f3e7a2d74eecaba561",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

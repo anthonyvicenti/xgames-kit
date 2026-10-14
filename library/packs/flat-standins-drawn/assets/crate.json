@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "flat-standins-drawn",
+ "file": "crate.png",
+ "sha256": "2bcddb440e9dbc9b012cb9b7bff97e94ecf7465e5eccc9b13a106c2ea96dfb90",
+ "bytes": 995,
+ "preview": "previews/crate.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn crate",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "crate"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c98f4e",
+     "#e0ab6c",
+     "#a8733a",
+     "#8a5a28",
+     "#2a2440",
+     "#5f4845",
+     "#67514f",
+     "#543e3e"
+    ],
+    "saturation": 0.504,
+    "value": 0.477,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.732
+     },
+     {
+      "hue": "brown",
+      "share": 0.134
+     },
+     {
+      "hue": "purple",
+      "share": 0.1
+     },
+     {
+      "hue": "grey",
+      "share": 0.034
+     }
+    ],
+    "exact": 18,
+    "grey": 0.034
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

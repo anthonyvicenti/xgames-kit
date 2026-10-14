@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "floor-lamp",
+ "pack": "kenney-furniture-kit",
+ "file": "floor-lamp.glb",
+ "sha256": "d719132a5974925e90d25d28af765ca3621b4b0af12c8b038aea0eb80ad7a946",
+ "bytes": 3876,
+ "preview": "previews/floor-lamp.png",
+ "from": "kenney:furniture-kit/lampRoundFloor; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round floor lamp",
+ "tags": [
+  "office",
+  "lamp",
+  "light",
+  "floor"
+ ],
+ "use": {
+  "size": [
+   0.304,
+   1.72,
+   0.351
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "light": {
+   "at": [
+    0,
+    1.55,
+    0
+   ],
+   "range": 0.9
+  },
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.2,
+   "height": 1.6,
+   "offset": [
+    0,
+    0.8,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 76,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 76,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3876,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#fff5ca",
+     "#dfeaec"
+    ],
+    "saturation": 0.735,
+    "value": 0.897,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.644
+     },
+     {
+      "hue": "cyan",
+      "share": 0.356
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 9.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "50fe1b5b588edf15bfa9cc880f71a02a4fda6036350b24733d0ef4de5cc5e908",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

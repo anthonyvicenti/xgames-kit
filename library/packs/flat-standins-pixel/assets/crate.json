@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "flat-standins-pixel",
+ "file": "crate.png",
+ "sha256": "cb1f143ff3235dfafbddca90b70db45085f71cf42e5cb5b3775e4301d815f25e",
+ "bytes": 296,
+ "preview": "previews/crate.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): crate.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a small wooden crate",
+ "tags": [
+  "pixel",
+  "crate",
+  "box",
+  "wood",
+  "flat",
+  "2d"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#b97c45",
+     "#7a4a2a",
+     "#452a2c",
+     "#9a6236",
+     "#67483f",
+     "#d39a5c",
+     "#5d3d37"
+    ],
+    "saturation": 0.427,
+    "value": 0.39,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.452
+     },
+     {
+      "hue": "orange",
+      "share": 0.389
+     },
+     {
+      "hue": "red",
+      "share": 0.159
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.679
+   }
+  }
+ },
+ "source": {
+  "sha256": "35a7360554e294699afaac91a49c6c4c58bbdc85b2f49c3ff68942bd551215d5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

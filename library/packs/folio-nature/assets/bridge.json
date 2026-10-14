@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "bridge",
+ "pack": "folio-nature",
+ "file": "bridge.glb",
+ "sha256": "509aad8738cf946bbfb5191408bcdb3fc282a935f55e8463054fa8c08be6a67d",
+ "bytes": 46432,
+ "preview": "previews/bridge.png",
+ "from": "static/scenery/scenery.glb node bridgePhysicalFixed; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a short wooden footbridge",
+ "tags": [
+  "bridge",
+  "wood",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   11.038,
+   3.246,
+   8.301
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.5,
+   3
+  ]
+ },
+ "budgets": {
+  "triangles": 651,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 651,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 46432,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f8a658",
+     "#7c7691"
+    ],
+    "saturation": 0.911,
+    "value": 0.657,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.99
+     }
+    ],
+    "grey": 0.01
+   },
+   "trianglesPerMetre": 2.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

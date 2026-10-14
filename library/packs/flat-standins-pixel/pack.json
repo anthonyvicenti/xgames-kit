@@ -1,0 +1,85 @@
+{
+ "packVersion": 1,
+ "id": "flat-standins-pixel",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Flat pixel stand-ins",
+ "describe": "The pixel art a flat 2D game starts with (gf-flat-1): ground tiles, a side and a top body sheet, pickups.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/flat-standins-pixel/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "validators": [
+  "flat-judge"
+ ],
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#e8b828",
+    "#e84868",
+    "#4f9443",
+    "#9a6236",
+    "#6e542c",
+    "#ffe066",
+    "#754d2f",
+    "#b97c45",
+    "#3474b8",
+    "#a8784a",
+    "#5fa44a",
+    "#c2935e"
+   ],
+   "saturation": 0.479,
+   "value": 0.471,
+   "families": [
+    {
+     "hue": "brown",
+     "share": 0.261
+    },
+    {
+     "hue": "orange",
+     "share": 0.209
+    },
+    {
+     "hue": "grey",
+     "share": 0.114
+    },
+    {
+     "hue": "yellow",
+     "share": 0.103
+    },
+    {
+     "hue": "blue",
+     "share": 0.086
+    },
+    {
+     "hue": "green",
+     "share": 0.077
+    },
+    {
+     "hue": "cyan",
+     "share": 0.068
+    },
+    {
+     "hue": "red",
+     "share": 0.062
+    }
+   ],
+   "grey": 0
+  },
+  "texelsPerMetre": 16,
+  "outline": {
+   "present": false,
+   "share": 0.267
+  }
+ },
+ "assets": 15
+}

@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "folio-nature",
+ "file": "fence.glb",
+ "sha256": "840db43941f7d331fcc0c1d5b2ccfd5edb455eaa1ddad775123b2a75cf378a6a",
+ "bytes": 5196,
+ "preview": "previews/fence.png",
+ "from": "static/fences/fences.glb node fencePhysicalDynamic.001; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a short wooden fence section",
+ "tags": [
+  "fence",
+  "edge",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   2.142,
+   1.243,
+   0.736
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.8,
+   1.4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.142,
+    1.243,
+    0.736
+   ],
+   "offset": [
+    0,
+    0.622,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 5196,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f29246"
+    ],
+    "saturation": 0.869,
+    "value": 0.612,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.45,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

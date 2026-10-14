@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "body-top",
+ "pack": "flat-standins-pixel",
+ "file": "body-top.png",
+ "sha256": "4bb7334a58aae086eec8aa2084e5fb4f1402a7ae196037ba4f1ab521334a5e4f",
+ "bytes": 4442,
+ "preview": "previews/body-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): body-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a villager in a light grey tee that takes the player's colour, short brown hair, blue jeans; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "player",
+  "tint",
+  "flat",
+  "2d"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#7a4a28",
+     "#d6d6dc",
+     "#eeb88f",
+     "#452e36",
+     "#55546a",
+     "#32365e",
+     "#5f3b2f",
+     "#3f5f9a"
+    ],
+    "saturation": 0.349,
+    "value": 0.471,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.34
+     },
+     {
+      "hue": "brown",
+      "share": 0.269
+     },
+     {
+      "hue": "orange",
+      "share": 0.196
+     },
+     {
+      "hue": "blue",
+      "share": 0.155
+     },
+     {
+      "hue": "red",
+      "share": 0.036
+     }
+    ],
+    "exact": 24,
+    "grey": 0.34
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.661
+   }
+  }
+ },
+ "source": {
+  "sha256": "8ff6627ab549177c070760721ecf1e251473008ebdba413415396f2ea18e9e82",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

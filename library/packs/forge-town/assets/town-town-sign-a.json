@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-sign-a",
+ "pack": "forge-town",
+ "file": "town-town-sign-a.png",
+ "sha256": "a792b50240ce0e83ae2c20625ddad72e4e145ecd098cb50ec9df222ea1bc2468",
+ "bytes": 245,
+ "preview": "previews/town-town-sign-a.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a hanging shop sign: a wooden board on an iron bracket with a boot painted on it, no words (drawn; alpha round the board)",
+ "tags": [
+  "texture",
+  "town",
+  "sign-a",
+  "sign"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 24
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "24x24 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 24,
+     "height": 24,
+     "seeThrough": 0.406
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#32241a",
+     "#1e1e20",
+     "#d6be7e",
+     "#5e432d",
+     "#533b28",
+     "#5a412b",
+     "#62462f",
+     "#563e29"
+    ],
+    "saturation": 0.32,
+    "value": 0.28,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.69
+     },
+     {
+      "hue": "grey",
+      "share": 0.158
+     },
+     {
+      "hue": "yellow",
+      "share": 0.152
+     }
+    ],
+    "exact": 8,
+    "grey": 0.158
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

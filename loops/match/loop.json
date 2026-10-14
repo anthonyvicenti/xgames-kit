@@ -1,0 +1,120 @@
+{
+  "id": "match",
+  "name": "a match of rounds",
+  "describe": "A match of several short rounds with the rounds won counted: best of N or first to N; everything goes back to a round's start between two.",
+  "pick": "short rounds whose wins add up to the match",
+  "acts": "rounds-won",
+  "near": [
+    "round"
+  ],
+  "clock": "required",
+  "ends": "a player takes enough rounds",
+  "seats": {
+    "alone": "fill",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "rounds": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 15,
+        "default": 3,
+        "description": "The most rounds a match has (best of this many)"
+      },
+      "winsToWin": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 15,
+        "default": 0,
+        "description": "Rounds a player must win to take the match (0: more than half of rounds)"
+      },
+      "between": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 15,
+        "default": 3,
+        "description": "Seconds between two rounds, while every screen says who took the last one"
+      },
+      "textRound": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "Round {n}",
+        "description": "Banner when a round starts ({n})"
+      },
+      "textTook": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "{name} takes round {n}",
+        "description": "Banner when a round is won ({name}, {n})"
+      },
+      "textNobody": {
+        "type": "string",
+        "maxLength": 40,
+        "default": "Nobody takes round {n}",
+        "description": "Banner when nobody took a round ({n})"
+      }
+    }
+  },
+  "hooks": [
+    {
+      "name": "roundStart",
+      "on": "every copy",
+      "args": "(ctx)",
+      "when": "each round of the match starts (scores, p.data and the mechanics are back at a round's start)"
+    },
+    {
+      "name": "check",
+      "on": "host",
+      "args": "(ctx) → null | { winners: [playerId], reason }",
+      "when": "ten times a second: is this round over before its clock? The match counts the win"
+    },
+    {
+      "name": "results",
+      "on": "every copy",
+      "args": "(ctx) → [{ id, name, value }]",
+      "when": "the match is over: p.score is now the rounds each player won"
+    }
+  ],
+  "notes": [
+    "Write one short round as for a timed round; the kit plays it again, counts who took each one (ctx.match.wins(p)) and ends the match at round.params.winsToWin or after round.params.rounds.",
+    "Everything a round sets up goes in roundStart(ctx): it runs at the start of every round of the match, after scores, p.data and ctx.shared are back at their start."
+  ],
+  "promise": "Rounds are won one at a time, the match ends when someone has enough, and it plays again.",
+  "impl": {
+    "three": {
+      "by": "flow",
+      "path": "loops/match/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+            "date": "2026-10-13"
+          }
+        ]
+      },
+      "note": "flat-2d: claimed by the catalog, not run per plane"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

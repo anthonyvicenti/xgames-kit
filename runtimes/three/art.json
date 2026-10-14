@@ -1,0 +1,11 @@
+{
+ "about": "The asset library's packs this runtime's own names resolve in, in order: a world template's prop ids, a spec's body id, a default's \"library:<id>\", the voxel world's block faces. Assets live in library/packs (builder/art/views.mjs reads them); this file holds no art. A kind's preset ranks packs for open slots; this order only says which pack a bare id means when two packs use it.",
+ "packs": [
+  "kenney-platformer-kit", "kenney-nature-kit", "kenney-holiday-kit", "kenney-food-kit", "kenney-minigolf-kit", "kenney-mini-arena",
+  "kenney-mini-arcade", "kenney-mini-forest", "kenney-mini-skate", "kenney-mini-market", "kenney-furniture-kit", "kenney-fantasy-town-kit",
+  "kenney-city-kit-suburban", "kenney-city-kit-commercial", "kenney-city-kit-roads", "kenney-modular-buildings", "kenney-car-kit",
+  "kenney-survival-kit", "poly-pizza-cc-by",
+  "gf-beans", "quaternius-ual-bodies", "rocketbox-adults", "generated-bodies", "humanoid-clips",
+  "kit-textures", "xk-voxel-blocks", "gf-voxel-blocks", "kit-standins", "polyhaven"
+ ]
+}

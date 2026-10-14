@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "fireball",
+ "pack": "kenney-new-platformer-pack",
+ "file": "fireball.png",
+ "sha256": "8ea81c5ca5714a837b95c1ae790173b2933278364523d8ef3dea77733530b14e",
+ "bytes": 3164,
+ "preview": "previews/fireball.png",
+ "from": "Sprites/Tiles/Double/fireball.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "fireball",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "fireball",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#ff9935",
+     "#343440",
+     "#353540",
+     "#fe9733",
+     "#fe9834",
+     "#ef7728",
+     "#fa7f20"
+    ],
+    "saturation": 0.549,
+    "value": 0.418,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.543
+     },
+     {
+      "hue": "grey",
+      "share": 0.444
+     }
+    ],
+    "exact": 241,
+    "grey": 0.444
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "a204934dad3cc829ca70393c245ffa40b009fad3da1bc8458b008c58f1330da4",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

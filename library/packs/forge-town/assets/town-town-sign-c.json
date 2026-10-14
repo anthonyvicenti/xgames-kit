@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-sign-c",
+ "pack": "forge-town",
+ "file": "town-town-sign-c.png",
+ "sha256": "f75f59bd51c6203dfd78d2768e33cb62f7c81416929dc4c9a94ce26f43a925bf",
+ "bytes": 234,
+ "preview": "previews/town-town-sign-c.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a hanging shop sign: a wooden board on an iron bracket with a key painted on it, no words (drawn; alpha round the board)",
+ "tags": [
+  "texture",
+  "town",
+  "sign-c",
+  "sign"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 24
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "24x24 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 24,
+     "height": 24,
+     "seeThrough": 0.406
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#32241a",
+     "#1e1e20",
+     "#62462f",
+     "#5e432d",
+     "#533b28",
+     "#5a412b",
+     "#563e29",
+     "#d6be7e"
+    ],
+    "saturation": 0.312,
+    "value": 0.261,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.737
+     },
+     {
+      "hue": "grey",
+      "share": 0.158
+     },
+     {
+      "hue": "yellow",
+      "share": 0.105
+     }
+    ],
+    "exact": 9,
+    "grey": 0.158
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 8 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

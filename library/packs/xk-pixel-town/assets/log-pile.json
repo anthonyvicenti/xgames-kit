@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "log-pile",
+ "pack": "xk-pixel-town",
+ "file": "log-pile.png",
+ "sha256": "2551b18e38755dc5b9d59422d1bd85822283db4c15f6b73684d5f18652dbfe05",
+ "bytes": 363,
+ "preview": "previews/log-pile.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): log-pile.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a pile of cut logs",
+ "tags": [
+  "pixel",
+  "logs",
+  "wood",
+  "firewood",
+  "log",
+  "pile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 30
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 30
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#64402c",
+     "#dcb27c",
+     "#c89a64",
+     "#3c262d",
+     "#b98a54"
+    ],
+    "saturation": 0.423,
+    "value": 0.448,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.561
+     },
+     {
+      "hue": "brown",
+      "share": 0.263
+     },
+     {
+      "hue": "pink",
+      "share": 0.177
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "5f36949c2f69b4be8a47a82a37fdbb6781220d052b1041c96dcf5a45bd58cac2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

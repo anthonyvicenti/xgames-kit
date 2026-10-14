@@ -1,0 +1,64 @@
+{
+  "verdictVersion": 1,
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "run": "build",
+  "gates": {
+    "A": {
+      "gate": "A",
+      "ran": [
+        1,
+        2,
+        4,
+        18,
+        19
+      ],
+      "passed": [
+        1,
+        2,
+        4,
+        18,
+        19
+      ],
+      "skipped": [],
+      "ok": true
+    },
+    "D": {
+      "gate": "D",
+      "ran": [
+        6,
+        12
+      ],
+      "passed": [
+        6
+      ],
+      "skipped": [],
+      "failed": [
+        {
+          "measure": 12,
+          "detail": "a score that only ticks",
+          "rule": "every score change is matched by a counted event",
+          "fix": "count the event that scores with ctx.events.count"
+        }
+      ],
+      "ok": false
+    }
+  },
+  "judges": [
+    {
+      "measure": 23,
+      "finding": "the palette is warmer than the reference"
+    }
+  ],
+  "pass": false,
+  "failed": [
+    {
+      "gate": "D",
+      "measure": 12,
+      "detail": "a score that only ticks",
+      "rule": "every score change is matched by a counted event",
+      "fix": "count the event that scores with ctx.events.count"
+    }
+  ]
+}

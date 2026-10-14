@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-barrel-small",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-barrel-small.glb",
+ "sha256": "999f4d95b98200ee165f58b0671758184f7e52504720234b47b8598f76b7ee90",
+ "bytes": 54772,
+ "preview": "previews/dungeon-barrel-small.png",
+ "from": "barrel_small.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small wooden barrel",
+ "tags": [
+  "dungeon",
+  "barrel",
+  "wood",
+  "container",
+  "breakable",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.751,
+   0.763,
+   0.751
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.751,
+    0.763,
+    0.751
+   ],
+   "offset": [
+    0,
+    0.382,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 207,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 207,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 54772,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#9f5e48",
+     "#8b4a37",
+     "#a15f48",
+     "#a16049",
+     "#aab8be",
+     "#7f898e",
+     "#ae6c50",
+     "#a9674d"
+    ],
+    "saturation": 0.287,
+    "value": 0.508,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.529
+     },
+     {
+      "hue": "grey",
+      "share": 0.341
+     },
+     {
+      "hue": "brown",
+      "share": 0.131
+     }
+    ],
+    "grey": 0.341
+   },
+   "trianglesPerMetre": 9.68,
+   "texelsPerMetre": 53,
+   "texturedShare": 0.879,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/barrel_small.gltf.glb",
+  "sha256": "f46d0c421e46080aff079286ce9459a22da25e1b4f3489a04243f17617175212",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

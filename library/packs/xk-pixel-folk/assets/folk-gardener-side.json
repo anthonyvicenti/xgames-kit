@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "folk-gardener-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-gardener-side.png",
+ "sha256": "b12e655fec864414642e3922efa960ea6dcd8c7e591e4a44c5a1e503936bf48d",
+ "bytes": 1918,
+ "preview": "previews/folk-gardener-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-gardener-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a gardener in a green dress, long red hair; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "gardener",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#c8582c",
+     "#5aa05a",
+     "#f7cdb0",
+     "#3b4d47",
+     "#603237",
+     "#4b7751",
+     "#8a4a3c",
+     "#924532"
+    ],
+    "saturation": 0.441,
+    "value": 0.475,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.386
+     },
+     {
+      "hue": "green",
+      "share": 0.219
+     },
+     {
+      "hue": "brown",
+      "share": 0.134
+     },
+     {
+      "hue": "grey",
+      "share": 0.133
+     },
+     {
+      "hue": "red",
+      "share": 0.098
+     },
+     {
+      "hue": "pink",
+      "share": 0.03
+     }
+    ],
+    "exact": 22,
+    "grey": 0.133
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.503
+   }
+  }
+ },
+ "source": {
+  "sha256": "bec891ccafadfcdd283652c68ee5820666dd92dabe04553c97edef627566261e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

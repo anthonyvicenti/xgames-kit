@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "ground-mud",
+ "pack": "forge-textures-night",
+ "file": "ground-mud.jpg",
+ "sha256": "b8cf6efa6f4dfaf5cf7e27c7985a12d61bb018a4780363f791a80f57fe8f2e9c",
+ "bytes": 88497,
+ "preview": "previews/ground-mud.png",
+ "from": "https://polyhaven.com/a/brown_mud_rocks_01; resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.8, brightness ×0.9; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dark mud with stones and a little moss",
+ "tags": [
+  "texture",
+  "ground",
+  "mud",
+  "textures"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 30,
+    "hues": [
+     "#3d352a",
+     "#3b3328",
+     "#3d3327",
+     "#393126",
+     "#3e3428",
+     "#42382c",
+     "#443a2e",
+     "#3c3226"
+    ],
+    "saturation": 0.215,
+    "value": 0.241,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.561
+     },
+     {
+      "hue": "brown",
+      "share": 0.43
+     }
+    ],
+    "exact": 16079,
+    "grey": 0.561
+   },
+   "outline": {
+    "present": false,
+    "share": 0.468
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/brown_mud_rocks_01",
+  "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_rocks_01/brown_mud_rocks_01_diff_1k.jpg",
+  "sha256": "805675195f875f75b8f34410d8ead8b75c25643cdb2c0a8b0936d0f2698cce8c",
+  "retrieved": "2026-10-09",
+  "modified": "resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.8, brightness ×0.9; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+  "author": "Rob Tuytel"
+ }
+}

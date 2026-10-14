@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-wall-window",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-wall-window.glb",
+ "sha256": "9fe5777326a8b2b332cb77649dcd902385ce9268386c6bd074ed7fc8061c96ba",
+ "bytes": 64580,
+ "preview": "previews/dungeon-wall-window.png",
+ "from": "wall_window_open.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone wall with an open window",
+ "tags": [
+  "dungeon",
+  "wall",
+  "window",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    0.75
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 604,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 604,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 64580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#7d878b",
+     "#7f8a8f",
+     "#4b5256",
+     "#596064",
+     "#9e5d47",
+     "#4a5155",
+     "#788286",
+     "#a26149"
+    ],
+    "saturation": 0.151,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.733
+     },
+     {
+      "hue": "orange",
+      "share": 0.191
+     },
+     {
+      "hue": "brown",
+      "share": 0.067
+     }
+    ],
+    "grey": 0.733
+   },
+   "trianglesPerMetre": 4.22,
+   "texelsPerMetre": 37,
+   "texturedShare": 0.64,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_window_open.gltf.glb",
+  "sha256": "7cb4804e55bd90a4c61198b6b9c557ccb87c485b13dfad4b184c9b6d8632438f",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

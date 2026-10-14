@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "surf-far",
+ "pack": "vista-sounds",
+ "file": "surf-far.ogg",
+ "sha256": "a4c0068c83ae7752c0b666cf06548ac917aefd61bb49f970d9f19d52b4f7eaa4",
+ "bytes": 365150,
+ "preview": "previews/surf-far.png",
+ "from": "distant surf roar (cliff top) — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Distant surf (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "surf",
+  "far",
+  "loop"
+ ],
+ "use": {
+  "seconds": 52,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -19.4,
+     "samplePeakDb": -7.4,
+     "truePeakDb": -7.4,
+     "hfRatio": 0.005
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 52,
+    "peakDbfs": -7.4,
+    "soundMaxLufs": -19.4
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/chris_dagorne/sounds/426074/",
+  "author": "chris_dagorne"
+ }
+}

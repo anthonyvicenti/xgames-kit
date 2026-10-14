@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "heart",
+ "pack": "flat-standins-drawn",
+ "file": "heart.png",
+ "sha256": "72616a0894d9d6fd4eb36ad64af085b73e98e56b1f52567956ec0c232e59f46a",
+ "bytes": 1498,
+ "preview": "previews/heart.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn heart",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "heart"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ff5a7a",
+     "#2a2440",
+     "#ffc2cf",
+     "#713653",
+     "#422a46",
+     "#e75474",
+     "#b84867",
+     "#a04260"
+    ],
+    "saturation": 0.876,
+    "value": 0.603,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.828
+     },
+     {
+      "hue": "purple",
+      "share": 0.149
+     }
+    ],
+    "exact": 19,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

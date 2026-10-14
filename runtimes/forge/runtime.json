@@ -1,0 +1,294 @@
+{
+  "id": "forge",
+  "name": "forge (Rust on wgpu)",
+  "version": "0.10.0-wave8",
+  "describe": "A Rust core on wgpu, shipped as one prebuilt, hash-pinned wasm per release in two builds (WebGPU, WebGL2), with a JavaScript layer that joins the shared system. First-person and close-camera action with weight; live co-op.",
+  "for": "first-person action with weight: shooters, wave nights, roguelite runs, arena fights; co-op for 1-4 friends who see each other",
+  "rank": 2,
+  "defaultKind": "dark",
+  "says": "plays on phones and desktops: WebGPU where the browser has it, else its WebGL2 build; co-op for 1 to 4; first person only; not yet tried in an in-app browser",
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "a gaslit-street wave game passes verify --release (all gates)",
+        "date": "2026-10-12"
+      },
+      {
+        "what": "the creator played a forge game: \"honestly not bad at all in terms of quality, smoothness, and gameplay\"",
+        "date": "2026-10-10"
+      },
+      {
+        "what": "the minimal example ruin-hold: see its example.json verified",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "opened to pitches by the creator on 2026-10-13: \"We can open forge and vista.\""
+  },
+  "limits": {
+    "dimension": "3d",
+    "inputs": [
+      "keyboard-mouse",
+      "touch"
+    ],
+    "graphics": {
+      "apis": [
+        "webgpu",
+        "webgl2"
+      ],
+      "fidelity": [
+        "standard"
+      ],
+      "noApi": "the kit's open-in-another-browser screen (measure 32)"
+    },
+    "cameraRigs": [
+      "first"
+    ],
+    "cameraDefault": "first",
+    "players": {
+      "min": 1,
+      "max": 4
+    },
+    "bots": true,
+    "watch": true,
+    "voice": true,
+    "devices": {
+      "desktop": {
+        "status": "tested",
+        "evidence": [
+          {
+            "what": "the creator played forge games on their desktop",
+            "date": "2026-10-10",
+            "browser": "Chrome",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "laptop": {
+        "status": "untested"
+      },
+      "tablet": {
+        "status": "untested"
+      },
+      "phone": {
+        "status": "tested",
+        "evidence": [
+          {
+            "what": "the creator played a forge game on their phone",
+            "date": "2026-10-11",
+            "hardware": "the creator's phone"
+          }
+        ],
+        "note": "the creator's phone, browser not recorded; the creator found the HUD too large there; in-app browsers untested"
+      },
+      "x-post": {
+        "status": "emulated",
+        "note": "passes the stand-in post page (measure 24, 2026-10-12); never posted on real X"
+      }
+    },
+    "firstLoad": "the wasm core (a few MB) and its models",
+    "capabilities": [
+      "characters",
+      "first-person-weight",
+      "projectiles",
+      "melee",
+      "enemies",
+      "card-rewards",
+      "shop",
+      "revive"
+    ]
+  },
+  "toolchain": {
+    "game": [],
+    "build": [
+      {
+        "name": "rust and wasm tools",
+        "version": "see the core's toolchain file",
+        "install": "tools/install-toolchain.sh"
+      }
+    ]
+  },
+  "core": {
+    "kind": "prebuilt-wasm",
+    "pins": [
+      {
+        "name": "forge core, WebGPU build",
+        "note": "sha256 in BUILD.json"
+      },
+      {
+        "name": "forge core, WebGL2 build",
+        "note": "sha256 in BUILD.json"
+      },
+      {
+        "name": "meshopt_decoder",
+        "licence": "MIT"
+      }
+    ],
+    "licences": [
+      "wasm/LICENSES.md",
+      "library/LICENSES.json"
+    ],
+    "neverOverride": [
+      "gf/forge/wasm/",
+      "gf/forge/wasm-webgl2/",
+      "gf/forge/BUILD.json",
+      "*.wasm"
+    ]
+  },
+  "play": {
+    "by": [
+      "tables",
+      "rules"
+    ],
+    "rules": "rules.js: commands in, events out (the core simulates); health, loot, pickup and waves run on forge (components/<id>/impl/forge, kit/mechanics.js), each with a two-player fixture (tools/fixture.mjs); the others keep their params for the rules",
+    "tables": "runtimes/forge/kit/tables/index.js",
+    "loops": "the shared session's round and endless flows over the core's waves"
+  },
+  "worlds": [
+    {
+      "id": "crypt-room",
+      "describe": "a torch-lit stone room of KayKit pieces (CC0)"
+    },
+    {
+      "id": "ruins-arena",
+      "describe": "a moonlit ruined courtyard generated from world.seed"
+    },
+    {
+      "id": "town-street",
+      "describe": "a gaslit old-town street opening into a square, generated from world.seed"
+    }
+  ],
+  "looks": [
+    {
+      "id": "moonlit-ruins",
+      "times": [
+        "night"
+      ]
+    },
+    {
+      "id": "ember-crypt",
+      "times": [
+        "night"
+      ]
+    },
+    {
+      "id": "ash-storm",
+      "times": [
+        "night"
+      ]
+    },
+    {
+      "id": "gaslit-street",
+      "times": [
+        "night"
+      ]
+    }
+  ],
+  "admission": {
+    "create": {
+      "meets": "yes"
+    },
+    "slots": {
+      "meets": "yes",
+      "how": "models, textures and table values are slots; coverage from the core's instance report; roles this kit does not ship are drawn by free (CC0) stand-ins (tools/stand-ins.mjs)"
+    },
+    "multiplayer": {
+      "meets": "yes",
+      "how": "live co-op 1-4: the host's core owns the world and replays each friend's inputs; Go live and voice"
+    },
+    "hostBridge": {
+      "meets": "yes",
+      "how": "menu, HUD, wallet and economy buttons (measure 22 on forge in real time)"
+    },
+    "observation": {
+      "meets": "yes",
+      "how": "window.__game on runtimes/CONTRACT.md \u00a76: runtime/profile, events() (the core as part forge in the kit's event log), sounds(), panels(), stepped time, controls() with a real aim, screen() with fps/frameMs/api/gpu; forge's own names under forge.*"
+    },
+    "measures": {
+      "meets": "yes",
+      "how": "every round measure runs on forge (12, 35, 38, 39 since 2026-10-13); 9 (the contact sheet) on a full run; nothing skipped"
+    },
+    "examples": {
+      "meets": "partly",
+      "how": "minimal: examples/minimal/ruin-hold (free stand-in art)",
+      "gaps": [
+        "no public showcase: the gaslit-street wave game stays private"
+      ]
+    },
+    "pinned": {
+      "meets": "yes",
+      "how": "one prebuilt wasm per build per release, hashes in BUILD.json"
+    },
+    "toolchainOnDemand": {
+      "meets": "yes",
+      "how": "a game build needs nothing; agents never run cargo"
+    }
+  },
+  "measures": {
+    "build": {
+      "A": [
+        1,
+        2,
+        4,
+        18,
+        19
+      ],
+      "B": [
+        3,
+        32,
+        33
+      ],
+      "C": [
+        10,
+        13,
+        15,
+        16,
+        38
+      ],
+      "D": [
+        6,
+        12
+      ],
+      "E": [
+        5,
+        25
+      ],
+      "F": [
+        11,
+        14,
+        17,
+        35,
+        39
+      ]
+    },
+    "release": {
+      "A": [
+        8
+      ],
+      "B": [
+        20,
+        22,
+        24,
+        31
+      ],
+      "C": [
+        7,
+        21
+      ],
+      "E": [
+        34
+      ]
+    },
+    "skipped": []
+  },
+  "examples": {
+    "minimal": [
+      "ruin-hold"
+    ],
+    "showcase": [
+      "a private gaslit-street wave game (kept out of the public tree)"
+    ]
+  }
+}

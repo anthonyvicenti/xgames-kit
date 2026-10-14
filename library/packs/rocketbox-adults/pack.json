@@ -1,0 +1,75 @@
+{
+ "packVersion": 1,
+ "id": "rocketbox-adults",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Microsoft Rocketbox avatars",
+ "describe": "Realistic adult avatars from Microsoft Rocketbox, normalised onto gf-humanoid-1.",
+ "licence": {
+  "spdx": "MIT",
+  "author": "Microsoft",
+  "url": "https://github.com/microsoft/Microsoft-Rocketbox",
+  "file": "library/packs/rocketbox-adults/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/microsoft/Microsoft-Rocketbox",
+  "commit": "0943055db6ec570bcef9f2c8b41c9e5467c808f9"
+ },
+ "validators": [
+  "rig-check"
+ ],
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 52,
+   "hues": [
+    "#000000",
+    "#110906",
+    "#585858",
+    "#120a07",
+    "#2f2317",
+    "#21292b",
+    "#cacaca",
+    "#807768",
+    "#281710",
+    "#27180f",
+    "#82796a",
+    "#1e2628"
+   ],
+   "saturation": 0.272,
+   "value": 0.337,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.473
+    },
+    {
+     "hue": "brown",
+     "share": 0.237
+    },
+    {
+     "hue": "orange",
+     "share": 0.183
+    }
+   ],
+   "grey": 0.413
+  },
+  "trianglesPerMetre": 51.5,
+  "texelsPerMetre": 849,
+  "texturedShare": 1,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0
+  },
+  "proportions": "bodies: median 6.15 heads tall",
+  "body": {
+   "headsTall": 6.15,
+   "hipShare": 0.527
+  }
+ },
+ "assets": 6
+}

@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-weapon-rack",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-weapon-rack.glb",
+ "sha256": "d178478b86f47574b07377e2335731c9fa3a9be9d97aa0a94c1addee685365a8",
+ "bytes": 62420,
+ "preview": "previews/dungeon-weapon-rack.png",
+ "from": "sword_shield.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a crossed sword and shield wall trophy",
+ "tags": [
+  "dungeon",
+  "sword",
+  "shield",
+  "wall-decor",
+  "weapon",
+  "rack"
+ ],
+ "use": {
+  "size": [
+   1.674,
+   1.251,
+   0.252
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -0.837,
+   -0.611,
+   -0.063
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 542,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 542,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 62420,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#bbc6ca",
+     "#b1bec3",
+     "#b6c2c7",
+     "#8e9a9f",
+     "#6e777c",
+     "#859095",
+     "#8c979c",
+     "#788286"
+    ],
+    "saturation": 0.113,
+    "value": 0.59,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.924
+     },
+     {
+      "hue": "orange",
+      "share": 0.057
+     }
+    ],
+    "grey": 0.924
+   },
+   "trianglesPerMetre": 12.71,
+   "texelsPerMetre": 76,
+   "texturedShare": 0.909,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/sword_shield.gltf.glb",
+  "sha256": "4dc33b156a166b2c47cf3ac0344f9462946e952ee8c12945bbe6aedddf63af72",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-shopfront",
+ "pack": "forge-town",
+ "file": "town-town-shopfront.png",
+ "sha256": "4fc38b20e71801708dd87b65219e3e3a032dcc248d99bec523634ddceda61d40",
+ "bytes": 3057,
+ "preview": "previews/town-town-shopfront.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 28 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a shop front: dark green painted wood round small lamp-lit panes with goods in the window, a blank fascia board above (drawn; it glows: material glow_window)",
+ "tags": [
+  "texture",
+  "town",
+  "shopfront"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "64x48 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 64,
+     "height": 48,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#2b453a",
+     "#462c1e",
+     "#263e34",
+     "#233930",
+     "#233a31",
+     "#253c32",
+     "#294338",
+     "#273f35"
+    ],
+    "saturation": 0.407,
+    "value": 0.391,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.489
+     },
+     {
+      "hue": "cyan",
+      "share": 0.415
+     },
+     {
+      "hue": "yellow",
+      "share": 0.034
+     },
+     {
+      "hue": "brown",
+      "share": 0.033
+     },
+     {
+      "hue": "grey",
+      "share": 0.03
+     }
+    ],
+    "exact": 256,
+    "grey": 0.03
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 28 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

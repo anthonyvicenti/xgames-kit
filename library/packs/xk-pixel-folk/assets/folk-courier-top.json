@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "folk-courier-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-courier-top.png",
+ "sha256": "424b5c4ed89ac913ed202200a78ca4be03857fc74f4caf5eb0ac517ca3e0eb77",
+ "bytes": 4419,
+ "preview": "previews/folk-courier-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-courier-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a courier in an orange tee and blue jeans, a red cap; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "courier",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 21,
+    "hues": [
+     "#e8823a",
+     "#774729",
+     "#c83a3a",
+     "#6e433c",
+     "#1e1a1e",
+     "#63293c",
+     "#31345e",
+     "#2f1a10"
+    ],
+    "saturation": 0.431,
+    "value": 0.394,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.222
+     },
+     {
+      "hue": "brown",
+      "share": 0.198
+     },
+     {
+      "hue": "orange",
+      "share": 0.184
+     },
+     {
+      "hue": "blue",
+      "share": 0.156
+     },
+     {
+      "hue": "grey",
+      "share": 0.155
+     },
+     {
+      "hue": "pink",
+      "share": 0.053
+     }
+    ],
+    "exact": 28,
+    "grey": 0.155
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.659
+   }
+  }
+ },
+ "source": {
+  "sha256": "b699406943becb278460f8bf9f3fa326e81c65a3a6ab14673decebe1dbf1e89b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

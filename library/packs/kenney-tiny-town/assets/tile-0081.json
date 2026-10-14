@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0081",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0081.png",
+ "sha256": "db1fa6267af0f377a8d3bce0c8cee355b706eac6f79d646355dfe804b89c2c53",
+ "bytes": 125,
+ "preview": "previews/tile-0081.png",
+ "from": "Tiles/tile_0081.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the middle rail of a short horizontal wooden fence; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "fence",
+  "wooden",
+  "rail",
+  "middle",
+  "horizontal"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#eaa56c",
+     "#bd6c4a"
+    ],
+    "saturation": 0.428,
+    "value": 0.396,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.5
+     },
+     {
+      "hue": "orange",
+      "share": 0.5
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.818
+   }
+  }
+ },
+ "source": {
+  "sha256": "ad179a7fc3d6438202c7f2762ceb13cb6decdd44fcc40e4465bdf763fc6915cc",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

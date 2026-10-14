@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "crickets",
+ "pack": "vista-sounds",
+ "file": "crickets.ogg",
+ "sha256": "01b41d7e8fc719373f77f41f3936e8ccfdfee4aadea1a1dd1120206b2115d76c",
+ "bytes": 341489,
+ "preview": "previews/crickets.png",
+ "from": "night crickets — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Night crickets (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "crickets",
+  "loop"
+ ],
+ "use": {
+  "seconds": 45,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 35% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -21.7,
+     "samplePeakDb": -13.7,
+     "truePeakDb": -13.7,
+     "hfRatio": 0.349
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 45,
+    "peakDbfs": -13.7,
+    "soundMaxLufs": -21.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/hdfreema/sounds/333221/",
+  "author": "hdfreema"
+ }
+}

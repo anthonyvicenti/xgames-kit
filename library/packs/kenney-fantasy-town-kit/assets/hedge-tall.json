@@ -1,0 +1,122 @@
+{
+ "assetVersion": 1,
+ "id": "hedge-tall",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "hedge-tall.glb",
+ "sha256": "555d75a246301a06748ec1f48076bd1549caa453314b779e0fc535c399f61622",
+ "bytes": 19728,
+ "preview": "previews/hedge-tall.png",
+ "from": "kenney:fantasy-town-kit/hedge-large; baked to metres (x3), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tall trimmed hedge in a stone planter",
+ "tags": [
+  "nature",
+  "hedge",
+  "wall",
+  "plaza",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   1.2,
+   1.8,
+   3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.2,
+    1.8,
+    3
+   ],
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 90,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 90,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19728,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7d829c",
+     "#3d9f75",
+     "#bdc6ee",
+     "#42a579",
+     "#8d93b1",
+     "#9da4c4",
+     "#4db382",
+     "#b3bbe0"
+    ],
+    "saturation": 0.369,
+    "value": 0.573,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.31
+     },
+     {
+      "hue": "blue",
+      "share": 0.269
+     },
+     {
+      "hue": "grey",
+      "share": 0.239
+     },
+     {
+      "hue": "green",
+      "share": 0.183
+     }
+    ],
+    "grey": 0.239
+   },
+   "trianglesPerMetre": 1.98,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "f3aafd7064fcb53a1783cb04997d2f676038a55e0941bada74f39bcc7c86afd3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x3), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

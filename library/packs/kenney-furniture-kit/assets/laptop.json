@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "laptop",
+ "pack": "kenney-furniture-kit",
+ "file": "laptop.glb",
+ "sha256": "f4f56b4ad3e45b2d8c77af8315cc38d44f0cd7ab8a3fc31febb903fdac247dbd",
+ "bytes": 4712,
+ "preview": "previews/laptop.png",
+ "from": "kenney:furniture-kit/laptop; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an open laptop",
+ "tags": [
+  "office",
+  "screen",
+  "station",
+  "item",
+  "laptop"
+ ],
+ "use": {
+  "size": [
+   0.528,
+   0.324,
+   0.48
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4712,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#96a7a7",
+     "#dfeaec",
+     "#a3b6b6"
+    ],
+    "saturation": 0.116,
+    "value": 0.668,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.848
+     },
+     {
+      "hue": "cyan",
+      "share": 0.152
+     }
+    ],
+    "grey": 0.848
+   },
+   "trianglesPerMetre": 9.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "5fa8a1f4a71ab8d82ef64da77a6973ffd350c6d4557516069a4ffd4bb8d808af",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

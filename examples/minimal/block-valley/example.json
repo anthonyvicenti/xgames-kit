@@ -1,0 +1,10 @@
+{
+  "title": "Block Valley",
+  "summary": "A block world everyone shares on the blocky kind's land: biomes, caves lit by crystals and glowcaps, lakes, the hills going on into the haze; place, break and paint blocks, saved on the play host.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 16/16 (9, the contact sheet and perf, is not run for a world: frame cost is in kinds/sheets/blocky-world-record.json)",
+    "kit": "xgames-kit stream/voxel (the voxel world, the blocky kind and xk-voxel-blocks of this branch)",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from block-valley, then node builder/tools/verify.mjs <dir> --all (a build verify of a world, every build measure; 93 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\")"
+  }
+}

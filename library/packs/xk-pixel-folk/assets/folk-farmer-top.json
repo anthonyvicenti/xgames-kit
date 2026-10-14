@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "folk-farmer-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-farmer-top.png",
+ "sha256": "a6c3f9cbb4f3a33a18e5c56dc4974d96cd443d31346655589f29b998cde9012d",
+ "bytes": 4562,
+ "preview": "previews/folk-farmer-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-farmer-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a farmer in denim overalls over a red shirt, short brown hair; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "farmer",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#6b4423",
+     "#d49866",
+     "#4f6fae",
+     "#402c34",
+     "#632d3c",
+     "#373c66",
+     "#c8463a",
+     "#55372c"
+    ],
+    "saturation": 0.406,
+    "value": 0.392,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.273
+     },
+     {
+      "hue": "blue",
+      "share": 0.244
+     },
+     {
+      "hue": "orange",
+      "share": 0.196
+     },
+     {
+      "hue": "red",
+      "share": 0.113
+     },
+     {
+      "hue": "grey",
+      "share": 0.107
+     },
+     {
+      "hue": "pink",
+      "share": 0.063
+     }
+    ],
+    "exact": 24,
+    "grey": 0.107
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.817
+   }
+  }
+ },
+ "source": {
+  "sha256": "3316743d3f43c8c02757be63398d331f7c7d89fd89c1ed9c8ac047ed0be4b95b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

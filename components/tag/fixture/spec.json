@@ -1,0 +1,80 @@
+{
+  "specVersion": 2,
+  "title": "Tag Fixture",
+  "hook": "Two players to check the tag mechanic.",
+  "prompt": "mechanic fixture: tag",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "primary",
+    "interact": "use"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "most hits",
+    "replay": true
+  },
+  "world": {
+    "template": "backyard",
+    "size": "small",
+    "props": [],
+    "notes": ""
+  },
+  "mechanics": [
+    {
+      "id": "tag",
+      "as": "tag you are it",
+      "params": {
+        "its": 1,
+        "radius": 1.2,
+        "cooldown": 1,
+        "toast": false
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Hit the other player.",
+    "scoring": "+1 per hit",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [],
+  "build": [],
+  "accept": [
+    "a hit shows on both screens"
+  ],
+  "notInV1": [],
+  "content": {
+    "rating": "E"
+  }
+}

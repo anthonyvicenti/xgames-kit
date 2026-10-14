@@ -1,0 +1,7 @@
+[
+  {
+    "name": "studio-requests",
+    "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/wait.mjs\" --monitor",
+    "description": "Requests from the games.fun studio page (the fallback wait: it stays quiet unless the studio is set to use it)"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/promises/1.json",
+  "title": "Promise ledger (gf-promises/1)",
+  "description": "What a game promises a player, from the locked spec and the requirements ledger (builder/loop/promises.mjs promisesOf), and how each one was settled (settlePromises). row.<id>: a ledger row a registry part does, in the creator's words. build.<n>: spec.build item n, core, proven only by the play-tester seeing it work. control.<action>: a control does what it says. loop.closes: the loop's own promise. The kit's own standing promises (kit.*) and the creator's accept items (accept.<n>) may be added. Delivery carries every promise as proven, failed, untested or unreachable, each named; the list is never shorter than at the lock.",
+  "type": "object",
+  "required": ["schema", "spec", "promises"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "gf-promises/1" },
+    "spec": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256", "description": "The locked spec's sha256." },
+    "runtime": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id" },
+    "title": { "type": "string", "maxLength": 60 },
+    "hud": { "type": "string", "maxLength": 300, "description": "The controls line the play-tester is given." },
+    "promises": { "type": "array", "minItems": 1, "maxItems": 80, "items": { "$ref": "#/$defs/promise" } }
+  },
+  "$defs": {
+    "promise": {
+      "type": "object",
+      "required": ["id", "kind", "text", "core", "proofs"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^(row\\.[a-z0-9][a-z0-9-]{0,31}|build\\.[1-9][0-9]?|control\\.[a-z][a-zA-Z0-9]{0,23}|loop\\.closes|accept\\.[1-9][0-9]?|kit\\.[a-z][a-z0-9-]{0,31})$" },
+        "kind": { "enum": ["row", "build", "control", "loop", "accept", "kit"] },
+        "text": { "type": "string", "minLength": 1, "maxLength": 400, "description": "Plain words a player would say (a row's says the creator's words)." },
+        "row": { "type": ["string", "null"], "description": "The ledger row it serves." },
+        "core": { "type": "boolean", "description": "Part of the first-minute loop: still failing after the repair rounds, the job fails." },
+        "confirm": { "type": "boolean", "description": "Only the play-tester seeing it work proves it (every build promise)." },
+        "friends": { "type": "boolean", "description": "About friends (the ledger's players line, or a build line that serves it): proven by the play-tester only with two player-driven seats, checked against the run's own record (builder/loop/playtest.mjs twoSeats); seen with bots or alone it stays untested." },
+        "proofs": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "description": "What may prove it: a gate (gate:C), or a measure of it (gate:C/13), a test of the game's own (test:<file>), or the play-tester's own screen (play).",
+          "items": { "type": "string", "pattern": "^(gate:[A-F](/[0-9]{1,2})?|test:[a-z0-9][a-z0-9_.-]{0,60}|play)$" }
+        },
+        "where": { "enum": ["rules", "module", "engine"], "description": "build: where it is written." },
+        "how": { "type": "string", "maxLength": 300 },
+        "look": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id", "description": "build: the kind this item proves on the runtime." },
+        "action": { "type": "string", "maxLength": 24, "description": "control: the action." },
+        "keys": { "type": "string", "maxLength": 80, "description": "control: the plain words of the control." },
+        "area": { "enum": ["art", "sound", "netcode", "feel", "code"], "description": "Where a failure of it is repaired (the ladder's specialist rounds)." },
+        "heldFromLock": { "type": "boolean", "description": "The game stopped making it; it was put back as worded at the lock." },
+        "status": {
+          "enum": ["proven", "failed", "untested", "unreachable"],
+          "description": "proven: every proof that ran agrees (and a confirm promise was seen). failed: a gate it rests on failed, or the tester did not see it. untested: nothing that ran answers it (a gate this runtime skipped, a play-test that did not ask). unreachable: the tester could not get the game to where it would show; counted with failed for the outcome, named apart in the delivery."
+        },
+        "by": {
+          "type": "array",
+          "maxItems": 6,
+          "description": "Each proof's answer.",
+          "items": {
+            "type": "object",
+            "required": ["proof", "status"],
+            "additionalProperties": false,
+            "properties": {
+              "proof": { "type": "string" },
+              "status": { "enum": ["proven", "failed", "untested", "unreachable"] },
+              "note": { "type": "string", "maxLength": 600 },
+              "seats": { "type": "string", "maxLength": 40, "description": "A friends promise proven: the seats it was seen with." },
+              "ref": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/path", "description": "The verdict.json or play-test report it read." },
+              "round": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "build" } } }, "then": { "required": ["confirm"], "properties": { "core": { "const": true }, "confirm": { "const": true }, "proofs": { "contains": { "const": "play" } } } } },
+        { "if": { "required": ["status"], "properties": { "status": { "enum": ["proven", "failed", "unreachable"] } } }, "then": { "required": ["by"], "properties": { "by": { "minItems": 1 } } } }
+      ]
+    }
+  }
+}

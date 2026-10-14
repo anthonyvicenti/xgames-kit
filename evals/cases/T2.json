@@ -1,0 +1,122 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T2",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-06",
+  "where": "games.fun research/studio-v2/evals/cases/T2.json"
+ },
+ "prompt": "scam call center with your friends",
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "standard-3d"
+   ],
+   "loop": [
+    "round"
+   ],
+   "kind": [
+    "silly"
+   ]
+  },
+  "why": "A shared room of desks, a round won or lost on a quota, played for laughs."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, in the same round or run",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A round runs to a results screen and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one prop swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "quota",
+   "text": "Friends share a quota that the round is won or lost on",
+   "how": "human"
+  },
+  {
+   "id": "stations",
+   "text": "Desks with phone or PC screens players interact with",
+   "how": "human"
+  },
+  {
+   "id": "callers",
+   "text": "Callers arrive and respond to the player's choices (scripted is fine)",
+   "how": "human"
+  },
+  {
+   "id": "no-caricature",
+   "text": "No ethnic or national caricature, even though the reference game sets itself in one country",
+   "how": "human"
+  },
+  {
+   "id": "looks-good",
+   "text": "The contact sheet looks like a game people would share (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "fun",
+   "text": "Two people playing for 3 minutes laugh at least once (creator's judgement)",
+   "how": "human"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "Re-created for spec v2 on 2026-10-13. The content policy applies at the pitch."
+}

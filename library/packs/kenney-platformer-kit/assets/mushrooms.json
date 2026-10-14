@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "mushrooms",
+ "pack": "kenney-platformer-kit",
+ "file": "mushrooms.glb",
+ "sha256": "8912e12011f004b04d5905365921bb66365d811eb5725fbdde7aa5dea2cc90a4",
+ "bytes": 20732,
+ "preview": "previews/mushrooms.png",
+ "from": "kenney:platformer-kit/mushrooms; baked to metres (x1.3831), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cluster of cartoon mushrooms",
+ "tags": [
+  "nature",
+  "decor",
+  "mushrooms"
+ ],
+ "use": {
+  "size": [
+   0.722,
+   0.4,
+   0.708
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 126,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 126,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#dd5b4a",
+     "#e86147",
+     "#ec6346",
+     "#f06644",
+     "#e25d49",
+     "#e05c4a",
+     "#e2a882",
+     "#d79770"
+    ],
+    "saturation": 0.728,
+    "value": 0.616,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.772
+     },
+     {
+      "hue": "orange",
+      "share": 0.228
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 11.57,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "81971dad14f9947d70897f1f76d7b3e723b7ee3737a32274ed8cc0355ea55c66",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.3831), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

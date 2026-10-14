@@ -1,0 +1,408 @@
+{
+  "id": "godot",
+  "name": "Godot 4.6 (web export)",
+  "version": "0.1.0",
+  "describe": "Godot 4.6's web export as a full runtime: the game is a Godot project (scenes, GDScript, Godot's own 2D physics and drawing); the shared system (slots, the round and the friends, the menu, HUD and wallet, sounds, the observation) runs in the page and meets it through JavaScriptBridge once a frame.",
+  "for": "2D games (pixel and drawn: side-on stages and fields seen from above, from a gf-tilemap-1 map, gf-flat-1 bodies and pictures) and 3D arenas with gf-humanoid-1 bodies",
+  "rank": 4,
+  "defaultKind": "pixel",
+  "says": "WebGL2 compatibility rendering, one thread (no cross-origin isolation); a 37.7 MB engine file (about 9 MB compressed) on first load; 2D side-on and top-down, 3D with a follow camera; tested in headless Chrome and Firefox on a desktop and a phone emulated in Chrome, never a real phone, not Safari",
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "run 6, verify --release on every Godot example on the pixel kind's new art (the field from three's draw plan, the seat colour on the shirt only): 68-72 checks each, all passed, the shared multiplayer gate 24/24 each",
+        "ref": "runtimes/godot/evidence/2026-10-13-run6/README.md",
+        "date": "2026-10-13",
+        "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+      },
+      {
+        "what": "run 5, verify --release on every Godot example with the phone layout: 68-72 checks each, all passed, the shared multiplayer gate 24/24 each; the phone leg held upright and sideways",
+        "ref": "runtimes/godot/evidence/2026-10-13-run5/README.md",
+        "date": "2026-10-13",
+        "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+      },
+      {
+        "what": "verify --release on every Godot example (side-on, top-down, 3D, the Coin Hop showcase candidate): the six gates with the measures this runtime supplies, the shared multiplayer gate, a phone emulated in Chrome, Firefox",
+        "ref": "runtimes/godot/evidence/2026-10-13-run4/README.md",
+        "date": "2026-10-13",
+        "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+      },
+      {
+        "what": "run 1 (staging): minimal 33/33, Coin Hop 34/34, mp gate 24/24",
+        "ref": "runtimes/godot/evidence/2026-10-13-run1/README.md",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "tested by headless browsers only; nobody has played a Godot game on the kit yet. Opening it to pitches is the creator's call."
+  },
+  "profiles": [
+    {
+      "id": "2d",
+      "describe": "Godot 2D: gf-flat-1 pictures and the gf-tilemap-1 map read from slots at run time; Godot's own 2D physics; two starters: side-on (templates/2d-side, camera side, world stage) and seen from above (templates/2d-top, camera top, world field)",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "Ledge Friends (side) and Meadow Walk (top): verify --release",
+            "ref": "runtimes/godot/evidence/2026-10-13-run4/README.md",
+            "date": "2026-10-13",
+            "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+          }
+        ]
+      },
+      "renderer": "Godot 4.6 gl_compatibility (WebGL2), CanvasItem 2D",
+      "limits": {
+        "dimension": "2d",
+        "cameraRigs": [
+          "side",
+          "top"
+        ],
+        "cameraDefault": "side"
+      },
+      "loops": [
+        "round"
+      ]
+    },
+    {
+      "id": "3d",
+      "describe": "Godot 3D: an arena built from a map seen from above (templates/3d-follow, camera follow, world arena), gf-humanoid-1 bodies from the asset library (library/packs) read from a model slot at run time and played with the shared clip file through the standard's retarget (addons/gf/gf_rig_3d.gd)",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "Arena Friends: verify --release",
+            "ref": "runtimes/godot/evidence/2026-10-13-run4/README.md",
+            "date": "2026-10-13",
+            "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+          }
+        ],
+        "note": "the retarget's finger shift for rigs whose finger 1 sits in the palm is not ported"
+      },
+      "renderer": "Godot 4.6 gl_compatibility (WebGL2), 3D with a directional light and shadows",
+      "limits": {
+        "dimension": "3d",
+        "cameraRigs": [
+          "follow"
+        ],
+        "cameraDefault": "follow"
+      },
+      "loops": [
+        "round"
+      ]
+    }
+  ],
+  "limits": {
+    "devices": {
+      "desktop": {
+        "status": "emulated",
+        "evidence": [
+          {
+            "what": "verify --release on every Godot example",
+            "ref": "runtimes/godot/evidence/2026-10-13-run4/README.md",
+            "date": "2026-10-13",
+            "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver, a desktop GPU"
+          }
+        ],
+        "note": "headless Chrome and Firefox at 1280x720 on Linux; no person has played it on a desktop"
+      },
+      "laptop": {
+        "status": "untested"
+      },
+      "tablet": {
+        "status": "untested"
+      },
+      "phone": {
+        "status": "emulated",
+        "evidence": [
+          {
+            "what": "the phone leg at 390x844 and 844x390, 3x, touch: the menu fits, a tap plays, the move stick is in sight and moves the player, the buttons are the game's own actions, Jump jumps, every HUD box and control on the screen with none over another",
+            "ref": "runtimes/godot/evidence/2026-10-13-run6/README.md",
+            "date": "2026-10-13",
+            "browser": "headless Chrome (Playwright) emulating a phone"
+          }
+        ],
+        "note": "never a real phone; Safari (WebKit) could not start on the machine the runs were made on"
+      },
+      "x-post": {
+        "status": "untested"
+      }
+    },
+    "inputs": [
+      "keyboard-mouse",
+      "touch"
+    ],
+    "graphics": {
+      "apis": [
+        "webgl2"
+      ],
+      "noApi": "the kit's own screen naming what is missing, with the game's link (boot.js unsupported)",
+      "fidelity": [
+        "standard"
+      ]
+    },
+    "dimension": "2d",
+    "cameraRigs": [
+      "side",
+      "top",
+      "follow"
+    ],
+    "cameraDefault": "side",
+    "players": {
+      "min": 1,
+      "max": 8
+    },
+    "bots": true,
+    "watch": true,
+    "voice": true
+  },
+  "toolchain": {
+    "game": [
+      {
+        "name": "Godot editor (headless, Linux x86-64)",
+        "version": "4.6.stable",
+        "install": "tools/install.mjs",
+        "size": "139 MB"
+      },
+      {
+        "name": "Godot web export template (no threads)",
+        "version": "4.6.stable",
+        "install": "tools/install.mjs",
+        "size": "9.6 MB"
+      }
+    ],
+    "build": []
+  },
+  "core": {
+    "kind": "engine-export",
+    "pins": [
+      {
+        "name": "Godot editor",
+        "version": "4.6.stable",
+        "repo": "https://github.com/godotengine/godot",
+        "commit": "89cea1439",
+        "sha256": "9995532a9ddb6fc81bb510546fcb5b780175e766096f9be3e58cf403258f4898",
+        "licence": "MIT",
+        "note": "linux x86-64 binary; the archive is pinned too (toolchain/toolchain.json)"
+      },
+      {
+        "name": "Godot web template (web_nothreads_release.zip)",
+        "version": "4.6.stable",
+        "sha256": "25d12ed1dda42fe4d863d6bd78075d632b41401afb085947bb4d3865a341fd90",
+        "licence": "MIT",
+        "note": "its godot.js and godot.wasm are every game's build/game.js and build/game.wasm, byte for byte (verify measure 2)"
+      }
+    ],
+    "licences": [
+      "toolchain/LICENSES.md",
+      "toolchain/GODOT-LICENSE.txt",
+      "toolchain/GODOT-COPYRIGHT.txt"
+    ]
+  },
+  "play": {
+    "by": [
+      "scenes",
+      "rules"
+    ],
+    "rules": "GDScript in the game's Godot project (project/main.gd and its scenes) through the GF autoload; the round's rules in rules.js (ctx), which hears every GF.event",
+    "loops": "the shared session's round loop in the page; Godot keeps running its own frame beside it"
+  },
+  "worlds": [
+    {
+      "id": "stage",
+      "describe": "a side-on stage from a gf-tilemap-1 map (ground, walls, one-way ledges, spawns, marks)",
+      "profiles": [
+        "2d"
+      ]
+    },
+    {
+      "id": "field",
+      "describe": "a field seen from above from a gf-tilemap-1 map (a base kind, walls, water, paths, spawns, marks); generated from the title when the spec draws none",
+      "profiles": [
+        "2d"
+      ]
+    },
+    {
+      "id": "arena",
+      "describe": "the same kind of map built in 3D: the base kind is the ground, walls stand 2 m, water is a basin",
+      "profiles": [
+        "3d"
+      ]
+    }
+  ],
+  "looks": [],
+  "admission": {
+    "create": {
+      "meets": "yes",
+      "how": "gamesfun create (runtimes/godot/gamesfun.mjs → tools/create.mjs; the adapter create.mjs): spec v2 → config, slots, the Godot project from the starter the camera picks (2d-side, 2d-top, 3d-follow), the export; refuses only a camera, world or multiplayer mode it cannot boot"
+    },
+    "slots": {
+      "meets": "partly",
+      "how": "every picture, model and value is a slot read at run time through gf-assets (GF.texture, GF.bytes, GF.value): Studio's replaced picture and a live value change both show without a new export (verify measure 8, 2D and 3D)",
+      "gaps": [
+        "no slot-ID pass over what Godot draws: that nothing on screen comes from outside a slot is not proven (measure 4's second half)"
+      ]
+    },
+    "multiplayer": {
+      "meets": "yes",
+      "how": "gf/mp live: each copy sends its pose, Godot draws every friend where they are, in their seat colour with the page's name tag; the host owns the round, scores and ctx.shared (GF.shared); the friends page's lobby and names; Go live from the pause menu (a viewer follows the streamer with no player of its own) and voice through gf/mp (measure 34); bots alone (GfBots2D, GfBots3D)",
+      "gaps": [
+        "renaming in the waiting room not measured on godot"
+      ]
+    },
+    "hostBridge": {
+      "meets": "partly",
+      "how": "the kit's menu, HUD, pause menu, results and panels (GF.panel: choice, shop, inventory, dialogue, input) over Godot's canvas; Esc and Enter read by the page; while the kit holds input GF empties the game's input map, and alone the pause menu pauses the scene tree; touch: the kit's stick and buttons press the game's actions",
+      "gaps": [
+        "the wallet's loadouts are not drawn on Godot bodies, and gf/web3 is not added to a Godot game",
+        "release measures 22, 24, 31 not run"
+      ]
+    },
+    "observation": {
+      "meets": "partly",
+      "how": "window.__game answers every name of runtimes/CONTRACT.md §6.1 and the snapshot's fields (2D and 3D: project() through the game's camera), panels() the shared panels, the game's own block under godot (frames, view, friends, the files it read, its script errors, its own observe, the last panel answer)",
+      "gaps": [
+        "coverage() and sight() answer notYet (no slot-ID pass)",
+        "no stepped time (measures 35 and 38 run in real time)"
+      ]
+    },
+    "measures": {
+      "meets": "partly",
+      "how": "tools/verify.mjs: gates A to F with the measures below, verdict in builder/gates/verdict.schema.json; the shared multiplayer gate with --mp-gate",
+      "gaps": [
+        "skipped measures are listed with why under measures.skipped"
+      ]
+    },
+    "examples": {
+      "meets": "partly",
+      "how": "examples/minimal/godot-ledge-friends (side), godot-meadow-walk (top), godot-arena-friends (3D), each create's output from its spec; examples/showcase/godot-coin-hop (a coin grab, host-owned coins, bots that hunt coins, its own two-player test)",
+      "gaps": [
+        "the showcase has no reference game named by the creator and no person has played it"
+      ]
+    },
+    "pinned": {
+      "meets": "yes",
+      "how": "the editor and the web template by sha256 (toolchain/toolchain.json); every game's engine files held to the template's bytes and its project to its export (measure 2); Godot's licence and third-party notices beside the engine in every game"
+    },
+    "toolchainOnDemand": {
+      "meets": "yes",
+      "how": "tools/install.mjs runs only from create, export, dev and verify of a godot game; it takes the editor (71 MB archive) and pulls the 9.6 MB template out of Godot's 1.25 GB archive by HTTP range requests, each checked by sha256; a 3D Godot game also installs the 3D tools' packages once (gltf-transform, meshoptimizer) to decode its body and clips"
+    }
+  },
+  "measures": {
+    "build": {
+      "A": [
+        1,
+        2,
+        4,
+        18,
+        19
+      ],
+      "B": [
+        3,
+        20
+      ],
+      "C": [
+        13
+      ],
+      "D": [
+        6
+      ],
+      "E": [
+        5,
+        25,
+        34
+      ],
+      "F": [
+        14,
+        17,
+        35
+      ]
+    },
+    "release": {
+      "A": [
+        8
+      ],
+      "B": [
+        20
+      ],
+      "E": [
+        5
+      ]
+    },
+    "skipped": [
+      {
+        "measure": 9,
+        "why": "contact sheet and frame cost: the capture tool drives three.js scenes; a Godot capture with frame times is not written"
+      },
+      {
+        "measure": 22,
+        "why": "the wallet in the menu: the kit's own, not run on godot yet"
+      },
+      {
+        "measure": 24,
+        "why": "inside a post on X: not tried with a Godot export"
+      },
+      {
+        "measure": 31,
+        "why": "sharp on every screen: the canvas is Godot's (device pixels); not measured"
+      },
+      {
+        "measure": 32,
+        "why": "the no-WebGL2 screen is written (boot.js) but not driven by a browser without WebGL2"
+      },
+      {
+        "measure": 7,
+        "why": "audio gate: gf-audio plays every sound, so the kit's loudness gate applies unchanged, but it was not run on a Godot game"
+      },
+      {
+        "measure": 10,
+        "why": "fair play: nothing in the starter knocks a player down"
+      },
+      {
+        "measure": 15,
+        "why": "the loop is alive (a slot-ID sight pass): not built for godot"
+      },
+      {
+        "measure": 16,
+        "why": "hits read: nothing is hit in the starter"
+      },
+      {
+        "measure": 21,
+        "why": "the HUD shows your state: not run per release on godot"
+      },
+      {
+        "measure": 38,
+        "why": "every event answered: GF events are in events() but the answered-on-screen check is the gf-three boot's"
+      },
+      {
+        "measure": 12,
+        "why": "scores come from counted events: events() logs scores and game events, but the one-to-one trace is not wired"
+      },
+      {
+        "measure": 11,
+        "why": "set dressing: the stage is the map; no props are laid out from the spec"
+      },
+      {
+        "measure": 39,
+        "why": "hits per kill: nothing is hit"
+      }
+    ]
+  },
+  "examples": {
+    "minimal": [
+      "examples/minimal/godot-ledge-friends",
+      "examples/minimal/godot-meadow-walk",
+      "examples/minimal/godot-arena-friends"
+    ],
+    "showcase": [
+      "examples/showcase/godot-coin-hop"
+    ]
+  }
+}

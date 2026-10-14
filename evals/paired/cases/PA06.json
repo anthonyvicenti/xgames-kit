@@ -1,0 +1,93 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA06",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "frozen-case",
+  "case": "T6",
+  "verbatim": false,
+  "where": "games.fun research/studio-v2/evals/cases/T6.json (frozen 2026-10-10)",
+  "restated": "T6 asks for a game like a private reference game by its name. Restated here as what that case's checklist holds the game to, without the name (it may not appear in public files) and without engine words. The case as written is evals/cases/T6.json, whose prompt is kept privately"
+ },
+ "prompt": "A first-person co-op shooter for me and up to three friends on our phones, at night in moonlit ruins with fog, firelight and a grainy old look. It should feel heavy: guns that kick and flash, a dodge, a quick melee. Waves of creatures crawl out of the ground and grow every wave, between waves you pick one of three cards that changes how you fight, and it ends with one huge boss.",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "perspective",
+   "core": true,
+   "words": "A first-person co-op shooter",
+   "means": "Seen through the player's eyes, a weapon in hand",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "feel",
+   "core": true,
+   "words": "It should feel heavy: guns that kick and flash, a dodge, a quick melee",
+   "means": "Each gun kicks and flashes, there is a dodge and a quick melee, and moving and stopping have weight",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "turns",
+   "core": true,
+   "words": "Waves of creatures crawl out of the ground and grow every wave",
+   "means": "Enemies rise from the ground in waves that grow, and show a tell before they hit",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "turns",
+   "core": true,
+   "words": "between waves you pick one of three cards that changes how you fight",
+   "means": "Between waves each player picks one card of three, and it changes how they fight for the rest of the run",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "goal",
+   "core": true,
+   "words": "it ends with one huge boss",
+   "means": "The run ends with one huge enemy with its own health bar: won when it falls, lost when everyone has",
+   "source": "prompt"
+  },
+  {
+   "id": "r6",
+   "about": "feel",
+   "core": true,
+   "words": "at night in moonlit ruins with fog, firelight and a grainy old look",
+   "means": "Dark moonlit ruins, fog and firelight, a retro grain",
+   "source": "prompt"
+  },
+  {
+   "id": "r7",
+   "about": "devices",
+   "core": true,
+   "words": "on our phones",
+   "means": "It plays on phones with touch controls",
+   "source": "prompt"
+  },
+  {
+   "id": "r8",
+   "about": "players",
+   "core": true,
+   "words": "for me and up to three friends",
+   "means": "Two to four friends play the same run together",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [
+  "The private reference game's name and names never reach the game"
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

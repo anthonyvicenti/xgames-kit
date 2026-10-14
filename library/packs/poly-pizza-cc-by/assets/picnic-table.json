@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "picnic-table",
+ "pack": "poly-pizza-cc-by",
+ "file": "picnic-table.glb",
+ "sha256": "97db8dc3205bec2601f89ecc490b4143ca82f083fc490fcf0f25991b79c4fdb1",
+ "bytes": 18472,
+ "preview": "previews/picnic-table.png",
+ "from": "polypizza:GQieALI2C4; baked to metres (x0.88731), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden picnic table with a checked cloth",
+ "tags": [
+  "backyard",
+  "table",
+  "cover",
+  "picnic"
+ ],
+ "use": {
+  "size": [
+   1.668,
+   0.9,
+   1.346
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.668,
+    0.9,
+    1.346
+   ],
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 832,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 832,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 18472,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#997857",
+     "#c54a4a",
+     "#e7e7e7"
+    ],
+    "saturation": 0.27,
+    "value": 0.543,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.709
+     },
+     {
+      "hue": "red",
+      "share": 0.145
+     },
+     {
+      "hue": "grey",
+      "share": 0.145
+     }
+    ],
+    "grey": 0.145
+   },
+   "trianglesPerMetre": 9.05,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "J-Toastie",
+  "url": "https://poly.pizza/m/GQieALI2C4",
+  "credit": "\"Picnic Table\" by J-Toastie, CC BY 3.0 (https://poly.pizza/m/GQieALI2C4)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/GQieALI2C4",
+  "download": "https://static.poly.pizza/83c41a82-88f3-4bc5-a77e-769ba6337626.glb",
+  "sha256": "d6df1c5d89ed8e207faf5a1bbe39864ad94d3fbeaa3ef2c992ddb4672f5e497d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.88731), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "J-Toastie"
+ }
+}

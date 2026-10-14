@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "blood-mist",
+ "pack": "forge-fx",
+ "file": "blood-mist.png",
+ "sha256": "30e11987be6979d5986ef58af0703e964a6673541aa0cc17088f20441a0b7cd9",
+ "bytes": 20536,
+ "preview": "previews/blood-mist.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a dark red mist puff",
+ "tags": [
+  "fx",
+  "blood",
+  "mist"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#8b0808",
+     "#8a0808",
+     "#8c0808",
+     "#890808",
+     "#8d0808",
+     "#880808",
+     "#870808",
+     "#8e0808"
+    ],
+    "saturation": 0.89,
+    "value": 0.286,
+    "families": [
+     {
+      "hue": "red",
+      "share": 1
+     }
+    ],
+    "exact": 20,
+    "grey": 0
+   },
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "packVersion": 1,
+ "id": "kenney-mini-skate",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Mini Skate (1.2)",
+ "describe": "Kenney's mini skate: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/mini-skate",
+  "file": "library/packs/kenney-mini-skate/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/mini-skate",
+  "download": "https://kenney.nl/media/pages/assets/mini-skate/00b0c2b304-1709221152/kenney_mini-skate.zip",
+  "sha256": "82582f6de507e93090c16bb4802a7c361015fe246eddd571e6e96f816b12e8c6",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#646a81",
+    "#c3704e",
+    "#99a0c0",
+    "#5d637b",
+    "#d47e59",
+    "#cc7853",
+    "#c87451",
+    "#d07b56",
+    "#a0a8c9",
+    "#de875f",
+    "#7e849b",
+    "#d7815b"
+   ],
+   "saturation": 0.507,
+   "value": 0.557,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.481
+    },
+    {
+     "hue": "grey",
+     "share": 0.379
+    },
+    {
+     "hue": "blue",
+     "share": 0.141
+    }
+   ],
+   "grey": 0.677
+  },
+  "trianglesPerMetre": 1.23,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 2,
+ "validators": [
+  "budget"
+ ]
+}

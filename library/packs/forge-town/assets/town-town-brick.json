@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-brick",
+ "pack": "forge-town",
+ "file": "town-town-brick.png",
+ "sha256": "ba1fb382c1c6766cfeca6036d5c92ab3086b4bdda22ccade2da621f3f9d1ceca",
+ "bytes": 9241,
+ "preview": "previews/town-town-brick.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "sooty red-brown brick, 25 cm by 12.5 cm in running bond, pale mortar; tiles; 3 m across",
+ "tags": [
+  "texture",
+  "town",
+  "brick"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#332f2c",
+     "#47413a",
+     "#4a433c",
+     "#48413b",
+     "#49423c",
+     "#48423b",
+     "#34302d",
+     "#453f38"
+    ],
+    "saturation": 0.234,
+    "value": 0.281,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.507
+     },
+     {
+      "hue": "grey",
+      "share": 0.374
+     },
+     {
+      "hue": "red",
+      "share": 0.095
+     }
+    ],
+    "exact": 256,
+    "grey": 0.374
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.347
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

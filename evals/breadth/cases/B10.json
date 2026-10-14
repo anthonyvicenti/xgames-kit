@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B10",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "open-world",
+  "rank": 10,
+  "row": "Open-world action / adventure",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a big beautiful open land to explore on horseback, find old ruins with treasure in them, and fight huge beasts that roam around",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "big-land",
+   "type": "world",
+   "must": "a large land to roam"
+  },
+  {
+   "id": "horse",
+   "type": "body",
+   "must": "a horse to ride"
+  },
+  {
+   "id": "ruins",
+   "type": "world",
+   "must": "ruins with treasure to find"
+  },
+  {
+   "id": "beasts",
+   "type": "mechanic",
+   "must": "huge roaming beasts to fight"
+  },
+  {
+   "id": "beautiful",
+   "type": "feel",
+   "must": "a beautiful, scenic look"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

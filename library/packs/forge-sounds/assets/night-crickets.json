@@ -1,0 +1,60 @@
+{
+ "assetVersion": 1,
+ "id": "night-crickets",
+ "pack": "forge-sounds",
+ "file": "night-crickets.ogg",
+ "sha256": "7d172ece9db1a025ae38ce8f60529a3755a98c11f9bc3588f3af9decb8fd34be",
+ "bytes": 69759,
+ "preview": "previews/night-crickets.png",
+ "from": "https://opengameart.org/content/crickets-ambient-noise-loopable crickets_1.mp3; cut to 0.5-8.1 s of the source, made a seamless 7 s loop (the last 0.6 s cross-faded into the start, equal power), downmixed to mono, resampled to 44.1 kHz, gain 7.3 dB (integrated toward -26 LUFS), encoded Ogg Vorbis…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "night wind and crickets (loop) (night crickets)",
+ "tags": [
+  "sounds",
+  "night",
+  "crickets",
+  "ambient"
+ ],
+ "use": {
+  "seconds": 7.001,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 44% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -22.5,
+     "samplePeakDb": -14.8,
+     "truePeakDb": -14.6,
+     "hfRatio": 0.435
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 7.001,
+    "peakDbfs": -14.8,
+    "soundMaxLufs": -22.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/crickets-ambient-noise-loopable",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.5-8.1 s of the source, made a seamless 7 s loop (the last 0.6 s cross-faded into the start, equal power), downmixed to mono, resampled to 44.1 kHz, gain 7.3 dB (integrated toward -26 LUFS), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "Wolfgang_ (Ted Kerr) (OpenGameArt)"
+ }
+}

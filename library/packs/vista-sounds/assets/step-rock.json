@@ -1,0 +1,55 @@
+{
+ "assetVersion": 1,
+ "id": "step-rock",
+ "pack": "vista-sounds",
+ "file": "step-rock.ogg",
+ "sha256": "82b0a1bb6344b982c789988d99d9d324493ea0a1e7fd1668c0ca2081e8895157",
+ "bytes": 21541,
+ "preview": "previews/step-rock.png",
+ "from": "5 steps, stone",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Footstep: rock",
+ "tags": [
+  "coast",
+  "calm",
+  "step",
+  "rock"
+ ],
+ "use": {
+  "seconds": 3.02,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -18.7,
+     "samplePeakDb": -0.8,
+     "truePeakDb": -0.8,
+     "hfRatio": 0.003
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 3.02,
+    "peakDbfs": -0.8,
+    "soundMaxLufs": -18.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/SecureSubset/sounds/813622/",
+  "author": "SecureSubset"
+ }
+}

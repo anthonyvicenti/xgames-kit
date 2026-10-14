@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Backers",
+  "prompt": "Players stake our game token and earn SOL from 20% of every item sale in the shop.",
+  "currency": "sol",
+  "tokens": [
+    { "key": "sol", "source": "sol" },
+    { "key": "game", "source": "curve", "name": "Backer", "symbol": "BACK", "decimals": 6, "venue": "games.fun" }
+  ],
+  "collection": { "name": "Backers" },
+  "items": [
+    { "key": "cape", "name": "Cape", "price": 0.1, "split": [{ "to": "pool:stakers", "percent": 20 }] },
+    { "key": "crown", "name": "Crown", "price": 0.5, "rarity": "Epic", "supply": 50, "split": [{ "to": "pool:stakers", "percent": 20 }] }
+  ],
+  "pools": [{ "key": "stakers", "currency": "sol", "about": "20% of every sale, shared by everyone who stakes BACK." }],
+  "stakes": [{ "key": "backers", "name": "Back the game", "stakes": "game", "rewards": "stakers", "lock": "1d" }],
+  "scenario": { "days": 30, "perDay": { "item:cape": 30, "item:crown": 2, "stake:backers": 10 }, "staked": { "backers": 500000 } }
+}

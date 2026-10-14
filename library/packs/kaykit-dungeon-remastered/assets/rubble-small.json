@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "rubble-small",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "rubble-small.glb",
+ "sha256": "15dbddc77af5e626d09ca0c149ba1b18f6596058ace933adc222075709b94ff1",
+ "bytes": 15916,
+ "preview": "previews/rubble-small.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small heap of rubble",
+ "tags": [
+  "ruins",
+  "rubble",
+  "small"
+ ],
+ "use": {
+  "size": [
+   3,
+   2.625,
+   2.25
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1.5,
+   0,
+   -1.125
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    2.625,
+    2.25
+   ],
+   "offset": [
+    0,
+    1.313,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 390,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 390,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#5c4f47",
+     "#544841",
+     "#65574e",
+     "#6d5f58",
+     "#736358"
+    ],
+    "saturation": 0.126,
+    "value": 0.331,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.37,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/rubble_half.gltf.glb",
+  "sha256": "7514ccbda643c13d5a782579e4f01ee6402eec5519590d3f048d396cdaedec24",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

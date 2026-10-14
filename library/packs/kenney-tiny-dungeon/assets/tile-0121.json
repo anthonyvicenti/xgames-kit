@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0121",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0121.png",
+ "sha256": "1b52d30e252e73fed08be674b92a394ec85cf59cbdab001007ee34ac30936e68",
+ "bytes": 264,
+ "preview": "previews/tile-0121.png",
+ "from": "Tiles/tile_0121.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a pale grey ghost",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "ghost",
+  "spirit",
+  "spectre",
+  "undead",
+  "grey"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4"
+    ],
+    "saturation": 0.261,
+    "value": 0.47,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.535
+     },
+     {
+      "hue": "blue",
+      "share": 0.465
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.896
+   }
+  }
+ },
+ "source": {
+  "sha256": "28466ec899a6e0720f40e4f622aee5925d2e5c50b2409856f36ef65c7eedc532",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

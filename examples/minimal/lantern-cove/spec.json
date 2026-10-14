@@ -1,0 +1,185 @@
+{
+  "specVersion": 2,
+  "title": "Lantern Cove",
+  "hook": "Fish off a quiet island pier as the sun goes down, sell what you land, and fill the logbook with friends.",
+  "prompt": "An original calm fishing game of our own on the vista runtime: walk out along an island pier at sunset with friends, cast, land fish, sell the catch and buy better tackle",
+  "runtime": "vista",
+  "loop": "round",
+  "kind": "calm",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "primary": "cast, strike and reel",
+    "interact": "board the boat, trade at a stall"
+  },
+  "round": {
+    "seconds": 900,
+    "winBy": "Land four different kinds of fish before the evening is over.",
+    "replay": true
+  },
+  "world": {
+    "template": "islands",
+    "islands": [
+      {
+        "name": "Lantern Cove",
+        "seed": 4127,
+        "words": {
+          "size": "medium",
+          "shape": "twin",
+          "coast": "coves",
+          "river": "yes",
+          "village": "hamlet",
+          "houses": "timber",
+          "sand": "golden",
+          "time": "sunset"
+        }
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "species": {
+      "sergeant": {
+        "name": "Banded perch",
+        "habitat": [
+          "pier",
+          "reef"
+        ],
+        "minKg": 0.1,
+        "maxKg": 0.35,
+        "value": 6
+      },
+      "grunt": {
+        "name": "Blue-lined grunt",
+        "habitat": [
+          "pier",
+          "reef"
+        ],
+        "minKg": 0.3,
+        "maxKg": 1.2,
+        "value": 7
+      },
+      "yellowtail": {
+        "name": "Sunset snapper",
+        "habitat": [
+          "reef",
+          "pier",
+          "bay"
+        ],
+        "minKg": 0.4,
+        "maxKg": 1.6,
+        "value": 12
+      },
+      "jack": {
+        "name": "Pier runner",
+        "habitat": [
+          "pier",
+          "bay"
+        ],
+        "minKg": 1,
+        "maxKg": 9,
+        "value": 6
+      }
+    },
+    "gear": {
+      "line-0": {
+        "name": "Light line",
+        "kind": "line",
+        "price": 0,
+        "lineKg": 7
+      },
+      "line-1": {
+        "name": "Braided line",
+        "kind": "line",
+        "price": 40,
+        "lineKg": 14
+      },
+      "reel-0": {
+        "name": "Basic reel",
+        "kind": "reel",
+        "price": 0,
+        "reelSpeed": 1.1
+      },
+      "reel-1": {
+        "name": "Smooth reel",
+        "kind": "reel",
+        "price": 60,
+        "reelSpeed": 1.6
+      },
+      "rod-0": {
+        "name": "Short rod",
+        "kind": "rod",
+        "price": 0,
+        "castM": 22
+      },
+      "hold-0": {
+        "name": "Cooler",
+        "kind": "hold",
+        "price": 0,
+        "holdKg": 30
+      }
+    },
+    "vendors": {
+      "buyer": {
+        "name": "The fish stall",
+        "greeting": "Fresh off the pier? Let's weigh it."
+      },
+      "shop": {
+        "name": "The tackle hut",
+        "greeting": "Line, reels and bait for the evening."
+      }
+    },
+    "economy": {
+      "startMoney": 20,
+      "fuelPrice": 2
+    },
+    "start": "pier"
+  },
+  "rules": {
+    "summary": "Walk out along the pier at sunset, cast from the pier head, the beach or the boat, land fish, sell them at the fish stall and buy better tackle. The evening ends when one of you has landed four different kinds of fish.",
+    "scoring": "+1 for every fish landed",
+    "params": {
+      "goalSpecies": 4
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see each other as people in their own colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "sunset-glow"
+  },
+  "build": [],
+  "accept": [
+    "the sunset over the sea looks like a real coast",
+    "you can walk the pier, cast and land a fish",
+    "friends see each other on the pier",
+    "the island is a place of its own (its own coast, peaks, river mouth and village), never the reference island"
+  ],
+  "notInV1": [
+    "a shared boat ride (each player's boat is their own)",
+    "a catch journal that lasts between sessions"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "A calm fishing evening on an island: no violence, no names of any real game, person or place."
+  }
+}

@@ -1,0 +1,203 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "bench": {
+   "origin": "gf-three library props/bench.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.668
+      },
+      {
+       "hue": "blue",
+       "share": 0.283
+      },
+      {
+       "hue": "grey",
+       "share": 0.049
+      }
+     ],
+     "grey": 0.049,
+     "lightness": 0.601,
+     "saturation": 0.445,
+     "top": [
+      {
+       "colour": "#b86747",
+       "share": 0.235
+      },
+      {
+       "colour": "#d17c57",
+       "share": 0.235
+      },
+      {
+       "colour": "#c6724f",
+       "share": 0.099
+      },
+      {
+       "colour": "#be6c4b",
+       "share": 0.099
+      },
+      {
+       "colour": "#989fbf",
+       "share": 0.065
+      },
+      {
+       "colour": "#b6bfe5",
+       "share": 0.063
+      },
+      {
+       "colour": "#abb3d6",
+       "share": 0.057
+      },
+      {
+       "colour": "#a6add0",
+       "share": 0.05
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.65,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 160,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 22580,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "present": {
+   "origin": "gf-three library props/present.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 10,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.594
+      },
+      {
+       "hue": "red",
+       "share": 0.25
+      },
+      {
+       "hue": "grey",
+       "share": 0.155
+      }
+     ],
+     "grey": 0.155,
+     "lightness": 0.808,
+     "saturation": 0.353,
+     "top": [
+      {
+       "colour": "#cecee0",
+       "share": 0.179
+      },
+      {
+       "colour": "#e6e6ef",
+       "share": 0.145
+      },
+      {
+       "colour": "#d8d8e7",
+       "share": 0.103
+      },
+      {
+       "colour": "#d3d3e4",
+       "share": 0.094
+      },
+      {
+       "colour": "#f7f7fa",
+       "share": 0.089
+      },
+      {
+       "colour": "#eaeaf2",
+       "share": 0.066
+      },
+      {
+       "colour": "#c54246",
+       "share": 0.055
+      },
+      {
+       "colour": "#e34e43",
+       "share": 0.054
+      }
+     ]
+    },
+    "trianglesPerMetre": 13.38,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 238,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 22944,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 2,
+   "paletteSize": 10,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.439
+    },
+    {
+     "hue": "orange",
+     "share": 0.334
+    },
+    {
+     "hue": "red",
+     "share": 0.125
+    },
+    {
+     "hue": "grey",
+     "share": 0.102
+    }
+   ],
+   "lightness": 0.808,
+   "saturation": 0.445,
+   "trianglesPerMetre": 13.38,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.155
+  },
+  "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
+ }
+}

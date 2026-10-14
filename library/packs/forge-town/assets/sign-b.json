@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "sign-b",
+ "pack": "forge-town",
+ "file": "sign-b.glb",
+ "sha256": "b291d258d870b32c6cf2e724949561390bef812a8d8f4448d0d7e5d53011e737",
+ "bytes": 1636,
+ "preview": "previews/sign-b.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-sign-b.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a hanging shop sign, 0.75 m: a painted board on an iron bracket, standing out from the wall at its back (z = 0); alpha mask, seen from both sides",
+ "tags": [
+  "town",
+  "sign",
+  "b"
+ ],
+ "use": {
+  "size": [
+   0,
+   0.75,
+   0.75
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   0,
+   0,
+   0.07
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 2,
+  "textures": 1,
+  "textureMax": 24,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 1636,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#d6be7e",
+     "#533b28"
+    ],
+    "saturation": 0.434,
+    "value": 0.454,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.5
+     },
+     {
+      "hue": "brown",
+      "share": 0.5
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.89,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-sign-b.png) inside",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "ball",
+ "pack": "kit-standins",
+ "file": "ball.glb",
+ "sha256": "31dbb456cc0e118b91fed390c2c21fdc28d9e9b65ee0d29cd6fb801f4e5ea0dd",
+ "bytes": 20332,
+ "preview": "previews/ball.png",
+ "from": "games.fun (baked by tools/lib/standin-bake.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "prop stand-in for a ball",
+ "tags": [
+  "ball"
+ ],
+ "use": {
+  "size": [
+   0.44,
+   0.44,
+   0.44
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 1008,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1008,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 20332,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#e8483f"
+    ],
+    "saturation": 0.786,
+    "value": 0.578,
+    "families": [
+     {
+      "hue": "red",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 40.87,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://games.fun",
+  "author": "games.fun (baked by tools/lib/standin-bake.mjs)"
+ }
+}

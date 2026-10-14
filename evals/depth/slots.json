@@ -1,0 +1,304 @@
+{
+ "schema": "xgk-eval-depth-slots/1",
+ "set": "depth",
+ "frozen": "2026-10-13",
+ "about": "One showcase slot per kind. Each slot offers two or three reference games for the creator to name one. Game facts are from memory unless DESIGN gives a number and its source; check them before the creator picks. The creator's choice, the showcase prompt and every result are added as new files (choices/, records/), never by editing this one.",
+ "slots": [
+  {
+   "kind": "silly",
+   "look": "toon low-poly, pastel, bright light, physics bodies that flop",
+   "likely": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "run or round"
+   },
+   "candidates": [
+    {
+     "name": "Peak",
+     "year": 2025,
+     "what": "co-op climbing up a mountain with floppy bodies, stamina and items",
+     "players": "1-4 online",
+     "whyFair": "the best-selling silly co-op game of 2025 (7 million copies, DESIGN \"Initial kinds\"); short sessions that fit a browser slice",
+     "caveat": "its fun comes from physics climbing, which the kit would build in the game"
+    },
+    {
+     "name": "R.E.P.O.",
+     "year": 2025,
+     "what": "co-op physics: carry fragile loot out of a haunted house with wobbly robots",
+     "players": "1-6 online",
+     "whyFair": "16.4 million copies (DESIGN); the silly side of co-op horror; friends as visible characters is the whole joke",
+     "caveat": "part horror, so it pulls toward the lofi kind"
+    },
+    {
+     "name": "Chained Together",
+     "year": 2024,
+     "what": "players chained to each other climb out of a pit; one falls, all fall",
+     "players": "1-4 online",
+     "whyFair": "one rule, readable in seconds; a clean test of silly bodies and shared fate",
+     "caveat": "mostly one long climb; less to compare on look"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "blocky",
+   "look": "flat-shaded blocks, voxel or block avatars, saturated colours",
+   "likely": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "world or saved"
+   },
+   "candidates": [
+    {
+     "name": "Grow a Garden",
+     "year": 2025,
+     "what": "plant, grow, sell and steal crops on your own plot in a shared server",
+     "players": "a Roblox server",
+     "whyFair": "21.6 million concurrent players in July 2025 (DESIGN); the blocky look as most players know it now",
+     "caveat": "its pull is a saved economy over days, which a short blind session cannot show"
+    },
+    {
+     "name": "Steal a Brainrot",
+     "year": 2025,
+     "what": "buy creatures, defend your base, steal others' creatures",
+     "players": "a Roblox server",
+     "whyFair": "25.4 million concurrent (DESIGN); blocky avatars and bases",
+     "caveat": "meme characters; a blind player may know it at once"
+    },
+    {
+     "name": "Minecraft",
+     "year": 2011,
+     "what": "build and survive in a world of blocks",
+     "players": "1-many",
+     "whyFair": "the origin of the block look; the yardstick for crisp block faces (T5's block-world line)",
+     "caveat": "older than 2023 and a reference everyone knows, so it is never blind"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "lofi",
+   "look": "low polygons, low-resolution textures, dithering, vertex wobble, cel-shaded grime",
+   "likely": {
+    "runtime": "forge or three (with the lofi post pass)",
+    "profile": null,
+    "loop": "run"
+   },
+   "candidates": [
+    {
+     "name": "Lethal Company",
+     "year": 2023,
+     "what": "co-op scavenging on moons for a company quota while things hunt you",
+     "players": "1-4 online",
+     "whyFair": "the start of the lofi lineage: 100,000 concurrent in its first month, more than 10 million copies by January 2024 (DESIGN)",
+     "caveat": "its voice chat and proximity horror are a big part of the feel"
+    },
+    {
+     "name": "Content Warning",
+     "year": 2024,
+     "what": "co-op: film scary things with a camera to go viral",
+     "players": "1-4 online",
+     "whyFair": "short sessions, cheap on purpose, a clear lofi look",
+     "caveat": "the filming idea is its own mechanic"
+    },
+    {
+     "name": "Buckshot Roulette",
+     "year": 2023,
+     "what": "a tense table game with a shotgun and items, later with multiplayer",
+     "players": "1-4",
+     "whyFair": "one room, one table: a tight slice where look and tension carry everything",
+     "caveat": "turns at a table, not movement; the multiplayer mode came later"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "scenic",
+   "look": "painterly stylised 3D: a house material, living grass, fog, a day cycle",
+   "likely": {
+    "runtime": "three",
+    "profile": "scenic-3d",
+    "loop": "run"
+   },
+   "candidates": [
+    {
+     "name": "Hades II",
+     "year": 2025,
+     "what": "an action roguelike seen from above: rooms, boons, bosses",
+     "players": "single player",
+     "whyFair": "painterly 3D look, a run of rooms and a boss: close to T4's request",
+     "caveat": "single player; drawn-over 3D rather than a living world"
+    },
+    {
+     "name": "Tunic",
+     "year": 2022,
+     "what": "a small fox explores a stylised island seen from a high three-quarter camera",
+     "players": "single player",
+     "whyFair": "the reference for the camera and the painterly island look",
+     "caveat": "single player; older than 2023"
+    },
+    {
+     "name": "Valheim",
+     "year": 2021,
+     "what": "co-op survival in a stylised northern world with fog and a day cycle",
+     "players": "1-10 online",
+     "whyFair": "co-op in a scenic world with weather and light",
+     "caveat": "survival crafting brings in systems a showcase slice would only sample"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "dark",
+   "look": "grim fantasy: moonlit ruins, embers, ash",
+   "likely": {
+    "runtime": "forge",
+    "profile": null,
+    "loop": "run"
+   },
+   "candidates": [
+    {
+     "name": "the private first-person reference game",
+     "year": null,
+     "what": "the first-person co-op game the forge runtime's measured feel targets came from (named in the private notes)",
+     "players": "co-op",
+     "whyFair": "forge was built to play and feel like it, and its feel targets are already measured",
+     "caveat": "not public: it can be played blind only on this machine, and its name stays out of public records"
+    },
+    {
+     "name": "Elden Ring Nightreign",
+     "year": 2025,
+     "what": "three-player co-op runs on a shrinking map with bosses",
+     "players": "1-3 online",
+     "whyFair": "the 2025 dark co-op run with bosses",
+     "caveat": "a third-person action game from a big studio; an unfair look comparison in a short slice"
+    },
+    {
+     "name": "Dark and Darker",
+     "year": 2023,
+     "what": "first-person dungeon raids, PvPvE, extract with loot",
+     "players": "1-3 per team",
+     "whyFair": "first-person dark fantasy with weight",
+     "caveat": "PvP extraction loop; its fun needs other teams"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "calm",
+   "look": "photoreal light, sea and sky; the place is the point",
+   "likely": {
+    "runtime": "vista",
+    "profile": null,
+    "loop": "world or saved"
+   },
+   "candidates": [
+    {
+     "name": "Tidewater",
+     "year": null,
+     "what": "a calm photoreal coast with fishing and boats; MIT, its WebGPU core is the vista runtime's (credited)",
+     "players": "see its repository",
+     "whyFair": "the vista runtime's own reference; a look pack of matched shots exists (T7)",
+     "caveat": "our runtime runs its core, so it measures what we add more than the renderer"
+    },
+    {
+     "name": "Dredge",
+     "year": 2023,
+     "what": "fishing from a small boat among islands, with something wrong in the water",
+     "players": "single player",
+     "whyFair": "fishing and boats; calm by day",
+     "caveat": "single player; stylised rather than photoreal, and horror at night"
+    },
+    {
+     "name": "Webfishing",
+     "year": 2024,
+     "what": "hang out and fish with friends in a small lofi world",
+     "players": "1-12 online",
+     "whyFair": "fishing with friends: 10,000 concurrent in its first week (DESIGN)",
+     "caveat": "its look is cheap and cosy, not photoreal"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "pixel",
+   "look": "2D pixel art, 16 texels a metre, at most 32 colours a picture",
+   "likely": {
+    "runtime": "three or godot",
+    "profile": "flat-2d",
+    "loop": "saved or world"
+   },
+   "candidates": [
+    {
+     "name": "Stardew Valley",
+     "year": 2016,
+     "what": "farm, fish, mine and make friends in a pixel-art town",
+     "players": "1-4 online co-op (more since later updates)",
+     "whyFair": "still the reference for pixel art people play together",
+     "caveat": "a long saved game; older than 2023"
+    },
+    {
+     "name": "Core Keeper",
+     "year": 2024,
+     "what": "co-op mining and building underground, seen from above",
+     "players": "1-8 online",
+     "whyFair": "pixel art with lighting, co-op from the start",
+     "caveat": "survival crafting systems"
+    },
+    {
+     "name": "Balatro",
+     "year": 2024,
+     "what": "poker hands in a roguelike deck builder",
+     "players": "single player",
+     "whyFair": "a pixel look with juice that holds attention on a still screen",
+     "caveat": "single player and turn-based: friends would be a new thing"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  },
+  {
+   "kind": "drawn",
+   "look": "2D hand-drawn and cartoon, 128 texels a metre",
+   "likely": {
+    "runtime": "three or godot",
+    "profile": "flat-2d",
+    "loop": "run or round"
+   },
+   "candidates": [
+    {
+     "name": "Cuphead",
+     "year": 2017,
+     "what": "run-and-gun boss fights in a 1930s cartoon style",
+     "players": "1-2 local co-op",
+     "whyFair": "the reference for a hand-drawn look in motion",
+     "caveat": "frame-by-frame animation is the bar; older than 2023"
+    },
+    {
+     "name": "Slay the Spire 2",
+     "year": 2026,
+     "what": "a deck-building roguelike, with co-op",
+     "players": "single player and co-op",
+     "whyFair": "568,884 concurrent at its peak (DESIGN)",
+     "caveat": "turns and cards: movement and feel are about the cards"
+    },
+    {
+     "name": "Hollow Knight: Silksong",
+     "year": 2025,
+     "what": "a hand-drawn action platformer in a large connected world",
+     "players": "single player",
+     "whyFair": "the 2025 reference for drawn art and feel",
+     "caveat": "single player; very long"
+    }
+   ],
+   "reference": null,
+   "prompt": null
+  }
+ ]
+}

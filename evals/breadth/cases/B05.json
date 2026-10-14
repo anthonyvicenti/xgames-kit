@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B05",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "collect-hatch-train",
+  "rank": 5,
+  "row": "Collect / hatch / train simulator",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a cute pixel art game where you catch little critters around a meadow, keep them in your collection, level them up and battle your friends' critters. it should remember my critters next time I play",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "catch",
+   "type": "mechanic",
+   "must": "catching critters found around the meadow"
+  },
+  {
+   "id": "collection",
+   "type": "panel",
+   "must": "a collection screen of the critters a player owns"
+  },
+  {
+   "id": "level-battle",
+   "type": "mechanic",
+   "must": "critters level up and battle other players' critters"
+  },
+  {
+   "id": "saved",
+   "type": "loop",
+   "must": "the collection is still there next time"
+  },
+  {
+   "id": "pixel",
+   "type": "feel",
+   "must": "pixel art"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

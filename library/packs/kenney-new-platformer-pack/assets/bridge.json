@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "bridge",
+ "pack": "kenney-new-platformer-pack",
+ "file": "bridge.png",
+ "sha256": "f49857372ee3171262d137cb2c49c5a8672bbc75e4d153b6f1967180fac94a7b",
+ "bytes": 1954,
+ "preview": "previews/bridge.png",
+ "from": "Sprites/Tiles/Double/bridge.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "bridge",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "bridge",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#fa9f72",
+     "#bd6341",
+     "#343440",
+     "#353540",
+     "#c96d46",
+     "#c56944"
+    ],
+    "saturation": 0.513,
+    "value": 0.484,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.68
+     },
+     {
+      "hue": "grey",
+      "share": 0.318
+     }
+    ],
+    "exact": 52,
+    "grey": 0.318
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "be1ead5f09f19611d3707367592d7a87df131f19f27d50f755be8c3a26a1eff0",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

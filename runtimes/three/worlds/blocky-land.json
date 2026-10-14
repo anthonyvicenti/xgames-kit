@@ -1,0 +1,37 @@
+{
+  "about": "The blocky kind's world preset: the voxel world (worlds/voxel) used as a world, not a game. Generated land to every edge and on past it into the haze: plains, forests, birch woods, taiga, snow, desert and mountains, caves with ore and glowcaps, lit by the sun and by lamps (light.mjs), the kit's own pixel faces (library pack xk-voxel-blocks). The size and the spawn square are the default world's (create protects the square before the kind is applied). Merged over the voxel world's default.json by create (spec world.template 'voxel', world.voxel from this file). No seed here: each game's land is seeded from its title (the sheet and the bench draw the generator's default seed). The world store stays local unless the game asks for a world that stays (loop 'world').",
+  "template": "voxel",
+  "voxel": {
+    "faces": {
+      "size": 32,
+      "filter": "pixel"
+    },
+    "light": {
+      "cave": 0.06,
+      "block": 1.4,
+      "spread": 1.8,
+      "caveLight": {
+        "color": "#5a74a0",
+        "strength": 0.07
+      },
+      "haze": [
+        14,
+        1
+      ],
+      "caveFog": "#141c28"
+    },
+    "terrain": {
+      "generator": 2,
+      "kind": "land",
+      "water": 30,
+      "ground": 34,
+      "hills": 10,
+      "mountains": 0.5,
+      "trees": 1,
+      "plants": 1.2,
+      "caves": 1,
+      "ores": 1,
+      "far": 56
+    }
+  }
+}

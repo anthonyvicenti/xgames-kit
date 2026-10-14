@@ -1,0 +1,302 @@
+{
+  "about": "What a published game may carry (creator-studio lib/publish-scan.mjs; the same file is gamesfun-kit tests/fixtures/publish-scan-cases.json for the kit's builder/lib/publish/scan.mjs). The game's backend.json carries public keys only. Key-shaped values are written in parts and joined by the tests, so this file itself holds no key a scanner would flag. {jwt: role} makes a signed-looking token with that role claim; {jwt: null} one with no role.",
+  "cases": [
+    {
+      "name": "a Supabase anon key in gamesfun.json",
+      "path": "gamesfun.json",
+      "text": [
+        "{\"backend\":{\"anonKey\":\"",
+        {
+          "jwt": "anon"
+        },
+        "\"}}"
+      ],
+      "refused": false
+    },
+    {
+      "name": "a Supabase anon key assigned to apiKey",
+      "path": "main.js",
+      "text": [
+        "const apiKey = \"",
+        {
+          "jwt": "anon"
+        },
+        "\";"
+      ],
+      "refused": false
+    },
+    {
+      "name": "a Supabase publishable key",
+      "path": "main.js",
+      "text": [
+        "const SUPABASE_API_KEY = '",
+        "sb_",
+        "publishable_",
+        "AbCdEfGhIjKlMnOpQrStUv12",
+        "';"
+      ],
+      "refused": false
+    },
+    {
+      "name": "a Supabase service-role key",
+      "path": "rules.js",
+      "text": [
+        "const key = '",
+        {
+          "jwt": "service_role"
+        },
+        "';"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a user's own session token",
+      "path": "config/game.json",
+      "text": [
+        "{\"t\":\"",
+        {
+          "jwt": "authenticated"
+        },
+        "\"}"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a token with no role",
+      "path": "main.js",
+      "text": [
+        "x='",
+        {
+          "jwt": null
+        },
+        "'"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a Supabase secret key",
+      "path": "main.js",
+      "text": [
+        "const k = '",
+        "sb_",
+        "secret_",
+        "AbCdEfGhIjKlMnOpQrStUv12",
+        "';"
+      ],
+      "refused": true
+    },
+    {
+      "name": "an Anthropic key",
+      "path": "notes.md",
+      "text": [
+        "key: ",
+        "sk-",
+        "ant-",
+        "api03-AbCdEfGhIjKlMnOpQrStUvWxYz0123"
+      ],
+      "refused": true
+    },
+    {
+      "name": "an AWS access key",
+      "path": "config/aws.json",
+      "text": [
+        "{\"id\":\"",
+        "AKIA",
+        "ABCDEFGHIJKLMNOP",
+        "\"}"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a Stripe secret key",
+      "path": "main.js",
+      "text": [
+        "s='",
+        "sk_",
+        "live_",
+        "AbCdEfGhIjKlMnOpQr",
+        "'"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a password assigned a literal",
+      "path": "rules.js",
+      "text": [
+        "const DB_PASSWORD = \"",
+        "hunter2hunter2hunter2",
+        "\";"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a private key block",
+      "path": "server.txt",
+      "text": [
+        "-----BEGIN ",
+        "PRIVATE KEY-----\nabc\n"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a games.fun publish token",
+      "path": "main.js",
+      "text": [
+        "t='",
+        "gfk_",
+        "AbCdEfGhIjKlMnOpQrStUvWxYz0123456789abcdefg",
+        "'"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a wallet keypair file by name",
+      "path": "deploy.keypair.json",
+      "text": [
+        "[]"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a .env file",
+      "path": "config/.env",
+      "text": [
+        "A=1"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a .env.local file",
+      "path": ".env.local",
+      "text": [
+        "A=1"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a 64-byte keypair array",
+      "path": "data/k.json",
+      "text": [
+        "[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64]"
+      ],
+      "refused": true
+    },
+    {
+      "name": "an ordinary game file",
+      "path": "rules.js",
+      "text": [
+        "export default { setup(ctx) { ctx.ui.goal('Collect the coins'); } };"
+      ],
+      "refused": false
+    },
+    {
+      "name": "a public wallet address",
+      "path": "gamesfun.json",
+      "text": [
+        "{\"economy\":{\"live\":{\"game\":\"",
+        "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+        "\"}}}"
+      ],
+      "refused": false
+    },
+    {
+      "name": "backend.json with a Supabase anon key",
+      "path": "backend.json",
+      "text": [
+        "{\"version\":1,\"provider\":\"supabase\",\"url\":\"https://abcdefgh.supabase.co\",\"key\":\"",
+        {
+          "jwt": "anon"
+        },
+        "\",\"origins\":[\"https://abcdefgh.supabase.co\"]}"
+      ],
+      "refused": false
+    },
+    {
+      "name": "backend.json with a publishable key",
+      "path": "backend.json",
+      "text": [
+        "{\"key\":\"",
+        "sb_",
+        "publishable_",
+        "AbCdEfGhIjKlMnOpQrStUv12",
+        "\"}"
+      ],
+      "refused": false
+    },
+    {
+      "name": "a Supabase access token",
+      "path": "notes.md",
+      "text": [
+        "token ",
+        "sbp_",
+        "0123456789abcdef0123456789abcdef01234567"
+      ],
+      "refused": true
+    },
+    {
+      "name": "a database address with a password",
+      "path": "server.js",
+      "text": [
+        "const db = 'postgres",
+        "ql://postgres:",
+        "s3cretpass",
+        "@db.abcdefgh.supabase.co:5432/postgres';"
+      ],
+      "refused": true
+    }
+  ],
+  "origins": [
+    {
+      "value": "https://abcdefgh.supabase.co",
+      "ok": "https://abcdefgh.supabase.co"
+    },
+    {
+      "value": "wss://abcdefgh.supabase.co",
+      "ok": "wss://abcdefgh.supabase.co"
+    },
+    {
+      "value": "https://api.example-game.com:8443",
+      "ok": "https://api.example-game.com:8443"
+    },
+    {
+      "value": "https://abcdefgh.supabase.co/",
+      "ok": "https://abcdefgh.supabase.co"
+    },
+    {
+      "value": "http://abcdefgh.supabase.co",
+      "ok": null
+    },
+    {
+      "value": "https://*.supabase.co",
+      "ok": null
+    },
+    {
+      "value": "https://abcdefgh.supabase.co/rest/v1",
+      "ok": null
+    },
+    {
+      "value": "https://127.0.0.1",
+      "ok": null
+    },
+    {
+      "value": "https://localhost:3000",
+      "ok": null
+    },
+    {
+      "value": "https://user:pw@abcdefgh.supabase.co",
+      "ok": null
+    },
+    {
+      "value": "https://ABCDEFGH.supabase.co",
+      "ok": "https://abcdefgh.supabase.co"
+    },
+    {
+      "value": "data:text/plain,hi",
+      "ok": null
+    },
+    {
+      "value": "http://127.0.0.1:54321",
+      "ok": null
+    }
+  ]
+}

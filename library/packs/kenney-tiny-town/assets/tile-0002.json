@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0002",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0002.png",
+ "sha256": "f143d6b3f927c9c678797f22f5043b4fe05dad19eb333d454f04b816f65a9996",
+ "bytes": 275,
+ "preview": "previews/tile-0002.png",
+ "from": "Tiles/tile_0002.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "green grass ground with small yellow and white flowers",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "ground",
+  "grass",
+  "flowers",
+  "meadow",
+  "fill",
+  "yellow"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#84c669",
+     "#fdbe53",
+     "#65a556",
+     "#e38628",
+     "#ffffff"
+    ],
+    "saturation": 0.504,
+    "value": 0.607,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.813
+     },
+     {
+      "hue": "orange",
+      "share": 0.156
+     },
+     {
+      "hue": "grey",
+      "share": 0.031
+     }
+    ],
+    "exact": 5,
+    "grey": 0.031
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ea524c6974ad6203f46a3e68a360883d0d53dbbdaa237f6cd81ac6fd5be6ea7c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

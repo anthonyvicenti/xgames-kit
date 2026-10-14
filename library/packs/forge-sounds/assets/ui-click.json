@@ -1,0 +1,55 @@
+{
+ "assetVersion": 1,
+ "id": "ui-click",
+ "pack": "forge-sounds",
+ "file": "ui-click.ogg",
+ "sha256": "adcd1f4adc35f1b41bc1b5bbefeff7aa44f2f3f0d96d3199b544140c7c1e761c",
+ "bytes": 4275,
+ "preview": "previews/ui-click.png",
+ "from": "https://kenney.nl/assets/interface-sounds Audio/click_002.ogg; unmodified",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "menu click (ui click)",
+ "tags": [
+  "sounds",
+  "ui",
+  "click"
+ ],
+ "use": {
+  "seconds": 0.012,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -23.5,
+     "samplePeakDb": -0.8,
+     "truePeakDb": -0.8,
+     "hfRatio": 0.024
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.012,
+    "peakDbfs": -0.8,
+    "soundMaxLufs": -23.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/interface-sounds",
+  "retrieved": "2026-10-09",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

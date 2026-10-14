@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tile-ground",
+ "pack": "flat-standins-pixel",
+ "file": "tile-ground.png",
+ "sha256": "ffb822f111d995f6d7e1c308e92a3610051461ed574d1acfdc418ead97aa6bd4",
+ "bytes": 534,
+ "preview": "previews/tile-ground.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-ground.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "side-on ground: a grass lip over dirt (cap, fill)",
+ "tags": [
+  "pixel",
+  "ground",
+  "grass",
+  "dirt",
+  "side",
+  "flat",
+  "2d",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#754d2f",
+     "#8a5a35",
+     "#9f6a3d",
+     "#5fa44a",
+     "#a9958b",
+     "#96827a",
+     "#94cc63",
+     "#78b956"
+    ],
+    "saturation": 0.401,
+    "value": 0.381,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.699
+     },
+     {
+      "hue": "green",
+      "share": 0.152
+     },
+     {
+      "hue": "grey",
+      "share": 0.084
+     },
+     {
+      "hue": "orange",
+      "share": 0.064
+     }
+    ],
+    "exact": 10,
+    "grey": 0.084
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.011
+   }
+  }
+ },
+ "source": {
+  "sha256": "de308934391275a50273882bdef1292318a1dde4e1334844575bf763cf184047",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

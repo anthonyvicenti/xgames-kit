@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-grunt",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-grunt.glb",
+ "sha256": "87fd5c69bd5e13a231476587f4cfaf69e95888d4f4acf5759af168329e5ddece",
+ "bytes": 119572,
+ "preview": "previews/skeleton-grunt.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a bare bone-white skeleton in a ragged cloak, glowing eyes (the chaser)",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "chaser",
+  "kaykit",
+  "bodies",
+  "grunt"
+ ],
+ "use": {
+  "size": [
+   1.454,
+   1.625,
+   0.684
+  ],
+  "height": 1.625,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/forge-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 5288,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)",
+     "model judge, right leg: getup_front at 1.2 s: its edges stretch or crush ×7.3 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.625,
+     "triangles": 5288,
+     "joints": 22,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 23,
+    "hues": [
+     "#d8ab80",
+     "#d6a778",
+     "#deba96",
+     "#e1be9d",
+     "#e5c8ab",
+     "#dbb186",
+     "#dcb58f",
+     "#e7ceb4"
+    ],
+    "saturation": 0.462,
+    "value": 0.629,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.867
+     },
+     {
+      "hue": "grey",
+      "share": 0.12
+     }
+    ],
+    "grey": 0.12
+   },
+   "trianglesPerMetre": 8.8,
+   "texelsPerMetre": 59,
+   "texturedShare": 0.65,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Minion.glb",
+  "sha256": "6ffc003f895bed0b074791e0e490846210a2e2f8fc7da300aba53cc185f95968",
+  "retrieved": "2026-10-09",
+  "modified": "held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm, lowerarm.l→LeftForeArm, wrist.l→LeftHand…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0082",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0082.png",
+ "sha256": "bb816b72d3271f1597eede64f782f254ec00b342a224a863b36e53680161e38e",
+ "bytes": 335,
+ "preview": "previews/tile-0082.png",
+ "from": "Tiles/tile_0082.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a wooden barrel with iron hoops",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "barrel",
+  "cask",
+  "wooden",
+  "container",
+  "storage"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#eaa56c",
+     "#8b9bb4"
+    ],
+    "saturation": 0.371,
+    "value": 0.485,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.38
+     },
+     {
+      "hue": "orange",
+      "share": 0.35
+     },
+     {
+      "hue": "blue",
+      "share": 0.27
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.826
+   }
+  }
+ },
+ "source": {
+  "sha256": "2efb31e30cd6f1527329fe5d7704e41c65a8376d498bf93372f46155600420c9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,1449 @@
+{
+  "about": "K3 economy evals with a real agent (builder/web3/economy/evals/run.mjs): each case a fresh copy of the kit, a game from coin-hop, one headless Claude Code session given the case sentence alone (model: the default), the kit MCP server and skills for that session only, then score.mjs. \"standard\" is the kit as it ships; \"heldOut\" (--holdout) removes the case own reference/fixture and its cases.json entry from the copy first. Live: three held-out economies put live on devnet through economyFlow with the test-creator key standing in for the creator wallet (builder/web3/economy/evals/live.mjs). Transcripts are not committed (about 3 MB a run).",
+  "date": "2026-10-11",
+  "headline": {
+    "standard": "20 of 20",
+    "heldOut": [
+      "19 of 20",
+      "19 of 20"
+    ],
+    "live": "3 of 3"
+  },
+  "findings": [
+    "As the kit ships, the answer is in reach: economy_examples lists every eval reference and fixture with its prompt (an eval prompt word for word, and an `eval` field naming the case), and in all 20 standard sessions the agent fetched that case own reference by name (3 of 20 saved it unchanged apart from its name, prompt and scenario). So 20 of 20 measures finding the example, not composing an economy. The held-out runs are the fairer number.",
+    "Held out, 19 of 20 pass, the same 19 in two runs. e17-stud-farm fails both times on one check (\"breeding pays about 5 to the stud holder\": a recipe input paying to holder:<address>). The program pays a holder only by naming one collectible address; the prompt gives none, no stud exists before going live, and the skill says never guess an address. Both agents said so plainly and chose the nearest thing (fees into a pool, paid out by a decision the creator signs, with per-stud recipes once studs exist). The check needs an address the sentence does not give: a check too strict for the prompt, not a misleading tool. cases.json is frozen (change only by a new case id), so it was left as it is.",
+    "e01 coin flip (known ambiguous): no question can be answered in a headless run (the runner tells the session so, and to choose and say what it chose). All three runs kept the reading as written (2% to stakers + 10% to the lottery, 88% back) and told the creator plainly that players keep 88%, not 98%. The case accepts that reading (return 80 to 99%, feeds 1-5% stake and 5-15% lottery); the other reading (98% back, the pot from tickets alone) would fail its lottery-feed check.",
+    "No skill or tool text misled an agent in these runs, so nothing in skills/gamesfun-economy or builder/mcp/tools/economy.mjs was changed. Every session saved with economy_save, none called economy_publish (none was asked to put it live; going live needs the creator wallet in the studio page by design). The only denials were the web3 picture tools in the first pilot (now allowed: read-only)."
+  ],
+  "standard": {
+    "passed": 20,
+    "of": 20,
+    "costUsd": 7.7,
+    "cases": [
+      {
+        "id": "e01-coin-flip-arena",
+        "pass": true,
+        "checks": "11/11",
+        "seconds": 28,
+        "costUsd": 0.319,
+        "turns": 10,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_check",
+          "economy_simulate",
+          "economy_explain",
+          "economy_cost",
+          "economy_save",
+          "economy_cost"
+        ]
+      },
+      {
+        "id": "e02-mystery-box-drop",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 37,
+        "costUsd": 0.383,
+        "turns": 13,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "web3_list_pictures",
+          "economy_catalog",
+          "economy_catalog",
+          "economy_catalog",
+          "economy_check",
+          "economy_save",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e03-hat-shop",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 24,
+        "costUsd": 0.307,
+        "turns": 11,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "web3_list_pictures",
+          "web3_player_looks",
+          "economy_examples",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e04-daily-lottery",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 25,
+        "costUsd": 0.277,
+        "turns": 9,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e05-stake-to-earn",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 29,
+        "costUsd": 0.361,
+        "turns": 13,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "Read",
+          "web3_player_looks",
+          "economy_catalog",
+          "economy_check",
+          "economy_save",
+          "economy_simulate",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e06-merge-tiers",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 42,
+        "costUsd": 0.424,
+        "turns": 12,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_catalog",
+          "economy_check",
+          "Grep",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e07-spark-pity",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 70,
+        "costUsd": 0.599,
+        "turns": 14,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_catalog",
+          "economy_check",
+          "Grep",
+          "economy_check",
+          "economy_catalog",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e08-halving-seasons",
+        "pass": true,
+        "checks": "9/9",
+        "seconds": 29,
+        "costUsd": 0.339,
+        "turns": 10,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_check",
+          "economy_save",
+          "economy_simulate",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e09-duel-stakes",
+        "pass": true,
+        "checks": "9/9",
+        "seconds": 40,
+        "costUsd": 0.551,
+        "turns": 13,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_catalog",
+          "Grep",
+          "economy_check",
+          "Read",
+          "economy_check",
+          "economy_save",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e10-token-2022-box",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 34,
+        "costUsd": 0.345,
+        "turns": 13,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_catalog",
+          "economy_examples",
+          "web3_player_looks",
+          "web3_list_pictures",
+          "economy_check",
+          "economy_simulate",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e11-pump-coin-shop",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 22,
+        "costUsd": 0.277,
+        "turns": 11,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_catalog",
+          "economy_examples",
+          "web3_list_pictures",
+          "economy_check",
+          "economy_save",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e12-scorched-treasury",
+        "pass": true,
+        "checks": "7/7",
+        "seconds": 37,
+        "costUsd": 0.473,
+        "turns": 9,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e13-sacrifice-raffle",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 38,
+        "costUsd": 0.38,
+        "turns": 9,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_check",
+          "economy_save",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e14-falling-price",
+        "pass": true,
+        "checks": "7/7",
+        "seconds": 35,
+        "costUsd": 0.423,
+        "turns": 11,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_check",
+          "economy_games",
+          "economy_explain",
+          "economy_cost",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e15-level-ladder",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 27,
+        "costUsd": 0.324,
+        "turns": 9,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e16-plinko",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 28,
+        "costUsd": 0.233,
+        "turns": 8,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_check",
+          "economy_simulate",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e17-stud-farm",
+        "pass": true,
+        "checks": "9/9",
+        "seconds": 42,
+        "costUsd": 0.433,
+        "turns": 12,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_catalog",
+          "Grep",
+          "Grep",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e18-starforce",
+        "pass": true,
+        "checks": "9/9",
+        "seconds": 31,
+        "costUsd": 0.35,
+        "turns": 9,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "Read",
+          "economy_examples",
+          "economy_check",
+          "economy_explain",
+          "economy_save"
+        ]
+      },
+      {
+        "id": "e19-weekly-ladder",
+        "pass": true,
+        "checks": "8/8",
+        "seconds": 29,
+        "costUsd": 0.454,
+        "turns": 11,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_check",
+          "economy_save",
+          "economy_simulate",
+          "economy_cost",
+          "economy_explain"
+        ]
+      },
+      {
+        "id": "e20-founder-passes",
+        "pass": true,
+        "checks": "9/9",
+        "seconds": 28,
+        "costUsd": 0.448,
+        "turns": 12,
+        "calls": [
+          "Skill",
+          "economy_examples",
+          "economy_catalog",
+          "economy_examples",
+          "economy_check",
+          "economy_simulate",
+          "economy_simulate",
+          "economy_explain",
+          "economy_cost",
+          "economy_save"
+        ]
+      }
+    ]
+  },
+  "heldOut": [
+    {
+      "passed": 19,
+      "of": 20,
+      "costUsd": 9.84,
+      "meta": {
+        "startedAt": "2026-10-12T04:27:37.614Z",
+        "kit": {
+          "commit": "e3ba721",
+          "changed": [
+            "?? tests/economy-evals-run.test.mjs",
+            "?? builder/web3/economy/evals/live.mjs",
+            "?? builder/web3/economy/evals/run.mjs"
+          ]
+        },
+        "claude": "2.1.296 (Claude Code)",
+        "model": "the default",
+        "options": {
+          "holdout": true,
+          "example": "coin-hop",
+          "parallel": 4,
+          "timeoutMin": 25,
+          "maxTurns": 60,
+          "budgetUsd": 10
+        },
+        "appended": "This is a non-interactive run: nobody reads your questions or answers them before the session ends. When something is unclear, choose, and say what you chose. The game is games/<id> (made from a kit example; it has no economy yet)."
+      },
+      "cases": [
+        {
+          "id": "e01-coin-flip-arena",
+          "pass": true,
+          "checks": "11/11",
+          "seconds": 55,
+          "costUsd": 0.597,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "Read",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save",
+            "economy_cost"
+          ],
+          "leaks": [
+            ".agents/skills/gamesfun-economy/references/sentence-to-spec.md",
+            ".claude/skills/gamesfun-economy/references/sentence-to-spec.md",
+            "skills/gamesfun-economy/references/sentence-to-spec.md"
+          ]
+        },
+        {
+          "id": "e02-mystery-box-drop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 48,
+          "costUsd": 0.463,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "web3_list_pictures",
+            "economy_catalog",
+            "economy_check",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e03-hat-shop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 22,
+          "costUsd": 0.292,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "web3_list_pictures",
+            "web3_player_looks",
+            "economy_examples",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e04-daily-lottery",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 26,
+          "costUsd": 0.301,
+          "turns": 9,
+          "calls": [
+            "Skill",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e05-stake-to-earn",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 38,
+          "costUsd": 0.399,
+          "turns": 14,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "Glob",
+            "Read",
+            "web3_player_looks",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e06-merge-tiers",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 51,
+          "costUsd": 0.521,
+          "turns": 18,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "economy_check",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_check",
+            "economy_save",
+            "economy_simulate",
+            "economy_explain",
+            "economy_cost"
+          ]
+        },
+        {
+          "id": "e07-spark-pity",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 65,
+          "costUsd": 0.654,
+          "turns": 14,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e08-halving-seasons",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 47,
+          "costUsd": 0.507,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e09-duel-stakes",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 62,
+          "costUsd": 0.684,
+          "turns": 20,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "Grep",
+            "Grep",
+            "Grep",
+            "Grep",
+            "Grep",
+            "Read",
+            "Grep",
+            "Read",
+            "economy_check",
+            "Grep",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e10-token-2022-box",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 30,
+          "costUsd": 0.333,
+          "turns": 12,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "web3_player_looks",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e11-pump-coin-shop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 29,
+          "costUsd": 0.346,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e12-scorched-treasury",
+          "pass": true,
+          "checks": "7/7",
+          "seconds": 67,
+          "costUsd": 0.618,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_cost",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e13-sacrifice-raffle",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 47,
+          "costUsd": 0.601,
+          "turns": 16,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "web3_list_pictures",
+            "economy_check",
+            "economy_save",
+            "economy_explain",
+            "economy_simulate"
+          ]
+        },
+        {
+          "id": "e14-falling-price",
+          "pass": true,
+          "checks": "7/7",
+          "seconds": 27,
+          "costUsd": 0.381,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "Grep",
+            "Read",
+            "web3_list_pictures",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e15-level-ladder",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 39,
+          "costUsd": 0.375,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_simulate",
+            "economy_cost",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e16-plinko",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 50,
+          "costUsd": 0.399,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e17-stud-farm",
+          "pass": false,
+          "checks": "8/9",
+          "failed": [
+            "breeding pays about 5 to the stud's holder: 0 of recipes match"
+          ],
+          "seconds": 75,
+          "costUsd": 0.734,
+          "turns": 16,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "Grep",
+            "Read",
+            "Grep",
+            "Read",
+            "Grep",
+            "economy_check",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e18-starforce",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 86,
+          "costUsd": 0.732,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "Grep",
+            "economy_catalog",
+            "economy_check",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e19-weekly-ladder",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 42,
+          "costUsd": 0.413,
+          "turns": 12,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_check",
+            "economy_explain",
+            "economy_simulate",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e20-founder-passes",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 41,
+          "costUsd": 0.492,
+          "turns": 10,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        }
+      ]
+    },
+    {
+      "passed": 19,
+      "of": 20,
+      "costUsd": 10.01,
+      "meta": {
+        "startedAt": "2026-10-12T04:32:36.549Z",
+        "kit": {
+          "commit": "e3ba721",
+          "changed": [
+            "?? tests/economy-evals-run.test.mjs",
+            "?? builder/web3/economy/evals/live.mjs",
+            "?? builder/web3/economy/evals/run.mjs"
+          ]
+        },
+        "claude": "2.1.296 (Claude Code)",
+        "model": "the default",
+        "options": {
+          "holdout": true,
+          "example": "coin-hop",
+          "parallel": 4,
+          "timeoutMin": 25,
+          "maxTurns": 60,
+          "budgetUsd": 10
+        },
+        "appended": "This is a non-interactive run: nobody reads your questions or answers them before the session ends. When something is unclear, choose, and say what you chose. The game is games/<id> (made from a kit example; it has no economy yet)."
+      },
+      "cases": [
+        {
+          "id": "e01-coin-flip-arena",
+          "pass": true,
+          "checks": "11/11",
+          "seconds": 44,
+          "costUsd": 0.495,
+          "turns": 18,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "Grep",
+            "Read",
+            "economy_check",
+            "economy_simulate",
+            "economy_save",
+            "economy_explain",
+            "economy_cost"
+          ],
+          "leaks": [
+            ".agents/skills/gamesfun-economy/references/sentence-to-spec.md",
+            ".claude/skills/gamesfun-economy/references/sentence-to-spec.md",
+            "skills/gamesfun-economy/references/sentence-to-spec.md"
+          ]
+        },
+        {
+          "id": "e02-mystery-box-drop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 63,
+          "costUsd": 0.467,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "web3_list_pictures",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_simulate",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e03-hat-shop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 33,
+          "costUsd": 0.377,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "web3_list_pictures",
+            "economy_examples",
+            "web3_player_looks",
+            "economy_check",
+            "economy_catalog",
+            "economy_check",
+            "economy_catalog",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e04-daily-lottery",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 23,
+          "costUsd": 0.283,
+          "turns": 9,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e05-stake-to-earn",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 34,
+          "costUsd": 0.367,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_catalog",
+            "Glob",
+            "Read",
+            "economy_catalog",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e06-merge-tiers",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 48,
+          "costUsd": 0.528,
+          "turns": 15,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_explain",
+            "economy_cost",
+            "economy_save",
+            "economy_simulate"
+          ]
+        },
+        {
+          "id": "e07-spark-pity",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 87,
+          "costUsd": 0.799,
+          "turns": 17,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_check",
+            "Grep",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e08-halving-seasons",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 47,
+          "costUsd": 0.434,
+          "turns": 14,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e09-duel-stakes",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 44,
+          "costUsd": 0.54,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "Read",
+            "economy_catalog",
+            "Grep",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e10-token-2022-box",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 35,
+          "costUsd": 0.332,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "web3_player_looks",
+            "economy_catalog",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e11-pump-coin-shop",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 30,
+          "costUsd": 0.329,
+          "turns": 12,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_examples",
+            "web3_list_pictures",
+            "economy_check",
+            "economy_explain",
+            "economy_cost",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e12-scorched-treasury",
+          "pass": true,
+          "checks": "7/7",
+          "seconds": 92,
+          "costUsd": 0.692,
+          "turns": 14,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_simulate",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e13-sacrifice-raffle",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 44,
+          "costUsd": 0.516,
+          "turns": 10,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e14-falling-price",
+          "pass": true,
+          "checks": "7/7",
+          "seconds": 26,
+          "costUsd": 0.446,
+          "turns": 12,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "web3_list_pictures",
+            "economy_check",
+            "Grep",
+            "economy_check",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e15-level-ladder",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 32,
+          "costUsd": 0.38,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_check",
+            "economy_explain",
+            "economy_simulate",
+            "economy_cost",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e16-plinko",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 44,
+          "costUsd": 0.366,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_save",
+            "economy_explain"
+          ]
+        },
+        {
+          "id": "e17-stud-farm",
+          "pass": false,
+          "checks": "8/9",
+          "failed": [
+            "breeding pays about 5 to the stud's holder: 0 of recipes match"
+          ],
+          "seconds": 87,
+          "costUsd": 0.818,
+          "turns": 21,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "Grep",
+            "Glob",
+            "Read",
+            "Grep",
+            "Grep",
+            "Grep",
+            "Grep",
+            "Grep",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e18-starforce",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 89,
+          "costUsd": 0.801,
+          "turns": 13,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "Read",
+            "economy_examples",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_catalog",
+            "economy_check",
+            "economy_simulate",
+            "economy_cost",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e19-weekly-ladder",
+          "pass": true,
+          "checks": "8/8",
+          "seconds": 47,
+          "costUsd": 0.547,
+          "turns": 14,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "Glob",
+            "Grep",
+            "Read",
+            "Grep",
+            "economy_check",
+            "economy_simulate",
+            "economy_explain",
+            "economy_save"
+          ]
+        },
+        {
+          "id": "e20-founder-passes",
+          "pass": true,
+          "checks": "9/9",
+          "seconds": 45,
+          "costUsd": 0.488,
+          "turns": 11,
+          "calls": [
+            "Skill",
+            "economy_examples",
+            "economy_catalog",
+            "economy_examples",
+            "economy_check",
+            "economy_simulate",
+            "economy_simulate",
+            "economy_save",
+            "economy_cost"
+          ]
+        }
+      ]
+    }
+  ],
+  "live": {
+    "network": "devnet",
+    "program": "88Labq6tdVnBQsjHSfic6qqgvo5b9NGmy99AYj7KVXqM",
+    "creator": "7eqbK77uXxrZmd8gi6wGogYgQ6Ks9BH8PLhEA3vtUHy4",
+    "seedScale": 0.01,
+    "startedAt": "2026-10-12T04:32:51.282Z",
+    "cases": [
+      {
+        "id": "e02-mystery-box-drop",
+        "ok": true,
+        "game": "4C6PdTHbQshhmTdS3Q81ffnMAGYyehQRLts7kk11F6oy",
+        "explorer": "https://explorer.solana.com/address/4C6PdTHbQshhmTdS3Q81ffnMAGYyehQRLts7kk11F6oy?cluster=devnet",
+        "walletSteps": 12,
+        "signatures": [
+          "2XibH6ahpZU5VmuwoGXeKd642FKHJpjGRe2PaH6Kufqvuh1oPkSXqSF9Sz1UKMo2ZjVPVFBVY9fqABPYvQTpKCFP",
+          "3qTp2tDSra4FtSJPpsKUTug56bBCatRVxkwRapZTPCVNUfBWQ2wqWAhrZS9JaexiGQEFHvGpsiMBdwHbQG2tErv4"
+        ],
+        "seeds": [],
+        "parts": 8,
+        "onChain": 8,
+        "pools": [],
+        "lamportsSpent": "11892040",
+        "status": [
+          "Game 4C6PdTHbQshhmTdS3Q81ffnMAGYyehQRLts7kk11F6oy on loot program 88Labq6tdVnBQsjHSfic6qqgvo5b9NGmy99AYj7KVXqM (devnet): live. https://explorer.solana.com/address/4C6PdTHbQshhmTdS3Q81ffnMAGYyehQRLts7kk11F6oy?cluster=devnet",
+          "  game game: on chain, as the spec says",
+          "  collection collection: on chain, as the spec says",
+          "  item common: on chain, as the spec says",
+          "  item uncommon: on chain, as the spec says",
+          "  item rare: on chain, as the spec says",
+          "  item epic: on chain, as the spec says",
+          "  item mythic: on chain, as the spec says",
+          "  box mystery-box: on chain, as the spec says",
+          "Recent: transaction 2026-10-12T04:32:56.000Z; transaction 2026-10-12T04:32:55.000Z",
+          "Everything matches the spec."
+        ]
+      },
+      {
+        "id": "e04-daily-lottery",
+        "ok": true,
+        "game": "WRtgL3whDLhqBXnNoC5FgBFkUzKoERkkeREPijhUiKr",
+        "explorer": "https://explorer.solana.com/address/WRtgL3whDLhqBXnNoC5FgBFkUzKoERkkeREPijhUiKr?cluster=devnet",
+        "walletSteps": 1,
+        "signatures": [
+          "c4TYcLZ7zVLmHDXHGbatvx7YmUNP6bgtEUZSUg9R4ybb5uM22SzPSa3FQUtZUJHgRKqGUTx4GBQEge5vnYfwC7r"
+        ],
+        "seeds": [],
+        "parts": 4,
+        "onChain": 4,
+        "pools": [
+          {
+            "key": "pot",
+            "amount": "0",
+            "symbol": "SOL"
+          }
+        ],
+        "lamportsSpent": "6161880",
+        "status": [
+          "Game WRtgL3whDLhqBXnNoC5FgBFkUzKoERkkeREPijhUiKr on loot program 88Labq6tdVnBQsjHSfic6qqgvo5b9NGmy99AYj7KVXqM (devnet): live. https://explorer.solana.com/address/WRtgL3whDLhqBXnNoC5FgBFkUzKoERkkeREPijhUiKr?cluster=devnet",
+          "  game game: on chain, as the spec says",
+          "  collection collection: on chain, as the spec says",
+          "  pool pot: on chain, as the spec says",
+          "  lottery daily: on chain, as the spec says",
+          "Pools: pot 0 SOL",
+          "Recent: transaction 2026-10-12T04:33:00.000Z",
+          "Everything matches the spec."
+        ]
+      },
+      {
+        "id": "e05-stake-to-earn",
+        "ok": true,
+        "game": "Ad6XAgH9yqW3mingHtWvLt4UPBPiHh9QE3UGFcdoUG5d",
+        "explorer": "https://explorer.solana.com/address/Ad6XAgH9yqW3mingHtWvLt4UPBPiHh9QE3UGFcdoUG5d?cluster=devnet",
+        "walletSteps": 11,
+        "signatures": [
+          "4VRGMs11KJU2ojWcCxaYtJegDwavCkfUdzhD3vTzBYpia949nf4mDK1zscafZ5r8ZdQXYYJHJQ7zdpnLfAWySdd",
+          "3fpqgAWFBh2ZGpfis4FR7t153ZjEjiU3jaKpzQofLnGHghCQcg3C7FH2WKVL3y3e4CDDJ6Y8A1RYUAGpXyZATzFt"
+        ],
+        "seeds": [],
+        "parts": 7,
+        "onChain": 7,
+        "pools": [
+          {
+            "key": "stakers",
+            "amount": "0",
+            "symbol": "SOL"
+          }
+        ],
+        "lamportsSpent": "34149920",
+        "status": [
+          "Game Ad6XAgH9yqW3mingHtWvLt4UPBPiHh9QE3UGFcdoUG5d on loot program 88Labq6tdVnBQsjHSfic6qqgvo5b9NGmy99AYj7KVXqM (devnet): live. https://explorer.solana.com/address/Ad6XAgH9yqW3mingHtWvLt4UPBPiHh9QE3UGFcdoUG5d?cluster=devnet",
+          "  game game: on chain, as the spec says",
+          "  collection collection: on chain, as the spec says",
+          "  pool stakers: on chain, as the spec says",
+          "  item red-hopper: on chain, as the spec says",
+          "  item blue-hopper: on chain, as the spec says",
+          "  item gold-hopper: on chain, as the spec says",
+          "  stake stakers: on chain, as the spec says",
+          "Pools: stakers 0 SOL",
+          "Recent: transaction 2026-10-12T04:33:09.000Z; transaction 2026-10-12T04:33:08.000Z",
+          "Everything matches the spec."
+        ]
+      }
+    ],
+    "creatorLamportsLeft": "282017077",
+    "specsFrom": "heldOut[0]",
+    "note": "None of the three has a seeded pool, so --seed-scale 0.01 changed nothing."
+  }
+}

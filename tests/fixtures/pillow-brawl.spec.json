@@ -1,0 +1,154 @@
+{
+  "specVersion": 2,
+  "title": "Pillow Brawl",
+  "hook": "A backyard pillow fight: bop your friends, grab feathers, most bops wins.",
+  "prompt": "a silly pillow fight with friends in a backyard, with a few different pillows to swing",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "swing your pillow",
+    "secondary": "big swing",
+    "interact": "grab a feather",
+    "jump": "dash"
+  },
+  "round": {
+    "seconds": 90,
+    "winBy": "most bops when time is up",
+    "replay": true
+  },
+  "world": {
+    "template": "backyard",
+    "size": "small",
+    "props": [
+      {
+        "name": "crate",
+        "describe": "a wooden crate of feathers",
+        "count": 6,
+        "role": "a pickup that heals you",
+        "kind": "gameplay"
+      },
+      {
+        "name": "bench",
+        "describe": "a wooden bench",
+        "count": 2,
+        "role": "scenery",
+        "kind": "scenery"
+      }
+    ]
+  },
+  "mechanics": [
+    {
+      "id": "melee",
+      "as": "your pillow: swing it to bop friends",
+      "params": {
+        "weapon": "pillow",
+        "weapons": [
+          {
+            "id": "pillow",
+            "name": "Pillow",
+            "kind": "sword",
+            "color": "#f4f1ea",
+            "combo": [
+              {
+                "damage": 1,
+                "reach": 2.2,
+                "windup": 0.1,
+                "knockback": 3.5
+              }
+            ],
+            "heavy": {
+              "damage": 3,
+              "reach": 2.8
+            }
+          },
+          {
+            "id": "big-pillow",
+            "name": "Big pillow",
+            "kind": "axe",
+            "color": "#ffc94d",
+            "combo": [
+              {
+                "damage": 2,
+                "reach": 2.4,
+                "windup": 0.17,
+                "knockback": 6
+              }
+            ],
+            "heavy": {
+              "damage": 4,
+              "reach": 2.6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "pickup",
+      "as": "feather crates that patch you up",
+      "params": {
+        "prop": "crate",
+        "respawnSeconds": 10,
+        "effect": "heal",
+        "value": 20
+      }
+    },
+    {
+      "id": "health",
+      "as": "bopped: knocked over, back up soon",
+      "params": {
+        "hp": 100
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Swing to bop. Crates heal. Most bops wins.",
+    "scoring": "+1 per knock-over",
+    "params": {
+      "bopPoints": 1
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid in pyjamas",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [
+    {
+      "id": "bop",
+      "describe": "a soft pillow thump"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

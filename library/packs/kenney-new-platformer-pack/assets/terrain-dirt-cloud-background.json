@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-cloud-background",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-cloud-background.png",
+ "sha256": "48fe4b07fab0dd6956d4cf19caa472b903a1c278119c7a1ea620f263aa7e56aa",
+ "bytes": 3257,
+ "preview": "previews/terrain-dirt-cloud-background.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_cloud_background.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt cloud background tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "cloud",
+  "background",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#353541",
+     "#de7e4f",
+     "#a6b2bb",
+     "#ee9366",
+     "#c66a3e",
+     "#cf7144"
+    ],
+    "saturation": 0.271,
+    "value": 0.654,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.734
+     },
+     {
+      "hue": "orange",
+      "share": 0.266
+     }
+    ],
+    "exact": 109,
+    "grey": 0.734
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.244
+   }
+  }
+ },
+ "source": {
+  "sha256": "b7fb774176f1bdc72174441f57fecdd6384b5add9a852c5aedb8fe30a8bc815d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

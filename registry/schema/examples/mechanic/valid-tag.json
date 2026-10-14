@@ -1,0 +1,15 @@
+{
+  "id": "tag",
+  "name": "Tag",
+  "describe": "Roles that pass between players on contact.",
+  "examples": ["tag, you're it", "infection"],
+  "params": { "type": "object", "properties": { "its": { "type": "integer", "minimum": 1, "maximum": 4, "default": 1 } } },
+  "slots": { "templates": [] },
+  "events": [ { "name": "onTag", "on": "host", "args": "(ctx, from, to)", "when": "a tag lands" } ],
+  "counters": ["whole seconds as it"],
+  "host": { "owner": "host", "state": "tag", "fields": { "t": "who is it" } },
+  "owns": [ { "res": "player.control", "when": "hideSeconds > 0" } ],
+  "fixture": { "path": "components/tag/fixture", "players": 2 },
+  "impl": { "three": { "path": "components/tag/impl/three/index.js", "state": { "exists": true, "tested": true, "open": true, "evidence": [ { "what": "two-player fixture", "ref": "components/tag/fixture" } ] } } },
+  "state": { "exists": true, "tested": true, "open": true, "evidence": [ { "what": "two-player fixture", "ref": "components/tag/fixture" } ] }
+}

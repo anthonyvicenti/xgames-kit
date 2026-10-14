@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B13",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "tycoon",
+  "rank": 13,
+  "row": "Tycoon / management / city builder",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "run a burger restaurant with friends: take orders, cook, serve, earn money and buy upgrades like a faster grill and more tables",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "orders",
+   "type": "mechanic",
+   "must": "customers who come in and order"
+  },
+  {
+   "id": "cook-serve",
+   "type": "mechanic",
+   "must": "cooking at stations and serving"
+  },
+  {
+   "id": "money",
+   "type": "panel",
+   "must": "money earned and spent"
+  },
+  {
+   "id": "upgrades",
+   "type": "panel",
+   "must": "upgrades that change the restaurant (a faster grill, more tables)"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

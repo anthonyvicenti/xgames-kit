@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0058",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0058.png",
+ "sha256": "daf3426469257c6d81dcd9a1cdabdfdbb358d55de60f111c4357045874af7834",
+ "bytes": 226,
+ "preview": "previews/tile-0058.png",
+ "from": "Tiles/tile_0058.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a one-tile-wide grey brick wall face with stone edge strips on both sides (a pillar of wall)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "brick",
+  "stone",
+  "grey",
+  "face",
+  "pillar",
+  "single"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#52607c",
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4"
+    ],
+    "saturation": 0.236,
+    "value": 0.496,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.75
+     },
+     {
+      "hue": "pink",
+      "share": 0.25
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.6
+   }
+  }
+ },
+ "source": {
+  "sha256": "d010f83dc263ca1b3b4788ef380c7ef5695a21493c7db10e423c9891e2eac730",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

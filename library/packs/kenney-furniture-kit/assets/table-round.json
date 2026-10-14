@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "table-round",
+ "pack": "kenney-furniture-kit",
+ "file": "table-round.glb",
+ "sha256": "e4c48591db4c82321016d2bea5b61efe81618f98e9a3a6896faa042e67b10035",
+ "bytes": 2828,
+ "preview": "previews/table-round.png",
+ "from": "kenney:furniture-kit/tableRound; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small round table",
+ "tags": [
+  "plaza",
+  "office",
+  "table",
+  "round"
+ ],
+ "use": {
+  "size": [
+   1.386,
+   0.733,
+   1.6
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.5,
+   "height": 0.8,
+   "offset": [
+    0,
+    0.4,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 80,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 80,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 2828,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8"
+    ],
+    "saturation": 0.758,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.15,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "f8daea9124a542a00b7bdacfddac82dc468573d43e44d7b54dd6316e9695754b",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

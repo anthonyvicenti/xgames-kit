@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0086",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0086.png",
+ "sha256": "e97bfcd793cdecc6c44c16ed2fc6a93845892aa3f835382cb3d8a1d36e4f2e6f",
+ "bytes": 196,
+ "preview": "previews/tile-0086.png",
+ "from": "Tiles/tile_0086.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the left half of a wide double door in a wooden house wall (tile 87 is its right half)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "wooden",
+  "door",
+  "double-door",
+  "entrance",
+  "house",
+  "building",
+  "left"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bd6c4a",
+     "#763b36",
+     "#3f2631",
+     "#eaa56c",
+     "#8b9bb4"
+    ],
+    "saturation": 0.442,
+    "value": 0.427,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.488
+     },
+     {
+      "hue": "red",
+      "share": 0.262
+     },
+     {
+      "hue": "pink",
+      "share": 0.234
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.25
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ed488f6faf0d68facc719882d2a1fd287d1979b8d0a21c07371bfeeb3923566",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

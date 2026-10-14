@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "clouds",
+ "pack": "forge-world",
+ "file": "clouds.glb",
+ "sha256": "6d9a4db9248a70da1a1b1ccc3ac7bf063f5e58922b08120df8b460aeb12f7456",
+ "bytes": 28672,
+ "preview": "previews/clouds.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-clouds.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "the sky's clouds: a 768 m sheet of night-clouds repeated every 128 m, seen from below (alpha mask: the sky, its stars and the moon show through the gaps); the world hangs it over the arena in the…",
+ "tags": [
+  "world",
+  "sky",
+  "clouds"
+ ],
+ "use": {
+  "size": [
+   768,
+   0,
+   768
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -384,
+   0,
+   -384
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 2,
+  "textures": 1,
+  "textureMax": 256,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 28672,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#000000"
+    ],
+    "saturation": 0,
+    "value": 0,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 0,
+   "texelsPerMetre": 2,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-clouds.png) inside",
+  "author": "games.fun"
+ }
+}

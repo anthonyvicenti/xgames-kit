@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "kaykit-halloween",
+ "file": "fence.glb",
+ "sha256": "5a0ef6feab4e21e906864ebebf69c85ef656837084f967e3627839e04cf36485",
+ "bytes": 16512,
+ "preview": "previews/fence.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an iron graveyard fence",
+ "tags": [
+  "ruins",
+  "fence"
+ ],
+ "use": {
+  "size": [
+   3,
+   1.65,
+   0.375
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1.5,
+   0,
+   -0.188
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    1.65,
+    0.375
+   ],
+   "offset": [
+    0,
+    0.825,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 380,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 380,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 16512,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#808b90",
+     "#707a7e",
+     "#2f2f2d",
+     "#596065",
+     "#798388",
+     "#353533",
+     "#282827",
+     "#687075"
+    ],
+    "saturation": 0.054,
+    "value": 0.418,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 5.93,
+   "texelsPerMetre": 39,
+   "texturedShare": 0.319,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/fence.gltf",
+  "sha256": "341bdb0bc8c4d6895a7184daebf76522866677909992701efbd3a719b348d4a7",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

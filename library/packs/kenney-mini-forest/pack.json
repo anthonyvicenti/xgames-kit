@@ -1,0 +1,68 @@
+{
+ "packVersion": 1,
+ "id": "kenney-mini-forest",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Mini Forest (1.0)",
+ "describe": "Kenney's mini forest: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/mini-forest",
+  "file": "library/packs/kenney-mini-forest/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/mini-forest",
+  "download": "https://kenney.nl/media/pages/assets/mini-forest/44a89aed7f-1784024079/kenney_mini-forest_1.0.zip",
+  "sha256": "8691614018075a66458e35915b8c358c2e6178648aedadafcdf313b924aa6581",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 13,
+   "hues": [
+    "#d9835c",
+    "#c77451",
+    "#84879f",
+    "#71678e",
+    "#e28b62",
+    "#dd865f",
+    "#777293",
+    "#7d7c99"
+   ],
+   "saturation": 0.524,
+   "value": 0.599,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.574
+    },
+    {
+     "hue": "grey",
+     "share": 0.215
+    },
+    {
+     "hue": "red",
+     "share": 0.173
+    }
+   ],
+   "grey": 0.215
+  },
+  "trianglesPerMetre": 5.26,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 1,
+ "validators": [
+  "budget"
+ ]
+}

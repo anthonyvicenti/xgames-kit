@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "store-shelf-b",
+ "pack": "kenney-mini-market",
+ "file": "store-shelf-b.glb",
+ "sha256": "ef4b240aaa6b7c56a569e11c24605b5425418c1fbcc59ba818a88a4b5500e6a1",
+ "bytes": 29584,
+ "preview": "previews/store-shelf-b.png",
+ "from": "kenney:mini-market/shelf-bags; baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a supermarket shelf of bagged goods, stocked on both sides",
+ "tags": [
+  "store",
+  "shelf",
+  "cover"
+ ],
+ "use": {
+  "size": [
+   1.68,
+   1.813,
+   1.47
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   1.4,
+   2.2
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.68,
+    1.813,
+    1.47
+   ],
+   "offset": [
+    0,
+    0.906,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 892,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 892,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 29584,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#a6add0",
+     "#7c8199",
+     "#9198b6",
+     "#878da9",
+     "#b5bde2",
+     "#dedeea",
+     "#dadae7",
+     "#abb3d6"
+    ],
+    "saturation": 0.355,
+    "value": 0.688,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.563
+     },
+     {
+      "hue": "grey",
+      "share": 0.254
+     },
+     {
+      "hue": "red",
+      "share": 0.092
+     },
+     {
+      "hue": "orange",
+      "share": 0.069
+     }
+    ],
+    "grey": 0.254
+   },
+   "trianglesPerMetre": 5.82,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "17725a5f680aff17dbc6ac3398ef0339d78b5b76bbfaa29292a5084479c4bd69",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

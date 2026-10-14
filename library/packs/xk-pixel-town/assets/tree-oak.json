@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tree-oak",
+ "pack": "xk-pixel-town",
+ "file": "tree-oak.png",
+ "sha256": "369e2af8e3f7ca36c386af723127d385821828e780fd919ced688ec2227461d5",
+ "bytes": 1461,
+ "preview": "previews/tree-oak.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tree-oak.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round leafy oak tree, 3 m across",
+ "tags": [
+  "pixel",
+  "tree",
+  "oak",
+  "nature",
+  "set-piece"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 64
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#7ec152",
+     "#26522f",
+     "#5ca546",
+     "#468a3c",
+     "#336b34",
+     "#64402c",
+     "#252d2e",
+     "#a6d867"
+    ],
+    "saturation": 0.383,
+    "value": 0.373,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.788
+     },
+     {
+      "hue": "brown",
+      "share": 0.078
+     },
+     {
+      "hue": "grey",
+      "share": 0.077
+     }
+    ],
+    "exact": 20,
+    "grey": 0.077
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.774
+   }
+  }
+ },
+ "source": {
+  "sha256": "094068fdf85f1d522912ef88b0e21ba6691c6c0401e6f5e87fe60620dcd85666",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

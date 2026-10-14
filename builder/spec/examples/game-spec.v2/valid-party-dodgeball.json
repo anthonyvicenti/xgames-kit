@@ -1,0 +1,84 @@
+{
+  "specVersion": 2,
+  "title": "Backyard Bonk",
+  "hook": "Peg your friends with water balloons across a backyard full of cover.",
+  "prompt": "a silly dodgeball game in a backyard for me and my friends, works on phones too",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 6,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone",
+      "x-post"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "throw a water balloon",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 120,
+    "winBy": "Most hits when the clock runs out."
+  },
+  "world": {
+    "template": "backyard",
+    "size": "small",
+    "props": [
+      {
+        "name": "balloon",
+        "describe": "a round water balloon",
+        "kind": "gameplay",
+        "fill": {
+          "from": "kind"
+        },
+        "size": 0.4
+      }
+    ]
+  },
+  "mechanics": [
+    {
+      "id": "projectile",
+      "as": "water balloon throw",
+      "params": {
+        "prop": "balloon",
+        "splashRadius": 1.2
+      }
+    },
+    {
+      "id": "health",
+      "as": "soaked and back up",
+      "params": {
+        "hp": 3
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Throw water balloons; a hit scores a point; three hits soak a player, who gets back up after a moment.",
+    "scoring": "one point a hit"
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a jelly bean in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "build": [],
+  "content": {
+    "rating": "E"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "schema": "xgames-library-config/1",
+  "about": "Where the asset library keeps what is not in git. Each path can be overridden by its variable (XGAMES_STORE, XGAMES_PRIVATE_PACKS, XGAMES_QUARANTINE, XGAMES_MIRRORS, XGAMES_KINDS). Where private packs live is an open creator decision (2026-10-13); the default is a folder in the person's home that is never pushed.",
+  "store": "~/.xgames/store",
+  "privatePacks": "~/.xgames/private-packs",
+  "quarantine": "~/.xgames/quarantine",
+  "mirrors": [],
+  "policy": "policy.json",
+  "kinds": "../kinds"
+}

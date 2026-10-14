@@ -1,0 +1,14 @@
+{
+  "id": "crowd",
+  "name": "Crowd",
+  "describe": "A fixture must be two players.",
+  "examples": ["crowd"],
+  "params": { "type": "object" },
+  "slots": { "templates": [] },
+  "events": [],
+  "host": { "owner": "host" },
+  "owns": [],
+  "fixture": { "path": "components/crowd/fixture", "players": 3 },
+  "impl": { "three": { "path": "x.js", "state": { "exists": true, "tested": false, "open": false } } },
+  "state": { "exists": true, "tested": false, "open": false }
+}

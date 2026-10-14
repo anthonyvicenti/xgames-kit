@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "block-tall",
+ "pack": "kenney-platformer-kit",
+ "file": "block-tall.glb",
+ "sha256": "5a1d9d01eb8d8128dba1127fa1cb79953de08a79ff3cdfdc89cfbe53949a9ecd",
+ "bytes": 20092,
+ "preview": "previews/block-tall.png",
+ "from": "kenney:platformer-kit/block-grass-large-tall; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tall grass-topped block",
+ "tags": [
+  "arena",
+  "block",
+  "platform",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   4.164,
+   4,
+   4.164
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    4.164,
+    4,
+    4.164
+   ],
+   "offset": [
+    0,
+    2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20092,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#d9835c",
+     "#c77451",
+     "#5ac487",
+     "#ea9168",
+     "#47b07e",
+     "#339c75",
+     "#50ba83",
+     "#299270"
+    ],
+    "saturation": 0.576,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.742
+     },
+     {
+      "hue": "green",
+      "share": 0.215
+     },
+     {
+      "hue": "cyan",
+      "share": 0.044
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "61c9aaaf8c8ea071731dc27b0def1711c482d67768a2f456fc03a746ae29a80a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,148 @@
+{
+ "tool": "builder/look-judge/kind-sheet.mjs",
+ "kind": "pixel",
+ "runtime": "three/flat-2d",
+ "made": "2026-10-14T00:53:40.864Z",
+ "size": [
+  1280,
+  720
+ ],
+ "chrome": "148.0.7778.96",
+ "tiles": [
+  {
+   "name": "world",
+   "file": "tiles/pixel/world.png",
+   "info": {
+    "shot": "world",
+    "pxPerTexel": 4,
+    "style": "pixel",
+    "ppm": 16,
+    "sprites": 794
+   },
+   "errors": []
+  },
+  {
+   "name": "hero",
+   "file": "tiles/pixel/hero.png",
+   "info": {
+    "shot": "hero",
+    "pxPerTexel": 12,
+    "captions": [
+     "the kind's villagers at 16 texels a metre, 12 screen pixels a texel, in front of a set piece"
+    ],
+    "style": "pixel",
+    "ppm": 16,
+    "sprites": 782
+   },
+   "errors": []
+  },
+  {
+   "name": "bodies",
+   "file": "tiles/pixel/bodies.png",
+   "info": {
+    "shot": "bodies",
+    "pxPerTexel": 6,
+    "captions": [
+     "13 villagers seen from above (the player's light grey shirt takes each seat's colour)",
+     "gf-flat-1 frames: idle · walk1 · walk2 · air · act · down, side-on and from above (each sheet passes the flat judge)"
+    ],
+    "style": "pixel",
+    "ppm": 16,
+    "sprites": 261,
+    "judged": [
+     {
+      "id": "flat-standins-pixel/body-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-farmer-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-baker-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-smith-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-elder-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-fisher-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-gardener-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-scholar-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-rocker-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-ranger-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-courier-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-tailor-top",
+      "ok": true,
+      "errors": 0
+     },
+     {
+      "id": "xk-pixel-folk/folk-miner-top",
+      "ok": true,
+      "errors": 0
+     }
+    ]
+   },
+   "errors": []
+  },
+  {
+   "name": "props",
+   "file": "tiles/pixel/props.png",
+   "info": {
+    "shot": "props",
+    "pxPerTexel": 6,
+    "captions": [
+     "trees, a well, a lamp, props and pickups from the kind's packs, each with the runtime's shadow"
+    ],
+    "style": "pixel",
+    "ppm": 16,
+    "sprites": 257
+   },
+   "errors": []
+  },
+  {
+   "name": "hud",
+   "file": "tiles/pixel/hud.png",
+   "info": {
+    "font": true
+   },
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "sheet": "pixel.png"
+}

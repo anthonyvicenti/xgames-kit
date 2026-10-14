@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "gem-yellow",
+ "pack": "kenney-new-platformer-pack",
+ "file": "gem-yellow.png",
+ "sha256": "ad738e5873985066c9acfbcac163693dc2b0c1e044f6ac589b0f0dc4342a4cea",
+ "bytes": 2264,
+ "preview": "previews/gem-yellow.png",
+ "from": "Sprites/Tiles/Double/gem_yellow.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "gem yellow",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "gem",
+  "yellow",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#faba2d",
+     "#ffd751",
+     "#f3ae2c",
+     "#343440",
+     "#efa72c",
+     "#353540",
+     "#eca12b"
+    ],
+    "saturation": 0.604,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.391
+     },
+     {
+      "hue": "orange",
+      "share": 0.389
+     },
+     {
+      "hue": "yellow",
+      "share": 0.211
+     }
+    ],
+    "exact": 119,
+    "grey": 0.391
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "bcb99e8904bbfcf852ed0a879b8fa3cf3eae994467d2b5db28b6fc6963e45a1a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

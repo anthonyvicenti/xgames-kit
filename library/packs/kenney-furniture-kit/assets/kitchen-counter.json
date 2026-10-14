@@ -1,0 +1,106 @@
+{
+ "assetVersion": 1,
+ "id": "kitchen-counter",
+ "pack": "kenney-furniture-kit",
+ "file": "kitchen-counter.glb",
+ "sha256": "52ec30c7dd2f3284df826ec5b51125f699fca068512f63ae2556b736d8e615fc",
+ "bytes": 5496,
+ "preview": "previews/kitchen-counter.png",
+ "from": "kenney:furniture-kit/kitchenCabinet; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a kitchen counter cabinet",
+ "tags": [
+  "office",
+  "kitchen",
+  "counter"
+ ],
+ "use": {
+  "size": [
+   0.86,
+   0.9,
+   0.9
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.86,
+    0.9,
+    0.9
+   ],
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 114,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 114,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 5496,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#f3cca8",
+     "#dfeaec",
+     "#d7b495"
+    ],
+    "saturation": 0.692,
+    "value": 0.817,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.875
+     },
+     {
+      "hue": "cyan",
+      "share": 0.125
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.51,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "7238c57778935ae25db5e57e9f7af3ba7068c71b005ff7cfbff3b6f3b1a13200",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

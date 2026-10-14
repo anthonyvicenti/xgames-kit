@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "roof-gable",
+ "pack": "forge-town",
+ "file": "roof-gable.glb",
+ "sha256": "b15de48fffe7d1f43cbd26f63391c12c40fd15217a79217bdfb295e6533338fd",
+ "bytes": 6672,
+ "preview": "previews/roof-gable.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-roof.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tiled roof over one 3 m bay with its gable to the street: the ridge runs back from the front, the eaves 0.4 m past the bay on each side; a gable wall stands under its open front end",
+ "tags": [
+  "town",
+  "roof",
+  "gable"
+ ],
+ "use": {
+  "size": [
+   3.8,
+   1.9,
+   3.45
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.9,
+   0,
+   -1.5
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 7,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 7,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 6672,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#23221a",
+     "#422f29",
+     "#5d423b",
+     "#492c26",
+     "#684234",
+     "#211410"
+    ],
+    "saturation": 0.236,
+    "value": 0.19,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.628
+     },
+     {
+      "hue": "grey",
+      "share": 0.372
+     }
+    ],
+    "grey": 0.372
+   },
+   "trianglesPerMetre": 0.45,
+   "texelsPerMetre": 32,
+   "texturedShare": 0.628,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-roof.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

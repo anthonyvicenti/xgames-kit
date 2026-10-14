@@ -1,0 +1,737 @@
+{
+ "about": "The file slots of the soak-squad example as the old kit created it on 2026-10-13 (gamesfun create --from soak-squad): what the resolver must fill. Kind for the test: silly.",
+ "example": "soak-squad",
+ "kind": "silly",
+ "slots": [
+  {
+   "id": "character.body.player",
+   "label": "Player character",
+   "type": "model",
+   "source": {
+    "file": "assets/models/body-player.glb"
+   },
+   "constraints": {
+    "rigged": true,
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ],
+    "maxBytes": 6000000,
+    "scale": 1
+   },
+   "description": "a round jelly-bean kid in swim goggles",
+   "generate": {
+    "tool": "research/gf-three/tools/meshy-character.mjs",
+    "prompt": "a round jelly-bean kid in swim goggles",
+    "style": "full-body stylised game character, A-pose, front view"
+   }
+  },
+  {
+   "id": "character.hat.player",
+   "label": "Player hat (players' own)",
+   "type": "model",
+   "optional": true,
+   "source": {
+    "file": "assets/models/hat-player.glb"
+   },
+   "constraints": {
+    "maxBytes": 2000000,
+    "scale": 1
+   },
+   "description": "Worn on the head socket; its origin sits on top of the head, +Z forward"
+  },
+  {
+   "id": "character.clips",
+   "label": "Character animations",
+   "type": "model",
+   "source": {
+    "file": "assets/clips/gf-humanoid-1.glb"
+   },
+   "constraints": {
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ]
+   }
+  },
+  {
+   "id": "prop.house",
+   "label": "Suburban house with a green roof",
+   "type": "model",
+   "source": {
+    "file": "assets/models/house.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     9.335,
+     7.5,
+     7.461
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 9.3 x 7.5 x 7.5 m.",
+   "generate": {
+    "prompt": "a suburban house with a green roof",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.house-b",
+   "label": "Two-storey suburban house",
+   "type": "model",
+   "source": {
+    "file": "assets/models/house-b.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     9.889,
+     8,
+     7.64
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 9.9 x 8.0 x 7.6 m.",
+   "generate": {
+    "prompt": "a two-storey suburban house",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.slide",
+   "label": "Red playground slide with a ladder",
+   "type": "model",
+   "source": {
+    "file": "assets/models/slide.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.562,
+     2.4,
+     3.404
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.6 x 2.4 x 3.4 m.",
+   "generate": {
+    "prompt": "a red playground slide with a ladder",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.swing-set",
+   "label": "Wooden swing set with two swings",
+   "type": "model",
+   "source": {
+    "file": "assets/models/swing-set.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.88,
+     2.5,
+     3.308
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.9 x 2.5 x 3.3 m.",
+   "generate": {
+    "prompt": "a wooden swing set with two swings",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.sandbox",
+   "label": "Red sandbox with a sandcastle",
+   "type": "model",
+   "source": {
+    "file": "assets/models/sandbox.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     2.6,
+     1.02,
+     2.6
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 2.6 x 1.0 x 2.6 m.",
+   "generate": {
+    "prompt": "a red sandbox with a sandcastle",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.picnic-table",
+   "label": "Wooden picnic table with a checked cloth",
+   "type": "model",
+   "source": {
+    "file": "assets/models/picnic-table.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.668,
+     0.9,
+     1.346
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.7 x 0.9 x 1.3 m.",
+   "generate": {
+    "prompt": "a wooden picnic table with a checked cloth",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.grill",
+   "label": "Kettle barbecue grill",
+   "type": "model",
+   "source": {
+    "file": "assets/models/grill.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.669,
+     1.15,
+     0.754
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.7 x 1.1 x 0.8 m.",
+   "generate": {
+    "prompt": "a kettle barbecue grill",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.path-stones",
+   "label": "Stepping stones for a garden path",
+   "type": "model",
+   "source": {
+    "file": "assets/models/path-stones.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.56,
+     0.04,
+     1.6
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.6 x 0.0 x 1.6 m.",
+   "generate": {
+    "prompt": "stepping stones for a garden path",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.flowers-tall",
+   "label": "Cluster of tall flowers",
+   "type": "model",
+   "source": {
+    "file": "assets/models/flowers-tall.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.71,
+     0.6,
+     0.804
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.7 x 0.6 x 0.8 m.",
+   "generate": {
+    "prompt": "a cluster of tall flowers",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-round",
+   "label": "Tall tree with a round leafy crown",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-round.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.926,
+     5.2,
+     1.926
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.9 x 5.2 x 1.9 m.",
+   "generate": {
+    "prompt": "a tall tree with a round leafy crown",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-pine",
+   "label": "Tall stylised pine tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-pine.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.893,
+     5.5,
+     1.893
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.9 x 5.5 x 1.9 m.",
+   "generate": {
+    "prompt": "a tall stylised pine tree",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.cloud-puffy",
+   "label": "Puffy low-poly cloud",
+   "type": "model",
+   "source": {
+    "file": "assets/models/cloud-puffy.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     13.261,
+     5,
+     4.796
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 13.3 x 5.0 x 4.8 m.",
+   "generate": {
+    "prompt": "a puffy low-poly cloud",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.cloud-small",
+   "label": "Small low-poly cloud",
+   "type": "model",
+   "source": {
+    "file": "assets/models/cloud-small.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     8.299,
+     3,
+     2.634
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 8.3 x 3.0 x 2.6 m.",
+   "generate": {
+    "prompt": "a small low-poly cloud",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.parasol",
+   "label": "Red and white beach umbrella",
+   "type": "model",
+   "source": {
+    "file": "assets/models/parasol.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     2.107,
+     2.5,
+     1.882
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 2.1 x 2.5 x 1.9 m.",
+   "generate": {
+    "prompt": "a red and white beach umbrella",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.hose-reel",
+   "label": "Garden hose on a reel",
+   "type": "model",
+   "source": {
+    "file": "assets/models/hose-reel.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.814,
+     0.8,
+     1.115
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.8 x 0.8 x 1.1 m.",
+   "generate": {
+    "prompt": "a garden hose on a reel",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.crate",
+   "label": "Wooden crate",
+   "type": "model",
+   "source": {
+    "file": "assets/models/crate.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.9,
+     0.9,
+     0.9
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.9 x 0.9 x 0.9 m.",
+   "generate": {
+    "prompt": "a wooden crate",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.bench",
+   "label": "Wooden park bench",
+   "type": "model",
+   "source": {
+    "file": "assets/models/bench.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.412,
+     0.92,
+     0.796
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.4 x 0.9 x 0.8 m.",
+   "generate": {
+    "prompt": "a wooden park bench",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-large",
+   "label": "Large garden tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-large.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.262,
+     4.6,
+     1.457
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.3 x 4.6 x 1.5 m.",
+   "generate": {
+    "prompt": "a large garden tree",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-small",
+   "label": "Small garden tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-small.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.039,
+     2.8,
+     1.2
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.0 x 2.8 x 1.2 m.",
+   "generate": {
+    "prompt": "a small garden tree",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.bush",
+   "label": "Round leafy bush",
+   "type": "model",
+   "source": {
+    "file": "assets/models/bush.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.505,
+     0.9,
+     1.505
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.5 x 0.9 x 1.5 m.",
+   "generate": {
+    "prompt": "a round leafy bush",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.bush-large",
+   "label": "Large leafy bush",
+   "type": "model",
+   "source": {
+    "file": "assets/models/bush-large.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     2.003,
+     1.3,
+     1.796
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 2.0 x 1.3 x 1.8 m.",
+   "generate": {
+    "prompt": "a large leafy bush",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.flower-red",
+   "label": "Red garden flowers",
+   "type": "model",
+   "source": {
+    "file": "assets/models/flower-red.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.245,
+     0.45,
+     0.279
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.2 x 0.5 x 0.3 m.",
+   "generate": {
+    "prompt": "red garden flowers",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.flowers",
+   "label": "Cluster of small flowers",
+   "type": "model",
+   "source": {
+    "file": "assets/models/flowers.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.983,
+     0.35,
+     2.006
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 2.0 x 0.3 x 2.0 m.",
+   "generate": {
+    "prompt": "a cluster of small flowers",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.fence",
+   "label": "Wooden garden fence panel",
+   "type": "model",
+   "source": {
+    "file": "assets/models/fence.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.9,
+     1.08,
+     0.3
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.9 x 1.1 x 0.3 m.",
+   "generate": {
+    "prompt": "a wooden garden fence panel",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-oak",
+   "label": "Low-poly oak tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-oak.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     2.507,
+     4.8,
+     2.895
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 2.5 x 4.8 x 2.9 m.",
+   "generate": {
+    "prompt": "a low-poly oak tree",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.planter",
+   "label": "Planter box with a shrub",
+   "type": "model",
+   "source": {
+    "file": "assets/models/planter.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.6,
+     0.708,
+     1.2
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 1.6 x 0.7 x 1.2 m.",
+   "generate": {
+    "prompt": "a planter box with a shrub",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.grass-tuft",
+   "label": "Tuft of grass",
+   "type": "model",
+   "source": {
+    "file": "assets/models/grass-tuft.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.578,
+     0.35,
+     0.606
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.6 x 0.3 x 0.6 m.",
+   "generate": {
+    "prompt": "a tuft of grass",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.grass-large",
+   "label": "Large tuft of grass",
+   "type": "model",
+   "source": {
+    "file": "assets/models/grass-large.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.644,
+     0.4,
+     0.642
+    ]
+   },
+   "description": "A backyard prop. Metres, Y up, base at y=0, centred; a replacement is fitted to 0.6 x 0.4 x 0.6 m.",
+   "generate": {
+    "prompt": "a large tuft of grass",
+    "style": "soft stylised low-poly, chunky shapes, flat pastel colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.bucket",
+   "label": "Bucket",
+   "type": "model",
+   "source": {
+    "file": "assets/models/bucket.glb"
+   },
+   "constraints": {
+    "maxBytes": 8388608,
+    "scale": 1
+   },
+   "description": "a bucket of water",
+   "generate": {
+    "prompt": "a bucket of water",
+    "style": "stylised low-poly game prop, soft colours, clean silhouette"
+   }
+  },
+  {
+   "id": "world.backyard.ground.pattern",
+   "label": "Ground pattern",
+   "type": "image",
+   "source": {
+    "file": "assets/textures/lawn-stripes.png"
+   },
+   "constraints": {
+    "tile": true,
+    "colorSpace": "srgb",
+    "formats": [
+     "png",
+     "jpg",
+     "webp"
+    ],
+    "tileMetres": 4
+   },
+   "description": "A seamless greyscale pattern multiplied over the ground colour, 4 m per tile (paving slabs, carpet tiles, mowing stripes). Light = the ground colour, dark = grout or seams.",
+   "generate": {
+    "prompt": "seamless top-down backyard ground pattern, greyscale, light with darker joints",
+    "style": "tileable, flat, no lighting, no perspective"
+   }
+  },
+  {
+   "id": "look.textures.noise",
+   "label": "Ground, water and stream pattern",
+   "type": "image",
+   "optional": true,
+   "source": {
+    "file": "assets/textures/ground-noise.png"
+   },
+   "constraints": {
+    "width": 256,
+    "height": 256,
+    "tile": true,
+    "alpha": false,
+    "formats": [
+     "png",
+     "webp",
+     "jpg"
+    ]
+   },
+   "description": "Seamless soft noise: red = large patches, green = medium detail, blue = fine grain. Drives the ground colour patches, water ripples and stream streaks.",
+   "generate": {
+    "prompt": "seamless soft greyscale noise in the red, green and blue channels at three scales",
+    "style": "tileable, soft, no hard edges"
+   }
+  }
+ ]
+}

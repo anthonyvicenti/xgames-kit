@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "background-color-desert",
+ "pack": "kenney-new-platformer-pack",
+ "file": "background-color-desert.png",
+ "sha256": "772c60de95ba534bf9f839984bb92dfd9c8eb071f0f13b88219278600d6bfd88",
+ "bytes": 11422,
+ "preview": "previews/background-color-desert.png",
+ "from": "Sprites/Backgrounds/Double/background_color_desert.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "background color desert",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "background",
+  "color",
+  "desert",
+  "backgrounds"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 512
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ffffff",
+     "#f3c7a5",
+     "#ddefff",
+     "#ffe0c2",
+     "#2cc987",
+     "#e7b187",
+     "#95e4c3",
+     "#eef7ff"
+    ],
+    "saturation": 0.431,
+    "value": 0.896,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.549
+     },
+     {
+      "hue": "orange",
+      "share": 0.417
+     },
+     {
+      "hue": "cyan",
+      "share": 0.034
+     }
+    ],
+    "exact": 127,
+    "grey": 0.549
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "7e7b562512a21d2fc843c64ad33e85c175f024fa8e49cb2499dab12e8c93954d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

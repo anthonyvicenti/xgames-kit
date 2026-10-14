@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kind sheet: vista</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/vista/core/src/ui/ui.css">
+  <!-- the picture only: the core's own panels, brand and loader are hidden (its names never show on a sheet) -->
+  <style>html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; } #app, #app canvas { display: block; } body > :not(#app):not(script) { display: none !important } #app > :not(canvas) { display: none !important }</style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="./vista.js"></script>
+</body>
+</html>

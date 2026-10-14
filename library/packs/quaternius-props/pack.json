@@ -1,0 +1,61 @@
+{
+ "packVersion": 1,
+ "id": "quaternius-props",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Quaternius props and weapons",
+ "describe": "Quaternius weapons and ruin props from Poly Pizza pages, each pinned by its page and hash.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Quaternius",
+  "url": "https://quaternius.com",
+  "file": "library/packs/quaternius-props/LICENSE.txt"
+ },
+ "source": {
+  "kind": "collection",
+  "page": "https://poly.pizza/u/Quaternius",
+  "rebuild": "each asset's page and download are in sources.json; the old kit tools normalised bodies onto gf-humanoid-1 (optimize.mjs --normalize) and weapons to the forge weapon frame"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 3,
+   "hues": [
+    "#888880",
+    "#373736",
+    "#414241",
+    "#636b76",
+    "#5d6476",
+    "#5c4c42",
+    "#555659",
+    "#63474a",
+    "#51443b",
+    "#402d39",
+    "#919092",
+    "#7f7f75"
+   ],
+   "saturation": 0.061,
+   "value": 0.362,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 1
+    }
+   ],
+   "grey": 1
+  },
+  "trianglesPerMetre": 66.22,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 9,
+ "validators": [
+  "budget"
+ ]
+}

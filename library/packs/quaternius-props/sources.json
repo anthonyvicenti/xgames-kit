@@ -1,0 +1,610 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "rock": {
+   "origin": "gf-forge library ruins/rock.glb",
+   "roles": [
+    "ruins.rock",
+    "ruins.rock"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.518,
+     "saturation": 0.033,
+     "top": [
+      {
+       "colour": "#888880",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 6.12,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 162,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 4320,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "rocks-small": {
+   "origin": "gf-forge library ruins/rocks-small.glb",
+   "roles": [
+    "ruins.rocks.small",
+    "ruins.rocks.small"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.425,
+     "saturation": 0.088,
+     "top": [
+      {
+       "colour": "#636b76",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 6.67,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 84,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3516,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "rocks": {
+   "origin": "gf-forge library ruins/rocks.glb",
+   "roles": [
+    "ruins.rocks",
+    "ruins.rocks"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.518,
+     "saturation": 0.033,
+     "top": [
+      {
+       "colour": "#888880",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 8.54,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 632,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 10916,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "axe": {
+   "origin": "gf-forge library weapons/axe.glb",
+   "roles": [
+    "player.coop.knight",
+    "weapon.melee.quaternius",
+    "weapon.melee.quaternius"
+   ],
+   "hold": {
+    "arm_r": [
+     0.17,
+     -0.2,
+     -0.36
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.362,
+     "saturation": 0.135,
+     "top": [
+      {
+       "colour": "#5d6476",
+       "share": 0.513
+      },
+      {
+       "colour": "#63474a",
+       "share": 0.236
+      },
+      {
+       "colour": "#402d39",
+       "share": 0.202
+      },
+      {
+       "colour": "#919092",
+       "share": 0.05
+      }
+     ]
+    },
+    "trianglesPerMetre": 95.83,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 966,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 20536,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "dagger": {
+   "origin": "gf-forge library weapons/dagger.glb",
+   "roles": [
+    "weapon.melee.dagger",
+    "weapon.melee.dagger"
+   ],
+   "hold": {
+    "arm_r": [
+     0.15,
+     -0.19,
+     -0.34
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.432,
+     "saturation": 0.096,
+     "top": [
+      {
+       "colour": "#5d6476",
+       "share": 0.44
+      },
+      {
+       "colour": "#63474a",
+       "share": 0.197
+      },
+      {
+       "colour": "#7f7f75",
+       "share": 0.191
+      },
+      {
+       "colour": "#919092",
+       "share": 0.159
+      },
+      {
+       "colour": "#402d39",
+       "share": 0.013
+      }
+     ]
+    },
+    "trianglesPerMetre": 176.52,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 726,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 17376,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "machinegun": {
+   "origin": "gf-forge library weapons/machinegun.glb",
+   "roles": [
+    "weapon.mg.quaternius",
+    "weapon.mg.quaternius"
+   ],
+   "hold": {
+    "arm_r": [
+     0.15,
+     -0.21,
+     -0.46
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.231,
+     "saturation": 0.009,
+     "top": [
+      {
+       "colour": "#373736",
+       "share": 0.476
+      },
+      {
+       "colour": "#414241",
+       "share": 0.442
+      },
+      {
+       "colour": "#333435",
+       "share": 0.068
+      },
+      {
+       "colour": "#28292a",
+       "share": 0.014
+      }
+     ]
+    },
+    "trianglesPerMetre": 87.98,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1374,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 22640,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "pistol": {
+   "origin": "gf-forge library weapons/pistol.glb",
+   "roles": [
+    "player.coop.kaykit",
+    "weapon.pistol.quaternius",
+    "weapon.pistol.quaternius"
+   ],
+   "hold": {
+    "arm_r": [
+     0.13,
+     -0.17,
+     -0.34
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.308,
+     "saturation": 0.036,
+     "top": [
+      {
+       "colour": "#555659",
+       "share": 0.527
+      },
+      {
+       "colour": "#414241",
+       "share": 0.342
+      },
+      {
+       "colour": "#5c4c42",
+       "share": 0.13
+      }
+     ]
+    },
+    "trianglesPerMetre": 104.99,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1046,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 19912,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "shotgun-pump": {
+   "origin": "gf-forge library weapons/shotgun-pump.glb",
+   "roles": [
+    "weapon.shotgun.pump",
+    "weapon.shotgun.pump"
+   ],
+   "hold": {
+    "arm_r": [
+     0.13,
+     -0.2,
+     -0.44
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.252,
+     "saturation": 0.061,
+     "top": [
+      {
+       "colour": "#373736",
+       "share": 0.384
+      },
+      {
+       "colour": "#5c4c42",
+       "share": 0.329
+      },
+      {
+       "colour": "#414241",
+       "share": 0.225
+      },
+      {
+       "colour": "#28292a",
+       "share": 0.062
+      }
+     ]
+    },
+    "trianglesPerMetre": 66.03,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 978,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 19452,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "shotgun": {
+   "origin": "gf-forge library weapons/shotgun.glb",
+   "roles": [
+    "weapon.shotgun.quaternius",
+    "weapon.shotgun.quaternius"
+   ],
+   "hold": {
+    "arm_r": [
+     0.13,
+     -0.2,
+     -0.4
+    ],
+    "note": "a default first-person hold: where fp/arms.glb's arm_r (the grip) sits in camera space for this weapon"
+   },
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.246,
+     "saturation": 0.063,
+     "top": [
+      {
+       "colour": "#373736",
+       "share": 0.483
+      },
+      {
+       "colour": "#51443b",
+       "share": 0.231
+      },
+      {
+       "colour": "#414241",
+       "share": 0.154
+      },
+      {
+       "colour": "#5c4c42",
+       "share": 0.125
+      },
+      {
+       "colour": "#28292a",
+       "share": 0.008
+      }
+     ]
+    },
+    "trianglesPerMetre": 66.22,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 956,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 21544,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 9,
+   "paletteSize": 3,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 1
+    }
+   ],
+   "lightness": 0.362,
+   "saturation": 0.061,
+   "trianglesPerMetre": 66.22,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 1
+  },
+  "licenceText": "Each model's Poly Pizza page reads \"CC0 1.0\" (Creative Commons Zero) on the day it was retrieved; the Universal Animation Library is CC0."
+ }
+}

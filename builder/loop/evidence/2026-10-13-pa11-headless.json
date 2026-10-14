@@ -1,0 +1,633 @@
+{
+ "schema": "xgk-loop-e2e/1",
+ "what": "The second real end-to-end build through `gamesfun build` (headless), on the merged tree (main c19fc18 plus stream/loop2): the paired eval case PA11 verbatim (a board game, no walking character asked for), a real model, the real create, the six gates in real Chrome on the GPU queue, a black-box play-tester and the new second reader. Not an eval run (no witness, no probe, no eval judge): a proof that the loop runs whole on a non-character game.",
+ "date": "2026-10-13",
+ "prompt": "giant four in a row with friends",
+ "command": "GAMESFUN_GPU_WRAP=<gpu-run.sh> gamesfun build --prompt \"giant four in a row with friends\" --game games/pa11-four --model claude-opus-5-5 --playtest-model claude-sonnet-5-5",
+ "ranOn": "stream/loop2: attempt 1 at 754f1ab, attempt 2 at d4470bd, attempt 3 at c9e1b6d",
+ "answers": "the defaults (card 1 with every question's default; nobody typed anything)",
+ "attempts": [
+  {
+   "attempt": 1,
+   "minutes": 3.6,
+   "usd": 0.673,
+   "ended": "stopped by me in round 7",
+   "why": "six ledger rounds went back and forth on one checker problem (the body line quoted the person and was asked); on the stronger model the ledger round read evals/paired/cases/PA11.json (the frozen case: its ledger and control, the answer key), so I stopped it. Ctrl+C then killed the round, but the loop started the next one.",
+   "fixedBy": [
+    "d4470bd: headless rounds deny Read under evals/; a stopped build starts no new round; the problem names both ways out"
+   ],
+   "rounds": [
+    {
+     "n": 1,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.17,
+     "turns": 4
+    },
+    {
+     "n": 2,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.4,
+     "usd": 0.11,
+     "turns": 4
+    },
+    {
+     "n": 3,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.04,
+     "turns": 2
+    },
+    {
+     "n": 4,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.4,
+     "usd": 0.21,
+     "turns": 4
+    },
+    {
+     "n": 5,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.14,
+     "turns": 2
+    },
+    {
+     "n": 6,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 1.9,
+     "usd": 0,
+     "turns": null,
+     "error": "claude exited (null) without a result: "
+    }
+   ]
+  },
+  {
+   "attempt": 2,
+   "minutes": 2.3,
+   "usd": 0.9706,
+   "ended": "stopped by me in round 8",
+   "why": "the ledger round went back and forth eight times: the board mechanic owes a question when the prompt does not say how each player is shown, and the checker refused any question on a line that quotes the person. No ladder rung could fix a checker that contradicts a part's own manifest.",
+   "fixedBy": [
+    "c9e1b6d: a line that quotes the person may be asked when it says so (asked: true)"
+   ],
+   "rounds": [
+    {
+     "n": 1,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.21,
+     "turns": 5
+    },
+    {
+     "n": 2,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.4,
+     "usd": 0.12,
+     "turns": 4
+    },
+    {
+     "n": 3,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.17,
+     "turns": 5
+    },
+    {
+     "n": 4,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.2,
+     "usd": 0.03,
+     "turns": 2
+    },
+    {
+     "n": 5,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.4,
+     "usd": 0.18,
+     "turns": 5
+    },
+    {
+     "n": 6,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.14,
+     "turns": 2
+    },
+    {
+     "n": 7,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.2,
+     "usd": 0.13,
+     "turns": 2
+    },
+    {
+     "n": 8,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.2,
+     "usd": 0,
+     "turns": null,
+     "error": "claude exited (null) without a result: "
+    }
+   ]
+  },
+  {
+   "attempt": 3,
+   "minutes": 139.8,
+   "usd": 10.4455,
+   "ended": "delivered",
+   "models": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "rounds": [
+    {
+     "n": 1,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.21,
+     "turns": 4
+    },
+    {
+     "n": 2,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.8,
+     "usd": 0.36,
+     "turns": 10
+    },
+    {
+     "n": 3,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.8,
+     "usd": 0.34,
+     "turns": 9
+    },
+    {
+     "n": 4,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.9,
+     "usd": 0.37,
+     "turns": 10
+    },
+    {
+     "n": 5,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 19.3,
+     "usd": 6.83,
+     "turns": 105,
+     "denied": [
+      "Monitor"
+     ]
+    },
+    {
+     "n": 6,
+     "kind": "spec",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 1.8,
+     "usd": 1.35,
+     "turns": 28
+    },
+    {
+     "n": 7,
+     "kind": "build",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 10.7,
+     "usd": 0.47,
+     "turns": 21,
+     "denied": [
+      "Bash",
+      "Bash",
+      "Bash"
+     ]
+    },
+    {
+     "n": 8,
+     "kind": "playtest",
+     "model": "claude-sonnet-5-5",
+     "effort": null,
+     "minutes": 21.4,
+     "usd": 0.15,
+     "turns": 13,
+     "waitedOut": [
+      {
+       "error": "You've hit your session limit · resets 6:30pm (America/Phoenix)",
+       "minutes": 31.5
+      }
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "read",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.6,
+     "usd": 0.36,
+     "turns": 11
+    }
+   ]
+  }
+ ],
+ "total": {
+  "minutes": 145.7,
+  "usd": 12.09
+ },
+ "foundation": {
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "turns",
+  "kind": "silly",
+  "why": {
+   "runtime": "three/standard-3d: meets camera follow, dimension 3d",
+   "loop": "turns: \"four in a row\": One player acts at a time, in order; a move out of turn is refused with a reason; a clock for each turn; bots act on theirs.",
+   "kind": "silly: the person did not say how it should feel, so the look proven on three/standard-3d until they do"
+  },
+  "said": [
+   "three: plays in any browser with WebGL2 (the scenic profile uses WebGPU and falls back to WebGL2) on desktops, laptops, phones and inside a post on X; phones are measured in a phone-sized browser, not yet on a real phone",
+   "No feel was named: the silly look for now; a change request can give it another without touching play."
+  ]
+ },
+ "ledger": [
+  {
+   "id": "acts",
+   "about": "acts",
+   "words": "four in a row",
+   "what": "Players take turns, one at a time, each dropping one disc on their turn.",
+   "home": "exists",
+   "by": "loop:turns"
+  },
+  {
+   "id": "perspective",
+   "about": "perspective",
+   "words": "giant four in a row",
+   "what": "A 3D view following your player beside a giant board on the floor, so its size is felt.",
+   "home": "exists",
+   "by": "runtime:three"
+  },
+  {
+   "id": "players",
+   "about": "players",
+   "words": "with friends",
+   "what": "Friends play against each other in one shared game, taking turns at the same board; empty seats are filled by bots.",
+   "home": "exists",
+   "by": "mechanic:board"
+  },
+  {
+   "id": "body",
+   "about": "body",
+   "words": "giant four in a row with friends",
+   "what": "Each player is a character who walks beside and on the giant board and drops a disc in the column they stand at.",
+   "home": "exists",
+   "by": "mechanic:board",
+   "asked": false
+  },
+  {
+   "id": "drop",
+   "about": "action",
+   "words": "four in a row",
+   "what": "On your turn you drop a disc into a column and it slides to the lowest free cell; a full column or a move out of turn is refused with a reason.",
+   "home": "exists",
+   "by": "mechanic:board"
+  },
+  {
+   "id": "win",
+   "about": "action",
+   "words": "four in a row",
+   "what": "The first player with four of their discs in a line (across, up or diagonal) wins; a full board is a draw.",
+   "home": "build"
+  },
+  {
+   "id": "giant",
+   "about": "thing",
+   "words": "giant",
+   "what": "The board is giant: big cells and discs at the scale of the players' bodies, laid out on the floor.",
+   "home": "exists",
+   "by": "mechanic:board"
+  }
+ ],
+ "pitch": {
+  "cards": [
+   "Giant Four",
+   "Shove Four",
+   "Dash Four"
+  ],
+  "questions": [
+   {
+    "about": "body",
+    "text": "How is each friend at the giant board?",
+    "default": "walk"
+   }
+  ],
+  "offers": null,
+  "chosen": [
+   {
+    "about": "cards",
+    "asked": [
+     "Giant Four",
+     "Shove Four",
+     "Dash Four"
+    ],
+    "answered": {
+     "choice": {
+      "card": "giant-four",
+      "answers": {
+       "body": "walk"
+      }
+     }
+    }
+   }
+  ]
+ },
+ "promises": [
+  {
+   "id": "row.acts",
+   "kind": "row",
+   "text": "Players take turns, one at a time, each dropping one disc on their turn. (you said: \"four in a row\")"
+  },
+  {
+   "id": "row.perspective",
+   "kind": "row",
+   "text": "A 3D view following your player beside a giant board on the floor, so its size is felt. (you said: \"giant four in a row\")"
+  },
+  {
+   "id": "row.players",
+   "kind": "row",
+   "text": "Friends play against each other in one shared game, taking turns at the same board; empty seats are filled by bots. (you said: \"with friends\")"
+  },
+  {
+   "id": "row.body",
+   "kind": "row",
+   "text": "Each player is a character who walks beside and on the giant board and drops a disc in the column they stand at. (you said: \"giant four in a row with friends\")"
+  },
+  {
+   "id": "row.drop",
+   "kind": "row",
+   "text": "On your turn you drop a disc into a column and it slides to the lowest free cell; a full column or a move out of turn is refused with a reason. (you said: \"four in a row\")"
+  },
+  {
+   "id": "row.giant",
+   "kind": "row",
+   "text": "The board is giant: big cells and discs at the scale of the players' bodies, laid out on the floor. (you said: \"giant\")"
+  },
+  {
+   "id": "build.1",
+   "kind": "build",
+   "text": "Built new for this game, and I can see it working when I play: four in a row wins: across, up or diagonal; a full board is a draw"
+  },
+  {
+   "id": "control.interact",
+   "kind": "control",
+   "text": "E: drop your disc in the column you stand in (on your turn): interact"
+  },
+  {
+   "id": "loop.closes",
+   "kind": "loop",
+   "text": "Players take turns, a move out of turn is refused, and the game ends with a winner and plays again."
+  }
+ ],
+ "playtest": {
+  "round": 1,
+  "ok": true,
+  "answers": {
+   "row.acts": {
+    "status": "seen",
+    "evidence": [
+     "runs/play2/16-d.jpg"
+    ],
+    "note": "HUD banner alternated 'Your turn' / 'Pip's turn'; each player dropped one disc per turn."
+   },
+   "row.perspective": {
+    "status": "seen",
+    "evidence": [
+     "runs/first-look/02-first.jpg"
+    ],
+    "note": "3D view from above/behind my pink character beside a big blue board on a plaza floor. The camera stayed in one spot instead of following me, and the board runs off the bottom-left of the screen."
+   },
+   "row.players": {
+    "status": "seen",
+    "evidence": [
+     "runs/play2/05-drop1.jpg"
+    ],
+    "note": "Bots (Pip, Bo, Moss) took seats and played at the same board with me. I only tested bots, not a second human."
+   },
+   "row.body": {
+    "status": "seen",
+    "evidence": [
+     "runs/first-look/17-e3.jpg",
+     "runs/play2/05-drop1.jpg"
+    ],
+    "note": "My pink bean character walks with WASD, and a ring marks the column I stand in. Walking off the board gave the hint 'Walk onto the board', and E there gave 'Stand on the board'."
+   },
+   "row.drop": {
+    "status": "seen",
+    "evidence": [
+     "runs/play2/16-d.jpg",
+     "runs/full/play.json"
+    ],
+    "note": "Discs landed in the lowest free cell. Refusals shown: 'Not your turn', 'That column is full', and 'Stand on the board'."
+   },
+   "row.giant": {
+    "status": "seen",
+    "evidence": [
+     "runs/first-look/02-first.jpg"
+    ],
+    "note": "The cells are about as wide as my character, so the board is big. I could only see part of it at once."
+   },
+   "build.1": {
+    "status": "seen",
+    "evidence": [
+     "runs/full2/33-end.jpg"
+    ],
+    "note": "A round ended with 'Pip wins!', with a yellow-ringed highlight on a winning line. Pip's discs look like a diagonal, and the HUD gave Pip 1 point. I did not see a draw."
+   },
+   "control.interact": {
+    "status": "seen",
+    "evidence": [
+     "runs/play2/16-d.jpg"
+    ],
+    "note": "E dropped a disc in my column on my turn. Off turn it showed a refusal toast."
+   },
+   "loop.closes": {
+    "status": "seen",
+    "evidence": [
+     "runs/full2/33-end.jpg"
+    ],
+    "note": "Turns and the out-of-turn refusal worked, and the game ended with a winner card showing 'Play again' and 'Menu'. I did not click Play again, so a restart is unverified."
+   }
+  },
+  "summary": "Turns, dropping with E, refusals with reasons, a bot win with the line highlighted, and the results card with Play again all showed on screen. I never saw a draw, and I never clicked Play again, so a restart is unchecked. The fixed camera that doesn't follow my character is the main rough spot."
+ },
+ "secondReader": {
+  "status": "read",
+  "marks": {
+   "kept": 5,
+   "partly": 1,
+   "lost": 0,
+   "cannot-tell": 1
+  },
+  "intent": 0.8333333333333334,
+  "rows": {
+   "acts": {
+    "mark": "kept",
+    "why": "The turn banner switches between 'Your turn' and 'Pip's turn', and each turn adds one disc to the board."
+   },
+   "perspective": {
+    "mark": "partly",
+    "why": "It is a 3D view from above and behind a character standing beside a big floor board, but the board is always cut off at the bottom-left, and the tester says the camera did not keep up with their character."
+   },
+   "players": {
+    "mark": "cannot-tell",
+    "why": "Only bots (Pip, Bo, Moss) were seen sharing the board, and no second human ever joined, so playing with friends is unseen; the lobby's 'Play with friends' button is only a label."
+   },
+   "body": {
+    "mark": "kept",
+    "why": "The player is a pink bean that walks around the plaza and onto the board, a ring marks the column it stands in, and 'E: drop in this column' appears there; bots also walk to their columns."
+   },
+   "drop": {
+    "mark": "kept",
+    "why": "Discs show up on the board after each drop, and the tester saw the refusals 'Not your turn', 'That column is full' and 'Stand on the board'; the 'Walk onto the board' hint is on screen, but I could not check the lowest-free-cell rule myself on a board that lies flat."
+   },
+   "win": {
+    "mark": "kept",
+    "why": "A round ended with 'Pip wins!', four blue discs in a diagonal ringed in yellow, and Pip's score went to 1; across and up wins and the draw were not seen."
+   },
+   "giant": {
+    "mark": "kept",
+    "why": "The board fills the town square, and each cell is about as wide as a character, so the discs are at body scale."
+   }
+  },
+  "findings": [
+   "The friends part of their idea is unproven: every game seen was one person against bots, and the lobby's default Play is 'You and 1 bot'.",
+   "You can never see the whole giant board at once because it always runs off the screen, so it is hard to spot lines of four forming.",
+   "The board lies flat on the floor, so 'slides to the lowest cell' has no gravity you can see, and it is hard to tell which end of a column is the bottom.",
+   "A draw on a full board and 'Play again' starting a new round were never seen."
+  ],
+  "summary": "Giant Four is a 3D four-in-a-row game on a board laid out flat in a town square: you walk your bean character to a column and press E to drop a disc, taking turns with bot opponents. The giant board, walking bodies, turns and a highlighted diagonal win all came through, but nobody ever saw friends playing together, and the camera never shows the whole board.",
+  "words": "A second reader, who saw only your words and the game, did not find everything kept. A 3D view following your player beside a giant board on the floor, so its size is felt. (\"giant four in a row\"): partly, It is a 3D view from above and behind a character standing beside a big floor board, but the board is always cut off at the bottom-left, and the tester says the camera did not keep up with their character. Friends play against each other in one shared game, taking turns at the same board; empty seats are filled by bots. (\"with friends\"): cannot-tell, Only bots (Pip, Bo, Moss) were seen sharing the board, and no second human ever joined, so playing with friends is unseen; the lobby's 'Play with friends' button is only a label. It also noticed: The friends part of their idea is unproven: every game seen was one person against bots, and the lobby's default Play is 'You and 1 bot'. You can never see the whole giant board at once because it always runs off the screen, so it is hard to spot lines of four forming. The board lies flat on the floor, so 'slides to the lowest cell' has no gravity you can see, and it is hard to tell which end of a column is the bottom. A draw on a full board and 'Play again' starting a new round were never seen."
+ },
+ "ladder": {
+  "climbs": [],
+  "record": {
+   "repairs": 0,
+   "rescues": 0,
+   "rescueModel": null,
+   "specialist": 0,
+   "generated": 0,
+   "asked": false,
+   "stop": null
+  }
+ },
+ "delivery": {
+  "outcome": "delivered",
+  "gates": {
+   "A": "pass",
+   "B": "pass",
+   "C": "pass",
+   "D": "pass",
+   "E": "pass",
+   "F": "pass"
+  },
+  "promises": {
+   "proven": [
+    "row.acts",
+    "row.perspective",
+    "row.players",
+    "row.body",
+    "row.drop",
+    "row.giant",
+    "build.1",
+    "control.interact",
+    "loop.closes"
+   ],
+   "failed": [],
+   "untested": []
+  },
+  "ledger": [
+   {
+    "id": "acts",
+    "status": "proven",
+    "reader": "kept"
+   },
+   {
+    "id": "perspective",
+    "status": "proven",
+    "reader": "partly"
+   },
+   {
+    "id": "players",
+    "status": "proven",
+    "reader": "cannot-tell"
+   },
+   {
+    "id": "body",
+    "status": "proven",
+    "reader": "kept"
+   },
+   {
+    "id": "drop",
+    "status": "proven",
+    "reader": "kept"
+   },
+   {
+    "id": "win",
+    "status": "proven",
+    "reader": "kept"
+   },
+   {
+    "id": "giant",
+    "status": "proven",
+    "reader": "kept"
+   }
+  ],
+  "summary": "Giant Four has a 7×6 board laid flat in the plaza, big enough to walk on. On your turn, walk to a column and press E, and your disc slides to the lowest free cell. If the column is full, or it isn't your turn, the move is refused and you're told why. rules.js now checks for four discs of one colour in a line (across, up or diagonal) through the last disc dropped. When that happens the winning line lights up and the round ends with +1 to the winner; a full board is a draw. Bots walk to their column before they drop. The number in a line that wins is the rules.need setting (4). The quick verify passed 21 of 21 checks (the contact sheet was skipped). One problem I couldn't clean up: shell commands were blocked, so a stray scratch file, games/pa11-four/rules.js.new (it only contains \"x\"), is still in the folder and should be deleted."
+ },
+ "honest": [
+  "Delivered on the third attempt with every gate passed and every promise seen by the play-tester; nobody has played it, and this is not the creator's verdict.",
+  "The second reader, which saw only the prompt, the promises with the tester's log and the screenshots, did not agree that everything was kept: \"with friends\" cannot-tell (every game seen was one person against bots; the tester marked it seen with bots only, as on PA10), the view partly (the giant board always runs off the screen; the camera did not follow). The loop's own proof said delivered; the reader is advisory and its words are delivered beside it. This is the gap it exists to show.",
+  "Two human players were checked by gate E (measure 5), not by the tester or the reader.",
+  "No economy or backend was offered: the pitch round chose not to, and the words did not ask for one, so the new part steps did not run in this build (they run in the tests only).",
+  "Round 5 (the pitch, on the stronger model) took 19 minutes and $6.83: with no shell of its own it started general-purpose subagents (the Agent tool) that ran validation scripts for it. No round was meant to have subagents; fixed after this run (headless rounds deny Agent and Task).",
+  "The account hit its session limit during the play-test; the round waited 31.5 minutes for the reset and ran again (claude.mjs patient), as designed. The wait is not in the round's minutes; it is in the attempt's.",
+  "The build round left a scratch file (rules.js.new, holding \"x\") it could not delete with the commands it was allowed; verify still passed with it there.",
+  "Attempts 1 and 2 were stopped by me after the loop went back and forth on the ledger; their fixes are commits d4470bd and c9e1b6d. Their records are summarised here; the transcripts (7 MB, machine paths) stay outside the repository."
+ ]
+}

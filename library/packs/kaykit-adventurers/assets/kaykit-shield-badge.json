@@ -1,0 +1,128 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-shield-badge",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-shield-badge.glb",
+ "sha256": "31ba8b2e9da1d0d08f9e24b60cd5844a3da88555dfb61643e48197b681e82c26",
+ "bytes": 44792,
+ "preview": "previews/kaykit-shield-badge.png",
+ "from": "shield_badge.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Badge_Shield (handslot.l)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a heater shield with a badge",
+ "tags": [
+  "shield",
+  "offhand",
+  "block",
+  "heater",
+  "kaykit",
+  "badge"
+ ],
+ "use": {
+  "size": [
+   0.662,
+   0.766,
+   0.184
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.331,
+   -0.405,
+   -0.109
+  ],
+  "grip": {
+   "position": [
+    -0.0073,
+    0.0738,
+    0.078
+   ],
+   "quaternion": [
+    -0.4909,
+    0.5089,
+    0.5089,
+    0.4909
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 262,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 262,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 44792,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#767f84",
+     "#788287",
+     "#6e777c",
+     "#6a7277",
+     "#7f898e",
+     "#6a7377",
+     "#8e9a9f",
+     "#838e92"
+    ],
+    "saturation": 0.133,
+    "value": 0.482,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.81
+     },
+     {
+      "hue": "orange",
+      "share": 0.106
+     },
+     {
+      "hue": "brown",
+      "share": 0.077
+     }
+    ],
+    "grey": 0.81
+   },
+   "trianglesPerMetre": 15.42,
+   "texelsPerMetre": 73,
+   "texturedShare": 0.955,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/shield_badge.gltf",
+  "sha256": "51b687316b2f9bfe89e586a6ef5f91cface8a326c9d604c8acea7699d6f3523d",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Badge_Shield (handslot.l)"
+ }
+}

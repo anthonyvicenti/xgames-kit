@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "office-wall",
+ "pack": "kenney-furniture-kit",
+ "file": "office-wall.glb",
+ "sha256": "42ee7e247a35e346d6787010214b9e23b925fa74ff7ba98f6d59dfea9c569d55",
+ "bytes": 4040,
+ "preview": "previews/office-wall.png",
+ "from": "kenney:furniture-kit/wall; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a plain office wall panel",
+ "tags": [
+  "office",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.579,
+   0.1
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2,
+    2.579,
+    0.1
+   ],
+   "offset": [
+    0,
+    1.29,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4040,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffffff",
+     "#96a7a7",
+     "#f3cca8"
+    ],
+    "saturation": 0.067,
+    "value": 0.819,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.964
+     },
+     {
+      "hue": "orange",
+      "share": 0.036
+     }
+    ],
+    "grey": 0.964
+   },
+   "trianglesPerMetre": 1.03,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "69273d5d623bddfce41d12d4e5eeb5621ea04f1edcbd8f35c00a60c2fd3258b7",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

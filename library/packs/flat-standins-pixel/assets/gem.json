@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "gem",
+ "pack": "flat-standins-pixel",
+ "file": "gem.png",
+ "sha256": "9237b4c5dc468e90256454419e794649e7def6070b13e8b48ae1531e433d13c3",
+ "bytes": 290,
+ "preview": "previews/gem.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): gem.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a cut blue gem",
+ "tags": [
+  "pixel",
+  "gem",
+  "jewel",
+  "pickup",
+  "flat",
+  "2d"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#48c8e8",
+     "#2a9ac0",
+     "#9aeefa",
+     "#325a75",
+     "#1a6a8a",
+     "#51687c",
+     "#203651",
+     "#264865"
+    ],
+    "saturation": 0.625,
+    "value": 0.496,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.817
+     },
+     {
+      "hue": "blue",
+      "share": 0.158
+     }
+    ],
+    "exact": 9,
+    "grey": 0.025
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.188
+   }
+  }
+ },
+ "source": {
+  "sha256": "db1c7a27625090395e840dfaaa490b14633363890b0ad1d106c8d74031762c35",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

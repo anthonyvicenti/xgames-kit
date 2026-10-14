@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-clouds",
+ "pack": "forge-world",
+ "file": "world-night-clouds.png",
+ "sha256": "f0c661e2bf2f17ef598043f3e6d5bce8042b470e625a3cd09567ff50cbc038e2",
+ "bytes": 27259,
+ "preview": "previews/world-night-clouds.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 20 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a clouded night sky from below: grey masses with paler rims, ragged gaps of open sky (alpha), a wide gap for the moon at 0.5, 0.5 of the picture; tiles; 128 m across",
+ "tags": [
+  "texture",
+  "night",
+  "clouds",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 2,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0.446
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#3b4351",
+     "#3a4250",
+     "#58616f",
+     "#5c6573",
+     "#5b6472",
+     "#3c4452",
+     "#3e4655",
+     "#5e6775"
+    ],
+    "saturation": 0.123,
+    "value": 0.378,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 252,
+    "grey": 1
+   },
+   "texelsPerMetre": 2,
+   "outline": {
+    "present": false,
+    "share": 0.004
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 20 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

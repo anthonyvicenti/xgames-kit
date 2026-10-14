@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "barrel",
+ "pack": "forge-town",
+ "file": "barrel.glb",
+ "sha256": "fc7573181409ac965e743ff81ef24367fe7a622cab670f8c06d2b02b15402a29",
+ "bytes": 5956,
+ "preview": "previews/barrel.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-barrel.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a barrel, 0.92 m tall",
+ "tags": [
+  "town",
+  "barrel"
+ ],
+ "use": {
+  "size": [
+   0.684,
+   0.92,
+   0.684
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.342,
+   0,
+   -0.342
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.7,
+    0.92,
+    0.7
+   ],
+   "offset": [
+    0,
+    0.46,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 40,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 40,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 5956,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#4f3926",
+     "#282626",
+     "#5e432c",
+     "#664930",
+     "#785538",
+     "#543c27",
+     "#63462e",
+     "#705034"
+    ],
+    "saturation": 0.291,
+    "value": 0.247,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.795
+     },
+     {
+      "hue": "grey",
+      "share": 0.205
+     }
+    ],
+    "grey": 0.205
+   },
+   "trianglesPerMetre": 4.4,
+   "texelsPerMetre": 33,
+   "texturedShare": 0.877,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-barrel.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0051",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0051.png",
+ "sha256": "c7d7c7175d96aaca27ed44a867fb5ccea1fe136effdf2beb9d892419c39c495a",
+ "bytes": 178,
+ "preview": "previews/tile-0051.png",
+ "from": "Tiles/tile_0051.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "sand floor with a wall's shadow along its top edge and a few pebbles",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "floor",
+  "sand",
+  "shadow",
+  "pebbles",
+  "edge",
+  "edge-north"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#eaa56c",
+     "#cf8254",
+     "#fec99c"
+    ],
+    "saturation": 0.698,
+    "value": 0.643,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "2c10663f36fbfef2638b018d8ed3c11f1e2e3c62fd63300b13e7aeb39273eb97",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

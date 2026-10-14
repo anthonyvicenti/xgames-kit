@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0042",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0042.png",
+ "sha256": "0da3abd3b193d0aa80407031ffd5e933adb054ac628b390e645e23c4042e89c5",
+ "bytes": 194,
+ "preview": "previews/tile-0042.png",
+ "from": "Tiles/tile_0042.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "sand floor with broken grey flagstones",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "floor",
+  "sand",
+  "flagstones",
+  "paving",
+  "stones",
+  "rubble",
+  "fill"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#eaa56c",
+     "#c0cbdc",
+     "#cf8254"
+    ],
+    "saturation": 0.609,
+    "value": 0.698,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.734
+     },
+     {
+      "hue": "blue",
+      "share": 0.266
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8dc63d1b4fc05e9ef0dc5ad22788e49e4b37477d4e85de2c2e420d22fe4cd958",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

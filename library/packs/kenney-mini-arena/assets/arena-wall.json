@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "arena-wall",
+ "pack": "kenney-mini-arena",
+ "file": "arena-wall.glb",
+ "sha256": "152a67ff355f3c6ca188bd4521e0b1ca991e31bc14b7728dfa170d847c7b2cec",
+ "bytes": 17324,
+ "preview": "previews/arena-wall.png",
+ "from": "kenney:mini-arena/wall; baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a chunky lilac stone arena wall",
+ "tags": [
+  "arena",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   2.5,
+   2.5,
+   1.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.5,
+    2.5,
+    1.5
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 174,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 174,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17324,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#6d728a",
+     "#757a91",
+     "#afb7dc",
+     "#f5f5f9",
+     "#71768e",
+     "#696f86",
+     "#99a0c0",
+     "#a7afd2"
+    ],
+    "saturation": 0.189,
+    "value": 0.614,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.723
+     },
+     {
+      "hue": "blue",
+      "share": 0.277
+     }
+    ],
+    "grey": 0.723
+   },
+   "trianglesPerMetre": 2.37,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "4434f4013f4f61c41630f6b13d96ec4a8435c1afabd8b6d0bfa98f8e8608104a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

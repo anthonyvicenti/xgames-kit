@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "half-pipe",
+ "pack": "kenney-mini-skate",
+ "file": "half-pipe.glb",
+ "sha256": "250fefcee61171d7ae0b264b66e28c7f8c69371ecf92ba0a0733f2e7b2f33068",
+ "bytes": 14208,
+ "preview": "previews/half-pipe.png",
+ "from": "kenney:mini-skate/half-pipe; baked to metres (x2.75), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skate half-pipe ramp",
+ "tags": [
+  "arena",
+  "plaza",
+  "ramp",
+  "half",
+  "pipe"
+ ],
+ "use": {
+  "size": [
+   2.75,
+   2.2,
+   2.75
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.75,
+    2.2,
+    2.75
+   ],
+   "offset": [
+    0,
+    1.1,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14208,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c3704e",
+     "#d47e59",
+     "#cc7853",
+     "#c87451",
+     "#d07b56",
+     "#d7815b",
+     "#7e849b",
+     "#5a6078"
+    ],
+    "saturation": 0.507,
+    "value": 0.557,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.92
+     },
+     {
+      "hue": "grey",
+      "share": 0.08
+     }
+    ],
+    "grey": 0.08
+   },
+   "trianglesPerMetre": 1.23,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-skate",
+  "download": "https://kenney.nl/media/pages/assets/mini-skate/00b0c2b304-1709221152/kenney_mini-skate.zip",
+  "sha256": "5390fcbf9519d74ca16110af655ed4beeb7570f456e18483f927d5c0c4077e5a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.75), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

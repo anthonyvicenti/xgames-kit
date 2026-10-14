@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "body-side",
+ "pack": "flat-standins-drawn",
+ "file": "body-side.png",
+ "sha256": "e0f154495de3f2ecab06e64b900b816a2cd33a7a2c084b60d0c2c0fe4e5cc4e0",
+ "bytes": 19144,
+ "preview": "previews/body-side.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a drawn body sheet seen from the side (six frames)",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "body",
+  "side"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "frames": {
+   "cell": [
+    256,
+    256
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "drawn",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1536
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 256,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#f2f0ec",
+     "#2a2440",
+     "#ffd9b8",
+     "#cfcbd6",
+     "#5a4a6a",
+     "#ffffff",
+     "#6d6879",
+     "#b89d90"
+    ],
+    "saturation": 0.347,
+    "value": 0.665,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.553
+     },
+     {
+      "hue": "purple",
+      "share": 0.243
+     },
+     {
+      "hue": "orange",
+      "share": 0.204
+     }
+    ],
+    "exact": 77,
+    "grey": 0.553
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-wall-half",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-wall-half.glb",
+ "sha256": "6c6ea3d6c15173ba7f5d1f4db48378fc7125c48ee4730c1ec8ed64b67eb25c3f",
+ "bytes": 57488,
+ "preview": "previews/dungeon-wall-half.png",
+ "from": "wall_half.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a half-width stone wall section",
+ "tags": [
+  "dungeon",
+  "wall",
+  "modular",
+  "stone",
+  "half"
+ ],
+ "use": {
+  "size": [
+   1.5,
+   3,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   0,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.5,
+    3,
+    0.75
+   ],
+   "offset": [
+    0.75,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 272,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 272,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 57488,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7b8589",
+     "#7f8a8f",
+     "#4b5256",
+     "#596064",
+     "#4a5155",
+     "#40464a",
+     "#565c60",
+     "#4c5256"
+    ],
+    "saturation": 0.063,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.25,
+   "texelsPerMetre": 36,
+   "texturedShare": 0.72,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_half.gltf.glb",
+  "sha256": "9e65c438f55d96cbcd554489bf2dec236feb575a8192c709d3bf6886599339a8",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "about": "What the look judge's contact sheets draw that is not in a runtime's own library: third-party 2D packs, fetched by kind-sheet.mjs --fetch from their pinned source into .cache/packs/<id>/ (never committed; the zip hash is checked), and the HUD fonts, read from the asset library's font packs (library/packs/ofl-*, the bytes in the library's store). Each 2D pack is also a library pack (kinds/PACKS.md); once the sheet reads the 2D packs from the library store too, this file shrinks to nothing.",
+ "packs": {
+  "kenney-tiny-town": {
+   "title": "Tiny Town (Kenney)",
+   "page": "https://kenney.nl/assets/tiny-town",
+   "download": "https://kenney.nl/media/pages/assets/tiny-town/a415fbeb49-1735736916/kenney_tiny-town.zip",
+   "zipSha256": "9768692dccff1d706408a5aedd6ca4f6cd1409506cbc84cb2f862919764be977",
+   "spdx": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "licenseText": "License.txt in the zip"
+  },
+  "kenney-tiny-dungeon": {
+   "title": "Tiny Dungeon (Kenney)",
+   "page": "https://kenney.nl/assets/tiny-dungeon",
+   "download": "https://kenney.nl/media/pages/assets/tiny-dungeon/f8422efb44-1674742415/kenney_tiny-dungeon.zip",
+   "zipSha256": "c109438ab06f65fd80f9b2686a4cf9c7c11dc64444b47333ec71d602f8bb5fc7",
+   "spdx": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "licenseText": "License.txt in the zip"
+  },
+  "kenney-new-platformer-pack": {
+   "title": "New Platformer Pack 1.1 (Kenney)",
+   "page": "https://kenney.nl/assets/new-platformer-pack",
+   "download": "https://kenney.nl/media/pages/assets/new-platformer-pack/1896103897-1764756702/kenney_new-platformer-pack-1.1.zip",
+   "zipSha256": "553b907f3f0e505ab65f56f245ccaff3123c8fe3f3a0dfce9373b996bfc18cc2",
+   "spdx": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "licenseText": "License.txt in the zip"
+  },
+  "kenney-toon-characters": {
+   "title": "Toon Characters (Kenney)",
+   "page": "https://kenney.nl/assets/toon-characters",
+   "download": "https://kenney.nl/media/pages/assets/toon-characters/4e8a6e4e53-1774770819/kenney_toon-characters.zip",
+   "zipSha256": "d4c0eb31f9d9af074315af251a53e8c74925dec84fbd53703c91c9ed4a4cace9",
+   "spdx": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "licenseText": "License.txt in the zip"
+  },
+  "kenney-background-elements-remastered": {
+   "title": "Background Elements Remastered (Kenney)",
+   "page": "https://kenney.nl/assets/background-elements-remastered",
+   "download": "https://kenney.nl/media/pages/assets/background-elements-remastered/7b034822ed-1774771758/kenney_background-elements-remastered.zip",
+   "zipSha256": "9c904f0b7c52a15aeb2cbf454de641620cfb9025b1611a0a21bd8c46992f4568",
+   "spdx": "CC0-1.0",
+   "author": "Kenney (www.kenney.nl)",
+   "licenseText": "License.txt in the zip"
+  }
+ },
+ "fonts": {
+  "Fredoka": {
+   "pack": "ofl-fredoka",
+   "spdx": "OFL-1.1"
+  },
+  "Lilita One": {
+   "pack": "ofl-lilita-one",
+   "spdx": "OFL-1.1"
+  },
+  "VT323": {
+   "pack": "ofl-vt323",
+   "spdx": "OFL-1.1"
+  },
+  "Silkscreen": {
+   "pack": "ofl-silkscreen",
+   "spdx": "OFL-1.1"
+  }
+ }
+}

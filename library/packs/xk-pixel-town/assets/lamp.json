@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "lamp",
+ "pack": "xk-pixel-town",
+ "file": "lamp.png",
+ "sha256": "67ffa429b709ef7de810e246ec891a16f145bad93a7dafab795f7fdaa38d9895",
+ "bytes": 285,
+ "preview": "previews/lamp.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): lamp.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a street lamp, lit",
+ "tags": [
+  "pixel",
+  "lamp",
+  "light",
+  "street"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 40
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 40
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#3c3a48",
+     "#2d2438",
+     "#3f354a",
+     "#6a6878",
+     "#4a4858",
+     "#ffd860",
+     "#fff4c0",
+     "#32293e"
+    ],
+    "saturation": 0.292,
+    "value": 0.351,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.546
+     },
+     {
+      "hue": "purple",
+      "share": 0.282
+     },
+     {
+      "hue": "yellow",
+      "share": 0.172
+     }
+    ],
+    "exact": 9,
+    "grey": 0.546
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.935
+   }
+  }
+ },
+ "source": {
+  "sha256": "c9829b9933eb59b8812f9125b433cee9f755ffae4b5092acca68f98cb72c5560",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

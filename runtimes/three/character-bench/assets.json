@@ -1,0 +1,743 @@
+{
+  "schema": "gf-assets/1",
+  "game": "gf-three-character-bench",
+  "title": "gf-three character bench",
+  "editing": "readonly",
+  "readonlyReason": "A development bench for track C, not a game",
+  "groups": [
+    {
+      "id": "characters",
+      "label": "Characters"
+    }
+  ],
+  "slots": [
+    {
+      "id": "character.body.player",
+      "group": "characters",
+      "label": "Player character",
+      "type": "model",
+      "source": {
+        "file": "assets/models/body-player.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "main",
+      "description": "Default: bean-classic"
+    },
+    {
+      "id": "character.clips",
+      "group": "characters",
+      "label": "Character animations",
+      "type": "model",
+      "source": {
+        "file": "assets/clips/gf-humanoid-1.glb"
+      },
+      "constraints": {
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ]
+      },
+      "tier": "advanced",
+      "facet": "look",
+      "editable": false,
+      "readonlyReason": "shared clips",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius (Universal Animation Library); carry, emotes and get-ups authored by games.fun",
+        "url": "https://quaternius.itch.io/universal-animation-library",
+        "source": "pmndrs/ecctrl@e2cab804f9f15661a642e76f52d09f0b2db63f35 public/AnimationLibrary.glb (sha256 1b7bf678…ee5c)"
+      }
+    },
+    {
+      "id": "character.body.lib-bean-classic",
+      "group": "characters",
+      "label": "Jelly bean",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/bean-classic.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun",
+        "url": "https://games.fun"
+      }
+    },
+    {
+      "id": "character.body.lib-bean-chunky",
+      "group": "characters",
+      "label": "Chunky toon",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/bean-chunky.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun",
+        "url": "https://games.fun"
+      }
+    },
+    {
+      "id": "character.body.lib-bean-tall",
+      "group": "characters",
+      "label": "Tall bean",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/bean-tall.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun",
+        "url": "https://games.fun"
+      }
+    },
+    {
+      "id": "character.body.lib-bean-gumdrop",
+      "group": "characters",
+      "label": "Gumdrop",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/bean-gumdrop.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "games.fun",
+        "url": "https://games.fun"
+      }
+    },
+    {
+      "id": "character.body.lib-ual-mannequin",
+      "group": "characters",
+      "label": "Mannequin",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/ual-mannequin.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://quaternius.itch.io/universal-animation-library"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-astronaut",
+      "group": "characters",
+      "label": "Astronaut",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-astronaut.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/3hC2i0CTuO"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-swat",
+      "group": "characters",
+      "label": "SWAT",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-swat.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/Btfn3G5Xv4"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-adventurer-woman",
+      "group": "characters",
+      "label": "Adventurer",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-adventurer-woman.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/ZwF0K7WBmu"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-business-man",
+      "group": "characters",
+      "label": "Office worker",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-business-man.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/JFrLIKqvCH"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-casual-man",
+      "group": "characters",
+      "label": "Casual man",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-casual-man.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/kZ3DmIoGip"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-casual-woman",
+      "group": "characters",
+      "label": "Casual woman",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-casual-woman.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/qJ2gsTUBHL"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-hoodie",
+      "group": "characters",
+      "label": "Hoodie kid",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-hoodie.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/gKLBoRsyKe"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-office-zombie",
+      "group": "characters",
+      "label": "Office zombie",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-office-zombie.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/kZ3DmIoGip"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-punk-woman",
+      "group": "characters",
+      "label": "Punk",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-punk-woman.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/djXoqejw6w"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-woman-dress",
+      "group": "characters",
+      "label": "Woman in a dress",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-woman-dress.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/nIItLV9nxS"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-worker",
+      "group": "characters",
+      "label": "Construction worker",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-worker.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/Yg2bQZO6Hj"
+      }
+    },
+    {
+      "id": "character.body.lib-quaternius-zombie",
+      "group": "characters",
+      "label": "Zombie",
+      "type": "model",
+      "source": {
+        "file": "assets/bodies/quaternius-zombie.glb"
+      },
+      "constraints": {
+        "rigged": true,
+        "rig": "gf-humanoid-1",
+        "animations": [
+          "idle",
+          "walk",
+          "run",
+          "jump",
+          "fall",
+          "land",
+          "hit",
+          "knockdown",
+          "getup",
+          "aim",
+          "carry",
+          "interact",
+          "emote_wave",
+          "emote_cheer"
+        ],
+        "maxBytes": 6000000,
+        "scale": 1
+      },
+      "facet": "look",
+      "tier": "advanced",
+      "license": {
+        "spdx": "CC0-1.0",
+        "author": "Quaternius",
+        "url": "https://poly.pizza/m/VlXjG0N8Eg"
+      }
+    }
+  ],
+  "ignore": [
+    {
+      "path": "*.mjs",
+      "reason": "bench tooling"
+    },
+    {
+      "path": "evidence/**",
+      "reason": "QA runs"
+    }
+  ]
+}

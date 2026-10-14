@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-planks",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-planks.png",
+ "sha256": "f860fe837d67a5d972d4d0a0dab79d8e77b68f99ee35c11297744f4a56cc21fb",
+ "bytes": 43000,
+ "preview": "previews/voxel-planks.png",
+ "from": "kenney:voxel-pack/wood; PNG/Tiles/wood.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 972,158; mean difference 6.5 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "wood (Voxel Pack)",
+ "tags": [
+  "planks",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.024
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c48647",
+     "#b47b41",
+     "#aa743d",
+     "#cb8b49",
+     "#d08e4a",
+     "#bf8244",
+     "#c38546",
+     "#c28445"
+    ],
+    "saturation": 0.508,
+    "value": 0.511,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 390,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "034f0c8cf6ea6d42cae74eaf0665f10c9331baa79cc9d305190ee90880c4849e",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

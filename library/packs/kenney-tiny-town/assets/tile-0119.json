@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0119",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0119.png",
+ "sha256": "712fb231af19094a97d787cd2c6b84a06c1e972549740ee9da996b37af51439f",
+ "bytes": 251,
+ "preview": "previews/tile-0119.png",
+ "from": "Tiles/tile_0119.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "an arrow with a grey head and white fletching, pointing up and right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "arrow",
+  "ammo",
+  "archery",
+  "weapon",
+  "projectile",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a"
+    ],
+    "saturation": 0.266,
+    "value": 0.322,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.77
+     },
+     {
+      "hue": "blue",
+      "share": 0.175
+     },
+     {
+      "hue": "orange",
+      "share": 0.056
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "30091d93126c683011d0866c54c755d631af69b97c396c3a6b3e285a9da6a2f8",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-purple-horizontal-left",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-purple-horizontal-left.png",
+ "sha256": "a2e883158a1dc45b611d90c26ead904085c6b5036e782af8591b5692932024e5",
+ "bytes": 2987,
+ "preview": "previews/terrain-purple-horizontal-left.png",
+ "from": "Sprites/Tiles/Double/terrain_purple_horizontal_left.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain purple horizontal left tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "purple",
+  "horizontal",
+  "left",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 63.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#ba6be9",
+     "#353541",
+     "#cfd5da",
+     "#d699fa",
+     "#a452d4",
+     "#a6b2bb",
+     "#b869e7"
+    ],
+    "saturation": 0.326,
+    "value": 0.649,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.671
+     },
+     {
+      "hue": "purple",
+      "share": 0.329
+     }
+    ],
+    "exact": 115,
+    "grey": 0.671
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "7034b6752bdce5312b0f00ecb1e9770c64e036905b5ce4c7c1236ef08bb92a86",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "packVersion": 1,
+ "id": "kenney-mini-market",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Mini Market (1.0)",
+ "describe": "Kenney's mini market: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/mini-market",
+  "file": "library/packs/kenney-mini-market/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "6f2e69090e359204ace43e4c98dc3fb8639b75e423109672b5c890d194c45203",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 15,
+   "hues": [
+    "#a6add0",
+    "#7c8199",
+    "#696f86",
+    "#9198b6",
+    "#71778e",
+    "#7f849c",
+    "#d6805a",
+    "#abb3d6",
+    "#da845d",
+    "#cb7752",
+    "#353539",
+    "#656a82"
+   ],
+   "saturation": 0.336,
+   "value": 0.6,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.439
+    },
+    {
+     "hue": "blue",
+     "share": 0.331
+    },
+    {
+     "hue": "orange",
+     "share": 0.127
+    },
+    {
+     "hue": "red",
+     "share": 0.051
+    }
+   ],
+   "grey": 0.458
+  },
+  "trianglesPerMetre": 5.06,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 10,
+ "validators": [
+  "budget"
+ ]
+}

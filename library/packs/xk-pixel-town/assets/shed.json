@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "shed",
+ "pack": "xk-pixel-town",
+ "file": "shed.png",
+ "sha256": "d9d63f6a32b6f3278872c2a1d33445eb8d42532f4d52671ffa85c5378e147e00",
+ "bytes": 798,
+ "preview": "previews/shed.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): shed.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a small plank shed with a green roof, 3 m across",
+ "tags": [
+  "pixel",
+  "shed",
+  "barn",
+  "building",
+  "set-piece"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 56
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 56
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#a8723f",
+     "#57a26a",
+     "#3c855a",
+     "#24503e",
+     "#2f6a4c",
+     "#5a3a24",
+     "#80c084",
+     "#6a4428"
+    ],
+    "saturation": 0.359,
+    "value": 0.384,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.421
+     },
+     {
+      "hue": "brown",
+      "share": 0.201
+     },
+     {
+      "hue": "orange",
+      "share": 0.162
+     },
+     {
+      "hue": "cyan",
+      "share": 0.098
+     },
+     {
+      "hue": "grey",
+      "share": 0.081
+     },
+     {
+      "hue": "red",
+      "share": 0.036
+     }
+    ],
+    "exact": 32,
+    "grey": 0.081
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.184
+   }
+  }
+ },
+ "source": {
+  "sha256": "5c9066e7fe98a60a2e2571cd7c7e8ebf1345f13c678f11b881721de35f1ea00b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

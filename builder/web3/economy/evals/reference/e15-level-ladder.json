@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Level Ladder",
+  "prompt": "Players pay 0.02 SOL for each attempt at a level; failed attempts grow the pot, and whoever clears the final level wins the whole pot.",
+  "keys": { "authority": "owner" },
+  "currency": "sol",
+  "tokens": [{ "key": "sol", "source": "sol" }],
+  "pools": [{ "key": "pot", "currency": "sol", "seed": 1, "about": "90% of every attempt; the one who clears the last level takes it." }],
+  "payments": [{ "key": "attempt", "name": "Attempt a level", "amount": 0.02, "split": [{ "to": "pool:pot", "percent": 90 }] }],
+  "decisions": [
+    { "key": "cleared", "when": "a player clears the final level", "does": "payout", "pool": "pot", "percent": 100, "to": "the player who cleared it", "signedBy": "page", "perDay": 0.2 }
+  ],
+  "scenario": { "days": 30, "perDay": { "payment:attempt": 400 } }
+}

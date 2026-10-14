@@ -1,0 +1,126 @@
+{
+ "assetVersion": 1,
+ "id": "bottle-return",
+ "pack": "kenney-mini-market",
+ "file": "bottle-return.glb",
+ "sha256": "329f53c3a21da6fe8bceae18125a68518b35b3aac66dcb1b1c7bd81e764b7943",
+ "bytes": 19004,
+ "preview": "previews/bottle-return.png",
+ "from": "kenney:mini-market/bottle-return; baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a bottle return machine",
+ "tags": [
+  "store",
+  "machine",
+  "station",
+  "bottle",
+  "return"
+ ],
+ "use": {
+  "size": [
+   0.945,
+   2.294,
+   1.01
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   1.7,
+   2.4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.945,
+    2.294,
+    1.01
+   ],
+   "offset": [
+    0,
+    1.147,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 324,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 324,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#656a82",
+     "#6d738a",
+     "#7c8199",
+     "#2c9671",
+     "#3aa378",
+     "#a6add0",
+     "#4cb681",
+     "#38383d"
+    ],
+    "saturation": 0.271,
+    "value": 0.494,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.521
+     },
+     {
+      "hue": "cyan",
+      "share": 0.237
+     },
+     {
+      "hue": "blue",
+      "share": 0.128
+     },
+     {
+      "hue": "green",
+      "share": 0.115
+     }
+    ],
+    "grey": 0.521
+   },
+   "trianglesPerMetre": 5.17,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "039eefd7eb61876eb8bfa3937f2890e75ec4e6629a6c97640504baa3ef51991f",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

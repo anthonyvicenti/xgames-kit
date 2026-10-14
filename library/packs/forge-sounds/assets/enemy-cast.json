@@ -1,0 +1,56 @@
+{
+ "assetVersion": 1,
+ "id": "enemy-cast",
+ "pack": "forge-sounds",
+ "file": "enemy-cast.ogg",
+ "sha256": "efd860c34a174310933ccdf12049f350469e5fc14681c3174cf71f768fa7d66a",
+ "bytes": 7744,
+ "preview": "previews/enemy-cast.png",
+ "from": "https://opengameart.org/content/80-cc0-rpg-sfx spell_fire_07.ogg; cut to 0.028-0.518 s of the source (0.49 s), 2 ms fade-in and 120 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 10 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton caster releases an orb (enemy cast)",
+ "tags": [
+  "sounds",
+  "enemy",
+  "cast"
+ ],
+ "use": {
+  "seconds": 0.504,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16.8,
+     "samplePeakDb": -7,
+     "truePeakDb": -6.9,
+     "hfRatio": 0.045
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.504,
+    "peakDbfs": -7,
+    "soundMaxLufs": -16.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.028-0.518 s of the source (0.49 s), 2 ms fade-in and 120 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 10 dB (loudest 400 ms toward -20 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

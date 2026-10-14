@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0089",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0089.png",
+ "sha256": "e6aba233a75ae6c9c2ae22867d5ac4a4dc8d17c56d6f870d7c7fe633d55aa4f0",
+ "bytes": 305,
+ "preview": "previews/tile-0089.png",
+ "from": "Tiles/tile_0089.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a closed wooden chest with iron bands, seen from above",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "chest",
+  "treasure",
+  "loot",
+  "closed",
+  "wooden",
+  "container"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#eaa56c",
+     "#8b9bb4",
+     "#763b36",
+     "#5a6988",
+     "#262b44"
+    ],
+    "saturation": 0.348,
+    "value": 0.482,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.351
+     },
+     {
+      "hue": "blue",
+      "share": 0.342
+     },
+     {
+      "hue": "orange",
+      "share": 0.261
+     },
+     {
+      "hue": "red",
+      "share": 0.045
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.778
+   }
+  }
+ },
+ "source": {
+  "sha256": "0b9fa753068061e816246437466d0c9d3100375ff12b77fe9459a801265c83c1",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

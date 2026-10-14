@@ -1,0 +1,273 @@
+{
+  "pitchVersion": 2,
+  "reply": "Card 1 builds the tilting board new for this game, which makes the build take a little longer.",
+  "ledger": {
+    "schema": "gf-ledger/1",
+    "prompt": "connect four but the board tilts every few turns, pixel art, play with a friend online. ranked can come later",
+    "rows": [
+      {
+        "id": "drop",
+        "about": "action",
+        "what": "Players drop discs into columns; four in a row wins",
+        "words": "connect four",
+        "home": "exists",
+        "by": "mechanic:board",
+        "core": true
+      },
+      {
+        "id": "tilt",
+        "about": "action",
+        "what": "The board tilts every few turns and loose discs slide",
+        "words": "the board tilts every few turns",
+        "home": "build",
+        "how": "a module in src/tilt.js that slides the discs after every third move",
+        "where": "module",
+        "core": true
+      },
+      {
+        "id": "acts",
+        "about": "acts",
+        "what": "One player acts at a time",
+        "words": "connect four",
+        "acts": "one-at-a-time",
+        "home": "exists"
+      },
+      {
+        "id": "view",
+        "about": "perspective",
+        "what": "A flat board seen from above",
+        "words": "pixel art",
+        "camera": "top",
+        "dimension": "2d",
+        "home": "exists"
+      },
+      {
+        "id": "friend",
+        "about": "players",
+        "what": "Two friends take turns against each other",
+        "words": "play with a friend online",
+        "together": "turns",
+        "home": "exists"
+      },
+      {
+        "id": "body",
+        "about": "body",
+        "what": "Each player is a cursor over the board",
+        "words": null,
+        "body": "cursor",
+        "asked": true,
+        "home": "exists"
+      },
+      {
+        "id": "devices",
+        "about": "devices",
+        "what": "It plays on a desktop and a phone",
+        "words": "default",
+        "devices": [
+          "desktop",
+          "phone"
+        ],
+        "home": "exists"
+      },
+      {
+        "id": "look",
+        "about": "feel",
+        "what": "Pixel art",
+        "words": "pixel art",
+        "kind": "pixel",
+        "home": "exists"
+      },
+      {
+        "id": "ranked",
+        "about": "thing",
+        "what": "Ranked matchmaking",
+        "words": "ranked",
+        "home": "build",
+        "cut": {
+          "words": "ranked can come later"
+        }
+      }
+    ],
+    "asks": [
+      {
+        "about": "body",
+        "text": "How is each player shown on the board?",
+        "field": "body",
+        "options": [
+          {
+            "id": "cursor",
+            "label": "A cursor in my colour",
+            "value": "cursor"
+          },
+          {
+            "id": "character",
+            "label": "A little character beside the board",
+            "value": "character"
+          }
+        ],
+        "default": "cursor"
+      }
+    ]
+  },
+  "cards": [
+    {
+      "id": "a",
+      "title": "Drop Four Dash",
+      "hook": "Take turns dropping discs, but every third turn the board tilts.",
+      "howItPlays": "Two players take turns dropping discs into a 7 by 6 board. Every third turn the board tilts and loose discs slide. Four in a row wins.",
+      "players": "2 friends online, or you against a bot",
+      "whyFunny": "The tilt turns a sure win into a scramble.",
+      "v1": {
+        "has": [
+          "a drop-four board",
+          "turns with a clock",
+          "pixel art"
+        ],
+        "build": [
+          "the board tilts every few turns",
+          "the tilt shakes the camera"
+        ],
+        "notYet": [
+          "ranked matchmaking"
+        ]
+      },
+      "conceptPrompt": "pixel art drop-four board mid-tilt, discs sliding, two cursors",
+      "spec": {
+        "specVersion": 2,
+        "title": "Drop Four Dash",
+        "hook": "Take turns dropping discs, but every third turn the board tilts.",
+        "prompt": "connect four but the board tilts every few turns, pixel art, play with a friend online",
+        "ledger": {
+          "sha256": "9f2c4b7a8e1d3c5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f"
+        },
+        "runtime": "three",
+        "profile": "flat-2d",
+        "loop": "turns",
+        "kind": "pixel",
+        "players": {
+          "min": 2,
+          "max": 2,
+          "bots": true
+        },
+        "multiplayer": {
+          "mode": "live",
+          "together": "turns"
+        },
+        "devices": {
+          "targets": [
+            "desktop",
+            "laptop"
+          ]
+        },
+        "camera": "top",
+        "controls": {
+          "primary": "drop a disc"
+        },
+        "round": {
+          "seconds": 600,
+          "params": {
+            "turnSeconds": 20
+          }
+        },
+        "world": {
+          "template": "field",
+          "size": "small"
+        },
+        "mechanics": [
+          {
+            "id": "board",
+            "as": "drop-four board",
+            "params": {
+              "cols": 7,
+              "rows": 6,
+              "input": "drop",
+              "presence": "cursor",
+              "turnSeconds": 0
+            }
+          }
+        ],
+        "rules": {
+          "summary": "Four in a row wins. Every third turn the board tilts one way and loose discs slide.",
+          "params": {
+            "tiltEvery": 3
+          }
+        },
+        "characters": [
+          {
+            "role": "player",
+            "describe": "a pixel hand in your colour",
+            "body": {
+              "from": "kind"
+            }
+          }
+        ],
+        "build": [
+          {
+            "what": "the board tilts every few turns",
+            "how": "a module in src/tilt.js that slides discs after every third move and animates the tilt through the board's own cells",
+            "where": "module",
+            "row": "tilt",
+            "accept": "after the third turn the discs slide to one side"
+          },
+          {
+            "what": "the tilt shakes the camera",
+            "how": "an engine override of the flat camera rig that adds a short shake on the tilt event",
+            "where": "engine",
+            "row": "tilt"
+          }
+        ],
+        "src": [
+          {
+            "path": "src/tilt.js",
+            "for": [
+              "build.1"
+            ]
+          }
+        ],
+        "overrides": [
+          {
+            "file": "gf/three/flat/controller.js",
+            "why": "a short camera shake when the board tilts",
+            "for": [
+              "build.2"
+            ]
+          }
+        ],
+        "notInV1": [
+          "ranked matchmaking"
+        ]
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "body",
+      "about": "feel",
+      "text": "How is each player shown on the board?",
+      "options": [
+        {
+          "id": "cursor",
+          "label": "A cursor in my colour",
+          "value": "cursor"
+        },
+        {
+          "id": "character",
+          "label": "A little character beside the board",
+          "value": "character",
+          "set": {
+            "/characters/0/describe": "a little pixel character"
+          }
+        }
+      ],
+      "default": "cursor"
+    }
+  ],
+  "research": {
+    "bank": [],
+    "web": [],
+    "notes": "A drop-four board; the tilt is new."
+  },
+  "policy": {
+    "ok": true
+  }
+}

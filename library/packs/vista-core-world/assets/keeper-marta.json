@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "keeper-marta",
+ "pack": "vista-core-world",
+ "file": "keeper-marta.glb",
+ "sha256": "2b5eb048c75d37a6815cfc2770ca87dcaba1729b72779f1557c4f4d13b3ba75a",
+ "bytes": 5507076,
+ "preview": "previews/keeper-marta.png",
+ "from": "Microsoft Rocketbox avatar as the core ships it",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "the chandlery keeper (a Rocketbox adult on the core's own rig)",
+ "tags": [
+  "keeper",
+  "npc",
+  "human",
+  "realistic",
+  "calm"
+ ],
+ "use": {
+  "size": [
+   1.217,
+   1.766,
+   0.356
+  ],
+  "height": 1.766,
+  "rig": "rocketbox",
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 9284,
+  "textures": 3,
+  "textureMax": 1024,
+  "materials": 3,
+  "joints": 81
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": false,
+   "date": "2026-10-13",
+   "report": {
+    "problems": [
+     "missing required bones: Hips, Spine, Head, LeftArm, LeftForeArm, LeftHand, LeftUpLeg, LeftLeg, LeftFoot, RightArm, RightForeArm, RightHand, RightUpLeg, RightLeg, RightFoot"
+    ],
+    "warnings": [
+     "file size 5507076 B is over the target 2500000 B",
+     "the body carries 7 animation(s) of its own; the kit ignores them (clips come from the shared clip file)"
+    ],
+    "facts": {
+     "triangles": 9284,
+     "joints": 81,
+     "materials": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#000000",
+     "#ba9365",
+     "#615944",
+     "#635b44",
+     "#504833",
+     "#564e39",
+     "#ffff00",
+     "#686147"
+    ],
+    "saturation": 0.165,
+    "value": 0.178,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.697
+     },
+     {
+      "hue": "brown",
+      "share": 0.212
+     },
+     {
+      "hue": "orange",
+      "share": 0.061
+     },
+     {
+      "hue": "yellow",
+      "share": 0.03
+     }
+    ],
+    "grey": 0.697
+   },
+   "trianglesPerMetre": 6813.22,
+   "texelsPerMetre": 142707,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "MIT",
+  "author": "Microsoft",
+  "url": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

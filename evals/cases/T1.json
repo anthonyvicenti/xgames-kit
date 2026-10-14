@@ -1,0 +1,142 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T1",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-06",
+  "where": "games.fun research/studio-v2/evals/cases/T1.json"
+ },
+ "prompt": "a game like PeeVPee where you pee on your friends",
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "standard-3d"
+   ],
+   "loop": [
+    "round"
+   ],
+   "kind": [
+    "silly"
+   ]
+  },
+  "why": "Friends in one arena, a round of a few minutes, played for laughs. Godot is accepted on the same terms as three (a full runtime since 2026-10-13); profile applies to three."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, in the same round or run",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A round runs to a results screen and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one prop swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "stream",
+   "text": "Holding primary shoots a continuous arcing stream that knocks friends back",
+   "how": "human"
+  },
+  {
+   "id": "territory",
+   "text": "The stream claims surfaces or objects as territory that friends can take back; score follows territory",
+   "how": "human"
+  },
+  {
+   "id": "bladder",
+   "text": "A bladder meter empties while peeing and refills from drinks placed in the world",
+   "how": "human"
+  },
+  {
+   "id": "drinks-vary",
+   "text": "At least two drinks change the stream differently",
+   "how": "human"
+  },
+  {
+   "id": "stream-swap",
+   "text": "The stream's colour or look is a slot",
+   "how": "probe:slot"
+  },
+  {
+   "id": "pg13",
+   "text": "No anatomy is modelled; the stream comes from a censor blob or similar gag",
+   "how": "human"
+  },
+  {
+   "id": "looks-good",
+   "text": "The contact sheet looks like a game people would share (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "fun",
+   "text": "Two people playing for 3 minutes laugh at least once (creator's judgement)",
+   "how": "human"
+  }
+ ],
+ "probes": {
+  "slot": {
+   "match": "/stream|projectile/",
+   "types": [
+    "color",
+    "image",
+    "texture"
+   ]
+  }
+ },
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "The creator's acceptance test for Studio v2 (2026-10-06), re-created for spec v2 on 2026-10-13. Copy the loop, not the named game's name or art."
+}

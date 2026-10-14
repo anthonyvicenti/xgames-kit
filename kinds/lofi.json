@@ -1,0 +1,181 @@
+{
+  "id": "lofi",
+  "label": "Lo-fi",
+  "feel": "Cheap and dark on purpose: a low-resolution picture with hard pixels and an ordered dither, a small grimy palette, models that swim a little on the pixel grid, cel shading and thick ink in the gloom. Funny and scary in the same breath.",
+  "references": ["Lethal Company", "Content Warning", "Buckshot Roulette", "Mouthwashing"],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "standard-3d",
+      "preset": "toon-lowpoly",
+      "time": "night",
+      "values": {
+        "renderer": { "exposure": 0.82 },
+        "palette": {
+          "players": ["#e8762b", "#6a8a90", "#b8863e", "#6d7f45", "#8c2f28", "#bdb6a0", "#3d5763", "#d9b45a"],
+          "accent": "#e8762b",
+          "ui": "#0b0c0e"
+        },
+        "sun": {
+          "color": "#a9b4c2",
+          "intensity": 0.8,
+          "elevation": 35,
+          "azimuth": 20,
+          "shadowStrength": 0.95,
+          "shadowSoftness": 0.6
+        },
+        "ambient": { "sky": "#3a4148", "ground": "#1a1714", "intensity": 0.95, "envIntensity": 0.12, "envGround": "#141210" },
+        "sky": {
+          "top": "#05070a",
+          "horizon": "#1b2024",
+          "bottom": "#0c0e10",
+          "glow": "#9fb0c0",
+          "glowSize": 0.02,
+          "glowStrength": 0.25,
+          "disc": 2
+        },
+        "fog": { "color": "#0a0c0e", "near": 5, "far": 40 },
+        "lamps": { "intensity": 9, "distance": 8, "glow": 1.2, "color": "#ffd9a0" },
+        "materials": {
+          "character": {
+            "bands": 3,
+            "saturation": 0.8,
+            "rim": 0.4,
+            "rimColor": "#c9d4e0",
+            "shadowFloor": 0.3,
+            "toonSpecular": 0.2
+          },
+          "prop": { "bands": 3, "saturation": 0.75, "shadowFloor": 0.18 },
+          "ground": { "bands": 3, "saturation": 0.7, "shadowFloor": 0.16, "detail": 0.6 }
+        },
+        "post": {
+          "ao": { "intensity": 2.6, "radius": 1.0, "color": "#000000" },
+          "bloom": { "intensity": 0.55, "threshold": 0.85 },
+          "outline": { "strength": 1.0, "thickness": 1.0, "color": "#040404", "darken": 0.1, "fadeNear": 18, "fadeFar": 50 },
+          "grade": {
+            "contrast": 1.22,
+            "saturation": 0.78,
+            "vibrance": 0,
+            "temperature": -0.04,
+            "lift": "#06080a",
+            "gain": "#f2ead6",
+            "vignette": 0.5,
+            "vignetteColor": "#000000"
+          },
+          "lofi": {
+            "lines": 240,
+            "dither": 0.75,
+            "bayer": 4,
+            "steps": 6,
+            "paletteMix": 0.85,
+            "wobble": 1,
+            "affine": 0.7,
+            "palette": [
+              "#0b0c0e", "#17191c", "#24272b", "#33373b", "#4a4f52", "#6b6f6c", "#8f8e84", "#bdb6a0", "#e6dcc0",
+              "#3a2a20", "#5e3d27", "#8a5a32", "#b8863e", "#d9b45a", "#2c3a2a", "#465a36", "#6d7f45", "#25343c",
+              "#3d5763", "#6a8a90", "#5a1e1e", "#8c2f28", "#c45a3a", "#e8762b"
+            ]
+          }
+        },
+        "quality": { "high": { "smaa": false, "fxaa": false }, "low": { "smaa": false, "fxaa": false } }
+      }
+    },
+    "forge": { "preset": "gaslit-street" }
+  },
+  "world": {
+    "family": "facility",
+    "three": {
+      "templates": ["office"],
+      "default": "office",
+      "values": {
+        "ceiling": { "color": "#56544e", "color2": "#4e4c46", "glow": 0.05, "band": "#4a463f" },
+        "ground": { "color": "#6a6f66", "color2": "#62675e" }
+      },
+      "notes": "an interior after hours: the office template's rooms, lit by its ceiling lamps; the ceiling and the carpet in grimy tones (world values over the template, as config/world.json takes them)"
+    }
+  },
+  "camera": { "default": "first", "three": { "fov": 70, "bob": true } },
+  "bodies": {
+    "set": "workwear",
+    "three": ["quaternius-worker", "quaternius-hoodie", "quaternius-astronaut", "ual-mannequin"],
+    "physics": "ragdoll",
+    "notes": "plain work clothes and suits; the pass makes any body read cheap"
+  },
+  "props": {
+    "three": [
+      "desk", "chair-office", "monitor", "trashcan", "box-closed", "vending-machine", "fridge", "coat-rack", "barrel",
+      "cone"
+    ]
+  },
+  "audio": {
+    "character": "lo-fi and close: pitched-down crunches, a thin hum, retro shots; sounds feel recorded on cheap gear",
+    "sounds": {
+      "jump": { "preset": "jump", "pitch": 0.8 },
+      "land": { "preset": "land", "pitch": 0.75 },
+      "hit": { "preset": "hit-crunch", "pitch": 0.7 },
+      "hurt": { "preset": "hurt", "pitch": 0.75 },
+      "shoot": { "preset": "pew-retro", "pitch": 0.7 },
+      "door": { "preset": "door", "pitch": 0.8 },
+      "pickup": { "preset": "gem", "pitch": 0.8 },
+      "alarm": { "preset": "alarm", "pitch": 0.85 }
+    },
+    "ambient": { "preset": "wind-loop", "pitch": 0.55, "gainDb": -6 },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#e8762b",
+    "panel": "#0b0c0ee0",
+    "text": "#f0a25a",
+    "font": "VT323",
+    "radius": "0px",
+    "weight": 400,
+    "size": "20px"
+  },
+  "mechanics": {
+    "suggested": ["carry", "pickup", "health", "station"],
+    "why": "scavenging and hauling loot to a quota under threat. Suggestions only."
+  },
+  "packs": ["kenney-furniture-kit", "kenney-mini-market", "kenney-car-kit", "quaternius-ual-bodies", "ofl-vt323"],
+  "runtimes": {
+    "three": {
+      "profile": "standard-3d",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": true,
+        "note": "the lofi pass (runtimes/three/kit/look/lofi.js) and its tests; no game on this kind yet"
+      }
+    },
+    "forge": {
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": true,
+        "note": "partly: first person with weight and the square-texel retro option; no dither or palette pass on forge"
+      }
+    },
+    "godot": {
+      "profile": "3d",
+      "state": { "exists": false, "tested": false, "open": false },
+      "toProve": "a low-resolution dithered pass on Godot 3D"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "world": { "template": "office", "camera": "eye" },
+    "hero": "quaternius-worker",
+    "bodies": ["quaternius-worker", "quaternius-hoodie", "quaternius-astronaut", "ual-mannequin"],
+    "props": [
+      "desk", "chair-office", "monitor", "trashcan", "box-closed", "vending-machine", "fridge", "coat-rack", "barrel",
+      "cone"
+    ]
+  },
+  "state": {
+    "exists": true,
+    "tested": false,
+    "open": true,
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

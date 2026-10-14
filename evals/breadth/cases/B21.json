@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B21",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "steal-defend",
+  "rank": 21,
+  "row": "Steal-and-defend tycoon",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "each of us has a garden that grows money plants. sneak into other people's gardens and steal their best plants, buy better seeds and traps to protect yours",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "plots",
+   "type": "world",
+   "must": "a garden for each player"
+  },
+  {
+   "id": "grow",
+   "type": "mechanic",
+   "must": "plants that grow over time and earn money"
+  },
+  {
+   "id": "steal",
+   "type": "mechanic",
+   "must": "sneaking into another garden and carrying a plant away"
+  },
+  {
+   "id": "shop",
+   "type": "panel",
+   "must": "a shop of seeds and traps"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

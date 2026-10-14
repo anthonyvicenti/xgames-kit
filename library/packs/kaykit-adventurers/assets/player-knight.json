@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "player-knight",
+ "pack": "kaykit-adventurers",
+ "file": "player-knight.glb",
+ "sha256": "65e33285060703075730f6b04253e73b8f49cfd780dc21b9f9dbe2e0df823946",
+ "bytes": 106924,
+ "preview": "previews/player-knight.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0@672074b73ba276876a19e8816ecdc5241817ab47; held items taken off (1H_Sword_Offhand, Badge_Shield, Rectangle_Shield, Round_Shield, Spike_Shield, 1H_Sword, 2H_Sword: they are props on the hand sockets); clavicles added (l, r)…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a stocky knight in plate with a horned helmet and a cape (a spare player body; the cape takes the player colour)",
+ "tags": [
+  "player",
+  "coop",
+  "knight",
+  "bodies"
+ ],
+ "use": {
+  "size": [
+   1.457,
+   1.85,
+   0.94
+  ],
+  "height": 1.85,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/forge-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_cape"
+  ],
+  "tintMix": 0.85
+ },
+ "budgets": {
+  "triangles": 4712,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: interact at 0.4 s: 6.0% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: punch at 0.35 s: 8.0% of its triangles fold inside out (limit 4%)"
+    ],
+    "facts": {
+     "height": 1.736,
+     "triangles": 4712,
+     "joints": 22,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 26,
+    "hues": [
+     "#596064",
+     "#70797e",
+     "#747d82",
+     "#e4bf90",
+     "#e1ba8b",
+     "#f6c09c",
+     "#deb584",
+     "#687075"
+    ],
+    "saturation": 0.252,
+    "value": 0.527,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.676
+     },
+     {
+      "hue": "orange",
+      "share": 0.3
+     }
+    ],
+    "grey": 0.676
+   },
+   "trianglesPerMetre": 9.19,
+   "texelsPerMetre": 81,
+   "texturedShare": 0.83,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Knight.glb",
+  "sha256": "60428e3abc09ba83e595d256e3af8c5c976b46cdae599f0802fc82b4a3445168",
+  "retrieved": "2026-10-09",
+  "modified": "held items taken off (1H_Sword_Offhand, Badge_Shield, Rectangle_Shield, Round_Shield, Spike_Shield, 1H_Sword, 2H_Sword: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

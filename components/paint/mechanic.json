@@ -1,0 +1,289 @@
+{
+  "id": "paint",
+  "name": "Paint",
+  "describe": "Surface coverage per player or team; territory score",
+  "examples": [
+    "paint the arena with your colour",
+    "territory score from sprayed ground",
+    "ink trail while running"
+  ],
+  "rank": 20,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "by": {
+        "type": "string",
+        "enum": [
+          "player",
+          "team"
+        ],
+        "default": "player",
+        "description": "Who owns paint: each player, or each team (the teams mechanic)"
+      },
+      "cell": {
+        "type": "number",
+        "description": "Preferred cell size in metres (cells grow so that there are at most maxCells)",
+        "minimum": 0.25,
+        "maximum": 6,
+        "default": 1
+      },
+      "maxCells": {
+        "type": "integer",
+        "minimum": 16,
+        "maximum": 900,
+        "default": 400,
+        "description": "Most cells in the grid (the whole grid travels in about 2 bytes a cell at worst)"
+      },
+      "radius": {
+        "type": "number",
+        "description": "Radius of a splat from a thrown shot (m)",
+        "minimum": 0.2,
+        "maximum": 8,
+        "default": 1.3
+      },
+      "repaint": {
+        "type": "boolean",
+        "default": true,
+        "description": "A later splat takes cells from the previous owner"
+      },
+      "opacity": {
+        "type": "number",
+        "description": "Paint opacity",
+        "minimum": 0.1,
+        "maximum": 1,
+        "default": 0.85
+      },
+      "height": {
+        "type": "number",
+        "description": "Height above the ground the paint is drawn at (m)",
+        "minimum": 0.005,
+        "maximum": 0.2,
+        "default": 0.03
+      },
+      "fromProjectile": {
+        "type": "boolean",
+        "default": true,
+        "description": "Paint where the projectile mechanic's shots and streams touch the world"
+      },
+      "streamRadius": {
+        "type": "number",
+        "description": "Radius of a splat from a stream tick (m)",
+        "minimum": 0.2,
+        "maximum": 6,
+        "default": 0.8
+      },
+      "walkRadius": {
+        "type": "number",
+        "description": "Paint under walking players with this radius (0: off, the ink-trail mode)",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0
+      },
+      "walkInterval": {
+        "type": "number",
+        "description": "Seconds between trail splats",
+        "minimum": 0.05,
+        "maximum": 2,
+        "default": 0.2
+      },
+      "zones": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [],
+        "description": "World zone names to report coverage for (zoneOwner)"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.paint.radius",
+        "label": "Splat size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 48,
+        "constraints": {
+          "min": 0.2,
+          "max": 8,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.paint.opacity",
+        "label": "Paint opacity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/opacity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 36,
+        "constraints": {
+          "min": 0.1,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.paint.repaint",
+        "label": "Paint can be taken over",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/repaint"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.paint.stream-radius",
+        "label": "Stream splat size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/streamRadius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.2,
+          "max": 6,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.paint.walk-radius",
+        "label": "Trail width (0 off)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/walkRadius"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 5,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.paint.cell",
+        "label": "Cell size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cell"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.25,
+          "max": 6,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.paint.height",
+        "label": "Paint height",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/height"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.005,
+          "max": 0.2,
+          "unit": "m"
+        }
+      }
+    ]
+  },
+  "events": [],
+  "counters": [
+    "each player's (or team's) painted share"
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the grid; every copy decodes the string and redraws the decal",
+    "state": "paint",
+    "fields": {
+      "g": "the owner grid as a run-length string (decode with paint.coverage(), never by hand)"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "projectile",
+    "teams"
+  ],
+  "gives": [
+    "territory"
+  ],
+  "bots": "no bot code",
+  "notes": {
+    "lines": [
+      "With the projectile mechanic, paint lands under every shot and stream by itself (fromProjectile); otherwise the host calls paint.splat(player, { x, z }).",
+      "paint.coverage() gives each owner's share on every copy: score from it in results() or check(), not per frame.",
+      "by \"team\" paints in team colours: for a game with the teams mechanic."
+    ],
+    "readme": "components/paint/README.md",
+    "stub": {
+      "as": "paint",
+      "worked": "results(ctx) { return paint.coverage().map(c => ({ id: c.owner, name: c.label, value: Math.round(c.share * 100) })); }",
+      "traps": [
+        "paint.splat, clear and fill change the grid on the host only: keep them under if (ctx.host)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/paint/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/paint/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-paint.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-paint.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

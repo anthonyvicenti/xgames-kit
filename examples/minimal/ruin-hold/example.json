@@ -1,0 +1,10 @@
+{
+  "title": "Ruin Hold",
+  "summary": "A first-person co-op hold on the forge runtime: two waves of the risen dead and their captain in a moonlit ruin, with down and revive. Free stand-in art (KayKit and Quaternius, CC0). WebGPU, else WebGL2; desktop and phone.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 23/23, none skipped; the same with the free stand-ins alone (XGAMES_PRIVATE_PACKS pointing at an empty folder) and with this machine's private art",
+    "kit": "xgames-kit stream/runtimes 4abb784 (on main a9d7c21)",
+    "date": "2026-10-13",
+    "how": "node bin/gamesfun.mjs create <dir> --from ruin-hold, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; about 7 minutes) under gpu-run.sh on Linux with a desktop GPU (WebGPU, its WebGL2 build for measure 32)"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "specVersion": 2,
+  "title": "Block Valley",
+  "hook": "A block world everyone shares: dig into the hills, light up a cave, build a house by the lake. It all stays.",
+  "prompt": "a minecraft-like block world for friends: build houses, dig caves, and it keeps what we built",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "world",
+  "kind": "blocky",
+  "players": {
+    "min": 1,
+    "max": 8,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "world": {
+    "template": "voxel",
+    "notes": "The blocky kind's land: biomes, caves with glowcaps and amber crystals, lakes, the hills going on into the haze. One shared world per published game, saved on the play host."
+  },
+  "mechanics": [
+    {
+      "id": "build",
+      "as": "place, break and paint blocks, lanterns, signs and boom blocks",
+      "params": {
+        "reach": 7
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Build anything with friends. Dig into the hills and caves, light them with lanterns, put up signs, set off a boom block. Everything is saved for everyone."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a block builder in their own colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "build": [],
+  "accept": [
+    "you are in the world with whoever is there, and you see each other",
+    "a block placed or broken shows for everyone, lit right (a lantern lights a cave)",
+    "everything built is still there the next day"
+  ],
+  "notInV1": [
+    "crafting",
+    "mobs",
+    "day and night",
+    "flowing water"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "Building with blocks; a boom block knocks a few out."
+  }
+}

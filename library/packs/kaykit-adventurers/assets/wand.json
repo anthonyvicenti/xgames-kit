@@ -1,0 +1,154 @@
+{
+ "assetVersion": 1,
+ "id": "wand",
+ "pack": "kaykit-adventurers",
+ "file": "wand.glb",
+ "sha256": "99f8dd8ef6c552ef5779bfc0897ba7f01ff7d21fc6ebd527858ce111164b9609",
+ "bytes": 11452,
+ "preview": "previews/wand.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0@672074b73ba276876a19e8816ecdc5241817ab47; normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis y+ → +Z, x → +Y, the grip to the origin, ×0.4968 to 0.36 m long; primitives joined per…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a short magic wand (KayKit)",
+ "tags": [
+  "weapon",
+  "focus",
+  "kaykit",
+  "wand",
+  "weapons",
+  "held"
+ ],
+ "use": {
+  "size": [
+   0.06,
+   0.06,
+   0.36
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    -0.01,
+    -0.043,
+    0
+   ],
+   "quaternion": [
+    0,
+    0,
+    -0.7071,
+    0.7071
+   ],
+   "scale": 2
+  },
+  "hands": 1,
+  "sockets": [
+   {
+    "name": "grip",
+    "node": "socket_grip",
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   {
+    "name": "muzzle",
+    "node": "socket_muzzle",
+    "position": [
+     0,
+     -0.0145,
+     0.261
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 150,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 150,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11452,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#31626b",
+     "#a26049",
+     "#8c4b38",
+     "#ad6b4f",
+     "#9b5a45",
+     "#a8664c",
+     "#306870",
+     "#325a64"
+    ],
+    "saturation": 0.388,
+    "value": 0.385,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.418
+     },
+     {
+      "hue": "orange",
+      "share": 0.411
+     },
+     {
+      "hue": "brown",
+      "share": 0.153
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 60.86,
+   "texelsPerMetre": 242,
+   "texturedShare": 0.862,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/wand.gltf",
+  "sha256": "b726392709e3e7fb4b5157f950500d4a98281503f7cac7d6afdf164578169338",
+  "retrieved": "2026-10-09",
+  "modified": "normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis y+ → +Z, x → +Y, the grip to the origin, ×0.4968 to 0.36 m long; primitives joined per material; sockets grip, muzzle; meshopt (from research/gf-scenic/library/props/kaykit-wand.glb)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

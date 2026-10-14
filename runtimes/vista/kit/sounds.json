@@ -1,0 +1,479 @@
+{
+  "version": 1,
+  "_note": "gf-vista core sounds (research/gf-vista/kit/audio.js). The core's soundscape plays these files itself into the gf-audio kit's sfx bus; a game lists them in assets.json sounds so Studio shows them. kit/audio.js splitSounds() keeps them out of createAudio (it would decode every file again) and applies each one's gainDb. Files: CC0 field recordings, credits in core/public/audio/CREDITS.md.",
+  "sounds": {
+    "vista-surf-far": {
+      "label": "Distant surf (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/surf_far.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-wind": {
+      "label": "Coastal wind (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/wind.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-palms": {
+      "label": "Wind in the palms (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/palms.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-crickets": {
+      "label": "Night crickets (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/crickets.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-pier-lap": {
+      "label": "Water lapping the pier (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/pier_lap.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-under-reef": {
+      "label": "Underwater reef crackle (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/under_reef.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-boat-engine": {
+      "label": "Boat engine (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/boat_engine.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-boat-lap": {
+      "label": "Water lapping the hull (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/boat_lap.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-boat-rush": {
+      "label": "Water rushing past the hull (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/boat_rush.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-birds-dawn": {
+      "label": "Dawn chorus (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/birds_dawn.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-whale-song": {
+      "label": "Whale song (bed)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/whale_song.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-step-sand": {
+      "label": "Footstep: dry sand",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_sand.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-step-wetsand": {
+      "label": "Footstep: wet sand",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_wetsand.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-surf-crash": {
+      "label": "Wave breaking",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/surf_crash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-surf-wash": {
+      "label": "Wave running up the sand",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/surf_wash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-surf-backwash": {
+      "label": "Backwash draining",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/surf_backwash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-step-wood": {
+      "label": "Footstep: planks",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_wood.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-step-water": {
+      "label": "Footstep: wading",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_water.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-step-grass": {
+      "label": "Footstep: grass",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_grass.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-step-rock": {
+      "label": "Footstep: rock",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/step_rock.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-swim": {
+      "label": "Swim stroke",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/swim.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-uw-swim": {
+      "label": "Underwater stroke",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/uw_swim.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-submerge": {
+      "label": "Going under",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/submerge.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-emerge": {
+      "label": "Coming up",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/emerge.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-splash": {
+      "label": "Splash into the water",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/splash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-hull-slap": {
+      "label": "Hull slamming a wave",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/hull_slap.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-gull": {
+      "label": "Gull call",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/gull.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-bird-forest": {
+      "label": "Songbird",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/bird_forest.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-bird-dove": {
+      "label": "Dove cooing",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/bird_dove.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-tern": {
+      "label": "Tern call",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/tern.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-whale-blow": {
+      "label": "Whale blow",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/whale_blow.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-big-splash": {
+      "label": "Whale splash",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/big_splash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-reel-wind": {
+      "label": "Reel winding (loop)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/reel_wind.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-reel-drag": {
+      "label": "Reel drag screaming (loop)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/reel_drag.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-line-strain": {
+      "label": "Line straining (loop)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/line_strain.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below).",
+      "loop": true
+    },
+    "vista-rod-swish": {
+      "label": "Rod swish (cast)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/rod_swish.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-bail-click": {
+      "label": "Bail click",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/bail_click.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-line-out": {
+      "label": "Line paying out",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/line_out.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-plop": {
+      "label": "Float landing",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/plop.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-line-snap": {
+      "label": "Line snapping",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/line_snap.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-fish-splash": {
+      "label": "Hooked fish splashing",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/fish_splash.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-fish-flop": {
+      "label": "Landed fish flapping",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/fish_flop.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-coins": {
+      "label": "Coins (sold, bought)",
+      "bus": "sfx",
+      "src": {
+        "file": "gf/core/public/audio/coins.ogg"
+      },
+      "engine": "vista-core",
+      "editable": false,
+      "readonlyReason": "Played by the scene's own soundscape (placed in the world, mixed by distance); its level can be trimmed with gainDb (0 or below)."
+    },
+    "vista-panel": {
+      "label": "Panel opens (buyer, shop, cooler)",
+      "bus": "ui",
+      "src": {
+        "preset": "click"
+      }
+    },
+    "vista-buy": {
+      "label": "Gear bought",
+      "bus": "ui",
+      "src": {
+        "preset": "confirm"
+      }
+    },
+    "vista-refused": {
+      "label": "Can't buy that",
+      "bus": "ui",
+      "src": {
+        "preset": "error"
+      }
+    },
+    "vista-bite": {
+      "label": "Bite cue (strike now)",
+      "bus": "sfx",
+      "src": {
+        "preset": "hover"
+      },
+      "gainDb": -6
+    }
+  }
+}

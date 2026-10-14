@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-cloud-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-cloud-middle.png",
+ "sha256": "efd30c97c6ea22d84a5544c2ea4540dded2c15a0fa9b3227357b8dde3ba6ce60",
+ "bytes": 1816,
+ "preview": "previews/terrain-grass-cloud-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_cloud_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass cloud middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "cloud",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 29.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#2ecc71",
+     "#ee9366",
+     "#353541",
+     "#de7e4f",
+     "#46e087",
+     "#20b860",
+     "#c66a3e",
+     "#2cc96e"
+    ],
+    "saturation": 0.581,
+    "value": 0.496,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.412
+     },
+     {
+      "hue": "orange",
+      "share": 0.409
+     },
+     {
+      "hue": "grey",
+      "share": 0.171
+     }
+    ],
+    "exact": 68,
+    "grey": 0.171
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.617
+   }
+  }
+ },
+ "source": {
+  "sha256": "1735afed81e7a99b48941a4cd353571669b934a01c21ff84a9f9328416f3f142",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

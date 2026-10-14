@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "ground-deadgrass",
+ "pack": "forge-textures-night",
+ "file": "ground-deadgrass.jpg",
+ "sha256": "6909229e2645576fd6b2afba254d19068e353968c3e73dca7c00a59cef3919c4",
+ "bytes": 93605,
+ "preview": "previews/ground-deadgrass.png",
+ "from": "https://polyhaven.com/a/burned_ground_01; resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.75, brightness ×0.95; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dead grass and ash over dirt",
+ "tags": [
+  "texture",
+  "ground",
+  "deadgrass",
+  "textures"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 32,
+    "hues": [
+     "#4d463e",
+     "#504941",
+     "#524b43",
+     "#4e473f",
+     "#534c44",
+     "#4f4840",
+     "#514a42",
+     "#4c453d"
+    ],
+    "saturation": 0.129,
+    "value": 0.32,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.898
+     },
+     {
+      "hue": "brown",
+      "share": 0.09
+     }
+    ],
+    "exact": 15580,
+    "grey": 0.898
+   },
+   "outline": {
+    "present": false,
+    "share": 0.219
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/burned_ground_01",
+  "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/burned_ground_01/burned_ground_01_diff_1k.jpg",
+  "sha256": "be83310cad64d23539e628f14525af651a03646f5a1cc6029bd19a9446ea72f9",
+  "retrieved": "2026-10-09",
+  "modified": "resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.75, brightness ×0.95; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+  "author": "Rob Tuytel"
+ }
+}

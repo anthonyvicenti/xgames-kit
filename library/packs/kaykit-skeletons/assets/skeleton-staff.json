@@ -1,0 +1,122 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-staff",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-staff.glb",
+ "sha256": "d10bf6032d6a7f43e0aacb0d683aa224d3c455bcb087a652ad83ec354d1a3517",
+ "bytes": 36928,
+ "preview": "previews/skeleton-staff.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Mage 2H_Staff…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skeleton mage's bone staff with a skull",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "ranged",
+  "kaykit",
+  "held",
+  "staff",
+  "weapon"
+ ],
+ "use": {
+  "size": [
+   0.448,
+   1.576,
+   0.565
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    -0.0055,
+    -0.0431,
+    0.0776
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 2
+ },
+ "budgets": {
+  "triangles": 1519,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1519,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 36928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 26,
+    "hues": [
+     "#726357",
+     "#d5a675",
+     "#5d5048",
+     "#e4c6a9",
+     "#565784",
+     "#e8ceb4",
+     "#e0be9c",
+     "#deb995"
+    ],
+    "saturation": 0.382,
+    "value": 0.595,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.639
+     },
+     {
+      "hue": "grey",
+      "share": 0.246
+     },
+     {
+      "hue": "blue",
+      "share": 0.107
+     }
+    ],
+    "grey": 0.246
+   },
+   "trianglesPerMetre": 36.63,
+   "texelsPerMetre": 135,
+   "texturedShare": 0.775,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Staff.gltf",
+  "sha256": "6bb554fef0889dc9e1a69a71ddae793a772fc18eea059ded61be4f8157fd2f04",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Mage 2H_Staff (handslot.r) (bounds -0.458,-0.846,-0.368..0.14,1.255,0.385 vs -0.245,-0.9,-0.146..0.331,1.254,0.146); the grip is…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

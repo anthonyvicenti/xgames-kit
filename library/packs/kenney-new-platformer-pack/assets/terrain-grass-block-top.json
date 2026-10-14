@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-block-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-block-top.png",
+ "sha256": "4c501046411fd4cba51a61cc4639706e93c8d9f5b0973826eb6b4dcd97ed8c65",
+ "bytes": 2113,
+ "preview": "previews/terrain-grass-block-top.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_block_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass block top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "block",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 27.0 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ee9366",
+     "#de7e4f",
+     "#2ecc71",
+     "#46e087",
+     "#353541",
+     "#c66a3e",
+     "#20b860",
+     "#2cc96e"
+    ],
+    "saturation": 0.666,
+    "value": 0.556,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.621
+     },
+     {
+      "hue": "green",
+      "share": 0.313
+     },
+     {
+      "hue": "grey",
+      "share": 0.063
+     }
+    ],
+    "exact": 71,
+    "grey": 0.063
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "4f3966fb8449e75ae284fdd78befb23fb9e1c7e15a27b6a0b88c6bea412fc864",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

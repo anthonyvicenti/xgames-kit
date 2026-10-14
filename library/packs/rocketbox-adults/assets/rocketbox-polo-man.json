@@ -1,0 +1,129 @@
+{
+ "assetVersion": 1,
+ "id": "rocketbox-polo-man",
+ "pack": "rocketbox-adults",
+ "file": "rocketbox-polo-man.glb",
+ "sha256": "1d80ba931c2e60f7905cfce5946a1cd2d761b60806c5318c85a453f97ed2658d",
+ "bytes": 718796,
+ "preview": "previews/rocketbox-polo-man.png",
+ "from": "https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9 Assets/Avatars/Adults/Male_Adult_01/Export/Male_Adult_01.fbx (git blob fdaf4aa7…, sha256 8d1edb51…8a29) and Assets/Avatars/Adults/Male_Adult_01/Textures/m002_*.tga, retrieved 2026-10-12; licence LICENSE.md…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a young man with short brown hair in a striped polo shirt, khaki shorts and trainers (realistic)",
+ "tags": [
+  "human",
+  "man",
+  "casual",
+  "realistic",
+  "summer",
+  "beach",
+  "coastal",
+  "modern",
+  "player",
+  "m",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.381,
+   1.824,
+   0.34
+  ],
+  "height": 1.824,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 7440,
+  "textures": 3,
+  "textureMax": 1024,
+  "materials": 3,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left arm: knockdown at 0.48 s: its edges stretch or crush ×5.1 (99th percentile; limit ×4.1)",
+     "model judge, right arm: heavy at 0.98 s: its edges stretch or crush ×5.2 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.824,
+     "triangles": 7440,
+     "joints": 80,
+     "materials": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 68,
+    "hues": [
+     "#585858",
+     "#27180f",
+     "#c8beb4",
+     "#7a736d",
+     "#000000",
+     "#d0c6bd",
+     "#a4906b",
+     "#988660"
+    ],
+    "saturation": 0.242,
+    "value": 0.502,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.413
+     },
+     {
+      "hue": "orange",
+      "share": 0.38
+     },
+     {
+      "hue": "brown",
+      "share": 0.155
+     },
+     {
+      "hue": "red",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.413
+   },
+   "trianglesPerMetre": 48.55,
+   "texelsPerMetre": 858,
+   "texturedShare": 0.999,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "6.04 heads tall; hips at 49% of the height; shoulders 23% of it",
+   "body": {
+    "headsTall": 6.04,
+    "hipShare": 0.491,
+    "shoulderShare": 0.231,
+    "widthShare": 0.757
+   }
+  }
+ },
+ "source": {
+  "page": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

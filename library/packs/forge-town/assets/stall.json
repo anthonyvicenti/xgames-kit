@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "stall",
+ "pack": "forge-town",
+ "file": "stall.glb",
+ "sha256": "7ab769a59e2018389b45b64619265ce9a8b2cb1319fdcfd4735eb6a1ef79618a",
+ "bytes": 14600,
+ "preview": "previews/stall.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-wood.png, town/town-awning.png, town/town-crate.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a market stall: a plank counter 2.4 m long with two boxes on it, four posts and a striped awning 2.4 m up",
+ "tags": [
+  "town",
+  "stall"
+ ],
+ "use": {
+  "size": [
+   2.9,
+   2.42,
+   1.65
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1.45,
+   0,
+   -0.7
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.4,
+    0.95,
+    1
+   ],
+   "offset": [
+    0,
+    0.475,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 66,
+  "textures": 3,
+  "textureMax": 64,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 66,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 3,
+     "bytes": 14600,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#7f312b",
+     "#7a2f2a",
+     "#413123",
+     "#56402d",
+     "#533e28",
+     "#473526",
+     "#433224",
+     "#33271b"
+    ],
+    "saturation": 0.367,
+    "value": 0.253,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.706
+     },
+     {
+      "hue": "red",
+      "share": 0.294
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.85,
+   "texelsPerMetre": 38,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-wood.png, town/town-awning.png, town/town-crate.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

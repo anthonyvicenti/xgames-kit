@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-dirt",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-dirt.png",
+ "sha256": "7f2fd7b32280c73a1990209045611b4db1af2a44910bbbb068d5c54570ccbe50",
+ "bytes": 37866,
+ "preview": "previews/voxel-dirt.png",
+ "from": "kenney:voxel-pack/dirt; PNG/Tiles/dirt.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 528,232; mean difference 3.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dirt (Voxel Pack)",
+ "tags": [
+  "dirt",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.016
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bb8044",
+     "#b17940",
+     "#9f6c39",
+     "#cd8c4a",
+     "#c48647",
+     "#b1793f",
+     "#b1783f",
+     "#b87e42"
+    ],
+    "saturation": 0.472,
+    "value": 0.495,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 352,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "fff7cf42c901e597cc8e212e070daf9e691032b49466d2e51ade930ad433fca1",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "body-fall",
+ "pack": "forge-sounds",
+ "file": "body-fall.ogg",
+ "sha256": "49e7ca88743fca974bb8676ea138b751cfd8f9033b5e7af8736c2a215d6edbc1",
+ "bytes": 6570,
+ "preview": "previews/body-fall.png",
+ "from": "https://kenney.nl/assets/impact-sounds Audio/impactSoft_heavy_000.ogg; unmodified",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "player dies (body fall)",
+ "tags": [
+  "sounds",
+  "body",
+  "fall",
+  "player",
+  "death"
+ ],
+ "use": {
+  "seconds": 0.527,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -10,
+     "samplePeakDb": -0.9,
+     "truePeakDb": -0.9,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.527,
+    "peakDbfs": -0.9,
+    "soundMaxLufs": -10
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/impact-sounds",
+  "retrieved": "2026-10-09",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

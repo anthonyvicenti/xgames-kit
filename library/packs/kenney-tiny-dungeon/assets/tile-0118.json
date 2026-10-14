@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0118",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0118.png",
+ "sha256": "4fa2897e12338562fd0eac82b0cce19640002c8873be5d26b46e4578a2008cbf",
+ "bytes": 318,
+ "preview": "previews/tile-0118.png",
+ "from": "Tiles/tile_0118.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a double-bladed iron battle axe",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "axe",
+  "battle-axe",
+  "double",
+  "weapon",
+  "melee",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#52607c",
+     "#eaa56c"
+    ],
+    "saturation": 0.278,
+    "value": 0.377,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.579
+     },
+     {
+      "hue": "blue",
+      "share": 0.295
+     },
+     {
+      "hue": "orange",
+      "share": 0.126
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "43679336db4fca6d7c4b47941f707174cdc4476b75af32e0d9f0bd80677831bd",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

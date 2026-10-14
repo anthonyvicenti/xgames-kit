@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B15",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "idle-clicker",
+  "rank": 15,
+  "row": "Idle / incremental / clicker",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a bakery clicker: tap the oven to bake, buy helpers that bake for you, keep earning even when I close it. friends can see each other's bakeries",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "tap",
+   "type": "mechanic",
+   "must": "tapping the oven to bake"
+  },
+  {
+   "id": "helpers",
+   "type": "panel",
+   "must": "a shop of helpers that bake on their own"
+  },
+  {
+   "id": "away",
+   "type": "loop",
+   "must": "earning goes on while the game is closed, and progress is kept"
+  },
+  {
+   "id": "see-friends",
+   "type": "players",
+   "must": "friends see each other's bakeries"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

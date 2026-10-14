@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0059",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0059.png",
+ "sha256": "a76738a012fef67579168fe052870345fc6943740f8d48ae918c8958d656d354",
+ "bytes": 181,
+ "preview": "previews/tile-0059.png",
+ "from": "Tiles/tile_0059.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a vertical run of wooden fence with a post in the middle; repeats up and down",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "fence",
+  "wooden",
+  "rail",
+  "post",
+  "vertical",
+  "middle"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#eaa56c",
+     "#bd6c4a"
+    ],
+    "saturation": 0.423,
+    "value": 0.38,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.567
+     },
+     {
+      "hue": "orange",
+      "share": 0.433
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.9
+   }
+  }
+ },
+ "source": {
+  "sha256": "90f0a1089064abeb9701110ba5c0770ff13b3b1fc90c459e30523ccf4711f507",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

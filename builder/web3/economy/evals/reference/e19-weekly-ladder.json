@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Weekly Ladder",
+  "prompt": "Every week, move 5% of the treasury pool into a prize pool and pay the top three on the leaderboard 50%, 30% and 20% of it.",
+  "keys": { "authority": "owner" },
+  "currency": "sol",
+  "tokens": [{ "key": "sol", "source": "sol" }],
+  "pools": [
+    { "key": "treasury", "currency": "sol", "seed": 50, "about": "The season's treasury." },
+    { "key": "prizes", "currency": "sol", "about": "5% of the treasury each week, paid to the top three." }
+  ],
+  "schedules": [{ "key": "weekly-prizes", "name": "Weekly prizes", "does": "move", "from": "treasury", "to": "prizes", "percent": 5, "every": "7d", "start": "publish+7d" }],
+  "decisions": [
+    { "key": "first", "when": "the week ends: first place on the leaderboard", "does": "payout", "pool": "prizes", "percent": 50, "to": "first place", "signedBy": "page", "perDay": 0.142857 },
+    { "key": "second", "when": "the week ends: second place, paid right after first", "does": "payout", "pool": "prizes", "percent": 60, "to": "second place (60% of what is left is 30% of the week's prize)", "signedBy": "page", "perDay": 0.142857 },
+    { "key": "third", "when": "the week ends: third place, paid right after second", "does": "payout", "pool": "prizes", "percent": 100, "to": "third place (the rest, 20%)", "signedBy": "page", "perDay": 0.142857 }
+  ],
+  "scenario": { "days": 30 }
+}

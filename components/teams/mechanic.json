@@ -1,0 +1,274 @@
+{
+  "id": "teams",
+  "name": "Teams",
+  "describe": "Team assignment, team score",
+  "examples": [
+    "red vs blue",
+    "two teams, shared score",
+    "three-way team battle"
+  ],
+  "rank": 100,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "count": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 4,
+        "default": 2,
+        "description": "Number of teams"
+      },
+      "names": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "Red",
+          "Blue",
+          "Green",
+          "Yellow"
+        ],
+        "description": "Team names, in order"
+      },
+      "colors": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "#ff5e6c",
+          "#4f7cff",
+          "#3ddc84",
+          "#ffd166"
+        ],
+        "description": "Team colours, in order"
+      },
+      "assign": {
+        "type": "string",
+        "enum": [
+          "balanced",
+          "seat",
+          "random"
+        ],
+        "default": "balanced",
+        "description": "balanced: the smallest team; seat: seat number; random: a random one of the smallest teams"
+      },
+      "friendlyFire": {
+        "type": "boolean",
+        "default": false,
+        "description": "Whether teammates can hurt each other (read by the projectile mechanic)"
+      },
+      "scoreMode": {
+        "type": "string",
+        "enum": [
+          "sum",
+          "manual"
+        ],
+        "default": "sum",
+        "description": "sum: a team's score is its players' scores added; manual: only addScore() counts"
+      },
+      "tint": {
+        "type": "boolean",
+        "default": true,
+        "description": "Nameplates and floor rings take the team colour"
+      },
+      "scoreboard": {
+        "type": "boolean",
+        "default": true,
+        "description": "Replace the kit scoreboard with one row per team"
+      },
+      "bannerOnStart": {
+        "type": "boolean",
+        "default": true,
+        "description": "Tell the local player their team when play starts"
+      },
+      "youAreText": {
+        "type": "string",
+        "default": "You are on the {team} team",
+        "description": "That banner; {team} is the team name"
+      },
+      "spawnZones": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [],
+        "description": "World zone each team starts in (spawnPoint(player) reads it)"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.teams.count",
+        "label": "Number of teams",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/count"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 2,
+          "max": 4
+        }
+      },
+      {
+        "id": "mechanic.teams.colors",
+        "label": "Team colours",
+        "group": "mechanics",
+        "type": "json",
+        "source": {
+          "pointer": "{base}/colors"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 52
+      },
+      {
+        "id": "mechanic.teams.names",
+        "label": "Team names",
+        "group": "mechanics",
+        "type": "json",
+        "source": {
+          "pointer": "{base}/names"
+        },
+        "tier": "main",
+        "facet": "text",
+        "rank": 50
+      },
+      {
+        "id": "mechanic.teams.friendly-fire",
+        "label": "Teammates can hurt each other",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/friendlyFire"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 40
+      },
+      {
+        "id": "mechanic.teams.you-are-text",
+        "label": "Team banner text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/youAreText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 60
+        }
+      },
+      {
+        "id": "mechanic.teams.tint",
+        "label": "Team colours on players",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/tint"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.teams.scoreboard",
+        "label": "Team scoreboard",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/scoreboard"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      }
+    ]
+  },
+  "events": [],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the assignment and hand-added points; team scores are summed on every copy from the players' scores",
+    "state": "teams",
+    "fields": {
+      "a": "{ playerId: team index }",
+      "m": "points added by hand, per team"
+    }
+  },
+  "owns": [
+    {
+      "res": "hud.scoreboard",
+      "why": "one row per team replaces the kit's scoreboard (params.scoreboard)"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "projectile",
+    "paint"
+  ],
+  "gives": [
+    "teams"
+  ],
+  "bots": "no bot code",
+  "notes": {
+    "lines": [
+      "Players are put on teams at round start and wear their team's colour; a team's score is the sum of its players' scores, so score players as usual.",
+      "teams.teamOf(p), teams.sameTeam(a, b) and teams.standings() are the same on every copy; projectile reads friendlyFire by itself.",
+      "The round ends on a team only when rules.check returns teams.check()."
+    ],
+    "readme": "components/teams/README.md",
+    "stub": {
+      "as": "teams",
+      "worked": "check(ctx) { return ctx.time.left <= 0 ? teams.check() : null; }   // { winners: [the leading team's player ids], reason }",
+      "traps": [
+        "results() still returns one row per player: the team scoreboard is the kit's, from teams.standings()",
+        "teams.addScore(t, n) is for bonuses: with scoreMode \"sum\" a point given to a player already counts for their team"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/teams/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/teams/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-teams.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-teams.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

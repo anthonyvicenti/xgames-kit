@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "star",
+ "pack": "kenney-new-platformer-pack",
+ "file": "star.png",
+ "sha256": "255e33c9e21cd343c25044cb605bbed155bc8a5ea84bab278031df75c20fa147",
+ "bytes": 3195,
+ "preview": "previews/star.png",
+ "from": "Sprites/Tiles/Double/star.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "star",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "star",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#353541",
+     "#faba2d",
+     "#343440",
+     "#353540",
+     "#f5b12c",
+     "#f3ae2c",
+     "#f4b02c",
+     "#f2ac2c"
+    ],
+    "saturation": 0.577,
+    "value": 0.433,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.469
+     },
+     {
+      "hue": "grey",
+      "share": 0.405
+     },
+     {
+      "hue": "yellow",
+      "share": 0.112
+     }
+    ],
+    "exact": 220,
+    "grey": 0.405
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f7d0a92a4d3eaa97a40823e267f093b5e6d581546aee6dfd3c108c507328a039",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

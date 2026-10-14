@@ -1,0 +1,69 @@
+{
+ "schema": "xgames-forge-fixture/1",
+ "mechanic": "loot",
+ "runtime": "forge",
+ "at": "2026-10-14T01:34:30.483Z",
+ "renderer": "webgpu",
+ "browser": "headless Chrome 151.0.7922.34",
+ "seconds": 12,
+ "pass": true,
+ "checks": [
+  {
+   "name": "two-players-in-one-game",
+   "ok": true,
+   "detail": "webgpu; the mechanic runs: host [{\"id\":\"loot\",\"standin\":false}]"
+  },
+  {
+   "name": "potion-lies-in-the-same-place-on-both",
+   "ok": true,
+   "detail": "[{\"id\":1,\"kind\":\"potion\",\"x\":8.93,\"y\":0,\"z\":2.96},{\"id\":1,\"kind\":\"potion\",\"x\":8.93,\"y\":0,\"z\":2.96}]"
+  },
+  {
+   "name": "coins-counted-the-same-on-both",
+   "ok": true,
+   "detail": "{\"p1\":0,\"p2\":2}"
+  },
+  {
+   "name": "weapon-lies-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "both-draw-the-potion",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "potion-taken-goes-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "potion-heals-on-both",
+   "ok": true,
+   "detail": "60 → 85 (host) / 85.09803771972656 (joiner)"
+  },
+  {
+   "name": "weapon-taken-goes-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "the-host-hears-the-take",
+   "ok": true,
+   "detail": "{\"coins\":2,\"took\":[\"potion\"]}"
+  },
+  {
+   "name": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "shots": [
+  "host-sees-the-drop.jpg",
+  "joiner-sees-the-drop.jpg",
+  "host-end.jpg",
+  "joiner-end.jpg"
+ ],
+ "errors": []
+}

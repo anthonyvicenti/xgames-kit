@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-skeleton-shield-large",
+ "pack": "kaykit-skeletons",
+ "file": "kaykit-skeleton-shield-large.glb",
+ "sha256": "a24a7ed73dcd8f78f9736721a8965beb6cbbecf5fcae57c933214a730ca990a4",
+ "bytes": 66804,
+ "preview": "previews/kaykit-skeleton-shield-large.png",
+ "from": "Skeleton_Shield_Large_A.gltf (KayKit Character Pack: Skeletons 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Knight Rectangle_Shield (handslot.l) (bounds…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large battered skeleton shield",
+ "tags": [
+  "shield",
+  "offhand",
+  "block",
+  "skeleton",
+  "kaykit",
+  "large"
+ ],
+ "use": {
+  "size": [
+   0.658,
+   0.851,
+   0.272
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.327,
+   -0.426,
+   -0.127
+  ],
+  "grip": {
+   "position": [
+    -0.0073,
+    0.0738,
+    0.078
+   ],
+   "quaternion": [
+    -0.4909,
+    0.5089,
+    0.5089,
+    0.4909
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 626,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 626,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 66804,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#7a7d7f",
+     "#75797b",
+     "#6e7172",
+     "#575a5b",
+     "#696d6e",
+     "#6a6d6e",
+     "#6c6f71",
+     "#808486"
+    ],
+    "saturation": 0.073,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.936
+     },
+     {
+      "hue": "orange",
+      "share": 0.041
+     }
+    ],
+    "grey": 0.936
+   },
+   "trianglesPerMetre": 20.06,
+   "texelsPerMetre": 79,
+   "texturedShare": 0.823,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Shield_Large_A.gltf",
+  "sha256": "7844df0f1607259c45d01fd4f9d7bad03b5bfe50897a136831915fecff240a92",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Knight Rectangle_Shield (handslot.l) (bounds -0.436,-0.568,-0.169..0.441,0.567,0.193 vs -0.441,-0.596,-0.145..0.441,0.596,0.156)…"
+ }
+}

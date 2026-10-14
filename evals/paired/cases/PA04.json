@@ -1,0 +1,121 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA04",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "frozen-case",
+  "case": "T4",
+  "verbatim": true,
+  "where": "games.fun research/studio-v2/evals/cases/T4.json (frozen 2026-10-08): the creator's roguelike prompt and their three images, verbatim"
+ },
+ "prompt": "Make a high quality rogue like multiplayer game with very smooth assets. The game should have several levels you have to clear all monsters in and then a final boss level. Take inspiration from games like Lost Castle and Rampage Knights. The assets should look very close to the attached images",
+ "images": [
+  {
+   "label": "artwork-04-agentgames-studio",
+   "sha256": "6535e7f2522622cda2c1ff8ab2ce2324d3a0c9a0ef0933be6bd16b6d6ac72ffa",
+   "bytes": 1328867,
+   "describe": "a tiled stone arena on mossy floating islands under a blue cloud sky, waterfalls and bridges, a glowing crystal on a ring pad, coins, crates, four small chibi robots running; high three-quarter view",
+   "kept": "private: the creator's upload or a third party's picture, never in git; the runner finds it by sha256 in the private refs folder (RUNNER.md)"
+  },
+  {
+   "label": "artwork-02-economy-questions",
+   "sha256": "602483f2dc1026577d89cd62c59afbdb4b88b27e6edcdef8f94cbada60ba1b42",
+   "bytes": 1294188,
+   "describe": "three glossy chunky prop vignettes on black: a green cube robot with a gamepad, a coin and a crystal; a market stall with a hooded merchant; an open stone chest with a glowing crystal and dice",
+   "kept": "private: the creator's upload or a third party's picture, never in git; the runner finds it by sha256 in the private refs folder (RUNNER.md)"
+  },
+  {
+   "label": "artwork-01-game-world",
+   "sha256": "a6af80f6a9cf17b200f4eedfe647ce2c838faf0f8815d4bf335af9a8e5f5062a",
+   "bytes": 2129870,
+   "describe": "one floating mossy stone island over a black void at night: a stone arena with a glowing ring, a purple swirl portal in a stone arch, glowing green and violet crystals, waterfalls, pine trees, rope bridges, small cube and round-helmet robots; high three-quarter view",
+   "kept": "private: the creator's upload or a third party's picture, never in git; the runner finds it by sha256 in the private refs folder (RUNNER.md)"
+  }
+ ],
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "turns",
+   "core": true,
+   "words": "rogue like",
+   "means": "A run: it starts fresh, gets harder as it goes, and ends won or lost",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "players",
+   "core": true,
+   "words": "multiplayer game",
+   "means": "Friends play the same run together",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "goal",
+   "core": true,
+   "words": "several levels you have to clear all monsters in",
+   "means": "Several levels: each is cleared of every monster, then the way to the next opens",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "goal",
+   "core": true,
+   "words": "then a final boss level",
+   "means": "The last level is a boss fight: one big enemy with its own health bar and attacks it signals before they land",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "reference",
+   "core": true,
+   "words": "games like Lost Castle and Rampage Knights",
+   "means": "As in the named games: players fight up close with weapons they swing, and the hits read (a flash, a flinch, a health bar)",
+   "source": "prompt"
+  },
+  {
+   "id": "r6",
+   "about": "reference",
+   "core": false,
+   "words": "games like Lost Castle and Rampage Knights",
+   "means": "As in the named games: weapons or items picked up during the run change how a player fights",
+   "source": "prompt"
+  },
+  {
+   "id": "r7",
+   "about": "other",
+   "core": false,
+   "words": "all monsters",
+   "means": "More than one kind of monster, and the boss is bigger than they are",
+   "source": "prompt"
+  },
+  {
+   "id": "r8",
+   "about": "reference",
+   "core": true,
+   "words": "look very close to the attached images",
+   "means": "Floating mossy islands over a void, glowing violet and green crystals and a portal, a high three-quarter camera, small chunky characters",
+   "source": "prompt"
+  },
+  {
+   "id": "r9",
+   "about": "feel",
+   "core": false,
+   "words": "very smooth assets",
+   "means": "Finished models, not stand-ins, that keep their shape when they move",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

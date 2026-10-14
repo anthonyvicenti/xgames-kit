@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "folk-smith-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-smith-top.png",
+ "sha256": "ff4246fd1fb7ed6a38393800e771239f618c923a590661c8d90a06a05479a051",
+ "bytes": 4490,
+ "preview": "previews/folk-smith-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-smith-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a smith in a leather vest over a cream shirt, close black hair and a beard; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "smith",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#2a2226",
+     "#2a2035",
+     "#e6d7b8",
+     "#774729",
+     "#2a212e",
+     "#6e6169",
+     "#322942",
+     "#3f3a4a"
+    ],
+    "saturation": 0.236,
+    "value": 0.292,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.533
+     },
+     {
+      "hue": "brown",
+      "share": 0.172
+     },
+     {
+      "hue": "purple",
+      "share": 0.169
+     },
+     {
+      "hue": "orange",
+      "share": 0.08
+     }
+    ],
+    "exact": 27,
+    "grey": 0.533
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.837
+   }
+  }
+ },
+ "source": {
+  "sha256": "9e5ef67b550bcaf52c04dd309827a178ebb4703aa53a35ba469f660861122033",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

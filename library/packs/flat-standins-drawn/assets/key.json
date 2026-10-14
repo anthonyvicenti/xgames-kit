@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "key",
+ "pack": "flat-standins-drawn",
+ "file": "key.png",
+ "sha256": "fc3967dc990e13df8c27a293d048f4e272af0bbba8072a5c64061dce06be8f52",
+ "bytes": 1227,
+ "preview": "previews/key.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn key",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "key"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ffd23f",
+     "#2a2440",
+     "#715e40",
+     "#b8983f",
+     "#423740",
+     "#e7bf3f",
+     "#a0853f",
+     "#d0ab3f"
+    ],
+    "saturation": 0.676,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.577
+     },
+     {
+      "hue": "purple",
+      "share": 0.384
+     }
+    ],
+    "exact": 10,
+    "grey": 0.012
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

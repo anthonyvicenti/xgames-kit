@@ -1,0 +1,78 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-fern",
+ "pack": "forge-world",
+ "file": "world-night-fern.png",
+ "sha256": "e1e6c40bc344a7f43e4e55125a0bd3b20a673a40fdd81579cc8d5a95721f4840",
+ "bytes": 248,
+ "preview": "previews/world-night-fern.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a fern's arching fronds (drawn; alpha between them)",
+ "tags": [
+  "texture",
+  "night",
+  "fern",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 35.556,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0.752
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#182e20",
+     "#3a5836",
+     "#243e28"
+    ],
+    "saturation": 0.293,
+    "value": 0.172,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 35.556,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.861
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

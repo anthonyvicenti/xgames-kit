@@ -1,0 +1,26 @@
+{
+  "name": "xgames-kit",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "xgames-kit: build multiplayer browser games with the AI coding agent you already have: a shared builder, runtimes (three.js, forge, vista), mechanics, loops and worlds, and Solana items, loot boxes and tokens.",
+  "type": "module",
+  "bin": {
+    "gamesfun": "bin/gamesfun.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\" \"evals/tests/*.test.mjs\"",
+    "test:smoke": "node scripts/smoke.mjs",
+    "dev": "node bin/gamesfun.mjs dev",
+    "mcp": "node builder/mcp/server.mjs",
+    "sync-skills": "node scripts/sync-skills.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "ajv": "8.20.0",
+    "playwright-core": "1.63.0"
+  }
+}

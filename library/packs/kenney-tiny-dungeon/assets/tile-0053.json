@@ -1,0 +1,80 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0053",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0053.png",
+ "sha256": "b65e27f8cf7906a35b93997bcf65f6e87d992f4c4665218772607dfccc8732d0",
+ "bytes": 125,
+ "preview": "previews/tile-0053.png",
+ "from": "Tiles/tile_0053.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "sand floor with a small patch of shadow in its top-left corner (where a wall's shadow ends)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "floor",
+  "sand",
+  "shadow",
+  "corner",
+  "corner-outer-nw"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#eaa56c",
+     "#cf8254"
+    ],
+    "saturation": 0.739,
+    "value": 0.665,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 2,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e3d67fdc99ebea256141127ccfeb4103821db7dca11d099639de32e60b05b47e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

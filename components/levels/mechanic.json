@@ -1,0 +1,495 @@
+{
+  "id": "levels",
+  "name": "Levels",
+  "describe": "A run of levels (one island or room set each): clear every enemy, the portal or door opens, everyone moves to the next; the last is the boss",
+  "examples": [
+    "three floating islands and a boss",
+    "dungeon rooms you clear one by one",
+    "a run of arenas with a portal between them"
+  ],
+  "rank": 120,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "count": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 8,
+        "default": 3,
+        "description": "Levels in a run (the world lays out one island or room set per level; CONTRACT §8)"
+      },
+      "wavesPerLevel": {
+        "type": [
+          "integer",
+          "array"
+        ],
+        "default": 2,
+        "description": "Waves on each level (a number, or one per level)"
+      },
+      "startCount": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 3,
+        "description": "Enemies in a level's first wave on level 1"
+      },
+      "levelGrowth": {
+        "type": "number",
+        "description": "Extra enemies per wave on each later level",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1
+      },
+      "growth": {
+        "type": "number",
+        "description": "Extra enemies in each later wave of a level",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1
+      },
+      "countPerPlayer": {
+        "type": "number",
+        "description": "More enemies per player beyond the first (fraction)",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.35
+      },
+      "hpScale": {
+        "type": "number",
+        "description": "Enemy hit points gained per level (fraction)",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.15
+      },
+      "speedScale": {
+        "type": "number",
+        "description": "Enemy speed gained per level (fraction)",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.05
+      },
+      "bossLevel": {
+        "type": "string",
+        "enum": [
+          "last",
+          "none"
+        ],
+        "default": "last",
+        "description": "last: the last level is the boss mechanic's fight"
+      },
+      "portalZone": {
+        "type": "string",
+        "default": "portal",
+        "description": "The world zone of each level the portal stands in"
+      },
+      "portalSeconds": {
+        "type": "number",
+        "description": "Seconds the portal waits once one player is in it",
+        "minimum": 1,
+        "maximum": 60,
+        "default": 8
+      },
+      "travelSeconds": {
+        "type": "number",
+        "description": "Seconds the move to the next level takes",
+        "minimum": 0.2,
+        "maximum": 5,
+        "default": 0.8
+      },
+      "portalColor": {
+        "type": "string",
+        "default": "#7cf6ff",
+        "description": "Colour of the portal's ring"
+      },
+      "portalGlow": {
+        "type": "string",
+        "default": "#b98cff",
+        "description": "Colour of the portal's inner glow and its beam"
+      },
+      "portalProp": {
+        "type": "string",
+        "default": "portal",
+        "description": "A prop.<name> model drawn as the portal when the game has it (else the kit's ring)"
+      },
+      "endRound": {
+        "type": "boolean",
+        "default": true,
+        "description": "The run's end is the round's: won on the last level, lost when everyone is down at once"
+      },
+      "upgrades": {
+        "type": "boolean",
+        "default": true,
+        "description": "Offer every player an upgrade card when a level is cleared (the loot mechanic)"
+      },
+      "chests": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 4,
+        "default": 1,
+        "description": "Chests on each level (the loot mechanic)"
+      },
+      "bannerText": {
+        "type": "string",
+        "default": "Level {n}"
+      },
+      "bossText": {
+        "type": "string",
+        "default": "The final level"
+      },
+      "openText": {
+        "type": "string",
+        "default": "Portal open"
+      },
+      "winText": {
+        "type": "string",
+        "default": "Run cleared!"
+      },
+      "loseText": {
+        "type": "string",
+        "default": "Everyone is down"
+      },
+      "soundPortal": {
+        "type": "string",
+        "default": "portal-open"
+      },
+      "soundTravel": {
+        "type": "string",
+        "default": "portal-travel"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.levels.portal-color",
+        "label": "Portal ring colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/portalColor"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 66
+      },
+      {
+        "id": "mechanic.levels.portal-glow",
+        "label": "Portal glow colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/portalGlow"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 64
+      },
+      {
+        "id": "mechanic.levels.start-count",
+        "label": "Enemies in a level's first wave",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/startCount"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 60,
+        "constraints": {
+          "min": 1,
+          "max": 30
+        }
+      },
+      {
+        "id": "mechanic.levels.level-growth",
+        "label": "Extra enemies per level",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/levelGrowth"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10
+        }
+      },
+      {
+        "id": "mechanic.levels.growth",
+        "label": "Extra enemies per wave",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/growth"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10
+        }
+      },
+      {
+        "id": "mechanic.levels.hp-scale",
+        "label": "Enemy toughness per level",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/hpScale"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 2
+        }
+      },
+      {
+        "id": "mechanic.levels.speed-scale",
+        "label": "Enemy speed per level",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/speedScale"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.levels.portal-seconds",
+        "label": "Portal wait",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/portalSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.levels.banner-text",
+        "label": "Level banner text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/bannerText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.boss-text",
+        "label": "Boss level banner",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/bossText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.open-text",
+        "label": "Portal open text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/openText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.win-text",
+        "label": "Run won text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/winText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.lose-text",
+        "label": "Run lost text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/loseText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.sound-portal",
+        "label": "Portal opens sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundPortal"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.levels.sound-travel",
+        "label": "Travel sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundTravel"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onLevel",
+      "on": "every copy",
+      "args": "{ level }",
+      "when": "a level begins"
+    },
+    {
+      "name": "onClear",
+      "on": "host",
+      "args": "{ level }",
+      "when": "the level's last enemy went down and its portal opened"
+    },
+    {
+      "name": "onWin",
+      "on": "host",
+      "args": "{ level }",
+      "when": "the last level was beaten"
+    },
+    {
+      "name": "onLose",
+      "on": "host",
+      "args": "{ level }",
+      "when": "everyone was down at once"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the run; every copy applies a level change on its edge",
+    "state": "levels",
+    "fields": {
+      "l": "the level being played (0-based)",
+      "ph": "fight | open | travel | won | lost",
+      "t": "the portal's wait",
+      "ip": "players standing in the portal",
+      "c": "levels cleared",
+      "v": "moves through a portal"
+    }
+  },
+  "owns": [
+    {
+      "res": "round.end",
+      "why": "the run's end is the round's: won on the last level, lost when everyone is down at once (params.endRound)"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "waves",
+    "boss",
+    "loot",
+    "health"
+  ],
+  "gives": [
+    "levels"
+  ],
+  "bots": "no bot code",
+  "notes": {
+    "lines": [
+      "The run plays by itself: the waves mechanic gives each level its enemies, the portal opens when they are down, everyone steps in, and the last level is the boss's when the game has one.",
+      "It ends the round by itself (endRound): rules.check stays null unless the game has another way to end.",
+      "In a world with levels (scenic isles or dungeon) each level is its own island or room set; any other world plays them all in its one arena."
+    ],
+    "readme": "components/levels/README.md",
+    "stub": {
+      "as": "levels",
+      "worked": "levels.onClear(({ level }) => { for (const p of ctx.players.list()) p.score += 10 * (level + 1); });",
+      "traps": [
+        "returning a winner from rules.check while endRound is on ends the run early: one of the two ends the round, never both",
+        "a replay starts at level 1 again: reset the game's own per-run state in roundStart(ctx)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/levels/fixture",
+    "players": 2,
+    "with": [
+      "waves",
+      "health"
+    ]
+  },
+  "impl": {
+    "three": {
+      "path": "components/levels/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-levels.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-levels.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

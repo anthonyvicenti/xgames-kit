@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "frog-idle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "frog-idle.png",
+ "sha256": "c59598e18f3fe758662f54608b18de4ed66940ce64a962d6eff05a63554c1b15",
+ "bytes": 6067,
+ "preview": "previews/frog-idle.png",
+ "from": "Sprites/Enemies/Double/frog_idle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "frog idle",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "frog",
+  "idle",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#2cc987",
+     "#ffffff",
+     "#1aa074",
+     "#139167",
+     "#343440",
+     "#353540",
+     "#5d5d67"
+    ],
+    "saturation": 0.337,
+    "value": 0.505,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.529
+     },
+     {
+      "hue": "cyan",
+      "share": 0.471
+     }
+    ],
+    "exact": 229,
+    "grey": 0.529
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "0d6390956bb3be4d56d6ec9b368fab4cce2a0821aeed4b0752989606083daa90",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

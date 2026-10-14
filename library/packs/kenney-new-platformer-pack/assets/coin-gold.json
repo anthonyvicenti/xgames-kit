@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "coin-gold",
+ "pack": "kenney-new-platformer-pack",
+ "file": "coin-gold.png",
+ "sha256": "6e8054cc2083ac2afe915e03de9f31a5c4c6bdd6b387fce7889fd71ea8ce150a",
+ "bytes": 2914,
+ "preview": "previews/coin-gold.png",
+ "from": "Sprites/Tiles/Double/coin_gold.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "coin gold",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "coin",
+  "gold",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#353541",
+     "#f1aa2c",
+     "#ea9e2b",
+     "#f2ac2c",
+     "#eb9f2b",
+     "#faba2d",
+     "#e99c2b",
+     "#eba02b"
+    ],
+    "saturation": 0.545,
+    "value": 0.417,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.614
+     },
+     {
+      "hue": "grey",
+      "share": 0.364
+     }
+    ],
+    "exact": 242,
+    "grey": 0.364
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "d47ad8bc9957a1301ce2b649176652330a31e3ff5728f891d2408f295a1de615",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

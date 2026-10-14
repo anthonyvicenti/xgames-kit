@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "gf-beans",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Jelly bean bodies",
+ "describe": "Procedural jelly bean players on gf-humanoid-1: one tinted body, mitten hands, shoes, big eyes.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/gf-beans/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "validators": [
+  "rig-check"
+ ],
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 4,
+   "hues": [
+    "#4fc7c0",
+    "#a98bff",
+    "#ff7eb3",
+    "#ffc94a",
+    "#fbfbff",
+    "#17141f",
+    "#4a3a2c",
+    "#2b2f3a",
+    "#3d3a52",
+    "#2c2840",
+    "#4a1428",
+    "#ff8fa8"
+   ],
+   "saturation": 0.918,
+   "value": 0.7,
+   "families": [
+    {
+     "hue": "purple",
+     "share": 0.238
+    },
+    {
+     "hue": "cyan",
+     "share": 0.23
+    },
+    {
+     "hue": "pink",
+     "share": 0.223
+    },
+    {
+     "hue": "yellow",
+     "share": 0.212
+    },
+    {
+     "hue": "grey",
+     "share": 0.061
+    }
+   ],
+   "grey": 0.089
+  },
+  "trianglesPerMetre": 50.92,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  },
+  "proportions": "bodies: median 3.38 heads tall",
+  "body": {
+   "headsTall": 3.38,
+   "hipShare": 0.282
+  }
+ },
+ "assets": 4
+}

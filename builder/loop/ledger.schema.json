@@ -1,0 +1,629 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/ledger/1.json",
+  "title": "Requirements ledger (gf-ledger/1)",
+  "description": "Written before any card (DESIGN 'The game creation loop'; builder/loop/ledger.mjs checks the rules no schema can: words quoted exactly, one row each of acts, perspective, players and body, every by known to the registry). The essentials of the idea in the creator's own words, each with a home: exists (a registry part does it), build (this game writes it), or probe (a bounded probe decides first). Nothing is dropped: a row leaves only when the creator's own words cut it. The creator is asked only how friends play and what a player is, and only when their words leave it open. Then the foundation: runtime by hard limits, loop by who acts when, kind last.",
+  "type": "object",
+  "required": [
+    "schema",
+    "rows"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "gf-ledger/1"
+    },
+    "prompt": {
+      "type": "string",
+      "maxLength": 6000,
+      "description": "The idea as the creator wrote it (untrusted data)."
+    },
+    "rows": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 40,
+      "items": {
+        "$ref": "#/$defs/row"
+      }
+    },
+    "asks": {
+      "type": "array",
+      "maxItems": 4,
+      "description": "The ledger's questions: players and body only (a host may add economy or backend), each for a row the creator's words leave open, with the row marked asked.",
+      "items": {
+        "type": "object",
+        "required": [
+          "about",
+          "text",
+          "options",
+          "default"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "about": {
+            "enum": [
+              "players",
+              "body",
+              "economy",
+              "backend"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "field": {
+            "type": "string",
+            "maxLength": 24,
+            "description": "The row field the answer sets (players: together, body: body)."
+          },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 60
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ]
+                }
+              }
+            }
+          },
+          "default": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+          }
+        }
+      }
+    },
+    "foundation": {
+      "$ref": "#/$defs/foundation"
+    }
+  },
+  "$defs": {
+    "row": {
+      "type": "object",
+      "required": [
+        "id",
+        "about",
+        "what",
+        "home"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/rowId"
+        },
+        "about": {
+          "enum": [
+            "action",
+            "acts",
+            "perspective",
+            "players",
+            "body",
+            "devices",
+            "feel",
+            "reference",
+            "thing"
+          ],
+          "description": "action: what a player does. acts: who acts when. perspective: how the player sees the game. players: how friends play together. body: what a player is on screen. devices: where it is played. feel: how it should feel. reference: a game or picture it should be like. thing: a thing in the game (an enemy, a boss, a hook)."
+        },
+        "what": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "description": "One plain sentence: what this row is."
+        },
+        "words": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 300,
+          "description": "The creator's own words, copied exactly from the idea, a reference's caption or an answer (checked). 'default' only on the devices row (the creator said nothing). null only on a players or body row that is asked, answered, or a body that is plainly a character."
+        },
+        "core": {
+          "type": "boolean",
+          "description": "Without it, it is not the game the creator asked for."
+        },
+        "home": {
+          "enum": [
+            "exists",
+            "build",
+            "probe"
+          ]
+        },
+        "by": {
+          "type": "string",
+          "pattern": "^(mechanic|loop|runtime|kind|capability|pack):[a-z0-9][a-z0-9._/-]{0,80}$",
+          "description": "home exists: what in the registry does it. Rows about the foundation (acts, perspective, players, devices, feel) may leave it out: the foundation does them."
+        },
+        "needs": {
+          "type": "array",
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/capability"
+          },
+          "description": "Capabilities the row needs from the runtime (registry capabilities); the foundation's compat answer reads them. A capability the chosen runtime lacks is built in the game."
+        },
+        "how": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "home build: what will be written, in one sentence (rules logic, a module in src/, an engine override)."
+        },
+        "where": {
+          "enum": [
+            "rules",
+            "module",
+            "engine"
+          ]
+        },
+        "probe": {
+          "type": "object",
+          "required": [
+            "question",
+            "minutes"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "question": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "minutes": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 30,
+              "description": "Its bound."
+            },
+            "result": {
+              "enum": [
+                "exists",
+                "build"
+              ]
+            },
+            "evidence": {
+              "type": "string",
+              "maxLength": 400
+            }
+          }
+        },
+        "cut": {
+          "type": "object",
+          "required": [
+            "words"
+          ],
+          "additionalProperties": false,
+          "description": "Only when the creator cut it: their words, quoted exactly. A cut row is in notInV1 and nowhere else.",
+          "properties": {
+            "words": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 200
+            }
+          }
+        },
+        "asked": {
+          "type": "boolean",
+          "description": "A question in asks is open for this row."
+        },
+        "answered": {
+          "type": "object",
+          "required": [
+            "question",
+            "chosen"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "question": {
+              "type": "string",
+              "maxLength": 160
+            },
+            "chosen": {
+              "type": "string",
+              "maxLength": 32
+            },
+            "default": {
+              "type": "boolean",
+              "description": "The creator did not answer; the default stood."
+            }
+          }
+        },
+        "acts": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{0,31}$",
+          "description": "about acts: who acts when, as a loop manifest's acts word (registry loops)."
+        },
+        "closest": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "about acts, when no open loop has that acts word: the loop it is built on."
+        },
+        "together": {
+          "enum": [
+            "versus",
+            "coop",
+            "teams",
+            "turns",
+            "own-board",
+            "solo"
+          ],
+          "description": "about players."
+        },
+        "body": {
+          "enum": [
+            "character",
+            "board",
+            "vehicle",
+            "cursor",
+            "cards",
+            "boat",
+            "other"
+          ],
+          "description": "about body."
+        },
+        "camera": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "about perspective: a camera rig from the registry's vocabulary."
+        },
+        "dimension": {
+          "enum": [
+            "2d",
+            "3d"
+          ],
+          "description": "about perspective."
+        },
+        "devices": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/device"
+          },
+          "description": "about devices."
+        },
+        "graphics": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/fidelity",
+          "description": "A row that sets how far the picture must go (a hard limit when quoted)."
+        },
+        "kind": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+          "description": "about feel or reference: the registry kind it names."
+        },
+        "rehomed": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "The foundation moved this row from exists to build: the chosen runtime lacks a capability or a mechanic it needs.",
+          "properties": {
+            "from": {
+              "enum": [
+                "exists",
+                "probe"
+              ]
+            },
+            "capability": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/capability"
+            },
+            "runtime": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+            },
+            "mechanic": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+              "description": "The mechanic the row was by, when the chosen runtime has no implementation of it (the build writes it)."
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "home": {
+                "const": "build"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "how",
+              "where"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "home": {
+                "const": "probe"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "probe"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "about": {
+                "const": "acts"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "acts"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "about": {
+                "const": "players"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "together"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "about": {
+                "const": "body"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "body"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "about": {
+                "const": "perspective"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "camera",
+              "dimension"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "about": {
+                "const": "devices"
+              }
+            },
+            "not": {
+              "required": [
+                "cut"
+              ]
+            }
+          },
+          "then": {
+            "required": [
+              "devices"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "cut"
+            ]
+          },
+          "then": {
+            "properties": {
+              "core": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "foundation": {
+      "type": "object",
+      "required": [
+        "runtime",
+        "loop",
+        "kind",
+        "why"
+      ],
+      "additionalProperties": false,
+      "description": "What builder/loop/foundation.mjs chose, kept beside the rows it chose from: the runtime and profile by hard limits, the loop by who acts when, the kind last; why each, in plain words; and what this game must build because of the choice.",
+      "properties": {
+        "runtime": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "profile": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "loop": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "kind": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "why": {
+          "type": "object",
+          "required": [
+            "runtime",
+            "loop",
+            "kind"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "runtime": {
+              "type": "string",
+              "maxLength": 600
+            },
+            "loop": {
+              "type": "string",
+              "maxLength": 600
+            },
+            "kind": {
+              "type": "string",
+              "maxLength": 600
+            }
+          }
+        },
+        "said": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "maxLength": 400
+          },
+          "description": "What the creator is told plainly (a limit that yields, a capability built, a kind proven by this game)."
+        },
+        "builds": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "object",
+            "required": [
+              "capability"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "capability": {
+                "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/capability"
+              },
+              "row": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        },
+        "loopBuild": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "wants": {
+              "type": "string"
+            },
+            "closest": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "how": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "row": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "kindProof": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "type": "string"
+            },
+            "runtime": {
+              "type": "string"
+            },
+            "profile": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "candidates": {
+          "type": "array",
+          "description": "The registry's compat answers, best first (for the record)."
+        },
+        "limits": {
+          "type": "object",
+          "description": "The hard and soft limits the ledger set, each with its row."
+        }
+      }
+    }
+  }
+}

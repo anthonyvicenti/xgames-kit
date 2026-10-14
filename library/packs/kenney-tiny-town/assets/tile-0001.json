@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0001",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0001.png",
+ "sha256": "911a7c5d74ecd320263cb949c949f827c077a64dee528926278112f645f201f6",
+ "bytes": 194,
+ "preview": "previews/tile-0001.png",
+ "from": "Tiles/tile_0001.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "green grass ground with small dark tufts",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "ground",
+  "grass",
+  "green",
+  "tufts",
+  "fill",
+  "field"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#84c669",
+     "#8bd87d",
+     "#65a556"
+    ],
+    "saturation": 0.446,
+    "value": 0.592,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "cf3b3df8669e621af90944fb3155b15f13adf203dda464e6149d7318f3660713",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

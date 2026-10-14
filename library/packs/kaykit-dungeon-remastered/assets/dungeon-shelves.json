@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-shelves",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-shelves.glb",
+ "sha256": "ac8f7d9ed89b1d439fea41d3ce9fb25adc19dca4c4aec6318626dfaf35108054",
+ "bytes": 53328,
+ "preview": "previews/dungeon-shelves.png",
+ "from": "shelves.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wooden shelves",
+ "tags": [
+  "dungeon",
+  "shelves",
+  "furniture",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.5,
+   1.462,
+   0.375
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.5,
+    1.462,
+    0.375
+   ],
+   "offset": [
+    0,
+    0.731,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 152,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 152,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 53328,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#975742",
+     "#a4634a",
+     "#834331",
+     "#92523e",
+     "#9a5944",
+     "#8e4d3a",
+     "#8d4d3a",
+     "#9c5b46"
+    ],
+    "saturation": 0.404,
+    "value": 0.415,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.51
+     },
+     {
+      "hue": "brown",
+      "share": 0.489
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.27,
+   "texelsPerMetre": 37,
+   "texturedShare": 0.312,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/shelves.gltf.glb",
+  "sha256": "8df148ae0f4909512295302491f2b40dc3ae84d072f2cacdfd929c7848d7062e",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

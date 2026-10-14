@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "hud-heart",
+ "pack": "kenney-new-platformer-pack",
+ "file": "hud-heart.png",
+ "sha256": "749d2ddd6ed3a947addc1f32b4eb4709ec7223e03b025bc318ddc3a7a614c775",
+ "bytes": 3242,
+ "preview": "previews/hud-heart.png",
+ "from": "Sprites/Tiles/Double/hud_heart.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "hud heart",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "hud",
+  "heart",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#ffffff",
+     "#353541",
+     "#e54341",
+     "#f17575",
+     "#e54644",
+     "#41414c",
+     "#d9d9db",
+     "#c26568"
+    ],
+    "saturation": 0.3,
+    "value": 0.645,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.639
+     },
+     {
+      "hue": "red",
+      "share": 0.361
+     }
+    ],
+    "exact": 47,
+    "grey": 0.639
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "99d2b1050134368712b9319c9f875794202c884cbf049b4610b7ad5d84f7138d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,69 @@
+{
+ "assetVersion": 1,
+ "id": "impact-ring",
+ "pack": "forge-fx",
+ "file": "impact-ring.png",
+ "sha256": "74b56f01a6841cba8457830c852d8f013ed0e1b4f974da4c41578ca3bb345a00",
+ "bytes": 1719,
+ "preview": "previews/impact-ring.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "an impact flash ring (white): a hit on stone or bone, scaled up over a few frames",
+ "tags": [
+  "fx",
+  "impact",
+  "ring"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0.974
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 1,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

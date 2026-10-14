@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "ember",
+ "pack": "forge-fx",
+ "file": "ember.png",
+ "sha256": "bc85cd50b802fdaaa04da8eae296fde31463cd047a78bfb239d267cd43c39632",
+ "bytes": 746,
+ "preview": "previews/ember.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 32×32 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a glowing ember (orange core, soft halo)",
+ "tags": [
+  "fx",
+  "ember"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0.969
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ffac5d",
+     "#ff8c2e",
+     "#ff8e31",
+     "#ff9338",
+     "#ff963d",
+     "#ff9a43",
+     "#ffa553",
+     "#ffbc76"
+    ],
+    "saturation": 1,
+    "value": 0.683,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.958
+     },
+     {
+      "hue": "yellow",
+      "share": 0.042
+     }
+    ],
+    "exact": 13,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 32×32 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

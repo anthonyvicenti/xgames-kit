@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-crate-small",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-crate-small.glb",
+ "sha256": "a2abddd14c371742b78951d41d28ee905fac40a682a6977f0a8fc5794cfe8876",
+ "bytes": 54040,
+ "preview": "previews/dungeon-crate-small.png",
+ "from": "box_small.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small wooden crate",
+ "tags": [
+  "dungeon",
+  "crate",
+  "box",
+  "wood",
+  "container",
+  "breakable",
+  "small"
+ ],
+ "use": {
+  "size": [
+   0.75,
+   0.75,
+   0.75
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.75,
+    0.75,
+    0.75
+   ],
+   "offset": [
+    0,
+    0.375,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 188,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 188,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 54040,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#9d5c46",
+     "#7b858b",
+     "#975742",
+     "#9daaaf",
+     "#646c70",
+     "#7f898e",
+     "#7a8489",
+     "#869196"
+    ],
+    "saturation": 0.181,
+    "value": 0.496,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.664
+     },
+     {
+      "hue": "orange",
+      "share": 0.261
+     },
+     {
+      "hue": "brown",
+      "share": 0.075
+     }
+    ],
+    "grey": 0.664
+   },
+   "trianglesPerMetre": 6.8,
+   "texelsPerMetre": 66,
+   "texturedShare": 0.432,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/box_small.gltf.glb",
+  "sha256": "3052015d7cd670c170742317fd9c728e5643221450857abbae9eefe6dbc66092",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

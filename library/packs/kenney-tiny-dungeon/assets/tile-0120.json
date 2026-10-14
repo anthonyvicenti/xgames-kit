@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0120",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0120.png",
+ "sha256": "e22999c29ed66114f70749a16ab64328fa034f034ecd28e91924f0fc6647dae4",
+ "bytes": 282,
+ "preview": "previews/tile-0120.png",
+ "from": "Tiles/tile_0120.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a brown bat with its wings spread",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "bat",
+  "brown",
+  "flying",
+  "wings"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#eaa56c",
+     "#763b36",
+     "#ffffff"
+    ],
+    "saturation": 0.37,
+    "value": 0.348,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.61
+     },
+     {
+      "hue": "orange",
+      "share": 0.354
+     }
+    ],
+    "exact": 5,
+    "grey": 0.012
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "2ca96264cc5506bb52a5f7b5d278d0fa8e66e26c4b8242e40db6b46acb9df95e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

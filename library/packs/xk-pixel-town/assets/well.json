@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "well",
+ "pack": "xk-pixel-town",
+ "file": "well.png",
+ "sha256": "50e218e6b585cbc65e92ebb2c8b43f395e2aeb998b5e5f074e401339b4c68f87",
+ "bytes": 663,
+ "preview": "previews/well.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): well.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a stone well with a little roof",
+ "tags": [
+  "pixel",
+  "well",
+  "stone",
+  "water",
+  "village"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 36
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 36
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#b3acb5",
+     "#5e5866",
+     "#cc6748",
+     "#7a4a2a",
+     "#968f9c",
+     "#8e3a32",
+     "#5a4f61",
+     "#e08a5e"
+    ],
+    "saturation": 0.259,
+    "value": 0.464,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.525
+     },
+     {
+      "hue": "orange",
+      "share": 0.181
+     },
+     {
+      "hue": "red",
+      "share": 0.163
+     },
+     {
+      "hue": "brown",
+      "share": 0.05
+     },
+     {
+      "hue": "blue",
+      "share": 0.048
+     },
+     {
+      "hue": "pink",
+      "share": 0.032
+     }
+    ],
+    "exact": 24,
+    "grey": 0.525
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.401
+   }
+  }
+ },
+ "source": {
+  "sha256": "5caf57e8d970ea521337cf79e125c7da4483786426fbb2036348e7d272d86a24",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

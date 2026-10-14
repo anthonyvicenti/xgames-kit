@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-block-bottom",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-block-bottom.png",
+ "sha256": "04add236baa504bca0866d10425c29fbf25e367ad143ca1fc341e3509a7f4ead",
+ "bytes": 2466,
+ "preview": "previews/terrain-snow-block-bottom.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_block_bottom.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow block bottom tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "block",
+  "bottom",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 46.1 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#353541",
+     "#c0c8ce",
+     "#abb6bf",
+     "#b0bbc3",
+     "#c4ccd2"
+    ],
+    "saturation": 0.131,
+    "value": 0.731,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 46,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "46d2043eda4edfdf96fb436cc533d70fcf9db2f8c97b6acf7202a67d26a5001d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

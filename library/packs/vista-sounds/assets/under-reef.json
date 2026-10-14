@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "under-reef",
+ "pack": "vista-sounds",
+ "file": "under-reef.ogg",
+ "sha256": "121952cc2e09a3a30712e2d1038a00366e2cbad3dccf1fa2388261487028249f",
+ "bytes": 412371,
+ "preview": "previews/under-reef.png",
+ "from": "hydrophone in a cove: snapping-shrimp crackle, low rumble — loop",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Underwater reef crackle (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "under",
+  "reef",
+  "loop"
+ ],
+ "use": {
+  "seconds": 50,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 30% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -17.8,
+     "samplePeakDb": -5.4,
+     "truePeakDb": -5.4,
+     "hfRatio": 0.302
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 50,
+    "peakDbfs": -5.4,
+    "soundMaxLufs": -17.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/KaleidacousticsAudio/sounds/630436/",
+  "author": "KaleidacousticsAudio"
+ }
+}

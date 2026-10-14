@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "cloud-puffy",
+ "pack": "poly-pizza-cc-by",
+ "file": "cloud-puffy.glb",
+ "sha256": "26044dd440e9917b99bddaf4bdf493181d9190149de5799f9bb9e0b6520fdda6",
+ "bytes": 18380,
+ "preview": "previews/cloud-puffy.png",
+ "from": "polypizza:8CXbPO6p0n2; baked to metres (x0.02502), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a puffy low-poly cloud",
+ "tags": [
+  "sky",
+  "cloud",
+  "decor",
+  "puffy"
+ ],
+ "use": {
+  "size": [
+   13.261,
+   4.999,
+   4.795
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 816,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 816,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 18380,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 2.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "jeremy",
+  "url": "https://poly.pizza/m/8CXbPO6p0n2",
+  "credit": "\"Cloud\" by jeremy, CC BY 3.0 (https://poly.pizza/m/8CXbPO6p0n2)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/8CXbPO6p0n2",
+  "download": "https://static.poly.pizza/b713e1c3-f06b-49b3-b88f-d5f84eb4d968.glb",
+  "sha256": "dad81f64d3566030dbe9fdd77453af10fb02c79a80d6e4189fdf46d8db41dd24",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.02502), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "jeremy"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-block",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-block.png",
+ "sha256": "20cf77ee5f317f69eac644ae4cd976e908301c8a6a41969c5395e93626e6100e",
+ "bytes": 4393,
+ "preview": "previews/terrain-snow-block.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_block.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow block tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "block",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#bbc4cb",
+     "#e5f0ff",
+     "#cfd5da",
+     "#a6b2bb",
+     "#ffffff",
+     "#c8dbf5",
+     "#343440"
+    ],
+    "saturation": 0.334,
+    "value": 0.71,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.944
+     },
+     {
+      "hue": "blue",
+      "share": 0.056
+     }
+    ],
+    "exact": 135,
+    "grey": 0.944
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "bd507f0a27213de6716ccc83338e4e49c5f51c5bc409322bd080d13fc16da980",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

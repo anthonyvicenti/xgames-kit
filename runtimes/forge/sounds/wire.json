@@ -1,0 +1,35 @@
+{
+ "about": "How a forge game's sound ids become this library's sounds (wave 2, track U; tools/sound-wire.mjs reads it, create calls that). The core plays sounds by the ids its tables name (research/gf-forge/kit/tables); sounds.json is the library's own list. alias: a table id that is a library sound under another name. aliasByKind: the same, chosen by the kind of the weapons that name the id. own: sounds the library has no entry for, made from its files (no new recording: a composition, a slice or a pitch). always, withWaves, withCards: library sounds the kit itself plays (gf/forge/sound.js), added whatever the tables name. An id with no alias, no own entry and no library entry keeps its gf-audio preset; the tool lists those.",
+ "alias": {
+  "step": "player-step",
+  "jump": "player-jump",
+  "land": "player-land",
+  "evade": "player-evade",
+  "hurt": "player-hurt",
+  "swing": "melee-swing",
+  "reload": "weapon-pistol-reload",
+  "impact": "impact-bone",
+  "shot": "weapon-pistol-shot"
+ },
+ "aliasByKind": {
+  "shot": { "charge": "weapon-wand-cast", "beam": "weapon-wand-cast" }
+ },
+ "own": {
+  "round-countdown": { "label": "Countdown tick", "src": { "file": "sounds/metal-click.ogg" }, "pitchJitter": 0, "maxVoices": 1 },
+  "round-go": { "label": "The round starts (a weapon drawn)", "src": { "layers": [{ "file": "sounds/cloth.ogg" }, { "file": "sounds/metal-latch.ogg", "gainDb": -6, "delayMs": 140 }] }, "maxVoices": 1 },
+  "round-win": { "label": "The round is won", "gainDb": -2, "src": { "layers": [{ "file": "sounds/wave-clear.ogg" }, { "file": "sounds/bell-toll.ogg", "gainDb": -5, "delayMs": 420 }] }, "maxVoices": 1 },
+  "round-end": { "label": "The round is lost or over (a low knell)", "src": { "file": "sounds/bell-toll.ogg" }, "pitch": 0.7, "pitchJitter": 0, "maxVoices": 1 },
+  "shield-block": { "label": "A shield blocks", "pitch": 0.8, "src": [{ "layers": [{ "file": "sounds/metal-latch.ogg" }, { "file": "sounds/bone-knock-0.ogg", "gainDb": -3 }] }, { "layers": [{ "file": "sounds/metal-latch.ogg" }, { "file": "sounds/bone-knock-1.ogg", "gainDb": -3 }] }], "cooldownMs": 60, "maxVoices": 3 },
+  "shield-break": { "label": "A shield breaks", "gainDb": -2, "src": { "layers": [{ "file": "sounds/impact-stone-1.ogg" }, { "file": "sounds/bone-crunch-1.ogg", "gainDb": -2, "delayMs": 20 }, { "file": "sounds/metal-latch.ogg", "gainDb": -4, "delayMs": 60 }] }, "cooldownMs": 120, "maxVoices": 2 },
+  "elite-ignite": { "label": "A player is set alight (wave 7: a burning elite's blow)", "src": { "file": "sounds/evade-whoosh.ogg" }, "pitch": 0.6, "maxVoices": 2 },
+  "elite-burn": { "label": "A burn bites (wave 7)", "gainDb": -6, "src": { "file": "sounds/cloth.ogg" }, "pitch": 1.7, "cooldownMs": 120, "maxVoices": 2 },
+  "elite-split": { "label": "A splitting elite bursts (wave 7)", "pitch": 0.75, "src": { "layers": [{ "file": "sounds/bone-crunch-1.ogg" }, { "file": "sounds/impact-bone-2.ogg", "gainDb": -4, "delayMs": 40 }] }, "maxVoices": 2 }
+ },
+ "trim": {
+  "player-death": -3
+ },
+ "trimWhy": "dB taken off a library sound in a game (never added: research/audio/GUIDE.md rule 4). player-death: alone through the sfx bus its loudest 400 ms was 9.9 LU over the median of a fight's sounds and 2.3 over the next loudest (tools/listen.mjs, 2026-10-10); -3 dB puts it beside the hurt sound.",
+ "always": ["ui-click", "ambient-night"],
+ "withWaves": ["wave-start", "wave-end"],
+ "withCards": ["card-reveal", "card-select", "card-hover"]
+}

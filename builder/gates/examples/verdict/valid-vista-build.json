@@ -1,0 +1,136 @@
+{
+  "verdictVersion": 1,
+  "runtime": "vista",
+  "loop": "endless",
+  "run": "build",
+  "environment": {
+    "browser": "Chrome 141 headless",
+    "gpu": "desktop, discrete GPU",
+    "api": "webgpu"
+  },
+  "gates": {
+    "A": {
+      "gate": "A",
+      "ran": [
+        1,
+        2,
+        18
+      ],
+      "passed": [
+        1,
+        2,
+        18
+      ],
+      "skipped": [
+        {
+          "measure": 4,
+          "why": "the slot pass over what the vista core draws is not built"
+        },
+        {
+          "measure": 19,
+          "why": "friends' bodies are library bodies the model judge already passed"
+        }
+      ],
+      "ok": true
+    },
+    "B": {
+      "gate": "B",
+      "ran": [
+        3,
+        31,
+        32,
+        36
+      ],
+      "passed": [
+        3,
+        31,
+        32,
+        36
+      ],
+      "skipped": [
+        {
+          "measure": 33,
+          "why": "the vista core does not recover from a lost GPU device yet"
+        }
+      ],
+      "ok": true
+    },
+    "C": {
+      "gate": "C",
+      "ran": [
+        13,
+        15
+      ],
+      "passed": [
+        13,
+        15
+      ],
+      "skipped": [
+        {
+          "measure": 10,
+          "why": "nothing in a vista game can knock or hurt a player"
+        },
+        {
+          "measure": 16,
+          "why": "nothing is hit in a vista game"
+        },
+        {
+          "measure": 38,
+          "why": "the vista boot keeps no event log yet"
+        }
+      ],
+      "ok": true
+    },
+    "D": {
+      "gate": "D",
+      "ran": [
+        6
+      ],
+      "passed": [
+        6
+      ],
+      "skipped": [
+        {
+          "measure": 12,
+          "why": "no bots on vista, and no event log to trace scores"
+        }
+      ],
+      "ok": true
+    },
+    "E": {
+      "gate": "E",
+      "ran": [
+        5,
+        25
+      ],
+      "passed": [
+        5,
+        25
+      ],
+      "skipped": [],
+      "ok": true
+    },
+    "F": {
+      "gate": "F",
+      "ran": [
+        14,
+        17,
+        37
+      ],
+      "passed": [
+        14,
+        17,
+        37
+      ],
+      "skipped": [
+        {
+          "measure": 11,
+          "why": "each island's props are its place's own (its words lay out the village, the harbour and the beach); nothing is placed from spec.world.props"
+        }
+      ],
+      "ok": true
+    }
+  },
+  "pass": true,
+  "failed": []
+}

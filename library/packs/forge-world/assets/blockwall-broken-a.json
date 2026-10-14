@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "blockwall-broken-a",
+ "pack": "forge-world",
+ "file": "blockwall-broken-a.glb",
+ "sha256": "0dc0a81b1253a2b77bb2d35c24eb37db99bc2123bc40cc9cb978cb038917419a",
+ "bytes": 15596,
+ "preview": "previews/blockwall-broken-a.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-blocks.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "3 m of block wall broken down to a block in the middle: the backdrop shows through",
+ "tags": [
+  "world",
+  "wall",
+  "broken",
+  "a",
+  "blockwall"
+ ],
+ "use": {
+  "size": [
+   3,
+   2.5,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    2.5,
+    0.75
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 50,
+  "textures": 1,
+  "textureMax": 96,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 50,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 15596,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#60707c",
+     "#43584c",
+     "#505d67",
+     "#485e50",
+     "#4c5c61",
+     "#7f8681",
+     "#8a928c",
+     "#586671"
+    ],
+    "saturation": 0.101,
+    "value": 0.411,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.961
+     },
+     {
+      "hue": "green",
+      "share": 0.039
+     }
+    ],
+    "grey": 0.961
+   },
+   "trianglesPerMetre": 1.62,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-blocks.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

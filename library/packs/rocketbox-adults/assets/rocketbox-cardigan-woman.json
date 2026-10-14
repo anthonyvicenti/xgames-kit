@@ -1,0 +1,125 @@
+{
+ "assetVersion": 1,
+ "id": "rocketbox-cardigan-woman",
+ "pack": "rocketbox-adults",
+ "file": "rocketbox-cardigan-woman.glb",
+ "sha256": "6d4865521744ae1364790b01d56ba6984d1d4d28c002b93fe9c9b4929fa361e7",
+ "bytes": 1058292,
+ "preview": "previews/rocketbox-cardigan-woman.png",
+ "from": "https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9 Assets/Avatars/Adults/Female_Adult_14/Export/Female_Adult_14.fbx (git blob 869e5ce1…, sha256 63d32ecd…67f4) and Assets/Avatars/Adults/Female_Adult_14/Textures/f017_*.tga, retrieved 2026-10-12; licence…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a middle-aged woman with short brown hair in a long grey knit cardigan, dark jeans and flat shoes (realistic)",
+ "tags": [
+  "human",
+  "woman",
+  "casual",
+  "realistic",
+  "everyday",
+  "older",
+  "coastal",
+  "modern",
+  "player",
+  "f",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.252,
+   1.744,
+   0.304
+  ],
+  "height": 1.744,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 8724,
+  "textures": 3,
+  "textureMax": 1024,
+  "materials": 3,
+  "joints": 80
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: throw at 0.1 s: the left middle bends -36° at its knuckle (a finger bends -35° to 105°)",
+     "model judge, right leg: run at 0.19 s: its edges stretch or crush ×4.5 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.744,
+     "triangles": 8724,
+     "joints": 80,
+     "materials": 3
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 43,
+    "hues": [
+     "#21292b",
+     "#807768",
+     "#82796a",
+     "#1e2628",
+     "#1f2427",
+     "#242c2e",
+     "#151a1d",
+     "#7d7465"
+    ],
+    "saturation": 0.179,
+    "value": 0.298,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.821
+     },
+     {
+      "hue": "brown",
+      "share": 0.106
+     },
+     {
+      "hue": "orange",
+      "share": 0.058
+     }
+    ],
+    "grey": 0.821
+   },
+   "trianglesPerMetre": 53.11,
+   "texelsPerMetre": 849,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "6.11 heads tall; hips at 53% of the height; shoulders 20% of it",
+   "body": {
+    "headsTall": 6.11,
+    "hipShare": 0.532,
+    "shoulderShare": 0.197,
+    "widthShare": 0.718
+   }
+  }
+ },
+ "source": {
+  "page": "https://github.com/microsoft/Microsoft-Rocketbox"
+ }
+}

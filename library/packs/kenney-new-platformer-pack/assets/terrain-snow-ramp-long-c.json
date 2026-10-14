@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-ramp-long-c",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-ramp-long-c.png",
+ "sha256": "caf4273ad58ccd2d95235e6eede1dcaf11a64ddb9482cafe647a5202167ce608",
+ "bytes": 2617,
+ "preview": "previews/terrain-snow-ramp-long-c.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_ramp_long_c.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow ramp long tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "ramp",
+  "long",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 19.1 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 18.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#e5f0ff",
+     "#c8dbf5",
+     "#ffffff",
+     "#353541",
+     "#c0c8ce"
+    ],
+    "saturation": 0.208,
+    "value": 0.788,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.958
+     },
+     {
+      "hue": "blue",
+      "share": 0.042
+     }
+    ],
+    "exact": 76,
+    "grey": 0.958
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.039
+   }
+  }
+ },
+ "source": {
+  "sha256": "889c6c76d13f871413a5baef77fa5acfd3257a831156421f05892479f2ae3d0d",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

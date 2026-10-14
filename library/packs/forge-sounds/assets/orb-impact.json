@@ -1,0 +1,60 @@
+{
+ "assetVersion": 1,
+ "id": "orb-impact",
+ "pack": "forge-sounds",
+ "file": "orb-impact.ogg",
+ "sha256": "2a312873b35764a8e26123040575b99c172d8a7a13f04efba9bb28cdb124ce0a",
+ "bytes": 7865,
+ "preview": "previews/orb-impact.png",
+ "from": "https://opengameart.org/content/80-cc0-rpg-sfx spell_fire_06.ogg; cut to 0-0.45 s of the source (0.45 s), 2 ms fade-in and 180 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 6.3 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "enemy orb hits (orb impact)",
+ "tags": [
+  "sounds",
+  "orb",
+  "impact",
+  "enemy"
+ ],
+ "use": {
+  "seconds": 0.451,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 58% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -18.3,
+     "samplePeakDb": -6,
+     "truePeakDb": -5.8,
+     "hfRatio": 0.579
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.451,
+    "peakDbfs": -6,
+    "soundMaxLufs": -18.3
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0-0.45 s of the source (0.45 s), 2 ms fade-in and 180 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 6.3 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

@@ -1,0 +1,1152 @@
+{
+  "id": "melee",
+  "name": "Melee",
+  "describe": "Swords, axes and fists: combo chains (windup, active, recover), arc and reach, damage, knockback and hit-stop; a dash with invulnerable frames; slash trails",
+  "examples": [
+    "a sword you swing in combos",
+    "an axe with a heavy spin",
+    "a spear that thrusts",
+    "fists in a brawl"
+  ],
+  "rank": 110,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "action": {
+        "type": "string",
+        "enum": [
+          "",
+          "primary",
+          "secondary",
+          "interact",
+          "jump"
+        ],
+        "default": "primary",
+        "description": "Input that swings the combo (\"\": rules call melee.swing(p))"
+      },
+      "heavyAction": {
+        "type": "string",
+        "enum": [
+          "",
+          "primary",
+          "secondary",
+          "interact",
+          "jump"
+        ],
+        "default": "secondary",
+        "description": "Input for the heavy attack (\"\": none)"
+      },
+      "dashAction": {
+        "type": "string",
+        "enum": [
+          "",
+          "primary",
+          "secondary",
+          "interact",
+          "jump"
+        ],
+        "default": "jump",
+        "description": "Input that dashes (\"\": none). With \"jump\", Space dashes instead of jumping"
+      },
+      "weapon": {
+        "type": "string",
+        "default": "sword",
+        "description": "Id of the weapon every player starts with (from weapons)"
+      },
+      "weapons": {
+        "type": [
+          "array",
+          "null"
+        ],
+        "default": null,
+        "maxItems": 8,
+        "description": "The weapon table: [{id, name, kind (sword|axe|spear|hammer|fists), rarity 0-3, color, prop, model, combo: [move...], heavy: move, dashStrike: move}]; null: the kit's sword, axe and spear. create writes the engine's own table when the spec gives none, so a game holds one (the slot mechanic.melee.weapons)",
+        "items": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "id": {
+              "type": "string",
+              "title": "Id",
+              "description": "A short name, unique in the table: lower case letters, digits and dashes",
+              "pattern": "^[a-z0-9][a-z0-9_-]{0,23}$"
+            },
+            "name": {
+              "type": "string",
+              "title": "Name",
+              "description": "What the HUD and the drops call it",
+              "maxLength": 32
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "sword",
+                "axe",
+                "spear",
+                "hammer",
+                "fists"
+              ],
+              "title": "Kind",
+              "description": "Its shape when the kit draws it, and the kit weapon whose moves fill in what this one leaves out",
+              "default": "sword"
+            },
+            "rarity": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 3,
+              "title": "Rarity",
+              "description": "0 common, 1 rare, 2 epic, 3 legendary: each step hits 25% harder",
+              "default": 0
+            },
+            "color": {
+              "type": "string",
+              "format": "color",
+              "title": "Colour",
+              "description": "Its colour when the kit draws it (no model)"
+            },
+            "prop": {
+              "type": "string",
+              "title": "Prop",
+              "description": "One of the game's props held as the weapon (prop.<name>), when it has no model of its own"
+            },
+            "model": {
+              "type": "string",
+              "title": "Model",
+              "description": "A file in assets/models/ (slot mechanic.melee.<id>.model), or \"library:<id>\" for a library model that the next slots --write copies in"
+            },
+            "grip": {
+              "type": "object",
+              "title": "Grip",
+              "description": "The model's place on the hand_r socket {position, quaternion}"
+            },
+            "license": {
+              "type": "object",
+              "title": "Licence",
+              "description": "The model's licence {spdx, author, url}"
+            },
+            "combo": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "title": "Swings",
+              "items": {
+                "type": "object",
+                "additionalProperties": true,
+                "properties": {
+                  "damage": {
+                    "type": "number",
+                    "description": "Damage per target",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "title": "Damage",
+                    "default": 1
+                  },
+                  "windup": {
+                    "type": "number",
+                    "description": "Seconds the swing winds up (readable, before it can hit)",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "title": "Wind-up",
+                    "unit": "s",
+                    "default": 0.1
+                  },
+                  "active": {
+                    "type": "number",
+                    "description": "Seconds it can hit",
+                    "minimum": 0.02,
+                    "maximum": 1,
+                    "title": "Active time",
+                    "unit": "s",
+                    "default": 0.1
+                  },
+                  "recover": {
+                    "type": "number",
+                    "description": "Seconds the player is committed after it",
+                    "minimum": 0,
+                    "maximum": 2,
+                    "title": "Recovery",
+                    "unit": "s",
+                    "default": 0.24
+                  },
+                  "arc": {
+                    "type": "number",
+                    "description": "Arc it covers (degrees)",
+                    "minimum": 5,
+                    "maximum": 360,
+                    "title": "Arc",
+                    "unit": "°",
+                    "default": 110
+                  },
+                  "reach": {
+                    "type": "number",
+                    "description": "Reach (m)",
+                    "minimum": 0.5,
+                    "maximum": 8,
+                    "title": "Reach",
+                    "unit": "m",
+                    "default": 2.1
+                  },
+                  "knockback": {
+                    "type": "number",
+                    "description": "Knockback (m/s)",
+                    "minimum": 0,
+                    "maximum": 30,
+                    "title": "Knockback",
+                    "unit": "m/s",
+                    "default": 4
+                  },
+                  "hitStop": {
+                    "type": "number",
+                    "description": "Hit-stop on a hit (s, this player's own screen)",
+                    "minimum": 0,
+                    "maximum": 0.3,
+                    "title": "Hit-stop",
+                    "unit": "s",
+                    "default": 0.05
+                  },
+                  "lunge": {
+                    "type": "number",
+                    "description": "Step forward as it lands (m/s)",
+                    "minimum": 0,
+                    "maximum": 20,
+                    "title": "Lunge",
+                    "unit": "m/s",
+                    "default": 3
+                  },
+                  "sweep": {
+                    "type": "integer",
+                    "enum": [
+                      -1,
+                      0,
+                      1
+                    ],
+                    "title": "Sweep",
+                    "description": "1 right to left, -1 left to right, 0 a thrust",
+                    "default": 1
+                  },
+                  "tilt": {
+                    "type": "number",
+                    "description": "Trail tilt (degrees)",
+                    "minimum": -80,
+                    "maximum": 80,
+                    "title": "Trail tilt",
+                    "unit": "°",
+                    "default": 0
+                  },
+                  "clip": {
+                    "type": "string",
+                    "title": "Animation",
+                    "description": "gf-humanoid-1 clip (slash_1, slash_2, slash_3, heavy; falls back to punch)",
+                    "maxLength": 40
+                  },
+                  "finisher": {
+                    "type": "boolean",
+                    "title": "Finisher",
+                    "description": "Ends the combo"
+                  },
+                  "knockdown": {
+                    "type": "boolean",
+                    "title": "Knocks down",
+                    "description": "A hit knocks a player over (fair play decides) and staggers an enemy longer"
+                  },
+                  "guardBreak": {
+                    "type": "boolean",
+                    "title": "Breaks a guard",
+                    "description": "Goes through a shielded enemy's guard"
+                  }
+                },
+                "title": "Swing"
+              }
+            },
+            "heavy": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "damage": {
+                  "type": "number",
+                  "description": "Damage per target",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "title": "Damage",
+                  "default": 1
+                },
+                "windup": {
+                  "type": "number",
+                  "description": "Seconds the swing winds up (readable, before it can hit)",
+                  "minimum": 0,
+                  "maximum": 2,
+                  "title": "Wind-up",
+                  "unit": "s",
+                  "default": 0.1
+                },
+                "active": {
+                  "type": "number",
+                  "description": "Seconds it can hit",
+                  "minimum": 0.02,
+                  "maximum": 1,
+                  "title": "Active time",
+                  "unit": "s",
+                  "default": 0.1
+                },
+                "recover": {
+                  "type": "number",
+                  "description": "Seconds the player is committed after it",
+                  "minimum": 0,
+                  "maximum": 2,
+                  "title": "Recovery",
+                  "unit": "s",
+                  "default": 0.24
+                },
+                "arc": {
+                  "type": "number",
+                  "description": "Arc it covers (degrees)",
+                  "minimum": 5,
+                  "maximum": 360,
+                  "title": "Arc",
+                  "unit": "°",
+                  "default": 110
+                },
+                "reach": {
+                  "type": "number",
+                  "description": "Reach (m)",
+                  "minimum": 0.5,
+                  "maximum": 8,
+                  "title": "Reach",
+                  "unit": "m",
+                  "default": 2.1
+                },
+                "knockback": {
+                  "type": "number",
+                  "description": "Knockback (m/s)",
+                  "minimum": 0,
+                  "maximum": 30,
+                  "title": "Knockback",
+                  "unit": "m/s",
+                  "default": 4
+                },
+                "hitStop": {
+                  "type": "number",
+                  "description": "Hit-stop on a hit (s, this player's own screen)",
+                  "minimum": 0,
+                  "maximum": 0.3,
+                  "title": "Hit-stop",
+                  "unit": "s",
+                  "default": 0.05
+                },
+                "lunge": {
+                  "type": "number",
+                  "description": "Step forward as it lands (m/s)",
+                  "minimum": 0,
+                  "maximum": 20,
+                  "title": "Lunge",
+                  "unit": "m/s",
+                  "default": 3
+                },
+                "sweep": {
+                  "type": "integer",
+                  "enum": [
+                    -1,
+                    0,
+                    1
+                  ],
+                  "title": "Sweep",
+                  "description": "1 right to left, -1 left to right, 0 a thrust",
+                  "default": 1
+                },
+                "tilt": {
+                  "type": "number",
+                  "description": "Trail tilt (degrees)",
+                  "minimum": -80,
+                  "maximum": 80,
+                  "title": "Trail tilt",
+                  "unit": "°",
+                  "default": 0
+                },
+                "clip": {
+                  "type": "string",
+                  "title": "Animation",
+                  "description": "gf-humanoid-1 clip (slash_1, slash_2, slash_3, heavy; falls back to punch)",
+                  "maxLength": 40
+                },
+                "finisher": {
+                  "type": "boolean",
+                  "title": "Finisher",
+                  "description": "Ends the combo"
+                },
+                "knockdown": {
+                  "type": "boolean",
+                  "title": "Knocks down",
+                  "description": "A hit knocks a player over (fair play decides) and staggers an enemy longer"
+                },
+                "guardBreak": {
+                  "type": "boolean",
+                  "title": "Breaks a guard",
+                  "description": "Goes through a shielded enemy's guard"
+                }
+              },
+              "title": "Heavy attack"
+            },
+            "dashStrike": {
+              "type": "object",
+              "additionalProperties": true,
+              "properties": {
+                "damage": {
+                  "type": "number",
+                  "description": "Damage per target",
+                  "minimum": 0,
+                  "maximum": 100,
+                  "title": "Damage",
+                  "default": 1
+                },
+                "windup": {
+                  "type": "number",
+                  "description": "Seconds the swing winds up (readable, before it can hit)",
+                  "minimum": 0,
+                  "maximum": 2,
+                  "title": "Wind-up",
+                  "unit": "s",
+                  "default": 0.1
+                },
+                "active": {
+                  "type": "number",
+                  "description": "Seconds it can hit",
+                  "minimum": 0.02,
+                  "maximum": 1,
+                  "title": "Active time",
+                  "unit": "s",
+                  "default": 0.1
+                },
+                "recover": {
+                  "type": "number",
+                  "description": "Seconds the player is committed after it",
+                  "minimum": 0,
+                  "maximum": 2,
+                  "title": "Recovery",
+                  "unit": "s",
+                  "default": 0.24
+                },
+                "arc": {
+                  "type": "number",
+                  "description": "Arc it covers (degrees)",
+                  "minimum": 5,
+                  "maximum": 360,
+                  "title": "Arc",
+                  "unit": "°",
+                  "default": 110
+                },
+                "reach": {
+                  "type": "number",
+                  "description": "Reach (m)",
+                  "minimum": 0.5,
+                  "maximum": 8,
+                  "title": "Reach",
+                  "unit": "m",
+                  "default": 2.1
+                },
+                "knockback": {
+                  "type": "number",
+                  "description": "Knockback (m/s)",
+                  "minimum": 0,
+                  "maximum": 30,
+                  "title": "Knockback",
+                  "unit": "m/s",
+                  "default": 4
+                },
+                "hitStop": {
+                  "type": "number",
+                  "description": "Hit-stop on a hit (s, this player's own screen)",
+                  "minimum": 0,
+                  "maximum": 0.3,
+                  "title": "Hit-stop",
+                  "unit": "s",
+                  "default": 0.05
+                },
+                "lunge": {
+                  "type": "number",
+                  "description": "Step forward as it lands (m/s)",
+                  "minimum": 0,
+                  "maximum": 20,
+                  "title": "Lunge",
+                  "unit": "m/s",
+                  "default": 3
+                },
+                "sweep": {
+                  "type": "integer",
+                  "enum": [
+                    -1,
+                    0,
+                    1
+                  ],
+                  "title": "Sweep",
+                  "description": "1 right to left, -1 left to right, 0 a thrust",
+                  "default": 1
+                },
+                "tilt": {
+                  "type": "number",
+                  "description": "Trail tilt (degrees)",
+                  "minimum": -80,
+                  "maximum": 80,
+                  "title": "Trail tilt",
+                  "unit": "°",
+                  "default": 0
+                },
+                "clip": {
+                  "type": "string",
+                  "title": "Animation",
+                  "description": "gf-humanoid-1 clip (slash_1, slash_2, slash_3, heavy; falls back to punch)",
+                  "maxLength": 40
+                },
+                "finisher": {
+                  "type": "boolean",
+                  "title": "Finisher",
+                  "description": "Ends the combo"
+                },
+                "knockdown": {
+                  "type": "boolean",
+                  "title": "Knocks down",
+                  "description": "A hit knocks a player over (fair play decides) and staggers an enemy longer"
+                },
+                "guardBreak": {
+                  "type": "boolean",
+                  "title": "Breaks a guard",
+                  "description": "Goes through a shielded enemy's guard"
+                }
+              },
+              "title": "Dash strike"
+            }
+          }
+        }
+      },
+      "comboWindow": {
+        "type": "number",
+        "description": "Seconds after a swing in which a press continues the combo",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.45
+      },
+      "buffer": {
+        "type": "number",
+        "description": "Seconds an early press is remembered",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.25
+      },
+      "chainAt": {
+        "type": "number",
+        "description": "Share of the recovery after which a remembered press chains",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.3
+      },
+      "holdRepeat": {
+        "type": "boolean",
+        "default": true,
+        "description": "Holding the button keeps swinging the combo"
+      },
+      "moveWhileSwinging": {
+        "type": "number",
+        "description": "Walking speed while swinging, as a share of the run speed",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.35
+      },
+      "dashSpeed": {
+        "type": "number",
+        "description": "Dash speed (m/s)",
+        "minimum": 4,
+        "maximum": 40,
+        "default": 16
+      },
+      "dashTime": {
+        "type": "number",
+        "description": "Seconds a dash lasts",
+        "minimum": 0.05,
+        "maximum": 1,
+        "default": 0.2
+      },
+      "dashIframes": {
+        "type": "number",
+        "description": "Seconds a dash makes the player untouchable",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.28
+      },
+      "dashCooldown": {
+        "type": "number",
+        "description": "Seconds between dashes",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0.65
+      },
+      "dashStrikeWindow": {
+        "type": "number",
+        "description": "Seconds after a dash in which an attack is a dash strike",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.18
+      },
+      "hitPlayers": {
+        "type": [
+          "string",
+          "boolean"
+        ],
+        "enum": [
+          "auto",
+          true,
+          false
+        ],
+        "default": "auto",
+        "description": "Swings hit other players: auto = when the game is not co-op"
+      },
+      "playerDamage": {
+        "type": "number",
+        "description": "Damage scale against players",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1
+      },
+      "trailColor": {
+        "type": "string",
+        "default": "#d6ecff",
+        "description": "Colour of the slash trail"
+      },
+      "trailOpacity": {
+        "type": "number",
+        "description": "Slash trail opacity",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.7
+      },
+      "sparkColor": {
+        "type": "string",
+        "default": "#ffe7a8",
+        "description": "Colour of the sparks a hit throws"
+      },
+      "blockColor": {
+        "type": "string",
+        "default": "#9fd8ff",
+        "description": "Colour of the sparks a blocked hit throws"
+      },
+      "rarityColors": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [
+          "#7d8799",
+          "#3d8bff",
+          "#a55cff",
+          "#f29a12"
+        ],
+        "description": "Colours of common, rare, epic and legendary"
+      },
+      "shake": {
+        "type": "number",
+        "description": "Screen shake on a hit (0 off)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 1
+      },
+      "hitStopScale": {
+        "type": "number",
+        "description": "Hit-stop scale (0 off)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 1
+      },
+      "weaponRot": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "default": [
+          90,
+          0,
+          0
+        ],
+        "description": "Weapon rotation in the hand (degrees x, y, z)"
+      },
+      "weaponOffset": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "default": [
+          0,
+          0,
+          0
+        ],
+        "description": "Weapon offset in the hand (m)"
+      },
+      "weaponScale": {
+        "type": "number",
+        "description": "Weapon scale",
+        "minimum": 0.2,
+        "maximum": 5,
+        "default": 1
+      },
+      "weaponColor": {
+        "type": "string",
+        "default": "#c9d3df",
+        "description": "Colour of the kit's stand-in weapon (with the kit's own weapon table)"
+      },
+      "weaponGrip": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "default": null,
+        "description": "The weapon model's place on the hand_r socket {position: [x, y, z] m, quaternion: [x, y, z, w]} (research/gf-scenic/library/props.json records it for each KayKit weapon); null: weaponRot and weaponOffset. A weapon in the table may carry its own `grip`"
+      },
+      "soundSwing": {
+        "type": "string",
+        "default": "melee-swing"
+      },
+      "soundHeavy": {
+        "type": "string",
+        "default": "melee-heavy"
+      },
+      "soundHit": {
+        "type": "string",
+        "default": "melee-hit"
+      },
+      "soundDash": {
+        "type": "string",
+        "default": "melee-dash"
+      },
+      "soundBlock": {
+        "type": "string",
+        "default": "melee-block"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.melee.trail-color",
+        "label": "Slash trail colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/trailColor"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 60
+      },
+      {
+        "id": "mechanic.melee.dash-cooldown",
+        "label": "Dash cooldown",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/dashCooldown"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 54,
+        "constraints": {
+          "min": 0,
+          "max": 5,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.melee.spark-color",
+        "label": "Hit spark colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/sparkColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.melee.block-color",
+        "label": "Blocked hit spark colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/blockColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 20
+      },
+      {
+        "id": "mechanic.melee.trail-opacity",
+        "label": "Slash trail opacity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/trailOpacity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.melee.rarity-colors",
+        "label": "Rarity colours (common, rare, epic, legendary)",
+        "group": "mechanics",
+        "type": "colors",
+        "source": {
+          "pointer": "{base}/rarityColors"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 24
+      },
+      {
+        "id": "mechanic.melee.move-while-swinging",
+        "label": "Walking speed while swinging",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/moveWhileSwinging"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.melee.dash-speed",
+        "label": "Dash speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/dashSpeed"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 4,
+          "max": 40,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.melee.dash-time",
+        "label": "Dash time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/dashTime"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.05,
+          "max": 1,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.melee.dash-iframes",
+        "label": "Dash invulnerable time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/dashIframes"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.melee.combo-window",
+        "label": "Combo window",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/comboWindow"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 2,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.melee.shake",
+        "label": "Screen shake on a hit",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/shake"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "id": "mechanic.melee.hit-stop-scale",
+        "label": "Hit-stop scale",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/hitStopScale"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "id": "mechanic.melee.player-damage",
+        "label": "Damage scale against players",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/playerDamage"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10
+        }
+      },
+      {
+        "id": "mechanic.melee.weapon-scale",
+        "label": "Weapon size in the hand",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/weaponScale"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.2,
+          "max": 5
+        }
+      },
+      {
+        "id": "mechanic.melee.sound-swing",
+        "label": "Swing sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundSwing"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.melee.sound-heavy",
+        "label": "Heavy sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundHeavy"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.melee.sound-hit",
+        "label": "Hit sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundHit"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.melee.sound-dash",
+        "label": "Dash sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundDash"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.melee.sound-block",
+        "label": "Block sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundBlock"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.melee.weapon-color",
+        "label": "Stand-in weapon colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/weaponColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 40
+      }
+    ],
+    "dynamic": "more slots follow from params (slotsFor in the implementation): one per table row or per configured kind",
+    "items": [
+      "0"
+    ]
+  },
+  "events": [
+    {
+      "name": "onHit",
+      "on": "host",
+      "args": "{ attacker, target, kind: 'enemy' | 'boss' | 'player', damage, move, blocked, killed }",
+      "when": "a swing hit something (each target once a swing)"
+    },
+    {
+      "name": "onSwing",
+      "on": "own copy",
+      "args": "{ player, key, serial }",
+      "when": "a swing started"
+    }
+  ],
+  "host": {
+    "owner": "copy",
+    "how": "the copy that owns a player runs their swings and finds the hits; the host checks each hit and applies the damage",
+    "state": "melee",
+    "fields": {
+      "w": "{ playerId: [weapon index, rarity] }",
+      "r": "the last reported hit per player",
+      "n": "{ playerId: [swings, hits] }"
+    }
+  },
+  "owns": [
+    {
+      "res": "player.socket.hand_r",
+      "why": "the weapon is held on the hand_r socket"
+    },
+    {
+      "res": "input.primary",
+      "why": "primary swings the combo (params.action)"
+    },
+    {
+      "res": "input.secondary",
+      "why": "secondary is the heavy attack (params.heavyAction)"
+    },
+    {
+      "res": "input.jump",
+      "why": "jump dashes (params.dashAction)"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "waves",
+    "boss",
+    "health",
+    "loot"
+  ],
+  "gives": [
+    "melee"
+  ],
+  "bots": "bots fight by themselves",
+  "notes": {
+    "lines": [
+      "Nothing to wire: primary swings the combo, secondary is the heavy attack, jump (Space) dashes, and bots fight with it by themselves.",
+      "Swings hurt the waves mechanic's enemies, the boss, and other players unless the game is co-op (hitPlayers \"auto\").",
+      "With dashAction \"jump\" the players cannot jump: move the dash to another input in a game that needs jumping."
+    ],
+    "readme": "components/melee/README.md",
+    "stub": {
+      "as": "melee",
+      "worked": "melee.onHit(h => { if (h.kind === 'player' && h.attacker) h.attacker.score += 1; });",
+      "traps": [
+        "a kill of an enemy already scores the waves mechanic's killPoints: score only what is yours in onHit",
+        "hit-stop and camera shake are this copy's own feel: never pause or slow the shared world for a hit"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/melee/fixture",
+    "players": 2,
+    "with": [
+      "health",
+      "waves"
+    ]
+  },
+  "impl": {
+    "three": {
+      "path": "components/melee/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-melee.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "author": "BUDDY: ROLLBACK contributors",
+    "url": "https://github.com/octobooth-4/buddy-rollback",
+    "file": "components/melee/LICENSE-buddy-rollback",
+    "credit": "combat model from BUDDY: ROLLBACK at db51978 (MIT); NOTICE-buddy-rollback says what was taken"
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-melee.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

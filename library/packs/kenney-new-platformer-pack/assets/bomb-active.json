@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "bomb-active",
+ "pack": "kenney-new-platformer-pack",
+ "file": "bomb-active.png",
+ "sha256": "f35be53d7439db9bb97e80fdc74fbcab8566c061a3554911093353099ae63b50",
+ "bytes": 3360,
+ "preview": "previews/bomb-active.png",
+ "from": "Sprites/Tiles/Double/bomb_active.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "bomb active",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "bomb",
+  "active",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#d6dce0",
+     "#ffffff",
+     "#919eaa",
+     "#d8dee1",
+     "#f4f6f7",
+     "#d1d8dc",
+     "#f7f8f9",
+     "#ccd3d8"
+    ],
+    "saturation": 0.093,
+    "value": 0.9,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 90,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "5bfc77a17fba036d1bf28002961d80086a35800e38e49044c0c23c9bc928a056",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

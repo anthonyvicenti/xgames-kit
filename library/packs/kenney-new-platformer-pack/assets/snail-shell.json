@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "snail-shell",
+ "pack": "kenney-new-platformer-pack",
+ "file": "snail-shell.png",
+ "sha256": "35116aa9b09b0b2bbe3ee6be10a137ff09f8aa16797b2ccca6cb982119dd2b8b",
+ "bytes": 3876,
+ "preview": "previews/snail-shell.png",
+ "from": "Sprites/Enemies/Double/snail_shell.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "snail shell",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "snail",
+  "shell",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#ba6be9",
+     "#353541",
+     "#d699fa",
+     "#343440",
+     "#cf8df5",
+     "#353540",
+     "#c882f1",
+     "#bb6dea"
+    ],
+    "saturation": 0.584,
+    "value": 0.565,
+    "families": [
+     {
+      "hue": "purple",
+      "share": 0.691
+     },
+     {
+      "hue": "grey",
+      "share": 0.309
+     }
+    ],
+    "exact": 35,
+    "grey": 0.309
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "da16d640664a8e26dec2cd4b2a650ba925bdda502a4d1c559ca507875d4c808b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0042",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0042.png",
+ "sha256": "341ca9589064b6b7c2dadcd2a03239750358e7d575fe25e022a46ab23f0ec677",
+ "bytes": 176,
+ "preview": "previews/tile-0042.png",
+ "from": "Tiles/tile_0042.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "dirt with a nub of grass in its bottom-left corner: an inner corner of a dirt path",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "dirt",
+  "path",
+  "grass",
+  "ground",
+  "corner",
+  "corner-inner-sw"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#eaa56c",
+     "#84c669",
+     "#fec99c",
+     "#cf8254",
+     "#65a556"
+    ],
+    "saturation": 0.734,
+    "value": 0.667,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.945
+     },
+     {
+      "hue": "green",
+      "share": 0.055
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "322a22e1567b667f5f5423767412014ac490968e0f6f6fd22f1721234784f9aa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

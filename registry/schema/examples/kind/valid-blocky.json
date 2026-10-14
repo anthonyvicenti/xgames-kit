@@ -1,0 +1,15 @@
+{
+  "id": "blocky",
+  "label": "Blocky",
+  "feel": "Flat-shaded blocks and block people in saturated colours.",
+  "references": ["Grow a Garden", "Minecraft"],
+  "changesPlay": false,
+  "look": { "three": { "profile": "standard-3d", "preset": "toon-lowpoly", "time": "day", "values": {} } },
+  "world": { "family": "voxel", "three": { "templates": ["voxel"], "default": "voxel" } },
+  "camera": { "default": "third", "three": { "distance": 8 } },
+  "bodies": { "set": "blocky", "three": ["blocky-classic"] },
+  "mechanics": { "suggested": ["build", "pickup"], "why": "placing blocks" },
+  "packs": ["xk-blocky-bodies"],
+  "runtimes": { "three": { "profile": "standard-3d", "state": { "exists": true, "tested": false, "open": true, "note": "no game on this kind yet" } }, "godot": { "profile": "3d", "state": { "exists": false, "tested": false, "open": false }, "toProve": "a blocky body set on Godot 3D" } },
+  "state": { "exists": true, "tested": false, "open": true }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "edges-soil",
+ "pack": "xk-pixel-town",
+ "file": "edges-soil.png",
+ "sha256": "ebd1416c13369beab9b1bfbe596b054a8a0fdd948b2b6924823f07ae83e81cbf",
+ "bytes": 796,
+ "preview": "previews/edges-soil.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): edges-soil.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "tilled soil edges over grass (16, blend)",
+ "tags": [
+  "pixel",
+  "soil",
+  "farm",
+  "edges"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "blend"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#62402a",
+     "#93673f",
+     "#7a5134",
+     "#4e2f1e",
+     "#4f9443",
+     "#3c2416"
+    ],
+    "saturation": 0.412,
+    "value": 0.306,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.901
+     },
+     {
+      "hue": "green",
+      "share": 0.099
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.199
+   }
+  }
+ },
+ "source": {
+  "sha256": "4dd6d6e58a2d8aae3eed0ca097fe6b25712c936740cb6ea0ffd30c5d317e6b84",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

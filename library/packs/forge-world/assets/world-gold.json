@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "world-gold",
+ "pack": "forge-world",
+ "file": "world-gold.png",
+ "sha256": "c6c8fae69fbee9b6aea4c8a53d72ee5197d901308f681e5db3a94b25d4da35e6",
+ "bytes": 210,
+ "preview": "previews/world-gold.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a gold coin's face with a cross struck on it (drawn)",
+ "tags": [
+  "texture",
+  "night",
+  "gold",
+  "world"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 16,
+     "height": 16,
+     "seeThrough": 0.25
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#f6c43e",
+     "#b0761e",
+     "#9c6418",
+     "#ffdc45",
+     "#af701b"
+    ],
+    "saturation": 0.815,
+    "value": 0.49,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.542
+     },
+     {
+      "hue": "yellow",
+      "share": 0.458
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0066",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0066.png",
+ "sha256": "eef78f683dfc7031eba77822a3d22d968674c17916dc7a054d750656fa5dbd8c",
+ "bytes": 238,
+ "preview": "previews/tile-0066.png",
+ "from": "Tiles/tile_0066.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a brown wooden coffin seen from above (or a wooden trapdoor)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "coffin",
+  "grave",
+  "wooden",
+  "brown",
+  "graveyard",
+  "trapdoor"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#eaa56c",
+     "#763b36"
+    ],
+    "saturation": 0.445,
+    "value": 0.422,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.552
+     },
+     {
+      "hue": "pink",
+      "share": 0.352
+     },
+     {
+      "hue": "red",
+      "share": 0.095
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.792
+   }
+  }
+ },
+ "source": {
+  "sha256": "601f7619c0103424fb76a2fe0ef6f086fbc29a404f2bfba2dd16fa6dc141e9d9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

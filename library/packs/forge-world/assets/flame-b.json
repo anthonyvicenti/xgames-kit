@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "flame-b",
+ "pack": "forge-world",
+ "file": "flame-b.glb",
+ "sha256": "61a82a51eb76b299d2170d9a23ae7ff4b9376bb5091e9f7210b1e1795891c007",
+ "bytes": 2204,
+ "preview": "previews/flame-b.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/flame-b.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a fire's flame, frame 2 of 6: 0.5 m wide and 0.8 m tall, two crossed cards (material glow_flame: emissive × its picture; alpha mask)",
+ "tags": [
+  "world",
+  "flame",
+  "b"
+ ],
+ "use": {
+  "size": [
+   0.442,
+   0.8,
+   0.442
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.221,
+   -0.04,
+   -0.221
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 4,
+  "textures": 1,
+  "textureMax": 40,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 4,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 2204,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#ffcc50",
+     "#ff8420"
+    ],
+    "saturation": 1,
+    "value": 0.61,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.5
+     },
+     {
+      "hue": "orange",
+      "share": 0.5
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.28,
+   "texelsPerMetre": 50,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/flame-b.png) inside",
+  "author": "games.fun"
+ }
+}

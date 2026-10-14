@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "coin",
+ "pack": "flat-standins-pixel",
+ "file": "coin.png",
+ "sha256": "56cef99e6b0bc3a96692a4bfdef504c41bf77e2639dcb07523de40f1d31adf9f",
+ "bytes": 304,
+ "preview": "previews/coin.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): coin.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a gold coin",
+ "tags": [
+  "pixel",
+  "coin",
+  "gold",
+  "pickup",
+  "flat",
+  "2d"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#e8b828",
+     "#c08a1c",
+     "#ffe066",
+     "#5f4227",
+     "#6e542c",
+     "#fff6c0"
+    ],
+    "saturation": 0.736,
+    "value": 0.483,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.574
+     },
+     {
+      "hue": "brown",
+      "share": 0.227
+     },
+     {
+      "hue": "orange",
+      "share": 0.199
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa3e567bd490b7b651a333ffd5bff454f69522ba76dfc50e0a5475abcd85827a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

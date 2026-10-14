@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "pizza",
+ "pack": "kenney-food-kit",
+ "file": "pizza.glb",
+ "sha256": "375a439103ce772451c911568482d10ed704ccfffd63fbbfa02315266618c768",
+ "bytes": 31684,
+ "preview": "previews/pizza.png",
+ "from": "kenney:food-kit/pizza; baked to metres (x0.59397), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a whole pizza",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "pizza"
+ ],
+ "use": {
+  "size": [
+   0.5,
+   0.026,
+   0.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.5,
+    0.026,
+    0.5
+   ],
+   "offset": [
+    0,
+    0.013,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1208,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1208,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 31684,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#b56545",
+     "#ffcd5e",
+     "#fd6c40",
+     "#e68d64",
+     "#da835c",
+     "#d37e58",
+     "#c87450",
+     "#ba6948"
+    ],
+    "saturation": 0.683,
+    "value": 0.577,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.885
+     },
+     {
+      "hue": "red",
+      "share": 0.101
+     }
+    ],
+    "grey": 0.006
+   },
+   "trianglesPerMetre": 47.72,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "e98eda0a63421bc4e86f063ebd096a21e50254b169ddbba945d2473b59390951",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.59397), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

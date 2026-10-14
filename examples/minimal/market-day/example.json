@@ -1,0 +1,10 @@
+{
+  "title": "Market Day",
+  "summary": "A pixel town seen from above: soft path and pond borders, a fence, crops, houses and trees as set pieces, villagers in four facings; a coin grab with friends.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22",
+    "kit": "xgames-kit stream/pixel-bodies after 670fa8b",
+    "date": "2026-10-13",
+    "how": "node bin/gamesfun.mjs create <dir> --from market-day, then node builder/tools/verify.mjs <dir> (148 s) under gpu-run.sh on Linux with a desktop GPU (ANGLE on GL/EGL); the first run failed gates A, B (the new shadows carried no slot) and F (a spawn walled in by a rock), fixed, then passed"
+  }
+}

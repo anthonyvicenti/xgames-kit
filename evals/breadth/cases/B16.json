@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B16",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "story-vn",
+  "rank": 16,
+  "row": "Story / visual novel / point-and-click",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a hand-drawn murder mystery at a dinner party. talk to the guests, find clues and accuse someone at the end. different choices, different endings. me and a friend vote on what to do",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "talk",
+   "type": "panel",
+   "must": "talking to guests with choices of what to say"
+  },
+  {
+   "id": "clues",
+   "type": "mechanic",
+   "must": "clues found and kept"
+  },
+  {
+   "id": "endings",
+   "type": "loop",
+   "must": "choices lead to different endings"
+  },
+  {
+   "id": "vote",
+   "type": "players",
+   "must": "two players vote on each choice"
+  },
+  {
+   "id": "drawn",
+   "type": "feel",
+   "must": "a hand-drawn look"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

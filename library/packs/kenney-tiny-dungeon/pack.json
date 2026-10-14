@@ -1,0 +1,75 @@
+{
+ "packVersion": 1,
+ "id": "kenney-tiny-dungeon",
+ "title": "Kenney Tiny Dungeon",
+ "describe": "16 px dungeon folk, monsters, chests, potions, weapons and dungeon tiles.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/tiny-dungeon",
+  "file": "library/packs/kenney-tiny-dungeon/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/tiny-dungeon",
+  "download": "https://kenney.nl/media/pages/assets/tiny-dungeon/f8422efb44-1674742415/kenney_tiny-dungeon.zip",
+  "sha256": "c109438ab06f65fd80f9b2686a4cf9c7c11dc64444b47333ec71d602f8bb5fc7",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_tiny-dungeon.zip --pack kenney-tiny-dungeon --include 'Tiles/*.png' --style pixel --texels 16"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 4,
+   "hues": [
+    "#3f2631",
+    "#8b9bb4",
+    "#c0cbdc",
+    "#262b44",
+    "#eaa56c",
+    "#763b36",
+    "#bd6c4a",
+    "#52607c",
+    "#ffffff",
+    "#f7c282",
+    "#cf8254",
+    "#43e1b3"
+   ],
+   "saturation": 0.314,
+   "value": 0.415,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.368
+    },
+    {
+     "hue": "pink",
+     "share": 0.325
+    },
+    {
+     "hue": "orange",
+     "share": 0.177
+    },
+    {
+     "hue": "red",
+     "share": 0.091
+    }
+   ],
+   "grey": 0
+  },
+  "texelsPerMetre": 16,
+  "outline": {
+   "present": true,
+   "share": 0.511
+  }
+ },
+ "assets": 131,
+ "validators": [
+  "flat-judge"
+ ],
+ "notes": "Every tile's words were written by looking at it beside the pack's tile map and sample map (2026-10-13). A tile with use.tile false is a piece (an edge, a corner, an end, a part of a bigger picture): gf-flat-1 judges it without the seam rule. The source's tile 48 (plain sand floor) is the same file as Tiny Town's tile 25, so it is kept there once."
+}

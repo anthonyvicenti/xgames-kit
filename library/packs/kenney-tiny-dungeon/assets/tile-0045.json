@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0045",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0045.png",
+ "sha256": "945a60a7b415c930f8953177986abfda2345bd48f9fb050d23dfd582cd076242",
+ "bytes": 309,
+ "preview": "previews/tile-0045.png",
+ "from": "Tiles/tile_0045.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a doorway in a stone wall with its wooden door closed",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "wooden",
+  "closed",
+  "single"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#262b44",
+     "#3f2631",
+     "#763b36",
+     "#8b9bb4",
+     "#bd6c4a",
+     "#52607c",
+     "#c0cbdc"
+    ],
+    "saturation": 0.29,
+    "value": 0.329,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.516
+     },
+     {
+      "hue": "pink",
+      "share": 0.25
+     },
+     {
+      "hue": "red",
+      "share": 0.125
+     },
+     {
+      "hue": "orange",
+      "share": 0.109
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.767
+   }
+  }
+ },
+ "source": {
+  "sha256": "4f5d0fd34c70872b66f2418b6cae9c9c9e3aca133bdec0b0dbf860ce82f9f225",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

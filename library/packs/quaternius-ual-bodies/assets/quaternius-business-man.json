@@ -1,0 +1,125 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-business-man",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-business-man.glb",
+ "sha256": "95e9fc83a8d40b9eb37381a049d235fe50ff53d97db5541fad1dbca70ab64a83",
+ "bytes": 189396,
+ "preview": "previews/quaternius-business-man.png",
+ "from": "https://poly.pizza/m/JFrLIKqvCH \"Business Man\" (Ultimate Modular Men Pack), https://static.poly.pizza/e599abbe-7d73-488c-9d7e-3ead281e705c.glb (sha256 82b81257…546e, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (45 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a man in a dark business suit, white shirt and tie; the tie takes the player colour",
+ "tags": [
+  "human",
+  "man",
+  "office",
+  "business",
+  "suit",
+  "boss",
+  "worker",
+  "modern",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.675,
+   1.857,
+   0.372
+  ],
+  "height": 1.857,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_Tie"
+  ]
+ },
+ "budgets": {
+  "triangles": 6634,
+  "textures": 0,
+  "materials": 9,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.857,
+     "triangles": 6634,
+     "joints": 58,
+     "materials": 8
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#412914",
+     "#ba9c79",
+     "#202020",
+     "#1d2329",
+     "#2c2018",
+     "#372e24",
+     "#a3a3a3",
+     "#414751"
+    ],
+    "saturation": 0.334,
+    "value": 0.245,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.461
+     },
+     {
+      "hue": "grey",
+      "share": 0.334
+     },
+     {
+      "hue": "orange",
+      "share": 0.205
+     }
+    ],
+    "grey": 0.334
+   },
+   "trianglesPerMetre": 14.12,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.38 heads tall; hips at 48% of the height; shoulders 16% of it",
+   "body": {
+    "headsTall": 5.38,
+    "hipShare": 0.482,
+    "shoulderShare": 0.164,
+    "widthShare": 0.902
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/JFrLIKqvCH"
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "arena-gate",
+ "pack": "kenney-mini-arena",
+ "file": "arena-gate.glb",
+ "sha256": "7889639c210ca78dfb593889a5499f50b1b913de392723d2086f308e48f656f1",
+ "bytes": 19824,
+ "preview": "previews/arena-gate.png",
+ "from": "kenney:mini-arena/wall-gate; baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an arena wall with a portcullis gate",
+ "tags": [
+  "arena",
+  "wall",
+  "gate"
+ ],
+ "use": {
+  "size": [
+   2.5,
+   2.5,
+   1.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.5,
+    2.5,
+    1.5
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 322,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 322,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19824,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#6d728a",
+     "#afb7dc",
+     "#757a91",
+     "#da835c",
+     "#99a0c0",
+     "#9da4c5",
+     "#cb7753",
+     "#787d95"
+    ],
+    "saturation": 0.265,
+    "value": 0.599,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.501
+     },
+     {
+      "hue": "blue",
+      "share": 0.326
+     },
+     {
+      "hue": "orange",
+      "share": 0.173
+     }
+    ],
+    "grey": 0.501
+   },
+   "trianglesPerMetre": 3.19,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "5fedbd34c3f6f83676e9c6e9d6e3f005be1e2e1166d976aaa909ec9c5f3f9602",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

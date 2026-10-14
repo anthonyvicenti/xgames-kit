@@ -1,0 +1,20 @@
+[toolchain]
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+loot = "GVzbAquLbqGxWzzjEAYvGyj1a3SHEcBr3gM9fseTg73o"
+
+[programs.devnet]
+loot = "GVzbAquLbqGxWzzjEAYvGyj1a3SHEcBr3gM9fseTg73o"
+
+# Deploys go through `solana program deploy` with explicit --url devnet (see README);
+# the global Solana CLI config on this machine points at mainnet.
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "cargo test"

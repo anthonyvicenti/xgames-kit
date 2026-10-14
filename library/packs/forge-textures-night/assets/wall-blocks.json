@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "wall-blocks",
+ "pack": "forge-textures-night",
+ "file": "wall-blocks.jpg",
+ "sha256": "d3b78c97e8df2503ed876792a02ea620aeeef2058a46f70efe73520abe7b416f",
+ "bytes": 63068,
+ "preview": "previews/wall-blocks.png",
+ "from": "https://polyhaven.com/a/castle_wall_slates; resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.7, brightness ×0.85, tinted 255,242,225; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "castle wall blocks",
+ "tags": [
+  "texture",
+  "wall",
+  "blocks",
+  "textures"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 21,
+    "hues": [
+     "#827668",
+     "#837769",
+     "#85796b",
+     "#7b6f61",
+     "#7f7365",
+     "#776b5d",
+     "#7e7264",
+     "#7a6e60"
+    ],
+    "saturation": 0.127,
+    "value": 0.408,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.977
+     }
+    ],
+    "exact": 2265,
+    "grey": 0.977
+   },
+   "outline": {
+    "present": false,
+    "share": 0.058
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/castle_wall_slates",
+  "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/castle_wall_slates/castle_wall_slates_diff_1k.jpg",
+  "sha256": "1c42fe616560553caf8f61f298750e6a2cee06bf2a4af9156a930057d02da003",
+  "retrieved": "2026-10-09",
+  "modified": "resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.7, brightness ×0.85, tinted 255,242,225; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+  "author": "Rob Tuytel"
+ }
+}

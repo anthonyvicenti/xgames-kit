@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-purple-cloud-background",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-purple-cloud-background.png",
+ "sha256": "4c23405b6c3f5742e3745badb1da120047c7155683224d1badab0e08e61990a2",
+ "bytes": 4261,
+ "preview": "previews/terrain-purple-cloud-background.png",
+ "from": "Sprites/Tiles/Double/terrain_purple_cloud_background.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain purple cloud background tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "purple",
+  "cloud",
+  "background",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#ba6be9",
+     "#cfd5da",
+     "#353541",
+     "#a6b2bb",
+     "#d699fa",
+     "#a452d4",
+     "#b9c2ca"
+    ],
+    "saturation": 0.312,
+    "value": 0.675,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.697
+     },
+     {
+      "hue": "purple",
+      "share": 0.303
+     }
+    ],
+    "exact": 131,
+    "grey": 0.697
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.205
+   }
+  }
+ },
+ "source": {
+  "sha256": "6b2bbf4b3b14b3abebe50b63b8d4cdd336cc700b21e29fe72683b77fa3604ba5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

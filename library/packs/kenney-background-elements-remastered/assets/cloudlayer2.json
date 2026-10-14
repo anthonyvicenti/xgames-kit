@@ -1,0 +1,80 @@
+{
+ "assetVersion": 1,
+ "id": "cloudlayer2",
+ "pack": "kenney-background-elements-remastered",
+ "file": "cloudlayer2.png",
+ "sha256": "004778aea2b6d1c8aa08823af0afe2db600a5af79ef1a17b090fab1e4c5e3c3e",
+ "bytes": 7036,
+ "preview": "previews/cloudlayer2.png",
+ "from": "Backgrounds/Elements/cloudLayer2.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "cloudlayer2",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "cloudlayer2",
+  "backgrounds",
+  "elements"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x400: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 400,
+     "seeThrough": 0.197
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#def5ff",
+     "#def4ff",
+     "#ddf5ff",
+     "#ddf4ff"
+    ],
+    "saturation": 1,
+    "value": 0.935,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "dff24ccd2cce4ddd600ed2afc66ed53d0c6bf4d0f2914f0d38673bbf604d6dd6",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

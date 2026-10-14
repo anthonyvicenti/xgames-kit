@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "water-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "water-top.png",
+ "sha256": "882a0ade39d0d48bc7f6caf0b174188d1f3e14b94eba0cdc8b0d9a88181806f1",
+ "bytes": 2707,
+ "preview": "previews/water-top.png",
+ "from": "Sprites/Tiles/Double/water_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "water top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "water",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 56.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#b4dfff",
+     "#82ceff",
+     "#e9edff",
+     "#353541",
+     "#5baee7",
+     "#9bd6ff",
+     "#a7daff",
+     "#8ed2ff"
+    ],
+    "saturation": 0.919,
+    "value": 0.778,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.404
+     },
+     {
+      "hue": "cyan",
+      "share": 0.401
+     },
+     {
+      "hue": "grey",
+      "share": 0.196
+     }
+    ],
+    "exact": 67,
+    "grey": 0.196
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.288
+   }
+  }
+ },
+ "source": {
+  "sha256": "e2f84f13cdfe5a58f6c01bddccacbf28cc1f5217f81d091666a2c6d18a4f2e82",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

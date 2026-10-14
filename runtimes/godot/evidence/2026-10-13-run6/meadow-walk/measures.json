@@ -1,0 +1,914 @@
+{
+  "schema": "xgames-godot-measures/1",
+  "runtime": "0.1.0",
+  "game": "godot-meadow-walk",
+  "at": "2026-10-14T02:29:54.392Z",
+  "legs": [
+    "boot",
+    "round",
+    "bots",
+    "live",
+    "swap",
+    "panels",
+    "watch",
+    "phone",
+    "browsers"
+  ],
+  "checks": [
+    {
+      "gate": "B",
+      "name": "boots-to-the-menu",
+      "ok": true,
+      "detail": "the kit's menu is up over the Godot canvas in 1016 ms (Godot 4.6-stable (official), addon 0.1.0, 40 game frames)"
+    },
+    {
+      "gate": "B",
+      "name": "observation-answers",
+      "ok": true,
+      "detail": "window.__game answers all 23 names; snapshot() has 28 keys, godot: addon, godot, style, ppm, background, frames, pulls, fps, input, me, view, friends, game, panel, files, errors"
+    },
+    {
+      "gate": "A",
+      "name": "pictures-read-through-slots",
+      "ok": true,
+      "detail": "the game read 9 picture slots through gf-assets: world.tiles.grass, world.tiles.path, world.tiles.wall, world.tiles.water, world.edges.path, world.edges.water, world.dress.grass, world.edges.wall, character.body.player"
+    },
+    {
+      "gate": "F",
+      "name": "look-view-honoured",
+      "ok": true,
+      "detail": "look.view is 12 m; the camera's zoom is 4 (the view's rule gives 4): it shows 11.25 m top to bottom"
+    },
+    {
+      "gate": "C",
+      "name": "D-runs-right",
+      "ok": true,
+      "detail": "holding D for 0.9 s moved the player 2.18 m (x -8.5 → -6.32)"
+    },
+    {
+      "gate": "C",
+      "name": "W-walks-up",
+      "ok": true,
+      "detail": "holding W for 0.7 s moved the player 1.86 m north, facing \"up\""
+    },
+    {
+      "gate": "C",
+      "name": "menu-holds-input",
+      "ok": true,
+      "detail": "Esc opened \"pause\"; D under it moved the player 0 m"
+    },
+    {
+      "gate": "C",
+      "name": "esc-resumes",
+      "ok": true,
+      "detail": "a second Esc left the pause menu (view null, input true); A then moved the player 2.43 m left"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors",
+      "ok": true,
+      "detail": "no console error, page error or failed request"
+    },
+    {
+      "gate": "D",
+      "name": "round-reaches-results",
+      "ok": true,
+      "detail": "the 20 s round ended (time); the results list You 0"
+    },
+    {
+      "gate": "D",
+      "name": "plays-again",
+      "ok": true,
+      "detail": "Play again started round 2 (countdown)"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-round",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "D",
+      "name": "bots-fill-the-seats",
+      "ok": true,
+      "detail": "alone with ?bots=2: 3 players, bots Pip (drawn true), Bo (drawn true)"
+    },
+    {
+      "gate": "D",
+      "name": "bots-move",
+      "ok": true,
+      "detail": "in 3.5 s the bots moved 11.03 m and 11.36 m"
+    },
+    {
+      "gate": "C",
+      "name": "bots-hold-under-the-menu",
+      "ok": true,
+      "detail": "under the pause menu for 1.2 s the bots moved 0 m and 0 m"
+    },
+    {
+      "gate": "D",
+      "name": "bots-in-the-results",
+      "ok": true,
+      "detail": "the results list You 0, Pip 0, Bo 0"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-bots",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "B",
+      "name": "panel-covers-the-game",
+      "ok": true,
+      "detail": "open: choice \"Pick a boost\" (2 cards, modal true); the game's input held; D under it moved the player 0 m"
+    },
+    {
+      "gate": "B",
+      "name": "panel-answer-reaches-the-game",
+      "ok": true,
+      "detail": "a click on the second card: Godot got {\"refused\":false,\"req\":9001,\"result\":{\"id\":\"high\",\"index\":1}}; panels open after: 0; the game's input back"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-panels",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "E",
+      "name": "joiner-joins",
+      "ok": true,
+      "detail": "room Y7R4FW: Hosta hosts, Joan joined by the invite link over WebRTC"
+    },
+    {
+      "gate": "E",
+      "name": "one-host",
+      "ok": true,
+      "detail": "host copy p1, joiner copy p2"
+    },
+    {
+      "gate": "E",
+      "name": "each-draws-the-other-where-they-are",
+      "ok": true,
+      "detail": "the host ran right: the joiner draws the host 0 m from where the host is (-6.32, 4.5); the host draws the joiner 0 m off (8.5, 4.5); the joiner ran left: the joiner draws the host 0 m from where the host is (-6.32, 4.5); the host draws the joiner 0 m off (6.33, 4.5)"
+    },
+    {
+      "gate": "E",
+      "name": "each-sees-the-other-on-screen",
+      "ok": true,
+      "detail": "in view: the host on the joiner's screen true, the joiner on the host's true"
+    },
+    {
+      "gate": "E",
+      "name": "names-are-the-players-own",
+      "ok": true,
+      "detail": "the joiner's copy calls the host \"Hosta\", the host's calls the joiner \"Joan\""
+    },
+    {
+      "gate": "E",
+      "name": "name-tag-over-the-friend",
+      "ok": true,
+      "detail": "tags shown on the joiner's screen: [\"Hosta\"]"
+    },
+    {
+      "gate": "E",
+      "name": "shared-world-agrees",
+      "ok": true,
+      "detail": "host \"playing|1|p1:0,p2:0\" / joiner \"playing|1|p1:0,p2:0\""
+    },
+    {
+      "gate": "E",
+      "name": "shared-clock-runs",
+      "ok": true,
+      "detail": "the joiner's shared clock reads 8.82 s (the host's 8.83 s)"
+    },
+    {
+      "gate": "E",
+      "name": "both-reach-the-results",
+      "ok": true,
+      "detail": "the host ended the round; both copies show the results"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-live",
+      "ok": true,
+      "detail": "no console error on either player's page"
+    },
+    {
+      "gate": "B",
+      "name": "phone-menu-fits",
+      "ok": true,
+      "detail": "390x844 at 3x (emulated): page 390 px wide; Play at [19,513,372,577]; Godot's canvas 1170x2532 device px"
+    },
+    {
+      "gate": "B",
+      "name": "phone-hud-fits",
+      "ok": true,
+      "detail": "390x844: menu button, clock, scores, goal line, player card, move stick; off the screen: none; overlapping: none"
+    },
+    {
+      "gate": "C",
+      "name": "phone-controls-match",
+      "ok": true,
+      "detail": "390x844: the move stick is in sight before a touch; buttons [], the game's actions [] (controls [])"
+    },
+    {
+      "gate": "C",
+      "name": "phone-stick-moves",
+      "ok": true,
+      "detail": "390x844: the stick held right for 0.9 s moved the player 2.17 m"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-phone",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "B",
+      "name": "phone-menu-fits-landscape",
+      "ok": true,
+      "detail": "844x390 at 3x (emulated): page 844 px wide; Play at [54,87,429,131]; Godot's canvas 2532x1170 device px"
+    },
+    {
+      "gate": "B",
+      "name": "phone-hud-fits-landscape",
+      "ok": true,
+      "detail": "844x390: menu button, clock, scores, goal line, player card, move stick; off the screen: none; overlapping: none"
+    },
+    {
+      "gate": "C",
+      "name": "phone-controls-match-landscape",
+      "ok": true,
+      "detail": "844x390: the move stick is in sight before a touch; buttons [], the game's actions [] (controls [])"
+    },
+    {
+      "gate": "C",
+      "name": "phone-stick-moves-landscape",
+      "ok": true,
+      "detail": "844x390: the stick held right for 0.9 s moved the player 2.17 m"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-phone-landscape",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "B",
+      "name": "firefox-boots",
+      "ok": true,
+      "detail": "firefox 155.0 (headless, Playwright's build; WebGL2 renderer: NVIDIA GeForce GTX 980, or similar): the menu in 1140 ms"
+    },
+    {
+      "gate": "C",
+      "name": "firefox-D-runs-right",
+      "ok": true,
+      "detail": "firefox: holding D for 0.9 s moved the player 2.18 m"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-firefox",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the pause menu offers Go live in a round with friends",
+      "ok": true,
+      "detail": "#gf-live in the kit's pause menu over the Godot canvas"
+    },
+    {
+      "gate": "E",
+      "name": "watch: Go live: LIVE for everyone in the room",
+      "ok": true,
+      "detail": "link http://127.0.0.1:39583/gf/mp/?watch=5hqgnms9qlsu; H sees \"LIVE Jules is live · 0 watching\""
+    },
+    {
+      "gate": "E",
+      "name": "watch: a viewer tunes in: this round's game page, the streamer followed",
+      "ok": true,
+      "detail": "following Jules (p2); 2 in the stream"
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the stream panel offers Turn on mic, which opens Studio's mic window",
+      "ok": true,
+      "detail": "\"🎤 Turn on mic\" opened /play/game/voice?s=5hqgnms9qlsu"
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the streamer talks: a viewer taps for sound and hears them",
+      "ok": true,
+      "detail": "mic on; 4 voice frames sent; the viewer's button \"🔇 Tap for sound\"; 16 packets played, 0 late, peak 0.2744"
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: only the page above the streamer's friends page may hand it voice (not the game below it)",
+      "ok": true,
+      "detail": "the game's frame tried: refused"
+    },
+    {
+      "gate": "E",
+      "name": "watch: voice: the panel shows the mic on; closing the mic window turns it off",
+      "ok": true,
+      "detail": "the panel's button pressed while on; after the window closed off"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer draws the streamer where they really are (after a run)",
+      "ok": true,
+      "detail": "J ran 2.18 m to 10.675, 4.5, 0; V draws [[\"Hosta\",-8.5,4.5,0],[\"Jules\",10.68,4.5,0]]"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer has no player of its own, and its game follows the streamer",
+      "ok": true,
+      "detail": "players [\"Hosta\",\"Jules\"]; the game follows p2"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer sees what the streamer sees",
+      "ok": true,
+      "detail": "top cameras 0.00 m apart (J at 2,2.38, V at 2,2.38)"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the viewer sees the round's clock and scores, not a player's own card or menu",
+      "ok": true,
+      "detail": "{\"timer\":true,\"scores\":true,\"card\":false,\"menu\":false}"
+    },
+    {
+      "gate": "E",
+      "name": "watch: a viewer's name tags sit over the characters",
+      "ok": true,
+      "detail": "[{\"name\":\"Jules\",\"dx\":0,\"dy\":-4}]"
+    },
+    {
+      "gate": "E",
+      "name": "watch: the streamer sees how many watch",
+      "ok": true,
+      "detail": "LIVE You’re live · 1 watching"
+    },
+    {
+      "gate": "E",
+      "name": "watch: no page error or console error on any screen",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "gate": "A",
+      "name": "value-slot-shows-live",
+      "ok": true,
+      "detail": "the page set look.view to 6 m (ok true, on-use); the camera's zoom went 4 → 8"
+    },
+    {
+      "gate": "A",
+      "name": "picture-slot-replaced",
+      "ok": true,
+      "detail": "the game was handed 2d9c7ccb for character.body.player (its own file is 78a164cc); red pixels where the player stands: 32 before, 4304 with the replaced picture (of 6976)"
+    },
+    {
+      "gate": "B",
+      "name": "no-console-errors-swap",
+      "ok": true,
+      "detail": "none"
+    }
+  ],
+  "shots": [
+    "boot-home.png",
+    "boot-playing.png",
+    "boot-paused.png",
+    "round-results.png",
+    "bots-playing.png",
+    "bots-results.png",
+    "panel-choice-open.png",
+    "live-lobby-host.png",
+    "live-host-sees-joiner.png",
+    "live-joiner-sees-host.png",
+    "live-results-host.png",
+    "live-results-joiner.png",
+    "phone-home.png",
+    "phone-playing.png",
+    "phone-landscape-home.png",
+    "phone-landscape-playing.png",
+    "browser-firefox.png",
+    "watch-streamer-live.png",
+    "watch-viewer.png",
+    "watch-streamer.png",
+    "swap-view-live.png",
+    "swap-body-replaced.png"
+  ],
+  "chrome": "148.0.7778.96",
+  "observation": {
+    "answers": {
+      "kit": "string",
+      "runtime": "string",
+      "profile": "string",
+      "version": "string",
+      "seed": "number",
+      "quality": "string",
+      "phase": "string",
+      "ready": "boolean",
+      "players": "object",
+      "snapshot": "function",
+      "coverage": "function",
+      "slots": "function",
+      "sight": "function",
+      "project": "function",
+      "camera": "function",
+      "controls": "function",
+      "screen": "function",
+      "menu": "function",
+      "hud": "function",
+      "looks": "function",
+      "events": "function",
+      "sounds": "function",
+      "panels": "function"
+    },
+    "snapshotKeys": [
+      "kit",
+      "runtime",
+      "profile",
+      "version",
+      "phase",
+      "round",
+      "seed",
+      "quality",
+      "time",
+      "me",
+      "host",
+      "live",
+      "backdrop",
+      "view",
+      "paused",
+      "players",
+      "fair",
+      "refusals",
+      "winners",
+      "reason",
+      "results",
+      "shared",
+      "rules",
+      "modules",
+      "net",
+      "watch",
+      "world",
+      "godot"
+    ],
+    "godotKeys": [
+      "addon",
+      "godot",
+      "style",
+      "ppm",
+      "background",
+      "frames",
+      "pulls",
+      "fps",
+      "input",
+      "me",
+      "view",
+      "friends",
+      "game",
+      "panel",
+      "files",
+      "errors"
+    ],
+    "bootMs": 1016
+  },
+  "read": [
+    "world.tiles.grass",
+    "world.tiles.path",
+    "world.tiles.wall",
+    "world.tiles.water",
+    "world.edges.path",
+    "world.edges.water",
+    "world.dress.grass",
+    "world.edges.wall",
+    "character.body.player"
+  ],
+  "plane": "top",
+  "profile": "2d",
+  "bots": {
+    "scores": [
+      {
+        "id": "p1",
+        "name": "You",
+        "value": 0
+      },
+      {
+        "id": "b1",
+        "name": "Pip",
+        "value": 0
+      },
+      {
+        "id": "b2",
+        "name": "Bo",
+        "value": 0
+      }
+    ]
+  },
+  "live": {
+    "samples": [
+      {
+        "label": "the host ran right",
+        "host": {
+          "x": -6.32,
+          "y": 4.5,
+          "z": 0
+        },
+        "joiner": {
+          "x": 8.5,
+          "y": 4.5,
+          "z": 0
+        },
+        "hostOnJoiner": {
+          "id": "p1",
+          "name": "Hosta",
+          "x": -6.32,
+          "y": 4.5,
+          "z": 0,
+          "onScreen": true
+        },
+        "joinerOnHost": {
+          "id": "p2",
+          "name": "Joan",
+          "x": 8.5,
+          "y": 4.5,
+          "z": 0,
+          "onScreen": false
+        },
+        "dHost": 0,
+        "dJoin": 0,
+        "names": {
+          "onJoiner": "Hosta",
+          "onHost": "Joan"
+        }
+      },
+      {
+        "label": "the joiner ran left",
+        "host": {
+          "x": -6.32,
+          "y": 4.5,
+          "z": 0
+        },
+        "joiner": {
+          "x": 6.33,
+          "y": 4.5,
+          "z": 0
+        },
+        "hostOnJoiner": {
+          "id": "p1",
+          "name": "Hosta",
+          "x": -6.32,
+          "y": 4.5,
+          "z": 0,
+          "onScreen": true
+        },
+        "joinerOnHost": {
+          "id": "p2",
+          "name": "Joan",
+          "x": 6.33,
+          "y": 4.5,
+          "z": 0,
+          "onScreen": true
+        },
+        "dHost": 0,
+        "dJoin": 0,
+        "names": {
+          "onJoiner": "Hosta",
+          "onHost": "Joan"
+        }
+      }
+    ]
+  },
+  "phone": {
+    "emulated": "Chrome (Playwright) at 390x844 and 844x390 CSS px, device scale 3, isMobile, hasTouch, an Android user agent: no real phone",
+    "layouts": {
+      "390x844": [
+        {
+          "name": "menu button",
+          "r": [
+            8,
+            8,
+            44,
+            44
+          ]
+        },
+        {
+          "name": "clock",
+          "r": [
+            52,
+            10,
+            142,
+            43
+          ]
+        },
+        {
+          "name": "scores",
+          "r": [
+            309,
+            8,
+            382,
+            35
+          ]
+        },
+        {
+          "name": "goal line",
+          "r": [
+            82,
+            50,
+            308,
+            73
+          ]
+        },
+        {
+          "name": "player card",
+          "r": [
+            150,
+            8,
+            219,
+            38
+          ]
+        },
+        {
+          "name": "move stick",
+          "r": [
+            24,
+            696,
+            148,
+            820
+          ]
+        }
+      ],
+      "844x390": [
+        {
+          "name": "menu button",
+          "r": [
+            10,
+            10,
+            50,
+            50
+          ]
+        },
+        {
+          "name": "clock",
+          "r": [
+            377,
+            10,
+            467,
+            47
+          ]
+        },
+        {
+          "name": "scores",
+          "r": [
+            750,
+            10,
+            834,
+            45
+          ]
+        },
+        {
+          "name": "goal line",
+          "r": [
+            309,
+            56,
+            535,
+            79
+          ]
+        },
+        {
+          "name": "player card",
+          "r": [
+            475,
+            10,
+            544,
+            40
+          ]
+        },
+        {
+          "name": "move stick",
+          "r": [
+            24,
+            242,
+            148,
+            366
+          ]
+        }
+      ]
+    }
+  },
+  "browsers": {
+    "firefox": {
+      "launched": true,
+      "version": "155.0",
+      "phase": "lobby",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64; rv:155.0) Gecko/20100101 Firefox/155.0",
+      "gl": "NVIDIA GeForce GTX 980, or similar",
+      "bootMs": 1140
+    },
+    "webkit": {
+      "launched": false,
+      "why": "browserType.launch: Host system is missing dependencies to run browsers. Please install them with the following command: sudo npx playwright install-deps Alternatively, use apt: sudo apt-get install libavif16 Playwright Team"
+    }
+  },
+  "notRun": [
+    "webkit: did not launch on this machine (browserType.launch: Host system is missing dependencies to run browsers. Please install them with the following command: sudo npx playwright install-deps Alternatively, use apt: sudo apt-get install libavif16 Playwright Team)"
+  ],
+  "watch": [
+    {
+      "name": "the pause menu offers Go live in a round with friends",
+      "ok": true,
+      "detail": "#gf-live in the kit's pause menu over the Godot canvas"
+    },
+    {
+      "name": "Go live: LIVE for everyone in the room",
+      "ok": true,
+      "detail": "link http://127.0.0.1:39583/gf/mp/?watch=5hqgnms9qlsu; H sees \"LIVE Jules is live · 0 watching\""
+    },
+    {
+      "name": "a viewer tunes in: this round's game page, the streamer followed",
+      "ok": true,
+      "detail": "following Jules (p2); 2 in the stream"
+    },
+    {
+      "name": "voice: the stream panel offers Turn on mic, which opens Studio's mic window",
+      "ok": true,
+      "detail": "\"🎤 Turn on mic\" opened /play/game/voice?s=5hqgnms9qlsu"
+    },
+    {
+      "name": "voice: the streamer talks: a viewer taps for sound and hears them",
+      "ok": true,
+      "detail": "mic on; 4 voice frames sent; the viewer's button \"🔇 Tap for sound\"; 16 packets played, 0 late, peak 0.2744"
+    },
+    {
+      "name": "voice: only the page above the streamer's friends page may hand it voice (not the game below it)",
+      "ok": true,
+      "detail": "the game's frame tried: refused"
+    },
+    {
+      "name": "voice: the panel shows the mic on; closing the mic window turns it off",
+      "ok": true,
+      "detail": "the panel's button pressed while on; after the window closed off"
+    },
+    {
+      "name": "the viewer draws the streamer where they really are (after a run)",
+      "ok": true,
+      "detail": "J ran 2.18 m to 10.675, 4.5, 0; V draws [[\"Hosta\",-8.5,4.5,0],[\"Jules\",10.68,4.5,0]]"
+    },
+    {
+      "name": "the viewer has no player of its own, and its game follows the streamer",
+      "ok": true,
+      "detail": "players [\"Hosta\",\"Jules\"]; the game follows p2"
+    },
+    {
+      "name": "the viewer sees what the streamer sees",
+      "ok": true,
+      "detail": "top cameras 0.00 m apart (J at 2,2.38, V at 2,2.38)"
+    },
+    {
+      "name": "the viewer sees the round's clock and scores, not a player's own card or menu",
+      "ok": true,
+      "detail": "{\"timer\":true,\"scores\":true,\"card\":false,\"menu\":false}"
+    },
+    {
+      "name": "a viewer's name tags sit over the characters",
+      "ok": true,
+      "detail": "[{\"name\":\"Jules\",\"dx\":0,\"dy\":-4}]"
+    },
+    {
+      "name": "the streamer sees how many watch",
+      "ok": true,
+      "detail": "LIVE You’re live · 1 watching"
+    },
+    {
+      "name": "no page error or console error on any screen",
+      "ok": true,
+      "detail": "none"
+    }
+  ],
+  "swap": {
+    "slot": "character.body.player",
+    "baseHash": "78a164cc",
+    "hash2": "2d9c7ccb",
+    "basePx": {
+      "n": 6976,
+      "red": 32,
+      "magenta": 0,
+      "blueish": 720
+    },
+    "px2": {
+      "n": 6976,
+      "red": 4304,
+      "magenta": 0,
+      "blueish": 0
+    },
+    "baseBox": {
+      "x0": 192,
+      "x1": 256,
+      "y0": 115.52,
+      "y1": 224.32
+    },
+    "box2": {
+      "x0": 192,
+      "x1": 256,
+      "y0": 115.52,
+      "y1": 224.32
+    }
+  },
+  "ok": true,
+  "gates": {
+    "A": {
+      "ok": true,
+      "checks": [
+        "pictures-read-through-slots",
+        "value-slot-shows-live",
+        "picture-slot-replaced"
+      ]
+    },
+    "B": {
+      "ok": true,
+      "checks": [
+        "boots-to-the-menu",
+        "observation-answers",
+        "no-console-errors",
+        "no-console-errors-round",
+        "no-console-errors-bots",
+        "panel-covers-the-game",
+        "panel-answer-reaches-the-game",
+        "no-console-errors-panels",
+        "no-console-errors-live",
+        "phone-menu-fits",
+        "phone-hud-fits",
+        "no-console-errors-phone",
+        "phone-menu-fits-landscape",
+        "phone-hud-fits-landscape",
+        "no-console-errors-phone-landscape",
+        "firefox-boots",
+        "no-console-errors-firefox",
+        "no-console-errors-swap"
+      ]
+    },
+    "C": {
+      "ok": true,
+      "checks": [
+        "D-runs-right",
+        "W-walks-up",
+        "menu-holds-input",
+        "esc-resumes",
+        "bots-hold-under-the-menu",
+        "phone-controls-match",
+        "phone-stick-moves",
+        "phone-controls-match-landscape",
+        "phone-stick-moves-landscape",
+        "firefox-D-runs-right"
+      ]
+    },
+    "D": {
+      "ok": true,
+      "checks": [
+        "round-reaches-results",
+        "plays-again",
+        "bots-fill-the-seats",
+        "bots-move",
+        "bots-in-the-results"
+      ]
+    },
+    "E": {
+      "ok": true,
+      "checks": [
+        "joiner-joins",
+        "one-host",
+        "each-draws-the-other-where-they-are",
+        "each-sees-the-other-on-screen",
+        "names-are-the-players-own",
+        "name-tag-over-the-friend",
+        "shared-world-agrees",
+        "shared-clock-runs",
+        "both-reach-the-results",
+        "watch: the pause menu offers Go live in a round with friends",
+        "watch: Go live: LIVE for everyone in the room",
+        "watch: a viewer tunes in: this round's game page, the streamer followed",
+        "watch: voice: the stream panel offers Turn on mic, which opens Studio's mic window",
+        "watch: voice: the streamer talks: a viewer taps for sound and hears them",
+        "watch: voice: only the page above the streamer's friends page may hand it voice (not the game below it)",
+        "watch: voice: the panel shows the mic on; closing the mic window turns it off",
+        "watch: the viewer draws the streamer where they really are (after a run)",
+        "watch: the viewer has no player of its own, and its game follows the streamer",
+        "watch: the viewer sees what the streamer sees",
+        "watch: the viewer sees the round's clock and scores, not a player's own card or menu",
+        "watch: a viewer's name tags sit over the characters",
+        "watch: the streamer sees how many watch",
+        "watch: no page error or console error on any screen"
+      ]
+    },
+    "F": {
+      "ok": true,
+      "checks": [
+        "look-view-honoured"
+      ]
+    }
+  }
+}

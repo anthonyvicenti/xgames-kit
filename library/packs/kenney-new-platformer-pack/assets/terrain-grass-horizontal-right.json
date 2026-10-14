@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-horizontal-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-horizontal-right.png",
+ "sha256": "230ebae7b46b289896e33a17a20ea3eaf6f67b61c6abe76c9b558b254a575050",
+ "bytes": 2794,
+ "preview": "previews/terrain-grass-horizontal-right.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_horizontal_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass horizontal right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "horizontal",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 47.6 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#353541",
+     "#2ecc71",
+     "#46e087",
+     "#20b860",
+     "#c66a3e",
+     "#2cc96e"
+    ],
+    "saturation": 0.591,
+    "value": 0.511,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.531
+     },
+     {
+      "hue": "green",
+      "share": 0.291
+     },
+     {
+      "hue": "grey",
+      "share": 0.174
+     }
+    ],
+    "exact": 100,
+    "grey": 0.174
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "4af87652ffe518e2c6abc12576fe6f921589bb9344f4da26b56015e42c8a0476",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

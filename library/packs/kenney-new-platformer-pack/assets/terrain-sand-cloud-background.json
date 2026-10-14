@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-sand-cloud-background",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-sand-cloud-background.png",
+ "sha256": "f1eb443c65703c1d4f288f37d11d0a00f8eac11b7fa0c4ea299520309025367f",
+ "bytes": 4131,
+ "preview": "previews/terrain-sand-cloud-background.png",
+ "from": "Sprites/Tiles/Double/terrain_sand_cloud_background.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain sand cloud background tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "sand",
+  "cloud",
+  "background",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#f3c7a5",
+     "#353541",
+     "#c66a3e",
+     "#ffe0c2",
+     "#e7b187",
+     "#cc6f42"
+    ],
+    "saturation": 0.651,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.871
+     },
+     {
+      "hue": "grey",
+      "share": 0.127
+     }
+    ],
+    "exact": 132,
+    "grey": 0.127
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.209
+   }
+  }
+ },
+ "source": {
+  "sha256": "63c77541768fb482a1e00f8ac92f81179e13442e439cbc3600048da733d18f29",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

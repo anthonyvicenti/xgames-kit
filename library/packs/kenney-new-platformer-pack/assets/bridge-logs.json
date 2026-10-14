@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "bridge-logs",
+ "pack": "kenney-new-platformer-pack",
+ "file": "bridge-logs.png",
+ "sha256": "acefb99ae154de35e25aeefe47079bd5f28e6c18e69718c84fa78541864ffe59",
+ "bytes": 4608,
+ "preview": "previews/bridge-logs.png",
+ "from": "Sprites/Tiles/Double/bridge_logs.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "bridge logs",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "bridge",
+  "logs",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#de7e4f",
+     "#bd6341",
+     "#fa9f72",
+     "#343440",
+     "#353540",
+     "#c56944",
+     "#5f4744"
+    ],
+    "saturation": 0.405,
+    "value": 0.426,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.562
+     },
+     {
+      "hue": "grey",
+      "share": 0.43
+     }
+    ],
+    "exact": 68,
+    "grey": 0.43
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "494bfd437e5b7d2f596a2da7e6c959f56a1c3ca58a6143cf1355062357e659a0",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

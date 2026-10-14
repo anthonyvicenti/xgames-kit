@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "block-spikes",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-spikes.png",
+ "sha256": "31733dc7c52b68e8bec08a566ffb679ff848f341f008dd4b8c434bfc05ae5c31",
+ "bytes": 4377,
+ "preview": "previews/block-spikes.png",
+ "from": "Sprites/Tiles/Double/block_spikes.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block spikes tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "spikes",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#b9c2ca",
+     "#353541",
+     "#92a1ad",
+     "#767d83",
+     "#e8ebee",
+     "#353540",
+     "#343440",
+     "#afb9c2"
+    ],
+    "saturation": 0.125,
+    "value": 0.581,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 62,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "a53171a185c638818455b788494c07e3c8c792f8d605e9a7924f2f3dba385b3c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

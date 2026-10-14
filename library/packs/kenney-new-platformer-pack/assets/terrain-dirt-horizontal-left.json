@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-horizontal-left",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-horizontal-left.png",
+ "sha256": "9b2aa252a9b445f4dbbcc3ed7f05a2d289505d77de71b8b3b1b82f1a82f1ac07",
+ "bytes": 2683,
+ "preview": "previews/terrain-dirt-horizontal-left.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_horizontal_left.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt horizontal left tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "horizontal",
+  "left",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 57.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#353541",
+     "#de7e4f",
+     "#ee9366",
+     "#c66a3e",
+     "#a6b2bb",
+     "#cf7144"
+    ],
+    "saturation": 0.286,
+    "value": 0.631,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.705
+     },
+     {
+      "hue": "orange",
+      "share": 0.295
+     }
+    ],
+    "exact": 101,
+    "grey": 0.705
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "dfcd64e039cfb1be9bf1dcf9e083d5c6e0679b64f66d8d4d984b56cfe1f28cd3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "glass",
+ "pack": "xk-voxel-blocks",
+ "file": "glass.png",
+ "sha256": "5a6f30dccf5ed833247632f0baaa100b8643f15274b005a1049e352eff93a877",
+ "bytes": 2877,
+ "preview": "previews/glass.png",
+ "from": "glass.png",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "glass",
+ "tags": [
+  "voxel",
+  "block",
+  "pixel",
+  "tileable",
+  "glass"
+ ],
+ "use": {
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#e4f2f6",
+     "#b7d3db",
+     "#ffffff"
+    ],
+    "saturation": 0.39,
+    "value": 0.871,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.55
+     },
+     {
+      "hue": "cyan",
+      "share": 0.45
+     }
+    ],
+    "exact": 3,
+    "grey": 0.55
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-14"
+ }
+}

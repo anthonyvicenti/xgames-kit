@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "swing-set",
+ "pack": "poly-pizza-cc-by",
+ "file": "swing-set.glb",
+ "sha256": "7a1f83d2ebce177efe986ae14c7944eae82651a32f741d022d9cbaf9d21f169d",
+ "bytes": 6652,
+ "preview": "previews/swing-set.png",
+ "from": "polypizza:e-IJdcqZH4p; baked to metres (x0.02184), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden swing set with two swings",
+ "tags": [
+  "backyard",
+  "playground",
+  "swing",
+  "set"
+ ],
+ "use": {
+  "size": [
+   1.88,
+   2.5,
+   3.308
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.88,
+    2.5,
+    3.308
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 588,
+  "textures": 1,
+  "textureMax": 256,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 588,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 6652,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#dd9358",
+     "#cc3b02",
+     "#3c3c3c"
+    ],
+    "saturation": 0.669,
+    "value": 0.552,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.784
+     },
+     {
+      "hue": "brown",
+      "share": 0.153
+     },
+     {
+      "hue": "grey",
+      "share": 0.063
+     }
+    ],
+    "grey": 0.063
+   },
+   "trianglesPerMetre": 7.58,
+   "texelsPerMetre": 18,
+   "texturedShare": 0.979,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "Poly by Google",
+  "url": "https://poly.pizza/m/e-IJdcqZH4p",
+  "credit": "\"Swing set\" by Poly by Google, CC BY 3.0 (https://poly.pizza/m/e-IJdcqZH4p)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/e-IJdcqZH4p",
+  "download": "https://static.poly.pizza/d1bfc135-fa19-40ea-aae2-818a1c01edbe.glb",
+  "sha256": "0f52984c52698edd1e8806f8a53468cf7c7a9a735de9597367e087f6f3aa6599",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.02184), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Poly by Google"
+ }
+}

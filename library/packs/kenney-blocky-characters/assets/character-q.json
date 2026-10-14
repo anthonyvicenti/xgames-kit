@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "character-q",
+ "pack": "kenney-blocky-characters",
+ "file": "character-q.glb",
+ "sha256": "9ab4da707ad30160090985b3beb492ce503ea1e37db0f23054ffe59e9f30e807",
+ "bytes": 39880,
+ "preview": "previews/character-q.png",
+ "from": "Models/GLB format/character-q.glb; its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a man in a black suit and a red tie",
+ "tags": [
+  "man",
+  "suit",
+  "business",
+  "agent",
+  "office",
+  "kenney",
+  "blocky",
+  "block",
+  "voxel",
+  "character",
+  "player"
+ ],
+ "use": {
+  "size": [
+   1.8,
+   1.62,
+   0.48
+  ],
+  "height": 1.62,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 464,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 1,
+  "joints": 23
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.62,
+     "triangles": 464,
+     "joints": 23,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#3c3c44",
+     "#8d5641",
+     "#ffffff",
+     "#36363e",
+     "#2e2e36",
+     "#383840",
+     "#585e76",
+     "#3b3b43"
+    ],
+    "saturation": 0.133,
+    "value": 0.325,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.801
+     },
+     {
+      "hue": "brown",
+      "share": 0.177
+     }
+    ],
+    "grey": 0.801
+   },
+   "trianglesPerMetre": 7.31,
+   "texelsPerMetre": 221,
+   "texturedShare": 0.877,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "3.29 heads tall; hips at 37% of the height; shoulders 44% of it",
+   "body": {
+    "headsTall": 3.29,
+    "hipShare": 0.37,
+    "shoulderShare": 0.444,
+    "widthShare": 1.111
+   }
+  }
+ },
+ "source": {
+  "sha256": "9193d03bc9ee1cfb080a1d561522f45806fe0b522b9807ef2b7c451b77547999",
+  "modified": "its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+  "retrieved": "2026-10-13"
+ }
+}

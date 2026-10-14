@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0039",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0039.png",
+ "sha256": "60d63107ba17e876ee7452f5eb07b45b83ef2a18dd12ddfb877f4d81a1709aa9",
+ "bytes": 198,
+ "preview": "previews/tile-0039.png",
+ "from": "Tiles/tile_0039.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a one-tile-wide flight of grey stone steps with both ends closed",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "stairs",
+  "steps",
+  "stone",
+  "grey",
+  "single"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#262b44",
+     "#c0cbdc",
+     "#52607c"
+    ],
+    "saturation": 0.245,
+    "value": 0.519,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.6
+   }
+  }
+ },
+ "source": {
+  "sha256": "7dc16b81fa82f7fdd377d68bac398a8358438599d1036c509de913abcde64683",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

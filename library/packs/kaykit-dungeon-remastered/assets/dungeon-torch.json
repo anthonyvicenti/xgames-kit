@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-torch",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-torch.glb",
+ "sha256": "9bad357e636caf0ea93fb5767f795d611347e5a9fb0dfb5fac5b213bbea837dc",
+ "bytes": 54704,
+ "preview": "previews/dungeon-torch.png",
+ "from": "torch_lit.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a lit standing torch",
+ "tags": [
+  "dungeon",
+  "torch",
+  "light",
+  "fire"
+ ],
+ "use": {
+  "size": [
+   0.413,
+   0.844,
+   0.413
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.4,
+   2.2
+  ],
+  "light": {
+   "at": [
+    0,
+    0.776,
+    0
+   ],
+   "color": "#ffb259",
+   "range": 4
+  },
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 270,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 270,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 54704,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#899499",
+     "#838e94",
+     "#685950",
+     "#6f6056",
+     "#98a4a9",
+     "#767f84",
+     "#7b8589",
+     "#737c81"
+    ],
+    "saturation": 0.207,
+    "value": 0.528,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.855
+     },
+     {
+      "hue": "orange",
+      "share": 0.096
+     },
+     {
+      "hue": "yellow",
+      "share": 0.049
+     }
+    ],
+    "grey": 0.855
+   },
+   "trianglesPerMetre": 18.6,
+   "texelsPerMetre": 129,
+   "texturedShare": 0.734,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/torch_lit.gltf.glb",
+  "sha256": "45fcfeb3b129722019d42aef0acae8f6c5f8f6dbdf5d3346ceea1f084b69b396",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

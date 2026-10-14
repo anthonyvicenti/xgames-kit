@@ -1,0 +1,134 @@
+{
+ "assetVersion": 1,
+ "id": "lantern",
+ "pack": "kaykit-halloween",
+ "file": "lantern.glb",
+ "sha256": "d6c6c3c93ae0743a566f4dbe4b64ab3309cafaca1b1a859d3e4060f13359eb8f",
+ "bytes": 12424,
+ "preview": "previews/lantern.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 0.43, 0…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a standing lantern",
+ "tags": [
+  "ruins",
+  "lantern"
+ ],
+ "use": {
+  "size": [
+   0.48,
+   0.694,
+   0.48
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.24,
+   0,
+   -0.24
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.48,
+    0.694,
+    0.48
+   ],
+   "offset": [
+    0,
+    0.347,
+    0
+   ]
+  },
+  "sockets": [
+   {
+    "name": "flame",
+    "node": "socket_flame",
+    "position": [
+     0,
+     0.43,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 264,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 264,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12424,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#52595d",
+     "#474d51",
+     "#4c5357",
+     "#41474b",
+     "#3c4246",
+     "#f9a64c",
+     "#fcbe59",
+     "#f79643"
+    ],
+    "saturation": 0.274,
+    "value": 0.396,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.76
+     },
+     {
+      "hue": "orange",
+      "share": 0.24
+     }
+    ],
+    "grey": 0.76
+   },
+   "trianglesPerMetre": 14.34,
+   "texelsPerMetre": 115,
+   "texturedShare": 0.538,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/lantern_standing.gltf",
+  "sha256": "7fbaed7c4f33181d22c015e11aa9b3d8d04f77f1658b6a80ed2dc23746fb7fc5",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 0.43, 0 (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

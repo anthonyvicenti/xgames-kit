@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0031",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0031.png",
+ "sha256": "0632ff7201e567d224e833b2cc5312ac6887605373edcdbd16e5307173570d5c",
+ "bytes": 185,
+ "preview": "previews/tile-0031.png",
+ "from": "Tiles/tile_0031.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the south edge of a dense green forest clump: tree trunks along the bottom",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "forest",
+  "trees",
+  "tree",
+  "green",
+  "nature",
+  "edge",
+  "edge-south"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#479f4a",
+     "#3f2631",
+     "#84c669",
+     "#bd6c4a"
+    ],
+    "saturation": 0.337,
+    "value": 0.365,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.561
+     },
+     {
+      "hue": "pink",
+      "share": 0.415
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.688
+   }
+  }
+ },
+ "source": {
+  "sha256": "b0330026a4ee1bb5d0895d2f1310d2caff75512522752ed0a30770783f97bb7a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

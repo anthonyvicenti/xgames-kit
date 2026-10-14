@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B06",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "action-rpg",
+  "rank": 6,
+  "row": "Action RPG / soulslike / ARPG",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "dark co-op dungeon crawler with heavy sword combat, dodge rolls and bosses. pick up better gear as you go down the floors",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "sword",
+   "type": "mechanic",
+   "must": "heavy sword combat with a dodge roll"
+  },
+  {
+   "id": "floors",
+   "type": "world",
+   "must": "dungeon floors that go down"
+  },
+  {
+   "id": "bosses",
+   "type": "mechanic",
+   "must": "bosses"
+  },
+  {
+   "id": "gear",
+   "type": "mechanic",
+   "must": "gear found on the way that makes a player stronger"
+  },
+  {
+   "id": "dark",
+   "type": "feel",
+   "must": "a dark look"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

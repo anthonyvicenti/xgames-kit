@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B07",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "life-sim-town",
+  "rank": 7,
+  "row": "Life sim / social roleplay town",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a cozy little town where my friends and I each get a house to decorate, we can visit each other, sit at the cafe, and change our outfits",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "houses",
+   "type": "world",
+   "must": "a house for each player that others can walk into"
+  },
+  {
+   "id": "decorate",
+   "type": "mechanic",
+   "must": "placing furniture and decorations"
+  },
+  {
+   "id": "wardrobe",
+   "type": "panel",
+   "must": "a wardrobe to change outfits"
+  },
+  {
+   "id": "stays",
+   "type": "loop",
+   "must": "the town and each house stay as they were left"
+  },
+  {
+   "id": "cozy",
+   "type": "feel",
+   "must": "a cozy look"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

@@ -1,0 +1,127 @@
+{
+ "assetVersion": 1,
+ "id": "candles",
+ "pack": "kaykit-halloween",
+ "file": "candles.glb",
+ "sha256": "2c485223e9743239d67b827fdc2d0f55fc33916d9a330f1828f3da173ee4f3b6",
+ "bytes": 11768,
+ "preview": "previews/candles.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 0.566, 0…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "three candles",
+ "tags": [
+  "ruins",
+  "candles"
+ ],
+ "use": {
+  "size": [
+   0.338,
+   0.589,
+   0.263
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.169,
+   0,
+   -0.132
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.338,
+    0.589,
+    0.263
+   ],
+   "offset": [
+    0,
+    0.295,
+    0
+   ]
+  },
+  "sockets": [
+   {
+    "name": "flame",
+    "node": "socket_flame",
+    "position": [
+     0,
+     0.566,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 198,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 198,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 11768,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#dee0e1",
+     "#c7d0d4",
+     "#adbac0",
+     "#f6f6f7",
+     "#5c4f48"
+    ],
+    "saturation": 0.09,
+    "value": 0.824,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 15.66,
+   "texelsPerMetre": 155,
+   "texturedShare": 0.907,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/candle_triple.gltf",
+  "sha256": "e7b0f28c03e4b19fde8af713f952660ad786bd3a80932a2bbe48dfe0d0edede5",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt; socket_flame at 0, 0.566, 0 (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

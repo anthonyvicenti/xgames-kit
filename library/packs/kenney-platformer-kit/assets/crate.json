@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "kenney-platformer-kit",
+ "file": "crate.glb",
+ "sha256": "24dd9c9c328e727fab3245491908ca839c75f9a6a7f443e9009541ca2d3d443d",
+ "bytes": 21444,
+ "preview": "previews/crate.png",
+ "from": "kenney:platformer-kit/crate; baked to metres (x1.8), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden crate",
+ "tags": [
+  "crate",
+  "cover",
+  "arena",
+  "backyard"
+ ],
+ "use": {
+  "size": [
+   0.9,
+   0.9,
+   0.9
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 156,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 156,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21444,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#d9835c",
+     "#9d5b41",
+     "#955941",
+     "#ca7753",
+     "#c77451",
+     "#d6805a",
+     "#b66545",
+     "#ea9168"
+    ],
+    "saturation": 0.528,
+    "value": 0.536,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.862
+     },
+     {
+      "hue": "brown",
+      "share": 0.138
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.36,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "5eb6b633b71d7459c7ef9b0bf6e138a719175e107d4d52faca8fc7d0a059a45a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.8), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "muzzle-flash-side",
+ "pack": "forge-fx",
+ "file": "muzzle-flash-side.png",
+ "sha256": "420cd3299884ca4c52bf364781982351aec870f63492e875a18cd037797ae89d",
+ "bytes": 3373,
+ "preview": "previews/muzzle-flash-side.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a muzzle flash from the side: a forked cone along +U (for others' guns and third person)",
+ "tags": [
+  "fx",
+  "muzzle",
+  "side",
+  "flash"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 128,
+     "height": 128,
+     "seeThrough": 0.966
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ff9926",
+     "#ff9927",
+     "#ff9a28",
+     "#ff9b2a",
+     "#ff9a27",
+     "#ff9a29",
+     "#ff9f31",
+     "#ff9c2b"
+    ],
+    "saturation": 1,
+    "value": 0.61,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.986
+     }
+    ],
+    "exact": 156,
+    "grey": 0.004
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 128×128 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,156 @@
+{
+ "tool": "builder/look-judge/kind-sheet.mjs",
+ "kind": "lofi",
+ "runtime": "three/standard-3d",
+ "made": "2026-10-13T22:04:08.310Z",
+ "size": [
+  1280,
+  720
+ ],
+ "chrome": "148.0.7778.96",
+ "tiles": [
+  {
+   "name": "world",
+   "file": "tiles/lofi/world.png",
+   "info": {
+    "shot": "world",
+    "world": "office",
+    "bodies": [
+     "quaternius-worker",
+     "quaternius-hoodie",
+     "quaternius-astronaut",
+     "ual-mannequin"
+    ],
+    "height": 1.87,
+    "lofi": {
+     "scale": 3,
+     "pixelRatio": 0.3333333333333333,
+     "lines": 240
+    },
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 7.013,
+     "calls": 274,
+     "triangles": 297966,
+     "programs": 30,
+     "geometries": 133,
+     "textures": 88,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "night"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hero",
+   "file": "tiles/lofi/hero.png",
+   "info": {
+    "shot": "hero",
+    "world": "office",
+    "bodies": [
+     "quaternius-worker"
+    ],
+    "height": 1.87,
+    "lofi": {
+     "scale": 3,
+     "pixelRatio": 0.3333333333333333,
+     "lines": 240
+    },
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 3.961,
+     "calls": 207,
+     "triangles": 231786,
+     "programs": 29,
+     "geometries": 108,
+     "textures": 63,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "night"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "bodies",
+   "file": "tiles/lofi/bodies.png",
+   "info": {
+    "shot": "bodies",
+    "world": "office",
+    "bodies": [
+     "quaternius-worker",
+     "quaternius-hoodie",
+     "quaternius-astronaut",
+     "ual-mannequin"
+    ],
+    "lofi": {
+     "scale": 3,
+     "pixelRatio": 0.3333333333333333,
+     "lines": 240
+    },
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 4.029,
+     "calls": 268,
+     "triangles": 295557,
+     "programs": 30,
+     "geometries": 133,
+     "textures": 87,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "night"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "props",
+   "file": "tiles/lofi/props.png",
+   "info": {
+    "shot": "props",
+    "world": "office",
+    "props": [
+     "vending-machine",
+     "fridge",
+     "coat-rack",
+     "chair-office",
+     "barrel",
+     "trashcan",
+     "desk",
+     "cone",
+     "monitor",
+     "box-closed"
+    ],
+    "lofi": {
+     "scale": 3,
+     "pixelRatio": 0.3333333333333333,
+     "lines": 240
+    },
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 4.375,
+     "calls": 229,
+     "triangles": 227845,
+     "programs": 32,
+     "geometries": 113,
+     "textures": 52,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "night"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hud",
+   "file": "tiles/lofi/hud.png",
+   "info": {
+    "font": true
+   },
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "sheet": "lofi.png"
+}

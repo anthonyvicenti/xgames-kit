@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "folk-ranger-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-ranger-side.png",
+ "sha256": "db5f4195293773ef9b7d1e18f3198e1505655f6a069b102571f174bca8fc53fd",
+ "bytes": 1846,
+ "preview": "previews/folk-ranger-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-ranger-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a ranger in a green vest over a beige shirt, a dark ponytail; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "ranger",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#3a2418",
+     "#a96b41",
+     "#2f2130",
+     "#695a5e",
+     "#d8c49a",
+     "#41343e",
+     "#4a2618",
+     "#715e49"
+    ],
+    "saturation": 0.306,
+    "value": 0.324,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.367
+     },
+     {
+      "hue": "brown",
+      "share": 0.339
+     },
+     {
+      "hue": "orange",
+      "share": 0.215
+     },
+     {
+      "hue": "red",
+      "share": 0.043
+     }
+    ],
+    "exact": 26,
+    "grey": 0.367
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.882
+   }
+  }
+ },
+ "source": {
+  "sha256": "4596fc2f076b5106606139ceecaba8f24542b80171694126debcf1bd6ecf1fa6",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

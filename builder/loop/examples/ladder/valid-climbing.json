@@ -1,0 +1,12 @@
+{
+  "schema": "gf-ladder/1",
+  "rung": "model",
+  "strong": true,
+  "sets": [
+    { "key": "gate C:13\nplay build.1:not-seen", "items": [ { "key": "gate C:13", "area": "feel" }, { "key": "play build.1:not-seen", "area": "code" } ], "after": "verify", "round": 1 },
+    { "key": "play build.1:not-seen", "items": [ { "key": "play build.1:not-seen", "area": "code" } ], "after": "playtest", "round": 2 },
+    { "key": "play build.1:not-seen", "items": [ { "key": "play build.1:not-seen", "area": "code" } ], "after": "playtest", "round": 3 }
+  ],
+  "climbs": [ { "rung": "model", "reason": "repeat", "set": "play build.1:not-seen", "at": "2026-10-13T12:00:00Z" } ],
+  "queue": [ { "kind": "repair", "strong": true } ]
+}

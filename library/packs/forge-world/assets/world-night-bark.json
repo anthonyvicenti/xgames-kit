@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-bark",
+ "pack": "forge-world",
+ "file": "world-night-bark.png",
+ "sha256": "03c504d071870b95a6f3c2aad1f1b2a7e5f4d9e69c83a187cc60f17c4032ae0b",
+ "bytes": 2960,
+ "preview": "previews/world-night-bark.png",
+ "from": "research/gf-forge/library/tools/world.mjs; the photo resized to 32 × 64 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 20 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a tree's scaly grey-brown bark; tiles; 1 m round by 2 m up",
+ "tags": [
+  "texture",
+  "night",
+  "bark",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 64,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#372f29",
+     "#373029",
+     "#37302b",
+     "#372b25",
+     "#332b24",
+     "#39302a",
+     "#3c302a",
+     "#332a24"
+    ],
+    "saturation": 0.168,
+    "value": 0.188,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.759
+     },
+     {
+      "hue": "brown",
+      "share": 0.241
+     }
+    ],
+    "exact": 254,
+    "grey": 0.759
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "the photo resized to 32 × 64 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 20 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

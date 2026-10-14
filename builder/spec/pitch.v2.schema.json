@@ -1,0 +1,421 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/pitch/2.json",
+  "title": "xgames-kit pitch v2",
+  "description": "What a pitch or refine round writes. The requirements ledger comes first (the essentials in the creator's words, each with a home), then 1-3 cards, each carrying a complete spec v2 that assumes each question's default. Nothing the creator asked for is dropped: every ledger line is in card 1 as something that exists or a build promise, and v1.notYet holds only what the creator cut.",
+  "type": "object",
+  "required": [
+    "pitchVersion",
+    "ledger",
+    "cards",
+    "questions",
+    "research",
+    "policy"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "pitchVersion": {
+      "const": 2
+    },
+    "reply": {
+      "type": "string",
+      "maxLength": 400,
+      "description": "One or two sentences to the creator. When card 1 builds new parts it says so plainly, and that it makes the build longer. When a kind is not proven on the chosen runtime it says so. It never opens with what the kit lacks."
+    },
+    "ledger": {
+      "$ref": "https://xgames.fun/schemas/ledger/1.json",
+      "description": "The requirements ledger the cards were made from (with its foundation)."
+    },
+    "cards": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "hook",
+          "howItPlays",
+          "players",
+          "whyFunny",
+          "v1",
+          "conceptPrompt",
+          "spec"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,23}$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "hook": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "howItPlays": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 600
+          },
+          "players": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "limits": {
+            "type": "string",
+            "maxLength": 240,
+            "description": "The chosen runtime's device limits, said plainly when they narrow where it plays (vista: 'a desktop browser with WebGPU only'; forge: 'not yet tried on a real phone in an in-app browser')."
+          },
+          "similar": {
+            "type": "array",
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "name",
+                "why"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "url": {
+                  "type": "string",
+                  "maxLength": 300,
+                  "pattern": "^https?://"
+                },
+                "why": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200
+                }
+              }
+            }
+          },
+          "v1": {
+            "type": "object",
+            "required": [
+              "has"
+            ],
+            "additionalProperties": false,
+            "description": "What the first version has. Everything the creator asked for is in hook, howItPlays and has; what this game builds new is named in build (one line per spec.build item, checked); notYet holds only what the creator cut (the ledger's cut rows, checked).",
+            "properties": {
+              "has": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 12,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                }
+              },
+              "build": {
+                "type": "array",
+                "maxItems": 12,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 160
+                },
+                "description": "Plain words for each spec.build item, in its order."
+              },
+              "notYet": {
+                "type": "array",
+                "maxItems": 8,
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 120
+                },
+                "description": "Only rows the creator cut, never what the kit lacks."
+              }
+            }
+          },
+          "conceptPrompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 600
+          },
+          "spec": {
+            "$ref": "https://xgames.fun/schemas/game-spec/2.json"
+          },
+          "fit": {
+            "enum": [
+              "faithful",
+              "variation"
+            ],
+            "description": "Only when the prompt names an existing game: faithful keeps its signature loop whole (card 1, checked); variation is a different take."
+          },
+          "whyFunny": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "questions": {
+      "type": "array",
+      "maxItems": 3,
+      "description": "At most 3 across the whole conversation. Each applies to whichever card the creator picks; each option may set spec values by JSON pointer.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "options",
+          "default"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
+          },
+          "about": {
+            "enum": [
+              "players",
+              "body",
+              "economy",
+              "backend"
+            ],
+            "description": "The ledger's asks only (players, body; a host adds economy or backend)."
+          },
+          "options": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 4,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 60
+                },
+                "set": {
+                  "type": "object",
+                  "maxProperties": 8,
+                  "propertyNames": {
+                    "pattern": "^/[A-Za-z0-9_~/-]{1,120}$"
+                  }
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean"
+                  ],
+                  "description": "The value the ledger row takes (players: together, body: body)."
+                }
+              }
+            }
+          },
+          "default": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+          }
+        }
+      }
+    },
+    "offers": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Optional parts a session offers when the creator's words ask or a question offers them.",
+      "properties": {
+        "economy": {
+          "type": "object",
+          "required": [
+            "what",
+            "price"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "what": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            },
+            "price": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "clears": {
+              "type": "boolean"
+            },
+            "from": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 120
+            }
+          }
+        },
+        "backend": {
+          "type": "object",
+          "required": [
+            "kind",
+            "needs"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": [
+                "database",
+                "host"
+              ]
+            },
+            "provider": {
+              "enum": [
+                "supabase",
+                "railway"
+              ]
+            },
+            "needs": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 5,
+              "uniqueItems": true,
+              "items": {
+                "enum": [
+                  "leaderboard",
+                  "saves",
+                  "accounts",
+                  "server-rules",
+                  "trading"
+                ]
+              }
+            },
+            "from": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 120
+            }
+          }
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": [
+        "bank",
+        "web",
+        "notes"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "bank": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          }
+        },
+        "web": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "type": "string",
+            "maxLength": 300,
+            "pattern": "^https?://"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1200
+        },
+        "signature": {
+          "type": "object",
+          "required": [
+            "games"
+          ],
+          "additionalProperties": false,
+          "description": "When the creator names existing games: where their signature loop was read. Its rows are ledger lines with source reference.",
+          "properties": {
+            "games": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 4,
+              "items": {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "bank": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "urls": {
+                    "type": "array",
+                    "maxItems": 4,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 300,
+                      "pattern": "^https?://"
+                    }
+                  },
+                  "loop": {
+                    "type": "string",
+                    "maxLength": 300
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "ok"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ok": {
+          "type": "boolean"
+        },
+        "steered": {
+          "type": "string",
+          "maxLength": 400
+        }
+      }
+    }
+  }
+}

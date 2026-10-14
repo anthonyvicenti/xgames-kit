@@ -1,0 +1,648 @@
+{
+ "schema": "xgk-loop-e2e/1",
+ "what": "PA11 (\"giant four in a row with friends\") through `gamesfun build` twice on stream/loop3, to prove that a friends promise is proven only with two player-driven seats (the creator, 2026-10-08: a friends round has no bots and needs two players), that a round can remove files it made, and (run B) the fixes from Studio's first v3 build. Real models, the real create, the six gates on the GPU queue, a black-box play-tester and the second reader. Not an eval run.",
+ "date": "2026-10-13",
+ "prompt": "giant four in a row with friends",
+ "command": "GAMESFUN_GPU_WRAP=<gpu-run.sh> gamesfun build --prompt \"giant four in a row with friends\" --game games/<name> --model claude-opus-5-5 --playtest-model claude-sonnet-5-5",
+ "answers": "the defaults (card 1 with every question's default; nobody typed anything)",
+ "runs": {
+  "A": {
+   "ranOn": "7326bb1",
+   "started": "2026-10-13T19:12:10-07:00",
+   "minutes": 81.6,
+   "usd": 15.1261,
+   "models": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "ended": "delivered",
+   "talkRounds": {
+    "ledger": 3,
+    "pitch": 1,
+    "spec": 1
+   },
+   "rounds": [
+    {
+     "n": 1,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.3
+    },
+    {
+     "n": 2,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.3,
+     "usd": 0.06
+    },
+    {
+     "n": 3,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 8.3,
+     "usd": 2.5
+    },
+    {
+     "n": 4,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 14,
+     "usd": 6.69
+    },
+    {
+     "n": 5,
+     "kind": "spec",
+     "model": "claude-opus-5-5",
+     "effort": "max",
+     "minutes": 2.2,
+     "usd": 1.42
+    },
+    {
+     "n": 6,
+     "kind": "build",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 20.2,
+     "usd": 1.11,
+     "denied": [
+      "Bash"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "playtest",
+     "model": "claude-sonnet-5-5",
+     "effort": null,
+     "minutes": 3.8,
+     "usd": 0.26
+    },
+    {
+     "n": 8,
+     "kind": "repair",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 14.1,
+     "usd": 2.27,
+     "denied": [
+      "Bash",
+      "Bash"
+     ]
+    },
+    {
+     "n": 9,
+     "kind": "playtest",
+     "model": "claude-sonnet-5-5",
+     "effort": null,
+     "minutes": 8.5,
+     "usd": 0.17
+    },
+    {
+     "n": 10,
+     "kind": "read",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.5,
+     "usd": 0.34
+    }
+   ],
+   "foundation": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly"
+   },
+   "ledger": [
+    {
+     "id": "turns",
+     "about": "acts",
+     "words": "four in a row",
+     "what": "Friends take turns, one disc each in order; whose turn it is shows on every screen, and a move out of turn is refused with the reason.",
+     "home": "exists"
+    },
+    {
+     "id": "view",
+     "about": "perspective",
+     "words": "giant four in a row",
+     "what": "A 3D view of your character at the giant board, pulled back and up so the whole board and your friends stay in sight.",
+     "home": "exists"
+    },
+    {
+     "id": "friends",
+     "about": "players",
+     "words": "with friends",
+     "what": "Friends play against each other in one game at the same giant board, each in their own colour, and every move shows on every friend's screen.",
+     "home": "exists",
+     "together": "versus"
+    },
+    {
+     "id": "body",
+     "about": "body",
+     "words": null,
+     "what": "Each friend is a character in their own colour who walks onto the giant board, stands in a column and drops their disc there.",
+     "home": "exists"
+    },
+    {
+     "id": "drop",
+     "about": "action",
+     "words": "four in a row",
+     "what": "On your turn you drop a disc into a column and it slides to the lowest free cell, so each column fills from the bottom up; a full column is refused with the reason.",
+     "home": "exists"
+    },
+    {
+     "id": "four",
+     "about": "action",
+     "words": "four in a row",
+     "what": "Four of your discs in a line, across, up or diagonally, win and light up; a full board with no four is a draw.",
+     "home": "build"
+    },
+    {
+     "id": "giant",
+     "about": "thing",
+     "words": "giant",
+     "what": "The board is giant: cells and discs at the scale of the players' bodies, a board bigger than the friends standing on and around it.",
+     "home": "exists"
+    }
+   ],
+   "friendsPromises": [
+    {
+     "id": "row.friends",
+     "status": "proven",
+     "seats": "two players",
+     "run": "friends2",
+     "two": true,
+     "screens": {
+      "host": "Pink discs and blue discs in the same cells, 'Me wins' banner, score 1-0.",
+      "friend": "The same board with the same discs, 'Me wins' banner, 'Friend (you)' in the scoreboard."
+     }
+    }
+   ],
+   "playtests": 2,
+   "playtest": {
+    "round": 2,
+    "ok": true,
+    "answers": {
+     "row.turns": {
+      "status": "seen",
+      "note": "Banner said 'Your turn' for host and 'Friend's turn' after the drop. The friend pressed E out of turn and got the toast 'Not your turn'. The host pressed E again on the friend's turn and got the same toast."
+     },
+     "row.view": {
+      "status": "seen",
+      "note": "The camera looks down from above and behind. The whole 7x6 board and both characters are in frame."
+     },
+     "row.friends": {
+      "status": "seen",
+      "two": true,
+      "note": "Two seats played one game. Pink and blue discs matched on both screens, and each seat saw its own 'you' label."
+     },
+     "row.body": {
+      "status": "seen",
+      "note": "Each friend is a small pink or blue character. Walking with D moved the host's character to another column, and the next disc dropped there. The characters stand in front of the board's bottom edge, not on the board."
+     },
+     "row.drop": {
+      "status": "seen",
+      "note": "Discs fell to the lowest free cell and stacked from the bottom. Dropping in a full column showed a \"That column is full\" toast and a hint to walk to another."
+     },
+     "row.giant": {
+      "status": "seen",
+      "note": "The board is a 7x6 grid painted on the plaza floor. It is wider than the players' bodies, and my pink avatar and Pip stand at its edge."
+     },
+     "build.1": {
+      "status": "seen",
+      "note": "Pip's four in a row lit up yellow and the results card said \"Pip wins!\". I didn't get a draw."
+     },
+     "build.2": {
+      "status": "seen",
+      "note": "A fixed overhead camera kept the whole board and both players in view throughout."
+     },
+     "control.interact": {
+      "status": "seen",
+      "note": "E dropped a disc into the column the character stood on, and a pink disc appeared in that column."
+     },
+     "loop.closes": {
+      "status": "seen",
+      "note": "Pressing E twice in a row gave a \"Not your turn\" toast. The game ended with a winner, and Play again started a fresh board."
+     }
+    }
+   },
+   "secondReader": {
+    "status": "read",
+    "marks": {
+     "kept": 7,
+     "partly": 0,
+     "lost": 0,
+     "cannot-tell": 0
+    },
+    "intent": 1,
+    "findings": [
+     "The board lies flat on the plaza floor like a mat, not standing upright, so 'drops to the lowest' means the cell nearest the players and nothing visibly falls.",
+     "The host's default name is 'Me', so the friend's screen shows 'Me's turn' and 'Me wins', which reads as if the friend won.",
+     "In a game against the bot, the results card covers the lit-up winning line.",
+     "No capture shows a draw on a full board or a diagonal win, so those parts of the four-in-a-row rule are unproven.",
+     "The 30-second turn clock was never asked for, and the tester found it and the 'Go!' banner a little confusing at first.",
+     "The tester's summary says friends could not be tested, but the friends runs show two tester-driven seats playing one game."
+    ],
+    "rows": {
+     "turns": {
+      "mark": "kept",
+      "why": "The banner reads 'Your turn' then 'Friend's turn' after a drop, and when the friend pressed out of turn they got a 'Not your turn' toast."
+     },
+     "view": {
+      "mark": "kept",
+      "why": "A 3D camera set back and above the players keeps the whole 7x6 board and both characters in frame on every capture."
+     },
+     "friends": {
+      "mark": "kept",
+      "why": "Two seats driven by the tester shared one board in pink and blue, and the same discs, banner and score showed on both screens."
+     },
+     "body": {
+      "mark": "kept",
+      "why": "Each player is a character in their own colour. Walking to another column and pressing E dropped the disc in that column, and the bot character Pip is seen standing on the board itself."
+     },
+     "drop": {
+      "mark": "kept",
+      "why": "Discs land in the lowest free cell and stack from the board's near edge, and a full column shows 'That column is full: walk to another'."
+     },
+     "four": {
+      "mark": "kept",
+      "why": "A four in a column and a four in a row both turned yellow and ended the game with a winner, though no capture shows a diagonal win or a draw."
+     },
+     "giant": {
+      "mark": "kept",
+      "why": "The board fills most of the plaza, each cell is about as big as a character, and the whole board is many times bigger than the players standing at it."
+     }
+    }
+   },
+   "delivery": {
+    "outcome": "delivered",
+    "gates": {
+     "A": "pass",
+     "B": "pass",
+     "C": "pass",
+     "D": "pass",
+     "E": "pass",
+     "F": "pass"
+    },
+    "ledger": [
+     {
+      "id": "turns",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "view",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "friends",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "body",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "drop",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "four",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "giant",
+      "status": "proven",
+      "reader": "kept"
+     }
+    ],
+    "summary": null,
+    "lastRound": "Repair round for the four promises the play-tester couldn't see:\n- **build.1 (the winning four light up):** the board's own win colour was painted on the cells under the discs, where nobody could see it. New src/marks.js gives the board's four winning disc meshes a glowing gold copy of their material on every screen. The glow pulses until the next round, then the discs get their own material back. It builds no new shapes, which verify check 4 refuses. The board also now waits 6 s after a win instead of 3 (mechanics.board endDelay), so the lit four stay on screen before the results card. Seen in the play run winglow: the four winning discs turned gold.\n- **row.drop (a full column is refused with the reason):** filling a column was out of reach in a few minutes. The board now has its own bot rule in rules.js: take a win, else block one, else usually drop on top of the last disc (rules.params.botStack 0.6), else near the middle. Alone with one bot, pressing E in one spot fills that column in 4 presses (play run fullcol). On your turn, standing on a full column now shows \"That column is full: walk to another\" before you press. Pressing gives the board's toast \"That column is full\".\n- **row.giant (cells and discs at body scale):** the beans are taller (config/characters.json player height 1.7 → 2.4 m, about one 2 m cell). The camera frames the board closer and a little lower (frameMargin 3.5 → 2, frameFov 42 → 46, framePitchDeg 64 → 62), so the board fills the screen and the beans read at cell scale. The camera was tried lower (pitch 50–56), but the front houses' roofs covered the board, so it went back up to 62.\n- **loop.closes (Play again starts a second round):** the tester clicked Play again the instant the friends results card appeared. The party page (the kit's gf/mp, not this game's code) ignores clicks for the first 0.7 s so a click meant for the game doesn't land on the button. Clicked 1.5 s after the card appeared, it started round 2 (play run winglow). With endDelay at 6 s, the round no longer ends right after the winning drop. This game can't shorten that guard. A tester just needs to wait a moment before clicking.\n\nNot tried in a play run: a horizontal or diagonal win, and a draw. The glow lights whatever cells the winner rule returns, and that rule already checks every direction through the last disc.\n\nNew tuning slots: rules.params botStack, winColor, textFull. Slots were regenerated (assets.json).\n\nVerify (quick) passes: gates 6/6, measures 21/21, check 9 skipped (evidence/verify-6). Set dressing warns that some props (stalls, barrel, parasol, chairs) look small next to the 2.4 m beans. These are warnings only, and I left them.\n\nNothing to remove: src/marks.js is used by rules.js. Within this round I replaced an earlier mesh-building version of marks.js in place."
+   },
+   "note": "loop3 before the Studio findings: friends need two seats, gamesfun_remove"
+  },
+  "B": {
+   "ranOn": "121b1b2",
+   "started": "2026-10-13T20:34:53-07:00",
+   "minutes": 41.7,
+   "usd": 3.9599,
+   "models": [
+    "claude-opus-5-5",
+    "claude-sonnet-5-5"
+   ],
+   "ended": "delivered",
+   "talkRounds": {
+    "ledger": 1,
+    "pitch": 3,
+    "spec": 1
+   },
+   "rounds": [
+    {
+     "n": 1,
+     "kind": "ledger",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.4,
+     "usd": 0.27
+    },
+    {
+     "n": 2,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.9,
+     "usd": 0.38
+    },
+    {
+     "n": 3,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.5,
+     "usd": 0.24
+    },
+    {
+     "n": 4,
+     "kind": "pitch",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.5,
+     "usd": 0.24
+    },
+    {
+     "n": 5,
+     "kind": "spec",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.2,
+     "usd": 0.22
+    },
+    {
+     "n": 6,
+     "kind": "build",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 29.9,
+     "usd": 2.04,
+     "denied": [
+      "Bash",
+      "Bash"
+     ]
+    },
+    {
+     "n": 7,
+     "kind": "playtest",
+     "model": "claude-sonnet-5-5",
+     "effort": null,
+     "minutes": 6.5,
+     "usd": 0.29
+    },
+    {
+     "n": 8,
+     "kind": "read",
+     "model": "claude-opus-5-5",
+     "effort": null,
+     "minutes": 0.5,
+     "usd": 0.28
+    }
+   ],
+   "foundation": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly"
+   },
+   "ledger": [
+    {
+     "id": "acts",
+     "about": "acts",
+     "words": "four in a row",
+     "what": "Players take turns dropping one disc each, in order; a move out of turn is refused.",
+     "home": "exists"
+    },
+    {
+     "id": "perspective",
+     "about": "perspective",
+     "words": "giant",
+     "what": "A 3D view that shows the whole giant board and the players around it.",
+     "home": "exists"
+    },
+    {
+     "id": "players",
+     "about": "players",
+     "words": "with friends",
+     "what": "Friends play against each other, each with their own disc colour.",
+     "home": "exists",
+     "together": "free-for-all"
+    },
+    {
+     "id": "body",
+     "about": "body",
+     "words": "giant four in a row",
+     "what": "Each player is a character standing at a huge board, choosing a column to drop their disc in.",
+     "home": "exists"
+    },
+    {
+     "id": "drop",
+     "about": "action",
+     "words": "four in a row",
+     "what": "Pick a column and drop a disc; it falls to the lowest free cell.",
+     "home": "exists"
+    },
+    {
+     "id": "win",
+     "about": "action",
+     "words": "four in a row",
+     "what": "Four of your discs in a row across, down or diagonally wins; a full board is a draw.",
+     "home": "build"
+    },
+    {
+     "id": "giant",
+     "about": "thing",
+     "words": "giant",
+     "what": "The board is giant: people-sized cells and discs, with the players small beside it.",
+     "home": "build"
+    }
+   ],
+   "friendsPromises": [
+    {
+     "id": "row.players",
+     "status": "proven",
+     "seats": "two players",
+     "run": "friends3",
+     "two": true,
+     "screens": {
+      "host": "Own pink disc in column 4 and the friend's blue disc beside it. HUD showed Me (you) and Friend.",
+      "friend": "The same two discs, seen from the opposite side. HUD showed Friend (you) and \"Me's turn\"."
+     }
+    }
+   ],
+   "playtests": 1,
+   "playtest": {
+    "round": 1,
+    "ok": true,
+    "answers": {
+     "row.acts": {
+      "status": "seen",
+      "note": "Turns alternate with Pip, with a 20s clock. A second click during Pip's turn gave toast \"Not your turn\". The friend's click out of turn also got \"Not your turn\"."
+     },
+     "row.perspective": {
+      "status": "seen",
+      "note": "A top-down 3D view shows the whole 7x6 board with the town around it. Both characters are visible, one on each side of the board."
+     },
+     "row.players": {
+      "status": "seen",
+      "two": true,
+      "note": "Host is pink, friend is blue, and each sees the other's discs and character. Turns pass between the two. The mouse click did not drop a disc for the host in the friends runs (friends, friends2); the F key worked."
+     },
+     "row.body": {
+      "status": "seen",
+      "note": "Each player is a small character standing at the edge of the board with a ring over their column. They move along it to choose a column."
+     },
+     "row.drop": {
+      "status": "seen",
+      "note": "A disc dropped in the column I stood under and landed in the bottom cell, and later discs stacked on top. Dropping in a full column gave \"That column is full\"."
+     },
+     "build.1": {
+      "status": "seen",
+      "note": "Pip got four in a row and won. The winning cells were highlighted in gold and the card said \"Pip wins!\". I never won myself, and I never got a full-board draw. One round ended \"nobody scored\" on the 120s timer with a nearly full board."
+     },
+     "build.2": {
+      "status": "seen",
+      "note": "The board fills the middle of the screen and the characters are tiny beside it."
+     },
+     "control.primary": {
+      "status": "seen",
+      "note": "A mouse click dropped a disc in the solo runs, and F worked in the friends run. In the friends runs the host's mouse click did nothing visible, only F worked. That was in the friends runs only."
+     },
+     "control.move": {
+      "status": "seen",
+      "note": "WASD moved me along the board and the column ring followed. Walking off the board gave the hint \"Walk onto the board\" and the toast \"Stand on the board\"."
+     },
+     "loop.closes": {
+      "status": "seen",
+      "note": "A round ended with \"Pip wins!\" and a Play again button. Play again started a fresh empty board with the clock reset and the turn back to me."
+     }
+    }
+   },
+   "secondReader": {
+    "status": "read",
+    "marks": {
+     "kept": 6,
+     "partly": 1,
+     "lost": 0,
+     "cannot-tell": 0
+    },
+    "intent": 0.9166666666666666,
+    "findings": [
+     "The giant board lies flat on the ground like a floor, not standing upright, so discs never visibly fall; they just appear in the free cell nearest one edge, and for the friend at the far edge they stack away from where the friend stands.",
+     "A 120-second round limit can end the game \"Round over: nobody scored\" while much of the board is still empty (full/25-end.jpg), which is not how four in a row ends.",
+     "In the friends game a mouse click did not drop the host's disc, though the on-screen hint says \"Click: drop in this column\"; only F worked.",
+     "The waiting room takes up to 4 players and says \"Best score wins\", which does not fit a two-player four in a row (friends/00-room.jpg).",
+     "A bot named Pip plays in solo games; the person asked only to play with friends, so this is extra rather than in the way.",
+     "Nothing on screen looked made for a tester rather than a player; the bottom line is a controls hint."
+    ],
+    "rows": {
+     "acts": {
+      "mark": "kept",
+      "why": "The label switches between \"Your turn\" and \"Pip's turn\", and a click out of turn gets the \"Not your turn\" toast with no disc placed."
+     },
+     "perspective": {
+      "mark": "kept",
+      "why": "A tilted 3D overhead view shows the whole 7x6 board in a town square, with both characters standing at its edges."
+     },
+     "players": {
+      "mark": "kept",
+      "why": "In a two-player friends room the host is pink and the friend is blue, and each screen shows both discs and both characters, seen from opposite sides."
+     },
+     "body": {
+      "mark": "kept",
+      "why": "Each player is a small character at the board's edge, and a ring marks the column they stand under."
+     },
+     "drop": {
+      "mark": "kept",
+      "why": "Discs land in the free cell nearest the bottom edge of the chosen column and stack on each other; a full column is refused."
+     },
+     "win": {
+      "mark": "partly",
+      "why": "The only win seen is Pip's four, marked in gold with \"Pip wins!\"; no capture shows a win across or diagonally, or a full-board draw."
+     },
+     "giant": {
+      "mark": "kept",
+      "why": "Each cell is several times as big as a character, and the board fills the middle of the square with the players tiny beside it."
+     }
+    }
+   },
+   "delivery": {
+    "outcome": "delivered",
+    "gates": {
+     "A": "pass",
+     "B": "pass",
+     "C": "pass",
+     "D": "pass",
+     "E": "pass",
+     "F": "pass"
+    },
+    "ledger": [
+     {
+      "id": "acts",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "perspective",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "players",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "body",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "drop",
+      "status": "proven",
+      "reader": "kept"
+     },
+     {
+      "id": "win",
+      "status": "proven",
+      "reader": "partly"
+     },
+     {
+      "id": "giant",
+      "status": "proven",
+      "reader": "kept"
+     }
+    ],
+    "summary": "Giant Drop Four. A four in a row board as tall as a house: walk your character to a column and drop a disc bigger than you. What you asked for that works now: players take turns dropping one disc each, in order; a move out of turn is refused; friends play against each other, each with their own disc colour; each player is a character standing at a huge board, choosing a column to drop their disc in; pick a column and drop a disc; it falls to the lowest free cell; four of your discs in a row across, down or diagonally wins; a full board is a draw; the board is giant: people-sized cells and discs, with the players small beside it.",
+    "lastRound": "You see a giant 7 × 6 four-in-a-row board on the plaza floor. Each cell is 3.2 m across, and each dropped disc is about 2.4 m wide and waist-high, so the characters walking along its edge look small next to it. The camera pulls back and up by itself to keep the whole board and every player in view, above the townhouses and the on-screen prompts. Players take turns walking to a column and dropping a disc, which slides to the lowest free cell; a full column or an out-of-turn press is refused with a reason. Four of one colour across, down or diagonally wins and lights up, and a full board is a draw; bots take a win when they can and block yours. Changes from the plan, all checked in verify's screenshots: at the planned 4 m cells the players' standing spots fell inside the front houses, so cells are 3.2 m. The board lies flat on the floor (the kit's board mechanic only does floor boards), so its height comes from thick discs and a raised camera, not an upright frame. During verify's two-player check only (a test-only web-address flag, never used in real play), the board is never decided, because the test's random presses would finish the game before its later steps ran."
+   },
+   "note": "loop3 with the Studio findings merged (main ea96bb4 merged in): pitch v2 cards, the person's summary, talk rounds that see their problems"
+  }
+ },
+ "removal": "gamesfun_remove on run A's delivered game through the CLI: a scratch rules.js.new was removed; rules.js (create made it) was refused with the reason; a missing path was refused. Neither build round left a stray file, so no round needed it.",
+ "honest": [
+  "Both runs delivered; nobody has played either game, and this is not the creator's verdict.",
+  "The friends promise (row.friends in A, row.players in B) was proven in both runs by a play-tester run with two player-driven seats (A: friends2, B: friends3; checked against each run's own play.json by twoSeats: a friends run, host and friend each acting, each screen captured, no bot), with what each screen showed. The second reader marked that line kept in both, and in A it said why: \"the friends runs show two tester-driven seats playing one game\". On the earlier PA11 build (loop2) the same line was proven with bots only and the reader said cannot-tell.",
+  "In run A the first play-test, played as two, found four promises not seen (no lit winning line, a Play again that stayed up, characters tiny beside the board, a full column out of reach); one repair round fixed them and the second play-test saw all.",
+  "Run A ran before the Studio findings: its ledger took 3 rounds (twice a home written as an object, the round never shown why: the blind retry), and the stronger model then stayed on for the pitch ($6.69 of $15.13). Run B ran after them: the ledger passed in 1 round and the pitch ran on the base model; it took 3 pitch rounds because every card named the world \"field\", a flat-2d world, on standard-3d (from a board example). That was fixed after run B (779940f: the pitch round is told the worlds of its runtime and profile); no run has shown that fix yet.",
+  "Run B's summary (the loop's, in the person's terms) lists every proven line, including \"a full board is a draw\"; the play-tester saw one vertical win and no draw, and the second reader marked that line partly. The summary rests on the loop's proof; the reader's words come right after it.",
+  "gamesfun_remove was not needed by either build (no stray file). It was shown on run A's delivered game through the CLI.",
+  "Run B's reader found game issues the loop's proof did not: the board lies flat so nothing visibly drops, a 120-second round can end with \"nobody scored\" mid-board, a click did not drop for the host in the friends game though the hint says click, the room says up to 4 players and \"best score wins\". None of them blocked delivery (the reader is advisory).",
+  "The full transcripts (machine paths) stay outside the repository."
+ ]
+}

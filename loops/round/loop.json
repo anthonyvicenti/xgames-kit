@@ -1,0 +1,137 @@
+{
+  "id": "round",
+  "name": "a timed round",
+  "describe": "Everyone plays at once in one timed round: lobby, countdown, play, results, play again.",
+  "pick": "things move all the time and every player acts at the same moment; one clock for everyone, then a winner",
+  "acts": "together-timed",
+  "near": [],
+  "clock": "required",
+  "ends": "the clock, or the rules' check naming winners",
+  "seats": {
+    "alone": "fill",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "hooks": [
+    {
+      "name": "roundStart",
+      "on": "every copy",
+      "args": "(ctx)",
+      "when": "the round starts (the same moment for everyone)"
+    },
+    {
+      "name": "check",
+      "on": "host",
+      "args": "(ctx) → null | { winners: [playerId], reason }",
+      "when": "ten times a second: is the round over before the clock?"
+    },
+    {
+      "name": "results",
+      "on": "every copy",
+      "args": "(ctx) → [{ id, name, value }]",
+      "when": "the round ended: the rows of the results card"
+    }
+  ],
+  "notes": [
+    "Everyone acts at once for round.seconds; the most points wins unless check(ctx) names winners sooner."
+  ],
+  "promise": "A round can be won or lost, ends on a results screen, and plays again.",
+  "impl": {
+    "three": {
+      "by": "flow",
+      "path": "loops/round/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "forge": {
+      "by": "flow",
+      "path": "loops/round/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "forge round games pass measure 6 (a round to results and replay) in verify-forge",
+            "date": "2026-10-12"
+          }
+        ]
+      },
+      "note": "the shared session's flow over the core's waves (boot-forge)"
+    },
+    "vista": {
+      "by": "session",
+      "path": "runtimes/vista/kit/game.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "a calm fishing game passes measure 6 in verify-vista",
+            "date": "2026-10-12"
+          }
+        ]
+      },
+      "note": "the session's round clock; the game ends with ctx.finish"
+    },
+    "godot": {
+      "by": "session",
+      "path": "runtimes/godot/kit/boot.js",
+      "profiles": [
+        "2d",
+        "3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "all four Godot examples (2D side-on, 2D top-down, 3D, Coin Hop) play a round to results and replay and pass measure 6 in verify --release",
+            "ref": "runtimes/godot/evidence/2026-10-13-run6",
+            "date": "2026-10-13"
+          }
+        ]
+      },
+      "note": "the shared session's round (lobby, countdown, play, results, replay) driven from the page side of the Godot bridge"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "loop unit tests (tests/m4b-loops.test.mjs) pass, run by the contracts stream",
+        "date": "2026-10-13"
+      },
+      {
+        "what": "forge round games pass measure 6 (a round to results and replay) in verify-forge",
+        "date": "2026-10-12"
+      },
+      {
+        "what": "a calm fishing game passes measure 6 in verify-vista",
+        "date": "2026-10-12"
+      }
+    ]
+  }
+}

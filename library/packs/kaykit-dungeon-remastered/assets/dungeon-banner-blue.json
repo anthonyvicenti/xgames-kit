@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-banner-blue",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-banner-blue.glb",
+ "sha256": "8ac42b9d0c9f390c086bbe05bd566c9b33b5543dcfd16e5a6680cfa97d6cd2d7",
+ "bytes": 52580,
+ "preview": "previews/dungeon-banner-blue.png",
+ "from": "banner_patternB_blue.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a blue patterned banner that hangs on a wall",
+ "tags": [
+  "dungeon",
+  "banner",
+  "blue",
+  "wall-decor",
+  "cloth"
+ ],
+ "use": {
+  "size": [
+   1.125,
+   2.397,
+   0.234
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -0.562,
+   0.399,
+   0.283
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 97,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 97,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 52580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#e0e5e8",
+     "#dae0e3",
+     "#69a9d5",
+     "#6eb0d8",
+     "#d4dbde",
+     "#c4ced2",
+     "#73b6dc",
+     "#548dc6"
+    ],
+    "saturation": 0.348,
+    "value": 0.735,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.504
+     },
+     {
+      "hue": "cyan",
+      "share": 0.347
+     },
+     {
+      "hue": "blue",
+      "share": 0.149
+     }
+    ],
+    "grey": 0.504
+   },
+   "trianglesPerMetre": 5.87,
+   "texelsPerMetre": 61,
+   "texturedShare": 0.827,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/banner_patternB_blue.gltf.glb",
+  "sha256": "a86be2d4bc01207ab694b614a9bb9e358ed498467a8e8bcd695c838be0f4f88a",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

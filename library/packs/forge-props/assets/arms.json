@@ -1,0 +1,123 @@
+{
+ "assetVersion": 1,
+ "id": "arms",
+ "pack": "forge-props",
+ "file": "arms.glb",
+ "sha256": "8b5ee577210c0db64ef9d2d15a214fb017e1e174ddaf018b4077445f7c3ae7ad",
+ "bytes": 14224,
+ "preview": "previews/arms.png",
+ "from": "research/gf-forge/library/tools/arms.mjs; made here: chamfered-box fists, a prism thumb, cuffs and tapered sleeves, flat shaded; three plain materials (glove, cuff, tint_sleeve); camera-space nodes arm_r, arm_l with socket_grip, socket_grip_l",
+ "dimension": "3d",
+ "category": "viewmodel",
+ "describe": "first-person gloved fists with leather cuffs and sleeves (the sleeves take the player colour); right hand holds every weapon at socket_grip, left hand goes on a long gun's socket_grip_l",
+ "tags": [
+  "fp",
+  "arms",
+  "gloves",
+  "first-person"
+ ],
+ "use": {
+  "size": [
+   0.433,
+   0.391,
+   0.928
+  ],
+  "origin": "camera",
+  "facing": "camera",
+  "sockets": [
+   {
+    "name": "grip",
+    "node": "socket_grip",
+    "position": [
+     0.13,
+     -0.17,
+     -0.34
+    ],
+    "quaternion": [
+     0,
+     1,
+     0,
+     0
+    ]
+   },
+   {
+    "name": "grip_l",
+    "node": "socket_grip_l",
+    "position": [
+     0.12,
+     -0.155,
+     -0.74
+    ],
+    "quaternion": [
+     0,
+     1,
+     0,
+     0
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 312,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 312,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 14224,
+     "role": "small"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#cecbc5",
+     "#7c6552",
+     "#5d5045"
+    ],
+    "saturation": 0.126,
+    "value": 0.615,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.726
+     },
+     {
+      "hue": "brown",
+      "share": 0.274
+     }
+    ],
+    "grey": 0.726
+   },
+   "trianglesPerMetre": 26.6,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "made here: chamfered-box fists, a prism thumb, cuffs and tapered sleeves, flat shaded; three plain materials (glove, cuff, tint_sleeve); camera-space nodes arm_r, arm_l with socket_grip, socket_grip_l",
+  "author": "games.fun"
+ }
+}

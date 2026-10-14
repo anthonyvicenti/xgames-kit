@@ -1,0 +1,77 @@
+{
+ "packVersion": 1,
+ "id": "forge-world",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Forge night ruin pieces",
+ "describe": "Code-made ruin pieces and texel pictures for a moonlit arena: block walls, flagstones, gates, coins, clouds (some drawn over CC0 Poly Haven photos).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/forge-world/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 5,
+   "hues": [
+    "#000000",
+    "#ff8420",
+    "#ffcc50",
+    "#fff4be",
+    "#ce3e10",
+    "#182e20",
+    "#32462c",
+    "#f6c43e",
+    "#0b1616",
+    "#282624",
+    "#b0761e",
+    "#252526"
+   ],
+   "saturation": 0.219,
+   "value": 0.281,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.562
+    },
+    {
+     "hue": "green",
+     "share": 0.133
+    },
+    {
+     "hue": "orange",
+     "share": 0.107
+    },
+    {
+     "hue": "yellow",
+     "share": 0.103
+    },
+    {
+     "hue": "cyan",
+     "share": 0.061
+    }
+   ],
+   "grey": 0.5
+  },
+  "trianglesPerMetre": 1.61,
+  "texelsPerMetre": 32,
+  "texturedShare": 1,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0.082
+  }
+ },
+ "assets": 49,
+ "validators": [
+  "budget",
+  "picture-check"
+ ]
+}

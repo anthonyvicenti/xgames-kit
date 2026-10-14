@@ -1,0 +1,81 @@
+{
+ "packVersion": 1,
+ "id": "xk-pixel-folk",
+ "title": "Pixel folk",
+ "describe": "Villagers for the pixel kind (gf-flat-1): a big head, a short body, five skin tones, hair, clothes, a hat or a beard; six frames (idle, walk1, walk2, air, act, down) in four facings from above and side-on. Drawn by runtimes/three/tools/pixel/folk.mjs.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/xk-pixel-folk/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "owner": "own",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 17,
+   "hues": [
+    "#f7cdb0",
+    "#eeb88f",
+    "#a96b41",
+    "#d49866",
+    "#774729",
+    "#c8582c",
+    "#2a2226",
+    "#22202c",
+    "#7a4a2a",
+    "#a04a6a",
+    "#3a2418",
+    "#e8c060"
+   ],
+   "saturation": 0.401,
+   "value": 0.394,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.281
+    },
+    {
+     "hue": "orange",
+     "share": 0.222
+    },
+    {
+     "hue": "brown",
+     "share": 0.176
+    },
+    {
+     "hue": "pink",
+     "share": 0.066
+    },
+    {
+     "hue": "purple",
+     "share": 0.065
+    },
+    {
+     "hue": "blue",
+     "share": 0.061
+    },
+    {
+     "hue": "red",
+     "share": 0.056
+    }
+   ],
+   "grey": 0.248
+  },
+  "texelsPerMetre": 16,
+  "outline": {
+   "present": true,
+   "share": 0.542
+  }
+ },
+ "assets": 24,
+ "validators": [
+  "flat-judge"
+ ]
+}

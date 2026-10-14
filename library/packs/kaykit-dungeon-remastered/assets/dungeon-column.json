@@ -1,0 +1,109 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-column",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-column.glb",
+ "sha256": "6c90fab9b88480c38198d7ffb4290e54d141cf676e54d0894c5387843cc33cea",
+ "bytes": 51008,
+ "preview": "previews/dungeon-column.png",
+ "from": "column.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round stone column",
+ "tags": [
+  "dungeon",
+  "column",
+  "stone",
+  "ruin"
+ ],
+ "use": {
+  "size": [
+   0.525,
+   1.05,
+   0.525
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.525,
+    1.05,
+    0.525
+   ],
+   "offset": [
+    0,
+    0.525,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 51008,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#6a7377",
+     "#70797e",
+     "#909ca2",
+     "#8a959b",
+     "#6f787c",
+     "#737c81",
+     "#687175",
+     "#6c767a"
+    ],
+    "saturation": 0.062,
+    "value": 0.476,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.57,
+   "texelsPerMetre": 57,
+   "texturedShare": 0.417,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/column.gltf.glb",
+  "sha256": "761adf0fcc1a86ab1c42740b7a8ad340d73982f94257e7892b2c7998f98c304e",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-window-lit",
+ "pack": "forge-town",
+ "file": "town-town-window-lit.png",
+ "sha256": "dd2037bf6b8f7b5d7de7213307a1c84d9c4c2510c63f69ceef8296155a58535a",
+ "bytes": 1554,
+ "preview": "previews/town-town-window-lit.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 24 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a six-pane casement window with lamplight behind a half-drawn curtain, on a stone sill (drawn; it glows: material glow_window)",
+ "tags": [
+  "texture",
+  "town",
+  "window-lit",
+  "window",
+  "lit"
+ ],
+ "use": {
+  "texelsPerMetre": 32.5,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 38
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "26x38 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 26,
+     "height": 38,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 22,
+    "hues": [
+     "#2c221c",
+     "#6a6861",
+     "#cf7b38",
+     "#848279",
+     "#e4903d",
+     "#c87636",
+     "#cb7937",
+     "#c06f34"
+    ],
+    "saturation": 0.539,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.607
+     },
+     {
+      "hue": "brown",
+      "share": 0.294
+     },
+     {
+      "hue": "grey",
+      "share": 0.079
+     }
+    ],
+    "exact": 255,
+    "grey": 0.079
+   },
+   "texelsPerMetre": 32.5,
+   "outline": {
+    "present": false,
+    "share": 0.758
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 24 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

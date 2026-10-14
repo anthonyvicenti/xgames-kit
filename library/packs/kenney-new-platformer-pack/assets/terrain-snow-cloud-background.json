@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-cloud-background",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-cloud-background.png",
+ "sha256": "0eb4a30aca89b0603eb536125bf9fa88b4fecdd337ae508adea751cd41c302d5",
+ "bytes": 4089,
+ "preview": "previews/terrain-snow-cloud-background.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_cloud_background.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow cloud background tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "cloud",
+  "background",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#e5f0ff",
+     "#cfd5da",
+     "#353541",
+     "#a6b2bb",
+     "#ffffff",
+     "#c8dbf5",
+     "#abb6bf"
+    ],
+    "saturation": 0.316,
+    "value": 0.759,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.948
+     },
+     {
+      "hue": "blue",
+      "share": 0.052
+     }
+    ],
+    "exact": 146,
+    "grey": 0.948
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.209
+   }
+  }
+ },
+ "source": {
+  "sha256": "c0db6f2e68107606e5de0c2125b082e597606031924288f79596637d5a946406",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

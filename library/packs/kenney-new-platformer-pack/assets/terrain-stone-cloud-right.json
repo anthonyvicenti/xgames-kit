@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-cloud-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-cloud-right.png",
+ "sha256": "fd405a1348d206541477420f9c61917842f9b1f3622de5467c32188423295496",
+ "bytes": 2101,
+ "preview": "previews/terrain-stone-cloud-right.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_cloud_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone cloud right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "cloud",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 47.9 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 24.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#5e5e6d",
+     "#353541",
+     "#a6b2bb",
+     "#424251",
+     "#cfd5da",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.104,
+    "value": 0.504,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 113,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.798
+   }
+  }
+ },
+ "source": {
+  "sha256": "5affa41d47dafa9139bb2f47117fd7d091015e1111c5697670d330aa50693295",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

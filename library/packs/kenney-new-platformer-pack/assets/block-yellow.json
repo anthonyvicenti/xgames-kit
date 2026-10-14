@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "block-yellow",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-yellow.png",
+ "sha256": "8509bb2c3d78d8b99f7f803bf6723a4c4f53646e94bc6bd24d9423f94c1cabc7",
+ "bytes": 1749,
+ "preview": "previews/block-yellow.png",
+ "from": "Sprites/Tiles/Double/block_yellow.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block yellow tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "yellow",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#faba2d",
+     "#353541",
+     "#ffd751",
+     "#e28f2b",
+     "#343440",
+     "#eb9f2b",
+     "#e8992b",
+     "#e99c2b"
+    ],
+    "saturation": 0.751,
+    "value": 0.501,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.715
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     },
+     {
+      "hue": "yellow",
+      "share": 0.056
+     }
+    ],
+    "exact": 41,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "e2486fc1515506d1605fd58784e86149e9bcdaebf67e73671b20b0886beb1eb9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

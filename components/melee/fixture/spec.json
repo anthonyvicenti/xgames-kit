@@ -1,0 +1,104 @@
+{
+  "specVersion": 2,
+  "title": "Melee Fixture",
+  "hook": "Two players to check the melee mechanic.",
+  "prompt": "mechanic fixture: melee",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "swing",
+    "secondary": "heavy strike",
+    "jump": "dodge"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "most hits",
+    "replay": true
+  },
+  "world": {
+    "template": "arena",
+    "size": "small",
+    "props": [],
+    "notes": ""
+  },
+  "mechanics": [
+    {
+      "id": "melee",
+      "as": "a sword",
+      "params": {}
+    },
+    {
+      "id": "health",
+      "as": "hearts",
+      "params": {
+        "hp": 20,
+        "respawnSeconds": 3
+      }
+    },
+    {
+      "id": "waves",
+      "as": "one slow warrior",
+      "params": {
+        "startCount": 1,
+        "growth": 0,
+        "maxWaves": 1,
+        "firstDelay": 0.5,
+        "types": [
+          {
+            "id": "warrior",
+            "behaviour": "chaser",
+            "hp": 50,
+            "speed": 0.4,
+            "damage": 0,
+            "knock": 0
+          }
+        ]
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Swing at the other player.",
+    "scoring": "+1 per hit",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean kid",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [],
+  "build": [],
+  "accept": [
+    "a swing shows on both screens and hits once"
+  ],
+  "notInV1": [],
+  "content": {
+    "rating": "E"
+  }
+}

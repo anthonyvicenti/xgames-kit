@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "world-portcullis",
+ "pack": "forge-world",
+ "file": "world-portcullis.png",
+ "sha256": "99af343dd849ab79982d88029d430286260bc63d5229de5c6aa55a04bb28b098",
+ "bytes": 345,
+ "preview": "previews/world-portcullis.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "an iron grille: bars, bands and spikes at the foot (drawn; alpha between the bars)",
+ "tags": [
+  "texture",
+  "night",
+  "portcullis",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 40
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "32x40 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 32,
+     "height": 40,
+     "seeThrough": 0.588
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#282624",
+     "#1e1d1c",
+     "#462c1e"
+    ],
+    "saturation": 0.085,
+    "value": 0.145,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.894
+     },
+     {
+      "hue": "brown",
+      "share": 0.106
+     }
+    ],
+    "exact": 3,
+    "grey": 0.894
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

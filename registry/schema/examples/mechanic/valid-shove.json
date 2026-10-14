@@ -1,0 +1,14 @@
+{
+  "id": "shove",
+  "name": "Shove",
+  "describe": "A key or touch button pushes the nearest player in front; a push, never a knock-down.",
+  "examples": ["playful shove"],
+  "params": { "type": "object", "properties": { "force": { "type": "number", "minimum": 1, "maximum": 20, "default": 7.5 } } },
+  "slots": { "templates": [ { "id": "mechanic.shove.force", "label": "Shove strength", "group": "mechanics", "type": "number", "source": { "pointer": "{base}/force" }, "tier": "main" } ] },
+  "events": [],
+  "host": { "owner": "copy", "state": null },
+  "owns": [ { "res": "input.key.KeyF" } ],
+  "fixture": { "players": 2, "missing": "played through the world flow; tests/f-fair.test.mjs" },
+  "impl": { "three": { "path": "components/shove/impl/three/index.js", "state": { "exists": true, "tested": false, "open": true } } },
+  "state": { "exists": true, "tested": false, "open": true }
+}

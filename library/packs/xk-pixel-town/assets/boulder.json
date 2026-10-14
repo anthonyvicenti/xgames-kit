@@ -1,0 +1,80 @@
+{
+ "assetVersion": 1,
+ "id": "boulder",
+ "pack": "xk-pixel-town",
+ "file": "boulder.png",
+ "sha256": "43c70f5441d36815b4c3ed3ec57fcde5252919b6eca212c36418d4704c850325",
+ "bytes": 508,
+ "preview": "previews/boulder.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): boulder.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a big boulder",
+ "tags": [
+  "pixel",
+  "rock",
+  "boulder",
+  "stone"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 28
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 28
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#565260",
+     "#a9a4ae",
+     "#8c8794",
+     "#6f6a78",
+     "#372d41",
+     "#c8c4c8",
+     "#574c5f",
+     "#41364a"
+    ],
+    "saturation": 0.078,
+    "value": 0.47,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 10,
+    "grey": 1
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.621
+   }
+  }
+ },
+ "source": {
+  "sha256": "c9281380b44459c708e32d50b13e85135aff17a855c57536e997ea4baccdc410",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

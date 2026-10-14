@@ -1,0 +1,15 @@
+# A transfer hook for the loot tests only: it counts the transfers it sees in an account it is
+# handed, which proves the hook ran and got its accounts through loot. Never deployed.
+# Built by scripts/fetch-fixtures.sh into tests/fixtures/test_hook.so.
+[package]
+name = "test-hook"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+pinocchio = "=0.9.3"
+
+[workspace]

@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-wall-pillar",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-wall-pillar.glb",
+ "sha256": "fc208fa727e8844e596d845d20b15b60b36da9aadb8c73e20abf58fad55e8363",
+ "bytes": 63928,
+ "preview": "previews/dungeon-wall-pillar.png",
+ "from": "wall_pillar.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone wall section with a pillar",
+ "tags": [
+  "dungeon",
+  "wall",
+  "pillar",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   1.125
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.563
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    1.125
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 540,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 540,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 63928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7f8a8f",
+     "#7b8589",
+     "#4b5256",
+     "#596064",
+     "#4a5155",
+     "#40464a",
+     "#565c60",
+     "#778185"
+    ],
+    "saturation": 0.063,
+    "value": 0.44,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.43,
+   "texelsPerMetre": 31,
+   "texturedShare": 0.789,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_pillar.gltf.glb",
+  "sha256": "f85030386f9f183bbc03a0817a1967a40758f24828295ed2a1c88d4c004eb5eb",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

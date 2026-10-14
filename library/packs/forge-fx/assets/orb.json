@@ -1,0 +1,68 @@
+{
+ "assetVersion": 1,
+ "id": "orb",
+ "pack": "forge-fx",
+ "file": "orb.png",
+ "sha256": "dff630d204f1b59c1fd4958463da1856d18163d0fb8eef71558af117d835e4df",
+ "bytes": 1227,
+ "preview": "previews/orb.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a glowing orb with a soft halo (white; tinted per caster: the green caster orb)",
+ "tags": [
+  "fx",
+  "orb"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0.896
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 1,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

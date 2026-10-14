@@ -1,0 +1,575 @@
+{
+  "id": "station",
+  "name": "Station",
+  "describe": "Interact with a prop: an in-world screen or panel UI, timed tasks, quotas",
+  "examples": [
+    "a desk with a job quota",
+    "a PC the players use to complete orders",
+    "a hold-to-fix control panel"
+  ],
+  "rank": 70,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "stations": {
+        "type": "array",
+        "default": [],
+        "items": {
+          "type": "object"
+        },
+        "description": "Where stations are: [{zone}] or [{at: [x, y, z]}] or [{prop: \"desk\", index: 0}] (the screen goes above that prop), each with an optional title. Empty: one in the middle of the play area"
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "hold",
+          "tap",
+          "stand"
+        ],
+        "default": "hold",
+        "description": "hold: hold the action for taskSeconds; tap: press it `taps` times; stand: stay in range"
+      },
+      "taskSeconds": {
+        "type": "number",
+        "description": "Seconds a hold or stand task takes",
+        "minimum": 0.2,
+        "maximum": 60,
+        "default": 3
+      },
+      "taps": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100,
+        "default": 8,
+        "description": "Presses a tap task takes"
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds before a finished station can be worked again",
+        "minimum": 0,
+        "maximum": 120,
+        "default": 2
+      },
+      "keepProgress": {
+        "type": "boolean",
+        "default": false,
+        "description": "Letting go of a hold keeps the progress made (the same player resumes)"
+      },
+      "range": {
+        "type": "number",
+        "description": "How close a player must be (m)",
+        "minimum": 0.5,
+        "maximum": 8,
+        "default": 2
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "interact",
+          "primary",
+          "secondary"
+        ],
+        "default": "interact",
+        "description": "The input that works a station"
+      },
+      "quota": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 999,
+        "default": 0,
+        "description": "Tasks the whole team must finish (0: no quota); the rules read quota().met"
+      },
+      "quotaLabel": {
+        "type": "string",
+        "default": "Done",
+        "description": "Word shown beside the quota count"
+      },
+      "title": {
+        "type": "string",
+        "default": "Station",
+        "description": "Screen title"
+      },
+      "idleText": {
+        "type": "string",
+        "default": "Press E to start",
+        "description": "Screen text while free"
+      },
+      "busyText": {
+        "type": "string",
+        "default": "In use by {name}",
+        "description": "Screen text while someone else works it ({name})"
+      },
+      "mineText": {
+        "type": "string",
+        "default": "Working... {pct}%",
+        "description": "Screen text while you work it ({pct})"
+      },
+      "doneText": {
+        "type": "string",
+        "default": "Done!",
+        "description": "Screen text after a finished task"
+      },
+      "pointsPerTask": {
+        "type": "number",
+        "description": "Score the player gets for a finished task",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 1
+      },
+      "screenWidth": {
+        "type": "number",
+        "description": "Screen width (m)",
+        "minimum": 0.3,
+        "maximum": 5,
+        "default": 1.4
+      },
+      "screenHeight": {
+        "type": "number",
+        "description": "Screen height (m)",
+        "minimum": 0.2,
+        "maximum": 3,
+        "default": 0.7
+      },
+      "screenY": {
+        "type": "number",
+        "description": "Height of the screen centre above the ground (m)",
+        "minimum": 0.3,
+        "maximum": 5,
+        "default": 1.9
+      },
+      "screenColor": {
+        "type": "string",
+        "default": "#12182b",
+        "description": "Screen background"
+      },
+      "textColor": {
+        "type": "string",
+        "default": "#ffffff",
+        "description": "Screen text colour"
+      },
+      "accent": {
+        "type": "string",
+        "default": "#4be0a8",
+        "description": "Progress bar colour"
+      },
+      "standColor": {
+        "type": "string",
+        "default": "#8a93a8",
+        "description": "Colour of the stand under a screen with no prop"
+      },
+      "stand": {
+        "type": "boolean",
+        "default": true,
+        "description": "Draw a small stand under screens that are not on a prop"
+      },
+      "showPrompt": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show a hint near a station"
+      },
+      "soundStart": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when work starts"
+      },
+      "soundDone": {
+        "type": "string",
+        "default": "coin",
+        "description": "Sound id when a task is finished"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.station.task-seconds",
+        "label": "Seconds a task takes",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/taskSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 60,
+        "constraints": {
+          "min": 0.2,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.station.quota",
+        "label": "Tasks needed (quota)",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/quota"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 58,
+        "constraints": {
+          "min": 0,
+          "max": 999
+        }
+      },
+      {
+        "id": "mechanic.station.title",
+        "label": "Screen title",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/title"
+        },
+        "tier": "main",
+        "facet": "text",
+        "rank": 54,
+        "constraints": {
+          "maxLength": 30
+        }
+      },
+      {
+        "id": "mechanic.station.screen-color",
+        "label": "Screen colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/screenColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 34
+      },
+      {
+        "id": "mechanic.station.accent",
+        "label": "Progress bar colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/accent"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 32
+      },
+      {
+        "id": "mechanic.station.text-color",
+        "label": "Screen text colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/textColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 20
+      },
+      {
+        "id": "mechanic.station.stand-color",
+        "label": "Stand colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/standColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 10
+      },
+      {
+        "id": "mechanic.station.cooldown",
+        "label": "Cooldown after a task",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 120,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.station.taps",
+        "label": "Presses in a tap task",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/taps"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.station.range",
+        "label": "Use distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/range"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.5,
+          "max": 8,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.station.points-per-task",
+        "label": "Score per task",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/pointsPerTask"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.station.idle-text",
+        "label": "Free text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/idleText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.station.busy-text",
+        "label": "Busy text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/busyText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.station.mine-text",
+        "label": "Working text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/mineText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.station.done-text",
+        "label": "Done text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/doneText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.station.quota-label",
+        "label": "Quota word",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/quotaLabel"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 20
+        }
+      },
+      {
+        "id": "mechanic.station.screen-width",
+        "label": "Screen width",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/screenWidth"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.3,
+          "max": 5,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.station.screen-height",
+        "label": "Screen height",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/screenHeight"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.2,
+          "max": 3,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.station.screen-y",
+        "label": "Screen height above ground",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/screenY"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.3,
+          "max": 5,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.station.sound-done",
+        "label": "Task done sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundDone"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onComplete",
+      "on": "host",
+      "args": "{ station, player, quota: { done, needed, met } }",
+      "when": "a task was finished"
+    },
+    {
+      "name": "onStart",
+      "on": "host",
+      "args": "{ station, player }",
+      "when": "a player began working a station"
+    },
+    {
+      "name": "onCancel",
+      "on": "host",
+      "args": "{ station, player }",
+      "when": "a player let go before it was done"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns each station's state and the quota; a copy sends its hold or taps",
+    "state": "station",
+    "fields": {
+      "s": "[[state, workerSeat, progress %, cooldown × 10]] per station",
+      "q": "[done, needed] the quota",
+      "x": "screen text the rules set with station.show"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "interact works a station in range (params.action)"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "stations"
+  ],
+  "bots": "only when the rules send them with station.use(p, i, true)",
+  "notes": {
+    "lines": [
+      "A station is a screen in the world (text and a bar the kit draws); hold, tap or stand in range works it, with the HUD's prompt.",
+      "A finished task already scores pointsPerTask and counts toward quota; station.show(i, { title, lines, bar }) puts your own text on a screen.",
+      "Place stations by zone, position or prop: params.stations is [{ zone }], [{ at: [x, y, z] }] or [{ prop, index }]."
+    ],
+    "readme": "components/station/README.md",
+    "stub": {
+      "as": "station",
+      "worked": "station.onComplete(({ quota }) => { if (quota.met) ctx.round.end('quota met', ctx.players.list().map(p => p.id)); });",
+      "traps": [
+        "adding score in onComplete counts every task twice (pointsPerTask is already added): set pointsPerTask to 0 first",
+        "bots work a station only when the rules send them: in bot(ctx, p) walk to it and call station.use(p, i, true)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/station/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/station/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-station.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-station.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

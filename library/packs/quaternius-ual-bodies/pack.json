@@ -1,0 +1,78 @@
+{
+ "packVersion": 1,
+ "id": "quaternius-ual-bodies",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Quaternius and UAL bodies",
+ "describe": "Quaternius characters (Poly Pizza pages) and the Universal Animation Library mannequin, normalised onto gf-humanoid-1, each pinned by its page and hash.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Quaternius",
+  "url": "https://quaternius.com",
+  "file": "library/packs/quaternius-ual-bodies/LICENSE.txt"
+ },
+ "source": {
+  "kind": "collection",
+  "page": "https://poly.pizza/u/Quaternius",
+  "rebuild": "each asset pins its page and download; the old kit normalised bodies onto gf-humanoid-1 (gf-three tools optimize.mjs --normalize)"
+ },
+ "validators": [
+  "rig-check"
+ ],
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 4,
+   "hues": [
+    "#412914",
+    "#e7aa3a",
+    "#f6c481",
+    "#ba9c79",
+    "#779851",
+    "#2b2926",
+    "#cead86",
+    "#68220c",
+    "#8b7547",
+    "#312e2b",
+    "#93542b",
+    "#383838"
+   ],
+   "saturation": 0.334,
+   "value": 0.349,
+   "families": [
+    {
+     "hue": "brown",
+     "share": 0.346
+    },
+    {
+     "hue": "grey",
+     "share": 0.279
+    },
+    {
+     "hue": "orange",
+     "share": 0.243
+    },
+    {
+     "hue": "green",
+     "share": 0.075
+    }
+   ],
+   "grey": 0.241
+  },
+  "trianglesPerMetre": 14.9,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  },
+  "proportions": "bodies: median 5.37 heads tall",
+  "body": {
+   "headsTall": 5.37,
+   "hipShare": 0.482
+  }
+ },
+ "assets": 14
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "backgroundcolorfall",
+ "pack": "kenney-background-elements-remastered",
+ "file": "backgroundcolorfall.png",
+ "sha256": "03e0a896e24723a76fb6313a314bf8c40f578d003bba1f7dd538da2b7ca2ef0a",
+ "bytes": 40056,
+ "preview": "previews/backgroundcolorfall.png",
+ "from": "Backgrounds/backgroundColorFall.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "backgroundcolorfall",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "backgroundcolorfall",
+  "backgrounds"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x1024: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#cfeffc",
+     "#f78d3b",
+     "#d26b4c",
+     "#e58032",
+     "#def5ff",
+     "#ff913c",
+     "#c26246",
+     "#f2fafe"
+    ],
+    "saturation": 0.822,
+    "value": 0.741,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.319
+     },
+     {
+      "hue": "cyan",
+      "share": 0.312
+     },
+     {
+      "hue": "red",
+      "share": 0.201
+     },
+     {
+      "hue": "grey",
+      "share": 0.168
+     }
+    ],
+    "exact": 250,
+    "grey": 0.168
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "b4df338e1a37ed4056ccc19fa59a9c5de9d9bb03f9e97bebf35a6397986685a3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0076",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0076.png",
+ "sha256": "64f551b9fa228b4b3232be3b1d1da0df45b32c0dbb61233d678de1ae2e090432",
+ "bytes": 212,
+ "preview": "previews/tile-0076.png",
+ "from": "Tiles/tile_0076.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the left end of a row of iron bars (a prison cell front or railing)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "bars",
+  "iron",
+  "railing",
+  "fence",
+  "prison",
+  "cell",
+  "end",
+  "end-west"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#262b44"
+    ],
+    "saturation": 0.253,
+    "value": 0.392,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.579
+     },
+     {
+      "hue": "blue",
+      "share": 0.421
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.852
+   }
+  }
+ },
+ "source": {
+  "sha256": "349c56fdf06e20fb6a1ee98e2dea1e70833f4f0cf3a96ace0660d32ee0496631",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

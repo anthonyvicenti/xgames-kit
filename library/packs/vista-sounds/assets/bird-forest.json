@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "bird-forest",
+ "pack": "vista-sounds",
+ "file": "bird-forest.ogg",
+ "sha256": "a5368bcbbaae5b7521322f225cab99f644abab975c6c5db1a17b9232ada6f032",
+ "bytes": 159596,
+ "preview": "previews/bird-forest.png",
+ "from": "13 songbird calls / short songs (high-passed 1.1 kHz); sung in bouts from perches in the trees",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Songbird",
+ "tags": [
+  "coast",
+  "calm",
+  "bird",
+  "forest"
+ ],
+ "use": {
+  "seconds": 19.07,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 33% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -5.1,
+     "samplePeakDb": -0.7,
+     "truePeakDb": -0.7,
+     "hfRatio": 0.331
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 19.07,
+    "peakDbfs": -0.7,
+    "soundMaxLufs": -5.1
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/coalcon/sounds/636071/",
+  "author": "coalcon, coalcon, dubminister"
+ }
+}

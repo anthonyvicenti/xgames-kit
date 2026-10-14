@@ -1,0 +1,108 @@
+{
+  "specVersion": 2,
+  "title": "Levels Fixture",
+  "hook": "Two players to check the levels mechanic.",
+  "prompt": "mechanic fixture: levels",
+  "runtime": "three",
+  "profile": "scenic-3d",
+  "loop": "run",
+  "kind": "scenic",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "follow",
+  "controls": {
+    "primary": "swing"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Clear both isles.",
+    "loseBy": "Everyone is down at once.",
+    "replay": true
+  },
+  "world": {
+    "template": "isles",
+    "size": "small"
+  },
+  "mechanics": [
+    {
+      "id": "waves",
+      "as": "one warrior an isle",
+      "params": {
+        "firstDelay": 0.5,
+        "types": [
+          {
+            "id": "warrior",
+            "behaviour": "chaser",
+            "hp": 3,
+            "speed": 0.3,
+            "damage": 0,
+            "knock": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "levels",
+      "as": "two isles and a portal",
+      "params": {
+        "count": 2,
+        "wavesPerLevel": 1,
+        "startCount": 1,
+        "levelGrowth": 0,
+        "countPerPlayer": 0,
+        "bossLevel": "none",
+        "chests": 0,
+        "upgrades": false,
+        "portalSeconds": 30
+      }
+    },
+    {
+      "id": "health",
+      "as": "hearts",
+      "params": {
+        "hp": 5
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Clear each isle and step into the portal together.",
+    "scoring": "none",
+    "params": {}
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "an adventurer",
+      "body": {
+        "from": "library",
+        "asset": "quaternius-ual-bodies/quaternius-adventurer-woman"
+      }
+    }
+  ],
+  "look": {
+    "preset": "dusk-isle",
+    "time": "dusk"
+  },
+  "sounds": [],
+  "build": [],
+  "accept": [
+    "both players move to the next isle together"
+  ],
+  "notInV1": [],
+  "content": {
+    "rating": "E"
+  }
+}

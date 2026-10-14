@@ -1,0 +1,105 @@
+{
+  "id": "example-engine",
+  "name": "An engine not built yet",
+  "version": "0.0.0",
+  "describe": "A runtime that exists only as a plan: nothing is open.",
+  "state": {
+    "exists": false,
+    "tested": false,
+    "open": false,
+    "note": "planned"
+  },
+  "limits": {
+    "graphics": {
+      "apis": [
+        "webgl2"
+      ]
+    },
+    "dimension": "2d",
+    "cameraRigs": [
+      "side"
+    ],
+    "players": {
+      "min": 1,
+      "max": 4
+    }
+  },
+  "toolchain": {
+    "game": [
+      {
+        "name": "example-cli",
+        "version": "1.0.0",
+        "install": "tools/install.sh"
+      }
+    ],
+    "build": []
+  },
+  "core": {
+    "kind": "engine-export",
+    "licences": [
+      "MIT"
+    ]
+  },
+  "play": {
+    "by": [
+      "scenes"
+    ]
+  },
+  "admission": {
+    "create": {
+      "meets": "no",
+      "gaps": [
+        "no create yet"
+      ]
+    },
+    "slots": {
+      "meets": "no",
+      "gaps": [
+        "no slot binding yet"
+      ]
+    },
+    "multiplayer": {
+      "meets": "no",
+      "gaps": [
+        "no gf/mp bridge yet"
+      ]
+    },
+    "hostBridge": {
+      "meets": "no",
+      "gaps": [
+        "no host bridge yet"
+      ]
+    },
+    "observation": {
+      "meets": "no",
+      "gaps": [
+        "no window.__game yet"
+      ]
+    },
+    "measures": {
+      "meets": "no",
+      "gaps": [
+        "no measures yet"
+      ]
+    },
+    "examples": {
+      "meets": "no",
+      "gaps": [
+        "no examples yet"
+      ]
+    },
+    "pinned": {
+      "meets": "no",
+      "gaps": [
+        "nothing pinned yet"
+      ]
+    },
+    "toolchainOnDemand": {
+      "meets": "yes",
+      "how": "installed only when chosen"
+    }
+  },
+  "rank": 9,
+  "defaultKind": "pixel",
+  "says": "planned: nothing runs yet"
+}

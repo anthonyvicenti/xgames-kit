@@ -1,0 +1,68 @@
+{
+ "packVersion": 1,
+ "id": "forge-fx",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Forge effect pictures",
+ "describe": "Effect sprites drawn from code: blood mist, bone chips, sparks, embers, smoke.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/forge-fx/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#ffffff",
+    "#9e8c75",
+    "#ff9926",
+    "#ff8c1f",
+    "#f5f5f5",
+    "#f6f6f6",
+    "#f4f4f4",
+    "#8b0808",
+    "#ffefa5",
+    "#fffef8",
+    "#8a0808",
+    "#ffac5d"
+   ],
+   "saturation": 0.89,
+   "value": 0.683,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.518
+    },
+    {
+     "hue": "orange",
+     "share": 0.296
+    },
+    {
+     "hue": "red",
+     "share": 0.1
+    },
+    {
+     "hue": "yellow",
+     "share": 0.086
+    }
+   ],
+   "grey": 0.81
+  },
+  "outline": {
+   "present": false,
+   "share": 0.1
+  }
+ },
+ "assets": 10,
+ "validators": [
+  "picture-check"
+ ]
+}

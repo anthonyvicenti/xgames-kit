@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "palms",
+ "pack": "vista-sounds",
+ "file": "palms.ogg",
+ "sha256": "33c89a41d0e0592cb2b6fd5592fab4e7333b090dace7fd755334cc145ef51820",
+ "bytes": 357078,
+ "preview": "previews/palms.png",
+ "from": "wind in palm trees (+ day insects) — loop, gust-modulated",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Wind in the palms (bed)",
+ "tags": [
+  "coast",
+  "calm",
+  "palms",
+  "loop"
+ ],
+ "use": {
+  "seconds": 50,
+  "loop": true
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 46% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -17.8,
+     "samplePeakDb": -2.9,
+     "truePeakDb": -2.5,
+     "hfRatio": 0.464
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 50,
+    "peakDbfs": -2.9,
+    "soundMaxLufs": -17.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/felix.blume/sounds/384550/",
+  "author": "felix.blume"
+ }
+}

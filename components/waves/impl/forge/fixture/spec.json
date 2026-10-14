@@ -1,0 +1,103 @@
+{
+  "specVersion": 2,
+  "title": "Waves Fixture (forge)",
+  "hook": "Two players to check the waves mechanic on forge.",
+  "prompt": "mechanic fixture: waves on forge",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Nobody wins: a fixture",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "small",
+    "seed": 11
+  },
+  "mechanics": [
+    {
+      "id": "waves",
+      "params": {
+        "startCount": 2,
+        "growth": 1,
+        "maxWaves": 2,
+        "firstDelay": 1,
+        "restSeconds": 2,
+        "spawnEvery": 0.4,
+        "maxAlive": 6,
+        "killPoints": 1
+      }
+    }
+  ],
+  "tables": {
+    "player": {
+      "health": 400
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Sidearm"
+      },
+      {
+        "id": "hatchet",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 2,
+        "start": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Grunt",
+        "archetype": "chaser",
+        "health": 30
+      }
+    ]
+  },
+  "rules": {
+    "summary": "Two waves made from the params: two grunts, then three; each kill a point to whoever made it."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "accept": [
+    "the plan is the params' on both screens",
+    "wave 1 with two enemies on both",
+    "kills count and score on both",
+    "both waves cleared on both"
+  ]
+}

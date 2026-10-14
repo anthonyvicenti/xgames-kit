@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0114",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0114.png",
+ "sha256": "4546970c1cb317ecd400884256c8f8b56a0347c65ecc1014357d55dd9045b960",
+ "bytes": 311,
+ "preview": "previews/tile-0114.png",
+ "from": "Tiles/tile_0114.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the top-right of a plain stone archway (no portcullis)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "castle",
+  "arch",
+  "archway",
+  "gateway",
+  "stone",
+  "entrance",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c"
+    ],
+    "saturation": 0.25,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.345
+   }
+  }
+ },
+ "source": {
+  "sha256": "3d89b0b1ebed238aecfa84a251d9eb1bab87a5ae34fac5e91d788176ed523f41",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

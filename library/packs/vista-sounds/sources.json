@@ -1,0 +1,1302 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "bail-click": {
+   "origin": "gf-vista core public/audio/bail_click.ogg",
+   "use": "4 small sprung-metal clicks (the bail opening / snapping shut)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.086,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -23.4,
+     "activeLufs": -25.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 68% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -23.4,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.5,
+      "hfRatio": 0.682
+     }
+    }
+   ]
+  },
+  "big-splash": {
+   "origin": "gf-vista core public/audio/big_splash.ogg",
+   "use": "2 large splashes (whale breach / re-entry / flukes, pitched down)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 4.165,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -13.2,
+     "activeLufs": -19.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.2,
+      "samplePeakDb": -1,
+      "truePeakDb": -0.9,
+      "hfRatio": 0.125
+     }
+    }
+   ]
+  },
+  "bird-dove": {
+   "origin": "gf-vista core public/audio/bird_dove.ogg",
+   "use": "5 dove coo phrases",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 16.58,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -5.1,
+     "activeLufs": -9.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -5.1,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "bird-forest": {
+   "origin": "gf-vista core public/audio/bird_forest.ogg",
+   "use": "13 songbird calls / short songs (high-passed 1.1 kHz); sung in bouts from perches in the trees",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 19.07,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -5.1,
+     "activeLufs": -13.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 33% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -5.1,
+      "samplePeakDb": -0.7,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.331
+     }
+    }
+   ]
+  },
+  "birds-dawn": {
+   "origin": "gf-vista core public/audio/birds_dawn.ogg",
+   "use": "dawn chorus (Waikoloa, Hawaii, morning) — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 44,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -12.2,
+     "soundMaxLufs": -19,
+     "activeLufs": -23
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -19,
+      "samplePeakDb": -12.2,
+      "truePeakDb": -12.1,
+      "hfRatio": 0.184
+     }
+    }
+   ]
+  },
+  "boat-engine": {
+   "origin": "gf-vista core public/audio/boat_engine.ogg",
+   "use": "Volvo Penta MD22 marine diesel — loop, pitched with rpm",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 45,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -6.2,
+     "soundMaxLufs": -21.7,
+     "activeLufs": -23
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -21.7,
+      "samplePeakDb": -6.2,
+      "truePeakDb": -6.2,
+      "hfRatio": 0.022
+     }
+    }
+   ]
+  },
+  "boat-lap": {
+   "origin": "gf-vista core public/audio/boat_lap.ogg",
+   "use": "water lapping a fibreglass hull — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 38,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -15.2,
+     "activeLufs": -25.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.2,
+      "samplePeakDb": -0.7,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.01
+     }
+    }
+   ]
+  },
+  "boat-rush": {
+   "origin": "gf-vista core public/audio/boat_rush.ogg",
+   "use": "bow wave / water past the hull — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 45,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -6.5,
+     "soundMaxLufs": -17.8,
+     "activeLufs": -23
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -17.8,
+      "samplePeakDb": -6.5,
+      "truePeakDb": -6.4,
+      "hfRatio": 0.185
+     }
+    }
+   ]
+  },
+  "coins": {
+   "origin": "gf-vista core public/audio/coins.ogg",
+   "use": "coins dropped in a bowl (selling fish)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.784,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.4,
+     "soundMaxLufs": -13.7,
+     "activeLufs": -18.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 97% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -13.7,
+      "samplePeakDb": -1.4,
+      "truePeakDb": -1.4,
+      "hfRatio": 0.973
+     }
+    }
+   ]
+  },
+  "crickets": {
+   "origin": "gf-vista core public/audio/crickets.ogg",
+   "use": "night crickets — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 45,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -13.7,
+     "soundMaxLufs": -21.7,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 35% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -21.7,
+      "samplePeakDb": -13.7,
+      "truePeakDb": -13.7,
+      "hfRatio": 0.349
+     }
+    }
+   ]
+  },
+  "emerge": {
+   "origin": "gf-vista core public/audio/emerge.ogg",
+   "use": "water settling / dripping (short)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.084,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -17.2,
+     "activeLufs": -19.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -17.2,
+      "samplePeakDb": -0.7,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.176
+     }
+    }
+   ]
+  },
+  "fish-flop": {
+   "origin": "gf-vista core public/audio/fish_flop.ogg",
+   "use": "landed fish flapping / flopping",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 2.706,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -12.8,
+     "activeLufs": -21.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.8,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0.04
+     }
+    }
+   ]
+  },
+  "fish-splash": {
+   "origin": "gf-vista core public/audio/fish_splash.ogg",
+   "use": "5 fish splashes / thrashing at the surface",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 4.3,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -11.4,
+     "activeLufs": -17.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11.4,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1,
+      "hfRatio": 0.032
+     }
+    }
+   ]
+  },
+  "gull": {
+   "origin": "gf-vista core public/audio/gull.ogg",
+   "use": "6 gull calls",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 6.574,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -6.6,
+     "activeLufs": -15.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -6.6,
+      "samplePeakDb": -0.7,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.012
+     }
+    }
+   ]
+  },
+  "hull-slap": {
+   "origin": "gf-vista core public/audio/hull_slap.ogg",
+   "use": "5 water knocks on the hull",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 3.127,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -11,
+     "activeLufs": -18.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.006
+     }
+    }
+   ]
+  },
+  "line-out": {
+   "origin": "gf-vista core public/audio/line_out.ogg",
+   "use": "line paying out off the reel during a cast",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.824,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.2,
+     "soundMaxLufs": -11,
+     "activeLufs": -14.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11,
+      "samplePeakDb": -1.2,
+      "truePeakDb": -1.2,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "line-snap": {
+   "origin": "gf-vista core public/audio/line_snap.ogg",
+   "use": "4 snaps (strings breaking under tension, used for the line parting)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 2.486,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -12.2,
+     "activeLufs": -18.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "true peak 0.3 dBTP is over 0",
+      "harsh: 44% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -12.2,
+      "samplePeakDb": -0.9,
+      "truePeakDb": 0.3,
+      "hfRatio": 0.436
+     }
+    }
+   ]
+  },
+  "line-strain": {
+   "origin": "gf-vista core public/audio/line_strain.ogg",
+   "use": "nylon line under strain (creak near the breaking point) — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 0.95,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -21.8,
+     "activeLufs": -24.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 58% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -21.8,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.582
+     }
+    }
+   ]
+  },
+  "palms": {
+   "origin": "gf-vista core public/audio/palms.ogg",
+   "use": "wind in palm trees (+ day insects) — loop, gust-modulated",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 50,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -2.9,
+     "soundMaxLufs": -17.8,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 46% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -17.8,
+      "samplePeakDb": -2.9,
+      "truePeakDb": -2.5,
+      "hfRatio": 0.464
+     }
+    }
+   ]
+  },
+  "pier-lap": {
+   "origin": "gf-vista core public/audio/pier_lap.ogg",
+   "use": "water lapping a dock — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 38,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1.1,
+     "soundMaxLufs": -18.3,
+     "activeLufs": -28.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -18.3,
+      "samplePeakDb": -1.1,
+      "truePeakDb": -1.1,
+      "hfRatio": 0.005
+     }
+    }
+   ]
+  },
+  "plop": {
+   "origin": "gf-vista core public/audio/plop.ogg",
+   "use": "2 bobber / sinker landings",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.148,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -14.8,
+     "activeLufs": -20.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.8,
+      "samplePeakDb": -1,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.15
+     }
+    }
+   ]
+  },
+  "reel-drag": {
+   "origin": "gf-vista core public/audio/reel_drag.ogg",
+   "use": "reel ratchet screaming as line is pulled off (a fish running against the drag) — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 3.2,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -8.5,
+     "soundMaxLufs": -21.4,
+     "activeLufs": -23.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 96% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -21.4,
+      "samplePeakDb": -8.5,
+      "truePeakDb": -8.5,
+      "hfRatio": 0.956
+     }
+    }
+   ]
+  },
+  "reel-wind": {
+   "origin": "gf-vista core public/audio/reel_wind.ogg",
+   "use": "spinning reel cranked steadily (gear ticking) — loop, rate follows the crank",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 6.2,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.9,
+     "soundMaxLufs": -18.7,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 91% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -18.7,
+      "samplePeakDb": -0.9,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.905
+     }
+    }
+   ]
+  },
+  "rod-swish": {
+   "origin": "gf-vista core public/audio/rod_swish.ogg",
+   "use": "5 rod swishes (the cast)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 2.981,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.6,
+     "soundMaxLufs": -12.1,
+     "activeLufs": -17.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 62% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -12.1,
+      "samplePeakDb": -0.6,
+      "truePeakDb": -0.4,
+      "hfRatio": 0.621
+     }
+    }
+   ]
+  },
+  "splash": {
+   "origin": "gf-vista core public/audio/splash.ogg",
+   "use": "4 splashes (body into water)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 8.35,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.4,
+     "soundMaxLufs": -12.6,
+     "activeLufs": -20.7
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.6,
+      "samplePeakDb": -0.4,
+      "truePeakDb": -0.4,
+      "hfRatio": 0.069
+     }
+    }
+   ]
+  },
+  "step-grass": {
+   "origin": "gf-vista core public/audio/step_grass.ogg",
+   "use": "5 steps, grass",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.945,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -13.7,
+     "activeLufs": -18.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 28% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -13.7,
+      "samplePeakDb": -1,
+      "truePeakDb": -0.9,
+      "hfRatio": 0.283
+     }
+    }
+   ]
+  },
+  "step-rock": {
+   "origin": "gf-vista core public/audio/step_rock.ogg",
+   "use": "5 steps, stone",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 3.02,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -18.7,
+     "activeLufs": -21.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -18.7,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.003
+     }
+    }
+   ]
+  },
+  "step-sand": {
+   "origin": "gf-vista core public/audio/step_sand.ogg",
+   "use": "5 steps, soft loose dry sand (foley, no surf)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 2.182,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -16.6,
+     "activeLufs": -22.4
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -16.6,
+      "samplePeakDb": -1,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.046
+     }
+    }
+   ]
+  },
+  "step-water": {
+   "origin": "gf-vista core public/audio/step_water.ogg",
+   "use": "5 wading swishes (slowest-attack picks)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 4.16,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -13.2,
+     "activeLufs": -18.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.2,
+      "samplePeakDb": -0.7,
+      "truePeakDb": -0.7,
+      "hfRatio": 0.065
+     }
+    }
+   ]
+  },
+  "step-wetsand": {
+   "origin": "gf-vista core public/audio/step_wetsand.ogg",
+   "use": "5 steps, wet coarse sand (close)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.74,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -15.3,
+     "activeLufs": -19.5
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -15.3,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.076
+     }
+    }
+   ]
+  },
+  "step-wood": {
+   "origin": "gf-vista core public/audio/step_wood.ogg",
+   "use": "5 steps, hollow wood",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 2.624,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.8,
+     "soundMaxLufs": -14.7,
+     "activeLufs": -19.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.7,
+      "samplePeakDb": -0.8,
+      "truePeakDb": -0.8,
+      "hfRatio": 0.001
+     }
+    }
+   ]
+  },
+  "submerge": {
+   "origin": "gf-vista core public/audio/submerge.ogg",
+   "use": "2 short underwater water-rushes (hydrophone)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 1.818,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -20.6,
+     "activeLufs": -26.6
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -20.6,
+      "samplePeakDb": -1,
+      "truePeakDb": -0.9,
+      "hfRatio": 0.008
+     }
+    }
+   ]
+  },
+  "surf-backwash": {
+   "origin": "gf-vista core public/audio/surf_backwash.ogg",
+   "use": "6 backwash drains (sand fizz), close mic",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 15.144,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.7,
+     "soundMaxLufs": -11.1,
+     "activeLufs": -19.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11.1,
+      "samplePeakDb": -0.7,
+      "truePeakDb": 0,
+      "hfRatio": 0.247
+     }
+    }
+   ]
+  },
+  "surf-crash": {
+   "origin": "gf-vista core public/audio/surf_crash.ogg",
+   "use": "7 breaking waves (crash / thump) — sand beach + rough shore; played per wave at its break point",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 18.033,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.4,
+     "soundMaxLufs": -12.3,
+     "activeLufs": -15.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.3,
+      "samplePeakDb": -0.4,
+      "truePeakDb": -0.4,
+      "hfRatio": 0.029
+     }
+    }
+   ]
+  },
+  "surf-far": {
+   "origin": "gf-vista core public/audio/surf_far.ogg",
+   "use": "distant surf roar (cliff top) — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 52,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -7.4,
+     "soundMaxLufs": -19.4,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -19.4,
+      "samplePeakDb": -7.4,
+      "truePeakDb": -7.4,
+      "hfRatio": 0.005
+     }
+    }
+   ]
+  },
+  "surf-wash": {
+   "origin": "gf-vista core public/audio/surf_wash.ogg",
+   "use": "6 uprushes (swash running up the sand), close mic",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 9.954,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.6,
+     "soundMaxLufs": -10.5,
+     "activeLufs": -17.3
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "true peak 0.4 dBTP is over 0"
+     ],
+     "facts": {
+      "soundMaxLufs": -10.5,
+      "samplePeakDb": -0.6,
+      "truePeakDb": 0.4,
+      "hfRatio": 0.191
+     }
+    }
+   ]
+  },
+  "swim": {
+   "origin": "gf-vista core public/audio/swim.ogg",
+   "use": "4 surface swim strokes",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 3.137,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.1,
+     "soundMaxLufs": -12.1,
+     "activeLufs": -20.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -12.1,
+      "samplePeakDb": -0.1,
+      "truePeakDb": -0.1,
+      "hfRatio": 0.167
+     }
+    }
+   ]
+  },
+  "tern": {
+   "origin": "gf-vista core public/audio/tern.ogg",
+   "use": "6 common tern calls (high-passed 2 kHz)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 11.305,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": 0,
+     "soundMaxLufs": -6.3,
+     "activeLufs": -13.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 42% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -6.3,
+      "samplePeakDb": 0,
+      "truePeakDb": 0,
+      "hfRatio": 0.422
+     }
+    }
+   ]
+  },
+  "under-reef": {
+   "origin": "gf-vista core public/audio/under_reef.ogg",
+   "use": "hydrophone in a cove: snapping-shrimp crackle, low rumble — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 50,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -5.4,
+     "soundMaxLufs": -17.8,
+     "activeLufs": -23.1
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "harsh: 30% of its energy is over 4 kHz"
+     ],
+     "facts": {
+      "soundMaxLufs": -17.8,
+      "samplePeakDb": -5.4,
+      "truePeakDb": -5.4,
+      "hfRatio": 0.302
+     }
+    }
+   ]
+  },
+  "uw-swim": {
+   "origin": "gf-vista core public/audio/uw_swim.ogg",
+   "use": "4 underwater hand/arm movements (hydrophone)",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 3.773,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -0.6,
+     "soundMaxLufs": -13.4,
+     "activeLufs": -21.2
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -13.4,
+      "samplePeakDb": -0.6,
+      "truePeakDb": -0.6,
+      "hfRatio": 0.007
+     }
+    }
+   ]
+  },
+  "whale-blow": {
+   "origin": "gf-vista core public/audio/whale_blow.ogg",
+   "use": "3 cetacean breaths (explosive exhale + inhale), played pitched down as the humpback's blow",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 5.173,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -1,
+     "soundMaxLufs": -11.6,
+     "activeLufs": -16.8
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -11.6,
+      "samplePeakDb": -1,
+      "truePeakDb": -1,
+      "hfRatio": 0.023
+     }
+    }
+   ]
+  },
+  "whale-song": {
+   "origin": "gf-vista core public/audio/whale_song.ogg",
+   "use": "humpback whale song, recorded diving (French Polynesia), low-passed 2.6 kHz (divers' regulator hiss) — loop",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 50,
+     "sampleRate": 48000,
+     "channels": 1,
+     "peakDbfs": -4.3,
+     "soundMaxLufs": -14.1,
+     "activeLufs": -22.9
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -14.1,
+      "samplePeakDb": -4.3,
+      "truePeakDb": -4.3,
+      "hfRatio": 0
+     }
+    }
+   ]
+  },
+  "wind": {
+   "origin": "gf-vista core public/audio/wind.ogg",
+   "use": "coastal wind through bushes — loop, gust-modulated",
+   "signature": {
+    "version": 1,
+    "sound": {
+     "seconds": 60,
+     "sampleRate": 48000,
+     "channels": 2,
+     "peakDbfs": -9.4,
+     "soundMaxLufs": -17.9,
+     "activeLufs": -23
+    }
+   },
+   "validated": [
+    {
+     "by": "sound-gate",
+     "version": "v5",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "soundMaxLufs": -17.9,
+      "samplePeakDb": -9.4,
+      "hfRatio": 0.031
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 43,
+   "outlineShare": 0
+  },
+  "licenceText": "Every file is a Freesound recording released under CC0 1.0, excerpted, trimmed, looped and normalised by the core's build script (loops about -23 LUFS, one-shots peak -1 dBFS)."
+ }
+}

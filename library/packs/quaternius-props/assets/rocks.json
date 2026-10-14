@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "rocks",
+ "pack": "quaternius-props",
+ "file": "rocks.glb",
+ "sha256": "553d6bf2e6f4d4dc232da726609025943aae23c15fb3a87f74fcb41d2826add3",
+ "bytes": 10916,
+ "preview": "previews/rocks.png",
+ "from": "https://poly.pizza/m/RtLRqYjfMs; ×2.472 to metres (1.4 m tall), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cluster of grey rocks (Quaternius)",
+ "tags": [
+  "ruins",
+  "rocks"
+ ],
+ "use": {
+  "size": [
+   1.53,
+   1.4,
+   1.725
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.765,
+   0,
+   -0.862
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.53,
+    1.4,
+    1.725
+   ],
+   "offset": [
+    0,
+    0.7,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 632,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 632,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 10916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#888880"
+    ],
+    "saturation": 0.033,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 8.54,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/RtLRqYjfMs",
+  "download": "https://static.poly.pizza/87d3dfd2-de47-4b03-b9f1-4c84c2a605b0.glb",
+  "sha256": "f515dce62fda16b1a265ce511d284e95b46443876a234f40896958d7e68d4ecd",
+  "retrieved": "2026-10-09",
+  "modified": "×2.472 to metres (1.4 m tall), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Quaternius"
+ }
+}

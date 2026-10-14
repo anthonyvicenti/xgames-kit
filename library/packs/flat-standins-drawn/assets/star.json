@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "star",
+ "pack": "flat-standins-drawn",
+ "file": "star.png",
+ "sha256": "317109f63644d60c3f07cf381ed081fa080221b23aa871bbc321b0aad3ab6360",
+ "bytes": 2213,
+ "preview": "previews/star.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn star",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "star"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ffd23f",
+     "#ffe680",
+     "#2a2440",
+     "#ffffff",
+     "#715e40",
+     "#b8983f",
+     "#423740",
+     "#e7bf3f"
+    ],
+    "saturation": 0.787,
+    "value": 0.555,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.73
+     },
+     {
+      "hue": "purple",
+      "share": 0.221
+     },
+     {
+      "hue": "grey",
+      "share": 0.032
+     }
+    ],
+    "exact": 41,
+    "grey": 0.032
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

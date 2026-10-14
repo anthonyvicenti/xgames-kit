@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "hillslarge",
+ "pack": "kenney-background-elements-remastered",
+ "file": "hillslarge.png",
+ "sha256": "b504b6864fc9b938df42d5255f3810701d0bed59460b298a6c667f59779843a2",
+ "bytes": 10804,
+ "preview": "previews/hillslarge.png",
+ "from": "Backgrounds/Elements/hillsLarge.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "hillslarge",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "hillslarge",
+  "backgrounds",
+  "elements"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x400: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 400,
+     "seeThrough": 0.247
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#b7e7fa",
+     "#c9efff",
+     "#c8efff",
+     "#b8e7fa",
+     "#c7eefe",
+     "#bbe9fb",
+     "#bae8fa",
+     "#c5edfe"
+    ],
+    "saturation": 0.875,
+    "value": 0.851,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 28,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "257775025ee1ecc9a0c2084b053e96c7e7b7a6ed13330a57ccbfe7a390ae755a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

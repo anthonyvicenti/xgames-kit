@@ -1,0 +1,104 @@
+{
+  "specVersion": 2,
+  "title": "Drop Four Dash",
+  "hook": "Take turns dropping discs, but every third turn the board tilts.",
+  "prompt": "connect four but the board tilts every few turns, pixel art, play with a friend online",
+  "ledger": {
+    "sha256": "9f2c4b7a8e1d3c5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f"
+  },
+  "runtime": "three",
+  "profile": "flat-2d",
+  "loop": "turns",
+  "kind": "pixel",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "turns"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "laptop"
+    ]
+  },
+  "camera": "top",
+  "controls": {
+    "primary": "drop a disc"
+  },
+  "round": {
+    "seconds": 600,
+    "params": {
+      "turnSeconds": 20
+    }
+  },
+  "world": {
+    "template": "field",
+    "size": "small"
+  },
+  "mechanics": [
+    {
+      "id": "board",
+      "as": "drop-four board",
+      "params": {
+        "cols": 7,
+        "rows": 6,
+        "input": "drop",
+        "presence": "cursor",
+        "turnSeconds": 0
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Four in a row wins. Every third turn the board tilts one way and loose discs slide.",
+    "params": {
+      "tiltEvery": 3
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a pixel hand in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "build": [
+    {
+      "what": "the board tilts every few turns",
+      "how": "a module in src/tilt.js that slides discs after every third move and animates the tilt through the board's own cells",
+      "where": "module",
+      "accept": "after the third turn the discs slide to one side"
+    },
+    {
+      "what": "the tilt shakes the camera",
+      "how": "an engine override of the flat camera rig that adds a short shake on the tilt event",
+      "where": "engine",
+      "row": "tilt"
+    }
+  ],
+  "src": [
+    {
+      "path": "src/tilt.js",
+      "for": [
+        "build.1"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "file": "gf/three/flat/controller.js",
+      "why": "a short camera shake when the board tilts",
+      "for": [
+        "build.2"
+      ]
+    }
+  ],
+  "notInV1": [
+    "ranked matchmaking"
+  ]
+}

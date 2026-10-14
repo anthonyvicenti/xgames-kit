@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0093",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0093.png",
+ "sha256": "bc3885836e51bb4da5a4b298f6e54c177d94723506ad02c5b79865c3d54e6e11",
+ "bytes": 204,
+ "preview": "previews/tile-0093.png",
+ "from": "Tiles/tile_0093.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round golden bundle with a zig-zag line: a loaf of bread or a hay bale (hard to tell at 16 px)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "bread",
+  "loaf",
+  "hay",
+  "bale",
+  "food",
+  "golden",
+  "item",
+  "farm"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#fdbe53",
+     "#e38628"
+    ],
+    "saturation": 0.518,
+    "value": 0.368,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.593
+     },
+     {
+      "hue": "orange",
+      "share": 0.407
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "d432578df64a8e4cc5cefe559129badefd30a9e9ad988eef6e1470bba7eb9fc1",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

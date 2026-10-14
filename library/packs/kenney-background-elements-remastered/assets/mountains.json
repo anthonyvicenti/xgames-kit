@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "mountains",
+ "pack": "kenney-background-elements-remastered",
+ "file": "mountains.png",
+ "sha256": "f18fe3e69623f02ea8bfaa04d423ff6c71c0c7d14c7f3b02046d2a224ad5b1a3",
+ "bytes": 10306,
+ "preview": "previews/mountains.png",
+ "from": "Backgrounds/Elements/mountains.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "mountains",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "mountains",
+  "backgrounds",
+  "elements"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x400: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 400,
+     "seeThrough": 0.301
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#b7e7fa",
+     "#c9efff",
+     "#bdeafb",
+     "#c8efff",
+     "#c2ecfd",
+     "#bbe9fb",
+     "#caefff",
+     "#c7eefe"
+    ],
+    "saturation": 0.878,
+    "value": 0.852,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 19,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "33e787985553a8f9ade137d6bb7af563b63a272ce0c2a7d18f4f8481804fbe23",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

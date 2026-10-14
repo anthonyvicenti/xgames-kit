@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "conveyor",
+ "pack": "kenney-new-platformer-pack",
+ "file": "conveyor.png",
+ "sha256": "aa7b79b72056a8c0db8246280a7dafebe42a422b24b5af9374fec91da059b5db",
+ "bytes": 2163,
+ "preview": "previews/conveyor.png",
+ "from": "Sprites/Tiles/Double/conveyor.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "conveyor tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "conveyor",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bbc4cb",
+     "#353541",
+     "#474758",
+     "#e8ebee",
+     "#fe9632",
+     "#40404f",
+     "#3b3b49",
+     "#343440"
+    ],
+    "saturation": 0.165,
+    "value": 0.481,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.942
+     },
+     {
+      "hue": "orange",
+      "share": 0.057
+     }
+    ],
+    "exact": 60,
+    "grey": 0.942
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "76e159caff67a5548ae018c0d683e94c08ad6fd4c8b44144cd1d7c5c65d27889",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

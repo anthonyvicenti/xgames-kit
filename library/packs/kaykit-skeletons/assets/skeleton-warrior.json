@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-warrior",
+ "pack": "kaykit-skeletons",
+ "file": "skeleton-warrior.glb",
+ "sha256": "cae99df329fba77f9837b5ed4231c5fe144e5b790a41612895bf68199d5f8530",
+ "bytes": 140904,
+ "preview": "previews/skeleton-warrior.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0@15b62b9bad122f72926c10fb14d622c73819fa54; held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a skeleton warrior in a horned helmet and torn cloak, glowing eyes (the shield-bearer; scaled up, the brute)",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "brute",
+  "kaykit",
+  "shield",
+  "bodies",
+  "warrior"
+ ],
+ "use": {
+  "size": [
+   1.457,
+   1.943,
+   1.094
+  ],
+  "height": 1.943,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/forge-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 5934,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 2,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.625,
+     "triangles": 5934,
+     "joints": 22,
+     "materials": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 39,
+    "hues": [
+     "#6f7475",
+     "#592138",
+     "#74797b",
+     "#d8ab80",
+     "#deba96",
+     "#d6a778",
+     "#7a7e80",
+     "#dbb186"
+    ],
+    "saturation": 0.334,
+    "value": 0.539,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.447
+     },
+     {
+      "hue": "grey",
+      "share": 0.403
+     },
+     {
+      "hue": "pink",
+      "share": 0.122
+     }
+    ],
+    "grey": 0.403
+   },
+   "trianglesPerMetre": 8.86,
+   "texelsPerMetre": 64,
+   "texturedShare": 0.54,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Characters/gltf/Skeleton_Warrior.glb",
+  "sha256": "178b6fda810b814c250d8a2010c24dfd9b458b9006dd323353e620b7ff118bbe",
+  "retrieved": "2026-10-09",
+  "modified": "held items taken off (none: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm, lowerarm.l→LeftForeArm, wrist.l→LeftHand…",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "pumpkin",
+ "pack": "xk-pixel-town",
+ "file": "pumpkin.png",
+ "sha256": "30abdc4645e2c88060205d515969fe6ec7fef1b8f0bc5a5889fee05ac58e747b",
+ "bytes": 438,
+ "preview": "previews/pumpkin.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): pumpkin.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a big orange pumpkin",
+ "tags": [
+  "pixel",
+  "pumpkin",
+  "crop",
+  "farm"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 18
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 18
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#9a4010",
+     "#ffa040",
+     "#e87c22",
+     "#c85a18",
+     "#512623",
+     "#ffc070",
+     "#774a35",
+     "#6e3d29"
+    ],
+    "saturation": 0.729,
+    "value": 0.42,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.429
+     },
+     {
+      "hue": "brown",
+      "share": 0.39
+     },
+     {
+      "hue": "red",
+      "share": 0.098
+     },
+     {
+      "hue": "green",
+      "share": 0.049
+     },
+     {
+      "hue": "grey",
+      "share": 0.034
+     }
+    ],
+    "exact": 16,
+    "grey": 0.034
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.578
+   }
+  }
+ },
+ "source": {
+  "sha256": "2b7cb3bfd8f6fdef2d4e76abf1f61a682284715638c4edcd3959d0731b65cfd7",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

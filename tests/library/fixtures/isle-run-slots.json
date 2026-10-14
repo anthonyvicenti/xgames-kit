@@ -1,0 +1,607 @@
+{
+ "about": "The file slots of the isle-run example as the old kit created it on 2026-10-13 (gamesfun create --from isle-run): what the resolver must fill. Kind for the test: scenic.",
+ "example": "isle-run",
+ "kind": "scenic",
+ "slots": [
+  {
+   "id": "character.body.player",
+   "label": "Player character",
+   "type": "model",
+   "source": {
+    "file": "assets/models/body-player.glb"
+   },
+   "constraints": {
+    "rigged": true,
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ],
+    "maxBytes": 6000000,
+    "scale": 1
+   },
+   "description": "a knight in armour",
+   "generate": {
+    "tool": "research/gf-three/tools/meshy-character.mjs",
+    "prompt": "a knight in armour",
+    "style": "full-body stylised game character, A-pose, front view"
+   }
+  },
+  {
+   "id": "character.hat.player",
+   "label": "Player hat (players' own)",
+   "type": "model",
+   "optional": true,
+   "source": {
+    "file": "assets/models/hat-player.glb"
+   },
+   "constraints": {
+    "maxBytes": 2000000,
+    "scale": 1
+   },
+   "description": "Worn on the head socket; its origin sits on top of the head, +Z forward"
+  },
+  {
+   "id": "character.body.monster",
+   "label": "Monster character",
+   "type": "model",
+   "source": {
+    "file": "assets/models/body-monster.glb"
+   },
+   "constraints": {
+    "rigged": true,
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ],
+    "maxBytes": 6000000,
+    "scale": 1
+   },
+   "description": "a skeleton warrior",
+   "generate": {
+    "tool": "research/gf-three/tools/meshy-character.mjs",
+    "prompt": "a skeleton warrior",
+    "style": "full-body stylised game character, A-pose, front view"
+   }
+  },
+  {
+   "id": "character.body.archer",
+   "label": "Archer character",
+   "type": "model",
+   "source": {
+    "file": "assets/models/body-archer.glb"
+   },
+   "constraints": {
+    "rigged": true,
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ],
+    "maxBytes": 6000000,
+    "scale": 1
+   },
+   "description": "a skeleton archer with a crossbow",
+   "generate": {
+    "tool": "research/gf-three/tools/meshy-character.mjs",
+    "prompt": "a skeleton archer with a crossbow",
+    "style": "full-body stylised game character, A-pose, front view"
+   }
+  },
+  {
+   "id": "character.body.boss",
+   "label": "Boss character",
+   "type": "model",
+   "source": {
+    "file": "assets/models/body-boss.glb"
+   },
+   "constraints": {
+    "rigged": true,
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ],
+    "maxBytes": 6000000,
+    "scale": 1
+   },
+   "description": "a giant skeleton sorcerer",
+   "generate": {
+    "tool": "research/gf-three/tools/meshy-character.mjs",
+    "prompt": "a giant skeleton sorcerer",
+    "style": "full-body stylised game character, A-pose, front view"
+   }
+  },
+  {
+   "id": "character.clips",
+   "label": "Character animations",
+   "type": "model",
+   "source": {
+    "file": "assets/clips/gf-humanoid-1.glb"
+   },
+   "constraints": {
+    "rig": "gf-humanoid-1",
+    "animations": [
+     "idle",
+     "walk",
+     "run",
+     "jump",
+     "fall",
+     "land",
+     "hit",
+     "knockdown",
+     "getup",
+     "aim",
+     "carry",
+     "interact",
+     "emote_wave",
+     "emote_cheer"
+    ]
+   }
+  },
+  {
+   "id": "prop.dungeon-barrel",
+   "label": "Large wooden barrel",
+   "type": "model",
+   "source": {
+    "file": "assets/models/dungeon-barrel.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.35,
+     1.5,
+     1.35
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a large wooden barrel",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.dungeon-column",
+   "label": "Round stone column",
+   "type": "model",
+   "source": {
+    "file": "assets/models/dungeon-column.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.525,
+     1.05,
+     0.525
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a round stone column",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.dungeon-crates",
+   "label": "Stacked wooden crates",
+   "type": "model",
+   "source": {
+    "file": "assets/models/dungeon-crates.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     1.567,
+     1.607,
+     1.687
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "stacked wooden crates",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.lantern",
+   "label": "Small stone lantern with a warm glow",
+   "type": "model",
+   "source": {
+    "file": "assets/models/lantern.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.897,
+     1.226,
+     0.897
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a small stone lantern with a warm glow",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.pole-light",
+   "label": "Street lamp on a post",
+   "type": "model",
+   "source": {
+    "file": "assets/models/pole-light.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     0.741,
+     3.564,
+     0.741
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a street lamp on a post",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.rock-1",
+   "label": "Cluster of basalt rock columns",
+   "type": "model",
+   "source": {
+    "file": "assets/models/rock-1.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     5.761,
+     3.032,
+     11.075
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a cluster of basalt rock columns",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.rock-2",
+   "label": "Cluster of basalt rock columns",
+   "type": "model",
+   "source": {
+    "file": "assets/models/rock-2.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     5.419,
+     4.317,
+     7.46
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a cluster of basalt rock columns",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.rock-3",
+   "label": "Low basalt rock",
+   "type": "model",
+   "source": {
+    "file": "assets/models/rock-3.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     8.965,
+     3.499,
+     5.377
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred.",
+   "generate": {
+    "prompt": "a low basalt rock",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-birch",
+   "label": "Tall birch tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-birch.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     4.254,
+     9.089,
+     4.529
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred; meshes named treeLeaves* become leaf clusters.",
+   "generate": {
+    "prompt": "a tall birch tree",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-cherry",
+   "label": "Wide cherry tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-cherry.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     6.071,
+     6.657,
+     5.356
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred; meshes named treeLeaves* become leaf clusters.",
+   "generate": {
+    "prompt": "a wide cherry tree",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "prop.tree-oak",
+   "label": "Round leafy oak tree",
+   "type": "model",
+   "source": {
+    "file": "assets/models/tree-oak.glb"
+   },
+   "constraints": {
+    "scale": 1,
+    "size": [
+     3.743,
+     8.313,
+     4.564
+    ]
+   },
+   "description": "A scenic prop. Metres, Y up, base at y=0, centred; meshes named treeLeaves* become leaf clusters.",
+   "generate": {
+    "prompt": "a round leafy oak tree",
+    "style": "stylised low-poly, soft painterly colours, game-ready"
+   }
+  },
+  {
+   "id": "world.isles.ground.slabs",
+   "label": "Paving pattern",
+   "type": "image",
+   "source": {
+    "file": "assets/textures/slabs.png"
+   },
+   "constraints": {
+    "tile": true,
+    "colorSpace": "linear",
+    "formats": [
+     "png",
+     "jpg",
+     "webp"
+    ],
+    "tileMetres": 5.7
+   },
+   "description": "A seamless greyscale stone pattern (light stones, dark joints) mixed between the two paving colours."
+  },
+  {
+   "id": "world.isles.foliage.texture",
+   "label": "Leaf shape",
+   "type": "image",
+   "source": {
+    "file": "assets/textures/foliage-sdf.png"
+   },
+   "constraints": {
+    "colorSpace": "linear",
+    "formats": [
+     "png"
+    ]
+   },
+   "description": "A white-on-black distance field of one leaf (folio-2025): the leaf clusters cut their shape from it."
+  },
+  {
+   "id": "mechanic.melee.sword.model",
+   "label": "Sword: model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/melee-sword.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a sword (Sword), the grip at the origin, the blade toward +Y",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.melee.axe.model",
+   "label": "Axe: model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/melee-axe.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a axe (Axe), the grip at the origin, the blade toward +Y",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.melee.greatsword.model",
+   "label": "Greatsword: model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/melee-greatsword.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a sword (Greatsword), the grip at the origin, the blade toward +Y",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.waves.warrior.weapon",
+   "label": "Warrior: weapon",
+   "type": "model",
+   "source": {
+    "file": "assets/models/kaykit-skeleton-axe.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "the weapon a Warrior holds",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.waves.archer.weapon",
+   "label": "Archer: weapon",
+   "type": "model",
+   "source": {
+    "file": "assets/models/kaykit-skeleton-crossbow.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "the weapon a Archer holds",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.waves.brute.weapon",
+   "label": "Brute: weapon",
+   "type": "model",
+   "source": {
+    "file": "assets/models/kaykit-greataxe.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "the weapon a Brute holds",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.boss.weapon",
+   "label": "Boss weapon",
+   "type": "model",
+   "source": {
+    "file": "assets/models/kaykit-staff.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "the weapon the boss holds",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.loot.chest",
+   "label": "Chest model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/loot-chest.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a treasure chest whose lid opens",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.loot.coin",
+   "label": "Coin model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/loot-coin.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a gold coin",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  },
+  {
+   "id": "mechanic.loot.potion",
+   "label": "Potion model",
+   "type": "model",
+   "source": {
+    "file": "assets/models/loot-potion.glb"
+   },
+   "constraints": {
+    "maxBytes": 4194304
+   },
+   "generate": {
+    "prompt": "a small red heal potion",
+    "style": "stylised low-poly game prop, clean silhouette"
+   }
+  }
+ ]
+}

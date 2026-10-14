@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "kit-standins",
+ "file": "crate.glb",
+ "sha256": "4468360121b5f23b960cbd9c03b78f6ec75ad2f30a09c4c1ff66983094f41998",
+ "bytes": 3100,
+ "preview": "previews/crate.png",
+ "from": "games.fun (baked by tools/lib/standin-bake.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "prop stand-in for any prop with no closer match",
+ "tags": [
+  "crate"
+ ],
+ "use": {
+  "size": [
+   0.84,
+   0.8,
+   0.84
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 24,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 24,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3100,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#d9a066",
+     "#8a5a3a"
+    ],
+    "saturation": 0.541,
+    "value": 0.55,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.687
+     },
+     {
+      "hue": "brown",
+      "share": 0.313
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.07,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://games.fun",
+  "author": "games.fun (baked by tools/lib/standin-bake.mjs)"
+ }
+}

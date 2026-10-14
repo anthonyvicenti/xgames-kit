@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "coffee-table",
+ "pack": "kenney-furniture-kit",
+ "file": "coffee-table.glb",
+ "sha256": "52984adc4ca12d33503920b942512ce1b1c26fd498c408fedca8809150efb375",
+ "bytes": 3004,
+ "preview": "previews/coffee-table.png",
+ "from": "kenney:furniture-kit/tableCoffee; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low coffee table",
+ "tags": [
+  "office",
+  "table",
+  "coffee"
+ ],
+ "use": {
+  "size": [
+   1.322,
+   0.46,
+   0.8
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.322,
+    0.46,
+    0.8
+   ],
+   "offset": [
+    0,
+    0.23,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3004,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8"
+    ],
+    "saturation": 0.758,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.68,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "e38bea760fbd514efbb75528d09b4752c91af44677bbb97e6d4386c263525179",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

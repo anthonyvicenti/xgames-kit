@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-cloud",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-cloud.png",
+ "sha256": "d1512dbc4e20d3edf6a78cc7351f77d900c54596ac7b0f2396531a6ce330af03",
+ "bytes": 2828,
+ "preview": "previews/terrain-stone-cloud.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_cloud.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone cloud tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "cloud",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 21.1 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#5e5e6d",
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#424251",
+     "#717180",
+     "#4f4f5d"
+    ],
+    "saturation": 0.104,
+    "value": 0.488,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 119,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "db7be9c0028c2283f91e7bcf442537420208fd597587fe43f536cb8f7d7bf661",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

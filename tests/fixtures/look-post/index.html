@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>the look at a pixel ratio</title>
+  <link rel="icon" href="data:,">
+  <script type="importmap">
+    { "imports": {
+      "three": "/vendor/three/build/three.module.js",
+      "three/addons/": "/vendor/three/examples/jsm/",
+      "three/examples/jsm/": "/vendor/three/examples/jsm/",
+      "postprocessing": "/vendor/postprocessing/postprocessing.module.js",
+      "n8ao": "/vendor/n8ao/N8AO.js"
+    } }
+  </script>
+  <style>html, body { margin: 0; background: #000; } canvas { display: block; width: 320px; height: 180px; }</style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <script type="module">
+    // The kit's look (gf/three/look/look.js and its post stack, N8AO included) resized to a pixel ratio the way a game's
+    // resize does it (kit/core/boot.js: setPixelRatio, then look.resize): a floor and a row of blocks, which N8AO shades
+    // around their feet. window.grid() answers the frame as 16 × 9 cells of mean brightness (0..1, rows from the top).
+    // ?ratio=<n> &preset=<look id>
+    import * as THREE from 'three';
+    import { createRenderer, applyLook, material } from '/kit/look/look.js';
+    const Q = new URLSearchParams(location.search), ratio = Number(Q.get('ratio') ?? 1), preset = Q.get('preset') ?? 'toon-lowpoly';
+    const canvas = document.getElementById('c');
+    const renderer = createRenderer(canvas, preset, 'high');
+    renderer.setSize(320, 180, false);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(50, 320 / 180, 0.5, 80);
+    camera.position.set(0, 6, 11); camera.lookAt(0, 0.5, 0);
+    const look = applyLook({ scene, camera, renderer }, preset, { quality: 'high', time: 'day', captureApi: false });
+    const floor = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), material('ground', { color: '#c8c8c8' }));
+    floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+    for (let i = 0; i < 5; i++) {
+      const b = new THREE.Mesh(new THREE.BoxGeometry(1.4, 2.2 + (i % 2), 1.4), material('prop', { color: ['#e05050', '#50a0e0', '#e0c050', '#60c070', '#b070d0'][i] }));
+      b.position.set((i - 2) * 2.6, 1.1 + (i % 2) / 2, -1 + (i % 2) * 1.5); b.castShadow = b.receiveShadow = true; scene.add(b);
+    }
+    renderer.setPixelRatio(ratio);
+    renderer.setSize(320, 180, false);
+    look.resize(320, 180);
+    for (let i = 0; i < 6; i++) look.render(camera);
+    const read = document.createElement('canvas'); read.width = 320; read.height = 180;
+    const g = read.getContext('2d', { willReadFrequently: true }); g.drawImage(canvas, 0, 0, 320, 180);
+    window.grid = () => {
+      const d = g.getImageData(0, 0, 320, 180).data, out = [];
+      for (let cy = 0; cy < 9; cy++) { const row = []; for (let cx = 0; cx < 16; cx++) {
+        let s = 0; for (let y = cy * 20; y < cy * 20 + 20; y++) for (let x = cx * 20; x < cx * 20 + 20; x++) { const i = (y * 320 + x) * 4; s += (d[i] * 0.2126 + d[i + 1] * 0.7152 + d[i + 2] * 0.0722) / 255; }
+        row.push(+(s / 400).toFixed(3)); } out.push(row); }
+      return out;
+    };
+    window.ready = true;
+  </script>
+</body>
+</html>

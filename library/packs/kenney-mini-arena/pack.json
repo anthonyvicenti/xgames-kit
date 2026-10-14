@@ -1,0 +1,72 @@
+{
+ "packVersion": 1,
+ "id": "kenney-mini-arena",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Mini Arena (1.1)",
+ "describe": "Kenney's mini arena: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/mini-arena",
+  "file": "library/packs/kenney-mini-arena/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "514760c2bc2457027451534a0b06a23f98beece166fb11ed2321226276b83c2c",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 10,
+   "hues": [
+    "#6d728a",
+    "#757a91",
+    "#afb7dc",
+    "#d6966e",
+    "#a7afd2",
+    "#e9a177",
+    "#f6c7a6",
+    "#7b8198",
+    "#99a0c0",
+    "#949bba",
+    "#ffb94d",
+    "#dc9f78"
+   ],
+   "saturation": 0.427,
+   "value": 0.616,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.416
+    },
+    {
+     "hue": "grey",
+     "share": 0.337
+    },
+    {
+     "hue": "blue",
+     "share": 0.187
+    }
+   ],
+   "grey": 0.274
+  },
+  "trianglesPerMetre": 3.19,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 7,
+ "validators": [
+  "budget"
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0012",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0012.png",
+ "sha256": "602238a190214c7c84276396b0d7a888969e28ebc4597cb7d9fdddd4d7153bf8",
+ "bytes": 221,
+ "preview": "previews/tile-0012.png",
+ "from": "Tiles/tile_0012.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the north-west corner of a bare dirt patch in grass (3x3 set with tiles 13, 14, 24-26, 36-38)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "dirt",
+  "path",
+  "ground",
+  "grass",
+  "border",
+  "corner",
+  "corner-outer-nw"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#eaa56c",
+     "#84c669",
+     "#65a556",
+     "#cf8254",
+     "#fec99c"
+    ],
+    "saturation": 0.626,
+    "value": 0.636,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.613
+     },
+     {
+      "hue": "green",
+      "share": 0.387
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "e1b87cceac398679e30d7cd4feecf4f40b8104515c255ed2d8e4fd4f868bb35c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

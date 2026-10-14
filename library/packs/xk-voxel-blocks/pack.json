@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "xk-voxel-blocks",
+ "title": "Voxel block faces (pixel)",
+ "describe": "The voxel world's own block faces: 32 × 32 pixel art drawn by code (runtimes/three/tools/voxel-faces.mjs), written at 512 px with every texel a 16 px square. Grey half-transparent texels take the biome's grass colour.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by code: runtimes/three/tools/voxel-faces.mjs)",
+  "file": "library/packs/xk-voxel-blocks/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "retrieved": "2026-10-14"
+ },
+ "owner": "own",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 5,
+   "hues": [
+    "#7a7b7e",
+    "#a2a2a2",
+    "#6c6d70",
+    "#765236",
+    "#b6b6b6",
+    "#c9c9c9",
+    "#86878a",
+    "#3a74c8",
+    "#dcdcdc",
+    "#7a5a34",
+    "#684630",
+    "#3f7a2c"
+   ],
+   "saturation": 0.387,
+   "value": 0.481,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.299
+    },
+    {
+     "hue": "brown",
+     "share": 0.17
+    },
+    {
+     "hue": "orange",
+     "share": 0.141
+    },
+    {
+     "hue": "green",
+     "share": 0.13
+    },
+    {
+     "hue": "yellow",
+     "share": 0.083
+    },
+    {
+     "hue": "blue",
+     "share": 0.078
+    },
+    {
+     "hue": "red",
+     "share": 0.077
+    }
+   ],
+   "grey": 0
+  },
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 59,
+ "validators": [
+  "picture-check"
+ ]
+}

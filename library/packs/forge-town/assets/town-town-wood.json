@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-wood",
+ "pack": "forge-town",
+ "file": "town-town-wood.png",
+ "sha256": "6f338b430c632b4ebb32fb9e73186cd8875b4a88d6e43d0363da5a517bae2979",
+ "bytes": 4425,
+ "preview": "previews/town-town-wood.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 64 × 64 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 20 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dark upright planks 25 cm wide, dark gaps between, nails; tiles; 2 m across",
+ "tags": [
+  "texture",
+  "town",
+  "wood"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#403022",
+     "#3c2d20",
+     "#4a3626",
+     "#443324",
+     "#3b2c1f",
+     "#3e2e21",
+     "#4e3928",
+     "#463324"
+    ],
+    "saturation": 0.306,
+    "value": 0.187,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.921
+     },
+     {
+      "hue": "grey",
+      "share": 0.079
+     }
+    ],
+    "exact": 199,
+    "grey": 0.079
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.869
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 64 × 64 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 20 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

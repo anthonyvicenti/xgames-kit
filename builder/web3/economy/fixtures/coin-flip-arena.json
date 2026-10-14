@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Coin-flip arena",
+  "prompt": "Make me a coin-flip arena: 2% house edge to people who stake, and a weekly lottery with three places fed by 10% of every flip.",
+  "keys": { "authority": "owner" },
+  "currency": "sol",
+  "tokens": [
+    { "key": "sol", "source": "sol" },
+    { "key": "arena", "source": "curve", "name": "Arena", "symbol": "ARENA", "decimals": 6, "venue": "games.fun" }
+  ],
+  "pools": [
+    { "key": "house", "currency": "sol", "seed": 5, "about": "Pays the winning flips. 88% of every flip comes back into it." },
+    { "key": "backers", "currency": "sol", "about": "The 2% edge, shared by everyone who stakes ARENA." },
+    { "key": "pot", "currency": "sol", "about": "The weekly lottery's pot: 10% of every flip and every ticket." }
+  ],
+  "boxes": [
+    {
+      "key": "flip",
+      "name": "Coin flip",
+      "price": 0.1,
+      "split": [
+        { "to": "pool:house", "percent": 88 },
+        { "to": "pool:pot", "percent": 10 },
+        { "to": "pool:backers", "percent": 2 }
+      ],
+      "outcomes": [
+        { "gives": "pay", "chance": 50, "pool": "house", "amount": 0.176 },
+        { "gives": "nothing", "chance": 50 }
+      ]
+    }
+  ],
+  "lotteries": [
+    { "key": "weekly", "name": "Weekly draw", "pot": "pot", "price": 0.01, "places": [50, 30, 20], "every": "7d", "firstDraw": "publish+7d" }
+  ],
+  "stakes": [
+    { "key": "backers", "name": "Back the house", "stakes": "arena", "rewards": "backers", "lock": "1d" }
+  ],
+  "scenario": { "days": 30, "perDay": { "box:flip": 1000, "lottery:weekly": 100, "stake:backers": 10 }, "staked": { "backers": 1000000 } }
+}

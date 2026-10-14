@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Tile Smithy",
+  "prompt": "Use my pump.fun coin (mint 75C3pLRUXZxMAyuF1xj7MzvPjEfyoDV6A2QB2f51QXHH, 6 decimals) as the shop's currency: sell a sword for 1,000 coins and burn 10% of every sale.",
+  "currency": "tile",
+  "tokens": [
+    {
+      "key": "tile",
+      "source": "existing",
+      "name": "Tile",
+      "symbol": "TILE",
+      "decimals": 6,
+      "program": "spl-token",
+      "mint": "75C3pLRUXZxMAyuF1xj7MzvPjEfyoDV6A2QB2f51QXHH",
+      "venue": "pump.fun",
+      "powers": { "mintAuthority": "none", "freeze": false }
+    }
+  ],
+  "collection": { "name": "Tile Smithy" },
+  "items": [{ "key": "sword", "name": "Sword", "price": 1000, "split": [{ "to": "burn", "percent": 10 }] }],
+  "scenario": { "days": 30, "perDay": { "item:sword": 25 } }
+}

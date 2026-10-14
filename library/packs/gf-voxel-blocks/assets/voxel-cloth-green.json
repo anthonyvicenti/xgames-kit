@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-cloth-green",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-cloth-green.png",
+ "sha256": "0711f9126ba7a7a602e610ade3d67d30188b495d65374543d2a3d3515b380291",
+ "bytes": 38337,
+ "preview": "previews/voxel-cloth-green.png",
+ "from": "kenney:voxel-pack/cotton_green; PNG/Tiles/cotton_green.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1046,84; mean difference 4.1 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "cotton_green (Voxel Pack)",
+ "tags": [
+  "cloth",
+  "green",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.017
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#27ae60",
+     "#25a75c",
+     "#2dc66e",
+     "#24a75b",
+     "#24a75c",
+     "#26ad5f",
+     "#24a85c",
+     "#25a75b"
+    ],
+    "saturation": 0.634,
+    "value": 0.419,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 257,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "8cd6535c8ebc0b4de89804e3da2652a913df6fe809b309d1b26d9e02c1694025",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

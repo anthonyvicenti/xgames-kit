@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-rogue",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-rogue.glb",
+ "sha256": "28624765e9fe4c93cb281d6d1527e82c5b251c263b4d9bf29e0aee3d95c3dc69",
+ "bytes": 100664,
+ "preview": "previews/kaykit-rogue.png",
+ "from": "Rogue.glb (KayKit Character Pack: Adventurers 1.0); held items taken off (Knife_Offhand, 1H_Crossbow, 2H_Crossbow, Knife, Throwable: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a stylised rogue in leather with a short cape",
+ "tags": [
+  "rogue",
+  "fantasy",
+  "player",
+  "hero",
+  "kaykit",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.457,
+   1.64,
+   0.762
+  ],
+  "height": 1.64,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 4347,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 1,
+  "joints": 22
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 5.3% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.0% of its triangles fold inside out (limit 4%)",
+     "model judge, right foot: push at 1.07 s: its edges stretch or crush ×4.4 (99th percentile; limit ×4.1)"
+    ],
+    "facts": {
+     "height": 1.64,
+     "triangles": 4347,
+     "joints": 22,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 21,
+    "hues": [
+     "#af6d50",
+     "#b16f52",
+     "#7d3d2c",
+     "#8d4c39",
+     "#b67455",
+     "#b87656",
+     "#086f5b",
+     "#08715c"
+    ],
+    "saturation": 0.564,
+    "value": 0.432,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.535
+     },
+     {
+      "hue": "cyan",
+      "share": 0.255
+     },
+     {
+      "hue": "brown",
+      "share": 0.191
+     }
+    ],
+    "grey": 0.019
+   },
+   "trianglesPerMetre": 9.03,
+   "texelsPerMetre": 76,
+   "texturedShare": 0.838,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Characters/gltf/Rogue.glb",
+  "sha256": "e825437cd4d2ee9c1960b517a74a69101e33eb409ae7fa8cedc7134a998fbb7d",
+  "retrieved": "2026-10-08",
+  "modified": "held items taken off (Knife_Offhand, 1H_Crossbow, 2H_Crossbow, Knife, Throwable: they are props on the hand sockets); clavicles added (l, r); bones renamed to gf-humanoid-1 (hips→Hips, spine→Spine02, chest→Spine, head→Head, shoulder.l→LeftShoulder, shoulder.r→RightShoulder, upperarm.l→LeftArm…"
+ }
+}

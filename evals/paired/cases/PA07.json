@@ -1,0 +1,85 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA07",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "frozen-case",
+  "case": "T7",
+  "verbatim": false,
+  "where": "games.fun research/studio-v2/evals/cases/T7.json (frozen 2026-10-12)",
+  "restated": "T7 asks for a game like a named open-source game whose engine core one runtime is built on, so its name works as an engine word. Restated as what that case's checklist holds the game to. The case as written is evals/cases/T7.json"
+ },
+ "prompt": "A calm fishing game with friends on a coast that looks real: a proper sky and sea, light that changes through the day, clouds and surf. Walk the beach, cast off the pier or take a boat out, wait for a bite, reel it in, then keep or sell your catch and buy better gear so you can fish further out.",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "feel",
+   "core": true,
+   "words": "a coast that looks real: a proper sky and sea",
+   "means": "A real-looking sky and sea, clouds and surf: a beach, a pier, open water",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "feel",
+   "core": true,
+   "words": "light that changes through the day",
+   "means": "The light changes with the time of day",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "action",
+   "core": true,
+   "words": "cast off the pier or take a boat out, wait for a bite, reel it in",
+   "means": "Cast, wait for a bite, a fight on the line, a catch shown",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "action",
+   "core": true,
+   "words": "take a boat out",
+   "means": "A boat players can take out on the water",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "goal",
+   "core": true,
+   "words": "keep or sell your catch and buy better gear so you can fish further out",
+   "means": "Catches are kept or sold; money buys gear that lets players fish further out",
+   "source": "prompt"
+  },
+  {
+   "id": "r6",
+   "about": "players",
+   "core": true,
+   "words": "with friends",
+   "means": "Friends fish together and see each other on the shore and in the boat",
+   "source": "prompt"
+  },
+  {
+   "id": "r7",
+   "about": "feel",
+   "core": false,
+   "words": "A calm fishing game",
+   "means": "Nothing rushes the player",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [
+  "The named game's title and its people never reach the game"
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

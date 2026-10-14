@@ -1,0 +1,2849 @@
+{
+ "schema": "vista-places-gallery/2",
+ "at": "2026-10-14T01:46:37.659Z",
+ "tool": "runtimes/vista/tools/places-gallery.mjs",
+ "size": [
+  1920,
+  1080
+ ],
+ "frames": 48,
+ "shots": [
+  {
+   "name": "start",
+   "view": "placeStart",
+   "says": "the first view (the start)"
+  },
+  {
+   "name": "sea",
+   "view": "placeSea",
+   "says": "the harbour from the sea"
+  },
+  {
+   "name": "aerial",
+   "view": "placeAerial",
+   "says": "the whole island from the air"
+  },
+  {
+   "name": "back",
+   "view": "placeBack",
+   "says": "the far side, from the water"
+  },
+  {
+   "name": "village",
+   "view": "placeVillage",
+   "says": "down over the harbour"
+  }
+ ],
+ "places": [
+  {
+   "id": "reference",
+   "seed": null,
+   "asked": {},
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "single",
+    "islets": "0",
+    "bay": "s",
+    "beach": "wide",
+    "pier": "pier",
+    "village": "town",
+    "houses": "pastel",
+    "reef": "large",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "palms",
+    "plants": "normal"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a large island (one summit, high peaks), palms on basalt, a wide white beach facing south, a pier, a pastel town, a large reef, lagoon water",
+   "generateMs": 0,
+   "loadMs": 7976,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7765,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 36,
+     "gridB": 554,
+     "upsample": 91,
+     "detail": 153,
+     "features": 29,
+     "scarp": 15,
+     "seabed": 158,
+     "masks": 220,
+     "border": 6,
+     "total": 1262
+    },
+    "heapMB": 347,
+    "village": {
+     "triangles": 137656,
+     "drawCalls": 7,
+     "lights": 50,
+     "buildings": 21
+    },
+    "plants": {
+     "palms": 233,
+     "trees": 12745,
+     "bananas": 188,
+     "shrubs": 5598,
+     "youngPalms": 268,
+     "ferns": 44548,
+     "monsteras": 1693,
+     "elephantEars": 24,
+     "heliconias": 70,
+     "strelitzias": 16
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/reference-strip.jpg",
+   "ms": 16745
+  },
+  {
+   "id": "seed-201",
+   "seed": 201,
+   "asked": {},
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "single",
+    "islets": "2",
+    "bay": 160,
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "none",
+    "houses": "whitewash",
+    "reef": "large",
+    "water": "deep",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "palms",
+    "plants": "normal",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "some"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (one summit, high peaks, 2 islets), a smooth coast, some cliffs, palms on basalt, a narrow dark beach facing 160°, a jetty, no village, a large reef, deep water",
+   "generateMs": 126,
+   "loadMs": 12595,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 12258,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 20,
+     "gridB": 434,
+     "upsample": 92,
+     "detail": 138,
+     "features": 39,
+     "scarp": 14,
+     "seabed": 89,
+     "masks": 179,
+     "border": 7,
+     "total": 1012
+    },
+    "heapMB": 257,
+    "village": {
+     "triangles": 17689,
+     "drawCalls": 6,
+     "lights": 5,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 439,
+     "trees": 2539,
+     "bananas": 83,
+     "shrubs": 3793,
+     "youngPalms": 246,
+     "ferns": 14220,
+     "monsteras": 441,
+     "elephantEars": 17,
+     "heliconias": 19,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-201-strip.jpg",
+   "ms": 22712
+  },
+  {
+   "id": "seed-202",
+   "seed": 202,
+   "asked": {
+    "size": "small",
+    "peaks": "low",
+    "beach": "narrow",
+    "village": "hamlet",
+    "time": "morning"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "ridge",
+    "islets": "1",
+    "bay": 312,
+    "beach": "narrow",
+    "pier": "pier",
+    "village": "hamlet",
+    "houses": "bright",
+    "reef": "none",
+    "water": "deep",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "cliffs",
+    "plants": "sparse",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "sheer",
+    "time": "morning"
+   },
+   "look": {
+    "hour": 9.5,
+    "sea": "breezy"
+   },
+   "describe": "a small island (a long ridge, low peaks, 1 islet), a rugged coast, 1 cove, sheer cliffs, cliffs on basalt, a narrow dark beach facing 312°, a pier, a bright hamlet, no reef, deep water (seen morning)",
+   "generateMs": 17,
+   "loadMs": 9755,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 9374,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 26,
+     "gridB": 574,
+     "upsample": 139,
+     "detail": 107,
+     "features": 59,
+     "scarp": 16,
+     "seabed": 105,
+     "masks": 217,
+     "border": 7,
+     "total": 1250
+    },
+    "heapMB": 257,
+    "village": {
+     "triangles": 86654,
+     "drawCalls": 7,
+     "lights": 30,
+     "buildings": 8
+    },
+    "plants": {
+     "palms": 5,
+     "trees": 485,
+     "bananas": 25,
+     "shrubs": 1137,
+     "youngPalms": 15,
+     "ferns": 520,
+     "monsteras": 13,
+     "elephantEars": 3,
+     "heliconias": 6,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-202-strip.jpg",
+   "ms": 20150
+  },
+  {
+   "id": "seed-203",
+   "seed": 203,
+   "asked": {
+    "size": "medium",
+    "bay": "w",
+    "plants": "lush",
+    "reef": "small",
+    "coast": "rugged"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "single",
+    "islets": "0",
+    "bay": "w",
+    "beach": "narrow",
+    "pier": "pier",
+    "village": "hamlet",
+    "houses": "pastel",
+    "reef": "small",
+    "water": "deep",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (one summit, high peaks), a rugged coast, jungle on basalt, a narrow white beach facing west, a pier, a pastel hamlet, a small reef, deep water",
+   "generateMs": 47,
+   "loadMs": 8409,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8137,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 25,
+     "gridB": 399,
+     "upsample": 92,
+     "detail": 126,
+     "features": 32,
+     "scarp": 9,
+     "seabed": 96,
+     "masks": 180,
+     "border": 6,
+     "total": 965
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 88040,
+     "drawCalls": 7,
+     "lights": 27,
+     "buildings": 10
+    },
+    "plants": {
+     "palms": 90,
+     "trees": 7458,
+     "bananas": 303,
+     "shrubs": 6150,
+     "youngPalms": 208,
+     "ferns": 32817,
+     "monsteras": 930,
+     "elephantEars": 38,
+     "heliconias": 112,
+     "strelitzias": 22
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-203-strip.jpg",
+   "ms": 17796
+  },
+  {
+   "id": "seed-204",
+   "seed": 204,
+   "asked": {
+    "size": "large",
+    "shape": "plateau",
+    "peaks": "high",
+    "beach": "wide",
+    "village": "hamlet",
+    "time": "noon"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "plateau",
+    "islets": "2",
+    "bay": 349,
+    "beach": "wide",
+    "pier": "jetty",
+    "village": "hamlet",
+    "houses": "terracotta",
+    "reef": "small",
+    "water": "flat",
+    "sand": "golden",
+    "rock": "limestone",
+    "vegetation": "scrub",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "yes",
+    "cliffs": "some",
+    "time": "noon"
+   },
+   "look": {
+    "hour": 12.5,
+    "sea": "breezy"
+   },
+   "describe": "a large island (a flat-topped table mountain, high peaks, 2 islets), a rugged coast, 1 cove, a river mouth, some cliffs, scrub on limestone, a wide golden beach facing 349°, a jetty, a terracotta hamlet, a small reef, flat water (seen noon)",
+   "generateMs": 49,
+   "loadMs": 9009,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8671,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 22,
+     "gridB": 513,
+     "upsample": 99,
+     "detail": 150,
+     "features": 35,
+     "scarp": 11,
+     "seabed": 236,
+     "masks": 255,
+     "border": 7,
+     "total": 1328
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 57612,
+     "drawCalls": 7,
+     "lights": 23,
+     "buildings": 9
+    },
+    "plants": {
+     "palms": 19,
+     "trees": 688,
+     "bananas": 18,
+     "shrubs": 3493,
+     "youngPalms": 64,
+     "ferns": 3684,
+     "monsteras": 116,
+     "elephantEars": 0,
+     "heliconias": 2,
+     "strelitzias": 1
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-204-strip.jpg",
+   "ms": 19813
+  },
+  {
+   "id": "seed-205",
+   "seed": 205,
+   "asked": {
+    "size": "small",
+    "peaks": "high",
+    "bay": "e",
+    "reef": "none",
+    "weather": "storm"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "high",
+    "shape": "twin",
+    "islets": "1",
+    "bay": "e",
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "hamlet",
+    "houses": "terracotta",
+    "reef": "none",
+    "water": "flat",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "plants": "sparse",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "none",
+    "weather": "storm"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "storm",
+    "clouds": 0.85,
+    "veil": 1,
+    "haze": 5.5,
+    "exposure": -0.3
+   },
+   "describe": "a small island (twin peaks, high peaks, 1 islet), a smooth coast, jungle on basalt, a narrow dark beach facing east, a dock, a terracotta hamlet, no reef, flat water (seen storm)",
+   "generateMs": 45,
+   "loadMs": 14476,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 13430,
+    "look": {
+     "preset": null,
+     "hour": 15.5,
+     "sea": "storm",
+     "exposure": -0.3,
+     "clouds": 0.85,
+     "veil": 1,
+     "haze": 5.5
+    },
+    "terrainMs": {
+     "gridA": 42,
+     "gridB": 816,
+     "upsample": 109,
+     "detail": 281,
+     "features": 134,
+     "scarp": 36,
+     "seabed": 465,
+     "masks": 368,
+     "border": 11,
+     "total": 2262
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 80088,
+     "drawCalls": 7,
+     "lights": 24,
+     "buildings": 9
+    },
+    "plants": {
+     "palms": 44,
+     "trees": 3780,
+     "bananas": 230,
+     "shrubs": 2479,
+     "youngPalms": 83,
+     "ferns": 10080,
+     "monsteras": 340,
+     "elephantEars": 18,
+     "heliconias": 43,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-205-strip.jpg",
+   "ms": 26141
+  },
+  {
+   "id": "seed-206",
+   "seed": 206,
+   "asked": {},
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "single",
+    "islets": "0",
+    "bay": 298,
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "hamlet",
+    "houses": "whitewash",
+    "reef": "large",
+    "water": "flat",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "scrub",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a small island (one summit, low peaks), a rugged coast, 1 cove, scrub on basalt, a narrow white beach facing 298°, a jetty, a whitewash hamlet, a large reef, flat water",
+   "generateMs": 105,
+   "loadMs": 11983,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 11296,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 39,
+     "gridB": 525,
+     "upsample": 107,
+     "detail": 177,
+     "features": 66,
+     "scarp": 23,
+     "seabed": 361,
+     "masks": 325,
+     "border": 10,
+     "total": 1633
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 62156,
+     "drawCalls": 7,
+     "lights": 26,
+     "buildings": 8
+    },
+    "plants": {
+     "palms": 16,
+     "trees": 338,
+     "bananas": 51,
+     "shrubs": 3444,
+     "youngPalms": 58,
+     "ferns": 1158,
+     "monsteras": 27,
+     "elephantEars": 3,
+     "heliconias": 5,
+     "strelitzias": 1
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-206-strip.jpg",
+   "ms": 22539
+  },
+  {
+   "id": "seed-207",
+   "seed": 207,
+   "asked": {
+    "size": "large",
+    "bay": "n",
+    "beach": "narrow",
+    "reef": "large",
+    "river": "yes"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "single",
+    "islets": "3",
+    "bay": "n",
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "hamlet",
+    "houses": "terracotta",
+    "reef": "none",
+    "water": "deep",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "palms",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "yes",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a large island (one summit, high peaks, 3 islets), a rugged coast, 1 cove, a river mouth, palms on basalt, a narrow white beach facing north, a jetty, a terracotta hamlet, no reef, deep water",
+   "generateMs": 213,
+   "loadMs": 8891,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8225,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 24,
+     "gridB": 639,
+     "upsample": 111,
+     "detail": 142,
+     "features": 41,
+     "scarp": 9,
+     "seabed": 124,
+     "masks": 235,
+     "border": 7,
+     "total": 1332
+    },
+    "heapMB": 257,
+    "village": {
+     "triangles": 54511,
+     "drawCalls": 7,
+     "lights": 19,
+     "buildings": 7
+    },
+    "plants": {
+     "palms": 202,
+     "trees": 2932,
+     "bananas": 71,
+     "shrubs": 4113,
+     "youngPalms": 231,
+     "ferns": 22222,
+     "monsteras": 636,
+     "elephantEars": 17,
+     "heliconias": 24,
+     "strelitzias": 7
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-207-strip.jpg",
+   "ms": 18501
+  },
+  {
+   "id": "seed-208",
+   "seed": 208,
+   "asked": {
+    "size": "medium",
+    "peaks": "high",
+    "village": "hamlet",
+    "plants": "lush",
+    "time": "sunset"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "atoll",
+    "islets": "0",
+    "bay": 37,
+    "beach": "wide",
+    "pier": "dock",
+    "village": "hamlet",
+    "houses": "whitewash",
+    "reef": "small",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "palms",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none",
+    "time": "sunset"
+   },
+   "look": {
+    "hour": 17.95,
+    "sea": "breezy",
+    "exposure": 0.3
+   },
+   "describe": "a medium island (a low ring round a lagoon, high peaks), a rugged coast, 1 cove, palms on basalt, a wide white beach facing 37°, a dock, a whitewash hamlet, a small reef, lagoon water (seen sunset)",
+   "generateMs": 70,
+   "loadMs": 15361,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 14383,
+    "look": {
+     "preset": null,
+     "hour": 17.95,
+     "sea": "breezy",
+     "exposure": 0.3,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 37,
+     "gridB": 733,
+     "upsample": 138,
+     "detail": 246,
+     "features": 71,
+     "scarp": 86,
+     "seabed": 322,
+     "masks": 318,
+     "border": 11,
+     "total": 1962
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 72938,
+     "drawCalls": 7,
+     "lights": 23,
+     "buildings": 8
+    },
+    "plants": {
+     "palms": 580,
+     "trees": 873,
+     "bananas": 111,
+     "shrubs": 2903,
+     "youngPalms": 130,
+     "ferns": 3350,
+     "monsteras": 53,
+     "elephantEars": 25,
+     "heliconias": 22,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-208-strip.jpg",
+   "ms": 26110
+  },
+  {
+   "id": "seed-209",
+   "seed": 209,
+   "asked": {
+    "shape": "archipelago",
+    "village": "hamlet",
+    "water": "lagoon"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "archipelago",
+    "islets": "3",
+    "bay": 211,
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "hamlet",
+    "houses": "bright",
+    "reef": "large",
+    "water": "lagoon",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "plants": "normal",
+    "coast": "coves",
+    "bays": "2",
+    "river": "yes",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (among bigger islets, high peaks, 3 islets), a coves coast, 2 coves, a river mouth, jungle on basalt, a narrow dark beach facing 211°, a dock, a bright hamlet, a large reef, lagoon water",
+   "generateMs": 324,
+   "loadMs": 12342,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 11664,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 28,
+     "gridB": 668,
+     "upsample": 105,
+     "detail": 194,
+     "features": 59,
+     "scarp": 32,
+     "seabed": 215,
+     "masks": 279,
+     "border": 7,
+     "total": 1587
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 88340,
+     "drawCalls": 7,
+     "lights": 28,
+     "buildings": 8
+    },
+    "plants": {
+     "palms": 77,
+     "trees": 3872,
+     "bananas": 153,
+     "shrubs": 3322,
+     "youngPalms": 106,
+     "ferns": 14239,
+     "monsteras": 354,
+     "elephantEars": 24,
+     "heliconias": 55,
+     "strelitzias": 7
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-209-strip.jpg",
+   "ms": 22574
+  },
+  {
+   "id": "seed-210",
+   "seed": 210,
+   "asked": {},
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "archipelago",
+    "islets": "2",
+    "bay": 134,
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "town",
+    "houses": "bright",
+    "reef": "none",
+    "water": "deep",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "cliffs",
+    "plants": "sparse",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "yes",
+    "cliffs": "sheer"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a small island (among bigger islets, low peaks, 2 islets), a smooth coast, a river mouth, sheer cliffs, cliffs on basalt, a narrow dark beach facing 134°, a dock, a bright town, no reef, deep water",
+   "generateMs": 30,
+   "loadMs": 8518,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8226,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 28,
+     "gridB": 493,
+     "upsample": 115,
+     "detail": 73,
+     "features": 39,
+     "scarp": 10,
+     "seabed": 93,
+     "masks": 170,
+     "border": 9,
+     "total": 1030
+    },
+    "heapMB": 257,
+    "village": {
+     "triangles": 103731,
+     "drawCalls": 7,
+     "lights": 36,
+     "buildings": 18
+    },
+    "plants": {
+     "palms": 3,
+     "trees": 336,
+     "bananas": 24,
+     "shrubs": 669,
+     "youngPalms": 10,
+     "ferns": 519,
+     "monsteras": 26,
+     "elephantEars": 2,
+     "heliconias": 5,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-210-strip.jpg",
+   "ms": 18203
+  },
+  {
+   "id": "seed-211",
+   "seed": 211,
+   "asked": {
+    "size": "large",
+    "peaks": "high",
+    "beach": "narrow",
+    "village": "hamlet",
+    "plants": "lush",
+    "river": "yes",
+    "time": "golden"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "cliffs",
+    "islets": "3",
+    "bay": 151,
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "hamlet",
+    "houses": "timber",
+    "reef": "small",
+    "water": "lagoon",
+    "sand": "golden",
+    "rock": "limestone",
+    "vegetation": "scrub",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "yes",
+    "cliffs": "sheer",
+    "time": "golden"
+   },
+   "look": {
+    "hour": 17.4,
+    "sea": "breezy"
+   },
+   "describe": "a large island (sheer cliffs on one side, high peaks, 3 islets), a rugged coast, a river mouth, sheer cliffs, scrub on limestone, a narrow golden beach facing 151°, a dock, a timber hamlet, a small reef, lagoon water (seen golden)",
+   "generateMs": 77,
+   "loadMs": 9125,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8615,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 31,
+     "gridB": 599,
+     "upsample": 126,
+     "detail": 146,
+     "features": 36,
+     "scarp": 14,
+     "seabed": 176,
+     "masks": 231,
+     "border": 5,
+     "total": 1364
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 92549,
+     "drawCalls": 7,
+     "lights": 32,
+     "buildings": 9
+    },
+    "plants": {
+     "palms": 16,
+     "trees": 627,
+     "bananas": 20,
+     "shrubs": 3491,
+     "youngPalms": 42,
+     "ferns": 3264,
+     "monsteras": 60,
+     "elephantEars": 7,
+     "heliconias": 6,
+     "strelitzias": 3
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-211-strip.jpg",
+   "ms": 18224
+  },
+  {
+   "id": "seed-212",
+   "seed": 212,
+   "asked": {
+    "size": "medium",
+    "shape": "volcano",
+    "peaks": "high",
+    "bay": "e",
+    "village": "none",
+    "reef": "small",
+    "coast": "smooth"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "volcano",
+    "islets": "2",
+    "bay": "e",
+    "beach": "wide",
+    "pier": "dock",
+    "village": "none",
+    "houses": "timber",
+    "reef": "small",
+    "water": "deep",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "cliffs",
+    "plants": "normal",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "sheer"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (a volcano with a rock spire, high peaks, 2 islets), a smooth coast, sheer cliffs, cliffs on basalt, a wide white beach facing east, a dock, no village, a small reef, deep water",
+   "generateMs": 26,
+   "loadMs": 8000,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7710,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 24,
+     "gridB": 482,
+     "upsample": 107,
+     "detail": 141,
+     "features": 34,
+     "scarp": 16,
+     "seabed": 101,
+     "masks": 196,
+     "border": 9,
+     "total": 1110
+    },
+    "heapMB": 242,
+    "village": {
+     "triangles": 37916,
+     "drawCalls": 5,
+     "lights": 8,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 9,
+     "trees": 1793,
+     "bananas": 18,
+     "shrubs": 2607,
+     "youngPalms": 25,
+     "ferns": 3160,
+     "monsteras": 119,
+     "elephantEars": 5,
+     "heliconias": 7,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-212-strip.jpg",
+   "ms": 17597
+  },
+  {
+   "id": "seed-213",
+   "seed": 213,
+   "asked": {
+    "shape": "atoll",
+    "pier": "jetty",
+    "houses": "bright",
+    "time": "noon"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "atoll",
+    "islets": "0",
+    "bay": 325,
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "none",
+    "houses": "bright",
+    "reef": "none",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "limestone",
+    "vegetation": "palms",
+    "plants": "sparse",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "none",
+    "time": "noon"
+   },
+   "look": {
+    "hour": 12.5,
+    "sea": "breezy"
+   },
+   "describe": "a small island (a low ring round a lagoon, low peaks), a rugged coast, palms on limestone, a narrow white beach facing 325°, a jetty, no village, no reef, lagoon water (seen noon)",
+   "generateMs": 168,
+   "loadMs": 8124,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7643,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 23,
+     "gridB": 369,
+     "upsample": 93,
+     "detail": 181,
+     "features": 33,
+     "scarp": 16,
+     "seabed": 217,
+     "masks": 273,
+     "border": 7,
+     "total": 1212
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 24075,
+     "drawCalls": 6,
+     "lights": 11,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 206,
+     "trees": 432,
+     "bananas": 48,
+     "shrubs": 1122,
+     "youngPalms": 78,
+     "ferns": 1423,
+     "monsteras": 40,
+     "elephantEars": 9,
+     "heliconias": 10,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-213-strip.jpg",
+   "ms": 18266
+  },
+  {
+   "id": "seed-214",
+   "seed": 214,
+   "asked": {
+    "shape": "twin",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "water": "deep",
+    "weather": "overcast"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "twin",
+    "islets": "1",
+    "bay": 262,
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "hamlet",
+    "houses": "bright",
+    "reef": "none",
+    "water": "deep",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "plants": "normal",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none",
+    "weather": "overcast"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "choppy",
+    "clouds": 0.9,
+    "veil": 1,
+    "haze": 4.2,
+    "exposure": 0.1
+   },
+   "describe": "a small island (twin peaks, low peaks, 1 islet), a rugged coast, 1 cove, jungle on basalt, a narrow dark beach facing 262°, a jetty, a bright hamlet, no reef, deep water (seen overcast)",
+   "generateMs": 195,
+   "loadMs": 7193,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 6764,
+    "look": {
+     "preset": null,
+     "hour": 15.5,
+     "sea": "choppy",
+     "exposure": 0.1,
+     "clouds": 0.9,
+     "veil": 1,
+     "haze": 4.2
+    },
+    "terrainMs": {
+     "gridA": 19,
+     "gridB": 394,
+     "upsample": 100,
+     "detail": 106,
+     "features": 24,
+     "scarp": 7,
+     "seabed": 84,
+     "masks": 176,
+     "border": 6,
+     "total": 916
+    },
+    "heapMB": 242,
+    "village": {
+     "triangles": 47483,
+     "drawCalls": 7,
+     "lights": 20,
+     "buildings": 7
+    },
+    "plants": {
+     "palms": 81,
+     "trees": 5612,
+     "bananas": 427,
+     "shrubs": 4836,
+     "youngPalms": 131,
+     "ferns": 16271,
+     "monsteras": 475,
+     "elephantEars": 33,
+     "heliconias": 103,
+     "strelitzias": 12
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-214-strip.jpg",
+   "ms": 16470
+  },
+  {
+   "id": "seed-215",
+   "seed": 215,
+   "asked": {
+    "shape": "cliffs",
+    "rock": "limestone",
+    "vegetation": "cliffs",
+    "houses": "whitewash",
+    "coast": "rugged"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "low",
+    "shape": "cliffs",
+    "islets": "2",
+    "bay": 108,
+    "beach": "wide",
+    "pier": "jetty",
+    "village": "none",
+    "houses": "whitewash",
+    "reef": "large",
+    "water": "flat",
+    "sand": "dark",
+    "rock": "limestone",
+    "vegetation": "cliffs",
+    "plants": "normal",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "yes",
+    "cliffs": "sheer"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (sheer cliffs on one side, low peaks, 2 islets), a rugged coast, a river mouth, sheer cliffs, cliffs on limestone, a wide dark beach facing 108°, a jetty, no village, a large reef, flat water",
+   "generateMs": 74,
+   "loadMs": 13646,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 13316,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 24,
+     "gridB": 477,
+     "upsample": 98,
+     "detail": 163,
+     "features": 34,
+     "scarp": 14,
+     "seabed": 262,
+     "masks": 238,
+     "border": 6,
+     "total": 1316
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 18225,
+     "drawCalls": 6,
+     "lights": 7,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 8,
+     "trees": 1275,
+     "bananas": 22,
+     "shrubs": 2732,
+     "youngPalms": 24,
+     "ferns": 1579,
+     "monsteras": 70,
+     "elephantEars": 4,
+     "heliconias": 4,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-215-strip.jpg",
+   "ms": 24350
+  },
+  {
+   "id": "seed-216",
+   "seed": 216,
+   "asked": {},
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "cliffs",
+    "islets": "1",
+    "bay": 188,
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "hamlet",
+    "houses": "whitewash",
+    "reef": "small",
+    "water": "lagoon",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "jungle",
+    "plants": "sparse",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "yes",
+    "cliffs": "sheer"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a medium island (sheer cliffs on one side, high peaks, 1 islet), a smooth coast, a river mouth, sheer cliffs, jungle on basalt, a narrow dark beach facing 188°, a jetty, a whitewash hamlet, a small reef, lagoon water",
+   "generateMs": 97,
+   "loadMs": 11598,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 10983,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 29,
+     "gridB": 589,
+     "upsample": 119,
+     "detail": 194,
+     "features": 40,
+     "scarp": 7,
+     "seabed": 196,
+     "masks": 276,
+     "border": 6,
+     "total": 1456
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 54780,
+     "drawCalls": 7,
+     "lights": 24,
+     "buildings": 8
+    },
+    "plants": {
+     "palms": 51,
+     "trees": 6613,
+     "bananas": 186,
+     "shrubs": 3054,
+     "youngPalms": 106,
+     "ferns": 22868,
+     "monsteras": 874,
+     "elephantEars": 29,
+     "heliconias": 65,
+     "strelitzias": 7
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-216-strip.jpg",
+   "ms": 21274
+  },
+  {
+   "id": "seed-217",
+   "seed": 217,
+   "asked": {
+    "size": "small",
+    "islets": "3",
+    "water": "flat",
+    "pier": "pier",
+    "houses": "timber",
+    "time": "night"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "plateau",
+    "islets": "3",
+    "bay": 329,
+    "beach": "wide",
+    "pier": "pier",
+    "village": "town",
+    "houses": "timber",
+    "reef": "none",
+    "water": "flat",
+    "sand": "white",
+    "rock": "basalt",
+    "vegetation": "scrub",
+    "plants": "normal",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "yes",
+    "cliffs": "none",
+    "time": "night"
+   },
+   "look": {
+    "hour": 21.5,
+    "sea": "breezy",
+    "exposure": 0.8
+   },
+   "describe": "a small island (a flat-topped table mountain, low peaks, 3 islets), a rugged coast, a river mouth, scrub on basalt, a wide white beach facing 329°, a pier, a timber town, no reef, flat water (seen night)",
+   "generateMs": 24,
+   "loadMs": 8862,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8538,
+    "look": {
+     "preset": null,
+     "hour": 21.5,
+     "sea": "breezy",
+     "exposure": 0.8,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 28,
+     "gridB": 474,
+     "upsample": 107,
+     "detail": 178,
+     "features": 58,
+     "scarp": 23,
+     "seabed": 257,
+     "masks": 207,
+     "border": 6,
+     "total": 1338
+    },
+    "heapMB": 307,
+    "village": {
+     "triangles": 122805,
+     "drawCalls": 7,
+     "lights": 41,
+     "buildings": 19
+    },
+    "plants": {
+     "palms": 16,
+     "trees": 302,
+     "bananas": 39,
+     "shrubs": 2607,
+     "youngPalms": 47,
+     "ferns": 1041,
+     "monsteras": 37,
+     "elephantEars": 2,
+     "heliconias": 8,
+     "strelitzias": 2
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-217-strip.jpg",
+   "ms": 23219
+  },
+  {
+   "id": "seed-218",
+   "seed": 218,
+   "asked": {
+    "shape": "ridge",
+    "pier": "jetty",
+    "village": "town",
+    "houses": "pastel",
+    "bay": "w"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "ridge",
+    "islets": "0",
+    "bay": "w",
+    "beach": "narrow",
+    "pier": "jetty",
+    "village": "town",
+    "houses": "pastel",
+    "reef": "large",
+    "water": "lagoon",
+    "sand": "golden",
+    "rock": "limestone",
+    "vegetation": "palms",
+    "plants": "sparse",
+    "coast": "rugged",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a large island (a long ridge, high peaks), a rugged coast, palms on limestone, a narrow golden beach facing west, a jetty, a pastel town, a large reef, lagoon water",
+   "generateMs": 60,
+   "loadMs": 8481,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8138,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 26,
+     "gridB": 408,
+     "upsample": 95,
+     "detail": 156,
+     "features": 36,
+     "scarp": 11,
+     "seabed": 170,
+     "masks": 231,
+     "border": 6,
+     "total": 1139
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 95987,
+     "drawCalls": 7,
+     "lights": 44,
+     "buildings": 18
+    },
+    "plants": {
+     "palms": 117,
+     "trees": 1389,
+     "bananas": 52,
+     "shrubs": 1838,
+     "youngPalms": 103,
+     "ferns": 7087,
+     "monsteras": 253,
+     "elephantEars": 16,
+     "heliconias": 20,
+     "strelitzias": 3
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-218-strip.jpg",
+   "ms": 17864
+  },
+  {
+   "id": "seed-219",
+   "seed": 219,
+   "asked": {
+    "shape": "archipelago",
+    "sand": "golden",
+    "vegetation": "scrub",
+    "village": "none",
+    "time": "morning"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "archipelago",
+    "islets": "2",
+    "bay": 77,
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "none",
+    "houses": "terracotta",
+    "reef": "none",
+    "water": "flat",
+    "sand": "golden",
+    "rock": "basalt",
+    "vegetation": "scrub",
+    "plants": "sparse",
+    "coast": "smooth",
+    "bays": "0",
+    "river": "none",
+    "cliffs": "none",
+    "time": "morning"
+   },
+   "look": {
+    "hour": 9.5,
+    "sea": "breezy"
+   },
+   "describe": "a small island (among bigger islets, low peaks, 2 islets), a smooth coast, scrub on basalt, a narrow golden beach facing 77°, a dock, no village, no reef, flat water (seen morning)",
+   "generateMs": 13,
+   "loadMs": 7874,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7571,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 33,
+     "gridB": 474,
+     "upsample": 100,
+     "detail": 144,
+     "features": 35,
+     "scarp": 16,
+     "seabed": 221,
+     "masks": 216,
+     "border": 11,
+     "total": 1250
+    },
+    "heapMB": 242,
+    "village": {
+     "triangles": 44752,
+     "drawCalls": 5,
+     "lights": 10,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 16,
+     "trees": 181,
+     "bananas": 13,
+     "shrubs": 1543,
+     "youngPalms": 26,
+     "ferns": 459,
+     "monsteras": 21,
+     "elephantEars": 2,
+     "heliconias": 0,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-219-strip.jpg",
+   "ms": 17511
+  },
+  {
+   "id": "seed-220",
+   "seed": 220,
+   "asked": {
+    "shape": "cliffs",
+    "peaks": "high",
+    "vegetation": "cliffs",
+    "village": "none",
+    "weather": "storm",
+    "coast": "rugged"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "cliffs",
+    "islets": "0",
+    "bay": 150,
+    "beach": "narrow",
+    "pier": "pier",
+    "village": "none",
+    "houses": "pastel",
+    "reef": "large",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "limestone",
+    "vegetation": "cliffs",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "sheer",
+    "weather": "storm"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "storm",
+    "clouds": 0.85,
+    "veil": 1,
+    "haze": 5.5,
+    "exposure": -0.3
+   },
+   "describe": "a large island (sheer cliffs on one side, high peaks), a rugged coast, 1 cove, sheer cliffs, cliffs on limestone, a narrow white beach facing 150°, a pier, no village, a large reef, lagoon water (seen storm)",
+   "generateMs": 95,
+   "loadMs": 8480,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 8077,
+    "look": {
+     "preset": null,
+     "hour": 15.5,
+     "sea": "storm",
+     "exposure": -0.3,
+     "clouds": 0.85,
+     "veil": 1,
+     "haze": 5.5
+    },
+    "terrainMs": {
+     "gridA": 20,
+     "gridB": 421,
+     "upsample": 96,
+     "detail": 152,
+     "features": 53,
+     "scarp": 11,
+     "seabed": 160,
+     "masks": 207,
+     "border": 7,
+     "total": 1127
+    },
+    "heapMB": 257,
+    "village": {
+     "triangles": 47831,
+     "drawCalls": 5,
+     "lights": 10,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 8,
+     "trees": 1578,
+     "bananas": 34,
+     "shrubs": 2616,
+     "youngPalms": 23,
+     "ferns": 3658,
+     "monsteras": 73,
+     "elephantEars": 3,
+     "heliconias": 7,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-220-strip.jpg",
+   "ms": 17742
+  },
+  {
+   "id": "seed-221",
+   "seed": 221,
+   "asked": {
+    "size": "large",
+    "shape": "single",
+    "river": "yes",
+    "village": "town",
+    "houses": "whitewash",
+    "coast": "coves"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "high",
+    "shape": "single",
+    "islets": "1",
+    "bay": 124,
+    "beach": "wide",
+    "pier": "dock",
+    "village": "town",
+    "houses": "whitewash",
+    "reef": "none",
+    "water": "lagoon",
+    "sand": "dark",
+    "rock": "basalt",
+    "vegetation": "palms",
+    "plants": "lush",
+    "coast": "coves",
+    "bays": "2",
+    "river": "yes",
+    "cliffs": "none"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "breezy"
+   },
+   "describe": "a large island (one summit, high peaks, 1 islet), a coves coast, 2 coves, a river mouth, palms on basalt, a wide dark beach facing 124°, a dock, a whitewash town, no reef, lagoon water",
+   "generateMs": 13,
+   "loadMs": 7466,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7266,
+    "look": {
+     "preset": null,
+     "hour": 16.2,
+     "sea": "breezy",
+     "exposure": 0,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 20,
+     "gridB": 476,
+     "upsample": 93,
+     "detail": 127,
+     "features": 41,
+     "scarp": 26,
+     "seabed": 152,
+     "masks": 212,
+     "border": 6,
+     "total": 1153
+    },
+    "heapMB": 290,
+    "village": {
+     "triangles": 107525,
+     "drawCalls": 7,
+     "lights": 39,
+     "buildings": 15
+    },
+    "plants": {
+     "palms": 304,
+     "trees": 2767,
+     "bananas": 174,
+     "shrubs": 4432,
+     "youngPalms": 354,
+     "ferns": 18587,
+     "monsteras": 498,
+     "elephantEars": 17,
+     "heliconias": 53,
+     "strelitzias": 14
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-221-strip.jpg",
+   "ms": 16296
+  },
+  {
+   "id": "seed-222",
+   "seed": 222,
+   "asked": {
+    "size": "medium",
+    "shape": "twin",
+    "sand": "white",
+    "vegetation": "palms",
+    "water": "lagoon",
+    "time": "sunset"
+   },
+   "words": {
+    "size": "medium",
+    "peaks": "high",
+    "shape": "twin",
+    "islets": "3",
+    "bay": 82,
+    "beach": "narrow",
+    "pier": "pier",
+    "village": "none",
+    "houses": "timber",
+    "reef": "none",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "limestone",
+    "vegetation": "palms",
+    "plants": "sparse",
+    "coast": "smooth",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none",
+    "time": "sunset"
+   },
+   "look": {
+    "hour": 17.95,
+    "sea": "breezy",
+    "exposure": 0.3
+   },
+   "describe": "a medium island (twin peaks, high peaks, 3 islets), a smooth coast, 1 cove, palms on limestone, a narrow white beach facing 82°, a pier, no village, no reef, lagoon water (seen sunset)",
+   "generateMs": 217,
+   "loadMs": 7293,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 6868,
+    "look": {
+     "preset": null,
+     "hour": 17.95,
+     "sea": "breezy",
+     "exposure": 0.3,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 21,
+     "gridB": 443,
+     "upsample": 94,
+     "detail": 147,
+     "features": 30,
+     "scarp": 8,
+     "seabed": 144,
+     "masks": 209,
+     "border": 6,
+     "total": 1102
+    },
+    "heapMB": 242,
+    "village": {
+     "triangles": 44646,
+     "drawCalls": 5,
+     "lights": 10,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 323,
+     "trees": 1931,
+     "bananas": 70,
+     "shrubs": 2715,
+     "youngPalms": 200,
+     "ferns": 9142,
+     "monsteras": 425,
+     "elephantEars": 20,
+     "heliconias": 19,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-222-strip.jpg",
+   "ms": 16092
+  },
+  {
+   "id": "seed-223",
+   "seed": 223,
+   "asked": {
+    "shape": "ridge",
+    "rock": "limestone",
+    "vegetation": "scrub",
+    "sand": "golden",
+    "coast": "smooth",
+    "weather": "overcast",
+    "houses": "terracotta",
+    "pier": "dock"
+   },
+   "words": {
+    "size": "large",
+    "peaks": "low",
+    "shape": "ridge",
+    "islets": "2",
+    "bay": 285,
+    "beach": "narrow",
+    "pier": "dock",
+    "village": "hamlet",
+    "houses": "terracotta",
+    "reef": "small",
+    "water": "lagoon",
+    "sand": "golden",
+    "rock": "limestone",
+    "vegetation": "scrub",
+    "plants": "normal",
+    "coast": "smooth",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none",
+    "weather": "overcast"
+   },
+   "look": {
+    "hour": 15.5,
+    "sea": "choppy",
+    "clouds": 0.9,
+    "veil": 1,
+    "haze": 4.2,
+    "exposure": 0.1
+   },
+   "describe": "a large island (a long ridge, low peaks, 2 islets), a smooth coast, 1 cove, scrub on limestone, a narrow golden beach facing 285°, a dock, a terracotta hamlet, a small reef, lagoon water (seen overcast)",
+   "generateMs": 132,
+   "loadMs": 7644,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 7298,
+    "look": {
+     "preset": null,
+     "hour": 15.5,
+     "sea": "choppy",
+     "exposure": 0.1,
+     "clouds": 0.9,
+     "veil": 1,
+     "haze": 4.2
+    },
+    "terrainMs": {
+     "gridA": 21,
+     "gridB": 437,
+     "upsample": 95,
+     "detail": 162,
+     "features": 28,
+     "scarp": 10,
+     "seabed": 185,
+     "masks": 201,
+     "border": 6,
+     "total": 1145
+    },
+    "heapMB": 273,
+    "village": {
+     "triangles": 82074,
+     "drawCalls": 7,
+     "lights": 25,
+     "buildings": 6
+    },
+    "plants": {
+     "palms": 21,
+     "trees": 780,
+     "bananas": 48,
+     "shrubs": 6038,
+     "youngPalms": 76,
+     "ferns": 2498,
+     "monsteras": 86,
+     "elephantEars": 3,
+     "heliconias": 19,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-223-strip.jpg",
+   "ms": 16616
+  },
+  {
+   "id": "seed-224",
+   "seed": 224,
+   "asked": {
+    "size": "small",
+    "shape": "atoll",
+    "islets": "2",
+    "village": "none",
+    "time": "night"
+   },
+   "words": {
+    "size": "small",
+    "peaks": "low",
+    "shape": "atoll",
+    "islets": "2",
+    "bay": 265,
+    "beach": "narrow",
+    "pier": "pier",
+    "village": "none",
+    "houses": "timber",
+    "reef": "none",
+    "water": "lagoon",
+    "sand": "white",
+    "rock": "limestone",
+    "vegetation": "palms",
+    "plants": "lush",
+    "coast": "rugged",
+    "bays": "1",
+    "river": "none",
+    "cliffs": "none",
+    "time": "night"
+   },
+   "look": {
+    "hour": 21.5,
+    "sea": "breezy",
+    "exposure": 0.8
+   },
+   "describe": "a small island (a low ring round a lagoon, low peaks, 2 islets), a rugged coast, 1 cove, palms on limestone, a narrow white beach facing 265°, a pier, no village, no reef, lagoon water (seen night)",
+   "generateMs": 232,
+   "loadMs": 7046,
+   "gpu": "blackwell",
+   "cost": {
+    "readyMs": 6617,
+    "look": {
+     "preset": null,
+     "hour": 21.5,
+     "sea": "breezy",
+     "exposure": 0.8,
+     "clouds": 0.45,
+     "veil": 0.5,
+     "haze": 1.6
+    },
+    "terrainMs": {
+     "gridA": 20,
+     "gridB": 363,
+     "upsample": 90,
+     "detail": 106,
+     "features": 25,
+     "scarp": 11,
+     "seabed": 184,
+     "masks": 186,
+     "border": 6,
+     "total": 991
+    },
+    "heapMB": 242,
+    "village": {
+     "triangles": 39601,
+     "drawCalls": 5,
+     "lights": 10,
+     "buildings": 0
+    },
+    "plants": {
+     "palms": 333,
+     "trees": 553,
+     "bananas": 73,
+     "shrubs": 1872,
+     "youngPalms": 140,
+     "ferns": 1919,
+     "monsteras": 37,
+     "elephantEars": 5,
+     "heliconias": 6,
+     "strelitzias": 0
+    }
+   },
+   "files": [
+    {
+     "view": "start",
+     "says": "the first view (the start)",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "sea",
+     "says": "the harbour from the sea",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "aerial",
+     "says": "the whole island from the air",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "back",
+     "says": "the far side, from the water",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    },
+    {
+     "view": "village",
+     "says": "down over the harbour",
+     "kept": "in the strip only (the full 1920x1080 shots stay out of git)"
+    }
+   ],
+   "strip": "strips/seed-224-strip.jpg",
+   "ms": 19770
+  }
+ ],
+ "note": "The five shots per place are kept as one strip each (1920x1080 shots at a third of their size side by side): start, sea, aerial, back, village."
+}

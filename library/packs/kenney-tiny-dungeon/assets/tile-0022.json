@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0022",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0022.png",
+ "sha256": "d6abe4713c9427d6ce3cca0c7b8ac50e205bc8af10bd5e86115de6248ca6e3a0",
+ "bytes": 252,
+ "preview": "previews/tile-0022.png",
+ "from": "Tiles/tile_0022.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the left half of a double doorway in a stone wall, its wooden door swung open (tile 23 is the right half)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "wooden",
+  "open",
+  "double-door",
+  "left"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#262b44",
+     "#3f2631",
+     "#52607c",
+     "#8b9bb4",
+     "#bd6c4a",
+     "#c0cbdc"
+    ],
+    "saturation": 0.271,
+    "value": 0.284,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.746
+     },
+     {
+      "hue": "pink",
+      "share": 0.211
+     },
+     {
+      "hue": "orange",
+      "share": 0.043
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.867
+   }
+  }
+ },
+ "source": {
+  "sha256": "24298faf91a61a57d158435e9fa75ca30ab88bbfddae797e2a268b1064787f45",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

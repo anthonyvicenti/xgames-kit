@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "barricade-b",
+ "pack": "forge-town",
+ "file": "barricade-b.glb",
+ "sha256": "a72bc080139bec16cfdb2f2971f86a03084581476442e2126a51ba466e984279",
+ "bytes": 24412,
+ "preview": "previews/barricade-b.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-crate.png, town/town-barrel.png, town/town-wood.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "3 m of a street closed off: crates heaped three high, barrels, boards nailed across the front; 2.5 m tall, nobody climbs it",
+ "tags": [
+  "town",
+  "barricade",
+  "b"
+ ],
+ "use": {
+  "size": [
+   3.094,
+   2.55,
+   1.678
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.532,
+   0,
+   -0.762
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    2.55,
+    1.7
+   ],
+   "offset": [
+    0,
+    1.275,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 164,
+  "textures": 3,
+  "textureMax": 64,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 164,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 3,
+     "bytes": 24412,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#533e28",
+     "#3f2e20",
+     "#4f3926",
+     "#413021",
+     "#282626",
+     "#433123",
+     "#5e432c",
+     "#664930"
+    ],
+    "saturation": 0.34,
+    "value": 0.236,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.976
+     }
+    ],
+    "grey": 0.024
+   },
+   "trianglesPerMetre": 2.31,
+   "texelsPerMetre": 35,
+   "texturedShare": 0.985,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-crate.png, town/town-barrel.png, town/town-wood.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

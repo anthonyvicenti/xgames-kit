@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "box-open",
+ "pack": "kenney-furniture-kit",
+ "file": "box-open.glb",
+ "sha256": "19218b56a0f437d514f7f1df5f0c5ff1586dab67fd8c5bd46e9762053a2260e4",
+ "bytes": 3580,
+ "preview": "previews/box-open.png",
+ "from": "kenney:furniture-kit/cardboardBoxOpen; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an open cardboard box",
+ "tags": [
+  "office",
+  "box",
+  "item",
+  "open"
+ ],
+ "use": {
+  "size": [
+   0.744,
+   0.562,
+   0.425
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.744,
+    0.562,
+    0.425
+   ],
+   "offset": [
+    0,
+    0.281,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3580,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8",
+     "#d7b495"
+    ],
+    "saturation": 0.751,
+    "value": 0.804,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.22,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "960da412564774c75e7b32f9af0100895e1edb877fc1e70dd34ee2422a2196d4",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "ground-dirt",
+ "pack": "forge-world",
+ "file": "ground-dirt.glb",
+ "sha256": "d6e01f705bd06c89f4d3ce28ea4e3c5413de888b4a51e3c41695d31573800b4d",
+ "bytes": 7328,
+ "preview": "previews/ground-dirt.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-dirt.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a 4 m ragged patch of dark earth lying on the grass (alpha mask: its edge is square texels)",
+ "tags": [
+  "world",
+  "ground",
+  "dirt"
+ ],
+ "use": {
+  "size": [
+   4,
+   0,
+   4
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -2,
+   0.012,
+   -2
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 2,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 7328,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#252526",
+     "#282723"
+    ],
+    "saturation": 0.04,
+    "value": 0.147,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 0.35,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-dirt.png) inside",
+  "author": "games.fun over Rob Tuytel (Poly Haven)"
+ }
+}

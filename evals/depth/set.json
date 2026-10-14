@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-set/1",
+ "set": "depth",
+ "frozen": "2026-10-13",
+ "title": "Depth pass 1",
+ "question": "For each kind, does our showcase game come within reach of a reference game the creator names, judged blind by players, and what does the creator say when they play it?",
+ "slots": [
+  "silly",
+  "blocky",
+  "lofi",
+  "scenic",
+  "dark",
+  "calm",
+  "pixel",
+  "drawn"
+ ],
+ "order": "The kinds breadth can already build go first (DESIGN, \"Cadence\"). The order is set in the pass's plan.json, not here.",
+ "build": "Each showcase is built through the whole loop from its prompt, with the whole ladder: the strong model, specialist rounds for art, feel and netcode, generated and hand-made art, as many rounds as it takes. No budget.",
+ "scale": {
+  "min": 1,
+  "max": 7,
+  "anchors": {
+   "1": "very poor",
+   "4": "fine",
+   "7": "excellent"
+  }
+ },
+ "measures": {
+  "clarity": "I always knew what to do and what was happening.",
+  "feel": "Moving, acting and getting hit felt good under my hands.",
+  "look": "It looked good while it was moving.",
+  "again": "I would play it again with friends."
+ },
+ "panel": {
+  "minPlayers": 6,
+  "who": "people who have not seen our game, are not on the team, and do not know which game is ours",
+  "together": "when both games are multiplayer, players play in pairs; the same count plays both games"
+ },
+ "screen": {
+  "size": "3840x2160",
+  "refresh": 60,
+  "where": "the creator's 4K screen on this machine, both games full screen, in motion"
+ },
+ "withinReach": "A measure is within reach when the mean over players of (our score - the reference's score) is at least -1.0.",
+ "exit": "Per slot: the creator's verdict in their own words, recorded verbatim in a new evidence file; and the blind scores within reach on at least 3 of the 4 measures.",
+ "protocol": "PROTOCOL.md"
+}

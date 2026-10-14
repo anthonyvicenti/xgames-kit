@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0011",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0011.png",
+ "sha256": "3552e7639e201f4822813ab9d2ca5dc6e48826b19deacd13d7e36d74070e925e",
+ "bytes": 250,
+ "preview": "previews/tile-0011.png",
+ "from": "Tiles/tile_0011.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the right half of a wide open doorway in a stone wall",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "open",
+  "wide",
+  "right"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#bd6c4a",
+     "#52607c",
+     "#8b9bb4",
+     "#c0cbdc"
+    ],
+    "saturation": 0.289,
+    "value": 0.329,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.883
+     },
+     {
+      "hue": "orange",
+      "share": 0.117
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.65
+   }
+  }
+ },
+ "source": {
+  "sha256": "22b9237af31b12ff6cfaa1ed3b520383e93380c4e1582b7feafd76a9e9344426",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

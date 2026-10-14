@@ -1,0 +1,12 @@
+[
+  { "path": "AGENTS.md", "reason": "the game's guide for coding agents (gamesfun-kit), not a game asset" },
+  { "path": "CLAUDE.md", "reason": "imports AGENTS.md for Claude Code (gamesfun-kit), not a game asset" },
+  { "path": ".claude/**", "reason": "coding-agent settings and skills, not game assets" },
+  { "path": ".agents/**", "reason": "coding-agent skills, not game assets" },
+  { "path": "scratch/**", "reason": "an agent's and a play-tester's scratch files, not game assets" },
+  { "path": "gamesfun.json", "reason": "the game's public web3 settings (gf-web3: token, shop, items, loot boxes), not a game asset" },
+  { "path": "backend.json", "reason": "the game's public backend settings (its project URL and publishable key; gamesfun backend), not a game asset" },
+  { "path": "supabase/**", "reason": "the game's database tables and access rules (SQL migrations, gamesfun backend), not game assets" },
+  { "path": ".gamesfun/**", "reason": "the kit's record of this game's games.fun link and its last passing check (gamesfun publish), not game assets" },
+  { "path": ".mcp.json", "reason": "Claude Code's MCP servers for this game folder (gamesfun backend: Supabase's MCP server for its project), not a game asset" }
+]

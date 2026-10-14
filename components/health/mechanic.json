@@ -1,0 +1,397 @@
+{
+  "id": "health",
+  "name": "Health",
+  "describe": "Health, knockback, ragdoll and get-up, respawn",
+  "examples": [
+    "bonked: knocked over, gets up",
+    "three hearts, respawn after 3 s",
+    "water balloon hits"
+  ],
+  "rank": 40,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "hp": {
+        "type": "number",
+        "description": "Hit points (0: no meter, a hit only knocks the player over)",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 3
+      },
+      "regen": {
+        "type": "number",
+        "description": "Hit points regained per second once left alone",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 0
+      },
+      "regenDelay": {
+        "type": "number",
+        "description": "Seconds without a hit before regeneration starts",
+        "minimum": 0,
+        "maximum": 30,
+        "default": 3
+      },
+      "ragdollOnHit": {
+        "type": "boolean",
+        "default": true,
+        "description": "A hit with an impulse knocks the body over (ragdoll / knockdown animation)"
+      },
+      "getUpSeconds": {
+        "type": "number",
+        "description": "Seconds a knocked player stays down when fair play is off (with it on, fair.downSeconds rules)",
+        "minimum": 0,
+        "maximum": 8,
+        "default": 1.5
+      },
+      "respawnSeconds": {
+        "type": "number",
+        "description": "Seconds a player at 0 hp stays out (0: never returns this round)",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 3
+      },
+      "respawnInvuln": {
+        "type": "number",
+        "description": "Seconds of protection after respawning",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1.5
+      },
+      "respawnZone": {
+        "type": "string",
+        "default": "",
+        "description": "World zone to respawn in (\"\": the player's own spawn point)"
+      },
+      "killY": {
+        "type": "number",
+        "description": "Falling below this height (m) counts as falling out of the world",
+        "minimum": -200,
+        "maximum": 0,
+        "default": -8
+      },
+      "meter": {
+        "type": "boolean",
+        "default": true,
+        "description": "Kept for old configs; the kit HUD always shows hit points when hp > 0 (CONTRACT §6g)"
+      },
+      "label": {
+        "type": "string",
+        "default": "Health",
+        "description": "Meter label"
+      },
+      "color": {
+        "type": "string",
+        "default": "#ff5e6c",
+        "description": "Meter colour"
+      },
+      "soundHurt": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when someone loses hit points (\"\": none)"
+      },
+      "soundDown": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when someone is knocked out (\"\": none)"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.health.hp",
+        "label": "Hit points",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/hp"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 68,
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.health.get-up-seconds",
+        "label": "Seconds down after a knock (fair play off)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/getUpSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 24,
+        "constraints": {
+          "min": 0,
+          "max": 8,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.health.respawn-seconds",
+        "label": "Respawn time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/respawnSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 58,
+        "constraints": {
+          "min": 0,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.health.color",
+        "label": "Health meter colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 40
+      },
+      {
+        "id": "mechanic.health.label",
+        "label": "Health meter label",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/label"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 24
+        }
+      },
+      {
+        "id": "mechanic.health.regen",
+        "label": "Regeneration per second",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/regen"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20
+        }
+      },
+      {
+        "id": "mechanic.health.regen-delay",
+        "label": "Regeneration delay",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/regenDelay"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 30,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.health.respawn-invuln",
+        "label": "Protection after respawn",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/respawnInvuln"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.health.ragdoll-on-hit",
+        "label": "Hits knock the body over",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/ragdollOnHit"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.health.kill-y",
+        "label": "Fall-out height",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/killY"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": -200,
+          "max": 0,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.health.sound-hurt",
+        "label": "Hurt sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundHurt"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.health.sound-down",
+        "label": "Knocked-out sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundDown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onDamage",
+      "on": "host",
+      "args": "{ target, from, amount, hp, lethal, knocked, source }",
+      "when": "a hit that counted (fair play let it through)"
+    },
+    {
+      "name": "onDown",
+      "on": "host",
+      "args": "{ target, from }",
+      "when": "a player ran out of hit points"
+    },
+    {
+      "name": "onRespawn",
+      "on": "host",
+      "args": "{ player }",
+      "when": "a player came back"
+    },
+    {
+      "name": "onHurt",
+      "on": "every copy",
+      "args": "{ player, hp, delta }",
+      "when": "a player's hit points changed"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns hit points, down and respawn timers and protection",
+    "state": "hp",
+    "fields": {
+      "h": "{ playerId: hit points }"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "health"
+  ],
+  "bots": "fair play caps bots per human",
+  "notes": {
+    "lines": [
+      "The kit's HUD already shows the local player's hit points, knocked-down state and protection: never draw them in rules.js.",
+      "Projectile, melee, waves and the boss call hp.damage themselves; rules.js calls it only for its own hazards.",
+      "hp 0 means no hit points: a hit only knocks over. respawnSeconds 0 means out for the round."
+    ],
+    "readme": "components/health/README.md",
+    "stub": {
+      "as": "hp",
+      "worked": "hp.onDamage(d => { if (d.from && d.knocked) d.from.score += 1; });",
+      "traps": [
+        "hp.damage returns false and onDamage stays silent when fair play refuses the hit (the target is down or protected, or the round has just begun): do not score outside onDamage",
+        "a hit that repeats every frame (a hazard, contact) passes { push: true }, so it shoves and never knocks over"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/health/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/health/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-health.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "forge": {
+      "path": "components/health/impl/forge/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "the two-player forge fixture (runtimes/forge/tools/fixture.mjs health): a host and a joiner over WebRTC, 13 of 13 checks on both screens; passed in every run that day (six), the last two on the final code; the shared state has three's keys and shapes (what the gates read)",
+            "ref": "components/health/impl/forge/evidence/2026-10-13/checks.json",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 151.0.7922.34 (Playwright, WebGPU)",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "note": "the core's health (the tables' scale): damage, heal, regen, down, respawn; hp, the ragdoll knock and respawnInvuln are three's"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-health.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

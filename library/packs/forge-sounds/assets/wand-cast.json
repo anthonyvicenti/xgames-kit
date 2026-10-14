@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "wand-cast",
+ "pack": "forge-sounds",
+ "file": "wand-cast.ogg",
+ "sha256": "9596736dcb27458940bc969d2932ae849735d057bdff4c9965100e16a8384c21",
+ "bytes": 8193,
+ "preview": "previews/wand-cast.png",
+ "from": "https://opengameart.org/content/80-cc0-rpg-sfx spell_01.ogg; cut to 0.011-0.511 s of the source (0.5 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -3.5 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "wand spell cast (wand cast)",
+ "tags": [
+  "sounds",
+  "wand",
+  "cast",
+  "weapon"
+ ],
+ "use": {
+  "seconds": 0.506,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -15,
+     "samplePeakDb": -3.1,
+     "truePeakDb": -3.1,
+     "hfRatio": 0.225
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.506,
+    "peakDbfs": -3.1,
+    "soundMaxLufs": -15
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/80-cc0-rpg-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.011-0.511 s of the source (0.5 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -3.5 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

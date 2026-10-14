@@ -1,0 +1,388 @@
+{
+  "about": "A cosy town corner seen from above, in the pixel kind's own art (library pack xk-pixel-town): two houses with a path to each door, a fenced plot of crops, a pond, trees, a lamp, barrels and dressing in the grass. The look judge's contact sheet draws it (builder/look-judge/pages/flat.js) through the same draw plan a game uses (runtimes/three/profiles/flat-2d/drawplan.js); a spec may copy its map. `art` names the picture of each kind in the asset library (<pack>/<id>: tiles, edges, dress); `bodies` places villagers (xk-pixel-folk) for the sheet only.",
+  "template": "field",
+  "map": {
+    "format": "gf-tilemap-1",
+    "plane": "top",
+    "tile": 1,
+    "base": "grass",
+    "kinds": {
+      "grass": {
+        "solid": false,
+        "dress": 0.24
+      },
+      "path": {
+        "solid": false,
+        "edges": "blend"
+      },
+      "soil": {
+        "solid": false,
+        "edges": "blend",
+        "dress": 1
+      },
+      "water": {
+        "solid": true,
+        "edges": "blend"
+      },
+      "cobble": {
+        "solid": false,
+        "edges": "blend"
+      },
+      "fence": {
+        "solid": true,
+        "edges": "connect"
+      },
+      "hedge": {
+        "solid": true,
+        "edges": "connect"
+      },
+      "house-red": {
+        "solid": true,
+        "piece": [
+          5,
+          3
+        ]
+      },
+      "house-blue": {
+        "solid": true,
+        "piece": [
+          5,
+          3
+        ]
+      },
+      "oak": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "apple": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "pine": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "bush": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "rock": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "barrel": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "lamp": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "mailbox": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "well": {
+        "solid": true,
+        "piece": [
+          2,
+          1
+        ]
+      },
+      "sign": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "hay": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "pumpkin": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "pot": {
+        "solid": true,
+        "piece": [
+          1,
+          1
+        ]
+      },
+      "bench": {
+        "solid": true,
+        "piece": [
+          2,
+          1
+        ]
+      },
+      "logs": {
+        "solid": true,
+        "piece": [
+          2,
+          1
+        ]
+      }
+    },
+    "legend": {
+      ".": null,
+      ",": "path",
+      "s": "soil",
+      "~": "water",
+      "c": "cobble",
+      "f": "fence",
+      "h": "hedge",
+      "R": "house-red",
+      "B": "house-blue",
+      "T": "oak",
+      "A": "apple",
+      "P": "pine",
+      "b": "bush",
+      "r": "rock",
+      "k": "barrel",
+      "l": "lamp",
+      "m": "mailbox",
+      "w": "well",
+      "g": "sign",
+      "y": "hay",
+      "u": "pumpkin",
+      "o": "pot",
+      "n": "bench",
+      "L": "logs",
+      "1": "spawn"
+    },
+    "rows": [
+      "....................",
+      "......b.............",
+      "...............T..A.",
+      ".RRRRR..BBBBB.......",
+      ".RRRRR.kBBBBB...P...",
+      ".RRRRRk.BBBBBom..b..",
+      "...,o.....,.....g...",
+      ",,,,,,,,,,,,,,,,,,,,",
+      ",,,,,,,,,,,,,,,,,,,,",
+      ".ffffffff.cccc.~~~..",
+      ".fssssssf.cwwc~~~~~.",
+      "1fssssssf.cccc~~~~1."
+    ]
+  },
+  "art": {
+    "tiles": {
+      "grass": "flat-standins-pixel/tile-grass",
+      "path": "flat-standins-pixel/tile-path",
+      "soil": "xk-pixel-town/tile-soil",
+      "water": "flat-standins-pixel/tile-water",
+      "cobble": "xk-pixel-town/tile-cobble",
+      "house-red": "xk-pixel-town/house-red",
+      "house-blue": "xk-pixel-town/house-blue",
+      "oak": "xk-pixel-town/tree-oak",
+      "apple": "xk-pixel-town/tree-apple",
+      "pine": "xk-pixel-town/tree-pine",
+      "bush": "xk-pixel-town/bush",
+      "rock": "xk-pixel-town/boulder",
+      "barrel": "xk-pixel-town/barrel",
+      "lamp": "xk-pixel-town/lamp",
+      "mailbox": "xk-pixel-town/mailbox",
+      "well": "xk-pixel-town/well",
+      "sign": "xk-pixel-town/sign",
+      "hay": "xk-pixel-town/hay",
+      "pumpkin": "xk-pixel-town/pumpkin",
+      "pot": "xk-pixel-town/flower-pot",
+      "bench": "xk-pixel-town/bench",
+      "logs": "xk-pixel-town/log-pile"
+    },
+    "edges": {
+      "path": "xk-pixel-town/edges-path",
+      "soil": "xk-pixel-town/edges-soil",
+      "water": "xk-pixel-town/edges-water",
+      "cobble": "xk-pixel-town/edges-cobble",
+      "fence": "xk-pixel-town/edges-fence",
+      "hedge": "xk-pixel-town/edges-hedge"
+    },
+    "dress": {
+      "grass": "xk-pixel-town/dress-grass",
+      "soil": "xk-pixel-town/dress-soil"
+    }
+  },
+  "sheet": {
+    "bodies": [
+      {
+        "id": "folk-farmer",
+        "row": 0,
+        "frame": 0,
+        "at": [
+          3.6,
+          7.2
+        ]
+      },
+      {
+        "id": "folk-gardener",
+        "row": 1,
+        "frame": 1,
+        "at": [
+          6.5,
+          8.4
+        ]
+      },
+      {
+        "id": "folk-elder",
+        "row": 1,
+        "frame": 0,
+        "at": [
+          13.4,
+          7.6
+        ],
+        "flip": true
+      },
+      {
+        "id": "folk-courier",
+        "row": 0,
+        "frame": 2,
+        "at": [
+          10.4,
+          6.8
+        ]
+      },
+      {
+        "id": "folk-baker",
+        "row": 2,
+        "frame": 0,
+        "at": [
+          15.5,
+          6.2
+        ]
+      },
+      {
+        "id": "folk-fisher",
+        "row": 1,
+        "frame": 4,
+        "at": [
+          14.1,
+          11.1
+        ]
+      },
+      {
+        "id": "folk-miner",
+        "row": 0,
+        "frame": 1,
+        "at": [
+          4.5,
+          11.2
+        ]
+      },
+      {
+        "id": "folk-player",
+        "row": 1,
+        "frame": 1,
+        "at": [
+          18.2,
+          8.9
+        ],
+        "flip": true
+      }
+    ],
+    "hero": [
+      {
+        "id": "folk-farmer",
+        "row": 0,
+        "frame": 0,
+        "at": [
+          3.1,
+          6.95
+        ]
+      },
+      {
+        "id": "folk-gardener",
+        "row": 1,
+        "frame": 4,
+        "at": [
+          4.9,
+          7.05
+        ],
+        "flip": true
+      }
+    ],
+    "folk": [
+      "folk-farmer",
+      "folk-baker",
+      "folk-smith",
+      "folk-elder",
+      "folk-fisher",
+      "folk-gardener",
+      "folk-scholar",
+      "folk-rocker",
+      "folk-ranger",
+      "folk-courier",
+      "folk-tailor",
+      "folk-miner",
+      "folk-player"
+    ],
+    "frames": {
+      "side": "folk-ranger",
+      "down": "folk-baker"
+    },
+    "props": [
+      [
+        "xk-pixel-town/tree-oak",
+        "xk-pixel-town/tree-apple",
+        "xk-pixel-town/tree-pine",
+        "xk-pixel-town/well",
+        "xk-pixel-town/lamp",
+        "xk-pixel-town/mailbox"
+      ],
+      [
+        "xk-pixel-town/bush",
+        "xk-pixel-town/boulder",
+        "xk-pixel-town/rock",
+        "xk-pixel-town/stump",
+        "xk-pixel-town/log-pile",
+        "xk-pixel-town/barrel",
+        "xk-pixel-town/crate-big",
+        "xk-pixel-town/sign"
+      ],
+      [
+        "xk-pixel-town/flower-pot",
+        "xk-pixel-town/pumpkin",
+        "xk-pixel-town/hay",
+        "xk-pixel-town/bench",
+        "flat-standins-pixel/coin",
+        "flat-standins-pixel/gem",
+        "flat-standins-pixel/heart",
+        "flat-standins-pixel/key",
+        "flat-standins-pixel/star"
+      ]
+    ]
+  }
+}

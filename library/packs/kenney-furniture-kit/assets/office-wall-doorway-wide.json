@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "office-wall-doorway-wide",
+ "pack": "kenney-furniture-kit",
+ "file": "office-wall-doorway-wide.glb",
+ "sha256": "2c936d73fafaf730ae57ee6f72b2de360c0ef6fcf3b0d069db0855dda4f747d0",
+ "bytes": 4572,
+ "preview": "previews/office-wall-doorway-wide.png",
+ "from": "kenney:furniture-kit/wallDoorwayWide; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an office wall panel with a wide open doorway (1.7 m)",
+ "tags": [
+  "office",
+  "wall",
+  "door",
+  "doorway",
+  "wide"
+ ],
+ "use": {
+  "size": [
+   2,
+   2.579,
+   0.178
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 60,
+  "textures": 0,
+  "materials": 3
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 60,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4572,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f3cca8",
+     "#ffffff",
+     "#96a7a7"
+    ],
+    "saturation": 0.33,
+    "value": 0.826,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.594
+     },
+     {
+      "hue": "orange",
+      "share": 0.406
+     }
+    ],
+    "grey": 0.594
+   },
+   "trianglesPerMetre": 3.22,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "877af5b239f31f12027e3cec92aa26e97d511e1ae8673a8e3d7d13302d33edf3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

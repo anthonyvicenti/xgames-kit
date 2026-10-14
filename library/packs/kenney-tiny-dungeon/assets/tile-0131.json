@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0131",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0131.png",
+ "sha256": "62515cdb1887057857452ede02fbf5febebef77a65773b826ba207f15ba71560",
+ "bytes": 214,
+ "preview": "previews/tile-0131.png",
+ "from": "Tiles/tile_0131.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a spear with an iron point",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "spear",
+  "lance",
+  "polearm",
+  "weapon",
+  "melee",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#c0cbdc",
+     "#eaa56c",
+     "#8b9bb4",
+     "#763b36"
+    ],
+    "saturation": 0.296,
+    "value": 0.307,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.74
+     },
+     {
+      "hue": "orange",
+      "share": 0.146
+     },
+     {
+      "hue": "blue",
+      "share": 0.094
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "0fe7c5448902cef52dd8ed8530eda0a986ad0d2cc0c36c2ee1528fe0c6860262",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

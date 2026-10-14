@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "folk-fisher-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-fisher-top.png",
+ "sha256": "2a48f45b90c282351a68e0fe66867b3baff5c2f418e5b2e3dcaa3972a54faeaa",
+ "bytes": 4458,
+ "preview": "previews/folk-fisher-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-fisher-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a fisher in a yellow cap and a teal jumper; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "fisher",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#2f9a9a",
+     "#a96b41",
+     "#f0c040",
+     "#2c4b5e",
+     "#3a2a22",
+     "#71593e",
+     "#39364f",
+     "#55606e"
+    ],
+    "saturation": 0.384,
+    "value": 0.364,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.269
+     },
+     {
+      "hue": "cyan",
+      "share": 0.26
+     },
+     {
+      "hue": "brown",
+      "share": 0.172
+     },
+     {
+      "hue": "orange",
+      "share": 0.152
+     },
+     {
+      "hue": "yellow",
+      "share": 0.104
+     },
+     {
+      "hue": "purple",
+      "share": 0.036
+     }
+    ],
+    "exact": 28,
+    "grey": 0.269
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.57
+   }
+  }
+ },
+ "source": {
+  "sha256": "ab091e8802af2edc35cc0361786010550196629bb320b3c47e5018e775cd1a7c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

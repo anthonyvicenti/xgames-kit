@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-mushroom-brown",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-mushroom-brown.png",
+ "sha256": "5e9ab267488959260b0158826c0d06c6b5201983891d2af8f181063a38e02a68",
+ "bytes": 20249,
+ "preview": "previews/voxel-mushroom-brown.png",
+ "from": "kenney:voxel-pack/mushroom_brown; PNG/Tiles/mushroom_brown.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 528,528; mean difference 4.1 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "mushroom_brown (Voxel Pack)",
+ "tags": [
+  "mushroom",
+  "brown",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.834
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#a06d3d",
+     "#efebdc",
+     "#936438",
+     "#bd8853",
+     "#e1d7bf",
+     "#bd8852",
+     "#e1d7be",
+     "#bc8853"
+    ],
+    "saturation": 0.432,
+    "value": 0.531,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.678
+     },
+     {
+      "hue": "yellow",
+      "share": 0.204
+     },
+     {
+      "hue": "brown",
+      "share": 0.117
+     }
+    ],
+    "exact": 369,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "dca9f09ea940da8646b49406ae1257079525ee4c7dcc3db956eaa1689cae3fbc",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

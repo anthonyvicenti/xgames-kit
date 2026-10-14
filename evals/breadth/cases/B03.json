@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B03",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "survival-crafting",
+  "rank": 3,
+  "row": "Survival crafting",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "we wake up stranded in a forest. chop trees, mine rocks, craft tools and a campfire, and keep each other alive when it gets dark and things come out",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "gather",
+   "type": "mechanic",
+   "must": "chopping and mining into an inventory"
+  },
+  {
+   "id": "craft",
+   "type": "mechanic",
+   "must": "crafting tools and a campfire from what was gathered"
+  },
+  {
+   "id": "night",
+   "type": "mechanic",
+   "must": "night comes and things come out that hurt the players"
+  },
+  {
+   "id": "days",
+   "type": "loop",
+   "must": "days and nights pass and the camp stays, so surviving is the goal"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

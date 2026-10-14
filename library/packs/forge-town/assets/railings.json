@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "railings",
+ "pack": "forge-town",
+ "file": "railings.glb",
+ "sha256": "a59d16d14e31744c651c891d9661d1ad2c0ee904c0306dec1b7c285df6063575",
+ "bytes": 14052,
+ "preview": "previews/railings.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-stone.png, town/town-railings.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "3 m of iron railings with spear tips on a stone plinth, 3.4 m tall (alpha mask: the fog and what stands past it show between the bars)",
+ "tags": [
+  "town",
+  "railings"
+ ],
+ "use": {
+  "size": [
+   3,
+   3.4,
+   0.4
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.2
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3.4,
+    0.4
+   ],
+   "offset": [
+    0,
+    1.7,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 2,
+  "textureMax": 96,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 2,
+     "bytes": 14052,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#000000",
+     "#828480",
+     "#555957",
+     "#535755",
+     "#61605b",
+     "#52534f",
+     "#65635e"
+    ],
+    "saturation": 0.008,
+    "value": 0.138,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 0.95,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (town/town-stone.png, town/town-railings.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-shield-spikes",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-shield-spikes.glb",
+ "sha256": "3a36d7bbc0299dff2ac2e913e1f0fda1c7f16985cf029d9bf3d04bb538ba670a",
+ "bytes": 49120,
+ "preview": "previews/kaykit-shield-spikes.png",
+ "from": "shield_spikes.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Spike_Shield (handslot.l)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round shield with spikes",
+ "tags": [
+  "shield",
+  "offhand",
+  "block",
+  "spiked",
+  "kaykit",
+  "spikes"
+ ],
+ "use": {
+  "size": [
+   0.755,
+   0.778,
+   0.345
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.378,
+   -0.417,
+   -0.109
+  ],
+  "grip": {
+   "position": [
+    -0.0073,
+    0.0738,
+    0.078
+   ],
+   "quaternion": [
+    -0.4909,
+    0.5089,
+    0.5089,
+    0.4909
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 420,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 420,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 49120,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#818b90",
+     "#7d888d",
+     "#737c81",
+     "#767f85",
+     "#7d878b",
+     "#899499",
+     "#6c7579",
+     "#727b7f"
+    ],
+    "saturation": 0.099,
+    "value": 0.492,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.919
+     },
+     {
+      "hue": "brown",
+      "share": 0.081
+     }
+    ],
+    "grey": 0.919
+   },
+   "trianglesPerMetre": 17.84,
+   "texelsPerMetre": 113,
+   "texturedShare": 0.845,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/shield_spikes.gltf",
+  "sha256": "c2bb6202c2236ff477573ae4770c55c0586d9a554b6df861bc62d7ec0134e31f",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight Spike_Shield (handslot.l)"
+ }
+}

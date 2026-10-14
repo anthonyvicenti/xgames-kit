@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-cloud",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-cloud.png",
+ "sha256": "76b5adfbf908b7a7d327086c3704a30159928b40fb1df49fe83b6ad425a1a0e2",
+ "bytes": 3396,
+ "preview": "previews/terrain-grass-cloud.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_cloud.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "terrain grass cloud",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "cloud",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#2ecc71",
+     "#ee9366",
+     "#de7e4f",
+     "#46e087",
+     "#20b860",
+     "#c66a3e",
+     "#25bf66"
+    ],
+    "saturation": 0.528,
+    "value": 0.467,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.368
+     },
+     {
+      "hue": "green",
+      "share": 0.359
+     },
+     {
+      "hue": "grey",
+      "share": 0.265
+     }
+    ],
+    "exact": 99,
+    "grey": 0.265
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "4566529578268d884a77d9de5d38d5aed04b300711c227c4ad1fe13f551139e3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

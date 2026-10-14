@@ -1,0 +1,108 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "bucket": {
+   "origin": "gf-three library props/bucket.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.477
+      },
+      {
+       "hue": "blue",
+       "share": 0.426
+      },
+      {
+       "hue": "orange",
+       "share": 0.097
+      }
+     ],
+     "grey": 0.477,
+     "lightness": 0.628,
+     "saturation": 0.242,
+     "top": [
+      {
+       "colour": "#979ebe",
+       "share": 0.426
+      },
+      {
+       "colour": "#8a91ad",
+       "share": 0.327
+      },
+      {
+       "colour": "#7d829a",
+       "share": 0.15
+      },
+      {
+       "colour": "#e78f65",
+       "share": 0.048
+      },
+      {
+       "colour": "#db845d",
+       "share": 0.024
+      },
+      {
+       "colour": "#df8860",
+       "share": 0.024
+      }
+     ]
+    },
+    "trianglesPerMetre": 10.74,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 68,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 14404,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 1,
+   "paletteSize": 4,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.477
+    },
+    {
+     "hue": "blue",
+     "share": 0.426
+    },
+    {
+     "hue": "orange",
+     "share": 0.097
+    }
+   ],
+   "lightness": 0.628,
+   "saturation": 0.242,
+   "trianglesPerMetre": 10.74,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.477
+  },
+  "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
+ }
+}

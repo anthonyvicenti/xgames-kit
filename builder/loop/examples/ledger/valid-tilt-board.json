@@ -1,0 +1,18 @@
+{
+  "schema": "gf-ledger/1",
+  "prompt": "connect four but the board tilts every few turns, pixel art, play with a friend online. ranked can come later",
+  "rows": [
+    { "id": "drop", "about": "action", "what": "Players drop discs into columns; four in a row wins", "words": "connect four", "home": "exists", "by": "mechanic:board", "core": true },
+    { "id": "tilt", "about": "action", "what": "The board tilts every few turns and loose discs slide", "words": "the board tilts every few turns", "home": "build", "how": "a module in src/tilt.js that slides the discs after every third move", "where": "module", "core": true },
+    { "id": "acts", "about": "acts", "what": "One player acts at a time", "words": "connect four", "acts": "one-at-a-time", "home": "exists" },
+    { "id": "view", "about": "perspective", "what": "A flat board seen from above", "words": "pixel art", "camera": "top", "dimension": "2d", "home": "exists" },
+    { "id": "friend", "about": "players", "what": "Two friends take turns against each other", "words": "play with a friend online", "together": "turns", "home": "exists" },
+    { "id": "body", "about": "body", "what": "Each player is a cursor over the board", "words": null, "body": "cursor", "asked": true, "home": "exists" },
+    { "id": "devices", "about": "devices", "what": "It plays on a desktop and a phone", "words": "default", "devices": ["desktop", "phone"], "home": "exists" },
+    { "id": "look", "about": "feel", "what": "Pixel art", "words": "pixel art", "kind": "pixel", "home": "exists" },
+    { "id": "ranked", "about": "thing", "what": "Ranked matchmaking", "words": "ranked", "home": "build", "cut": { "words": "ranked can come later" } }
+  ],
+  "asks": [
+    { "about": "body", "text": "How is each player shown on the board?", "field": "body", "options": [ { "id": "cursor", "label": "A cursor in my colour", "value": "cursor" }, { "id": "character", "label": "A little character beside the board", "value": "character" } ], "default": "cursor" }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "specVersion": 2,
+  "title": "Ruin Hold",
+  "hook": "Hold a moonlit ruin with friends: two waves of the risen dead come up out of the graves, and their captain comes last.",
+  "prompt": "a small first-person co-op fight with weight: friends hold a ruin at night against skeletons rising from the graves, two waves and then their captain",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 420,
+    "winBy": "Hold the ruin through both waves.",
+    "loseBy": "Everyone falls.",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "medium",
+    "seed": 11,
+    "props": [
+      {
+        "name": "chest",
+        "describe": "an iron-bound chest the dead come for",
+        "role": "what you guard",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "player": {
+      "health": 100,
+      "armor": 20
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Watch sidearm"
+      },
+      {
+        "id": "hatchet",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 2,
+        "start": false
+      }
+    ],
+    "enemies": [
+      {
+        "id": "grunt",
+        "name": "Bone grunt",
+        "archetype": "chaser"
+      },
+      {
+        "id": "skirmisher",
+        "name": "Skirmisher",
+        "archetype": "runner",
+        "health": 22
+      },
+      {
+        "id": "captain",
+        "name": "Bone captain",
+        "archetype": "brute"
+      }
+    ],
+    "waves": [
+      {
+        "id": "first",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 6
+          },
+          {
+            "type": "skirmisher",
+            "count": 1
+          }
+        ],
+        "delay": 2.4,
+        "spawnEvery": 1.4,
+        "maxAlive": 4,
+        "attackers": 2,
+        "friends": 0.5
+      },
+      {
+        "id": "second",
+        "enemies": [
+          {
+            "type": "grunt",
+            "count": 8
+          },
+          {
+            "type": "skirmisher",
+            "count": 3
+          },
+          {
+            "type": "captain",
+            "count": 1
+          }
+        ],
+        "spawnEvery": 1,
+        "maxAlive": 6,
+        "friends": 0.5
+      }
+    ]
+  },
+  "rules": {
+    "summary": "The dead rise from the graves of a moonlit ruin in two waves, the second led by a brute of a captain. Shoot, cut and dodge. With friends, a fallen hunter is brought back: hold E beside them. Shift evades, V is a quick cut, R reloads.",
+    "scoring": "each kill scores the enemy's points to whoever landed it, and each coin a point to whoever it reaches",
+    "params": {
+      "mend": 25
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "content": {
+    "rating": "T",
+    "notes": "Skeletons fight and break apart; no blood."
+  },
+  "accept": [
+    "the dead rise from the graves and come for you in two waves, more of them in the second",
+    "each kill scores for whoever landed it, and the round is won when both waves are cleared",
+    "with friends, a fallen hunter is brought back by a friend holding E beside them",
+    "Play again starts a new hold"
+  ],
+  "notInV1": [
+    "rewards between waves (cards or a shop)",
+    "a boss with phases",
+    "more than one arena"
+  ]
+}

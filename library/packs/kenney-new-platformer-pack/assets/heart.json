@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "heart",
+ "pack": "kenney-new-platformer-pack",
+ "file": "heart.png",
+ "sha256": "e3cfce8e706e37d7906de20bd2e3137cc2c3a7e8bbed76b2fb4734f57ba7f1a4",
+ "bytes": 2827,
+ "preview": "previews/heart.png",
+ "from": "Sprites/Tiles/Double/heart.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "heart",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "heart",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#353541",
+     "#e54341",
+     "#f17575",
+     "#343440",
+     "#353540",
+     "#e54644",
+     "#c26568",
+     "#403944"
+    ],
+    "saturation": 0.465,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.558
+     },
+     {
+      "hue": "grey",
+      "share": 0.442
+     }
+    ],
+    "exact": 35,
+    "grey": 0.442
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f38914b5ec0e26e9ad33bed26eec07250293bfd0a1ffa9589eaeb5f0d6678d22",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

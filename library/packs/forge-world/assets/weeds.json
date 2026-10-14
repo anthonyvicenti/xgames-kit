@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "weeds",
+ "pack": "forge-world",
+ "file": "weeds.glb",
+ "sha256": "9095f80ab7f90256e5e9ef1dbb71bd48287e45873eb4dd8bbc9ed9a35a2ee24e",
+ "bytes": 2144,
+ "preview": "previews/weeds.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-weeds.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a tuft of tall weeds, 0.7 m across and 0.72 m tall: three crossed cards (alpha mask)",
+ "tags": [
+  "world",
+  "plant",
+  "weeds"
+ ],
+ "use": {
+  "size": [
+   0.706,
+   0.72,
+   0.683
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.353,
+   0,
+   -0.341
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 6,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 6,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 2144,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#32462c",
+     "#000000"
+    ],
+    "saturation": 0.114,
+    "value": 0.112,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.5
+     },
+     {
+      "hue": "grey",
+      "share": 0.5
+     }
+    ],
+    "grey": 0.5
+   },
+   "trianglesPerMetre": 1.96,
+   "texelsPerMetre": 44,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-weeds.png) inside",
+  "author": "games.fun"
+ }
+}

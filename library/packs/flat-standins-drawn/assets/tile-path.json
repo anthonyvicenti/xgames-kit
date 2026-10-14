@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "tile-path",
+ "pack": "flat-standins-drawn",
+ "file": "tile-path.png",
+ "sha256": "13d5d42fd2116391f2a57291a0bbf7fbc29d6518751d9dc4655e23a3f479aeb2",
+ "bytes": 1245,
+ "preview": "previews/tile-path.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn path ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "path"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#d9b98a",
+     "#e6cba0",
+     "#c9a877",
+     "#ddbf91",
+     "#d7b788",
+     "#e2c599",
+     "#ceae7d",
+     "#d4b384"
+    ],
+    "saturation": 0.51,
+    "value": 0.696,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 26,
+    "grey": 0
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

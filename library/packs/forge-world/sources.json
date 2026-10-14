@@ -1,0 +1,3695 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "rig": {
+   "origin": "gf-forge library fp/rig.glb",
+   "roles": [
+    "fp.arms",
+    "fp.rig",
+    "fp.arms",
+    "fp.rig"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0,
+     "saturation": 0,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 1
+      }
+     ]
+    },
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 1116,
+      "role": "small"
+     }
+    }
+   ]
+  },
+  "blockwall-a": {
+   "origin": "gf-forge library world/blockwall-a.glb",
+   "roles": [
+    "world.wall.a",
+    "world.wall.a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 15,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.929
+      },
+      {
+       "hue": "green",
+       "share": 0.071
+      }
+     ],
+     "grey": 0.929,
+     "lightness": 0.44,
+     "saturation": 0.094,
+     "top": [
+      {
+       "colour": "#84988f",
+       "share": 0.086
+      },
+      {
+       "colour": "#688074",
+       "share": 0.086
+      },
+      {
+       "colour": "#637a70",
+       "share": 0.064
+      },
+      {
+       "colour": "#36523e",
+       "share": 0.064
+      },
+      {
+       "colour": "#4e615e",
+       "share": 0.064
+      },
+      {
+       "colour": "#687b6f",
+       "share": 0.057
+      },
+      {
+       "colour": "#75847e",
+       "share": 0.057
+      },
+      {
+       "colour": "#5c686d",
+       "share": 0.057
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.35,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 48,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 15376,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "blockwall-b": {
+   "origin": "gf-forge library world/blockwall-b.glb",
+   "roles": [
+    "world.wall.b",
+    "world.wall.b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.985
+      }
+     ],
+     "grey": 0.985,
+     "lightness": 0.431,
+     "saturation": 0.092,
+     "top": [
+      {
+       "colour": "#7f8681",
+       "share": 0.083
+      },
+      {
+       "colour": "#60707c",
+       "share": 0.074
+      },
+      {
+       "colour": "#43584c",
+       "share": 0.074
+      },
+      {
+       "colour": "#505d67",
+       "share": 0.056
+      },
+      {
+       "colour": "#485e50",
+       "share": 0.049
+      },
+      {
+       "colour": "#4c5c61",
+       "share": 0.049
+      },
+      {
+       "colour": "#637a70",
+       "share": 0.037
+      },
+      {
+       "colour": "#4f6057",
+       "share": 0.034
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.34,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 46,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 15184,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "blockwall-broken-a": {
+   "origin": "gf-forge library world/blockwall-broken-a.glb",
+   "roles": [
+    "world.wall.broken.a",
+    "world.wall.broken.a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 16,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.961
+      },
+      {
+       "hue": "green",
+       "share": 0.039
+      }
+     ],
+     "grey": 0.961,
+     "lightness": 0.411,
+     "saturation": 0.101,
+     "top": [
+      {
+       "colour": "#60707c",
+       "share": 0.118
+      },
+      {
+       "colour": "#43584c",
+       "share": 0.118
+      },
+      {
+       "colour": "#505d67",
+       "share": 0.095
+      },
+      {
+       "colour": "#485e50",
+       "share": 0.066
+      },
+      {
+       "colour": "#4c5c61",
+       "share": 0.066
+      },
+      {
+       "colour": "#7f8681",
+       "share": 0.066
+      },
+      {
+       "colour": "#8a928c",
+       "share": 0.039
+      },
+      {
+       "colour": "#586671",
+       "share": 0.033
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.62,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 50,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 15596,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "blockwall-broken-b": {
+   "origin": "gf-forge library world/blockwall-broken-b.glb",
+   "roles": [
+    "world.wall.broken.b",
+    "world.wall.broken.b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 21,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.959
+      },
+      {
+       "hue": "green",
+       "share": 0.041
+      }
+     ],
+     "grey": 0.959,
+     "lightness": 0.456,
+     "saturation": 0.092,
+     "top": [
+      {
+       "colour": "#75847e",
+       "share": 0.072
+      },
+      {
+       "colour": "#84988f",
+       "share": 0.062
+      },
+      {
+       "colour": "#688074",
+       "share": 0.062
+      },
+      {
+       "colour": "#637a70",
+       "share": 0.051
+      },
+      {
+       "colour": "#687b6f",
+       "share": 0.041
+      },
+      {
+       "colour": "#5c686d",
+       "share": 0.041
+      },
+      {
+       "colour": "#909992",
+       "share": 0.041
+      },
+      {
+       "colour": "#4c5862",
+       "share": 0.038
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.62,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 48,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 15404,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "blockwall-c": {
+   "origin": "gf-forge library world/blockwall-c.glb",
+   "roles": [
+    "world.wall.c",
+    "world.wall.c"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.993
+      }
+     ],
+     "grey": 0.993,
+     "lightness": 0.427,
+     "saturation": 0.099,
+     "top": [
+      {
+       "colour": "#637a70",
+       "share": 0.052
+      },
+      {
+       "colour": "#425750",
+       "share": 0.046
+      },
+      {
+       "colour": "#617674",
+       "share": 0.046
+      },
+      {
+       "colour": "#61766c",
+       "share": 0.039
+      },
+      {
+       "colour": "#657582",
+       "share": 0.039
+      },
+      {
+       "colour": "#5f6e7a",
+       "share": 0.039
+      },
+      {
+       "colour": "#506260",
+       "share": 0.039
+      },
+      {
+       "colour": "#b2beba",
+       "share": 0.039
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.52,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 66,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 17104,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "blockwall-corner": {
+   "origin": "gf-forge library world/blockwall-corner.glb",
+   "roles": [
+    "world.wall.corner",
+    "world.wall.corner"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.383,
+     "saturation": 0.108,
+     "top": [
+      {
+       "colour": "#4f6057",
+       "share": 0.118
+      },
+      {
+       "colour": "#404c52",
+       "share": 0.111
+      },
+      {
+       "colour": "#67757b",
+       "share": 0.111
+      },
+      {
+       "colour": "#647176",
+       "share": 0.111
+      },
+      {
+       "colour": "#435056",
+       "share": 0.063
+      },
+      {
+       "colour": "#748d81",
+       "share": 0.063
+      },
+      {
+       "colour": "#657c74",
+       "share": 0.063
+      },
+      {
+       "colour": "#697987",
+       "share": 0.063
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.33,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 32,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 13844,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "cedar-a": {
+   "origin": "gf-forge library world/cedar-a.glb",
+   "roles": [
+    "world.cedar.a",
+    "world.cedar.a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.669
+      },
+      {
+       "hue": "grey",
+       "share": 0.304
+      }
+     ],
+     "grey": 0.304,
+     "lightness": 0.12,
+     "saturation": 0.313,
+     "top": [
+      {
+       "colour": "#0b1616",
+       "share": 0.215
+      },
+      {
+       "colour": "#142725",
+       "share": 0.098
+      },
+      {
+       "colour": "#18302e",
+       "share": 0.095
+      },
+      {
+       "colour": "#162d2b",
+       "share": 0.073
+      },
+      {
+       "colour": "#122422",
+       "share": 0.063
+      },
+      {
+       "colour": "#152b29",
+       "share": 0.062
+      },
+      {
+       "colour": "#172f2d",
+       "share": 0.052
+      },
+      {
+       "colour": "#10211f",
+       "share": 0.048
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.76,
+    "texelsPerMetre": 33,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 262,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 2,
+      "bytes": 30784,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "cedar-b": {
+   "origin": "gf-forge library world/cedar-b.glb",
+   "roles": [
+    "world.cedar.b",
+    "world.cedar.b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.69
+      },
+      {
+       "hue": "grey",
+       "share": 0.287
+      }
+     ],
+     "grey": 0.287,
+     "lightness": 0.127,
+     "saturation": 0.3,
+     "top": [
+      {
+       "colour": "#0b1616",
+       "share": 0.15
+      },
+      {
+       "colour": "#142725",
+       "share": 0.116
+      },
+      {
+       "colour": "#112221",
+       "share": 0.096
+      },
+      {
+       "colour": "#142927",
+       "share": 0.083
+      },
+      {
+       "colour": "#2c463c",
+       "share": 0.064
+      },
+      {
+       "colour": "#162d2b",
+       "share": 0.055
+      },
+      {
+       "colour": "#18302e",
+       "share": 0.051
+      },
+      {
+       "colour": "#0e1d1b",
+       "share": 0.042
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.9,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 210,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 2,
+      "bytes": 25788,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "cedar-c": {
+   "origin": "gf-forge library world/cedar-c.glb",
+   "roles": [
+    "world.cedar.c",
+    "world.cedar.c"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.801
+      },
+      {
+       "hue": "grey",
+       "share": 0.161
+      },
+      {
+       "hue": "brown",
+       "share": 0.038
+      }
+     ],
+     "grey": 0.161,
+     "lightness": 0.126,
+     "saturation": 0.317,
+     "top": [
+      {
+       "colour": "#142725",
+       "share": 0.16
+      },
+      {
+       "colour": "#0b1616",
+       "share": 0.096
+      },
+      {
+       "colour": "#162d2b",
+       "share": 0.08
+      },
+      {
+       "colour": "#112221",
+       "share": 0.08
+      },
+      {
+       "colour": "#152b29",
+       "share": 0.072
+      },
+      {
+       "colour": "#122422",
+       "share": 0.066
+      },
+      {
+       "colour": "#172f2d",
+       "share": 0.061
+      },
+      {
+       "colour": "#10211f",
+       "share": 0.056
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.67,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 288,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 2,
+      "bytes": 33272,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "clouds": {
+   "origin": "gf-forge library world/clouds.glb",
+   "roles": [
+    "world.sky.clouds",
+    "world.sky.clouds"
+   ],
+   "describeFull": "the sky's clouds: a 768 m sheet of night-clouds repeated every 128 m, seen from below (alpha mask: the sky, its stars and the moon show through the gaps); the world hangs it over the arena in the backdrop layer",
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0,
+     "saturation": 0,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 0,
+    "texelsPerMetre": 2,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 2,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 28672,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "coin": {
+   "origin": "gf-forge library world/coin.glb",
+   "roles": [
+    "fight.coin",
+    "fight.coin"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.681
+      },
+      {
+       "hue": "yellow",
+       "share": 0.319
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.452,
+     "saturation": 0.784,
+     "top": [
+      {
+       "colour": "#f6c43e",
+       "share": 0.319
+      },
+      {
+       "colour": "#9c6418",
+       "share": 0.289
+      },
+      {
+       "colour": "#b0761e",
+       "share": 0.263
+      },
+      {
+       "colour": "#af701b",
+       "share": 0.129
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.42,
+    "texelsPerMetre": 16,
+    "texturedShare": 0.799,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 36,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 5124,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "fern": {
+   "origin": "gf-forge library world/fern.glb",
+   "roles": [
+    "world.plant.fern",
+    "world.plant.fern"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.069,
+     "saturation": 0.157,
+     "top": [
+      {
+       "colour": "#182e20",
+       "share": 0.5
+      },
+      {
+       "colour": "#000000",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.89,
+    "texelsPerMetre": 43,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 6,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2064,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "flagstone-a": {
+   "origin": "gf-forge library world/flagstone-a.glb",
+   "roles": [
+    "world.flagstone.a",
+    "world.flagstone.a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.311,
+     "saturation": 0.111,
+     "top": [
+      {
+       "colour": "#576865",
+       "share": 0.173
+      },
+      {
+       "colour": "#5b666a",
+       "share": 0.167
+      },
+      {
+       "colour": "#475a51",
+       "share": 0.154
+      },
+      {
+       "colour": "#41554a",
+       "share": 0.124
+      },
+      {
+       "colour": "#42544b",
+       "share": 0.108
+      },
+      {
+       "colour": "#415649",
+       "share": 0.086
+      },
+      {
+       "colour": "#243328",
+       "share": 0.022
+      },
+      {
+       "colour": "#42524c",
+       "share": 0.022
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.71,
+    "texelsPerMetre": 62,
+    "texturedShare": 0.811,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 18,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7680,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "flagstone-b": {
+   "origin": "gf-forge library world/flagstone-b.glb",
+   "roles": [
+    "world.flagstone.b",
+    "world.flagstone.b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.309,
+     "saturation": 0.116,
+     "top": [
+      {
+       "colour": "#43574d",
+       "share": 0.171
+      },
+      {
+       "colour": "#4d6059",
+       "share": 0.17
+      },
+      {
+       "colour": "#4b5f56",
+       "share": 0.159
+      },
+      {
+       "colour": "#5b6a69",
+       "share": 0.157
+      },
+      {
+       "colour": "#41524a",
+       "share": 0.137
+      },
+      {
+       "colour": "#1b261e",
+       "share": 0.068
+      },
+      {
+       "colour": "#26362b",
+       "share": 0.025
+      },
+      {
+       "colour": "#405549",
+       "share": 0.025
+      }
+     ]
+    },
+    "trianglesPerMetre": 5.28,
+    "texelsPerMetre": 75,
+    "texturedShare": 0.77,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 15,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7392,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "flagstone-c": {
+   "origin": "gf-forge library world/flagstone-c.glb",
+   "roles": [
+    "world.flagstone.c",
+    "world.flagstone.c"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 8,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.285,
+     "saturation": 0.122,
+     "top": [
+      {
+       "colour": "#3a4e42",
+       "share": 0.282
+      },
+      {
+       "colour": "#3f5148",
+       "share": 0.131
+      },
+      {
+       "colour": "#495d54",
+       "share": 0.128
+      },
+      {
+       "colour": "#53645f",
+       "share": 0.12
+      },
+      {
+       "colour": "#3f5347",
+       "share": 0.111
+      },
+      {
+       "colour": "#5a6569",
+       "share": 0.075
+      },
+      {
+       "colour": "#1b261e",
+       "share": 0.037
+      },
+      {
+       "colour": "#2e3335",
+       "share": 0.022
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.08,
+    "texelsPerMetre": 50,
+    "texturedShare": 0.847,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 21,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7968,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "flame-a": {
+   "origin": "gf-forge library world/flame-a.glb",
+   "roles": [
+    "world.flame.a",
+    "world.flame.a"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.5
+      },
+      {
+       "hue": "yellow",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.328,
+     "saturation": 0.5,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 0.5
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2196,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-a": {
+   "origin": "gf-forge library world/flame-a.png",
+   "roles": [
+    "texture.night.flame-a",
+    "texture.night.flame-a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.568
+      },
+      {
+       "hue": "orange",
+       "share": 0.432
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.659,
+     "saturation": 0.975,
+     "top": [
+      {
+       "colour": "#fff4be",
+       "share": 0.297
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.27
+      },
+      {
+       "colour": "#ff8420",
+       "share": 0.262
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.17
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.615,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.615
+     }
+    }
+   ]
+  },
+  "flame-b": {
+   "origin": "gf-forge library world/flame-b.glb",
+   "roles": [
+    "world.flame.b",
+    "world.flame.b"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.5
+      },
+      {
+       "hue": "orange",
+       "share": 0.5
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.61,
+     "saturation": 1,
+     "top": [
+      {
+       "colour": "#ffcc50",
+       "share": 0.5
+      },
+      {
+       "colour": "#ff8420",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2204,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-b": {
+   "origin": "gf-forge library world/flame-b.png",
+   "roles": [
+    "texture.night.flame-b",
+    "texture.night.flame-b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.551
+      },
+      {
+       "hue": "orange",
+       "share": 0.449
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.653,
+     "saturation": 0.973,
+     "top": [
+      {
+       "colour": "#fff4be",
+       "share": 0.288
+      },
+      {
+       "colour": "#ff8420",
+       "share": 0.264
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.264
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.185
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.605,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.605
+     }
+    }
+   ]
+  },
+  "flame-c": {
+   "origin": "gf-forge library world/flame-c.glb",
+   "roles": [
+    "world.flame.c",
+    "world.flame.c"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.281,
+     "saturation": 0.5,
+     "top": [
+      {
+       "colour": "#ff8420",
+       "share": 0.5
+      },
+      {
+       "colour": "#000000",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2196,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-c": {
+   "origin": "gf-forge library world/flame-c.png",
+   "roles": [
+    "texture.night.flame-c",
+    "texture.night.flame-c"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.535
+      },
+      {
+       "hue": "orange",
+       "share": 0.465
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.651,
+     "saturation": 0.976,
+     "top": [
+      {
+       "colour": "#ff8420",
+       "share": 0.296
+      },
+      {
+       "colour": "#fff4be",
+       "share": 0.277
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.258
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.169
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.613,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.613
+     }
+    }
+   ]
+  },
+  "flame-d": {
+   "origin": "gf-forge library world/flame-d.glb",
+   "roles": [
+    "world.flame.d",
+    "world.flame.d"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.281,
+     "saturation": 0.5,
+     "top": [
+      {
+       "colour": "#ff8420",
+       "share": 0.5
+      },
+      {
+       "colour": "#000000",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2196,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-d": {
+   "origin": "gf-forge library world/flame-d.png",
+   "roles": [
+    "texture.night.flame-d",
+    "texture.night.flame-d"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.534
+      },
+      {
+       "hue": "orange",
+       "share": 0.466
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.647,
+     "saturation": 0.973,
+     "top": [
+      {
+       "colour": "#ff8420",
+       "share": 0.278
+      },
+      {
+       "colour": "#fff4be",
+       "share": 0.27
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.264
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.188
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.629,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.629
+     }
+    }
+   ]
+  },
+  "flame-e": {
+   "origin": "gf-forge library world/flame-e.glb",
+   "roles": [
+    "world.flame.e",
+    "world.flame.e"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.218,
+     "saturation": 0.428,
+     "top": [
+      {
+       "colour": "#ce3e10",
+       "share": 0.5
+      },
+      {
+       "colour": "#000000",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2188,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-e": {
+   "origin": "gf-forge library world/flame-e.png",
+   "roles": [
+    "texture.night.flame-e",
+    "texture.night.flame-e"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.532
+      },
+      {
+       "hue": "orange",
+       "share": 0.468
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.645,
+     "saturation": 0.973,
+     "top": [
+      {
+       "colour": "#ff8420",
+       "share": 0.278
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.269
+      },
+      {
+       "colour": "#fff4be",
+       "share": 0.263
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.19
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.644,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.644
+     }
+    }
+   ]
+  },
+  "flame-f": {
+   "origin": "gf-forge library world/flame-f.glb",
+   "roles": [
+    "world.flame.f",
+    "world.flame.f"
+   ],
+   "glow": true,
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.5
+      },
+      {
+       "hue": "orange",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.281,
+     "saturation": 0.5,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 0.5
+      },
+      {
+       "colour": "#ff8420",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.28,
+    "texelsPerMetre": 50,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 4,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2204,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-flame-f": {
+   "origin": "gf-forge library world/flame-f.png",
+   "roles": [
+    "texture.night.flame-f",
+    "texture.night.flame-f"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.547
+      },
+      {
+       "hue": "orange",
+       "share": 0.453
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.651,
+     "saturation": 0.974,
+     "top": [
+      {
+       "colour": "#fff4be",
+       "share": 0.278
+      },
+      {
+       "colour": "#ff8420",
+       "share": 0.272
+      },
+      {
+       "colour": "#ffcc50",
+       "share": 0.269
+      },
+      {
+       "colour": "#ce3e10",
+       "share": 0.181
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.632,
+    "size": [
+     24,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "24x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 24,
+      "height": 40,
+      "seeThrough": 0.632
+     }
+    }
+   ]
+  },
+  "gatehouse": {
+   "origin": "gf-forge library world/gatehouse.glb",
+   "roles": [
+    "world.gate",
+    "world.gate"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.939
+      },
+      {
+       "hue": "green",
+       "share": 0.061
+      }
+     ],
+     "grey": 0.939,
+     "lightness": 0.396,
+     "saturation": 0.11,
+     "top": [
+      {
+       "colour": "#9ca59e",
+       "share": 0.122
+      },
+      {
+       "colour": "#3f5d48",
+       "share": 0.122
+      },
+      {
+       "colour": "#546664",
+       "share": 0.061
+      },
+      {
+       "colour": "#36523e",
+       "share": 0.061
+      },
+      {
+       "colour": "#53616b",
+       "share": 0.061
+      },
+      {
+       "colour": "#657c74",
+       "share": 0.061
+      },
+      {
+       "colour": "#899392",
+       "share": 0.037
+      },
+      {
+       "colour": "#43554a",
+       "share": 0.037
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.61,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 96,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 19972,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-gold": {
+   "origin": "gf-forge library world/gold.png",
+   "roles": [
+    "texture.night.gold",
+    "texture.night.gold"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 5,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.542
+      },
+      {
+       "hue": "yellow",
+       "share": 0.458
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.49,
+     "saturation": 0.815,
+     "top": [
+      {
+       "colour": "#f6c43e",
+       "share": 0.359
+      },
+      {
+       "colour": "#b0761e",
+       "share": 0.354
+      },
+      {
+       "colour": "#9c6418",
+       "share": 0.167
+      },
+      {
+       "colour": "#ffdc45",
+       "share": 0.099
+      },
+      {
+       "colour": "#af701b",
+       "share": 0.021
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.25,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 16,
+      "height": 16,
+      "seeThrough": 0.25
+     }
+    }
+   ]
+  },
+  "ground-dirt": {
+   "origin": "gf-forge library world/ground-dirt.glb",
+   "roles": [
+    "world.ground.dirt",
+    "world.ground.dirt"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.147,
+     "saturation": 0.04,
+     "top": [
+      {
+       "colour": "#252526",
+       "share": 0.5
+      },
+      {
+       "colour": "#282723",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.35,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 2,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7328,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "ground-grass": {
+   "origin": "gf-forge library world/ground-grass.glb",
+   "roles": [
+    "world.ground",
+    "world.ground"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.182,
+     "saturation": 0.272,
+     "top": [
+      {
+       "colour": "#1e3c1d",
+       "share": 0.5
+      },
+      {
+       "colour": "#273a30",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.02,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 2,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 66736,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "world-night-bark": {
+   "origin": "gf-forge library world/night-bark.png",
+   "roles": [
+    "texture.night.bark",
+    "texture.night.bark"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "exact": 254,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.759
+      },
+      {
+       "hue": "brown",
+       "share": 0.241
+      }
+     ],
+     "grey": 0.759,
+     "lightness": 0.188,
+     "saturation": 0.168,
+     "top": [
+      {
+       "colour": "#372f29",
+       "share": 0.016
+      },
+      {
+       "colour": "#373029",
+       "share": 0.014
+      },
+      {
+       "colour": "#37302b",
+       "share": 0.014
+      },
+      {
+       "colour": "#372b25",
+       "share": 0.012
+      },
+      {
+       "colour": "#332b24",
+       "share": 0.011
+      },
+      {
+       "colour": "#39302a",
+       "share": 0.011
+      },
+      {
+       "colour": "#3c302a",
+       "share": 0.011
+      },
+      {
+       "colour": "#332a24",
+       "share": 0.011
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 1
+    },
+    "seeThrough": 0,
+    "size": [
+     32,
+     64
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 32,
+      "height": 64,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "world-night-blocks": {
+   "origin": "gf-forge library world/night-blocks.png",
+   "roles": [
+    "texture.night.blocks",
+    "texture.night.blocks"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 35,
+     "exact": 256,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.989
+      }
+     ],
+     "grey": 0.989,
+     "lightness": 0.389,
+     "saturation": 0.09,
+     "top": [
+      {
+       "colour": "#23282c",
+       "share": 0.008
+      },
+      {
+       "colour": "#505d67",
+       "share": 0.008
+      },
+      {
+       "colour": "#53616b",
+       "share": 0.008
+      },
+      {
+       "colour": "#59656a",
+       "share": 0.008
+      },
+      {
+       "colour": "#808a89",
+       "share": 0.008
+      },
+      {
+       "colour": "#516259",
+       "share": 0.008
+      },
+      {
+       "colour": "#55695f",
+       "share": 0.007
+      },
+      {
+       "colour": "#7c8685",
+       "share": 0.007
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0.397
+    },
+    "seeThrough": 0,
+    "size": [
+     96,
+     96
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "96x96 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 96,
+      "height": 96,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "world-night-clouds": {
+   "origin": "gf-forge library world/night-clouds.png",
+   "roles": [
+    "texture.night.clouds",
+    "texture.night.clouds"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 11,
+     "exact": 252,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.378,
+     "saturation": 0.123,
+     "top": [
+      {
+       "colour": "#3b4351",
+       "share": 0.011
+      },
+      {
+       "colour": "#3a4250",
+       "share": 0.011
+      },
+      {
+       "colour": "#58616f",
+       "share": 0.01
+      },
+      {
+       "colour": "#5c6573",
+       "share": 0.01
+      },
+      {
+       "colour": "#5b6472",
+       "share": 0.01
+      },
+      {
+       "colour": "#3c4452",
+       "share": 0.01
+      },
+      {
+       "colour": "#3e4655",
+       "share": 0.009
+      },
+      {
+       "colour": "#5e6775",
+       "share": 0.009
+      }
+     ]
+    },
+    "texelsPerMetre": 2,
+    "outline": {
+     "present": false,
+     "share": 0.004
+    },
+    "seeThrough": 0.446,
+    "size": [
+     256,
+     256
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 256,
+      "height": 256,
+      "seeThrough": 0.446
+     }
+    }
+   ]
+  },
+  "world-night-dirt": {
+   "origin": "gf-forge library world/night-dirt.png",
+   "roles": [
+    "texture.night.dirt",
+    "texture.night.dirt"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "exact": 253,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.968
+      }
+     ],
+     "grey": 0.968,
+     "lightness": 0.147,
+     "saturation": 0.068,
+     "top": [
+      {
+       "colour": "#282726",
+       "share": 0.016
+      },
+      {
+       "colour": "#272626",
+       "share": 0.015
+      },
+      {
+       "colour": "#242422",
+       "share": 0.014
+      },
+      {
+       "colour": "#232424",
+       "share": 0.014
+      },
+      {
+       "colour": "#262525",
+       "share": 0.014
+      },
+      {
+       "colour": "#262524",
+       "share": 0.013
+      },
+      {
+       "colour": "#252524",
+       "share": 0.013
+      },
+      {
+       "colour": "#252424",
+       "share": 0.012
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 1
+    },
+    "seeThrough": 0.714,
+    "size": [
+     128,
+     128
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 128,
+      "height": 128,
+      "seeThrough": 0.714
+     }
+    }
+   ]
+  },
+  "world-night-fern": {
+   "origin": "gf-forge library world/night-fern.png",
+   "roles": [
+    "texture.night.fern",
+    "texture.night.fern"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "exact": 3,
+     "families": [
+      {
+       "hue": "green",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.172,
+     "saturation": 0.293,
+     "top": [
+      {
+       "colour": "#182e20",
+       "share": 0.65
+      },
+      {
+       "colour": "#3a5836",
+       "share": 0.177
+      },
+      {
+       "colour": "#243e28",
+       "share": 0.173
+      }
+     ]
+    },
+    "texelsPerMetre": 35.556,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.861
+    },
+    "seeThrough": 0.752,
+    "size": [
+     32,
+     32
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 32,
+      "height": 32,
+      "seeThrough": 0.752
+     }
+    }
+   ]
+  },
+  "world-night-flagstone": {
+   "origin": "gf-forge library world/night-flagstone.png",
+   "roles": [
+    "texture.night.flagstone",
+    "texture.night.flagstone"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 16,
+     "exact": 256,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.253,
+     "saturation": 0.115,
+     "top": [
+      {
+       "colour": "#1a251d",
+       "share": 0.042
+      },
+      {
+       "colour": "#1b261e",
+       "share": 0.034
+      },
+      {
+       "colour": "#19241c",
+       "share": 0.028
+      },
+      {
+       "colour": "#19231b",
+       "share": 0.018
+      },
+      {
+       "colour": "#2e3335",
+       "share": 0.017
+      },
+      {
+       "colour": "#1a241d",
+       "share": 0.015
+      },
+      {
+       "colour": "#2a2f31",
+       "share": 0.015
+      },
+      {
+       "colour": "#2d3234",
+       "share": 0.015
+      }
+     ]
+    },
+    "texelsPerMetre": 53.333,
+    "outline": {
+     "present": false,
+     "share": 1
+    },
+    "seeThrough": 0,
+    "size": [
+     64,
+     64
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 64,
+      "height": 64,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "world-night-grass": {
+   "origin": "gf-forge library world/night-grass.png",
+   "roles": [
+    "texture.night.grass",
+    "texture.night.grass"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 12,
+     "exact": 256,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.502
+      },
+      {
+       "hue": "green",
+       "share": 0.495
+      }
+     ],
+     "grey": 0.502,
+     "lightness": 0.184,
+     "saturation": 0.219,
+     "top": [
+      {
+       "colour": "#243529",
+       "share": 0.008
+      },
+      {
+       "colour": "#293730",
+       "share": 0.008
+      },
+      {
+       "colour": "#243625",
+       "share": 0.007
+      },
+      {
+       "colour": "#273a2d",
+       "share": 0.007
+      },
+      {
+       "colour": "#263827",
+       "share": 0.007
+      },
+      {
+       "colour": "#223223",
+       "share": 0.007
+      },
+      {
+       "colour": "#233827",
+       "share": 0.007
+      },
+      {
+       "colour": "#223523",
+       "share": 0.007
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 0.939
+    },
+    "seeThrough": 0,
+    "size": [
+     256,
+     256
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 256,
+      "height": 256,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "world-night-needles": {
+   "origin": "gf-forge library world/night-needles.png",
+   "roles": [
+    "texture.night.needles",
+    "texture.night.needles"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "exact": 16,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.865
+      },
+      {
+       "hue": "grey",
+       "share": 0.135
+      }
+     ],
+     "grey": 0.135,
+     "lightness": 0.118,
+     "saturation": 0.265,
+     "top": [
+      {
+       "colour": "#0d1714",
+       "share": 0.135
+      },
+      {
+       "colour": "#15241c",
+       "share": 0.106
+      },
+      {
+       "colour": "#172820",
+       "share": 0.098
+      },
+      {
+       "colour": "#2e422c",
+       "share": 0.092
+      },
+      {
+       "colour": "#16261e",
+       "share": 0.073
+      },
+      {
+       "colour": "#13221b",
+       "share": 0.071
+      },
+      {
+       "colour": "#13211a",
+       "share": 0.064
+      },
+      {
+       "colour": "#122019",
+       "share": 0.061
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 1
+    },
+    "seeThrough": 0,
+    "size": [
+     32,
+     32
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 32,
+      "height": 32,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "world-night-weeds": {
+   "origin": "gf-forge library world/night-weeds.png",
+   "roles": [
+    "texture.night.weeds",
+    "texture.night.weeds"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "exact": 9,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.955
+      },
+      {
+       "hue": "grey",
+       "share": 0.045
+      }
+     ],
+     "grey": 0.045,
+     "lightness": 0.178,
+     "saturation": 0.231,
+     "top": [
+      {
+       "colour": "#32462c",
+       "share": 0.215
+      },
+      {
+       "colour": "#263a26",
+       "share": 0.18
+      },
+      {
+       "colour": "#1a2c1e",
+       "share": 0.154
+      },
+      {
+       "colour": "#1e3228",
+       "share": 0.148
+      },
+      {
+       "colour": "#1e2e1e",
+       "share": 0.071
+      },
+      {
+       "colour": "#283823",
+       "share": 0.071
+      },
+      {
+       "colour": "#152318",
+       "share": 0.061
+      },
+      {
+       "colour": "#182820",
+       "share": 0.055
+      }
+     ]
+    },
+    "texelsPerMetre": 40,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.937
+    },
+    "seeThrough": 0.696,
+    "size": [
+     32,
+     32
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 32,
+      "height": 32,
+      "seeThrough": 0.696
+     }
+    }
+   ]
+  },
+  "world-night-yew": {
+   "origin": "gf-forge library world/night-yew.png",
+   "roles": [
+    "texture.night.yew",
+    "texture.night.yew"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "exact": 16,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.818
+      },
+      {
+       "hue": "grey",
+       "share": 0.182
+      }
+     ],
+     "grey": 0.182,
+     "lightness": 0.114,
+     "saturation": 0.331,
+     "top": [
+      {
+       "colour": "#0b1616",
+       "share": 0.182
+      },
+      {
+       "colour": "#142725",
+       "share": 0.091
+      },
+      {
+       "colour": "#152b29",
+       "share": 0.087
+      },
+      {
+       "colour": "#162d2b",
+       "share": 0.08
+      },
+      {
+       "colour": "#122422",
+       "share": 0.071
+      },
+      {
+       "colour": "#112221",
+       "share": 0.066
+      },
+      {
+       "colour": "#132624",
+       "share": 0.063
+      },
+      {
+       "colour": "#2c463c",
+       "share": 0.055
+      }
+     ]
+    },
+    "texelsPerMetre": 32,
+    "outline": {
+     "present": false,
+     "share": 1
+    },
+    "seeThrough": 0,
+    "size": [
+     32,
+     32
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 32,
+      "height": 32,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "pine-a": {
+   "origin": "gf-forge library world/pine-a.glb",
+   "roles": [
+    "world.pine.a",
+    "world.pine.a"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.72
+      },
+      {
+       "hue": "grey",
+       "share": 0.262
+      }
+     ],
+     "grey": 0.262,
+     "lightness": 0.129,
+     "saturation": 0.249,
+     "top": [
+      {
+       "colour": "#0d1714",
+       "share": 0.157
+      },
+      {
+       "colour": "#2e422c",
+       "share": 0.133
+      },
+      {
+       "colour": "#13211a",
+       "share": 0.106
+      },
+      {
+       "colour": "#16261e",
+       "share": 0.088
+      },
+      {
+       "colour": "#172820",
+       "share": 0.08
+      },
+      {
+       "colour": "#182a21",
+       "share": 0.061
+      },
+      {
+       "colour": "#13221b",
+       "share": 0.06
+      },
+      {
+       "colour": "#15241c",
+       "share": 0.059
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.02,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 158,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 2,
+      "bytes": 20772,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "pine-b": {
+   "origin": "gf-forge library world/pine-b.glb",
+   "roles": [
+    "world.pine.b",
+    "world.pine.b"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 8,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.736
+      },
+      {
+       "hue": "grey",
+       "share": 0.201
+      },
+      {
+       "hue": "brown",
+       "share": 0.063
+      }
+     ],
+     "grey": 0.201,
+     "lightness": 0.126,
+     "saturation": 0.257,
+     "top": [
+      {
+       "colour": "#16261e",
+       "share": 0.198
+      },
+      {
+       "colour": "#13211a",
+       "share": 0.109
+      },
+      {
+       "colour": "#0d1714",
+       "share": 0.104
+      },
+      {
+       "colour": "#182a21",
+       "share": 0.097
+      },
+      {
+       "colour": "#15241c",
+       "share": 0.077
+      },
+      {
+       "colour": "#192c22",
+       "share": 0.069
+      },
+      {
+       "colour": "#15251d",
+       "share": 0.048
+      },
+      {
+       "colour": "#122019",
+       "share": 0.04
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.18,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 140,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 2,
+      "bytes": 19044,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "portcullis": {
+   "origin": "gf-forge library world/portcullis.glb",
+   "roles": [
+    "world.gate.grille",
+    "world.gate.grille"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0,
+     "saturation": 0,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.63,
+    "texelsPerMetre": 16,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 2,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 1720,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "world-portcullis": {
+   "origin": "gf-forge library world/portcullis.png",
+   "roles": [
+    "texture.night.portcullis",
+    "texture.night.portcullis"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "exact": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.894
+      },
+      {
+       "hue": "brown",
+       "share": 0.106
+      }
+     ],
+     "grey": 0.894,
+     "lightness": 0.145,
+     "saturation": 0.085,
+     "top": [
+      {
+       "colour": "#282624",
+       "share": 0.629
+      },
+      {
+       "colour": "#1e1d1c",
+       "share": 0.265
+      },
+      {
+       "colour": "#462c1e",
+       "share": 0.106
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 1
+    },
+    "seeThrough": 0.588,
+    "size": [
+     32,
+     40
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "32x40 is not a power of two (mipmaps and KTX2 want one)"
+     ],
+     "facts": {
+      "width": 32,
+      "height": 40,
+      "seeThrough": 0.588
+     }
+    }
+   ]
+  },
+  "ruin-tower": {
+   "origin": "gf-forge library world/ruin-tower.glb",
+   "roles": [
+    "world.ruin.tower",
+    "world.ruin.tower"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 23,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.988
+      }
+     ],
+     "grey": 0.988,
+     "lightness": 0.429,
+     "saturation": 0.089,
+     "top": [
+      {
+       "colour": "#4f6057",
+       "share": 0.049
+      },
+      {
+       "colour": "#506260",
+       "share": 0.048
+      },
+      {
+       "colour": "#5c686d",
+       "share": 0.047
+      },
+      {
+       "colour": "#767e78",
+       "share": 0.042
+      },
+      {
+       "colour": "#3f5d48",
+       "share": 0.034
+      },
+      {
+       "colour": "#75847e",
+       "share": 0.033
+      },
+      {
+       "colour": "#929d9c",
+       "share": 0.033
+      },
+      {
+       "colour": "#8e958f",
+       "share": 0.033
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.09,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 290,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 38584,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "ruin-wall": {
+   "origin": "gf-forge library world/ruin-wall.glb",
+   "roles": [
+    "world.ruin.wall",
+    "world.ruin.wall"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 27,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.978
+      }
+     ],
+     "grey": 0.978,
+     "lightness": 0.431,
+     "saturation": 0.09,
+     "top": [
+      {
+       "colour": "#84988f",
+       "share": 0.043
+      },
+      {
+       "colour": "#74766e",
+       "share": 0.035
+      },
+      {
+       "colour": "#abb6b5",
+       "share": 0.031
+      },
+      {
+       "colour": "#3f5d48",
+       "share": 0.029
+      },
+      {
+       "colour": "#858c86",
+       "share": 0.029
+      },
+      {
+       "colour": "#9da9a8",
+       "share": 0.025
+      },
+      {
+       "colour": "#5b6974",
+       "share": 0.024
+      },
+      {
+       "colour": "#738288",
+       "share": 0.024
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.39,
+    "texelsPerMetre": 32,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 200,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 29948,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "weeds": {
+   "origin": "gf-forge library world/weeds.glb",
+   "roles": [
+    "world.plant.weeds",
+    "world.plant.weeds"
+   ],
+   "track": "L2",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.5
+      },
+      {
+       "hue": "grey",
+       "share": 0.5
+      }
+     ],
+     "grey": 0.5,
+     "lightness": 0.112,
+     "saturation": 0.114,
+     "top": [
+      {
+       "colour": "#32462c",
+       "share": 0.5
+      },
+      {
+       "colour": "#000000",
+       "share": 0.5
+      }
+     ]
+    },
+    "trianglesPerMetre": 1.96,
+    "texelsPerMetre": 44,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 6,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 2144,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 49,
+   "paletteSize": 5,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.562
+    },
+    {
+     "hue": "green",
+     "share": 0.133
+    },
+    {
+     "hue": "orange",
+     "share": 0.107
+    },
+    {
+     "hue": "yellow",
+     "share": 0.103
+    },
+    {
+     "hue": "cyan",
+     "share": 0.061
+    }
+   ],
+   "lightness": 0.281,
+   "saturation": 0.219,
+   "trianglesPerMetre": 1.61,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "outlineShare": 0.082,
+   "grey": 0.5
+  },
+  "licenceText": "Made by the kit's own tools from code, with no upstream art (unless an asset names the CC0 texture it was drawn over). Released under CC0 1.0."
+ }
+}

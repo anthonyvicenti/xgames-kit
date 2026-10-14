@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0008",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0008.png",
+ "sha256": "6310688ef2185e2bfb216a1097d13658cb5f01d158751265dcf459031908291a",
+ "bytes": 354,
+ "preview": "previews/tile-0008.png",
+ "from": "Tiles/tile_0008.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a stone spout in a brick wall pouring green water: the top of a running wall fountain",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "spout",
+  "water",
+  "green",
+  "wall",
+  "running",
+  "top"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#8b9bb4",
+     "#52607c",
+     "#262b44",
+     "#c0cbdc",
+     "#43e1b3",
+     "#69ffd4",
+     "#25956a"
+    ],
+    "saturation": 0.261,
+    "value": 0.514,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.953
+     },
+     {
+      "hue": "cyan",
+      "share": 0.047
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "23721149763a8fd6071857c19e01d0967c769e80ae89bbe968bc88a4816fc4f5",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Daily Draw",
+  "prompt": "A daily lottery: tickets cost 0.01 SOL, 5% of ticket sales go to me, and each draw has one grand prize and seven smaller ones.",
+  "currency": "sol",
+  "tokens": [{ "key": "sol", "source": "sol" }],
+  "pools": [{ "key": "pot", "currency": "sol", "about": "Ticket money, less the 5% cut." }],
+  "lotteries": [
+    { "key": "daily", "name": "Daily draw", "pot": "pot", "price": 0.01, "cutPercent": 5, "places": [50, 10, 10, 10, 5, 5, 5, 5], "every": "1d", "firstDraw": "publish+1d" }
+  ],
+  "scenario": { "days": 30, "perDay": { "lottery:daily": 300 } }
+}

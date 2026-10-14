@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "fence-broken",
+ "pack": "kaykit-halloween",
+ "file": "fence-broken.glb",
+ "sha256": "c4c4696548e2a3787fca9909b7cf58909f64fc9a108cb87585b222bdcc5b4594",
+ "bytes": 17820,
+ "preview": "previews/fence-broken.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a broken iron fence",
+ "tags": [
+  "ruins",
+  "fence",
+  "broken"
+ ],
+ "use": {
+  "size": [
+   3,
+   1.65,
+   0.375
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -1.5,
+   0,
+   -0.188
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    1.65,
+    0.375
+   ],
+   "offset": [
+    0,
+    0.825,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 446,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 446,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17820,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#808b90",
+     "#707a7e",
+     "#798388",
+     "#2f2f2d",
+     "#596065",
+     "#3a3a39",
+     "#687075",
+     "#353533"
+    ],
+    "saturation": 0.054,
+    "value": 0.422,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 7.01,
+   "texelsPerMetre": 34,
+   "texturedShare": 0.372,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/fence_broken.gltf",
+  "sha256": "f44a7261ff0b61cfd1ce8669372d1884687747fd1d785c01a9d7df7f849551e6",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

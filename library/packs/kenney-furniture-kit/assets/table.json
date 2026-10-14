@@ -1,0 +1,100 @@
+{
+ "assetVersion": 1,
+ "id": "table",
+ "pack": "kenney-furniture-kit",
+ "file": "table.glb",
+ "sha256": "9404b4c6ae0c5577ea6e800ee48cdbd3eaea9db74e6955834a41846133ab3ea2",
+ "bytes": 3024,
+ "preview": "previews/table.png",
+ "from": "kenney:furniture-kit/table; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a meeting table",
+ "tags": [
+  "office",
+  "table",
+  "cover"
+ ],
+ "use": {
+  "size": [
+   1.683,
+   0.653,
+   0.895
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.683,
+    0.653,
+    0.895
+   ],
+   "offset": [
+    0,
+    0.327,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 120,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 120,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3024,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#f3cca8"
+    ],
+    "saturation": 0.758,
+    "value": 0.806,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.73,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "ff1a94498d023957f4bc3ff6f55a7a82977d336dbf01a573b3364f03afe5ff61",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

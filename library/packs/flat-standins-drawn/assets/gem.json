@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "gem",
+ "pack": "flat-standins-drawn",
+ "file": "gem.png",
+ "sha256": "8f901caacf926f8303a836506a4c9b4f78fe2cbc98dae0557afbd37d4e281b92",
+ "bytes": 1643,
+ "preview": "previews/gem.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a drawn gem",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "gem"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#35c7e8",
+     "#8ff0ff",
+     "#2a2440",
+     "#22a5c6",
+     "#ffffff",
+     "#53d5f0",
+     "#34b5d5",
+     "#2b3653"
+    ],
+    "saturation": 0.732,
+    "value": 0.555,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.806
+     },
+     {
+      "hue": "purple",
+      "share": 0.16
+     }
+    ],
+    "exact": 43,
+    "grey": 0.019
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ }
+}

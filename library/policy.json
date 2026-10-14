@@ -1,0 +1,12 @@
+{
+  "schema": "xgames-licence-policy/1",
+  "about": "Which licences the library takes in and in what order the resolver prefers them. The licence floor was settled by the creator on 2026-10-14 (\"We can open up CC-By\"): CC-BY is allowed with the asset's credit line written into the game. Changing the floor is an edit here, never code.",
+  "classes": {
+    "own": { "rank": 0, "spdx": ["LicenseRef-Own"], "duty": "none", "about": "made by the kit, the creator or a build" },
+    "public-domain": { "rank": 0, "spdx": ["CC0-1.0", "Unlicense", "0BSD"], "duty": "none" },
+    "permissive": { "rank": 0, "spdx": ["MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "ISC", "Zlib", "OFL-1.1"], "duty": "notice", "about": "the licence text travels with the file (the game's ATTRIBUTION and the pack's LICENSE.txt); OFL-1.1 is for fonts (a font is never sold on its own)" },
+    "attribution": { "rank": 1, "spdx": ["CC-BY-3.0", "CC-BY-4.0"], "duty": "credit", "about": "used only with the asset's credit line written into the game's credits" },
+    "paid-maker": { "rank": 2, "pattern": "^LicenseRef-[A-Za-z0-9.-]+-Paid$", "duty": "key-and-yes", "about": "output of a paid generator on the creator's account: used only when the caller holds that account's key and the creator said yes" }
+  },
+  "allow": ["own", "public-domain", "permissive", "attribution", "paid-maker"]
+}

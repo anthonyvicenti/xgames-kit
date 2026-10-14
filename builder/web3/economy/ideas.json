@@ -1,0 +1,1396 @@
+{
+  "about": "The 100 game economies of games.fun's economy catalogue (2026-10-11), one entry each: what it is, how it fits loot program 0.3 (Alone: runs with no game key; Key: the authority signs what only the game knows; Server: the main rule runs on the game's server; Gap: needs a piece the program does not have), the parts it uses (read from its words, roughly), and the fixture to start from. None of the 100 was built or tested; the fixtures in fixtures/ were. economy_examples searches this list.",
+  "source": "games.fun economy catalogue, 2026-10-11",
+  "ideas": [
+    {
+      "n": 1,
+      "name": "Blind Forge",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "A drop of mystery boxes with a 60 / 25 / 10 / 4 / 1 rarity table, priced on a curve: each box costs 0.5% more than the last. Mythics are 1-of-1, and once one is pulled it leaves the table for everyone. The table shrinks in public, so late buyers can see exactly what's left.",
+      "how": "box + `rise`; sold-out items are skipped by the roll.",
+      "parts": [
+        "boxes",
+        "rise"
+      ],
+      "start": "blind-forge",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 2,
+      "name": "Spark Pity Gacha",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "Every pull gives a Spark token alongside the roll. 90 Sparks craft the legendary of your choice from this season's banner. Bad luck is capped, and Sparks are tradeable, so unlucky whales sell them to lucky players.",
+      "seenIn": "Genshin-style pity, made tradeable.",
+      "how": "box, recipe.",
+      "parts": [
+        "boxes",
+        "recipes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 3,
+      "name": "Lens Reveal",
+      "section": "Minting and rarity",
+      "fit": "Key",
+      "says": "The collection mints unrevealed. To reveal one you burn a Lens, and a Lens only drops in play. Sealed and revealed copies trade at different prices, and a sealed copy is a bet on the roll.",
+      "seenIn": "delayed reveals (SMB, Okay Bears), here gated by play.",
+      "how": "the authority mints Lenses; the reveal itself is recipe → box.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "contests",
+        "decisions",
+        "burn"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes, burn)"
+    },
+    {
+      "n": 4,
+      "name": "Shiny Hunt",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "Every creature mint has a 1-in-4,096 chance of a shiny variant. The first 10 shinies each also come with a Bounty Certificate (supply 10) that crafts into a payout from the bounty pool. After that, shinies are just rare.",
+      "how": "box entries, an item with supply 10, a recipe paying from a pool.",
+      "parts": [
+        "boxes",
+        "recipes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 5,
+      "name": "Proof-of-Play Mint",
+      "section": "Minting and rarity",
+      "fit": "Key",
+      "says": "This season's skin can only be minted by a wallet holding the soulbound \"Cleared World 3\" badge. The recipe uses the badge, keeps it, and burns coins. Bots can't snipe the mint, because the badge is earned.",
+      "how": "for the badge. The mint itself is Alone.",
+      "parts": [
+        "recipes",
+        "life",
+        "burn",
+        "decisions"
+      ],
+      "start": "stud-farm",
+      "startWhy": "nearest by parts (recipes, life, burn)"
+    },
+    {
+      "n": 6,
+      "name": "Daily Hatchery Ticket",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "Every wallet gets a soulbound ticket with a 24-hour cooldown. Using it rolls a free creature egg, mostly commons, with a 1% chance of a starter legendary. Retention as a mint.",
+      "how": "life `cooldown`, recipe → box.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "lotteries",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 7,
+      "name": "Serial Collectors",
+      "section": "Minting and rarity",
+      "fit": "Key",
+      "says": "Each mint is \"Blade #N\". Serials #1, #7, #69, #420, #777 and palindromes pay a bonus from a pool when claimed, so people sweep the floor hunting numbers.",
+      "how": "a recipe can't read the serial, so the authority pays.",
+      "parts": [
+        "recipes",
+        "decisions"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes)"
+    },
+    {
+      "n": 8,
+      "name": "Shrinking Odds",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "Each time a legendary is minted, its weight in the box drops, and the last one is nearly impossible. It rewards being early without a whitelist.",
+      "how": "a box with `stock_odds` (added 2026-10-11).",
+      "parts": [
+        "boxes"
+      ],
+      "start": "blind-forge",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 9,
+      "name": "Curve-Launched Game Token",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "The game's token launches on a pump.fun-style bonding curve. When it graduates, the game unlocks for everyone, and a share of the curve's fees seeds the season's prize pool. The community literally funds the launch.",
+      "seenIn": "pump.fun, Meteora DBC.",
+      "how": "the launchpad we already have, plus `deposit` into a pool.",
+      "parts": []
+    },
+    {
+      "n": 10,
+      "name": "Variant Printer",
+      "section": "Minting and rarity",
+      "fit": "Alone",
+      "says": "One base item, eight printings (foil, gold, misprint, upside-down…). Each printing is its own item with its own supply. Misprints are 1-in-500 and the most valuable.",
+      "seenIn": "trading-card printings.",
+      "how": "box over items.",
+      "parts": [
+        "boxes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes)"
+    },
+    {
+      "n": 11,
+      "name": "Incinerator Altar",
+      "section": "Burning and deflation",
+      "fit": "Alone",
+      "says": "Burn any NFT from the collection and get Ash in proportion to its rarity. Ash is the only currency in the top-tier shop. Old junk becomes fuel, and supply shrinks.",
+      "seenIn": "DeGods / y00ts burns, Sol Incinerator.",
+      "how": "one recipe per item.",
+      "parts": [
+        "recipes",
+        "burn"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes, burn)"
+    },
+    {
+      "n": 12,
+      "name": "Ember Count",
+      "section": "Burning and deflation",
+      "fit": "Key",
+      "says": "Same altar, but every burn also adds to a global ember counter. At 10,000 burns the world boss wakes up and everyone who burned shares its loot pool by burn count.",
+      "how": "the game reads `Crafted` receipts and pays.",
+      "parts": [
+        "recipes",
+        "burn",
+        "decisions"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes, burn)"
+    },
+    {
+      "n": 13,
+      "name": "Deflation Royale",
+      "section": "Burning and deflation",
+      "fit": "Key",
+      "says": "Match entry fee: 50% to the pot, 30% burned, 20% to the treasury. Every game played shrinks the supply, and the season trophy goes to whoever burned the most through play.",
+      "how": "a contest whose shares burn; the authority names the winner.",
+      "parts": [
+        "contests",
+        "payments",
+        "decisions",
+        "burn"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (payments, decisions, burn)"
+    },
+    {
+      "n": 14,
+      "name": "Scorched Treasury",
+      "section": "Burning and deflation",
+      "fit": "Alone",
+      "says": "A schedule burns 1% of the treasury pool every day. Players can slow it down by depositing tokens into the \"flame guard\" pool, which the next season pays back with a bonus. Doing nothing costs something.",
+      "how": "for the burn; the season payback is Key.",
+      "parts": [
+        "schedules",
+        "burn"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 15,
+      "name": "Sacrifice Raffle",
+      "section": "Burning and deflation",
+      "fit": "Alone",
+      "says": "Burn an NFT for raffle tickets (more for rarer ones). The pot is a share of the collection's trading fees, drawn weekly. Holders clear out their junk, and someone wins big.",
+      "how": "recipe → ticket token; lottery with `ticket_mint`.",
+      "parts": [
+        "recipes",
+        "lotteries",
+        "burn"
+      ],
+      "start": "sacrifice-raffle",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 16,
+      "name": "Phoenix Rebirth",
+      "section": "Burning and deflation",
+      "fit": "Key",
+      "says": "Burn a max-level hero and get it back at level 1 with +1 star, keeping its name and its kill count. Stars are capped at 5, and five-star heroes are the endgame.",
+      "how": "for levels. The rebirth is Alone (`needs` level=max, `keeps` name/kills).",
+      "parts": [
+        "burn",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions, burn)"
+    },
+    {
+      "n": 17,
+      "name": "Tontine Blades",
+      "section": "Burning and deflation",
+      "fit": "Gap",
+      "says": "100 swords exist. Any holder can burn theirs and take 1/remaining of the pool, so each burn makes the next one worth more. Who blinks first?",
+      "how": "a payout of 1/N of the pool, with N the blades left. A share of a pool in basis points was added on 2026-10-11, but N needs a count of burns, and the program can't keep one: a holder can burn a collectible through Metaplex Core directly.",
+      "parts": [
+        "burn"
+      ]
+    },
+    {
+      "n": 18,
+      "name": "Burn-to-Vote",
+      "section": "Burning and deflation",
+      "fit": "Key",
+      "says": "Next week's map, boss or banner is chosen by burning tokens on an option. Every token cast is destroyed: voting is a sink.",
+      "how": "a contest whose shares burn the whole pot; the authority names the option with the most.",
+      "parts": [
+        "contests",
+        "decisions",
+        "burn"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (contests, decisions, burn)"
+    },
+    {
+      "n": 19,
+      "name": "Sneaker Durability",
+      "section": "Burning and deflation",
+      "fit": "Key",
+      "says": "Shoes have 100 uses. Every run uses one, a repair burns the earned token and renews the uses, and minting a new pair burns both the earned token and the governance token. Two sinks hold up one faucet.",
+      "seenIn": "STEPN (GST/GMT).",
+      "how": "for earnings; durability and repairs are Alone (life `uses`, `Renew`).",
+      "parts": [
+        "holds",
+        "life",
+        "burn",
+        "decisions"
+      ],
+      "start": "stud-farm",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 20,
+      "name": "Cursed Coin",
+      "section": "Burning and deflation",
+      "fit": "Alone",
+      "says": "A cursed coin pays double in every shop, but every sale burns 10% of it. It's a hot currency people want to spend before it melts away.",
+      "how": "the shop's split takes a share that burns.",
+      "parts": [
+        "burn"
+      ],
+      "start": "falling-drop",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 21,
+      "name": "2048 Collection",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Two of tier N merge into one of tier N+1. The single tier-11 piece also claims a huge pool prize, so the whole collection races to merge.",
+      "seenIn": "Pak's Merge.",
+      "how": "recipes; the tier-11 item comes with a pool payout.",
+      "parts": [
+        "recipes"
+      ],
+      "start": "merge-2048",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 22,
+      "name": "Starforce",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Enhance a sword from +1 to +15: each try burns the sword and some stones. The roll can go up a level (a new sword one level higher), stay (the same level, minted again) or destroy it. The odds get worse as you climb.",
+      "seenIn": "MapleStory.",
+      "how": "recipe → attempt token → box per level.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "burn"
+      ],
+      "start": "starforce",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 23,
+      "name": "Alchemist's Discovery",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Recipes sit on chain but aren't advertised. The first wallet to craft each one also gets the Discoverer NFT (supply 1), which earns 2% of every later craft of that recipe forever. Reading the chain becomes a game.",
+      "how": "the first recipe version outputs the supply-1 Discoverer, the second pays its holder (`To::Holder`).",
+      "parts": [
+        "recipes",
+        "holder"
+      ],
+      "start": "stud-farm",
+      "startWhy": "nearest by parts (recipes, holder)"
+    },
+    {
+      "n": 24,
+      "name": "Trait-Splice Fusion",
+      "section": "Merging, crafting and evolution",
+      "fit": "Gap",
+      "says": "Fuse two pets, and for each trait the child takes the mother's or the father's at random. Players chase perfect gene combos.",
+      "how": "a trait picked by chance from two parents.",
+      "parts": [
+        "recipes"
+      ]
+    },
+    {
+      "n": 25,
+      "name": "Shipbreaker's Yard",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Break a ship into parts (hull, sails, cannons). Parts plus a blueprint build a new ship. A blueprint has 5 uses, then it's a museum piece.",
+      "how": "recipes, life `uses`.",
+      "parts": [
+        "recipes",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (recipes, life)"
+    },
+    {
+      "n": 26,
+      "name": "Field Kitchen",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Ingredients rot after 3 days. Recipes turn them into meals that give buffs, and each meal has a cooldown. A market in fresh food.",
+      "how": "life `lasts`, `cooldown`.",
+      "parts": [
+        "recipes",
+        "life"
+      ],
+      "start": "stud-farm",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 27,
+      "name": "Set Bonus Vault",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Hold all five pieces of a matching armor set, and once a week a recipe uses all five (without burning them) and pays from the set's pool. Partial sets trade at a discount and the last missing piece trades at a premium.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "holds",
+        "life",
+        "burn"
+      ],
+      "start": "stud-farm",
+      "startWhy": "nearest by parts (recipes, life, burn)"
+    },
+    {
+      "n": 28,
+      "name": "Gem Sockets",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Socket a ruby into a sword: the recipe burns both and mints \"Sword [Ruby]\". To unsocket, the reverse recipe takes a fee. Players build items piece by piece.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "burn"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes, burn)"
+    },
+    {
+      "n": 29,
+      "name": "Mutation Serum",
+      "section": "Merging, crafting and evolution",
+      "fit": "Alone",
+      "says": "Serums drop at three strengths. Burn a serum and use (not burn) your creature to mint a mutant. You keep the original, so mutants are pure new supply, paid for by serums.",
+      "seenIn": "MAYC serums.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "burn"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes, burn)"
+    },
+    {
+      "n": 30,
+      "name": "Card XP",
+      "section": "Merging, crafting and evolution",
+      "fit": "Key",
+      "says": "Burn duplicate cards to feed XP into one card. Its level is written on the card and it shows in any wallet. Max-level cards unlock a foil reprint.",
+      "seenIn": "Sorare, Parallel.",
+      "how": "the authority writes the XP. The foil reprint is Alone (`needs` level=max).",
+      "parts": [
+        "recipes",
+        "decisions",
+        "burn"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes, burn)"
+    },
+    {
+      "n": 31,
+      "name": "Stud Farm",
+      "section": "Breeding and life",
+      "fit": "Key",
+      "says": "Studs earn a cover fee for their holder, foals are ready 7 days after breeding, mares have 6 foals in their life, and races decide which bloodlines are worth anything.",
+      "seenIn": "Photo Finish LIVE.",
+      "how": "for races; the breeding is Alone.",
+      "parts": [
+        "life",
+        "decisions"
+      ],
+      "start": "stud-farm",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 32,
+      "name": "Incubator",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Eggs hatch 3 days after they're laid. An incubator item (with uses) halves that by crafting a \"warm egg\" that's ready sooner. Time can be bought, but only by spending something.",
+      "seenIn": "Aurory, Genopets eggs.",
+      "how": "life `ready_after`.",
+      "parts": [
+        "recipes",
+        "schedules",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (schedules, recipes, life)"
+    },
+    {
+      "n": 33,
+      "name": "Mortal Pets and Ghosts",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "A pet lasts 3 days unless fed (feeding renews it). A dead pet leaves a gravestone, and gravestones are the only ingredient for ghost pets, which never die but can't breed. Neglect has a market.",
+      "how": ".",
+      "parts": []
+    },
+    {
+      "n": 34,
+      "name": "Royal Bloodlines",
+      "section": "Breeding and life",
+      "fit": "Gap",
+      "says": "Pets descended from the 50 genesis pets carry the line's crest, and the genesis holder earns a cut of every descendant's breeding fee, however many generations down.",
+      "how": "a family tree.",
+      "parts": [
+        "holder"
+      ]
+    },
+    {
+      "n": 35,
+      "name": "Wolves and Sheep",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Sheep stake and earn wool. To cash out, a sheep risks a roll: half the time it gets its wool, half the time the wool goes to the wolves' reward pool. Wolves stake for that pool. Greed against safety, on chain.",
+      "seenIn": "Wolf Game.",
+      "how": "a box priced in wool, with a \"pay from pool\" outcome and a \"nothing\" outcome whose split feeds the wolves' stake.",
+      "parts": [
+        "boxes",
+        "stakes"
+      ],
+      "start": "coin-flip-arena",
+      "startWhy": "nearest by parts (boxes, stakes)"
+    },
+    {
+      "n": 36,
+      "name": "Molting Season",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Every 7 days a creature can shed a Shell (a recipe that uses the creature, with a cooldown). Shells are the crafting currency, so owning creatures is a yield.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (recipes, life)"
+    },
+    {
+      "n": 37,
+      "name": "Genetics Lab",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Breeding rolls a box: 85% a normal baby, 14% a rare color, 1% a mutant species that can't be bred any other way.",
+      "how": "recipe → box token → box.",
+      "parts": [
+        "boxes",
+        "recipes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 38,
+      "name": "Retired Coaches",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "A hero has 200 battles in it. Retire it and it becomes a Coach, and the Coach's holder earns a share whenever a new hero trains with it. Old assets keep paying.",
+      "how": "life `uses`, a recipe that pays the holder.",
+      "parts": [
+        "recipes",
+        "life",
+        "holder"
+      ],
+      "start": "stud-farm",
+      "startWhy": "nearest by parts (recipes, life, holder)"
+    },
+    {
+      "n": 39,
+      "name": "Bee Garden",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Seeds grow in 2 days, flowers rot in 5, bees pollinate (used and kept, with a cooldown) to make honey, and honey crafts everything else.",
+      "seenIn": "Honeyland, DeFi Land.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (recipes, life)"
+    },
+    {
+      "n": 40,
+      "name": "Clone Vats",
+      "section": "Breeding and life",
+      "fit": "Alone",
+      "says": "Each clone of a famous creature costs more than the last (+5% per clone), forever. The first clones are cheap, and the price of the 1,000th says what the line is worth.",
+      "how": "shop item with `rise`.",
+      "parts": [
+        "rise"
+      ],
+      "start": "falling-drop",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 41,
+      "name": "Workshop Plots",
+      "section": "Land and territory",
+      "fit": "Alone",
+      "says": "Every craft happens on a plot, and the plot's holder gets 3% of it. Busy plots are worth more, so landlords compete on location and reputation.",
+      "how": "`To::Holder`.",
+      "parts": [
+        "recipes",
+        "holder"
+      ],
+      "start": "stud-farm",
+      "startWhy": "nearest by parts (recipes, holder)"
+    },
+    {
+      "n": 42,
+      "name": "Harberger Land",
+      "section": "Land and territory",
+      "fit": "Gap",
+      "says": "Each plot's holder declares its price and pays 5% a week in tax on it. Anyone can buy any plot at its declared price at any time. Land goes to whoever values it most, and the tax funds the prize pool.",
+      "how": "a forced sale, and taking tax without the holder's signature.",
+      "parts": [
+        "holder"
+      ]
+    },
+    {
+      "n": 43,
+      "name": "Fog-of-War Scouting",
+      "section": "Land and territory",
+      "fit": "Alone",
+      "says": "Buy scouting boxes for a map region. They drop resources, or one of 8 map fragments. All 8 craft into a treasure map that pays out that region's pool, so the region with the biggest pool fills with scouts.",
+      "how": ".",
+      "parts": [
+        "boxes",
+        "recipes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 44,
+      "name": "Mining Claims",
+      "section": "Land and territory",
+      "fit": "Alone",
+      "says": "A claim gives 50 extractions of ore (life `uses`), and then it's spent. A spent claim is a cosmetic \"Old Shaft\" that's a vanity flex. New claims mint on a halving schedule.",
+      "seenIn": "Star Atlas resource claims.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "schedules",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (schedules, recipes, life)"
+    },
+    {
+      "n": 45,
+      "name": "Faction Territory War",
+      "section": "Land and territory",
+      "fit": "Key",
+      "says": "Each week every territory is a contest: factions put tokens on their side, and players fight in game. The winning side splits the pot, and whoever holds the territory's banner NFT takes 5%.",
+      "how": "the authority names the winner.",
+      "parts": [
+        "contests",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (contests, decisions)"
+    },
+    {
+      "n": 46,
+      "name": "Market Town Rent",
+      "section": "Land and territory",
+      "fit": "Alone",
+      "says": "Shops, forges and stables are buildings, and players pay their holder to use them. Each building needs weekly upkeep (lasts + renew) or it falls to ruins.",
+      "how": ".",
+      "parts": []
+    },
+    {
+      "n": 47,
+      "name": "Fleet Missions",
+      "section": "Land and territory",
+      "fit": "Key",
+      "says": "Send ships on a 6-hour mission: the ship is held by the game. It comes home with loot, or the authority sends it to the wreck yard. Fail to answer in time and anyone can send it home.",
+      "seenIn": "Star Atlas, Famous Fox missions.",
+      "how": "`hold` + `award`; `take_back` keeps the player safe.",
+      "parts": [
+        "holds",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 48,
+      "name": "Grid Miner",
+      "section": "Land and territory",
+      "fit": "Key",
+      "says": "Every minute, players put SOL on squares of a 5×5 grid. A VRF roll picks one square, and those on it split everything on the board plus newly minted ORE. One round in 500 also hits the motherlode pool.",
+      "seenIn": "ORE.",
+      "how": "a contest per round, the authority uses `roll` and decides.",
+      "parts": [
+        "boxes",
+        "schedules",
+        "contests",
+        "decisions",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (schedules, life)"
+    },
+    {
+      "n": 49,
+      "name": "Tower Lots",
+      "section": "Land and territory",
+      "fit": "Server",
+      "says": "Players own tower slots along a shared road. Every monster a tower kills pays its owner a bounty, so the best lots are where the monsters come.",
+      "how": "kills are real-time game state.",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 50,
+      "name": "Sinking Isles",
+      "section": "Land and territory",
+      "fit": "Alone",
+      "says": "Island plots sink unless dredged weekly. A sunk island becomes a reef that spawns fish boxes for whoever holds it. Abandoned land turns into a different kind of land.",
+      "how": ".",
+      "parts": [
+        "boxes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes)"
+    },
+    {
+      "n": 51,
+      "name": "Weekly Ladder Drop",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "A schedule moves 5% of the treasury into the prize pool each week, and the top 10 on the leaderboard are paid on a fixed ladder (30 / 20 / 12 / …). Every payout leaves a receipt, so anyone can check it.",
+      "how": ".",
+      "parts": [
+        "schedules",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (schedules, decisions)"
+    },
+    {
+      "n": 52,
+      "name": "Level Ladder (the creator's example)",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "Pay to attempt each level. Failed attempts grow the pot, and clearing the final level pays the token prize. The hardest level holds the biggest pot.",
+      "how": "`pay` into a pool; `payout` on a clear.",
+      "parts": [
+        "payments",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (payments, decisions)"
+    },
+    {
+      "n": 53,
+      "name": "Speedrun Bounties",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "Anyone can post a bounty into a pool: \"beat 4:12 on World 2\". The first verified run that beats it collects. Sponsors and fans fund the scene.",
+      "how": ".",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 54,
+      "name": "Record Holder's Crown",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "A record has a Crown NFT, and every attempt fee pays 10% to whoever holds the Crown. When the record breaks, the old Crown is burned and a new one is minted to the new holder.",
+      "how": "`unmake` + `make`; the `To::Holder` share is Alone.",
+      "parts": [
+        "payments",
+        "holder",
+        "burn",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (payments, decisions, burn)"
+    },
+    {
+      "n": 55,
+      "name": "Skill Key Mint",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "The top 1,000 scores in a two-week event get a soulbound Key. Keys later craft a rare mint at cost, so the mint goes to whoever is best at the game.",
+      "seenIn": "Yuga's Dookey Dash.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "decisions"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes)"
+    },
+    {
+      "n": 56,
+      "name": "Streamer Boss",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "Viewers fund the boss's HP pool while watching live. Players fight it, and when it falls, each fighter's share of the pool matches their share of the damage.",
+      "how": "(ties into Go live).",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 57,
+      "name": "Holder Raffle",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "Every NFT a wallet holds at the snapshot is one ticket in the weekly raffle, so holding counts with no staking needed. A VRF roll picks the winner.",
+      "how": "the snapshot is off chain; `roll` picks.",
+      "parts": [
+        "boxes",
+        "lotteries",
+        "stakes",
+        "decisions"
+      ],
+      "start": "coin-flip-arena",
+      "startWhy": "nearest by parts (boxes, lotteries, stakes)"
+    },
+    {
+      "n": 58,
+      "name": "Live Event Rain",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "During a live event, a random 50 players online get airdrops: tokens, a cosmetic, sometimes a rare. You have to be there.",
+      "how": ".",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 59,
+      "name": "Bracket with Side Bets",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "A 64-player bracket has an entry-fee pot. Spectators bet on every match as a contest, and each match's rake grows the grand prize. The audience funds the tournament.",
+      "how": ".",
+      "parts": [
+        "contests",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (contests, decisions)"
+    },
+    {
+      "n": 60,
+      "name": "Melting Prize",
+      "section": "Leaderboards, tournaments and giveaways",
+      "fit": "Key",
+      "says": "The prize pool burns 1% an hour until someone beats the level. Every hour it sits, it's worth less.",
+      "how": "the burn is a schedule; the authority pays the winner.",
+      "parts": [
+        "schedules",
+        "decisions",
+        "burn"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (schedules, decisions, burn)"
+    },
+    {
+      "n": 61,
+      "name": "Coin Flip Den",
+      "section": "Betting and chance",
+      "fit": "Alone",
+      "says": "50/50, double or nothing, with a 3% edge that goes to the stakers who back the house. Players can be the house.",
+      "seenIn": "Degen Coin Flip.",
+      "how": "box with a pool prize; the \"nothing\" split feeds the stake.",
+      "parts": [
+        "boxes",
+        "stakes"
+      ],
+      "start": "coin-flip-arena",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 62,
+      "name": "Plinko Drops",
+      "section": "Betting and chance",
+      "fit": "Alone",
+      "says": "A box whose outcomes are the slots: 0.2×, 0.5×, 1×, 3×, 10×, 100×. Same odds, a different feel from the coin flip.",
+      "how": ".",
+      "parts": [
+        "boxes"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes)"
+    },
+    {
+      "n": 63,
+      "name": "Crash",
+      "section": "Betting and chance",
+      "fit": "Server",
+      "says": "A multiplier climbs from 1×, and you cash out before it crashes.",
+      "how": "real-time; the program takes the bets and pays.",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 64,
+      "name": "Parimutuel Races",
+      "section": "Betting and chance",
+      "fit": "Key",
+      "says": "Bet on any of 8 runners: the pot is split among those who backed the winner, less a rake to the track's holder.",
+      "how": "a contest with 8 sides.",
+      "parts": [
+        "contests",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (contests, decisions)"
+    },
+    {
+      "n": 65,
+      "name": "Fomo Keys",
+      "section": "Betting and chance",
+      "fit": "Gap",
+      "says": "Each key bought adds 30 seconds to a timer, and the last buyer when it hits zero takes the pot.",
+      "seenIn": "Fomo3D.",
+      "how": "a last-buyer timer.",
+      "parts": []
+    },
+    {
+      "n": 66,
+      "name": "Hot Potato",
+      "section": "Betting and chance",
+      "fit": "Gap",
+      "says": "A cursed idol charges its holder a fee every hour until they pass it on. Whoever holds it when it \"explodes\" loses their deposit to everyone else.",
+      "how": "taking from a wallet with no signature.",
+      "parts": [
+        "schedules"
+      ]
+    },
+    {
+      "n": 67,
+      "name": "Grand + Minors Lottery",
+      "section": "Betting and chance",
+      "fit": "Alone",
+      "says": "One grand prize and 20 minor prizes in each draw, so most players feel close to winning.",
+      "how": "a lottery has up to 8 places (added 2026-10-11), so one grand prize and 7 minor ones per draw; 20 minors still means three lotteries side by side.",
+      "parts": [
+        "lotteries",
+        "contests"
+      ],
+      "start": "sacrifice-raffle",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 68,
+      "name": "Sealed Packs",
+      "section": "Betting and chance",
+      "fit": "Alone",
+      "says": "Packs are tradeable while sealed. Opening one burns it for a roll, and sealed packs from early seasons gain value as fewer stay sealed.",
+      "how": ".",
+      "parts": [
+        "boxes",
+        "burn"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, burn)"
+    },
+    {
+      "n": 69,
+      "name": "Duel Stakes",
+      "section": "Betting and chance",
+      "fit": "Key",
+      "says": "Two players each put up the same stake and fight. The winner takes it, less a rake that goes to the arena's holder.",
+      "how": "a contest with 2 sides.",
+      "parts": [
+        "stakes",
+        "contests",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 70,
+      "name": "Uncrackable Vault",
+      "section": "Betting and chance",
+      "fit": "Key",
+      "says": "A vault holds a pool. Each guess at the code costs a fee that grows the vault, and the code's hash is posted up front. When someone cracks it, the game reveals the code to show the answer was fixed.",
+      "how": ".",
+      "parts": [
+        "payments",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (payments, decisions)"
+    },
+    {
+      "n": 71,
+      "name": "Guild Treasuries",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Each guild has its own pool. Members' match winnings pay a tithe into it, and the guild master pays out from it, with every payout public.",
+      "how": ".",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 72,
+      "name": "Kingdom Tokens",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Three kingdoms, three tokens, with exchange recipes between them. The kingdom whose token holds the most value at season's end wins a bonus mint. Diplomacy is market-making.",
+      "how": ".",
+      "parts": [
+        "recipes",
+        "decisions"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes)"
+    },
+    {
+      "n": 73,
+      "name": "Mercenary Rentals",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Lend your hero to another player for 24 hours: the game holds it while it fights for them. A share of their winnings comes to you, and the hero comes home when the time is up.",
+      "how": "`hold`; `take_back` guarantees the return.",
+      "parts": [
+        "holds",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (holds, decisions)"
+    },
+    {
+      "n": 74,
+      "name": "Recruiter Cut",
+      "section": "Social, factions and guilds",
+      "fit": "Alone",
+      "says": "A new player's first purchase pays 10% to the friend who brought them, named in the payment they sign. Referrals with no server holding the money.",
+      "how": "`pay` with a `To::Account` share.",
+      "parts": [
+        "payments"
+      ],
+      "start": "falling-drop",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 75,
+      "name": "Player Shares",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Fans buy a pro player's season token. The player's winnings flow into that token's stake pool, so fans earn when their player wins.",
+      "how": "the winnings are paid into the pool.",
+      "parts": [
+        "stakes",
+        "decisions"
+      ],
+      "start": "coin-flip-arena",
+      "startWhy": "nearest by parts (stakes)"
+    },
+    {
+      "n": 76,
+      "name": "Loot Table Vote",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Holders burn tokens to vote on which new item enters next month's box. The owner then edits the box to match the vote.",
+      "how": ".",
+      "parts": [
+        "boxes",
+        "contests",
+        "burn",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (contests, decisions, burn)"
+    },
+    {
+      "n": 77,
+      "name": "Heist Crew",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Five players each put an item on hold as a stake and run a heist. If it succeeds, the authority pays the loot and returns the stakes. If it fails, the stakes go to the vault's guards.",
+      "how": ".",
+      "parts": [
+        "stakes",
+        "holds",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (holds, decisions)"
+    },
+    {
+      "n": 78,
+      "name": "Bounty Board",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Players post jobs (\"kill the boss with only a dagger\") and fund them into a pool, and the authority pays whoever does it. The players write the content.",
+      "how": ".",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 79,
+      "name": "Friend Keys",
+      "section": "Social, factions and guilds",
+      "fit": "Gap",
+      "says": "Every player has their own key on a rising price, and holding a key gets you into their private room. Key sales pay the player, and selling a key back follows the curve down.",
+      "seenIn": "friend.tech.",
+      "how": "a buy-back along a rising price (and a new item per player, which the owner writes).",
+      "parts": [
+        "rise"
+      ]
+    },
+    {
+      "n": 80,
+      "name": "Clan Siege",
+      "section": "Social, factions and guilds",
+      "fit": "Key",
+      "says": "Two clans each put their castle NFT on hold for a siege. The winning clan takes both castles.",
+      "how": ".",
+      "parts": [
+        "holds",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (holds, decisions)"
+    },
+    {
+      "n": 81,
+      "name": "Halving Seasons",
+      "section": "Time, seasons and world events",
+      "fit": "Alone",
+      "says": "Rewards mint into the play pool on a schedule that halves every 30 days. Early players get the most, and later ones play for scarcity.",
+      "how": "schedule with a halving.",
+      "parts": [
+        "schedules"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 82,
+      "name": "Meteor Shower",
+      "section": "Time, seasons and world events",
+      "fit": "Key",
+      "says": "Every day a schedule moves 2% of the treasury into a meteor pool. At a random time a meteor lands somewhere on the map, and whoever reaches it first claims the pool.",
+      "how": "`roll` for the time and place; the authority pays.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "schedules",
+        "decisions"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 83,
+      "name": "Market Mood",
+      "section": "Time, seasons and world events",
+      "fit": "Server",
+      "says": "The world reacts to the game token's price. In a bull market it's sunny and drops are generous; in a bear market monsters hit harder and drop rarer loot. Players watch the chart to plan a run.",
+      "how": "the game reads a price feed.",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 84,
+      "name": "Season Pass Relic",
+      "section": "Time, seasons and world events",
+      "fit": "Alone",
+      "says": "A pass lasts 30 days and crafts season rewards while it's live. When it expires it becomes a \"Veteran of Season N\" relic: proof you were there.",
+      "how": ".",
+      "parts": [
+        "recipes"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes)"
+    },
+    {
+      "n": 85,
+      "name": "Advent Vault",
+      "section": "Time, seasons and world events",
+      "fit": "Alone",
+      "says": "24 boxes, and one becomes openable each day. Miss a day and you can still open it later, but the day-24 box needs all 23 before it.",
+      "how": "life `ready_after`; a recipe that needs 23.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "life"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 86,
+      "name": "Daily Dungeon Key",
+      "section": "Time, seasons and world events",
+      "fit": "Key",
+      "says": "A soulbound key opens the dungeon once a day, and the dungeon's loot is the authority's call.",
+      "how": "for the loot; the key is Alone.",
+      "parts": [
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (decisions)"
+    },
+    {
+      "n": 87,
+      "name": "Time Capsule",
+      "section": "Time, seasons and world events",
+      "fit": "Alone",
+      "says": "Lock tokens for a year, and when they unlock you also craft a vintage-stamped NFT that only exists for capsules that lasted the year.",
+      "how": "a stake with a lock; an item `ready_after`.",
+      "parts": [
+        "recipes",
+        "stakes",
+        "life"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "nearest by parts (recipes, stakes, life)"
+    },
+    {
+      "n": 88,
+      "name": "Night Mode",
+      "section": "Time, seasons and world events",
+      "fit": "Key",
+      "says": "Every 7th day the world is night and the box tables change: undead drops, darker variants.",
+      "how": "the owner edits the boxes at night.",
+      "parts": [
+        "boxes",
+        "decisions"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes)"
+    },
+    {
+      "n": 89,
+      "name": "Blood Moon Bonus",
+      "section": "Time, seasons and world events",
+      "fit": "Key",
+      "says": "For one random hour a week, every craft gives double. Nobody knows when, so players stay online.",
+      "how": "`roll` picks the hour; the authority pays the bonus.",
+      "parts": [
+        "boxes",
+        "recipes",
+        "decisions"
+      ],
+      "start": "spark-pity",
+      "startWhy": "nearest by parts (boxes, recipes)"
+    },
+    {
+      "n": 90,
+      "name": "Ice Age Reset",
+      "section": "Time, seasons and world events",
+      "fit": "Gap",
+      "says": "Every 90 days, everything not inside a vault (a stake) freezes: resources turn into \"frozen\" items that need a thaw craft. Saving beats hoarding.",
+      "how": "changing items in wallets without their holders' signatures. The thaw recipe could be Alone.",
+      "parts": [
+        "recipes",
+        "stakes"
+      ]
+    },
+    {
+      "n": 91,
+      "name": "Daily Auction Forever",
+      "section": "Strange ones",
+      "fit": "Gap",
+      "says": "One unique character is auctioned every day, forever, and the proceeds go to the treasury that holders govern.",
+      "seenIn": "Nouns.",
+      "how": "an auction.",
+      "parts": [
+        "schedules"
+      ]
+    },
+    {
+      "n": 92,
+      "name": "Falling Price Drop",
+      "section": "Strange ones",
+      "fit": "Alone",
+      "says": "The mint price drops every minute until the drop sells out, so buyers set the price by waiting.",
+      "how": "an item with a `fall` (added 2026-10-11).",
+      "parts": [
+        "schedules",
+        "fall"
+      ],
+      "start": "falling-drop",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 93,
+      "name": "Pixel Canvas",
+      "section": "Strange ones",
+      "fit": "Gap",
+      "says": "Every pixel on a shared 1000×1000 canvas is ownable. Painting over someone's pixel costs twice what they paid, and they get the money.",
+      "seenIn": "r/place, the Million Dollar Homepage.",
+      "how": "a forced sale.",
+      "parts": []
+    },
+    {
+      "n": 94,
+      "name": "Pay to Curse",
+      "section": "Strange ones",
+      "fit": "Server",
+      "says": "Pay to put an hour-long curse on the top player, and the fee goes to them as a consolation. Grief becomes a tip.",
+      "how": "for the effect; the payment is Alone (`pay` with a `To::Account` share).",
+      "parts": [
+        "payments",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (payments, decisions)"
+    },
+    {
+      "n": 95,
+      "name": "Emission Thermostat",
+      "section": "Strange ones",
+      "fit": "Key",
+      "says": "Holders vote weekly on the next week's reward rate, and the owner rewrites the schedule to match. Monetary policy as a game.",
+      "how": ".",
+      "parts": [
+        "schedules",
+        "contests",
+        "decisions"
+      ],
+      "start": "scorched-treasury",
+      "startWhy": "nearest by parts (schedules, decisions)"
+    },
+    {
+      "n": 96,
+      "name": "Bank Run",
+      "section": "Strange ones",
+      "fit": "Alone",
+      "says": "An in-game bank pays interest from a schedule-filled pool. If too many withdraw at once, the pool runs dry, the last ones out get nothing, and the bank \"collapses\".",
+      "how": "a stake and a schedule; the panic is real.",
+      "parts": [
+        "stakes",
+        "schedules"
+      ],
+      "start": "halving-seasons",
+      "startWhy": "written from this entry"
+    },
+    {
+      "n": 97,
+      "name": "Salt Mine",
+      "section": "Strange ones",
+      "fit": "Key",
+      "says": "Losing a match gives you Salt. Salt crafts consolation cosmetics, and the saltiest player of the season gets a trophy. Losing has value.",
+      "how": "the authority issues Salt.",
+      "parts": [
+        "recipes",
+        "decisions"
+      ],
+      "start": "merge-2048",
+      "startWhy": "nearest by parts (recipes)"
+    },
+    {
+      "n": 98,
+      "name": "Pawnshop",
+      "section": "Strange ones",
+      "fit": "Key",
+      "says": "Pawn an NFT (held by the game) for a loan from the shop's pool. Repay on time and it's yours; default and the shop sells it.",
+      "seenIn": "Sharky.fi, Citrus.",
+      "how": "`hold`; the authority awards on default. The player sets the hold's length, so the shop has to ask for one at least as long as the loan.",
+      "parts": [
+        "holds",
+        "decisions"
+      ],
+      "start": "duel-arena",
+      "startWhy": "nearest by parts (holds, decisions)"
+    },
+    {
+      "n": 99,
+      "name": "Cross-Game Passport",
+      "section": "Strange ones",
+      "fit": "Gap",
+      "says": "A sword from game A is a crafting ingredient in game B, so studios trade ingredients and players carry value across games.",
+      "how": "a recipe that reads another game's collection.",
+      "parts": [
+        "recipes"
+      ]
+    },
+    {
+      "n": 100,
+      "name": "Proof of Absence",
+      "section": "Strange ones",
+      "fit": "Gap",
+      "says": "A dormant wallet's idle NFTs slowly \"fade\". Logging in restores them, and fully faded ones can be claimed by active players. Activity is the price of ownership.",
+      "how": "changing or taking items without the holder's signature.",
+      "parts": [
+        "holder"
+      ]
+    }
+  ]
+}

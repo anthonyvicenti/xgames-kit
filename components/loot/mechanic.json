@@ -1,0 +1,586 @@
+{
+  "id": "loot",
+  "name": "Loot",
+  "describe": "Drops, chests, coins, potions and weapons with rarity; pick one of three upgrades between levels",
+  "examples": [
+    "coins and potions from every kill",
+    "chests to open between fights",
+    "weapon drops in rarity colours",
+    "pick an upgrade between levels"
+  ],
+  "rank": 140,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "potionChance": {
+        "type": "number",
+        "description": "Chance a kill drops a heal potion",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.12
+      },
+      "potionHeal": {
+        "type": "number",
+        "description": "Hit points a potion gives back",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 2
+      },
+      "weaponChance": {
+        "type": "number",
+        "description": "Chance a kill drops a weapon (the melee mechanic's)",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.06
+      },
+      "chestWeapon": {
+        "type": "number",
+        "description": "Chance a chest holds a weapon",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.5
+      },
+      "bossDrops": {
+        "type": "boolean",
+        "default": true,
+        "description": "The boss drops a pile of coins, a potion and an epic weapon"
+      },
+      "touch": {
+        "type": "number",
+        "description": "Coins and potions are taken within this distance (m)",
+        "minimum": 0.3,
+        "maximum": 3,
+        "default": 0.9
+      },
+      "magnet": {
+        "type": "number",
+        "description": "Coins and potions drift toward a player within this distance (m)",
+        "minimum": 0,
+        "maximum": 8,
+        "default": 2.6
+      },
+      "reach": {
+        "type": "number",
+        "description": "Chests and weapons are taken with E within this distance (m)",
+        "minimum": 0.5,
+        "maximum": 4,
+        "default": 1.8
+      },
+      "maxDrops": {
+        "type": "integer",
+        "minimum": 4,
+        "maximum": 30,
+        "default": 20,
+        "description": "Drops on the ground at once (each about 25 bytes of the world message)"
+      },
+      "dropSeconds": {
+        "type": "number",
+        "description": "Seconds a drop stays before it fades",
+        "minimum": 5,
+        "maximum": 600,
+        "default": 45
+      },
+      "upgrades": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "sharper",
+            "quicker",
+            "fleet",
+            "reach",
+            "heavy",
+            "mend"
+          ]
+        },
+        "default": [
+          "sharper",
+          "quicker",
+          "fleet",
+          "reach",
+          "heavy",
+          "mend"
+        ],
+        "description": "Upgrade cards to draw from (kit/mechanics/melee/logic.js UPGRADES)"
+      },
+      "upgradeCount": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4,
+        "default": 3,
+        "description": "Cards offered between levels"
+      },
+      "botPickSeconds": {
+        "type": "number",
+        "description": "Seconds before a bot picks its card",
+        "minimum": 0,
+        "maximum": 30,
+        "default": 2
+      },
+      "coinColor": {
+        "type": "string",
+        "default": "#ffd23f"
+      },
+      "potionColor": {
+        "type": "string",
+        "default": "#ff4d6a"
+      },
+      "chestColor": {
+        "type": "string",
+        "default": "#8a5a2b"
+      },
+      "chestTrim": {
+        "type": "string",
+        "default": "#e0b04a"
+      },
+      "coinProp": {
+        "type": "string",
+        "default": "coin",
+        "description": "A prop.<name> model drawn as a coin when the game has it (else the kit's)"
+      },
+      "potionProp": {
+        "type": "string",
+        "default": "potion"
+      },
+      "chestProp": {
+        "type": "string",
+        "default": "chest"
+      },
+      "chestLid": {
+        "type": "string",
+        "default": "chest_lid",
+        "description": "The node of the chest model that opens (research/gf-scenic/library/props.json parts.lid)"
+      },
+      "chestHinge": {
+        "type": "array",
+        "items": {
+          "type": "number"
+        },
+        "default": [
+          0,
+          0.375,
+          -0.441
+        ],
+        "description": "Where the lid turns, in the chest model (m)"
+      },
+      "chestOpen": {
+        "type": "number",
+        "description": "How far the lid opens (degrees about x)",
+        "minimum": -180,
+        "maximum": 180,
+        "default": -110
+      },
+      "label": {
+        "type": "string",
+        "default": "Coins",
+        "description": "The HUD's coin line"
+      },
+      "upgradeTitle": {
+        "type": "string",
+        "default": "Choose an upgrade"
+      },
+      "chestPrompt": {
+        "type": "string",
+        "default": "open the chest"
+      },
+      "weaponPrompt": {
+        "type": "string",
+        "default": "take the {name}",
+        "description": "{name}: the weapon's name and rarity"
+      },
+      "soundCoin": {
+        "type": "string",
+        "default": "loot-coin"
+      },
+      "soundPotion": {
+        "type": "string",
+        "default": "loot-potion"
+      },
+      "soundChest": {
+        "type": "string",
+        "default": "loot-chest"
+      },
+      "soundWeapon": {
+        "type": "string",
+        "default": "loot-weapon"
+      },
+      "soundUpgrade": {
+        "type": "string",
+        "default": "loot-upgrade"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.loot.coin-color",
+        "label": "Coin colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/coinColor"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 52
+      },
+      {
+        "id": "mechanic.loot.potion-color",
+        "label": "Potion colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/potionColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 40
+      },
+      {
+        "id": "mechanic.loot.chest-color",
+        "label": "Chest colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/chestColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 38
+      },
+      {
+        "id": "mechanic.loot.chest-trim",
+        "label": "Chest trim colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/chestTrim"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.loot.potion-chance",
+        "label": "Potion drop chance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/potionChance"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 46,
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.loot.weapon-chance",
+        "label": "Weapon drop chance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/weaponChance"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.loot.potion-heal",
+        "label": "Potion heal",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/potionHeal"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.loot.chest-weapon",
+        "label": "Chest weapon chance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/chestWeapon"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1
+        }
+      },
+      {
+        "id": "mechanic.loot.magnet",
+        "label": "Pickup pull distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/magnet"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 8,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.loot.label",
+        "label": "Coins label",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/label"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 24
+        }
+      },
+      {
+        "id": "mechanic.loot.upgrade-title",
+        "label": "Upgrade card title",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/upgradeTitle"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.chest-prompt",
+        "label": "Chest prompt",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/chestPrompt"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.weapon-prompt",
+        "label": "Weapon prompt",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/weaponPrompt"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.sound-coin",
+        "label": "Coin sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundCoin"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.sound-potion",
+        "label": "Potion sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundPotion"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.sound-chest",
+        "label": "Chest sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundChest"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.sound-weapon",
+        "label": "Weapon sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundWeapon"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.loot.sound-upgrade",
+        "label": "Upgrade sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundUpgrade"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ],
+    "dynamic": "more slots follow from params (slotsFor in the implementation): one per table row or per configured kind",
+    "items": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ]
+  },
+  "events": [],
+  "host": {
+    "owner": "host",
+    "how": "the host owns drops, coins, upgrades and offers; a copy asks to take what its player walks over or presses E at",
+    "state": "loot",
+    "fields": {
+      "d": "[[id, kind, x, z, weapon, rarity]] drops on the ground",
+      "c": "{ playerId: coins }",
+      "u": "{ playerId: [upgrade ids] }",
+      "o": "[serial, [upgrade ids]] the offer",
+      "p": "the last offer each player picked from",
+      "e": "the last take, for its sound"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "interact (E) opens a chest or takes a weapon in reach"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "waves",
+    "boss",
+    "health",
+    "melee",
+    "levels"
+  ],
+  "gives": [
+    "loot"
+  ],
+  "bots": "bots walk over loot and pick a card after botPickSeconds",
+  "notes": {
+    "lines": [
+      "Kills and the boss drop coins, potions and weapons by themselves, coins count on the HUD, and bots walk over loot: nothing to wire.",
+      "loot.coinsOf(p) and loot.upgradesOf(p) are the same on every copy: put coins in results() when they are the score.",
+      "The host can add its own: loot.drop('coin' | 'potion' | 'weapon' | 'chest', x, z), loot.placeChests(n, zone), loot.offerUpgrades()."
+    ],
+    "readme": "components/loot/README.md",
+    "stub": {
+      "as": "loot",
+      "worked": "results(ctx) { return ctx.players.list().map(p => ({ id: p.id, name: p.name, value: loot.coinsOf(p) })); }",
+      "traps": [
+        "coins are not the score: p.score moves only where the rules (or another mechanic's killPoints) move it",
+        "a potion heals through the health mechanic and a weapon drop needs the melee mechanic: without them those drops do nothing"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/loot/fixture",
+    "players": 2,
+    "with": [
+      "melee",
+      "health"
+    ]
+  },
+  "impl": {
+    "three": {
+      "path": "components/loot/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-loot.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "forge": {
+      "path": "components/loot/impl/forge/index.js",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "the two-player forge fixture (runtimes/forge/tools/fixture.mjs loot): a host and a joiner over WebRTC, 10 of 10 checks on both screens; passed in every run that day (six), the last two on the final code; the shared state has three's keys and shapes (what the gates read)",
+            "ref": "components/loot/impl/forge/evidence/2026-10-13/checks.json",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 151.0.7922.34 (Playwright, WebGPU)",
+            "hardware": "desktop, discrete GPU"
+          }
+        ]
+      },
+      "note": "the core's coins counted per player, potions as drawn drops, weapons as the core's weapon pickups; no chests or upgrade cards"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-loot.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

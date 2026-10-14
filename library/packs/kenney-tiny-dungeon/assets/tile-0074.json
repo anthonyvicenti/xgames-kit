@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0074",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0074.png",
+ "sha256": "8d36557af43c55629ccce8225751d79fd807910abcba14e24cd25353f56e407e",
+ "bytes": 241,
+ "preview": "previews/tile-0074.png",
+ "from": "Tiles/tile_0074.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a grey iron anvil",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "anvil",
+  "smithing",
+  "blacksmith",
+  "forge",
+  "iron",
+  "grey"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#e4edf9",
+     "#52607c"
+    ],
+    "saturation": 0.286,
+    "value": 0.493,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.943
+     },
+     {
+      "hue": "grey",
+      "share": 0.057
+     }
+    ],
+    "exact": 5,
+    "grey": 0.057
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.841
+   }
+  }
+ },
+ "source": {
+  "sha256": "cfb675c1dcc7530a41956004471c8ec27cd5ae19a03d8c424074b855395497e8",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

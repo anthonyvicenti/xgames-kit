@@ -1,0 +1,165 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T4",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-08",
+  "where": "games.fun research/studio-v2/evals/cases/T4.json"
+ },
+ "prompt": "Make a high quality rogue like multiplayer game with very smooth assets. The game should have several levels you have to clear all monsters in and then a final boss level. Take inspiration from games like Lost Castle and Rampage Knights. The assets should look very close to the attached images",
+ "images": [
+  {
+   "label": "artwork-04-agentgames-studio",
+   "sha256": "6535e7f2522622cda2c1ff8ab2ce2324d3a0c9a0ef0933be6bd16b6d6ac72ffa",
+   "bytes": 1328867,
+   "kept": "private: the creator's upload, never in git; found by sha256 in the private refs folder (RUNNER.md)"
+  },
+  {
+   "label": "artwork-02-economy-questions",
+   "sha256": "602483f2dc1026577d89cd62c59afbdb4b88b27e6edcdef8f94cbada60ba1b42",
+   "bytes": 1294188,
+   "kept": "private: the creator's upload, never in git; found by sha256 in the private refs folder (RUNNER.md)"
+  },
+  {
+   "label": "artwork-01-game-world",
+   "sha256": "a6af80f6a9cf17b200f4eedfe647ce2c838faf0f8815d4bf335af9a8e5f5062a",
+   "bytes": 2129870,
+   "kept": "private: the creator's upload, never in git; found by sha256 in the private refs folder (RUNNER.md)"
+  }
+ ],
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "scenic-3d"
+   ],
+   "loop": [
+    "run"
+   ],
+   "kind": [
+    "scenic"
+   ],
+   "camera": [
+    "follow"
+   ]
+  },
+  "why": "Floating islands seen from a high three-quarter camera, a run of levels and a boss: the scenic profile and kind, and the follow rig (the high three-quarter view)."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "research",
+   "text": "The pitch researched both named games from real sources (a store page and a gameplay description each), and the ledger carries their signature as reference lines",
+   "how": "judge"
+  },
+  {
+   "id": "levels",
+   "text": "A run of several levels: each is cleared of every monster, then the way to the next opens",
+   "how": "human"
+  },
+  {
+   "id": "boss",
+   "text": "The last level is a boss fight: one big enemy with its own health bar and telegraphed attacks, not a bigger wave",
+   "how": "human"
+  },
+  {
+   "id": "melee",
+   "text": "Players fight up close with weapons they swing (a sword or similar), and the hits read (a flash, a flinch, a health bar)",
+   "how": "human"
+  },
+  {
+   "id": "enemies",
+   "text": "More than one kind of monster, and the boss is bigger than they are",
+   "how": "human"
+  },
+  {
+   "id": "camera",
+   "text": "The camera is a high three-quarter follow view (spec camera \"follow\")",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "looks-like",
+   "text": "The game looks very close to the attached images: floating mossy islands over a void, glowing violet and green crystals and portal, a high three-quarter camera, small chunky characters",
+   "how": "judge"
+  },
+  {
+   "id": "smooth",
+   "text": "Characters and props are finished models, not stand-ins, and keep their shape when they move",
+   "how": "gate:F"
+  },
+  {
+   "id": "bodies",
+   "text": "Every body holds its shape in every animation",
+   "how": "gate:A"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, in the same run",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A run ends on a results screen (won or lost) and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one prop swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "vibe",
+   "text": "The creator says it has the right vibe (creator's judgement)",
+   "how": "human"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "The roguelike miss of 2026-10-08, re-created for spec v2 on 2026-10-13. The prompt is verbatim. The three images are the creator's own uploads, kept privately (by sha256). Nothing in the kit is tuned to this case: a failure is fixed in the system."
+}

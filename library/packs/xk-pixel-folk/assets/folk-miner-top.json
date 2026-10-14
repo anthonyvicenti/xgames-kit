@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "folk-miner-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-miner-top.png",
+ "sha256": "9c3bd378eb0e21284a66200eb34f8a6338d2c59716d225b9a8225b391843ff60",
+ "bytes": 4605,
+ "preview": "previews/folk-miner-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-miner-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a miner in a brown jumper and dark trousers, messy ginger hair; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "miner",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#d0782c",
+     "#8a5a3a",
+     "#f7cdb0",
+     "#623d37",
+     "#4d343c",
+     "#302940",
+     "#dd9a58",
+     "#985a32"
+    ],
+    "saturation": 0.412,
+    "value": 0.419,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.359
+     },
+     {
+      "hue": "grey",
+      "share": 0.24
+     },
+     {
+      "hue": "brown",
+      "share": 0.23
+     },
+     {
+      "hue": "purple",
+      "share": 0.085
+     },
+     {
+      "hue": "red",
+      "share": 0.083
+     }
+    ],
+    "exact": 24,
+    "grey": 0.24
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.516
+   }
+  }
+ },
+ "source": {
+  "sha256": "f5b05709fc0a1ea7d3e1d6a13f8c343a15b7e2ea5e4f649e69ca6d303e8b757e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

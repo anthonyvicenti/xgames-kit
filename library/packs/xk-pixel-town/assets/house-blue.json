@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "house-blue",
+ "pack": "xk-pixel-town",
+ "file": "house-blue.png",
+ "sha256": "0bdd664381cdec9cbf2611fe3b0cbea948b9048ec5e0adaed4fdd3451bc37c1a",
+ "bytes": 1437,
+ "preview": "previews/house-blue.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): house-blue.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a plank house with a blue roof, 5 m across",
+ "tags": [
+  "pixel",
+  "house",
+  "home",
+  "building",
+  "set-piece",
+  "blue"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 96
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#a8723f",
+     "#6680bc",
+     "#4c62a2",
+     "#2c3768",
+     "#3a4b86",
+     "#6a4428",
+     "#8ea4d4",
+     "#3a5a8a"
+    ],
+    "saturation": 0.402,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.57
+     },
+     {
+      "hue": "orange",
+      "share": 0.23
+     },
+     {
+      "hue": "brown",
+      "share": 0.132
+     },
+     {
+      "hue": "grey",
+      "share": 0.042
+     }
+    ],
+    "exact": 32,
+    "grey": 0.042
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.483
+   }
+  }
+ },
+ "source": {
+  "sha256": "d8ad3ed9164f0379309c3834ec5b895827ead2f85931f112f986dd10b9211fcc",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "stone",
+ "pack": "xk-voxel-blocks",
+ "file": "stone.png",
+ "sha256": "b5f858d87a112354577d386a4380b4018546b0a5e488ccdefe63ef4f39e52650",
+ "bytes": 6470,
+ "preview": "previews/stone.png",
+ "from": "stone.png",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "stone",
+ "tags": [
+  "voxel",
+  "block",
+  "pixel",
+  "tileable",
+  "stone"
+ ],
+ "use": {
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#7a7b7e",
+     "#6c6d70",
+     "#86878a",
+     "#939497",
+     "#5f6063",
+     "#565659",
+     "#5a5b5e"
+    ],
+    "saturation": 0.017,
+    "value": 0.48,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 7,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-14"
+ }
+}

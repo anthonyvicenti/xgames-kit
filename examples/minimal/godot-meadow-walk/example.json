@@ -1,0 +1,10 @@
+{
+  "title": "Meadow Walk (Godot, top-down)",
+  "summary": "The top-down starter on runtime godot: a generated field seen from above, eight-way walking, friends drawn where they are.",
+  "runtime": "godot",
+  "verified": {
+    "result": "PASS all six gates, 61/61 checks, shared multiplayer gate 24/24 (verify --release)",
+    "date": "2026-10-13",
+    "how": "npx gamesfun create games/godot-meadow-walk --from godot-meadow-walk, npx gamesfun verify games/godot-meadow-walk --release (Linux, headless Chrome on the graphics card, a phone emulated in Chrome, Firefox; WebKit could not start there): runtimes/godot/evidence/2026-10-13-run4/meadow-walk"
+  }
+}

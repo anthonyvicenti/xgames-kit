@@ -1,0 +1,68 @@
+{
+ "assetVersion": 1,
+ "id": "dust",
+ "pack": "forge-fx",
+ "file": "dust.png",
+ "sha256": "91cb983ed5aeeaf7c2680f645a7263c77ff516017685748dda38304b57429fdd",
+ "bytes": 3663,
+ "preview": "previews/dust.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a thin dust puff (warm grey-brown, low alpha)",
+ "tags": [
+  "fx",
+  "dust"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#9e8c75"
+    ],
+    "saturation": 0.174,
+    "value": 0.539,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 1,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

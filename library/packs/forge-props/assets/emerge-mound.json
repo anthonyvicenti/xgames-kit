@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "emerge-mound",
+ "pack": "forge-props",
+ "file": "emerge-mound.glb",
+ "sha256": "21a43557b9c3662fc154e7fff9864cd356e8d4b4c5e24cb9e5ae85c02c38d986",
+ "bytes": 4856,
+ "preview": "previews/emerge-mound.png",
+ "from": "research/gf-forge/library/tools/props.mjs moundDoc(); made here: four jittered rings of dirt round a dark broken centre, flat shaded; two materials (dirt, dirt_dark); socket_emerge at the centre",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a low broken mound of dirt where an enemy claws its way out (made by tools/props.mjs; socket_emerge at its centre)",
+ "tags": [
+  "ruins",
+  "mound",
+  "code",
+  "emerge"
+ ],
+ "use": {
+  "size": [
+   1.7,
+   0.241,
+   1.612
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.821,
+   0,
+   -0.821
+  ],
+  "collider": {
+   "shape": "none"
+  },
+  "sockets": [
+   {
+    "name": "emerge",
+    "node": "socket_emerge",
+    "position": [
+     0,
+     0.06,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 77,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 77,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4856,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#897965",
+     "#554b3f"
+    ],
+    "saturation": 0.151,
+    "value": 0.431,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 5.92,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "made here: four jittered rings of dirt round a dark broken centre, flat shaded; two materials (dirt, dirt_dark); socket_emerge at the centre",
+  "author": "games.fun"
+ }
+}

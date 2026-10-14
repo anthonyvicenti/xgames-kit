@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0117",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0117.png",
+ "sha256": "09bafd5b4b008ba31bfb5287306b089913d5018dd45cf53f8d7760e614fabc92",
+ "bytes": 237,
+ "preview": "previews/tile-0117.png",
+ "from": "Tiles/tile_0117.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a silver key",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "key",
+  "silver",
+  "item",
+  "unlock",
+  "pickup"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4"
+    ],
+    "saturation": 0.256,
+    "value": 0.403,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.642
+     },
+     {
+      "hue": "blue",
+      "share": 0.358
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "d2be7fbb7b9c2a278dcbe2fc54af0e9f08e0f0c565c5f6f96cf44562deef0665",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

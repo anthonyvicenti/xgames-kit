@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "jewel",
+ "pack": "kenney-platformer-kit",
+ "file": "jewel.glb",
+ "sha256": "eea0db2f413bcc76e9a32aa6c1a6ec7df4579f24f5539c8f86b81dd5a62a9ac7",
+ "bytes": 19340,
+ "preview": "previews/jewel.png",
+ "from": "kenney:platformer-kit/jewel; baked to metres (x1.34959), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a cut jewel",
+ "tags": [
+  "item",
+  "pickup",
+  "score",
+  "jewel"
+ ],
+ "use": {
+  "size": [
+   0.449,
+   0.5,
+   0.389
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "sphere",
+   "radius": 0.25,
+   "offset": [
+    0,
+    0.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19340,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#5d6bc6",
+     "#617dce"
+    ],
+    "saturation": 0.503,
+    "value": 0.582,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 5.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "cec20d8ae2678c292b3885aaee468ba39d165a7e2043af5ba8102b6cd974c2c3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.34959), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "grill",
+ "pack": "poly-pizza-cc-by",
+ "file": "grill.glb",
+ "sha256": "b669425cef8883fde8c6cee54526e452ff89832c2799c8fe96d7cef64f1630d8",
+ "bytes": 73404,
+ "preview": "previews/grill.png",
+ "from": "polypizza:c53QXQ1ofIN; baked to metres (x1.21967), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a kettle barbecue grill",
+ "tags": [
+  "backyard",
+  "grill"
+ ],
+ "use": {
+  "size": [
+   0.669,
+   1.15,
+   0.754
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.35,
+   "height": 1,
+   "offset": [
+    0,
+    0.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 4117,
+  "textures": 0,
+  "materials": 8
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 4117,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 73404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#a0a0a0",
+     "#191919",
+     "#df9b45",
+     "#455965",
+     "#d0dadd",
+     "#795545",
+     "#ff5519",
+     "#ffcd89"
+    ],
+    "saturation": 0.118,
+    "value": 0.443,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.851
+     },
+     {
+      "hue": "orange",
+      "share": 0.115
+     },
+     {
+      "hue": "brown",
+      "share": 0.034
+     }
+    ],
+    "grey": 0.851
+   },
+   "trianglesPerMetre": 31.41,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "Jason Toff",
+  "url": "https://poly.pizza/m/c53QXQ1ofIN",
+  "credit": "\"Barbecue Grill\" by Jason Toff, CC BY 3.0 (https://poly.pizza/m/c53QXQ1ofIN)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/c53QXQ1ofIN",
+  "download": "https://static.poly.pizza/399e45ee-79cb-44b3-ab52-d29df72b960b.glb",
+  "sha256": "90d07caf8f5df353034a4c14746885e3c99af320f53a693478c81bb6cb626ba3",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.21967), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Jason Toff"
+ }
+}

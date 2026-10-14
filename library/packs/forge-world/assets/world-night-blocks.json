@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-blocks",
+ "pack": "forge-world",
+ "file": "world-night-blocks.png",
+ "sha256": "732ed6a3f5d43bd154b82959ef6a7839aea24715e095715b1efd12a7a5a522ac",
+ "bytes": 9607,
+ "preview": "previews/world-night-blocks.png",
+ "from": "research/gf-forge/library/tools/world.mjs; the photo resized to 96 × 96 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 40 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "mossy wall blocks, 0.5 m a block in running bond, dark joints; tiles; 3 m across (six blocks)",
+ "tags": [
+  "texture",
+  "night",
+  "blocks",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 35,
+    "hues": [
+     "#23282c",
+     "#505d67",
+     "#53616b",
+     "#59656a",
+     "#808a89",
+     "#516259",
+     "#55695f",
+     "#7c8685"
+    ],
+    "saturation": 0.09,
+    "value": 0.389,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.989
+     }
+    ],
+    "exact": 256,
+    "grey": 0.989
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.397
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "the photo resized to 96 × 96 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 40 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

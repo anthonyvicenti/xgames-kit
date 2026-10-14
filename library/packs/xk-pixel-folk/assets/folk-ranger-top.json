@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "folk-ranger-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-ranger-top.png",
+ "sha256": "54454229db4bcc2ccefa66504a52f528e646a34b48e8462b1eb5214eec32a8aa",
+ "bytes": 4585,
+ "preview": "previews/folk-ranger-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-ranger-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a ranger in a green vest over a beige shirt, a dark ponytail; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "ranger",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 21,
+    "hues": [
+     "#3a2418",
+     "#a96b41",
+     "#d8c49a",
+     "#2f2130",
+     "#695a5e",
+     "#41343e",
+     "#6a5a40",
+     "#4a2618"
+    ],
+    "saturation": 0.304,
+    "value": 0.33,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.342
+     },
+     {
+      "hue": "grey",
+      "share": 0.34
+     },
+     {
+      "hue": "orange",
+      "share": 0.182
+     },
+     {
+      "hue": "green",
+      "share": 0.071
+     },
+     {
+      "hue": "red",
+      "share": 0.044
+     }
+    ],
+    "exact": 28,
+    "grey": 0.34
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.841
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa81c48bf4ea15e8b65b422b38bb0848c7a3b9d9f641f48c0ebb933f475a66df",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B17",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "coop-horror",
+  "rank": 17,
+  "row": "Co-op horror",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "creepy grainy co-op game in an abandoned hospital, everyone has a flashlight, find fuses to get the power back on while something stalks you in the dark",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "hospital",
+   "type": "world",
+   "must": "a dark abandoned hospital"
+  },
+  {
+   "id": "flashlight",
+   "type": "mechanic",
+   "must": "a flashlight each"
+  },
+  {
+   "id": "stalker",
+   "type": "mechanic",
+   "must": "something that stalks and catches players"
+  },
+  {
+   "id": "fuses",
+   "type": "rule",
+   "must": "fuses found, then the power comes back on"
+  },
+  {
+   "id": "grainy",
+   "type": "feel",
+   "must": "creepy and grainy"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

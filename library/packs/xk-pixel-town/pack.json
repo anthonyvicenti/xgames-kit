@@ -1,0 +1,73 @@
+{
+ "packVersion": 1,
+ "id": "xk-pixel-town",
+ "title": "Pixel town",
+ "describe": "A cosy town for the pixel kind: soil and cobble tiles, soft edges for paths, ponds and fields, fences, walls and hedges that join, flowers and crops, trees, props and houses seen from above. Drawn by runtimes/three/tools/pixel/town.mjs.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/xk-pixel-town/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "owner": "own",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-14",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 8,
+   "hues": [
+    "#7a4a2a",
+    "#7ec152",
+    "#b97c45",
+    "#9a6236",
+    "#26522f",
+    "#6a6470",
+    "#5ca546",
+    "#468a3c",
+    "#64402c",
+    "#565260",
+    "#336b34",
+    "#62402a"
+   ],
+   "saturation": 0.391,
+   "value": 0.423,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.266
+    },
+    {
+     "hue": "brown",
+     "share": 0.209
+    },
+    {
+     "hue": "green",
+     "share": 0.195
+    },
+    {
+     "hue": "orange",
+     "share": 0.157
+    },
+    {
+     "hue": "red",
+     "share": 0.052
+    }
+   ],
+   "grey": 0.081
+  },
+  "texelsPerMetre": 16,
+  "outline": {
+   "present": false,
+   "share": 0.314
+  }
+ },
+ "assets": 35,
+ "validators": [
+  "flat-judge"
+ ]
+}

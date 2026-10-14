@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "crate",
+ "pack": "forge-town",
+ "file": "crate.glb",
+ "sha256": "ebe9b3c809798cecf2229c366553fcfd852509db22dca51b2afce9cef387e3ce",
+ "bytes": 2800,
+ "preview": "previews/crate.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-crate.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a crate, 0.9 m",
+ "tags": [
+  "town",
+  "crate"
+ ],
+ "use": {
+  "size": [
+   0.9,
+   0.9,
+   0.9
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.45,
+   0,
+   -0.45
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.9,
+    0.9,
+    0.9
+   ],
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 10,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 10,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 2800,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#533e28"
+    ],
+    "saturation": 0.35,
+    "value": 0.241,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.57,
+   "texelsPerMetre": 36,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (town/town-crate.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

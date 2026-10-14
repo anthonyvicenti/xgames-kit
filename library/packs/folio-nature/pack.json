@@ -1,0 +1,71 @@
+{
+ "packVersion": 1,
+ "id": "folio-nature",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "folio-2025 models and textures",
+ "describe": "Painterly low-poly nature and town pieces from Bruno Simon's folio-2025 (trees, rocks, a bridge, lamps), cut into props.",
+ "licence": {
+  "spdx": "MIT",
+  "author": "Bruno Simon",
+  "url": "https://github.com/brunosimon/folio-2025/blob/41046b57eeed8d156d9c3fd7fa259900baef7816/license.md",
+  "file": "library/packs/folio-nature/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/brunosimon/folio-2025",
+  "commit": "41046b57eeed8d156d9c3fd7fa259900baef7816",
+  "rebuild": "the old kit's scenic world tool (world-folio.mjs)"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 2,
+   "hues": [
+    "#7c7691",
+    "#9eaf33",
+    "#f8a658",
+    "#f29246",
+    "#ffe9d7",
+    "#000000",
+    "#6f6a87",
+    "#ed3f1c",
+    "#988165",
+    "#b76b31",
+    "#92ae93",
+    "#0d0d0d"
+   ],
+   "saturation": 0.551,
+   "value": 0.516,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.525
+    },
+    {
+     "hue": "orange",
+     "share": 0.273
+    },
+    {
+     "hue": "yellow",
+     "share": 0.184
+    }
+   ],
+   "grey": 0.594
+  },
+  "trianglesPerMetre": 2.15,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 15,
+ "validators": [
+  "budget",
+  "picture-check"
+ ]
+}

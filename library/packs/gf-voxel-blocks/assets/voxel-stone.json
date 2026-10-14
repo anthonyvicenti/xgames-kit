@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-stone",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-stone.png",
+ "sha256": "75775b9e13423c9531be0702a555140943533e19ad6c380dd33a6fc81ed9a5ad",
+ "bytes": 37258,
+ "preview": "previews/voxel-stone.png",
+ "from": "kenney:voxel-pack/stone; PNG/Tiles/stone.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 602,232; mean difference 4.1 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "stone (Voxel Pack)",
+ "tags": [
+  "stone",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.016
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#89a4a6",
+     "#819a9c",
+     "#8eabad",
+     "#88a3a5",
+     "#81999b",
+     "#839e9f",
+     "#8daaac",
+     "#80999b"
+    ],
+    "saturation": 0.138,
+    "value": 0.589,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 204,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "e53319b547c6172c72c299e21631fecf5434dc75c013b22538146badaf768d1f",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

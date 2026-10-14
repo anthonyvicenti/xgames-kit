@@ -1,0 +1,68 @@
+{
+ "packVersion": 1,
+ "id": "vista-core-world",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Vista core world pieces",
+ "describe": "What the vista runtime's vendored WebGPU core ships besides its code-made island, sea and sky: scanned shore debris, the two stall keepers and the stall surfaces.",
+ "licence": {
+  "spdx": "MIT",
+  "author": "DRG Software Solutions LLC",
+  "url": "https://github.com/dgreenheck/tidewater",
+  "file": "library/packs/vista-core-world/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/dgreenheck/tidewater",
+  "commit": "4811ba48d795197de5621985f404e765c0b7c0ef"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 11,
+   "hues": [
+    "#ffffff",
+    "#000000",
+    "#ba9365",
+    "#615944",
+    "#635b44",
+    "#504833",
+    "#564e39",
+    "#ffff00",
+    "#686147",
+    "#a4b2b5",
+    "#7e8f96",
+    "#a2b0b3"
+   ],
+   "saturation": 0.112,
+   "value": 0.518,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.833
+    },
+    {
+     "hue": "brown",
+     "share": 0.122
+    }
+   ],
+   "grey": 0.986
+  },
+  "trianglesPerMetre": 186.22,
+  "texelsPerMetre": 142707,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 10,
+ "validators": [
+  "budget",
+  "rig-check",
+  "picture-check"
+ ]
+}

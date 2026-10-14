@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0106",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0106.png",
+ "sha256": "e52bf2537332f5dfa504bcb151fe26c8f21dc9bc1e0079fc10fb016f0b419d74",
+ "bytes": 230,
+ "preview": "previews/tile-0106.png",
+ "from": "Tiles/tile_0106.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a cut wooden log lying on its side",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "log",
+  "wood",
+  "timber",
+  "lumber",
+  "item",
+  "resource"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#eaa56c",
+     "#763b36"
+    ],
+    "saturation": 0.381,
+    "value": 0.358,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.538
+     },
+     {
+      "hue": "orange",
+      "share": 0.423
+     },
+     {
+      "hue": "red",
+      "share": 0.038
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "f915896f745a28497de7c86602b64b0a3bcabb7821103965926ea768b5476b18",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

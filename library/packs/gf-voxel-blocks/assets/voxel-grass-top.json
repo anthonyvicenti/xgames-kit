@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-grass-top",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-grass-top.png",
+ "sha256": "a9905ff4e314bd9ff8ffe0392615c0b3e07439565c257206afe9632396d15990",
+ "bytes": 43332,
+ "preview": "previews/voxel-grass-top.png",
+ "from": "kenney:voxel-pack/grass_top; PNG/Tiles/grass_top.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 528,10; mean difference 4.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "grass_top (Voxel Pack)",
+ "tags": [
+  "grass",
+  "top",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.02
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#2ecc71",
+     "#2cc46c",
+     "#2abb67",
+     "#30d475",
+     "#2bc46c",
+     "#2bc46b",
+     "#2dcb70",
+     "#2dca6f"
+    ],
+    "saturation": 0.633,
+    "value": 0.487,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 230,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "6e91371f300c74179fb164d1c731b174f58ce68670b63b4925734b13053bf01d",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

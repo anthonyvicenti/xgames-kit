@@ -1,0 +1,340 @@
+{
+  "id": "tag",
+  "name": "Tag",
+  "describe": "Roles that pass between players on contact, hide and seek",
+  "examples": [
+    "tag: whoever is it chases",
+    "infection: tagged players join the chasers",
+    "hide and seek with a head start"
+  ],
+  "rank": 90,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "its": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4,
+        "default": 1,
+        "description": "Players who start as \"it\" (picked at random by the host)"
+      },
+      "mode": {
+        "type": "string",
+        "enum": [
+          "swap",
+          "infect"
+        ],
+        "default": "swap",
+        "description": "swap: a tag passes the role on; infect: the tagged player becomes \"it\" too"
+      },
+      "radius": {
+        "type": "number",
+        "description": "Contact distance in metres",
+        "minimum": 0.3,
+        "maximum": 4,
+        "default": 1
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds before a tag can be tagged back, or the victim again",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1.5
+      },
+      "hideSeconds": {
+        "type": "number",
+        "description": "Head start for the hiders: the \"it\"s are held still this long at the start (hide and seek)",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 0
+      },
+      "color": {
+        "type": "string",
+        "default": "#ff4d4d",
+        "description": "Colour of the marker over the \"it\"s"
+      },
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Prop slot hovering over the \"it\"s (\"\": a cone marker)"
+      },
+      "markerSize": {
+        "type": "number",
+        "description": "Marker size in metres",
+        "minimum": 0.1,
+        "maximum": 2,
+        "default": 0.5
+      },
+      "toast": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show a line when someone becomes \"it\""
+      },
+      "toastText": {
+        "type": "string",
+        "default": "{name} is it!",
+        "description": "That line; {name} is the new \"it\""
+      },
+      "soundTag": {
+        "type": "string",
+        "default": "bonk",
+        "description": "Sound id when someone is tagged"
+      },
+      "knock": {
+        "type": "number",
+        "description": "Knock the victim gets from a tag (m/s, 0: none)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 0
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.tag.its",
+        "label": "Players who start as it",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/its"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 54,
+        "constraints": {
+          "min": 1,
+          "max": 4
+        }
+      },
+      {
+        "id": "mechanic.tag.radius",
+        "label": "Tag distance",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 50,
+        "constraints": {
+          "min": 0.3,
+          "max": 4,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.tag.color",
+        "label": "It marker colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 48
+      },
+      {
+        "id": "mechanic.tag.cooldown",
+        "label": "Tag-back delay",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 40,
+        "constraints": {
+          "min": 0,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.tag.hide-seconds",
+        "label": "Hide head start",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/hideSeconds"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 36,
+        "constraints": {
+          "min": 0,
+          "max": 60,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.tag.toast-text",
+        "label": "New it text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/toastText"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.tag.marker-size",
+        "label": "Marker size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/markerSize"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.1,
+          "max": 2,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.tag.prop",
+        "label": "Marker prop",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.tag.knock",
+        "label": "Tag knock",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/knock"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.tag.sound-tag",
+        "label": "Tag sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundTag"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onTag",
+      "on": "host",
+      "args": "{ from, to }",
+      "when": "a tag counted"
+    }
+  ],
+  "counters": [
+    "whole seconds a player has been it"
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host decides every tag, the cooldowns and the hide timer",
+    "state": "tag",
+    "fields": {
+      "t": "ids of the players who are it",
+      "h": "hide seconds left",
+      "ti": "{ playerId: seconds spent as it }"
+    }
+  },
+  "owns": [
+    {
+      "res": "player.control",
+      "when": "hideSeconds > 0",
+      "why": "the it player is frozen while the others hide"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "tagging"
+  ],
+  "bots": "the rules move bots with tag.botStep(b)",
+  "notes": {
+    "lines": [
+      "The kit picks who is it at round start, judges contact, and draws the marker over them: mode \"swap\" passes it on, \"infect\" adds to the its.",
+      "tag.isIt(p), tag.its() and tag.notIt() are the same on every copy. A score in time as it: p.score = tag.itSeconds(p) (whole seconds, set on the host in update), never tag.itTime(p), a fraction that differs on every screen.",
+      "hideSeconds > 0 is hide and seek: the it waits that long before chasing."
+    ],
+    "readme": "components/tag/README.md",
+    "stub": {
+      "as": "tag",
+      "worked": "update(ctx) { if (ctx.host) for (const p of ctx.players.list()) p.score = tag.itSeconds(p); }",
+      "traps": [
+        "a score that is a running time must be whole seconds (tag.itSeconds): with tag.itTime(p) as the score the two screens never show the same number and verify check 5 fails on \"the-shared-world-matches\"",
+        "bots neither chase nor flee unless the rules steer them: in bot(ctx, p) call tag.botStep(p)",
+        "with mode \"infect\", end the round in check(ctx) when tag.notIt().length === 0, or the last runner is chased until the clock runs out"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/tag/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/tag/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-tag.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-tag.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

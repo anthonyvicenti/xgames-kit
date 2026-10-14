@@ -1,0 +1,106 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-stairs-wood",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-stairs-wood.glb",
+ "sha256": "7a75cabfa71a13d27c13b784e677e0d538e5b6ff87ee58cab45e2774251f5748",
+ "bytes": 55060,
+ "preview": "previews/dungeon-stairs-wood.png",
+ "from": "stairs_wood.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "wooden stairs",
+ "tags": [
+  "dungeon",
+  "stairs",
+  "wood",
+  "modular"
+ ],
+ "use": {
+  "size": [
+   2.475,
+   3.038,
+   4.5
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.238,
+   0,
+   0
+  ]
+ },
+ "budgets": {
+  "triangles": 296,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 296,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 55060,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7d3d2c",
+     "#92513d",
+     "#a7654c",
+     "#985742",
+     "#a26149",
+     "#9d5c46",
+     "#8d4d3a",
+     "#b06e51"
+    ],
+    "saturation": 0.405,
+    "value": 0.423,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.547
+     },
+     {
+      "hue": "brown",
+      "share": 0.449
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.47,
+   "texelsPerMetre": 19,
+   "texturedShare": 0.474,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/stairs_wood.gltf.glb",
+  "sha256": "3b2cf5c08aec60ea7b217e1c499885d803419dc39a2968e8da0da5e725adb140",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

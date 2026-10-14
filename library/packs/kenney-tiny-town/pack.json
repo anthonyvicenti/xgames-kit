@@ -1,0 +1,79 @@
+{
+ "packVersion": 1,
+ "id": "kenney-tiny-town",
+ "title": "Kenney Tiny Town",
+ "describe": "16 px top-down town tiles and objects: grass, paths, roofs, walls, doors, fences, trees, a well, beehives, tools.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/tiny-town",
+  "file": "library/packs/kenney-tiny-town/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/tiny-town",
+  "download": "https://kenney.nl/media/pages/assets/tiny-town/a415fbeb49-1735736916/kenney_tiny-town.zip",
+  "sha256": "9768692dccff1d706408a5aedd6ca4f6cd1409506cbc84cb2f862919764be977",
+  "retrieved": "2026-10-13",
+  "rebuild": "art ingest kenney_tiny-town.zip --pack kenney-tiny-town --include 'Tiles/*.png' --style pixel --texels 16"
+ },
+ "owner": "third-party",
+ "visibility": "public",
+ "dimension": "2d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 3,
+   "hues": [
+    "#3f2631",
+    "#eaa56c",
+    "#c0cbdc",
+    "#8b9bb4",
+    "#bd6c4a",
+    "#84c669",
+    "#5a6988",
+    "#fdbe53",
+    "#e38628",
+    "#479f4a",
+    "#c34b35",
+    "#763b36"
+   ],
+   "saturation": 0.378,
+   "value": 0.446,
+   "families": [
+    {
+     "hue": "pink",
+     "share": 0.31
+    },
+    {
+     "hue": "orange",
+     "share": 0.279
+    },
+    {
+     "hue": "blue",
+     "share": 0.253
+    },
+    {
+     "hue": "green",
+     "share": 0.103
+    },
+    {
+     "hue": "red",
+     "share": 0.052
+    }
+   ],
+   "grey": 0
+  },
+  "texelsPerMetre": 16,
+  "outline": {
+   "present": false,
+   "share": 0.402
+  }
+ },
+ "assets": 132,
+ "validators": [
+  "flat-judge"
+ ],
+ "notes": "Every tile's words were written by looking at it beside the pack's tile map and sample scene (2026-10-13). A tile with use.tile false is a piece (an edge, a corner, an end, a part of a bigger picture): gf-flat-1 judges it without the seam rule. Tile 25 is also Tiny Dungeon's plain sand floor (its tile 48)."
+}

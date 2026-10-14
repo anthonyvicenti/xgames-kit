@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "wall",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "wall.glb",
+ "sha256": "86a4db258761d050a2bc430b50a6c7ac42872c4fc37502191cebf8d3c22c5103",
+ "bytes": 21048,
+ "preview": "previews/wall.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone dungeon wall section (one 3 m module)",
+ "tags": [
+  "ruins",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    0.75
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 494,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 494,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21048,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#838e93",
+     "#7a8388",
+     "#4e5559",
+     "#596064",
+     "#545b5f",
+     "#42484c",
+     "#484e53",
+     "#677074"
+    ],
+    "saturation": 0.064,
+    "value": 0.448,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.26,
+   "texelsPerMetre": 36,
+   "texturedShare": 0.805,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall.gltf.glb",
+  "sha256": "f2f343a7bdf2d45947e3f354494e16095a923485e05637e3804e3b81ce11d921",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

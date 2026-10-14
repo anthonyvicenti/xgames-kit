@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-path",
+ "pack": "flat-standins-pixel",
+ "file": "tile-path.png",
+ "sha256": "9906f4ed7fb603e4155915c40e847022fc8ea52c488c86168e7f80c1f7a37a9c",
+ "bytes": 325,
+ "preview": "previews/tile-path.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-path.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "dirt path tile, sandy brown with grit",
+ "tags": [
+  "pixel",
+  "path",
+  "dirt",
+  "road",
+  "flat",
+  "2d",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#a8784a",
+     "#c2935e",
+     "#d6ad78",
+     "#e6c595",
+     "#8a6038"
+    ],
+    "saturation": 0.439,
+    "value": 0.54,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.992
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "0a029034a734f0c63e78841bf5ca7226a17c0b873cc826f9d582753b300b7315",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

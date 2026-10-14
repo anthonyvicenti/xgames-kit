@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-awning",
+ "pack": "forge-town",
+ "file": "town-town-awning.png",
+ "sha256": "f3f4804730f148d6aeba8a654a7f31efd58a8652e6f2eac4d2a8b31057b7f427",
+ "bytes": 467,
+ "preview": "previews/town-town-awning.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 10 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "faded striped awning cloth, dull red and cream; tiles; 1 m across",
+ "tags": [
+  "texture",
+  "town",
+  "awning"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#97896e",
+     "#7f312b",
+     "#742d28",
+     "#7a2f2a",
+     "#9b8d72",
+     "#6d2a25",
+     "#89352f",
+     "#84332d"
+    ],
+    "saturation": 0.33,
+    "value": 0.419,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.5
+     },
+     {
+      "hue": "grey",
+      "share": 0.463
+     },
+     {
+      "hue": "orange",
+      "share": 0.037
+     }
+    ],
+    "exact": 16,
+    "grey": 0.463
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.202
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 10 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA12",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "gauntlet",
+  "verbatim": true,
+  "archetype": "steal-defend",
+  "where": "games.fun research/studio-v2/evals/gauntlet/kinds.json (2026-10-11), \"steal-defend\": pitched as something else (no bases, no shop)"
+ },
+ "prompt": "Everyone has a base: sneak into the others' bases, steal their treasures, carry them home to earn money, and upgrade your door to keep thieves out.",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "other",
+   "core": true,
+   "words": "Everyone has a base",
+   "means": "Each player has a base of their own",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "action",
+   "core": true,
+   "words": "sneak into the others' bases, steal their treasures",
+   "means": "Players get into others' bases and take their treasures",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "action",
+   "core": true,
+   "words": "carry them home to earn money",
+   "means": "A stolen treasure is carried home, where it earns money",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "action",
+   "core": true,
+   "words": "upgrade your door to keep thieves out",
+   "means": "Money buys door upgrades that keep thieves out",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "players",
+   "core": true,
+   "words": "Everyone",
+   "means": "Every player plays at once, against each other",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

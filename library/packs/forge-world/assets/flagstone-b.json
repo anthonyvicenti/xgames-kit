@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "flagstone-b",
+ "pack": "forge-world",
+ "file": "flagstone-b.glb",
+ "sha256": "6a02a52daeff3ba89c6f5b93aeb4eb7e51b4d75d346a5d781b6b3c68cee10c25",
+ "bytes": 7392,
+ "preview": "previews/flagstone-b.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-flagstone.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a loose paving slab, about 0.9 m across and 5 cm thick",
+ "tags": [
+  "world",
+  "flagstone",
+  "b"
+ ],
+ "use": {
+  "size": [
+   0.708,
+   0.05,
+   0.901
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.321,
+   0,
+   -0.418
+  ],
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 15,
+  "textures": 1,
+  "textureMax": 64,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 15,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 7392,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#43574d",
+     "#4d6059",
+     "#4b5f56",
+     "#5b6a69",
+     "#41524a",
+     "#1b261e",
+     "#26362b",
+     "#405549"
+    ],
+    "saturation": 0.116,
+    "value": 0.309,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 5.28,
+   "texelsPerMetre": 75,
+   "texturedShare": 0.77,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its picture (world/night-flagstone.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

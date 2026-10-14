@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "tree-cherry",
+ "pack": "folio-nature",
+ "file": "tree-cherry.glb",
+ "sha256": "75dcc20fd139f001e951594fe746dfc340a52866f2d28ae3873dfbb309a3003d",
+ "bytes": 13928,
+ "preview": "previews/tree-cherry.png",
+ "from": "static/cherryTrees/cherryTreesVisual.glb; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wide cherry tree",
+ "tags": [
+  "tree",
+  "nature",
+  "cherry",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   6.071,
+   6.657,
+   5.356
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   3,
+   12
+  ],
+  "collider": {
+   "shape": "cylinder",
+   "size": [
+    0.6,
+    4,
+    0.6
+   ],
+   "offset": [
+    0,
+    2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 424,
+  "textures": 1,
+  "textureMax": 32,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 324,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 13928,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#9eaf33",
+     "#b76b31"
+    ],
+    "saturation": 0.551,
+    "value": 0.444,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.919
+     },
+     {
+      "hue": "orange",
+      "share": 0.081
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

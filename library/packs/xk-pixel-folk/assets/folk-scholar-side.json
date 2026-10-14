@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "folk-scholar-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-scholar-side.png",
+ "sha256": "10fbd3934a66678c45066307e3783e2e1f87d38296139f287871f010e3d95211",
+ "bytes": 1842,
+ "preview": "previews/folk-scholar-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-scholar-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a scholar in a navy long-sleeved top and grey trousers, a black bob; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "scholar",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#22202c",
+     "#d49866",
+     "#271f37",
+     "#2e3159",
+     "#34508a",
+     "#474057",
+     "#605b58",
+     "#653a24"
+    ],
+    "saturation": 0.272,
+    "value": 0.324,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.469
+     },
+     {
+      "hue": "orange",
+      "share": 0.162
+     },
+     {
+      "hue": "blue",
+      "share": 0.161
+     },
+     {
+      "hue": "purple",
+      "share": 0.16
+     },
+     {
+      "hue": "brown",
+      "share": 0.047
+     }
+    ],
+    "exact": 23,
+    "grey": 0.469
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.692
+   }
+  }
+ },
+ "source": {
+  "sha256": "175224f65a6557c0b6152bf4a4c1a7b6630b944399dd6c84335b0c886d8b54d2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0004",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0004.png",
+ "sha256": "b46c03a1691bef1d1a1fbabd1aa9668a4f7e793957a17993a71e81c01db7c851",
+ "bytes": 226,
+ "preview": "previews/tile-0004.png",
+ "from": "Tiles/tile_0004.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the top of a tall green tree (tile 16 is its trunk below)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "tree",
+  "green",
+  "tall",
+  "top",
+  "nature",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#3f2631",
+     "#84c669",
+     "#479f4a"
+    ],
+    "saturation": 0.347,
+    "value": 0.394,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.503
+     },
+     {
+      "hue": "pink",
+      "share": 0.497
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.81
+   }
+  }
+ },
+ "source": {
+  "sha256": "5de3dff614fb984dedcbfb7551d13a984f66d5a0a835df3048b51bc7cfddba57",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

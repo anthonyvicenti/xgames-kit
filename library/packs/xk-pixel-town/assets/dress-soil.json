@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "dress-soil",
+ "pack": "xk-pixel-town",
+ "file": "dress-soil.png",
+ "sha256": "a9285a869b137720333b60afaab77515daa24c7c5056c2cce9126fdcd77619a0",
+ "bytes": 948,
+ "preview": "previews/dress-soil.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): dress-soil.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "crops in tilled soil: sprouts, cabbage, carrots, wheat, a pumpkin, a sunflower (6)",
+ "tags": [
+  "pixel",
+  "crops",
+  "farm",
+  "dressing",
+  "dress",
+  "soil"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "dress"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#665b37",
+     "#44633b",
+     "#64b048",
+     "#a8a040",
+     "#45903a",
+     "#e87c22",
+     "#355334",
+     "#597347"
+    ],
+    "saturation": 0.475,
+    "value": 0.423,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.375
+     },
+     {
+      "hue": "brown",
+      "share": 0.295
+     },
+     {
+      "hue": "orange",
+      "share": 0.161
+     },
+     {
+      "hue": "yellow",
+      "share": 0.156
+     }
+    ],
+    "exact": 28,
+    "grey": 0.013
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "324e05d84d0ca59c1a2189907840e3d4d4abb6830e5b823d1a2440536746132b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

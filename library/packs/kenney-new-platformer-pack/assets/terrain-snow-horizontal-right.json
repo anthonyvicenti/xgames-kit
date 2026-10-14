@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-horizontal-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-horizontal-right.png",
+ "sha256": "3b010e1921d6ccd1a9868c6eec4d5347fbfb21049de5c02067fba3718fbd8b7f",
+ "bytes": 3594,
+ "preview": "previews/terrain-snow-horizontal-right.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_horizontal_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow horizontal right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "horizontal",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 72.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#e5f0ff",
+     "#353541",
+     "#cfd5da",
+     "#ffffff",
+     "#c8dbf5",
+     "#a6b2bb",
+     "#343440"
+    ],
+    "saturation": 0.336,
+    "value": 0.74,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.936
+     },
+     {
+      "hue": "blue",
+      "share": 0.064
+     }
+    ],
+    "exact": 134,
+    "grey": 0.936
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "ed17176263e572d9547bf4d0f255d9c1788288a47a06915197ae2d84fe89b976",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

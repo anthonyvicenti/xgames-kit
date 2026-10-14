@@ -1,0 +1,121 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-table",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-table.glb",
+ "sha256": "5460f5a1abbb68f177122f6e7b2b6f5d7119c513236fbec96debc13921c790cf",
+ "bytes": 83384,
+ "preview": "previews/dungeon-table.png",
+ "from": "table_long_decorated_A.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a long wooden table with plates and bottles",
+ "tags": [
+  "dungeon",
+  "table",
+  "furniture",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.544,
+   1.414,
+   3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.544,
+    1.414,
+    3
+   ],
+   "offset": [
+    0,
+    0.707,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1961,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1961,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 83384,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 24,
+    "hues": [
+     "#904f3c",
+     "#92523e",
+     "#9c5b45",
+     "#8e4d3a",
+     "#9f5e48",
+     "#985742",
+     "#8d837c",
+     "#ab694e"
+    ],
+    "saturation": 0.332,
+    "value": 0.477,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.494
+     },
+     {
+      "hue": "grey",
+      "share": 0.233
+     },
+     {
+      "hue": "brown",
+      "share": 0.208
+     },
+     {
+      "hue": "cyan",
+      "share": 0.038
+     }
+    ],
+    "grey": 0.233
+   },
+   "trianglesPerMetre": 9.05,
+   "texelsPerMetre": 90,
+   "texturedShare": 0.461,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/table_long_decorated_A.gltf.glb",
+  "sha256": "47564d874e79f04212c05487d88ac8cbe9bb50b1865a8eeb1178bcb711aa444d",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

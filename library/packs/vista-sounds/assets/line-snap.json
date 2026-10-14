@@ -1,0 +1,59 @@
+{
+ "assetVersion": 1,
+ "id": "line-snap",
+ "pack": "vista-sounds",
+ "file": "line-snap.ogg",
+ "sha256": "2a312b716065f7c676d56ed3b31b6ffef8194cbb00159337b2a65b9a998c860d",
+ "bytes": 20929,
+ "preview": "previews/line-snap.png",
+ "from": "4 snaps (strings breaking under tension, used for the line parting)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Line snapping",
+ "tags": [
+  "coast",
+  "calm",
+  "line",
+  "snap"
+ ],
+ "use": {
+  "seconds": 2.486,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "true peak 0.3 dBTP is over 0",
+     "harsh: 44% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -12.2,
+     "samplePeakDb": -0.9,
+     "truePeakDb": 0.3,
+     "hfRatio": 0.436
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 2.486,
+    "peakDbfs": -0.9,
+    "soundMaxLufs": -12.2
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/khenshom/sounds/537084/",
+  "author": "khenshom"
+ }
+}

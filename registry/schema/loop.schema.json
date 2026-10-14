@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/loop/1.json",
+  "title": "Loop manifest (loops/<id>/loop.json)",
+  "description": "How a game is played, by who acts when: the session's phases while playing, the clock, who may act, what ends it. The lobby, countdown, results, replay, players and net stay the shared system's for every loop. One implementation per runtime that has it; a second runtime only with its own evidence, never by a shared label.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "describe",
+    "pick",
+    "acts",
+    "clock",
+    "params",
+    "state",
+    "impl"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "describe": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 400
+    },
+    "pick": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "description": "When the ledger's 'who acts when' lines choose it."
+    },
+    "clock": {
+      "enum": [
+        "required",
+        "cap",
+        "none"
+      ],
+      "description": "spec.round.seconds: required (round, run, match), an optional cap on the whole session (turns, endless), or none (world)."
+    },
+    "ends": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "What ends a session."
+    },
+    "seats": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "alone": {
+          "enum": [
+            "fill",
+            "min",
+            "none"
+          ],
+          "description": "Alone: bots fill every seat, fill players.min - 1 seats, or none."
+        },
+        "late": {
+          "enum": [
+            "join",
+            "wait"
+          ]
+        }
+      }
+    },
+    "params": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/jsonSchema",
+      "description": "spec.round.params, validated against this; each becomes a round.* value slot."
+    },
+    "needs": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What a spec must also have for this loop (run: the levels mechanic; world: the voxel world and the build mechanic).",
+      "properties": {
+        "mechanics": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          }
+        },
+        "worlds": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          }
+        },
+        "why": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "hooks": {
+      "type": "array",
+      "maxItems": 16,
+      "description": "The rules hooks the loop calls: name, the copy that runs it, its arguments, when.",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "on",
+          "when"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-zA-Z0-9]{0,31}$"
+          },
+          "on": {
+            "enum": [
+              "host",
+              "every copy",
+              "own copy"
+            ]
+          },
+          "args": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "when": {
+            "type": "string",
+            "maxLength": 200
+          }
+        }
+      }
+    },
+    "observe": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "What it publishes in window.__game.snapshot().flow, and its shared state key."
+    },
+    "signs": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Its sign of life for gate C and D (a pulse, a pressed change, what a 25 s check round cuts).",
+      "properties": {
+        "alive": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "pulse": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "pressed": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "short": {
+          "type": "string",
+          "maxLength": 200
+        }
+      }
+    },
+    "notes": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "maxLength": 300
+      },
+      "description": "At most three lines for the build agent, read only when it is chosen."
+    },
+    "state": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state",
+      "description": "The loop as a whole: open when any runtime has it open."
+    },
+    "impl": {
+      "type": "object",
+      "description": "One entry per runtime that has it. A runtime missing here does not have the loop: a spec that wants it there builds it (a build promise with where: loop).",
+      "propertyNames": {
+        "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "by",
+          "state"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "by": {
+            "enum": [
+              "flow",
+              "session",
+              "mechanic",
+              "tables",
+              "core",
+              "scenes"
+            ],
+            "description": "flow: a flow module of its own. session: a mode of the shared session (world). mechanic: the round flow plus a mechanic (run = round + levels). tables: the runtime's data tables (forge's waves). core: the runtime's own core (vista's day). scenes: an engine's own scenes."
+          },
+          "path": {
+            "type": "string",
+            "maxLength": 200,
+            "description": "Where it lives (relative to the runtime folder, or a kit path)."
+          },
+          "profiles": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+            },
+            "description": "The profiles it is proven on; left out, every profile."
+          },
+          "state": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "fixture": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Its two-player fixture or test."
+    },
+    "acts": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,31}$",
+      "description": "Who acts when, as one word the ledger's acts row names (together-timed, levels-in-order, shared-place-stays, one-at-a-time, rounds-won, until-you-fall, progress-kept). One loop per word."
+    },
+    "near": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+      },
+      "description": "The loops to build it on when it is not open, closest first."
+    },
+    "promise": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "The loop's own promise to a player (loop.closes)."
+    }
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/verdict/1.json",
+  "title": "Gate verdict (evidence/verify-N/verdict.json)",
+  "description": "What verify writes for one game on any runtime (runtimes/CONTRACT.md §7). A gate's name is the same everywhere, but every gate lists what ran, what passed and what was skipped with why, so 'passes gate C on vista' never implies a round game's coverage. A skipped measure is never counted as passed; a verdict passes only when every gate this run requires passed with every measure it requires run.",
+  "type": "object",
+  "required": [
+    "verdictVersion",
+    "runtime",
+    "run",
+    "gates",
+    "failed",
+    "pass"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "verdictVersion": {
+      "const": 1
+    },
+    "game": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "runtime": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "profile": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "loop": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "run": {
+      "enum": [
+        "build",
+        "release"
+      ],
+      "description": "build: a build's verify (the measures a game can break). release: adds the kit's own tests."
+    },
+    "spec": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "browser": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "gpu": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "api": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/graphicsApi"
+        },
+        "profile": {
+          "type": "string",
+          "maxLength": 60,
+          "description": "A machine profile that skipped measures (a CI runner with no GPU): a profiled run is never a pass."
+        }
+      }
+    },
+    "gates": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "description": "One entry per gate this run judged, keyed by its letter (verdict.gates.C). A gate's skipped list names measures that did not run; a gate with nothing run is judged untested by the promises, never passed.",
+      "patternProperties": {
+        "^[A-F]$": {
+          "$ref": "#/$defs/gate"
+        }
+      }
+    },
+    "judges": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "Advisory findings (gate J: the likeness judge, the play-tester): repair rounds, never a failed verdict.",
+      "items": {
+        "type": "object",
+        "required": [
+          "measure",
+          "finding"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "measure": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "finding": {
+            "type": "string",
+            "maxLength": 600
+          }
+        }
+      }
+    },
+    "pass": {
+      "type": "boolean"
+    },
+    "seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "failed": {
+      "type": "array",
+      "description": "Every failed measure across the gates, flat (what the ladder's failing set reads).",
+      "items": {
+        "type": "object",
+        "required": [
+          "gate",
+          "measure"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "gate": {
+            "enum": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F"
+            ]
+          },
+          "measure": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          },
+          "area": {
+            "enum": [
+              "art",
+              "sound",
+              "netcode",
+              "feel",
+              "code"
+            ]
+          },
+          "detail": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "rule": {
+            "type": "string",
+            "maxLength": 400
+          },
+          "fix": {
+            "type": "string",
+            "maxLength": 400
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "gate": {
+      "type": "object",
+      "required": [
+        "gate",
+        "ran",
+        "passed",
+        "skipped"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "gate": {
+          "enum": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "ran": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          }
+        },
+        "passed": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          }
+        },
+        "skipped": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "measure",
+              "why"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "measure": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 99
+              },
+              "why": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 400
+              },
+              "required": {
+                "type": "boolean",
+                "description": "true when this run required it: the gate cannot pass."
+              }
+            }
+          }
+        },
+        "failed": {
+          "type": "array",
+          "description": "Derived (ran minus passed), each with the rule and the fix it names.",
+          "items": {
+            "type": "object",
+            "required": [
+              "measure"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "measure": {
+                "type": "integer"
+              },
+              "detail": {
+                "type": "string",
+                "maxLength": 1000
+              },
+              "rule": {
+                "type": "string",
+                "maxLength": 400
+              },
+              "fix": {
+                "type": "string",
+                "maxLength": 400
+              }
+            }
+          }
+        },
+        "ok": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

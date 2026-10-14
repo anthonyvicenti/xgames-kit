@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0041",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0041.png",
+ "sha256": "049051db9a8c0b1d61a023252b0f860e1c03185d51afcdc397f36e6f5b58b629",
+ "bytes": 263,
+ "preview": "previews/tile-0041.png",
+ "from": "Tiles/tile_0041.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a carved grey stone slab set in the sand floor in a dark frame: a trapdoor or floor grate",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "trapdoor",
+  "grate",
+  "slab",
+  "floor",
+  "stone",
+  "hatch"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#262b44",
+     "#eaa56c",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c"
+    ],
+    "saturation": 0.37,
+    "value": 0.477,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.773
+     },
+     {
+      "hue": "orange",
+      "share": 0.227
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.1
+   }
+  }
+ },
+ "source": {
+  "sha256": "0fbb63362251a29d741280e59f5d9cf29c80c0fcff0532cc9c8530936d873994",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

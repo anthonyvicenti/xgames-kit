@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "tree-small",
+ "pack": "kenney-city-kit-suburban",
+ "file": "tree-small.glb",
+ "sha256": "d58dc672de6f39ada429935915512c460ef7a6f9dfa72e7ffedeccf9f339a784",
+ "bytes": 20292,
+ "preview": "previews/tree-small.png",
+ "from": "kenney:city-kit-suburban/tree-small; baked to metres (x4.93827), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small garden tree",
+ "tags": [
+  "nature",
+  "tree",
+  "backyard",
+  "small"
+ ],
+ "use": {
+  "size": [
+   1.039,
+   2.8,
+   1.2
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.25,
+   "height": 2,
+   "offset": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 42,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 42,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20292,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#39a277",
+     "#228c6c",
+     "#4cb581",
+     "#2a9370",
+     "#d57f59",
+     "#c87451",
+     "#5bc588",
+     "#e89066"
+    ],
+    "saturation": 0.51,
+    "value": 0.435,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.746
+     },
+     {
+      "hue": "green",
+      "share": 0.166
+     },
+     {
+      "hue": "orange",
+      "share": 0.088
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "5f63359e5f392609d7617cc98070855ca1ffd4f4b4bc3978a5ff56ece88a58d6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x4.93827), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

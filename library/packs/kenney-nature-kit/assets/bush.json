@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "bush",
+ "pack": "kenney-nature-kit",
+ "file": "bush.glb",
+ "sha256": "d261873dee433e1eef57ccaaca094d3d050f00b4dcde5327c14cc16a21d38940",
+ "bytes": 3992,
+ "preview": "previews/bush.png",
+ "from": "kenney:nature-kit/plant_bushDetailed; baked to metres (x2.49715), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round leafy bush",
+ "tags": [
+  "nature",
+  "bush"
+ ],
+ "use": {
+  "size": [
+   1.505,
+   0.9,
+   1.505
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.505,
+    0.9,
+    1.505
+   ],
+   "offset": [
+    0,
+    0.45,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3992,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#73eddd"
+    ],
+    "saturation": 0.772,
+    "value": 0.69,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 4.76,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/nature-kit",
+  "download": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "sha256": "2e0487020d68ccf664435db9d829c78ae00e6d2785ee3ec10b9f89cc70a10406",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.49715), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

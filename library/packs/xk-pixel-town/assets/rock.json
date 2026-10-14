@@ -1,0 +1,78 @@
+{
+ "assetVersion": 1,
+ "id": "rock",
+ "pack": "xk-pixel-town",
+ "file": "rock.png",
+ "sha256": "adfbf6d06b0a8db2272d6ae2cb743c7429e193223240b4446de704b309a08604",
+ "bytes": 331,
+ "preview": "previews/rock.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): rock.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a small grey rock",
+ "tags": [
+  "pixel",
+  "rock",
+  "stone"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#565260",
+     "#a9a4ae",
+     "#6f6a78",
+     "#8c8794",
+     "#372d41",
+     "#574c5f",
+     "#c8c4c8",
+     "#41364a"
+    ],
+    "saturation": 0.084,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 10,
+    "grey": 1
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.525
+   }
+  }
+ },
+ "source": {
+  "sha256": "99e7beda6070eee2b97ca5f8a2621a46f022837742f2b01049e1fc3b4e68a328",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

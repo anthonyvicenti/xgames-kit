@@ -1,0 +1,143 @@
+{
+ "assetVersion": 1,
+ "id": "axe",
+ "pack": "quaternius-props",
+ "file": "axe.glb",
+ "sha256": "615a13993d30fcca881806b811c73d93b956b455df3c7ff1c89f79e07d1fdb35",
+ "bytes": 20536,
+ "preview": "previews/axe.png",
+ "from": "https://poly.pizza/m/o54NXjRI4V; normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis y+ → +Z, x → +Y, the grip to the origin, ×0.3049 to 0.48 m long; primitives joined per material; sockets grip, tip; meshopt (from Poly Pizza o54NXjRI4V)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a bearded hand axe",
+ "tags": [
+  "player",
+  "coop",
+  "knight",
+  "weapon",
+  "melee",
+  "quaternius",
+  "weapons",
+  "axe",
+  "held"
+ ],
+ "use": {
+  "size": [
+   0.04,
+   0.19,
+   0.48
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    -0.01,
+    -0.043,
+    0
+   ],
+   "quaternion": [
+    0.5,
+    0.5,
+    0.5,
+    0.5
+   ],
+   "scale": 1.8
+  },
+  "hands": 1,
+  "sockets": [
+   {
+    "name": "grip",
+    "node": "socket_grip",
+    "position": [
+     0,
+     0,
+     0
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   },
+   {
+    "name": "tip",
+    "node": "socket_tip",
+    "position": [
+     0,
+     0.0392,
+     0.384
+    ],
+    "quaternion": [
+     0,
+     0,
+     0,
+     1
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 966,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 966,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 20536,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#5d6476",
+     "#63474a",
+     "#402d39",
+     "#919092"
+    ],
+    "saturation": 0.135,
+    "value": 0.362,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 95.83,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/o54NXjRI4V",
+  "download": "https://static.poly.pizza/654d4ee5-e217-4c23-b8e1-92e16226b21a.glb",
+  "sha256": "b4eedc707dabb98883f0e18a096953dbea164b9d2d40a657bd44805886f33b8d",
+  "retrieved": "2026-10-09",
+  "modified": "normalised to the forge weapon frame by research/gf-forge/library/tools/props.mjs: long axis y+ → +Z, x → +Y, the grip to the origin, ×0.3049 to 0.48 m long; primitives joined per material; sockets grip, tip; meshopt (from Poly Pizza o54NXjRI4V)",
+  "author": "Quaternius"
+ }
+}

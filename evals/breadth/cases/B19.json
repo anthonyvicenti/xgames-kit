@@ -1,0 +1,47 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B19",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "board-card",
+  "rank": 19,
+  "row": "Board and card classics",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a card game with friends where we play cards onto a pile matching the colour or number, special cards skip or reverse, first to empty their hand wins",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "hand",
+   "type": "panel",
+   "must": "each player's own hand of cards, hidden from the others"
+  },
+  {
+   "id": "turns",
+   "type": "loop",
+   "must": "players take turns"
+  },
+  {
+   "id": "match",
+   "type": "rule",
+   "must": "a card must match the pile's colour or number"
+  },
+  {
+   "id": "specials",
+   "type": "mechanic",
+   "must": "skip and reverse cards"
+  },
+  {
+   "id": "empty-hand",
+   "type": "rule",
+   "must": "the first with an empty hand wins"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working fishing minigame",
+  "how": "judge"
+ }
+}

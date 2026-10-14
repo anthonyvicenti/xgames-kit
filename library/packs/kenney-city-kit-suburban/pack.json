@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "kenney-city-kit-suburban",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney City Kit Suburban (2.0)",
+ "describe": "Kenney's city kit suburban: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/city-kit-suburban",
+  "file": "library/packs/kenney-city-kit-suburban/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "5869c35cf30b1c87bdb2d197b6d325eebadd2ef08ea27f04797e8e08d77a9a39",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#39a277",
+    "#595e76",
+    "#4cb581",
+    "#747990",
+    "#d57f59",
+    "#626880",
+    "#2a9370",
+    "#228c6c",
+    "#47b17e",
+    "#e6e6ef",
+    "#c3714e",
+    "#bb6a49"
+   ],
+   "saturation": 0.348,
+   "value": 0.477,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.309
+    },
+    {
+     "hue": "cyan",
+     "share": 0.234
+    },
+    {
+     "hue": "orange",
+     "share": 0.208
+    },
+    {
+     "hue": "green",
+     "share": 0.17
+    },
+    {
+     "hue": "blue",
+     "share": 0.079
+    }
+   ],
+   "grey": 0.347
+  },
+  "trianglesPerMetre": 2.48,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 7,
+ "validators": [
+  "budget"
+ ]
+}

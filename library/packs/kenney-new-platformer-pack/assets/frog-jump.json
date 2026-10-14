@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "frog-jump",
+ "pack": "kenney-new-platformer-pack",
+ "file": "frog-jump.png",
+ "sha256": "a26ebfedf296ef8f001221560eb9508e1bfe69b3ca888e13e2a93cc58504f339",
+ "bytes": 5989,
+ "preview": "previews/frog-jump.png",
+ "from": "Sprites/Enemies/Double/frog_jump.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "frog jump",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "frog",
+  "jump",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#2cc987",
+     "#353541",
+     "#ffffff",
+     "#139167",
+     "#343440",
+     "#353540",
+     "#5d5d67",
+     "#2ea475"
+    ],
+    "saturation": 0.353,
+    "value": 0.478,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.502
+     },
+     {
+      "hue": "cyan",
+      "share": 0.498
+     }
+    ],
+    "exact": 88,
+    "grey": 0.502
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "d3895daec628b583cadb3b7849cbc87a40480ba836e4c527ee90150c22e48203",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

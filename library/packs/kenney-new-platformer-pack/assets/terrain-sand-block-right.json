@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-sand-block-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-sand-block-right.png",
+ "sha256": "3825fbbf8efd444b1dbaf5a73b74b3997889b98aac74952e3dd1ba78d0066548",
+ "bytes": 2238,
+ "preview": "previews/terrain-sand-block-right.png",
+ "from": "Sprites/Tiles/Double/terrain_sand_block_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain sand block right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "sand",
+  "block",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 50.4 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#c66a3e",
+     "#353541",
+     "#e6885a",
+     "#d27446",
+     "#cc6f42",
+     "#da7e52"
+    ],
+    "saturation": 0.651,
+    "value": 0.573,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.938
+     },
+     {
+      "hue": "grey",
+      "share": 0.063
+     }
+    ],
+    "exact": 49,
+    "grey": 0.063
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "1448a070254eb9d399b8365b69694d8a6285d7875fdd0cc3755d19cc6dbe4964",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

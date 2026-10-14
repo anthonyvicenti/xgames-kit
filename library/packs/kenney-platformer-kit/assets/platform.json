@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "platform",
+ "pack": "kenney-platformer-kit",
+ "file": "platform.glb",
+ "sha256": "1d135e18bd785876a37a430c2220cf6563adeea305ecae2a793f49cf7f25eadb",
+ "bytes": 20424,
+ "preview": "previews/platform.png",
+ "from": "kenney:platformer-kit/platform; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden plank platform",
+ "tags": [
+  "arena",
+  "platform"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.39,
+   2
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    2,
+    0.39,
+    2
+   ],
+   "offset": [
+    0,
+    0.195,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 84,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 84,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20424,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#c3714e",
+     "#d47f59",
+     "#d9835c",
+     "#d07c57",
+     "#925841",
+     "#9f5b41",
+     "#865542",
+     "#ab5f41"
+    ],
+    "saturation": 0.501,
+    "value": 0.523,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.842
+     },
+     {
+      "hue": "brown",
+      "share": 0.158
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.55,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "59edd84481a20b91587dfb35afef7b3e5b2f20081e6af4fc641a51655d7db2c8",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

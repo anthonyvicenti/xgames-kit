@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-stone-ramp-long-c",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-stone-ramp-long-c.png",
+ "sha256": "e42a8cfb3af8c1cbbb5b314fe8858060146e5b41a0f518892a749cbca6e5c87b",
+ "bytes": 1925,
+ "preview": "previews/terrain-stone-ramp-long-c.png",
+ "from": "Sprites/Tiles/Double/terrain_stone_ramp_long_c.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain stone ramp long tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "stone",
+  "ramp",
+  "long",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 26.5 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 34.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#bbc4cb",
+     "#a6b2bb",
+     "#cfd5da",
+     "#5e5e6d",
+     "#424251",
+     "#717180",
+     "#353541",
+     "#4c4c5b"
+    ],
+    "saturation": 0.126,
+    "value": 0.7,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 51,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.043
+   }
+  }
+ },
+ "source": {
+  "sha256": "00ee41f903c8610c70331566dadaf406fd624ac0ddaa435403769ff752f1012e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "fly-rest",
+ "pack": "kenney-new-platformer-pack",
+ "file": "fly-rest.png",
+ "sha256": "f3b344cf01721d3695f9123d112b7fe1a9a03eb3816f11ce76b4ba011c74d1de",
+ "bytes": 5475,
+ "preview": "previews/fly-rest.png",
+ "from": "Sprites/Enemies/Double/fly_rest.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "fly rest",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "fly",
+  "rest",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#474758",
+     "#ffffff",
+     "#525262",
+     "#343440",
+     "#353540",
+     "#444455",
+     "#3e3e4f"
+    ],
+    "saturation": 0.083,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 242,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "5ac606485069bcf3820365c0d25fcf0c01b2169e53acf8cbe104e9831093c7e3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

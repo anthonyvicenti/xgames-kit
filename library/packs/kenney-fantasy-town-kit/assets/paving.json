@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "paving",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "paving.glb",
+ "sha256": "691528dca9e0681697d1d67537cc225e6fbaa8f045af7a1a6880883a00c9863b",
+ "bytes": 18692,
+ "preview": "previews/paving.png",
+ "from": "kenney:fantasy-town-kit/road; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a 2 m stone paving tile",
+ "tags": [
+  "plaza",
+  "floor",
+  "tile",
+  "paving"
+ ],
+ "use": {
+  "size": [
+   2,
+   0.05,
+   2
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 12,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 12,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18692,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#a0a8c9"
+    ],
+    "saturation": 0.275,
+    "value": 0.708,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 1.2,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "85630c89588bdc19285a7b5e894c1ddac69d7ce2b069966453800519e446f900",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

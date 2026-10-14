@@ -1,0 +1,10 @@
+{
+  "title": "Coin Hop",
+  "summary": "A 2D platformer seen from the side: ledges, jumps and coins on a tile map written in the spec.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22 (9 is the flat sheet, and ran)",
+    "kit": "xgames-kit stream/core-spec after 07cc523 (spec v2)",
+    "date": "2026-10-13",
+    "how": "node bin/gamesfun.mjs create <dir> --from coin-hop, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 165 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\"); the verdict is builder/gates/verdict.schema.json's and valid against it"
+  }
+}

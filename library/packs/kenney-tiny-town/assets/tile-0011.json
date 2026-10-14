@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0011",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0011.png",
+ "sha256": "9731da7cfa71b4a2cc66772bfef08f76d6c20862220245a18e294108e8b83538",
+ "bytes": 233,
+ "preview": "previews/tile-0011.png",
+ "from": "Tiles/tile_0011.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the north-east corner of a dense autumn (orange) forest clump",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "forest",
+  "trees",
+  "tree",
+  "autumn",
+  "nature",
+  "orange",
+  "corner",
+  "corner-outer-ne"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#fdbe53",
+     "#e38628",
+     "#bd6c4a"
+    ],
+    "saturation": 0.616,
+    "value": 0.432,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.557
+     },
+     {
+      "hue": "pink",
+      "share": 0.443
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.542
+   }
+  }
+ },
+ "source": {
+  "sha256": "69c6e3e76d76356f16086e922d331cd3baf4b18aed2bf07d242b2c61d1c0719c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

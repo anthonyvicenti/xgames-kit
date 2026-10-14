@@ -1,0 +1,133 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T7",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-12",
+  "where": "games.fun research/studio-v2/evals/cases/T7.json"
+ },
+ "prompt": "a game that looks and plays like Tidewater",
+ "ownWords": {
+  "never": [
+   "Tidewater"
+  ],
+  "exact": [
+   "Joe",
+   "Marta",
+   "Joe's",
+   "Marta's"
+  ],
+  "why": "Tidewater is MIT-licensed and the vista runtime runs its core (credited), but a delivered game is ours: not called Tidewater and using none of its people. The first list is held in any case and spacing; the second, everyday names, as written. They may stand where the creator reads about the game they named: the pitch's research and reply."
+ },
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "vista"
+   ],
+   "loop": [
+    "world",
+    "saved",
+    "run",
+    "endless"
+   ],
+   "kind": [
+    "calm"
+   ]
+  },
+  "why": "Photoreal sea and sky on a desktop GPU is the vista runtime's hard limit; a calm loop with gear that lets players fish further out is a world, a saved game or a run."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "own-words",
+   "text": "The game is our own in our own words: the named game's title and its people are in no card's spec, the locked spec, the build brief, a file of the game or an asset prompt",
+   "how": "probe:own-words"
+  },
+  {
+   "id": "own-place",
+   "text": "The game has its own place, generated from its spec: never the reference's island as it is",
+   "how": "judge"
+  },
+  {
+   "id": "looks-matched",
+   "text": "The blind reviewer places the game's matched shots within one step of the reference pack's on the 5-step look scale for at least 4 of the 6 times of day",
+   "how": "probe:look-pack"
+  },
+  {
+   "id": "budgets",
+   "text": "The frame budgets hold: 60 fps steady at 3840x2160 on the high tier (temporal upscale allowed) while walking, sailing and fishing; 30 fps or more at 1920x1080 on the low tier; the menu interactive within 15 s cold with at most 20 MB downloaded before it",
+   "how": "probe:frame-budget"
+  },
+  {
+   "id": "place",
+   "text": "It is a place worth being in: a coast with a beach, a pier, a village, a reef and open water, light that changes with the time of day, a sea that changes with the weather",
+   "how": "human"
+  },
+  {
+   "id": "play",
+   "text": "There is a calm loop to play: walk the shore, cast from the pier or a boat, a bite, a fight on the line, a catch shown and kept, sold for gear that lets you fish further out",
+   "how": "human"
+  },
+  {
+   "id": "friends-visible",
+   "text": "Two friends in one game see each other where they really are, on the shore and in a boat",
+   "how": "gate:E"
+  },
+  {
+   "id": "no-webgpu",
+   "text": "A browser without WebGPU gets the kit's screen with the game's link, never a blank canvas",
+   "how": "gate:B"
+  },
+  {
+   "id": "looks-like",
+   "text": "Beside the game the creator named, the creator says it looks like the same kind of place: a real sky and sea, light you can feel the time of day in, clouds, surf (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "feels-like",
+   "text": "The creator plays it and says whether it's there (creator's judgement, their words in a new evidence file)",
+   "how": "human"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "The vista runtime's acceptance, re-created for spec v2 on 2026-10-13. The prompt is the plan of record's wording; the creator has not typed it. The look is judged against the reference look pack (matched shots of 6 times of day x 4 sea states). The own-place item comes from the creator's words of 2026-10-12: \"we should work on unique setting every time\"."
+}

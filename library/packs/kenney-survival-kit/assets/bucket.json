@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "bucket",
+ "pack": "kenney-survival-kit",
+ "file": "bucket.glb",
+ "sha256": "1c79b72f324b4f6b29e73fe01d2899fe06e7e52d0574ae6ab7f89d9d972b724e",
+ "bytes": 14404,
+ "preview": "previews/bucket.png",
+ "from": "kenney:survival-kit/bucket; baked to metres (x2.08265), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a metal bucket",
+ "tags": [
+  "item",
+  "backyard",
+  "bucket"
+ ],
+ "use": {
+  "size": [
+   0.3,
+   0.4,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.3,
+    0.4,
+    0.3
+   ],
+   "offset": [
+    0,
+    0.2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#979ebe",
+     "#8a91ad",
+     "#7d829a",
+     "#e78f65",
+     "#db845d",
+     "#df8860"
+    ],
+    "saturation": 0.242,
+    "value": 0.628,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.477
+     },
+     {
+      "hue": "blue",
+      "share": 0.426
+     },
+     {
+      "hue": "orange",
+      "share": 0.097
+     }
+    ],
+    "grey": 0.477
+   },
+   "trianglesPerMetre": 10.74,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/survival-kit",
+  "download": "https://kenney.nl/media/pages/assets/survival-kit/4065a8185b-1712149243/kenney_survival-kit.zip",
+  "sha256": "ff173908480929067cd634d5edfedba038428f1503db487521492975fa5c8274",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.08265), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

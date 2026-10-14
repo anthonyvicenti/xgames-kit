@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "flag-blue-a",
+ "pack": "kenney-new-platformer-pack",
+ "file": "flag-blue-a.png",
+ "sha256": "a5454202ee845b3628b759357ce804b87b8951fa68e6b0f584d2b65e0491aff1",
+ "bytes": 2512,
+ "preview": "previews/flag-blue-a.png",
+ "from": "Sprites/Tiles/Double/flag_blue_a.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "flag blue tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "flag",
+  "blue",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 15.7 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 11.8 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#419fdd",
+     "#353541",
+     "#de7e4f",
+     "#366fbf",
+     "#ee9366",
+     "#343440",
+     "#353540",
+     "#409edc"
+    ],
+    "saturation": 0.518,
+    "value": 0.469,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.463
+     },
+     {
+      "hue": "grey",
+      "share": 0.278
+     },
+     {
+      "hue": "orange",
+      "share": 0.165
+     },
+     {
+      "hue": "blue",
+      "share": 0.094
+     }
+    ],
+    "exact": 75,
+    "grey": 0.278
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.948
+   }
+  }
+ },
+ "source": {
+  "sha256": "01ec3ed8b8cb271665a88bae2861bb409c5dcc9027d447565bcc1a31ea0d2828",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

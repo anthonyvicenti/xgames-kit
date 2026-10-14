@@ -1,0 +1,12 @@
+[package]
+name = "forge-play"
+description = "gf-forge's tracks together (the wave 1b integration): what forge-feel and forge-ai owe each other, as systems between them (an enemy's knock on a player, a flying piece's knock on an enemy), and the one call that installs the whole game core. Native tests play them together."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+
+[dependencies]
+forge-core = { workspace = true }
+forge-feel = { workspace = true }
+forge-ai = { workspace = true }

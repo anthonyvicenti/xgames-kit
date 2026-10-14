@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "sign-exit",
+ "pack": "kenney-new-platformer-pack",
+ "file": "sign-exit.png",
+ "sha256": "bd5bef23fbd0354bf740f4fcde5e217847f1555e46d836bfa18cd71714c989c6",
+ "bytes": 3801,
+ "preview": "previews/sign-exit.png",
+ "from": "Sprites/Tiles/Double/sign_exit.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "sign exit tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "sign",
+  "exit",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 10.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#c66a3e",
+     "#ffe0c2",
+     "#fa9f72",
+     "#aa5e39",
+     "#eeaf88",
+     "#343440"
+    ],
+    "saturation": 0.562,
+    "value": 0.526,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.743
+     },
+     {
+      "hue": "grey",
+      "share": 0.255
+     }
+    ],
+    "exact": 105,
+    "grey": 0.255
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.929
+   }
+  }
+ },
+ "source": {
+  "sha256": "5791b7ffff2ea0b660b5b6f285fd594fe3d2bf335704848e17b25238b7e67959",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

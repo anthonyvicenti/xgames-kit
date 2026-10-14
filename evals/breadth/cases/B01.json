@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B01",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "tactical-fps",
+  "rank": 1,
+  "row": "Tactical / arena FPS",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "first person shooter, 4v4 on a little warehouse map, one life per round, first team to win 5 rounds takes it. bots fill in if we don't have enough people",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "first-person",
+   "type": "camera",
+   "must": "a first-person view with aim"
+  },
+  {
+   "id": "guns",
+   "type": "mechanic",
+   "must": "guns that shoot"
+  },
+  {
+   "id": "one-life",
+   "type": "rule",
+   "must": "one life per round; rounds until a team has won 5"
+  },
+  {
+   "id": "teams-bots",
+   "type": "players",
+   "must": "two teams of four, bots taking the empty seats"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

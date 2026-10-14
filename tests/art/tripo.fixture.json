@@ -1,0 +1,6 @@
+{ "about": "The documented shapes of Tripo's v3 API (https://developers.tripo3d.com/en/docs/quick-start.md and /task-lifecycle.md, read 2026-10-11). NOT a recording of a real call: no key was on the build machine.",
+  "create": { "code": 0, "data": { "task_id": "task_abc123" } },
+  "noCredits": { "code": 2010, "message": "insufficient credits" },
+  "running": { "code": 0, "data": { "task_id": "task_abc123", "type": "text_to_model", "status": "running", "progress": 40 } },
+  "success": { "code": 0, "data": { "task_id": "task_abc123", "type": "text_to_model", "status": "success", "progress": 100, "output": { "model_url": "https://example.invalid/model.glb", "rendered_image_url": "https://example.invalid/render.webp" }, "credits_consumed": 100.0 } },
+  "banned": { "code": 0, "data": { "task_id": "task_abc123", "status": "banned", "progress": 0 } } }

@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "tile-ledge",
+ "pack": "flat-standins-pixel",
+ "file": "tile-ledge.png",
+ "sha256": "49607d111b8e98bf94bf8fba18650b5e9781e516f4753a7c5a113d2e186c6841",
+ "bytes": 200,
+ "preview": "previews/tile-ledge.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-ledge.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a wooden ledge on brackets, side-on",
+ "tags": [
+  "pixel",
+  "ledge",
+  "platform",
+  "wood",
+  "side",
+  "flat",
+  "2d",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#9a6236",
+     "#d39a5c",
+     "#5a3620",
+     "#b97c45",
+     "#7a4a2a",
+     "#c8c4d0"
+    ],
+    "saturation": 0.485,
+    "value": 0.423,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.677
+     },
+     {
+      "hue": "orange",
+      "share": 0.302
+     }
+    ],
+    "exact": 6,
+    "grey": 0.021
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.4
+   }
+  }
+ },
+ "source": {
+  "sha256": "797ad6a75bfc2f6b2863cf597bb8b1ed747eaac74b24ff9ceddbaec9e65f3d1a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

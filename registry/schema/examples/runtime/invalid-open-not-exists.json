@@ -1,0 +1,59 @@
+{
+  "id": "phantom",
+  "name": "Open but missing",
+  "version": "0.1.0",
+  "describe": "Offered to pitches with no code.",
+  "state": {
+    "exists": false,
+    "tested": false,
+    "open": true
+  },
+  "limits": {},
+  "toolchain": {
+    "game": [],
+    "build": []
+  },
+  "core": {
+    "kind": "js",
+    "licences": [
+      "MIT"
+    ]
+  },
+  "play": {
+    "by": [
+      "rules"
+    ]
+  },
+  "admission": {
+    "create": {
+      "meets": "yes"
+    },
+    "slots": {
+      "meets": "yes"
+    },
+    "multiplayer": {
+      "meets": "yes"
+    },
+    "hostBridge": {
+      "meets": "yes"
+    },
+    "observation": {
+      "meets": "yes"
+    },
+    "measures": {
+      "meets": "yes"
+    },
+    "examples": {
+      "meets": "yes"
+    },
+    "pinned": {
+      "meets": "yes"
+    },
+    "toolchainOnDemand": {
+      "meets": "yes"
+    }
+  },
+  "rank": 5,
+  "defaultKind": "silly",
+  "says": "x"
+}

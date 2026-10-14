@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-far",
+ "pack": "forge-town",
+ "file": "town-town-far.png",
+ "sha256": "a9c0df6279252c3832f878fa83d5c2cbd646f25508ff12a5c90362fd1c9dd9c7",
+ "bytes": 3263,
+ "preview": "previews/town-town-far.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 16 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a far house front: dark plaster with rows of dark windows (drawn; fitted over a far house's walls)",
+ "tags": [
+  "texture",
+  "town",
+  "far"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#564e46",
+     "#161c26",
+     "#595148",
+     "#534b44",
+     "#3a3430",
+     "#5c534b",
+     "#514942",
+     "#4e473f"
+    ],
+    "saturation": 0.12,
+    "value": 0.272,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.891
+     },
+     {
+      "hue": "blue",
+      "share": 0.109
+     }
+    ],
+    "exact": 16,
+    "grey": 0.891
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.263
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 16 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

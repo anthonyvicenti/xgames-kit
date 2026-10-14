@@ -1,0 +1,228 @@
+{
+  "id": "pixel",
+  "label": "Pixel",
+  "feel": "2D pixel art with hard square texels, 16 a metre, whole screen pixels a texel, at most 32 colours a picture, a one-texel outline in each thing's own deep shade. A cosy town seen from above in three-quarter view: villagers with their own skin, hair and clothes, soft paths and pond shores, flowers, crops behind a fence, houses and trees to walk behind; or a cave seen from the side.",
+  "references": [
+    "Stardew Valley",
+    "Balatro",
+    "Core Keeper",
+    "Animal Well",
+    "Webfishing"
+  ],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "flat-2d",
+      "style": "pixel",
+      "preset": "pixel-day",
+      "plane": "top",
+      "alternates": [
+        {
+          "preset": "pixel-night",
+          "why": "the same hard pixels on a deep blue night"
+        }
+      ],
+      "values": {
+        "view": 12
+      }
+    },
+    "godot": {
+      "profile": "2d",
+      "preset": "pixel-day",
+      "style": "pixel",
+      "plane": "side",
+      "values": {
+        "background": "#8fd3ff"
+      }
+    }
+  },
+  "world": {
+    "family": "tiles",
+    "three": {
+      "templates": [
+        "field",
+        "stage"
+      ],
+      "default": "field",
+      "notes": "a tile map (gf-tilemap-1): top-down field or side-on stage. Seen from above a kind may have soft edges (a path, a pond, a field: \"edges\": \"blend\"), join itself (a fence, a wall, a hedge: \"connect\"), carry dressing (flowers and tufts in the grass, crops in the soil: \"dress\") or be a set piece (a house, a tree: \"piece\"); runtimes/three/worlds/pixel-town.json is a whole town to copy"
+    },
+    "godot": {
+      "templates": [
+        "stage",
+        "field"
+      ],
+      "default": "stage",
+      "notes": "side-on stages and fields seen from above (gf-tilemap-1 read from slots); this kind's Godot look is side-on, so a field keeps the runtime's own background"
+    }
+  },
+  "camera": {
+    "three": {
+      "plane": "top",
+      "snap": "whole screen pixels a texel"
+    },
+    "default": "top",
+    "godot": {
+      "plane": "side"
+    }
+  },
+  "bodies": {
+    "set": "pixel-folk",
+    "notes": "Villagers drawn by the kit (runtimes/three/tools/pixel/folk.mjs, a layered paper doll): twelve people and the player, five skin tones. gf-flat-1: 6 frames, 3 rows from above (down, side, up; side mirrored is the fourth facing) and 1 row side-on, 32 px cells; every sheet passes the flat judge. The player's light grey shirt takes the seat colour; other roles get a villager by their words.",
+    "three": [
+      "flat-standins-pixel/body-top",
+      "xk-pixel-folk/folk-farmer-top",
+      "xk-pixel-folk/folk-baker-top",
+      "xk-pixel-folk/folk-smith-top",
+      "xk-pixel-folk/folk-elder-top",
+      "xk-pixel-folk/folk-fisher-top",
+      "xk-pixel-folk/folk-gardener-top",
+      "xk-pixel-folk/folk-scholar-top",
+      "xk-pixel-folk/folk-rocker-top",
+      "xk-pixel-folk/folk-ranger-top",
+      "xk-pixel-folk/folk-courier-top",
+      "xk-pixel-folk/folk-tailor-top",
+      "xk-pixel-folk/folk-miner-top"
+    ]
+  },
+  "props": {
+    "three": [
+      "coin",
+      "gem",
+      "heart",
+      "key",
+      "star",
+      "crate",
+      "xk-pixel-town/tree-oak",
+      "xk-pixel-town/tree-apple",
+      "xk-pixel-town/tree-pine",
+      "xk-pixel-town/bush",
+      "xk-pixel-town/boulder",
+      "xk-pixel-town/barrel",
+      "xk-pixel-town/well",
+      "xk-pixel-town/lamp",
+      "xk-pixel-town/house-red",
+      "xk-pixel-town/house-blue",
+      "xk-pixel-town/shop",
+      "xk-pixel-town/shed"
+    ]
+  },
+  "audio": {
+    "character": "chiptune: square-wave blips, coins and jumps straight from the synth presets, nothing pitched down",
+    "sounds": {
+      "jump": {
+        "preset": "jump"
+      },
+      "pickup": {
+        "preset": "coin"
+      },
+      "gem": {
+        "preset": "gem"
+      },
+      "hit": {
+        "preset": "hit-soft"
+      },
+      "shoot": {
+        "preset": "pew-retro"
+      },
+      "ui": {
+        "preset": "click"
+      },
+      "win": {
+        "preset": "level-up"
+      }
+    },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#f2c14e",
+    "panel": "#2b1d14e6",
+    "text": "#fff4d6",
+    "font": "Silkscreen",
+    "radius": "0px",
+    "weight": 400,
+    "size": "14px",
+    "pixel": true
+  },
+  "mechanics": {
+    "suggested": [
+      "pickup",
+      "board",
+      "station",
+      "levels"
+    ],
+    "why": "collecting, a tile board, a shop and a level at a time. Suggestions only."
+  },
+  "packs": [
+    "xk-pixel-folk",
+    "xk-pixel-town",
+    "flat-standins-pixel",
+    "ofl-silkscreen"
+  ],
+  "runtimes": {
+    "three": {
+      "profile": "flat-2d",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "Market Day (examples/minimal/market-day: seen from above, the kind's villagers, soft edges, dressing, set pieces) passes the six gates, 22 of 22 measures, on the graphics card",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 148 (Playwright) on Linux, ANGLE on the GL/EGL driver"
+          },
+          {
+            "what": "the look judge's contact sheet for pixel, rendered on the graphics card (its only check); the flat judge passes all 13 of the kind's body sheets",
+            "ref": "kinds/sheets/pixel.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "godot": {
+      "profile": "2d",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": false,
+        "evidence": [
+          {
+            "what": "three pixel games on Godot 2D pass verify --release: Ledge Friends (side-on), Meadow Walk (seen from above), Coin Hop (side-on, bots, its own two-player test)",
+            "ref": "runtimes/godot/evidence/2026-10-13-run4/README.md",
+            "date": "2026-10-13",
+            "browser": "headless Chrome (Playwright) on Linux, ANGLE on the GL/EGL driver"
+          },
+          {
+            "what": "Meadow Walk on Godot 2D with the new stand-ins (the player villager, the redrawn tiles) passes the six gates (verify, not --release)",
+            "date": "2026-10-13",
+            "browser": "headless Chrome 148 (Playwright) on Linux, ANGLE on the GL/EGL driver"
+          }
+        ],
+        "note": "the stand-in pixel art (flat-standins-pixel: the player villager and the tiles) on both 2D starters; Godot draws plain tiles (no edges, dressing or set pieces yet) and its seat colour still tints the whole body, skin too; no sheet drawn on Godot; tested by headless browsers only, nobody has played it"
+      },
+      "toProve": "a sheet drawn on Godot, and the top-down edges, dressing and set pieces (drawplan.js) on Godot 2D (it draws plain tiles today)"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "flat-2d",
+    "style": "pixel",
+    "plane": "top",
+    "world": "runtimes/three/worlds/pixel-town.json",
+    "packs": []
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for pixel, rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/pixel.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

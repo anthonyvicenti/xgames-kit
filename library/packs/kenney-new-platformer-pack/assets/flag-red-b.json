@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "flag-red-b",
+ "pack": "kenney-new-platformer-pack",
+ "file": "flag-red-b.png",
+ "sha256": "51806b9a5e7a251de00bc444dfd083442aec01870ff3a70f3933a96262aad55c",
+ "bytes": 2565,
+ "preview": "previews/flag-red-b.png",
+ "from": "Sprites/Tiles/Double/flag_red_b.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "flag red tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "flag",
+  "red",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 16.9 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 14.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#e54341",
+     "#353541",
+     "#de7e4f",
+     "#bc2423",
+     "#ee9366",
+     "#343440",
+     "#e03f3d",
+     "#d93a38"
+    ],
+    "saturation": 0.554,
+    "value": 0.474,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.555
+     },
+     {
+      "hue": "grey",
+      "share": 0.278
+     },
+     {
+      "hue": "orange",
+      "share": 0.166
+     }
+    ],
+    "exact": 72,
+    "grey": 0.278
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.949
+   }
+  }
+ },
+ "source": {
+  "sha256": "83178b8ee89031c1492a2fc1b7df432e4652f98c1f7bad34075d445c743a3322",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B20",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "trivia",
+  "rank": 20,
+  "row": "Word and trivia",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a quiz show with my friends: pick a category, buzz in first to answer, wrong answers lose points",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "question",
+   "type": "panel",
+   "must": "a question with answers shown to everyone"
+  },
+  {
+   "id": "categories",
+   "type": "mechanic",
+   "must": "categories to pick from"
+  },
+  {
+   "id": "buzz",
+   "type": "mechanic",
+   "must": "buzzing in first to answer"
+  },
+  {
+   "id": "scoring",
+   "type": "rule",
+   "must": "right answers score, wrong answers lose points"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "spark",
+ "pack": "forge-fx",
+ "file": "spark.png",
+ "sha256": "a32e3c97f4c3e6f51941703b276dbee82ac98b2b73e54778913d2d491f23e2bc",
+ "bytes": 1322,
+ "preview": "previews/spark.png",
+ "from": "research/gf-forge/library/tools/fx.mjs; drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+ "dimension": "2d",
+ "category": "effect",
+ "describe": "a hot streak (a stretched quad along its motion: white-yellow core)",
+ "tags": [
+  "fx",
+  "spark"
+ ],
+ "use": {},
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0.978
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ffefa5",
+     "#fffef8",
+     "#fff6cf",
+     "#fff6cd",
+     "#fff6ce",
+     "#fff3ba",
+     "#fff4c0",
+     "#fff5c7"
+    ],
+    "saturation": 1,
+    "value": 0.902,
+    "families": [
+     {
+      "hue": "yellow",
+      "share": 0.68
+     },
+     {
+      "hue": "grey",
+      "share": 0.32
+     }
+    ],
+    "exact": 28,
+    "grey": 0.32
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-09",
+  "modified": "drawn here: 64×64 RGBA, seeded value noise and falloff shapes",
+  "author": "games.fun"
+ }
+}

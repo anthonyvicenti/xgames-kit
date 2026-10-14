@@ -1,0 +1,199 @@
+{
+  "tool": "runtimes/vista/tools/hop-friends.mjs",
+  "started": "2026-10-14T01:50:08.510Z",
+  "game": "<scratch>/v1/isle-hop",
+  "near": 0.5,
+  "shortcut": "a hop starts through window.__game.vista.hop (the host's copy follows its own decision; the joiner's copy asks the host), not a sail-out at the helm",
+  "checks": [
+    {
+      "name": "joiner-joins-over-webrtc",
+      "ok": true,
+      "detail": "room WALXCU"
+    },
+    {
+      "name": "one-host",
+      "ok": true,
+      "detail": "host p1, joiner p2"
+    },
+    {
+      "name": "both-on-island-1",
+      "ok": true,
+      "detail": "Fern Key: place 0a055317 on both (the spec's 0a055317)"
+    },
+    {
+      "name": "both-on-island-2",
+      "ok": true,
+      "detail": "host and joiner on Table Rock (place 5d955cad)"
+    },
+    {
+      "name": "host-draws-the-joiner-where-it-is",
+      "ok": true,
+      "detail": "0.000 m (allowed 0.5)"
+    },
+    {
+      "name": "joiner-draws-the-host-where-it-is",
+      "ok": true,
+      "detail": "0.000 m (allowed 0.5)"
+    },
+    {
+      "name": "they-see-each-other-aboard",
+      "ok": true,
+      "detail": "{\"hostSeesJoiner\":true,\"joinerSeesHost\":true}"
+    },
+    {
+      "name": "a-joiner-asks-the-host-decides",
+      "ok": true,
+      "detail": "the joiner's ask answered {\"ok\":true,\"from\":1,\"to\":0,\"name\":\"Fern Key\",\"ms\":7786,\"rebuild\":{\"ms\":{\"clear\":4,\"terrain\":1089,\"village\":92,\"vegetation\":602,\"terrainGPU\":324,\"rocks\":171,\"reef\":754,\"wildlife\":18,\"place\":0,\"compile\":2632,\"free\":1},\"total\":5687,\"freed\":{\"materials\":29,\"geometries\":342,\"uniforms\":32,\"textures\":28,\"buffers\":37,\"raw\":0,\"shaders\":2,\"kept\":0},\"pipelines\":112}}; both on Fern Key: true"
+    },
+    {
+      "name": "a-player-joining-mid-trip-lands-on-the-current-island",
+      "ok": true,
+      "detail": "the joiner's fresh copy booted Fern Key, took the host's island from the world message and landed on Ember Reach"
+    },
+    {
+      "name": "no-page-errors",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "numbers": {
+    "secondsToBothStarted": 14.6,
+    "hop1": {
+      "hostMs": 8153,
+      "host": {
+        "ok": true,
+        "from": 0,
+        "to": 1,
+        "name": "Table Rock",
+        "ms": 8135,
+        "rebuild": {
+          "ms": {
+            "clear": 6,
+            "terrain": 966,
+            "village": 125,
+            "vegetation": 655,
+            "terrainGPU": 237,
+            "rocks": 172,
+            "reef": 899,
+            "wildlife": 7,
+            "place": 0,
+            "compile": 2901,
+            "free": 3
+          },
+          "total": 5971,
+          "freed": {
+            "materials": 29,
+            "geometries": 354,
+            "uniforms": 32,
+            "textures": 28,
+            "buffers": 37,
+            "raw": 0,
+            "shaders": 2,
+            "kept": 2
+          },
+          "pipelines": 113
+        }
+      },
+      "joiner": {
+        "ok": true
+      }
+    },
+    "atIsland2": {
+      "errHostDrawsJoiner": 0,
+      "errJoinerDrawsHost": 0,
+      "seen": {
+        "hostSeesJoiner": true,
+        "joinerSeesHost": true
+      },
+      "host": {
+        "template": "islands",
+        "start": "pier",
+        "island": 1,
+        "islands": 3,
+        "names": [
+          "Fern Key",
+          "Table Rock",
+          "Ember Reach"
+        ],
+        "place": {
+          "key": "5d955cad",
+          "reference": false,
+          "name": "place-2207",
+          "seed": 2207
+        }
+      },
+      "joiner": {
+        "template": "islands",
+        "start": "pier",
+        "island": 1,
+        "islands": 3,
+        "names": [
+          "Fern Key",
+          "Table Rock",
+          "Ember Reach"
+        ],
+        "place": {
+          "key": "5d955cad",
+          "reference": false,
+          "name": "place-2207",
+          "seed": 2207
+        }
+      }
+    }
+  },
+  "shots": [
+    {
+      "file": "01-host-island-1.jpg",
+      "note": "the host on Fern Key"
+    },
+    {
+      "file": "02-host-island-2-sees-joiner.jpg",
+      "note": "Table Rock: the host aboard at the dock"
+    },
+    {
+      "file": "03-joiner-island-2-sees-host.jpg",
+      "note": "Table Rock: the joiner aboard at the dock"
+    },
+    {
+      "file": "04-joiner-joined-mid-trip-island-3.jpg",
+      "note": "the joiner's fresh copy on Ember Reach"
+    },
+    {
+      "file": "05-host-island-3.jpg",
+      "note": "the host on Ember Reach"
+    }
+  ],
+  "errors": [],
+  "notes": [],
+  "islands": [
+    {
+      "name": "Fern Key",
+      "seed": 811,
+      "key": "0a055317"
+    },
+    {
+      "name": "Table Rock",
+      "seed": 2207,
+      "key": "5d955cad"
+    },
+    {
+      "name": "Ember Reach",
+      "seed": 5309,
+      "key": "371502ab"
+    }
+  ],
+  "gpu": {
+    "ok": true,
+    "tries": 1,
+    "vendor": "nvidia",
+    "architecture": "blackwell",
+    "description": "",
+    "fallback": false,
+    "ms": 386,
+    "executablePath": "<home>/…"
+  },
+  "finished": "2026-10-14T01:51:01.323Z",
+  "verdict": "pass",
+  "passed": 10,
+  "total": 10
+}

@@ -1,0 +1,27 @@
+{
+ "schema": "xgk-eval-set/1",
+ "set": "cases",
+ "frozen": "2026-10-13",
+ "title": "The frozen cases T1-T7, re-created for spec v2",
+ "cases": [
+  "T1",
+  "T2",
+  "T3",
+  "T4",
+  "T5",
+  "T6",
+  "T7"
+ ],
+ "spec": "Spec v2 (builder/spec/game-spec.v2.schema.json, contracts step 1 of 2026-10-13): no engine field. foundation.at gives the JSON pointer of each answer in the locked spec; foundation.accept lists the values a judge accepts, and why. A value outside it is not refused by the loop (the catalog never gates an idea); it fails this case's foundation item unless the second reader finds the ledger's reason sound, which the record states.",
+ "how": {
+  "gate:<A-F>": "that gate's verdict on the delivered game",
+  "gates:all": "every gate",
+  "release": "the kit's own release tests (a game breaks them only by breaking a kit-owned thing)",
+  "probe:<name>": "evals/probes/<name>.mjs on the run (not all written yet; an unwritten probe is recorded as not run)",
+  "record": "the run record",
+  "judge": "the second reader, from the witness bundle",
+  "human": "the creator"
+ },
+ "budget": "None: cost never stops a build (the creator, 2026-10-13). Time, tokens and money are recorded.",
+ "history": "The cases as first frozen (with an engine field and numbered checks) stay in games.fun research/studio-v2/evals/cases/ as history. They are not run on xgames-kit and nothing converts them (no backwards compatibility, the creator, 2026-10-13)."
+}

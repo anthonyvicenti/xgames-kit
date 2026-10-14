@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "pine-b",
+ "pack": "forge-world",
+ "file": "pine-b.glb",
+ "sha256": "e045604f7e69cb7b27dc37b52b7e1abef97edc28ee1d5fa023d48c1566fd37b5",
+ "bytes": 19044,
+ "preview": "previews/pine-b.png",
+ "from": "research/gf-forge/library/tools/world.mjs; made here from code: flat-shaded triangles with UVs in metres; its pictures (world/night-bark.png, world/night-needles.png) inside",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a 10.5 m pine: a bare scaly trunk, 4 tiers of drooping boughs, dead snags",
+ "tags": [
+  "world",
+  "pine",
+  "b"
+ ],
+ "use": {
+  "size": [
+   6.318,
+   11,
+   6.716
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -2.702,
+   -0.1,
+   -3.15
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.7,
+    10.5,
+    0.7
+   ],
+   "offset": [
+    0,
+    5.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 140,
+  "textures": 2,
+  "textureMax": 64,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 140,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 2,
+     "bytes": 19044,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#16261e",
+     "#13211a",
+     "#0d1714",
+     "#182a21",
+     "#15241c",
+     "#192c22",
+     "#15251d",
+     "#122019"
+    ],
+    "saturation": 0.257,
+    "value": 0.126,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.736
+     },
+     {
+      "hue": "grey",
+      "share": 0.201
+     },
+     {
+      "hue": "brown",
+      "share": 0.063
+     }
+    ],
+    "grey": 0.201
+   },
+   "trianglesPerMetre": 1.18,
+   "texelsPerMetre": 32,
+   "texturedShare": 1,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "made here from code: flat-shaded triangles with UVs in metres; its pictures (world/night-bark.png, world/night-needles.png) inside",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

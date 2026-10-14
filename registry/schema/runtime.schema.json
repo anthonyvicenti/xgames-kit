@@ -1,0 +1,694 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/runtime/1.json",
+  "title": "Runtime manifest (runtimes/<id>/runtime.json)",
+  "description": "What runs a game: its profiles, its hard limits (devices, graphics API, camera rigs, players, where it can be embedded), its toolchain, its pinned core and licences, its worlds and looks, how its play is given (mechanic modules or data tables), and what of the price of admission (runtimes/CONTRACT.md) it meets today. The registry reads it; the foundation step chooses a runtime by these limits, never by taste or a keyword.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "version",
+    "describe",
+    "state",
+    "limits",
+    "toolchain",
+    "core",
+    "play",
+    "admission",
+    "rank",
+    "defaultKind",
+    "says"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-[a-z0-9.]+)?$"
+    },
+    "describe": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 400
+    },
+    "for": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "What it is good at, in plain words (never a feel: a feel is a kind)."
+    },
+    "state": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state"
+    },
+    "profiles": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "The runtime's own sub-settings (three: standard-3d, scenic-3d, flat-2d). Each narrows the runtime's limits; a field left out keeps the runtime's.",
+      "items": {
+        "$ref": "#/$defs/profile"
+      }
+    },
+    "limits": {
+      "$ref": "#/$defs/limits"
+    },
+    "toolchain": {
+      "type": "object",
+      "required": [
+        "build",
+        "game"
+      ],
+      "additionalProperties": false,
+      "description": "Installed only when this runtime is chosen: a three.js game never installs Godot or cargo.",
+      "properties": {
+        "game": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/tool"
+          },
+          "description": "What a game build needs on the person's machine (beyond Node and Chrome)."
+        },
+        "build": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "$ref": "#/$defs/tool"
+          },
+          "description": "What rebuilding the runtime's own core needs (a kit release, never a game build)."
+        }
+      }
+    },
+    "core": {
+      "type": "object",
+      "required": [
+        "kind",
+        "licences"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "js",
+            "prebuilt-wasm",
+            "vendored",
+            "engine-export"
+          ],
+          "description": "js: the runtime is our own JavaScript and pinned npm libraries. prebuilt-wasm: one hash-pinned .wasm per release (agents never rebuild it). vendored: an upstream core copied in, pinned file by file. engine-export: an outside engine's web export (Godot)."
+        },
+        "pins": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "type": "string",
+                "maxLength": 80
+              },
+              "version": {
+                "type": "string",
+                "maxLength": 40
+              },
+              "repo": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{7,40}$"
+              },
+              "sha256": {
+                "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+              },
+              "licence": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "note": {
+                "type": "string",
+                "maxLength": 300
+              }
+            }
+          }
+        },
+        "licences": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "description": "Where the licence and attribution files travel (paths inside the runtime folder, or SPDX ids until the folder lands)."
+        },
+        "neverOverride": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "description": "Game-relative paths a declared override may never touch on this runtime (the prebuilt core)."
+        }
+      }
+    },
+    "play": {
+      "type": "object",
+      "required": [
+        "by"
+      ],
+      "additionalProperties": false,
+      "description": "How a game's play is given on this runtime.",
+      "properties": {
+        "by": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "mechanics",
+              "tables",
+              "rules",
+              "scenes"
+            ]
+          },
+          "description": "mechanics: the kit's mechanic modules (components/). tables: the runtime's data tables (spec.tables). rules: the game's rules.js and src/. scenes: an engine's own scenes and scripts (Godot)."
+        },
+        "rules": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "The game's own code surface (rules.js with ctx; a Godot script)."
+        },
+        "tables": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/path",
+          "description": "The tables' checker (check, fill)."
+        },
+        "loops": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "How a loop runs here (the session's flows; the core's own waves)."
+        }
+      }
+    },
+    "worlds": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "$ref": "#/$defs/named"
+      }
+    },
+    "looks": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "$ref": "#/$defs/named"
+      }
+    },
+    "admission": {
+      "type": "object",
+      "required": [
+        "create",
+        "slots",
+        "multiplayer",
+        "hostBridge",
+        "observation",
+        "measures",
+        "examples",
+        "pinned",
+        "toolchainOnDemand"
+      ],
+      "additionalProperties": false,
+      "description": "The price of admission (runtimes/CONTRACT.md §1), each with its state and the gaps said plainly.",
+      "properties": {
+        "create": {
+          "$ref": "#/$defs/clause"
+        },
+        "slots": {
+          "$ref": "#/$defs/clause"
+        },
+        "multiplayer": {
+          "$ref": "#/$defs/clause"
+        },
+        "hostBridge": {
+          "$ref": "#/$defs/clause"
+        },
+        "observation": {
+          "$ref": "#/$defs/clause"
+        },
+        "measures": {
+          "$ref": "#/$defs/clause"
+        },
+        "examples": {
+          "$ref": "#/$defs/clause"
+        },
+        "pinned": {
+          "$ref": "#/$defs/clause"
+        },
+        "toolchainOnDemand": {
+          "$ref": "#/$defs/clause"
+        }
+      }
+    },
+    "measures": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Which measures of each gate this runtime supplies in a build, and what it skips with the reason (runtimes/CONTRACT.md §6). Release-only measures are listed under release.",
+      "properties": {
+        "build": {
+          "$ref": "#/$defs/gateMeasures"
+        },
+        "release": {
+          "$ref": "#/$defs/gateMeasures"
+        },
+        "skipped": {
+          "type": "array",
+          "maxItems": 40,
+          "items": {
+            "type": "object",
+            "required": [
+              "measure",
+              "why"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "measure": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 99
+              },
+              "why": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300
+              }
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "minimal": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        },
+        "showcase": {
+          "type": "array",
+          "maxItems": 20,
+          "items": {
+            "type": "string",
+            "maxLength": 120
+          }
+        }
+      }
+    },
+    "rank": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 99,
+      "description": "Tie-break between runtimes that meet the same limits: lower first (the one that builds the least for a plain idea)."
+    },
+    "defaultKind": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id",
+      "description": "The kind a game gets when the creator names no feel."
+    },
+    "says": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300,
+      "description": "Its limits in plain words, as a pitch says them to the creator."
+    }
+  },
+  "$defs": {
+    "named": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "describe": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "profiles": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "description": "The profiles it belongs to; left out, every profile."
+        },
+        "loops": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "description": "For a world only usable with some loops (voxel: world)."
+        },
+        "times": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "enum": [
+              "day",
+              "golden",
+              "dusk",
+              "night"
+            ]
+          }
+        }
+      }
+    },
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "version": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "install": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "The script that installs it (relative to the runtime folder)."
+        },
+        "size": {
+          "type": "string",
+          "maxLength": 40
+        }
+      }
+    },
+    "support": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "tested",
+            "emulated",
+            "untested",
+            "unsupported"
+          ],
+          "description": "tested: played on a real device of that class, with evidence. emulated: measured in a headless browser at that size with touch emulation, never on the real device. untested: no evidence either way. unsupported: known not to work (the runtime says so to the player)."
+        },
+        "evidence": {
+          "type": "array",
+          "maxItems": 6,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/evidence"
+          }
+        },
+        "note": {
+          "type": "string",
+          "maxLength": 300
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "tested"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "evidence"
+            ]
+          }
+        }
+      ]
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Hard limits. A field left out on a profile keeps the runtime's.",
+      "properties": {
+        "devices": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "desktop": {
+              "$ref": "#/$defs/support"
+            },
+            "laptop": {
+              "$ref": "#/$defs/support"
+            },
+            "tablet": {
+              "$ref": "#/$defs/support"
+            },
+            "phone": {
+              "$ref": "#/$defs/support"
+            },
+            "x-post": {
+              "$ref": "#/$defs/support",
+              "description": "Inside a post on X (sandboxed frame, no pointer lock)."
+            }
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/input"
+          }
+        },
+        "graphics": {
+          "type": "object",
+          "required": [
+            "apis"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "apis": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/graphicsApi"
+              },
+              "description": "In order of preference; a game plays when the browser has any one."
+            },
+            "noApi": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "What a browser with none of them shows."
+            },
+            "fidelity": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/fidelity"
+              },
+              "description": "How far its picture goes."
+            }
+          }
+        },
+        "dimension": {
+          "enum": [
+            "2d",
+            "3d"
+          ]
+        },
+        "cameraRigs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          }
+        },
+        "cameraDefault": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "players": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "min": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 64
+            }
+          }
+        },
+        "bots": {
+          "type": "boolean"
+        },
+        "watch": {
+          "type": "boolean",
+          "description": "Go live: a viewer's copy exists."
+        },
+        "voice": {
+          "type": "boolean"
+        },
+        "packedHtml": {
+          "type": "boolean",
+          "description": "Can be delivered as one packed HTML file (else the file tree only)."
+        },
+        "firstLoad": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "What the first visit costs (download, shader compile)."
+        },
+        "capabilities": {
+          "type": "array",
+          "maxItems": 40,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/capability"
+          },
+          "description": "What it can do that an idea may need (registry/capabilities.json). A profile's list is its own, not added to the runtime's."
+        }
+      }
+    },
+    "profile": {
+      "type": "object",
+      "required": [
+        "id",
+        "describe",
+        "state"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+        },
+        "describe": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "state": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/state"
+        },
+        "renderer": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "limits": {
+          "$ref": "#/$defs/limits"
+        },
+        "loops": {
+          "type": "array",
+          "maxItems": 10,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id"
+          },
+          "description": "Loops proven on this profile, when narrower than the loops' own manifests say."
+        }
+      }
+    },
+    "clause": {
+      "type": "object",
+      "required": [
+        "meets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "meets": {
+          "enum": [
+            "yes",
+            "partly",
+            "no"
+          ]
+        },
+        "how": {
+          "type": "string",
+          "maxLength": 400
+        },
+        "gaps": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "meets": {
+                "enum": [
+                  "partly",
+                  "no"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "gaps"
+            ],
+            "properties": {
+              "gaps": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "gateMeasures": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[A-FJ]$": {
+          "type": "array",
+          "maxItems": 20,
+          "uniqueItems": true,
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          }
+        }
+      }
+    }
+  }
+}

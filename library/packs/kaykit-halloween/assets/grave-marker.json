@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "grave-marker",
+ "pack": "kaykit-halloween",
+ "file": "grave-marker.glb",
+ "sha256": "f006b1ba65050ada6ec5960d733fe87bc0230f5e451ee293932f11a4fc5e222f",
+ "bytes": 9664,
+ "preview": "previews/grave-marker.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden grave marker",
+ "tags": [
+  "ruins",
+  "grave",
+  "marker"
+ ],
+ "use": {
+  "size": [
+   0.604,
+   0.897,
+   0.209
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.302,
+   0,
+   -0.104
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.604,
+    0.897,
+    0.209
+   ],
+   "offset": [
+    0,
+    0.449,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 56,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 56,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 9664,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#66584f",
+     "#6e6059",
+     "#75665c",
+     "#5c4f48"
+    ],
+    "saturation": 0.124,
+    "value": 0.36,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 8.68,
+   "texelsPerMetre": 38,
+   "texturedShare": 0.726,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/gravemarker_A.gltf",
+  "sha256": "484a0a06f912d8d9b97e556decbb8fd557bcdcc867ec35ff392bff629b4fa25b",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

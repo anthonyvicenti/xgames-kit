@@ -1,0 +1,118 @@
+{
+  "id": "silly",
+  "label": "Silly",
+  "feel": "Toon low-poly in pastel colours under bright light, with soft jelly bodies that flop and tumble. Nothing hurts for long and everything bounces.",
+  "references": ["Peak", "R.E.P.O.", "Meccha Chameleon", "Chained Together", "Gang Beasts"],
+  "changesPlay": false,
+  "look": {
+    "three": {
+      "profile": "standard-3d",
+      "preset": "jelly-pastel",
+      "time": "day",
+      "alternates": [
+        { "preset": "toon-lowpoly", "why": "crisper ink lines and saturated colour, for a louder party" },
+        { "preset": "soft-stylised", "why": "softer light and deep shade, for a cosier day out" }
+      ],
+      "values": {}
+    }
+  },
+  "world": { "family": "yard", "three": { "templates": ["backyard", "plaza", "arena", "office"], "default": "backyard" } },
+  "camera": { "default": "third", "three": { "distance": 7.5, "height": 3.2, "fov": 55 } },
+  "bodies": {
+    "set": "beans",
+    "three": ["bean-classic", "bean-chunky", "bean-tall", "bean-gumdrop"],
+    "physics": "ragdoll",
+    "notes": "One tinted body each; a knock ragdolls and gets up (gf-humanoid-1 knockdown and getup)."
+  },
+  "props": {
+    "three": [
+      "tree-puffy", "bush-large", "flowers-tall", "mushrooms", "crate", "ball-red", "present", "spring", "donut",
+      "cone"
+    ]
+  },
+  "audio": {
+    "character": "bouncy and bright: short synth blips pitched up, no reverb tails, a light wind bed",
+    "sounds": {
+      "jump": { "preset": "jump", "pitch": 1.2 },
+      "land": { "preset": "bounce", "pitch": 1.1 },
+      "hit": { "preset": "hit-soft", "pitch": 1.15 },
+      "pickup": { "preset": "coin", "pitch": 1.1 },
+      "shove": { "preset": "bounce", "pitch": 0.9 },
+      "win": { "preset": "win" },
+      "lose": { "preset": "lose", "pitch": 1.1 }
+    },
+    "ambient": { "preset": "wind-loop", "gainDb": -8 },
+    "buses": "kit defaults (creator-approved 2026-09-25; never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#ff5fa2",
+    "panel": "#2a1d3dcc",
+    "text": "#ffffff",
+    "font": "Fredoka",
+    "radius": "999px",
+    "weight": 700
+  },
+  "mechanics": {
+    "suggested": ["shove", "carry", "pickup", "tag"],
+    "why": "physical comedy: pushing, carrying and grabbing read best with floppy bodies. Suggestions only; the loop decides play."
+  },
+  "packs": [
+    "gf-beans", "kenney-platformer-kit", "kenney-nature-kit", "kenney-holiday-kit", "kenney-food-kit",
+    "kenney-minigolf-kit", "ofl-fredoka"
+  ],
+  "runtimes": {
+    "three": {
+      "profile": "standard-3d",
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "party games on jelly-pastel, toon-lowpoly and soft-stylised pass verify (the kit examples and the delivered corpus)"
+          },
+          {
+            "what": "the look judge's contact sheet for silly, rendered on the graphics card (its only check)",
+            "ref": "kinds/sheets/silly.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "godot": {
+      "profile": "3d",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": false,
+        "note": "Godot 3D plays this kind's bean bodies (gf-beans on gf-humanoid-1, the shared clips through the retarget): Arena Friends, kind silly, passes verify --release (runtimes/godot/evidence/2026-10-13-run4); the kind's look (jelly-pastel light and materials) is three's and the Godot 3D starter does not apply it; no sheet on Godot"
+      },
+      "toProve": "silly's look on Godot 3D (the pastel light and materials), judged by a sheet"
+    }
+  },
+  "sheet": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "world": { "template": "backyard" },
+    "hero": "bean-classic",
+    "bodies": ["bean-classic", "bean-chunky", "bean-tall", "bean-gumdrop"],
+    "props": [
+      "tree-puffy", "bush-large", "flowers-tall", "mushrooms", "crate", "ball-red", "present", "spring", "donut",
+      "cone"
+    ]
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for silly, rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/silly.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

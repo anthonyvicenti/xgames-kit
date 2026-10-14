@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0103",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0103.png",
+ "sha256": "cff07601cc8ea5ed30034c5dcafe5b4514a57316a2f14703ea28964410d1ae43",
+ "bytes": 196,
+ "preview": "previews/tile-0103.png",
+ "from": "Tiles/tile_0103.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a short iron dagger",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "dagger",
+  "knife",
+  "blade",
+  "weapon",
+  "melee",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#8b9bb4"
+    ],
+    "saturation": 0.264,
+    "value": 0.327,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.756
+     },
+     {
+      "hue": "blue",
+      "share": 0.192
+     },
+     {
+      "hue": "orange",
+      "share": 0.051
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "38a3ab676d73fe4219930bad3d0294e045269fd153587b0e21c60843fc13d281",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

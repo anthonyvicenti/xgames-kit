@@ -1,0 +1,376 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "bean-classic": {
+   "origin": "gf-three library bodies/bean-classic.glb",
+   "label": "Jelly bean",
+   "color": "#ff7eb3",
+   "default": true,
+   "describeFull": "procedural jelly bean: one tinted body, mitten hands, shoes, big eyes",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "pink",
+       "share": 0.86
+      },
+      {
+       "hue": "grey",
+       "share": 0.102
+      }
+     ],
+     "grey": 0.102,
+     "lightness": 0.7,
+     "saturation": 0.918,
+     "top": [
+      {
+       "colour": "#ff7eb3",
+       "share": 0.846
+      },
+      {
+       "colour": "#3d3a52",
+       "share": 0.065
+      },
+      {
+       "colour": "#fbfbff",
+       "share": 0.037
+      },
+      {
+       "colour": "#17141f",
+       "share": 0.028
+      },
+      {
+       "colour": "#ff8fa8",
+       "share": 0.01
+      },
+      {
+       "colour": "#4a1428",
+       "share": 0.009
+      },
+      {
+       "colour": "#5b2238",
+       "share": 0.005
+      }
+     ]
+    },
+    "trianglesPerMetre": 50.05,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.33,
+     "headsTall": 3.38,
+     "hipShare": 0.278,
+     "shoulderShare": 0.35,
+     "widthShare": 1.079
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.33,
+      "triangles": 15568,
+      "joints": 23,
+      "materials": 8
+     }
+    }
+   ]
+  },
+  "bean-chunky": {
+   "origin": "gf-three library bodies/bean-chunky.glb",
+   "label": "Chunky toon",
+   "color": "#4fc7c0",
+   "describeFull": "procedural chunky toon: one tinted body, mitten hands, shoes, big eyes",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.887
+      },
+      {
+       "hue": "grey",
+       "share": 0.089
+      }
+     ],
+     "grey": 0.089,
+     "lightness": 0.521,
+     "saturation": 0.497,
+     "top": [
+      {
+       "colour": "#4fc7c0",
+       "share": 0.887
+      },
+      {
+       "colour": "#2b2f3a",
+       "share": 0.069
+      },
+      {
+       "colour": "#fbfbff",
+       "share": 0.021
+      },
+      {
+       "colour": "#17141f",
+       "share": 0.015
+      },
+      {
+       "colour": "#4a1428",
+       "share": 0.005
+      },
+      {
+       "colour": "#5b2238",
+       "share": 0.003
+      }
+     ]
+    },
+    "trianglesPerMetre": 47.91,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.391,
+     "headsTall": 2.64,
+     "hipShare": 0.282,
+     "shoulderShare": 0.278,
+     "widthShare": 1.072
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.391,
+      "triangles": 17232,
+      "joints": 23,
+      "materials": 7
+     }
+    }
+   ]
+  },
+  "bean-tall": {
+   "origin": "gf-three library bodies/bean-tall.glb",
+   "label": "Tall bean",
+   "color": "#a98bff",
+   "describeFull": "procedural tall bean: one tinted body, mitten hands, shoes, big eyes",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "purple",
+       "share": 0.887
+      },
+      {
+       "hue": "blue",
+       "share": 0.065
+      }
+     ],
+     "grey": 0.029,
+     "lightness": 0.721,
+     "saturation": 0.927,
+     "top": [
+      {
+       "colour": "#a98bff",
+       "share": 0.865
+      },
+      {
+       "colour": "#2c2840",
+       "share": 0.065
+      },
+      {
+       "colour": "#fbfbff",
+       "share": 0.029
+      },
+      {
+       "colour": "#17141f",
+       "share": 0.022
+      },
+      {
+       "colour": "#ff8fa8",
+       "share": 0.008
+      },
+      {
+       "colour": "#4a1428",
+       "share": 0.008
+      },
+      {
+       "colour": "#5b2238",
+       "share": 0.004
+      }
+     ]
+    },
+    "trianglesPerMetre": 58.72,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.63,
+     "headsTall": 3.87,
+     "hipShare": 0.343,
+     "shoulderShare": 0.22,
+     "widthShare": 0.996
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.63,
+      "triangles": 15568,
+      "joints": 23,
+      "materials": 8
+     }
+    }
+   ]
+  },
+  "bean-gumdrop": {
+   "origin": "gf-three library bodies/bean-gumdrop.glb",
+   "label": "Gumdrop",
+   "color": "#ffc94a",
+   "describeFull": "procedural gumdrop: one tinted body, mitten hands, shoes, big eyes",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.818
+      },
+      {
+       "hue": "brown",
+       "share": 0.075
+      },
+      {
+       "hue": "grey",
+       "share": 0.044
+      },
+      {
+       "hue": "purple",
+       "share": 0.033
+      }
+     ],
+     "grey": 0.044,
+     "lightness": 0.605,
+     "saturation": 0.91,
+     "top": [
+      {
+       "colour": "#ffc94a",
+       "share": 0.818
+      },
+      {
+       "colour": "#4a3a2c",
+       "share": 0.075
+      },
+      {
+       "colour": "#fbfbff",
+       "share": 0.044
+      },
+      {
+       "colour": "#17141f",
+       "share": 0.033
+      },
+      {
+       "colour": "#4a1428",
+       "share": 0.012
+      },
+      {
+       "colour": "#ff8fa8",
+       "share": 0.012
+      },
+      {
+       "colour": "#5b2238",
+       "share": 0.006
+      }
+     ]
+    },
+    "trianglesPerMetre": 50.92,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.01,
+     "headsTall": 3.03,
+     "hipShare": 0.267,
+     "shoulderShare": 0.582,
+     "widthShare": 1.43
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "height": 1.01,
+      "triangles": 15568,
+      "joints": 23,
+      "materials": 8
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 4,
+   "paletteSize": 4,
+   "families": [
+    {
+     "hue": "purple",
+     "share": 0.238
+    },
+    {
+     "hue": "cyan",
+     "share": 0.23
+    },
+    {
+     "hue": "pink",
+     "share": 0.223
+    },
+    {
+     "hue": "yellow",
+     "share": 0.212
+    },
+    {
+     "hue": "grey",
+     "share": 0.061
+    }
+   ],
+   "lightness": 0.7,
+   "saturation": 0.918,
+   "trianglesPerMetre": 50.92,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "headsTall": 3.38,
+   "hipShare": 0.282,
+   "grey": 0.089
+  },
+  "licenceText": "Made by the kit's own tools from code, with no upstream art (unless an asset names the CC0 texture it was drawn over). Released under CC0 1.0."
+ }
+}

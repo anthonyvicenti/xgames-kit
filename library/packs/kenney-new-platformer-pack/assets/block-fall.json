@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "block-fall",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-fall.png",
+ "sha256": "438bcfd35480cc1c2377e701d63c6d41810856aa26c07269508aa3611d33cb44",
+ "bytes": 4025,
+ "preview": "previews/block-fall.png",
+ "from": "Sprites/Enemies/Double/block_fall.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "block fall",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "fall",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#ee9366",
+     "#2ecc71",
+     "#de7e4f",
+     "#20b860",
+     "#c66a3e",
+     "#46e087",
+     "#ffffff"
+    ],
+    "saturation": 0.51,
+    "value": 0.499,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.421
+     },
+     {
+      "hue": "grey",
+      "share": 0.303
+     },
+     {
+      "hue": "green",
+      "share": 0.269
+     }
+    ],
+    "exact": 131,
+    "grey": 0.303
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "bc27fbab70ef65c47a618b8a10331174ca8e3ce4ce3b32fc46a488a9e2feedc8",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

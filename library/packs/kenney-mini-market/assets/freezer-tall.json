@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "freezer-tall",
+ "pack": "kenney-mini-market",
+ "file": "freezer-tall.glb",
+ "sha256": "0e7ec12f6e34588b9301049db33e12560df0992254c89b8539197036ae38fa8a",
+ "bytes": 17268,
+ "preview": "previews/freezer-tall.png",
+ "from": "kenney:mini-market/freezers-standing; baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a pair of tall glass-door freezers",
+ "tags": [
+  "store",
+  "freezer",
+  "cover",
+  "tall"
+ ],
+ "use": {
+  "size": [
+   2.1,
+   1.89,
+   1.05
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   1.6,
+   2.2
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    2.1,
+    1.89,
+    1.05
+   ],
+   "offset": [
+    0,
+    0.945,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 156,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 156,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17268,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#71778e",
+     "#696f86",
+     "#7f849c",
+     "#353539",
+     "#959cbb",
+     "#abb3d6",
+     "#d5d5e4",
+     "#5e647b"
+    ],
+    "saturation": 0.168,
+    "value": 0.554,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.695
+     },
+     {
+      "hue": "blue",
+      "share": 0.305
+     }
+    ],
+    "grey": 0.695
+   },
+   "trianglesPerMetre": 2.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "0fe103e694d7b9a733d2c1a8dde3fcb15fd355d63aba376aa8d7aa8e752ed9a1",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

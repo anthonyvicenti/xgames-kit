@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "gravestone",
+ "pack": "kaykit-halloween",
+ "file": "gravestone.glb",
+ "sha256": "62b3e316e4fc6ea952bf7190dc5da0fac8447efd52c97ce7bf875edc2ec3260d",
+ "bytes": 12052,
+ "preview": "previews/gravestone.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a rounded gravestone",
+ "tags": [
+  "ruins",
+  "grave",
+  "kaykit",
+  "gravestone"
+ ],
+ "use": {
+  "size": [
+   1.05,
+   1.2,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.525,
+   0,
+   -0.15
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.05,
+    1.2,
+    0.3
+   ],
+   "offset": [
+    0,
+    0.6,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 271,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 271,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 12052,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#798388",
+     "#707a7e",
+     "#889398",
+     "#808b90",
+     "#8e999e",
+     "#687075",
+     "#596065",
+     "#929ea4"
+    ],
+    "saturation": 0.064,
+    "value": 0.506,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 8.33,
+   "texelsPerMetre": 47,
+   "texturedShare": 0.742,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/gravestone.gltf",
+  "sha256": "9c82f5161bdd4f06391f174ef92b82b21f18a6e5a00d386b254ed3cd124f1c21",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

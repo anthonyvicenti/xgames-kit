@@ -1,0 +1,85 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0111",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0111.png",
+ "sha256": "9c5836caee63d8fb88c6ea46fbd1d7d7ed19995f388f6860027400062a5ae728",
+ "bytes": 321,
+ "preview": "previews/tile-0111.png",
+ "from": "Tiles/tile_0111.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the top-left of a stone castle gateway with its portcullis raised (2x2 with tiles 112, 123, 124)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "castle",
+  "gate",
+  "gateway",
+  "arch",
+  "portcullis",
+  "stone",
+  "entrance",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#52607c"
+    ],
+    "saturation": 0.253,
+    "value": 0.45,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.373
+   }
+  }
+ },
+ "source": {
+  "sha256": "5af9d32868dfab9ff81d9f23db0d966c899c5942ebf167cb9d09eba052d1ca8c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

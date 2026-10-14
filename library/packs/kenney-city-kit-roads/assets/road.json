@@ -1,0 +1,104 @@
+{
+ "assetVersion": 1,
+ "id": "road",
+ "pack": "kenney-city-kit-roads",
+ "file": "road.glb",
+ "sha256": "7d3a8ae2367bd899cd11d678ad659701d778baa514ce6f43d22aad568890f6ba",
+ "bytes": 18628,
+ "preview": "previews/road.png",
+ "from": "kenney:city-kit-roads/road-straight; baked to metres (x8), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an 8 m straight two-lane road tile",
+ "tags": [
+  "city",
+  "street",
+  "floor",
+  "path",
+  "road"
+ ],
+ "use": {
+  "size": [
+   8,
+   0.16,
+   8
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 44,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 44,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18628,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#7d829c",
+     "#666b80",
+     "#515566",
+     "#bdc6ee",
+     "#a8b0d3",
+     "#9299b7",
+     "#8e95b3",
+     "#b3bbe0"
+    ],
+    "saturation": 0.176,
+    "value": 0.537,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.875
+     },
+     {
+      "hue": "blue",
+      "share": 0.125
+     }
+    ],
+    "grey": 0.875
+   },
+   "trianglesPerMetre": 0.57,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-roads",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-roads/74288c9459-1787042796/kenney_city-kit-roads.zip",
+  "sha256": "f8f744fb6fc96dedd5ad1f763b550166f2624a3757bf36b4b39969d2e7cacac5",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x8), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

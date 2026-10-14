@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B22",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "voxel-sandbox",
+  "rank": 22,
+  "row": "Voxel sandbox",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a world made of blocks where we can mine, place blocks and build a castle together, and it's still there tomorrow",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "blocks",
+   "type": "world",
+   "must": "a world made of blocks"
+  },
+  {
+   "id": "mine-place",
+   "type": "mechanic",
+   "must": "mining and placing blocks"
+  },
+  {
+   "id": "together",
+   "type": "players",
+   "must": "friends building in the same world"
+  },
+  {
+   "id": "stays",
+   "type": "loop",
+   "must": "the world is still there the next day"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

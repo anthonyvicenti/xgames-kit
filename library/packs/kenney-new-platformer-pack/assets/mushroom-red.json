@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "mushroom-red",
+ "pack": "kenney-new-platformer-pack",
+ "file": "mushroom-red.png",
+ "sha256": "f6d4eaa42f437040faf7d921695936a70236abc77f6e7223c642b0b44171549d",
+ "bytes": 2059,
+ "preview": "previews/mushroom-red.png",
+ "from": "Sprites/Tiles/Double/mushroom_red.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "mushroom red",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "mushroom",
+  "red",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#353541",
+     "#e54341",
+     "#f17575",
+     "#343440",
+     "#353540",
+     "#efc29c",
+     "#f2c8a4",
+     "#f6ceac"
+    ],
+    "saturation": 0.423,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.506
+     },
+     {
+      "hue": "red",
+      "share": 0.435
+     },
+     {
+      "hue": "orange",
+      "share": 0.059
+     }
+    ],
+    "exact": 72,
+    "grey": 0.506
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.892
+   }
+  }
+ },
+ "source": {
+  "sha256": "c2159a3ae5f1f1eea81571d9c0b9f39144cf8e6754a24a865c1aa80080662baa",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

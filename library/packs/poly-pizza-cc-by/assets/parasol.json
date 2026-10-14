@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "parasol",
+ "pack": "poly-pizza-cc-by",
+ "file": "parasol.glb",
+ "sha256": "751409733dfd70926cef57e461a1f403a531d993b3bf9ce44274ba7da0ba5c34",
+ "bytes": 11000,
+ "preview": "previews/parasol.png",
+ "from": "polypizza:2li3sdSkmCI; baked to metres (x3.71342), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red and white beach umbrella",
+ "tags": [
+  "backyard",
+  "plaza",
+  "parasol"
+ ],
+ "use": {
+  "size": [
+   2.107,
+   2.5,
+   1.882
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.08,
+   "height": 2.4,
+   "offset": [
+    0,
+    1.2,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 214,
+  "textures": 0,
+  "materials": 4
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 214,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 11000,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#79909e",
+     "#ffffff",
+     "#f53f30",
+     "#a0a0a0"
+    ],
+    "saturation": 0.319,
+    "value": 0.704,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.717
+     },
+     {
+      "hue": "red",
+      "share": 0.283
+     }
+    ],
+    "grey": 0.717
+   },
+   "trianglesPerMetre": 4.66,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC-BY-3.0",
+  "author": "S. Paul Michael",
+  "url": "https://poly.pizza/m/2li3sdSkmCI",
+  "credit": "\"Red/White Beach Umbrella\" by S. Paul Michael, CC BY 3.0 (https://poly.pizza/m/2li3sdSkmCI)"
+ },
+ "source": {
+  "page": "https://poly.pizza/m/2li3sdSkmCI",
+  "download": "https://static.poly.pizza/6c5af3c4-aa1a-4cd2-b181-be06f6567ccb.glb",
+  "sha256": "04e5db492960a9788e37ae74a368b66456179631f9841679a4d4870a421cc368",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x3.71342), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "S. Paul Michael"
+ }
+}

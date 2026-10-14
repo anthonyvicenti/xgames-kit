@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-grass",
+ "pack": "forge-world",
+ "file": "world-night-grass.png",
+ "sha256": "e0bae58a872b77df810269aa99fd0ec79a4955d004f218b9f8b23d94db337f83",
+ "bytes": 65379,
+ "preview": "previews/world-night-grass.png",
+ "from": "research/gf-forge/library/tools/world.mjs; the photo resized to 256 × 256 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 40 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dark blue-green grass and litter, mottled; tiles; 8 m across at 32 texels a metre",
+ "tags": [
+  "texture",
+  "night",
+  "grass",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#243529",
+     "#293730",
+     "#243625",
+     "#273a2d",
+     "#263827",
+     "#223223",
+     "#233827",
+     "#223523"
+    ],
+    "saturation": 0.219,
+    "value": 0.184,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.502
+     },
+     {
+      "hue": "green",
+      "share": 0.495
+     }
+    ],
+    "exact": 256,
+    "grey": 0.502
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.939
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "the photo resized to 256 × 256 px as the middle of a 3 × 3 tiling (it still tiles), its mean moved to a night colour, stepped to 40 colours (palette PNG, no dither)",
+  "author": "games.fun over Rob Tuytel (Poly Haven)"
+ }
+}

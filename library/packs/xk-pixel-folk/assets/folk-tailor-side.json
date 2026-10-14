@@ -1,0 +1,120 @@
+{
+ "assetVersion": 1,
+ "id": "folk-tailor-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-tailor-side.png",
+ "sha256": "dc36199dcd36845cab8367c66a38ff3e9ccaf3e2d6df3aa6dca2e193d9df7dab",
+ "bytes": 1832,
+ "preview": "previews/folk-tailor-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-tailor-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a tailor in a plum dress, a brown bob; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "tailor",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#7a4a2a",
+     "#a04a6a",
+     "#eeb88f",
+     "#542e4d",
+     "#452e37",
+     "#7c4232",
+     "#7a3c5c",
+     "#9f7956"
+    ],
+    "saturation": 0.398,
+    "value": 0.397,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.3
+     },
+     {
+      "hue": "brown",
+      "share": 0.255
+     },
+     {
+      "hue": "orange",
+      "share": 0.203
+     },
+     {
+      "hue": "grey",
+      "share": 0.14
+     },
+     {
+      "hue": "purple",
+      "share": 0.06
+     },
+     {
+      "hue": "red",
+      "share": 0.042
+     }
+    ],
+    "exact": 22,
+    "grey": 0.14
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.867
+   }
+  }
+ },
+ "source": {
+  "sha256": "d4fc19d310a843f0166b26a2c94a454904ad06d3a6bfff19234cd249eceb7d41",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "street-light",
+ "pack": "kenney-city-kit-roads",
+ "file": "street-light.glb",
+ "sha256": "e5ffe9f4cac347d5741fe1f1041f482ddea03bb90c3224de8dd8f3a198de661f",
+ "bytes": 19360,
+ "preview": "previews/street-light.png",
+ "from": "kenney:city-kit-roads/light-curved; baked to metres (x6.66667), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a curved modern street light",
+ "tags": [
+  "plaza",
+  "lamp",
+  "light",
+  "street"
+ ],
+ "use": {
+  "size": [
+   0.333,
+   4.5,
+   1.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "light": {
+   "at": [
+    0,
+    4.25,
+    0.62
+   ],
+   "range": 1
+  },
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.12,
+   "height": 4.5,
+   "offset": [
+    0,
+    2.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 92,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 92,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19360,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#99a0c0",
+     "#a6aed0",
+     "#949bb9",
+     "#9ba3c3",
+     "#9aa1c1",
+     "#a9b0d3",
+     "#bdc6ee",
+     "#bbc4eb"
+    ],
+    "saturation": 0.315,
+    "value": 0.74,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.932
+     },
+     {
+      "hue": "grey",
+      "share": 0.068
+     }
+    ],
+    "grey": 0.068
+   },
+   "trianglesPerMetre": 4.53,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-roads",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-roads/74288c9459-1787042796/kenney_city-kit-roads.zip",
+  "sha256": "154dcce9d58ec2cd165e26c91a89c97bdd2838cf06d255099b3570df84f82ec6",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x6.66667), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

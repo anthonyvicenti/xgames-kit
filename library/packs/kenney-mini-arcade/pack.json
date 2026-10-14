@@ -1,0 +1,76 @@
+{
+ "packVersion": 1,
+ "id": "kenney-mini-arcade",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Mini Arcade (1.2)",
+ "describe": "Kenney's mini arcade: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/mini-arcade",
+  "file": "library/packs/kenney-mini-arcade/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/mini-arcade",
+  "download": "https://kenney.nl/media/pages/assets/mini-arcade/ece1e8f320-1721638600/kenney_mini-arcade.zip",
+  "sha256": "2acfe5cb44d392e834f77cf5488528c7cd45427cdf5fb941ce99856276158c19",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 17,
+   "hues": [
+    "#656a82",
+    "#5a6078",
+    "#71778e",
+    "#7f849c",
+    "#f16544",
+    "#6d738a",
+    "#51bb83",
+    "#48b27f",
+    "#e65f48",
+    "#e25d49",
+    "#7c8199",
+    "#797e96"
+   ],
+   "saturation": 0.324,
+   "value": 0.569,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.589
+    },
+    {
+     "hue": "blue",
+     "share": 0.144
+    },
+    {
+     "hue": "red",
+     "share": 0.127
+    },
+    {
+     "hue": "green",
+     "share": 0.106
+    }
+   ],
+   "grey": 0.62
+  },
+  "trianglesPerMetre": 5.88,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 2,
+ "validators": [
+  "budget"
+ ]
+}

@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "noise-soft",
+ "pack": "kit-textures",
+ "file": "noise-soft.png",
+ "sha256": "97e41fef593591ed84801536492b536b48402057a7017982453c905dc688114f",
+ "bytes": 128523,
+ "preview": "previews/noise-soft.png",
+ "from": "research/gf-three/lookdev/tools/bake-textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "noise soft pattern",
+ "tags": [
+  "noise",
+  "soft",
+  "ground",
+  "pattern",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1322,
+    "hues": [
+     "#828380",
+     "#886e80",
+     "#5c9080",
+     "#b5907a",
+     "#976f79",
+     "#af8380",
+     "#768380",
+     "#808678"
+    ],
+    "saturation": 0.328,
+    "value": 0.509,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.264
+     },
+     {
+      "hue": "green",
+      "share": 0.137
+     },
+     {
+      "hue": "cyan",
+      "share": 0.111
+     },
+     {
+      "hue": "purple",
+      "share": 0.095
+     },
+     {
+      "hue": "blue",
+      "share": 0.086
+     },
+     {
+      "hue": "yellow",
+      "share": 0.084
+     },
+     {
+      "hue": "pink",
+      "share": 0.077
+     },
+     {
+      "hue": "orange",
+      "share": 0.068
+     },
+     {
+      "hue": "red",
+      "share": 0.06
+     }
+    ],
+    "exact": 64684,
+    "grey": 0.264
+   },
+   "outline": {
+    "present": false,
+    "share": 0.019
+   }
+  }
+ },
+ "licence": {
+  "spdx": "LicenseRef-Own",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)"
+ }
+}

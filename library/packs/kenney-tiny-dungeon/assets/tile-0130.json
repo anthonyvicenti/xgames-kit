@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0130",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0130.png",
+ "sha256": "0e878637cdef85bdc5b41d769050a0d5c3abbdbd8cd6ed672cdfc521929b9b9c",
+ "bytes": 224,
+ "preview": "previews/tile-0130.png",
+ "from": "Tiles/tile_0130.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a crooked wooden staff tipped with a blue crystal",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "staff",
+  "wand",
+  "magic",
+  "blue",
+  "crystal",
+  "weapon",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#75e3ff",
+     "#eaa56c",
+     "#763b36"
+    ],
+    "saturation": 0.353,
+    "value": 0.306,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.709
+     },
+     {
+      "hue": "orange",
+      "share": 0.2
+     },
+     {
+      "hue": "cyan",
+      "share": 0.073
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "a61e8a3fe7e1e6f192d6b6452852274a02768c20a45ef6afa48ec80908a39185",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

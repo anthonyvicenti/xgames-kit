@@ -1,0 +1,79 @@
+{
+ "assetVersion": 1,
+ "id": "tile-soil",
+ "pack": "xk-pixel-town",
+ "file": "tile-soil.png",
+ "sha256": "18f369541671666a32aba71fdc3c9ee67374cb68de4ae8bbce7a797c409af608",
+ "bytes": 169,
+ "preview": "previews/tile-soil.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tile-soil.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "tilled soil tile, dark furrows",
+ "tags": [
+  "pixel",
+  "soil",
+  "farm",
+  "field",
+  "crops",
+  "tile"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#62402a",
+     "#93673f",
+     "#7a5134",
+     "#4e2f1e"
+    ],
+    "saturation": 0.409,
+    "value": 0.313,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 1
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.3
+   }
+  }
+ },
+ "source": {
+  "sha256": "96fbbd53919f62dee9490325370ab80f1fa9bea7e0076c4e8b7b744432f0035f",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

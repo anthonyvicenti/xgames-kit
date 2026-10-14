@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0104",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0104.png",
+ "sha256": "5695e97dbfd63f425070b8f63804cde6941c49bd7bc0d69d891c0591c3787c19",
+ "bytes": 367,
+ "preview": "previews/tile-0104.png",
+ "from": "Tiles/tile_0104.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a round stone well full of blue water, seen from the front (tile 92 is its roof above)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "well",
+  "water",
+  "stone",
+  "blue",
+  "village",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#3d212d",
+     "#8c9cb5",
+     "#763b36",
+     "#009adc",
+     "#c1ccdd",
+     "#eaa56c",
+     "#bd6c4a",
+     "#eba66c"
+    ],
+    "saturation": 0.436,
+    "value": 0.454,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.283
+     },
+     {
+      "hue": "pink",
+      "share": 0.276
+     },
+     {
+      "hue": "orange",
+      "share": 0.185
+     },
+     {
+      "hue": "red",
+      "share": 0.138
+     },
+     {
+      "hue": "cyan",
+      "share": 0.118
+     }
+    ],
+    "exact": 11,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.69
+   }
+  }
+ },
+ "source": {
+  "sha256": "3befce5d6373d4315f35eeed22752bb1cf7a2ab5d008ce26dd6b4aebbb278978",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

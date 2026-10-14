@@ -1,0 +1,26 @@
+node_modules/
+# Games you make live here and stay out of the kit's history (each game can be its own repo).
+/games/*
+!/games/README.md
+# Local state: dev-server ports, signer sessions, throwaway devnet keys, caches.
+.gamesfun/
+*.keypair.json
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+# Playwright's own browsers, if someone points the cache here
+ms-playwright/
+# What the by-hand devnet proofs write (records of a run, not fixtures)
+/tests/web3/devnet/*.json
+/tests/web3/devnet/shots-real-game/
+# the look judge's fetched sheet packs and scratch games (builder/look-judge/kind-sheet.mjs makes them again)
+/.cache/
+# the tiles each kind's contact sheet is made from (made again with the sheet)
+/kinds/sheets/tiles/
+# Eval records stay out of git (a pass is frozen in place; the person keeps them). Private inputs live outside the repo (XGK_EVAL_PRIVATE).
+/evals/records/
+# the 3D tools' packages while they install (builder/lib/char-deps.mjs: a folder per installer, moved into place whole)
+/builder/tools/lib/char-deps/.stage-*/
+/builder/tools/lib/char-deps/.installing/

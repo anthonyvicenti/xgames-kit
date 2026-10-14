@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "dead-quiver-trunk",
+ "pack": "vista-core-world",
+ "file": "dead-quiver-trunk.glb",
+ "sha256": "19a89e0b97270d816555cfe39f3c45a8cfd1452e77c41822219f0947b7d96f3c",
+ "bytes": 128644,
+ "preview": "previews/dead-quiver-trunk.png",
+ "from": "Poly Haven scan, decimated to three LODs by the core's tools",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a scanned dead quiver tree trunk (geometry only, three levels of detail)",
+ "tags": [
+  "shore",
+  "debris",
+  "driftwood",
+  "beach",
+  "scan",
+  "dead",
+  "quiver",
+  "trunk"
+ ],
+ "use": {
+  "size": [
+   1.995,
+   0.309,
+   0.275
+  ],
+  "origin": "feet"
+ },
+ "budgets": {
+  "triangles": 4859,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 4859,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 128644,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 39.44,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Poly Haven",
+  "url": "https://polyhaven.com/a/dead_quiver_trunk"
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/dead_quiver_trunk",
+  "author": "Poly Haven"
+ }
+}

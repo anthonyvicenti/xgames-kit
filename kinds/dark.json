@@ -1,0 +1,109 @@
+{
+  "id": "dark",
+  "label": "Dark",
+  "feel": "Grim fantasy at night: moonlit ruins, embers and ash, firelight that pools and flickers, square retro texels and grain, bone-white skeletons with lit eyes, and a printed serif HUD.",
+  "references": [
+    "Elden Ring Nightreign", "Dark and Darker", "Darkest Dungeon II",
+    "a private reference game (first-person co-op, grim)"
+  ],
+  "changesPlay": false,
+  "look": {
+    "forge": {
+      "preset": "moonlit-ruins",
+      "alternates": [
+        { "preset": "ember-crypt", "why": "underground: fire and ember light, no moon" },
+        { "preset": "ash-storm", "why": "ash in the air, a red sky, low sun" },
+        { "preset": "gaslit-street", "why": "a town at night under gas lamps" }
+      ],
+      "values": {}
+    },
+    "three": { "profile": "scenic-3d", "preset": "night-ruins", "time": "night" }
+  },
+  "world": {
+    "family": "ruins",
+    "forge": { "default": "ruins", "templates": ["ruins", "town-street"] },
+    "three": { "templates": ["ruins", "dungeon"] }
+  },
+  "camera": {
+    "default": "first",
+    "forge": { "fov": 72, "notes": "first person with weight (head bob, recoil, the arms and the held weapon)" }
+  },
+  "bodies": {
+    "set": "grim",
+    "forge": ["player-knight", "player-hooded"],
+    "enemies": ["skeleton-warrior", "skeleton-rogue", "skeleton-caster", "skeleton-champion", "skeleton-grunt"],
+    "physics": "animated, pieces on a kill",
+    "notes": "Public bodies from the KayKit packs. The forge library's hunters and grim skeletons are the owner's paid generations (LicenseRef-Meshy-Paid): a game may use them, the public library does not hold them; the sheet's lookdev scene draws them."
+  },
+  "props": {
+    "forge": [
+      "arch", "gravestone", "grave-a", "fence-broken", "post-lantern", "shrine", "tree-dead-large", "ribcage",
+      "brazier", "wall-broken"
+    ]
+  },
+  "audio": {
+    "character": "heavy and close: crunching hits, low drones, fire crackle; forge's own sound set on gf-audio",
+    "sounds": {
+      "hit": { "preset": "hit-crunch", "pitch": 0.8 },
+      "hurt": { "preset": "hurt", "pitch": 0.8 },
+      "explode": { "preset": "explosion-big", "pitch": 0.8 }
+    },
+    "library": "forge-sounds (the asset library pack)",
+    "ambient": { "preset": "wind-loop", "pitch": 0.7, "gainDb": -6 },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": { "theme": "grim" },
+  "mechanics": {
+    "suggested": ["waves", "melee", "health", "boss", "loot"],
+    "why": "holding a ruin against waves with a boss at the end. Suggestions only."
+  },
+  "packs": [
+    "forge-world", "forge-props", "forge-town", "forge-textures-night", "forge-fx", "kaykit-halloween",
+    "kaykit-skeletons", "kaykit-adventurers", "forge-sounds", "ofl-grenze"
+  ],
+  "runtimes": {
+    "forge": {
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "ruin-hold, the forge minimal example, passes all six gates (23 of 23 measures) on moonlit-ruins with the free stand-ins alone",
+            "ref": "examples/minimal/ruin-hold",
+            "date": "2026-10-13"
+          },
+          {
+            "what": "the look judge's contact sheet for dark, rendered on the graphics card (its only check)",
+            "ref": "kinds/sheets/dark.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    },
+    "three": {
+      "profile": "scenic-3d",
+      "state": {
+        "exists": true,
+        "tested": false,
+        "open": true,
+        "note": "the scenic night-ruins look exists; no grim game on it yet"
+      },
+      "toProve": "a grim game on scenic-3d"
+    }
+  },
+  "sheet": { "runtime": "forge", "preset": "moonlit-ruins" },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for dark, rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/dark.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

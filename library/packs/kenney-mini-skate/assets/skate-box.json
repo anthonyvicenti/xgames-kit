@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "skate-box",
+ "pack": "kenney-mini-skate",
+ "file": "skate-box.glb",
+ "sha256": "564d3bd1944094c8d9d5f247999a7a4da237c6bce5c00b2b68b73881d1ee9204",
+ "bytes": 14288,
+ "preview": "previews/skate-box.png",
+ "from": "kenney:mini-skate/obstacle-box; baked to metres (x3.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skate box obstacle",
+ "tags": [
+  "arena",
+  "plaza",
+  "cover",
+  "skate",
+  "box"
+ ],
+ "use": {
+  "size": [
+   3.5,
+   0.7,
+   3.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    3.5,
+    0.7,
+    3.5
+   ],
+   "offset": [
+    0,
+    0.35,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 28,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 28,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14288,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#646a81",
+     "#99a0c0",
+     "#5d637b",
+     "#a0a8c9",
+     "#de875f",
+     "#7c8198",
+     "#7e849b"
+    ],
+    "saturation": 0.185,
+    "value": 0.522,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.677
+     },
+     {
+      "hue": "blue",
+      "share": 0.281
+     },
+     {
+      "hue": "orange",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.677
+   },
+   "trianglesPerMetre": 1.04,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-skate",
+  "download": "https://kenney.nl/media/pages/assets/mini-skate/00b0c2b304-1709221152/kenney_mini-skate.zip",
+  "sha256": "4c7d92d5860792b48312846cf2057f07ac238ddd2ef546c0844b4bb37977d915",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x3.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

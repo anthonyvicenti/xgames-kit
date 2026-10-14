@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-railings",
+ "pack": "forge-town",
+ "file": "town-town-railings.png",
+ "sha256": "8c9d6a78070b9b5bd66be174cd6cf130c2c0d2540d493dc0dd8dfedf516f9393",
+ "bytes": 1113,
+ "preview": "previews/town-town-railings.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "iron railings: upright bars with spear tips, two rails, rust (drawn; alpha between the bars); 3 m across",
+ "tags": [
+  "texture",
+  "town",
+  "railings"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0.693
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#2e2e34",
+     "#222226",
+     "#543628"
+    ],
+    "saturation": 0.089,
+    "value": 0.182,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.901
+     },
+     {
+      "hue": "brown",
+      "share": 0.099
+     }
+    ],
+    "exact": 3,
+    "grey": 0.901
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

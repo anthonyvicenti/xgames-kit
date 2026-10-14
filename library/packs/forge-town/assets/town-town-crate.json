@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-crate",
+ "pack": "forge-town",
+ "file": "town-town-crate.png",
+ "sha256": "aaf646561ad1f21c466d288ced30ba0584497c3b547067ffc3d026e5e56efa50",
+ "bytes": 645,
+ "preview": "previews/town-town-crate.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 32 × 32 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 12 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a crate's face: a frame of battens round boards, a brace corner to corner, nails (drawn)",
+ "tags": [
+  "texture",
+  "town",
+  "crate"
+ ],
+ "use": {
+  "texelsPerMetre": 35.556,
+  "tile": false,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#533e28",
+     "#58412b",
+     "#563f29",
+     "#70563a",
+     "#6c5338",
+     "#4f3b27",
+     "#5b442c",
+     "#74593c"
+    ],
+    "saturation": 0.333,
+    "value": 0.272,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.992
+     }
+    ],
+    "exact": 16,
+    "grey": 0.008
+   },
+   "texelsPerMetre": 35.556,
+   "outline": {
+    "present": false,
+    "share": 0.121
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 32 × 32 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 12 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,137 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-greatsword",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-greatsword.glb",
+ "sha256": "5bbdb8aa5ee92dcf5addccb23f33d005abdce0a2244a3445d1d2564f197a0f7e",
+ "bytes": 48024,
+ "preview": "previews/kaykit-greatsword.png",
+ "from": "sword_2handed.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight 2H_Sword (handslot.r)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a two-handed greatsword",
+ "tags": [
+  "weapon",
+  "sword",
+  "greatsword",
+  "melee",
+  "two-handed",
+  "heavy",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.629,
+   1.774,
+   0.186
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "real": [
+   1.1,
+   1.7
+  ],
+  "min": [
+   -0.315,
+   -0.301,
+   -0.093
+  ],
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 2,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 412,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 412,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 48024,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#9facb1",
+     "#9aa7ad",
+     "#9ca9af",
+     "#96a3a9",
+     "#6f787c",
+     "#6e767a",
+     "#8c979c",
+     "#9b5a45"
+    ],
+    "saturation": 0.164,
+    "value": 0.547,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.773
+     },
+     {
+      "hue": "orange",
+      "share": 0.114
+     },
+     {
+      "hue": "brown",
+      "share": 0.069
+     },
+     {
+      "hue": "red",
+      "share": 0.041
+     }
+    ],
+    "grey": 0.773
+   },
+   "trianglesPerMetre": 20.63,
+   "texelsPerMetre": 147,
+   "texturedShare": 0.832,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/sword_2handed.gltf",
+  "sha256": "0f67613f6233d637be60cb27e320dd3b855b73d1ca0249df46999f68efb05494",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight 2H_Sword (handslot.r)"
+ }
+}

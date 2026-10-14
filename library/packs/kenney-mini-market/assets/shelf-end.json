@@ -1,0 +1,128 @@
+{
+ "assetVersion": 1,
+ "id": "shelf-end",
+ "pack": "kenney-mini-market",
+ "file": "shelf-end.glb",
+ "sha256": "3b309b34689ee1bcc00674107e17666be01eedc69418e5bc249bef25b031a9d8",
+ "bytes": 21084,
+ "preview": "previews/shelf-end.png",
+ "from": "kenney:mini-market/shelf-end; baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a supermarket end-cap display",
+ "tags": [
+  "store",
+  "shelf",
+  "end"
+ ],
+ "use": {
+  "size": [
+   1.68,
+   2.205,
+   0.84
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   1.4,
+   2.4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.68,
+    2.205,
+    0.84
+   ],
+   "offset": [
+    0,
+    1.103,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 362,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 362,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21084,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 19,
+    "hues": [
+     "#a6add0",
+     "#9198b6",
+     "#7c8199",
+     "#b977e9",
+     "#ca77eb",
+     "#319a74",
+     "#48b27f",
+     "#7f849c"
+    ],
+    "saturation": 0.336,
+    "value": 0.66,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.573
+     },
+     {
+      "hue": "grey",
+      "share": 0.241
+     },
+     {
+      "hue": "purple",
+      "share": 0.089
+     },
+     {
+      "hue": "cyan",
+      "share": 0.04
+     },
+     {
+      "hue": "green",
+      "share": 0.04
+     }
+    ],
+    "grey": 0.241
+   },
+   "trianglesPerMetre": 4.48,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "9a6f4528ae127689d538de0fa45c07f58538c8572a1b858cc5e40caceb7d2c69",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0096",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0096.png",
+ "sha256": "052bf8d74b13ba7bc6a353bc8ab3249a1646f54dc0be920ff7147119b55c9f68",
+ "bytes": 239,
+ "preview": "previews/tile-0096.png",
+ "from": "Tiles/tile_0096.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the north-west corner of a stone castle tower top: crenellated rim around a pale stone floor (3x3 set)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "castle",
+  "tower",
+  "battlements",
+  "crenellations",
+  "stone",
+  "rampart",
+  "corner",
+  "corner-outer-nw"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#c0cbdc",
+     "#3f2631",
+     "#8b9bb4",
+     "#5a6988"
+    ],
+    "saturation": 0.256,
+    "value": 0.572,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.711
+     },
+     {
+      "hue": "pink",
+      "share": 0.289
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.552
+   }
+  }
+ },
+ "source": {
+  "sha256": "c62b7cd4a8397dc1d7be794246ee5a05aefef46ae320db1cf1aa9d2e752899ed",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

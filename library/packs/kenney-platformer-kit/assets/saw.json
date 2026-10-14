@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "saw",
+ "pack": "kenney-platformer-kit",
+ "file": "saw.glb",
+ "sha256": "a692041b3d6d498fd2722edba9f80895ff93989c306e991b432e29b73fd1a8c2",
+ "bytes": 20832,
+ "preview": "previews/saw.png",
+ "from": "kenney:platformer-kit/saw; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a spinning saw blade on a base",
+ "tags": [
+  "arena",
+  "hazard",
+  "saw"
+ ],
+ "use": {
+  "size": [
+   1.587,
+   1.587,
+   0.607
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.587,
+    1.587,
+    0.607
+   ],
+   "offset": [
+    0,
+    0.793,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 128,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 128,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20832,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#7b7f94",
+     "#7d8197",
+     "#a8b0d3",
+     "#8389a4",
+     "#b7c0e6",
+     "#81859b",
+     "#7a7e93",
+     "#7f8398"
+    ],
+    "saturation": 0.2,
+    "value": 0.617,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.621
+     },
+     {
+      "hue": "blue",
+      "share": 0.379
+     }
+    ],
+    "grey": 0.621
+   },
+   "trianglesPerMetre": 5.3,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "1ad078d8154ff90cc3e57175d971ddbdfc839fcc158f4aa6b26d28e7e0b1839d",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

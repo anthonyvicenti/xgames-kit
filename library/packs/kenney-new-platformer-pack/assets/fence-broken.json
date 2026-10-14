@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "fence-broken",
+ "pack": "kenney-new-platformer-pack",
+ "file": "fence-broken.png",
+ "sha256": "e50482c6d4fb325e163befcd01e3dfedec71f6b05b5f52853be3b50f28866207",
+ "bytes": 1693,
+ "preview": "previews/fence-broken.png",
+ "from": "Sprites/Tiles/Double/fence_broken.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "fence broken",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "fence",
+  "broken",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#bd6341",
+     "#9f5438",
+     "#fa9f72",
+     "#353540",
+     "#df8051",
+     "#ef9264"
+    ],
+    "saturation": 0.468,
+    "value": 0.458,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.675
+     },
+     {
+      "hue": "grey",
+      "share": 0.319
+     }
+    ],
+    "exact": 45,
+    "grey": 0.319
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.844
+   }
+  }
+ },
+ "source": {
+  "sha256": "6708e100573b653870ae60c71f1e977046a989417d14528b2b0535509d59a637",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "folk-elder-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-elder-top.png",
+ "sha256": "42f601e03836d5c0dfb0f80ea965b3c4c06f5445d40e56ff886cb4427232138a",
+ "bytes": 4296,
+ "preview": "previews/folk-elder-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-elder-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "an elder in a purple cardigan, grey hair at the sides and a grey beard; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "elder",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 16,
+    "hues": [
+     "#f7cdb0",
+     "#7a5aa0",
+     "#c9c6d8",
+     "#473461",
+     "#8a4a3c",
+     "#3c3445",
+     "#5d5a52",
+     "#605872"
+    ],
+    "saturation": 0.321,
+    "value": 0.52,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.482
+     },
+     {
+      "hue": "purple",
+      "share": 0.228
+     },
+     {
+      "hue": "orange",
+      "share": 0.193
+     },
+     {
+      "hue": "brown",
+      "share": 0.091
+     }
+    ],
+    "exact": 23,
+    "grey": 0.482
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.539
+   }
+  }
+ },
+ "source": {
+  "sha256": "8d6170a5065f142ee3675dd7a52ea802dc7f2e77133cd5e7e9cfebab716dfd4e",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

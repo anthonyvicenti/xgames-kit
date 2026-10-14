@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "house-red",
+ "pack": "xk-pixel-town",
+ "file": "house-red.png",
+ "sha256": "75f1667bf125b17ee08ec6774286bb02924d18e57ec50e11981d7861de953219",
+ "bytes": 1362,
+ "preview": "previews/house-red.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): house-red.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a cottage with a red shingle roof, a door and two windows, 5 m across",
+ "tags": [
+  "pixel",
+  "house",
+  "cottage",
+  "home",
+  "building",
+  "set-piece",
+  "red"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 96
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#dacab2",
+     "#cc6748",
+     "#b04c3c",
+     "#6e2a2a",
+     "#8e3a32",
+     "#e08a5e",
+     "#7a4a2a",
+     "#7a4428"
+    ],
+    "saturation": 0.437,
+    "value": 0.527,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.467
+     },
+     {
+      "hue": "red",
+      "share": 0.345
+     },
+     {
+      "hue": "brown",
+      "share": 0.103
+     },
+     {
+      "hue": "grey",
+      "share": 0.052
+     }
+    ],
+    "exact": 32,
+    "grey": 0.052
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.566
+   }
+  }
+ },
+ "source": {
+  "sha256": "e144b8ad94dc53a4cc8cb112c4227d133861ac57bc950a21ab9748f3b60bea4c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

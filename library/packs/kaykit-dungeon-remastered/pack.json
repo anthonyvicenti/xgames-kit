@@ -1,0 +1,73 @@
+{
+ "packVersion": 1,
+ "id": "kaykit-dungeon-remastered",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "KayKit Dungeon Remastered 1.0",
+ "describe": "KayKit Dungeon Remastered 1.0: chunky stylised low-poly with one shared texture per set.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kay Lousberg (www.kaylousberg.com)",
+  "url": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "file": "library/packs/kaykit-dungeon-remastered/LICENSE.txt"
+ },
+ "source": {
+  "kind": "git",
+  "repo": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0",
+  "commit": "b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07",
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "rebuild": "the old kit's scenic art tool (art-kaykit.mjs --fetch) or the forge library tools: KayKit units x 0.75 = metres"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 9,
+   "hues": [
+    "#7a8388",
+    "#958d84",
+    "#838e93",
+    "#7f8a8f",
+    "#7b8589",
+    "#887e77",
+    "#596064",
+    "#8c837b",
+    "#4b5256",
+    "#978e85",
+    "#4e5559",
+    "#5c4f47"
+   ],
+   "saturation": 0.124,
+   "value": 0.476,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.694
+    },
+    {
+     "hue": "orange",
+     "share": 0.173
+    },
+    {
+     "hue": "brown",
+     "share": 0.077
+    }
+   ],
+   "grey": 0.939
+  },
+  "trianglesPerMetre": 5.37,
+  "texelsPerMetre": 56,
+  "texturedShare": 0.649,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 68,
+ "validators": [
+  "budget",
+  "picture-check"
+ ]
+}

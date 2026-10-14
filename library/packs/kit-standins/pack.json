@@ -1,0 +1,69 @@
+{
+ "packVersion": 1,
+ "id": "kit-standins",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Kit stand-in models",
+ "describe": "Simple models the kit starts a game with before the creator picks art: a ball, a slide, a bench, a crate, caps.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/kit-standins/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 2,
+   "hues": [
+    "#4f7cff",
+    "#e8483f",
+    "#c98b55",
+    "#3a5fd0",
+    "#d9a066",
+    "#ff7a59",
+    "#8a5a3a",
+    "#ffd166",
+    "#4a4a55",
+    "#ffffff"
+   ],
+   "saturation": 0.823,
+   "value": 0.613,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.368
+    },
+    {
+     "hue": "red",
+     "share": 0.256
+    },
+    {
+     "hue": "orange",
+     "share": 0.256
+    },
+    {
+     "hue": "brown",
+     "share": 0.053
+    }
+   ],
+   "grey": 0.028
+  },
+  "trianglesPerMetre": 40.87,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 6,
+ "validators": [
+  "budget"
+ ]
+}

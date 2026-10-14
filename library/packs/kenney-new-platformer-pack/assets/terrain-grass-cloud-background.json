@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-cloud-background",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-cloud-background.png",
+ "sha256": "13b85a04fbd7aaaa9ca9bf9c15dc3b6cbba9e5238938d1f5bd6b16eaf10ca0c7",
+ "bytes": 3229,
+ "preview": "previews/terrain-grass-cloud-background.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_cloud_background.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass cloud background tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "cloud",
+  "background",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#ee9366",
+     "#353541",
+     "#2ecc71",
+     "#c66a3e",
+     "#46e087",
+     "#20b860",
+     "#25bf66"
+    ],
+    "saturation": 0.609,
+    "value": 0.525,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.597
+     },
+     {
+      "hue": "green",
+      "share": 0.262
+     },
+     {
+      "hue": "grey",
+      "share": 0.134
+     }
+    ],
+    "exact": 111,
+    "grey": 0.134
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.248
+   }
+  }
+ },
+ "source": {
+  "sha256": "30765f0567fcc9dedb961330a99380ad3134a4d83328295316e2d9bd8c85550a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

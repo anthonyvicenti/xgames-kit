@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "path-stones",
+ "pack": "kenney-city-kit-suburban",
+ "file": "path-stones.glb",
+ "sha256": "aca990852d337f2c95b13c14425eb8bce1afd5260938e55fde2775f945eb66bd",
+ "bytes": 20396,
+ "preview": "previews/path-stones.png",
+ "from": "kenney:city-kit-suburban/path-stones-long; baked to metres (x4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stepping stones for a garden path",
+ "tags": [
+  "backyard",
+  "path",
+  "decor",
+  "stones"
+ ],
+ "use": {
+  "size": [
+   0.56,
+   0.04,
+   1.6
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 48,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 48,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20396,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#626880",
+     "#747990",
+     "#6a7087"
+    ],
+    "saturation": 0.123,
+    "value": 0.474,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 5.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "cbd73ca5746f2290f44a2e1fc6f0759076c2c5fcdb3cb3f1e3acd74d5751d114",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

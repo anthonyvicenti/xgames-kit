@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-cobble",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-cobble.png",
+ "sha256": "82974719a6f1226942368c493d94f786516ea9e82230d3703c24204e08df1795",
+ "bytes": 45838,
+ "preview": "previews/voxel-cobble.png",
+ "from": "kenney:voxel-pack/greystone; PNG/Tiles/greystone.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1120,380; mean difference 4.9 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "greystone (Voxel Pack)",
+ "tags": [
+  "cobble",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.021
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#5f7374",
+     "#677c7e",
+     "#6c8385",
+     "#5b6f70",
+     "#667b7d",
+     "#657a7c",
+     "#5e7273",
+     "#5a6e6f"
+    ],
+    "saturation": 0.101,
+    "value": 0.436,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 276,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "af60d1ce96647777280f803321019431950543b7fffbf3c010b129b767d0825b",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

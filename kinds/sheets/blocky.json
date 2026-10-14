@@ -1,0 +1,136 @@
+{
+ "tool": "builder/look-judge/kind-sheet.mjs",
+ "kind": "blocky",
+ "runtime": "three/standard-3d",
+ "made": "2026-10-14T02:14:25.560Z",
+ "size": [
+  1280,
+  720
+ ],
+ "chrome": "148.0.7778.96",
+ "tiles": [
+  {
+   "name": "world",
+   "file": "tiles/blocky/world.png",
+   "info": {
+    "shot": "world",
+    "world": "voxel",
+    "bodies": [
+     "blocky-classic",
+     "blocky-cap",
+     "blocky-tall",
+     "blocky-chunky"
+    ],
+    "height": 1.85,
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 7.757,
+     "calls": 484,
+     "triangles": 435788,
+     "programs": 33,
+     "geometries": 353,
+     "textures": 71,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hero",
+   "file": "tiles/blocky/hero.png",
+   "info": {
+    "shot": "hero",
+    "world": "voxel",
+    "bodies": [
+     "blocky-classic"
+    ],
+    "height": 1.85,
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 3.753,
+     "calls": 345,
+     "triangles": 327906,
+     "programs": 30,
+     "geometries": 262,
+     "textures": 48,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "bodies",
+   "file": "tiles/blocky/bodies.png",
+   "info": {
+    "shot": "bodies",
+    "world": "voxel",
+    "bodies": [
+     "blocky-classic",
+     "blocky-cap",
+     "blocky-tall",
+     "blocky-chunky"
+    ],
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 4.071,
+     "calls": 412,
+     "triangles": 360684,
+     "programs": 31,
+     "geometries": 308,
+     "textures": 69,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "props",
+   "file": "tiles/blocky/props.png",
+   "info": {
+    "shot": "props",
+    "world": "voxel",
+    "props": [
+     "flag",
+     "barrel",
+     "block-hex",
+     "crate",
+     "trophy",
+     "star",
+     "coin",
+     "key",
+     "jewel",
+     "platform"
+    ],
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 6.828,
+     "calls": 383,
+     "triangles": 372568,
+     "programs": 29,
+     "geometries": 294,
+     "textures": 51,
+     "quality": "high",
+     "preset": "toon-lowpoly",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hud",
+   "file": "tiles/blocky/hud.png",
+   "info": {
+    "font": true
+   },
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "sheet": "blocky.png"
+}

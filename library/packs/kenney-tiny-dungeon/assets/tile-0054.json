@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0054",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0054.png",
+ "sha256": "27625bdd676c22376aeab23731d5c0fe049c5b6e1cf3b54e2093de83bcd387c8",
+ "bytes": 252,
+ "preview": "previews/tile-0054.png",
+ "from": "Tiles/tile_0054.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a grey iron mine cart with an open top, seen from the front",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "minecart",
+  "cart",
+  "mine",
+  "iron",
+  "grey",
+  "wagon"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#262b44",
+     "#52607c",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#e4edf9"
+    ],
+    "saturation": 0.262,
+    "value": 0.412,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.982
+     }
+    ],
+    "exact": 5,
+    "grey": 0.018
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.885
+   }
+  }
+ },
+ "source": {
+  "sha256": "1a9ae3a209decf1f4b8df62d354edd7dfa1f7d4101ab14819f181a8e51b5ce20",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

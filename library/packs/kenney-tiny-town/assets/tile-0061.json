@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0061",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0061.png",
+ "sha256": "d44660bd7d402df64c8bae72f08775a1617f6127c98bc72d395e2286561b7174",
+ "bytes": 288,
+ "preview": "previews/tile-0061.png",
+ "from": "Tiles/tile_0061.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the bottom edge of a grey slate roof with its eave; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "roof",
+  "grey",
+  "slate",
+  "eave",
+  "house",
+  "building",
+  "edge",
+  "edge-south"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#5a6988",
+     "#8b9bb4",
+     "#c0cbdc",
+     "#763b36"
+    ],
+    "saturation": 0.226,
+    "value": 0.53,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.938
+     },
+     {
+      "hue": "red",
+      "share": 0.063
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "decb9f96369b248fb55d27282bcaf9d3b77f7dd214dad9a68f29509b09e1e754",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

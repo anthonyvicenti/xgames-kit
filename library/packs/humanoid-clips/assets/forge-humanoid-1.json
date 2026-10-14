@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "forge-humanoid-1",
+ "pack": "humanoid-clips",
+ "file": "forge-humanoid-1.glb",
+ "sha256": "cedcd6cf2efc63148894ad8b2aa0a9933cd2d40fb2f5b71b41cf8e871643431c",
+ "bytes": 785032,
+ "preview": "previews/forge-humanoid-1.png",
+ "from": "research/gf-three/library/clips/gf-humanoid-1.glb (sha256 c4606d391a27f95193496189f450c0911258f3b9d6603bd883e84de1562eb346) + https://raw.githubusercontent.com/pmndrs/ecctrl/e2cab804f9f15661a642e76f52d09f0b2db63f35/public/AnimationLibrary.glb +…",
+ "dimension": "3d",
+ "category": "clip",
+ "describe": "forge clip file on gf-humanoid-1",
+ "tags": [
+  "clips",
+  "humanoid",
+  "forge"
+ ],
+ "use": {
+  "seconds": 4.267
+ },
+ "budgets": {
+  "triangles": 0,
+  "textures": 0,
+  "materials": 0
+ },
+ "validated": [
+  {
+   "by": "clip-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "clips": 55
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://quaternius.itch.io/universal-animation-library",
+  "retrieved": "2026-10-09",
+  "modified": "the standard clips kept channel for channel (31: idle, walk, run, jump, fall, land, hit, knockdown, getup, aim, carry, interact, emote_wave, emote_cheer, sprint, hit_head, aim_up, aim_down, throw, punch, roll, getup_front, slash_1, slash_2, slash_3, heavy, dash, block, cast, death, attack_enemy)…",
+  "author": "Quaternius (Universal Animation Library); Kay Lousberg (KayKit Adventurers 1.0, Skeletons 1.0); authored clips: games.fun"
+ }
+}

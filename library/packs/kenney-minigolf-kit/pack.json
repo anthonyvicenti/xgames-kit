@@ -1,0 +1,76 @@
+{
+ "packVersion": 1,
+ "id": "kenney-minigolf-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Minigolf Kit (3.1)",
+ "describe": "Kenney's minigolf kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/minigolf-kit",
+  "file": "library/packs/kenney-minigolf-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/minigolf-kit",
+  "download": "https://kenney.nl/media/pages/assets/minigolf-kit/3ae60d8b01-1741163874/kenney_minigolf-kit.zip",
+  "sha256": "74b7bf5cf82bf8a5225319ade1284600c64f9482ae66f0ccf1f22d2212d5a952",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#20896b",
+    "#585abf",
+    "#d3554e",
+    "#595dc0",
+    "#d6574d",
+    "#eb6246",
+    "#6386d3",
+    "#f56843",
+    "#5a61c2",
+    "#248d6d",
+    "#28916f",
+    "#da594b"
+   ],
+   "saturation": 0.555,
+   "value": 0.565,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.333
+    },
+    {
+     "hue": "red",
+     "share": 0.333
+    },
+    {
+     "hue": "cyan",
+     "share": 0.282
+    },
+    {
+     "hue": "green",
+     "share": 0.051
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 42.09,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 3,
+ "validators": [
+  "budget"
+ ]
+}

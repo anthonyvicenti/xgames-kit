@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "coin",
+ "pack": "kenney-platformer-kit",
+ "file": "coin.glb",
+ "sha256": "f48f1ca1b0322126e9f225ef0c306cedb875c2e8b630fe3c238533cdfd0034c6",
+ "bytes": 20732,
+ "preview": "previews/coin.png",
+ "from": "kenney:platformer-kit/coin-gold; baked to metres (x1.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a spinning gold coin",
+ "tags": [
+  "item",
+  "pickup",
+  "score",
+  "coin"
+ ],
+ "use": {
+  "size": [
+   0.6,
+   0.6,
+   0.263
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "sphere",
+   "radius": 0.3,
+   "offset": [
+    0,
+    0.3,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 124,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 124,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#ff9d36",
+     "#ffca5c",
+     "#ffba4f",
+     "#ffc154",
+     "#ffad43",
+     "#ffa63e",
+     "#ff9b34",
+     "#ffcc5e"
+    ],
+    "saturation": 0.956,
+    "value": 0.636,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.32,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "cf2179e57721b943d88283d38678c4b1b8422e9a4dd44f631acfb35007c223a8",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

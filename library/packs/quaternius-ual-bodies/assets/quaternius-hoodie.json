@@ -1,0 +1,128 @@
+{
+ "assetVersion": 1,
+ "id": "quaternius-hoodie",
+ "pack": "quaternius-ual-bodies",
+ "file": "quaternius-hoodie.glb",
+ "sha256": "a79415cda492a8f209a7e79040e95d75ab48a025bfdd542608d2bfad1d369376",
+ "bytes": 182184,
+ "preview": "previews/quaternius-hoodie.png",
+ "from": "https://poly.pizza/m/gKLBoRsyKe \"Hoodie Character\" (Ultimate Modular Men Pack), https://static.poly.pizza/bcd66ec5-5e81-4901-a222-47abc875fe2a.glb (sha256 0de1bcd7…e61e, retrieved 2026-10-07); made by research/gf-three/tools/cc0-bodies.mjs: posed at its bind pose (45 joints reset); normalised onto…",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a young man in a hoodie, shorts and trainers; the hoodie takes the player colour",
+ "tags": [
+  "human",
+  "man",
+  "teen",
+  "casual",
+  "streetwear",
+  "hoodie",
+  "skater",
+  "modern",
+  "player",
+  "body"
+ ],
+ "use": {
+  "size": [
+   1.675,
+   1.87,
+   0.378
+  ],
+  "height": 1.87,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ],
+  "tint": [
+   "tint_Purple"
+  ]
+ },
+ "budgets": {
+  "triangles": 6206,
+  "textures": 0,
+  "materials": 7,
+  "joints": 58
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+     "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+    ],
+    "facts": {
+     "height": 1.87,
+     "triangles": 6206,
+     "joints": 58,
+     "materials": 7
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#412914",
+     "#ba9c79",
+     "#3f3152",
+     "#a3a3a3",
+     "#2d383f",
+     "#2c2018",
+     "#372e24"
+    ],
+    "saturation": 0.352,
+    "value": 0.343,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.424
+     },
+     {
+      "hue": "orange",
+      "share": 0.258
+     },
+     {
+      "hue": "grey",
+      "share": 0.181
+     },
+     {
+      "hue": "purple",
+      "share": 0.136
+     }
+    ],
+    "grey": 0.181
+   },
+   "trianglesPerMetre": 14.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "5.26 heads tall; hips at 48% of the height; shoulders 16% of it",
+   "body": {
+    "headsTall": 5.26,
+    "hipShare": 0.48,
+    "shoulderShare": 0.163,
+    "widthShare": 0.896
+   }
+  }
+ },
+ "source": {
+  "page": "https://poly.pizza/m/gKLBoRsyKe"
+ }
+}

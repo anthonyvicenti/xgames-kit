@@ -1,0 +1,436 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "ground-cobble": {
+   "origin": "gf-forge library textures/ground-cobble.jpg",
+   "roles": [
+    "texture.floor",
+    "texture.ground.cobble",
+    "texture.ground.cobble",
+    "texture.floor"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 11,
+     "exact": 1181,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.977
+      }
+     ],
+     "grey": 0.977,
+     "lightness": 0.397,
+     "saturation": 0.145,
+     "top": [
+      {
+       "colour": "#716555",
+       "share": 0.018
+      },
+      {
+       "colour": "#706454",
+       "share": 0.017
+      },
+      {
+       "colour": "#726656",
+       "share": 0.017
+      },
+      {
+       "colour": "#6f6353",
+       "share": 0.016
+      },
+      {
+       "colour": "#736757",
+       "share": 0.016
+      },
+      {
+       "colour": "#6e6252",
+       "share": 0.016
+      },
+      {
+       "colour": "#6d6151",
+       "share": 0.014
+      },
+      {
+       "colour": "#746858",
+       "share": 0.014
+      }
+     ]
+    },
+    "outline": {
+     "present": false,
+     "share": 0.011
+    },
+    "seeThrough": 0,
+    "size": [
+     512,
+     512
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 512,
+      "height": 512,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "ground-deadgrass": {
+   "origin": "gf-forge library textures/ground-deadgrass.jpg",
+   "roles": [
+    "texture.ground.deadgrass",
+    "texture.ground.deadgrass"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 32,
+     "exact": 15580,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.898
+      },
+      {
+       "hue": "brown",
+       "share": 0.09
+      }
+     ],
+     "grey": 0.898,
+     "lightness": 0.32,
+     "saturation": 0.129,
+     "top": [
+      {
+       "colour": "#4d463e",
+       "share": 0.002
+      },
+      {
+       "colour": "#504941",
+       "share": 0.002
+      },
+      {
+       "colour": "#524b43",
+       "share": 0.002
+      },
+      {
+       "colour": "#4e473f",
+       "share": 0.002
+      },
+      {
+       "colour": "#534c44",
+       "share": 0.002
+      },
+      {
+       "colour": "#4f4840",
+       "share": 0.002
+      },
+      {
+       "colour": "#514a42",
+       "share": 0.001
+      },
+      {
+       "colour": "#4c453d",
+       "share": 0.001
+      }
+     ]
+    },
+    "outline": {
+     "present": false,
+     "share": 0.219
+    },
+    "seeThrough": 0,
+    "size": [
+     512,
+     512
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 512,
+      "height": 512,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "ground-mud": {
+   "origin": "gf-forge library textures/ground-mud.jpg",
+   "roles": [
+    "texture.ground",
+    "texture.ground.mud",
+    "texture.ground",
+    "texture.ground.mud"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 30,
+     "exact": 16079,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.561
+      },
+      {
+       "hue": "brown",
+       "share": 0.43
+      }
+     ],
+     "grey": 0.561,
+     "lightness": 0.241,
+     "saturation": 0.215,
+     "top": [
+      {
+       "colour": "#3d352a",
+       "share": 0.001
+      },
+      {
+       "colour": "#3b3328",
+       "share": 0.001
+      },
+      {
+       "colour": "#3d3327",
+       "share": 0.001
+      },
+      {
+       "colour": "#393126",
+       "share": 0.001
+      },
+      {
+       "colour": "#3e3428",
+       "share": 0.001
+      },
+      {
+       "colour": "#42382c",
+       "share": 0.001
+      },
+      {
+       "colour": "#443a2e",
+       "share": 0.001
+      },
+      {
+       "colour": "#3c3226",
+       "share": 0.001
+      }
+     ]
+    },
+    "outline": {
+     "present": false,
+     "share": 0.468
+    },
+    "seeThrough": 0,
+    "size": [
+     512,
+     512
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 512,
+      "height": 512,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "wall-blocks": {
+   "origin": "gf-forge library textures/wall-blocks.jpg",
+   "roles": [
+    "texture.wall.blocks",
+    "texture.wall.blocks"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 21,
+     "exact": 2265,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.977
+      }
+     ],
+     "grey": 0.977,
+     "lightness": 0.408,
+     "saturation": 0.127,
+     "top": [
+      {
+       "colour": "#827668",
+       "share": 0.007
+      },
+      {
+       "colour": "#837769",
+       "share": 0.007
+      },
+      {
+       "colour": "#85796b",
+       "share": 0.006
+      },
+      {
+       "colour": "#7b6f61",
+       "share": 0.006
+      },
+      {
+       "colour": "#7f7365",
+       "share": 0.006
+      },
+      {
+       "colour": "#776b5d",
+       "share": 0.006
+      },
+      {
+       "colour": "#7e7264",
+       "share": 0.006
+      },
+      {
+       "colour": "#7a6e60",
+       "share": 0.006
+      }
+     ]
+    },
+    "outline": {
+     "present": false,
+     "share": 0.058
+    },
+    "seeThrough": 0,
+    "size": [
+     512,
+     512
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 512,
+      "height": 512,
+      "seeThrough": 0
+     }
+    }
+   ]
+  },
+  "wall-rubble": {
+   "origin": "gf-forge library textures/wall-rubble.jpg",
+   "roles": [
+    "texture.wall",
+    "texture.wall.rubble",
+    "texture.wall",
+    "texture.wall.rubble"
+   ],
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 18,
+     "exact": 2384,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.976
+      }
+     ],
+     "grey": 0.976,
+     "lightness": 0.41,
+     "saturation": 0.124,
+     "top": [
+      {
+       "colour": "#837769",
+       "share": 0.013
+      },
+      {
+       "colour": "#84786a",
+       "share": 0.013
+      },
+      {
+       "colour": "#827668",
+       "share": 0.013
+      },
+      {
+       "colour": "#817567",
+       "share": 0.012
+      },
+      {
+       "colour": "#807466",
+       "share": 0.012
+      },
+      {
+       "colour": "#867a6c",
+       "share": 0.012
+      },
+      {
+       "colour": "#7f7365",
+       "share": 0.012
+      },
+      {
+       "colour": "#85796b",
+       "share": 0.012
+      }
+     ]
+    },
+    "outline": {
+     "present": false,
+     "share": 0.02
+    },
+    "seeThrough": 0,
+    "size": [
+     512,
+     512
+    ]
+   },
+   "validated": [
+    {
+     "by": "picture",
+     "version": "1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "width": 512,
+      "height": 512,
+      "seeThrough": 0
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 5,
+   "paletteSize": 21,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.894
+    },
+    {
+     "hue": "brown",
+     "share": 0.106
+    }
+   ],
+   "lightness": 0.397,
+   "saturation": 0.129,
+   "outlineShare": 0,
+   "grey": 0.976
+  },
+  "licenceText": "polyhaven.com/license: \"All assets on Poly Haven are licensed as CC0 and can be downloaded instantly, giving you complete freedom.\""
+ }
+}

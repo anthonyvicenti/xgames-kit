@@ -1,0 +1,95 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-block-top-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-block-top-right.png",
+ "sha256": "69087fe19f03b9ec07ed1748c8ebe935d9db2620939d7c13c3a376a12b449733",
+ "bytes": 3363,
+ "preview": "previews/terrain-snow-block-top-right.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_block_top_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow block top right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "block",
+  "top",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 70.8 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 45.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#e5f0ff",
+     "#353541",
+     "#ffffff",
+     "#a6b2bb",
+     "#c8dbf5",
+     "#d6e5fa"
+    ],
+    "saturation": 0.338,
+    "value": 0.774,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.944
+     },
+     {
+      "hue": "blue",
+      "share": 0.056
+     }
+    ],
+    "exact": 118,
+    "grey": 0.944
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.518
+   }
+  }
+ },
+ "source": {
+  "sha256": "659b2251fbfbaa96b61ba43a185e9f26be6f549b0b83f3214d1fe66e455ec22c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

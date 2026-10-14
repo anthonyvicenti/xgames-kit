@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0003",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0003.png",
+ "sha256": "d43cc3e9e6cd215470a94087edb8a988a1b1b22ac1498648cdec92be8f5a9907",
+ "bytes": 155,
+ "preview": "previews/tile-0003.png",
+ "from": "Tiles/tile_0003.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the top-right (north-east) corner of a room's stone wall",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "stone",
+  "rim",
+  "corner",
+  "corner-outer-ne",
+  "room"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#763b36",
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4"
+    ],
+    "saturation": 0.354,
+    "value": 0.359,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.84
+     },
+     {
+      "hue": "pink",
+      "share": 0.082
+     },
+     {
+      "hue": "blue",
+      "share": 0.078
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.067
+   }
+  }
+ },
+ "source": {
+  "sha256": "2c0b45910d964d71112b81f7be17cc9a24169d4942c64ce8b59ea0f3f7490ca8",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

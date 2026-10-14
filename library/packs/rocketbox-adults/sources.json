@@ -1,0 +1,626 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "rocketbox-polo-man": {
+   "origin": "gf-three library bodies/rocketbox-polo-man.glb",
+   "label": "Polo shirt man",
+   "sidecarFrom": "gf-three library bodies/rocketbox-polo-man.json",
+   "describeFull": "a young man with short brown hair in a striped polo shirt, khaki shorts and trainers (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 68,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.413
+      },
+      {
+       "hue": "orange",
+       "share": 0.38
+      },
+      {
+       "hue": "brown",
+       "share": 0.155
+      },
+      {
+       "hue": "red",
+       "share": 0.042
+      }
+     ],
+     "grey": 0.413,
+     "lightness": 0.502,
+     "saturation": 0.242,
+     "top": [
+      {
+       "colour": "#585858",
+       "share": 0.012
+      },
+      {
+       "colour": "#27180f",
+       "share": 0.008
+      },
+      {
+       "colour": "#c8beb4",
+       "share": 0.007
+      },
+      {
+       "colour": "#7a736d",
+       "share": 0.006
+      },
+      {
+       "colour": "#000000",
+       "share": 0.006
+      },
+      {
+       "colour": "#d0c6bd",
+       "share": 0.006
+      },
+      {
+       "colour": "#a4906b",
+       "share": 0.006
+      },
+      {
+       "colour": "#988660",
+       "share": 0.006
+      }
+     ]
+    },
+    "trianglesPerMetre": 48.55,
+    "texelsPerMetre": 858,
+    "texturedShare": 0.999,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.824,
+     "headsTall": 6.04,
+     "hipShare": 0.491,
+     "shoulderShare": 0.231,
+     "widthShare": 0.757
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left arm: knockdown at 0.48 s: its edges stretch or crush ×5.1 (99th percentile; limit ×4.1)",
+      "model judge, right arm: heavy at 0.98 s: its edges stretch or crush ×5.2 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.824,
+      "triangles": 7440,
+      "joints": 80,
+      "materials": 3
+     }
+    }
+   ]
+  },
+  "rocketbox-tee-woman": {
+   "origin": "gf-three library bodies/rocketbox-tee-woman.glb",
+   "label": "T-shirt woman",
+   "sidecarFrom": "gf-three library bodies/rocketbox-tee-woman.json",
+   "describeFull": "a young woman with fair hair tied up, in a green T-shirt, light jeans and flat shoes (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 105,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.284
+      },
+      {
+       "hue": "green",
+       "share": 0.252
+      },
+      {
+       "hue": "orange",
+       "share": 0.225
+      },
+      {
+       "hue": "cyan",
+       "share": 0.188
+      },
+      {
+       "hue": "brown",
+       "share": 0.041
+      }
+     ],
+     "grey": 0.284,
+     "lightness": 0.522,
+     "saturation": 0.272,
+     "top": [
+      {
+       "colour": "#000000",
+       "share": 0.009
+      },
+      {
+       "colour": "#70ac86",
+       "share": 0.007
+      },
+      {
+       "colour": "#71ad87",
+       "share": 0.005
+      },
+      {
+       "colour": "#66a47d",
+       "share": 0.004
+      },
+      {
+       "colour": "#698a99",
+       "share": 0.003
+      },
+      {
+       "colour": "#589971",
+       "share": 0.003
+      },
+      {
+       "colour": "#9eb9c4",
+       "share": 0.003
+      },
+      {
+       "colour": "#5fa078",
+       "share": 0.003
+      }
+     ]
+    },
+    "trianglesPerMetre": 58.34,
+    "texelsPerMetre": 1039,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.751,
+     "headsTall": 5.89,
+     "hipShare": 0.527,
+     "shoulderShare": 0.197,
+     "widthShare": 0.715
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: sprint at 0.13 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1) (+1 more)",
+      "model judge, right hand: sprint at 0.27 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)",
+      "model judge, left leg: roll at 0 s: its edges stretch or crush ×4.1 (99th percentile; limit ×4.1)",
+      "model judge, right leg: run at 0.19 s: its edges stretch or crush ×4.6 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.751,
+      "triangles": 8516,
+      "joints": 80,
+      "materials": 3
+     }
+    }
+   ]
+  },
+  "rocketbox-denim-man": {
+   "origin": "gf-three library bodies/rocketbox-denim-man.glb",
+   "label": "Denim jacket man",
+   "sidecarFrom": "gf-three library bodies/rocketbox-denim-man.json",
+   "describeFull": "a Black man with close-cropped hair in a denim jacket over a white T-shirt, jeans and white trainers (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 52,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.869
+      },
+      {
+       "hue": "brown",
+       "share": 0.064
+      },
+      {
+       "hue": "blue",
+       "share": 0.048
+      }
+     ],
+     "grey": 0.869,
+     "lightness": 0.337,
+     "saturation": 0.137,
+     "top": [
+      {
+       "colour": "#cacaca",
+       "share": 0.01
+      },
+      {
+       "colour": "#cbcbcb",
+       "share": 0.005
+      },
+      {
+       "colour": "#4a5c6a",
+       "share": 0.004
+      },
+      {
+       "colour": "#516473",
+       "share": 0.004
+      },
+      {
+       "colour": "#38393e",
+       "share": 0.004
+      },
+      {
+       "colour": "#455056",
+       "share": 0.003
+      },
+      {
+       "colour": "#5e6b74",
+       "share": 0.003
+      },
+      {
+       "colour": "#36434c",
+       "share": 0.003
+      }
+     ]
+    },
+    "trianglesPerMetre": 47.46,
+    "texelsPerMetre": 661,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.807,
+     "headsTall": 6.34,
+     "hipShare": 0.496,
+     "shoulderShare": 0.233,
+     "widthShare": 0.764
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, right leg: push at 2.13 s: its edges stretch or crush ×4.4 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.807,
+      "triangles": 6722,
+      "joints": 80,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "rocketbox-knit-woman": {
+   "origin": "gf-three library bodies/rocketbox-knit-woman.glb",
+   "label": "Knit dress woman",
+   "sidecarFrom": "gf-three library bodies/rocketbox-knit-woman.json",
+   "describeFull": "a woman with brown skin and dark hair in a bun, in a brown knit dress with a belt and tall boots (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 27,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.584
+      },
+      {
+       "hue": "grey",
+       "share": 0.278
+      },
+      {
+       "hue": "orange",
+       "share": 0.129
+      }
+     ],
+     "grey": 0.278,
+     "lightness": 0.176,
+     "saturation": 0.387,
+     "top": [
+      {
+       "colour": "#110906",
+       "share": 0.012
+      },
+      {
+       "colour": "#120a07",
+       "share": 0.011
+      },
+      {
+       "colour": "#000000",
+       "share": 0.008
+      },
+      {
+       "colour": "#281710",
+       "share": 0.008
+      },
+      {
+       "colour": "#321f18",
+       "share": 0.007
+      },
+      {
+       "colour": "#2b1a13",
+       "share": 0.007
+      },
+      {
+       "colour": "#2c1b14",
+       "share": 0.006
+      },
+      {
+       "colour": "#2d1c15",
+       "share": 0.006
+      }
+     ]
+    },
+    "trianglesPerMetre": 51.5,
+    "texelsPerMetre": 793,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.736,
+     "headsTall": 6.15,
+     "hipShare": 0.532,
+     "shoulderShare": 0.198,
+     "widthShare": 0.721
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: throw at 0.1 s: the left middle bends -36° at its knuckle (a finger bends -35° to 105°)",
+      "model judge, left leg: run at 0.75 s: its edges stretch or crush ×4.9 (99th percentile; limit ×4.1)",
+      "model judge, right leg: run at 0.75 s: its edges stretch or crush ×7.2 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.736,
+      "triangles": 8896,
+      "joints": 80,
+      "materials": 3
+     }
+    }
+   ]
+  },
+  "rocketbox-angler-man": {
+   "origin": "gf-three library bodies/rocketbox-angler-man.glb",
+   "label": "Outdoor vest man",
+   "sidecarFrom": "gf-three library bodies/rocketbox-angler-man.json",
+   "describeFull": "an older man with grey hair and a grey beard in a khaki multi-pocket vest over a green shirt, brown trousers and boots (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 48,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.454
+      },
+      {
+       "hue": "orange",
+       "share": 0.295
+      },
+      {
+       "hue": "grey",
+       "share": 0.14
+      },
+      {
+       "hue": "yellow",
+       "share": 0.106
+      }
+     ],
+     "grey": 0.14,
+     "lightness": 0.309,
+     "saturation": 0.32,
+     "top": [
+      {
+       "colour": "#2f2317",
+       "share": 0.01
+      },
+      {
+       "colour": "#2d2115",
+       "share": 0.006
+      },
+      {
+       "colour": "#454a34",
+       "share": 0.006
+      },
+      {
+       "colour": "#2f3420",
+       "share": 0.005
+      },
+      {
+       "colour": "#d1b087",
+       "share": 0.005
+      },
+      {
+       "colour": "#40452f",
+       "share": 0.005
+      },
+      {
+       "colour": "#463629",
+       "share": 0.005
+      },
+      {
+       "colour": "#cdac81",
+       "share": 0.005
+      }
+     ]
+    },
+    "trianglesPerMetre": 46.25,
+    "texelsPerMetre": 818,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.812,
+     "headsTall": 6.24,
+     "hipShare": 0.494,
+     "shoulderShare": 0.232,
+     "widthShare": 0.762
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left leg: getup_front at 1.2 s: its edges stretch or crush ×5.4 (99th percentile; limit ×4.1)",
+      "model judge, right leg: push at 2.13 s: its edges stretch or crush ×4.4 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.812,
+      "triangles": 7836,
+      "joints": 80,
+      "materials": 3
+     }
+    }
+   ]
+  },
+  "rocketbox-cardigan-woman": {
+   "origin": "gf-three library bodies/rocketbox-cardigan-woman.glb",
+   "label": "Cardigan woman",
+   "sidecarFrom": "gf-three library bodies/rocketbox-cardigan-woman.json",
+   "describeFull": "a middle-aged woman with short brown hair in a long grey knit cardigan, dark jeans and flat shoes (realistic)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 43,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.821
+      },
+      {
+       "hue": "brown",
+       "share": 0.106
+      },
+      {
+       "hue": "orange",
+       "share": 0.058
+      }
+     ],
+     "grey": 0.821,
+     "lightness": 0.298,
+     "saturation": 0.179,
+     "top": [
+      {
+       "colour": "#21292b",
+       "share": 0.01
+      },
+      {
+       "colour": "#807768",
+       "share": 0.008
+      },
+      {
+       "colour": "#82796a",
+       "share": 0.007
+      },
+      {
+       "colour": "#1e2628",
+       "share": 0.007
+      },
+      {
+       "colour": "#1f2427",
+       "share": 0.006
+      },
+      {
+       "colour": "#242c2e",
+       "share": 0.006
+      },
+      {
+       "colour": "#151a1d",
+       "share": 0.006
+      },
+      {
+       "colour": "#7d7465",
+       "share": 0.006
+      }
+     ]
+    },
+    "trianglesPerMetre": 53.11,
+    "texelsPerMetre": 849,
+    "texturedShare": 1,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.744,
+     "headsTall": 6.11,
+     "hipShare": 0.532,
+     "shoulderShare": 0.197,
+     "widthShare": 0.718
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: throw at 0.1 s: the left middle bends -36° at its knuckle (a finger bends -35° to 105°)",
+      "model judge, right leg: run at 0.19 s: its edges stretch or crush ×4.5 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.744,
+      "triangles": 8724,
+      "joints": 80,
+      "materials": 3
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 6,
+   "paletteSize": 52,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.473
+    },
+    {
+     "hue": "brown",
+     "share": 0.237
+    },
+    {
+     "hue": "orange",
+     "share": 0.183
+    }
+   ],
+   "lightness": 0.337,
+   "saturation": 0.272,
+   "trianglesPerMetre": 51.5,
+   "texelsPerMetre": 849,
+   "texturedShare": 1,
+   "outlineShare": 0,
+   "headsTall": 6.15,
+   "hipShare": 0.527,
+   "grey": 0.413
+  },
+  "licenceFiles": [
+   "Microsoft Rocketbox avatars (https://github.com/microsoft/Microsoft-Rocketbox @0943055db6ec570bcef9f2c8b41c9e5467c808f9, LICENSE.md):\n\nMIT License\n\nCopyright (c) 2020 Microsoft\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE."
+  ]
+ }
+}

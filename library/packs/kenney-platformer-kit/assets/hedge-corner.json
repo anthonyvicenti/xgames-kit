@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "hedge-corner",
+ "pack": "kenney-platformer-kit",
+ "file": "hedge-corner.glb",
+ "sha256": "1e1d8fac7c8d3c586cbdcc6ac99c3ff159b37f02d4a5c61a32708f7b43a8a016",
+ "bytes": 19984,
+ "preview": "previews/hedge-corner.png",
+ "from": "kenney:platformer-kit/hedge-corner; baked to metres (x3), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a trimmed hedge corner",
+ "tags": [
+  "nature",
+  "hedge",
+  "wall",
+  "corner"
+ ],
+ "use": {
+  "size": [
+   3,
+   1.2,
+   3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    1.2,
+    3
+   ],
+   "offset": [
+    0,
+    0.6,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 104,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 104,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19984,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#65657a",
+     "#82879d",
+     "#36a076",
+     "#43ad7c",
+     "#20896b",
+     "#5ac487",
+     "#6f7085",
+     "#797c91"
+    ],
+    "saturation": 0.339,
+    "value": 0.468,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.419
+     },
+     {
+      "hue": "cyan",
+      "share": 0.291
+     },
+     {
+      "hue": "green",
+      "share": 0.291
+     }
+    ],
+    "grey": 0.419
+   },
+   "trianglesPerMetre": 1.86,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "927602e30de4da6abf4c7264b148a745570b44c02bc42ae751a8976687dd15ea",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x3), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

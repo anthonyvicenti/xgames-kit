@@ -1,0 +1,38 @@
+{
+  "schema": "xgames-runtime-toolchain/1",
+  "runtime": "godot",
+  "version": "4.6.stable",
+  "commit": "89cea1439",
+  "about": "The pinned Godot editor (used headless, to import and export a game's project) and the one web template a game is exported with: WebGL2 (the compatibility renderer), single-threaded, so the page needs no cross-origin isolation. tools/install.mjs fetches and checks these only when a game picks runtime godot.",
+  "license": {
+    "spdx": "MIT",
+    "text": "https://github.com/godotengine/godot/blob/4.6-stable/LICENSE.txt",
+    "thirdParty": "https://github.com/godotengine/godot/blob/4.6-stable/COPYRIGHT.txt",
+    "note": "The exported game carries the engine (godot.js and godot.wasm from the template); gf/godot/LICENSES.md in every game names Godot's licence and its third-party notices."
+  },
+  "platforms": {
+    "linux-x64": {
+      "editor": {
+        "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-stable/Godot_v4.6-stable_linux.x86_64.zip",
+        "sha256": "6bcc59dfd1d670e918c77eae06e82b9dc5699de13d353dc3a4b3b6b307b6dc06",
+        "entry": "Godot_v4.6-stable_linux.x86_64",
+        "file": "godot",
+        "fileSha256": "9995532a9ddb6fc81bb510546fcb5b780175e766096f9be3e58cf403258f4898"
+      }
+    }
+  },
+  "template": {
+    "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-stable/Godot_v4.6-stable_export_templates.tpz",
+    "bytes": 1251639300,
+    "entry": "templates/web_nothreads_release.zip",
+    "file": "web_nothreads_release.zip",
+    "fileSha256": "25d12ed1dda42fe4d863d6bd78075d632b41401afb085947bb4d3865a341fd90",
+    "contents": {
+      "godot.js": "the engine loader (defines globalThis.Engine)",
+      "godot.wasm": "the engine, 37.7 MB (about 9 MB compressed on the wire)"
+    }
+  },
+  "notYet": [
+    "macOS and Windows editors are not pinned here yet: their archives have not been hashed and run on those systems. The web template is the same on every system, so a game exported on Linux plays everywhere."
+  ]
+}

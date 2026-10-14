@@ -1,0 +1,128 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-dagger",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-dagger.glb",
+ "sha256": "c9932f764a544fb00ea2f1ed2213f77bf5c343a247d6d2792334835aeca2e117",
+ "bytes": 53736,
+ "preview": "previews/kaykit-dagger.png",
+ "from": "dagger.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Rogue Knife (handslot.r)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a short dagger",
+ "tags": [
+  "weapon",
+  "dagger",
+  "knife",
+  "melee",
+  "one-handed",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.194,
+   0.904,
+   0.114
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.09,
+   -0.169,
+   -0.057
+  ],
+  "grip": {
+   "position": [
+    -0.0055,
+    -0.0431,
+    0.0776
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 172,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 172,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 53736,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#859095",
+     "#6c767a",
+     "#8a969b",
+     "#94533f",
+     "#9f5e47",
+     "#596064",
+     "#7b858b",
+     "#828d92"
+    ],
+    "saturation": 0.12,
+    "value": 0.527,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.866
+     },
+     {
+      "hue": "brown",
+      "share": 0.067
+     },
+     {
+      "hue": "orange",
+      "share": 0.066
+     }
+    ],
+    "grey": 0.866
+   },
+   "trianglesPerMetre": 24.98,
+   "texelsPerMetre": 150,
+   "texturedShare": 0.982,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/dagger.gltf",
+  "sha256": "33c577d4d5d268295f13494c930d20d11bf1a82e862aa7bdab4d7d51bc26fcd0",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Rogue Knife (handslot.r)"
+ }
+}

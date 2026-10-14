@@ -1,0 +1,111 @@
+{
+ "assetVersion": 1,
+ "id": "cup-coffee",
+ "pack": "kenney-food-kit",
+ "file": "cup-coffee.glb",
+ "sha256": "f6221ad411608366bc6e1295fa6ac22456429e4b759af3c3273bc67bb31034be",
+ "bytes": 18928,
+ "preview": "previews/cup-coffee.png",
+ "from": "kenney:food-kit/cup-coffee; baked to metres (x1.57143), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a takeaway coffee cup",
+ "tags": [
+  "item",
+  "pickup",
+  "drink",
+  "cup",
+  "coffee"
+ ],
+ "use": {
+  "size": [
+   0.34,
+   0.22,
+   0.45
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.08,
+   "height": 0.22,
+   "offset": [
+    0,
+    0.11,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 108,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 108,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18928,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#ebebf2",
+     "#e5e5ee",
+     "#cfcfe1",
+     "#51413d",
+     "#c1c1d8",
+     "#f1f1f6",
+     "#cacade",
+     "#f5f5f9"
+    ],
+    "saturation": 0.213,
+    "value": 0.818,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.528
+     },
+     {
+      "hue": "grey",
+      "share": 0.472
+     }
+    ],
+    "grey": 0.472
+   },
+   "trianglesPerMetre": 15.27,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "d74652ad1821bc5dedf1b2e1deb4e0ca0c498aa73880e7df5b91e5e729af6f81",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.57143), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

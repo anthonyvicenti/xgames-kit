@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "city-block-b",
+ "pack": "kenney-city-kit-commercial",
+ "file": "city-block-b.glb",
+ "sha256": "8642d78f938f8112f9b2c750be30c3c910e2ded614d9f3c3da98b8ba6a0cfad9",
+ "bytes": 42096,
+ "preview": "previews/city-block-b.png",
+ "from": "kenney:city-kit-commercial/building-g; baked to metres (x7.7), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a four-storey city building with shops below",
+ "tags": [
+  "city",
+  "building",
+  "backdrop",
+  "block"
+ ],
+ "use": {
+  "size": [
+   7.469,
+   13.036,
+   7.1
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    7.469,
+    13.036,
+    7.099
+   ],
+   "offset": [
+    0,
+    6.518,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 2006,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 2006,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 42096,
+     "role": "scenery"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#5a6078",
+     "#d8d8e6",
+     "#e8e8f0",
+     "#454856",
+     "#4c4f5d",
+     "#81869c",
+     "#5c627a",
+     "#5d637b"
+    ],
+    "saturation": 0.171,
+    "value": 0.541,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.834
+     },
+     {
+      "hue": "blue",
+      "share": 0.156
+     }
+    ],
+    "grey": 0.834
+   },
+   "trianglesPerMetre": 1.7,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-commercial",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-commercial/a742d900eb-1753115042/kenney_city-kit-commercial_2.1.zip",
+  "sha256": "9a28fa2fdfac07492ee95589882213cfd6eb32d6752cb3b2f5404604c676d27a",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x7.7), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

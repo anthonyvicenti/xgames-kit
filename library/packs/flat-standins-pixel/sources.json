@@ -1,0 +1,1213 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "tile-wall": {
+   "origin": "ingest tile-wall.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "exact": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 1
+      }
+     ],
+     "grey": 1,
+     "lightness": 0.645,
+     "saturation": 0.06,
+     "top": [
+      {
+       "colour": "#b3acb5",
+       "share": 0.395
+      },
+      {
+       "colour": "#7a7484",
+       "share": 0.359
+      },
+      {
+       "colour": "#cfc9cd",
+       "share": 0.246
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0,
+    "size": [
+     32,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 2
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "75a1a20dc2c0d9a16b54a8702861a76ad1ad320bb0c9324cf231c148d8ad6c55",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-grass": {
+   "origin": "ingest tile-grass.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "exact": 3,
+     "families": [
+      {
+       "hue": "green",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.448,
+     "saturation": 0.381,
+     "top": [
+      {
+       "colour": "#4f9443",
+       "share": 0.547
+      },
+      {
+       "colour": "#5fa44a",
+       "share": 0.355
+      },
+      {
+       "colour": "#78b956",
+       "share": 0.098
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "e6dacb0381fb87aeee0bb186b040930df7853bc449e18b336545eb2bc40d5ebe",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-water": {
+   "origin": "ingest tile-water.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.809
+      },
+      {
+       "hue": "cyan",
+       "share": 0.191
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.524,
+     "saturation": 0.59,
+     "top": [
+      {
+       "colour": "#3474b8",
+       "share": 0.453
+      },
+      {
+       "colour": "#3f8ccc",
+       "share": 0.355
+      },
+      {
+       "colour": "#62acdf",
+       "share": 0.145
+      },
+      {
+       "colour": "#a6d8f2",
+       "share": 0.047
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "d0e594117d24c8520133f74860c078efda50c45e95df85065e277681b4207672",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-brick": {
+   "origin": "ingest tile-brick.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 4,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.578
+      },
+      {
+       "hue": "brown",
+       "share": 0.422
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.41,
+     "saturation": 0.479,
+     "top": [
+      {
+       "colour": "#a85a3e",
+       "share": 0.359
+      },
+      {
+       "colour": "#6e3426",
+       "share": 0.344
+      },
+      {
+       "colour": "#c47652",
+       "share": 0.219
+      },
+      {
+       "colour": "#8c4430",
+       "share": 0.078
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0.483
+    },
+    "seeThrough": 0,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "0a99cf697288240bfd56d3534a635a06ae66db364da48c8945105f770b6e0c5d",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-path": {
+   "origin": "ingest tile-path.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "exact": 5,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.992
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.54,
+     "saturation": 0.439,
+     "top": [
+      {
+       "colour": "#a8784a",
+       "share": 0.445
+      },
+      {
+       "colour": "#c2935e",
+       "share": 0.406
+      },
+      {
+       "colour": "#d6ad78",
+       "share": 0.09
+      },
+      {
+       "colour": "#e6c595",
+       "share": 0.051
+      },
+      {
+       "colour": "#8a6038",
+       "share": 0.008
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "9906f4ed7fb603e4155915c40e847022fc8ea52c488c86168e7f80c1f7a37a9c",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-ground": {
+   "origin": "ingest tile-ground.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "exact": 10,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.699
+      },
+      {
+       "hue": "green",
+       "share": 0.152
+      },
+      {
+       "hue": "grey",
+       "share": 0.084
+      },
+      {
+       "hue": "orange",
+       "share": 0.064
+      }
+     ],
+     "grey": 0.084,
+     "lightness": 0.381,
+     "saturation": 0.401,
+     "top": [
+      {
+       "colour": "#754d2f",
+       "share": 0.488
+      },
+      {
+       "colour": "#8a5a35",
+       "share": 0.18
+      },
+      {
+       "colour": "#9f6a3d",
+       "share": 0.064
+      },
+      {
+       "colour": "#5fa44a",
+       "share": 0.059
+      },
+      {
+       "colour": "#a9958b",
+       "share": 0.043
+      },
+      {
+       "colour": "#96827a",
+       "share": 0.041
+      },
+      {
+       "colour": "#94cc63",
+       "share": 0.031
+      },
+      {
+       "colour": "#78b956",
+       "share": 0.031
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0.011
+    },
+    "seeThrough": 0,
+    "size": [
+     32,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 2
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "ffb822f111d995f6d7e1c308e92a3610051461ed574d1acfdc418ead97aa6bd4",
+    "date": "2026-10-14"
+   }
+  },
+  "tile-ledge": {
+   "origin": "ingest tile-ledge.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "exact": 6,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.677
+      },
+      {
+       "hue": "orange",
+       "share": 0.302
+      }
+     ],
+     "grey": 0.021,
+     "lightness": 0.423,
+     "saturation": 0.485,
+     "top": [
+      {
+       "colour": "#9a6236",
+       "share": 0.417
+      },
+      {
+       "colour": "#d39a5c",
+       "share": 0.167
+      },
+      {
+       "colour": "#5a3620",
+       "share": 0.167
+      },
+      {
+       "colour": "#b97c45",
+       "share": 0.135
+      },
+      {
+       "colour": "#7a4a2a",
+       "share": 0.094
+      },
+      {
+       "colour": "#c8c4d0",
+       "share": 0.021
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0.4
+    },
+    "seeThrough": 0.625,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16,
+      "frames": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "4d79576ae4b2ac25d5961574e62f59eda9a6c14730937b3cb9f45bdf0c8c1f9f",
+    "date": "2026-10-14"
+   }
+  },
+  "body-side": {
+   "origin": "ingest body-side.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "exact": 23,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.283
+      },
+      {
+       "hue": "brown",
+       "share": 0.27
+      },
+      {
+       "hue": "orange",
+       "share": 0.24
+      },
+      {
+       "hue": "blue",
+       "share": 0.156
+      },
+      {
+       "hue": "red",
+       "share": 0.051
+      }
+     ],
+     "grey": 0.283,
+     "lightness": 0.457,
+     "saturation": 0.382,
+     "top": [
+      {
+       "colour": "#eeb88f",
+       "share": 0.151
+      },
+      {
+       "colour": "#7a4a28",
+       "share": 0.15
+      },
+      {
+       "colour": "#452e36",
+       "share": 0.075
+      },
+      {
+       "colour": "#7c4232",
+       "share": 0.066
+      },
+      {
+       "colour": "#d6d6dc",
+       "share": 0.064
+      },
+      {
+       "colour": "#55546a",
+       "share": 0.063
+      },
+      {
+       "colour": "#32365e",
+       "share": 0.054
+      },
+      {
+       "colour": "#384b7c",
+       "share": 0.043
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.695
+    },
+    "seeThrough": 0.713,
+    "size": [
+     192,
+     32
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 32,
+      "rows": 1,
+      "frames": 6
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "cade65cdfcbc003cbeaf2232ddf4ca7f0fd0c0171d76c16c9f33fbf37ddfb350",
+    "date": "2026-10-14"
+   }
+  },
+  "body-top": {
+   "origin": "ingest body-top.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 17,
+     "exact": 24,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.34
+      },
+      {
+       "hue": "brown",
+       "share": 0.269
+      },
+      {
+       "hue": "orange",
+       "share": 0.196
+      },
+      {
+       "hue": "blue",
+       "share": 0.155
+      },
+      {
+       "hue": "red",
+       "share": 0.036
+      }
+     ],
+     "grey": 0.34,
+     "lightness": 0.471,
+     "saturation": 0.349,
+     "top": [
+      {
+       "colour": "#7a4a28",
+       "share": 0.149
+      },
+      {
+       "colour": "#d6d6dc",
+       "share": 0.111
+      },
+      {
+       "colour": "#eeb88f",
+       "share": 0.105
+      },
+      {
+       "colour": "#452e36",
+       "share": 0.073
+      },
+      {
+       "colour": "#55546a",
+       "share": 0.066
+      },
+      {
+       "colour": "#32365e",
+       "share": 0.052
+      },
+      {
+       "colour": "#5f3b2f",
+       "share": 0.05
+      },
+      {
+       "colour": "#3f5f9a",
+       "share": 0.049
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.661
+    },
+    "seeThrough": 0.666,
+    "size": [
+     192,
+     96
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 32,
+      "rows": 3,
+      "frames": 6
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "4bb7334a58aae086eec8aa2084e5fb4f1402a7ae196037ba4f1ab521334a5e4f",
+    "date": "2026-10-14"
+   }
+  },
+  "heart": {
+   "origin": "ingest heart.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "exact": 7,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.674
+      },
+      {
+       "hue": "pink",
+       "share": 0.302
+      }
+     ],
+     "grey": 0.023,
+     "lightness": 0.53,
+     "saturation": 0.667,
+     "top": [
+      {
+       "colour": "#e84868",
+       "share": 0.547
+      },
+      {
+       "colour": "#6e2944",
+       "share": 0.186
+      },
+      {
+       "colour": "#ff8aa0",
+       "share": 0.093
+      },
+      {
+       "colour": "#774259",
+       "share": 0.081
+      },
+      {
+       "colour": "#c02848",
+       "share": 0.035
+      },
+      {
+       "colour": "#5f1d38",
+       "share": 0.035
+      },
+      {
+       "colour": "#ffffff",
+       "share": 0.023
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.731
+    },
+    "seeThrough": 0.664,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "f53e69689bb3a68735d06d8d853d377c279ba0e0306509ce598b8cd5fbd2e940",
+    "date": "2026-10-14"
+   }
+  },
+  "gem": {
+   "origin": "ingest gem.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 8,
+     "exact": 9,
+     "families": [
+      {
+       "hue": "cyan",
+       "share": 0.817
+      },
+      {
+       "hue": "blue",
+       "share": 0.158
+      }
+     ],
+     "grey": 0.025,
+     "lightness": 0.496,
+     "saturation": 0.625,
+     "top": [
+      {
+       "colour": "#48c8e8",
+       "share": 0.25
+      },
+      {
+       "colour": "#2a9ac0",
+       "share": 0.233
+      },
+      {
+       "colour": "#9aeefa",
+       "share": 0.125
+      },
+      {
+       "colour": "#325a75",
+       "share": 0.108
+      },
+      {
+       "colour": "#1a6a8a",
+       "share": 0.1
+      },
+      {
+       "colour": "#51687c",
+       "share": 0.058
+      },
+      {
+       "colour": "#203651",
+       "share": 0.05
+      },
+      {
+       "colour": "#264865",
+       "share": 0.05
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0.188
+    },
+    "seeThrough": 0.531,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "9237b4c5dc468e90256454419e794649e7def6070b13e8b48ae1531e433d13c3",
+    "date": "2026-10-14"
+   }
+  },
+  "coin": {
+   "origin": "ingest coin.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "exact": 6,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.574
+      },
+      {
+       "hue": "brown",
+       "share": 0.227
+      },
+      {
+       "hue": "orange",
+       "share": 0.199
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.483,
+     "saturation": 0.736,
+     "top": [
+      {
+       "colour": "#e8b828",
+       "share": 0.426
+      },
+      {
+       "colour": "#c08a1c",
+       "share": 0.199
+      },
+      {
+       "colour": "#ffe066",
+       "share": 0.131
+      },
+      {
+       "colour": "#5f4227",
+       "share": 0.125
+      },
+      {
+       "colour": "#6e542c",
+       "share": 0.102
+      },
+      {
+       "colour": "#fff6c0",
+       "share": 0.017
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.313,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "56cef99e6b0bc3a96692a4bfdef504c41bf77e2639dcb07523de40f1d31adf9f",
+    "date": "2026-10-14"
+   }
+  },
+  "key": {
+   "origin": "ingest key.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "exact": 6,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.5
+      },
+      {
+       "hue": "yellow",
+       "share": 0.426
+      },
+      {
+       "hue": "orange",
+       "share": 0.074
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.456,
+     "saturation": 0.624,
+     "top": [
+      {
+       "colour": "#6e542c",
+       "share": 0.245
+      },
+      {
+       "colour": "#ffe066",
+       "share": 0.213
+      },
+      {
+       "colour": "#e8b828",
+       "share": 0.213
+      },
+      {
+       "colour": "#776343",
+       "share": 0.202
+      },
+      {
+       "colour": "#c08a1c",
+       "share": 0.074
+      },
+      {
+       "colour": "#5f4227",
+       "share": 0.053
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.633,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "db612214669d89cadef770fbf1af44999f546bee60c6140aac623f5ad174cc91",
+    "date": "2026-10-14"
+   }
+  },
+  "crate": {
+   "origin": "ingest crate.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "exact": 7,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.452
+      },
+      {
+       "hue": "orange",
+       "share": 0.389
+      },
+      {
+       "hue": "red",
+       "share": 0.159
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.39,
+     "saturation": 0.427,
+     "top": [
+      {
+       "colour": "#b97c45",
+       "share": 0.333
+      },
+      {
+       "colour": "#7a4a2a",
+       "share": 0.27
+      },
+      {
+       "colour": "#452a2c",
+       "share": 0.151
+      },
+      {
+       "colour": "#9a6236",
+       "share": 0.119
+      },
+      {
+       "colour": "#67483f",
+       "share": 0.063
+      },
+      {
+       "colour": "#d39a5c",
+       "share": 0.056
+      },
+      {
+       "colour": "#5d3d37",
+       "share": 0.008
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": true,
+     "how": "ink",
+     "share": 0.679
+    },
+    "seeThrough": 0.016,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "cb1f143ff3235dfafbddca90b70db45085f71cf42e5cb5b3775e4301d815f25e",
+    "date": "2026-10-14"
+   }
+  },
+  "star": {
+   "origin": "ingest star.png",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "exact": 7,
+     "families": [
+      {
+       "hue": "yellow",
+       "share": 0.53
+      },
+      {
+       "hue": "brown",
+       "share": 0.38
+      },
+      {
+       "hue": "orange",
+       "share": 0.09
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.477,
+     "saturation": 0.674,
+     "top": [
+      {
+       "colour": "#e8b828",
+       "share": 0.34
+      },
+      {
+       "colour": "#6e542c",
+       "share": 0.18
+      },
+      {
+       "colour": "#ffe066",
+       "share": 0.17
+      },
+      {
+       "colour": "#776343",
+       "share": 0.13
+      },
+      {
+       "colour": "#c08a1c",
+       "share": 0.09
+      },
+      {
+       "colour": "#5f4227",
+       "share": 0.07
+      },
+      {
+       "colour": "#fff6c0",
+       "share": 0.02
+      }
+     ]
+    },
+    "texelsPerMetre": 16,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "seeThrough": 0.609,
+    "size": [
+     16,
+     16
+    ]
+   },
+   "validated": [
+    {
+     "by": "flat-judge",
+     "version": "gf-flat-1",
+     "date": "2026-10-14",
+     "ok": true,
+     "facts": {
+      "cell": 16
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "75600d1520b0ce65a530dde3be194222bdf62c15751fdbfe86a9813295e33511",
+    "date": "2026-10-14"
+   }
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 15,
+   "paletteSize": 6,
+   "families": [
+    {
+     "hue": "brown",
+     "share": 0.261
+    },
+    {
+     "hue": "orange",
+     "share": 0.209
+    },
+    {
+     "hue": "grey",
+     "share": 0.114
+    },
+    {
+     "hue": "yellow",
+     "share": 0.103
+    },
+    {
+     "hue": "blue",
+     "share": 0.086
+    },
+    {
+     "hue": "green",
+     "share": 0.077
+    },
+    {
+     "hue": "cyan",
+     "share": 0.068
+    },
+    {
+     "hue": "red",
+     "share": 0.062
+    }
+   ],
+   "lightness": 0.471,
+   "saturation": 0.479,
+   "texelsPerMetre": 16,
+   "outlineShare": 0.267,
+   "grey": 0
+  },
+  "licenceText": "Made by the kit's own tools from code, with no upstream art (unless an asset names the CC0 texture it was drawn over). Released under CC0 1.0."
+ }
+}

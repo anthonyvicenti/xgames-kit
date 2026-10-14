@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-floor-grate",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-floor-grate.glb",
+ "sha256": "de9a5b44bdf041aa67407e839ed9fed77c41e1215497eacf9d00b2ea662a6b21",
+ "bytes": 56732,
+ "preview": "previews/dungeon-floor-grate.png",
+ "from": "floor_tile_big_grate.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone floor tile with an iron grate",
+ "tags": [
+  "dungeon",
+  "floor",
+  "grate",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3,
+   0.787,
+   3
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   -0.75,
+   -1.5
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    0.787,
+    3
+   ],
+   "offset": [
+    0,
+    -0.356,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 292,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 292,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 56732,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7b706a",
+     "#958d84",
+     "#786c67",
+     "#726661",
+     "#101516",
+     "#232e32",
+     "#13181a",
+     "#202a2d"
+    ],
+    "saturation": 0.092,
+    "value": 0.343,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 3.42,
+   "texelsPerMetre": 55,
+   "texturedShare": 0.414,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/floor_tile_big_grate.gltf.glb",
+  "sha256": "6c393b10cb00ad69177f58d1b30af05f3c7f350bc331508529ef6323ff9efae3",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

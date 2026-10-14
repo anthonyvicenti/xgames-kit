@@ -1,0 +1,130 @@
+{
+ "assetVersion": 1,
+ "id": "character-f",
+ "pack": "kenney-blocky-characters",
+ "file": "character-f.glb",
+ "sha256": "0325e22739e46e6fb2fb5e84dcdabf0ebc2131d51c2f337d5fb2c1ca2479f6f8",
+ "bytes": 39664,
+ "preview": "previews/character-f.png",
+ "from": "Models/GLB format/character-f.glb; its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a dark-haired woman in a teal top with white cuffs and blue jeans",
+ "tags": [
+  "woman",
+  "casual",
+  "sporty",
+  "teal",
+  "kenney",
+  "blocky",
+  "block",
+  "voxel",
+  "character",
+  "player"
+ ],
+ "use": {
+  "size": [
+   1.8,
+   1.62,
+   0.48
+  ],
+  "height": 1.62,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 464,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 1,
+  "joints": 23
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.62,
+     "triangles": 464,
+     "joints": 23,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#58bd98",
+     "#ffffff",
+     "#8d5641",
+     "#3c3c44",
+     "#8494c9",
+     "#7d4732",
+     "#55b894",
+     "#7989be"
+    ],
+    "saturation": 0.313,
+    "value": 0.541,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.238
+     },
+     {
+      "hue": "blue",
+      "share": 0.237
+     },
+     {
+      "hue": "cyan",
+      "share": 0.223
+     },
+     {
+      "hue": "grey",
+      "share": 0.223
+     },
+     {
+      "hue": "orange",
+      "share": 0.08
+     }
+    ],
+    "grey": 0.223
+   },
+   "trianglesPerMetre": 7.31,
+   "texelsPerMetre": 221,
+   "texturedShare": 0.877,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "3.29 heads tall; hips at 37% of the height; shoulders 44% of it",
+   "body": {
+    "headsTall": 3.29,
+    "hipShare": 0.37,
+    "shoulderShare": 0.444,
+    "widthShare": 1.111
+   }
+  }
+ },
+ "source": {
+  "sha256": "04223c1c6cdce5da6fe9c9729a24e1aa9c765dec93af952379112f7da24a828a",
+  "modified": "its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+  "retrieved": "2026-10-13"
+ }
+}

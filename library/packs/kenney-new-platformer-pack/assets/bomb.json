@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "bomb",
+ "pack": "kenney-new-platformer-pack",
+ "file": "bomb.png",
+ "sha256": "c5b610ff11b85a9cc87e8790004d007a3dfdf4abd7b5d29b8910ada6ad2ecb3e",
+ "bytes": 3770,
+ "preview": "previews/bomb.png",
+ "from": "Sprites/Tiles/Double/bomb.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "bomb",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "bomb",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#474758",
+     "#353541",
+     "#525262",
+     "#de7e4f",
+     "#343440",
+     "#464657",
+     "#454556",
+     "#424254"
+    ],
+    "saturation": 0.117,
+    "value": 0.295,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.979
+     }
+    ],
+    "exact": 81,
+    "grey": 0.979
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "564006686bde5185a9b35f71aaa7b9fbf422ad6f2882924de766349c95477a37",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

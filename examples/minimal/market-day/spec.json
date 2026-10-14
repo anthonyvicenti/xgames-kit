@@ -1,0 +1,290 @@
+{
+  "specVersion": 2,
+  "title": "Market Day",
+  "hook": "A town square seen from above: race your friends to the coins dropped around the houses, the well and the pond.",
+  "prompt": "a cosy pixel art town seen from above like Stardew Valley, friends run around picking up coins",
+  "runtime": "three",
+  "profile": "flat-2d",
+  "loop": "round",
+  "kind": "pixel",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "top",
+  "controls": {
+    "interact": "pick up a coin"
+  },
+  "round": {
+    "seconds": 60,
+    "winBy": "most coins when the time runs out",
+    "replay": true
+  },
+  "world": {
+    "template": "field",
+    "size": "small",
+    "props": [
+      {
+        "name": "coin",
+        "describe": "a shiny gold coin",
+        "count": 8,
+        "role": "collected by players",
+        "kind": "gameplay"
+      }
+    ],
+    "map": {
+      "tile": 1,
+      "base": "grass",
+      "kinds": {
+        "grass": {
+          "solid": false,
+          "dress": 0.3
+        },
+        "path": {
+          "solid": false,
+          "edges": "blend"
+        },
+        "soil": {
+          "solid": false,
+          "edges": "blend",
+          "dress": 1
+        },
+        "water": {
+          "solid": true,
+          "edges": "blend"
+        },
+        "cobble": {
+          "solid": false,
+          "edges": "blend"
+        },
+        "fence": {
+          "solid": true,
+          "edges": "connect"
+        },
+        "hedge": {
+          "solid": true,
+          "edges": "connect"
+        },
+        "house-red": {
+          "solid": true,
+          "piece": [
+            5,
+            3
+          ]
+        },
+        "house-blue": {
+          "solid": true,
+          "piece": [
+            5,
+            3
+          ]
+        },
+        "oak": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "apple": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "pine": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "bush": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "rock": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "barrel": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "lamp": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "mailbox": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "well": {
+          "solid": true,
+          "piece": [
+            2,
+            1
+          ]
+        },
+        "sign": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "hay": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "pumpkin": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "pot": {
+          "solid": true,
+          "piece": [
+            1,
+            1
+          ]
+        },
+        "bench": {
+          "solid": true,
+          "piece": [
+            2,
+            1
+          ]
+        },
+        "logs": {
+          "solid": true,
+          "piece": [
+            2,
+            1
+          ]
+        }
+      },
+      "legend": {
+        ".": null,
+        ",": "path",
+        "s": "soil",
+        "~": "water",
+        "c": "cobble",
+        "f": "fence",
+        "h": "hedge",
+        "R": "house-red",
+        "B": "house-blue",
+        "T": "oak",
+        "A": "apple",
+        "P": "pine",
+        "b": "bush",
+        "r": "rock",
+        "k": "barrel",
+        "l": "lamp",
+        "m": "mailbox",
+        "w": "well",
+        "g": "sign",
+        "y": "hay",
+        "u": "pumpkin",
+        "o": "pot",
+        "n": "bench",
+        "L": "logs",
+        "1": "spawn",
+        "*": "mark:coin"
+      },
+      "rows": [
+        "....................",
+        "......b......*......",
+        "..*............T..A.",
+        ".RRRRR..BBBBB.......",
+        ".RRRRR.kBBBBB...P...",
+        ".RRRRRk.BBBBBom..b..",
+        "..1,o..*..,.....g.1.",
+        ",,,,,,,,,,*,,,,,,,,,",
+        ",,*,,,,,,,,,,,,,*,,,",
+        ".ffffffff.cccc.~~~..",
+        ".fssssssf.cwwc~~~~~.",
+        "1fssssssf*cccc~~~~1."
+      ]
+    }
+  },
+  "mechanics": [
+    {
+      "id": "pickup",
+      "as": "coins to collect",
+      "params": {
+        "prop": "coin",
+        "count": 0,
+        "effect": "score",
+        "value": 1,
+        "respawnSeconds": 5,
+        "size": 0.8,
+        "collect": "both"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Walk into a coin to take it. Coins lie around the town: by the houses, on the road, by the well. Each coin is a point. Most coins when the time runs out wins.",
+    "scoring": "+1 per coin"
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a villager in a light shirt that takes the player's colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "pixel-day"
+  },
+  "sounds": [
+    {
+      "id": "coin",
+      "describe": "a bright coin chime"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other walking around the town",
+    "a coin taken by one player is gone for everyone",
+    "the houses, trees and well stand in front of or behind a walker as they should",
+    "every tile, edge, set piece and body is a picture that can be replaced"
+  ],
+  "content": {
+    "rating": "E"
+  }
+}

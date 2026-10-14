@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0029",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0029.png",
+ "sha256": "90fc469b059f7da86ed2e56116b9d1bcbdc584a27077284102ba16e27956e606",
+ "bytes": 406,
+ "preview": "previews/tile-0029.png",
+ "from": "Tiles/tile_0029.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone brick wall with a red and gold banner hanging on it",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "brick",
+  "stone",
+  "banner",
+  "flag",
+  "red",
+  "heraldry",
+  "decor"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#8b9bb4",
+     "#3f2631",
+     "#52607c",
+     "#e84537",
+     "#ff706d",
+     "#feae34",
+     "#c0cbdc",
+     "#fee761"
+    ],
+    "saturation": 0.418,
+    "value": 0.493,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.469
+     },
+     {
+      "hue": "pink",
+      "share": 0.25
+     },
+     {
+      "hue": "red",
+      "share": 0.211
+     },
+     {
+      "hue": "orange",
+      "share": 0.047
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.133
+   }
+  }
+ },
+ "source": {
+  "sha256": "9a448977535c4af375b3db4800112ecde93e0d794b393e0cacf1dd82b4d9f971",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

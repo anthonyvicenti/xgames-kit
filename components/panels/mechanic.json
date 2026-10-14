@@ -1,0 +1,210 @@
+{
+  "id": "panels",
+  "name": "Panels",
+  "describe": "Panels over the game: a shop, an inventory (bar or grid), choice cards, a dialogue and a text field; they show and return a choice, and never pause the round",
+  "examples": [
+    "a shop where coins buy upgrades",
+    "an inventory of items to use",
+    "a dialogue with a guide",
+    "pick one of three cards",
+    "name your pet (a text field)"
+  ],
+  "rank": 145,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "kinds": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "choice",
+            "shop",
+            "inventory",
+            "dialogue",
+            "input"
+          ]
+        },
+        "default": [
+          "choice"
+        ],
+        "minItems": 1,
+        "uniqueItems": true,
+        "description": "Which panels this game uses: their words become slots (choice, shop, inventory, dialogue, input)"
+      },
+      "choiceTitle": {
+        "type": "string",
+        "default": "Choose one",
+        "description": "Choice panel: the title"
+      },
+      "choiceClose": {
+        "type": "string",
+        "default": "Close",
+        "description": "Choice panel: the Close button"
+      },
+      "shopTitle": {
+        "type": "string",
+        "default": "Shop",
+        "description": "Shop panel: the title"
+      },
+      "shopBuy": {
+        "type": "string",
+        "default": "Buy",
+        "description": "Shop panel: the Buy button"
+      },
+      "shopClose": {
+        "type": "string",
+        "default": "Close",
+        "description": "Shop panel: the Close button"
+      },
+      "shopEmpty": {
+        "type": "string",
+        "default": "Nothing for sale right now",
+        "description": "Shop panel: the empty-list line"
+      },
+      "shopBalance": {
+        "type": "string",
+        "default": "{label}: {amount}",
+        "description": "Shop panel: the money line"
+      },
+      "inventoryTitle": {
+        "type": "string",
+        "default": "Items",
+        "description": "Inventory panel: the title"
+      },
+      "inventoryEmpty": {
+        "type": "string",
+        "default": "Nothing here yet",
+        "description": "Inventory panel: the empty-list line"
+      },
+      "inventoryClose": {
+        "type": "string",
+        "default": "Close",
+        "description": "Inventory panel: the Close button"
+      },
+      "inventoryUse": {
+        "type": "string",
+        "default": "Use",
+        "description": "Inventory panel: the Use button"
+      },
+      "inventoryDrop": {
+        "type": "string",
+        "default": "Drop",
+        "description": "Inventory panel: the Drop button"
+      },
+      "dialogueNext": {
+        "type": "string",
+        "default": "Next",
+        "description": "Dialogue panel: the Next hint"
+      },
+      "dialogueDone": {
+        "type": "string",
+        "default": "Done",
+        "description": "Dialogue panel: the Done hint"
+      },
+      "dialogueSkip": {
+        "type": "string",
+        "default": "Skip",
+        "description": "Dialogue panel: the Skip button"
+      },
+      "inputTitle": {
+        "type": "string",
+        "default": "Type here",
+        "description": "Input panel: the title"
+      },
+      "inputOk": {
+        "type": "string",
+        "default": "OK",
+        "description": "Input panel: the OK button"
+      },
+      "inputCancel": {
+        "type": "string",
+        "default": "Cancel",
+        "description": "Input panel: the Cancel button"
+      },
+      "inputHint": {
+        "type": "string",
+        "default": "Ctrl+Enter to confirm",
+        "description": "Input panel: the keyboard hint"
+      },
+      "inputPlaceholder": {
+        "type": "string",
+        "default": "",
+        "description": "Input panel: the placeholder"
+      }
+    }
+  },
+  "slots": {
+    "templates": [],
+    "dynamic": "more slots follow from params (slotsFor in the implementation): one per table row or per configured kind"
+  },
+  "events": [],
+  "host": {
+    "owner": "none",
+    "how": "a panel is local to the copy that opens it (or the `for` player's copy); sending the answer to the host is the game's message",
+    "state": null
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "ui-panels"
+  ],
+  "bots": "no bot code",
+  "notes": {
+    "lines": [
+      "A panel only shows and returns a choice: prices, money, stock and what a purchase does are rules.js. Open one on every copy that should see it; `for: player.id` makes it open on that player's copy only.",
+      "A panel never pauses the round (a live round never does); a modal one takes only your own input. Pictures are slot ids (panel.image.<file under assets/panels/>), words are the part's params.",
+      "Open: panels.shop({ items, currency, onChoose }), choice({ cards, onPick }), inventory({ items }), dialogue({ speaker, lines, choices }), input({ title, maxLength }); `h.update({ items })` after a purchase, `h.done` is a promise."
+    ],
+    "readme": "components/panels/README.md",
+    "stub": {
+      "as": "panels",
+      "worked": "const shop = panels.shop({ items: [{ id: 'speed', name: 'Faster shoes', price: 10 }], currency: { label: 'Coins', amount: 0 }, onChoose: ({ id }) => { buy(id); shop.update({ currency: { label: 'Coins', amount: coins } }); } });",
+      "traps": [
+        "a purchase is the game's: check the money on the host, take it, give the item, then h.update({ items, currency }) so the panel shows the new state",
+        "a panel is local: to show every player a choice call it on every copy; to answer the host send a message (ctx.net.send) from onPick/onChoose"
+      ]
+    }
+  },
+  "signs": "reported: its sign of life is reported, not judged",
+  "fixture": {
+    "players": 2,
+    "missing": "no two-player fixture: tests/m4d-panels.test.mjs runs it in a browser harness"
+  },
+  "impl": {
+    "three": {
+      "path": "components/panels/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/m4d-panels.test.mjs runs it in a browser harness pass (40 of 40, run by the contracts stream)",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/m4d-panels.test.mjs runs it in a browser harness pass (40 of 40, run by the contracts stream)",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

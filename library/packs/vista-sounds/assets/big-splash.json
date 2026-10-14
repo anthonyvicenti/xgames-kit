@@ -1,0 +1,55 @@
+{
+ "assetVersion": 1,
+ "id": "big-splash",
+ "pack": "vista-sounds",
+ "file": "big-splash.ogg",
+ "sha256": "b3401965c8536d93dffa62a793ca45a34b185d0d0bb28f58f16b35a19990c38e",
+ "bytes": 31718,
+ "preview": "previews/big-splash.png",
+ "from": "2 large splashes (whale breach / re-entry / flukes, pitched down)",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Whale splash",
+ "tags": [
+  "coast",
+  "calm",
+  "big",
+  "splash"
+ ],
+ "use": {
+  "seconds": 4.165,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -13.2,
+     "samplePeakDb": -1,
+     "truePeakDb": -0.9,
+     "hfRatio": 0.125
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 4.165,
+    "peakDbfs": -1,
+    "soundMaxLufs": -13.2
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/qubodup/sounds/442773/",
+  "author": "qubodup, roboroo"
+ }
+}

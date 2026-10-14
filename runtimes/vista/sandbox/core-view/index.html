@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Vista core view</title>
+	<!-- The vendored core booted by kit/host.js, nothing else: the places gallery and the hop memory run drive this page
+	     with ?bench. The kit ships the core's own MIT clouds; ?volumetric asks for the sky-pro ones (not in the kit). -->
+	<link rel="stylesheet" href="../../core/src/ui/ui.css" />
+	<style>
+		html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; }
+		#app, #app canvas { display: block; }
+		#fps { position: fixed; top: 10px; left: 12px; z-index: 50; font: 500 12px/1.2 ui-monospace, monospace;
+			color: #e8f6ff; background: rgba(8, 14, 22, 0.55); padding: 5px 9px; border-radius: 6px; pointer-events: none; }
+	</style>
+</head>
+<body>
+	<div id="app"></div>
+	<div id="fps">-- fps</div>
+	<div id="loader" role="status" aria-live="polite" aria-label="Loading">
+		<div class="loader-scrim"></div>
+		<div class="loader-inner">
+			<div class="loader-brand">
+				<p class="loader-kicker">gf-vista</p>
+				<h1 class="loader-title">CORE VIEW</h1>
+				<p class="loader-tagline">The vendored core, unchanged, booted by the kit's host.</p>
+			</div>
+			<div class="loader-panel">
+				<div class="loader-row">
+					<span class="loader-status">Starting…</span>
+					<span class="loader-meta"><span class="loader-pct">0%</span><span class="loader-time">0:00</span></span>
+				</div>
+				<div class="loader-bar"><div class="loader-fill"></div><div class="loader-glint"></div></div>
+				<div class="loader-note">The first launch compiles the shaders and can take a minute. Later visits load faster.</div>
+			</div>
+		</div>
+	</div>
+	<script type="module">
+		import { createVista, noWebGPUScreen, NoWebGPU } from '../../kit/host.js';
+		import { placeRecipe, REFERENCE } from '../../kit/world/places.js';
+		try {
+			const qs = new URLSearchParams(location.search);
+			// ?place=reference (the core's island through a recipe) or ?seed=N[&words=size:small,peaks:high,...]: a generated
+			// place (kit/world/places.js, core patch #6); neither: the core's own island
+			const words = Object.fromEntries((qs.get('words') || '').split(',').filter(Boolean).map(kv => kv.split(':')));
+			const place = qs.get('place') === 'reference' ? REFERENCE : qs.has('seed') ? placeRecipe(Number(qs.get('seed')) || qs.get('seed'), words) : null;
+			window.__place = place;
+			// two review cameras for a place (tools/places-gallery.mjs): placeStart, the player's first view (the core's
+			// WORLD.start, eye height), and placeSea, from the water 350 m off the pier head looking back at the island
+			const { VIEWS } = await import('../../core/src/core/DebugViews.js');
+			const { WORLD } = await import('../../core/src/world/WorldLayout.js');
+			const ground = (x, z) => Math.max(0, window.__vista?.app?.terrainData?.heightAt(x, z) ?? 0);
+			const look = (from, to) => ({ yaw: Math.atan2(-(to[0] - from[0]), -(to[2] - from[2])), pitch: Math.atan2(to[1] - from[1], Math.hypot(to[0] - from[0], to[2] - from[2])) });
+			VIEWS.placeStart = { get p() { const s = WORLD.start.position; return [s.x, ground(s.x, s.z) + 1.65, s.z]; }, get yaw() { return WORLD.start.yaw; }, pitch: -0.035 };
+			// the same framing for every place: upstream's sea shot (150 m east of its pier, 340 m past its head) in each
+			// place's harbour frame
+			const { toWorld } = await import('../../core/src/world/Place.js');
+			const seaFrom = () => { const [x, z] = toWorld(205, 380); return [x, 16, z]; }, seaTo = () => { const [x, z] = toWorld(10, -260); return [x, 40, z]; };
+			VIEWS.placeSea = { get p() { return seaFrom(); }, get yaw() { return look(seaFrom(), seaTo()).yaw; }, get pitch() { return look(seaFrom(), seaTo()).pitch; } };
+			// placeAerial: the whole island from high over the sea in front of its harbour; placeBack: the far side, from
+			// the water behind the island (its cliffs, its other coves), low; placeVillage: the harbour from the slope
+			// above it, looking down over the village to the pier and the bay
+			const body = () => (place ?? {}).coast?.body ?? [0, -442, 565, 400];
+			const away = () => { const [bx, bz] = body(), [hx, hz] = toWorld(55, -64), L = Math.hypot(hx - bx, hz - bz) || 1; return [(hx - bx) / L, (hz - bz) / L]; };
+			const pose = (from, to) => ({ p: from, ...look(from, to) });
+			const aerial = () => { const [bx, bz, rx, rz] = body(), [ux, uz] = away(), d = Math.max(rx, rz) + 900; return pose([bx + ux * d - uz * 260, 520, bz + uz * d + ux * 260], [bx, 40, bz]); };
+			const back = () => { const [bx, bz, rx, rz] = body(), [ux, uz] = away(), d = Math.max(rx, rz) + 520; return pose([bx - ux * d + uz * 180, 22, bz - uz * d - ux * 180], [bx, 70, bz]); };
+			const above = () => { const [x, z] = toWorld(55, -230), [tx, tz] = toWorld(55, 40); const y = ground(x, z) + 45; return pose([x, y, z], [tx, 0, tz]); };
+			for (const [name, fn] of [['placeAerial', aerial], ['placeBack', back], ['placeVillage', above]]) VIEWS[name] = { get p() { return fn().p; }, get yaw() { return fn().yaw; }, get pitch() { return fn().pitch; } };
+			const vista = window.__vista = await createVista({ ui: !qs.has('noui'), clouds: qs.has('volumetric') ? 'volumetric' : 'basic', place });
+			window.__game = vista.observe;
+			// ?look={"clouds":0.7,"exposure":0.3}: look values beside the hour and sea the capture tool sets per shot
+			if (qs.get('look')) vista.look.set(JSON.parse(qs.get('look')));
+			if (!vista.bench && vista.ui) vista.ui.showStartOverlay(() => { vista.app.input.requestLock(); vista.app.audio?.resume(); });
+		} catch (e) {
+			if (e instanceof NoWebGPU) noWebGPUScreen(e.message, { kind: e.kind });
+			else { console.error(e); window.__ui?.setLoadingError?.('Something went wrong: ' + e.message); }
+		}
+	</script>
+</body>
+</html>

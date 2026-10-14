@@ -1,0 +1,89 @@
+{
+  "id": "calm",
+  "label": "Calm",
+  "feel": "Photoreal light, sea and sky: a physical sun, clouds, a simulated ocean with surf and whitecaps, on islands of each game's own. The place is the point; nothing hurries you.",
+  "references": ["Tidewater (golden reference)", "Dredge", "Webfishing (fishing with friends)"],
+  "changesPlay": false,
+  "look": {
+    "vista": {
+      "preset": "golden-hour",
+      "alternates": [
+        { "preset": "clear-morning", "why": "fresh morning light, glassy turquoise shallows" },
+        { "preset": "bright-noon", "why": "high sun, clear water over the seabed" },
+        { "preset": "sunset-glow", "why": "the sun on the horizon, pink cloud undersides" },
+        { "preset": "moonlit-night", "why": "moon and stars, lamp points, a dark glinting sea" },
+        { "preset": "storm-swell", "why": "a heavy sky, big breaking surf, whitecaps" }
+      ],
+      "values": {}
+    }
+  },
+  "world": {
+    "family": "coast",
+    "vista": { "default": "islands", "notes": "islands of the game's own, each generated from a seed and words (world.islands: shape, coast, coves, a river mouth, cliffs, sand, plants, village, time, weather); never the core's reference island", "templates": ["islands"] }
+  },
+  "camera": { "default": "third", "vista": { "notes": "on foot or on deck; the core's camera" } },
+  "bodies": {
+    "set": "rocketbox-adults",
+    "vista": [
+      "rocketbox-polo-man", "rocketbox-tee-woman", "rocketbox-denim-man", "rocketbox-knit-woman",
+      "rocketbox-angler-man", "rocketbox-cardigan-woman"
+    ],
+    "physics": "animated"
+  },
+  "props": { "vista": [] },
+  "audio": {
+    "character": "the soundscape: surf, wind, gulls and creaking wood under quiet chimes; vista's sound set on gf-audio",
+    "library": "runtimes/vista/kit/sounds.json",
+    "sounds": {
+      "splash": { "preset": "splash" },
+      "pickup": { "preset": "gem", "pitch": 0.8, "gainDb": -3 },
+      "ui": { "preset": "click", "pitch": 0.9 }
+    },
+    "buses": "kit defaults (never boosted)"
+  },
+  "hud": {
+    "theme": null,
+    "accent": "#43b6c4",
+    "panel": "#0d2a33a8",
+    "text": "#f4fbff",
+    "font": "Fredoka",
+    "radius": "16px",
+    "weight": 500
+  },
+  "mechanics": {
+    "suggested": ["station", "pickup", "loot"],
+    "why": "fishing, selling at a stall, collecting. vista's own game tables (fishing, gear, vendors). Suggestions only."
+  },
+  "packs": ["vista-core-world", "rocketbox-adults", "vista-sounds", "ofl-fredoka"],
+  "runtimes": {
+    "vista": {
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          { "what": "Lantern Cove and Glass Bay pass verify-vista; WebGPU on a desktop only", "date": "2026-10-12" },
+          {
+            "what": "the look judge's contact sheet for calm on a generated island (seed 4127), rendered on the graphics card (its only check)",
+            "ref": "kinds/sheets/calm.png",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "sheet": { "runtime": "vista", "preset": "golden-hour", "place": { "seed": 4127, "words": { "size": "medium", "shape": "twin", "coast": "coves", "river": "yes", "village": "hamlet", "houses": "timber", "sand": "golden" } } },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "the look judge's contact sheet for calm on a generated island (seed 4127), rendered on the graphics card (its only check)",
+        "ref": "kinds/sheets/calm.png",
+        "date": "2026-10-13"
+      }
+    ],
+    "note": "one of the initial eight (2026-10-13), for the creator to review"
+  }
+}

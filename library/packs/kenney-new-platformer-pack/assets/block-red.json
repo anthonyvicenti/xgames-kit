@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "block-red",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-red.png",
+ "sha256": "35a74f683cb7526d93c616a4f892c102706f6a73ddbb3dcabb1a2e11a563c402",
+ "bytes": 1778,
+ "preview": "previews/block-red.png",
+ "from": "Sprites/Tiles/Double/block_red.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block red tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "red",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#e54341",
+     "#353541",
+     "#f17575",
+     "#bc2423",
+     "#343440",
+     "#cb2f2e",
+     "#c62b2a",
+     "#c82d2c"
+    ],
+    "saturation": 0.607,
+    "value": 0.497,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.772
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     }
+    ],
+    "exact": 42,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "4f7f574ca1202ed0974205d724ac1fd235e7a9fcbcff254bffc95a23397b2a65",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

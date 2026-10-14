@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "block-idle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-idle.png",
+ "sha256": "a5a1cafcab78652c1563a2186bac71153874ff5b2fa4f95f23e46957f9016ca6",
+ "bytes": 3866,
+ "preview": "previews/block-idle.png",
+ "from": "Sprites/Enemies/Double/block_idle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "block idle",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "idle",
+  "enemies"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#353541",
+     "#ee9366",
+     "#de7e4f",
+     "#2ecc71",
+     "#20b860",
+     "#c66a3e",
+     "#46e087",
+     "#25bf66"
+    ],
+    "saturation": 0.541,
+    "value": 0.482,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.462
+     },
+     {
+      "hue": "green",
+      "share": 0.269
+     },
+     {
+      "hue": "grey",
+      "share": 0.264
+     }
+    ],
+    "exact": 130,
+    "grey": 0.264
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "c97640c45dac4398f6ad519fbbbf4b18575a25a77b1906481fea34c72ca08ee9",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

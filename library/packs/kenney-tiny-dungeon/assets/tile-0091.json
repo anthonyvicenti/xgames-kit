@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0091",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0091.png",
+ "sha256": "fca74b078d4640353abb6fbf9bbe07f54c4ba23d7019d37241ff831713a28507",
+ "bytes": 334,
+ "preview": "previews/tile-0091.png",
+ "from": "Tiles/tile_0091.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "an open wooden treasure chest, empty and dark inside",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "chest",
+  "treasure",
+  "loot",
+  "open",
+  "empty",
+  "wooden",
+  "container"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#bd6c4a",
+     "#763b36",
+     "#8b9bb4",
+     "#eaa56c",
+     "#5a6988",
+     "#262b44"
+    ],
+    "saturation": 0.306,
+    "value": 0.388,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.52
+     },
+     {
+      "hue": "blue",
+      "share": 0.236
+     },
+     {
+      "hue": "orange",
+      "share": 0.181
+     },
+     {
+      "hue": "red",
+      "share": 0.063
+     }
+    ],
+    "exact": 8,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.793
+   }
+  }
+ },
+ "source": {
+  "sha256": "19a75fbb7df761b7373dac310d5e7dd2aa5a65529f81d4ffc80940c89d0538ff",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

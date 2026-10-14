@@ -1,0 +1,64 @@
+{
+ "packVersion": 1,
+ "id": "kenney-car-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Car Kit (3.1)",
+ "describe": "Kenney's car kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/car-kit",
+  "file": "library/packs/kenney-car-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/car-kit",
+  "download": "https://kenney.nl/media/pages/assets/car-kit/1a312ec241-1775131960/kenney_car-kit.zip",
+  "sha256": "fac7dacac5c7874348cf19729af3ef205f3d366493edaf0a827d93f4fdf3d0c4",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 5,
+   "hues": [
+    "#ff7544",
+    "#d3d3e3",
+    "#ff7c44",
+    "#ff7844",
+    "#ff7a44",
+    "#ff8f44",
+    "#e6e6ef",
+    "#ff9444"
+   ],
+   "saturation": 0.806,
+   "value": 0.696,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.751
+    },
+    {
+     "hue": "blue",
+     "share": 0.249
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 13.37,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 1,
+ "validators": [
+  "budget"
+ ]
+}

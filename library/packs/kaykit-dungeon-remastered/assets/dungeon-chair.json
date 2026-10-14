@@ -1,0 +1,113 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-chair",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-chair.glb",
+ "sha256": "3ce6560d4fa00854c199f312a0551e4c59d277aa6c262004f3342a7c2d4b0ed6",
+ "bytes": 56708,
+ "preview": "previews/dungeon-chair.png",
+ "from": "chair.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden chair",
+ "tags": [
+  "dungeon",
+  "chair",
+  "furniture",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   0.563,
+   0.92,
+   0.563
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.563,
+    0.92,
+    0.563
+   ],
+   "offset": [
+    0,
+    0.46,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 294,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 294,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 56708,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#904f3c",
+     "#92523e",
+     "#985742",
+     "#a8674d",
+     "#9c5b46",
+     "#9e5c46",
+     "#9f5e48",
+     "#965541"
+    ],
+    "saturation": 0.395,
+    "value": 0.432,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.592
+     },
+     {
+      "hue": "brown",
+      "share": 0.405
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 10.11,
+   "texelsPerMetre": 72,
+   "texturedShare": 0.456,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/chair.gltf.glb",
+  "sha256": "5f133281686d398304c0a458c4d407dd483eeea8aba67220b585ceb89366efa2",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

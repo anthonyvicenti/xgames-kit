@@ -1,0 +1,578 @@
+{
+  "id": "board",
+  "name": "Board",
+  "describe": "A grid on the floor: take turns placing or moving pieces by the game's own legal and winner rules; refusals with a reason; bots",
+  "examples": [
+    "a giant four in a row on the floor",
+    "take turns placing pieces on a grid",
+    "move your pieces across a board and capture",
+    "a tic-tac-toe or reversi table with friends"
+  ],
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "cols": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 12,
+        "default": 7,
+        "description": "Cells across"
+      },
+      "rows": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 12,
+        "default": 6,
+        "description": "Cells deep (row 0 is at the end rowZero names)"
+      },
+      "rowZero": {
+        "type": "string",
+        "enum": [
+          "back",
+          "front"
+        ],
+        "default": "back",
+        "description": "Which end of the board row 0 is, where dropped pieces gather. back: the -z end (in a 3D game the far side from the first seat; seen from above, the top of the screen). front: the +z end (seen from above, the bottom of the screen, as a four-in-a-row board stands)"
+      },
+      "seatSides": {
+        "type": "string",
+        "pattern": "^[snew]{0,4}$",
+        "default": "",
+        "description": "The sides of the board the seats stand on, in seat order (letters s, n, e, w; s is +z, the bottom of the screen from above); several seats on one side spread along it. Empty: s and n for two, then e and w"
+      },
+      "cell": {
+        "type": "number",
+        "description": "Cell size in metres (it shrinks so the board and its seats fit the play area)",
+        "minimum": 0.6,
+        "maximum": 4,
+        "default": 1.5
+      },
+      "at": {
+        "default": "centre",
+        "description": "Where the middle of the board is: \"centre\", a world zone name, or [x, z]"
+      },
+      "input": {
+        "type": "string",
+        "enum": [
+          "place",
+          "drop",
+          "move"
+        ],
+        "default": "place",
+        "description": "What acting on a cell means. place: put a piece on that cell. drop: put a piece in that column, it slides to the free cell nearest row 0. move: pick one of your pieces, then where it goes"
+      },
+      "presence": {
+        "type": "string",
+        "enum": [
+          "walk",
+          "cursor"
+        ],
+        "default": "walk",
+        "description": "How a player is at the board. walk: your body walks beside and on it and the cell under your feet is yours to act on. cursor: your body stands at your side of the board and you move a mark in your colour (mouse, keys, stick); friends see the mark move"
+      },
+      "action": {
+        "type": "string",
+        "enum": [
+          "interact",
+          "primary"
+        ],
+        "default": "interact",
+        "description": "The input that acts on your cell (walk); with a cursor both the click and interact act"
+      },
+      "piece": {
+        "type": "string",
+        "enum": [
+          "disc",
+          "pawn",
+          "ball",
+          "block"
+        ],
+        "default": "disc",
+        "description": "The shape of a piece, drawn by the kit in its owner's colour (kind 1 and up are drawn taller)"
+      },
+      "pieceSize": {
+        "type": "number",
+        "description": "A piece's width as a share of the cell",
+        "minimum": 0.3,
+        "maximum": 0.98,
+        "default": 0.76
+      },
+      "cellShape": {
+        "type": "string",
+        "enum": [
+          "square",
+          "round"
+        ],
+        "default": "square",
+        "description": "Square tiles, or round holes on the slab"
+      },
+      "checker": {
+        "type": "boolean",
+        "default": true,
+        "description": "Alternate the two cell colours"
+      },
+      "turnSeconds": {
+        "type": "number",
+        "description": "Seconds a turn may take before the host plays a move for that player (0: no limit). The simple default until the session flow owns turns",
+        "minimum": 0,
+        "maximum": 300,
+        "default": 30
+      },
+      "botThink": {
+        "type": "number",
+        "description": "Seconds a bot waits before it moves",
+        "minimum": 0.1,
+        "maximum": 10,
+        "default": 1.1
+      },
+      "endDelay": {
+        "type": "number",
+        "description": "Seconds the finished board stays up before the results",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 2.2
+      },
+      "score": {
+        "type": "string",
+        "enum": [
+          "win",
+          "pieces",
+          "none"
+        ],
+        "default": "win",
+        "description": "win: the winner gets 1. pieces: your score is your pieces on the board, as it changes. none: the rules score"
+      },
+      "endsRound": {
+        "type": "boolean",
+        "default": true,
+        "description": "A won or drawn board ends the round"
+      },
+      "clear": {
+        "type": "number",
+        "description": "World props within this many metres of the board are taken away (walls, doors and ceilings stay); 0 keeps them",
+        "minimum": 0,
+        "maximum": 8,
+        "default": 2.4
+      },
+      "seats": {
+        "type": "boolean",
+        "default": true,
+        "description": "At round start each player stands at their own side of the board, facing it"
+      },
+      "edgeReach": {
+        "type": "number",
+        "description": "Walking: how far off the board's edge you can stand and still act on the nearest edge cell (m)",
+        "minimum": 0,
+        "maximum": 4,
+        "default": 1.8
+      },
+      "hints": {
+        "type": "boolean",
+        "default": true,
+        "description": "Show the mover which cells are legal"
+      },
+      "boardColor": {
+        "type": "string",
+        "default": "#2f4a7a",
+        "description": "The slab under the cells"
+      },
+      "cellColor": {
+        "type": "string",
+        "default": "#e9edf5",
+        "description": "Cell colour"
+      },
+      "cellColorB": {
+        "type": "string",
+        "default": "#c9d3e6",
+        "description": "The other cell colour (checker)"
+      },
+      "hintColor": {
+        "type": "string",
+        "default": "#58d68d",
+        "description": "Legal cells"
+      },
+      "refuseColor": {
+        "type": "string",
+        "default": "#ff5a5a",
+        "description": "A refused move flashes this"
+      },
+      "winColor": {
+        "type": "string",
+        "default": "#ffd23f",
+        "description": "The winning cells"
+      },
+      "soundPlace": {
+        "type": "string",
+        "default": "board-place",
+        "description": "Sound id when a piece lands"
+      },
+      "soundRefuse": {
+        "type": "string",
+        "default": "board-refuse",
+        "description": "Sound id when a move is refused"
+      },
+      "soundWin": {
+        "type": "string",
+        "default": "board-win",
+        "description": "Sound id when the board is won"
+      },
+      "soundSelect": {
+        "type": "string",
+        "default": "board-select",
+        "description": "Sound id when a piece is picked"
+      },
+      "textYourTurn": {
+        "type": "string",
+        "default": "Your turn",
+        "description": "Goal line on your turn"
+      },
+      "textTheirTurn": {
+        "type": "string",
+        "default": "{name}'s turn",
+        "description": "Goal line on another player's turn ({name})"
+      },
+      "textNotYourTurn": {
+        "type": "string",
+        "default": "Not your turn",
+        "description": "Refusal when it is not your turn"
+      },
+      "textDraw": {
+        "type": "string",
+        "default": "Draw",
+        "description": "Goal line on a draw"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.board.board-color",
+        "label": "Board colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/boardColor"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 62
+      },
+      {
+        "id": "mechanic.board.cell-color",
+        "label": "Cell colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/cellColor"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 60
+      },
+      {
+        "id": "mechanic.board.cell-color-b",
+        "label": "Second cell colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/cellColorB"
+        },
+        "tier": "main",
+        "facet": "look",
+        "rank": 58
+      },
+      {
+        "id": "mechanic.board.turn-seconds",
+        "label": "Seconds per turn (0 off)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/turnSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 0,
+          "max": 300,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.board.piece-size",
+        "label": "Piece size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/pieceSize"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 40,
+        "constraints": {
+          "min": 0.3,
+          "max": 0.98
+        }
+      },
+      {
+        "id": "mechanic.board.hint-color",
+        "label": "Legal move colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/hintColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.board.win-color",
+        "label": "Winning cells colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/winColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 28
+      },
+      {
+        "id": "mechanic.board.refuse-color",
+        "label": "Refused move colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/refuseColor"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 20
+      },
+      {
+        "id": "mechanic.board.bot-think",
+        "label": "Bot thinking time",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/botThink"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0.1,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.board.end-delay",
+        "label": "Pause before results",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/endDelay"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 10,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.board.text-your-turn",
+        "label": "Your turn text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textYourTurn"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.board.text-their-turn",
+        "label": "Their turn text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textTheirTurn"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.board.text-not-your-turn",
+        "label": "Not your turn text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textNotYourTurn"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.board.text-draw",
+        "label": "Draw text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textDraw"
+        },
+        "tier": "advanced",
+        "facet": "text",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onMove",
+      "on": "host",
+      "args": "{ player, seat, move, state, auto }",
+      "when": "a legal move was played (auto: the turn ran out and the host played it)"
+    },
+    {
+      "name": "onRefuse",
+      "on": "host",
+      "args": "{ player, why, cell }",
+      "when": "a move was refused: not legal, or not that player's turn"
+    },
+    {
+      "name": "onEnd",
+      "on": "host",
+      "args": "{ winners, seats, cells, reason, draw }",
+      "when": "the board was won or drawn (the round ends after endDelay)"
+    },
+    {
+      "name": "onTurn",
+      "on": "host",
+      "args": "{ seat, player, state }",
+      "when": "the turn passed to a seat"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns the grid, the turn and the result; a copy sends its move and is told why when it is refused; a cursor mark is its own player's",
+    "state": "board",
+    "fields": {
+      "g": "the grid, one letter a cell from row 0 (\".\" empty; read it with board.state.at(c, r), never by hand)",
+      "t": "the seat whose turn it is",
+      "n": "moves played",
+      "l": "[from, to] cell indexes of the last move (-1: none)",
+      "o": "player ids in seat order",
+      "b": "a 1 per seat that is a bot",
+      "w": "null, or the result { s: winning seats, c: cells, r: reason, d: 1 for a draw }",
+      "d": "the round second the turn runs out (0: untimed)",
+      "k": "moves refused so far",
+      "x": "the game's own data (state.data)"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "interact acts on the cell under the player's feet (params.action)"
+    },
+    {
+      "res": "round.end",
+      "why": "a won or drawn board ends the round (params.endsRound)"
+    },
+    {
+      "res": "player.control",
+      "when": "presence is cursor",
+      "why": "a cursor in place of a body"
+    },
+    {
+      "res": "input.primary",
+      "shared": true,
+      "when": "presence is cursor",
+      "why": "click to act"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [],
+  "gives": [
+    "board-grid"
+  ],
+  "bots": "bots play by themselves (botThink)",
+  "asks": [
+    {
+      "about": "body",
+      "why": "on a board each player is a character walking beside it (presence walk) or a mark that moves over the cells (presence cursor)"
+    }
+  ],
+  "notes": {
+    "lines": [
+      "Give the rules once, in setup: board.rules({ legal(move, s) → true or the reason in words, winner(s) → null | { seat, cells } | { draw: true } }). The board does turns, refusals, pieces, the win line, bots and the end of the round.",
+      "A move is { type: \"place\", to: [c, r] } or { type: \"move\", from, to }. s has at, empty, owner, set, line, flank, reach, dropRow, count, full, last, turn, data. apply(move, s) for captures, start(s) for the opening (README.md).",
+      "input \"place\" | \"drop\" (a column, it slides) | \"move\". presence \"walk\" (bodies on the board) or \"cursor\" (bodies stand at the table, each player moves a mark): ask the creator which when the prompt does not say."
+    ],
+    "readme": "components/board/README.md",
+    "stub": {
+      "as": "board",
+      "worked": "board.rules({ legal: (m, s) => s.empty(...m.to) || 'That cell is taken', winner: s => { const l = s.last && s.line(...s.last, 3); return l ? { seat: s.owner(...s.last), cells: l } : s.full() ? { draw: true } : null; } });",
+      "traps": [
+        "legal and winner run on every copy and in the bot's look ahead: read only the state they are handed, change nothing in them",
+        "bots already play (and the turn timer plays for an idle player): add bot(ctx, p, dt) { board.bot(p, dt); } to the hooks only so a bot walks to its cell first",
+        "the board ends the round and scores the winner (params.score, endsRound): leave check() returning null, or it ends twice"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/board/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/board/index.js",
+      "profiles": [
+        "standard-3d",
+        "flat-2d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-board.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      },
+      "note": "flat-2d: plane top only (a grid on the ground with a cursor each)"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-board.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

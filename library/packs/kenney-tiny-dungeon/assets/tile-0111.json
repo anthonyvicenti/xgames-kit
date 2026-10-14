@@ -1,0 +1,97 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0111",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0111.png",
+ "sha256": "bfa38f79de3b876afc5ce08326048219770ef0e065ef6565110bf6c3d7bc6fad",
+ "bytes": 351,
+ "preview": "previews/tile-0111.png",
+ "from": "Tiles/tile_0111.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a hooded cultist with glowing red eyes and a grey beard",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "cultist",
+  "hooded",
+  "red-eyes",
+  "necromancer",
+  "villain",
+  "evil"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#c0cbdc",
+     "#eaa56c",
+     "#f7c282",
+     "#763b36",
+     "#e84537",
+     "#8b9bb4"
+    ],
+    "saturation": 0.359,
+    "value": 0.395,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.526
+     },
+     {
+      "hue": "orange",
+      "share": 0.33
+     },
+     {
+      "hue": "blue",
+      "share": 0.121
+     }
+    ],
+    "exact": 9,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.86
+   }
+  }
+ },
+ "source": {
+  "sha256": "8ecfc9b753e676a3cd1fcf2f8f98cc70c8e814f706f41a7e172508fe15156618",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

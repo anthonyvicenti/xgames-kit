@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "trophy",
+ "pack": "kenney-mini-arena",
+ "file": "trophy.glb",
+ "sha256": "413a562228f05c267df7e4e6bf5db2f968e68bcfaeb9540f2f6c9af618939e82",
+ "bytes": 18192,
+ "preview": "previews/trophy.png",
+ "from": "kenney:mini-arena/trophy; baked to metres (x1.67574), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a golden trophy cup",
+ "tags": [
+  "arena",
+  "item",
+  "goal",
+  "trophy"
+ ],
+ "use": {
+  "size": [
+   0.954,
+   0.8,
+   0.757
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.954,
+    0.8,
+    0.757
+   ],
+   "offset": [
+    0,
+    0.4,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 244,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 244,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18192,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7b8198",
+     "#ffd161",
+     "#ffa73e",
+     "#ff9731",
+     "#ffb94d",
+     "#ffb247",
+     "#ff9c35",
+     "#787d95"
+    ],
+    "saturation": 0.854,
+    "value": 0.623,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.743
+     },
+     {
+      "hue": "grey",
+      "share": 0.167
+     },
+     {
+      "hue": "yellow",
+      "share": 0.091
+     }
+    ],
+    "grey": 0.167
+   },
+   "trianglesPerMetre": 8.83,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "111dd4de2c77560ed664bd7769839aad8d82d8e9148712aa0d349875042b69da",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.67574), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,83 @@
+{
+ "schema": "xgames-forge-fixture/1",
+ "mechanic": "health",
+ "runtime": "forge",
+ "at": "2026-10-14T01:34:18.914Z",
+ "renderer": "webgpu",
+ "browser": "headless Chrome 151.0.7922.34",
+ "seconds": 14,
+ "pass": true,
+ "checks": [
+  {
+   "name": "two-players-in-one-game",
+   "ok": true,
+   "detail": "webgpu; the mechanic runs: host [{\"id\":\"health\",\"standin\":false}]"
+  },
+  {
+   "name": "both-start-full",
+   "ok": true,
+   "detail": "max 100"
+  },
+  {
+   "name": "damage-agrees-on-both",
+   "ok": true,
+   "detail": "100 → 70 on both screens"
+  },
+  {
+   "name": "joiner-copy-hears-the-hurt",
+   "ok": true,
+   "detail": "onHurt on the joiner's copy: 1"
+  },
+  {
+   "name": "host-hears-how-much",
+   "ok": true,
+   "detail": "onDamage on the host: [30]"
+  },
+  {
+   "name": "heal-agrees-on-both",
+   "ok": true,
+   "detail": "70 → 80"
+  },
+  {
+   "name": "regen-fills-on-both",
+   "ok": true,
+   "detail": "regen 20/s after 2 s alone"
+  },
+  {
+   "name": "zero-is-down-on-both",
+   "ok": true,
+   "detail": "with the host standing the joiner is down"
+  },
+  {
+   "name": "host-hears-the-fall",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "nobody-standing-is-out-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "respawn-on-both",
+   "ok": true,
+   "detail": "both back at 100 after respawnSeconds 3"
+  },
+  {
+   "name": "respawns-heard",
+   "ok": true,
+   "detail": "onRespawn 2"
+  },
+  {
+   "name": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "shots": [
+  "joiner-down.jpg",
+  "host-end.jpg",
+  "joiner-end.jpg"
+ ],
+ "errors": []
+}

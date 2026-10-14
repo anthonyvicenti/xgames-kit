@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tree-apple",
+ "pack": "xk-pixel-town",
+ "file": "tree-apple.png",
+ "sha256": "d8eeea44fac8ccc8703d7b54f3b5c617b28769ca58659fd4f3ab4016918efdee",
+ "bytes": 1646,
+ "preview": "previews/tree-apple.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): tree-apple.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "an apple tree with red fruit",
+ "tags": [
+  "pixel",
+  "tree",
+  "apple",
+  "fruit",
+  "orchard",
+  "set-piece"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 64
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#7ec152",
+     "#26522f",
+     "#5ca546",
+     "#468a3c",
+     "#336b34",
+     "#64402c",
+     "#252d2e",
+     "#a6d867"
+    ],
+    "saturation": 0.392,
+    "value": 0.376,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.761
+     },
+     {
+      "hue": "brown",
+      "share": 0.078
+     },
+     {
+      "hue": "grey",
+      "share": 0.077
+     }
+    ],
+    "exact": 22,
+    "grey": 0.077
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.768
+   }
+  }
+ },
+ "source": {
+  "sha256": "fa5596331dd80697b23495ee44dbf07245b39631feb7a8bccc4c6b2bbe88b5c6",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

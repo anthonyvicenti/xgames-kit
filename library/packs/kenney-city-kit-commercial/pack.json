@@ -1,0 +1,72 @@
+{
+ "packVersion": 1,
+ "id": "kenney-city-kit-commercial",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney City Kit Commercial (2.1)",
+ "describe": "Kenney's city kit commercial: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/city-kit-commercial",
+  "file": "library/packs/kenney-city-kit-commercial/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/city-kit-commercial",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-commercial/a742d900eb-1753115042/kenney_city-kit-commercial_2.1.zip",
+  "sha256": "f8b09b081c2bb88bcc126e2dec1cb40fd0dad7e7e591b6c26aaefe96fb35276b",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 13,
+   "hues": [
+    "#5a6078",
+    "#3d3f4b",
+    "#d8d8e6",
+    "#e8e8f0",
+    "#646981",
+    "#d3d3e3",
+    "#40a97b",
+    "#20896b",
+    "#e6e6ef",
+    "#eaeaf2",
+    "#454856",
+    "#5c627a"
+   ],
+   "saturation": 0.181,
+   "value": 0.555,
+   "families": [
+    {
+     "hue": "grey",
+     "share": 0.709
+    },
+    {
+     "hue": "blue",
+     "share": 0.222
+    },
+    {
+     "hue": "cyan",
+     "share": 0.064
+    }
+   ],
+   "grey": 0.817
+  },
+  "trianglesPerMetre": 1.62,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 8,
+ "validators": [
+  "budget"
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T5",
+ "frozen": "2026-10-13",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-10",
+  "where": "games.fun research/studio-v2/evals/cases/T5.json"
+ },
+ "prompt": "Build a minecraft based world where we attack giants by swinging through the air with swords",
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "standard-3d"
+   ],
+   "loop": [
+    "round",
+    "run",
+    "match"
+   ],
+   "kind": [
+    "blocky"
+   ]
+  },
+  "why": "A block world and block-built bodies are the blocky kind; giants that come in a round or a run. A block world is a world in the registry, not a loop that stays: the prompt asks for a fight, not for saved building."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe); no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "block-world",
+   "text": "The world is built of blocks (ground, cliffs, trees, buildings) and reads as a block-building game's world, with block faces that stay crisp up close, far away and at speed",
+   "how": "human"
+  },
+  {
+   "id": "blocky-characters",
+   "text": "The players' characters are block-built too, and match the world",
+   "how": "human"
+  },
+  {
+   "id": "swing",
+   "text": "Players fly by swinging: hooks fired at the world, a rope that swings them, a reel and a boost; chained swings carry a player across the map without touching the ground",
+   "how": "human"
+  },
+  {
+   "id": "swing-feel",
+   "text": "The swing passes the kit's own measured feel checks (a rope never keeps slack, a full reel arrives and stops, the hero stays on screen and does not shake)",
+   "how": "probe:feel-targets"
+  },
+  {
+   "id": "giants",
+   "text": "The enemies are giants: at least five times a player's height, more than one in a round, and they come at the players or at what the players defend",
+   "how": "human"
+  },
+  {
+   "id": "swords",
+   "text": "Players attack the giants with swords from the air: a strike made at speed hurts a giant, and a giant can be killed",
+   "how": "human"
+  },
+  {
+   "id": "straightforward",
+   "text": "A new player knows what to do within the first minute without reading anything long: where to go, how to fly, what to hit",
+   "how": "human"
+  },
+  {
+   "id": "own-ip",
+   "text": "Nothing on screen names or copies the named block game or any other franchise: every picture, texture and model is ours or licensed",
+   "how": "human"
+  },
+  {
+   "id": "quality-bar",
+   "text": "Played side by side with the private prototype the creator accepted on 2026-10-10 (\"great, I love it\"), the creator says this game is of that quality (creator's judgement)",
+   "how": "human"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, swinging on their own hooks",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A round ends on a results screen (won or lost) and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one block texture swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working fishing minigame",
+  "how": "judge"
+ },
+ "note": "The creator's bridge of 2026-10-10, re-created for spec v2 on 2026-10-13: \"Give nothing but the prompt ..., and output something of this quality.\" The prompt is verbatim. The quality bar is a private prototype on a third party's code that never ships; builders never open it."
+}

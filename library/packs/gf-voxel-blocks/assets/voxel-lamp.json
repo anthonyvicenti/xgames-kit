@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-lamp",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-lamp.png",
+ "sha256": "97415fd6a0ed4366137d954d34e415138c41ff0c13e7c2444e3005971ba6bef1",
+ "bytes": 35372,
+ "preview": "previews/voxel-lamp.png",
+ "from": "research/worlds/tools/bake_blocks.py; baked offline by the script at 512 px (original work; 128 px until 2026-10-09)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "lamp block face",
+ "tags": [
+  "lamp",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#302014",
+     "#3c281a",
+     "#ffc45c",
+     "#4d3320",
+     "#362417",
+     "#382517",
+     "#ffcc5f",
+     "#ffcd60"
+    ],
+    "saturation": 0.733,
+    "value": 0.471,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.449
+     },
+     {
+      "hue": "yellow",
+      "share": 0.353
+     },
+     {
+      "hue": "orange",
+      "share": 0.198
+     }
+    ],
+    "exact": 744,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "author": "the kit (baked block face)",
+  "retrieved": "2026-10-09",
+  "modified": "baked offline by the script at 512 px (original work; 128 px until 2026-10-09)"
+ }
+}

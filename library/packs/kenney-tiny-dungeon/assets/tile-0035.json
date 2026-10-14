@@ -1,0 +1,101 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0035",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0035.png",
+ "sha256": "c57a7fcaa3d544b890304b7d6e9d74f1a0df8a4acdc5a05ab8180040d494c667",
+ "bytes": 336,
+ "preview": "previews/tile-0035.png",
+ "from": "Tiles/tile_0035.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the right half of a double doorway in a stone wall, its wooden door ajar",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "door",
+  "doorway",
+  "wall",
+  "stone",
+  "entrance",
+  "wooden",
+  "ajar",
+  "double-door",
+  "right"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#262b44",
+     "#3f2631",
+     "#52607c",
+     "#bd6c4a",
+     "#8b9bb4",
+     "#763b36",
+     "#c0cbdc"
+    ],
+    "saturation": 0.285,
+    "value": 0.3,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 0.691
+     },
+     {
+      "hue": "pink",
+      "share": 0.172
+     },
+     {
+      "hue": "orange",
+      "share": 0.082
+     },
+     {
+      "hue": "red",
+      "share": 0.055
+     }
+    ],
+    "exact": 7,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.867
+   }
+  }
+ },
+ "source": {
+  "sha256": "9fa58f97f4b8cd794179d8d2110c6180b69aa2030f449d734d69466b58eed2fb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

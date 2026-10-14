@@ -1,0 +1,47 @@
+[package]
+name = "loot"
+version = "0.3.2"
+description = "Economy for Anything: one program every coin of a project passes through"
+edition.workspace = true
+rust-version.workspace = true
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "loot"
+
+[features]
+default = []
+cpi = ["no-entrypoint"]
+no-entrypoint = []
+no-log-ix-name = []
+# anchor-spl's idl-build needs its token_2022 feature; the program itself does not link it.
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build", "anchor-spl/token_2022"]
+anchor-debug = []
+custom-heap = []
+custom-panic = []
+
+
+[dependencies]
+anchor-lang = "=1.1.2"
+anchor-spl = { version = "=1.1.2", default-features = false, features = ["token", "associated_token"] }
+ephemeral-rollups-sdk = { version = "0.17.2", features = ["anchor", "vrf"] }
+solana-sha256-hasher = "3.1.0"
+
+[dev-dependencies]
+mpl-core = "0.12.1"
+borsh = "1"
+litesvm = "0.10.0"
+solana-message = "3.0.1"
+solana-transaction = "3.0.2"
+solana-signer = "3.0.0"
+solana-keypair = "3.0.1"
+serde_json = "1.0.151"
+base64 = "0.22"
+solana-signature = "3"
+solana-system-interface = { version = "2", features = ["bincode"] }
+solana-account = "3"
+spl-token-2022-interface = "=2.1.0"
+
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(target_os, values("solana"))'] }

@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0030",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0030.png",
+ "sha256": "5b1db99c0c3e88e869c00a9adf8342fe8ace0783e2c35149c1ad114a721aa694",
+ "bytes": 178,
+ "preview": "previews/tile-0030.png",
+ "from": "Tiles/tile_0030.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the base of a grey stone pillar standing on the sand floor (tiles 6 and 18 above it)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "pillar",
+  "column",
+  "stone",
+  "base",
+  "floor",
+  "sand",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#eaa56c",
+     "#3f2631",
+     "#cf8254",
+     "#8b9bb4",
+     "#52607c"
+    ],
+    "saturation": 0.644,
+    "value": 0.604,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.82
+     },
+     {
+      "hue": "pink",
+      "share": 0.117
+     },
+     {
+      "hue": "blue",
+      "share": 0.063
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.067
+   }
+  }
+ },
+ "source": {
+  "sha256": "50ba69228b0185e84fe73b4beec8837e275c7be1b8bde1981484feeecdf02199",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

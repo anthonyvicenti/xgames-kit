@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "folk-baker-top",
+ "pack": "xk-pixel-folk",
+ "file": "folk-baker-top.png",
+ "sha256": "840f0a0367d1ace33db690a2a16ebbc4826354d5059520b99a0e603896947af8",
+ "bytes": 4617,
+ "preview": "previews/folk-baker-top.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-baker-top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a baker in a long-sleeved cream top and a white apron, a blonde ponytail; a gf-flat-1 body sheet seen from above (rows down, side, up)",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "top",
+  "baker",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "top"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 3,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 21,
+    "hues": [
+     "#e8c060",
+     "#eeb88f",
+     "#e9a05a",
+     "#6f4d47",
+     "#6b5649",
+     "#f3eee2",
+     "#7c4232",
+     "#eece7d"
+    ],
+    "saturation": 0.474,
+    "value": 0.543,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.316
+     },
+     {
+      "hue": "yellow",
+      "share": 0.268
+     },
+     {
+      "hue": "grey",
+      "share": 0.242
+     },
+     {
+      "hue": "brown",
+      "share": 0.101
+     },
+     {
+      "hue": "red",
+      "share": 0.074
+     }
+    ],
+    "exact": 28,
+    "grey": 0.242
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.282
+   }
+  }
+ },
+ "source": {
+  "sha256": "c153ff0c3a121e742fb55b1fd8192cf03cd87b9eae29267e02b7d1282a39289c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

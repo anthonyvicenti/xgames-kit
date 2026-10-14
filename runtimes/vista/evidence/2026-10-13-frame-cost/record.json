@@ -1,0 +1,207 @@
+{
+  "schema": "vista-frame-cost/1",
+  "at": "2026-10-14T01:51:58.986Z",
+  "tool": "runtimes/vista/tools/frame-cost.mjs",
+  "size": "3840x2160",
+  "views": [
+    "placeStart",
+    "placeSea",
+    "placeAerial",
+    "placeBack",
+    "placeVillage"
+  ],
+  "places": [
+    {
+      "id": "reference",
+      "words": {
+        "size": "large",
+        "peaks": "high",
+        "shape": "single",
+        "islets": "0",
+        "bay": "s",
+        "beach": "wide",
+        "pier": "pier",
+        "village": "town",
+        "houses": "pastel",
+        "reef": "large",
+        "water": "lagoon",
+        "sand": "white",
+        "rock": "basalt",
+        "vegetation": "palms",
+        "plants": "normal"
+      },
+      "look": {
+        "hour": 15.5,
+        "sea": "breezy"
+      },
+      "generateMs": 0,
+      "load": {
+        "readyMs": 7538,
+        "terrainMs": {
+          "gridA": 36,
+          "gridB": 544,
+          "upsample": 91,
+          "detail": 151,
+          "features": 30,
+          "scarp": 10,
+          "seabed": 170,
+          "masks": 219,
+          "border": 6,
+          "total": 1257
+        },
+        "heapMB": 347
+      },
+      "frame": {
+        "wall": 26.958,
+        "gpu": 23.312
+      }
+    },
+    {
+      "id": "seed-211",
+      "words": {
+        "size": "large",
+        "peaks": "high",
+        "shape": "cliffs",
+        "islets": "3",
+        "bay": 151,
+        "beach": "wide",
+        "pier": "dock",
+        "village": "town",
+        "houses": "timber",
+        "reef": "none",
+        "water": "deep",
+        "sand": "dark",
+        "rock": "basalt",
+        "vegetation": "scrub",
+        "plants": "normal",
+        "coast": "coves",
+        "bays": "3",
+        "river": "yes",
+        "cliffs": "sheer"
+      },
+      "look": {
+        "hour": 15.5,
+        "sea": "breezy"
+      },
+      "generateMs": 37,
+      "load": {
+        "readyMs": 7464,
+        "terrainMs": {
+          "gridA": 24,
+          "gridB": 553,
+          "upsample": 91,
+          "detail": 128,
+          "features": 39,
+          "scarp": 9,
+          "seabed": 88,
+          "masks": 190,
+          "border": 6,
+          "total": 1128
+        },
+        "heapMB": 273
+      },
+      "frame": {
+        "wall": 26.535,
+        "gpu": 22.158
+      }
+    },
+    {
+      "id": "seed-209",
+      "words": {
+        "size": "small",
+        "peaks": "high",
+        "shape": "archipelago",
+        "islets": "3",
+        "bay": 211,
+        "beach": "narrow",
+        "pier": "dock",
+        "village": "hamlet",
+        "houses": "bright",
+        "reef": "large",
+        "water": "flat",
+        "sand": "golden",
+        "rock": "basalt",
+        "vegetation": "scrub",
+        "plants": "lush",
+        "coast": "rugged",
+        "bays": "1",
+        "river": "none",
+        "cliffs": "none"
+      },
+      "look": {
+        "hour": 15.5,
+        "sea": "breezy"
+      },
+      "generateMs": 107,
+      "load": {
+        "readyMs": 7550,
+        "terrainMs": {
+          "gridA": 22,
+          "gridB": 406,
+          "upsample": 93,
+          "detail": 102,
+          "features": 27,
+          "scarp": 9,
+          "seabed": 187,
+          "masks": 179,
+          "border": 5,
+          "total": 1030
+        },
+        "heapMB": 307
+      },
+      "frame": {
+        "wall": 25.041,
+        "gpu": 22.194
+      }
+    },
+    {
+      "id": "seed-204",
+      "words": {
+        "size": "large",
+        "peaks": "high",
+        "shape": "plateau",
+        "islets": "2",
+        "bay": 349,
+        "beach": "narrow",
+        "pier": "jetty",
+        "village": "hamlet",
+        "houses": "whitewash",
+        "reef": "large",
+        "water": "deep",
+        "sand": "dark",
+        "rock": "basalt",
+        "vegetation": "cliffs",
+        "plants": "normal",
+        "coast": "coves",
+        "bays": "3",
+        "river": "yes",
+        "cliffs": "sheer"
+      },
+      "look": {
+        "hour": 15.5,
+        "sea": "breezy"
+      },
+      "generateMs": 90,
+      "load": {
+        "readyMs": 7255,
+        "terrainMs": {
+          "gridA": 26,
+          "gridB": 498,
+          "upsample": 91,
+          "detail": 118,
+          "features": 27,
+          "scarp": 5,
+          "seabed": 92,
+          "masks": 195,
+          "border": 6,
+          "total": 1058
+        },
+        "heapMB": 257
+      },
+      "frame": {
+        "wall": 26.075,
+        "gpu": 21.196
+      }
+    }
+  ]
+}

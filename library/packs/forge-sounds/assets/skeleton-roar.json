@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "skeleton-roar",
+ "pack": "forge-sounds",
+ "file": "skeleton-roar.ogg",
+ "sha256": "92a9a412ca98c7a9d8bde8de8cc03d3e1e48de6374d0a4b46bbdd34661028e8d",
+ "bytes": 12796,
+ "preview": "previews/skeleton-roar.png",
+ "from": "https://opengameart.org/content/retro-monster-roar Skeleton Roar_0.mp3; cut to 0-0.72 s of the source (0.72 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 4 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "boss roar (skeleton roar)",
+ "tags": [
+  "sounds",
+  "skeleton",
+  "roar",
+  "boss"
+ ],
+ "use": {
+  "seconds": 0.736,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16.8,
+     "samplePeakDb": -4.1,
+     "truePeakDb": -4.1,
+     "hfRatio": 0.056
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.736,
+    "peakDbfs": -4.1,
+    "soundMaxLufs": -16.8
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/retro-monster-roar",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0-0.72 s of the source (0.72 s), 2 ms fade-in and 150 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain 4 dB (loudest 400 ms toward -18 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "greg300 (OpenGameArt)"
+ }
+}

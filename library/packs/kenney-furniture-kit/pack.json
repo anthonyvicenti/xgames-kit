@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "kenney-furniture-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Furniture Kit (2.0)",
+ "describe": "Kenney's furniture kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/furniture-kit",
+  "file": "library/packs/kenney-furniture-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "e67652d0932cee41683f74711c03d3e192a2af9979ef8e6b237711f5482d46b0",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 2,
+   "hues": [
+    "#f3cca8",
+    "#96a7a7",
+    "#dfeaec",
+    "#ffffff",
+    "#f9a39e",
+    "#fff5ca",
+    "#a3b6b6",
+    "#f8fdfa",
+    "#76eac8",
+    "#daebe3",
+    "#d7b495",
+    "#fcffff"
+   ],
+   "saturation": 0.735,
+   "value": 0.806,
+   "families": [
+    {
+     "hue": "orange",
+     "share": 0.415
+    },
+    {
+     "hue": "grey",
+     "share": 0.334
+    },
+    {
+     "hue": "cyan",
+     "share": 0.105
+    },
+    {
+     "hue": "red",
+     "share": 0.077
+    },
+    {
+     "hue": "yellow",
+     "share": 0.065
+    }
+   ],
+   "grey": 0
+  },
+  "trianglesPerMetre": 5.26,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 34,
+ "validators": [
+  "budget"
+ ]
+}

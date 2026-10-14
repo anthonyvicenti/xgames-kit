@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-roof",
+ "pack": "forge-town",
+ "file": "town-town-roof.png",
+ "sha256": "c3ab172e9d3c66fd1172134252ea377c92669963d0d090a4a70fb67162797c31",
+ "bytes": 4797,
+ "preview": "previews/town-town-roof.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 64 × 64 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 28 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "dark clay roof tiles 25 cm square in overlapping rows, moss on some; tiles; 2 m across",
+ "tags": [
+  "texture",
+  "town",
+  "roof"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 64,
+     "height": 64,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#47302c",
+     "#4e322d",
+     "#462f2c",
+     "#5a3830",
+     "#57362e",
+     "#422d2a",
+     "#53352f",
+     "#442e2a"
+    ],
+    "saturation": 0.265,
+    "value": 0.233,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.619
+     },
+     {
+      "hue": "red",
+      "share": 0.291
+     },
+     {
+      "hue": "grey",
+      "share": 0.09
+     }
+    ],
+    "exact": 256,
+    "grey": 0.09
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.611
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 64 × 64 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 28 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

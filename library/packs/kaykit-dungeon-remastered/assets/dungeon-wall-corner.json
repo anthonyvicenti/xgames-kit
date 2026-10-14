@@ -1,0 +1,116 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-wall-corner",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-wall-corner.glb",
+ "sha256": "e140990ee3d55a276667a50c25b04f87901ccc3cb03f1430ac1ae645e69637f3",
+ "bytes": 62084,
+ "preview": "previews/dungeon-wall-corner.png",
+ "from": "wall_corner.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone wall corner",
+ "tags": [
+  "dungeon",
+  "wall",
+  "corner",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   1.875,
+   3,
+   1.875
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.875,
+    3,
+    1.875
+   ],
+   "offset": [
+    -0.562,
+    1.5,
+    0.563
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 443,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 443,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 62084,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7b8589",
+     "#7f8a8f",
+     "#4b5256",
+     "#596064",
+     "#4a5155",
+     "#40464a",
+     "#565c60",
+     "#565d61"
+    ],
+    "saturation": 0.063,
+    "value": 0.442,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.15,
+   "texelsPerMetre": 40,
+   "texturedShare": 0.536,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_corner.gltf.glb",
+  "sha256": "3c8cbcbf3abf78c9dc49f440b152340ef681fee9cccf9ca6ed27b6670a34eb81",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

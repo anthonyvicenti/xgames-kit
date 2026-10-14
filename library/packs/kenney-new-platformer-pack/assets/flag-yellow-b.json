@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "flag-yellow-b",
+ "pack": "kenney-new-platformer-pack",
+ "file": "flag-yellow-b.png",
+ "sha256": "37e44ca55c2bb5589edf5b010f909c40d81d479759a06152b1670b2b09cf1468",
+ "bytes": 2768,
+ "preview": "previews/flag-yellow-b.png",
+ "from": "Sprites/Tiles/Double/flag_yellow_b.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "flag yellow tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "flag",
+  "yellow",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 15.4 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 12.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#faba2d",
+     "#353541",
+     "#de7e4f",
+     "#e28f2b",
+     "#ee9366",
+     "#343440",
+     "#f0a82c",
+     "#f9b92c"
+    ],
+    "saturation": 0.656,
+    "value": 0.48,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.716
+     },
+     {
+      "hue": "grey",
+      "share": 0.279
+     }
+    ],
+    "exact": 73,
+    "grey": 0.279
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.949
+   }
+  }
+ },
+ "source": {
+  "sha256": "e4fbd642697605a4e997f12a7cda05a888b7209f264f14248b173cfe1a49c4c8",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

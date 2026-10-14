@@ -1,0 +1,130 @@
+{
+ "assetVersion": 1,
+ "id": "greataxe",
+ "pack": "kaykit-adventurers",
+ "file": "greataxe.glb",
+ "sha256": "798f478b9925a52091b6a08a2bf442c8bbcaba9b5b7be9433a11dbfea7e9923b",
+ "bytes": 19540,
+ "preview": "previews/greataxe.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0@672074b73ba276876a19e8816ecdc5241817ab47; x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Barbarian 2H_Axe…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a big two-handed battle axe",
+ "tags": [
+  "enemy",
+  "skeleton",
+  "brute",
+  "kaykit",
+  "held",
+  "greataxe",
+  "weapon"
+ ],
+ "use": {
+  "size": [
+   0.93,
+   1.293,
+   0.196
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 2
+ },
+ "budgets": {
+  "triangles": 508,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 508,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19540,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#737c81",
+     "#919da3",
+     "#6f787d",
+     "#8d999e",
+     "#798388",
+     "#81412f",
+     "#848f94",
+     "#9ba8ae"
+    ],
+    "saturation": 0.135,
+    "value": 0.514,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.777
+     },
+     {
+      "hue": "cyan",
+      "share": 0.074
+     },
+     {
+      "hue": "brown",
+      "share": 0.064
+     },
+     {
+      "hue": "blue",
+      "share": 0.043
+     },
+     {
+      "hue": "orange",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.777
+   },
+   "trianglesPerMetre": 19.84,
+   "texelsPerMetre": 119,
+   "texturedShare": 0.85,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/axe_2handed.gltf",
+  "sha256": "9570c2300c57db64a412a377c78f1681a66d7c47d75bb7643e69573e66a3a1d5",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Barbarian 2H_Axe (handslot.r); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

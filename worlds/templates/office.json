@@ -1,0 +1,159 @@
+{
+  "template": "office",
+  "label": "Office",
+  "kind": "indoor",
+  "describe": "A closed office building on a city street: carpet tiles, a ceiling with hanging lamps, windows all round, an open-plan floor with an atrium in the middle, side rooms (break room, meeting room, lobby, manager's office, store room) joined by real doorways, and doors to the street.",
+  "setPieces": [
+    "the atrium: the open floor's middle is kept clear (zone centre), where the thing players defend or gather at stands",
+    "a glass-walled meeting room (sightlines into it from the open floor)",
+    "the doors to the street: the entrance (lobby or front wall) and a back door in the break room, where enemies and visitors come in (entries)"
+  ],
+  "sizes": { "small": [24, 24], "medium": [40, 32], "large": [48, 40] },
+  "grid": 2,
+  "shell": {
+    "wall": "office-wall", "window": "office-wall-window", "door": "office-wall-doorway-wide", "corner": "office-wall-corner",
+    "wallHeight": 2.579, "wallScale": [1, 1.3, 1], "windows": [1, 1, 0], "doorWidth": 1.71
+  },
+  "ceiling": {
+    "height": 3.9, "lamp": "ceiling-lamp", "lampEvery": 6, "lampDrop": 0.69, "lampScale": 0.7,
+    "look": { "color": "#f6f3ee", "color2": "#eeeae2", "glow": 0.4, "band": "#efe6da", "pattern": { "file": "assets/textures/ceiling-tiles.png", "size": 2.4 } }
+  },
+  "ground": { "kind": "floor", "color": "#93a7c9", "color2": "#8a9ec2", "outer": "#a9a59e", "outer2": "#a19d95", "outerSize": 200, "pattern": { "file": "assets/textures/carpet-tiles.png", "size": 2 } },
+  "spawnRing": 3.2,
+  "centreRadius": 1.4,
+  "program": {
+    "small": {
+      "main": { "kind": "open-floor", "entry": "front" },
+      "bands": [ { "side": "back", "depth": 6, "rooms": [ { "kind": "break", "weight": 1.2, "entry": "back" }, { "kind": "meeting", "weight": 1 } ] } ]
+    },
+    "medium": {
+      "main": { "kind": "open-floor" },
+      "loops": 1,
+      "bands": [
+        { "side": "left", "depth": 10, "order": "fixed", "rooms": [ { "kind": "manager", "weight": 0.9 }, { "kind": "meeting", "weight": 1 }, { "kind": "lobby", "weight": 1.1, "entry": "front" } ] },
+        { "side": "back", "depth": 8, "rooms": [ { "kind": "break", "weight": 1.3, "entry": "back" }, { "kind": "storage", "weight": 0.9 } ] }
+      ]
+    },
+    "large": {
+      "main": { "kind": "open-floor" },
+      "loops": 2,
+      "bands": [
+        { "side": "left", "depth": 10, "order": "fixed", "rooms": [ { "kind": "manager", "weight": 0.9 }, { "kind": "meeting", "weight": 1 }, { "kind": "lobby", "weight": 1.2, "entry": "front" } ] },
+        { "side": "right", "depth": 10, "rooms": [ { "kind": "storage", "weight": 1, "entry": "side" }, { "kind": "meeting", "weight": 1 }, { "kind": "manager", "weight": 0.8 } ] },
+        { "side": "back", "depth": 8, "rooms": [ { "kind": "break", "weight": 1.3, "entry": "back" }, { "kind": "lounge", "weight": 1 } ] }
+      ]
+    }
+  },
+  "rooms": {
+    "open-floor": { "label": "Open floor", "keepClear": 4.5, "fill": [
+      { "group": "desk-pod", "where": "grid", "per100": 1.5, "aisle": 1.8, "gap": 0.6 },
+      { "group": "bookshelf", "where": "wall", "count": [2, 3], "spread": true },
+      { "group": "lounge", "where": "wall", "count": [0, 1] },
+      { "group": "water", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 4 },
+      { "group": "trashcan", "where": "wall", "count": 2, "spread": true }
+    ] },
+    "break": { "label": "Break room", "fill": [
+      { "group": "kitchen", "where": "wall", "count": 1 },
+      { "group": "vending", "where": "wall", "count": 1 },
+      { "group": "lounge", "where": "wall", "count": 1 },
+      { "group": "arcade", "where": "wall", "count": 1 },
+      { "group": "lunch", "where": "centre", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 2 }
+    ] },
+    "lounge": { "label": "Lounge", "fill": [
+      { "group": "lounge", "where": "wall", "count": 2, "spread": true },
+      { "group": "arcade", "where": "wall", "count": 1 },
+      { "group": "vending", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 3 }
+    ] },
+    "meeting": { "label": "Meeting room", "partition": "glass", "fill": [
+      { "group": "meeting", "where": "centre", "count": 1 },
+      { "group": "tv-wall", "where": "wall", "count": 1 },
+      { "group": "bookshelf", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 2 }
+    ] },
+    "lobby": { "label": "Lobby", "fill": [
+      { "group": "reception", "where": "wall", "count": 1 },
+      { "group": "waiting", "where": "wall", "count": 2, "spread": true },
+      { "group": "coat-rack", "where": "wall", "count": 1 },
+      { "group": "water", "where": "wall", "count": [0, 1] },
+      { "group": "plant", "where": "corner", "count": 3 }
+    ] },
+    "manager": { "label": "Manager's office", "fill": [
+      { "group": "manager", "where": "wall", "count": 1 },
+      { "group": "bookshelf", "where": "wall", "count": 1 },
+      { "group": "waiting", "where": "wall", "count": 1 },
+      { "group": "coat-rack", "where": "wall", "count": 1 },
+      { "group": "plant", "where": "corner", "count": 2 }
+    ] },
+    "storage": { "label": "Store room", "fill": [
+      { "group": "shelf-boxes", "where": "wall", "count": [3, 5], "spread": true },
+      { "group": "box-stack", "where": "wall", "count": [1, 2], "spread": true },
+      { "group": "trashcan", "where": "wall", "count": 1 }
+    ] }
+  },
+  "groups": {
+    "desk-pod": { "size": [3.0, 3.1], "props": [
+      { "prop": "desk", "at": [-0.75, 0, -0.4], "rot": 180 }, { "prop": "monitor", "at": [-0.75, 0.77, -0.16], "rot": 180 }, { "prop": "keyboard", "at": [-0.75, 0.77, -0.54], "rot": 180 }, { "prop": "desk-lamp", "at": [-0.17, 0.77, -0.2], "rot": 210 }, { "prop": "chair-office", "at": [-0.75, 0, -1.2], "rot": 0 },
+      { "prop": "desk", "at": [-0.75, 0, 0.4], "rot": 0 }, { "prop": "monitor", "at": [-0.75, 0.77, 0.16], "rot": 0 }, { "prop": "keyboard", "at": [-0.75, 0.77, 0.54], "rot": 0 }, { "prop": "desk-lamp", "at": [-1.33, 0.77, 0.2], "rot": 30 }, { "prop": "chair-office", "at": [-0.75, 0, 1.2], "rot": 180 },
+      { "prop": "desk", "at": [0.75, 0, -0.4], "rot": 180 }, { "prop": "monitor", "at": [0.75, 0.77, -0.16], "rot": 180 }, { "prop": "keyboard", "at": [0.75, 0.77, -0.54], "rot": 180 }, { "prop": "plant-small", "at": [0.17, 0.77, -0.2], "rot": 0 }, { "prop": "chair-office", "at": [0.75, 0, -1.2], "rot": 0 },
+      { "prop": "desk", "at": [0.75, 0, 0.4], "rot": 0 }, { "prop": "monitor", "at": [0.75, 0.77, 0.16], "rot": 0 }, { "prop": "keyboard", "at": [0.75, 0.77, 0.54], "rot": 0 }, { "prop": "chair-office", "at": [0.75, 0, 1.2], "rot": 180 }
+    ] },
+    "manager": { "size": [1.8, 2.4], "props": [
+      { "prop": "bookcase", "at": [0, 0, -0.95], "rot": 0 }, { "prop": "chair-office", "at": [0, 0, -0.15], "rot": 0 },
+      { "prop": "desk", "at": [0, 0, 0.75], "rot": 180 }, { "prop": "monitor", "at": [0, 0.77, 0.99], "rot": 180 }, { "prop": "keyboard", "at": [0, 0.77, 0.61], "rot": 180 },
+      { "prop": "desk-lamp", "at": [0.5, 0.77, 0.95], "rot": 210 }, { "prop": "plant-small", "at": [-0.55, 0.77, 0.95], "rot": 0 }
+    ] },
+    "meeting": { "size": [3.6, 2.0], "props": [
+      { "prop": "table", "at": [-0.84, 0, 0], "rot": 0 }, { "prop": "table", "at": [0.84, 0, 0], "rot": 0 }, { "prop": "laptop", "at": [-0.6, 0.653, 0.05], "rot": 200 }, { "prop": "laptop", "at": [0.9, 0.653, -0.05], "rot": 20 },
+      { "prop": "chair", "at": [-1.2, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [-0.4, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [0.4, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [1.2, 0, -0.7], "rot": 0 },
+      { "prop": "chair", "at": [-1.2, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [-0.4, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [0.4, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [1.2, 0, 0.7], "rot": 180 }
+    ] },
+    "lunch": { "size": [2.0, 2.0], "props": [
+      { "prop": "table", "at": [0, 0, 0], "rot": 0 },
+      { "prop": "chair", "at": [-0.5, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [0, 0, -0.7], "rot": 0 }, { "prop": "chair", "at": [0.5, 0, -0.7], "rot": 0 },
+      { "prop": "chair", "at": [-0.5, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [0, 0, 0.7], "rot": 180 }, { "prop": "chair", "at": [0.5, 0, 0.7], "rot": 180 }
+    ] },
+    "water": { "size": [0.5, 0.5], "props": [ { "prop": "water-cooler", "at": [0, 0, 0], "rot": 0 } ] },
+    "box-stack": { "size": [1.6, 1.0], "props": [
+      { "prop": "box-closed", "at": [-0.5, 0, 0], "rot": 5 }, { "prop": "box-closed", "at": [0, 0, 0.05], "rot": -8 }, { "prop": "box-open", "at": [0.5, 0, -0.05], "rot": 3 },
+      { "prop": "box-closed", "at": [-0.25, 0.56, 0.02], "rot": 12, "scale": 0.9 }
+    ] },
+    "tv-wall": { "size": [1.6, 0.4], "props": [ { "prop": "tv", "at": [0, 0, 0], "rot": 0 } ] },
+    "kitchen": { "size": [4.0, 1.0], "props": [
+      { "prop": "kitchen-counter", "at": [-1.6, 0, 0], "rot": 0 }, { "prop": "kitchen-counter", "at": [-0.74, 0, 0], "rot": 0 }, { "prop": "coffee-machine", "at": [-1.6, 0.9, 0], "rot": 0 },
+      { "prop": "fridge", "at": [0.4, 0, -0.16], "rot": 0 }, { "prop": "water-cooler", "at": [1.6, 0, -0.27], "rot": 0 }
+    ] },
+    "vending": { "size": [1.4, 1.3], "props": [ { "prop": "vending-machine", "at": [0, 0, 0], "rot": 0 } ] },
+    "lounge": { "size": [3.8, 3.2], "props": [
+      { "prop": "rug", "at": [0, 0, -0.3], "rot": 0 }, { "prop": "sofa", "at": [0, 0, -1.15], "rot": 0 }, { "prop": "coffee-table", "at": [0, 0, 0], "rot": 0 },
+      { "prop": "floor-lamp", "at": [1.5, 0, -1.25], "rot": 0 }, { "prop": "plant-potted", "at": [-1.5, 0, -1.25], "rot": 0 }
+    ] },
+    "arcade": { "size": [2.2, 1.4], "props": [ { "prop": "arcade-machine", "at": [-0.55, 0, 0], "rot": 0 }, { "prop": "arcade-machine", "at": [0.55, 0, 0], "rot": 0 } ] },
+    "bookshelf": { "size": [3.4, 0.6], "props": [ { "prop": "bookcase", "at": [-0.85, 0, 0], "rot": 0 }, { "prop": "bookcase", "at": [0.85, 0, 0], "rot": 0 } ] },
+    "plant": { "size": [0.6, 0.6], "props": [ { "prop": "plant-potted", "at": [0, 0, 0], "rot": 0 } ] },
+    "trashcan": { "size": [0.5, 0.5], "props": [ { "prop": "trashcan", "at": [0, 0, 0], "rot": 0 } ] },
+    "coat-rack": { "size": [0.6, 0.6], "props": [ { "prop": "coat-rack", "at": [0, 0, 0], "rot": 0 } ] },
+    "reception": { "size": [3.0, 1.9], "props": [
+      { "prop": "chair-office", "at": [0, 0, -0.55], "rot": 0 }, { "prop": "desk", "at": [0, 0, 0.35], "rot": 180 }, { "prop": "monitor", "at": [0, 0.77, 0.59], "rot": 180 }, { "prop": "keyboard", "at": [0, 0.77, 0.21], "rot": 180 },
+      { "prop": "plant-potted", "at": [1.25, 0, -0.5], "rot": 0 }
+    ] },
+    "waiting": { "size": [3.0, 2.2], "props": [
+      { "prop": "sofa", "at": [0, 0, -0.65], "rot": 0 }, { "prop": "coffee-table", "at": [0, 0, 0.5], "rot": 0 }, { "prop": "plant-potted", "at": [1.3, 0, -0.75], "rot": 0 }
+    ] },
+    "shelf-boxes": { "size": [2.2, 0.8], "props": [
+      { "prop": "bookcase-open", "at": [-0.6, 0, -0.1], "rot": 0 }, { "prop": "box-closed", "at": [0.35, 0, 0], "rot": 10 }, { "prop": "box-closed", "at": [0.35, 0.56, 0], "rot": 0, "scale": 0.9 }, { "prop": "box-open", "at": [0.75, 0, 0.12], "rot": -10 }, { "prop": "plant-small", "at": [0.75, 0.562, 0.12], "rot": 0 }
+    ] }
+  },
+  "outside": {
+    "kind": "street",
+    "sidewalk": { "prop": "sidewalk", "width": 4 },
+    "road": { "prop": "road", "cross": "road-crossing", "width": 8 },
+    "lights": { "prop": "street-light", "every": 12 },
+    "buildings": ["city-block", "city-block-b", "city-block-c", "city-block-wide", "shop"],
+    "towers": ["skyscraper", "skyscraper-b"],
+    "skyline": { "count": 10, "distance": 50, "props": ["skyscraper", "skyscraper-b", "city-block-c"] },
+    "sizes": { "city-block": [6.8, 7.3], "city-block-b": [7.5, 7.1], "city-block-c": [10.6, 10.8], "city-block-wide": [17.9, 14.1], "shop": [14.7, 9.1], "skyscraper": [10.5, 10.5], "skyscraper-b": [9.1, 8.7] }
+  }
+}

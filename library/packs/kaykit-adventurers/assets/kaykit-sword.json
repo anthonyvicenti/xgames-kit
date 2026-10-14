@@ -1,0 +1,131 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-sword",
+ "pack": "kaykit-adventurers",
+ "file": "kaykit-sword.glb",
+ "sha256": "8e57f748fbb7383d7187cd13ef6d593c92d083b66d6d2540e8778f069c5c70a3",
+ "bytes": 45588,
+ "preview": "previews/kaykit-sword.png",
+ "from": "sword_1handed.gltf (KayKit Character Pack: Adventurers 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight 1H_Sword (handslot.r)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a one-handed steel sword",
+ "tags": [
+  "weapon",
+  "sword",
+  "melee",
+  "one-handed",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.378,
+   1.331,
+   0.098
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "real": [
+   0.7,
+   1.1
+  ],
+  "min": [
+   -0.189,
+   -0.274,
+   -0.049
+  ],
+  "grip": {
+   "position": [
+    0.0195,
+    -0.0431,
+    0.0785
+   ],
+   "quaternion": [
+    0.5089,
+    0.4909,
+    -0.4909,
+    0.5089
+   ]
+  },
+  "hands": 1,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 300,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 300,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 45588,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#8a969b",
+     "#8e9a9f",
+     "#929ea3",
+     "#6b7378",
+     "#899499",
+     "#5f676b",
+     "#636b6f",
+     "#838e92"
+    ],
+    "saturation": 0.097,
+    "value": 0.518,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.922
+     },
+     {
+      "hue": "brown",
+      "share": 0.041
+     },
+     {
+      "hue": "orange",
+      "share": 0.037
+     }
+    ],
+    "grey": 0.922
+   },
+   "trianglesPerMetre": 21.51,
+   "texelsPerMetre": 132,
+   "texturedShare": 0.913,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-adventurers",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Adventures-1.0/672074b73ba276876a19e8816ecdc5241817ab47/addons/kaykit_character_pack_adventures/Assets/gltf/sword_1handed.gltf",
+  "sha256": "f88345d0c89d52710ddb00555964fe7a6f4024874d7ee902ee4c742c048a1958",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); the same mesh as Knight 1H_Sword (handslot.r)"
+ }
+}

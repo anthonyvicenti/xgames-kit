@@ -1,0 +1,1243 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "ual-mannequin": {
+   "origin": "gf-three library bodies/ual-mannequin.glb",
+   "label": "Mannequin",
+   "describeFull": "Quaternius UAL mannequin, the skeleton the clips come from",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.894
+      },
+      {
+       "hue": "grey",
+       "share": 0.106
+      }
+     ],
+     "grey": 0.106,
+     "lightness": 0.708,
+     "saturation": 0.781,
+     "top": [
+      {
+       "colour": "#f6c481",
+       "share": 0.894
+      },
+      {
+       "colour": "#767381",
+       "share": 0.106
+      }
+     ]
+    },
+    "trianglesPerMetre": 74.33,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.829,
+     "headsTall": 5.35,
+     "hipShare": 0.501,
+     "shoulderShare": 0.21,
+     "widthShare": 1.063
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, right hand: aim_up at 0 s: the right pinky bends 107° at its knuckle (a finger bends -35° to 105°)"
+     ],
+     "facts": {
+      "height": 1.829,
+      "triangles": 13744,
+      "joints": 52,
+      "materials": 2
+     }
+    }
+   ]
+  },
+  "quaternius-astronaut": {
+   "origin": "gf-three library bodies/quaternius-astronaut.glb",
+   "label": "Astronaut",
+   "describeFull": "Quaternius astronaut in a space suit",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.582
+      },
+      {
+       "hue": "brown",
+       "share": 0.418
+      }
+     ],
+     "grey": 0.582,
+     "lightness": 0.382,
+     "saturation": 0.267,
+     "top": [
+      {
+       "colour": "#93542b",
+       "share": 0.418
+      },
+      {
+       "colour": "#a19893",
+       "share": 0.259
+      },
+      {
+       "colour": "#383838",
+       "share": 0.177
+      },
+      {
+       "colour": "#2a3538",
+       "share": 0.099
+      },
+      {
+       "colour": "#3b4b49",
+       "share": 0.047
+      }
+     ]
+    },
+    "trianglesPerMetre": 18.42,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.886,
+     "headsTall": 5.03,
+     "hipShare": 0.474,
+     "shoulderShare": 0.162,
+     "widthShare": 0.888
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.886,
+      "triangles": 10558,
+      "joints": 58,
+      "materials": 5
+     }
+    }
+   ]
+  },
+  "quaternius-swat": {
+   "origin": "gf-three library bodies/quaternius-swat.glb",
+   "label": "SWAT",
+   "describeFull": "Quaternius SWAT officer",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.998
+      }
+     ],
+     "grey": 0.998,
+     "lightness": 0.182,
+     "saturation": 0.061,
+     "top": [
+      {
+       "colour": "#2b2926",
+       "share": 0.772
+      },
+      {
+       "colour": "#474a51",
+       "share": 0.186
+      },
+      {
+       "colour": "#131313",
+       "share": 0.04
+      },
+      {
+       "colour": "#ba9c79",
+       "share": 0.002
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.9,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.854,
+     "headsTall": 5.42,
+     "hipShare": 0.483,
+     "shoulderShare": 0.165,
+     "widthShare": 0.904
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.854,
+      "triangles": 7752,
+      "joints": 58,
+      "materials": 4
+     }
+    }
+   ]
+  },
+  "quaternius-adventurer-woman": {
+   "origin": "gf-three library bodies/quaternius-adventurer-woman.glb",
+   "label": "Adventurer",
+   "sidecarFrom": "gf-three library bodies/quaternius-adventurer-woman.json",
+   "describeFull": "an explorer in a khaki shirt, shorts, belts and boots; the shirt takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.734
+      },
+      {
+       "hue": "orange",
+       "share": 0.251
+      }
+     ],
+     "grey": 0.015,
+     "lightness": 0.388,
+     "saturation": 0.302,
+     "top": [
+      {
+       "colour": "#756440",
+       "share": 0.294
+      },
+      {
+       "colour": "#cead86",
+       "share": 0.249
+      },
+      {
+       "colour": "#3e3429",
+       "share": 0.184
+      },
+      {
+       "colour": "#5c4e32",
+       "share": 0.162
+      },
+      {
+       "colour": "#585236",
+       "share": 0.064
+      },
+      {
+       "colour": "#464025",
+       "share": 0.021
+      },
+      {
+       "colour": "#b4b4b4",
+       "share": 0.015
+      },
+      {
+       "colour": "#31251c",
+       "share": 0.009
+      }
+     ]
+    },
+    "trianglesPerMetre": 15.98,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.828,
+     "headsTall": 5.77,
+     "hipShare": 0.549,
+     "shoulderShare": 0.128,
+     "widthShare": 0.902
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "materials 9 is over the target 8",
+      "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+      "model judge, right hand: idle at 0 s: 7.1% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.828,
+      "triangles": 6808,
+      "joints": 58,
+      "materials": 9
+     }
+    }
+   ]
+  },
+  "quaternius-business-man": {
+   "origin": "gf-three library bodies/quaternius-business-man.glb",
+   "label": "Office worker",
+   "sidecarFrom": "gf-three library bodies/quaternius-business-man.json",
+   "describeFull": "a man in a dark business suit, white shirt and tie; the tie takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.461
+      },
+      {
+       "hue": "grey",
+       "share": 0.334
+      },
+      {
+       "hue": "orange",
+       "share": 0.205
+      }
+     ],
+     "grey": 0.334,
+     "lightness": 0.245,
+     "saturation": 0.334,
+     "top": [
+      {
+       "colour": "#412914",
+       "share": 0.453
+      },
+      {
+       "colour": "#ba9c79",
+       "share": 0.205
+      },
+      {
+       "colour": "#202020",
+       "share": 0.179
+      },
+      {
+       "colour": "#1d2329",
+       "share": 0.152
+      },
+      {
+       "colour": "#2c2018",
+       "share": 0.004
+      },
+      {
+       "colour": "#372e24",
+       "share": 0.003
+      },
+      {
+       "colour": "#a3a3a3",
+       "share": 0.002
+      },
+      {
+       "colour": "#414751",
+       "share": 0
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.12,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.857,
+     "headsTall": 5.38,
+     "hipShare": 0.482,
+     "shoulderShare": 0.164,
+     "widthShare": 0.902
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.857,
+      "triangles": 6634,
+      "joints": 58,
+      "materials": 8
+     }
+    }
+   ]
+  },
+  "quaternius-casual-man": {
+   "origin": "gf-three library bodies/quaternius-casual-man.glb",
+   "label": "Casual man",
+   "sidecarFrom": "gf-three library bodies/quaternius-casual-man.json",
+   "describeFull": "a man in a T-shirt, jeans and trainers; the shirt takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.438
+      },
+      {
+       "hue": "grey",
+       "share": 0.247
+      },
+      {
+       "hue": "orange",
+       "share": 0.208
+      },
+      {
+       "hue": "red",
+       "share": 0.108
+      }
+     ],
+     "grey": 0.247,
+     "lightness": 0.331,
+     "saturation": 0.374,
+     "top": [
+      {
+       "colour": "#412914",
+       "share": 0.43
+      },
+      {
+       "colour": "#ba9c79",
+       "share": 0.19
+      },
+      {
+       "colour": "#2d383f",
+       "share": 0.12
+      },
+      {
+       "colour": "#71222e",
+       "share": 0.108
+      },
+      {
+       "colour": "#a3a3a3",
+       "share": 0.104
+      },
+      {
+       "colour": "#878276",
+       "share": 0.023
+      },
+      {
+       "colour": "#a88d6d",
+       "share": 0.017
+      },
+      {
+       "colour": "#2c2018",
+       "share": 0.004
+      }
+     ]
+    },
+    "trianglesPerMetre": 12.99,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.858,
+     "headsTall": 5.37,
+     "hipShare": 0.482,
+     "shoulderShare": 0.164,
+     "widthShare": 0.902
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "materials 9 is over the target 8",
+      "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.858,
+      "triangles": 5776,
+      "joints": 58,
+      "materials": 9
+     }
+    }
+   ]
+  },
+  "quaternius-casual-woman": {
+   "origin": "gf-three library bodies/quaternius-casual-woman.glb",
+   "label": "Casual woman",
+   "sidecarFrom": "gf-three library bodies/quaternius-casual-woman.json",
+   "describeFull": "a woman in a fitted white top, orange trousers and trainers; the top takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.698
+      },
+      {
+       "hue": "grey",
+       "share": 0.175
+      },
+      {
+       "hue": "orange",
+       "share": 0.127
+      }
+     ],
+     "grey": 0.175,
+     "lightness": 0.419,
+     "saturation": 0.29,
+     "top": [
+      {
+       "colour": "#8b7547",
+       "share": 0.619
+      },
+      {
+       "colour": "#3f3f3f",
+       "share": 0.166
+      },
+      {
+       "colour": "#cead86",
+       "share": 0.127
+      },
+      {
+       "colour": "#9e6238",
+       "share": 0.072
+      },
+      {
+       "colour": "#b4b4b4",
+       "share": 0.009
+      },
+      {
+       "colour": "#31251c",
+       "share": 0.004
+      },
+      {
+       "colour": "#3e3429",
+       "share": 0.003
+      }
+     ]
+    },
+    "trianglesPerMetre": 11.52,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.852,
+     "headsTall": 5.56,
+     "hipShare": 0.546,
+     "shoulderShare": 0.127,
+     "widthShare": 0.891
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 7.7% of its triangles fold inside out (limit 4%) (+1 more)",
+      "model judge, right hand: idle at 0 s: 7.6% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.852,
+      "triangles": 6424,
+      "joints": 58,
+      "materials": 7
+     }
+    }
+   ]
+  },
+  "quaternius-hoodie": {
+   "origin": "gf-three library bodies/quaternius-hoodie.glb",
+   "label": "Hoodie kid",
+   "sidecarFrom": "gf-three library bodies/quaternius-hoodie.json",
+   "describeFull": "a young man in a hoodie, shorts and trainers; the hoodie takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.424
+      },
+      {
+       "hue": "orange",
+       "share": 0.258
+      },
+      {
+       "hue": "grey",
+       "share": 0.181
+      },
+      {
+       "hue": "purple",
+       "share": 0.136
+      }
+     ],
+     "grey": 0.181,
+     "lightness": 0.343,
+     "saturation": 0.352,
+     "top": [
+      {
+       "colour": "#412914",
+       "share": 0.416
+      },
+      {
+       "colour": "#ba9c79",
+       "share": 0.258
+      },
+      {
+       "colour": "#3f3152",
+       "share": 0.136
+      },
+      {
+       "colour": "#a3a3a3",
+       "share": 0.103
+      },
+      {
+       "colour": "#2d383f",
+       "share": 0.078
+      },
+      {
+       "colour": "#2c2018",
+       "share": 0.005
+      },
+      {
+       "colour": "#372e24",
+       "share": 0.004
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.26,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.87,
+     "headsTall": 5.26,
+     "hipShare": 0.48,
+     "shoulderShare": 0.163,
+     "widthShare": 0.896
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.3% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.87,
+      "triangles": 6206,
+      "joints": 58,
+      "materials": 7
+     }
+    }
+   ]
+  },
+  "quaternius-office-zombie": {
+   "origin": "gf-three library bodies/quaternius-office-zombie.glb",
+   "label": "Office zombie",
+   "sidecarFrom": "gf-three library bodies/quaternius-office-zombie.json",
+   "describeFull": "a zombie office worker: grey-green skin, pale eyes, a light-blue short-sleeve work shirt and dark trousers",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.433
+      },
+      {
+       "hue": "grey",
+       "share": 0.241
+      },
+      {
+       "hue": "green",
+       "share": 0.19
+      },
+      {
+       "hue": "red",
+       "share": 0.108
+      }
+     ],
+     "grey": 0.241,
+     "lightness": 0.341,
+     "saturation": 0.371,
+     "top": [
+      {
+       "colour": "#412914",
+       "share": 0.43
+      },
+      {
+       "colour": "#8fae7a",
+       "share": 0.19
+      },
+      {
+       "colour": "#3d4656",
+       "share": 0.12
+      },
+      {
+       "colour": "#71222e",
+       "share": 0.108
+      },
+      {
+       "colour": "#a3a3a3",
+       "share": 0.104
+      },
+      {
+       "colour": "#7ea6d8",
+       "share": 0.023
+      },
+      {
+       "colour": "#6d8a5c",
+       "share": 0.017
+      },
+      {
+       "colour": "#d9e8a0",
+       "share": 0.004
+      }
+     ]
+    },
+    "trianglesPerMetre": 12.99,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.858,
+     "headsTall": 5.37,
+     "hipShare": 0.482,
+     "shoulderShare": 0.164,
+     "widthShare": 0.902
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "materials 9 is over the target 8",
+      "model judge, left hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.4% of its triangles fold inside out (limit 4%)"
+     ],
+     "facts": {
+      "height": 1.858,
+      "triangles": 5776,
+      "joints": 58,
+      "materials": 9
+     }
+    }
+   ]
+  },
+  "quaternius-punk-woman": {
+   "origin": "gf-three library bodies/quaternius-punk-woman.glb",
+   "label": "Punk",
+   "sidecarFrom": "gf-three library bodies/quaternius-punk-woman.json",
+   "describeFull": "a punk with a mohawk, crop top and ripped black trousers; the top and the mohawk take the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.624
+      },
+      {
+       "hue": "purple",
+       "share": 0.237
+      },
+      {
+       "hue": "orange",
+       "share": 0.131
+      }
+     ],
+     "grey": 0.624,
+     "lightness": 0.272,
+     "saturation": 0.223,
+     "top": [
+      {
+       "colour": "#312e2b",
+       "share": 0.488
+      },
+      {
+       "colour": "#681d65",
+       "share": 0.237
+      },
+      {
+       "colour": "#3f3f3f",
+       "share": 0.136
+      },
+      {
+       "colour": "#cead86",
+       "share": 0.131
+      },
+      {
+       "colour": "#31251c",
+       "share": 0.004
+      },
+      {
+       "colour": "#3e3429",
+       "share": 0.004
+      }
+     ]
+    },
+    "trianglesPerMetre": 15.65,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.958,
+     "headsTall": 4.36,
+     "hipShare": 0.511,
+     "shoulderShare": 0.12,
+     "widthShare": 0.842
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+      "model judge, right hand: idle at 0 s: 7.1% of its triangles fold inside out (limit 4%) (+1 more)",
+      "model judge, left foot: getup_front at 0.8 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)",
+      "model judge, right foot: getup_front at 0.8 s: its edges stretch or crush ×4.2 (99th percentile; limit ×4.1)"
+     ],
+     "facts": {
+      "height": 1.958,
+      "triangles": 5956,
+      "joints": 58,
+      "materials": 6
+     }
+    }
+   ]
+  },
+  "quaternius-woman-dress": {
+   "origin": "gf-three library bodies/quaternius-woman-dress.glb",
+   "label": "Woman in a dress",
+   "sidecarFrom": "gf-three library bodies/quaternius-woman-dress.json",
+   "describeFull": "a red-haired woman in a sleeveless dress with a gold belt; the dress takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.679
+      },
+      {
+       "hue": "orange",
+       "share": 0.264
+      },
+      {
+       "hue": "green",
+       "share": 0.057
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.349,
+     "saturation": 0.658,
+     "top": [
+      {
+       "colour": "#68220c",
+       "share": 0.671
+      },
+      {
+       "colour": "#cead86",
+       "share": 0.263
+      },
+      {
+       "colour": "#466843",
+       "share": 0.057
+      },
+      {
+       "colour": "#31251c",
+       "share": 0.008
+      },
+      {
+       "colour": "#af8749",
+       "share": 0
+      }
+     ]
+    },
+    "trianglesPerMetre": 12.15,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.843,
+     "headsTall": 5.53,
+     "hipShare": 0.543,
+     "shoulderShare": 0.127,
+     "widthShare": 0.895
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, left hand: idle at 0 s: 7.0% of its triangles fold inside out (limit 4%) (+1 more)",
+      "model judge, right hand: idle at 0 s: 7.2% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.843,
+      "triangles": 6108,
+      "joints": 58,
+      "materials": 5
+     }
+    }
+   ]
+  },
+  "quaternius-worker": {
+   "origin": "gf-three library bodies/quaternius-worker.glb",
+   "label": "Construction worker",
+   "sidecarFrom": "gf-three library bodies/quaternius-worker.json",
+   "describeFull": "a moustached builder in a hard hat, hi-vis vest and work boots; the vest takes the player colour",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "brown",
+       "share": 0.532
+      },
+      {
+       "hue": "grey",
+       "share": 0.318
+      },
+      {
+       "hue": "orange",
+       "share": 0.15
+      }
+     ],
+     "grey": 0.318,
+     "lightness": 0.316,
+     "saturation": 0.325,
+     "top": [
+      {
+       "colour": "#a38610",
+       "share": 0.225
+      },
+      {
+       "colour": "#383838",
+       "share": 0.208
+      },
+      {
+       "colour": "#6a5a39",
+       "share": 0.153
+      },
+      {
+       "colour": "#ba9c79",
+       "share": 0.15
+      },
+      {
+       "colour": "#202020",
+       "share": 0.097
+      },
+      {
+       "colour": "#372e24",
+       "share": 0.096
+      },
+      {
+       "colour": "#52462c",
+       "share": 0.033
+      },
+      {
+       "colour": "#a75a25",
+       "share": 0.017
+      }
+     ]
+    },
+    "trianglesPerMetre": 14.85,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.866,
+     "headsTall": 5.3,
+     "hipShare": 0.481,
+     "shoulderShare": 0.163,
+     "widthShare": 0.898
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "materials 11 is over the target 8",
+      "model judge, left hand: idle at 0 s: 6.6% of its triangles fold inside out (limit 4%)",
+      "model judge, right hand: idle at 0 s: 6.5% of its triangles fold inside out (limit 4%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.866,
+      "triangles": 5240,
+      "joints": 58,
+      "materials": 11
+     }
+    }
+   ]
+  },
+  "quaternius-zombie": {
+   "origin": "gf-three library bodies/quaternius-zombie.glb (re-ingested 2026-10-13: node builder/art/cli.mjs ingest <the kit's old quaternius-zombie.glb, sha256 cfd53028…> --pack quaternius-ual-bodies --category body --replace --fix thumbs)",
+   "label": "Zombie",
+   "sidecarFrom": "gf-three library bodies/quaternius-zombie.json",
+   "describeFull": "a chunky cartoon zombie: green skin, big bald head, lolling tongue, a belt, torn trousers and one red trainer",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "green",
+       "share": 0.789
+      },
+      {
+       "hue": "grey",
+       "share": 0.071
+      },
+      {
+       "hue": "blue",
+       "share": 0.065
+      },
+      {
+       "hue": "red",
+       "share": 0.032
+      }
+     ],
+     "grey": 0.071,
+     "lightness": 0.424,
+     "saturation": 0.286,
+     "top": [
+      {
+       "colour": "#779851",
+       "share": 0.789
+      },
+      {
+       "colour": "#415463",
+       "share": 0.065
+      },
+      {
+       "colour": "#151515",
+       "share": 0.037
+      },
+      {
+       "colour": "#664631",
+       "share": 0.026
+      },
+      {
+       "colour": "#823a3b",
+       "share": 0.019
+      },
+      {
+       "colour": "#642226",
+       "share": 0.014
+      },
+      {
+       "colour": "#979870",
+       "share": 0.012
+      },
+      {
+       "colour": "#994871",
+       "share": 0.012
+      }
+     ]
+    },
+    "trianglesPerMetre": 37.37,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    },
+    "body": {
+     "height": 1.361,
+     "headsTall": 2.82,
+     "hipShare": 0.373,
+     "shoulderShare": 0.31,
+     "widthShare": 1.387
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "warnings": [
+      "model judge, body: getup at 0.78 s: 8.3% of its triangles fold inside out (limit 8%)",
+      "model judge, right hand: aim_up at 0 s: the right pinky bends 123° at its knuckle (a finger bends -35° to 105°)",
+      "model judge, right leg: getup_front at 0.8 s: 8.8% of its triangles fold inside out (limit 8%) (+1 more)"
+     ],
+     "facts": {
+      "height": 1.361,
+      "triangles": 7822,
+      "joints": 48,
+      "materials": 1
+     }
+    }
+   ],
+   "replaced": {
+    "sha256": "cfd53028b88b355016ceaa42b94018cc0720b901acb2c89584cd0354e8f71a0d",
+    "date": "2026-10-13"
+   }
+  },
+  "ual-mannequin-standin": {
+   "origin": "gf-three stand-ins mannequin.glb",
+   "use": "character body stand-in (character.body.<role>)",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.894
+      },
+      {
+       "hue": "purple",
+       "share": 0.106
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.573,
+     "saturation": 0.765,
+     "top": [
+      {
+       "colour": "#e7aa3a",
+       "share": 0.894
+      },
+      {
+       "colour": "#aa66db",
+       "share": 0.106
+      }
+     ]
+    },
+    "trianglesPerMetre": 74.33,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "rig-check",
+     "version": "gf-humanoid-1",
+     "date": "2026-10-13",
+     "ok": false,
+     "problems": [
+      "missing required bones: Hips, Spine, Head, LeftArm, LeftForeArm, LeftHand, LeftUpLeg, LeftLeg, LeftFoot, RightArm, RightForeArm, RightHand, RightUpLeg, RightLeg, RightFoot"
+     ],
+     "warnings": [
+      "file size 2720448 B is over the target 2500000 B",
+      "the body carries 14 animation(s) of its own; the kit ignores them (clips come from the shared clip file)"
+     ],
+     "facts": {
+      "triangles": 13744,
+      "joints": 53,
+      "materials": 2
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 14,
+   "paletteSize": 4,
+   "families": [
+    {
+     "hue": "brown",
+     "share": 0.346
+    },
+    {
+     "hue": "grey",
+     "share": 0.279
+    },
+    {
+     "hue": "orange",
+     "share": 0.243
+    },
+    {
+     "hue": "green",
+     "share": 0.075
+    }
+   ],
+   "lightness": 0.349,
+   "saturation": 0.334,
+   "trianglesPerMetre": 14.9,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "headsTall": 5.37,
+   "hipShare": 0.482,
+   "grey": 0.241
+  },
+  "licenceText": "Each model's Poly Pizza page reads \"CC0 1.0\" (Creative Commons Zero) on the day it was retrieved; the Universal Animation Library is CC0."
+ }
+}

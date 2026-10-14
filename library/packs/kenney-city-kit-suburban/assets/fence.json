@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "fence",
+ "pack": "kenney-city-kit-suburban",
+ "file": "fence.glb",
+ "sha256": "c32f108f4251dae3452790d6fd84ecb8433b839a26b7ee549cfa83db419a702d",
+ "bytes": 20916,
+ "preview": "previews/fence.png",
+ "from": "kenney:city-kit-suburban/fence; baked to metres (x4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a wooden garden fence panel",
+ "tags": [
+  "backyard",
+  "fence",
+  "wall"
+ ],
+ "use": {
+  "size": [
+   1.9,
+   1.08,
+   0.3
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.9,
+    1.08,
+    0.3
+   ],
+   "offset": [
+    0,
+    0.54,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 88,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 88,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20916,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#c3714e",
+     "#bb6a49",
+     "#d57f59",
+     "#ca7652",
+     "#dc855e",
+     "#e28a62",
+     "#e89066",
+     "#b76646"
+    ],
+    "saturation": 0.536,
+    "value": 0.557,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 3.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/city-kit-suburban",
+  "download": "https://kenney.nl/media/pages/assets/city-kit-suburban/2c871b7af2-1745479373/kenney_city-kit-suburban_20.zip",
+  "sha256": "073bd2000ac51879516d49f835d5156dac4d5038085380b1232858fc3f562d02",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

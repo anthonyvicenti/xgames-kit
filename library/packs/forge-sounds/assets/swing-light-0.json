@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "swing-light-0",
+ "pack": "forge-sounds",
+ "file": "swing-light-0.ogg",
+ "sha256": "91c06c3efa143c44e731d9d43673caabac2d767759a86c93256e2f6d115912c4",
+ "bytes": 4696,
+ "preview": "previews/swing-light-0.png",
+ "from": "https://opengameart.org/content/swishes-sound-pack swishes/swish-10.wav; cut to 0.009-0.109 s of the source (0.1 s), 2 ms fade-in and 30 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.5 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "skeleton swing (swing light 0)",
+ "tags": [
+  "sounds",
+  "swing",
+  "light",
+  "enemy",
+  "attack"
+ ],
+ "use": {
+  "seconds": 0.12,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -18.5,
+     "samplePeakDb": -3,
+     "truePeakDb": -3,
+     "hfRatio": 0.003
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.12,
+    "peakDbfs": -3,
+    "soundMaxLufs": -18.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/swishes-sound-pack",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.009-0.109 s of the source (0.1 s), 2 ms fade-in and 30 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.5 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "artisticdude (OpenGameArt)"
+ }
+}

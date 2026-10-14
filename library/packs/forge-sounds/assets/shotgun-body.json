@@ -1,0 +1,58 @@
+{
+ "assetVersion": 1,
+ "id": "shotgun-body",
+ "pack": "forge-sounds",
+ "file": "shotgun-body.ogg",
+ "sha256": "e88f14bffe7be6a3cfec346f69d39df04e38afabc8cb3cca94c318cb1531fe28",
+ "bytes": 8398,
+ "preview": "previews/shotgun-body.png",
+ "from": "https://opengameart.org/content/25-cc0-bang-firework-sfx bang_09.ogg; cut to 0-0.6 s of the source (0.6 s), 2 ms fade-in and 250 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 2 dB (look-ahead limiter, 20 ms release), gain -0.7 dB (loudest 400 ms toward -17 LUFS, true peak…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "shotgun blast (shotgun body)",
+ "tags": [
+  "sounds",
+  "shotgun",
+  "body",
+  "weapon",
+  "shot"
+ ],
+ "use": {
+  "seconds": 0.62,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -12.7,
+     "samplePeakDb": -2.8,
+     "truePeakDb": -2.8,
+     "hfRatio": 0.04
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.62,
+    "peakDbfs": -2.8,
+    "soundMaxLufs": -12.7
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/25-cc0-bang-firework-sfx",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0-0.6 s of the source (0.6 s), 2 ms fade-in and 250 ms fade-out, downmixed to mono, resampled to 44.1 kHz, peaks limited by 2 dB (look-ahead limiter, 20 ms release), gain -0.7 dB (loudest 400 ms toward -17 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "rubberduck (OpenGameArt)"
+ }
+}

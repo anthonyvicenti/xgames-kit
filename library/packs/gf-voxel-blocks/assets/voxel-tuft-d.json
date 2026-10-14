@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-tuft-d",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-tuft-d.png",
+ "sha256": "227f80c81b83a667e29f3752e334f3bf8b15193d9250f0fb0acd327143f39ab0",
+ "bytes": 24645,
+ "preview": "previews/voxel-tuft-d.png",
+ "from": "kenney:voxel-pack/grass4; PNG/Tiles/grass4.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 750,454; mean difference 1.8 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "grass4 (Voxel Pack)",
+ "tags": [
+  "tuft",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.821
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#27ae60",
+     "#2bc26a",
+     "#26ae5f",
+     "#2ac269",
+     "#2ac16a",
+     "#26ad60",
+     "#26ae60",
+     "#26ad5f"
+    ],
+    "saturation": 0.634,
+    "value": 0.423,
+    "families": [
+     {
+      "hue": "green",
+      "share": 1
+     }
+    ],
+    "exact": 140,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "1fc5b13977ef369465ee3321c1ad5253a28720a49fcfbbe4cd2bcd47512799d0",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

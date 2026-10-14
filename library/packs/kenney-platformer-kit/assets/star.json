@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "star",
+ "pack": "kenney-platformer-kit",
+ "file": "star.glb",
+ "sha256": "24f6ec64c075dc90314dbc8790a49bfd9ea05760dbdcc70555aa207280bc4738",
+ "bytes": 19444,
+ "preview": "previews/star.png",
+ "from": "kenney:platformer-kit/star; baked to metres (x1.9281), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a yellow star",
+ "tags": [
+  "item",
+  "pickup",
+  "power",
+  "star"
+ ],
+ "use": {
+  "size": [
+   0.704,
+   0.7,
+   0.46
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "sphere",
+   "radius": 0.35,
+   "offset": [
+    0,
+    0.35,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 30,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 30,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19444,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ffa53d",
+     "#ffb349",
+     "#ffaa41",
+     "#ffc154",
+     "#ffbb50",
+     "#ffa33b",
+     "#ffb94e",
+     "#ffc759"
+    ],
+    "saturation": 1,
+    "value": 0.641,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 6.2,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/platformer-kit",
+  "download": "https://kenney.nl/media/pages/assets/platformer-kit/1585cf62b4-1775122253/kenney_platformer-kit.zip",
+  "sha256": "a102a1b961fe0932c98ca29200ee6becae711b42437f14d58703388114eeff3c",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x1.9281), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

@@ -1,0 +1,82 @@
+{
+  "specVersion": 2,
+  "title": "Hello Forge",
+  "hook": "The forge engine's first room: a torch-lit crypt you walk in first person, drawn by the Rust core.",
+  "prompt": "gf-forge wave 0 skeleton (research/rust-engine/PLAN.md \u00a74, not a game for anyone yet): one room of glTF pieces, lit and fogged, a swappable texture slot and a model slot, first-person look and walk, through create and verify",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 60,
+    "winBy": "Find the chest the crypt guards and walk up to it.",
+    "loseBy": "The time runs out before you reach it.",
+    "replay": true
+  },
+  "world": {
+    "template": "crypt-room",
+    "size": "small",
+    "props": [
+      {
+        "name": "chest",
+        "describe": "an iron-bound wooden treasure chest",
+        "role": "the guarded treasure",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "rules": {
+    "summary": "Walk the torch-lit crypt in first person and reach the chest by the far wall before the time runs out.",
+    "scoring": "+1 for reaching the chest, which wins the round",
+    "params": {
+      "reach": 1.6
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "ember-crypt"
+  },
+  "build": [],
+  "content": {
+    "rating": "E",
+    "notes": "An empty stone room with a chest."
+  },
+  "accept": [
+    "the room reads as a lit, fogged crypt",
+    "mouse look and the WASD walk, with walls that stop you",
+    "the stone texture and the chest swap like any slot"
+  ],
+  "notInV1": [
+    "enemies (forge-ai, track A)",
+    "weapons, hits and feel (forge-feel, track F)",
+    "friends seen as bodies (skinning, track R; live co-op, track S)"
+  ]
+}

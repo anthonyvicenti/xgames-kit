@@ -1,0 +1,103 @@
+{
+ "assetVersion": 1,
+ "id": "dress-grass",
+ "pack": "xk-pixel-town",
+ "file": "dress-grass.png",
+ "sha256": "09a648aa9d31873ac7c36d69e89db50a395a569b406eb020277f4616fb7222cd",
+ "bytes": 894,
+ "preview": "previews/dress-grass.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): dress-grass.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "things in the grass: tufts, flowers, pebbles, clover (9)",
+ "tags": [
+  "pixel",
+  "grass",
+  "flowers",
+  "dressing",
+  "dress"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "dress"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 144
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 9
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 24,
+    "hues": [
+     "#4f9443",
+     "#3c5b3a",
+     "#3f7f3c",
+     "#9c96a1",
+     "#335036",
+     "#94cc63",
+     "#78b956",
+     "#6f6a78"
+    ],
+    "saturation": 0.339,
+    "value": 0.474,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.502
+     },
+     {
+      "hue": "grey",
+      "share": 0.247
+     },
+     {
+      "hue": "blue",
+      "share": 0.075
+     },
+     {
+      "hue": "pink",
+      "share": 0.068
+     },
+     {
+      "hue": "yellow",
+      "share": 0.044
+     },
+     {
+      "hue": "brown",
+      "share": 0.041
+     }
+    ],
+    "exact": 32,
+    "grey": 0.247
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "8bc3515fa935f2a611b9bae68520b714cbcf515a186f50f9b1e0228fef137560",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

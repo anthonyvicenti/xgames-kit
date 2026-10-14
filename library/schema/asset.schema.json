@@ -1,0 +1,664 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/asset/1.json",
+  "title": "Asset manifest (library/packs/<pack>/assets/<id>.json)",
+  "description": "One manifest per asset, 2D and 3D alike (DESIGN 'The asset library'): identity, what it is, how it is used, budgets, what validated it, and what it fits. Ingest writes it; a build never edits a pack. A slot asks by need (category, dimension, rig); the resolver answers by fit: the kind's packs, then tags against the slot's words, then budgets for the target devices, then licence policy.",
+  "type": "object",
+  "required": [
+    "assetVersion",
+    "id",
+    "pack",
+    "file",
+    "sha256",
+    "dimension",
+    "category",
+    "describe"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "assetVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$",
+      "description": "Unique within its pack; the library-wide id is <pack>/<id>."
+    },
+    "pack": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9.-]{0,39}$"
+    },
+    "file": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_./-]{0,199}$",
+      "description": "Its name inside the pack's content store (binaries are content-addressed by sha256 outside git)."
+    },
+    "sha256": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+    },
+    "bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "preview": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_./-]{0,199}\\.(png|jpg|webp)$",
+      "description": "The preview picture, rendered on the headless GPU at ingest (kept in git beside the manifest)."
+    },
+    "from": {
+      "type": "string",
+      "maxLength": 300,
+      "description": "Where in the pack's source it came from (the path in the zip, the maker job), and what ingest did (optimized, baked from <pack>/<id>)."
+    },
+    "dimension": {
+      "enum": [
+        "3d",
+        "2d",
+        "audio"
+      ]
+    },
+    "category": {
+      "$ref": "#/$defs/category"
+    },
+    "describe": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "description": "At most 200 characters, cut at a word; a longer text stays in the pack's sources.json."
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 24,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9-]{0,31}$"
+      }
+    },
+    "use": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How it is used: real size, origin, facing, sockets, collider; for 2D its density and frames; for a body its rig and clips.",
+      "properties": {
+        "height": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Metres (3D)."
+        },
+        "size": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "description": "Metres, x y z (3D)."
+        },
+        "texelsPerMetre": {
+          "type": "number",
+          "minimum": 0,
+          "description": "2D: picture pixels a metre (pixel 16, drawn 128)."
+        },
+        "origin": {
+          "enum": [
+            "feet",
+            "centre",
+            "grip",
+            "corner",
+            "grid",
+            "camera"
+          ],
+          "description": "grid: centred on a grid line with its base at 0 (dungeon walls on a 3 m grid; use.grid). camera: in camera space (first-person arms)."
+        },
+        "facing": {
+          "enum": [
+            "+z",
+            "-z",
+            "+x",
+            "-x",
+            "camera"
+          ]
+        },
+        "sockets": {
+          "type": "array",
+          "maxItems": 16,
+          "description": "Names, or objects with where they are.",
+          "items": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_]{0,31}$"
+              },
+              {
+                "type": "object",
+                "required": [
+                  "name"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_]{0,31}$"
+                  },
+                  "node": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "position": {
+                    "type": "array",
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "items": {
+                      "type": "number"
+                    }
+                  },
+                  "quaternion": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "collider": {
+          "type": "object",
+          "required": [
+            "shape"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "shape": {
+              "enum": [
+                "box",
+                "cylinder",
+                "sphere",
+                "capsule",
+                "mesh",
+                "none"
+              ]
+            },
+            "radius": {
+              "type": "number",
+              "minimum": 0
+            },
+            "height": {
+              "type": "number",
+              "minimum": 0
+            },
+            "size": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number",
+                "minimum": 0
+              }
+            },
+            "offset": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        "rig": {
+          "type": "string",
+          "maxLength": 40,
+          "description": "A body: its rig standard (gf-humanoid-1)."
+        },
+        "clips": {
+          "type": "string",
+          "maxLength": 200,
+          "description": "A body: the clip file it plays (<pack>/<id>)."
+        },
+        "tint": {
+          "type": "array",
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "description": "Material names a seat colour tints."
+        },
+        "frames": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "A sprite sheet: its cells and the frame names (gf-flat-1: six frames).",
+          "properties": {
+            "cell": {
+              "type": "array",
+              "minItems": 2,
+              "maxItems": 2,
+              "items": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "names": {
+              "type": "array",
+              "maxItems": 64,
+              "items": {
+                "type": "string",
+                "maxLength": 24
+              }
+            }
+          }
+        },
+        "loop": {
+          "type": "boolean",
+          "description": "A sound: whether it loops."
+        },
+        "seconds": {
+          "type": "number",
+          "minimum": 0,
+          "description": "A sound or clip: its length."
+        },
+        "grid": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "origin grid: the grid size in metres."
+        },
+        "real": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "description": "[min, max] metres a real one is: the scale check."
+        },
+        "min": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "number"
+          },
+          "description": "The bounds' low corner (origin grid pieces)."
+        },
+        "parts": {
+          "type": "array",
+          "maxItems": 16,
+          "description": "Moving nodes (a gate door and its hinge).",
+          "items": {
+            "type": "object",
+            "required": [
+              "node"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "node": {
+                "type": "string",
+                "maxLength": 60
+              },
+              "hinge": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "axis": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              },
+              "range": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 2,
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "grip": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Held props and weapons: position and quaternion on the hand_r socket.",
+          "properties": {
+            "position": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number"
+              }
+            },
+            "quaternion": {
+              "type": "array",
+              "minItems": 4,
+              "maxItems": 4,
+              "items": {
+                "type": "number"
+              }
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          }
+        },
+        "hands": {
+          "enum": [
+            1,
+            2
+          ]
+        },
+        "light": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "at": {
+              "type": "array",
+              "minItems": 3,
+              "maxItems": 3,
+              "items": {
+                "type": "number"
+              }
+            },
+            "color": {
+              "type": "string",
+              "pattern": "^#[0-9a-fA-F]{6}$"
+            },
+            "intensity": {
+              "type": "number",
+              "minimum": 0
+            },
+            "range": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "tile": {
+          "type": "boolean",
+          "description": "A texture or picture that tiles."
+        },
+        "tileSet": {
+          "enum": [
+            "blend",
+            "connect",
+            "dress"
+          ],
+          "description": "A 2D tile that is a set (gf-flat-1 §4b): a kind's 16 edge pictures, blend (soft borders) or connect (a fence or wall that joins itself), or its dressing strip."
+        },
+        "tileMetres": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "colorSpace": {
+          "enum": [
+            "srgb",
+            "linear"
+          ],
+          "description": "linear: masks, normal maps, SDFs."
+        },
+        "plane": {
+          "enum": [
+            "side",
+            "top"
+          ],
+          "description": "A sprite sheet: the plane it is drawn for."
+        },
+        "style": {
+          "enum": [
+            "pixel",
+            "drawn"
+          ],
+          "description": "A 2D asset: the flat standard it is judged on (gf-flat-1)."
+        },
+        "tintMix": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "budgets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "triangles": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "textures": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "textureMax": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "The largest texture's side in pixels."
+        },
+        "materials": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "joints": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "drawCalls": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "validated": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "Each validator it passed or failed, with its version and day. An asset that fails its pack's validator is not offered by the resolver.",
+      "items": {
+        "type": "object",
+        "required": [
+          "by",
+          "ok",
+          "date"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "by": {
+            "enum": [
+              "rig-check",
+              "body-judge",
+              "flat-judge",
+              "sound-gate",
+              "gltf-validator",
+              "budget",
+              "clip-check",
+              "picture-check"
+            ]
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "date": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+          },
+          "report": {
+            "type": "object",
+            "description": "The validator's own report (parts, warnings)."
+          }
+        }
+      }
+    },
+    "fits": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Style is measured and judged, never declared: its signature, and the kinds the look judge found it fits.",
+      "properties": {
+        "signature": {
+          "$ref": "https://xgames.fun/schemas/pack/1.json#/$defs/signature"
+        },
+        "kinds": {
+          "type": "array",
+          "maxItems": 12,
+          "items": {
+            "$ref": "https://xgames.fun/schemas/pack/1.json#/$defs/fit"
+          }
+        }
+      }
+    },
+    "licence": {
+      "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/licence",
+      "description": "Only when it differs from its pack's (rare: a pack carries one licence)."
+    },
+    "bakedFrom": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,39}/[a-z0-9][a-z0-9._-]{0,79}$",
+      "description": "A 2D sheet baked from a 3D asset: that asset."
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Where this one asset came from, pinned (collection packs: Poly Pizza, OpenGameArt, Poly Haven pin per asset).",
+      "properties": {
+        "page": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "download": {
+          "type": "string",
+          "pattern": "^https?://",
+          "maxLength": 400
+        },
+        "sha256": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256",
+          "description": "The upstream file's hash, before ingest changed it."
+        },
+        "retrieved": {
+          "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/date"
+        },
+        "modified": {
+          "type": "string",
+          "maxLength": 300,
+          "description": "What ingest did to it (optimized, resized, baked); left out: unmodified."
+        },
+        "author": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "licence": {
+          "type": "string",
+          "maxLength": 80
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "maxItems": 6,
+      "description": "Other copies of the same asset (a small copy with 128-512 px textures for phones).",
+      "items": {
+        "type": "object",
+        "required": [
+          "use",
+          "sha256"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "use": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,23}$"
+          },
+          "file": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "sha256": {
+            "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/sha256"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "textureMax": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "category": {
+            "const": "body"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "use": {
+            "required": [
+              "rig"
+            ]
+          }
+        },
+        "required": [
+          "use"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "dimension": {
+            "const": "audio"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "category": {
+            "const": "sound"
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "category": {
+      "enum": [
+        "body",
+        "prop",
+        "tile",
+        "texture",
+        "sprite-sheet",
+        "sound",
+        "sky",
+        "effect",
+        "font",
+        "card",
+        "clip",
+        "picture",
+        "viewmodel"
+      ],
+      "description": "What it is. clip: an animation file for a rig. picture: a flat image shown as itself (a panel picture, a portrait). viewmodel: first-person arms and held-in-view models, in camera space, no rig."
+    }
+  }
+}

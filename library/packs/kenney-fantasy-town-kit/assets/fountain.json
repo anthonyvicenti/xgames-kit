@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "fountain",
+ "pack": "kenney-fantasy-town-kit",
+ "file": "fountain.glb",
+ "sha256": "6270e12e1ec4980b27cb1a846ae43edfa8077cf8dae1d1ac06c39177b189da26",
+ "bytes": 28260,
+ "preview": "previews/fountain.png",
+ "from": "kenney:fantasy-town-kit/fountain-round; baked to metres (x2.4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round stone fountain with water",
+ "tags": [
+  "plaza",
+  "water",
+  "centrepiece",
+  "fountain"
+ ],
+ "use": {
+  "size": [
+   4.8,
+   0.672,
+   4.8
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 2.3,
+   "height": 0.7,
+   "offset": [
+    0,
+    0.35,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1002,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1002,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 28260,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#7d829c",
+     "#79dcff",
+     "#bdc6ee",
+     "#676c84",
+     "#747990",
+     "#b6bee4",
+     "#aab2d6",
+     "#a4acce"
+    ],
+    "saturation": 0.455,
+    "value": 0.647,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.508
+     },
+     {
+      "hue": "cyan",
+      "share": 0.284
+     },
+     {
+      "hue": "blue",
+      "share": 0.208
+     }
+    ],
+    "grey": 0.508
+   },
+   "trianglesPerMetre": 4.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "8d19741e2cca6cbdce114b950b4aa12af625979bbc17b2910ef2366834af5565",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.4), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

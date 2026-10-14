@@ -1,0 +1,10 @@
+{
+  "title": "Isle Run",
+  "summary": "A co-op action run on the three runtime's scenic-3d profile: knights clear three floating isles of skeletons, then beat the Bone Sorcerer.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 21/21 (9, the contact sheet, not run: its tool is not in this checkout). The run before it failed measure 5 once (soft step \"a background host does not stop the world\": not reached, the round had ended under the gate's random input); --check 5 alone and the full verify after it passed",
+    "kit": "xgames-kit stream/core-spec after 07cc523 (spec v2)",
+    "date": "2026-10-13",
+    "how": "node bin/gamesfun.mjs create <dir> --from isle-run, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 180 s) under gpu-run.sh on Linux with a desktop GPU (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\"); the verdict is builder/gates/verdict.schema.json's and valid against it"
+  }
+}

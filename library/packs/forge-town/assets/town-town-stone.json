@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-stone",
+ "pack": "forge-town",
+ "file": "town-town-stone.png",
+ "sha256": "5d1785d8366b54a711eadce46d40f2ba744bd9be26ef0a1384ac552a74aa4e53",
+ "bytes": 9880,
+ "preview": "previews/town-town-stone.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 32 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "pale dressed stone blocks 1 m by 0.5 m in running bond, sooty; tiles; 3 m across",
+ "tags": [
+  "texture",
+  "town",
+  "stone"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#535755",
+     "#646867",
+     "#515554",
+     "#565958",
+     "#606361",
+     "#585c5a",
+     "#545856",
+     "#616563"
+    ],
+    "saturation": 0.021,
+    "value": 0.382,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 256,
+    "grey": 1
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.389
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 32 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

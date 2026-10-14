@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "trashcan",
+ "pack": "kenney-furniture-kit",
+ "file": "trashcan.glb",
+ "sha256": "4b3ee2e5edf39c3a761b20f7353f4b410960be4459ab9d5f643ae2a44a0e2941",
+ "bytes": 4012,
+ "preview": "previews/trashcan.png",
+ "from": "kenney:furniture-kit/trashcan; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "an office bin",
+ "tags": [
+  "office",
+  "decor",
+  "trashcan"
+ ],
+ "use": {
+  "size": [
+   0.415,
+   0.856,
+   0.468
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.415,
+    0.856,
+    0.468
+   ],
+   "offset": [
+    0,
+    0.428,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 68,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 68,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 4012,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#dfeaec",
+     "#96a7a7"
+    ],
+    "saturation": 0.22,
+    "value": 0.841,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.79
+     },
+     {
+      "hue": "grey",
+      "share": 0.21
+     }
+    ],
+    "grey": 0.21
+   },
+   "trianglesPerMetre": 7.26,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "e0ccc1fe50cbd05386477fdff527171d1cf7c0de2ba7ff3233f8d9561feb2561",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

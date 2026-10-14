@@ -1,0 +1,105 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-bottle-brown",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-bottle-brown.glb",
+ "sha256": "719920c9f7400369caa9ff2f26f835ae1cd10ff8672cb69abc2e1146cd4b1b84",
+ "bytes": 53324,
+ "preview": "previews/dungeon-bottle-brown.png",
+ "from": "bottle_B_brown.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a round brown bottle (a potion)",
+ "tags": [
+  "bottle",
+  "potion",
+  "loot",
+  "pickup",
+  "brown",
+  "dungeon"
+ ],
+ "use": {
+  "size": [
+   0.415,
+   0.664,
+   0.415
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 144,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 144,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 53324,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#b1572e",
+     "#803825",
+     "#9a4529",
+     "#cb6933",
+     "#cf6b33",
+     "#c86732",
+     "#c66732",
+     "#b75b2f"
+    ],
+    "saturation": 0.602,
+    "value": 0.457,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.712
+     },
+     {
+      "hue": "brown",
+      "share": 0.288
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 14.59,
+   "texelsPerMetre": 124,
+   "texturedShare": 0.853,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/bottle_B_brown.gltf.glb",
+  "sha256": "930b73e80da06d0c7deb03067029472e6208705bd84375a1dc45893c8914a8dc",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

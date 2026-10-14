@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-cloth-blue",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-cloth-blue.png",
+ "sha256": "2a745a4ac50661148fdc263a8b476e0a8d34d205828fb0fcf89f853bd94649de",
+ "bytes": 38889,
+ "preview": "previews/voxel-cloth-blue.png",
+ "from": "kenney:voxel-pack/cotton_blue; PNG/Tiles/cotton_blue.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1120,84; mean difference 4.4 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "cotton_blue (Voxel Pack)",
+ "tags": [
+  "cloth",
+  "blue",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.017
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#2f95d0",
+     "#2d8fc7",
+     "#3fa8e5",
+     "#2c8fc7",
+     "#2c8ec7",
+     "#2e94ce",
+     "#2e94cf",
+     "#2d8fc8"
+    ],
+    "saturation": 0.641,
+    "value": 0.502,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 1
+     }
+    ],
+    "exact": 300,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "78eeb1faa9ca28706f68641cbc2812ff456e852447354e640027df9369ad843c",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

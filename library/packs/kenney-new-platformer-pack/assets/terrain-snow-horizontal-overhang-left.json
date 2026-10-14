@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-horizontal-overhang-left",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-horizontal-overhang-left.png",
+ "sha256": "0a382a23fb52ba676444fb2af651c5c55bed6af7781cf27ad693d88c057e9116",
+ "bytes": 4655,
+ "preview": "previews/terrain-snow-horizontal-overhang-left.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_horizontal_overhang_left.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow horizontal overhang left tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "horizontal",
+  "overhang",
+  "left",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 79.0 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 16.2 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#e5f0ff",
+     "#bbc4cb",
+     "#cfd5da",
+     "#353541",
+     "#ffffff",
+     "#a6b2bb",
+     "#c8dbf5",
+     "#343440"
+    ],
+    "saturation": 0.371,
+    "value": 0.746,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.948
+     },
+     {
+      "hue": "blue",
+      "share": 0.052
+     }
+    ],
+    "exact": 161,
+    "grey": 0.948
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.751
+   }
+  }
+ },
+ "source": {
+  "sha256": "719a38fd65005a05858187d05360243c56815bbb0b0e6271d33eb51a25b9e599",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

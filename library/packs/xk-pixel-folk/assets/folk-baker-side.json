@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "folk-baker-side",
+ "pack": "xk-pixel-folk",
+ "file": "folk-baker-side.png",
+ "sha256": "8a4875f05a78ab30c27b454986f06365bbf899321edcc9eda3582cb0618dfa9e",
+ "bytes": 1855,
+ "preview": "previews/folk-baker-side.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): folk-baker-side.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "sprite-sheet",
+ "describe": "a baker in a long-sleeved cream top and a white apron, a blonde ponytail; a gf-flat-1 body sheet seen from the side",
+ "tags": [
+  "pixel",
+  "villager",
+  "person",
+  "body",
+  "side",
+  "baker",
+  "folk"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "frames": {
+   "cell": [
+    32,
+    32
+   ],
+   "names": [
+    "idle",
+    "walk1",
+    "walk2",
+    "air",
+    "act",
+    "down"
+   ]
+  },
+  "style": "pixel",
+  "plane": "side"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 192
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32,
+     "rows": 1,
+     "frames": 6
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#e8c060",
+     "#eeb88f",
+     "#6b5649",
+     "#6f4d47",
+     "#7c4232",
+     "#eece7d",
+     "#e9a05a",
+     "#f3eee2"
+    ],
+    "saturation": 0.482,
+    "value": 0.538,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.304
+     },
+     {
+      "hue": "yellow",
+      "share": 0.268
+     },
+     {
+      "hue": "grey",
+      "share": 0.267
+     },
+     {
+      "hue": "brown",
+      "share": 0.093
+     },
+     {
+      "hue": "red",
+      "share": 0.067
+     }
+    ],
+    "exact": 26,
+    "grey": 0.267
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.306
+   }
+  }
+ },
+ "source": {
+  "sha256": "1e4c4e49f9bee3b6b490c80623c1b1ec03769a33a06e9625d6876a71a4cf31a7",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

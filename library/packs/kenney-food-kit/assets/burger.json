@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "burger",
+ "pack": "kenney-food-kit",
+ "file": "burger.glb",
+ "sha256": "d6e4cae1dcd3431884ab132c41d6ac8609ddabe77b0a009196f2855fe45e883f",
+ "bytes": 20912,
+ "preview": "previews/burger.png",
+ "from": "kenney:food-kit/burger; baked to metres (x0.75862), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a burger",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "burger"
+ ],
+ "use": {
+  "size": [
+   0.307,
+   0.22,
+   0.307
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "cylinder",
+   "radius": 0.15,
+   "height": 0.22,
+   "offset": [
+    0,
+    0.11,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 294,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 294,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 20912,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 13,
+    "hues": [
+     "#cd8860",
+     "#995941",
+     "#efba94",
+     "#845442",
+     "#ab5e41",
+     "#3fa87a",
+     "#d3554d",
+     "#ffcd5e"
+    ],
+    "saturation": 0.56,
+    "value": 0.556,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.687
+     },
+     {
+      "hue": "brown",
+      "share": 0.129
+     },
+     {
+      "hue": "red",
+      "share": 0.121
+     },
+     {
+      "hue": "cyan",
+      "share": 0.064
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 16.61,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/food-kit",
+  "download": "https://kenney.nl/media/pages/assets/food-kit/83086fa91c-1719418518/kenney_food-kit.zip",
+  "sha256": "b982f15d980ef49f3aa295fda03b1926b0b9a29d3d000d139e111d734474c99b",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x0.75862), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

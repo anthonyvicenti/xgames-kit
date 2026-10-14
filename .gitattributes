@@ -1,0 +1,36 @@
+# Text files are LF in every checkout, on every platform.
+* text=auto eol=lf
+# The kits a game vendors are held to sha256 hashes (verify check 2, the kits' kit.json and SHA256SUMS, forge's
+# BUILD.json, tests/layers.test.mjs), so git must never convert anything in them or in the tools that read them (a
+# Windows checkout with core.autocrlf would otherwise break every hash). These are the folders that were kits/.
+runtimes/** -text
+components/** -text
+loops/** -text
+worlds/** -text
+builder/ui/** -text
+builder/tools/** -text
+builder/loop/** -text
+builder/gf-multiplayer/** -text
+builder/gf-audio/** -text
+builder/gf-assets/** -text
+builder/multiplayer/** -text
+builder/spec/** -text
+builder/qa/** -text
+builder/asset-manifest/** -text
+builder/audio-gates/** -text
+builder/watch/** -text
+builder/world-server/** -text
+builder/studio-lib/** -text
+builder/CONTRACT.md -text
+# Binary assets, wherever they are.
+*.glb binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ktx2 binary
+*.hdr binary
+*.wasm binary
+*.ogg binary
+*.mp3 binary
+*.wav binary

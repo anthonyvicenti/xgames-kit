@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-sand-block",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-sand-block.png",
+ "sha256": "0794814266c3bdd5784ef2164fa9dcb6346cd6bc06bb3290bb1aa647f02f692f",
+ "bytes": 4381,
+ "preview": "previews/terrain-sand-block.png",
+ "from": "Sprites/Tiles/Double/terrain_sand_block.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain sand block tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "sand",
+  "block",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#f3c7a5",
+     "#ee9366",
+     "#e7b187",
+     "#c66a3e",
+     "#ffe0c2",
+     "#343440"
+    ],
+    "saturation": 0.593,
+    "value": 0.581,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.774
+     },
+     {
+      "hue": "grey",
+      "share": 0.226
+     }
+    ],
+    "exact": 123,
+    "grey": 0.226
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "8dbc5053ee0eac3fc3b2b917644ae0e40b683c61c952f32c898d180fd4e24523",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

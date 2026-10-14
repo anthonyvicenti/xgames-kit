@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "leafy-grass",
+ "pack": "polyhaven",
+ "file": "leafy-grass.ktx2",
+ "sha256": "f2fe8e722d534bdd101155f8cc7ac5b7edfc345284a8dea706d3c817d7cc634f",
+ "bytes": 297150,
+ "preview": "previews/leafy-grass.png",
+ "from": "research/foundations/trials/third-person-adventure/source/assets/tex/leafy_grass_diff.ktx2, byte for byte (converted to KTX2 by trials/scenic-valley; download URL and hashes in research/foundations/trials/scenic-valley/provenance.json)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "ground texture stand-in (world.<template>.ground)",
+ "tags": [
+  "grass",
+  "ground",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 27,
+    "hues": [
+     "#8e7f55",
+     "#967f55",
+     "#968755",
+     "#a28a60",
+     "#9a8a60",
+     "#967f5d",
+     "#a0875d",
+     "#9a8060"
+    ],
+    "saturation": 0.268,
+    "value": 0.475,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.474
+     },
+     {
+      "hue": "yellow",
+      "share": 0.422
+     },
+     {
+      "hue": "brown",
+      "share": 0.083
+     }
+    ],
+    "exact": 1660,
+    "grey": 0.02
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/leafy_grass",
+  "author": "Poly Haven"
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0106",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0106.png",
+ "sha256": "01eec1e28bc7bc72e68f42f1e007f80272baf5465a9f712c16c871200b5d5e96",
+ "bytes": 205,
+ "preview": "previews/tile-0106.png",
+ "from": "Tiles/tile_0106.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a long iron sword",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "sword",
+  "longsword",
+  "blade",
+  "weapon",
+  "melee",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4",
+     "#bd6c4a"
+    ],
+    "saturation": 0.257,
+    "value": 0.375,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.649
+     },
+     {
+      "hue": "blue",
+      "share": 0.316
+     },
+     {
+      "hue": "orange",
+      "share": 0.035
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "4958c3b09a0d41b3f21741476274855ab2242b3240e5054657dbc0569c881215",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

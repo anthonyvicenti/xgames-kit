@@ -1,0 +1,114 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-trunk",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-trunk.glb",
+ "sha256": "70afe4960f2e1199006bddccafd824c8efeea777ae39247fac802cca6f9b9ad3",
+ "bytes": 54536,
+ "preview": "previews/dungeon-trunk.png",
+ "from": "trunk_large_A.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a large wooden storage trunk",
+ "tags": [
+  "dungeon",
+  "trunk",
+  "chest",
+  "container",
+  "wood"
+ ],
+ "use": {
+  "size": [
+   1.125,
+   0.75,
+   0.975
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.125,
+    0.75,
+    0.975
+   ],
+   "offset": [
+    0,
+    0.375,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 204,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 204,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 54536,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#7d3d2c",
+     "#8d4c39",
+     "#5a6064",
+     "#92513e",
+     "#8a4a37",
+     "#92513d",
+     "#6c767a",
+     "#884836"
+    ],
+    "saturation": 0.321,
+    "value": 0.402,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.68
+     },
+     {
+      "hue": "grey",
+      "share": 0.307
+     }
+    ],
+    "grey": 0.307
+   },
+   "trianglesPerMetre": 6.54,
+   "texelsPerMetre": 45,
+   "texturedShare": 0.457,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/trunk_large_A.gltf.glb",
+  "sha256": "fb915dc521a92708dfe548922cfb09af23392a83a356e65c837cfbc406f237a9",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "run",
+  "name": "a level run",
+  "describe": "A run through levels in order: clear one and a portal takes everyone to the next; the last level, or a boss, ends it (one clock for the whole run).",
+  "pick": "the players go through places in order and the game is over at the end of the last one",
+  "acts": "levels-in-order",
+  "near": [
+    "round"
+  ],
+  "clock": "required",
+  "ends": "the last level cleared (or its boss down), or everyone down",
+  "seats": {
+    "alone": "fill",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "needs": {
+    "mechanics": [
+      "levels"
+    ],
+    "why": "the levels mechanic is the run"
+  },
+  "promise": "A run goes through its levels in order and ends at the last one, won or lost, and plays again.",
+  "impl": {
+    "three": {
+      "by": "mechanic",
+      "path": "components/levels/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/k2-levels.test.mjs pass; Isle Run plays a scenic run",
+            "date": "2026-10-08"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/k2-levels.test.mjs pass; Isle Run plays a scenic run",
+        "date": "2026-10-08"
+      }
+    ]
+  }
+}

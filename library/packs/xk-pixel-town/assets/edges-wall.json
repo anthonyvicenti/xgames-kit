@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "edges-wall",
+ "pack": "xk-pixel-town",
+ "file": "edges-wall.png",
+ "sha256": "121be9d5fadf4f8ca7820173f562fdf65ee5b74762dc8703c1a9bbf284492d3d",
+ "bytes": 814,
+ "preview": "previews/edges-wall.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): edges-wall.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a low stone wall that joins its neighbours (16, connect)",
+ "tags": [
+  "pixel",
+  "wall",
+  "stone",
+  "edges"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false,
+  "tileSet": "connect"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 64
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7a7484",
+     "#b3acb5",
+     "#cfc9cd",
+     "#968f9c",
+     "#5e5866",
+     "#655a6a",
+     "#453a4f",
+     "#5a4f61"
+    ],
+    "saturation": 0.068,
+    "value": 0.587,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.992
+     }
+    ],
+    "exact": 11,
+    "grey": 0.992
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.042
+   }
+  }
+ },
+ "source": {
+  "sha256": "578cc358ffba4b1ce0ef5d228910b7c205b5296a25212fc1fb3ea3b5b2905763",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

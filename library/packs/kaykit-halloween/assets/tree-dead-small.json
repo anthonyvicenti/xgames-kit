@@ -1,0 +1,110 @@
+{
+ "assetVersion": 1,
+ "id": "tree-dead-small",
+ "pack": "kaykit-halloween",
+ "file": "tree-dead-small.glb",
+ "sha256": "f8eaeb5ec1af92cfe81894223d1644e450322c7d352e71cbb5d3831b603a5040",
+ "bytes": 9860,
+ "preview": "previews/tree-dead-small.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0@6dc69bf6b2fa766a985754f35ec6a0324090e6c6; ×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small dead tree",
+ "tags": [
+  "ruins",
+  "tree",
+  "dead",
+  "small"
+ ],
+ "use": {
+  "size": [
+   1.057,
+   2.24,
+   0.761
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "min": [
+   -0.528,
+   0,
+   -0.381
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.057,
+    2.24,
+    0.761
+   ],
+   "offset": [
+    0,
+    1.12,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 184,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 184,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 9860,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#66584f",
+     "#5c4f48",
+     "#544842"
+    ],
+    "saturation": 0.124,
+    "value": 0.337,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 10.21,
+   "texelsPerMetre": 8,
+   "texturedShare": 0.571,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-halloween-bits",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Halloween-Bits-1.0/6dc69bf6b2fa766a985754f35ec6a0324090e6c6/addons/kaykit_halloween_bits/Assets/gltf/tree_dead_small.gltf",
+  "sha256": "1f7b1867de93554b5399c26ff6db32925048ae96450cdbc7ee33ffe44bb5c827",
+  "retrieved": "2026-10-09",
+  "modified": "×0.75 to metres (KayKit units ×0.75), base at y = 0 and centred, primitives joined per material, atlas at 512 px palette PNG, meshopt (research/gf-forge/library/tools/props.mjs)",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

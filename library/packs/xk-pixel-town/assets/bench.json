@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "bench",
+ "pack": "xk-pixel-town",
+ "file": "bench.png",
+ "sha256": "9c3a94b9a5d5cdd1f1d774a1e788883e973709f5048e5e966b38e91dcaee064f",
+ "bytes": 330,
+ "preview": "previews/bench.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): bench.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a wooden bench",
+ "tags": [
+  "pixel",
+  "bench",
+  "seat",
+  "park"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 32
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7a4a2a",
+     "#452a2c",
+     "#9a6236",
+     "#67483f",
+     "#d39a5c",
+     "#b97c45",
+     "#513331",
+     "#5a3620"
+    ],
+    "saturation": 0.409,
+    "value": 0.374,
+    "families": [
+     {
+      "hue": "brown",
+      "share": 0.519
+     },
+     {
+      "hue": "orange",
+      "share": 0.271
+     },
+     {
+      "hue": "red",
+      "share": 0.186
+     }
+    ],
+    "exact": 10,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.574
+   }
+  }
+ },
+ "source": {
+  "sha256": "b73aa3a881d915e4d7e2316dc4df7e6d1642dfd6849bf296c891ca4e75677a1a",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

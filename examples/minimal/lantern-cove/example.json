@@ -1,0 +1,10 @@
+{
+  "title": "Lantern Cove",
+  "summary": "A calm fishing evening on the vista runtime: walk an island pier at sunset with friends, land four kinds of fish. WebGPU only, desktop.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 20/20; 12 more are skipped with their reasons in verdict.json (the vista runtime's own skips: 7, 8, 9, 10, 11, 16, 19, 22, 24, 33, 34, 39), never counted as passed. Gate F's islands leg (17): the game is its spec's 1 island, each built from its own seed and words: 1. Lantern Cove (seed 4127, place 0b7b80ba); none is the reference island (ffca9377)",
+    "kit": "xgames-kit stream/vista-places at 3557107",
+    "date": "2026-10-13",
+    "how": "node builder/tools/create.mjs examples/minimal/lantern-cove/spec.json <dir>, then node builder/tools/verify.mjs <dir> (a build verify, every build measure; 190 s) in the machine's GPU queue, headless WebGPU on a desktop graphics card"
+  }
+}

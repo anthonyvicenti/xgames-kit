@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "network": "devnet",
+  "name": "Plinko Drops",
+  "prompt": "A plinko drop for 0.1 SOL: the slots pay 0.2x, 0.5x, 1x, 3x, 10x and 100x, with a house edge of about 3%.",
+  "currency": "sol",
+  "tokens": [{ "key": "sol", "source": "sol" }],
+  "pools": [{ "key": "board", "currency": "sol", "seed": 90, "about": "Every drop's SOL; pays every slot." }],
+  "boxes": [
+    {
+      "key": "drop",
+      "name": "Plinko drop",
+      "price": 0.1,
+      "split": [{ "to": "pool:board", "percent": 100 }],
+      "outcomes": [
+        { "gives": "pay", "pool": "board", "amount": 0.02, "chance": 14.05 },
+        { "gives": "pay", "pool": "board", "amount": 0.05, "chance": 30 },
+        { "gives": "pay", "pool": "board", "amount": 0.1, "chance": 50 },
+        { "gives": "pay", "pool": "board", "amount": 0.3, "chance": 5 },
+        { "gives": "pay", "pool": "board", "amount": 1, "chance": 0.9 },
+        { "gives": "pay", "pool": "board", "amount": 10, "chance": 0.05 }
+      ]
+    }
+  ],
+  "scenario": { "days": 30, "perDay": { "box:drop": 2000 } }
+}

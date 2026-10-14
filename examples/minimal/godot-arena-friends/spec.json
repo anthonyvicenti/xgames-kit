@@ -1,0 +1,26 @@
+{
+  "specVersion": 2,
+  "title": "Arena Friends",
+  "hook": "The smallest 3D Godot game the kit makes: walk and jump in an arena with your friends, each a gf-humanoid-1 body.",
+  "runtime": "godot",
+  "profile": "3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": { "min": 1, "max": 4, "bots": true },
+  "multiplayer": { "mode": "live", "together": "coop", "watch": false, "voice": false },
+  "devices": { "targets": ["desktop"], "inputs": ["keyboard-mouse"] },
+  "camera": "follow",
+  "controls": { "jump": "jump" },
+  "round": { "seconds": 60, "winBy": "nobody wins: it is an arena to share", "replay": true },
+  "world": { "template": "arena", "size": "small" },
+  "mechanics": [],
+  "rules": { "summary": "Walk, run and jump in the arena with your friends. Nothing to win: the round ends when the clock does." },
+  "characters": [{ "role": "player", "describe": "a round jelly bean with arms and legs", "body": { "from": "library", "asset": "gf-beans/bean-classic" } }],
+  "build": [
+    { "what": "the silly look on Godot 3D", "how": "the bean bodies under the starter's own bright light; three's pastel light and materials are not ported yet, so the look judge's sheet is still to make", "where": "module", "kind": "silly" }
+  ],
+  "accept": [
+    "the game boots from this spec on runtime godot, profile 3d",
+    "two players in one room each see the other where they really are"
+  ]
+}

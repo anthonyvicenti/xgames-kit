@@ -1,0 +1,308 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "street-light": {
+   "origin": "gf-three library props/street-light.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 6,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.932
+      },
+      {
+       "hue": "grey",
+       "share": 0.068
+      }
+     ],
+     "grey": 0.068,
+     "lightness": 0.74,
+     "saturation": 0.315,
+     "top": [
+      {
+       "colour": "#99a0c0",
+       "share": 0.158
+      },
+      {
+       "colour": "#a6aed0",
+       "share": 0.156
+      },
+      {
+       "colour": "#949bb9",
+       "share": 0.099
+      },
+      {
+       "colour": "#9ba3c3",
+       "share": 0.099
+      },
+      {
+       "colour": "#9aa1c1",
+       "share": 0.059
+      },
+      {
+       "colour": "#a9b0d3",
+       "share": 0.055
+      },
+      {
+       "colour": "#bdc6ee",
+       "share": 0.047
+      },
+      {
+       "colour": "#bbc4eb",
+       "share": 0.047
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.53,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 92,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 19360,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "road": {
+   "origin": "gf-three library props/road.glb",
+   "shadow": "receive",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 4,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.875
+      },
+      {
+       "hue": "blue",
+       "share": 0.125
+      }
+     ],
+     "grey": 0.875,
+     "lightness": 0.537,
+     "saturation": 0.176,
+     "top": [
+      {
+       "colour": "#7d829c",
+       "share": 0.48
+      },
+      {
+       "colour": "#666b80",
+       "share": 0.29
+      },
+      {
+       "colour": "#515566",
+       "share": 0.096
+      },
+      {
+       "colour": "#bdc6ee",
+       "share": 0.096
+      },
+      {
+       "colour": "#a8b0d3",
+       "share": 0.014
+      },
+      {
+       "colour": "#9299b7",
+       "share": 0.01
+      },
+      {
+       "colour": "#8e95b3",
+       "share": 0.01
+      },
+      {
+       "colour": "#b3bbe0",
+       "share": 0.005
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.57,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 44,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18628,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "road-crossing": {
+   "origin": "gf-three library props/road-crossing.glb",
+   "shadow": "receive",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "grey",
+       "share": 0.977
+      }
+     ],
+     "grey": 0.977,
+     "lightness": 0.504,
+     "saturation": 0.135,
+     "top": [
+      {
+       "colour": "#7d829c",
+       "share": 0.486
+      },
+      {
+       "colour": "#666b80",
+       "share": 0.424
+      },
+      {
+       "colour": "#515566",
+       "share": 0.058
+      },
+      {
+       "colour": "#bdc6ee",
+       "share": 0.019
+      },
+      {
+       "colour": "#8e95b3",
+       "share": 0.008
+      },
+      {
+       "colour": "#a8b0d3",
+       "share": 0.002
+      },
+      {
+       "colour": "#b3bbe0",
+       "share": 0.002
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.94,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 116,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 19380,
+      "role": "scenery"
+     }
+    }
+   ]
+  },
+  "sidewalk": {
+   "origin": "gf-three library props/sidewalk.glb",
+   "shadow": "receive",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.708,
+     "saturation": 0.275,
+     "top": [
+      {
+       "colour": "#a0a8c9",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 0.6,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 12,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 18240,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 4,
+   "paletteSize": 4,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.517
+    },
+    {
+     "hue": "grey",
+     "share": 0.483
+    }
+   ],
+   "lightness": 0.708,
+   "saturation": 0.275,
+   "trianglesPerMetre": 0.94,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.875
+  },
+  "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
+ }
+}

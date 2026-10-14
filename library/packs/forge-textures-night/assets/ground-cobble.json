@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "ground-cobble",
+ "pack": "forge-textures-night",
+ "file": "ground-cobble.jpg",
+ "sha256": "bc0a2929884c4bc5be53d92471a4ef604712a4060eaddcda454f7a2353f97c60",
+ "bytes": 49242,
+ "preview": "previews/ground-cobble.png",
+ "from": "https://polyhaven.com/a/cobblestone_floor_001; resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.7, brightness ×0.9, tinted 255,240,220; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "old cobbles set in mud",
+ "tags": [
+  "texture",
+  "floor",
+  "ground",
+  "cobble",
+  "textures"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#716555",
+     "#706454",
+     "#726656",
+     "#6f6353",
+     "#736757",
+     "#6e6252",
+     "#6d6151",
+     "#746858"
+    ],
+    "saturation": 0.145,
+    "value": 0.397,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.977
+     }
+    ],
+    "exact": 1181,
+    "grey": 0.977
+   },
+   "outline": {
+    "present": false,
+    "share": 0.011
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/cobblestone_floor_001",
+  "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/cobblestone_floor_001/cobblestone_floor_001_diff_1k.jpg",
+  "sha256": "893d3e7b4506c5935cbc6aca5b914d637bd4464484bcaa5d69e2ee205bb9ae9c",
+  "retrieved": "2026-10-09",
+  "modified": "resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.7, brightness ×0.9, tinted 255,240,220; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+  "author": "Rob Tuytel"
+ }
+}

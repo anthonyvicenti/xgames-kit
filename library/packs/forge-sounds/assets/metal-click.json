@@ -1,0 +1,62 @@
+{
+ "assetVersion": 1,
+ "id": "metal-click",
+ "pack": "forge-sounds",
+ "file": "metal-click.ogg",
+ "sha256": "9851a69d0c613e13bceef08060ecc4148f098ef487927cbebe270d642398a3b3",
+ "bytes": 13615,
+ "preview": "previews/metal-click.png",
+ "from": "https://kenney.nl/assets/rpg-audio Audio/metalClick.ogg; unmodified",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "pistol empty click (metal click)",
+ "tags": [
+  "sounds",
+  "metal",
+  "click",
+  "weapon",
+  "pistol",
+  "dry",
+  "mg"
+ ],
+ "use": {
+  "seconds": 0.457,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "harsh: 51% of its energy is over 4 kHz"
+    ],
+    "facts": {
+     "soundMaxLufs": -24.5,
+     "samplePeakDb": -6.9,
+     "truePeakDb": -6.8,
+     "hfRatio": 0.513
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.457,
+    "peakDbfs": -6.9,
+    "soundMaxLufs": -24.5
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/rpg-audio",
+  "retrieved": "2026-10-09",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

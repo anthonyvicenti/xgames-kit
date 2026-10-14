@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0110",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0110.png",
+ "sha256": "dfe3c7b4abe4f3547647048f91da40c880dcdc2c788caad2ca97c78e477d088c",
+ "bytes": 332,
+ "preview": "previews/tile-0110.png",
+ "from": "Tiles/tile_0110.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a red crab monster with big claws",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "monster",
+  "enemy",
+  "creature",
+  "crab",
+  "red",
+  "claws",
+  "crustacean"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#e84537",
+     "#ff706d",
+     "#f7c282",
+     "#763b36",
+     "#bd6c4a"
+    ],
+    "saturation": 0.442,
+    "value": 0.339,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.645
+     },
+     {
+      "hue": "red",
+      "share": 0.289
+     },
+     {
+      "hue": "orange",
+      "share": 0.066
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "ca2d26579be3738be5abfb74cea388634e212fb991b84701deeda65da4780f1c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

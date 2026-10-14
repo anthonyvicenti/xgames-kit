@@ -1,0 +1,42 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "breadth",
+ "id": "B24",
+ "frozen": "2026-10-13",
+ "archetype": {
+  "id": "physics-toy",
+  "rank": 24,
+  "row": "Creative sandbox / physics toy",
+  "source": "games.fun research/template-pipeline/reports/2026-09-24/RANKING.md, \"All archetypes by demand\""
+ },
+ "prompt": "a sandbox where we spawn ramps, balls, dominoes and cars from a menu, build crazy contraptions and blow them up",
+ "answers": {
+  "default": "accept"
+ },
+ "musts": [
+  {
+   "id": "spawn",
+   "type": "panel",
+   "must": "a menu to spawn ramps, balls, dominoes and cars"
+  },
+  {
+   "id": "physics",
+   "type": "body",
+   "must": "objects that fall, roll and topple"
+  },
+  {
+   "id": "build",
+   "type": "mechanic",
+   "must": "placing and turning objects to build"
+  },
+  {
+   "id": "boom",
+   "type": "mechanic",
+   "must": "explosions"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

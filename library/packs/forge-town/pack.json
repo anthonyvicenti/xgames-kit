@@ -1,0 +1,65 @@
+{
+ "packVersion": 1,
+ "id": "forge-town",
+ "owner": "own",
+ "visibility": "public",
+ "title": "Forge gaslit town pieces",
+ "describe": "Code-made town pieces and their 32-texel pictures for a gaslit street: houses, lamps, barrels, signs, drains (some drawn over CC0 Poly Haven photos).",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "xgames-kit (made by the kit's own tools; no upstream art)",
+  "file": "library/packs/forge-town/LICENSE.txt"
+ },
+ "source": {
+  "kind": "own",
+  "store": "kit default set"
+ },
+ "dimension": "mixed",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 6,
+   "hues": [
+    "#533e28",
+    "#533b28",
+    "#d6be7e",
+    "#2c221c",
+    "#23221a",
+    "#2a2a30",
+    "#35312e",
+    "#8f8772",
+    "#595148",
+    "#514942",
+    "#382a1f",
+    "#413024"
+   ],
+   "saturation": 0.259,
+   "value": 0.247,
+   "families": [
+    {
+     "hue": "brown",
+     "share": 0.435
+    },
+    {
+     "hue": "grey",
+     "share": 0.42
+    }
+   ],
+   "grey": 0.269
+  },
+  "trianglesPerMetre": 1.61,
+  "texelsPerMetre": 32,
+  "texturedShare": 0.986,
+  "textured": true,
+  "outline": {
+   "present": false,
+   "share": 0.075
+  }
+ },
+ "assets": 53,
+ "validators": [
+  "budget",
+  "picture-check"
+ ]
+}

@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "block-coin",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-coin.png",
+ "sha256": "93c92659149de98c771efee87c7b1f7d306ec9f5f9213c0517406e8c478a453f",
+ "bytes": 3391,
+ "preview": "previews/block-coin.png",
+ "from": "Sprites/Tiles/Double/block_coin.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block coin tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "coin",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#bd6341",
+     "#fa9f72",
+     "#c56944",
+     "#c96d46",
+     "#343440",
+     "#c16642"
+    ],
+    "saturation": 0.553,
+    "value": 0.511,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.771
+     },
+     {
+      "hue": "grey",
+      "share": 0.229
+     }
+    ],
+    "exact": 60,
+    "grey": 0.229
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "e7e56ee9c5db08c904053c83255dfc4a3a42edcc367f4312892942ae1a1a9b54",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

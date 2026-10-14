@@ -1,0 +1,119 @@
+{
+ "assetVersion": 1,
+ "id": "vending-machine",
+ "pack": "kenney-mini-arcade",
+ "file": "vending-machine.glb",
+ "sha256": "6fa469b74376136825fdbf347a8728b977bec678fa7832abebccbd7e45effafa",
+ "bytes": 17696,
+ "preview": "previews/vending-machine.png",
+ "from": "kenney:mini-arcade/vending-machine; baked to metres (x2.66667), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red drinks vending machine",
+ "tags": [
+  "office",
+  "plaza",
+  "drink",
+  "station",
+  "vending",
+  "machine"
+ ],
+ "use": {
+  "size": [
+   1.333,
+   2,
+   1.267
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.333,
+    2,
+    1.267
+   ],
+   "offset": [
+    0,
+    1,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 176,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 176,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17696,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#656a82",
+     "#71778e",
+     "#5a6078",
+     "#f16544",
+     "#e65f48",
+     "#7f849c",
+     "#e25d49",
+     "#a6add0"
+    ],
+    "saturation": 0.324,
+    "value": 0.569,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.557
+     },
+     {
+      "hue": "red",
+      "share": 0.254
+     },
+     {
+      "hue": "blue",
+      "share": 0.189
+     }
+    ],
+    "grey": 0.557
+   },
+   "trianglesPerMetre": 3.42,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arcade",
+  "download": "https://kenney.nl/media/pages/assets/mini-arcade/ece1e8f320-1721638600/kenney_mini-arcade.zip",
+  "sha256": "da92281856adbdc438f006c2381f586664d50890467d25ee3ee431e9502b2daa",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.66667), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

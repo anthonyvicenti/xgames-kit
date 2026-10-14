@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-block-right",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-block-right.png",
+ "sha256": "66847887314a9f27d465984468f58a902db7a0e21e3c101b511430552f3c3e52",
+ "bytes": 2072,
+ "preview": "previews/terrain-dirt-block-right.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_block_right.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt block right tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "block",
+  "right",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 60.3 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#bbc4cb",
+     "#cfd5da",
+     "#a6b2bb",
+     "#353541",
+     "#abb6be",
+     "#bfc7ce",
+     "#ccd2d8",
+     "#c7ced4"
+    ],
+    "saturation": 0.13,
+    "value": 0.739,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 45,
+    "grey": 1
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.28
+   }
+  }
+ },
+ "source": {
+  "sha256": "1ac73ade41dd3aa9f4c4e6dce85ff0b8afcc090eca9ae70254e37fa6415e0b5c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

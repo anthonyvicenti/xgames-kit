@@ -1,0 +1,98 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-vertical-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-vertical-top.png",
+ "sha256": "4adb00a4e1aad10e4c86290d071c534b2b1f2daed691879205edf64408de147d",
+ "bytes": 2947,
+ "preview": "previews/terrain-grass-vertical-top.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_vertical_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass vertical top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "vertical",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 36.4 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#ee9366",
+     "#de7e4f",
+     "#353541",
+     "#2ecc71",
+     "#46e087",
+     "#c66a3e",
+     "#20b860",
+     "#2cc96e"
+    ],
+    "saturation": 0.598,
+    "value": 0.517,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.556
+     },
+     {
+      "hue": "green",
+      "share": 0.266
+     },
+     {
+      "hue": "grey",
+      "share": 0.174
+     }
+    ],
+    "exact": 84,
+    "grey": 0.174
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "40f80a4053df6679a9526101e12e6051579db667c6edf37821b6a5628a0834b4",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-dirt-vertical-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-dirt-vertical-top.png",
+ "sha256": "4dd096194242bdfa5e4cd75f51ff3c2b3478e66eab12186659f40d7b8fbad07d",
+ "bytes": 2917,
+ "preview": "previews/terrain-dirt-vertical-top.png",
+ "from": "Sprites/Tiles/Double/terrain_dirt_vertical_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain dirt vertical top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "dirt",
+  "vertical",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 50.9 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#cfd5da",
+     "#bbc4cb",
+     "#353541",
+     "#de7e4f",
+     "#ee9366",
+     "#a6b2bb",
+     "#c66a3e",
+     "#db7b4c"
+    ],
+    "saturation": 0.271,
+    "value": 0.638,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.73
+     },
+     {
+      "hue": "orange",
+      "share": 0.27
+     }
+    ],
+    "exact": 82,
+    "grey": 0.73
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.769
+   }
+  }
+ },
+ "source": {
+  "sha256": "7c5e71b68938b7b4bc60f741caf49f5c2a8f0a76cc4ee651758817b8c37aa5e0",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

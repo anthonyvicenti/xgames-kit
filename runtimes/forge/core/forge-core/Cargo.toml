@@ -1,0 +1,18 @@
+[package]
+name = "forge-core"
+description = "gf-forge's simulation: an ECS world on a fixed 120 Hz step, a staged system schedule other crates plug into, rapier3d physics (a kinematic character controller, dynamic debris, ray and shape queries), typed events, the data tables, snapshot and apply. No web code."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+
+[dependencies]
+hecs = { workspace = true }
+glam = { workspace = true }
+rapier3d = { workspace = true }
+serde_json = { workspace = true }
+forge-anim = { workspace = true }
+
+# The native fixture runner (no browser): cargo run -p forge-core --example fixture -- <script.json>
+[[example]]
+name = "fixture"

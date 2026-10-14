@@ -1,0 +1,478 @@
+{
+  "id": "carry",
+  "name": "Carry",
+  "describe": "Grab, carry and throw props or players",
+  "examples": [
+    "pick up and hold a ball",
+    "carry crates and throw them",
+    "grab a friend and toss them"
+  ],
+  "rank": 50,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "prop": {
+        "type": "string",
+        "default": "",
+        "description": "Name of the prop.* slot to carry (\"\": the first gameplay prop of the game, else a coloured box)"
+      },
+      "count": {
+        "type": "integer",
+        "minimum": -1,
+        "maximum": 60,
+        "default": -1,
+        "description": "Items placed at the start (-1: the game prop's count; 0: none, rules spawn them)"
+      },
+      "spawnZone": {
+        "type": "string",
+        "default": "",
+        "description": "World zone to scatter the start items in (\"\": around the play area)"
+      },
+      "size": {
+        "type": "number",
+        "description": "Item size in metres (0: the game prop's size)",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0
+      },
+      "color": {
+        "type": "string",
+        "default": "#ffc84a",
+        "description": "Colour of the stand-in box"
+      },
+      "maxHeld": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 4,
+        "default": 1,
+        "description": "Items one player can hold"
+      },
+      "reach": {
+        "type": "number",
+        "description": "How close a player must be to grab (m)",
+        "minimum": 0.5,
+        "maximum": 6,
+        "default": 1.8
+      },
+      "grabAction": {
+        "type": "string",
+        "enum": [
+          "",
+          "interact",
+          "primary",
+          "secondary"
+        ],
+        "default": "interact",
+        "description": "Input that grabs (or drops when nothing is in reach); \"\": the rules call grab()"
+      },
+      "throwAction": {
+        "type": "string",
+        "enum": [
+          "",
+          "interact",
+          "primary",
+          "secondary"
+        ],
+        "default": "",
+        "description": "Input that throws what you hold; \"\": the rules call throw()"
+      },
+      "throwSpeed": {
+        "type": "number",
+        "description": "Throw speed (m/s)",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 11
+      },
+      "throwArc": {
+        "type": "number",
+        "description": "Upward bias of a throw",
+        "minimum": 0,
+        "maximum": 2,
+        "default": 0.45
+      },
+      "gravity": {
+        "type": "number",
+        "description": "Gravity on a thrown item",
+        "minimum": 0,
+        "maximum": 40,
+        "default": 16
+      },
+      "bounciness": {
+        "type": "number",
+        "description": "Bounce kept on landing",
+        "minimum": 0,
+        "maximum": 0.95,
+        "default": 0.45
+      },
+      "holdHeight": {
+        "type": "number",
+        "description": "Height (m) above the feet an item is held at when the body has no hand socket",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 1
+      },
+      "socket": {
+        "type": "string",
+        "enum": [
+          "hand_r",
+          "hand_l",
+          "head",
+          "back"
+        ],
+        "default": "hand_r",
+        "description": "Character socket the item is held at"
+      },
+      "grabPlayers": {
+        "type": "boolean",
+        "default": false,
+        "description": "Nothing in reach: grab the nearest friend instead (they are carried, then thrown)"
+      },
+      "maxItems": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 40,
+        "default": 24,
+        "description": "Items alive at once (each costs about 30 bytes of the world message)"
+      },
+      "soundGrab": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when an item is picked up"
+      },
+      "soundThrow": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when an item is thrown"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.carry.throw-speed",
+        "label": "Throw speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/throwSpeed"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 1,
+          "max": 30,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.carry.reach",
+        "label": "Grab reach",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/reach"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 52,
+        "constraints": {
+          "min": 0.5,
+          "max": 6,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.carry.max-held",
+        "label": "Items held at once",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/maxHeld"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "rank": 50,
+        "constraints": {
+          "min": 1,
+          "max": 4
+        }
+      },
+      {
+        "id": "mechanic.carry.color",
+        "label": "Stand-in item colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/color"
+        },
+        "tier": "advanced",
+        "facet": "look",
+        "rank": 30
+      },
+      {
+        "id": "mechanic.carry.prop",
+        "label": "Carried prop",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/prop"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.carry.count",
+        "label": "Items at the start",
+        "group": "mechanics",
+        "type": "integer",
+        "source": {
+          "pointer": "{base}/count"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": -1,
+          "max": 60
+        }
+      },
+      {
+        "id": "mechanic.carry.size",
+        "label": "Item size",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/size"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 5,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.carry.throw-arc",
+        "label": "Throw arc",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/throwArc"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 2
+        }
+      },
+      {
+        "id": "mechanic.carry.gravity",
+        "label": "Item gravity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/gravity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 40
+        }
+      },
+      {
+        "id": "mechanic.carry.bounciness",
+        "label": "Bounciness",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/bounciness"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 0.95
+        }
+      },
+      {
+        "id": "mechanic.carry.hold-height",
+        "label": "Hold height without a hand",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/holdHeight"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 3,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.carry.grab-players",
+        "label": "Can grab friends",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/grabPlayers"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.carry.sound-grab",
+        "label": "Pick-up sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundGrab"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      },
+      {
+        "id": "mechanic.carry.sound-throw",
+        "label": "Throw sound id",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/soundThrow"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 40
+        }
+      }
+    ],
+    "items": [
+      "0"
+    ]
+  },
+  "events": [
+    {
+      "name": "onGrab",
+      "on": "host",
+      "args": "{ player, item: { id, prop } }",
+      "when": "a player picked an item up (or was given one)"
+    },
+    {
+      "name": "onDrop",
+      "on": "host",
+      "args": "{ player, item }",
+      "when": "a player put an item down"
+    },
+    {
+      "name": "onThrow",
+      "on": "host",
+      "args": "{ player, item }",
+      "when": "a player threw what they held"
+    }
+  ],
+  "host": {
+    "owner": "host",
+    "how": "the host owns every item and who holds it; a copy asks",
+    "state": "carry",
+    "fields": {
+      "i": "[[id, x, y, z, holderSeat | -1, flying, vx, vy, vz]] per item",
+      "cp": "{ carrierId: carriedPlayerId }"
+    }
+  },
+  "owns": [
+    {
+      "res": "player.socket.hand_r",
+      "why": "the held item sits on the hand_r socket (params.socket)"
+    },
+    {
+      "res": "input.interact",
+      "shared": true,
+      "why": "interact grabs an item in reach (params.grabAction)"
+    },
+    {
+      "res": "input.<throwAction>",
+      "when": "throwAction is set",
+      "why": "a throw on its own key"
+    },
+    {
+      "res": "player.control",
+      "when": "grabPlayers is true",
+      "why": "a carried player is held"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "pickup",
+    "projectile"
+  ],
+  "gives": [
+    "carrying"
+  ],
+  "bots": "its API accepts a bot on the host",
+  "notes": {
+    "lines": [
+      "interact (E) grabs an item in reach and drops it when nothing is in reach; throwing is the rules' unless throwAction is set.",
+      "carry.held(p) says what a player holds on every copy; the pickup mechanic (effect auto) hands out carried items.",
+      "To throw the held thing as a shot: prj.fire(p) then carry.consume(p)."
+    ],
+    "readme": "components/carry/README.md",
+    "stub": {
+      "as": "carry",
+      "worked": "update(ctx) { const me = ctx.me; if (me.actions.primary.pressed && carry.held(me)) carry.throw(me); }",
+      "traps": [
+        "carry.throw(p) with no direction goes to the crosshair point: pass a direction only for bots and the top camera",
+        "bots grab only when the rules make them: in bot(ctx, p) seek carry.nearest(p.position) and call carry.grab(p)"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "path": "components/carry/fixture",
+    "players": 2
+  },
+  "impl": {
+    "three": {
+      "path": "components/carry/index.js",
+      "profiles": [
+        "standard-3d",
+        "scenic-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "unit tests tests/k2-carry.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+            "date": "2026-10-13"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "unit tests tests/k2-carry.test.mjs pass (127 of 127 k2 tests, run by the contracts stream); the two-player browser fixture was not re-run here",
+        "date": "2026-10-13"
+      }
+    ]
+  }
+}

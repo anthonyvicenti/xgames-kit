@@ -1,0 +1,10 @@
+{
+  "title": "Arena Friends (Godot, 3D)",
+  "summary": "The 3D starter on runtime godot: an arena from a map seen from above, gf-humanoid-1 bodies played with the kit's shared clips, a follow camera, friends and bots.",
+  "runtime": "godot",
+  "verified": {
+    "result": "PASS all six gates, 63/63 checks, shared multiplayer gate 24/24 (verify --release)",
+    "date": "2026-10-13",
+    "how": "npx gamesfun create games/godot-arena-friends --from godot-arena-friends, npx gamesfun verify games/godot-arena-friends --release (Linux, headless Chrome on the graphics card, a phone emulated in Chrome, Firefox; WebKit could not start there): runtimes/godot/evidence/2026-10-13-run4/arena-friends"
+  }
+}

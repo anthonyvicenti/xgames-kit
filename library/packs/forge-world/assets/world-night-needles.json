@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-needles",
+ "pack": "forge-world",
+ "file": "world-night-needles.png",
+ "sha256": "56215acbce9164dddbc248c7050ecd65071b62f4c18220458650f027bed4b926",
+ "bytes": 666,
+ "preview": "previews/world-night-needles.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a pine's dark boughs with a few lit sprigs (drawn); tiles; 1 m across",
+ "tags": [
+  "texture",
+  "night",
+  "needles",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#0d1714",
+     "#15241c",
+     "#172820",
+     "#2e422c",
+     "#16261e",
+     "#13221b",
+     "#13211a",
+     "#122019"
+    ],
+    "saturation": 0.265,
+    "value": 0.118,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.865
+     },
+     {
+      "hue": "grey",
+      "share": 0.135
+     }
+    ],
+    "exact": 16,
+    "grey": 0.135
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 12 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

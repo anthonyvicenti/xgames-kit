@@ -1,0 +1,67 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA11",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "gauntlet",
+  "verbatim": true,
+  "archetype": "board-card",
+  "where": "games.fun research/studio-v2/evals/gauntlet/kinds.json (2026-10-11), \"board-card\", itself the X2 experiment's prompt (2026-10-10): pitched as something else (no turns)"
+ },
+ "prompt": "giant four in a row with friends",
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "other",
+   "core": true,
+   "words": "four in a row",
+   "means": "A grid board that pieces drop into",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "feel",
+   "core": true,
+   "words": "giant",
+   "means": "The board is giant: players see it as a big thing in the world, not a small panel",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "turns",
+   "core": true,
+   "words": "four in a row",
+   "means": "Players take turns, one piece each",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "goal",
+   "core": true,
+   "words": "four in a row",
+   "means": "Four in a line wins; a full board is a draw",
+   "source": "prompt"
+  },
+  {
+   "id": "r5",
+   "about": "players",
+   "core": true,
+   "words": "with friends",
+   "means": "Friends play each other at the same board",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own.",
+  "note": "What \"sees friends as a character\" means for a board game is an open creator question (DESIGN, \"Still open\"). Until they answer, this case reads it as: each screen shows the other player as a character at the board, or, when the game has no bodies, as a named marker where they are about to play."
+ },
+ "policy": [],
+ "control": {
+  "text": "The game includes a working fishing minigame",
+  "how": "judge"
+ }
+}

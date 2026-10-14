@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0049",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0049.png",
+ "sha256": "057d6745d7d64fc68947dabec48acce262c56adb52b90cd210c8853fd158a548",
+ "bytes": 186,
+ "preview": "previews/tile-0049.png",
+ "from": "Tiles/tile_0049.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "sand floor with a few pebbles (the plain sand floor is Tiny Town's tile 25)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "floor",
+  "sand",
+  "pebbles",
+  "ground",
+  "fill"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#eaa56c",
+     "#cf8254",
+     "#fec99c"
+    ],
+    "saturation": 0.75,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "c4257bfa85878e4d293237cd9a50e72b3e883f721e4fe1c48132514bb93668f2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-cloth-tan",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-cloth-tan.png",
+ "sha256": "485689b7c928f982f30c13d056a2821032778a91a6357eef1e9c5fdb83143fea",
+ "bytes": 38649,
+ "preview": "previews/voxel-cloth-tan.png",
+ "from": "kenney:voxel-pack/cotton_tan; PNG/Tiles/cotton_tan.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 1194,84; mean difference 5.4 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "cotton_tan (Voxel Pack)",
+ "tags": [
+  "cloth",
+  "tan",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.017
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f3e2be",
+     "#ecdab3",
+     "#fff1d2",
+     "#ecdab2",
+     "#f3e2bd",
+     "#f2e1bd",
+     "#ebdab3",
+     "#efdeb7"
+    ],
+    "saturation": 0.697,
+    "value": 0.848,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.996
+     }
+    ],
+    "exact": 241,
+    "grey": 0
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "b01823007f43136e812f95d4acae32a465f282583a9ffa7488577f94c0771c61",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

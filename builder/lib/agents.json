@@ -1,0 +1,80 @@
+{
+  "schema": "gamesfun-agents/1",
+  "about": "The coding agents this kit can register its MCP server with, as rows of data. A new agent costs a row. Read by builder/lib/agents.mjs; checked by tests/agents.test.mjs. A row's `plugin` (or null) is the agent's own commands for installing this kit's plugin, which carries the studio bridge's hooks; an agent with no such command gets null and the studio page cannot reach its session yet. Placeholders in an argument list: {name} the server's name, {scope} the chosen scope, {command} the program that starts the server (an absolute path to this Node), and {...args} (a whole element) which expands to the server's arguments. We never edit an agent's own configuration file: registration is the agent's own command, and reading is the agent's own list or get command. Nothing here reads, copies or stores a credential, a login or a token.",
+  "server": { "name": "gamesfun" },
+  "agents": [
+    {
+      "id": "claude",
+      "name": "Claude Code",
+      "optional": true,
+      "binaries": { "win32": ["claude.exe", "claude"], "darwin": ["claude"], "linux": ["claude"] },
+      "versionArgs": ["--version"],
+      "install": {
+        "win32": "npm install -g @anthropic-ai/claude-code",
+        "darwin": "npm install -g @anthropic-ai/claude-code",
+        "linux": "npm install -g @anthropic-ai/claude-code"
+      },
+      "files": {
+        "projectMcp": ".mcp.json",
+        "userConfig": null,
+        "projectSkills": ".claude/skills",
+        "userSkills": "~/.claude/skills",
+        "note": "The user-level file is kept by `claude mcp`; this kit never reads or writes it."
+      },
+      "mcp": {
+        "scopes": ["user", "local", "project"],
+        "defaultScope": "user",
+        "projectScope": "project",
+        "add": ["mcp", "add", "--transport", "stdio", "--scope", "{scope}", "{name}", "--", "{command}", "{...args}"],
+        "get": ["mcp", "get", "{name}"],
+        "list": ["mcp", "list"],
+        "remove": ["mcp", "remove", "--scope", "{scope}", "{name}"],
+        "restartHint": "nothing to type: this session hears the studio page through node bin/gamesfun.mjs session wait (run it in the background), and new sessions load the tools and the plugin by themselves (/reload-plugins loads them into this one, if you want)."
+      },
+      "plugin": {
+        "about": "The kit's plugin (plugin/: the studio bridge's hooks and the play-tester subagent), installed from this checkout through Claude Code's own plugin commands. The checkout is a marketplace of one plugin (.claude-plugin/marketplace.json). {kit} is this checkout's folder. listMarketplaces says which folder the marketplace was added from, so connect can tell one added from another checkout.",
+        "marketplace": "gamesfun-kit",
+        "name": "gamesfun",
+        "scopes": ["user", "local", "project"],
+        "addMarketplace": ["plugin", "marketplace", "add", "{kit}", "--scope", "{scope}"],
+        "install": ["plugin", "install", "{plugin}@{marketplace}", "--scope", "{scope}"],
+        "list": ["plugin", "list", "--json"],
+        "listMarketplaces": ["plugin", "marketplace", "list", "--json"],
+        "uninstall": ["plugin", "uninstall", "{plugin}@{marketplace}", "--scope", "{scope}"],
+        "removeMarketplace": ["plugin", "marketplace", "remove", "{marketplace}", "--scope", "{scope}"]
+      },
+      "docs": "https://code.claude.com/docs/en/mcp"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "optional": true,
+      "binaries": { "win32": ["codex.cmd", "codex.exe", "codex"], "darwin": ["codex"], "linux": ["codex"] },
+      "versionArgs": ["--version"],
+      "install": {
+        "win32": "npm install -g @openai/codex",
+        "darwin": "npm install -g @openai/codex",
+        "linux": "npm install -g @openai/codex"
+      },
+      "files": {
+        "projectMcp": ".codex/config.toml",
+        "userConfig": "${CODEX_HOME:-~/.codex}/config.toml",
+        "projectSkills": ".agents/skills",
+        "userSkills": null,
+        "note": "Codex keeps its servers in the user-level file; this kit adds one only through `codex mcp add`."
+      },
+      "mcp": {
+        "scopes": ["user"],
+        "defaultScope": "user",
+        "projectScope": null,
+        "add": ["mcp", "add", "{name}", "--", "{command}", "{...args}"],
+        "get": ["mcp", "get", "{name}"],
+        "list": ["mcp", "list", "--json"],
+        "remove": ["mcp", "remove", "{name}"],
+        "restartHint": "Start a new Codex session so it picks up the new server."
+      },
+      "plugin": null,
+      "docs": "https://learn.chatgpt.com/docs/extend/mcp?surface=cli"
+    }
+  ]
+}

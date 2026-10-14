@@ -1,0 +1,82 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0077",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0077.png",
+ "sha256": "a30fa147dd6f9267afbe5ca2f240ec95a62423e58061a8fbbb84abd7c464e4a3",
+ "bytes": 168,
+ "preview": "previews/tile-0077.png",
+ "from": "Tiles/tile_0077.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a grey stone house wall; repeats left to right",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "wall",
+  "stone",
+  "grey",
+  "house",
+  "building",
+  "middle"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#8b9bb4",
+     "#c0cbdc",
+     "#5a6988"
+    ],
+    "saturation": 0.225,
+    "value": 0.645,
+    "families": [
+     {
+      "hue": "blue",
+      "share": 1
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "41d237731631ec4179146a19605265169843d5ce923c5f89375041d09ca90a11",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

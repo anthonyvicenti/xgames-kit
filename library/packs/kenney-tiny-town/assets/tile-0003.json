@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0003",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0003.png",
+ "sha256": "a059402e580de1971db78f16a67b4f3b0dfa980a7179d0f568424800ddd84b2a",
+ "bytes": 220,
+ "preview": "previews/tile-0003.png",
+ "from": "Tiles/tile_0003.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "the top of a tall autumn tree with orange leaves (tile 15 is its trunk below)",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "tree",
+  "autumn",
+  "orange",
+  "tall",
+  "top",
+  "nature",
+  "part"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#fdbe53",
+     "#e38628"
+    ],
+    "saturation": 0.608,
+    "value": 0.426,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.51
+     },
+     {
+      "hue": "pink",
+      "share": 0.49
+     }
+    ],
+    "exact": 3,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.81
+   }
+  }
+ },
+ "source": {
+  "sha256": "05ae1d16efd39ec9ec7315d8dba74f3aa85d4a75780f768cbca584dc96e1d2f2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

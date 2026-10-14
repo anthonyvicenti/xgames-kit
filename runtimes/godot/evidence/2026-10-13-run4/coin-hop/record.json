@@ -1,0 +1,555 @@
+{
+  "runtime": "godot",
+  "pass": true,
+  "started": "2026-10-13T22:33:28.591Z",
+  "seconds": 176,
+  "outDir": "../../runtimes/godot/evidence/2026-10-13-run4/coin-hop",
+  "checks": [
+    {
+      "n": 1,
+      "gate": "A",
+      "name": "manifests",
+      "ok": true,
+      "detail": "26 slots; missing files: none; unresolved pointers: none; multiplayer.json valid (live)"
+    },
+    {
+      "n": 2,
+      "gate": "A",
+      "name": "kit-copies-unedited",
+      "ok": true,
+      "detail": "55 kit files and the addon checked against runtime godot 0.1.0 and the shared kit's sources; edited: none; missing: none; not the kit's: none"
+    },
+    {
+      "n": 18,
+      "gate": "A",
+      "name": "sounds-listed",
+      "ok": true,
+      "detail": "1 sound ids played by the game (coin); unlisted: none"
+    },
+    {
+      "n": 19,
+      "gate": "A",
+      "name": "pictures-pass-the-judge",
+      "ok": true,
+      "detail": "5 pictures judged as gf-flat-1 (character.body.player, game.coin, world.tiles.ground, world.tiles.brick, world.tiles.ledge); failing: none"
+    },
+    {
+      "n": 2,
+      "gate": "A",
+      "name": "the-build-is-the-project",
+      "ok": true,
+      "detail": "build/ was exported from project/ as it is now; game.js and game.wasm are the pinned Godot 4.6.stable template's; the files on disk match the record"
+    },
+    {
+      "n": 17,
+      "gate": "F",
+      "name": "the-world-is-complete",
+      "ok": true,
+      "detail": "the map (30×12, 4 spawns, marks: coin 8) reads; every ledge and mark is within a jump of a spawn; kinds with no picture slot: none"
+    },
+    {
+      "n": 4,
+      "gate": "A",
+      "name": "every-picture-slot-is-read",
+      "ok": true,
+      "detail": "5 picture slots; read by the game at boot: 5; never read: none (the other half of measure 4, that nothing is drawn from outside a slot, is not proven on godot)"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "boots-to-the-menu",
+      "ok": true,
+      "detail": "the kit's menu is up over the Godot canvas in 994 ms (Godot 4.6-stable (official), addon 0.1.0, 16 game frames)"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "observation-answers",
+      "ok": true,
+      "detail": "window.__game answers all 23 names; snapshot() has 28 keys, godot: addon, godot, style, ppm, background, frames, pulls, fps, input, me, view, friends, game, panel, files, errors"
+    },
+    {
+      "n": 4,
+      "gate": "A",
+      "name": "pictures-read-through-slots",
+      "ok": true,
+      "detail": "the game read 5 picture slots through gf-assets: world.tiles.ground, world.tiles.brick, world.tiles.ledge, character.body.player, game.coin"
+    },
+    {
+      "n": 14,
+      "gate": "F",
+      "name": "look-background-honoured",
+      "ok": true,
+      "detail": "look.background is #8fd3ff; the sky on screen is rgb(143, 211, 255)"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "D-runs-right",
+      "ok": true,
+      "detail": "holding D for 0.9 s moved the player 3.2 m (x -12.5 → -9.3)"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "Space-jumps",
+      "ok": true,
+      "detail": "Space lifted the player 2.84 m"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "menu-holds-input",
+      "ok": true,
+      "detail": "Esc opened \"pause\"; D under it moved the player 0 m"
+    },
+    {
+      "n": 20,
+      "gate": "B",
+      "name": "esc-resumes",
+      "ok": true,
+      "detail": "a second Esc left the pause menu (view null, input true); A then moved the player 2.43 m left"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors",
+      "ok": true,
+      "detail": "no console error, page error or failed request"
+    },
+    {
+      "n": 6,
+      "gate": "D",
+      "name": "round-reaches-results",
+      "ok": true,
+      "detail": "the 20 s round ended (time); the results list You 1, Pip 0, Bo 0, Moss 5"
+    },
+    {
+      "n": 6,
+      "gate": "D",
+      "name": "plays-again",
+      "ok": true,
+      "detail": "Play again started round 2 (countdown)"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-round",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 6,
+      "gate": "D",
+      "name": "bots-fill-the-seats",
+      "ok": true,
+      "detail": "alone with ?bots=2: 3 players, bots Pip (drawn true), Bo (drawn true)"
+    },
+    {
+      "n": 6,
+      "gate": "D",
+      "name": "bots-move",
+      "ok": true,
+      "detail": "in 3.5 s the bots moved 1.43 m and 1.43 m"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "bots-hold-under-the-menu",
+      "ok": true,
+      "detail": "under the pause menu for 1.2 s the bots moved 0 m and 0 m"
+    },
+    {
+      "n": 6,
+      "gate": "D",
+      "name": "bots-in-the-results",
+      "ok": true,
+      "detail": "the results list You 0, Pip 0, Bo 0"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-bots",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 20,
+      "gate": "B",
+      "name": "panel-covers-the-game",
+      "ok": true,
+      "detail": "open: choice \"Pick a boost\" (2 cards, modal true); the game's input held; D under it moved the player 0 m"
+    },
+    {
+      "n": 20,
+      "gate": "B",
+      "name": "panel-answer-reaches-the-game",
+      "ok": true,
+      "detail": "a click on the second card: Godot got {\"refused\":false,\"req\":9001,\"result\":{\"id\":\"high\",\"index\":1}}; panels open after: 0; the game's input back"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-panels",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "joiner-joins",
+      "ok": true,
+      "detail": "room HCRQU4: Hosta hosts, Joan joined by the invite link over WebRTC"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "one-host",
+      "ok": true,
+      "detail": "host copy p1, joiner copy p2"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "each-draws-the-other-where-they-are",
+      "ok": true,
+      "detail": "the host ran right: the joiner draws the host 0 m from where the host is (-9.3, 0.01); the host draws the joiner 0 m off (-4.5, 0); the joiner ran left: the joiner draws the host 0 m from where the host is (-9.3, 0.01); the host draws the joiner 0 m off (-6.7, 0)"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "each-sees-the-other-on-screen",
+      "ok": true,
+      "detail": "in view: the host on the joiner's screen true, the joiner on the host's true"
+    },
+    {
+      "n": 25,
+      "gate": "E",
+      "name": "names-are-the-players-own",
+      "ok": true,
+      "detail": "the joiner's copy calls the host \"Hosta\", the host's calls the joiner \"Joan\""
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "name-tag-over-the-friend",
+      "ok": true,
+      "detail": "tags shown on the joiner's screen: [\"Hosta\"]"
+    },
+    {
+      "n": 35,
+      "gate": "F",
+      "name": "own:coin-scores-for-the-host",
+      "ok": true,
+      "detail": "the host's score went 1 → 2 on the host's copy; the joiner's copy shows 2"
+    },
+    {
+      "n": 35,
+      "gate": "F",
+      "name": "own:a-taken-coin-is-gone-for-everyone",
+      "ok": true,
+      "detail": "coins up on the host's copy 7 of 8; on the joiner's 7; drawn by the joiner's game 7"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "shared-world-agrees",
+      "ok": true,
+      "detail": "host \"playing|1|p1:2,p2:0|11111101\" / joiner \"playing|1|p1:2,p2:0|11111101\""
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "shared-clock-runs",
+      "ok": true,
+      "detail": "the joiner's shared clock reads 10.3 s (the host's 10.32 s)"
+    },
+    {
+      "n": 25,
+      "gate": "E",
+      "name": "both-reach-the-results",
+      "ok": true,
+      "detail": "the host ended the round; both copies show the results"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-live",
+      "ok": true,
+      "detail": "no console error on either player's page"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "phone-menu-fits",
+      "ok": true,
+      "detail": "390x844 at 3x (emulated): page 390 px wide; Play at [19,513,372,577]; Godot's canvas 1170x2532 device px"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "phone-stick-moves",
+      "ok": true,
+      "detail": "the kit's touch controls are up; the stick held right for 0.9 s moved the player 3.2 m"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "phone-jump-button-jumps",
+      "ok": true,
+      "detail": "the Jump button lifted the player 2.82 m"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-phone",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "firefox-boots",
+      "ok": true,
+      "detail": "firefox 155.0 (headless, Playwright's build; WebGL2 renderer: NVIDIA GeForce GTX 980, or similar): the menu in 1052 ms"
+    },
+    {
+      "n": 13,
+      "gate": "C",
+      "name": "firefox-D-runs-right",
+      "ok": true,
+      "detail": "firefox: holding D for 0.9 s moved the player 3.2 m"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-firefox",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the pause menu offers Go live in a round with friends",
+      "ok": true,
+      "detail": "#gf-live in the kit's pause menu over the Godot canvas"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: Go live: LIVE for everyone in the room",
+      "ok": true,
+      "detail": "link http://127.0.0.1:35897/gf/mp/?watch=020treo7f595; H sees \"LIVE Jules is live · 0 watching\""
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: a viewer tunes in: this round's game page, the streamer followed",
+      "ok": true,
+      "detail": "following Jules (p2); 2 in the stream"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: voice: the stream panel offers Turn on mic, which opens Studio's mic window",
+      "ok": true,
+      "detail": "\"🎤 Turn on mic\" opened /play/game/voice?s=020treo7f595"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: voice: the streamer talks: a viewer taps for sound and hears them",
+      "ok": true,
+      "detail": "mic on; 5 voice frames sent; the viewer's button \"🔇 Tap for sound\"; 23 packets played, 0 late, peak 0.2761"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: voice: only the page above the streamer's friends page may hand it voice (not the game below it)",
+      "ok": true,
+      "detail": "the game's frame tried: refused"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: voice: the panel shows the mic on; closing the mic window turns it off",
+      "ok": true,
+      "detail": "the panel's button pressed while on; after the window closed off"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the viewer draws the streamer where they really are (after a run)",
+      "ok": true,
+      "detail": "J ran 3.20 m to -1.303, 0.005, 0; V draws [[\"Hosta\",-12.5,0,0],[\"Jules\",-1.3,0.01,0]]"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the viewer has no player of its own, and its game follows the streamer",
+      "ok": true,
+      "detail": "players [\"Hosta\",\"Jules\"]; the game follows p2"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the viewer sees what the streamer sees",
+      "ok": true,
+      "detail": "side cameras 0.00 m apart (J at -1.3,4.63, V at -1.3,4.63)"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the viewer sees the round's clock and scores, not a player's own card or menu",
+      "ok": true,
+      "detail": "{\"timer\":true,\"scores\":true,\"card\":false,\"menu\":false}"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: a viewer's name tags sit over the characters",
+      "ok": true,
+      "detail": "[{\"name\":\"Jules\",\"dx\":0,\"dy\":-4}]"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: the streamer sees how many watch",
+      "ok": true,
+      "detail": "LIVE You’re live · 1 watching"
+    },
+    {
+      "n": 34,
+      "gate": "E",
+      "name": "watch: no page error or console error on any screen",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 8,
+      "gate": "A",
+      "name": "value-slot-shows-live",
+      "ok": true,
+      "detail": "the page set look.background to #ff00ff (ok true, on-use); the sky went from 0/3200 to 3200/3200 magenta pixels"
+    },
+    {
+      "n": 8,
+      "gate": "A",
+      "name": "picture-slot-replaced",
+      "ok": true,
+      "detail": "the game was handed 8fb1c9ad for character.body.player (its own file is f92810d3); red pixels where the player stands: 0 before, 4656 with the replaced picture (of 6976)"
+    },
+    {
+      "n": 3,
+      "gate": "B",
+      "name": "no-console-errors-swap",
+      "ok": true,
+      "detail": "none"
+    },
+    {
+      "n": 5,
+      "gate": "E",
+      "name": "shared-multiplayer-gate",
+      "ok": true,
+      "detail": "gf/mp's gate: pass (24/24 checks)"
+    },
+    {
+      "n": 9,
+      "gate": "B",
+      "name": "skipped",
+      "ok": null,
+      "detail": "contact sheet and frame cost: the capture tool drives three.js scenes; a Godot capture with frame times is not written"
+    },
+    {
+      "n": 22,
+      "gate": "B",
+      "name": "skipped",
+      "ok": null,
+      "detail": "the wallet in the menu: the kit's own, unchanged here; not run on godot yet"
+    },
+    {
+      "n": 24,
+      "gate": "B",
+      "name": "skipped",
+      "ok": null,
+      "detail": "plays inside a post on X: not tried with a Godot export"
+    },
+    {
+      "n": 31,
+      "gate": "B",
+      "name": "skipped",
+      "ok": null,
+      "detail": "sharp on every screen: the canvas is Godot's (canvas_resize_policy 2, device pixels); not measured"
+    },
+    {
+      "n": 32,
+      "gate": "B",
+      "name": "skipped",
+      "ok": null,
+      "detail": "the no-WebGL2 screen: written (boot.js unsupported) but not driven by a browser without WebGL2"
+    },
+    {
+      "n": 7,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "audio gate: gf-audio plays every sound (GF.sound), so the kit's loudness gate applies unchanged, but it was not run on a Godot game"
+    },
+    {
+      "n": 10,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "fair play: nothing in the starter knocks a player down"
+    },
+    {
+      "n": 15,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "the loop is alive (a slot-ID sight pass): not built for godot"
+    },
+    {
+      "n": 16,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "hits read: nothing is hit in the starter"
+    },
+    {
+      "n": 21,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "the HUD shows your state: the kit's HUD, not run per release on godot"
+    },
+    {
+      "n": 38,
+      "gate": "C",
+      "name": "skipped",
+      "ok": null,
+      "detail": "every event answered: GF events are in events() but the answered-on-screen check is the gf-three boot's"
+    },
+    {
+      "n": 12,
+      "gate": "D",
+      "name": "skipped",
+      "ok": null,
+      "detail": "scores come from counted events: events() logs scores and game events, but the one-to-one trace is not wired"
+    },
+    {
+      "n": 11,
+      "gate": "F",
+      "name": "skipped",
+      "ok": null,
+      "detail": "set dressing: the stage is the map; no props are laid out from the spec"
+    },
+    {
+      "n": 39,
+      "gate": "F",
+      "name": "skipped",
+      "ok": null,
+      "detail": "hits per kill: nothing is hit"
+    }
+  ]
+}

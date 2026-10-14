@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-snow-horizontal-middle",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-snow-horizontal-middle.png",
+ "sha256": "6260227e83da59f3f6e7f122a9ee1b775d85e99238908914ef190cc46a3ddb89",
+ "bytes": 2879,
+ "preview": "previews/terrain-snow-horizontal-middle.png",
+ "from": "Sprites/Tiles/Double/terrain_snow_horizontal_middle.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain snow horizontal middle tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "snow",
+  "horizontal",
+  "middle",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#bbc4cb",
+     "#e5f0ff",
+     "#cfd5da",
+     "#353541",
+     "#ffffff",
+     "#c8dbf5",
+     "#a6b2bb",
+     "#cfe0f7"
+    ],
+    "saturation": 0.339,
+    "value": 0.766,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.925
+     },
+     {
+      "hue": "blue",
+      "share": 0.075
+     }
+    ],
+    "exact": 79,
+    "grey": 0.925
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.559
+   }
+  }
+ },
+ "source": {
+  "sha256": "9441523cb43616f0a75817639fd44843819b887308a16592c06b32e83894a935",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

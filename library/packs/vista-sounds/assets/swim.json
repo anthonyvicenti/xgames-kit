@@ -1,0 +1,54 @@
+{
+ "assetVersion": 1,
+ "id": "swim",
+ "pack": "vista-sounds",
+ "file": "swim.ogg",
+ "sha256": "cf45000f1b0ad2b0f330b2dde654a53ea64ce3484301d024c32bd57dd32bffdc",
+ "bytes": 29543,
+ "preview": "previews/swim.png",
+ "from": "4 surface swim strokes",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "Swim stroke",
+ "tags": [
+  "coast",
+  "calm",
+  "swim"
+ ],
+ "use": {
+  "seconds": 3.137,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -12.1,
+     "samplePeakDb": -0.1,
+     "truePeakDb": -0.1,
+     "hfRatio": 0.167
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 3.137,
+    "peakDbfs": -0.1,
+    "soundMaxLufs": -12.1
+   }
+  }
+ },
+ "source": {
+  "page": "https://freesound.org/people/tbsounddesigns/sounds/530158/",
+  "author": "tbsounddesigns"
+ }
+}

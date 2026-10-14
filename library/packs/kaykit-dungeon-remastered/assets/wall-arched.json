@@ -1,0 +1,115 @@
+{
+ "assetVersion": 1,
+ "id": "wall-arched",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "wall-arched.glb",
+ "sha256": "4e5e80c487c208e362d3f1c7e184a84bdcfaa5738e87c874c4b018de0a77572f",
+ "bytes": 27256,
+ "preview": "previews/wall-arched.png",
+ "from": "https://github.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0@b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07; x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone wall with a blind arch",
+ "tags": [
+  "ruins",
+  "wall",
+  "arched"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    3,
+    3,
+    0.75
+   ],
+   "offset": [
+    0,
+    1.5,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 724,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 724,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 27256,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#7a8388",
+     "#838e93",
+     "#4e5559",
+     "#596064",
+     "#545b5f",
+     "#42484c",
+     "#484e53",
+     "#747d82"
+    ],
+    "saturation": 0.063,
+    "value": 0.447,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 4.98,
+   "texelsPerMetre": 39,
+   "texturedShare": 0.869,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_arched.gltf.glb",
+  "sha256": "916a7d81b8d6ebddb069440a0f9ecb14c9c2a1e5cd7769acf2218d630bd56cb8",
+  "retrieved": "2026-10-09",
+  "modified": "x0.75 to metres, its grid origin kept, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); copied into gf-forge, its atlas re-encoded as a 256-colour palette PNG, meshopt",
+  "author": "Kay Lousberg (www.kaylousberg.com)"
+ }
+}

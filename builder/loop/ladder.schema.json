@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/ladder/1.json",
+  "title": "Stop rule and escalation ladder state (gf-ladder/1)",
+  "description": "The repair loop's state (builder/loop/ladder.mjs), kept in the loop's state so a run picks it up after a restart. Every result after a repair round is a failing set. The stop rule: the set is the same as the one before it (repeat), a set from earlier in this ladder comes back (returned), or the round changed no file of the game and it still fails (unchanged). Then the loop stops repeating and climbs: model (the stronger model), specialist (one round per area the stuck set touches), generate (paid generation for what a generator can make), ask (questions for the creator; their answer re-enters at the ledger). Cost never ends a build: there is no cost rung, no round cap and no cost outcome (creator, 2026-10-13).",
+  "type": "object",
+  "required": [
+    "schema",
+    "rung",
+    "sets",
+    "climbs",
+    "queue",
+    "strong"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema": {
+      "const": "gf-ladder/1"
+    },
+    "rung": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rung"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "The rung in force; null before the first climb."
+    },
+    "strong": {
+      "type": "boolean",
+      "description": "Rounds run on the stronger model (from the model rung on, and after a reset)."
+    },
+    "sets": {
+      "type": "array",
+      "maxItems": 1000,
+      "description": "Each result's failing set, in order.",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "items"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The sorted item keys, one a line ('' for a pass)."
+          },
+          "items": {
+            "type": "array",
+            "maxItems": 100,
+            "items": {
+              "type": "object",
+              "required": [
+                "key",
+                "area"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "pattern": "^(gate [A-F]:[0-9]{1,2}|play [a-z][a-z0-9.-]{0,60}:[a-z-]{1,20}|part (economy|backend):[A-Za-z0-9-]{1,40})$",
+                  "description": "gate C:13 (a failed measure), play build.1:not-seen (a promise the tester did not see) or part economy:E-SHOP (a refusal of a part's check, builder/loop/parts.mjs)."
+                },
+                "area": {
+                  "$ref": "#/$defs/area"
+                }
+              }
+            }
+          },
+          "after": {
+            "type": "string",
+            "maxLength": 40,
+            "description": "What produced it (verify, playtest, economy, backend)."
+          },
+          "at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40
+          },
+          "round": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "unchanged": {
+            "type": "boolean",
+            "description": "The repair round before it changed no file of the game."
+          }
+        }
+      }
+    },
+    "climbs": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "rung",
+          "reason",
+          "set"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "rung": {
+            "$ref": "#/$defs/rung"
+          },
+          "reason": {
+            "enum": [
+              "repeat",
+              "returned",
+              "unchanged"
+            ]
+          },
+          "set": {
+            "type": "string",
+            "description": "The stuck set's key."
+          },
+          "at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40
+          },
+          "areas": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "$ref": "#/$defs/area"
+            },
+            "description": "specialist: the areas, most-touched first."
+          },
+          "skipped": {
+            "type": "string",
+            "maxLength": 300,
+            "description": "The rung could not apply (nothing in the stuck set a generator can make); the climb went on. Never cost."
+          }
+        }
+      }
+    },
+    "queue": {
+      "type": "array",
+      "maxItems": 10,
+      "description": "Rounds the rung in force still owes; nothing climbs while it has any.",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "kind": {
+            "enum": [
+              "repair",
+              "specialist",
+              "generate",
+              "ask"
+            ]
+          },
+          "strong": {
+            "type": "boolean"
+          },
+          "area": {
+            "$ref": "#/$defs/area"
+          },
+          "areas": {
+            "type": "array",
+            "maxItems": 5,
+            "items": {
+              "$ref": "#/$defs/area"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rung": {
+      "enum": [
+        "model",
+        "specialist",
+        "generate",
+        "ask"
+      ],
+      "description": "In order; the first build rounds run before any rung (rung null)."
+    },
+    "area": {
+      "enum": [
+        "art",
+        "sound",
+        "netcode",
+        "feel",
+        "code"
+      ]
+    }
+  }
+}

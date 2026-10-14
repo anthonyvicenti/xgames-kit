@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0025",
+ "pack": "kenney-tiny-town",
+ "file": "tile-0025.png",
+ "sha256": "895791f2bf341d41d9478a9070746fab2ffe7e2a8e3645b33da79f4501bbadf2",
+ "bytes": 107,
+ "preview": "previews/tile-0025.png",
+ "from": "Tiles/tile_0025.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "plain bare dirt (or sand) ground; the centre of the dirt patch. Tiny Dungeon's sand floor (its tile 48) is this same picture",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "town",
+  "dirt",
+  "sand",
+  "ground",
+  "path",
+  "floor",
+  "fill",
+  "centre"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#eaa56c"
+    ],
+    "saturation": 0.75,
+    "value": 0.671,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "exact": 1,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "63519065228f5f8af6200d979fa54cd7f00650034ceea10a1609203a34b3ff9b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

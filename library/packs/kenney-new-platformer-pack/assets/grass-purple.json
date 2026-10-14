@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "grass-purple",
+ "pack": "kenney-new-platformer-pack",
+ "file": "grass-purple.png",
+ "sha256": "884ab89e6d6f0883ae5cab281509c2c6d118637d81abcd46547a90227d848fd6",
+ "bytes": 3274,
+ "preview": "previews/grass-purple.png",
+ "from": "Sprites/Tiles/Double/grass_purple.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "grass purple",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "grass",
+  "purple",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#353541",
+     "#b15fe2",
+     "#9c4ecb",
+     "#343440",
+     "#b96ae8",
+     "#b666e6",
+     "#b463e4",
+     "#b261e3"
+    ],
+    "saturation": 0.433,
+    "value": 0.461,
+    "families": [
+     {
+      "hue": "purple",
+      "share": 0.593
+     },
+     {
+      "hue": "grey",
+      "share": 0.407
+     }
+    ],
+    "exact": 221,
+    "grey": 0.407
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.867
+   }
+  }
+ },
+ "source": {
+  "sha256": "86b0106ea209d5e5880454e78da4597f89967c5d7c8690f8fbd4016e63b88e61",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

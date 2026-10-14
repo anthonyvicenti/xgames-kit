@@ -1,0 +1,24 @@
+{
+  "specVersion": 2,
+  "title": "Meadow Walk",
+  "hook": "The smallest top-down Godot game the kit makes: walk a field seen from above and see your friends walk it too.",
+  "runtime": "godot",
+  "profile": "2d",
+  "loop": "round",
+  "kind": "pixel",
+  "players": { "min": 1, "max": 4, "bots": false },
+  "multiplayer": { "mode": "live", "together": "coop", "watch": false, "voice": false },
+  "devices": { "targets": ["desktop"], "inputs": ["keyboard-mouse"] },
+  "camera": "top",
+  "controls": {},
+  "round": { "seconds": 60, "winBy": "nobody wins: it is a field to share", "replay": true },
+  "world": { "template": "field", "size": "small" },
+  "mechanics": [],
+  "rules": { "summary": "Walk the field with your friends. Nothing to win: the round ends when the clock does." },
+  "characters": [{ "role": "player", "describe": "a small walker in a cap, seen from above", "body": { "from": "kind" } }],
+  "build": [],
+  "accept": [
+    "the game boots from this spec on runtime godot, seen from above",
+    "two players in one room each see the other where they really are"
+  ]
+}

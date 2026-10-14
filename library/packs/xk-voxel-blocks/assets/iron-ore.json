@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "iron-ore",
+ "pack": "xk-voxel-blocks",
+ "file": "iron-ore.png",
+ "sha256": "47bd2c22cd097a573590b7afca3864f69a6ed62a7c0948e358c63c6e2fa39e29",
+ "bytes": 7103,
+ "preview": "previews/iron-ore.png",
+ "from": "iron-ore.png",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "iron ore",
+ "tags": [
+  "voxel",
+  "block",
+  "pixel",
+  "tileable",
+  "iron",
+  "ore"
+ ],
+ "use": {
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#7a7b7e",
+     "#6c6d70",
+     "#86878a",
+     "#5f6063",
+     "#d29a72",
+     "#434345",
+     "#ecc4a0",
+     "#565659"
+    ],
+    "saturation": 0.045,
+    "value": 0.466,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.945
+     },
+     {
+      "hue": "orange",
+      "share": 0.055
+     }
+    ],
+    "exact": 11,
+    "grey": 0.945
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-14"
+ }
+}

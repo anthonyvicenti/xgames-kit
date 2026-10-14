@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "background-fade-desert",
+ "pack": "kenney-new-platformer-pack",
+ "file": "background-fade-desert.png",
+ "sha256": "439e7c703024f9f43cf4e13a88f5936fcd85f97f9f0b2e41d18eb724c5083246",
+ "bytes": 6644,
+ "preview": "previews/background-fade-desert.png",
+ "from": "Sprites/Backgrounds/Double/background_fade_desert.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "background fade desert",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "background",
+  "fade",
+  "desert",
+  "backgrounds"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 512
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#ffffff",
+     "#c3e3ff",
+     "#ddefff",
+     "#e1f1ff",
+     "#eef7ff",
+     "#d9edff",
+     "#f0f8ff",
+     "#c6e4ff"
+    ],
+    "saturation": 0.534,
+    "value": 0.942,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.552
+     },
+     {
+      "hue": "blue",
+      "share": 0.448
+     }
+    ],
+    "exact": 42,
+    "grey": 0.552
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "343e5bbf0fb6d19806e22205fd95393f959ef2329496d882ed3678f6483430d2",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

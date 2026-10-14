@@ -1,0 +1,90 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0043",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0043.png",
+ "sha256": "4dd820f2c896dbd63a71a97cbdb4973d7e0548df19c8b534313a6fbee9cbca43",
+ "bytes": 228,
+ "preview": "previews/tile-0043.png",
+ "from": "Tiles/tile_0043.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the front rim of an empty stone fountain basin",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "fountain",
+  "stone",
+  "basin",
+  "dry",
+  "empty",
+  "rim",
+  "bottom"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#eaa56c",
+     "#262b44",
+     "#c0cbdc",
+     "#cf8254",
+     "#52607c",
+     "#8b9bb4"
+    ],
+    "saturation": 0.548,
+    "value": 0.56,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.586
+     },
+     {
+      "hue": "blue",
+      "share": 0.414
+     }
+    ],
+    "exact": 6,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.133
+   }
+  }
+ },
+ "source": {
+  "sha256": "77511b6490f69a9f4991ac807a7a53bb946077883d629ae21f935989709067ea",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

@@ -1,0 +1,80 @@
+{
+ "packVersion": 1,
+ "id": "kenney-fantasy-town-kit",
+ "owner": "third-party",
+ "visibility": "public",
+ "title": "Kenney Fantasy Town Kit (2.0)",
+ "describe": "Kenney's fantasy town kit: low-poly, flat colours from one colour swatch texture.",
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Kenney (www.kenney.nl)",
+  "url": "https://kenney.nl/assets/fantasy-town-kit",
+  "file": "library/packs/kenney-fantasy-town-kit/LICENSE.txt"
+ },
+ "source": {
+  "kind": "zip",
+  "page": "https://kenney.nl/assets/fantasy-town-kit",
+  "download": "https://kenney.nl/media/pages/assets/fantasy-town-kit/efe948d309-1754222374/kenney_fantasy-town-kit_2.0.zip",
+  "sha256": "1a7530c09f4d2fa2cdee259876f089334f8b1f27fa86a0c4f54ef86cdd8676ef",
+  "retrieved": "2026-10-06",
+  "rebuild": "the old kit's curate tool (gf-three lookdev curate.mjs --fetch): bake to metres, base at y=0, meshopt"
+ },
+ "dimension": "3d",
+ "signature": {
+  "measured": "2026-10-13",
+  "tool": "art ingest 1",
+  "palette": {
+   "size": 8,
+   "hues": [
+    "#a0a8c9",
+    "#7d829c",
+    "#cc8665",
+    "#be7c5d",
+    "#3b9c74",
+    "#79dcff",
+    "#42a579",
+    "#3d9f76",
+    "#cd4b5c",
+    "#bdc6ee",
+    "#d24c5b",
+    "#676c84"
+   ],
+   "saturation": 0.443,
+   "value": 0.588,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.295
+    },
+    {
+     "hue": "cyan",
+     "share": 0.212
+    },
+    {
+     "hue": "orange",
+     "share": 0.183
+    },
+    {
+     "hue": "grey",
+     "share": 0.152
+    },
+    {
+     "hue": "red",
+     "share": 0.118
+    }
+   ],
+   "grey": 0.055
+  },
+  "trianglesPerMetre": 4.01,
+  "texturedShare": 0,
+  "textured": false,
+  "outline": {
+   "present": false,
+   "share": 0
+  }
+ },
+ "assets": 12,
+ "validators": [
+  "budget"
+ ]
+}

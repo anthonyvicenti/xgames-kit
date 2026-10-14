@@ -1,0 +1,39 @@
+; Engine configuration file, written by the xgames kit's create (runtime godot, profile 2d).
+; The kit reads: the autoload GF, the compatibility renderer (WebGL2) and the window that follows the page.
+
+config_version=5
+
+[application]
+
+config/name="$TITLE"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/show_image=false
+boot_splash/bg_color=Color(0, 0, 0, 0)
+
+[audio]
+
+driver/driver="Dummy"
+
+[autoload]
+
+GF="*res://addons/gf/gf.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="disabled"
+
+[physics]
+
+common/physics_ticks_per_second=60
+2d/default_gravity=0.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=false
+environment/defaults/default_clear_color=Color(0.11, 0.13, 0.21, 1)

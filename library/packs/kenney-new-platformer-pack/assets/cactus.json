@@ -1,0 +1,86 @@
+{
+ "assetVersion": 1,
+ "id": "cactus",
+ "pack": "kenney-new-platformer-pack",
+ "file": "cactus.png",
+ "sha256": "ceb7066e963895540a09681655ea5e8e770252e2450657c7b08ddc24b89d8fdf",
+ "bytes": 5552,
+ "preview": "previews/cactus.png",
+ "from": "Sprites/Tiles/Double/cactus.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "cactus",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "cactus",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 6,
+    "hues": [
+     "#2cc987",
+     "#353541",
+     "#59f0b0",
+     "#343440",
+     "#2ac282",
+     "#2abf80",
+     "#2bc584",
+     "#2abe7f"
+    ],
+    "saturation": 0.488,
+    "value": 0.408,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.714
+     },
+     {
+      "hue": "grey",
+      "share": 0.286
+     }
+    ],
+    "exact": 215,
+    "grey": 0.286
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.919
+   }
+  }
+ },
+ "source": {
+  "sha256": "65a0dd9ce926bf19565e5309fc460108e824adf8fd824f7174e34dddf6923ca3",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

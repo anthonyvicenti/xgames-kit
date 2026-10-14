@@ -1,0 +1,84 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0072",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0072.png",
+ "sha256": "e05bf7100884952e151b417c2b3e92dc7dc198aec89622ca2f5eac5b975213de",
+ "bytes": 205,
+ "preview": "previews/tile-0072.png",
+ "from": "Tiles/tile_0072.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a wooden table",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "table",
+  "furniture",
+  "wooden",
+  "tavern"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#3f2631",
+     "#eaa56c",
+     "#bd6c4a",
+     "#763b36"
+    ],
+    "saturation": 0.474,
+    "value": 0.431,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.543
+     },
+     {
+      "hue": "pink",
+      "share": 0.433
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.931
+   }
+  }
+ },
+ "source": {
+  "sha256": "a977172d74aef292a924c867d7d2744ac1c4720f9a9f7120c0dec4ca1b9e9e00",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

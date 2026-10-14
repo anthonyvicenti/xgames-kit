@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "lock-green",
+ "pack": "kenney-new-platformer-pack",
+ "file": "lock-green.png",
+ "sha256": "8a73370bad9eb4b54d75475f599e48046e69b6355f9378fa67ab4a97e837271d",
+ "bytes": 2535,
+ "preview": "previews/lock-green.png",
+ "from": "Sprites/Tiles/Double/lock_green.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "lock green tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "lock",
+  "green",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#2cc987",
+     "#353541",
+     "#1c6944",
+     "#59f0b0",
+     "#1aa074",
+     "#343440",
+     "#20af7b",
+     "#1eaa78"
+    ],
+    "saturation": 0.529,
+    "value": 0.41,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.69
+     },
+     {
+      "hue": "grey",
+      "share": 0.228
+     },
+     {
+      "hue": "green",
+      "share": 0.082
+     }
+    ],
+    "exact": 77,
+    "grey": 0.228
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "82ef068f693ca074fa30e460101708bd05bf129ad787aa02f04717f12b11d7b4",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

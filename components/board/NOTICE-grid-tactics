@@ -1,0 +1,20 @@
+board mechanic: what was lifted from research/foundations/trials/grid-tactics ("Riverguard Tactics")
+
+Source: our own frozen trial, research/foundations/trials/grid-tactics, as it stands at games.fun commit
+4c3fee670 (2026-10-11). The trial is read-only; nothing in it was changed.
+
+What was taken, into logic.js:
+  - the flood fill for a movement range (source/model.mjs `reachable`: a cost per cell, a budget, cells that cannot be
+    entered), rewritten as `state.reach(from, steps, cost, diagonal)`;
+  - the shape of a move from one player (source/live.mjs `cleanOp`, `opProblem`, then play): the message is made safe,
+    the checks never touch the board and answer with a reason in words, and only a checked move is played. Here:
+    `cleanMove`, `moveProblem`, `playMove`.
+
+Whose code that is: both files are original to the trial (its source/ATTRIBUTION.md, "Everything else is original to
+this trial": rules, combat, AI and movement ranges in model.mjs; the live co-op layer in live.mjs). They are games.fun's
+own code, under this repository's terms. No third-party code came with them.
+
+What was NOT taken: the trial's two vendored libraries. rot.js 2.2.1 (BSD-3-Clause, line of sight and a seeded RNG) and
+easystar.js 0.4.4 (MIT, single walk paths) stay in the trial; the board mechanic needs neither (the kit has ctx.rng, a
+board has no line of sight, and a move's path is the game's own rule). The trial's combat, classes, terrain, enemy AI,
+rendering and art were not taken either: they are that game's, not a board's.

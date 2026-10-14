@@ -1,0 +1,94 @@
+{
+  "specVersion": 2,
+  "title": "Forge Co-op",
+  "hook": "Track S's live co-op room: two to four friends in one torch-lit crypt, each seeing the others' bodies.",
+  "prompt": "gf-forge track S sandbox (research/rust-engine/PLAN.md \u00a74 S, not a game for anyone yet): the hello room played live by 2-4 players: the host's core owns the world and replays each joiner's inputs, joiners predict and reconcile, each player sees the others as the co-op body in their colour holding their weapon",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 60,
+    "winBy": "Explore the crypt: every 3 m you walk scores a point.",
+    "replay": true
+  },
+  "world": {
+    "template": "crypt-room",
+    "size": "medium",
+    "props": [
+      {
+        "name": "chest",
+        "describe": "an iron-bound wooden treasure chest",
+        "role": "the guarded treasure",
+        "kind": "gameplay",
+        "goal": true
+      }
+    ]
+  },
+  "mechanics": [],
+  "tables": {
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol"
+      },
+      {
+        "id": "focus",
+        "kind": "projectile",
+        "slot": 2
+      }
+    ]
+  },
+  "rules": {
+    "summary": "Walk the crypt with your friends; every 3 m each of you walks scores you a point.",
+    "scoring": "+1 for every 3 m walked, counted by the host for every player",
+    "params": {
+      "metresPerPoint": 3
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hooded body in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "ember-crypt"
+  },
+  "build": [],
+  "content": {
+    "rating": "E",
+    "notes": "An empty stone room with a chest."
+  },
+  "accept": [
+    "two players in one crypt, each sees the other's body in their colour with their name",
+    "the joiner's walk is immediate on its own screen and where the host has it",
+    "each player's own score on the results"
+  ],
+  "notInV1": [
+    "enemies (forge-ai, track A)",
+    "firing and hits (forge-feel, track F)",
+    "skinned bodies (track R: until then an unskinned stand-in)"
+  ]
+}

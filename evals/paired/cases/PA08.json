@@ -1,0 +1,68 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "paired",
+ "id": "PA08",
+ "frozen": "2026-10-13",
+ "source": {
+  "kind": "creator-prompt",
+  "verbatim": true,
+  "where": "games.fun research/foundations/evidence/studio-v2-live-hang-up-on-them-creator-feedback-2026-10-07.json (typed into live Studio 2026-10-07; the creator rejected the build)"
+ },
+ "prompt": "A zombie like game where you have to defend a token from scam callers by shooting with a gun. The zombies should look like the characters in the linked image",
+ "images": [
+  {
+   "label": "scam-callers-reference",
+   "sha256": "d2ef049c6854dbfd4a9507b00f4651559e48611427a210c9906d72d1f4c841bf",
+   "bytes": 131150,
+   "describe": "a screenshot of another studio's game: toon humanoid call-centre workers with headsets, short-sleeve shirts and lanyards, in rows of cubicles with monitors",
+   "kept": "private: the creator's upload or a third party's picture, never in git; the runner finds it by sha256 in the private refs folder (RUNNER.md)"
+  }
+ ],
+ "answers": {
+  "default": "accept"
+ },
+ "ledger": [
+  {
+   "id": "r1",
+   "about": "goal",
+   "core": true,
+   "words": "defend a token",
+   "means": "A token in the world is what the players defend; the game is lost if it falls",
+   "source": "prompt"
+  },
+  {
+   "id": "r2",
+   "about": "turns",
+   "core": true,
+   "words": "A zombie like game",
+   "means": "Scam callers come at the token like a zombie horde, in numbers and waves",
+   "source": "prompt"
+  },
+  {
+   "id": "r3",
+   "about": "action",
+   "core": true,
+   "words": "by shooting with a gun",
+   "means": "Players shoot them with guns, and a hit that does not kill reads (a flash, a health bar)",
+   "source": "prompt"
+  },
+  {
+   "id": "r4",
+   "about": "reference",
+   "core": true,
+   "words": "The zombies should look like the characters in the linked image",
+   "means": "The enemies look like the image's characters: toon call-centre workers with headsets, short-sleeve shirts and lanyards",
+   "source": "prompt"
+  }
+ ],
+ "multiplayer": {
+  "bar": "Two players in one game, in sync: each screen shows the other player as a character where they really are, in the same round or run, and each sees their own score as their own."
+ },
+ "policy": [
+  "The image is a reference for the look; nothing from it is copied into the game"
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "evade-whoosh",
+ "pack": "forge-sounds",
+ "file": "evade-whoosh.ogg",
+ "sha256": "bb0b1f49d75515e544faa51589c8395f3151838ffed018efcf247e10186b4bcf",
+ "bytes": 6966,
+ "preview": "previews/evade-whoosh.png",
+ "from": "https://opengameart.org/content/3-melee-sounds melee sounds/melee sound.wav; cut to 0.024-0.424 s of the source (0.4 s), 2 ms fade-in and 180 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.8 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "evade (dodge whoosh) (evade whoosh)",
+ "tags": [
+  "sounds",
+  "evade",
+  "whoosh",
+  "player"
+ ],
+ "use": {
+  "seconds": 0.408,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -16.6,
+     "samplePeakDb": -3.1,
+     "truePeakDb": -3,
+     "hfRatio": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 0.408,
+    "peakDbfs": -3.1,
+    "soundMaxLufs": -16.6
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/3-melee-sounds",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.024-0.424 s of the source (0.4 s), 2 ms fade-in and 180 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -2.8 dB (loudest 400 ms toward -21 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "remaxim (OpenGameArt), based on qubodup's CC0 bamboo swishes"
+ }
+}

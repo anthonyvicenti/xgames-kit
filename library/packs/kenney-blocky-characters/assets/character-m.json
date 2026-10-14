@@ -1,0 +1,123 @@
+{
+ "assetVersion": 1,
+ "id": "character-m",
+ "pack": "kenney-blocky-characters",
+ "file": "character-m.glb",
+ "sha256": "67f937697c10dc8c2eae805f256be4ee2e66a9bf152e3bc0500e1566c1363bd5",
+ "bytes": 43120,
+ "preview": "previews/character-m.png",
+ "from": "Models/GLB format/character-m.glb; its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "body",
+ "describe": "a moustached soldier in green fatigues with a shoulder strap",
+ "tags": [
+  "man",
+  "soldier",
+  "army",
+  "explorer",
+  "green",
+  "kenney",
+  "blocky",
+  "block",
+  "voxel",
+  "character",
+  "player"
+ ],
+ "use": {
+  "size": [
+   1.8,
+   1.62,
+   0.48
+  ],
+  "height": 1.62,
+  "rig": "gf-humanoid-1",
+  "origin": "feet",
+  "facing": "+z",
+  "clips": "humanoid-clips/gf-humanoid-1",
+  "sockets": [
+   "head",
+   "hand_r",
+   "hand_l",
+   "back"
+  ]
+ },
+ "budgets": {
+  "triangles": 464,
+  "textures": 1,
+  "textureMax": 1024,
+  "materials": 1,
+  "joints": 23
+ },
+ "validated": [
+  {
+   "by": "rig-check",
+   "version": "gf-humanoid-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "height": 1.62,
+     "triangles": 464,
+     "joints": 23,
+     "materials": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 14,
+    "hues": [
+     "#599374",
+     "#cc8860",
+     "#f2bf99",
+     "#4d505e",
+     "#e8b793",
+     "#508569",
+     "#467f60",
+     "#538b6d"
+    ],
+    "saturation": 0.361,
+    "value": 0.502,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.428
+     },
+     {
+      "hue": "orange",
+      "share": 0.366
+     },
+     {
+      "hue": "grey",
+      "share": 0.186
+     }
+    ],
+    "grey": 0.186
+   },
+   "trianglesPerMetre": 7.31,
+   "texelsPerMetre": 221,
+   "texturedShare": 0.877,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   },
+   "proportions": "3.29 heads tall; hips at 37% of the height; shoulders 44% of it",
+   "body": {
+    "headsTall": 3.29,
+    "hipShare": 0.37,
+    "shoulderShare": 0.444,
+    "widthShare": 1.111
+   }
+  }
+ },
+ "source": {
+  "sha256": "5289ed1e5f79a93c28d1bb0e4b8afda6fce298ab53a04fb2cc1f8f77cf661ccc",
+  "modified": "its texture files packed inside, put on gf-humanoid-1 (builder/art/rig/kenney-blocky.mjs: T-posed, rigid toy segments, 1.62 m), dedup and prune, meshopt compression",
+  "retrieved": "2026-10-13"
+ }
+}

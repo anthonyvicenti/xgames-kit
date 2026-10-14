@@ -1,0 +1,117 @@
+{
+ "assetVersion": 1,
+ "id": "checkout",
+ "pack": "kenney-mini-market",
+ "file": "checkout.glb",
+ "sha256": "d3fa4d5664813489bc3ff490b8829a2cdce921c50b8d6cfa8550eb3eb1b0a74b",
+ "bytes": 18224,
+ "preview": "previews/checkout.png",
+ "from": "kenney:mini-market/cash-register; baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a supermarket checkout counter with a till",
+ "tags": [
+  "store",
+  "counter",
+  "station",
+  "checkout"
+ ],
+ "use": {
+  "size": [
+   1.785,
+   1.249,
+   1.785
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.9,
+   1.4
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.785,
+    1.249,
+    1.785
+   ],
+   "offset": [
+    0,
+    0.625,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 203,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 203,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 18224,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 11,
+    "hues": [
+     "#71778e",
+     "#696f86",
+     "#7f849c",
+     "#7c8199",
+     "#353539",
+     "#464650",
+     "#bec7ee",
+     "#5a6078"
+    ],
+    "saturation": 0.171,
+    "value": 0.482,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.81
+     },
+     {
+      "hue": "blue",
+      "share": 0.175
+     }
+    ],
+    "grey": 0.81
+   },
+   "trianglesPerMetre": 3.91,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-market",
+  "download": "https://kenney.nl/media/pages/assets/mini-market/463f38da51-1729865423/kenney_mini-market.zip",
+  "sha256": "155f2eb666dea3a931d133a4953379898c8adb4b827ab60b86cae07235b9b598",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.1), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

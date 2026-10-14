@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "lambis-shell",
+ "pack": "vista-core-world",
+ "file": "lambis-shell.glb",
+ "sha256": "46228f0775fc1e6bea37595d72c8b3080f8adf68fbb522264c6fbab21df15579",
+ "bytes": 64276,
+ "preview": "previews/lambis-shell.png",
+ "from": "Poly Haven scan, decimated to three LODs by the core's tools",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a scanned conch shell (geometry only; the core packs its textures into an atlas)",
+ "tags": [
+  "shore",
+  "debris",
+  "driftwood",
+  "beach",
+  "scan",
+  "lambis",
+  "shell"
+ ],
+ "use": {
+  "size": [
+   0.139,
+   0.047,
+   0.076
+  ],
+  "origin": "feet"
+ },
+ "budgets": {
+  "triangles": 1779,
+  "textures": 0,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1779,
+     "meshes": 3,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 64276,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 1,
+    "hues": [
+     "#ffffff"
+    ],
+    "saturation": 0,
+    "value": 1,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "grey": 1
+   },
+   "trianglesPerMetre": 186.22,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "licence": {
+  "spdx": "CC0-1.0",
+  "author": "Poly Haven",
+  "url": "https://polyhaven.com/a/lambis_shell"
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/lambis_shell",
+  "author": "Poly Haven"
+ }
+}

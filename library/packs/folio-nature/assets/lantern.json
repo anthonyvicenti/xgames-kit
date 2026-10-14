@@ -1,0 +1,112 @@
+{
+ "assetVersion": 1,
+ "id": "lantern",
+ "pack": "folio-nature",
+ "file": "lantern.glb",
+ "sha256": "3dcab23424f265742d8e49b493f708175f2b2b3f8959e0fe9cfa40803ddd22e5",
+ "bytes": 21576,
+ "preview": "previews/lantern.png",
+ "from": "static/lanterns/lanterns.glb node lantern; cut by the old kit's world-folio tool",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a small stone lantern with a warm glow",
+ "tags": [
+  "lamp",
+  "light",
+  "lantern",
+  "scenic"
+ ],
+ "use": {
+  "size": [
+   0.897,
+   1.226,
+   0.897
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.6,
+   1.2
+  ],
+  "light": {
+   "at": [
+    0,
+    0.65,
+    0
+   ],
+   "range": 1
+  },
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.897,
+    1.226,
+    0.897
+   ],
+   "offset": [
+    0,
+    0.613,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 382,
+  "textures": 1,
+  "textureMax": 128,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 382,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 21576,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#f8a658",
+     "#7c7691",
+     "#000000"
+    ],
+    "saturation": 0.412,
+    "value": 0.45,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.594
+     },
+     {
+      "hue": "orange",
+      "share": 0.406
+     }
+    ],
+    "grey": 0.594
+   },
+   "trianglesPerMetre": 7.18,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

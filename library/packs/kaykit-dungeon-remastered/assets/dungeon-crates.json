@@ -1,0 +1,118 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-crates",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-crates.glb",
+ "sha256": "d6ae82a6d89b9c9cabb8a15a39f08d2da8156cbfca28795e97e73ab51ffb0cbb",
+ "bytes": 80364,
+ "preview": "previews/dungeon-crates.png",
+ "from": "crates_stacked.gltf.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "stacked wooden crates",
+ "tags": [
+  "dungeon",
+  "crate",
+  "stack",
+  "wood",
+  "crates"
+ ],
+ "use": {
+  "size": [
+   1.567,
+   1.607,
+   1.687
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.567,
+    1.607,
+    1.687
+   ],
+   "offset": [
+    0,
+    0.803,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1331,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1331,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 80364,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#8c4b39",
+     "#995944",
+     "#7e3e2d",
+     "#92513d",
+     "#7d3d2c",
+     "#9e5d47",
+     "#a26149",
+     "#904f3c"
+    ],
+    "saturation": 0.379,
+    "value": 0.435,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.429
+     },
+     {
+      "hue": "brown",
+      "share": 0.428
+     },
+     {
+      "hue": "grey",
+      "share": 0.143
+     }
+    ],
+    "grey": 0.143
+   },
+   "trianglesPerMetre": 7.81,
+   "texelsPerMetre": 78,
+   "texturedShare": 0.518,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/crates_stacked.gltf.glb",
+  "sha256": "43182b077ead9b033804300ef453b7402bdc979f00cfce2d7f0c91dcf6bb5d3c",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "assetVersion": 1,
+ "id": "arena-column",
+ "pack": "kenney-mini-arena",
+ "file": "arena-column.glb",
+ "sha256": "62ba89074e32d451eea44aee1d1c56b1663bea00cecdce11dcbba1b58e657587",
+ "bytes": 17516,
+ "preview": "previews/arena-column.png",
+ "from": "kenney:mini-arena/column; baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a sandstone column",
+ "tags": [
+  "arena",
+  "column",
+  "cover"
+ ],
+ "use": {
+  "size": [
+   1.508,
+   2.5,
+   1.5
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.508,
+    2.5,
+    1.5
+   ],
+   "offset": [
+    0,
+    1.25,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 168,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 168,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 17516,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#e9a177",
+     "#f6c7a6",
+     "#d6966e",
+     "#d18e67",
+     "#f1ba95",
+     "#eeaf88",
+     "#dc9f78",
+     "#e2a881"
+    ],
+    "saturation": 0.674,
+    "value": 0.699,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 1
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 2.64,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arena",
+  "download": "https://kenney.nl/media/pages/assets/mini-arena/88f977a0cb-1709220730/kenney_mini-arena.zip",
+  "sha256": "348c4df691e78fb9dc507a62e8f20fc2c75e87cdab7e110024d2ac6c2df9e2ed",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.5), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

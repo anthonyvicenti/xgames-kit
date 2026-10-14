@@ -1,0 +1,57 @@
+{
+ "assetVersion": 1,
+ "id": "death-grunt",
+ "pack": "forge-sounds",
+ "file": "death-grunt.ogg",
+ "sha256": "639b3b3f227caf94d9091ea513f6477cdfc88630f503004f51bd79fde0c636df",
+ "bytes": 15950,
+ "preview": "previews/death-grunt.png",
+ "from": "https://opengameart.org/content/grunts-male-death-and-pain death pain grunts.wav; cut to 0.48-1.72 s of the source (1.24 s), 10 ms fade-in and 300 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -1.7 dB (loudest 400 ms toward -16 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis…",
+ "dimension": "audio",
+ "category": "sound",
+ "describe": "player dies (death grunt)",
+ "tags": [
+  "sounds",
+  "death",
+  "grunt",
+  "player"
+ ],
+ "use": {
+  "seconds": 1.25,
+  "loop": false
+ },
+ "budgets": {},
+ "validated": [
+  {
+   "by": "sound-gate",
+   "version": "v5",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "soundMaxLufs": -13.2,
+     "samplePeakDb": -6.8,
+     "truePeakDb": -6.8,
+     "hfRatio": 0.003
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "sound": {
+    "seconds": 1.25,
+    "peakDbfs": -6.8,
+    "soundMaxLufs": -13.2
+   }
+  }
+ },
+ "source": {
+  "page": "https://opengameart.org/content/grunts-male-death-and-pain",
+  "retrieved": "2026-10-09",
+  "modified": "cut to 0.48-1.72 s of the source (1.24 s), 10 ms fade-in and 300 ms fade-out, downmixed to mono, resampled to 44.1 kHz, gain -1.7 dB (loudest 400 ms toward -16 LUFS, true peak at most -2 dBTP), encoded Ogg Vorbis q0.4 (GStreamer vorbisenc)",
+  "author": "thebardofblasphemy (OpenGameArt)"
+ }
+}

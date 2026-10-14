@@ -1,0 +1,91 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0001",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0001.png",
+ "sha256": "437cf011ceef89f93e4bb4720722e410b1c02c1574d8a7c9660c4e784aa74558",
+ "bytes": 143,
+ "preview": "previews/tile-0001.png",
+ "from": "Tiles/tile_0001.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "the top-left (north-west) corner of a room's stone wall: earth outside, the wall's rim turning down, its brick face below",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wall",
+  "stone",
+  "rim",
+  "corner",
+  "corner-outer-nw",
+  "room"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel",
+  "tile": false
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#763b36",
+     "#3f2631",
+     "#c0cbdc",
+     "#8b9bb4"
+    ],
+    "saturation": 0.354,
+    "value": 0.359,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.84
+     },
+     {
+      "hue": "pink",
+      "share": 0.082
+     },
+     {
+      "hue": "blue",
+      "share": 0.078
+     }
+    ],
+    "exact": 4,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": false,
+    "share": 0.067
+   }
+  }
+ },
+ "source": {
+  "sha256": "cd86d8a06512f6e1bb97110fdefc9dbbd64ea4d50e0c04158860d8420145c346",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

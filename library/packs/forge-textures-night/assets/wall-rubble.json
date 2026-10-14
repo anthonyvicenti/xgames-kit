@@ -1,0 +1,83 @@
+{
+ "assetVersion": 1,
+ "id": "wall-rubble",
+ "pack": "forge-textures-night",
+ "file": "wall-rubble.jpg",
+ "sha256": "f070adab6f0c0b173e793b96e4e91eb8109d68aca55a7398208405f9d2f6ae80",
+ "bytes": 59657,
+ "preview": "previews/wall-rubble.png",
+ "from": "https://polyhaven.com/a/broken_wall; resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.65, brightness ×0.82, tinted 255,242,225; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a wall of stacked broken stones",
+ "tags": [
+  "texture",
+  "wall",
+  "rubble",
+  "textures"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 18,
+    "hues": [
+     "#837769",
+     "#84786a",
+     "#827668",
+     "#817567",
+     "#807466",
+     "#867a6c",
+     "#7f7365",
+     "#85796b"
+    ],
+    "saturation": 0.124,
+    "value": 0.41,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.976
+     }
+    ],
+    "exact": 2384,
+    "grey": 0.976
+   },
+   "outline": {
+    "present": false,
+    "share": 0.02
+   }
+  }
+ },
+ "source": {
+  "page": "https://polyhaven.com/a/broken_wall",
+  "download": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/broken_wall/broken_wall_diff_1k.jpg",
+  "sha256": "f51cd1d6be47770b8b5d4a11b0eac3711b04bb3c2794a882d60180f21b356896",
+  "retrieved": "2026-10-09",
+  "modified": "resized 1024 → 512 px as the middle of a 3×3 tiling (seamless), saturation ×0.65, brightness ×0.82, tinted 255,242,225; JPEG quality 86 (mozjpeg) by research/gf-forge/library/tools/textures.mjs",
+  "author": "Rob Tuytel"
+ }
+}

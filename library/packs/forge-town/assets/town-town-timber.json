@@ -1,0 +1,88 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-timber",
+ "pack": "forge-town",
+ "file": "town-town-timber.png",
+ "sha256": "f04f2c1527fdebe3ece173efd235cf729a3105b7feb0b8ed192059999e12a8e8",
+ "bytes": 9712,
+ "preview": "previews/town-town-timber.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "one storey of a timber-framed house front: dark beams along the top and the foot, a sill rail a metre up, a post every metre, long braces in the outer bays, stained pale plaster between; tiles along…",
+ "tags": [
+  "texture",
+  "town",
+  "timber"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 96
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "96x96 is not a power of two (mipmaps and KTX2 want one)"
+    ],
+    "facts": {
+     "width": 96,
+     "height": 96,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 12,
+    "hues": [
+     "#9e947c",
+     "#9d937b",
+     "#9f957d",
+     "#3a2b20",
+     "#3e2e22",
+     "#9a9079",
+     "#423124",
+     "#3f2f23"
+    ],
+    "saturation": 0.18,
+    "value": 0.424,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.706
+     },
+     {
+      "hue": "brown",
+      "share": 0.292
+     }
+    ],
+    "exact": 256,
+    "grey": 0.706
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.784
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 96 × 96 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva, Dimitrios Savva (Poly Haven)"
+ }
+}

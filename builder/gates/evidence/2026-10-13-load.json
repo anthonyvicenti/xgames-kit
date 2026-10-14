@@ -1,0 +1,17 @@
+{
+  "schema": "xgk-gates-load/1",
+  "date": "2026-10-13",
+  "what": "Are verdicts independent of machine load? Each run a full build verify (or npm test) on a shared Linux machine (load average 15 to 95) with other streams' GPU jobs in the queue; pairs ran two verifies at once under the machine's two-slot GPU queue. 'before' is xgames-kit main c19fc18, 'after' is stream/gates.",
+  "isleRunMeasure5": {
+    "before": { "normalLoad": "6 of 6 passed (the background-host step ran 42.6 to 44.6 s into a 60 s round: 15 s from the cap)", "with12BusyCpuLoops": "1 of 4 passed; 3 failed measure 5 on the soft step a-background-host-does-not-stop-the-world (round 1 already over; in one, also measure 25's phone room wait timed out at 60 s)" },
+    "after": { "normalLoad": "6 of 6 passed", "with12BusyCpuLoops": "4 of 4 passed (in one, round 1 ended under random input and the step ran at the start of round 2)" },
+    "causes": ["the gate's 40 s of play counted from when it got to play, not from when the room's round began (the room ends it at check.seconds by its own clock)", "the game's own end (both knights down under random input) left no running round for the step"]
+  },
+  "npmTest": {
+    "before": "a fresh checkout: 31 failed (no extra load); 121 failed twice with 20 and 30 busy CPU loops: the 3D tools' packages installed by several processes at once",
+    "after": "a fresh checkout: 0 failed (one install); full runs beside GPU verifies: 0 failed after the Railway callback port and the one-button test's fixed port were taken off shared ranges",
+    "flakes": ["builder/lib/char-deps.mjs install race", "backend Chrome test: a 5 s window on a clock (6 s of polls)", "backend tests: callback ports from the ephemeral range or fixed (6081, 6062)", "bridge test: a 700 ms pause between two processes", "state waits of 4 to 20 s"]
+  },
+  "measure9": "shipped (builder/tools/lib/sheet-check.mjs); under load Isle Run measured 57.7 and 58.3 fps against a 60 fps calibration page: the old flat 58 fps rule would have failed it",
+  "notLoad": ["soak-squad failed measure 13 on every fresh create since the kinds merge (the silly camera aims at 11.3 m, the stream reached 9 m): the example's spec now gives streamReach 12"]
+}

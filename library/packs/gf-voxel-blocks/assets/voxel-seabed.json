@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-seabed",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-seabed.png",
+ "sha256": "7b37e0abf1eb3acd61315b7b3c3892775d9ce8d88c2ca7b0b054544ef73d6e9f",
+ "bytes": 36848,
+ "preview": "previews/voxel-seabed.png",
+ "from": "kenney:voxel-pack/greysand; PNG/Tiles/greysand.png inside the pack zip; this face is the same tile drawn again at 512 px from the pack's vector sheet (Vector/vector_tiles_items.svg, the cell at 972,380; mean difference 4.4 of 255 from the PNG at 128 px)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "greysand (Voxel Pack)",
+ "tags": [
+  "seabed",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0.016
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#9bbbbd",
+     "#a1c2c4",
+     "#95b4b6",
+     "#a0c1c3",
+     "#9ababc",
+     "#9abbbd",
+     "#9fbfc2",
+     "#a0c2c4"
+    ],
+    "saturation": 0.207,
+    "value": 0.677,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.927
+     },
+     {
+      "hue": "grey",
+      "share": 0.073
+     }
+    ],
+    "exact": 185,
+    "grey": 0.073
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "author": "Kenney (www.kenney.nl)",
+  "page": "https://kenney.nl/assets/voxel-pack",
+  "download": "https://kenney.nl/media/pages/assets/voxel-pack/a3a73d0ff7-1677662501/kenney_voxel-pack.zip",
+  "sha256": "60b8a772f76d0770e6e36e95ac6eec193a1dca91c7303f01b1eb3a7fba5a6267",
+  "retrieved": "2026-10-09",
+  "modified": "drawn again at 512 px from the pack's own vector (research/worlds/tools/vector_tiles.mjs, 2026-10-09); the picture is unchanged"
+ }
+}

@@ -1,0 +1,373 @@
+{
+ "about": "Beside the manifests: where each asset was before the library, the full description when the manifest cuts it at 200 characters, roles and labels, fields no manifest field holds, the measured signature in full and each validator's whole report.",
+ "assets": {
+  "ball": {
+   "origin": "gf-three stand-ins ball.glb",
+   "use": "prop stand-in for a ball",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 1,
+     "families": [
+      {
+       "hue": "red",
+       "share": 1
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.578,
+     "saturation": 0.786,
+     "top": [
+      {
+       "colour": "#e8483f",
+       "share": 1
+      }
+     ]
+    },
+    "trianglesPerMetre": 40.87,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 1008,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 20332,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "slide": {
+   "origin": "gf-three stand-ins slide.glb",
+   "use": "prop stand-in for a playground slide",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 3,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.523
+      },
+      {
+       "hue": "blue",
+       "share": 0.243
+      },
+      {
+       "hue": "yellow",
+       "share": 0.234
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.676,
+     "saturation": 1,
+     "top": [
+      {
+       "colour": "#ff7a59",
+       "share": 0.523
+      },
+      {
+       "colour": "#4f7cff",
+       "share": 0.243
+      },
+      {
+       "colour": "#ffd166",
+       "share": 0.234
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.47,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 260,
+      "meshes": 3,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 13568,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "bench": {
+   "origin": "gf-three stand-ins bench.glb",
+   "use": "prop stand-in for a bench",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.836
+      },
+      {
+       "hue": "grey",
+       "share": 0.164
+      }
+     ],
+     "grey": 0.164,
+     "lightness": 0.52,
+     "saturation": 0.444,
+     "top": [
+      {
+       "colour": "#c98b55",
+       "share": 0.836
+      },
+      {
+       "colour": "#4a4a55",
+       "share": 0.164
+      }
+     ]
+    },
+    "trianglesPerMetre": 4.66,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 72,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 5692,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "crate": {
+   "origin": "gf-three stand-ins crate.glb",
+   "use": "prop stand-in for any prop with no closer match",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "orange",
+       "share": 0.687
+      },
+      {
+       "hue": "brown",
+       "share": 0.313
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.55,
+     "saturation": 0.541,
+     "top": [
+      {
+       "colour": "#d9a066",
+       "share": 0.687
+      },
+      {
+       "colour": "#8a5a3a",
+       "share": 0.313
+      }
+     ]
+    },
+    "trianglesPerMetre": 2.07,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 24,
+      "meshes": 2,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 3100,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "cap": {
+   "origin": "gf-three stand-ins cap.glb",
+   "use": "hat stand-in (character.hat.<role>): a cap, brim forward; origin on top of the head, +Z forward",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.972
+      }
+     ],
+     "grey": 0.028,
+     "lightness": 0.613,
+     "saturation": 0.823,
+     "top": [
+      {
+       "colour": "#4f7cff",
+       "share": 0.586
+      },
+      {
+       "colour": "#3a5fd0",
+       "share": 0.385
+      },
+      {
+       "colour": "#ffffff",
+       "share": 0.028
+      }
+     ]
+    },
+    "trianglesPerMetre": 50.82,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 516,
+      "meshes": 3,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 13416,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "cap-backwards": {
+   "origin": "gf-three stand-ins cap-backwards.glb",
+   "use": "hat stand-in: a cap worn backwards",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 2,
+     "families": [
+      {
+       "hue": "blue",
+       "share": 0.972
+      }
+     ],
+     "grey": 0.028,
+     "lightness": 0.613,
+     "saturation": 0.823,
+     "top": [
+      {
+       "colour": "#4f7cff",
+       "share": 0.586
+      },
+      {
+       "colour": "#3a5fd0",
+       "share": 0.385
+      },
+      {
+       "colour": "#ffffff",
+       "share": 0.028
+      }
+     ]
+    },
+    "trianglesPerMetre": 50.82,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-13",
+     "ok": true,
+     "facts": {
+      "triangles": 516,
+      "meshes": 3,
+      "skins": 0,
+      "animations": 0,
+      "images": 0,
+      "bytes": 13468,
+      "role": "prop"
+     }
+    }
+   ]
+  }
+ },
+ "pack": {
+  "signature": {
+   "version": 1,
+   "assets": 6,
+   "paletteSize": 2,
+   "families": [
+    {
+     "hue": "blue",
+     "share": 0.368
+    },
+    {
+     "hue": "red",
+     "share": 0.256
+    },
+    {
+     "hue": "orange",
+     "share": 0.256
+    },
+    {
+     "hue": "brown",
+     "share": 0.053
+    }
+   ],
+   "lightness": 0.613,
+   "saturation": 0.823,
+   "trianglesPerMetre": 40.87,
+   "texturedShare": 0,
+   "outlineShare": 0,
+   "grey": 0.028
+  },
+  "licenceText": "Made by the kit's own tools from code, with no upstream art (unless an asset names the CC0 texture it was drawn over). Released under CC0 1.0."
+ }
+}

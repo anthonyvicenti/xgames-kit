@@ -1,0 +1,80 @@
+# Contributing
+
+Thanks for helping. This repository is MIT licensed (see [LICENSE](LICENSE) and [docs/LICENSING.md](docs/LICENSING.md));
+it is private for now, and contributions are by invitation. What you contribute is under the same licence. The people
+and projects the kit builds on are in [CREDITS.md](CREDITS.md). Everyone here follows the
+[Code of Conduct](CODE_OF_CONDUCT.md); security problems go to [SECURITY.md](SECURITY.md), not to an issue.
+
+Read first: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (layout, seams, ownership) and
+[docs/DEVELOPING.md](docs/DEVELOPING.md) (tests, the examples) and [docs/LAYOUT.md](docs/LAYOUT.md) (where everything is).
+
+## Branches and pull requests
+
+- Branch from `main` (`fix/…`, `docs/…`, `agent/…` for a coding agent's work). Never commit to `main` directly.
+- One change per pull request, small enough to review in one sitting. Say what changed, why, and how you checked it.
+- Before you open it: `npm test` (Node 24.19.0, `.nvmrc`) and `node scripts/sync-skills.mjs --check`. For anything
+  that touches create, verify, the loop, the server or the kit's layers, `npm run test:smoke` too (slow; real Chrome).
+- CI runs on Linux for every push to `main` and every pull request. Windows and macOS runs cost more and are started
+  by hand only (`docs/CI.md`).
+
+## Commit messages
+
+```
+Fix the stream that stopped after 20 s in soak-squad       ← subject: imperative, ≤ 72 characters, no full stop
+
+The spec set the projectile's own tank and rules.js kept a second one…   ← body: what and why, wrapped at 72
+```
+
+- The subject says what the commit does, in the imperative ("Add", "Fix", "Pin"), at most 72 characters.
+- The body says why, what it changes for a person or an agent, and how it was checked. Name what you did not do.
+- A commit made with a coding agent ends with its `Co-Authored-By:` line.
+
+## The kit is edited here
+
+This repository is the source of the kit: the builder, the runtimes, the mechanics, the loops and the worlds are
+edited where they are ([docs/LAYOUT.md](docs/LAYOUT.md)); nothing is synced from anywhere. Two things to keep in mind:
+- **A game's tree is assembled from the layers** (`GAME_TREE` in `builder/tools/lib/paths.mjs`): a kit module imports
+  as a game sees it (`gf/three/mechanics/<id>/index.js` imports `../../core/util.js`), never by this repository's
+  folders. In Node, import such a module with `importLayer()` (`builder/tools/lib/kit-import.mjs`).
+- **The kits a game vendors are held to hashes**: `builder/gf-multiplayer`, `gf-audio` and `gf-assets` to their own
+  `kit.json` and `SHA256SUMS`, forge's wasm to its `BUILD.json` (`tests/layers.test.mjs`). Change a file there and
+  its hashes in the same commit.
+
+The block between the `gf:game-building` marks in AGENTS.md is generated from the loop's prompt source
+(`builder/spec/prompts/source/`) by `node scripts/sync-skills.mjs`.
+
+## Adding a check: you add a broken example instead
+
+Rules that live only in a prompt get forgotten; checks that grow one per complaint pile up. The kit's way
+([GATES.md](builder/GATES.md)):
+the checks are a few general gates, and each mistake found becomes **a broken example that a gate must fail, for the
+reason it names**. So to stop a mistake coming back:
+1. write the smallest broken example that shows it (a spec plus a small change, or a fixture);
+2. show that an existing gate fails it for the right reason; if none does, widen the gate that should have for the whole
+   class of problem, never a new numbered check or prompt rule (a matter of taste changes a spec default instead);
+3. then fix the mistake, and keep the example as a test.
+
+`tests/examples.test.mjs` is this repository's own small case of it: each test names the example mistake it was
+written for and fails on the old files.
+
+## Code
+
+- **Seams are contracts.** Commands, MCP tools, dev-server routes and studio tabs plug in by dropping a file in
+  `builder/commands/`, `builder/mcp/tools/`, `builder/server/routes/` or `builder/studio/tabs/`. Additive changes are fine; changing a contract needs
+  agreement first. Every MCP tool declares all four hints and an honest input schema (docs/MCP.md).
+- **Cross-platform.** Windows, macOS and Linux with Node 24: no shell scripts or `shell: true`, no symlinks, paths with
+  `node:path`. Add a test with `path.win32` for anything path-shaped.
+- **Skills:** edit `skills/<name>/SKILL.md`, then `node scripts/sync-skills.mjs`. Never edit the mirrors
+  (`.claude/skills/`, `.agents/skills/`) or the generated files it names.
+- **Dependencies:** permissive licences only, pinned exactly, listed in `THIRD_PARTY.md`. Actions in CI are pinned to
+  commit SHAs.
+- **Secrets:** never commit `.env`, keys or keypairs (`.gitignore` covers the usual names). Meshy keys and wallets
+  belong to the person using the kit.
+
+## Tests to run
+
+| What you changed | Run |
+|---|---|
+| anything | `npm test`, `node scripts/sync-skills.mjs --check` |
+| create, verify, the loop, the server, the kit's layers, an example | also `npm run test:smoke` |
+| CI | also `node --test tests/ci.test.mjs`; a Windows or macOS run only by hand |

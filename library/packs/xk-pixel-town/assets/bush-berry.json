@@ -1,0 +1,89 @@
+{
+ "assetVersion": 1,
+ "id": "bush-berry",
+ "pack": "xk-pixel-town",
+ "file": "bush-berry.png",
+ "sha256": "e38d0a3e7c03bacc52a4b6b47de191d553cebe3442d123ca4d83fab197efb58c",
+ "bytes": 581,
+ "preview": "previews/bush-berry.png",
+ "from": "drawn by the kit's own tools (runtimes/three/tools/pixel/): bush-berry.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a bush with berries",
+ "tags": [
+  "pixel",
+  "bush",
+  "berries",
+  "nature",
+  "berry"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 24
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-14",
+   "report": {
+    "facts": {
+     "cell": 24
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-14",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 10,
+    "hues": [
+     "#26522f",
+     "#7ec152",
+     "#468a3c",
+     "#336b34",
+     "#5ca546",
+     "#252d2e",
+     "#46573c",
+     "#a6d867"
+    ],
+    "saturation": 0.365,
+    "value": 0.353,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.767
+     },
+     {
+      "hue": "grey",
+      "share": 0.166
+     },
+     {
+      "hue": "pink",
+      "share": 0.042
+     }
+    ],
+    "exact": 13,
+    "grey": 0.166
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.649
+   }
+  }
+ },
+ "source": {
+  "sha256": "2ef0e44035492856c33ba710ce2035016144d12b49136745f1b94397e8af5a6c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-14"
+ }
+}

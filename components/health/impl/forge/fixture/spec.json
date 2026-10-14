@@ -1,0 +1,94 @@
+{
+  "specVersion": 2,
+  "title": "Health Fixture (forge)",
+  "hook": "Two players to check the health mechanic on forge.",
+  "prompt": "mechanic fixture: health on forge",
+  "runtime": "forge",
+  "loop": "round",
+  "kind": "dark",
+  "players": {
+    "min": 2,
+    "max": 2,
+    "bots": false
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "coop"
+  },
+  "devices": {
+    "targets": [
+      "desktop"
+    ]
+  },
+  "camera": "first",
+  "controls": {
+    "jump": "jump",
+    "primary": "fire",
+    "interact": "raise a fallen friend (hold)"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "Nobody wins: a fixture",
+    "replay": true
+  },
+  "world": {
+    "template": "ruins-arena",
+    "size": "small",
+    "seed": 11
+  },
+  "mechanics": [
+    {
+      "id": "health",
+      "params": {
+        "regen": 20,
+        "regenDelay": 2,
+        "respawnSeconds": 3,
+        "soundHurt": "",
+        "soundDown": ""
+      }
+    }
+  ],
+  "tables": {
+    "player": {
+      "health": 100,
+      "armor": 0
+    },
+    "weapons": [
+      {
+        "id": "sidearm",
+        "preset": "pistol",
+        "name": "Sidearm"
+      },
+      {
+        "id": "hatchet",
+        "preset": "blade",
+        "name": "Hatchet",
+        "slot": 2,
+        "start": false
+      }
+    ],
+    "enemies": [],
+    "waves": []
+  },
+  "rules": {
+    "summary": "The host hurts and heals the joiner; at zero the joiner is down; with nobody standing both are out and come back."
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "you, seen in first person; friends see a hunter in your colour",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "moonlit-ruins"
+  },
+  "build": [],
+  "accept": [
+    "damage and healing agree on both screens",
+    "regen brings the joiner back to full on both",
+    "down on both, then out and back on both"
+  ]
+}

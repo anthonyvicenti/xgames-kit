@@ -1,0 +1,94 @@
+{
+ "assetVersion": 1,
+ "id": "terrain-grass-ramp-short-a",
+ "pack": "kenney-new-platformer-pack",
+ "file": "terrain-grass-ramp-short-a.png",
+ "sha256": "a0702b08b0136dd79d4171284e77c8f629c6bf54f2977ae550faef7c5644ac63",
+ "bytes": 2262,
+ "preview": "previews/terrain-grass-ramp-short-a.png",
+ "from": "Sprites/Tiles/Double/terrain_grass_ramp_short_a.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "terrain grass ramp short tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "terrain",
+  "grass",
+  "ramp",
+  "short",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the left and right edges do not continue each other (the step across the wrap is 24.6 times the step inside the tile; at most 3)",
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 17.7 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#ee9366",
+     "#de7e4f",
+     "#c66a3e",
+     "#2ecc71",
+     "#20b860",
+     "#46e087",
+     "#cb6f43",
+     "#df8357"
+    ],
+    "saturation": 0.695,
+    "value": 0.592,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.903
+     },
+     {
+      "hue": "green",
+      "share": 0.095
+     }
+    ],
+    "exact": 57,
+    "grey": 0.002
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0.026
+   }
+  }
+ },
+ "source": {
+  "sha256": "312f5dac5f0c4034753d96d200fd2f4ff550a329396fa0bb2cd5229bb71f42c7",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

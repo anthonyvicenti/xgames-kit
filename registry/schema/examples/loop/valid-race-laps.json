@@ -1,0 +1,27 @@
+{
+  "id": "laps",
+  "name": "laps",
+  "describe": "A race of laps: everyone at once until the last lap.",
+  "pick": "players race the same course at the same time",
+  "clock": "cap",
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "laps": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 20,
+        "default": 3
+      }
+    }
+  },
+  "state": {
+    "exists": false,
+    "tested": false,
+    "open": false,
+    "note": "an example: not built"
+  },
+  "impl": {},
+  "acts": "laps-raced"
+}

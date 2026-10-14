@@ -1,0 +1,93 @@
+{
+ "assetVersion": 1,
+ "id": "block-planks",
+ "pack": "kenney-new-platformer-pack",
+ "file": "block-planks.png",
+ "sha256": "dafe0bfad1ac546405d305a62a9957187b971925302e11aac46366310ff7f51e",
+ "bytes": 5411,
+ "preview": "previews/block-planks.png",
+ "from": "Sprites/Tiles/Double/block_planks.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "block planks tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "block",
+  "planks",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#de7e4f",
+     "#353541",
+     "#8e4a32",
+     "#bd6341",
+     "#fa9f72",
+     "#ee9366",
+     "#9f5438",
+     "#934d33"
+    ],
+    "saturation": 0.519,
+    "value": 0.478,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.644
+     },
+     {
+      "hue": "grey",
+      "share": 0.229
+     },
+     {
+      "hue": "brown",
+      "share": 0.128
+     }
+    ],
+    "exact": 134,
+    "grey": 0.229
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "6c7f719da2ad385f1f552f1e3a052be289951dd0fdb9429f2a07c2c335bbb148",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

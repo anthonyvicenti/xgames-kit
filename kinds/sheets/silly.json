@@ -1,0 +1,136 @@
+{
+ "tool": "builder/look-judge/kind-sheet.mjs",
+ "kind": "silly",
+ "runtime": "three/standard-3d",
+ "made": "2026-10-13T21:58:47.829Z",
+ "size": [
+  1280,
+  720
+ ],
+ "chrome": "148.0.7778.96",
+ "tiles": [
+  {
+   "name": "world",
+   "file": "tiles/silly/world.png",
+   "info": {
+    "shot": "world",
+    "world": "backyard",
+    "bodies": [
+     "bean-classic",
+     "bean-chunky",
+     "bean-tall",
+     "bean-gumdrop"
+    ],
+    "height": 1.33,
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 7.919,
+     "calls": 161,
+     "triangles": 211455,
+     "programs": 28,
+     "geometries": 89,
+     "textures": 74,
+     "quality": "high",
+     "preset": "jelly-pastel",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hero",
+   "file": "tiles/silly/hero.png",
+   "info": {
+    "shot": "hero",
+    "world": "backyard",
+    "bodies": [
+     "bean-classic"
+    ],
+    "height": 1.33,
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 4.551,
+     "calls": 119,
+     "triangles": 125073,
+     "programs": 28,
+     "geometries": 72,
+     "textures": 56,
+     "quality": "high",
+     "preset": "jelly-pastel",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "bodies",
+   "file": "tiles/silly/bodies.png",
+   "info": {
+    "shot": "bodies",
+    "world": "backyard",
+    "bodies": [
+     "bean-classic",
+     "bean-chunky",
+     "bean-tall",
+     "bean-gumdrop"
+    ],
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 6.36,
+     "calls": 155,
+     "triangles": 211190,
+     "programs": 29,
+     "geometries": 89,
+     "textures": 75,
+     "quality": "high",
+     "preset": "jelly-pastel",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "props",
+   "file": "tiles/silly/props.png",
+   "info": {
+    "shot": "props",
+    "world": "backyard",
+    "props": [
+     "tree-puffy",
+     "bush-large",
+     "spring",
+     "crate",
+     "cone",
+     "flowers-tall",
+     "present",
+     "mushrooms",
+     "ball-red",
+     "donut"
+    ],
+    "stats": {
+     "frames": 7,
+     "renderCpuMs": 6.404,
+     "calls": 129,
+     "triangles": 104266,
+     "programs": 30,
+     "geometries": 76,
+     "textures": 61,
+     "quality": "high",
+     "preset": "jelly-pastel",
+     "time": "day"
+    }
+   },
+   "errors": []
+  },
+  {
+   "name": "hud",
+   "file": "tiles/silly/hud.png",
+   "info": {
+    "font": true
+   },
+   "errors": []
+  }
+ ],
+ "errors": [],
+ "sheet": "silly.png"
+}

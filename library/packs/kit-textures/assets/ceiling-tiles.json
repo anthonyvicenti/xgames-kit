@@ -1,0 +1,77 @@
+{
+ "assetVersion": 1,
+ "id": "ceiling-tiles",
+ "pack": "kit-textures",
+ "file": "ceiling-tiles.png",
+ "sha256": "ee1bb030a50f75b2553c1ba6890aa6a2b30abc7b4a24aefdf93331580d633961",
+ "bytes": 15352,
+ "preview": "previews/ceiling-tiles.png",
+ "from": "research/gf-three/lookdev/tools/bake-patterns.mjs",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "acoustic ceiling tiles, 0.6 m squares in a T-bar grid, 2.4 m per tile",
+ "tags": [
+  "ceiling",
+  "tiles",
+  "ground",
+  "pattern",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb",
+  "tileMetres": 2.4
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 3,
+    "hues": [
+     "#fafafa",
+     "#f9f9f9",
+     "#fbfbfb",
+     "#f8f8f8",
+     "#fcfcfc",
+     "#f7f7f7",
+     "#fdfdfd",
+     "#f6f6f6"
+    ],
+    "saturation": 0,
+    "value": 0.965,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 30,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

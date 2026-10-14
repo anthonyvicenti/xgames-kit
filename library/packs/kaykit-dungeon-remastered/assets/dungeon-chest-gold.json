@@ -1,0 +1,147 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-chest-gold",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-chest-gold.glb",
+ "sha256": "e0e5e409108c4ae8eb49359a347c658b2ef32262ca343106003ce6385ad5d55e",
+ "bytes": 83404,
+ "preview": "previews/dungeon-chest-gold.png",
+ "from": "chest_gold.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, base at y=0 and centred, its lid kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a gold-trimmed treasure chest full of coins whose lid opens",
+ "tags": [
+  "dungeon",
+  "chest",
+  "loot",
+  "treasure",
+  "gold",
+  "rare",
+  "container"
+ ],
+ "use": {
+  "size": [
+   1.275,
+   0.975,
+   1.084
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "real": [
+   0.5,
+   1
+  ],
+  "parts": [
+   {
+    "node": "chest_gold_lid",
+    "hinge": [
+     0,
+     0.375,
+     -0.441
+    ],
+    "axis": [
+     1,
+     0,
+     0
+    ],
+    "range": [
+     0,
+     -110
+    ]
+   }
+  ],
+  "collider": {
+   "shape": "box",
+   "size": [
+    1.275,
+    0.975,
+    1.084
+   ],
+   "offset": [
+    0,
+    0.488,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 1568,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1568,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 83404,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 20,
+    "hues": [
+     "#93533f",
+     "#854533",
+     "#a15f48",
+     "#9d5c46",
+     "#596064",
+     "#fecf4a",
+     "#a26149",
+     "#a9674d"
+    ],
+    "saturation": 0.446,
+    "value": 0.49,
+    "families": [
+     {
+      "hue": "orange",
+      "share": 0.431
+     },
+     {
+      "hue": "brown",
+      "share": 0.285
+     },
+     {
+      "hue": "grey",
+      "share": 0.22
+     },
+     {
+      "hue": "yellow",
+      "share": 0.061
+     }
+    ],
+    "grey": 0.22
+   },
+   "trianglesPerMetre": 11.48,
+   "texelsPerMetre": 138,
+   "texturedShare": 0.489,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/chest_gold.glb",
+  "sha256": "04708d5f88ed59d361c8a6cec1efe8b7028dbc641dfae0a1467f272e14a94b6e",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, base at y=0 and centred, its lid kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

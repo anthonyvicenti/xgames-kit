@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "hill-top",
+ "pack": "kenney-new-platformer-pack",
+ "file": "hill-top.png",
+ "sha256": "8617642869870df180a059cd1befc1f7c154a4157351cbe3883b62d711ddfae7",
+ "bytes": 3041,
+ "preview": "previews/hill-top.png",
+ "from": "Sprites/Tiles/Double/hill_top.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "hill top tile",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "hill",
+  "top",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "fill: the top and bottom edges do not continue each other (the step across the wrap is 67.0 times the step inside the tile; at most 3)"
+    ],
+    "facts": {
+     "cell": 128,
+     "frames": 1
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#23b67e",
+     "#2cc987",
+     "#353541",
+     "#59f0b0",
+     "#343440",
+     "#353540",
+     "#2bc786",
+     "#2ac585"
+    ],
+    "saturation": 0.572,
+    "value": 0.42,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.83
+     },
+     {
+      "hue": "grey",
+      "share": 0.17
+     }
+    ],
+    "exact": 71,
+    "grey": 0.17
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.742
+   }
+  }
+ },
+ "source": {
+  "sha256": "5835bed02564de1776dc439f3ffb7c0107344f112a30cd09b98f6797822cf14b",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

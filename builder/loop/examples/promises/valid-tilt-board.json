@@ -1,0 +1,17 @@
+{
+  "schema": "gf-promises/1",
+  "spec": "4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b",
+  "runtime": "three",
+  "title": "Drop Four Dash",
+  "hud": "mouse aim · click / F: drop a disc · Esc: menu",
+  "promises": [
+    { "id": "row.drop", "kind": "row", "row": "drop", "text": "Players drop discs into columns; four in a row wins (you said: \"connect four\")", "core": true, "proofs": ["gate:C", "play"], "status": "proven",
+      "by": [ { "proof": "gate:C", "status": "proven", "ref": "evidence/verify-3/verdict.json" }, { "proof": "play", "status": "proven", "note": "dropped five discs, each in the column I pointed at", "round": 2 } ] },
+    { "id": "build.1", "kind": "build", "row": "tilt", "where": "module", "how": "a module in src/tilt.js that slides discs after every third move", "text": "Built new for this game, and I can see it working when I play: the board tilts every few turns", "core": true, "confirm": true, "proofs": ["play"], "area": "code", "status": "proven",
+      "by": [ { "proof": "play", "status": "proven", "note": "on turn 3 the board tipped left and two discs slid", "round": 2 } ] },
+    { "id": "build.2", "kind": "build", "row": "tilt", "where": "engine", "text": "Built new for this game, and I can see it working when I play: the tilt shakes the camera", "core": true, "confirm": true, "proofs": ["play"], "status": "unreachable",
+      "by": [ { "proof": "play", "status": "unreachable", "note": "the bot won before the second tilt" } ] },
+    { "id": "control.primary", "kind": "control", "action": "primary", "keys": "drop a disc", "text": "drop a disc: primary", "core": false, "proofs": ["gate:C/13", "play"], "status": "untested" },
+    { "id": "loop.closes", "kind": "loop", "text": "A turns game can be won or lost, ends, and plays again.", "core": true, "proofs": ["gate:D", "play"] }
+  ]
+}

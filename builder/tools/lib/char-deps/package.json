@@ -1,0 +1,15 @@
+{
+  "name": "gf-three-char-tools",
+  "private": true,
+  "type": "module",
+  "description": "Node dependencies for track C's character tools (rig-check, retarget, bean, meshy-character, optimize). Install with: npm ci --ignore-scripts=false (sharp needs its prebuilt binary). Loaded through ../char-deps.mjs.",
+  "engines": { "node": ">=24.0.0" },
+  "dependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@gltf-transform/functions": "4.5.1",
+    "meshoptimizer": "1.1.1",
+    "sharp": "0.35.5",
+    "three": "0.186.0"
+  }
+}

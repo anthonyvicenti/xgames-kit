@@ -1,0 +1,61 @@
+{
+  "id": "world",
+  "name": "a world that stays",
+  "describe": "No rounds: one shared place, saved on the play host, that players drop in and out of; no clock, no score, no bots, no results.",
+  "pick": "nothing ends and nobody wins: people come back to what they left (a block sandbox, a hangout)",
+  "acts": "shared-place-stays",
+  "near": [],
+  "clock": "none",
+  "ends": "never: players leave",
+  "seats": {
+    "alone": "none",
+    "late": "join"
+  },
+  "params": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  },
+  "needs": {
+    "mechanics": [
+      "build"
+    ],
+    "worlds": [
+      "voxel"
+    ],
+    "why": "today's world is the voxel island with the build mechanic"
+  },
+  "promise": "The world keeps what we built when we come back, and friends who join see it.",
+  "impl": {
+    "three": {
+      "by": "session",
+      "path": "runtimes/three/kit/net/session.js",
+      "profiles": [
+        "standard-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "a block world passes verify-world 24 of 24",
+            "date": "2026-10-10"
+          }
+        ]
+      },
+      "note": "a mode of the session (world.template voxel and the build mechanic), not a flow"
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "a block world passes verify-world 24 of 24",
+        "date": "2026-10-10"
+      }
+    ]
+  }
+}

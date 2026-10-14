@@ -1,0 +1,96 @@
+{
+ "assetVersion": 1,
+ "id": "monitor",
+ "pack": "kenney-furniture-kit",
+ "file": "monitor.glb",
+ "sha256": "e68afafe201eedd668fe778c6aa17bc9190d30a4d43bb8d3e2d1af2ada3fc8c6",
+ "bytes": 3892,
+ "preview": "previews/monitor.png",
+ "from": "kenney:furniture-kit/computerScreen; baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a computer monitor",
+ "tags": [
+  "office",
+  "screen",
+  "station",
+  "monitor"
+ ],
+ "use": {
+  "size": [
+   0.785,
+   0.589,
+   0.208
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 72,
+  "textures": 0,
+  "materials": 2
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 72,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 0,
+     "bytes": 3892,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 2,
+    "hues": [
+     "#96a7a7",
+     "#dfeaec"
+    ],
+    "saturation": 0.141,
+    "value": 0.709,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.685
+     },
+     {
+      "hue": "cyan",
+      "share": 0.315
+     }
+    ],
+    "grey": 0.685
+   },
+   "trianglesPerMetre": 8.01,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/furniture-kit",
+  "download": "https://kenney.nl/media/pages/assets/furniture-kit/440e0608a4-1677580847/kenney_furniture-kit.zip",
+  "sha256": "5942cbad29a2d2b956619569926e81d50a4174403d592fece6556e57632dc643",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

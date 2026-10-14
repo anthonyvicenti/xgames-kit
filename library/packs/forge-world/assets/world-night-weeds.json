@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "world-night-weeds",
+ "pack": "forge-world",
+ "file": "world-night-weeds.png",
+ "sha256": "4554b4a2e26c6027393b7ef50bfdecfe2b20d1be9b61ffcddde7aa3f3189bfd5",
+ "bytes": 317,
+ "preview": "previews/world-night-weeds.png",
+ "from": "research/gf-forge/library/tools/world.mjs; drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "a tuft of tall weeds, some with pale seed heads (drawn; alpha between the blades)",
+ "tags": [
+  "texture",
+  "night",
+  "weeds",
+  "world"
+ ],
+ "use": {
+  "texelsPerMetre": 40,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 32
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 32,
+     "height": 32,
+     "seeThrough": 0.696
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#32462c",
+     "#263a26",
+     "#1a2c1e",
+     "#1e3228",
+     "#1e2e1e",
+     "#283823",
+     "#152318",
+     "#182820"
+    ],
+    "saturation": 0.231,
+    "value": 0.178,
+    "families": [
+     {
+      "hue": "green",
+      "share": 0.955
+     },
+     {
+      "hue": "grey",
+      "share": 0.045
+     }
+    ],
+    "exact": 9,
+    "grey": 0.045
+   },
+   "texelsPerMetre": 40,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 0.937
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel, stepped to 6 colours (palette PNG, no dither)",
+  "author": "games.fun"
+ }
+}

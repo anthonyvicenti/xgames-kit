@@ -1,0 +1,135 @@
+{
+ "assetVersion": 1,
+ "id": "dungeon-doorway",
+ "pack": "kaykit-dungeon-remastered",
+ "file": "dungeon-doorway.glb",
+ "sha256": "0426ede9987e9d19779c832939244c718af9ca9e48b096617aeaec65cdde7bf1",
+ "bytes": 71056,
+ "preview": "previews/dungeon-doorway.png",
+ "from": "wall_doorway.glb (KayKit Dungeon Remastered 1.0); x0.75 to metres, its grid origin kept, its door kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a stone wall with a wooden door that swings open on its hinge",
+ "tags": [
+  "dungeon",
+  "wall",
+  "door",
+  "doorway",
+  "modular",
+  "stone"
+ ],
+ "use": {
+  "size": [
+   3,
+   3,
+   0.75
+  ],
+  "origin": "grid",
+  "facing": "+z",
+  "grid": 3,
+  "min": [
+   -1.5,
+   0,
+   -0.375
+  ],
+  "parts": [
+   {
+    "node": "wall_doorway_door",
+    "hinge": [
+     -0.615,
+     0,
+     0
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ],
+    "range": [
+     0,
+     100
+    ]
+   }
+  ]
+ },
+ "budgets": {
+  "triangles": 1068,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 1068,
+     "meshes": 2,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 71056,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#8f4f3b",
+     "#995743",
+     "#7e888d",
+     "#7b8589",
+     "#4b5256",
+     "#596064",
+     "#4a5155",
+     "#40464a"
+    ],
+    "saturation": 0.172,
+    "value": 0.431,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.681
+     },
+     {
+      "hue": "brown",
+      "share": 0.142
+     },
+     {
+      "hue": "orange",
+      "share": 0.108
+     },
+     {
+      "hue": "red",
+      "share": 0.069
+     }
+    ],
+    "grey": 0.681
+   },
+   "trianglesPerMetre": 5.74,
+   "texelsPerMetre": 35,
+   "texturedShare": 0.761,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-dungeon-remastered",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Dungeon-Remastered-1.0/b0ca9bd96a8072ab36a3a5464f00ed1e06a16d07/addons/kaykit_dungeon_remastered/Assets/gltf/wall_doorway.glb",
+  "sha256": "2be5369a2d1d1d8795150b2156d8343b3e37620d78de256cb03276c54ea70c97",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres, its grid origin kept, its door kept as its own node, texture 512 px, meshopt-compressed (gltf-transform 4)"
+ }
+}

@@ -1,0 +1,13 @@
+{
+  "promise": "loop",
+  "why": "the first wave starts by itself and the dead rise from the graves, more of them as it goes on",
+  "steps": [
+    { "do": "start", "seed": 7 },
+    { "do": "step", "seconds": 10 },
+    { "do": "expect", "path": "rules.ai.director.phase", "op": "==", "value": "running", "why": "the wave director runs once the round starts" },
+    { "do": "expect", "path": "rules.ai.enemies", "op": ">=", "value": 1, "why": "the dead have risen" },
+    { "do": "snap", "name": "risen" },
+    { "do": "step", "seconds": 6 },
+    { "do": "expect", "path": "rules.ai.director.spawned", "op": "increased", "since": "risen", "why": "more keep rising as the wave goes on" }
+  ]
+}

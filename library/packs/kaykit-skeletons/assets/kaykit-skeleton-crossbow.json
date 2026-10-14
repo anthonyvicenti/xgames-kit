@@ -1,0 +1,123 @@
+{
+ "assetVersion": 1,
+ "id": "kaykit-skeleton-crossbow",
+ "pack": "kaykit-skeletons",
+ "file": "kaykit-skeleton-crossbow.glb",
+ "sha256": "b6bd8f5bcb4d5606fdcbaacb0b179bf993b26c7ee4511be1e557b451e950aff5",
+ "bytes": 64672,
+ "preview": "previews/kaykit-skeleton-crossbow.png",
+ "from": "Skeleton_Crossbow.gltf (KayKit Character Pack: Skeletons 1.0); x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Rogue 2H_Crossbow (handslot.r) (bounds…",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a skeleton archer's crossbow",
+ "tags": [
+  "weapon",
+  "crossbow",
+  "ranged",
+  "skeleton",
+  "kaykit"
+ ],
+ "use": {
+  "size": [
+   0.833,
+   0.381,
+   1.064
+  ],
+  "origin": "grip",
+  "facing": "+z",
+  "min": [
+   -0.417,
+   -0.128,
+   -0.208
+  ],
+  "grip": {
+   "position": [
+    -0.0104,
+    -0.0431,
+    -0.0011
+   ],
+   "quaternion": [
+    0.0128,
+    -0.0128,
+    -0.707,
+    0.707
+   ]
+  },
+  "hands": 2,
+  "collider": {
+   "shape": "none"
+  }
+ },
+ "budgets": {
+  "triangles": 584,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 584,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 64672,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 15,
+    "hues": [
+     "#8a8f90",
+     "#7a7f81",
+     "#7f8485",
+     "#7a7d7f",
+     "#686a6c",
+     "#7b7f81",
+     "#7a7e80",
+     "#75797b"
+    ],
+    "saturation": 0.069,
+    "value": 0.463,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.941
+     },
+     {
+      "hue": "brown",
+      "share": 0.042
+     }
+    ],
+    "grey": 0.941
+   },
+   "trianglesPerMetre": 22.91,
+   "texelsPerMetre": 107,
+   "texturedShare": 0.759,
+   "textured": true,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kaylousberg.itch.io/kaykit-skeletons",
+  "download": "https://raw.githubusercontent.com/KayKit-Game-Assets/KayKit-Character-Pack-Skeletons-1.0/15b62b9bad122f72926c10fb14d622c73819fa54/addons/kaykit_character_pack_skeletons/Assets/gltf/Skeleton_Crossbow.gltf",
+  "sha256": "8b7b8adbc33d2b9921637735d3f319b86a98b8bab9dbbce022541cc732e415ce",
+  "retrieved": "2026-10-08",
+  "modified": "x0.75 to metres about its own origin (KayKit's grip point), primitives joined per material, texture 512 px, meshopt-compressed (gltf-transform 4); a different mesh from Rogue 2H_Crossbow (handslot.r) (bounds -0.556,-0.171,-0.278..0.556,0.337,1.141 vs -0.612,-0.171,-0.278..0.612,0.308,1.163); the…"
+ }
+}

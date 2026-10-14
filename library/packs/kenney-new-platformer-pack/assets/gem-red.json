@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "gem-red",
+ "pack": "kenney-new-platformer-pack",
+ "file": "gem-red.png",
+ "sha256": "31e72f42e6f7cea5bb1dacece9623d8f7773d9310ded6ca5fd5d3b0e35909238",
+ "bytes": 2191,
+ "preview": "previews/gem-red.png",
+ "from": "Sprites/Tiles/Double/gem_red.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "gem red",
+ "tags": [
+  "kenney",
+  "drawn",
+  "platformer",
+  "side",
+  "gem",
+  "red",
+  "tiles"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 128
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 8,
+    "hues": [
+     "#353541",
+     "#e54341",
+     "#f17575",
+     "#343440",
+     "#353540",
+     "#db3b39",
+     "#da3a39",
+     "#d93a38"
+    ],
+    "saturation": 0.487,
+    "value": 0.449,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.609
+     },
+     {
+      "hue": "grey",
+      "share": 0.389
+     }
+    ],
+    "exact": 129,
+    "grey": 0.389
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "bd141c2ea6df17d6ac9fb24dbcbc7123671d6a214941975d80cbf5616000fd2c",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

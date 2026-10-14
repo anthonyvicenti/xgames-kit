@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "town-town-cobbles",
+ "pack": "forge-town",
+ "file": "town-town-cobbles.png",
+ "sha256": "12055d4adcd6a9e816630467bb295111fea5eec2e5ae095739ca51f524742f6a",
+ "bytes": 55312,
+ "preview": "previews/town-town-cobbles.png",
+ "from": "research/gf-forge/library/tools/world-town.mjs; drawn here texel by texel over the photo's luminance (resized to 256 × 256 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "wet cobbles: slate setts 25 cm square in running rows, dark joints, wide wet patches with a glint on their setts; tiles; 8 m across at 32 texels a metre",
+ "tags": [
+  "texture",
+  "town",
+  "cobbles"
+ ],
+ "use": {
+  "texelsPerMetre": 32,
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 256,
+     "height": 256,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 22,
+    "hues": [
+     "#282a31",
+     "#272930",
+     "#282b32",
+     "#1c1e23",
+     "#292b32",
+     "#292c33",
+     "#25282e",
+     "#22242a"
+    ],
+    "saturation": 0.103,
+    "value": 0.26,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.973
+     }
+    ],
+    "exact": 256,
+    "grey": 0.973
+   },
+   "texelsPerMetre": 32,
+   "outline": {
+    "present": false,
+    "share": 0.599
+   }
+  }
+ },
+ "source": {
+  "retrieved": "2026-10-11",
+  "modified": "drawn here texel by texel over the photo's luminance (resized to 256 × 256 px as the middle of a 3 × 3 tiling, so it still tiles), stepped to 40 colours (palette PNG, no dither)",
+  "author": "games.fun over Dimitrios Savva (Poly Haven)"
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "schema": "xgames-forge-fixture/1",
+ "mechanic": "pickup",
+ "runtime": "forge",
+ "at": "2026-10-14T01:34:41.372Z",
+ "renderer": "webgpu",
+ "browser": "headless Chrome 151.0.7922.34",
+ "seconds": 11,
+ "pass": true,
+ "checks": [
+  {
+   "name": "two-players-in-one-game",
+   "ok": true,
+   "detail": "webgpu; the mechanic runs: host [{\"id\":\"pickup\",\"standin\":false}]"
+  },
+  {
+   "name": "both-see-the-same-spots",
+   "ok": true,
+   "detail": "[[5.24,-0.63],[-5.24,0.63]]"
+  },
+  {
+   "name": "both-draw-the-spots",
+   "ok": true,
+   "detail": "two instances of the spot model on each screen"
+  },
+  {
+   "name": "taken-spot-goes-on-both",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "joiner-scores-on-both",
+   "ok": true,
+   "detail": "joiner 1 point on both screens"
+  },
+  {
+   "name": "the-other-spot-stays",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "name": "spot-comes-back-on-both",
+   "ok": true,
+   "detail": "after respawnSeconds 3"
+  },
+  {
+   "name": "scored-once",
+   "ok": true,
+   "detail": "joiner 1"
+  },
+  {
+   "name": "no-page-errors",
+   "ok": true,
+   "detail": ""
+  }
+ ],
+ "shots": [
+  "host-sees-spots.jpg",
+  "joiner-sees-spots.jpg",
+  "host-end.jpg",
+  "joiner-end.jpg"
+ ],
+ "errors": []
+}

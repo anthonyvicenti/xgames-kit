@@ -1,0 +1,80 @@
+{
+ "assetVersion": 1,
+ "id": "voxel-bedrock",
+ "pack": "gf-voxel-blocks",
+ "file": "voxel-bedrock.png",
+ "sha256": "7a74c7489cd55289cdd17e1962dcacfea7cc99ded78b6417cff7aa9a9f0ed757",
+ "bytes": 40524,
+ "preview": "previews/voxel-bedrock.png",
+ "from": "research/worlds/tools/bake_blocks.py; baked offline by the script at 512 px (original work; 128 px until 2026-10-09)",
+ "dimension": "2d",
+ "category": "texture",
+ "describe": "bedrock block face",
+ "tags": [
+  "bedrock",
+  "voxel",
+  "block",
+  "tileable"
+ ],
+ "use": {
+  "tile": true,
+  "colorSpace": "srgb"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 512
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "width": 512,
+     "height": 512,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#3e4046",
+     "#46484d",
+     "#2a2c31",
+     "#505257",
+     "#33353a",
+     "#525459",
+     "#3a3c41",
+     "#484a4f"
+    ],
+    "saturation": 0.057,
+    "value": 0.263,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 1
+     }
+    ],
+    "exact": 158,
+    "grey": 1
+   },
+   "outline": {
+    "present": false,
+    "share": 0.267
+   }
+  }
+ },
+ "source": {
+  "author": "the kit (baked block face)",
+  "retrieved": "2026-10-09",
+  "modified": "baked offline by the script at 512 px (original work; 128 px until 2026-10-09)"
+ }
+}

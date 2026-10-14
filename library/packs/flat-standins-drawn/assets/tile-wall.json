@@ -1,0 +1,81 @@
+{
+ "assetVersion": 1,
+ "id": "tile-wall",
+ "pack": "flat-standins-drawn",
+ "file": "tile-wall.png",
+ "sha256": "08ab924bc9e1e722d4fb8a9dceeede87db1cb20c28a44a445fe5573dfd9e21a8",
+ "bytes": 783,
+ "preview": "previews/tile-wall.png",
+ "from": "the old kit's flat-art tool (gf-three tools/flat-art.mjs)",
+ "dimension": "2d",
+ "category": "tile",
+ "describe": "a drawn wall ground tile",
+ "tags": [
+  "drawn",
+  "flat",
+  "2d",
+  "tile",
+  "wall"
+ ],
+ "use": {
+  "texelsPerMetre": 128,
+  "style": "drawn",
+  "tile": true
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 256
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 128,
+     "frames": 2
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#a8a1ba",
+     "#b9b3c9",
+     "#8d86a3",
+     "#d6d1e2",
+     "#968fab",
+     "#6f6985",
+     "#9c95b0",
+     "#9089a6"
+    ],
+    "saturation": 0.162,
+    "value": 0.703,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.93
+     },
+     {
+      "hue": "purple",
+      "share": 0.07
+     }
+    ],
+    "exact": 9,
+    "grey": 0.93
+   },
+   "texelsPerMetre": 128,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ }
+}

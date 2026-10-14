@@ -1,0 +1,122 @@
+{
+ "assetVersion": 1,
+ "id": "arcade-machine",
+ "pack": "kenney-mini-arcade",
+ "file": "arcade-machine.glb",
+ "sha256": "8ec7fccff10126263c93d820212f2ad8f23cb059280ebc9be98172e7a1feefe9",
+ "bytes": 19576,
+ "preview": "previews/arcade-machine.png",
+ "from": "kenney:mini-arcade/arcade-machine; baked to metres (x2.48276), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a retro arcade cabinet",
+ "tags": [
+  "office",
+  "station",
+  "fun",
+  "arcade",
+  "machine"
+ ],
+ "use": {
+  "size": [
+   0.993,
+   1.8,
+   1.335
+  ],
+  "origin": "feet",
+  "facing": "+z",
+  "collider": {
+   "shape": "box",
+   "size": [
+    0.993,
+    1.8,
+    1.334
+   ],
+   "offset": [
+    0,
+    0.9,
+    0
+   ]
+  }
+ },
+ "budgets": {
+  "triangles": 392,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "triangles": 392,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 19576,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 17,
+    "hues": [
+     "#656a82",
+     "#5a6078",
+     "#6d738a",
+     "#7f849c",
+     "#51bb83",
+     "#48b27f",
+     "#7c8199",
+     "#797e96"
+    ],
+    "saturation": 0.237,
+    "value": 0.513,
+    "families": [
+     {
+      "hue": "grey",
+      "share": 0.62
+     },
+     {
+      "hue": "green",
+      "share": 0.212
+     },
+     {
+      "hue": "blue",
+      "share": 0.098
+     },
+     {
+      "hue": "cyan",
+      "share": 0.07
+     }
+    ],
+    "grey": 0.62
+   },
+   "trianglesPerMetre": 5.88,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "page": "https://kenney.nl/assets/mini-arcade",
+  "download": "https://kenney.nl/media/pages/assets/mini-arcade/ece1e8f320-1721638600/kenney_mini-arcade.zip",
+  "sha256": "90e346f68873daae2b4ce6e8e48f9f85486d537c07527b0516191b8f6eda787b",
+  "retrieved": "2026-10-06",
+  "modified": "baked to metres (x2.48276), base at y=0 and centred, primitives joined per material, unlit materials made lit, meshopt-compressed (gltf-transform 4)",
+  "author": "Kenney (www.kenney.nl)"
+ }
+}

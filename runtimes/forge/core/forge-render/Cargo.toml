@@ -1,0 +1,43 @@
+[package]
+name = "forge-render"
+description = "gf-forge's wgpu forward renderer: glTF 2.0 models and skinned bodies from bytes (GPU skinning from a bone-palette texture, instancing), a first-person layer, a moon with one shadow map, point lights and flashes, fog, a sky with a moon, particles, bloom, the tone curve and the retro pass, a slot-ID pass and a vertex capture for verify, device-loss recovery. WebGL2 limits only."
+version.workspace = true
+edition.workspace = true
+
+publish.workspace = true
+build = "build.rs"
+
+[dependencies]
+wgpu = { workspace = true }
+glam = { workspace = true }
+gltf = { workspace = true, features = ["names", "extras", "KHR_materials_emissive_strength"] }
+serde_json = { workspace = true }
+bytemuck = { workspace = true }
+# skeletal animation, shared with the core: the renderer's puppets (posed bodies the host places: lookdev, previews,
+# verify's poses) and the sockets held items hang on
+forge-anim = { workspace = true }
+# the WebGL2 build only (feature naga-ir): the shaders as naga's IR, read back from the bytes build.rs wrote
+naga = { version = "=30.0.1", default-features = false, features = ["deserialize"], optional = true }
+bincode = { version = "=1.3.3", optional = true }
+
+# How the shaders reach wgpu, one way a build (forge-web's `webgpu` and `webgl2` features choose):
+#   wgsl     (default: the WebGPU build and the native tests) the WGSL text; the browser's WebGPU compiles it
+#   naga-ir  (the WebGL2 build) wgpu's GL backend must translate WGSL to GLSL itself. The WGSL is parsed at build time
+#            (build.rs: naga's WGSL front end, on the build machine) and carried as naga's IR, so the wasm holds the
+#            validator and the GLSL writer but no WGSL parser (about 0.2 MB of it, and the Unicode tables its lexer
+#            reads, whose licence is not on PLAN §5's list)
+[features]
+default = ["wgsl"]
+wgsl = ["wgpu/wgsl"]
+naga-ir = ["wgpu/naga-ir", "dep:naga", "dep:bincode"]
+
+# build.rs, with feature naga-ir: the same naga, natively, with its WGSL front end, and the same bincode
+[build-dependencies]
+naga = { version = "=30.0.1", default-features = false, features = ["wgsl-in", "serialize"], optional = true }
+bincode = { version = "=1.3.3", optional = true }
+
+# the shaders are parsed and validated natively in the tests, and translated to GLSL ES 3.00 as the WebGL2 build's
+# wgpu does in the browser (naga is already in the lock through wgpu)
+[dev-dependencies]
+naga = { version = "=30.0.1", features = ["wgsl-in", "glsl-out", "serialize", "deserialize"] }
+bincode = { version = "=1.3.3" }

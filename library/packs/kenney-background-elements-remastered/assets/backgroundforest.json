@@ -1,0 +1,87 @@
+{
+ "assetVersion": 1,
+ "id": "backgroundforest",
+ "pack": "kenney-background-elements-remastered",
+ "file": "backgroundforest.png",
+ "sha256": "314a18482c6c748939ee68fd09fc57fc7639666a7f2c2234293bb7d9a9a3e4f0",
+ "bytes": 35244,
+ "preview": "previews/backgroundforest.png",
+ "from": "Backgrounds/backgroundForest.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "backgroundforest",
+ "tags": [
+  "kenney",
+  "drawn",
+  "background",
+  "backgroundforest",
+  "backgrounds"
+ ],
+ "use": {
+  "style": "drawn"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 1024
+ },
+ "validated": [
+  {
+   "by": "picture-check",
+   "version": "1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "warnings": [
+     "1024x1024: larger than a drawn prop (512 px a side), judged as a backdrop picture"
+    ],
+    "facts": {
+     "width": 1024,
+     "height": 1024,
+     "seeThrough": 0
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#b7e7fa",
+     "#cfeffc",
+     "#def5ff",
+     "#c9efff",
+     "#eff9fe",
+     "#f2fafe",
+     "#ebf8fd",
+     "#eef9fd"
+    ],
+    "saturation": 0.882,
+    "value": 0.886,
+    "families": [
+     {
+      "hue": "cyan",
+      "share": 0.837
+     },
+     {
+      "hue": "grey",
+      "share": 0.163
+     }
+    ],
+    "exact": 252,
+    "grey": 0.163
+   },
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "ad0c5883d876bca50fd83f73098df1e9c8a193d9de003c75ca84b56fe8809a69",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}

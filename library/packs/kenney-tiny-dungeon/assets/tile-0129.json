@@ -1,0 +1,92 @@
+{
+ "assetVersion": 1,
+ "id": "tile-0129",
+ "pack": "kenney-tiny-dungeon",
+ "file": "tile-0129.png",
+ "sha256": "4e64a2f0937c76f92e8f791fc932267adcaf9a0493c4d518f3297985b432e75a",
+ "bytes": 221,
+ "preview": "previews/tile-0129.png",
+ "from": "Tiles/tile_0129.png; re-encoded as 8-bit RGBA PNG without metadata",
+ "dimension": "2d",
+ "category": "picture",
+ "describe": "a wooden wand tipped with a purple gem",
+ "tags": [
+  "kenney",
+  "pixel",
+  "top-down",
+  "dungeon",
+  "wand",
+  "staff",
+  "magic",
+  "purple",
+  "gem",
+  "weapon",
+  "item"
+ ],
+ "use": {
+  "texelsPerMetre": 16,
+  "style": "pixel"
+ },
+ "budgets": {
+  "textures": 1,
+  "textureMax": 16
+ },
+ "validated": [
+  {
+   "by": "flat-judge",
+   "version": "gf-flat-1",
+   "ok": true,
+   "date": "2026-10-13",
+   "report": {
+    "facts": {
+     "cell": 16
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-13",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 4,
+    "hues": [
+     "#3f2631",
+     "#bd6c4a",
+     "#d176d0",
+     "#eaa56c",
+     "#763b36"
+    ],
+    "saturation": 0.323,
+    "value": 0.304,
+    "families": [
+     {
+      "hue": "pink",
+      "share": 0.706
+     },
+     {
+      "hue": "orange",
+      "share": 0.196
+     },
+     {
+      "hue": "purple",
+      "share": 0.078
+     }
+    ],
+    "exact": 5,
+    "grey": 0
+   },
+   "texelsPerMetre": 16,
+   "outline": {
+    "present": true,
+    "how": "ink",
+    "share": 1
+   }
+  }
+ },
+ "source": {
+  "sha256": "1b0a4efa97420e011f08151149c662dbc7c91be0e3c72caa3e8f5718789908fb",
+  "modified": "re-encoded as 8-bit RGBA PNG without metadata",
+  "retrieved": "2026-10-13"
+ }
+}
