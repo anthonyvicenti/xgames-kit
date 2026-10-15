@@ -10,10 +10,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { openLoop, fileStore, stateFileOf } from '../../builder/loop/index.mjs';
 import { fakeBindings, keepAll, scriptedVerify, seenTwo, touch } from './dryrun/fakes.mjs';
-import { fakeRegistry, goodLedger, pitchV2, PROMPT } from './fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, pitchV2, PROMPT, GATE_PLAY } from './fixtures/registry.mjs';
 
 const reg = fakeRegistry();
-const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
+const SPEC = { specVersion: 2, play: { target: GATE_PLAY }, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
   build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js', where: 'module', row: 'hook' }], notInV1: [] };
 const CARDS = pitchV2({ reply: 'Card 1 holds the gate. A grappling hook that pulls you onto the walls is built new, which makes the build take longer.', cards: ['a', 'b'].map(id => ({ id, title: id, v1: { has: ['waves at the gate'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: SPEC })), questions: [] });
 
@@ -74,6 +74,7 @@ test('2. an answer given after create failed is made by create, and its round is
   r = await L.step({}); assert.equal(r.kind, 'spec');
   r = await L.step({ spec: SPEC });
   assert.equal(r.next, 'create', 'the game was never made: create runs');
+  r = await L.step({}); assert.equal(r.next, 'design', 'the play is designed before the build (the spec carries its target)');
   r = await L.step({}); assert.equal(r.next, 'build');
   assert.equal(n, 2);
   r = await L.step({});
@@ -138,7 +139,7 @@ test('4. every hand-over carries its next action as data, beside the prose', asy
   assert.equal(r.action.returns, 'pitch');
   r = await L.step({ pitch: CARDS });
   assert.deepEqual(r.action, { tool: 'gamesfun_step_pitch', args: { choice: { card: '', answers: {}, words: '' } }, returns: 'choice' });
-  await L.step({ choice: { card: 'a' } }); await L.step({}); await L.step({});
+  await L.step({ choice: { card: 'a' } }); await L.step({}); await L.step({}); await L.step({});
   r = await L.step({});
   assert.deepEqual(r.action, { tool: 'gamesfun_step_fix', args: { summary: '', controls: '' }, returns: 'summary' });
   await touch(game, 'rules.js', '// built');

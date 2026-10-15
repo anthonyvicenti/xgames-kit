@@ -168,10 +168,18 @@ export function createCapsule(RAPIER, world, cfg, start, { userData = null } = {
     s.slip = Math.max(s.slip, seconds); s.pushes++;
   }
 
+  /** Ride a path someone else simulates (a host-owned flight: the knockback mechanic): the body is put where the path is
+   *  (feet {x, y, z}) at its velocity (m/s), input ignored for `stun` seconds. Call it every step while the ride lasts. */
+  function ride(feet, vel, stun = 0) {
+    body.setTranslation({ x: feet.x, y: feet.y + feetOffset, z: feet.z }, true);
+    body.setLinvel({ x: vel.x ?? 0, y: vel.y ?? 0, z: vel.z ?? 0 }, true);
+    s.stun = Math.max(s.stun, stun); s.onGround = false; s.sinceJump = 0; s.stepCount++;
+  }
+
   function reset(pos, yaw) {
     body.setTranslation({ x: pos.x, y: pos.y, z: pos.z }, true); body.setLinvel({ x: 0, y: 0, z: 0 }, true);
     Object.assign(s, { onGround: false, wasOnGround: false, jumpActive: false, coyote: 0, buffer: 0, stun: 0, slip: 0, facing: yaw ?? s.facing });
   }
 
-  return { body, collider, state: s, step, post, knock, push, reset, feetOffset, config: cfg, probeGroundY, setQuery(groups) { query = groups ?? SOLID_QUERY; } };
+  return { body, collider, state: s, step, post, knock, push, ride, reset, feetOffset, config: cfg, probeGroundY, setQuery(groups) { query = groups ?? SOLID_QUERY; } };
 }

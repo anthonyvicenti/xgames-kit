@@ -38,12 +38,11 @@ export function testLoadouts(assets, defaults) {
 
 /**
  * Why a player's page has no running game, from the party page's state (gate-lib snap) and the game's net snapshot.
- * Pure, so a test holds the wording. A round that ended by itself is the usual cause: the leg needs about two minutes
- * of a round with two players who mostly stand still.
+ * Pure, so a test holds the wording. (A round that ends while the joiner is away is followed into the next one.)
  */
 export function describeLost(party, net) {
   if (!party) return 'the party page did not answer';
-  if (party.room === 'results' || party.card === 'results') return `the round had already ended (the party page shows the results${party.round ? ` of round ${party.round}` : ''}): this leg needs a round that lasts about two minutes with two players who mostly stand still, and this game's round ended by itself before that`;
+  if (party.room === 'results' || party.card === 'results') return `the round had already ended (the party page shows the results${party.round ? ` of round ${party.round}` : ''})`;
   if (party.phase === 'home') return 'its party page is back at the Host / Join lobby (it did not rejoin the room)';
   if (net && net.started === false) return `its game loaded but the round has not started for it (party page: ${party.phase ?? '?'}${party.card ? `, ${party.card}` : ''})`;
   return `its party page shows ${party.phase ?? '?'}${party.card ? ` (${party.card})` : ''}${party.room ? `, room ${party.room}` : ''} and no game frame`;
@@ -244,26 +243,65 @@ export async function checkLoadouts({ dir, outDir = null, log = () => {}, third 
       else warnings.push(`loadouts: the host could not pick up something to throw (${record.throwWhy ?? '?'}); the ball colour was not seen in flight`);
     }
 
+    // A round may end by the game's own rules at any time in this leg (a knock-out, a last side standing, a player who
+    // dropped out forfeiting): each part below then runs in the next round, which the host starts. A round that ends
+    // while a part reads the other copy is followed into the next one, and the part runs again there, once.
+    const over = async () => { const s = await snap(A.page).catch(() => null); return s?.room === 'results' || s?.card === 'results' || (s?.phase === 'room' && !(await net(A))?.started); };
+    const inRound = async () => { const n = await net(B); return n?.started && n.peers?.some(p => p.id === aId && p.x != null); };
+    let rounds = 0;
+    const nextRound = async () => {
+      rounds++;
+      await until(over, 20000, 'the round to end').catch(() => {});
+      await sleep(900); await freeMouse(A);
+      await A.page.click(await A.page.isVisible('#mp-again') ? '#mp-again' : '#start').catch(() => {});
+      const ok = await until(async () => ((await net(A))?.started && (await inRound()) ? 'in' : null), 90000, 'the next round with the joiner back').catch(() => null);
+      if (ok) { await focus(A); await focus(B); }
+      return ok;
+    };
+    const fresh = async () => ((await over()) ? nextRound() : 'in');
+
     // ---- a change mid-round, from the page hosting the game (postMessage), reaches the other copy ----
     await A.page.evaluate(() => { window.__gfApplied = []; addEventListener('message', e => { if (e.data?.type === 'gf:loadout-applied') window.__gfApplied.push(e.data); }); });
-    await A.page.evaluate(l => document.getElementById('game').contentWindow.postMessage({ type: 'gf:loadout', loadout: l }, '*'), T.A2);
-    const applied = await until(async () => (await A.page.evaluate(() => window.__gfApplied?.[0] ?? null)), 5000, 'the game to answer gf:loadout-applied').catch(() => null);
+    // `again`: the part runs again in a round started after this game's rules ended the last one; the host does not
+    // shoot then (in a game where a hit ends the round, the leg's own shot would end this one too)
+    const change = async (again = false) => {
+      await A.page.evaluate(() => { window.__gfApplied = []; });
+      const send = () => A.page.evaluate(l => document.getElementById('game').contentWindow.postMessage({ type: 'gf:loadout', loadout: l }, '*'), T.A2).catch(() => {});
+      await send();
+      let tries = 0;
+      const applied = await until(async () => (await A.page.evaluate(() => window.__gfApplied?.[0] ?? null)) ?? (++tries % 4 === 0 ? (await send(), null) : null), 8000, 'the game to answer gf:loadout-applied').catch(() => null);
+      if (!again) await fire(A, 1400);
+      return { applied, changed: await seesLook(B, aId, T.A2, 8000, { streamed: !again }) };
+    };
+    let ch = (await fresh()) && rounds ? await change(true) : await change();
+    if ((!ch.applied || ch.changed.length) && (await over()) && (await nextRound())) ch = await change(true);
+    const { applied, changed } = ch;
     step('the game answers the page', !!applied?.key, applied ? `gf:loadout-applied key ${applied.key}, ${applied.dropped.length} dropped` : 'no gf:loadout-applied');
-    await fire(A, 1400);
-    const changed = await seesLook(B, aId, T.A2, 8000, { streamed: true });
     step('a change mid-round shows on the other copy', !changed.length, changed.length ? changed.join('; ') : `the joiner now draws the host with body ${T.A2.values[TINT] ?? '-'}, shots ${SHOT ? T.A2.values[SHOT] : '-'}`);
     if (await turnTo(B, aId)) { await turnTo(A, bId); await fire(A, 1300, () => shot(B.page, 'joiner-sees-host-after-change')); }
 
     // ---- a late copy: the joiner reloads mid-round and must get the host's look from the host's pose ----
+    // The reload: a round that ends while the joiner is away or just as it comes back is followed into the next one,
+    // where the look the late copy must get is the one the host draws itself in (a new round loads a fresh page, so
+    // the host wears its page's loadout again, or the change if the game keeps it).
+    await fresh();
+    const roundBefore = (await snap(A.page).catch(() => null))?.round ?? null;
     await B.page.reload({ waitUntil: 'load' });
-    const back = await until(async () => { const n = await net(B); return n?.started && n.peers?.some(p => p.id === aId && p.x != null); }, 90000, 'the joiner to drop back in').then(() => true).catch(() => false);
-    if (!back || !(await focus(B))) {
+    let back = await until(async () => ((await inRound()) ? 'in' : (await over()) ? 'over' : null), 90000, 'the joiner to drop back in').catch(() => null);
+    let followed = false;
+    if (back === 'over') { followed = true; back = await nextRound(); }
+    // the host's look now: the one the host draws itself in (the change, or its page's loadout in a round started since)
+    const wantNow = async () => ((await seesLook(A, aId, T.A2, 3000)).length ? T.A : T.A2);
+    let late = back === 'in' && (await focus(B)) ? await seesLook(B, aId, await wantNow(), 15000) : null;
+    // the round ended while the look was read (the joiner's frame went with it): follow into the next round once
+    if (late?.length && !followed && (await over())) { followed = true; back = await nextRound(); late = back === 'in' && (await focus(B)) ? await seesLook(B, aId, await wantNow(), 15000) : null; }
+    record.rounds = { followed: rounds, reload: [roundBefore, (await snap(A.page).catch(() => null))?.round ?? null], lateInNext: followed };
+    if (late === null) {
       // the reloaded joiner is not in a running round: say where its page is instead of reading a frame that is not there
-      step('a late copy (reloaded) gets the host\'s look', false, `the reloaded joiner did not drop back into the round within 90 s: ${await whereIs(B)}; the host: ${await whereIs(A)}`);
+      step('a late copy (reloaded) gets the host\'s look', false, `the reloaded joiner did not drop back into ${followed ? 'the next round' : 'the round'} within 90 s: ${await whereIs(B)}; the host: ${await whereIs(A)}`);
     } else {
-      const late = await seesLook(B, aId, T.A2, 15000);
       const lateBack = await seesLook(A, bId, T.B, 15000);
-      step('a late copy (reloaded) gets the host\'s look', !late.length, late.length ? late.join('; ') : 'the reloaded joiner draws the host in the changed look');
+      step('a late copy (reloaded) gets the host\'s look', !late.length, late.length ? late.join('; ') : `the reloaded joiner draws the host in its look${followed ? ' (the round ended while it was away: it came back in the next one)' : ''}`);
       step('the reloaded player\'s look reaches the host again', !lateBack.length, lateBack.length ? lateBack.join('; ') : 'the host draws the joiner in their look');
       if (await turnTo(B, aId)) { await turnTo(A, bId); await fire(A, 1300, () => shot(B.page, 'joiner-after-reload-sees-host')); }
     }

@@ -4,13 +4,14 @@ import { CARD_WORDS, pitchV2 } from './registry.mjs';
 import { existsSync } from 'node:fs';
 import { appendFile, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { TAG_LEDGER, tagSpec } from './tag.mjs';
+import { TAG_LEDGER, TAG_PLAY_ANSWER, tagSpec } from './tag.mjs';
 
 const card = (id, title) => ({ ...CARD_WORDS, id, title, v1: { has: ['a tag round'], build: ['a backyard with cover to run around'], notYet: [] }, spec: tagSpec(title) });
 export async function answer({ kind, prompt, cwd }) {
   if (kind === 'ledger') return { ledger: TAG_LEDGER };
   if (kind === 'pitch') return { pitch: pitchV2({ reply: 'Card 1 is a tag round in a backyard. A backyard with cover to run around is built new for this game, which makes the build take a little longer.', cards: [card('a', 'Yard Tag'), card('b', 'Fence Tag')], questions: [] }) };
   if (kind === 'spec') return { spec: tagSpec() };
+  if (kind === 'design') return { target: TAG_PLAY_ANSWER };
   if (kind === 'playtest') {
     const ids = [...prompt.matchAll(/^- `([^`]+)`/gm)].map(m => m[1]);
     // a two-player run, recorded where gamesfun_play records it (the tester works in its own folder)

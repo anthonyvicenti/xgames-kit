@@ -113,6 +113,16 @@ export function createRagdoll(RAPIER, world, parts, { velocity = new THREE.Vecto
     speed() { let s = 0; for (const m of made.values()) { const v = m.body.linvel(); s = Math.max(s, Math.hypot(v.x, v.y, v.z)); } return s; },
     /** Where a part is: { position, quaternion } in world space. */
     pose(name) { const m = made.get(name); if (!m) return null; const t = m.body.translation(), r = m.body.rotation(); return { position: new THREE.Vector3(t.x, t.y, t.z), quaternion: new THREE.Quaternion(r.x, r.y, r.z, r.w) }; },
+    /** Steer the whole body onto a path someone else simulates (a host-owned flight): the pelvis is pulled toward
+     *  `target` at the path's velocity `vel` ({x, y, z}), and every part gets the same change, so the limbs keep their own
+     *  flop. gain: per second; the change is at most maxDv m/s a call. */
+    steer(target, vel, { gain = 9, maxDv = 8 } = {}) {
+      if (!pelvis) return;
+      const t = pelvis.body.translation(), v = pelvis.body.linvel();
+      let dx = (vel.x ?? 0) + (target.x - t.x) * gain - v.x, dy = (vel.y ?? 0) + (target.y - t.y) * gain - v.y, dz = (vel.z ?? 0) + (target.z - t.z) * gain - v.z;
+      const l = Math.hypot(dx, dy, dz); if (l > maxDv) { dx *= maxDv / l; dy *= maxDv / l; dz *= maxDv / l; }
+      for (const m of made.values()) { const c = m.body.linvel(); m.body.setLinvel({ x: c.x + dx, y: c.y + dy, z: c.z + dz }, true); }
+    },
     /** Push every part (world m/s). */
     push(v) { for (const m of made.values()) { const c = m.body.linvel(); m.body.setLinvel({ x: c.x + v.x, y: c.y + v.y, z: c.z + v.z }, true); } },
     dispose() { for (const m of made.values()) world.removeRigidBody(m.body); made.clear(); },

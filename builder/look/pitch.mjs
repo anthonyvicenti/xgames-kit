@@ -28,7 +28,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { over } from '../../kinds/apply.mjs';
 import { KIT_ROOT } from '../lib/paths.mjs';
 import { lookValues, resolved, LEVERS, placeKey } from './apply.mjs';
-import { worldPlan, specWithWorld, dressingOf, cameraOf, strataOf } from './world.mjs';
+import { worldPlan, specWithWorld, dressingOf, cameraOf, strataOf, compositionPieces, composeOf } from './world.mjs';
 import { SET_PIECE } from '../art/recipe.mjs';
 import { targetOfLook, wherePlaces } from './looks.mjs';
 
@@ -248,8 +248,9 @@ export async function applyArt(dir, art, ground) {
   if (art.props.length) await writeFile(path.join(dir, 'config/look-sheet.json'), JSON.stringify({ props: await Promise.all(art.props.map(async p => ({ id: p.id, file: await put(p, 'props'), height: p.height ?? 0.9 }))) }, null, 1));
   if (ground) {
     const w = JSON.parse(await readFile(path.join(dir, 'config/world.json'), 'utf8'));
-    await put({ ...ground, ext: '.png' }, 'textures');
-    w.ground = { ...(w.ground ?? {}), color: '#ffffff', color2: '#f2f2f2', outer: '#e8e8e8', outer2: '#dedede', pattern: { file: `assets/textures/${ground.id}.png`, size: 3 } };
+    // the pattern names the file put() wrote (look-<id>.png): naming <id>.png left a real game's ground white
+    const file = await put({ ...ground, ext: '.png' }, 'textures');
+    w.ground = { ...(w.ground ?? {}), color: '#ffffff', color2: '#f2f2f2', outer: '#e8e8e8', outer2: '#dedede', pattern: { file, size: 3 } };
     await writeFile(path.join(dir, 'config/world.json'), JSON.stringify(w, null, 1));
   }
 }
@@ -330,9 +331,14 @@ export async function options(spec, { game, out = path.join(game, '.look', 'opti
   const result = [];
   for (const r of readings(target)) {
     const ground = groundFor(art, r.target), soil = soilFor(art, r.target), dressing = await dressingFor(r.target);
+    // what the play happens on (the target's composition): its landmarks and bridges found in the level's own set
+    // dressing first, made the playfield by a world that composes (worlds/terrain/compose.mjs)
+    const pieces = await compositionPieces(r.target, { dressing: dressing.ids, packs });
+    if (pieces.missing.length) log(`look options${r.target.level?.id ? ` (${r.target.level.id})` : ''}: no library piece for the landmark${pieces.missing.length > 1 ? 's' : ''} ${pieces.missing.map(w => `"${w}"`).join(', ')} (the land makes it, or the art ladder)`);
+    const compose = composeOf(r.target, pieces);
     // the reading's place and camera (world.mjs): the third reading takes the runtime's next world when it is nearly as
     // close as the best
-    const planOf = rank => worldPlan(r.target, place, { loop: spec.loop, current: spec.world?.template, art: { ...(ground ? { ground } : {}), ...(soil ? { soil } : {}) }, dressing: dressing.ids, push: r.world?.push ?? 0, rank });
+    const planOf = rank => worldPlan(r.target, place, { loop: spec.loop, current: spec.world?.template, art: { ...(ground ? { ground } : {}), ...(soil ? { soil } : {}) }, dressing: dressing.ids, push: r.world?.push ?? 0, rank, compose });
     let plan = planOf(0);
     const next = plan.ranked?.[1];
     if (r.world?.next && next && plan.score && next.score >= 0.75 * plan.score) {

@@ -13,6 +13,7 @@ import { createRenderer, applyLook, adoptMaterials, material } from '/kit/look/l
 import { spawnCharacter } from '/kit/character/character.js';
 import { loadWorld, templateLayout } from '/kit/world/world.js';
 import { harmonizeModel, harmonizePicture } from '/kit/look/harmonize.js';
+import { leanToward } from '/kit/world/compose.mjs';
 
 const Q = new URLSearchParams(location.search);
 const SHOT = Q.get('shot') ?? 'world';
@@ -110,7 +111,7 @@ if (W.template === 'voxel') {
   const W0 = GAME.world, loader = new THREE.TextureLoader();
   const gameAssets = {
     ...assets,
-    has: id => (/^world\.terrain\.(top|soil|cliff)$/.test(id) ? !!W0.materials?.[id.split('.')[2]]?.file : /^prop\./.test(id) ? (W0.scenery?.props ?? []).includes(id.slice(5)) : assets.has(id)),
+    has: id => (/^world\.terrain\.(top|soil|cliff)$/.test(id) ? !!W0.materials?.[id.split('.')[2]]?.file : /^prop\./.test(id) ? [...(W0.scenery?.props ?? []), ...(W0.terrain?.compose?.landmarks ?? []), ...(W0.terrain?.compose?.bridges ?? [])].includes(id.slice(5)) : assets.has(id)),
     async texture(id) { const t = await loader.loadAsync(`/game/${W0.materials[id.split('.')[2]].file}`); t.colorSpace = THREE.SRGBColorSpace; t.wrapS = t.wrapT = THREE.RepeatWrapping; harmonizePicture(t, id, HARM); return t; },
     async model(id) { if (!id.startsWith('prop.')) return assets.model(id); const g = await loadGltf(`/game/assets/models/${id.slice(5)}.glb`, id); return g.scene.clone(true); },
     // the game's prop catalog: the scenery reads each prop's size (a set piece stands back from the seats) and collider
@@ -134,7 +135,9 @@ S.info.world = W.template;
 // ---- where things stand: the world's first spawn, facing the middle (a terrain world's flattest seat: its seats
 // stand on hills and slopes, and a sheet is drawn on level ground) ----
 let spawn = world.spawn?.(0) ?? new THREE.Vector3();
-if (world.terrain && world.spawns?.length) {
+// a composed level's seats are placed and turned for play (a partner and a landmark in view): its first seat, as is
+if (world.landmarks?.length && world.spawns?.length) S.info.composed = { seat: [spawn.x, spawn.y, spawn.z], yaw: spawn.yaw, landmarks: world.landmarks.map(l => l.id) };
+else if (world.terrain && world.spawns?.length) {
   const rough = p => { let m = 0; for (let a = 0; a < 8; a++) { const y = world.groundAt(p.x + Math.cos(a * 0.785) * 3, p.z + Math.sin(a * 0.785) * 3); m = Math.max(m, Math.abs(y - p.y)); } return m; };
   const best = world.spawns.reduce((a, b) => (rough(b) < rough(a) ? b : a));
   spawn = best.clone(); spawn.yaw = best.yaw;
@@ -205,8 +208,17 @@ if (SHOT === 'hero' || SHOT === 'world' || SHOT === 'hud') {
   const chars = [];
   for (const [i, id] of ids.entries()) chars.push(await spawnBody(id, i));
   const spots = SHOT === 'hero' ? [[0, 0]] : [[-1.1, 0.4], [0.9, 0.1], [-2.6, -0.8], [2.4, -0.9]];
+  // a composed level: the first player at its seat, the partner at the partner's seat, two friends between them (the
+  // action as the seats frame it, the landmark in view); a place over the sea or off a piece's edge falls back to the seat
+  const partner = S.info.composed && world.spawns[1] ? world.spawns[1] : null;
+  const composedAt = i => {
+    if (i === 0 || !partner) return stage.clone();
+    if (i === 1) return partner.clone();
+    const p = stage.clone().lerp(partner, i === 2 ? 0.3 : 0.62), y = groundAt(p.x, p.z);
+    return y == null || Math.abs(y - stage.y) > 3 ? P(stage, i === 2 ? -1.2 : 1.2, 1.2) : p;
+  };
   chars.forEach((c, i) => {
-    const p = P(stage, spots[i][0], spots[i][1]); p.y = groundAt(p.x, p.z);
+    const p = S.info.composed && SHOT !== 'hero' ? composedAt(i) : P(stage, spots[i][0], spots[i][1]); p.y = groundAt(p.x, p.z);
     c.object3d.position.copy(p); c.object3d.rotation.y = yaw + Math.PI + (SHOT === 'hero' ? 0.45 : [0.3, -0.35, 0.5, -0.5][i]);
     hold(c, SHOT === 'hero' ? 'idle' : ['emote_wave', 'idle', 'run', 'emote_cheer'][i] ?? 'idle', [0.6, 0.4, 0.3, 0.9][i] ?? 0.5);
   });
@@ -223,10 +235,13 @@ if (SHOT === 'hero' || SHOT === 'world' || SHOT === 'hud') {
       // behind the last of the group at its pivot height, pitched and pulled back as a player first sees the world
       const R0 = { third: { distance: 5.2, height: 1.7, pitchDeg: 16, fov: 60 }, orbit: { distance: 8, height: 1.45, pitchDeg: 26, fov: 55 } }[GAME.game.camera];
       const C = { ...R0, ...(GAME.game.controller?.camera?.[GAME.game.camera] ?? {}) };
-      const feet = P(stage, 0.4, -3.2); feet.y = groundAt(feet.x, feet.z);
+      // the camera follows the last of the group (a composed level: the first player, at its seat)
+      const feet = S.info.composed ? stage.clone() : P(stage, 0.4, -3.2); if (!S.info.composed) feet.y = groundAt(feet.x, feet.z);
       const pivot = feet.clone().add(new THREE.Vector3(0, C.height, 0)), pitch = C.pitchDeg * Math.PI / 180;
       const eye = pivot.clone().addScaledVector(fwd, -Math.cos(pitch) * C.distance).add(new THREE.Vector3(0, Math.sin(pitch) * C.distance, 0));
       lookAt(eye, pivot, C.fov);
+      // the rig leans toward a landmark in view, as it does in play (kit/controller/camera-rig.js)
+      if (world.landmarks?.length) { const p = leanToward(cam.position.toArray(), pivot.toArray(), world.landmarks, { fov: C.fov, aspect: cam.aspect }); cam.lookAt(...p); cam.updateProjectionMatrix(); }
       S.info.camera = { rig: GAME.game.camera, ...C };
     } else {
       // the world: the group in the foreground, the place behind them, the sky above

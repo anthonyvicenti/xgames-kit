@@ -1,0 +1,13 @@
+{
+  "base": "berry-isles",
+  "why": "The creator played the composed island levels, 2026-10-14: \"We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes\". Once the berries stood on reachable ground (stream reach) the slot they are drawn with still held the kit's stand-in crate (CC0, standin-bake): the thing the player is told to collect did not look like it, and every gate passed. The class: an objective, pickup or goal drawn by a stand-in. Here the pickup's prop slot holds the kit's stand-in crate (crate.glb, the kit's own CC0 file); gate F must fail it on measure 14 and name the slot.",
+  "evidence": "builder/gates/evidence/2026-10-14-objective-art.json",
+  "files": {
+    "assets/models/berry.glb": "crate.glb"
+  },
+  "mustFail": [
+    "F"
+  ],
+  "measure": 14,
+  "detail": "the objective \"berry\" \\(prop\\.berry, drawn by pickup\\.prop.*is the kit stand-in crate\\.glb"
+}

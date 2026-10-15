@@ -65,6 +65,7 @@ import { createFair } from './fair.js';
 import * as refusals from './refusals.js';
 import { seedRules, readOnlyView, refusedPress, watchKit, setupFailed, frameFailed } from './guard.js';
 import { createEventLog } from './events.js';
+import { createPlay } from './play.js';
 import { stepAsked, createStepper } from './step.js';
 import { net } from '../../mp/net.js';
 import { createHost, BTN, KIND, ENTITY_FLAG, BUILD_SHA256, VERSION as FORGE_VERSION } from '../../forge/host.js';
@@ -237,6 +238,7 @@ export async function boot({ rules = {} } = {}) {
       /** play(soundId, {at: {x, y, z}, gainDb, pitch, optional}): at → quieter with distance from the eyes. */
       play(id, opts = {}) {
         const o = { ...opts };
+        if (o.at && ![o.at.x, o.at.y ?? 0, o.at.z].every(Number.isFinite)) delete o.at;   // a place not known yet plays unplaced
         if (o.at) { const e = forge.eye(); const d = Math.hypot(o.at.x - e.x, (o.at.y ?? e.y) - e.y, o.at.z - e.z); o.gainDb = (o.gainDb ?? 0) - Math.min(18, Math.max(0, (d - 4) * 0.6)); delete o.at; }
         if (!audio.has(id)) { if (!o.optional) refusals.refuse('sound-unlisted', `ctx.audio.play("${id}"): no sound with that id in assets.json → sounds → sounds (list it there, or pass { optional: true })`, id); return null; }
         return audio.play(id, o);
@@ -325,6 +327,8 @@ export async function boot({ rules = {} } = {}) {
     const forgeEvents = forgePart(forge, { playerOf: n => (n > 0 ? players.api.byNid(n) : null) });
     const kitLog = createEventLog(ctx, { list: [forgeEvents], modules: new Map([['forge', { manifest: forgeEvents.manifest }]]) });
     ctx.events = Object.freeze({ count: kitLog.count });
+    // the play feed (gf/three/core/play.js; builder/play): the same numbers as every runtime's, from the kit's event log
+    const playFeed = createPlay(ctx, { log: kitLog, list: [forgeEvents, ...list], modules: new Map([['forge', { manifest: forgeEvents.manifest }]]), rows: () => session.round.rows });
     await mech.setup(ctx);
     try { await rules.setup?.(ctx); } catch (e) { console.error(e); setupFailed('rules', e); throw e; }
 
@@ -471,6 +475,7 @@ export async function boot({ rules = {} } = {}) {
       sounds: () => JSON.parse(JSON.stringify({ plays: audio.stats?.plays ?? {}, dropped: audio.stats?.dropped ?? {} })),
       panels: () => JSON.parse(JSON.stringify(ui.panels?.observe?.() ?? { open: [], covered: false, opened: 0, closed: 0, refused: 0, last: null })),
       events: o => JSON.parse(JSON.stringify(kitLog.read(o ?? {}))),     // the event log (gf/three/core/events.js; gates C and D)
+      play: () => JSON.parse(JSON.stringify(playFeed.read())),             // the play feed (gf/three/core/play.js; gate D's play leg)
       menu: () => JSON.parse(JSON.stringify(menu.observe())),
       hud: () => JSON.parse(JSON.stringify({ phase: session.round.phase, covered: ui.covered, ...hud.observe() })),
       looks: () => JSON.parse(JSON.stringify({ me: me.id, local: ctx.looks?.observe?.() ?? null, slots: assets.playerLooks(),

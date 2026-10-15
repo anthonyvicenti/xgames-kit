@@ -33,6 +33,7 @@ import { listenForLoadout, pageLoadout, onPageLoadout } from '../net/looks.js';
 import { listenForSlots } from './live-slots.js';
 import { createBrain, createBots, defaultBot } from '../bots/bots.js';
 import { createFair } from './fair.js';
+import { createJuice } from './juice.js';
 import { rayCylinder, BODY_RADIUS } from './aim.js';
 import { sight } from './sight.js';
 import * as refusals from './refusals.js';
@@ -44,6 +45,7 @@ import { RIG_DEFAULTS } from '../controller/camera-rig.js';
 import { AIM_HEIGHT } from './aim.js';
 import { stepAsked, createStepper, fixedCameraPlace } from './step.js';
 import { createEventLog } from './events.js';
+import { createPlay } from './play.js';
 
 export const VERSION = KIT.version;
 const H = 1 / 60;
@@ -103,6 +105,8 @@ export async function boot({ rules = {} } = {}) {
     ctx.config = game; ctx.assets = assets;
     // fair play (CONTRACT §6c): kit-owned and on by default; mechanics, players and bots ask it before a hit counts
     ctx.fair = createFair(ctx);
+    // juice (shake, hitstop, slow motion, a camera that follows a shot): kit-owned, within the player's comfort settings
+    ctx.juice = createJuice(ctx, game.juice);
     ctx.bots = createBots(ctx);
     document.title = game.text?.title ?? game.title ?? document.title;
     await gf.applyCss();
@@ -173,6 +177,9 @@ export async function boot({ rules = {} } = {}) {
       /** play(soundId, {at: {x, y, z}, gainDb, pitch, optional}): at → panned and quieter with distance from the camera. */
       play(id, opts = {}) {
         const o = { ...opts };
+        // a place not known yet (a coordinate undefined or NaN) plays unplaced: a non-finite gain or pan throws inside
+        // the audio graph and stops the part that asked (T8 run 1: aim.update on every bot's shot)
+        if (o.at && ![o.at.x, o.at.y ?? 0, o.at.z].every(Number.isFinite)) delete o.at;
         if (o.at) {
           v1.set(o.at.x, o.at.y ?? 0, o.at.z).applyMatrix4(camera.matrixWorldInverse);
           // an orthographic camera hangs far from the plane: how far a sound is, is its distance across the screen
@@ -274,6 +281,12 @@ export async function boot({ rules = {} } = {}) {
     // the event log (kit/core/events.js; verify gates C and D): every mechanic event, score, press and sound, read-only
     const eventLog = createEventLog(ctx, { list, modules: mods.mechanics });
     ctx.events = Object.freeze({ count: eventLog.count });
+    // the play feed (kit/core/play.js; builder/play): objectives and whether they can be reached, gameplay events by kind
+    // and time, players on each other, idle time, lead changes, per round (a game's own: ctx.events.count)
+    // the game's own objectives (rules.objectives(ctx), for what the build wrote itself: a crate, a goal of its own) count as
+    // a part's (the play feed and gate D's reach leg read them beside the mechanics')
+    const objParts = typeof rules.objectives === 'function' ? [...list, { id: 'rules', objectives: () => rules.objectives(ctx) }] : list;
+    const playFeed = createPlay(ctx, { log: eventLog, list: objParts, modules: mods.mechanics, rows: () => session.round.rows, down: { from: (x, y, z) => new THREE.Vector3(x, y, z), dir: new THREE.Vector3(0, -1, 0) } });
     try { await rules.setup?.(ctx); } catch (e) { console.error(e); setupFailed('rules', e); throw e; }
     // the studio page changes a value slot while the game runs (dev only: kit/core/live-slots.js)
     if (!backdrop) listenForSlots(ctx, { win: window, net });
@@ -352,8 +365,11 @@ export async function boot({ rules = {} } = {}) {
       time: { now: r2(ctx.time.now), round: r2(ctx.time.round), left: r2(ctx.time.left) },
       me: me.id, host: ctx.host, live: session.live, backdrop, view: menu.view ?? ui.view, paused: menu.paused && !session.live,
       players: ctx.players.list().map(p => ({ id: p.id, name: p.name, score: p.score, alive: p.alive, bot: p.isBot, local: p.local, x: r2(p.position.x), y: r2(p.position.y), z: r2(p.position.z), anim: p.anim,
-        color: p.color, ring: ringColor(p), ...ctx.fair.observe(p), ...(m => (m ? { mark: { x: r2(m.x), z: r2(m.z) } } : {}))(ctx.presenceOf(p)) })),
+        color: p.color, ring: ringColor(p), ...ctx.fair.observe(p), ...(m => (m ? { mark: { x: r2(m.x), z: r2(m.z) } } : {}))(ctx.presenceOf(p)),
+        // a bot's intent on the host (QA, the play judge): what it does and where it is headed
+        ...(p.isBot && p.bot && ctx.host ? { intent: { mode: p.bot.mode, ...(p.bot.target?.x != null ? { to: [r2(p.bot.target.x), r2(p.bot.target.y ?? 0), r2(p.bot.target.z)] } : {}) } } : {}) })),
       fair: ctx.fair.summary(),
+      juice: ctx.juice.observe(),
       refusals: refusals.list(),
       winners: session.round.winners, reason: session.round.reason, results: session.round.rows,
       shared: ctx.shared.snapshot(),
@@ -384,7 +400,21 @@ export async function boot({ rules = {} } = {}) {
       // the listed sounds are heard, not only something loud enough); dropped: plays the kit did not start, by reason
       sounds: () => JSON.parse(JSON.stringify({ plays: audio.stats?.plays ?? {}, dropped: audio.stats?.dropped ?? {} })),
       panels: () => JSON.parse(JSON.stringify(ui.panels.observe())),      // the shared panels (CONTRACT §6j)
+      // what the play is for and whether it can be had (gate D, measure 6): every objective the mechanics put in play
+      // (pickups, zones, goals, enemies to reach), each held against every seat by the world's walk grid
+      // (worlds/placement.js), with where it is and why it cannot be reached
+      objectives: () => JSON.parse(JSON.stringify(objectivesReport())),
+      // the world's areas the seats cannot get to and why (gate D, measure 6's reach leg: every area worth going to is
+      // joined to the seats' ground, or kept apart by the game with a reason)
+      regions: () => JSON.parse(JSON.stringify(regionsReport())),
+      // the way there (worlds/placement.js world.route): the next point from the local player toward (x, y, z), with
+      // jump: true when the next step is a jump (a scripted player and the play-tester walk by it); null when straight on
+      // or there is no way; from: another player's id (a bot's way, for QA)
+      // can a body get from `from` (a point [x, y, z] or a seat's index) to `to` ([x, y, z])? → {ok, why, at, ground, water}
+      reach: (from, to) => { const P = q => (Array.isArray(q) ? { x: q[0], y: q[1], z: q[2] } : q); const r = ctx.world.reach?.(typeof from === 'number' ? from : P(from), P(to)); return r ? JSON.parse(JSON.stringify(r)) : null; },
+      routeTo: (x, y, z, from = null) => { const who = from ? ctx.players.get(from) : me; const r = who && ctx.world.route?.(who.position, { x, y: y ?? undefined, z }); return r ? JSON.parse(JSON.stringify(r)) : null; },
       events: o => JSON.parse(JSON.stringify(eventLog.read(o ?? {}))),     // the event log (kit/core/events.js; gates C and D)
+      play: () => JSON.parse(JSON.stringify(playFeed.read())),             // the play feed (kit/core/play.js; gate D's play leg)
       menu: () => JSON.parse(JSON.stringify(menu.observe())),      // verify checks 20 and 22 (CONTRACT §6g)
       hud: () => JSON.parse(JSON.stringify({ phase: session.round.phase, covered: ui.covered, ...hud.observe() })),   // verify check 21
       looks: () => JSON.parse(JSON.stringify(looksReport())),
@@ -402,6 +432,8 @@ export async function boot({ rules = {} } = {}) {
       // and the one the screen gets (they differ only when the frame-rate guard lowered it, and `slow` says why)
       screen: () => { const c = renderer.domElement; return JSON.parse(JSON.stringify({ dpr: globalThis.devicePixelRatio || 1, css: [innerWidth, innerHeight], buffer: [c.width, c.height],
         ratio: res.ratio, target: res.target, budget: res.budget, quality: quality.name, slow: governor?.last ?? null, guard: !!governor })); },
+      // QA: what a mechanic says of itself on this copy (its observe(): the knockback's flights, the aim's shells), or null
+      mechanic: mid => { const m = list.find(x => x.id === mid && !x.standin); try { return m?.observe ? JSON.parse(JSON.stringify(m.observe())) : null; } catch { return null; } },
       // worlds (CONTRACT §9; verify's world checks): the cells, the build tools' state, and where a point is on screen
       ...(ctx.world.voxel ? {
         voxelAt: (x, y, z) => ctx.world.voxel.grid.get(x, y, z),
@@ -419,11 +451,53 @@ export async function boot({ rules = {} } = {}) {
         terrainAt: (x, z) => ctx.world.terrain.heightAt(x, z),
         terrain: () => JSON.parse(JSON.stringify({ ...ctx.world.terrain.stats(), carve: list.find(m => m.id === 'carve')?.observe?.() ?? null, edits: ctx.world.terrain.edits.length, islands: ctx.world.terrain.info.islands, sea: ctx.world.seaLevel })),
         terrainHash: () => { const d = new Uint32Array(ctx.world.terrain.field.d.buffer); let h = 2166136261; for (let i = 0; i < d.length; i++) h = Math.imul(h ^ d[i], 16777619); return (h >>> 0).toString(16); },
+        // a composed level's landmarks (worlds/terrain/compose.mjs) and how much of each blasts have taken (samples)
+        landmarks: () => JSON.parse(JSON.stringify({ list: ctx.world.landmarks ?? [], lost: ctx.world.landmarkLoss?.() ?? null })),
         project: (x, y, z) => screenOf({ x, y, z }),
       } : {}),
       // stepped time (QA only, kit/core/step.js): present only when the address carries ?gf-step=1 and the round is not live
       ...(stepped ? { stepped: true, step: (ms, opts) => JSON.parse(JSON.stringify({ ...stepper.step(ms, opts), now: ctx.time.now, round: ctx.time.round, phase: session.round.phase })) } : {}),
     });
+
+    // ---- the objectives (worlds/placement.js; gate D's reach leg): each mechanic's objectives(), against every seat ----
+    function objectivesReport() {
+      const W = ctx.world, items = [], parts = [];
+      for (const m of objParts) {
+        if (m.standin || typeof m.objectives !== 'function') continue;
+        let o = []; try { o = m.objectives() ?? []; } catch (e) { parts.push({ id: m.id, error: e.message }); continue; }
+        items.push(...o.map(x => ({ ...x, part: m.id })));
+        parts.push({ id: m.id, count: o.length, asked: o.asked ?? null, shortfall: o.shortfall ?? null });
+      }
+      if (typeof W?.walk?.audit !== 'function') return { placement: false, seats: [], parts, objectives: items.map(o => ({ ...o, ok: null, why: 'the world has no placement' })) };
+      return { placement: true, walk: W.walk.stats(), split: !!W.walk.split?.(), seats: W.walk.seats(), parts, objectives: W.walk.audit(items) };
+    }
+
+    // ---- the world's areas (worlds/placement.js walk.regions; gate D's reach leg): the ground the seats cannot get to,
+    // what stands on it (landmarks, set dressing, objectives), why there is no way there, the connectors the world made
+    // (worlds/connect.mjs) and the regions the game keeps apart on purpose (config/world.json reach.apart, with a reason)
+    function regionsReport() {
+      const W = ctx.world;
+      if (typeof W?.walk?.regions !== 'function') return { placement: false };
+      const things = [];
+      for (const L of W.landmarks ?? []) {
+        const b = L.box, foot = Math.hypot(b.max[0] - b.min[0], b.max[2] - b.min[2]) / 2;
+        if (L.role === 'bridge') things.push({ kind: 'bridge', id: L.id, x: (b.min[0] + b.max[0]) / 2, y: b.min[1], z: (b.min[2] + b.max[2]) / 2, box: [b.min[0], b.min[1], b.min[2], b.max[0], b.max[1], b.max[2]] });
+        else things.push({ kind: 'landmark', id: L.id, x: (b.min[0] + b.max[0]) / 2, y: b.min[1] + 0.3, z: (b.min[2] + b.max[2]) / 2, r: foot + 1.5 });
+      }
+      for (const [id, list] of W.props ?? []) for (const p of list ?? []) {
+        if (p.far) continue;                  // a backdrop island's dressing: out at sea, never on the walk grid
+        const at = Array.isArray(p.at) ? p.at : [p.at?.x, p.at?.y, p.at?.z];
+        if (at.every(Number.isFinite)) things.push({ kind: 'prop', id, x: at[0], y: at[1] + 0.05, z: at[2], r: 1.2 });
+      }
+      // the seats: one standing where nothing leads back (a pit, a pad cut below a step) is a trap worth a way out
+      for (const s of W.walk.seats()) things.push({ kind: 'seat', id: s.seat + 1, x: s.at[0], y: s.at[1], z: s.at[2], r: 1 });
+      // an objective out of reach (the objectives' own audit says which): the region it stands on is worth joining
+      for (const o of objectivesReport().objectives ?? []) if (o.ok === false) things.push({ kind: 'objective', id: o.id, x: o.x, y: o.y, z: o.z, r: o.radius ?? 1 });
+      const R = W.walk.regions({ things, backdrop: W.connectors?.backdrop ?? [] });
+      // a part that lets players make their own way (building blocks, a grapple): the walk grid cannot see it
+      const ways = list.filter(m => !m.standin && typeof m.makesWay === 'string').map(m => ({ part: m.id, how: m.makesWay }));
+      return { placement: true, ...R, ways, numbers: W.walk.numbers ?? null, split: !!W.walk.split?.(), seatsReach: W.walk.seats(), connectors: W.connectors?.list ?? [], apart: W.connectors?.apart ?? [], kept: W.connectors?.kept ?? [], joined: W.joined ?? null };
+    }
 
     // ---- the looks observation (CONTRACT §6e; verify check 5's loadout leg): what this copy draws each player in ----
     function looksReport() {
@@ -484,7 +558,8 @@ export async function boot({ rules = {} } = {}) {
     // one fixed step, and says whether it is drawn (the frames inside a step are not: they cost no drawing)
     const frame = (t, fixed = null) => {
       const raw = fixed ? fixed.dt : last === null ? 0 : Math.max(0, (t - last) / 1000);
-      const dt = Math.min(0.1, raw); if (!fixed) last = t;
+      // a hitstop or a slow motion (ctx.juice) scales the game's time; a stepped QA frame keeps its own
+      const dt = Math.min(0.1, raw) * (fixed ? 1 : ctx.juice.timeScale(raw)); if (!fixed) last = t;
       const drawn = !fixed || fixed.draw;
       // the frame-rate guard: sampled while playing in view; it lowers the ratio, never under one CSS pixel
       if (governor) {
@@ -544,6 +619,9 @@ export async function boot({ rules = {} } = {}) {
       if (session.watching) { watchCam.was = true; watchCamera(dt); }
       const followed = session.watching && watchCam.target ? ctx.players.get(watchCam.target) : null;
       look.update?.(dt, followed?.position ?? me.position);
+      // the juice's camera (a shake, the follow camera) goes over where the rig put it, before anything reads the camera
+      // for the screen (nameplates, the drawing)
+      try { ctx.juice.frame(raw); } catch (e) { frameFailed('the juice (kit/core/juice.js)', e); }
       // nameplates over everyone else
       const w = innerWidth, h = innerHeight, plates = [];
       for (const p of ctx.players.list()) {

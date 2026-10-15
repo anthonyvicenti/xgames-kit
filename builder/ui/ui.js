@@ -22,6 +22,9 @@
 //   ui.pop(text, x, y, color?)                  a short word that rises and fades at a screen point ("+1" for a kill)
 //   meter handle .flash()                       the meter pulses once (the local player was hurt)
 //   ui.goal(text | null)                        the goal line under the clock (null: the game's own, text.goal)
+//   ui.dial | teams | turnTimer | weapons | announce | widgets   widget variants in the HUD's tokens (./widgets.js): a
+//                                               radial dial (aim, power, wind, compass, a number badge), team health
+//                                               cards, a turn clock badge, a weapon grid or wheel, a big inked announcement
 //   ui.panels.choice | shop | inventory | dialogue | input (opts) → handle   the shared panels (./panels/panels.js, CONTRACT §6j):
 //                                               cards to pick, a shop, a hotbar or item grid, a dialogue, a text field. They show
 //                                               and return a choice; they never pause the round and hold no game logic
@@ -36,6 +39,7 @@
 //                                               kit's own word (a wave starting), which never replaces a banner showing
 import { applyTheme, themeOf } from './theme.js';
 import { createPanels } from './panels/panels.js';
+import { createWidgets } from './widgets.js';
 
 const CSS = `
 #gf-ui{position:fixed;inset:0;pointer-events:none;font:600 15px/1.25 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--gf-text,#fff);z-index:5;user-select:none;-webkit-user-select:none}
@@ -237,7 +241,7 @@ export function createUI(ctx, { text = {}, controls = {}, theme = null } = {}) {
         seen.add(p.id);
         let e = plateMap.get(p.id);
         if (!e) { e = el('div', 'gf-plate'); const i = el('i'); e.append(i, el('span')); plates.append(e); plateMap.set(p.id, e); e._k = ''; }
-        const k = `${p.text}|${p.color}`; if (e._k !== k) { e._k = k; e.firstChild.style.background = p.color; e.lastChild.textContent = p.text; }
+        const k = `${p.text}|${p.color}`; if (e._k !== k) { e._k = k; e.firstChild.style.background = p.color; e.style.setProperty('--c', p.color); e.lastChild.textContent = p.text; }
         e.style.display = p.visible ? '' : 'none';
         if (p.visible) e.style.transform = `translate(${Math.round(p.x)}px, ${Math.round(p.y)}px) translate(-50%, -100%)`;
       }
@@ -249,6 +253,7 @@ export function createUI(ctx, { text = {}, controls = {}, theme = null } = {}) {
     },
   };
   api.panels = createPanels(ctx, api);
+  Object.assign(api, createWidgets(ctx, api));
   return api;
 }
 

@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "cherries",
+ "pack": "kenney-food-kit",
+ "file": "cherries.glb",
+ "sha256": "ae528864f0f9ba18a906492ed326a9cb1cf8d70b4e9e18586659002666128c6b",
+ "bytes": 7648,
+ "preview": "previews/cherries.png",
+ "from": "kenney:food-kit/cherries; its colour texture packed in, baked to metres (largest side 0.32 m), base at y=0 and centred (builder/tools/meshy-prop.mjs --fit): cherries.glb; kept as given (optimizing made it no smaller)",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a pair of red cherries on one stem with a leaf",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "fruit",
+  "cherry",
+  "cherries"
+ ],
+ "use": {
+  "size": [
+   0.165,
+   0.32,
+   0.304
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 134,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-15",
+   "report": {
+    "facts": {
+     "triangles": 134,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 7648,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-15",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 7,
+    "hues": [
+     "#dd5b4b",
+     "#d8584b",
+     "#de5b47",
+     "#d5564d",
+     "#4cb781",
+     "#d4554e",
+     "#e15c49",
+     "#e38a60"
+    ],
+    "saturation": 0.621,
+    "value": 0.571,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.687
+     },
+     {
+      "hue": "green",
+      "share": 0.159
+     },
+     {
+      "hue": "orange",
+      "share": 0.154
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 26.57,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "modified": "kept as given (optimizing made it no smaller)",
+  "retrieved": "2026-10-15"
+ }
+}

@@ -32,7 +32,7 @@ the measure, the rule and the fix (`tools/lib/homes.json`).
 | **A. Integrity** | Is the kit untouched (hashes from the kit release, never a list inside the game), is every visible thing a slot, does every file a slot names exist and pass its own validator (a body passes the rig and body judge when it is put in the slot)? | 1, 2, 4, 18 (listed), 19 |
 | **B. Health** | Does it boot to play with no errors or kit refusals, at an acceptable frame cost? | 3 (and every runtime refusal) |
 | **C. Cause → effect** | Does every input, and every event the kit logs (a hit, a kill, a pickup, a spawn, a goal change, a sound), produce something the player it concerns can see or hear on their own screen, soon? Does control come back within the spec's `fair.downSeconds`? | 10, 13, 15, 16 (the visible half), 18 (heard), 21 |
-| **D. The loop closes** | Can a round be won or lost, does it end and replay, and does every score change come from a counted event in the kit's log (never a number that only ticks)? | 6, 12 |
+| **D. The loop closes** | Can a round be won or lost (its objective reachable and taken in real play, something happening in it), does it end and replay, and does every score change come from a counted event in the kit's log (never a number that only ticks)? | 6 (with its play leg), 12 |
 | **E. Shared truth** | Does every player see every other player where they really are, and does each player's own value (score, colour, loadout, name) belong to that player? | 5, 25 |
 | **F. Matches the spec** | Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the look its target holds it to, the game's own tests? | 11 + 17 (one world lint), 14, 16 (the threshold, read from the spec), 23 (since 2026-10-14), 35 |
 | *Judges (advisory)* | The black-box play-tester. It gives repair rounds and findings, never a rule. | play-test |
@@ -53,7 +53,7 @@ sit inside the gate whose question they answer.
 | **C** | 10, 13, 15, 16, 38 | + 7, 21 | 13, 30 (+ 7, 21) | 10, 13, 15, 16 (+ 7, 21) | 13, 15 (+ 21) |
 | **D** | 6, 12 | | 26 | 6, 12 | 6 |
 | **E** | 5, 25 | + 34 | 5, 25, 27, 28, 29 (+ 34) | 5, 25 (+ 34) | 5, 25 (+ 34) |
-| **F** | 11, 14, 17, 23, 35, 39 | | 11, 14 | 11, 14, 17, 23 | 14, 23, 37 |
+| **F** | 11, 14, 17, 23, 35, 39 | | 11, 14, 23 | 11, 14, 17, 23 | 14, 23, 37 |
 | *J* | play-test (advisory) | | | | |
 
 A build's round game requires 20 measures (it was 22 checks); a release 28 (it was 27). Where the build differs from the
@@ -112,6 +112,15 @@ design above:
   it). npm test's 26 to 121 load failures were the 3D tools' packages installing in several processes at once
   (`builder/lib/char-deps.mjs` now installs once, under a lock); tests that waited a few seconds for a state wait a
   minute. Runs: `builder/gates/evidence/2026-10-13-load.json`.
+- **Gate F widened for "the thing to collect does not look like it"** (2026-10-14, the creator on the composed levels: "We
+  were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes"). After the
+  berries stood on reachable ground (stream reach) their slot still held the kit's stand-in crate. Measure 14 now holds
+  every objective's prop (a mechanic manifest's `objectives` names the params that draw one; a goal prop is one too) to
+  what it is: never a stand-in, never a library model whose id and tags never name it (`builder/art/objectives.mjs`
+  `whatModel`, `resolve.mjs` `means` with `library/words.json`'s families). No numbered check was added. The art step
+  that fills them: `create` (the library by meaning), the loop before the first build round and `gamesfun art objectives
+  --yes` (then a maker in the look's style from its anchor, on the person's own key). Regressions `objective-standin`,
+  `objective-wrong-model` (F) and the control `objective-in-library`.
 - **Asked by the godot-phone stream (2026-10-13).** Vista runs 34 per release (Go live and voice through gf/mp); its
   nameplate step judges the friends in view, and says when a first-person streamer has none in view. Forge's 15 walks
   to a pickup on a recorded page of its own (`tools/lib/forge-pickup-check.mjs`), so a forge game with pickups is not
@@ -151,10 +160,63 @@ design above:
   Regressions `look-greyed` (F · 23: the colour grade turned to greys) and the control `look-yard-holds`.
   **A verdict that does not depend on the judge's luck** (2026-10-14): the vision judge varies from call to call (on an
   unchanged game the whole score moved 47–58 across the bar). Measure 23 averages three judge passes and puts an
-  interval round the score (two standard errors, never narrower than the noise measured on unchanged games,
+  interval round the score (three standard errors, never narrower than the noise measured on unchanged games,
   `builder/look/noise.mjs`); it fails only when the whole interval is below the bar, and a game whose interval holds
   the bar is "unsure": advisory, never a fail. The same game's verdict agreed in 10 of 10 verify runs, passing and
-  failing (`builder/look/evidence/stability-2026-10-14.json`).
+  failing (`builder/look/evidence/stability-2026-10-14.json`). A world game is held to its look target too (measure 23
+  in the world list since 2026-10-14; before, a voxel world with a target was never judged on its look), and a frame of
+  ours that shows nothing (the haze, a white-out) or is called daylight with hardly any of it lit is left out of the
+  pairing rather than held to daylight references.
+
+- **Gate D widened for "the game is not a game"** (the gameplay layer, 2026-10-14; the creator on the look test: "The
+  biggest thing these all miss is the actual gameplay itself ... We were supposed to collect berries, but there were no
+  berries anywhere. I think in the ocean I saw some boxes but those are impossible to get"). Measure 6 gained a play leg
+  (`builder/tools/lib/play-check.mjs` → the play judge, `builder/play/judge.mjs`, [builder/play/JUDGE.md](play/JUDGE.md)):
+  real rounds with bots and a scripted player at two and four players and a friends round, the play feed every runtime
+  fills (`window.__game.play()`, `kit/core/play.js`), held to the locked spec's `play.target`, and a vision judge on clips
+  of that play. **Why D and not a seventh gate:** D asks whether a round can be won or lost and closes; a round whose
+  objective no player can reach cannot be won, and a round where nothing happens does not close as a game, so this is
+  D's question asked of real play. No number was added: 6 keeps its own. It fails on a **hard** finding whatever the
+  target (most objectives out of a player's reach, or none taken; nothing meaningful for 30 s in most rounds someone
+  played), and, with a play target, when the whole score interval is below the bar (50); an interval holding the bar is
+  unsure (advisory); with no target the score is advisory. A failed leg is area `play`: the loop's repair brief carries
+  the judge's findings, and a repeat goes to a game designer's round on the stronger model. Regressions
+  `objective-out-of-reach` and `idle-round` (D · 6) with the control `critter-lob-plays`. Godot has no play feed yet
+  (said as "not yet for godot", never passed silently); worlds have no measure 6.
+- **Gate D holds every objective to every seat** (its reach leg, beside the play leg above; both read reach from the
+  same walk grid: `kit/core/play.js` asks `world.walk.audit`) (the gameplay layer, 2026-10-14; the creator, on the composed island
+  levels: "We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some
+  boxes but those are impossible to get"). The pickup part put its spots at y = 0, sea level on island terrain, and every
+  gate passed. **Why D:** D asks whether a round can be won; a round whose objectives nobody can reach cannot be, so
+  measure 6 (a round reaches results and replays) was widened, no number added. On the solo page it reads
+  `window.__game.objectives()` (each part's `objectives()`: pickups, carry items, stations, race gates, enemies and the
+  target to defend, loot, the boss, the portal; audited against every seat by the world's walk grid,
+  `worlds/placement.js`) at the start of play and mid-round, and fails on any objective a seat cannot reach, naming it,
+  where it is and why (in water, under the ground, walled off, floating), on a part that put fewer in play than asked,
+  and on a seat with no ground (`builder/tools/lib/reach-check.mjs`). The class is fixed at its root too: every part
+  that places things uses `world.place` and the world's own ground. Regressions `pickups-at-sea-level` and
+  `pickups-walled-off` (D · 6), with the control `pickups-on-reachable-ground`. Forge, vista and godot do not report
+  objectives yet (forge's pickups place on the same grid; its boot has no `objectives()`).
+- **Gate D holds every area worth going to to the seats** (the reach leg widened, 2026-10-14; the creator, after the
+  berry fix: "Sunny Castle is good enough. But still some flags we talked about before, like making all area
+  reachable"). The composed levels showed islands, a gatehouse on a hill and a mesa a player sees and cannot get to;
+  Sunny Castle's third island had no bridge, and its two bridged islands were traps (a player who dropped off the
+  castle's plateau to walk to them could never climb back). **Why D:** the objectives' reach did not see it (the berries
+  were on reachable ground), and a level whose places cannot be got to (or got back from) is a loop that cannot close for
+  whoever wanders there, so the same leg of measure 6 reads `window.__game.regions()` at the start of play: the walk
+  grid's regions the seats cannot get to and its traps (ground the seats drop into with no way back), each with what
+  stands on it (landmarks, objectives, set dressing, a seat) and the nearest way across (`worlds/walk.mjs`). It fails on
+  every region worth going to (something stands on it, or room to play: 24 m² with 6 m² of it clear of its edges) that
+  is neither reached nor kept apart by the game with a reason (`config/world.json` → `reach.apart`, spec `world.reach`),
+  naming where it is, what is there and why (water, a cliff, a wall, a drop, a trap), on seats whose ground does not
+  join unless kept apart, and on backdrop islands less than 30 m of water out (they read as places to go). A part that
+  lets players make their own way (the build mechanic's `makesWay`) is read as one. Caves the walk grid reads from the
+  colliders as traps are reported, not failed (it sees each collider once down a column; the generator closes the caves it
+  sees in the ground's own field, and a terrain world closes the rest it reads at play). The class is fixed at its root:
+  `worlds/connect.mjs` joins every such region with the cheapest connector that fits, in the terrain's own ground at
+  generation (shallows, ramps cut into cliffs or along them, the level's bridge model or a land bridge) and with launch
+  pads on any world at play (`worlds/pads.js`); backdrop islands stand 30 m of water out. Regressions
+  `island-no-connector` and `ruin-on-cliff` (D · 6), with the control `areas-joined`.
 
 ## Rules that stay (prompt rules: at most five)
 

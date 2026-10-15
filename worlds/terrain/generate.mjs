@@ -12,6 +12,9 @@
 //   cliffs    one shore of land along a side of the box (`cliffs.coast`) falling to the sea in steps (`cliffs.terraces`)
 import { TerrainField, BAND } from './field.mjs';
 import { perlin, fbm2, mulberry32 } from '../voxel/noise.mjs';
+import { composeTerrain } from './compose.mjs';
+import { connectTerrain } from './connect.mjs';
+import { reachConfig } from '../connect.mjs';
 
 export const GENERATOR = 1;
 export const DEFAULTS = {
@@ -30,6 +33,10 @@ export const DEFAULTS = {
   // `count` flat discs `radius` m across their middle on open ground, at least `clear` m from every seat pad's middle and
   // apart from each other. Off (count 0) by default, so a world without them is the same ground it always was.
   sites: { count: 0, radius: 4.5, blend: 3, slope: 0.45, clear: 10 },
+  // the level's composition (looks wave 4: worlds/terrain/compose.mjs): landmarks and bridges made ground, the seats in
+  // pairs round them. Null by default (and with no pieces' shapes given), so a world without it is the same ground it
+  // always was. {landmarks: [prop id], bridges: [prop id], playOn, share, verticality, bridgeCount, camera, seats}
+  compose: null,
 };
 
 const clamp = (v, a, b) => (v < a ? a : v > b ? b : v);
@@ -105,8 +112,11 @@ function heightModel(P) {
 /**
  * Fill a field from params. → { field, params, info: { islands, sea: 0, top: Float32Array (the ground's top per sample
  * column before any edit: for the soil's depth), seconds } }
+ * opts.pieces: {id: {tris}} the set pieces' shapes (their models' triangles) for params.compose; with a composition and
+ * its pieces, info also has landmarks, own (the owner mask: which samples are a piece's), compose (the composer's
+ * report), and pads are the composed seats ({x, y, z, yaw}, in pairs).
  */
-export function generateTerrain(params = {}) {
+export function generateTerrain(params = {}, { pieces = null, numbers = {}, seats = null, players = 0, reach = null } = {}) {
   const t0 = typeof performance !== 'undefined' ? performance.now() : 0;
   const P = paramsOf(params);
   const h = P.cell, [sx, sy, sz] = P.size;
@@ -145,22 +155,48 @@ export function generateTerrain(params = {}) {
   field.sealEdges();
   // a lump the noise left in the air (or under the sea) touching no other ground: gone, so nothing floats
   for (const a of floatingOf(field).list) field.d[a] = Math.max(field.d[a], Math.fround(h * 0.5));
+  // a composed level (its pieces' shapes given): the landmarks and bridges made ground, the seats in pairs round them
+  const composed = P.compose && pieces ? (() => {
+    const own = new Uint8Array(d.length);
+    const c = composeTerrain(field, P, M.islands, pieces, { own, levelDisc });
+    // the placed pieces with their triangles (the connectors add bridges of the level's model to them)
+    c.landmarksFull = c.landmarks.map(m => ({ ...m, tris: c.tris.get(m.owner) }));
+    // a chasm or a plaza can leave a lump of land touching nothing: gone, as at generation (a piece is left as made)
+    for (const a of floatingOf(field).list) if (!own[a]) field.d[a] = Math.max(field.d[a], Math.fround(h * 0.5));
+    return { ...c, own };
+  })() : null;
   // level pads for the seats: a flat terrace cut (or filled) into the land at each, so a body and its camera stand level
-  const pads = P.pads?.count > 0 ? padsOn(field, P) : [];
+  const pads = composed ? composed.seats : P.pads?.count > 0 ? padsOn(field, P) : [];
   // level sites for the look's set pieces, away from the seats
-  const sites = P.sites?.count > 0 ? sitesOn(field, P, pads) : [];
-  // the ground's top per column before any edit (the soil's depth below it colours the cut faces)
+  const sites = !composed && P.sites?.count > 0 ? sitesOn(field, P, pads) : [];
+  // every region of ground worth going to joined to the seats (connect.mjs: bridges, shallows, ramps, launch pads), unless
+  // the world says otherwise (config/world.json reach: connect false, or regions kept apart with a reason)
+  const R = reachConfig(reach ?? P.reach ?? {});
+  const joined = R.connect ? connectTerrain(field, P, {
+    pieces, own: composed?.own ?? null, landmarks: composed ? composed.landmarksFull : [], numbers, seaLevel: 0, levelDisc,
+    // the seats in play (the game's players.max of them; a composed level makes spare ones)
+    seats: (l => (l && players > 0 ? l.slice(0, players) : l))(seats ?? (pads.length ? pads : null)), reach: reach ?? P.reach ?? {},
+  }) : null;
+  if (joined && composed) {
+    // a bridge model the connectors stood is a landmark like the composer's (drawn, clipped, leaned toward)
+    for (const m of composed.landmarksFull.slice(composed.landmarks.length)) { const { tris, facts, ...rest } = m; composed.landmarks.push(rest); composed.tris.set(m.owner, tris); }
+  }
+  // the ground's top per column before any edit (the soil's depth below it colours the cut faces): the land's, not a
+  // piece's (a castle's roof is not the top of the soil under it)
+  const own = composed?.own ?? null;
   const top = new Float32Array(nx * nz);
   for (let k = 0; k < nz; k++) for (let i = 0; i < nx; i++) {
     let t = origin[1] - 1;
     for (let j = ny - 2; j >= 1; j--) {
-      const a = d[(j * nz + k) * nx + i], b = d[((j + 1) * nz + k) * nx + i];
-      if (a < 0 && b >= 0) { t = origin[1] + (j + a / (a - b)) * h; break; }
+      const ia = (j * nz + k) * nx + i, ib = ((j + 1) * nz + k) * nx + i;
+      if (own && own[ia]) continue;
+      const a = d[ia], b = own && own[ib] ? Math.max(0, d[ib]) : d[ib];
+      if (a < 0 && b >= 0) { t = origin[1] + (j + (b === a ? 0 : a / (a - b))) * h; break; }
     }
     top[k * nx + i] = t;
   }
   const seconds = typeof performance !== 'undefined' ? (performance.now() - t0) / 1000 : 0;
-  return { field, params: P, info: { islands: M.islands, sea: 0, top, seconds, pads, sites } };
+  return { field, params: P, info: { islands: M.islands, sea: 0, top, seconds, pads, sites, ...(joined ? { connect: { list: joined.connectors, kept: joined.kept, left: joined.left, small: joined.small, links: joined.links, report: joined.report }, reached: joined.reached } : {}), ...(composed ? { landmarks: composed.landmarks, own, compose: composed.report, pieceTris: composed.tris } : {}) } };
 }
 
 /**
@@ -198,8 +234,12 @@ export function sitesOn(field, P, pads = []) {
   return out.map(p => ({ x: p.x, y: Math.round(p.y * 100) / 100, z: p.z, r: radius }));
 }
 
-/** Make the ground a flat disc at p's height: a terrace cut into a slope, or filled under it, blended over `blend` m. */
-function levelDisc(field, p, radius, blend) {
+/**
+ * Make the ground a flat disc at p's height: a terrace cut into a slope, or filled under it, blended over `blend` m. With
+ * an owner mask, a set piece's samples (own > 0) are never touched (a seat's pad beside a castle leaves the castle);
+ * cutOnly: only cut, never fill.
+ */
+export function levelDisc(field, p, radius, blend, own = null, { cutOnly = false } = {}) {
   const { nx, ny, nz, d, cell: h, origin } = field, reach = radius + blend;
   const py = p.y - 0.05;
   const i0 = Math.max(1, Math.floor((p.x - reach - origin[0]) / h)), i1 = Math.min(nx - 2, Math.ceil((p.x + reach - origin[0]) / h));
@@ -211,7 +251,10 @@ function levelDisc(field, p, radius, blend) {
     const t = q <= radius ? 1 : 1 - (q - radius) / blend, w = t * t * (3 - 2 * t);
     for (let j = j0; j <= j1; j++) {
       const y = origin[1] + j * h, a = (j * nz + k) * nx + i;
+      if (own && own[a]) continue;
       const plane = clamp(y - py, -BAND, BAND);
+      // cut only: never ground where there was air (a bridge's end never fills the gap it spans)
+      if (cutOnly && plane < d[a]) continue;
       d[a] = Math.fround(d[a] + (plane - d[a]) * w);
     }
   }

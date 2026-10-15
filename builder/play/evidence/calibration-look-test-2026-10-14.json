@@ -1,0 +1,462 @@
+{
+ "schema": "gf-play-calibration/1",
+ "made": "2026-10-14T19:17:34.764Z",
+ "creator": {
+  "evidence": "games.fun research/foundations/evidence/creator-looks-playtest-2026-10-14.json",
+  "words": "Sunny Castle looks the best. I do like how many details and areas to explore there were in sunset canyon. The biggest thing these all miss is the actual gameplay itself, which is a common theme. We need a better gameplayer designer and judge. We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get. It would also be cool to have more PvP, rag dolling, explosions type of gameplay. ... So in terms of settings and visuals, 8.5/10."
+ },
+ "note": "The levels as the creator played them carry create's stub rules.js (nothing fires, bots never act) and the pickup part's spots at y = 0 on island terrain. The judge plays copies, never the originals. No game here has a play target yet (play-design's step is new): every score is advisory and only hard findings fail.",
+ "games": [
+  {
+   "game": "sunny-castle-isles",
+   "creator": "gameplay missed (the creator's common miss); no berries anywhere; boxes in the ocean impossible to get",
+   "want": "fail",
+   "verdict": {
+    "verdict": "fail",
+    "agree": 10,
+    "of": 10,
+    "all": {
+     "fail": 10
+    }
+   },
+   "score": {
+    "n": 10,
+    "mean": 15.85,
+    "sd": 3.36,
+    "min": 10.4,
+    "max": 19.8
+   },
+   "oneRun": {
+    "score": 16.5,
+    "verdict": "pass",
+    "hard": [],
+    "measured": {
+     "score": 18,
+     "objective": 15,
+     "pace": 46,
+     "deadAir": 100,
+     "quiet": 0,
+     "idle": 83,
+     "firstAction": 63,
+     "interaction": 0,
+     "completion": 100,
+     "leads": 0
+    },
+    "judged": {
+     "score": 14.3,
+     "clarity": 1,
+     "feel": 0,
+     "chaos": 0.3,
+     "interaction": 1,
+     "again": 0.3,
+     "makes": []
+    },
+    "findings": [
+     "measured objective: 26 of 30 objectives (pickup) cannot be reached: 23 out in the sea, 3 inside the ground",
+     "measured objective: the scripted player could not get to 17 objective(s) it tried (p2:pickup:3: no closer than 0.21 m in 9 s of trying; p2:pickup:8: no closer than 9.84 m in 9 s of trying; p2:pickup:2: no closer than 11.96 m in 9 s of trying)",
+     "measured objective: only 4 of 30 objectives were ever taken",
+     "measured pace: 2 meaningful events a minute (the median round); the target is 6",
+     "measured quiet: a player's longest stretch with nothing done by or to them is 90 s (median; the target allows 30 s)",
+     "measured firstAction: the first meaningful action comes 21.1 s in (the target: 10 s)",
+     "measured interaction: players never touch each other: no hit, knock, steal or tag between two players in any round",
+     "measured leads: the lead changed hands 0 times a round: the first to score keeps it"
+    ],
+    "summary": [
+     "The critters wander a pretty island with the camera often stuck inside cliffs; no berries can be seen, no seeds fly and nobody hits anyone, so the round passes with almost no score and no action.",
+     "In all five clips no berry can be seen, no seed hit lands and the camera keeps getting stuck in walls, so the critters just wander a quiet lawn without affecting each other.",
+     "The camera mostly shows cliff walls while critters wander a lawn with no visible berries, seeds or hits, and scores barely move from 0, so there's almost no game to see yet."
+    ],
+    "numbers": {
+     "rounds": 5,
+     "done": 5,
+     "eventsPerMinute": 2,
+     "longestGap": 29.9,
+     "quietMedian": 90,
+     "idleShare": 0.3,
+     "firstAction": 21.1,
+     "interactionsPerMinute": 0,
+     "objectives": {
+      "present": 30,
+      "taken": 4,
+      "unreachable": 26
+     },
+     "byType": {
+      "pickup": 9,
+      "score": 9
+     }
+    }
+   },
+   "agrees": true
+  },
+  {
+   "game": "violet-dusk-fortress",
+   "creator": "the same",
+   "want": "fail",
+   "verdict": {
+    "verdict": "fail",
+    "agree": 10,
+    "of": 10,
+    "all": {
+     "fail": 10
+    }
+   },
+   "score": {
+    "n": 10,
+    "mean": 20.35,
+    "sd": 1.7,
+    "min": 17.4,
+    "max": 22
+   },
+   "oneRun": {
+    "score": 23.8,
+    "verdict": "fail",
+    "hard": [
+     "nothing meaningful happened for 30 s at a stretch in 3 of 5 rounds (the line is 30 s)"
+    ],
+    "measured": {
+     "score": 28,
+     "objective": 23,
+     "pace": 57,
+     "deadAir": 100,
+     "quiet": 48,
+     "idle": 56,
+     "firstAction": 100,
+     "interaction": 0,
+     "completion": 100,
+     "leads": 0
+    },
+    "judged": {
+     "score": 17.4,
+     "clarity": 1,
+     "feel": 0,
+     "chaos": 1,
+     "interaction": 0.7,
+     "again": 0.7,
+     "makes": []
+    },
+    "findings": [
+     "measured objective: 24 of 30 objectives (pickup) cannot be reached: 20 out in the sea, 4 inside the ground",
+     "measured objective: the scripted player could not get to 19 objective(s) it tried (p2:pickup:7: no closer than 18.53 m in 9 s of trying; p2:pickup:6: no closer than 12.9 m in 9 s of trying; p2:pickup:1: no closer than 12.06 m in 9 s of trying)",
+     "measured objective: only 6 of 30 objectives were ever taken",
+     "measured pace: 2.7 meaningful events a minute (the median round); the target is 6",
+     "measured deadAir: nothing meaningful happened for 30 s at a stretch in 3 of 5 rounds (the line is 30 s)",
+     "measured quiet: a player's longest stretch with nothing done by or to them is 61.3 s (median; the target allows 30 s)",
+     "measured idle: players stand still with nothing to do 46% of the time (bots included: make them play the game)",
+     "measured interaction: players never touch each other: no hit, knock, steal or tag between two players in any round"
+    ],
+    "summary": [
+     "In these clips no berries show and nobody is hit, scores go up with nothing happening on screen, and the camera keeps getting stuck in the scenery, so it plays like aimless wandering instead of a lawn brawl.",
+     "I couldn't see a berry, a seed or a hit in any clip: players wander on their own past walls the camera clips through, and the scores go up for no visible reason.",
+     "The camera mostly shows walls, rock and water. No berries or seed lobs are ever visible, and the scores go up without anything visible causing them, so right now the critters wander the same map separately."
+    ],
+    "numbers": {
+     "rounds": 5,
+     "done": 5,
+     "eventsPerMinute": 2.67,
+     "longestGap": 30,
+     "quietMedian": 61.3,
+     "idleShare": 0.46,
+     "firstAction": 3.7,
+     "interactionsPerMinute": 0,
+     "objectives": {
+      "present": 30,
+      "taken": 6,
+      "unreachable": 24
+     },
+     "byType": {
+      "pickup": 24,
+      "score": 24
+     }
+    }
+   },
+   "agrees": true
+  },
+  {
+   "game": "sunset-canyon-sands",
+   "creator": "the same (\"I do like how many details and areas to explore there were in sunset canyon\", about the place)",
+   "want": "fail",
+   "verdict": {
+    "verdict": "fail",
+    "agree": 10,
+    "of": 10,
+    "all": {
+     "fail": 10
+    }
+   },
+   "score": {
+    "n": 10,
+    "mean": 9.03,
+    "sd": 0.72,
+    "min": 8,
+    "max": 10.4
+   },
+   "oneRun": {
+    "score": 8,
+    "verdict": "fail",
+    "hard": [
+     "nothing meaningful happened for 60.1 s at a stretch in 5 of 5 rounds (the line is 30 s)"
+    ],
+    "measured": {
+     "score": 6,
+     "objective": 6,
+     "pace": 22,
+     "deadAir": 0,
+     "quiet": 0,
+     "idle": 70,
+     "firstAction": 33,
+     "interaction": 0,
+     "completion": 100,
+     "leads": 0
+    },
+    "judged": {
+     "score": 10.9,
+     "clarity": 1,
+     "feel": 0,
+     "chaos": 0,
+     "interaction": 1,
+     "again": 0,
+     "makes": []
+    },
+    "findings": [
+     "measured objective: 29 of 30 objectives (pickup) cannot be reached: 19 out in the sea, 10 inside the ground",
+     "measured objective: the scripted player could not get to 18 objective(s) it tried (p2:pickup:6: no closer than 0.1 m in 9 s of trying; p2:pickup:0: no closer than 12.12 m in 9 s of trying; p2:pickup:3: no closer than 2.11 m in 9 s of trying)",
+     "measured objective: only 1 of 30 objectives were ever taken",
+     "measured pace: 0.7 meaningful events a minute (the median round); the target is 6",
+     "measured deadAir: nothing meaningful happened for 60.1 s at a stretch in 5 of 5 rounds (the line is 30 s)",
+     "measured quiet: a player's longest stretch with nothing done by or to them is 90 s (median; the target allows 30 s)",
+     "measured idle: players stand still with nothing to do 38% of the time (bots included: make them play the game)",
+     "measured firstAction: the first meaningful action comes 30.2 s in (the target: 10 s)"
+    ],
+    "summary": [
+     "Across every clip the critters wander a cramped rock maze with the camera stuck in walls, and nobody finds a berry, lands a seed or scores a single point.",
+     "Critters wander a cramped rock maze with the camera stuck in walls, and across every clip nobody grabs a berry, lobs a seed, or scores a point.",
+     "Critters wander through a maze of rocks with the camera often stuck inside the walls; no berries or seed throws show up, and every score stays at 0."
+    ],
+    "numbers": {
+     "rounds": 5,
+     "done": 5,
+     "eventsPerMinute": 0.67,
+     "longestGap": 60.1,
+     "quietMedian": 90,
+     "idleShare": 0.38,
+     "firstAction": 30.2,
+     "interactionsPerMinute": 0,
+     "objectives": {
+      "present": 30,
+      "taken": 1,
+      "unreachable": 29
+     },
+     "byType": {
+      "pickup": 5,
+      "score": 5
+     }
+    }
+   },
+   "agrees": true
+  },
+  {
+   "game": "critter-lob",
+   "creator": "not judged by the creator: the kit's example, picked by playing it (the same game written out: berries on the lawn, bots that lob and seek)",
+   "want": "pass",
+   "verdict": {
+    "verdict": "pass",
+    "agree": 10,
+    "of": 10,
+    "all": {
+     "pass": 10
+    }
+   },
+   "score": {
+    "n": 10,
+    "mean": 80.44,
+    "sd": 0.96,
+    "min": 78.6,
+    "max": 82.1
+   },
+   "oneRun": {
+    "score": 83.6,
+    "verdict": "pass",
+    "hard": [],
+    "measured": {
+     "score": 100,
+     "objective": 100,
+     "pace": 100,
+     "deadAir": 100,
+     "quiet": 100,
+     "idle": 100,
+     "firstAction": 100,
+     "interaction": 100,
+     "completion": 100,
+     "leads": 100
+    },
+    "judged": {
+     "score": 58.9,
+     "clarity": 2,
+     "feel": 3,
+     "chaos": 2,
+     "interaction": 3,
+     "again": 2,
+     "makes": []
+    },
+    "findings": [
+     "judged clarity: The timer, the 'most berries' banner and the name tags are easy to read, but the berries are tiny orange dots that look just like the seeds in flight, and scores jump with no visible grab. Make the berries big and distinct, add a marker over each one, and show a pop on every pickup.",
+     "judged chaos: There are some funny moments, like both friends knocking each other over in one dust cloud and crates tumbling about, but most frames show critters wandering an empty lawn with no berry worth racing for.",
+     "judged again: Bowling a friend over is fun, but the berry chase can't be seen and scores tick up off-screen, so a round doesn't build toward a close finish that friends would want to replay."
+    ],
+    "summary": [
+     "Lobbing seeds to bowl friends over lands with real tumbles and dust, but the berries are hard to see and are never fought over, so the actual objective plays out invisibly and the rounds feel aimless.",
+     "Bowling a friend over with a seed lands with a nice tumble and dust burst, but I couldn't see any berries on the lawn, so scores climb with no visible cause and players mostly roam apart instead of racing for points.",
+     "Bowling friends over with seeds lands well (tumbles, dust, flying crates), but the berries that decide the winner can't be seen and scores just tick up, so players fight without a reason to."
+    ],
+    "numbers": {
+     "rounds": 5,
+     "done": 5,
+     "eventsPerMinute": 79.99,
+     "longestGap": 2.8,
+     "quietMedian": 5.5,
+     "idleShare": 0.04,
+     "firstAction": 0.9,
+     "interactionsPerMinute": 7.33,
+     "objectives": {
+      "present": 30,
+      "taken": 30,
+      "unreachable": 0
+     },
+     "byType": {
+      "pickup": 375,
+      "score": 378,
+      "attempt": 505,
+      "combo": 107,
+      "hit": 62
+     }
+    }
+   },
+   "agrees": true
+  }
+ ],
+ "controls": [
+  {
+   "game": "market-day",
+   "why": "a flat-2d pixel game (coins in a town square), not artillery",
+   "verdict": "pass",
+   "score": 46,
+   "hard": [],
+   "measured": {
+    "score": 56,
+    "objective": 95,
+    "pace": 100,
+    "deadAir": 100,
+    "quiet": 100,
+    "idle": 85,
+    "firstAction": 100,
+    "interaction": 0,
+    "completion": 100,
+    "leads": 80
+   },
+   "judged": {
+    "score": 31,
+    "clarity": 2,
+    "feel": 1,
+    "chaos": 1,
+    "interaction": 1,
+    "again": 1,
+    "makes": []
+   },
+   "findings": [
+    "measured objective: 2 of 21 objectives (pickup) cannot be reached: 2 that nobody got within 3 m of (the scripted player tried and gave up)",
+    "measured objective: the scripted player could not get to 8 objective(s) it tried (p2:pickup:6: no closer than 1.96 m in 9 s of trying; p2:pickup:0: no closer than 4.82 m in 9 s of trying; p2:pickup:1: no closer than 4.72 m in 9 s of trying)",
+    "measured interaction: players never touch each other: no hit, knock, steal or tag between two players in any round",
+    "judged clarity: The goal banner and the gold coins are easy to read. But every player is the same brown-haired villager, told apart only by a tiny name tag and a faint ring, and coins disappear with nothing on screen except a small change in the HUD score.",
+    "judged feel: Taking a coin shows no sparkle, pop, sound cue or '+1', and bodies pass through each other without reacting. A coin burst, a floating +1 and a little hop on pickup would fix this.",
+    "judged chaos: Only one or two coins are out at a time and the players walk calmly between them. In clip 5 both friends stand still by the well with coins all around them, so a round never turns into a scramble."
+   ],
+   "summary": [
+    "I read all five clips: players walk calmly to coins spread thinly around a pretty town square and take them with no visible effect. They never touch or get in each other's way, so each round plays as a quiet, one-sided race instead of a scramble.",
+    "Players wander a nicely drawn town while coins quietly disappear, with no pickup feedback, no contact between players and no scramble, so the race barely shows on screen.",
+    "Players walk around a pretty town square collecting coins that vanish with no effect, while a fast bot runs up the score and nobody ever affects anyone else, so it plays as a calm solo walk rather than a race between friends."
+   ]
+  },
+  {
+   "game": "table-four",
+   "why": "a board game on the turns loop (four in a row from the seats), not artillery",
+   "verdict": "pass",
+   "score": 58.8,
+   "hard": [],
+   "measured": {
+    "score": 74,
+    "pace": 100,
+    "deadAir": 100,
+    "quiet": 100,
+    "idle": 0,
+    "firstAction": 100,
+    "completion": 100
+   },
+   "judged": {
+    "score": 35.9,
+    "clarity": 2,
+    "feel": 1,
+    "chaos": 1,
+    "interaction": 2,
+    "again": 1,
+    "makes": []
+   },
+   "findings": [
+    "measured idle: players stand still with nothing to do 81% of the time (bots included: make them play the game)",
+    "judged clarity: The turn banner, the 'Click or E: drop in this column' prompt and the green rings on legal cells make it clear what to do. But the pink player sits at the bottom and their disc lands in the far top row, so 'nearest your end' reads backwards. In the 4-seat game, the seats on the sides drop sideways, ",
+    "judged feel: Discs just appear in their cell with a faint yellow ring and no visible slide, bounce, sound cue or screen reaction. Fix: animate the slide across the board, add a landing thud and squash, and make the last-placed disc pulse.",
+    "judged chaos: Turns are long (a 30 s timer that the scripted player ran down to 0:01), and after about 35 s only a few discs are on the board with every score at 0. Nothing threatens and nothing happens. Fix: shorten the turn timer and flag 'three in a row' threats so close calls are visible.",
+    "judged interaction: On both screens you can watch the other player's named pointer hunt across columns, and blocking is possible in principle. But the clips show no block or contested line, and the players only sit around the board taking turns.",
+    "judged again: It is a slow Connect Four with weightless drops and no visible climax. No clip reaches a win, so friends get little reason to call for another round."
+   ],
+   "summary": [
+    "It plays as a clear but slow, weightless Connect Four: discs pop into place with no impact, turns drag on a 30-second timer, and no clip shows a threat or a win.",
+    "It plays as a clear but slow and weightless Connect Four: discs pop silently into cells on long timers, with no threats, drama or wins shown.",
+    "The clips show a readable but slow, quiet four-in-a-row: turns drag on long timers, drops land with no impact, and players hardly feel each other beyond a hovering pointer."
+   ]
+  },
+  {
+   "game": "blast-isles",
+   "why": "the kit's turn-based artillery example (chaos stream: knockback into the sea, carve, aim), suggested by the parent as a plays-well control; it passes the six gates",
+   "verdict": "pass",
+   "score": 42,
+   "judged": {
+    "score": 39.1,
+    "clarity": 2,
+    "feel": 2,
+    "chaos": 2,
+    "interaction": 1,
+    "again": 1,
+    "makes": []
+   },
+   "findings": [
+    "measured interaction: players never touch each other: no hit, knock, steal or tag between two players in any round",
+    "judged clarity: Turn and 'hold to charge' prompts are clear, but opponents are tiny name tags on far islands, and when you get knocked out the camera stares at empty sea for seconds, so players can't tell who hit them or what happened.",
+    "judged feel: Blasts leave big terrain craters and smoke puffs, but the critters barely visibly tumble. A hit on an opponent is never seen landing; the player just ends up in the water or 'Out'.",
+    "judged chaos: Players often blast themselves into the sea on their own turn (Splash! Out in clips 1, 3 and 5), which is a funny mishap at first, but the scores mostly stay at 0 and the islands look empty between shots.",
+    "judged interaction: Players sit on separate islands and mostly knock themselves out. Only one bot in clip 4 has points (5), and no clip shows a shell visibly throwing another player.",
+    "judged again: Rounds are mostly turns spent watching water after self-knockouts with scores at 0, so friends would not ask for another round."
+   ],
+   "summary": [
+    "Shells carve impressive craters, but players mostly knock themselves into the sea and then watch empty water, so you rarely see anyone hit an opponent and the scores barely move.",
+    "The crater blasts look strong, but most shots fall short into the sea or knock the shooter off their own island, rivals are tiny and far away, and rounds pass at 0\u20130 with players staring at water, so there is little of the meant scramble of critters thrown into each other.",
+    "The blasts carve satisfying craters, but most shots knock the shooter into their own sea and the camera then shows empty water, so rivals rarely touch each other and scores barely move."
+   ],
+   "afterFix": {
+    "note": "the same play judged again by the measured half after two fixes it showed (a fling or a fall names its thrower apart, so player-on-player throws count; a turns game whose verbs hit bodies expects players to touch each other, by the mean over rounds): measured 100; with the judged half of the run above the score is about 75.6",
+    "measured": {
+     "score": 100,
+     "pace": 100,
+     "deadAir": 100,
+     "quiet": 100,
+     "firstAction": 100,
+     "interaction": 100,
+     "completion": 100
+    },
+    "findings": [
+     "players touched each other in only 2 of 5 rounds"
+    ]
+   },
+   "reading": "It plays (30 meaningful events a minute, no dead air), and the vision judge names what keeps it from playing well, in the creator's genre: players blast themselves into the sea, opponents on far islands are rarely hit (players touched each other in 2 of 5 rounds), and the camera shows empty sea after a knock-out. Those are findings for its design round, not a fail."
+  }
+ ]
+}

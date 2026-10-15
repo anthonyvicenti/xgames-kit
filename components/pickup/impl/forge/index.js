@@ -20,6 +20,7 @@
 // Not on forge (said in observe().notOnForge): a press of E to take one (forge's E raises a fallen friend; collect
 // 'press' takes a spot by walking into it, as 'touch'), the carry effect (no carry mechanic on forge), zones.
 import { touches, createSpots } from '../../logic.js';
+import { createWalk, boxSurfaces } from '../../../../world/placement.js';
 
 export const id = 'pickup';
 const D = { prop: '', count: -1, zone: '', size: 0.5, color: '#ffd23f', effect: 'auto', value: 1, radius: 1.0, collect: 'both', reach: 2.0, action: 'interact', prompt: true, respawnSeconds: 8, bob: true, spin: true, maxSpots: 24, soundCollect: 'coin', marker: 'auto' };
@@ -27,25 +28,18 @@ const D = { prop: '', count: -1, zone: '', size: 0.5, color: '#ffd23f', effect: 
 export const DEFAULT_COUNT = 4;
 
 /**
- * Where `count` spots go: a ring round the arena's middle at `r` metres, turned by `turn`, each moved in or out until it
- * is clear of every collider box a walker meets (in the ground plane, with `pad` metres to spare). Pure. → [{x, z}]
+ * Where `count` spots go on a forge world (its config/world.json: `size`, the box `colliders`, its ground a box too, and
+ * the `spawns`): open floor every seat reaches, clear of every box a walker meets and spread out (the shared placement,
+ * kit/world/placement.js, over the boxes). rng: the round's seeded draw. Pure. → [{x, y, z}]
  */
-export function placeSpots(count, { r = 5, turn = 0, boxes = [], pad = 0.6, centre = [0, 0], bounds = null } = {}) {
-  // only what stands in the way of a walker counts: a floor slab or a beam overhead does not
-  const walls = boxes.filter(b => Array.isArray(b?.min) && Array.isArray(b?.max) && b.max[1] > 0.25 && b.min[1] < 2);
-  const free = (x, z) => !walls.some(b => x > b.min[0] - pad && x < b.max[0] + pad && z > b.min[2] - pad && z < b.max[2] + pad)
-    && (!bounds || (x > bounds[0] + pad && x < bounds[2] - pad && z > bounds[1] + pad && z < bounds[3] - pad));
-  const out = [];
-  for (let i = 0; i < count; i++) {
-    const a = turn + (i / Math.max(1, count)) * Math.PI * 2;
-    let at = null;
-    for (const f of [1, 0.8, 1.2, 0.6, 1.4, 0.4, 1.6, 0.25]) {
-      const x = centre[0] + Math.sin(a) * r * f, z = centre[1] + Math.cos(a) * r * f;
-      if (free(x, z)) { at = { x: Math.round(x * 100) / 100, z: Math.round(z * 100) / 100 }; break; }
-    }
-    out.push(at ?? { x: centre[0], z: centre[1] });
-  }
-  return out;
+export function placeSpots(count, { world = {}, rng = Math.random, numbers = {} } = {}) {
+  const [w, d] = Array.isArray(world.size) ? world.size : [18, 18];
+  const walk = createWalk({
+    area: () => [-w / 2, -d / 2, w / 2, d / 2], cell: 0.5, numbers,
+    surfaces: boxSurfaces({ boxes: world.colliders ?? [], numbers }),
+    seats: () => (world.spawns ?? []).map(s => ({ x: s[0] ?? s.x, y: s[1] ?? s.y ?? 0, z: s[2] ?? s.z })),
+  });
+  return walk.place('pickup', count, { rng, clear: 0.6, gap: 1.6, away: 1.5 });
 }
 
 export function create(ctx, params = {}, K) {
@@ -64,12 +58,12 @@ export function create(ctx, params = {}, K) {
   /** The host: lay the spots for a round. */
   function lay() {
     const W = ctx.assets?.config?.('world') ?? {};
-    const [w, d] = Array.isArray(W.size) ? W.size : [18, 18];
     const n = Number(V('count'));
     const count = Math.max(0, Math.min(pool.spots.length ? 40 : 40, n < 0 ? DEFAULT_COUNT : n));
-    const at = placeSpots(count, { r: Math.min(w, d) * 0.22, turn: ((ctx.seed ?? 1) % 628) / 100, boxes: W.colliders ?? [], bounds: [-w / 2, -d / 2, w / 2, d / 2] });
+    let q = ((ctx.seed ?? 1) % 2147483646) + 1; const rng = () => ((q = (q * 16807) % 2147483647) / 2147483647);
+    const at = placeSpots(count, { world: W, rng });
     pool.spots.length = 0;
-    for (const a of at) pool.add(a.x, 0, a.z, Math.max(0, Number(V('respawnSeconds')) || 0));
+    for (const a of at) pool.add(a.x, a.y, a.z, Math.max(0, Number(V('respawnSeconds')) || 0));
     placed = true;
   }
   const rows = () => pool.spots.map(s => [s.x, s.y, s.z, s.state === 1 ? 1 : 0]);

@@ -1,0 +1,153 @@
+{
+  "specVersion": 2,
+  "title": "Tower Isles",
+  "hook": "Fight round the old tower and across the bridge: every blast bites a crater out of the island, or out of the tower itself.",
+  "prompt": "an artillery party game where friends fight around a ruined stone tower on an island and across a bridge to the next island, and bombs blow craters in the ground and the tower",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "lob a bomb where you aim",
+    "jump": "jump"
+  },
+  "round": {
+    "seconds": 120,
+    "winBy": "most points when time is up: a bomb that knocks a friend scores, a friend you send into the sea scores more",
+    "replay": true
+  },
+  "world": {
+    "template": "terrain",
+    "params": {
+      "shape": "islands",
+      "islands": {
+        "count": 3
+      },
+      "size": [
+        112,
+        44,
+        80
+      ],
+      "compose": {
+        "landmarks": [
+          "ruin-tower",
+          "gatehouse"
+        ],
+        "bridges": [
+          "bridge"
+        ],
+        "playOn": "around",
+        "share": 0.25,
+        "verticality": 0.5,
+        "bridgeCount": 1,
+        "camera": {
+          "distance": 5.2,
+          "height": 1.7,
+          "pitchDeg": 16,
+          "fov": 60
+        },
+        "seats": 8
+      }
+    },
+    "notes": "A composed level: the ruined tower stands on the middle island with a plaza round it, a gatehouse crowns the next island, and a bridge spans the gap; all three are ground (stand on them, blast holes in them). The seats come in pairs that see each other and the tower."
+  },
+  "mechanics": [
+    {
+      "id": "projectile",
+      "as": "a lobbed bomb that bursts where it lands",
+      "params": {
+        "kind": "discrete",
+        "color": "#2f2f38",
+        "size": 0.28,
+        "speed": 36,
+        "cooldown": 0.9,
+        "splashRadius": 2.4,
+        "splashKnockback": 8,
+        "knockUp": 5,
+        "damage": 1,
+        "hitFx": "spark-burst"
+      }
+    },
+    {
+      "id": "carve",
+      "as": "every blast carves a round crater in the ground, on every screen",
+      "params": {
+        "scale": 1.1,
+        "blastFx": "impact-flash",
+        "dustFx": "smoke-puff",
+        "sound": "boom",
+        "splashFx": "smoke-puff",
+        "splashSound": "splash"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Aim and lob bombs. A blast carves a crater and throws anyone near it. Knocking a friend scores 1; a friend who falls into the sea scores 3 for whoever threw the last bomb at them, and they come back on their island. Most points when time is up wins.",
+    "scoring": "+1 per friend knocked by your blast, +3 when a friend you knocked falls into the sea",
+    "params": {
+      "knockPoints": 1,
+      "seaPoints": 3,
+      "creditSeconds": 6
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly-bean bomber in a helmet",
+      "body": {
+        "from": "kind"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day",
+    "packs": [
+      "forge-world",
+      "folio-nature"
+    ]
+  },
+  "sounds": [
+    {
+      "id": "boom",
+      "describe": "a cartoon bomb blast",
+      "preset": "explosion-big"
+    },
+    {
+      "id": "splash",
+      "describe": "falling into the sea, a big splash"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other and the tower from where they start",
+    "a bomb carves a crater in the ground or in the tower, the same on every screen",
+    "the bridge can be walked across",
+    "a friend knocked into the sea scores for the thrower"
+  ],
+  "notInV1": [
+    "turns",
+    "wind",
+    "weapon choice"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "Cartoon bombs: beans get thrown about and splash into the sea, nobody is hurt."
+  }
+}

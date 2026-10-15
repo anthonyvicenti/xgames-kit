@@ -49,6 +49,7 @@ export function create(ctx, params = {}) {
   const P = { ...D, ...params };
   const V = k => { const sid = `mechanic.paint.${kebab(k)}`; try { return ctx.assets?.has(sid) ? ctx.assets.value(sid, P[k]) : P[k]; } catch { return P[k]; } };
   const A = areaOf(ctx.world);
+  let baseY = null;                 // the ground at the middle, read once the world's colliders are in its queries
   const grid = createGrid({ minX: A.minX, maxX: A.maxX, minZ: A.minZ, maxZ: A.maxZ }, P.cell, P.maxCells);
   const color = new THREE.Color();
   const tex = new THREE.DataTexture(new Uint8Array(grid.w * 4 * grid.h * 4 * 4), grid.w * 4, grid.h * 4, THREE.RGBAFormat);
@@ -123,14 +124,18 @@ export function create(ctx, params = {}) {
         if (!linked) { linked = true; const prj = ctx.mechanics.get('projectile'); if (V('fromProjectile') && prj && !prj.standin) prj.onSurface(h => { if (h.shooter) api.splat(h.shooter, h.point, { radius: h.kind === 'stream' ? V('streamRadius') : V('radius') }); }); }
         if (V('walkRadius') > 0 && ctx.round?.phase === 'playing' && (walkAcc += dt) >= V('walkInterval')) {
           walkAcc = 0;
-          for (const p of ctx.players.list()) if (p.alive !== false && p.position.y < 1.2) api.splat(p, p.position, { radius: V('walkRadius') });
+          // a player on their feet (on the ground under them, wherever that is: worlds/placement.js), not in the air
+          for (const p of ctx.players.list()) if (p.alive !== false && p.position.y - (ctx.world.groundAt?.(p.position.x, p.position.z, p.position.y) ?? 0) < 1.2) api.splat(p, p.position, { radius: V('walkRadius') });
         }
         if (dirty && (sendAcc += dt) >= 0.1) { sendAcc = 0; dirty = false; const s = grid.encode(); if (s !== lastSent) { lastSent = s; S.g = s; } redraw(); }
       } else {
         const s = S.g;
         if (typeof s === 'string' && s !== lastStr) { lastStr = s; if (grid.decode(s)) redraw(); }
       }
-      plane.position.y = V('height');
+      // the paint layer is one flat sheet: it lies on the ground at the play area's middle (a yard or an arena floor); on
+      // uneven ground it would need to follow the land (not yet: decals on the ground's own mesh)
+      if (baseY === null && (!ctx.world.walk || ctx.world.walk.ready())) baseY = ctx.world.groundAt?.(A.cx, A.cz) ?? 0;
+      plane.position.y = (baseY ?? 0) + V('height');
     },
     dispose() { plane.removeFromParent(); tex.dispose(); mat.dispose(); },
   };

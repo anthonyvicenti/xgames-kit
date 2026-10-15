@@ -1,0 +1,9 @@
+{
+ "base": "berry-isles",
+ "why": "A ruin on a cliff (2026-10-14): in Berry Isles the gatehouse crowns the west island's hill, a cliff 3 m above the beach the composer's bridge lands on (a jump climbs 1.1 m). With the world's connectors off (config/world.json reach.connect false), as the composed levels were made, nothing climbs it: the hill and the gatehouse on it are seen from the bridge and cannot be got to. Gate D must fail it on measure 6, naming the cliff.",
+ "evidence": "builder/gates/evidence/2026-10-14-connect.json",
+ "patches": [{ "file": "config/world.json", "pointer": "/reach", "value": { "connect": false } }],
+ "mustFail": ["D"],
+ "measure": 6,
+ "detail": "cannot be reached: a cliff [0-9.]+ m high"
+}

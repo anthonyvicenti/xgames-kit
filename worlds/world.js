@@ -4,6 +4,8 @@
 //   templates                -> the template ids (recipes in kit/world/templates/*.json; generate.js expands one at a
 //                               size class into a layout: templateLayout(id, { size, seed }))
 //   slots / slotsFor(cfg)     -> world.<template>.* and prop.<id> slot templates (§2.2)
+//   world.groundAt / waterAt / isWalkable / reach / place / route / walk -> placement.js, from the world's colliders: where
+//                               things may be put and what every seat can get to (never a flat floor at y = 0)
 //
 // Indoor worlds (a layout with `ceiling`, `rooms`, `doors`, `entries`; kit/world/generate.js): the ceiling is a kit
 // primitive (slot world.<t>.ceiling.color, pattern world.<t>.ceiling.pattern) drawn as a cutaway: it faces down, so
@@ -28,6 +30,9 @@ import { collidersOf, buildColliders, MATERIALS } from './colliders.js';
 import { generateLayout } from './generate.js';
 import { drawIslands } from './islands.js';
 import { placeFor as seaPlace } from './sea-places.mjs';
+import { WORLD_GROUPS } from '../core/util.js';
+import { leanToward } from './compose.mjs';
+import { placeOnColliders } from './placement.js';
 
 export const templates = ['backyard', 'office', 'plaza', 'arena', 'store', 'sea-islands'];
 const DEG = Math.PI / 180;
@@ -327,6 +332,26 @@ export async function loadWorld(ctx, cfg, opts = {}) {
   const phys = ctx.physics?.createRigidBody ? ctx.physics : ctx.physics?.world;
   const RAPIER = ctx.RAPIER ?? ctx.physics?.RAPIER ?? (phys ? (await import('@dimforge/rapier3d-compat')).default : null);
   const rapierColliders = phys ? buildColliders(RAPIER, phys, colliders, MATERIALS.party) : [];
+  // a composed level's landmark (worlds/sea-compose.mjs): solid by its model's own triangles, so players stand on its
+  // walls and roofs as they see them
+  const meshed = [...propsMap.values()].flat().filter(p => p.collider === 'mesh');
+  if (phys && RAPIER && meshed.length) {
+    const body = phys.createRigidBody(RAPIER.RigidBodyDesc.fixed());
+    for (const p of meshed) {
+      const pos = [], idx = [], v = new THREE.Vector3(), m = new THREE.Matrix4();
+      for (const im of p.meshes) {
+        const g = im.geometry, a = g.attributes.position, base = pos.length / 3;
+        im.getMatrixAt(p.instance, m);
+        for (let i = 0; i < a.count; i++) { v.fromBufferAttribute(a, i).applyMatrix4(m); pos.push(v.x, v.y, v.z); }
+        if (g.index) for (let i = 0; i < g.index.count; i++) idx.push(base + g.index.getX(i)); else for (let i = 0; i < a.count; i++) idx.push(base + i);
+      }
+      if (!idx.length) continue;
+      const desc = RAPIER.ColliderDesc.trimesh(new Float32Array(pos), new Uint32Array(idx)).setCollisionGroups(WORLD_GROUPS).setFriction(0.9);
+      const c = phys.createCollider(desc, body);
+      c.__gf = { tag: `prop:${p.prop}` };
+      rapierColliders.push(c);
+    }
+  }
 
   const box = new THREE.Box3(new THREE.Vector3(-size[0] / 2, 0, -size[1] / 2), new THREE.Vector3(size[0] / 2, cfg.bounds?.height ?? 4, size[1] / 2));
   box.half = Math.max(size[0], size[1]) / 2;   // K1's stand-in API (world.bounds.half)
@@ -342,18 +367,25 @@ export async function loadWorld(ctx, cfg, opts = {}) {
   // spawn points face the centre of the play area (yaw, radians; 0 = +z), like K1's stand-in; in a world with rooms,
   // the main room's middle (the centre zone), so nobody starts facing a wall
   const mid = (cfg.rooms?.length && cfg.zones?.centre?.at) || [0, 0, 0];
-  const spawns = (cfg.spawns ?? [[0, 0, 0]]).map(s => { const p = v3(s); p.yaw = Math.atan2(mid[0] - p.x, mid[2] - p.z); return p; });
+  // a composed level's seats carry their own yaw (worlds/sea-compose.mjs: the partner and the landmark in the frame)
+  const spawns = (cfg.spawns ?? [[0, 0, 0]]).map((s, i) => { const p = v3(s); p.yaw = Number.isFinite(cfg.spawnYaw?.[i]) ? cfg.spawnYaw[i] : Math.atan2(mid[0] - p.x, mid[2] - p.z); return p; });
   const zones = Object.fromEntries(Object.entries(cfg.zones ?? {}).map(([name, z]) => [name, zoneOf(name, z)]));
   const raycaster = new THREE.Raycaster();
   const via = createRouter(cfg);
   const entries = (cfg.entries ?? []).map(e => ({ ...e }));
+  // the world's own ray for the place finders: a view blocked right in front of the camera (a landmark's wall, a tree);
+  // the ground under the view (a surface facing up) and the invisible walls round the play area are not in the way
+  const rayClear = (from, dir, max) => {
+    const h = world.raycast(new THREE.Vector3(...from), new THREE.Vector3(...dir), max);
+    return h && !(h.normal && Math.abs(h.normal.y) > 0.7) && h.collider?.__gf?.tag !== 'bounds' ? h.distance : null;
+  };
   const world = {
     template: cfg.template, layout: cfg, root, group: root, bounds: box, shadowBounds: shadowBox, lampPoints,
     kind: cfg.kind ?? (cfg.ceiling ? 'indoor' : 'outdoor'), sizeClass: cfg.sizeClass ?? null, ceiling,
     rooms: cfg.rooms ?? [], doors: cfg.doors ?? [], entries,
     /** A camera place that shows one kind of view (a sea-islands world: sea-places.mjs; seat, day, cliff-edge, beach,
      *  sea-view) or null (a yard or a building has none: the camera frames the player). */
-    place: where => (cfg.islands?.length ? seaPlace(cfg, where) : null),
+    lookout: where => (cfg.islands?.length ? seaPlace(cfg, where, { clear: rayClear }) : null),
     /** The room that holds (x, z), or null. */
     roomAt: (x, z) => roomAt(cfg, x, z),
     /** The next point to walk to from `from` toward `to` ({x, z}): a door when they are in different rooms, else null. */
@@ -364,6 +396,10 @@ export async function loadWorld(ctx, cfg, opts = {}) {
     colliders: phys ? rapierColliders : colliders,              // Rapier colliders when there is physics
     isWorld: (c) => rapierColliders.includes(c),
     props: propsMap, catalog,
+    /** A composed level's landmarks ({id, prop, role, centre, box, top}): the camera leans toward one in view. */
+    landmarks: cfg.landmarks ?? [],
+    /** How the camera leans toward a landmark in view (worlds/compose.mjs; the rig calls it). */
+    lean: leanToward,
     spawn(i = 0) { const s = spawns[((i % spawns.length) + spawns.length) % spawns.length]; const p = s.clone(); p.yaw = s.yaw; return p; },
     spawns,
     zone(name) { return zones[name] ?? null; },
@@ -400,6 +436,9 @@ export async function loadWorld(ctx, cfg, opts = {}) {
     },
     dispose() { ctx.scene?.remove(root); root.traverse(o => { if (o.isInstancedMesh) o.dispose(); }); groundGeo?.dispose(); for (const m of isles?.meshes ?? []) m.geometry.dispose(); ceiling?.geometry.dispose(); },
   };
+  // where things may be put and what a seat can get to (placement.js: groundAt, isWalkable, reach, place, route), from
+  // the colliders just built; a sea-islands world's sea is water everywhere under its land
+  placeOnColliders(world, ctx, cfg.islands?.length ? { water: () => cfg.sea?.level ?? -4 } : {});
   ctx.world = world;
   return world;
 }

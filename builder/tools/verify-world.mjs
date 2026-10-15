@@ -58,6 +58,9 @@ export async function verifyWorld(dir, { rec, outDir, add, log, t0, lap, quick =
   if (want(14)) await statics.looks();
   if (want(18)) await statics.check18();
   if (want(19)) await statics.check19();
+  // 23, looks like its target (tools/lib/look-check.mjs): the world rendered live at the target's framings and a place
+  // per setting the references show (a cave shot in a cave, the wide view from a rise); no target passes at once
+  if (want(23)) { const t23 = Date.now(); await statics.look([]); lap?.('look', t23); }
 
   // ---- the world server (the play host's own protocol, here) and real Chrome ----
   const needsBrowser = [3, 4, 5, 7, 8, 13, 20, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34].some(want);

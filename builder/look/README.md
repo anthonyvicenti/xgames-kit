@@ -72,6 +72,7 @@ still builds: its target stands as written, and the judge says it could not comp
 | `target.mjs` | `extract({refs, words, kind, judge})` → {target} with a judge, else {pending: {message, schema, images, dirs, base}}; `finish(base, judged)` → the target; `judgeMessage()`, `JUDGED_SCHEMA` (the fixed rubric, $refs inlined for a runner's structured output); `runnerJudge(run)` (the loop's `claudeRunner`: the person's own login, no key here). CLI: `node builder/look/target.mjs <reference folder or images…> [--words "…"] [--kind k] [--judge [--model opus]] [--judged answer.json] [--out target.json]` | look-target |
 | `apply.mjs` | `lookValues(target, {runtime, profile})` → {values, levers, suggest} or {skipped}; `applyTarget(C, spec, {place})` (create's seam, after the kind); `LEVERS` (mapped per runtime, and why the others are not yet); `REF`, `LIT_C`, `LIT_L` (the scaling levers are set from fixed middles, so applying a target twice lands in the same place) | look-target |
 | `pitch.mjs` | `readings(target)` → faithful, pushed, and the references' other sky (else softer); `options(spec, {game, target, packs, refs, render, score, calibrate})` → [{id, title, reading, values, levers, art, sheet, tiles, calibration, score}]; `artOf(packs, target)`, `applyArt(dir, art, ground)`; `overview(opts, {refs, out})`; `markOf(files, refStats)`. CLI: `node builder/look/pitch.mjs <game> [--packs a,b] [--refs <reference folder>] [--out dir]` (through the GPU slots) | look-target |
+| `ui-style.mjs` | `hudOf(target, kindHud)` → {tokens, said}: the target's UI facts (type class → a library font in `FONTS`, ink and its weight, shape, layout, motion, tags, damage numbers, widgets) as the shared HUD's tokens (builder/ui/kind-hud.js, widgets in builder/ui/widgets.js); `applyTargetUi(C, spec, {place})` (create's seam after applyTarget); `vfxOf(target)` → the effect style (runtimes/three/kit/vfx/styles.js `styleFromFacts`; the vfx module writes config/game.json → fx from it) | look-ui |
 | `world.mjs` | `rankWorlds(target, place, {loop})` (the runtime's worlds by their `reads` in `runtimes/<id>/runtime.json`); `worldPlan(target, place, {loop, current, art, dressing, rank, push})` → {template, params, score, ranked, why, notes}; `cameraOf(target, rig, {framing})` → the rig's numbers; `worldLookValues(target)` (the sea, the ground's patch scale); `dressingOf(words)` → {ids, missing}; `specWithWorld(spec, plan)`; `seaParams`, `seaColours`, `strataOf`, `groundTileOf` | look-world |
 | `judge.mjs` | `score(game, target, refs)` → {score 0–100, parts, findings}; `pitch.mjs` calls it when it exists, else every score is null and the faithful reading is first | look-judge |
 | `tune.mjs` | the tuning loop over the cheap levers | look-judge |
@@ -147,7 +148,7 @@ What each part drives, on any game:
 
 Each target camera names the kind of place it stands in (`camera.framings[].where`: the reader's, else from its frame
 kind: `looks.mjs` `wherePlaces`: a play or close frame at a seat, a scene on a sunlit rise or over an open sea view).
-The look judge's render asks the world for it (`__gfLook.view({ where })` → `ctx.world.place(where)`): the voxel
+The look judge's render asks the world for it (`__gfLook.view({ where })` → `ctx.world.lookout(where)`): the voxel
 world's `places.mjs` (a lit cavern, a sunlit rise), the terrain world's `worlds/terrain/places.mjs` and the sea-islands
 world's `worlds/sea-places.mjs`, both on the outdoor lookouts (`worlds/lookouts.mjs`: seat, day, night, cliff-edge,
 beach, sea-view over the ground's height). A world with no such place answers null and the camera frames the player
@@ -168,6 +169,18 @@ pick writes that look as the spec's target (with the others kept for the levels)
 create keeps the spec's world and says when the target reads as another (`applyTarget` notes); the look step's options
 show the target's world, and the pick writes it into the spec (`world.template`, `world.params`), which the loop locks
 and create makes the game from.
+
+### Level composition (looks wave 4, `composition.mjs`, `worlds/compose.mjs`)
+
+Set pieces placed as dressing end up small in the distance; in the references the landmarks ARE the playfield. The
+target's `world.composition` (and each look's) says what the play happens on: `landmarks` [{what, kind, play}], `playOn`
+(on, around, across, behind, open), `bridges`, `verticality`, `share` (the share of a gameplay frame the landmarks take).
+The reader asks it in its one round; `node builder/look/composition.mjs <target.json> --refs <dir>` reads it for a target
+made before (one look's frames at a time). `world.mjs` `compositionPieces` finds each landmark in the level's own set
+dressing first (then the look's packs and the runtime's, for a building or a bridge), and `composeOf` writes the world's
+`compose` params (the terrain world: `worlds/terrain/compose.mjs`; sea-islands: `worlds/sea-compose.mjs`). The pitch
+passes it through `worldPlan`. The camera leans toward a landmark in view (`worlds/compose.mjs leanToward`) and the
+seats face their partner with a landmark in the frame (`framedYaw`); the sheet draws a composed level from its first seat.
 
 ## The style pass: mixed packs made one look (looks wave 3, `harmonize.mjs`)
 
@@ -190,6 +203,8 @@ pass off. What the target gives:
 | `outline`, `outlineColor` | `edges.outline`: high → an inverted-hull outline on still meshes (3D), mid → the post outline (3D) or an ink edge (2D); a pixel look inks in each thing's own deep shade |
 | `quantize`, `texelsPerMetre` | a pixel look snaps pictures to a ramp of its colours (beside each picture's own few) at 16 texels a metre; drawn 128; 3D props match the ground picture's texels a metre |
 | `skip` | the look's own picks (the world pictures the look chose from the library); UI, fonts, cards and the look's data pictures are always left; a slot's own `harmonize: false` too |
+| `keepFiles` | the look's own packs' art, left as it was made (they were made in the target's style; moving their colours again risks drift): create lists every file it took from a pack the look names (`spec.look.packs`, a level's packs) via `keepLookArt`; the pitch's `assets/<kind>/look-<id>` copies are always kept |
+| `include`, `includePacks` | opt-ins: a slot pattern (`include`), a whole pack (`spec.look.harmonize.includePacks`, left out of `keepFiles` by create), or one asset by its assets.json slot's `harmonize: true` |
 
 **How a colour moves** (`harmonize-core.js`): an asset's colours are grouped (a few OKLab clusters over its surface by
 area, or its pixels; a texture is read at each triangle's UVs, so an atlas counts by what it paints). Each cluster turns
@@ -236,6 +251,24 @@ studio shows the options as sheets (`GET /api/build/look/:option`, the Look stag
 straight to the build.
 
 A spec with no target, no references and no words about the look skips the step (said in the history): the kind decides.
+
+## The HUD and the effects (wave 2)
+
+The target's `ui` and `vfx` parts drive the HUD and the effects of every game the same way: never per-game code.
+`ui.type/shapes/layout/widgets/motion/tags/inkColor` and `vfx.explosion/smoke/debris/sparks/rings/numbers/trail/outline`
+are read on the rubric (target.mjs). create folds the HUD tokens over the kind's (`ui-style.mjs applyTargetUi`; a themed
+kind keeps its theme, forge and vista keep their own HUD, both said in the notes); the three runtime's vfx module turns
+the effect facts into `config/game.json → fx` (slot `vfx.style`) and the presets that style draws. The projectile calls
+`vfx.blast` where a splash lands, `vfx.hit` on a direct hit and `vfx.trail` behind each shot; the health mechanic calls
+`vfx.damage` on every hurt. Widgets the HUD lacked (a radial dial for aim, power, wind, a compass, a number badge; team
+health cards; a turn clock badge; a weapon grid or wheel; a big inked announcement) are `ui.dial`, `ui.teams`,
+`ui.turnTimer`, `ui.weapons`, `ui.announce` (builder/ui/widgets.js), drawn in the same tokens; the kit's HUD fills the team
+cards itself for a game with teams and health whose style names `team-cards`.
+
+The reference-name rule (builder/lib/publish/names.mjs): a game's reference names (look refs' `game`, the ledger's
+references and reference rows) never go up with it. spec.json is published as a copy with them taken out; any other
+shipped file (or file path) that carries one refuses the publish, naming the file and line. A multi-word name's first
+word alone, capitalised, is a warning.
 
 ## The judge, the tuning loop and the look gate
 
@@ -325,11 +358,11 @@ deviation of 5.7 points (range 17) and the whole 3.8 (range 47–58, across the 
 The measured half is deterministic (0.15 across re-renders; 0 on the same frames). So measure 23:
 - averages k = 3 judge passes (in parallel, so about one call's time), the pairs' order reversed on every other pass;
 - puts an interval round the score: ± Z · judged weight · sd / √k, where sd is the larger of this run's spread and the
-  measured noise (NOISE.judgedSd, 6), Z = 2;
+  measured noise (NOISE.judgedSd, 6), Z = 3 (at 2, a game near the bar failed 1 verify run in 10 and was unsure in 9);
 - fails only when the whole interval is below the bar; a game whose interval holds the bar is **unsure**: said, advisory,
   never a fail; above it, a pass.
 The measured half keeps 30 % (BLEND): averaged over three passes the judged half's spread is about 3.3, so the band of
-"unsure" is the bar ± 4.9; weighting the measured half more would narrow it at the price of the calibration (the bar was
+"unsure" is the bar ± 7.3; weighting the measured half more would narrow it at the price of the calibration (the bar was
 set on the 30/70 blend). Proof (evidence/stability-2026-10-14.json): the same games, verify --check 23 run 10 times each.
 
 ### Settings: like with like (settings.mjs)
@@ -339,7 +372,7 @@ indoors), `night`, `close` (a close-up) or `ui` (a menu or title card). The visi
 the local looks folder; without a model, the numbers tell day from cave). A reference is scored only against our frames
 of its own setting; a setting the references show and no frame of ours does is a finding (`missingSettings`), never a
 score. The whole is the settings' scores weighed by game time (the player's own view's setting counts twice).
-Our frames include a place per setting when the world has one (`ctx.world.place(setting)`; the voxel world finds a lit
+Our frames include a place per setting when the world has one (`ctx.world.lookout(setting)`; the voxel world finds a lit
 cavern and an open rise in daylight: `worlds/voxel/places.mjs`), so a cave reference is held to a frame in a cave.
 
 ### tune.mjs

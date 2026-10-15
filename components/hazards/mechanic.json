@@ -1,0 +1,310 @@
+{
+  "id": "hazards",
+  "name": "Hazards",
+  "describe": "Water, the world's edge and hard falls: a player who falls in is out for a moment and comes back on reachable ground; hard landings can hurt",
+  "examples": [
+    "fall in the sea and come back on your island",
+    "knocked off the edge of the world",
+    "a long drop hurts"
+  ],
+  "rank": 32,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "water": {
+        "type": "boolean",
+        "default": true,
+        "description": "Falling into the water (the world's sea, or its waterAt) takes a player out for a moment"
+      },
+      "waterDepth": {
+        "type": "number",
+        "description": "How far under the water surface the feet go before it counts (m)",
+        "minimum": 0,
+        "maximum": 5,
+        "default": 0.6
+      },
+      "out": {
+        "type": "boolean",
+        "default": true,
+        "description": "Leaving the world (past its edge, or falling below its floor) takes a player out for a moment"
+      },
+      "outMargin": {
+        "type": "number",
+        "description": "Metres past the world's edge before it counts",
+        "minimum": 0,
+        "maximum": 50,
+        "default": 4
+      },
+      "floor": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "default": null,
+        "description": "Height below which a body is out (null: 8 m under the lowest of the sea and the world)"
+      },
+      "respawnSeconds": {
+        "type": "number",
+        "description": "Seconds out before coming back",
+        "minimum": 0.2,
+        "maximum": 30,
+        "default": 2.5
+      },
+      "protectSeconds": {
+        "type": "number",
+        "description": "Seconds of protection after coming back (fair play)",
+        "minimum": 0,
+        "maximum": 10,
+        "default": 1.5
+      },
+      "fallDamage": {
+        "type": "number",
+        "description": "Damage per m/s a landing is over fallSafe (0: falls never hurt); passed to the health mechanic",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 0
+      },
+      "fallSafe": {
+        "type": "number",
+        "description": "Fastest landing that does not hurt (m/s)",
+        "minimum": 2,
+        "maximum": 60,
+        "default": 12
+      },
+      "splashFx": {
+        "type": "string",
+        "default": "",
+        "description": "A vfx preset where a player falls into the water (water-splash); unset: none"
+      },
+      "splashSound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id for a fall into the water; unset: none"
+      },
+      "fallSound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id when a player goes out (the edge, the floor); unset: none"
+      },
+      "backSound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id when a player comes back; unset: none"
+      },
+      "toast": {
+        "type": "boolean",
+        "default": true,
+        "description": "Tell the player who fell, in a toast"
+      },
+      "textWater": {
+        "type": "string",
+        "default": "Splash! Back in a moment",
+        "description": "What the player who fell in the water reads"
+      },
+      "textOut": {
+        "type": "string",
+        "default": "Out! Back in a moment",
+        "description": "What the player who went out reads"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.hazards.respawn-seconds",
+        "label": "Seconds out after a fall",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/respawnSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 56,
+        "constraints": {
+          "min": 0.2,
+          "max": 30,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.hazards.fall-damage",
+        "label": "Fall damage per m/s",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/fallDamage"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 52,
+        "constraints": {
+          "min": 0,
+          "max": 100
+        }
+      },
+      {
+        "id": "mechanic.hazards.fall-safe",
+        "label": "Safe landing speed",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/fallSafe"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 2,
+          "max": 60,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.hazards.water",
+        "label": "The water takes players out",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/water"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.hazards.out",
+        "label": "The world's edge takes players out",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/out"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.hazards.text-water",
+        "label": "Fell in the water text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textWater"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 60
+        }
+      },
+      {
+        "id": "mechanic.hazards.text-out",
+        "label": "Went out text",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/textOut"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "maxLength": 60
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onFall",
+      "on": "host",
+      "args": "{ player, cause: 'water' | 'out', by, at }",
+      "when": "a player fell in the water or out of the world (by: whoever threw them last)",
+      "play": "death"
+    },
+    {
+      "name": "onBack",
+      "on": "every copy",
+      "args": "{ player, at }",
+      "when": "a player came back after a fall",
+      "quiet": true
+    },
+    {
+      "name": "onHurt",
+      "on": "host",
+      "args": "{ player, amount, speed }",
+      "when": "a hard landing hurt (fallDamage > 0)",
+      "play": "hit"
+    }
+  ],
+  "counters": [],
+  "host": {
+    "owner": "host",
+    "how": "the host watches every player and decides a fall; it tells every copy (the splash, the hold under water) and where the player comes back",
+    "state": null,
+    "fields": {}
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "knockback",
+    "health"
+  ],
+  "capabilities": [],
+  "gives": [
+    "hazards"
+  ],
+  "bots": "no bot code (the part watches every player, bots included)",
+  "notes": {
+    "lines": [
+      "The kit HUD and the toast say a player fell; rules only score: hz.onFall(e => { if (e.by && e.by !== e.player) e.by.score += 3; }).",
+      "A player comes back on ground every seat can reach (the world's placement API), near their own seat, protected for protectSeconds.",
+      "With the knockback mechanic a thrown player's thrower is e.by for creditSeconds after the throw."
+    ],
+    "readme": "components/hazards/README.md",
+    "stub": {
+      "as": "hz",
+      "worked": "hz.onFall(e => { if (ctx.host && e.by && e.by !== e.player) e.by.score += 3; });",
+      "traps": [
+        "onFall runs on the host only: score there, never on every copy",
+        "do not move a fallen player yourself: the part brings them back"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "players": 2,
+    "missing": "no k2 fixture folder: the two-player check is tests/chaos-two-players.mjs <game> (the joiner thrown into the sea is out on both screens and comes back on dry ground)"
+  },
+  "impl": {
+    "three": {
+      "path": "components/hazards/index.js",
+      "profiles": [
+        "standard-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/chaos-two-players.mjs: the joiner thrown into the sea is out on both screens (credited to the host) and back on dry ground in the same place on both (11/11); verify 6/6",
+            "date": "2026-10-14"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/chaos-two-players.mjs: the joiner thrown into the sea is out on both screens (credited to the host) and back on dry ground in the same place on both (11/11); verify 6/6",
+        "date": "2026-10-14"
+      }
+    ]
+  }
+}

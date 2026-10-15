@@ -111,6 +111,9 @@ export function create(ctx, params = {}) {
   const row = () => (ctx.host ? [b.active ? 1 : 0, r2(b.x), r2(b.z), Math.round(b.hp * 10) / 10, b.max, b.phase, b.st, b.atk, Math.round(b.facing / DEG), r2(b.tx), r2(b.tz), Math.round(b.atkYaw / DEG)] : S?.a ?? null);
   const playersUp = () => ctx.players.list().filter(p => p.alive !== false && (p.owned || p.drawn));
   const phaseCount = () => (V('phases')?.length ?? 0) + 1;
+  // the world's own ground under the boss (worlds/placement.js world.groundAt): it stands on the land as it is, never a
+  // floor at y = 0; every copy works it out from the same world
+  const groundY = (x, z) => ctx.world.groundAt?.(x, z) ?? 0;
   const levelCircle = () => { const lv = ctx.world?.levels?.[ctx.world.level ?? 0]; return lv ? { x: lv.at?.[0] ?? 0, z: lv.at?.[2] ?? 0, r: Math.max(3, (lv.radius ?? 12) - 1.4) } : null; };
   const keepIn = (x, z) => { const c = levelCircle(); if (!c) { const h = ctx.world?.half ?? 20; return { x: Math.max(-h, Math.min(h, x)), z: Math.max(-h, Math.min(h, z)) }; } const dx = x - c.x, dz = z - c.z, d = Math.hypot(dx, dz); return d > c.r ? { x: c.x + dx / d * c.r, z: c.z + dz / d * c.r, edge: true } : { x, z }; };
 
@@ -118,7 +121,9 @@ export function create(ctx, params = {}) {
   function begin(at = null) {
     if (!ctx.host) return;
     const zone = ctx.world?.zone?.('boss') ?? ctx.world?.zone?.('arena') ?? ctx.world?.zone?.('centre');
-    const p = at ?? (zone ? { x: zone.at?.x ?? zone.at?.[0] ?? 0, z: zone.at?.z ?? zone.at?.[2] ?? 0 } : { x: 0, z: 0 });
+    // in its zone on open ground every seat reaches, nearest the zone's middle (or the play area's)
+    const mid = zone ? { x: zone.at?.x ?? zone.at?.[0] ?? 0, z: zone.at?.z ?? zone.at?.[2] ?? 0 } : { x: 0, z: 0 };
+    const p = at ?? ctx.world?.place?.('boss', 1, { prefer: mid, clear: V('radius') + 0.5, away: 3 })?.[0] ?? mid;
     const hp = Math.round(V('hp') * (1 + V('hpPerPlayer') * Math.max(0, ctx.players.list().length - 1)));
     // QA's staged moment ?gf-demo=boss.phase (verify check 15): it comes with its hit points just above its first phase
     // threshold, so a few real hits change its phase
@@ -277,15 +282,15 @@ export function create(ctx, params = {}) {
     if (name === 'slam' || name === 'summon') {
       const R = name === 'slam' ? A('slam').radius : 4.5;
       const at = name === 'slam' ? { x: v.tx, z: v.tz } : { x: v.x, z: v.z };
-      g.position.set(at.x, 0.06, at.z); g.rotation.set(0, 0, 0);
+      g.position.set(at.x, groundY(at.x, at.z) + 0.06, at.z); g.rotation.set(0, 0, 0);
       u.ring.visible = u.disc.visible = true; u.ring.scale.setScalar(R); u.disc.scale.setScalar(Math.max(0.05, R * share));
     } else if (name === 'charge') {
       const C = A('charge');
-      g.position.set(v.x, 0.06, v.z); g.rotation.set(0, v.atkYaw, 0);
+      g.position.set(v.x, (v.y ?? 0) + 0.06, v.z); g.rotation.set(0, v.atkYaw, 0);
       u.lane.visible = u.laneEdge.visible = true; u.laneEdge.scale.set(C.width, 1, C.length); u.lane.scale.set(C.width * 0.94, 1, Math.max(0.05, C.length * share));
     } else if (name === 'volley') {
       const Vo = A('volley'), ys = volleyYaws(0, Math.min(9, Math.round(Vo.count)), Vo.spread);
-      g.position.set(v.x, 0.06, v.z); g.rotation.set(0, v.atkYaw, 0); u.fan.visible = true;
+      g.position.set(v.x, (v.y ?? 0) + 0.06, v.z); g.rotation.set(0, v.atkYaw, 0); u.fan.visible = true;
       u.fan.children.forEach((l, i) => { l.visible = i < ys.length; if (i < ys.length) { l.rotation.set(0, ys[i], 0); l.scale.set(1, 1, Math.max(0.05, 9 * share)); } });
     }
   }
@@ -337,7 +342,7 @@ export function create(ctx, params = {}) {
     if (!frozen) v.yaw += wrap(face - v.yaw) * Math.min(1, dt * 10);
     v.born = Math.min(1, v.born + dt * 1.5);
     v.hitT += dt;
-    v.obj.position.set(v.x, 0, v.z); v.obj.rotation.y = v.yaw;
+    v.obj.position.set(v.x, (v.y = groundY(v.x, v.z)), v.z); v.obj.rotation.y = v.yaw;
     if (v.st === BST.dead) {
       v.deadT += dt;
       const pose = deathPose(v.deadT, V('deathSeconds'), 0.45);
@@ -367,6 +372,8 @@ export function create(ctx, params = {}) {
   };
 
   const api = {
+    /** The boss to reach (gate D's reach leg, window.__game.objectives()), while it is in play. */
+    objectives: () => (b.active || v.shown ? [{ kind: 'boss', id: 'boss', label: V('name'), x: v.shown ? v.x : b.x, y: v.y ?? groundY(b.x, b.z), z: v.shown ? v.z : b.z, present: true, open: (ctx.host ? b.st : v.st) !== BST.dead, radius: V('radius') + 2 }] : []),
     id, params: P,
     begin,
     /** Every copy: {active, name, hp, max, phase (0-based), phases, attack ('slam' | ...|null), state, dead, x, z}. */
@@ -394,8 +401,8 @@ export function create(ctx, params = {}) {
         S = ctx.shared.register('boss', { a: [0, 0, 0, 0, 0, 0, BST.idle, 0, 0, 0, 0, 0] });
         if (M('melee')) (ctx.meleeTargets ??= []).push(provider);
         const prj = M('projectile');
-        if (prj?.addTargets) prj.addTargets({ list: () => (ctx.host && b.active && b.st !== BST.dead ? [{ id: 'boss', x: b.x, y: 0, z: b.z, radius: V('radius'), height: V('height') }] : []), hit: h => damage(h.damage ?? 1, { from: h.shooter, kind: h.kind }) });
-        (ctx.aimBodies ??= []).push(() => (v.shown && v.st !== BST.dead ? [{ id: 'boss', x: v.x, z: v.z, height: V('height'), radius: V('radius') }] : []));
+        if (prj?.addTargets) prj.addTargets({ list: () => (ctx.host && b.active && b.st !== BST.dead ? [{ id: 'boss', x: b.x, y: groundY(b.x, b.z), z: b.z, radius: V('radius'), height: V('height') }] : []), hit: h => damage(h.damage ?? 1, { from: h.shooter, kind: h.kind }) });
+        (ctx.aimBodies ??= []).push(() => (v.shown && v.st !== BST.dead ? [{ id: 'boss', x: v.x, y: v.y ?? 0, z: v.z, height: V('height'), radius: V('radius') }] : []));
       }
       if (ctx.host) {
         const playing = ctx.round?.phase === 'playing';

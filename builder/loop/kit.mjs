@@ -7,6 +7,7 @@
 //   verify     builder/tools/verify.mjs as a child process (it starts Chrome); its verdict.json is the contracts'
 //              verdict (builder/gates/verdict.schema.json), read as written → {verdictVersion, pass, gates, failed}
 //   fix        builder/tools/fix.mjs when the kit has one                  → {repairs}
+//   objectiveArt builder/art/objectives.mjs on the made game (the objectives' art) → {items, credits}
 //   checkSpec  builder/tools/lib/spec.mjs checkSpecV2 (version, schema, registry), then create's own check in a
 //              throwaway folder → problems (findings are said, never refused)
 //   versions   builder/lib/checkpoint.mjs (the same store gamesfun_rollback restores from)
@@ -125,8 +126,8 @@ export function lookTools({ log = () => {}, env = process.env } = {}) {
     },
     async lookOptions(spec, { game, target }) {
       const { options, renderSheet } = await mod('pitch.mjs');
-      const wrap = gpuWrap(env), render = (g, out, o) => renderSheet(g, out, { ...o, wrap, env: { ...env, ...savedGpuEnv() } });
-      try { return await options(spec, { game, target, render, packs: spec.look?.packs ?? [], log }); } catch (e) { log(`look options: ${flat(e.message, 300)}`); return [{ ok: false, skipped: flat(e.message, 200) }]; }
+      const wrap = gpuWrap(env), gpuEnv = { ...env, ...savedGpuEnv() }, render = (g, out, o) => renderSheet(g, out, { ...o, wrap, env: gpuEnv });
+      try { return await options(spec, { game, target, render, score: judgeUnder(wrap, gpuEnv, { log }), packs: spec.look?.packs ?? [], log }); } catch (e) { log(`look options: ${flat(e.message, 300)}`); return [{ ok: false, skipped: flat(e.message, 200) }]; }
     },
     async applyLook(game, option, { spec = null } = {}) {
       // an option made from its own spec (its world and camera: builder/look/world.mjs) makes the game again from that
@@ -151,6 +152,30 @@ export function lookTools({ log = () => {}, env = process.env } = {}) {
   };
 }
 
+/**
+ * The look judge as its own process, on the same terms as the sheets and verify: under GAMESFUN_GPU_WRAP and with the
+ * GPU env doctor saved. Its live render opens a browser, and in the loop's own process that browser got neither (no
+ * hardware GL on a wrapped host: every option's judge timed out waiting for the game, T8 run 1, 2026-10-14).
+ * → score(game, target, refs) → the judge's record, or null when it gave none (the option is then unscored)
+ */
+export function judgeUnder(wrap = [], env = process.env, { log = () => {}, judgeFile = path.join(BUILDER, 'look', 'judge.mjs') } = {}) {
+  return async (game, target, refs = []) => {
+    const dir = await mkdtemp(path.join(os.tmpdir(), 'gf-look-judge-'));
+    try {
+      const t = path.join(dir, 'target.json'), m = path.join(dir, 'refs.json'), out = path.join(dir, 'record.json');
+      await writeFile(t, JSON.stringify(target ?? null));
+      await writeFile(m, JSON.stringify({ frames: (refs ?? []).filter(f => f?.file) }));
+      const [cmd, ...pre] = wrap.length ? [...wrap, process.execPath] : [process.execPath];
+      await new Promise(done => {
+        const c = spawn(cmd, [...pre, judgeFile, game, '--target', t, '--refs', m, '--out', path.join(game, '.verify', 'look'), '--json', out], { stdio: ['ignore', 'pipe', 'pipe'], env });
+        c.stdout.on('data', d => log(String(d).trimEnd())); c.stderr.on('data', d => log(String(d).trimEnd()));
+        c.on('close', done); c.on('error', e => { log(`look judge: ${e.message}`); done(1); });
+      });
+      return existsSync(out) ? JSON.parse(await readFile(out, 'utf8')) : null;
+    } finally { await rm(dir, { recursive: true, force: true }).catch(() => {}); }
+  };
+}
+
 // ---------------------------------------------------------------- the tools of one game
 const readJson = async f => { try { return JSON.parse(await readFile(f, 'utf8')); } catch { return null; } };
 export const loopDir = game => path.join(game, STATE_DIR);
@@ -169,14 +194,39 @@ export function kitTools({ registry, log = () => {}, signal = null, quick = fals
   };
   return {
     ...(look ? lookTools({ log, env }) : {}),
-    async create(spec, { game }) {
+    /**
+     * The design step's references (builder/play/design.mjs playRefsOf takes them): the person's own images and clips,
+     * then the look's reference frames on this machine (spec.look.refs, by sha256: builder/look/refs.mjs), gameplay first.
+     */
+    async playRefs(spec, { references = [] } = {}) {
+      const given = references.filter(r => r?.file).map(r => ({ file: r.file, note: r.caption ?? r.note ?? null }));
+      if (!spec.look?.refs?.length) return given;
+      try {
+        const { findRefs } = await import(pathToFileURL(path.join(BUILDER, 'look', 'refs.mjs')).href);
+        const { frames } = await findRefs(spec.look.refs);
+        const order = f => (f.frame === 'gameplay' ? 0 : f.frame === 'vfx' ? 1 : 2);
+        return [...given, ...frames.sort((a, b) => order(a) - order(b)).map(f => ({ file: f.file, note: [f.frame, f.note].filter(Boolean).join(': ') || null }))];
+      } catch (e) { log(`play refs: ${flat(e.message, 200)}`); return given; }
+    },
+    async create(spec, { game, newRules = false }) {
       try {
         const file = await writeSpec(spec, loopDir(game));
-        await createGame(game, { spec: file, force: true, cwd: KIT_ROOT, env });
+        await createGame(game, { spec: file, force: true, newRules, cwd: KIT_ROOT, env });
         await ignoreStateDir(game);
         log(`create: ${spec.runtime}${spec.profile ? `/${spec.profile}` : ''} ${spec.loop} ${spec.kind}`);
         return { ok: true };
       } catch (e) { return { ok: false, why: flat(e.message, 1200) }; }
+    },
+    // the art step for what the objectives draw (builder/art/objectives.mjs): the library by meaning, else a maker in the
+    // look's style on the person's own key (cost never stops a build; GAMESFUN_ART_MAKE=0 keeps makers off), else the
+    // stand-in and why, which gate F fails until it is filled
+    async objectiveArt(game) {
+      try {
+        const { objectiveArt, makerEnv } = await import(pathToFileURL(path.join(BUILDER, 'art', 'objectives.mjs')).href);
+        const r = await objectiveArt(game, { yes: env.GAMESFUN_ART_MAKE !== '0' && await makerEnv(), log });
+        for (const i of r.items) if (i.now !== 'kept' && i.now !== 'spec') log(`objective art: ${i.slot} ${i.now}${i.ref ? ` ${i.ref}` : ''}${i.why ? ` (${flat(i.why, 160)})` : ''}`);
+        return { items: r.items.map(({ name, slot, now, ref = null, why = null }) => ({ name, slot, now, ref, why })), credits: r.credits };
+      } catch (e) { log(`objective art could not run: ${flat(e.message, 200)}`); return { items: [], credits: 0, error: flat(e.message, 300) }; }
     },
     async fix(game) {
       const tool = path.join(GF3_TOOLS, 'fix.mjs');
@@ -203,6 +253,9 @@ export function kitTools({ registry, log = () => {}, signal = null, quick = fals
       if (r.aborted) { const e = new Error('verify was stopped: the host aborted it'); e.name = 'AbortError'; throw e; }
       const raw = await readJson(path.join(outDir, 'verdict.json'));
       const v = verdictOf(raw, { runtime: spec?.runtime ?? null, profile: spec?.profile ?? null, loop: spec?.loop ?? null, code: r.timedOut ? 'timed out' : r.code, stderr: r.stderr || r.stdout.slice(-2000), outDir });
+      // gate D's play leg (builder/play/judge.mjs) wrote its record beside the verdict: the loop keeps it (S.playJudge)
+      const pj = await readJson(path.join(outDir, 'play', 'play-judge.json')).catch(() => null);
+      if (pj?.verdict) v.play = { verdict: pj.verdict, score: pj.score, interval: pj.interval, bar: pj.bar, advisory: pj.advisory, hard: pj.hard ?? [], parts: pj.parts, findings: (pj.findings ?? []).slice(0, 12), change: pj.change ?? [], clips: (pj.clips ?? []).map(c => c.file), record: path.join(outDir, 'play', 'play-judge.json') };
       await writeFile(path.join(outDir, 'gates.json'), JSON.stringify(v, null, 2) + '\n');
       return v;
     },

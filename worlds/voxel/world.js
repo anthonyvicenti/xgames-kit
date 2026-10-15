@@ -23,7 +23,7 @@
 //   onApply(fn)           fn(x, y, z, v, old) after every apply
 //   setLight(partial)     the cave's own light, live: { cave, block, spread, caveLight: {color, strength}, caveFog } over
 //                         config/world.json → voxel.light (the look judge's tuning loop moves them with the cave in view)
-// world.place(setting)    a camera place that shows 'cave' or 'day' (places.mjs: the voxel bench's finders) → { eye,
+// world.lookout(setting)  a camera place that shows 'cave' or 'day' (places.mjs: the voxel bench's finders) → { eye,
 //                         target, fov } | null (builder/look: a cave reference is judged against a frame in a cave)
 //
 // voxel.faces { size: 32, filter: 'pixel' | 'smooth' }: block faces drawn at `size` texels; 'pixel' keeps every texel a
@@ -46,6 +46,7 @@ import { material } from '../../look/materials.js';
 import { WORLD_GROUPS } from '../../core/util.js';
 import { createWorldStore } from '../../net/persist.js';
 import { placeFor } from './places.mjs';
+import { placeOnColliders } from '../placement.js';
 
 export const templates = ['voxel'];
 // The size a smooth block face is drawn at, by quality tier (blocks.mjs FACE_SIZES: 512 high, 256 low). 32 faces at 512
@@ -486,7 +487,7 @@ export async function loadWorld(ctx, cfg) {
       return { distance: t, point: new THREE.Vector3().copy(from).addScaledVector(d, t), normal: new THREE.Vector3(hit.normal.x, hit.normal.y, hit.normal.z), collider: hit.collider };
     },
     update, lightAt: worldLightAt,
-    place: setting => placeFor({ grid, light, terrain: T, table }, setting, { from: T.plaza?.at }),
+    lookout: setting => placeFor({ grid, light, terrain: T, table }, setting, { from: T.plaza?.at }),
     voxel: {
       setLight, lightValues: () => JSON.parse(JSON.stringify(LV)),
       grid, table, light, signs, store, loaded, apply, pick, lightAt, heldMesh, protectedAt, remeshNow, floor, protect, signN, terrain: T, water: T.water,
@@ -509,12 +510,17 @@ export async function loadWorld(ctx, cfg) {
           const c = makeCollider(body);
           colliders[colliders.indexOf(collider)] = c; collider = c;
         }
+        world.walk?.invalidate();
       },
       onApply(fn) { if (typeof fn === 'function') listeners.push(fn); },
       stats: () => ({ chunks: chunks.size, scenery: farMeshes.length, dirty: grid.dirty.size, meshMs, timings, signs: signs.size, fence: fence.size, loaded: { ...loaded }, store: { mode: store.mode, seq: store.seq, queued: store.queued, ...store.stats } }),
     },
     dispose() { for (const list of chunks.values()) for (const m of list) m.geometry.dispose(); for (const m of farMeshes) m.geometry.dispose(); signs.dispose(); root.removeFromParent(); arrayTex.dispose(); },
   };
+  // where things may be put and what a seat can get to (../placement.js), from the voxel collider; water is the sea's
+  // surface; a block placed or broken is read again where it changed
+  placeOnColliders(world, ctx, { solid: c => colliders.includes(c), ...(Number.isFinite(T.water) ? { water: () => T.water } : {}) });
+  listeners.push((x, y, z) => world.walk?.invalidate([x - 1, z - 1, x + 2, z + 2]));
   ctx.world = world;
   return world;
 }

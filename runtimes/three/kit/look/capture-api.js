@@ -6,7 +6,7 @@
 //   __gfLook.freeze(on)    pause animation where the host supports it (the bench does)
 //   __gfLook.view(v)       a framing by numbers { pitch, distance, fov, yaw, aim } around the first subject (a style
 //                          target's camera; builder/look/judge.mjs), like shot(); shot(null) goes back. With
-//                          { where: 'cave' | 'day' | … } the world places the camera first (ctx.world.place(where):
+//                          { where: 'cave' | 'day' | … } the world places the camera first (ctx.world.lookout(where):
 //                          a cave shot inside a cave); a world with no such place frames the player and says so
 //   __gfLook.worldLight(p) the world's own light, live, where the world has one (voxel: the cave's fill, lamps, glow
 //                          and fog: world.voxel.setLight); null clears nothing and reads the values
@@ -92,7 +92,7 @@ export function installCaptureApi(ctx, extra = {}) {
       const subjects = subjectsOf(ctx, extra);
       const w = extra.world ?? ctx.world;
       // a world's place for a setting is found once (a cave search walks the whole grid)
-      if (v.where && typeof w?.place === 'function' && !places.has(v.where)) places.set(v.where, w.place(v.where) ?? null);
+      if (v.where && typeof w?.lookout === 'function' && !places.has(v.where)) places.set(v.where, w.lookout(v.where) ?? null);
       const place = v.where ? places.get(v.where) ?? null : null;
       if (place) {
         const cam = look.shot('view', { subjects, ...worldOpts(), view: { ...v } });

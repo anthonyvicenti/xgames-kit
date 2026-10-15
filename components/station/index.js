@@ -94,16 +94,23 @@ export function create(ctx, params = {}) {
   function resolve() {
     resolved = true;
     const list = P.stations?.length ? P.stations : [{ zone: ctx.world.zone?.('centre') ? 'centre' : '' }];
-    spots = list.map(def => {
-      let x = A.cx, y = 0, z = A.cz, onProp = false;
-      if (def.at) { x = def.at[0]; y = def.at[1] ?? 0; z = def.at[2] ?? def.at[1] ?? 0; if (def.at.length === 2) { y = 0; z = def.at[1]; } }
-      else if (def.zone) { const zn = ctx.world.zone?.(def.zone); if (zn) { const a = zn.at; x = a.x ?? a[0]; y = a.y ?? a[1] ?? 0; z = a.z ?? a[2]; } }
+    // where each stands: the world's own ground (worlds/placement.js), the same on every copy (a seeded draw per
+    // station over the same world); at [x, z] stands on the ground there, a zone or "the middle" on open ground every
+    // seat reaches (nearest the zone's or the play area's middle), never a floor at y = 0
+    const W = ctx.world, seeded = k => { let q = 7919 * (k + 1); return () => ((q = (q * 16807) % 2147483647) / 2147483647); };
+    const placed = (i, zone, at) => W.place?.('station', 1, { ...(zone ? { zone } : {}), prefer: at, rng: seeded(i), clear: 0.9, away: 1.2, exclude: spots.map(o => ({ x: o.x, z: o.z, r: 2 })) })?.[0] ?? null;
+    spots = [];
+    for (const [i, def] of list.entries()) spots.push((() => {
+      let x = A.cx, y = W.groundAt?.(A.cx, A.cz) ?? 0, z = A.cz, onProp = false;
+      if (def.at) { x = def.at[0]; z = def.at.length === 2 ? def.at[1] : def.at[2]; y = def.at.length === 2 ? (W.groundAt?.(x, z) ?? 0) : def.at[1]; }
+      else if (def.zone) { const zn = W.zone?.(def.zone); if (zn) { const a = zn.at, ax = a.x ?? a[0], az = a.z ?? a[2]; const q = placed(i, def.zone, { x: ax, z: az }); if (q) ({ x, y, z } = q); else { x = ax; z = az; y = W.groundAt?.(ax, az) ?? a.y ?? a[1] ?? 0; } } }
+      else if (!def.prop) { const q = placed(i, null, { x: A.cx, z: A.cz }); if (q) ({ x, y, z } = q); }
       else if (def.prop) {
         const arr = ctx.world.props?.get?.(def.prop) ?? [], it = arr[def.index ?? 0];
         if (it) { onProp = true; if (it.at) { x = it.at.x ?? it.at[0]; y = it.at.y ?? it.at[1] ?? 0; z = it.at.z ?? it.at[2]; } else if (it.position) { x = it.position.x; y = it.position.y; z = it.position.z; } }
       }
       return { x, y, z, yaw: Math.atan2(A.cx - x, A.cz - z), title: def.title ?? V('title'), onProp };
-    });
+    })());
     for (const sp of spots) logic.push(createStation({ mode: V('mode'), taskSeconds: V('taskSeconds'), taps: V('taps'), cooldown: V('cooldown'), keepProgress: V('keepProgress') }));
     spots.forEach((sp, i) => buildView(sp, i));
   }
@@ -190,6 +197,8 @@ export function create(ctx, params = {}) {
     /** An interact mechanic when its action is interact (CONTRACT §6d). */
     get interacts() { return V('action') === 'interact' && V('mode') !== 'stand'; },
     /** What a player can work (QA, verify check 13): the free stations, with the use distance and how to work them. */
+    /** The places a player must get to (gate D's reach leg, window.__game.objectives()): every station. */
+    objectives: () => Object.assign(spots.map((sp, i) => ({ kind: 'station', id: `station:${i}`, label: sp.title || 'station', x: sp.x, y: sp.y, z: sp.z, present: true, open: api.state(i)?.state !== 'cool', radius: V('range') })), { asked: (P.stations?.length || 1) }),
     interactables: () => spots.map((s, i) => ({ s, i, st: api.state(i) })).filter(x => x.st?.state === 'idle').map(({ s, i }) => ({ kind: 'station', id: `station:${i}`, x: s.x, y: s.y, z: s.z, reach: V('range'), touch: 0, action: V('action'), mode: V('mode'), seconds: V('mode') === 'tap' ? 0 : V('taskSeconds'), taps: V('taps') })),
     /** Every copy: {done, needed, met}. */
     quota() { const q = ctx.host ? [quota.done, quota.needed] : (S?.q ?? [0, V('quota')]); return { done: q[0], needed: q[1], met: q[1] > 0 && q[0] >= q[1] }; },
@@ -204,7 +213,7 @@ export function create(ctx, params = {}) {
     reset() { logic.forEach(s => s.reset()); quota.reset(); custom.clear(); lastWire = []; lastQuota = 0; },
     update(dt) {
       if (!S) { if (!(ctx.shared && ctx.players && ctx.me)) return; S = ctx.shared.register('station', { s: [], q: [0, V('quota')], x: {} }); }
-      if (!resolved) resolve();
+      if (!resolved) { if (ctx.world.walk && !ctx.world.walk.ready()) return; resolve(); }   // the ground is read after the physics' first step
       if (!spots.length) return;
       const playing = ctx.round?.phase === 'playing';
       // input of owned players (the local human and, on the host, bots that press interact)

@@ -3,7 +3,9 @@
 // the same ground (window.__game.terrainHash(): a hash of every sample of the field) with the craters in it; then a third
 // player joins late and must get the same edited ground (the host's log, replayed on the same generated land).
 //
-//   node tests/terrain-two-players.mjs <game dir> [--shots <dir>] [--bombs 6] [--late]
+//   node tests/terrain-two-players.mjs <game dir> [--shots <dir>] [--bombs 6] [--no-late] [--landmark]
+// --landmark (a composed level, worlds/terrain/compose.mjs): the host aims its bombs at the main landmark; both screens
+// must hold the same landmark with the same holes in it (window.__game.landmarks(): the samples each lost)
 // Under the GPU wrapper on Linux: .claude/scripts/gpu-run.sh node tests/terrain-two-players.mjs ...
 import { mkdirSync } from 'node:fs';
 import path from 'node:path';
@@ -18,10 +20,10 @@ async function until(fn, ms, what) {
 }
 const party = page => page.evaluate(() => window.__party?.snapshot() ?? null).catch(() => null);
 const gameFrame = page => page.frames().find(f => f.parentFrame() === page.mainFrame());
-const inGame = (page, fn) => gameFrame(page)?.evaluate(fn).catch(() => null) ?? null;
+const inGame = (page, fn, arg) => gameFrame(page)?.evaluate(fn, arg).catch(() => null) ?? null;
 const ground = page => inGame(page, () => (window.__game?.terrainHash ? { hash: window.__game.terrainHash(), t: window.__game.terrain(), started: !!window.__game.snapshot()?.net?.started } : null));
 
-export async function terrainTwoPlayers(dir, { shots = null, bombs = 6, late = true, log = () => {} } = {}) {
+export async function terrainTwoPlayers(dir, { shots = null, bombs = 6, late = true, landmark = false, log = () => {} } = {}) {
   const s = await serve(dir, { port: 0 });
   const browser = await launchChrome({ gpu: 'webgl', disableFeatures: ['WebRtcHideLocalIpsWithMdns'], args: ['--autoplay-policy=no-user-gesture-required'] });
   const errors = [], out = { ok: false, steps: [] };
@@ -55,21 +57,61 @@ export async function terrainTwoPlayers(dir, { shots = null, bombs = 6, late = t
     const g0 = [await ground(H), await ground(J)];
     step('both copies start on the same generated ground', g0[0].hash === g0[1].hash, `host ${g0[0].hash}, joiner ${g0[1].hash}`);
 
-    // the host lobs bombs with real clicks at the ground under its crosshair (the camera tilted down first)
+    // the host lobs bombs with real clicks at the ground under its crosshair (the camera tilted down first); on a composed
+    // level with landmark: true, at its main landmark (the mouse turns the camera until the landmark's middle is under the
+    // crosshair), so both screens must show the same landmark with the same holes in it
     const frameH = gameFrame(H);
     await frameH.locator('canvas').first().click({ position: { x: 640, y: 360 } }).catch(() => {});
-    await H.mouse.move(640, 360); await H.mouse.move(640, 470, { steps: 6 });
-    for (let i = 0; i < bombs; i++) {
-      await H.mouse.move(640 + (i % 3 - 1) * 90, 470 + (i % 2) * 30, { steps: 3 });
-      await H.mouse.down(); await sleep(70); await H.mouse.up();
-      await sleep(1100);
+    const marks = landmark ? await inGame(H, () => window.__game.landmarks?.() ?? null) : null;
+    const target = marks?.list?.find(l => l.role === 'landmark') ?? null;
+    if (landmark) step('the level has a landmark to aim at', !!target, target ? `${target.id} at ${target.centre.join(', ')}` : 'none');
+    let mx = 640, my = 360;
+    await H.mouse.move(mx, my);
+    if (target) {
+      const aimAt = async (q) => {
+        for (let k = 0; k < 14; k++) {
+          const sc = await inGame(H, (p) => window.__game.project(p[0], p[1], p[2]), q);
+          if (!sc?.front) { mx += 120; await H.mouse.move(mx, my, { steps: 4 }); continue; }
+          const vw = await inGame(H, () => [innerWidth, innerHeight]);
+          const dx = sc.x - vw[0] / 2, dy = sc.y - vw[1] / 2;
+          if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return true;
+          mx += dx * 0.8; my += dy * 0.8; await H.mouse.move(mx, my, { steps: 4 }); await sleep(250);
+        }
+        return false;
+      };
+      for (let i = 0; i < bombs; i++) {
+        const c = target.centre, q = [c[0] + ((i % 3) - 1) * 1.2, c[1] - 1 + (i % 2) * 2, c[2]];
+        await aimAt(q);
+        await H.mouse.down(); await sleep(70); await H.mouse.up();
+        await sleep(1300);
+      }
+    } else {
+      await H.mouse.move(640, 470, { steps: 6 });
+      for (let i = 0; i < bombs; i++) {
+        await H.mouse.move(640 + (i % 3 - 1) * 90, 470 + (i % 2) * 30, { steps: 3 });
+        await H.mouse.down(); await sleep(70); await H.mouse.up();
+        await sleep(1100);
+      }
     }
     await sleep(3000);
     const [h1, j1] = [await ground(H), await ground(J)];
     const made = h1.t.carve?.applied ?? 0;
     step('the host\'s bombs carved craters', made > 0 && h1.hash !== g0[0].hash, `${made} edits on the host (${h1.t.carve?.stats?.carved} carved), ground ${g0[0].hash} → ${h1.hash}`);
     step('the joiner holds the same ground, every crater in the same place', h1.hash === j1.hash && (j1.t.carve?.applied ?? 0) === made, `host ${h1.hash} (${made} edits), joiner ${j1.hash} (${j1.t.carve?.applied} edits)`);
-    step('the joiner saw each crater as it happened (not caught up afterwards)', (j1.t.carve?.stats?.caughtUp ?? 0) === 0 && (j1.t.carve?.stats?.carved ?? 0) === made, `joiner carved ${j1.t.carve?.stats?.carved} live, caught up ${j1.t.carve?.stats?.caughtUp}`);
+    // every edit live: the craters and the ground they left hanging that fell (settles: the carve mechanic's collapse)
+    const live = (j1.t.carve?.stats?.carved ?? 0) + (j1.t.carve?.stats?.settled ?? 0) + (j1.t.carve?.stats?.added ?? 0);
+    step('the joiner saw each crater as it happened (not caught up afterwards)', (j1.t.carve?.stats?.caughtUp ?? 0) === 0 && live === made, `joiner carved ${j1.t.carve?.stats?.carved} live (${j1.t.carve?.stats?.settled ?? 0} settles), caught up ${j1.t.carve?.stats?.caughtUp}`);
+    if (target) {
+      const [lh, lj] = [await inGame(H, () => window.__game.landmarks()), await inGame(J, () => window.__game.landmarks())];
+      const gone = lh?.lost?.[target.id] ?? 0;
+      step('the bombs took ground out of the landmark', gone > 0, `${target.id}: ${gone} samples gone on the host`);
+      step('both screens show the same landmark with the same holes', JSON.stringify(lh?.lost) === JSON.stringify(lj?.lost), `host ${JSON.stringify(lh?.lost)}, joiner ${JSON.stringify(lj?.lost)}`);
+      if (shots) {
+        // the same view of the landmark on both screens (a camera placed beside it), to see the holes by eye
+        const c = target.centre, view = { position: [c[0] - 14, c[1] + 6, c[2] - 14], target: c, fov: 50 };
+        for (const [p, n] of [[H, 'host-landmark.png'], [J, 'joiner-landmark.png']]) { await inGame(p, v => window.__gfLook?.shot(v), view); await sleep(700); await p.screenshot({ path: path.join(shots, n) }); await inGame(p, () => window.__gfLook?.shot(null)); }
+      }
+    }
     if (shots) {
       await H.screenshot({ path: path.join(shots, 'host.png') }); await J.screenshot({ path: path.join(shots, 'joiner.png') });
       // the same wide view on both screens (the look's contact-sheet camera): the craters in the same places, by eye
@@ -100,8 +142,8 @@ export async function terrainTwoPlayers(dir, { shots = null, bombs = 6, late = t
 if (isMain(import.meta)) {
   const a = process.argv.slice(2), arg = k => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : null; };
   const dir = a.find((x, i) => !x.startsWith('--') && !['--shots', '--bombs'].includes(a[i - 1]));
-  if (!dir) { console.error('usage: node tests/terrain-two-players.mjs <game dir> [--shots <dir>] [--bombs 6] [--no-late]'); process.exit(2); }
-  const r = await terrainTwoPlayers(dir, { shots: arg('--shots'), bombs: Number(arg('--bombs') ?? 6), late: !a.includes('--no-late'), log: m => console.error(m) });
+  if (!dir) { console.error('usage: node tests/terrain-two-players.mjs <game dir> [--shots <dir>] [--bombs 6] [--no-late] [--landmark]'); process.exit(2); }
+  const r = await terrainTwoPlayers(dir, { shots: arg('--shots'), bombs: Number(arg('--bombs') ?? 6), late: !a.includes('--no-late'), landmark: a.includes('--landmark'), log: m => console.error(m) });
   console.log(JSON.stringify(r, null, 2));
   process.exit(r.ok ? 0 : 1);
 }

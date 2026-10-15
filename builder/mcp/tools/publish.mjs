@@ -25,11 +25,11 @@ export const tools = [
   {
     name: 'gamesfun_publish_check',
     annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: false },
-    description: 'The offline part of publishing, without publishing: which files would go up, which are left out, and every reason it would be refused (a .env file, a link, anything that looks like a key, a backend.json whose origins the play host cannot open). Run it before gamesfun_publish and fix what it names. Read-only.',
+    description: 'The offline part of publishing, without publishing: which files would go up, which are left out, and every reason it would be refused (a .env file, a link, anything that looks like a key, a file that names a game this one was made to look or play like, a backend.json whose origins the play host cannot open). Run it before gamesfun_publish and fix what it names. Read-only.',
     inputSchema: { type: 'object', properties: { game }, additionalProperties: false },
     async handler(input) {
       const p = await preflight(await gameDir(input));
-      return { ok: !p.problems.length && !p.secrets, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, problems: p.problems, secrets: p.secrets, backend: p.backend };
+      return { ok: !p.problems.length && !p.secrets && !p.names, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, copied: p.built.copied, problems: p.problems, secrets: p.secrets, names: p.names, nameWarnings: p.nameWarnings, backend: p.backend };
     },
   },
   {

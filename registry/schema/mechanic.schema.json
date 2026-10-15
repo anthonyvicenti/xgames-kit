@@ -117,6 +117,10 @@
           "quiet": {
             "type": "boolean",
             "description": "Nothing on screen answers it by itself (a refused hit)."
+          },
+          "play": {
+            "enum": ["score", "hit", "knockout", "pickup", "goal", "death", "combo", "move", "tag", "blast", "attempt"],
+            "description": "What it is in play, for the play feed (kit/core/play.js, window.__game.play()): a meaningful kind of event, or an attempt (a shot, a throw, a swing). Without it the feed reads the event's name; a quiet event with none is not counted."
           }
         }
       }
@@ -334,6 +338,28 @@
           "why": {
             "type": "string",
             "maxLength": 200
+          }
+        }
+      }
+    },
+    "objectives": {
+      "type": "object",
+      "required": ["props"],
+      "additionalProperties": false,
+      "description": "What its objectives() draw (the things a player must get to: pickups, carried items, gates, drops, a portal): each a param naming a prop.<name> slot of the game. The art step fills those slots by meaning (builder/art/objectives.mjs) and gate F (measure 14) holds them to it: never a stand-in, never a model that means something else.",
+      "properties": {
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "required": ["param"],
+            "additionalProperties": false,
+            "properties": {
+              "param": { "type": "string", "pattern": "^[a-zA-Z][a-zA-Z0-9]{0,39}$", "description": "The param that names the prop." },
+              "empty": { "enum": ["first-gameplay-prop", "none"], "default": "none", "description": "What the part draws when the param is empty: the game's first gameplay prop, or its own marker (no slot of the game)." }
+            }
           }
         }
       }

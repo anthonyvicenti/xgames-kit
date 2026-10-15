@@ -17,11 +17,11 @@ export const PLAY_MINUTES = 8;
 /** Was this answer seen as its promise needs (a friends promise: with two player-driven seats)? */
 export const seenAsNeeded = (p, a) => a?.status === 'seen' && (!p?.friends || a.two === true);
 
-/** The promises a round asks: all of them the first time; a re-test asks what was not seen, and every build line. */
+/** The promises a round asks: all of them the first time; a re-test asks what was not seen, every build line and every line of play. */
 export function focusOf(promises, prev = null) {
   if (!prev) return promises.map(p => p.id);
   const open = new Set(Object.entries(prev.answers ?? {}).filter(([id, a]) => !seenAsNeeded(promises.find(p => p.id === id), a)).map(([id]) => id));
-  return promises.filter(p => open.has(p.id) || p.kind === 'build' || !prev.answers?.[p.id]).map(p => p.id);
+  return promises.filter(p => open.has(p.id) || p.kind === 'build' || p.kind === 'play' || !prev.answers?.[p.id]).map(p => p.id);
 }
 
 /** The tester's brief: one message, the promises with the controls. `reportHow`: how this host takes the report. */
@@ -34,7 +34,7 @@ export function playtestBrief({ promises, controls = {}, focus, game, round = 1,
     '## The controls', '', keys, '',
     '## What it promises', '',
     'For each promise below, report exactly one status: `seen` (it happened on your screen: give the screenshot or the HUD words as evidence), `not-seen` (you got where it should happen and it did not), or `unreachable` (you could not get to where it would happen; say how far you got).', '',
-    ...asked.map(p => `- \`${p.id}\`${p.core ? ' (core)' : ''}${p.friends ? ' (two players)' : ''}: ${p.text}${p.kind === 'build' ? ' (built new for this game: try it)' : ''}`), '',
+    ...asked.map(p => `- \`${p.id}\`${p.core ? ' (core)' : ''}${p.friends ? ' (two players)' : ''}: ${p.text}${p.kind === 'build' ? ' (built new for this game: try it)' : p.kind === 'play' ? ' (how it plays: play it as a player would until you can say)' : ''}`), '',
     ...(asked.some(p => p.friends) ? ['## Two players', '',
       'A promise marked **(two players)** is about playing with friends. It counts only when two players, each driven by you, are in one game: start a run with `{"do":"start","friend":true}` (the game\'s own friends page: you host, a second window joins through the lobby; a friends round has no bots), act as each (a step with `"who":"friend"` plays the second player), and take a `shot` or `snap` of each screen. Give that run\'s name as `run`, and say what each screen showed in `screens`: `{"host": "…", "friend": "…"}`. Seen with bots, or alone, it stays untested, whatever you report.', '',
       ...(asked.some(p => p.friends && p.sees) ? [`Nobody is a character in this game, so seeing your friend means: ${asked.some(p => p.sees === 'boards') ? 'their own board drawn live beside yours, framed in their colour with their name and an avatar, changing as they play' : 'a seat card for them with their name, colour and an avatar that reacts (thinking on their turn, placed just after a move), their pointer moving where they point, and their moves landing on your screen as they make them'}. Act as one player and capture the other's screen right after: say in \`screens\` exactly what each screen showed of the other player.`, ''] : [])] : []),

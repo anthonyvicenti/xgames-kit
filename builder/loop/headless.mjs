@@ -35,13 +35,14 @@ export const SCHEMAS = {
   probe: obj({ probes: { type: 'array', items: anyObj } }),
   pitch: obj({ pitch: obj({ reply: { type: 'string' }, cards: { type: 'array', items: anyObj }, questions: { type: 'array', items: anyObj } }, ['reply', 'cards']) }),
   spec: obj({ spec: anyObj }),
+  design: obj({ target: anyObj }),
   ask: obj({ questions: obj({ message: { type: 'string' }, questions: { type: 'array', items: anyObj } }) }),
   build: obj({ summary: { type: 'string' }, controls: { type: 'string' }, gaveUp: { type: 'string' }, questions: anyObj }, ['summary', 'controls']),
   report: PLAYTEST_REPORT,
   reading: READING,
 };
-const TALK = { ledger: 'ledger', amend: 'ledger', probe: 'probe', pitch: 'pitch', spec: 'spec', look: 'look', ask: 'ask' };
-const LOOP_TOOLS = ['gamesfun_next', 'gamesfun_step_ledger', 'gamesfun_step_foundation', 'gamesfun_step_pitch', 'gamesfun_step_spec', 'gamesfun_step_create', 'gamesfun_step_look', 'gamesfun_step_fix', 'gamesfun_step_economy', 'gamesfun_step_backend', 'gamesfun_step_verify', 'gamesfun_step_playtest', 'gamesfun_playtest_report', 'gamesfun_step_read', 'gamesfun_reader_report', 'gamesfun_step_repair', 'gamesfun_ask', 'gamesfun_step_deliver', 'gamesfun_change', 'gamesfun_rollback'].map(mcp);
+const TALK = { ledger: 'ledger', amend: 'ledger', probe: 'probe', pitch: 'pitch', spec: 'spec', look: 'look', design: 'design', ask: 'ask' };
+const LOOP_TOOLS = ['gamesfun_next', 'gamesfun_step_ledger', 'gamesfun_step_foundation', 'gamesfun_step_pitch', 'gamesfun_step_spec', 'gamesfun_step_create', 'gamesfun_step_look', 'gamesfun_step_design', 'gamesfun_step_fix', 'gamesfun_step_economy', 'gamesfun_step_backend', 'gamesfun_step_verify', 'gamesfun_step_playtest', 'gamesfun_playtest_report', 'gamesfun_step_read', 'gamesfun_reader_report', 'gamesfun_step_repair', 'gamesfun_ask', 'gamesfun_step_deliver', 'gamesfun_change', 'gamesfun_rollback'].map(mcp);
 
 /** What a headless round is told beside its message (the message itself is the loop's, word for word). */
 export const HEADLESS_WORDS = [
@@ -120,9 +121,11 @@ export function defaultAnswers({ cards = 0, words = null, maxAsks = 2, migration
  * Build one game from one prompt, headless. Options:
  *   prompt, game (a folder; made if missing), images [paths], answers (answersOf), model ('opus'), strong (the model
  *   the ladder climbs to; default the same model at the highest effort), playtestModel ('sonnet'), quick (verify --quick),
- *   permission ('dontAsk' | 'bypassPermissions'), runner (a test passes its own), kit (kitHost overrides), log, signal
+ *   permission ('dontAsk' | 'bypassPermissions'), runner (a test passes its own), kit (kitHost overrides), log, signal,
+ *   until (a step: the run stops when the loop reaches it, e.g. 'build' for the plan, the look and the play with no build;
+ *   the same call again without it goes on from there)
  */
-export async function buildHeadless({ prompt, game, images = [], answers = null, model = 'opus', strong = null, playtestModel = 'sonnet', readerModel = null, quick = false, permission = 'dontAsk', runner = null, waits = null, kit = null, log = console.error, signal = null, env = process.env } = {}) {
+export async function buildHeadless({ prompt, game, images = [], answers = null, model = 'opus', strong = null, playtestModel = 'sonnet', readerModel = null, quick = false, permission = 'dontAsk', runner = null, waits = null, kit = null, log = console.error, signal = null, env = process.env, until = null } = {}) {
   if (!prompt?.trim()) throw new Error('build needs the idea: --prompt "<the person\'s words>"');
   const dir = path.resolve(game);
   await mkdir(dir, { recursive: true });
@@ -148,8 +151,11 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
   };
 
   const base = await kitHost(dir, { quick, log, signal, env, ...(kit ?? {}) });
+  // `until`: the loop's store refuses to move past that step, so the run stops there and its state is kept
+  const store = fileStore(stateFileOf(dir));
+  const held = until ? { load: store.load, save: async S => { await store.save(S); if (S.step === until && !S.handed) throw Object.assign(new Error(`stopped at ${until}`), { name: 'UntilStop' }); } } : store;
   const L = await openLoop({
-    ...base, ...(kit ?? {}), game: dir, gameRef: dir, store: fileStore(stateFileOf(dir)),
+    ...base, ...(kit ?? {}), game: dir, gameRef: dir, store: held,
     limits: { model, strong: strongOf.model, playtestModel, readerModel: readerModel ?? model },
     // the headless tester and reader have no report tool and no token: each answers with its final structured answer
     reportHow: 'Give the report as your final structured answer (the output schema): there is no report tool and no token in this run.',
@@ -164,7 +170,7 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
       const t = toolsFor(kind, { game: dir, playtest, kitRoot: KIT_ROOT, generate: o.kind === 'generate' });
       if (TALK[kind] && imageDirs.length) t.addDirs.push(...imageDirs);
       // the look round reads the reference frames, wherever they are kept on this machine (never in the kit or the game)
-      if (o.kind === 'look' && o.dirs?.length) t.addDirs.push(...o.dirs.filter(d => !t.addDirs.includes(d)));
+      if ((o.kind === 'look' || o.kind === 'design') && o.dirs?.length) t.addDirs.push(...o.dirs.filter(d => !t.addDirs.includes(d)));
       log(`  round ${rounds.length + 1}: ${o.kind}${o.area ? ` (${o.area})` : ''} on ${m}${effort ? ` at ${effort} effort` : ''}`);
       // the loop's own output schema for the round when it gives one (the ledger's from the registry's words, the pitch v2 shape)
       const r = await run({ prompt: o.message, system: HEADLESS_WORDS, schema: o.schema ?? SCHEMAS[TALK[o.kind] ?? 'build'], model: m, effort, name: o.kind, signal, ...t });
@@ -192,8 +198,16 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
     },
   });
   const answer = await answersOf(answers);
+  // the record says the build is under way from its start (the studio reads it: a stopped build's game is shown)
+  await saveRecord({ running: true });
   let r, stopped = null, error = null;
   try {
+    // the idea on a game that exists is a change to it: one the loop delivered (its run is over), or one made outside
+    // the loop (create, a composed level: its spec.json and no run), which the loop takes as it is first
+    const made = !L.state.prompt && existsSync(path.join(dir, 'spec.json')) && existsSync(path.join(dir, 'rules.js'))
+      ? JSON.parse(await readFile(path.join(dir, 'spec.json'), 'utf8')) : null;
+    if (made) { const a = await L.adopt(made, prompt); if (a.refused) throw new Error(a.why); log(`the game exists (${path.basename(dir)}): the idea is a change to it`); }
+    else if (L.state.step === 'done' && L.state.lock) { const c = await L.change(prompt); if (c.refused) throw new Error(c.why); log('the game was delivered: the idea is a change to it'); }
     r = await L.run({ idea: prompt, ...(references.length ? { references } : {}) });
     for (let guard = 0; r.waiting === 'creator' && guard < 40; guard++) {
       const q = { about: r.about, pitch: r.pitch, questions: r.questions, migration: r.migration, looks: r.looks, asked: asked.filter(a => a.about === 'questions').length + 1 };
@@ -203,7 +217,10 @@ export async function buildHeadless({ prompt, game, images = [], answers = null,
       r = await L.run(input);
     }
     if (r.next !== 'done') stopped = r.waiting === 'creator' ? 'asking' : 'error';
-  } catch (e) { stopped = signal?.aborted ? 'wall-clock' : 'error'; error = String(e.stack ?? e.message).slice(0, 2000); log(`build stopped: ${e.message}`); }
+  } catch (e) {
+    if (e.name === 'UntilStop') { stopped = `until-${until}`; log(`the run stops at ${until}, as asked (the state is kept: run again without --until to go on)`); }
+    else { stopped = signal?.aborted ? 'wall-clock' : 'error'; error = String(e.stack ?? e.message).slice(0, 2000); log(`build stopped: ${e.message}`); }
+  }
   const S = L.state, o = S.outcome ?? null;
   const delivered = /^delivered/.test(String(o?.outcome ?? '')) && S.status === 'delivered';
   const ladder = [...(S.ladders ?? []), S.ladder].filter(Boolean).flatMap(l => l.climbs ?? []).map(c => ({ rung: c.rung, why: c.skipped ? `skipped: ${c.skipped}` : c.reason }));

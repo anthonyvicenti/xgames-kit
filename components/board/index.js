@@ -138,11 +138,14 @@ export function create(ctx, params = {}) {
     const room = P.presence === 'walk' ? 3.2 : 2.4;
     const cell = Math.max(0.6, Math.min(P.cell, (A.hx * 2 - room * 2) / cols, (A.hz * 2 - room * 2) / rows));
     G = geometry({ cols, rows, cell, x, z, rowZero: P.rowZero, seatSides: P.seatSides });
+    // the board lies on the world's own ground there (worlds/placement.js world.groundAt), never a floor at y = 0; read
+    // again once the world's colliders are in its queries (update)
+    G.y = ctx.world.groundAt?.(x, z) ?? 0; G.grounded = !ctx.world.walk || ctx.world.walk.ready();
   }
   const mat = (color, extra = {}) => new THREE.MeshStandardMaterial({ color, roughness: 0.6, metalness: 0, ...extra });
   const tag = (o, k) => { try { ctx.assets?.tag?.(o, `mechanic.board.${kebab(k)}`); } catch { /* a bench without assets */ } return o; };
   function build() {
-    const root = new THREE.Group(); root.name = 'gf-board'; root.position.set(G.x, 0, G.z);
+    const root = new THREE.Group(); root.name = 'gf-board'; root.position.set(G.x, G.y, G.z);
     const c = G.cell, rim = c * 0.18;
     const slab = tag(new THREE.Mesh(new THREE.BoxGeometry(G.w + rim * 2, 0.06, G.d + rim * 2), mat(V('boardColor'))), 'boardColor');
     slab.position.y = 0.03; slab.receiveShadow = true; root.add(slab);
@@ -375,7 +378,7 @@ export function create(ctx, params = {}) {
     const d = Math.hypot(p.position.x - at.x, p.position.z - at.z);
     // a bot whose body nobody steers (the rules have no bot hook) plays from where it stands
     const steered = walked || (plan.walked && ctx.time.now - plan.walked < 0.5);
-    if (steered && d > G.cell * 0.42 && plan.t < 9) { p.bot?.seek?.({ x: at.x, y: 0, z: at.z }, { stop: G.cell * 0.2 }); return; }
+    if (steered && d > G.cell * 0.42 && plan.t < 9) { p.bot?.seek?.({ x: at.x, y: G.y, z: at.z }, { stop: G.cell * 0.2 }); return; }
     if (walked) p.bot?.stop?.();
     hostPlay(p, plan.move);
   }
@@ -485,7 +488,7 @@ export function create(ctx, params = {}) {
         else view.anims.set(i, { kind: P.input === 'drop' ? 'lane' : 'drop', t: 0 });
         landed = true;
       }
-      if (landed && view.shown) ctx.audio?.play(V('soundPlace'), { optional: true, at: to >= 0 ? { x: G.centre(to % cols, Math.floor(to / cols)).x, y: 0, z: G.centre(to % cols, Math.floor(to / cols)).z } : undefined });
+      if (landed && view.shown) ctx.audio?.play(V('soundPlace'), { optional: true, at: to >= 0 ? { x: G.centre(to % cols, Math.floor(to / cols)).x, y: G.y, z: G.centre(to % cols, Math.floor(to / cols)).z } : undefined });
       view.shown = g;
     }
     const win = S.w && (!ownMode || (S.w.s ?? []).includes(seatOf(me))) ? new Set(S.w.c ?? []) : null;
@@ -545,7 +548,7 @@ export function create(ctx, params = {}) {
       seen.add(p.id);
       const m = markFor(p), at = G.centre(cu.c, cu.r), tx = at.x - G.x, tz = at.z - G.z, k = Math.min(1, dt * 14);
       m.x = m.x === null ? tx : m.x + (tx - m.x) * k; m.z = m.z === null ? tz : m.z + (tz - m.z) * k;
-      m.group.position.set(m.x, 0, m.z); m.group.visible = true;
+      m.group.position.set(m.x, G.y, m.z); m.group.visible = true;
       const turn = ownMode ? myTurn : p === cur && !over();
       m.ring.scale.setScalar(turn ? 1 + 0.06 * Math.sin(now * 6) : 0.8); m.ring.material.emissiveIntensity = turn ? 0.9 : 0.25;
       if (m.pointer) { m.pointer.position.y = G.cell * 1.15 + Math.sin(now * 4 + (p.seat ?? 0)) * 0.08; m.label.position.y = G.cell * 1.75; }
@@ -590,7 +593,7 @@ export function create(ctx, params = {}) {
     moves(seat = S?.t ?? 0) { return S ? candidates(state(), R, seat, P.input) : []; },
     /** The cell under a world position ([c, r] or null), and a cell's middle in the world. */
     cellAt: (x, z) => G?.cellAt(x, z, 0) ?? null,
-    centre: (c, r) => { const p = G.centre(c, r); return { x: p.x, y: 0.07, z: p.z }; },
+    centre: (c, r) => { const p = G.centre(c, r); return { x: p.x, y: G.y + 0.07, z: p.z }; },
     /** The cell a player is on: their feet (walk) or their mark (cursor). */
     cursor(p = ctx.me) { const c = p && G ? cursorOf(p) : null; return c ? [c.c, c.r] : null; },
     /** rules.bot(ctx, p, dt) calls this so a bot walks to its cell before it plays; without it a bot still plays, from where it stands. */
@@ -605,7 +608,7 @@ export function create(ctx, params = {}) {
     interactables() {
       if (cursorMode || !S || !G || !playing() || over() || mover() !== ctx.me || P.input === 'move') return [];
       const reach = Math.max(0.5, (G.cell / 2 - 0.25) / 0.6);
-      return candidates(state(), R, S.t, P.input).slice(0, 24).map(m => { const cell = P.input === 'drop' ? [m.to[0], rows - 1] : m.to, at = G.centre(...cell); return { kind: 'board', id: `board:${S.n}:${cell[1] * cols + cell[0]}`, x: at.x, y: 0, z: at.z, reach, touch: 0, action: P.action, turn: true, verb: P.input === 'drop' ? 'dropped a piece in the column' : 'placed a piece' }; });
+      return candidates(state(), R, S.t, P.input).slice(0, 24).map(m => { const cell = P.input === 'drop' ? [m.to[0], rows - 1] : m.to, at = G.centre(...cell); return { kind: 'board', id: `board:${S.n}:${cell[1] * cols + cell[0]}`, x: at.x, y: G.y, z: at.z, reach, touch: 0, action: P.action, turn: true, verb: P.input === 'drop' ? 'dropped a piece in the column' : 'placed a piece' }; });
     },
     /**
      * What the local player can point at and click now (QA, verify check 13 and the test player that takes its turn):
@@ -630,7 +633,7 @@ export function create(ctx, params = {}) {
       if (!cursorMode || !S || !G || !playing() || !p) return null;
       const c = p.local ? (mine.on === false ? null : mine) : cursors.get(p.id) ?? null;
       if (!c) return null;
-      const at = G.centre(c.c, c.r); return { x: at.x, y: 0.1, z: at.z };
+      const at = G.centre(c.c, c.r); return { x: at.x, y: G.y + 0.1, z: at.z };
     },
     /**
      * The kit's presence part (gf/three/ui/presence.js) reads what this board says of a player: their mood (thinking on
@@ -651,12 +654,12 @@ export function create(ctx, params = {}) {
       return { mood, moves: S.m?.[seat] ?? 0, last: cellOfIdx(S.v?.[seat]), pointer: cu ? [cu.c, cu.r] : null };
     },
     /** Where a cell of this board is on this screen (CSS pixels; front: in front of the camera). */
-    presenceScreen(cell) { if (!G || !cell) return null; const p = G.centre(cell[0], cell[1]); pv.set(p.x, 0.1, p.z).project(ctx.camera); return { x: (pv.x + 1) / 2 * innerWidth, y: (1 - pv.y) / 2 * innerHeight, front: pv.z > -1 && pv.z < 1 }; },
+    presenceScreen(cell) { if (!G || !cell) return null; const p = G.centre(cell[0], cell[1]); pv.set(p.x, G.y + 0.1, p.z).project(ctx.camera); return { x: (pv.x + 1) / 2 * innerWidth, y: (1 - pv.y) / 2 * innerHeight, front: pv.z > -1 && pv.z < 1 }; },
     /** This board draws every player's pointer itself (a mark with their name), so the presence part does not. */
     get presenceMarks() { return cursorMode && !ownMode; },
     get stats() { return { moves: S?.n ?? 0, refused: refusals, cleared }; },
     /** QA: where each cell's middle is on this screen, in CSS pixels ([x, y] per cell from row 0), so a test or a play-tester can point at one. */
-    screen() { if (!G) return []; const v = new THREE.Vector3(), out = []; for (let i = 0; i < cols * rows; i++) { const p = G.centre(i % cols, Math.floor(i / cols)); v.set(p.x, 0.07, p.z).project(ctx.camera); out.push([Math.round((v.x + 1) / 2 * innerWidth), Math.round((1 - v.y) / 2 * innerHeight)]); } return out; },
+    screen() { if (!G) return []; const v = new THREE.Vector3(), out = []; for (let i = 0; i < cols * rows; i++) { const p = G.centre(i % cols, Math.floor(i / cols)); v.set(p.x, G.y + 0.07, p.z).project(ctx.camera); out.push([Math.round((v.x + 1) / 2 * innerWidth), Math.round((1 - v.y) / 2 * innerHeight)]); } return out; },
     observe: () => ({ cols, rows, cell: G?.cell ?? null, at: G ? [G.x, G.z] : null, input: P.input, presence: P.presence, boards: P.boards, own: own ? { grid: own.grid(), moves: own.moves, last: own.last } : null, turn: S?.t ?? null, mover: mover()?.id ?? null, moves: S?.n ?? 0, grid: S?.g ?? null, result: api.result(), refused: refusals, lastRefusal, cleared, cursor: api.cursor(), sel, screen: api.screen(), cursors: ctx.players?.list().map(p => ({ id: p.id, cell: G && S ? api.cursor(p) : null })) ?? [] }),
     setup() {
       layout(); build();
@@ -665,6 +668,7 @@ export function create(ctx, params = {}) {
     },
     reset() { lastPhase = null; endAt = -1; plans.clear(); cursors.clear(); botBoards.clear(); own = null; ownKey = ''; sel = null; local = null; localKey = ''; if (view) { view.shown = ''; view.anims.clear(); for (const m of view.pieces) if (m) m.visible = false; view.won = false; } },
     update(dt) {
+      if (G && !G.grounded && ctx.world.walk?.ready()) { G.grounded = true; G.y = ctx.world.groundAt?.(G.x, G.z) ?? 0; view?.root.position.setY(G.y); }
       if (!S || !view) return;
       const ph = ctx.round?.phase;
       if (ph !== lastPhase) {
@@ -673,7 +677,7 @@ export function create(ctx, params = {}) {
           if (ctx.host) begin();
           sel = null; mine = { c: Math.floor(cols / 2), r: Math.floor(rows / 2), on: cursorMode }; sentCur = ''; cursors.clear(); own = null; ownKey = '';
           // each player this copy owns stands at their side of the board (a walker starts beside it; a cursor's body stays there)
-          if (P.seats) { const order = ctx.players.list().slice().sort((a, b) => (a.seat ?? 0) - (b.seat ?? 0)); order.forEach((p, k) => { if (p.owned && k < MAX_SEATS) { const st = G.seat(k, Math.min(MAX_SEATS, order.length)); try { p.teleport?.({ x: st.x, y: 0, z: st.z }, st.yaw); } catch (e) { console.error(e); } } }); }
+          if (P.seats) { const order = ctx.players.list().slice().sort((a, b) => (a.seat ?? 0) - (b.seat ?? 0)); order.forEach((p, k) => { if (p.owned && k < MAX_SEATS) { const st = G.seat(k, Math.min(MAX_SEATS, order.length)); try { p.teleport?.({ x: st.x, y: G.y, z: st.z }, st.yaw); } catch (e) { console.error(e); } } }); }
         } else if (was === 'playing') { ctx.ui?.prompt?.(null, 'board'); view.prompt = null; }
       }
       const me = ctx.me;

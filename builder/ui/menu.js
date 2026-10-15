@@ -203,10 +203,11 @@ export function controlRows(controls = {}, { touch = false, camera = 'third', wo
 }
 
 const SETTINGS_KEY = game => `gf3-settings:${game}`;
-/** The player's own settings for this game, saved in the browser: { sensitivity, invertY, quality }. */
+/** The player's own settings for this game, saved in the browser: { sensitivity, invertY, quality, reduceMotion (true,
+ *  false, or null: what the browser says) }. */
 export function loadSettings(game) {
   let s = {}; try { s = JSON.parse(localStorage.getItem(SETTINGS_KEY(game)) ?? '{}') ?? {}; } catch {}
-  return { sensitivity: Number.isFinite(s.sensitivity) ? Math.max(0.25, Math.min(3, s.sensitivity)) : 1, invertY: !!s.invertY, quality: ['low', 'high'].includes(s.quality) ? s.quality : 'auto' };
+  return { sensitivity: Number.isFinite(s.sensitivity) ? Math.max(0.25, Math.min(3, s.sensitivity)) : 1, invertY: !!s.invertY, quality: ['low', 'high'].includes(s.quality) ? s.quality : 'auto', reduceMotion: typeof s.reduceMotion === 'boolean' ? s.reduceMotion : null };
 }
 function saveSettings(game, s) { try { localStorage.setItem(SETTINGS_KEY(game), JSON.stringify(s)); } catch {} }
 
@@ -217,7 +218,7 @@ export function createMenu(ctx, ui, { game = {}, live = false, world = false, ga
   const col = el('div', 'gf-col'); root.append(col);
   ui.root.append(root);
   const settings = loadSettings(gameId);
-  const apply = () => { if (ctx.input) { ctx.input.lookScale = settings.sensitivity; ctx.input.invertY = settings.invertY; } };
+  const apply = () => { if (ctx.input) { ctx.input.lookScale = settings.sensitivity; ctx.input.invertY = settings.invertY; } ctx.juice?.setComfort?.({ reduceMotion: settings.reduceMotion }); };
   apply();
 
   let view = null, from = null, last = { b: null, t: 0 };
@@ -426,6 +427,8 @@ export function createMenu(ctx, ui, { game = {}, live = false, world = false, ga
       p.append(range('gf-sensitivity', 'Mouse sensitivity', settings.sensitivity, 0.25, 3, 0.05, v => `${v.toFixed(2)}×`, v => { settings.sensitivity = v; apply(); saveSettings(gameId, settings); }));
       p.append(check('gf-invert', 'Invert look up and down', settings.invertY, v => { settings.invertY = v; apply(); saveSettings(gameId, settings); }));
     }
+    // comfort: no screen shake or slow motion (ctx.juice); unset follows the browser's own setting
+    if (ctx.juice) p.append(check('gf-reduce-motion', 'Reduce motion (no shake or slow motion)', ctx.juice.reduceMotion, v => { settings.reduceMotion = v; apply(); saveSettings(gameId, settings); }));
     const l = el('label', 'gf-set'), seg = el('div', 'gf-seg'); seg.id = 'gf-quality';
     for (const q of ['auto', 'low', 'high']) {
       const b = el('button', settings.quality === q ? 'on' : '', q[0].toUpperCase() + q.slice(1)); b.type = 'button'; b.dataset.quality = q;
@@ -517,7 +520,7 @@ export function createMenu(ctx, ui, { game = {}, live = false, world = false, ga
       const items = [...col.querySelectorAll('.gf-item')].map(li => ({ itemId: Number(li.dataset.item), worn: li.classList.contains('on') }));
       return {
         view, pause: view !== null && isPause(), live, buttons, how: { goal: col.querySelector('#gf-how-goal')?.textContent ?? null, keys },
-        settings: { ...settings, volume: ctx.audio?.raw ? Math.round((ctx.audio.raw.volume ?? 1) * 100) : null, muted: ctx.audio?.raw?.muted ?? null, lookScale: ctx.input?.lookScale ?? null, invertY: ctx.input?.invertY ?? null },
+        settings: { ...settings, reduceMotion: ctx.juice?.reduceMotion ?? null, volume: ctx.audio?.raw ? Math.round((ctx.audio.raw.volume ?? 1) * 100) : null, muted: ctx.audio?.raw?.muted ?? null, lookScale: ctx.input?.lookScale ?? null, invertY: ctx.input?.invertY ?? null },
         items: { state: col.querySelector('#gf-items-panel')?.dataset.state ?? null, picks: [...col.querySelectorAll('.gf-wallet-pick')].map(b => b.dataset.wallet), list: items },
         wallet: host.observe(),
         economy: host.observeEconomy?.() ?? { offers: [], state: null, sent: [] },

@@ -52,7 +52,8 @@ export function pitchMessage({ ledger, foundation, parts = [], worlds = null, pr
     `The foundation (chosen from the ledger; say it plainly on the cards): runtime **${rid(foundation.runtime, foundation.profile)}** (${foundation.why.runtime}), loop **${foundation.loop}** (${foundation.why.loop}), kind **${foundation.kind}** (${foundation.why.kind}).`,
     ...foundation.said.map(s => `- ${s}`), '',
     'The ledger (every line not cut is kept by every card):', ...live.map(r => `- \`${r.id}\` ${r.what} (${r.home}${r.by ? ` ${r.by}` : ''}${r.words ? `; "${r.words}"` : ''})`), '',
-    `Write 2–3 cards that differ in how they play, each in the pitch v2 shape (\`builder/spec/pitch.v2.schema.json\`): \`{id, title (at most 60 characters), hook (one sentence, at most 200), howItPlays (at most 600), players (who plays, at most 80), whyFunny (at most 300), v1: {has, build, notYet} (each line at most 160), conceptPrompt (what the game looks like, at most 600), spec}\`. Every spec is a whole spec v2 (\`${SPEC_SCHEMA}\`; complete examples in \`${SPEC_EXAMPLES}\`): \`specVersion: 2\`, \`runtime: "${foundation.runtime}"\`${foundation.profile ? `, \`profile: "${foundation.profile}"\`` : ' (no profile)'}, \`loop: "${foundation.loop}"\`, a \`kind\`, the mechanics its \`exists\` lines name, and \`build\`: one line \`{what, how, where, row}\` for every \`build\` line of the ledger${foundation.loopBuild ? ` (and for \`${foundation.loopBuild.row}\`: who acts when, built on ${foundation.loop})` : ''}${foundation.kindProof ? ` and one \`{what, how, where, kind: "${foundation.kind}"}\` that proves the look on ${foundation.runtime}` : ''}. Name each build line in the card's \`v1.build\`; \`v1.notYet\` holds only what the person cut.`,
+    `Write 2–3 cards that differ in how they play, each in the pitch v2 shape (\`builder/spec/pitch.v2.schema.json\`): \`{id, title (at most 60 characters), hook (one sentence, at most 200), howItPlays (at most 600), players (who plays, at most 80), whyFunny (at most 300), v1: {has, build, notYet} (each line at most 160), conceptPrompt (what the game looks like, at most 600), play, spec}\`. Every spec is a whole spec v2 (\`${SPEC_SCHEMA}\`; complete examples in \`${SPEC_EXAMPLES}\`): \`specVersion: 2\`, \`runtime: "${foundation.runtime}"\`${foundation.profile ? `, \`profile: "${foundation.profile}"\`` : ' (no profile)'}, \`loop: "${foundation.loop}"\`, a \`kind\`, the mechanics its \`exists\` lines name, and \`build\`: one line \`{what, how, where, row}\` for every \`build\` line of the ledger${foundation.loopBuild ? ` (and for \`${foundation.loopBuild.row}\`: who acts when, built on ${foundation.loop})` : ''}${foundation.kindProof ? ` and one \`{what, how, where, kind: "${foundation.kind}"}\` that proves the look on ${foundation.runtime}` : ''}. Name each build line in the card's \`v1.build\`; \`v1.notYet\` holds only what the person cut.`,
+    `The cards differ in **how they play**, so the person chooses play, not only look: each card's \`play\` is \`{style (the kind of play, such as "turn-based artillery" or "real-time brawl"), verbs (2–5 words), beat (what a player does every few seconds), touch (how players affect each other), chaos (0 calm … 1 bodies flying)}\`, a different \`style\` on each card, and its spec carries the same as \`play.sketch\`. Reason from the genre the person's words point to: card 1 is the play that genre is loved for, the others a real alternative (another pace, another way players meet).${foundation.loopChoices?.length ? ` The person did not say who acts when, so a card may play on another loop (\`${foundation.loopChoices.join('`, `')}\`) when its play needs it; say so on the card.` : ''}`,
     ...(worlds ? [worlds.length ? `The worlds a spec on ${rid(foundation.runtime, foundation.profile)} may name in \`world.template\`: ${worlds.map(w => `\`${w.id}\`${w.describe ? ` (${String(w.describe).split(/[;(]/)[0].trim()})` : ''}`).join(', ')}. An example spec on another runtime or profile may name one this one does not have; a place none of these is, is built on the closest (a build line).` : `${rid(foundation.runtime, foundation.profile)} has no world templates to name: the place is the game's own (a build line, or the runtime's tables).`] : []),
     'The reply (at most 400 characters) says what card 1 does, what is built new and that building new takes longer. It never says the kit cannot do something.',
     'Beside the cards: `research` `{bank: [], web: [], notes}` (what you read to make them; empty lists are fine) and `policy` `{ok: true}` (or `{ok: true, steered}` when you steered the idea to a version within the content policy, saying how).',
@@ -77,10 +78,11 @@ const failedLines = verify => (verify?.failed ?? []).map(f => `- gate ${f.gate},
 const playLines = (pt, promises) => Object.entries(pt?.answers ?? {}).filter(([, a]) => a.status !== 'seen').map(([id, a]) => `- \`${id}\` ${a.status}: ${promises.find(p => p.id === id)?.text ?? ''}${a.note ? `\n  the tester: ${a.note}` : ''}`);
 
 /** A repair round, plain or from the ladder (specialist, generate). */
-export function repairMessage({ round, after, verify, playtest, promises, ladder, partsFailed = [], tune = null, toolNames }) {
+export function repairMessage({ round, after, verify, playtest, promises, ladder, partsFailed = [], tune = null, play = null, playJudge = null, toolNames }) {
   const t = tools(toolNames);
   const what = after === 'parts' ? ['A part the person kept failed its check (each refusal says its fix):', ...partFailureLines(partsFailed)]
-    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify), ...lookTuneLines(tune, verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play.'];
+    : after === 'verify' ? ['Verify failed on these measures:', ...failedLines(verify), ...lookTuneLines(tune, verify), ...playJudgeLines(playJudge, verify)] : ['The play-tester could not see these promises work:', ...playLines(playtest, promises), '', 'Not seen: make it happen where a new player looks. Unreachable: make it reachable with a new player\'s hand within a few minutes of play.'];
+  what.push(...playFindingLines({ play, judge: playJudge, playtest, promises, after }));
   const climb = ladder?.climbs?.at(-1);
   const head = round.kind === 'specialist' ? [`# Specialist round: ${round.area}`, '', `The repair loop stopped repeating itself (${climb?.reason}: the same failures came back), so this round is a ${round.area} specialist's. Look at the failures below only as a ${round.area} specialist would: ${SPECIALIST[round.area] ?? SPECIALIST.code}`]
     : round.kind === 'generate' ? ['# Generation round', '', `The repair loop is stuck on ${round.areas.join(' and ')} the game's own files cannot fix, so this round makes new ones with the paid makers (\`${t.art}\`, and sound makers where the host has them). Cost is not a reason to stop: make what is needed, put each into its slot, and say what you made.`]
@@ -102,7 +104,44 @@ export function lookTuneLines(tune, verify) {
     ...(left.length ? ['Light and colour the levers left (change them by hand only with a reason):', ...left.slice(0, 3).map(f => `- ${f.line}`)] : [])];
 }
 
+/**
+ * The play findings a repair carries (builder/play/design.mjs): the lines of play the tester did not see, with the
+ * target's beats, pacing and the guards they rest on, and the play judge's findings when a judge ran (S.playJudge:
+ * {score, findings, hard, …}: playJudgeLines). → lines, or none
+ */
+export function playFindingLines({ play = null, judge = null, playtest = null, promises = [], after = 'playtest' }) {
+  const missed = Object.entries(playtest?.answers ?? {}).filter(([id, a]) => a.status !== 'seen' && promises.find(p => p.id === id)?.kind === 'play');
+  const found = (judge?.findings ?? []).slice(0, 8);
+  if (!play || (!missed.length && !found.length) || after === 'parts') return [];
+  const p = play.pacing ?? {};
+  return ['', `## The play (spec.play.target: ${play.genre?.name ?? 'the design'})`, '',
+    ...(missed.length ? [`${missed.length} line(s) of what makes it play did not show for the tester. The design they come from:`] : ['The design the judge measured the game against:']),
+    `- every few seconds: ${play.beats?.moment}`, `- every half minute: ${play.beats?.stretch}`, `- the objective: ${play.objective?.goal} (reached: ${play.objective?.reach?.how})`,
+    `- pacing: the first action within ${p.firstAction} s, about ${p.eventsPerMinute} meaningful events a minute, nobody idle over ${p.idleMax} s, a round about ${p.roundSeconds} s`,
+    ...(play.avoid ?? []).map(a => `- avoid ${a.failure}: ${a.guard}`),
+    // the play judge's own lines (gate D's play leg), as a verify repair carries them
+    ...(found.length && after !== 'verify' ? playJudgeLines(judge, { failed: [{ measure: 6 }] }) : []),
+    '', 'Fix the play, not the test: tune the numbers and rules toward the target before you touch art.'];
+}
+
+
+/**
+ * Gate D's play leg (builder/play/judge.mjs), when it failed: what the judge measured and watched, so the round fixes the
+ * game as a game (where the objective is, what happens every few seconds, what players do to each other). → lines, or none
+ */
+export function playJudgeLines(pj, verify) {
+  if (!pj || !(verify?.failed ?? []).some(f => f.measure === 6)) return [];
+  const hard = (pj.hard ?? []).map(h => `- ${h.line}`);
+  const rest = (pj.findings ?? []).filter(f => !f.hard).slice(0, 8).map(f => `- ${f.source === 'judged' ? 'watched' : 'measured'}, ${f.part}: ${f.line}`);
+  return ['', `The play judge played the game (bots and a scripted player at two and four players, and two friends) and scored it ${pj.score ?? '—'}/100${pj.advisory ? ' (no play target: advisory)' : ` (the bar ${pj.bar})`}.`,
+    ...(hard.length ? ['What makes it not a game yet (fix these first):', ...hard] : []), ...(rest.length ? ['What it found:', ...rest] : []),
+    ...(pj.change?.length ? ['What the judge would change, most important first:', ...pj.change.slice(0, 5).map(c => `- ${c}`)] : []),
+    ...(pj.clips?.length ? [`The clips it watched: ${pj.clips.join(', ')}`] : []),
+    'Run `node builder/play/judge.mjs <game>` to play it again alone (its record says what each round measured).'];
+}
+
 const SPECIALIST = {
+  play: 'the game as a game: the objective (where it is, and that a player gets to it from where they start, on this world\'s own ground), what a player does every few seconds, what players do to each other, the arc of a round, and what bots do so one person still gets a game; the play target (spec.play.target) and the play judge\'s findings say what is missing. Change rules, placement and tuning before looks.',
   art: 'models, textures, materials and how they read on screen; the slots and their packs; nothing about rules.',
   sound: 'what the player hears, when, and from where; the sound slots and the bus levels the kit keeps.',
   netcode: 'what the host owns, what each copy sends and draws, and why two screens disagree; nothing about looks.',

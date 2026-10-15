@@ -1,6 +1,7 @@
 // The stop rule and the escalation ladder. A repair loop that repeats itself stops repeating and climbs:
 //   model       the rounds from here run on the stronger model
-//   specialist  one round per area the stuck set touches (art, sound, netcode, feel, code), each by a specialist brief
+//   specialist  one round per area the stuck set touches (art, sound, netcode, feel, play, code), each by a specialist
+//               brief; a play failure (area play) gets its game designer's round already at the model rung
 //   generate    paid generation for what a generator can make (models, pictures, sounds) in the stuck set
 //   ask         questions for the creator; their answer re-enters at the ledger
 // Cost never ends a build (the creator, 2026-10-13: "We rather spend $100,000 for a great game than $10 for something
@@ -12,13 +13,13 @@
 // Pure: the ladder is plain data kept in the loop's state, so a run picks it up after a restart.
 import { RUNGS } from './order.mjs';
 
-export const AREAS = ['art', 'sound', 'netcode', 'feel', 'code'];
+export const AREAS = ['art', 'sound', 'netcode', 'feel', 'play', 'code'];
 /** What a generator can make: the generate rung applies only when the stuck set touches one of these. */
 export const GENERATIVE = ['art', 'sound'];
 /** A gate's area when the measure does not say its own (the runtime's measures may carry `area`). */
 export const GATE_AREA = { A: 'art', B: 'code', C: 'feel', D: 'code', E: 'netcode', F: 'code', J: 'art' };
 /** A promise's area when the tester could not see it. */
-const PROMISE_AREA = { control: 'feel', loop: 'code', row: 'code', build: 'code' };
+const PROMISE_AREA = { control: 'feel', loop: 'code', row: 'code', build: 'code', play: 'play' };
 
 export const newLadder = () => ({ schema: 'gf-ladder/1', rung: null, sets: [], climbs: [], queue: [], strong: false });
 
@@ -82,7 +83,9 @@ export function climb(L, items, reason, at = null) {
     const next = RUNGS[RUNGS.indexOf(L.rung) + 1] ?? 'ask';
     L.rung = next;
     const areas = areasOf(items);
-    if (next === 'model') { L.strong = true; L.queue = [{ kind: 'repair', strong: true }]; }
+    // a play failure that came back (gate D's play leg: the game is not a game yet) goes to a game designer's round on
+    // the stronger model at once: a plain repair of the same brief repeats itself on play
+    if (next === 'model') { L.strong = true; L.queue = areas.includes('play') ? [{ kind: 'specialist', area: 'play', strong: true }] : [{ kind: 'repair', strong: true }]; }
     if (next === 'specialist') L.queue = areas.map(area => ({ kind: 'specialist', area }));
     if (next === 'generate') {
       const make = areas.filter(a => GENERATIVE.includes(a));

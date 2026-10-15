@@ -16,6 +16,7 @@ import { pictureMaterial, standY, groundShadow } from './look.js';
 import { drawPlan, PAD } from './drawplan.js';
 import { readMap, rects, boxOf, reachOf, jumpReach } from './tilemap.js';
 import { SIDE, STYLES } from './slots.js';
+import { placeOnColliders } from '../world/placement.js';
 export { templates, worldConfig } from './slots.js';
 
 /** The collision group of a ledge: nothing collides with it by default; a body's ground probe sees it only while that
@@ -139,6 +140,8 @@ export async function loadWorld(ctx, cfg) {
       random: rng => { if (z.shape === 'box') return { x: at[0] + (rng() - 0.5) * sz[0], y: at[1], z: side ? 0 : at[2] + (rng() - 0.5) * (sz[2] ?? sz[0]) }; const a = rng() * Math.PI * 2, r = Math.sqrt(rng()) * sz[0]; return { x: at[0] + Math.cos(a) * r, y: at[1], z: side ? 0 : at[2] + Math.sin(a) * r }; },
     };
   }
+  // a jump's numbers: the game's controller over the side-on defaults (slots.js SIDE)
+  const jumpNumbers = () => { const C = ctx.config?.controller ?? {}; return { gravity: ctx.config?.gravity ?? 20, jump: C.jump ?? SIDE.jump, speed: C.speed ?? SIDE.speed, fallScale: SIDE.fallScale }; };
   const ray = new RAPIER.Ray({ x: 0, y: 0, z: 0 }, { x: 0, y: -1, z: 0 });
   const isWorld = c => c.parent()?.handle === fixed.handle && !(c.__gf?.tag === 'ledge');
   // the play area. Side-on it is a strip: nothing is ever placed off Z = 0.
@@ -155,7 +158,7 @@ export async function loadWorld(ctx, cfg) {
     /** The cell a point is in, and what is there: { c, r, kind, solid }. */
     cell: p => { const q = M.cellAt(p), kind = M.at(q.c, q.r) ?? null; return { ...q, kind, solid: kind ? M.kinds[kind]?.solid ?? false : false }; },
     /** Side-on: what a jump reaches with this game's numbers, and what the map needs of it (tilemap.js reachOf). */
-    reach() { const C = ctx.config?.controller ?? {}, R = jumpReach({ gravity: ctx.config?.gravity ?? 20, jump: C.jump ?? SIDE.jump, speed: C.speed ?? SIDE.speed, fallScale: SIDE.fallScale }); return side ? { ...R, ...reachOf(M, R) } : R; },
+    jumps() { const R = jumpReach(jumpNumbers()); return side ? { ...R, ...reachOf(M, R) } : R; },
     raycast(from, dir, max = 50) {
       const l = Math.hypot(dir.x, dir.y, dir.z) || 1;
       ray.origin = { x: from.x, y: from.y, z: from.z }; ray.dir = { x: dir.x / l, y: dir.y / l, z: dir.z / l };
@@ -165,6 +168,12 @@ export async function loadWorld(ctx, cfg) {
       return { point: { x: from.x + ray.dir.x * d, y: from.y + ray.dir.y * d, z: from.z + ray.dir.z * d }, distance: d, normal: hit.normal, collider: hit.collider, tag: hit.collider.__gf?.tag ?? null };
     },
   };
+  // where things may be put and what a seat can get to (../world/placement.js), from the same boxes bodies meet: from
+  // above the floor between the walls; side-on the strip at Z = 0, a ledge a body jumps up through
+  placeOnColliders(world, ctx, {
+    solid: c => c.parent()?.handle === fixed.handle, pass: c => c.__gf?.tag === 'ledge', numbers: side ? jumpNumbers() : {},
+    ...(side ? { area: () => [A.minX, -0.25, A.maxX, 0.25], top: A.maxY + 10, bottom: A.minY - 10 } : {}),
+  });
   return world;
 }
 export { GROUPS };

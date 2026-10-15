@@ -49,6 +49,75 @@ about 10–12 m of floor reads clearly ahead.
   (`edge`: fence, arena wall) with gaps only at `gates` (the `entries`); the plaza's edge is rows of houses with streets
   between them (`outside.rows`); `outside.ring` and `rings` put trees round the edge so the world goes on.
 
+## Placement: where things go and what every seat reaches (`placement.js`, the gameplay layer, 2026-10-14)
+
+Every world has one API for putting things in play, built from its own colliders (party and sea-islands, terrain,
+voxel, scenic, flat seen from above and side-on; forge's pickups use the same grid over its boxes). Nothing that places
+a thing assumes a flat floor at y = 0 or the play box: the creator, 2026-10-14, "We were supposed to collect berries,
+but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get" (the pickup
+part had put its spots at y = 0, sea level on island terrain).
+
+```js
+world.groundAt(x, z, below?)   // the ground's top (the highest surface at or under `below`), null where there is none
+world.waterAt(x, z)            // the water's surface there, or null
+world.isWalkable(x, z, y?)     // dry ground, room for the body, a slope it stands on
+world.reach(from, to)          // {ok, why: 'in water' | 'under the ground' | 'walled off' | 'floating' | ...}; from: a point or a seat
+world.place(kind, n, { zone, clear, gap, away, rng, near, exclude, prefer })   // [{x, y, z}] on open ground every seat reaches
+world.route(from, to)          // the next point on the way ({jump: true} when the next step is a hop); world.via falls back to it
+world.walk.audit(list)         // each objective against every seat (window.__game.objectives(): gate D, measure 6)
+```
+
+The model: columns of 0.5 m (coarser on a big world, at most 26,000); in each, the surfaces facing up a body fits on
+(Rapier rays down, a body-sized cylinder a step up for the fit, probes for how high what pokes up beside it reaches).
+Walking joins a surface to a neighbour's a step up (or a ramp's rise, 10° under the capsule's slope limit) or any way
+down; a jump joins a place by a drop or a wall to one up to 82% of the jump's rise and reach, the arc clear. Routes are
+cheapest first (a hop costs 4 m), so a walk always beats a hop that saves a step. Water is not walkable unless
+`config/game.json` → `controller.swim`. The seats are the game's (`players.max` of the world's spawns). A terrain crater
+or a voxel edit is read again where it changed. Launch pads (`pads.js`) are links the walk travels as a jump. Not
+modelled: moving pieces, doors that open, the space under
+an overhang within one collider (a ray meets each collider once). `tests/placement.test.mjs`.
+
+The camera place finder (a look shot's `where`) is `world.lookout(where)`.
+
+## Connectors: every area worth going to is reached (`connect.mjs`, `walk.mjs`, `pads.js`, the gameplay layer, 2026-10-14)
+
+The creator, after the berry fix: "still some flags we talked about before, like making all area reachable". The
+composed levels showed islands, a gatehouse on a hill and a mesa a player sees and cannot get to, and islands a bridge
+led to that a player could never come back from. One rule for every world:
+
+```js
+world.walk.regions({ things, rims, backdrop })   // the ground the seats cannot get to, and the traps they cannot leave:
+                                                 // [{at, area, core, box, things, gap: {from, to, across, rise, why}, trap?, on?}]
+world.connectors                                 // {list: [{kind, at, ends, why, for}], kept, left, apart, backdrop}
+window.__game.regions()                          // the same, with the seats, landmarks, set dressing and objectives as things
+```
+
+- **Regions** are places that get to each other (strongly connected over walking, drops and jumps; `walk.mjs`, the
+  walk grid split out of `placement.js` so pure code builds one too). A **trap** is ground the seats get to (a drop)
+  with no way back to them. Each has the nearest way across and why there is none: water, void (a drop), a cliff (higher
+  than a jump), a wall, too far.
+- **Worth going to** (`worthOf`): it holds an objective, a landmark, a seat or two pieces of set dressing, or it is
+  room to play (24 m², 6 m² of it 1.2 m clear of its edges: a plateau, not a ribbon of beach). The tops of things (a
+  wall, a stall: colliders tagged as props) and a bridge's own deck are not places.
+- **The connectors**, cheapest first, by the gap and what the world and the look allow (`connectorsFor`): shallows (a
+  sandbar between low shores), a ramp (ground laid over a short gap, or a slope cut into a cliff and built out from its
+  foot, or along its face), a bridge (the level's bridge model when it has one, with earthen approaches onto its deck;
+  else a land bridge of the ground itself), a launch pad (a pad at each end; stepping on one throws the body along a
+  fixed arc to the other: `controller.carry`, the same on every copy). Each try that does not join its region is taken
+  away and the next is tried. Ladders and climbable faces are not offered: no controller climbs yet.
+- **Where they are made.** A terrain world makes them at generation in its distance field (`terrain/connect.mjs`),
+  deterministic like the rest of the ground (same seed, same connectors on every copy), so they are standable, stop
+  shots and are carved by blasts. Every world on the walk grid (party, voxel, flat, scenic, and what a terrain's ground
+  could not join) gets launch pads the first time its grid is ready (`pads.js` `joinWithPads`, from `placement.js`),
+  before anything is placed. A part that lets players make their own way (the build mechanic: `makesWay`) needs none.
+- **Kept apart on purpose**: `config/world.json` → `reach` (spec `world.reach`): `{connect: false}` turns them off,
+  `kinds` limits them to what the look allows, `apart: [{what, why}]` keeps a region apart with its reason (`what`:
+  `'seats'` for seats on their own grounds, a thing's id, or `[x, z]`).
+- **Backdrop** islands out at sea stand at least 30 m of water past the play ground (`sea.js` `BACKDROP_CLEAR`), and set
+  dressing only stands where the seats get to and back from.
+- **The gate**: measure 6's reach leg (`builder/tools/lib/reach-check.mjs`, `judgeAreas`) fails a world with a region
+  worth going to that is neither reached nor kept apart, naming it, where and why. `tests/connect.test.mjs`.
+
 ## Places, colliders and reach (open builder wave 10)
 
 - **`places/`, the vocabulary.** An outdoor place is a recipe: steps run in order over one seeded stream, each a word of
@@ -107,6 +176,14 @@ density, dressing, ground, cliffs) come from the recipe, a spec's `world.params`
 (`builder/look/world.mjs`). `heightAt(layout, x, z)` is the ground's height (the set-dressing lint and the sheet read it);
 the hills that reach the play area are hull colliders. The terrain stream's destructible ground takes the same island
 list when it lands (it owns the ground's mesh; `sea.js` owns where the land is and how high).
+
+**A composed level** (`params.compose`, looks wave 4: `sea-compose.mjs`, with the framing maths of `compose.mjs` that
+the terrain world's composer shares): the main landmark stands in the play area as ground (its placement's collider
+`mesh`: the world builds a trimesh from the model's own triangles, so players stand on its walls and roofs), the
+dressing keeps off its footprint, the seats come in pairs round it (or before it, `behind`) that see each other past it,
+each with its yaw (`spawnYaw`: the partner and the landmark in the frame), and `landmarks` is what the camera leans
+toward. Bridges are the terrain world's (here the play island is the one landmass players reach); a piece is never
+carved here (the terrain world's pieces are).
 
 ## Layout JSON (what agents edit; `config/world.json` is a copy of a template plus the game's own props)
 

@@ -68,7 +68,7 @@ export async function writeGuide(dir, { force = false } = {}) {
  * Make a game. target: the folder. One of spec (a game spec file) or from (an example id or folder).
  * → { ok, dir, title, example, wrote, kept, applied, guide, notes, warnings, slots, main }
  */
-export async function createGame(target, { spec = null, from = null, force = false, cwd = process.cwd(), env = process.env } = {}) {
+export async function createGame(target, { spec = null, from = null, force = false, newRules = false, cwd = process.cwd(), env = process.env } = {}) {
   if (!target) throw new UsageError('create needs a folder, e.g. games/my-game');
   if (!spec && !from) throw new UsageError('create needs --spec <spec.json> (your locked game spec) or --from <example> (npx gamesfun examples lists them)');
   if (spec && from) throw new UsageError('use --spec or --from, not both');
@@ -82,7 +82,7 @@ export async function createGame(target, { spec = null, from = null, force = fal
 
   const flags = [];
   if (force) flags.push('--force');
-  if (force && example) flags.push('--new-rules');
+  if (force && (example || newRules)) flags.push('--new-rules');
   const r = await runToolJson('create', [specPath, dir, ...flags]);
   if (!r.data) throw new Error(`gf-three create did not answer (exit ${r.code}): ${(r.stderr || r.stdout).trim().split('\n').slice(-3).join(' | ')}`);
   if (!r.data.ok) throw new Error(`the spec does not make a game:\n  ${(r.data.problems ?? []).join('\n  ')}`);

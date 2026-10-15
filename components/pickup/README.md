@@ -21,7 +21,14 @@ press goes to the host as `pickup:press` (1 m of slack for latency).
 ## How pickups look
 - The game's own prop, bobbing and turning, fitted to `size` (0.5–0.7 m reads well from the third-person camera).
 - `marker`: a faint thin ring on the ground under each spot. `auto` (default) draws it only under the stand-in gem, because a real model reads by itself; `ring` always; `none` never.
-- Spots never land inside a prop: `pointsIn` skips points within `size / 2 + 0.35` m of the world's colliders (`clearOfShapes(world.shapes)`).
+- Where spots go (the creator, 2026-10-14: "there were no berries anywhere. I think in the ocean I saw some boxes but
+  those are impossible to get"): `ctx.world.place('pickup', count, {zone})` (worlds/placement.js): on open ground every
+  seat reaches, at the ground's own height, clear of colliders and cliff edges, spread out, in `zone` when one is named.
+  Never in the sea, inside the ground or walled off. When there is no more room it places fewer and says why
+  (`objectives().shortfall`); gate D (measure 6) fails that. A spot that comes back stands on the ground as it is then
+  (a crater), or moves to open ground. `spawnAt({x, z})` with no `y` stands on the ground there.
+- `objectives()` lists every spot for `window.__game.objectives()`, which holds each to every seat.
+- With no `rules.bot`, bots go for the nearest spot (the world routes the way: round walls, over bridges, up ledges).
 - A gem means the game names no pickup prop. The set-dressing lint (`tools/dressing.mjs`) fails that (`pickup-standin`), and it fails scenery that looks like a pickup (`looks-collectable`).
 
 ## Network ownership and message rates

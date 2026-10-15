@@ -42,8 +42,15 @@ export function restAimDistance(mode = 'third', settings = {}) {
   return pitch > 0.01 && C.height > 0 ? C.height / Math.tan(pitch) : null;
 }
 
-export function createCameraRig({ camera, mode = 'third', physics = null, exclude = null, settings = {}, yaw = 0, pointer = null, wheel = null, free = null }) {
+/**
+ * frame: () → {marks, lean} or null: a composed level's landmarks ([{centre: [x, y, z]}], world.landmarks) and the
+ * world's lean (worlds/compose.mjs leanToward, world.lean): the third and orbit rigs lean their look point toward a
+ * landmark in view (settings.lean: the share of the angle, 0 off), as an offset over the player's own yaw and pitch, so
+ * the player still turns the camera anywhere. The world brings the maths, so a game whose world has none loads nothing.
+ */
+export function createCameraRig({ camera, mode = 'third', physics = null, exclude = null, settings = {}, yaw = 0, pointer = null, wheel = null, free = null, frame = null }) {
   const C = { ...RIG_DEFAULTS[mode] ?? RIG_DEFAULTS.third, ...settings };
+  const leanOff = new THREE.Vector3(), leanTo = new THREE.Vector3();
   const fixed = mode === 'top' || mode === 'follow';
   const st = { mode, yaw: fixed ? (C.yawDeg ?? 0) * DEG : yaw, pitch: C.pitchDeg * DEG, current: C.distance ?? 0, zoom: C.distance ?? 0, pivot: new THREE.Vector3(), first: true, collided: false };
   camera.fov = C.fov; camera.updateProjectionMatrix();
@@ -111,7 +118,15 @@ export function createCameraRig({ camera, mode = 'third', physics = null, exclud
     st.current = allowed < st.current ? allowed : st.current + (allowed - st.current) * (1 - Math.exp(-dt * 2.5));
     camera.position.copy(pivot).addScaledVector(dir, st.current);
     if (camera.position.y < feet.y + 0.3) camera.position.y = feet.y + 0.3;
-    camera.lookAt(pivot.x, pivot.y, pivot.z);
+    // a landmark in view: the look point leans toward it a little (eased, so turning past one never jumps)
+    const F = (mode === 'third' || mode === 'orbit') && frame && C.lean !== 0 ? frame() : null;
+    if (F?.marks?.length && F.lean) {
+      const e = [camera.position.x, camera.position.y, camera.position.z];
+      const p = F.lean(e, [pivot.x, pivot.y, pivot.z], F.marks, { fov: camera.fov, aspect: camera.aspect, ...(C.lean != null ? { bias: C.lean } : {}) });
+      leanTo.set(p[0] - pivot.x, p[1] - pivot.y, p[2] - pivot.z);
+    } else leanTo.set(0, 0, 0);
+    if (st.first === false && st.leaned === undefined) { leanOff.copy(leanTo); st.leaned = true; } else leanOff.lerp(leanTo, 1 - Math.exp(-dt * 3));
+    camera.lookAt(pivot.x + leanOff.x, pivot.y + leanOff.y, pivot.z + leanOff.z);
     // where the player aims: through the middle of the screen (third), or the way the camera faces on the ground (top)
     camera.getWorldDirection(fwd);
     if (mode === 'top') aim.set(Math.sin(st.yaw), 0, Math.cos(st.yaw));
@@ -144,7 +159,7 @@ export function createCameraRig({ camera, mode = 'third', physics = null, exclud
     /** The view's pitch (radians, + looks down) and whether the aim goes through the pointer, for the observation. */
     get pitch() { return st.pitch; },
     aimsAtPointer: () => mode === 'follow' || mode === 'orbit' || (mode === 'first' && !!free?.()),
-    reset(yawValue) { if (!fixed) st.yaw = yawValue ?? st.yaw; st.pitch = C.pitchDeg * DEG; st.current = st.zoom = C.distance ?? 0; st.first = true; },
+    reset(yawValue) { if (!fixed) st.yaw = yawValue ?? st.yaw; st.pitch = C.pitchDeg * DEG; st.current = st.zoom = C.distance ?? 0; st.first = true; st.leaned = undefined; },
     /** The camera distance now (orbit: the zoom, before walls pull it in). */
     get zoom() { return st.zoom; },
   };

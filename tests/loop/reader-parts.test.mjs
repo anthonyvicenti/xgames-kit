@@ -10,10 +10,10 @@ import { openLoop, fileStore, stateFileOf, readerBundle, readReading, readerSays
 import { loopTools } from '../../builder/mcp/loop-tools.mjs';
 import { decide } from '../../plugin/scripts/guard.mjs';
 import { fakeBindings, keepAll, scriptedVerify, seenTwo, touch } from './dryrun/fakes.mjs';
-import { fakeRegistry, goodLedger, PROMPT, CARD_WORDS, pitchV2 } from './fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, PROMPT, CARD_WORDS, pitchV2, GATE_PLAY } from './fixtures/registry.mjs';
 
 const reg = fakeRegistry();
-const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
+const SPEC = { specVersion: 2, play: { target: GATE_PLAY }, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
   build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js', where: 'module', row: 'hook' }], notInV1: [] };
 const REPLY = 'Card 1 holds the gate. A grappling hook that pulls you onto the walls is built new, which makes the build take longer.';
 const card = (id, spec = SPEC) => ({ ...CARD_WORDS, id, title: id, v1: { has: ['waves at the gate'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec });

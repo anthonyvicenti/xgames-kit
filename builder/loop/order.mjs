@@ -1,7 +1,7 @@
 // The creation loop's order, once. The library steps through it, the MCP tools refuse a call made out of it, and the
 // build-loop skill is generated from it (skill.mjs). Nothing else lists the steps.
 //
-//   ledger → foundation → pitch → spec → create → look → build → fix → [economy] → [backend] → verify → playtest → read → deliver
+//   ledger → foundation → pitch → spec → create → look → design → build → fix → [economy] → [backend] → verify → playtest → read → deliver
 //                                                          ↑                                              │
 //                                                   └── repair / ask ◄─────────────────────────────┘   (the stop rule and the ladder)
 //
@@ -10,7 +10,7 @@
 //
 // A change request, and the creator's answer to a question, re-enter at the ledger.
 
-export const STEPS = ['ledger', 'foundation', 'pitch', 'spec', 'create', 'look', 'build', 'fix', 'economy', 'backend', 'verify', 'playtest', 'read', 'repair', 'ask', 'deliver', 'done'];
+export const STEPS = ['ledger', 'foundation', 'pitch', 'spec', 'create', 'look', 'design', 'build', 'fix', 'economy', 'backend', 'verify', 'playtest', 'read', 'repair', 'ask', 'deliver', 'done'];
 
 /** The steps that are an agent round the session does itself; the round ends with gamesfun_step_fix. */
 export const ROUND_STEPS = ['build', 'repair'];
@@ -29,6 +29,7 @@ export const ORDER = [
   { step: 'spec', tool: 'gamesfun_step_spec', does: 'checks the cards or the spec against the ledger and the foundation; a valid spec is locked, and every "the build writes it" line becomes a promise in spec.build' },
   { step: 'create', tool: 'gamesfun_step_create', does: 'makes the game from the locked spec and hands you the build round with a one-page brief, built from the manifests of only what the spec chose' },
   { step: 'look', tool: 'gamesfun_step_look', does: 'the look before the build: the style target (the spec\'s, or read from the references and the person\'s words: a round reads the frames on a fixed rubric and you pass its answer as `judged`), then 2–3 readings of it drawn as contact sheets on the game\'s own world and bodies. The person picks one (`pick`: {option, words}); a host with no look tools goes straight on to the build' },
+  { step: 'design', tool: 'gamesfun_step_design', does: 'the play before the build (builder/play/design.mjs): a designer round on the stronger model reads the person\'s words, the ledger, the foundation\'s parts, the world and the references, and writes the play target (verbs, beats, the objective and how it is reached, how players affect each other, pacing numbers, feel, the failures it avoids, what makes it play); pass it as `target`. Its mechanics and build lines join the spec, and each "what makes it play" line becomes a promise the play-tester checks' },
   { step: 'build', tool: 'gamesfun_step_fix', does: 'the build round is yours: write rules.js, src/ modules and declared overrides for every promise in spec.build, then end it with gamesfun_step_fix (summary and controls)' },
   { step: 'fix', tool: 'gamesfun_step_fix', does: 'ends your round and runs the mechanical repairs' },
   { step: 'economy', tool: 'gamesfun_step_economy', does: 'only when the person kept an economy: the kit\'s economy checker on the economy the build round saved in gamesfun.json (economy_check). A refusal is repaired like a failed gate; going live waits for the person\'s own approval at delivery' },
@@ -62,6 +63,7 @@ export const ACTIONS = {
   build: { tool: 'gamesfun_step_fix', args: { summary: '', controls: '' }, returns: 'summary' },
   look: { tool: 'gamesfun_step_look', args: { judged: {} }, returns: 'judged' },
   looks: { tool: 'gamesfun_step_look', args: { pick: { option: '', words: '' } }, returns: 'pick' },
+  design: { tool: 'gamesfun_step_design', args: { target: {} }, returns: 'target' },
   ask: { tool: 'gamesfun_ask', args: { message: '', questions: [] }, returns: 'questions' },
   playtest: { tool: 'gamesfun_playtest_report', args: { token: '', report: { promises: [], feel: [], summary: '' } }, returns: 'report' },
   read: { tool: 'gamesfun_reader_report', args: { token: '', reading: { schema: 'gf-reading/1', rows: [], findings: [], summary: '' } }, returns: 'reading' },
@@ -78,7 +80,7 @@ export function actionOf({ waiting, kind = null, about = null, step = null }) {
   if (waiting === 'creator') return structuredClone(ACTIONS[about] ?? ACTIONS.questions);
   if (waiting === 'playtest') return structuredClone(ACTIONS.playtest);
   if (waiting === 'reader') return structuredClone(ACTIONS.read);
-  const talk = { ledger: 'ledger', foundation: 'probe', pitch: 'pitch', spec: 'spec', look: 'look', ask: 'ask' }[step];
+  const talk = { ledger: 'ledger', foundation: 'probe', pitch: 'pitch', spec: 'spec', look: 'look', design: 'design', ask: 'ask' }[step];
   if (kind === 'repair' && talk && step !== 'repair') return structuredClone(ACTIONS[talk]);
   if (BUILDING.includes(kind)) return structuredClone(ACTIONS.build);
   return structuredClone(ACTIONS[kind] ?? ACTIONS[talk] ?? ACTIONS.build);

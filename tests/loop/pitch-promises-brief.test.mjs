@@ -83,3 +83,11 @@ test('a brief over a page loses part notes, never the person\'s words or the bui
   assert.match(brief, /`build\.1`/);
   assert.match(brief, /"a boss at the end"/);
 });
+
+test('a ledger line the ledger gave to another runtime is kept on the runtime the foundation chose (found by the calm co-op plan, 2026-10-14)', async () => {
+  const L = goodLedger();
+  L.rows.find(r => r.id === 'view').by = 'runtime:vista';
+  const f = await chooseFoundation(L, reg);
+  assert.equal(f.runtime, 'forge');
+  assert.deepEqual((await checkSpec(spec(), { ledger: L, foundation: f, registry: reg })).filter(p => /runtime:vista/.test(p)), []);
+});

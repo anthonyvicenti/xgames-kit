@@ -5,6 +5,10 @@
 //   c.update(dt)       every frame: places the character (interpolated between physics steps), animates it, moves the camera
 //   c.pose()           {x, y, z, yaw, anim, aim, extra} for the net
 //   c.teleport(p, yaw) c.knock(impulse, seconds, {budget})  c.push(impulse)  c.enabled = false (input ignored; physics continues)
+//   c.carry(path, seconds, {upright}) ride a path someone else simulates (path() → {x, y, z, vx, vy, vz, done} feet, a
+//                      host-owned flight: the knockback mechanic) for `seconds`, down the whole time; null lets go at once.
+//                      upright: on its feet the whole way (a launch pad's throw: worlds/pads.js), jumping then falling,
+//                      never knocked down, in control again as it lands
 //   c.aimAt(point|null) hold the aim on a world point (QA, fixtures, cutscenes); null gives it back to the crosshair
 //   c.setCharacter(ch) drive another character (a player's own body arrived: CONTRACT §6e)
 //   Aim (kit/core/aim.js): the local player with a third or first camera aims at the point under the crosshair, with
@@ -33,7 +37,7 @@ export function createController(ctx, { player, character = null, camera = null,
   // the distance and height in, as slots)
   const small = character?.archetype && character.archetype !== 'humanoid' && character.height < 1.5;
   if (small && camera === 'third' && settings.shoulder == null) settings = { ...settings, shoulder: +(RIG_DEFAULTS.third.shoulder * Math.max(0.45, character.height / 1.7)).toFixed(2) };
-  const rig = camera ? createCameraRig({ camera: ctx.camera, mode: camera, physics: { RAPIER: ctx.RAPIER, world: ctx.physics }, exclude: cap.collider, settings, yaw: spawn.yaw ?? 0, pointer: () => ctx.input?.pointer, wheel: () => ctx.input?.wheel ?? 0, free: () => !!ctx.input?.aimFree }) : null;
+  const rig = camera ? createCameraRig({ camera: ctx.camera, mode: camera, physics: { RAPIER: ctx.RAPIER, world: ctx.physics }, exclude: cap.collider, settings, yaw: spawn.yaw ?? 0, pointer: () => ctx.input?.pointer, wheel: () => ctx.input?.wheel ?? 0, free: () => !!ctx.input?.aimFree, frame: () => (ctx.world?.landmarks?.length && ctx.world.lean ? { marks: ctx.world.landmarks, lean: ctx.world.lean } : null) }) : null;
   if (camera === 'follow' && ctx.input) ctx.input.cursorMode = true;
   if (camera === 'orbit' && ctx.input) ctx.input.cursorMode = 'drag';
   // first person in a world (CONTRACT §9): the lock where the page allows it, the 'drag' way where a post refuses it
@@ -42,13 +46,21 @@ export function createController(ctx, { player, character = null, camera = null,
   const prev = new THREE.Vector3(), curr = new THREE.Vector3(), drawn = new THREE.Vector3();
   const snap = () => { const t = cap.body.translation(); prev.set(t.x, t.y, t.z); curr.copy(prev); };
   snap();
-  let jumpPresses = 0, landT = 9, animOverride = null, alpha = 0, forced = null, aimFace = null, faceHold = null;
+  let jumpPresses = 0, landT = 9, animOverride = null, alpha = 0, forced = null, aimFace = null, faceHold = null, carried = null;
   const c = {
     player, character, rig, capsule: cap, body: cap.body, collider: cap.collider, state: cap.state, enabled: true, anim: 'idle',
     feet: new THREE.Vector3(),
 
     /** One physics step's input: the kit calls this before world.step(). */
     fixedStep() {
+      // a ride (a host-owned flight): the body is where the path says until it lands, then down until the ride ends
+      if (carried) {
+        const left = carried.until - ctx.time.now;
+        const q = left > 0 ? carried.path() : null;
+        if (q && !q.done) { cap.ride(q, { x: q.vx, y: q.vy, z: q.vz }, carried.upright ? 0 : left); jumpPresses = 0; return; }
+        if (left <= 0 || !q || carried.upright) carried = null;
+        else if (!carried.landed) { carried.landed = true; cap.ride(q, { x: 0, y: 0, z: 0 }, left); }
+      }
       const inp = player.input ?? {};
       let x = inp.x ?? 0, z = inp.z ?? 0;
       if (rig && player.local) {
@@ -82,6 +94,7 @@ export function createController(ctx, { player, character = null, camera = null,
       const cs = character?.state;
       if (player.alive === false || s.stun > 0) word = 'knockdown';
       else if (cs === 'ragdoll') word = 'down';
+      else if (carried?.upright) { const q = carried.path(); word = q && q.vy > 0 ? 'jump' : 'fall'; }
       else if (cs === 'getup') word = 'getup';
       else if (animOverride && animOverride.until > ctx.time.now) word = animOverride.word;
       else if (!s.onGround && s.heightAboveGround > 0.3) word = s.vy > 0 ? 'jump' : 'fall';
@@ -148,6 +161,17 @@ export function createController(ctx, { player, character = null, camera = null,
       if (budget) { cap.knock(impulse, budget.ragdoll); character?.knock?.(impulse, { getUp: false }); return; }
       cap.knock(impulse, seconds); character?.knock?.(impulse, { getUp: false });
     },
+    /** Ride a path someone else simulates (the knockback mechanic's flight, the same on every screen): path() → {x, y, z
+     *  (feet), vx, vy, vz, done}; down (input ignored, the character on its ragdoll) for `seconds`, the flight and the
+     *  settle after it. null lets go. */
+    carry(path, seconds = 1, { upright = false } = {}) {
+      if (typeof path !== 'function') { carried = null; return; }
+      animOverride = null;
+      carried = { path, until: ctx.time.now + Math.max(0.1, seconds), landed: false, upright };
+      const q = path();
+      if (q) { cap.ride(q, { x: q.vx ?? 0, y: q.vy ?? 0, z: q.vz ?? 0 }, upright ? 0 : seconds); snap(); }
+    },
+    get carried() { return !!carried; },
     /** A shove (fair play F6: continuous attacks push, never knock over): a velocity and a short slip, still in control. */
     push(impulse, seconds = 0.3) {
       if (cap.state.stun > 0 || (character?.state && character.state !== 'anim')) return false;

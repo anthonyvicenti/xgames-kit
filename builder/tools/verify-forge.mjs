@@ -47,6 +47,7 @@
 //      check (tools/lib/friends-watch-check.mjs) on the forge boot's viewer: a guest goes live from the game's own
 //      menu, a viewer's copy looks through their eyes and turns with them, joins the room, and one plays alone
 //   not yet for forge: the mechanic modules (NOT_YET_FORGE.mechanics is why none of them runs)
+import { checkPlay } from './lib/play-check.mjs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -157,7 +158,10 @@ export async function verifyForge(dir, { rec, outDir, add, log, t0, lap, quick =
   for (const c of AFTER) await c(env);
 
   // the two-player results
-  if (duo) { const d = await duo; check5(env, d); check6(env, d); check25(env, d); check34(env, d); }
+  const d = duo ? await duo : null;
+  // 6's play leg (gate D; tools/lib/play-check.mjs → builder/play/judge.mjs), once every other session has closed
+  if (want(6)) { const t = Date.now(); env.play = await checkPlay(dir, { outDir }).catch(e => ({ ok: false, detail: `the play judge stopped: ${e.message}`, record: null, notes: [] })); lap?.('play', t); rec.play = env.play.record; if (env.play.notes?.length) rec.notes.push(...env.play.notes); }
+  if (d) { check5(env, d); check6(env, d); check25(env, d); check34(env, d); }
   else if (!live) for (const [n, name] of [[5, 'two-player live gate'], [25, 'playing with friends'], [34, 'watch then play']]) if (want(n)) add(n, name, false, `multiplayer.json mode is ${env.mpm.manifest?.mode ?? 'missing'}, not live`);
   if (want(6) && !checks.some(c => c.n === 6)) check6(env, null);
 
@@ -690,13 +694,13 @@ function check5({ want, add, rec }, { gate: g, lo, sight }) {
     `gate ${g.verdict} ${g.passed ?? 0}/${g.total ?? 0}${replaced.length ? ` (${replaced.join(', ')}: the sight leg's)` : ''}${failed.length ? `; failed: ${failed.slice(0, 3).map(c => c.name).join(', ')}` : ''}; ${lo?.detail ?? 'no loadout leg'}; sight: ${sight?.detail ?? 'not run'}`);
 }
 /** 6: a round to results and replay, alone (the solo round) and with two players (the gate's own steps). */
-function check6({ want, add, solo, lost }, duo) {
+function check6({ want, add, solo, lost, play }, duo) {
   if (!want(6)) return;
   const g = name => (duo?.gate?.checks ?? []).find(c => c.name === name)?.ok === true;
   const soloOk = !!solo?.ok;
   const duoOk = !!duo?.gate && g('both-see-the-same-results') && g('play-again-starts-a-new-round') && g('host-ends-the-round');
-  const lostOk = lost ? lost.ok : true;
-  add(6, 'a round reaches results and replays', soloOk && duoOk && lostOk, `${lost && !lost.ok ? `${lost.detail}. ` : ''}alone: ${soloOk ? `results (${(solo.results ?? []).map(r => `${r.name} ${r.value}`).join(', ')}), Play again → round 2` : 'did not reach results and a second round'}; two players: ${duo?.gate ? (duoOk ? 'the same results on both, play again, the host ends round 2' : 'the gate did not show results, play again and end round') : 'not run'}${lost?.ok ? `; ${lost.detail}` : ''}`);
+  const lostOk = lost ? lost.ok : true, pl = play ?? null;
+  add(6, 'a round reaches results and replays', soloOk && duoOk && lostOk && (!pl || pl.ok), `${pl && !pl.ok ? `${pl.detail}. ` : ''}${lost && !lost.ok ? `${lost.detail}. ` : ''}alone: ${soloOk ? `results (${(solo.results ?? []).map(r => `${r.name} ${r.value}`).join(', ')}), Play again → round 2` : 'did not reach results and a second round'}; two players: ${duo?.gate ? (duoOk ? 'the same results on both, play again, the host ends round 2' : 'the gate did not show results, play again and end round') : 'not run'}${lost?.ok ? `; ${lost.detail}` : ''}${pl?.ok ? `; ${pl.detail}` : ''}`, pl && !pl.ok ? { area: 'play' } : {});
 }
 /** 25: playing with friends (tools/lib/friends-check.mjs, unchanged for forge). */
 function check25({ want, add, rec }, { fr }) {

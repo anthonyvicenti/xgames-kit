@@ -1,0 +1,102 @@
+{
+ "assetVersion": 1,
+ "id": "strawberry",
+ "pack": "kenney-food-kit",
+ "file": "strawberry.glb",
+ "sha256": "8ada422be1995df46b9f9b79231abbe94a08e55da6b470f726a2b95693d54fea",
+ "bytes": 7856,
+ "preview": "previews/strawberry.png",
+ "from": "kenney:food-kit/strawberry; its colour texture packed in, baked to metres (largest side 0.3 m), base at y=0 and centred (builder/tools/meshy-prop.mjs --fit): strawberry.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a red strawberry with a green leafy top",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "fruit",
+  "strawberry"
+ ],
+ "use": {
+  "size": [
+   0.197,
+   0.3,
+   0.197
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 156,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-15",
+   "report": {
+    "facts": {
+     "triangles": 156,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 7856,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-15",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 5,
+    "hues": [
+     "#e55e4a",
+     "#ea6346",
+     "#53bc84",
+     "#ee6346",
+     "#e05b48",
+     "#e6ac86",
+     "#54bd85",
+     "#db594b"
+    ],
+    "saturation": 0.663,
+    "value": 0.594,
+    "families": [
+     {
+      "hue": "red",
+      "share": 0.628
+     },
+     {
+      "hue": "green",
+      "share": 0.233
+     },
+     {
+      "hue": "orange",
+      "share": 0.139
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 29.99,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "d149bd86a19de7491a4c1fb6f60fd6d760ca6bea2b619ab4cc1c753009bfe891",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-15"
+ }
+}

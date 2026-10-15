@@ -34,7 +34,9 @@ async function walk(dir, root, out, pred, skip = null) {
   try { ents = await readdir(dir, { withFileTypes: true }); } catch { return out; }
   for (const e of ents) {
     const p = join(dir, e.name);
-    if (e.isDirectory()) { if (!(skip && dir === root && skip.has(e.name))) await walk(p, root, out, pred, skip); }
+    // a folder whose name starts with a dot is the loop's or a tool's own (the loop's state, the look's option copies,
+    // .verify), never the game's code (T8 run 1, 2026-10-14: the look step's copies inside the game failed measure 18)
+    if (e.isDirectory()) { if (!e.name.startsWith('.') && !(skip && dir === root && skip.has(e.name))) await walk(p, root, out, pred, skip); }
     else if (pred(e.name)) out.push(relative(root, p).split('\\').join('/'));
   }
   return out;

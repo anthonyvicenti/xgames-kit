@@ -37,10 +37,10 @@ export default {
     }
     if (values.check) {
       const p = await preflight(dir, { origin });
-      const ok = !p.problems.length && !p.secrets;
-      const out = { ok, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, problems: p.problems, secrets: p.secrets, backend: p.backend };
+      const ok = !p.problems.length && !p.secrets && !p.names;
+      const out = { ok, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, copied: p.built.copied, problems: p.problems, secrets: p.secrets, names: p.names, nameWarnings: p.nameWarnings, backend: p.backend };
       if (values.json) printJson(out);
-      else console.log(ok ? `${shown(dir)}: ${out.files} files, ${(out.bytes / 1048576).toFixed(1)} MB, nothing refused.${p.backend.length ? ` It may talk to: ${p.backend.join(', ')}.` : ''} Left out: ${out.skipped.join(', ') || 'nothing'}.` : [...p.problems, p.secrets].filter(Boolean).join('\n'));
+      else console.log(ok ? `${shown(dir)}: ${out.files} files, ${(out.bytes / 1048576).toFixed(1)} MB, nothing refused.${p.backend.length ? ` It may talk to: ${p.backend.join(', ')}.` : ''} Left out: ${out.skipped.join(', ') || 'nothing'}.` : [...p.problems, p.secrets, p.names].filter(Boolean).join('\n'));
       return ok ? 0 : 1;
     }
     const r = await publishGame(dir, { origin, draft: values.draft, newGame: values.new, title: values.title ?? null, progress: values.json ? () => {} : l => console.error(l) });

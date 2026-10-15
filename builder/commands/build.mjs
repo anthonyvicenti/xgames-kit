@@ -4,7 +4,7 @@ import { GAMES } from '../lib/paths.mjs';
 
 const usage = `Usage: gamesfun build --prompt "<the idea>" [--game games/<name>] [--model opus] [--strong <model>]
                       [--playtest-model sonnet] [--reader-model <model>] [--images a.png,b.png] [--answers <file.json | hook.mjs>] [--quick]
-                      [--permissions ask-none | bypass] [--json]
+                      [--permissions ask-none | bypass] [--until <step>] [--json]
 
 The whole creation loop with no session: the ledger, the foundation, the pitch, the spec, create, the build round, the
 six gates, the play-test of every promise, repairs under the stop rule and the ladder, the second reader, and the delivery. Every round is
@@ -23,6 +23,8 @@ stops a build; Ctrl+C does.
                     exporting answer({about, pitch, questions, migration, asked}); default: card 1 with every
                     question's default, a yes to a migration, and the game as it is after two asks
   --quick           the loop's verify runs --quick (no contact sheet); a delivery is normally verified in full
+  --until           stop when the loop reaches this step, its state kept (e.g. build: the plan, the look and the
+                    play designed, nothing built yet); the same command without it goes on from there
   --permissions     ask-none (default: each round may use only the tools its kind names, anything else is denied) or
                     bypass (every tool, no checks: only in a sandbox)
 
@@ -36,9 +38,10 @@ export default {
   summary: 'make a game from an idea with no session: the whole creation loop, headless',
   usage,
   run: args => guard(async () => {
-    const { values } = parse(args, { prompt: { type: 'string' }, game: { type: 'string' }, model: { type: 'string' }, strong: { type: 'string' }, 'playtest-model': { type: 'string' }, 'reader-model': { type: 'string' }, images: { type: 'string' }, answers: { type: 'string' }, quick: { type: 'boolean' }, permissions: { type: 'string' } }, usage);
+    const { values } = parse(args, { prompt: { type: 'string' }, game: { type: 'string' }, model: { type: 'string' }, strong: { type: 'string' }, 'playtest-model': { type: 'string' }, 'reader-model': { type: 'string' }, images: { type: 'string' }, answers: { type: 'string' }, quick: { type: 'boolean' }, permissions: { type: 'string' }, until: { type: 'string' } }, usage);
     if (!values.prompt?.trim()) throw new UsageError(`build needs --prompt\n\n${usage}`);
     if (values.permissions && !['ask-none', 'bypass'].includes(values.permissions)) throw new UsageError(`--permissions is ask-none or bypass\n\n${usage}`);
+    if (values.until && !(await import('../loop/order.mjs')).STEPS.includes(values.until)) throw new UsageError(`--until is a step of the loop (${(await import('../loop/order.mjs')).STEPS.join(', ')})\n\n${usage}`);
     const { buildHeadless } = await import('../loop/headless.mjs');
     const ac = new AbortController();
     process.once('SIGINT', () => ac.abort('stopped by the person'));
@@ -46,7 +49,7 @@ export default {
       prompt: values.prompt, game: path.resolve(values.game ?? path.join(GAMES, slugOf(values.prompt))),
       model: values.model ?? 'opus', strong: values.strong ?? null, playtestModel: values['playtest-model'] ?? 'sonnet', readerModel: values['reader-model'] ?? null,
       images: (values.images ?? '').split(',').map(s => s.trim()).filter(Boolean), answers: values.answers ?? null, quick: !!values.quick,
-      permission: values.permissions === 'bypass' ? 'bypassPermissions' : 'dontAsk', signal: ac.signal,
+      permission: values.permissions === 'bypass' ? 'bypassPermissions' : 'dontAsk', signal: ac.signal, until: values.until ?? null,
     });
     if (values.json) printJson(r);
     else {
@@ -57,6 +60,6 @@ export default {
       if (r.lastWords && r.lastWords !== r.outcome?.summary) console.log(r.lastWords);
       console.log(`${r.minutes} min, $${r.usd}, models ${r.models.join(', ')}; record: ${r.record}`);
     }
-    return r.delivered ? 0 : 1;
+    return r.delivered || String(r.stopped ?? '').startsWith('until-') ? 0 : 1;
   }),
 };

@@ -72,12 +72,16 @@ export function createBrain(ctx, player, rng) {
       if (b.mode === 'wander') {
         wanderT -= dt;
         if (!wanderAt || wanderT <= 0 || Math.hypot(wanderAt.x - p.x, wanderAt.z - p.z) < 1) {
-          wanderAt = { x: A.cx + (rng() * 2 - 1) * A.hx * 0.8, z: A.cz + (rng() * 2 - 1) * A.hz * 0.8 }; wanderT = 3 + rng() * 4;
+          // somewhere this bot can walk to from where it stands (the world's own ground: never out to sea or onto an
+          // island with no way across), else anywhere in the play area
+          wanderAt = ctx.world?.place?.('wander', 1, { rng, clear: 0.3, away: 0, from: p })?.[0] ?? { x: A.cx + (rng() * 2 - 1) * A.hx * 0.8, z: A.cz + (rng() * 2 - 1) * A.hz * 0.8 }; wanderT = 3 + rng() * 4;
         }
-        const w = ctx.world?.via?.(p, wanderAt) ?? wanderAt;     // through the doors to another room
+        const w = ctx.world?.via?.(p, wanderAt) ?? wanderAt;     // through the doors to another room, round a wall, up a ledge
+        if (w.jump) b.press('jump');
         x = w.x - p.x; z = w.z - p.z;
       } else if (b.mode === 'seek' && b.target) {
         const w = ctx.world?.via?.(p, b.target) ?? b.target;
+        if (w.jump) b.press('jump');
         x = w.x - p.x; z = w.z - p.z;
         if (Math.hypot(b.target.x - p.x, b.target.z - p.z) < b.stopAt) x = z = 0;
       } else if (b.mode === 'flee' && b.target) {
@@ -90,7 +94,15 @@ export function createBrain(ctx, player, rng) {
       // stuck against something: slide sideways for a moment
       const speed = player.controller?.state.speed ?? 1;
       if (l > 1e-3 && speed < 0.4) stuckT += dt; else stuckT = Math.max(0, stuckT - dt);
-      if (stuckT > 0.6) { const sx = -z * side, sz = x * side; x = sx; z = sz; if (stuckT > 1.4) { stuckT = 0; side = -side; b.press('jump'); } }
+      // a world with placement (worlds/placement.js) routes round what is in the way; stuck anyway, a bot steps aside
+      // only where it can stand, so it never walks off a ledge
+      const W = ctx.world;
+      if (stuckT > 0.6 && W?.isWalkable) {
+        // a side step only onto ground a body can stand on (never off a ledge), else a hop; a wanderer picks elsewhere
+        const sx = -z * side, sz = x * side;
+        if (W.isWalkable(p.x + sx * 0.8, p.z + sz * 0.8, (p.y ?? 0) + 0.5)) { x = sx; z = sz; }
+        if (stuckT > 1.4) { stuckT = 0; side = -side; b.press('jump'); if (b.mode === 'wander') wanderT = 0; }
+      } else if (stuckT > 0.6) { const sx = -z * side, sz = x * side; x = sx; z = sz; if (stuckT > 1.4) { stuckT = 0; side = -side; b.press('jump'); } }
       inp.x = x; inp.z = z;
       inp.face = faceYaw ?? undefined;
       inp.aim = aimDir ?? undefined;
@@ -218,20 +230,29 @@ export function meleeBot(ctx, player) {
 
 /**
  * Default behaviour when the rules have no bot(): with the melee mechanic, meleeBot; with a projectile mechanic, fight
- * fairly through ctx.bots (a target that can be hit, spread across bots, human reaction and aim); otherwise wander,
- * and now and then jump.
+ * fairly through ctx.bots (a target that can be hit, spread across bots, human reaction and aim) when one is nearer
+ * than the nearest pickup; go for the nearest pickup (the world routes the way: round walls, over bridges, up ledges);
+ * otherwise wander, and now and then jump.
  */
 export function defaultBot(ctx, player) {
   if (player.alive === false) { player.bot.stop(); return; }
   const mel = ctx.mechanics?.get?.('melee');
   if (mel && !mel.standin && meleeBot(ctx, player)) return;
+  // a pickup out in the world (the pickup part's spots, where every seat can get to them): the nearest is worth going
+  // for, unless a player to fight is closer than it
+  const pk = ctx.mechanics?.get?.('pickup');
+  const spot = pk && !pk.standin ? pk.nearest?.(player.position) : null;
+  const toSpot = spot ? Math.hypot(spot.x - player.position.x, spot.z - player.position.z) : Infinity;
   const prj = ctx.mechanics?.get?.('projectile');
   if (prj && !prj.standin && ctx.bots) {
     const stream = prj.params?.kind === 'continuous';
     const range = stream ? (prj.params?.streamReach ?? 9) * 0.85 : 12;
-    const t = ctx.bots.target(player, { range });
+    // with pickups out, a bot fights in spells (a third of the time, each bot at its own moment), else it collects
+    const spell = !spot || Math.floor(((ctx.time?.now ?? 0) + (player.seat ?? 0) * 2.3) / 5) % 3 === 0;
+    const t = spell ? ctx.bots.target(player, { range: Math.min(range, toSpot + 2) }) : null;
     if (t) { ctx.bots.attack(player, t, { stop: stream ? range * 0.6 : 5, hold: stream ? 0.3 : 0.12 }); return; }
   }
+  if (spot) { player.bot.seek(spot, { stop: 0.2 }); return; }
   player.bot.wander();
   if (player.bot.rng() < 0.004) player.bot.press('jump');
 }

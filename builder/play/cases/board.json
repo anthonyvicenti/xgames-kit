@@ -1,0 +1,649 @@
+{
+  "schema": "gf-play-case/1",
+  "id": "board",
+  "prompt": "a board game for me and up to 3 friends: roll dice to move round a haunted house, grab keys, steal them off each other, and the first one out the front door wins",
+  "how": "gamesfun build --until build (headless, opus): the ledger, the foundation, the pitch (card 1 by the answers hook), the spec, create, then the design step; the look step was off (GAMESFUN_LOOK=0)",
+  "at": "2026-10-14T19:01:53.015Z",
+  "ledger": [
+    {
+      "id": "acts",
+      "about": "acts",
+      "words": "roll dice to move",
+      "what": "Players take turns in order: on your turn you roll the dice and move; nobody else acts until their turn.",
+      "home": "exists",
+      "by": "loop:turns"
+    },
+    {
+      "id": "perspective",
+      "about": "perspective",
+      "words": "a board game",
+      "what": "The board is seen from above at a tilt, the whole haunted house track in view.",
+      "home": "exists",
+      "by": "runtime:three"
+    },
+    {
+      "id": "players",
+      "about": "players",
+      "words": "for me and up to 3 friends",
+      "what": "Two to four friends play against each other at one shared board; one of them wins.",
+      "home": "exists",
+      "by": "mechanic:board"
+    },
+    {
+      "id": "body",
+      "about": "body",
+      "words": "a board game",
+      "what": "Each player is a pawn on the board, playing from their seat at the table.",
+      "home": "exists",
+      "by": "mechanic:board"
+    },
+    {
+      "id": "dice",
+      "about": "action",
+      "words": "roll dice to move",
+      "what": "On your turn you roll the dice and the result is the number of spaces your pawn moves.",
+      "home": "build"
+    },
+    {
+      "id": "track",
+      "about": "action",
+      "words": "move round a haunted house",
+      "what": "Pawns move along a path of spaces that runs round the rooms of a haunted house.",
+      "home": "build"
+    },
+    {
+      "id": "keys",
+      "about": "action",
+      "words": "grab keys",
+      "what": "Keys lie on spaces of the house; landing on one picks it up and it counts toward escaping.",
+      "home": "build"
+    },
+    {
+      "id": "steal",
+      "about": "action",
+      "words": "steal them off each other",
+      "what": "A player can take a key from another player, by landing on or passing them on the board.",
+      "home": "build"
+    },
+    {
+      "id": "win",
+      "about": "action",
+      "words": "the first one out the front door wins",
+      "what": "The first player to reach the front door holding enough keys gets out and wins the game.",
+      "home": "build"
+    },
+    {
+      "id": "haunted",
+      "about": "thing",
+      "words": "a haunted house",
+      "what": "The board is a haunted house: rooms, spooky decor and a front door to escape through.",
+      "home": "build"
+    }
+  ],
+  "foundation": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly",
+    "why": {
+      "runtime": "three/standard-3d: meets camera top, dimension 3d; builds 1 thing it lacks in the game",
+      "loop": "turns: \"roll dice to move\": One player acts at a time, in order; a move out of turn is refused with a reason; a clock for each turn; bots act on theirs.",
+      "kind": "silly: the person did not say how it should feel, so the look proven on three/standard-3d until they do"
+    }
+  },
+  "cards": [
+    {
+      "id": "key-dash",
+      "title": "Haunted Key Dash",
+      "play": {
+        "style": "roll-and-move race board game",
+        "verbs": [
+          "roll",
+          "move",
+          "grab",
+          "steal",
+          "escape"
+        ],
+        "beat": "roll the dice, watch your pawn hop, grab a key or pick a rival's pocket",
+        "touch": "landing on or passing a rival's pawn steals one of their keys",
+        "chaos": 0.4
+      }
+    },
+    {
+      "id": "push-luck",
+      "title": "Spook or Bust",
+      "play": {
+        "style": "push-your-luck dice race",
+        "verbs": [
+          "roll",
+          "push",
+          "stop",
+          "steal",
+          "escape"
+        ],
+        "beat": "roll, move, then decide to stop or roll again",
+        "touch": "pass or land on a rival to steal a key; dropped keys are there for anyone to grab",
+        "chaos": 0.55
+      }
+    },
+    {
+      "id": "ghost-chase",
+      "title": "Ghost Chase",
+      "play": {
+        "style": "roll-and-choose take-that race",
+        "verbs": [
+          "roll",
+          "choose",
+          "haunt",
+          "steal",
+          "escape"
+        ],
+        "beat": "roll, then move yourself or send the ghost at a rival",
+        "touch": "steer the ghost into a rival to knock them back and make them drop a key; pass them to steal one",
+        "chaos": 0.65
+      }
+    }
+  ],
+  "chosen": "key-dash",
+  "designRounds": 0,
+  "spec": {
+    "title": "Haunted Key Dash",
+    "hook": "Roll the dice, race your pawn round a haunted house, snatch keys off your friends and be first out the front door.",
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly",
+    "camera": "top",
+    "players": {
+      "min": 2,
+      "max": 4,
+      "bots": true
+    },
+    "multiplayer": {
+      "mode": "live",
+      "together": "turns",
+      "presence": "seats"
+    },
+    "world": "office",
+    "controls": {
+      "primary": "roll the dice, then move your pawn"
+    },
+    "round": {
+      "seconds": 1200,
+      "params": {
+        "turnSeconds": 25
+      }
+    },
+    "mechanics": [
+      {
+        "id": "board",
+        "as": "haunted house track",
+        "params": {
+          "cols": 10,
+          "rows": 8,
+          "input": "move",
+          "presence": "cursor",
+          "piece": "pawn",
+          "turnSeconds": 0,
+          "hints": true,
+          "score": "none",
+          "endsRound": true,
+          "boardColor": "#3b2a4a",
+          "cellColor": "#e8dcc4",
+          "cellColorB": "#bfa98a",
+          "cell": 1.1,
+          "at": "centre",
+          "boards": "shared",
+          "pieceSize": 0.7,
+          "botThink": 1.2,
+          "endDelay": 3,
+          "clear": 3,
+          "seats": true,
+          "textYourTurn": "Your turn: roll, then pick a space"
+        }
+      }
+    ],
+    "build": [
+      "On your turn you roll the dice and the result is the number of spaces your pawn moves",
+      "Pawns move along a path of spaces that runs round the rooms of a haunted house",
+      "Keys lie on spaces of the house; landing on one picks it up",
+      "A player can take a key from another player, by landing on or passing them",
+      "The first player to reach the front door holding enough keys gets out and wins",
+      "The board is a haunted house: rooms, spooky decor and a front door",
+      "Each throw offers one die, the other, or both added: up to three spaces light up for the mover",
+      "Click your own pawn to roll: the dice tumble on every screen and the lit spaces appear",
+      "Landing right on a rival snatches one key and knocks their pawn back 3 spaces",
+      "Ghost spaces: a ghost takes a key from a pawn that lands there, or spooks a keyless pawn 2 spaces back",
+      "Secret passages: landing on one pops your pawn out of its twin across the house",
+      "The front door shows the keys it needs (3, one fewer at 5:00 and 7:00); reaching or passing it with them escapes",
+      "Five keys always lie on the board; a taken key reappears on another free plain space",
+      "Everyone's keys are seen: a key stack over each pawn, and the scoreboard counts the keys each player holds",
+      "Every screen shows the mover's dice and lit spaces; a pawn the move could rob shivers",
+      "Bots rob the richest rival, take keys and run for the door once they hold enough"
+    ]
+  },
+  "target": {
+    "schema": "gf-play-target/1",
+    "from": "words",
+    "confidence": 0.6,
+    "genre": {
+      "name": "roll-and-move party board game with take-that stealing",
+      "traits": [
+        "The dice moment: everyone watches the throw and shouts for the number they need; a lucky or cruel roll is the story told afterwards",
+        "A real choice in every throw: one die, the other or both, so the same roll can grab a key, rob a friend or run for the exit",
+        "Take-that between friends: snatching a key off someone one space from the door, then being robbed back, is the loudest moment at the table",
+        "Nobody is out until someone is out the door: the leader must still carry the keys round the board past everyone behind",
+        "Spooky-silly surprises (ghosts, secret passages) that swing the race and get a laugh without stopping it",
+        "Short turns and a whole game in about six minutes, then straight into the next"
+      ]
+    },
+    "verbs": [
+      {
+        "id": "roll",
+        "does": "Throw the two dice: on your turn, click your own pawn",
+        "input": "primary (click your pawn)",
+        "feel": "a clattering tumble, then each face pops big"
+      },
+      {
+        "id": "move",
+        "does": "Pick one of up to three lit spaces (one die, the other, or both added) and your pawn hops there along the track",
+        "input": "primary (click a lit space)",
+        "feel": "a springy arc that lands with a wooden tock and a puff of dust"
+      },
+      {
+        "id": "grab",
+        "does": "Land on a golden key to pick it up; it counts toward opening the front door",
+        "input": "primary (choose the key's space)",
+        "feel": "sparkle and a chime as it spins onto your pawn"
+      },
+      {
+        "id": "snatch",
+        "does": "Hop past a rival to take one of their keys; land right on them to take one and knock them back 3 spaces",
+        "input": "primary (choose a space past or on a rival)",
+        "feel": "a whoosh as the key arcs over; a thump and a squeak on a pounce"
+      },
+      {
+        "id": "sneak",
+        "does": "Land on a secret passage to pop out of its twin across the house",
+        "input": "primary (choose the passage space)",
+        "feel": "a poof, then a pop on the far side"
+      },
+      {
+        "id": "escape",
+        "does": "Reach or pass the front door holding the keys it needs to burst out and win",
+        "input": "primary (choose the door space)",
+        "feel": "the door bursts open in a flood of light and confetti"
+      },
+      {
+        "id": "aim",
+        "does": "Move your named mark over the board to choose a space without a mouse",
+        "input": "move (or the mouse)",
+        "feel": "your mark glides cell to cell"
+      }
+    ],
+    "beats": {
+      "moment": "On your turn click your pawn: two dice tumble, up to three spaces light; pick one and your pawn hops there, grabbing the key on it or snatching from each rival it passes. On others' turns, watch their lit spaces creep toward your pawn.",
+      "stretch": "A round of turns (about 30 s at a full table): every pawn has thrown once, keys have changed hands, someone may have been pounced or dived through a passage, and the threats and chances for your next throw have moved.",
+      "round": "All start in the Front Hall beside the locked door with no keys. Lap one is a scramble for floor keys and the first snatches; then a pawn with 3 keys turns for the door while the rest hunt it. The door eases to 2 keys at 5:00, then 1 at 7:00. The first pawn out the door wins and the results name it.",
+      "between": "A fresh game: everyone back in the Front Hall with no keys, the first player rotates, and the keys, ghosts and passages take new spaces."
+    },
+    "objective": {
+      "goal": "Collect keys round the haunted house, off the floor or off your friends, and be the first out the front door.",
+      "win": "Be first to reach the front door's space (land on it or move past it) holding the keys it needs: 3, easing to 2 after 5 minutes and 1 after 7.",
+      "lose": "Someone else escapes first. Nobody is knocked out: a robbed pawn keeps throwing and can snatch its keys back.",
+      "reach": {
+        "how": "Everything is on one board in the office's middle, square on from each seat under the top camera; every action is a click on it. Pawns start on the Front Hall spaces by the door, five keys lie on free track spaces (two within 12 of the start), and the closed loop brings every pawn past the door each lap.",
+        "within": 20,
+        "risks": [
+          "The board shrinks to fit the small office's play area: 10×8 cells of 1.1 m must stay readable under the top camera from every seat's side (the e/w seats look along its 11 m length).",
+          "Office walls or kept furniture between a seat's camera and the board could hide spaces: the board's clear margin and centre spot must leave the whole ring in view.",
+          "Keys, markers and the door prop must sit on the board's surface over their cells: not under the slab, off the rim, or on an interior cell.",
+          "A key on a pawn's, ghost's or passage space could never be picked up: keys go only on free plain track spaces."
+        ]
+      },
+      "things": [
+        {
+          "what": "golden key",
+          "where": "on free plain track spaces: 5 on the floor at once (2 within 12 spaces of the start); a taken key reappears on another free space",
+          "placed": "board",
+          "count": 5
+        },
+        {
+          "what": "front door",
+          "where": "the door space in the Front Hall on the ring; the crooked purple door prop stands on the rim beside it",
+          "placed": "board",
+          "count": 1
+        },
+        {
+          "what": "ghost space",
+          "where": "three track spaces on three different sides of the house, a goofy ghost floating over each",
+          "placed": "board",
+          "count": 3
+        },
+        {
+          "what": "secret passage",
+          "where": "two linked track spaces on opposite sides of the house",
+          "placed": "board",
+          "count": 2
+        },
+        {
+          "what": "start space",
+          "where": "the four Front Hall spaces just past the door, one pawn on each",
+          "placed": "board",
+          "count": 4
+        },
+        {
+          "what": "keys held",
+          "where": "on each pawn as a stack of small keys, and on the scoreboard",
+          "placed": "carried"
+        }
+      ]
+    },
+    "touchpoints": [
+      {
+        "how": "Hop past a rival and snatch one of their keys: it arcs from their pawn to yours",
+        "kind": "steal",
+        "often": "2–3 times a minute at a full table"
+      },
+      {
+        "how": "Land right on a rival: snatch a key and knock their pawn back 3 spaces, cruellest just before the door",
+        "kind": "knock",
+        "often": "about every two minutes"
+      },
+      {
+        "how": "Everyone races for the same floor keys and the one front door: the key you take is one they can't",
+        "kind": "race",
+        "often": "every turn"
+      },
+      {
+        "how": "Every screen shows the mover's dice and lit spaces; a pawn one of them would rob shivers while they choose",
+        "kind": "watch",
+        "often": "every turn"
+      }
+    ],
+    "risk": [
+      {
+        "risk": "Run for the door holding exactly the keys it needs: one snatch on the way and it stays locked.",
+        "reward": "Escape a lap before the rival who stopped to collect spares."
+      },
+      {
+        "risk": "Take the key space just ahead of a rival: next turn they can hop past or pounce on you.",
+        "reward": "One more key now, a step closer to opening the door."
+      },
+      {
+        "risk": "Dive into a secret passage: you pop out across the house, maybe right in front of a hunter.",
+        "reward": "Half a lap in one hop, sometimes onto the doorstep."
+      },
+      {
+        "risk": "Take the biggest number though it lands on a ghost space or right in front of the pack.",
+        "reward": "The most ground toward the door, or two rivals robbed in one hop."
+      }
+    ],
+    "pacing": {
+      "firstAction": 15,
+      "eventsPerMinute": 18,
+      "roundSeconds": 360,
+      "turnSeconds": 15,
+      "idleMax": 45,
+      "comeback": 0.45,
+      "rounds": 3
+    },
+    "events": [
+      {
+        "name": "dice-roll",
+        "what": "a seat's two dice were rolled onto the board (its click, a bot, or its turn clock)",
+        "meaningful": true
+      },
+      {
+        "name": "pawn-move",
+        "what": "a pawn moved to one of its lit spaces",
+        "meaningful": true
+      },
+      {
+        "name": "key-grab",
+        "what": "a pawn landed on a floor key and picked it up",
+        "meaningful": true
+      },
+      {
+        "name": "key-snatch",
+        "what": "a pawn took a key from a rival by hopping past or landing on them",
+        "meaningful": true
+      },
+      {
+        "name": "pounce",
+        "what": "a pawn landed right on a rival and knocked it back",
+        "meaningful": true
+      },
+      {
+        "name": "ghost-spook",
+        "what": "a ghost space took a key from a pawn, or spooked a keyless pawn back",
+        "meaningful": true
+      },
+      {
+        "name": "secret-passage",
+        "what": "a pawn went through a secret passage to its twin",
+        "meaningful": true
+      },
+      {
+        "name": "door-locked",
+        "what": "a pawn reached the door without enough keys and it rattled",
+        "meaningful": false
+      },
+      {
+        "name": "door-eased",
+        "what": "the door's lock eased to need one key fewer",
+        "meaningful": false
+      },
+      {
+        "name": "escape",
+        "what": "a pawn went out the front door with enough keys and won",
+        "meaningful": true
+      }
+    ],
+    "feel": {
+      "impact": "mid",
+      "weight": "light",
+      "chaos": 0.45,
+      "comedy": "The cruel dice (needing a 3, rolling two sixes); snatching the third key off a friend one space from the door, or pouncing them back just before it; a ghost robbing the leader; popping out of a secret passage right in front of the friend you were fleeing.",
+      "juice": [
+        "Dice: a clattering tumble onto the middle of the board, a thunk as each lands and its face pops big",
+        "Hop: ghostly footprints light each passed space, the pawn arcs over and lands with a puff of dust and a wooden tock",
+        "Snatch: the key yanks off the victim with a cartoon whoosh, arcs to the thief, and a 'Snatched!' popup names both",
+        "Pounce: a heavy thump, a small camera shake and a star burst; the victim drops back three spaces with a squeak",
+        "Key grab: the key spins up in a sparkle burst with a chime, and the stack over the pawn grows",
+        "Ghost: it swoops over the pawn with a 'Boo!' and the key spins off to its new space",
+        "Door: locked, it rattles with a chain clank; opened, it bursts wide, light pours out, confetti, a slow last hop",
+        "Threat: a pawn one of the lit spaces would rob shivers and sweats; the door's sign clunks down when it eases"
+      ]
+    },
+    "avoid": [
+      {
+        "failure": "idle",
+        "guard": "Turns are short and capped: the turns flow's clock is 15 s (round.params.turnSeconds; when it runs out the dice show and a lit space is played), bots take about 3 s, and every rival's options show on your screen, your pawn shivering when it can be robbed.",
+        "measure": "The longest gap between a seat's own throw and anything done to its keys or pawn stays under 45 s; no turn runs past its clock."
+      },
+      {
+        "failure": "unreachable",
+        "guard": "The track is one closed loop of board cells, all in the top camera's view from every seat; every throw has a legal space (the loop never ends), keys appear only on free plain track spaces, and every lap passes the door.",
+        "measure": "In bot runs a key is grabbed in the first two rounds of turns, no turn passes for want of a move, and every game ends in an escape."
+      },
+      {
+        "failure": "runaway-leader",
+        "guard": "Keys are taken by hopping past or landing on whoever holds them, so the leader is everyone's target and must still carry the keys round the board past the pawns behind; bots rob the richest rival first.",
+        "measure": "Over bot runs the seat holding the most keys at halftime wins fewer than 60% of games."
+      },
+      {
+        "failure": "stalemate",
+        "guard": "Keys keep entering play (5 always on the floor) and the door eases: it needs 3 keys, then 2 after 5 minutes and 1 after 7, so a pawn with any key can escape by passing it.",
+        "measure": "Every game ends in an escape, never at the 1200 s cap; none goes past 9 minutes."
+      },
+      {
+        "failure": "too-long",
+        "guard": "A game is about six minutes at a full table: a 32-space loop, moves of 1 to 12 spaces, a 15 s turn clock and the door's easing put a ceiling on it.",
+        "measure": "Median game 4–7 minutes with four seats, about 3 with two; none over 10."
+      },
+      {
+        "failure": "confusion",
+        "guard": "The goal line says 'Your turn: roll, then pick a space' and a die bounces over your pawn; after the throw only your legal spaces light; the scoreboard shows everyone's keys, the door shows the keys it needs, and a popup names each snatch.",
+        "measure": "A new player completes their first turn (throw and move) with at most one refusal."
+      },
+      {
+        "failure": "one-strategy",
+        "guard": "Each throw offers up to three spaces with different payoffs (a floor key, a snatch, a pounce, a passage, distance to the door, dodging a ghost), and which is best changes with who holds what and where they stand.",
+        "measure": "Every game has key grabs, snatches and at least one passage or pounce; the space chosen is not always the farthest."
+      }
+    ],
+    "makes": [
+      {
+        "says": "Clicking your pawn on your turn throws two dice, and you move by one die, the other, or both added.",
+        "see": "On my turn I click my pawn: two dice tumble and show their faces, up to three spaces light up, and clicking one sends my pawn hopping there along the track."
+      },
+      {
+        "says": "Landing on a golden key picks it up, and the keys you hold are what open the front door.",
+        "see": "My pawn lands on a key: it spins up onto my pawn's key stack, my key count on the scoreboard rises by one, and a new key appears on another space."
+      },
+      {
+        "says": "Hopping past a rival takes one of their keys; landing right on them also knocks them back 3 spaces.",
+        "see": "When my hop passes a pawn holding keys, a key flies from it to mine with a 'Snatched!' popup and both counts change; when I land on it, that pawn also drops back three spaces."
+      },
+      {
+        "says": "The front door opens only for a pawn holding the keys it needs, and the first one through wins.",
+        "see": "The door's sign shows the keys it needs; reaching it short of keys rattles it; reaching or passing it with enough bursts it open and the results name the winner."
+      },
+      {
+        "says": "Ghost spaces and secret passages swing the race: a ghost steals a key, a passage jumps you across the house.",
+        "see": "On a ghost space the ghost swoops and one of my keys flies to another space (keyless, I am spooked 2 back); on a passage my pawn vanishes and pops out of its twin across the board."
+      },
+      {
+        "says": "A friend's turn plays out on my screen: their dice, their lit spaces, their hop, and what they take from me.",
+        "see": "On a friend's turn I see their dice land and up to three spaces ringed; my pawn shivers when one would rob me, and a key they snatch flies from my pawn to theirs as my count drops.",
+        "friends": true
+      }
+    ],
+    "mechanics": [
+      {
+        "id": "board",
+        "as": "the haunted house: a ring of 32 spaces round a 10×8 board, each pawn moved from its seat with a mark",
+        "params": {
+          "cols": 10,
+          "rows": 8,
+          "cell": 1.1,
+          "at": "centre",
+          "input": "move",
+          "presence": "cursor",
+          "boards": "shared",
+          "piece": "pawn",
+          "pieceSize": 0.7,
+          "turnSeconds": 0,
+          "botThink": 1.2,
+          "endDelay": 3,
+          "score": "none",
+          "endsRound": true,
+          "clear": 3,
+          "seats": true,
+          "hints": true,
+          "textYourTurn": "Your turn: roll, then pick a space"
+        },
+        "why": "Seats 2–4 round one shared board, takes the pick-your-pawn-then-a-space clicks, refuses out-of-turn moves, plays bots, joins the turns flow and ends the round at the escape; the rules add dice, track and keys."
+      }
+    ],
+    "build": [
+      {
+        "what": "Each throw offers one die, the other, or both added: up to three spaces light up for the mover",
+        "how": "src/dice.js, a module: the host throws two dice with ctx.rng as each turn starts and keeps them in the board's data; legal() allows only the spaces die A, die B or their sum reach along the ring, so the board lights them and the turn clock can play one.",
+        "where": "module",
+        "row": "dice",
+        "why": "A choice in every throw turns a dice race into decisions; the board lights legal cells but knows no dice."
+      },
+      {
+        "what": "Click your own pawn to roll: the dice tumble on every screen and the lit spaces appear",
+        "how": "rules.js: a primary press on your own pawn on your turn sends one roll event; the host marks the dice shown and every copy tumbles two game.die slot models to their faces; bots roll after a short think, and the turn clock rolls for an idle player.",
+        "where": "rules",
+        "row": "dice",
+        "why": "The roll is the player's own action and the whole table's moment; the board has no dice and no roll step."
+      },
+      {
+        "what": "Landing right on a rival snatches one key and knocks their pawn back 3 spaces",
+        "how": "rules.js apply(): a move onto a rival's cell takes one of their keys and sets their pawn pounceBack spaces back along the ring (the next free space behind when that one is taken), with a thump, a star burst and a small camera shake.",
+        "where": "rules",
+        "row": "steal",
+        "why": "One space holds one pawn, so landing on a rival needs a rule; a pounce is the cruellest, loudest moment of the genre."
+      },
+      {
+        "what": "Ghost spaces: a ghost takes a key from a pawn that lands there, or spooks a keyless pawn 2 spaces back",
+        "how": "rules.js: three ghost spaces drawn from the host's seed each game, a ghost prop floating over each; apply() sends one of the lander's keys to a free plain space, or sets a keyless pawn ghostBack spaces back.",
+        "where": "rules",
+        "row": "haunted",
+        "why": "The haunted house has to play, not only look: a space to fear makes a choice between the lit spaces."
+      },
+      {
+        "what": "Secret passages: landing on one pops your pawn out of its twin across the house",
+        "how": "rules.js: two linked passage spaces on opposite sides of the ring, each marked by a game.passage slot; apply() puts the pawn on the twin (the next free space past it when taken) with a poof and a pop.",
+        "where": "rules",
+        "row": "track",
+        "why": "A shortcut that can land you in front of a hunter adds a gamble and a laugh to the loop."
+      },
+      {
+        "what": "The front door shows the keys it needs (3, one fewer at 5:00 and 7:00); reaching or passing it with them escapes",
+        "how": "rules.js: keysToEscape, doorEaseAt and doorEaseEvery in rules.params; the host lowers the need on the game clock, a game.door-sign slot shows it, a move reaching or passing the door with enough keys stops there and wins, and a pawn short of keys rattles it.",
+        "where": "rules",
+        "row": "win",
+        "why": "An exact roll to the door would stall the finish; an easing lock guarantees the game ends and tells everyone how close it is."
+      },
+      {
+        "what": "Five keys always lie on the board; a taken key reappears on another free plain space",
+        "how": "rules.js: the host keeps keysOnFloor keys on free plain track spaces (never a pawn's, the door, a ghost or a passage space), two of them within 12 spaces of the start, and places a new one with ctx.rng each time one is taken.",
+        "where": "rules",
+        "row": "keys",
+        "why": "Keys must keep coming or the game stalls once they are all held; keys near the start give a first grab in the first turns."
+      },
+      {
+        "what": "Everyone's keys are seen: a key stack over each pawn, and the scoreboard counts the keys each player holds",
+        "how": "rules.js: each player's score is the keys they hold (board score none), set by the host after every change; every copy draws small copies of the key prop stacked over each pawn from the board's data.",
+        "where": "rules",
+        "row": "keys",
+        "why": "Who to rob and whom to fear is the whole decision; it has to be read at a glance from every seat."
+      },
+      {
+        "what": "Every screen shows the mover's dice and lit spaces; a pawn the move could rob shivers",
+        "how": "rules.js: every copy works out the mover's options from the shared dice and rings them with a game.option-ring slot; a key-holding pawn on one of those paths wobbles, and game.footprint marks light the spaces a hop passes.",
+        "where": "rules",
+        "row": "steal",
+        "why": "The board shows hints only to the mover; the others need to see the threat coming, or their wait is idle."
+      },
+      {
+        "what": "Bots rob the richest rival, take keys and run for the door once they hold enough",
+        "how": "rules.js gives the board bot(s, seat, rng): escape when it can, else pounce on or pass whoever holds the most keys, else grab a key, else dodge ghost spaces while holding keys, else take the farthest space.",
+        "where": "rules",
+        "row": "players",
+        "why": "Bots fill empty seats, so one person still gets a race with thieves; the board's own bot knows no dice or keys."
+      }
+    ],
+    "params": {
+      "keysToEscape": 3,
+      "doorEaseAt": 300,
+      "doorEaseEvery": 120,
+      "doorMinKeys": 1,
+      "keysOnFloor": 5,
+      "keysNearStart": 2,
+      "keysNearReach": 12,
+      "pounceBack": 3,
+      "snatchPerRival": 1,
+      "ghostSpaces": 3,
+      "ghostBack": 2,
+      "passagePairs": 1,
+      "dieSides": 6,
+      "startSpaces": 4,
+      "botRevealSeconds": 0.6,
+      "hopSecondsPerSpace": 0.12,
+      "pounceShake": 0.15
+    },
+    "bots": "Bots take their own turns through the board: about 2 s of thought, their dice tumble, then their mark steps to the chosen space. They escape when they can, pounce on or pass whoever holds the most keys, grab keys, dodge ghosts while holding keys, else go farthest. Alone, a player still races and robs a bot.",
+    "sources": {
+      "words": true,
+      "refs": 0,
+      "model": "opus",
+      "at": "2026-10-14T19:01:51.822Z"
+    }
+  }
+}

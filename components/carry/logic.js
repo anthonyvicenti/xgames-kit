@@ -55,16 +55,3 @@ export function wallBounce(it, n, restitution = 0.45) {
   it.vx -= (1 + restitution) * d * n[0]; it.vy -= (1 + restitution) * d * n[1]; it.vz -= (1 + restitution) * d * n[2];
 }
 
-/** Scatter `n` positions in a box (centre cx,cz; half sizes hx,hz) at least `gap` apart and `margin` from the edge. rng() → 0..1 */
-export function scatter(n, rng, { cx = 0, cz = 0, hx = 10, hz = 10, gap = 1.5, margin = 2, keepClear = [] } = {}) {
-  const out = [];
-  for (let i = 0; i < n; i++) {
-    let p = null;
-    for (let t = 0; t < 60 && !p; t++) {
-      const x = cx + (rng() * 2 - 1) * Math.max(0.1, hx - margin), z = cz + (rng() * 2 - 1) * Math.max(0.1, hz - margin);
-      if (out.every(q => Math.hypot(q.x - x, q.z - z) >= gap) && keepClear.every(c => Math.hypot(c.x - x, c.z - z) >= c.r)) p = { x, z };
-    }
-    out.push(p ?? { x: cx + (rng() * 2 - 1) * hx * 0.5, z: cz + (rng() * 2 - 1) * hz * 0.5 });
-  }
-  return out;
-}

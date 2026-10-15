@@ -1,0 +1,161 @@
+{
+  "specVersion": 2,
+  "title": "Blast Isles",
+  "hook": "Take turns lobbing shells across the islands: a blast throws round critters tumbling through the air, into each other and into the sea.",
+  "prompt": "a turn-based artillery party game with round cartoon critters on little islands in the sea: aim, set the power, mind the wind, and blast your friends flying into the water",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "turns",
+  "kind": "silly",
+  "players": {
+    "min": 2,
+    "max": 4,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "turns"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "hold to charge the power, release to fire where you look",
+    "secondary": "open the weapon wheel",
+    "jump": "hop"
+  },
+  "round": {
+    "seconds": 300,
+    "winBy": "first to 6 points, or most points when time is up: a friend your blast throws scores 1, a friend who lands in the sea scores 3",
+    "replay": true,
+    "params": {
+      "turnSeconds": 25,
+      "botThink": 0.8
+    }
+  },
+  "world": {
+    "template": "terrain",
+    "params": {
+      "shape": "islands",
+      "islands": {
+        "count": 3
+      },
+      "spawns": 4
+    },
+    "notes": "Three grassy islands in a sea, cliffs with the soil showing. Craters undermine the ground; what they leave hanging falls."
+  },
+  "mechanics": [
+    {
+      "id": "aim",
+      "as": "aim with the view, charge the power, mind the wind; weapons on a wheel",
+      "params": {
+        "wind": 5,
+        "windPer": "turn",
+        "preview": "full",
+        "follow": "turns",
+        "explodeFx": "blast-puffs",
+        "splashFx": "water-splash",
+        "soundBoom": "boom",
+        "soundSplash": "splash"
+      }
+    },
+    {
+      "id": "knockback",
+      "as": "blasts throw critters tumbling, bouncing and into each other",
+      "params": {
+        "force": 16,
+        "up": 0.8,
+        "bounce": 0.42,
+        "landFx": "dust-kick",
+        "splashFx": "water-splash",
+        "splashSound": "splash"
+      }
+    },
+    {
+      "id": "carve",
+      "as": "every blast bites a crater; ground left hanging falls",
+      "params": {
+        "collapse": true,
+        "dustFx": "smoke-puff",
+        "blastFx": "impact-flash"
+      }
+    },
+    {
+      "id": "hazards",
+      "as": "a critter in the sea is out for a moment, then back on dry ground",
+      "params": {
+        "respawnSeconds": 2.5,
+        "splashFx": "water-splash"
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Players take turns. On your turn look where you want the shot to go, hold primary to charge the power and let go to fire; the wind blows it sideways. A blast throws every critter near it flying: one you throw scores 1, one that lands in the sea scores 3, and it comes back on its island a moment later. First to 6 points wins.",
+    "scoring": "+1 per friend your blast throws, +3 when a friend you threw lands in the sea",
+    "params": {
+      "throwPoints": 1,
+      "seaPoints": 3,
+      "target": 6
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly critter with big eyes; each friend a different colour",
+      "body": {
+        "archetype": "blob",
+        "from": "library",
+        "asset": "looks-pilot-artillery/ember-newt-blob",
+        "standIn": "xk-creature-bodies/slime-blue"
+      },
+      "seats": [
+        {
+          "archetype": "blob",
+          "from": "library",
+          "asset": "looks-pilot-artillery/moss-mole-blob",
+          "standIn": "xk-creature-bodies/slime-blue"
+        },
+        {
+          "archetype": "blob",
+          "from": "library",
+          "asset": "looks-pilot-artillery/tide-puff-blob",
+          "standIn": "xk-creature-bodies/slime-blue"
+        }
+      ]
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day"
+  },
+  "sounds": [
+    {
+      "id": "boom",
+      "describe": "a cartoon blast",
+      "preset": "explosion-big"
+    },
+    {
+      "id": "splash",
+      "describe": "a critter falling into the sea, a big splash"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends take turns and see each other's shots fly, the camera following the shot",
+    "a blast throws a critter flying, tumbling and bouncing, the same flight on both screens",
+    "a critter thrown into the sea splashes, is out for a moment and comes back on dry ground"
+  ],
+  "notInV1": [
+    "hit points",
+    "teams",
+    "more weapons"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "Cartoon blasts: critters get thrown about and splash into the sea, nobody is hurt."
+  }
+}

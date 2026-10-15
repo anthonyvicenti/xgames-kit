@@ -7,6 +7,8 @@
 //   f.sample(x, y, z)         the field at a point in metres (trilinear)
 //   f.normal(x, y, z)         the outward surface direction there (the field's gradient, normalised)
 //   f.apply(edit)             an edit [op, x, y, z, r] (EDIT below) → the changed sample box {min, max} or null
+//   f.settled                 after a settle edit: what fell {samples, at: [x, y, z] (their middle), points: [[x, y, z]]
+//                             (up to SETTLE_POINTS of them, for the crumbling lumps)} or null
 //   f.chunksOf(box)           the chunks whose mesh that box changes, as [cx, cy, cz]
 //
 // The outermost layer of samples is always air, so the ground closes inside the box and no edit can open it.
@@ -16,21 +18,31 @@ export const CHUNK = 16;
 /** How far from the surface a sample keeps its distance (m); past it the field is clamped (an edit reaches no further). */
 export const BAND = 4;
 /**
- * An edit on the wire and in the log: [op, x, y, z, r], op 0 = carve (a crater), 1 = add (a lump of ground); x, y, z and
- * r in centimetres (integers), so every copy applies exactly the same numbers.
+ * An edit on the wire and in the log: [op, x, y, z, r], op 0 = carve (a crater), 1 = add (a lump of ground), 2 = settle
+ * (ground within r of the point that no longer holds on to the rest falls: below); x, y, z and r in centimetres
+ * (integers), so every copy applies exactly the same numbers.
  */
-export const EDIT = { carve: 0, add: 1 };
+export const EDIT = { carve: 0, add: 1, settle: 2 };
 const MAX_R = 2000;   // 20 m: the largest edit taken
+/**
+ * A settle: ground holds on through samples at least NECK metres inside it (a neck thinner than about 2 × NECK gives way),
+ * from the faces of the box round the point; what does not hold on, and is not within SKIN samples of what does, falls.
+ * A thin overhang a blast left, a lump cut loose, a tower top whose foot was blown away.
+ */
+export const NECK = 0.3;
+const SKIN = 2;
+/** The most points a settle reports for the crumbling lumps. */
+export const SETTLE_POINTS = 90;
 
 /** An edit from metres → the wire form (rounded to the centimetre), or null when it is not one. */
 export function editOf(op, at, r) {
   const o = typeof op === 'string' ? EDIT[op] : op;
   const x = Math.round(at.x * 100), y = Math.round(at.y * 100), z = Math.round(at.z * 100), rr = Math.round(r * 100);
-  if ((o !== 0 && o !== 1) || ![x, y, z, rr].every(Number.isFinite) || rr <= 0) return null;
+  if ((o !== 0 && o !== 1 && o !== 2) || ![x, y, z, rr].every(Number.isFinite) || rr <= 0) return null;
   return [o, x, y, z, Math.min(MAX_R, rr)];
 }
 /** Is this a well-formed edit (from the net: never trusted)? */
-export const isEdit = e => Array.isArray(e) && e.length === 5 && (e[0] === 0 || e[0] === 1) && e.slice(1).every(Number.isInteger) && e[4] > 0 && e[4] <= MAX_R && e.slice(1, 4).every(v => Math.abs(v) < 1e7);
+export const isEdit = e => Array.isArray(e) && e.length === 5 && (e[0] === 0 || e[0] === 1 || e[0] === 2) && e.slice(1).every(Number.isInteger) && e[4] > 0 && e[4] <= MAX_R && e.slice(1, 4).every(v => Math.abs(v) < 1e7);
 
 export class TerrainField {
   constructor({ size, cell = 0.5, origin = [0, 0, 0], data = null }) {
@@ -38,6 +50,7 @@ export class TerrainField {
     const [nx, ny, nz] = this.size;
     this.nx = nx; this.ny = ny; this.nz = nz;
     this.cell = cell; this.origin = origin.slice();
+    this.settled = null;
     this.d = data ?? new Float32Array(nx * ny * nz).fill(BAND);
     // chunk counts: chunk c owns the edges whose first sample is in [c·N, c·N + N)
     this.cx = Math.ceil((nx - 1) / CHUNK); this.cy = Math.ceil((ny - 1) / CHUNK); this.cz = Math.ceil((nz - 1) / CHUNK);
@@ -123,6 +136,7 @@ export class TerrainField {
   apply(e) {
     if (!isEdit(e)) return null;
     const [op, X, Y, Z, R] = e, cx = X / 100, cy = Y / 100, cz = Z / 100, r = R / 100;
+    if (op === 2) return this.settle(cx, cy, cz, r);
     const h = this.cell, o = this.origin, reach = r + h;
     const i0 = Math.max(1, Math.floor((cx - reach - o[0]) / h)), i1 = Math.min(this.nx - 2, Math.ceil((cx + reach - o[0]) / h));
     const j0 = Math.max(1, Math.floor((cy - reach - o[1]) / h)), j1 = Math.min(this.ny - 2, Math.ceil((cy + reach - o[1]) / h));
@@ -147,6 +161,70 @@ export class TerrainField {
       }
     }
     return changed ? { min: [i0, j0, k0], max: [i1, j1, k1] } : null;
+  }
+  /**
+   * A settle edit (op 2): in the box of half-size r round (cx, cy, cz), the ground that holds on to the box's faces through
+   * samples at least NECK inside it stays, with a SKIN of samples round that core; every other solid sample becomes air.
+   * Pure arithmetic and comparisons on the stored Float32 values: every copy drops the same samples. → the changed box
+   * or null; this.settled says what fell.
+   */
+  settle(cx, cy, cz, r) {
+    this.settled = null;
+    const h = this.cell, o = this.origin, { nx, ny, nz, d } = this;
+    const i0 = Math.max(1, Math.floor((cx - r - o[0]) / h)), i1 = Math.min(nx - 2, Math.ceil((cx + r - o[0]) / h));
+    const j0 = Math.max(1, Math.floor((cy - r - o[1]) / h)), j1 = Math.min(ny - 2, Math.ceil((cy + r - o[1]) / h));
+    const k0 = Math.max(1, Math.floor((cz - r - o[2]) / h)), k1 = Math.min(nz - 2, Math.ceil((cz + r - o[2]) / h));
+    if (i0 > i1 || j0 > j1 || k0 > k1) return null;
+    const ni = i1 - i0 + 1, nj = j1 - j0 + 1, nk = k1 - k0 + 1, n = ni * nj * nk;
+    // 0 air, 1 solid, 2 core (NECK inside), 3 held core, then the skin's distance from it: 4 + steps
+    const m = new Uint8Array(n), core = -NECK, at = (i, j, k) => (j * nk + k) * ni + i;
+    for (let j = 0; j < nj; j++) for (let k = 0; k < nk; k++) {
+      let g = ((j0 + j) * nz + (k0 + k)) * nx + i0, t = at(0, j, k);
+      for (let i = 0; i < ni; i++, g++, t++) { const v = d[g]; m[t] = v < core ? 2 : v < 0 ? 1 : 0; }
+    }
+    // the core that reaches the box's faces holds on (it goes on outside the box); flood it through the core
+    const stack = [];
+    const hold = t => { if (m[t] === 2) { m[t] = 3; stack.push(t); } };
+    for (let j = 0; j < nj; j++) for (let k = 0; k < nk; k++) for (let i = 0; i < ni; i++) {
+      if (i === 0 || j === 0 || k === 0 || i === ni - 1 || j === nj - 1 || k === nk - 1) hold(at(i, j, k));
+    }
+    const near = (t, fn) => {
+      const i = t % ni, k = Math.floor(t / ni) % nk, j = Math.floor(t / (ni * nk));
+      if (i > 0) fn(t - 1); if (i < ni - 1) fn(t + 1);
+      if (k > 0) fn(t - ni); if (k < nk - 1) fn(t + ni);
+      if (j > 0) fn(t - ni * nk); if (j < nj - 1) fn(t + ni * nk);
+    };
+    while (stack.length) near(stack.pop(), hold);
+    // the skin: solid samples within SKIN steps of the held core (the surface of what holds), and any solid on the faces
+    let front = [];
+    for (let t = 0; t < n; t++) if (m[t] === 3) front.push(t);
+    for (let s = 0; s < SKIN && front.length; s++) {
+      const next = [];
+      for (const t of front) near(t, u => { if (m[u] === 1 || m[u] === 2) { m[u] = 4 + s; next.push(u); } });
+      front = next;
+    }
+    // what is left solid (1, 2) falls, unless it touches the box's faces (ground that goes on outside: not ours to judge)
+    const fell = [];
+    for (let j = 0; j < nj; j++) for (let k = 0; k < nk; k++) for (let i = 0; i < ni; i++) {
+      const t = at(i, j, k);
+      if (m[t] !== 1 && m[t] !== 2) continue;
+      if (i === 0 || j === 0 || k === 0 || i === ni - 1 || j === nj - 1 || k === nk - 1) continue;
+      fell.push(t);
+    }
+    if (!fell.length) return null;
+    const air = Math.fround(h * 0.5), pts = [], every = Math.max(1, Math.ceil(fell.length / SETTLE_POINTS));
+    let sx = 0, sy = 0, sz = 0, lo = [ni, nj, nk], hi = [0, 0, 0];
+    fell.forEach((t, q) => {
+      const i = t % ni, k = Math.floor(t / ni) % nk, j = Math.floor(t / (ni * nk));
+      const g = ((j0 + j) * nz + (k0 + k)) * nx + i0 + i;
+      if (d[g] < air) d[g] = air;
+      const x = o[0] + (i0 + i) * h, y = o[1] + (j0 + j) * h, z = o[2] + (k0 + k) * h;
+      sx += x; sy += y; sz += z;
+      if (q % every === 0) pts.push([x, y, z]);
+      lo = [Math.min(lo[0], i), Math.min(lo[1], j), Math.min(lo[2], k)]; hi = [Math.max(hi[0], i), Math.max(hi[1], j), Math.max(hi[2], k)];
+    });
+    this.settled = { samples: fell.length, at: [sx / fell.length, sy / fell.length, sz / fell.length], points: pts };
+    return { min: [i0 + lo[0], j0 + lo[1], k0 + lo[2]], max: [i0 + hi[0], j0 + hi[1], k0 + hi[2]] };
   }
   /** Every chunk [cx, cy, cz] whose mesh reads a sample in the box (a chunk reads one sample past each side). */
   chunksOf(box) {

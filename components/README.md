@@ -10,3 +10,9 @@ its own evidence, never by a shared label: health, loot, pickup and waves have `
 `runtimes/forge/tools/fixture.mjs` plays with two browsers. A need no mechanic covers is built in the game
 first (its `src/`) and moves here after a second game needs it. `npx gamesfun catalog mechanics` lists them. Where
 everything else is: [docs/LAYOUT.md](../docs/LAYOUT.md).
+
+A mechanic that places things players go for (spots, gates, zones) lists them with `objectives()` → `[{id, kind, x, y, z,
+open, touch?, reach?, radius?}]` (pickup and race do); the play feed (`runtimes/three/kit/core/play.js`,
+`window.__game.play()`) reads it, else the mechanic's `interactables()`, and gate D's play leg holds every one to a
+player's reach ([builder/play/JUDGE.md](../builder/play/JUDGE.md)). A manifest event may say its play type:
+`events: [{name, play: 'pickup'}]` (score, hit, knockout, pickup, goal, death, combo, move, tag, blast, attempt).

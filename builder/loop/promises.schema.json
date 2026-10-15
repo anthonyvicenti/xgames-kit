@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://xgames.fun/schemas/promises/1.json",
   "title": "Promise ledger (gf-promises/1)",
-  "description": "What a game promises a player, from the locked spec and the requirements ledger (builder/loop/promises.mjs promisesOf), and how each one was settled (settlePromises). row.<id>: a ledger row a registry part does, in the creator's words. build.<n>: spec.build item n, core, proven only by the play-tester seeing it work. control.<action>: a control does what it says. loop.closes: the loop's own promise. The kit's own standing promises (kit.*) and the creator's accept items (accept.<n>) may be added. Delivery carries every promise as proven, failed, untested or unreachable, each named; the list is never shorter than at the lock.",
+  "description": "What a game promises a player, from the locked spec and the requirements ledger (builder/loop/promises.mjs promisesOf), and how each one was settled (settlePromises). row.<id>: a ledger row a registry part does, in the creator's words. build.<n>: spec.build item n, core, proven only by the play-tester seeing it work. control.<action>: a control does what it says. loop.closes: the loop's own promise. play.<n>: a line of what makes it play (the play target's makes, builder/play/design.mjs), core, proven only by the play-tester seeing it. The kit's own standing promises (kit.*) and the creator's accept items (accept.<n>) may be added. Delivery carries every promise as proven, failed, untested or unreachable, each named; the list is never shorter than at the lock.",
   "type": "object",
   "required": ["schema", "spec", "promises"],
   "additionalProperties": false,
@@ -20,8 +20,8 @@
       "required": ["id", "kind", "text", "core", "proofs"],
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "pattern": "^(row\\.[a-z0-9][a-z0-9-]{0,31}|build\\.[1-9][0-9]?|control\\.[a-z][a-zA-Z0-9]{0,23}|loop\\.closes|accept\\.[1-9][0-9]?|kit\\.[a-z][a-z0-9-]{0,31})$" },
-        "kind": { "enum": ["row", "build", "control", "loop", "accept", "kit"] },
+        "id": { "type": "string", "pattern": "^(row\\.[a-z0-9][a-z0-9-]{0,31}|build\\.[1-9][0-9]?|control\\.[a-z][a-zA-Z0-9]{0,23}|loop\\.closes|accept\\.[1-9][0-9]?|kit\\.[a-z][a-z0-9-]{0,31}|play\\.[1-9])$" },
+        "kind": { "enum": ["row", "build", "control", "loop", "accept", "kit", "play"], "description": "play: a line of what makes it play (spec.play.target.makes, builder/play/design.mjs)." },
         "text": { "type": "string", "minLength": 1, "maxLength": 400, "description": "Plain words a player would say (a row's says the creator's words)." },
         "row": { "type": ["string", "null"], "description": "The ledger row it serves." },
         "core": { "type": "boolean", "description": "Part of the first-minute loop: still failing after the repair rounds, the job fails." },
@@ -40,7 +40,7 @@
         "look": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id", "description": "build: the kind this item proves on the runtime." },
         "action": { "type": "string", "maxLength": 24, "description": "control: the action." },
         "keys": { "type": "string", "maxLength": 80, "description": "control: the plain words of the control." },
-        "area": { "enum": ["art", "sound", "netcode", "feel", "code"], "description": "Where a failure of it is repaired (the ladder's specialist rounds)." },
+        "area": { "enum": ["art", "sound", "netcode", "feel", "play", "code"], "description": "Where a failure of it is repaired (the ladder's specialist rounds)." },
         "heldFromLock": { "type": "boolean", "description": "The game stopped making it; it was put back as worded at the lock." },
         "status": {
           "enum": ["proven", "failed", "untested", "unreachable"],
@@ -67,6 +67,7 @@
       },
       "allOf": [
         { "if": { "properties": { "kind": { "const": "build" } } }, "then": { "required": ["confirm"], "properties": { "core": { "const": true }, "confirm": { "const": true }, "proofs": { "contains": { "const": "play" } } } } },
+        { "if": { "properties": { "kind": { "const": "play" } } }, "then": { "required": ["confirm"], "properties": { "core": { "const": true }, "confirm": { "const": true }, "proofs": { "contains": { "const": "play" } } } } },
         { "if": { "required": ["status"], "properties": { "status": { "enum": ["proven", "failed", "unreachable"] } } }, "then": { "required": ["by"], "properties": { "by": { "minItems": 1 } } } }
       ]
     }

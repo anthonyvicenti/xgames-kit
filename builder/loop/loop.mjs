@@ -2,7 +2,7 @@
 // run) opens it on a game and steps it. Each step runs, saves the state and says what comes next, so a tool can run
 // one step and stop, and a run that was killed picks up where it was (the ladder too).
 //
-//   ledger → foundation → pitch → spec → create → build → fix → [economy] → [backend] → verify → playtest → read → deliver
+//   ledger → foundation → pitch → spec → create → look → design → build → fix → [economy] → [backend] → verify → playtest → read → deliver
 //   a part check, verify or the play-test fails → repair (the stop rule: same set again, or an earlier set back → climb the ladder:
 //   stronger model → specialist rounds → paid generation → ask) → fix → verify …
 //   a change request or the creator's answer → ledger (amended) → foundation (a runtime change waits for a yes) → spec …
@@ -17,6 +17,7 @@ import { creatorSummary, holdPromises, ledgerVerdict, notYetWords, outcomeOf, pr
 import { failingSet, ladderRecordOf, newLadder, nextRound, observe, resetLadder, SAY, sayKeyOf } from './ladder.mjs';
 import { focusOf, mergeAnswers, playtestBrief, readReport, runsOf, seenAsNeeded, twoSeats } from './playtest.mjs';
 import { composeBrief, manifestsOf } from './brief.mjs';
+import { checkTarget, designMessage, finish as finishPlay, partsOf, playRefsOf, PLAY_OUTPUT, withPlay } from '../play/design.mjs';
 import { READER_TRIES, readerBrief, readerBundle, readerOutcome, readReading, withMarks } from './reader.mjs';
 import { applyPartAnswers, backendAtDelivery, checkPart, checkPartsPitch, checkPartsSpec, economyAtDelivery, partAnswerKeys, partStepsOf, PART_IDS } from './parts.mjs';
 import { checkRegistry, rid } from './registry.mjs';
@@ -54,6 +55,8 @@ export const LOOK_MEASURE = 23;
  *   tools.captures?(game) → [{file, what}]: the play-tester's screenshots, for the second reader
  *   tools.tuneLook?(game, {n}) → builder/look/tune.mjs's record ({score: {before, after, bar}, wrote, ladder}): the look's
  *                        cheap levers, run when only the look (measure 23) failed, before any look repair
+ *   tools.objectiveArt?(game) → {items, credits}: the art step for what the game's objectives draw (builder/art/objectives.mjs),
+ *                        run once before the first build round
  *   tools.playRun?(game, name) → a gamesfun_play run's record (play.json) or null: what proves a friends promise was
  *                        seen with two player-driven seats (playtest.mjs twoSeats); without it none is proven
  *   hooks                {cards(pitch), ask(questions), migration(m), deliver(outcome)}: what only the host shows
@@ -200,7 +203,8 @@ export async function openLoop(host) {
       }
       if (S.waiting?.about === 'migration') return { waiting: 'creator', about: 'migration', migration: S.change.migration, why: 'the migration waits for the person\'s yes' };
       const c = changing ? await classifyChange({ before: { ledger: S.ledger, foundation: S.foundation, spec: lockedSpec() }, ledger: L, registry, ownFiles: (await tools.ownFiles?.(host.game)) ?? [] }) : null;
-      const f = changing ? c.foundation : await chooseFoundation(L, registry);
+      const made = S.adopted && !S.lock ? JSON.parse(S.adopted.spec.text) : null;
+      const f = changing ? c.foundation : await chooseFoundation(L, registry, made ? { current: { runtime: made.runtime, profile: made.profile ?? null } } : {});
       if (f.probes?.length) {
         const r = await round({ kind: 'probe', message: M.probeMessage({ probes: f.probes, ...words }) }, null);
         if (r.waiting) return r.waiting;
@@ -224,6 +228,7 @@ export async function openLoop(host) {
         Object.assign(S.change, { class: c.class, holds: c.holds, diff: { ...c.diff, abouts: [...c.diff.abouts] }, from: was ? rid(was.runtime, was.profile) : null, to: rid(f.runtime, f.profile) });
         return go('spec', `a ${c.class} change: the spec round, holding ${c.holds.join(', ') || 'nothing'}`);
       }
+      if (made) return adopted(made);
       return go('pitch', `runtime ${rid(f.runtime, f.profile)}, loop ${f.loop}, kind ${f.kind}: the pitch round`);
     },
 
@@ -242,7 +247,9 @@ export async function openLoop(host) {
         const decided = applyPartAnswers(card.spec, S.pitch, answers), partKeys = partAnswerKeys(S.pitch);
         if (Object.keys(decided.decided).length) S.parts = { ...(S.parts ?? {}), ...Object.fromEntries(Object.entries(decided.decided).map(([k, v]) => [k, { ...v, offer: S.pitch.offers?.[k] ?? null, at: stamp() }])) };
         // their other answers, or any words they typed when they chose, are applied by a spec round; a bare pick locks the card
-        S.candidate = { spec: decided.spec, needsRound: Object.keys(answers).some(k => !partKeys.has(k)) || !!said };
+        // the card's play goes with its spec (spec.play.sketch): where the designer starts
+        const chosen = card.play ? { ...decided.spec, play: { ...(decided.spec?.play ?? {}), sketch: card.play } } : decided.spec;
+        S.candidate = { spec: chosen, needsRound: Object.keys(answers).some(k => !partKeys.has(k)) || !!said };
         return go('spec', `the person chose "${card.title}"`);
       }
       const pitchSchema = { type: 'object', required: ['pitch'], properties: { pitch: PITCH_OUTPUT } };
@@ -279,16 +286,23 @@ export async function openLoop(host) {
         ...checkPartsSpec(spec, { on: partsOn }),
       ];
       if (problems.length) { S.candidate = { spec, needsRound: true }; return talkTrouble('spec', problems, p => M.specMessage({ base: spec, change: changing ? { class: S.change.class, holds: S.change.holds, to: S.change.to } : null, problems: p, ...words })); }
+      // a card that plays on another loop the person left open (foundation.loopChoices): the foundation and the ledger's
+      // acts line follow the person's choice
+      if (spec.loop !== S.foundation.loop && (S.foundation.loopChoices ?? []).includes(spec.loop)) {
+        const was = S.foundation.loop, m = (await registry.loops()).find(l => l.id === spec.loop);
+        S.foundation = { ...S.foundation, loop: spec.loop, loopChoices: [was, ...S.foundation.loopChoices.filter(l => l !== spec.loop)], why: { ...S.foundation.why, loop: `${spec.loop}: the card the person chose plays this way (${m?.describe ?? spec.loop})` } };
+        S.ledger = { ...S.ledger, rows: S.ledger.rows.map(r => (r.about === 'acts' && !r.cut ? { ...r, ...(m?.acts ? { acts: m.acts } : {}), ...(r.home === 'exists' ? { by: `loop:${spec.loop}` } : {}), what: m?.describe ?? r.what } : r)) };
+      }
       // the lock: the spec as agreed, and its promises. A change keeps every promise of a line that is still live.
       const text = JSON.stringify(spec, null, 2) + '\n';
       const promises = promisesOf({ spec, ledger: S.ledger, loopManifest: await registry.manifest('loop', spec.loop), friends: await friendsShapeOf(spec, registry) });
-      const held = changing ? (S.lock?.promises ?? []).filter(p => p.kind !== 'build' && p.kind !== 'control' && (!p.row || S.ledger.rows.some(r => r.id === p.row && !r.cut))) : [];
+      const held = changing ? (S.lock?.promises ?? []).filter(p => p.kind !== 'build' && p.kind !== 'control' && p.kind !== 'play' && (!p.row || S.ledger.rows.some(r => r.id === p.row && !r.cut))) : [];
       holdPromises(promises, held);
       S.lock = { at: stamp(), spec: { sha: sha(text), text }, promises };
       S.promises = promises; S.candidate = null; S.talk = { sets: [], strong: S.talk.strong };
       const migrate = changing && S.change.class === 'runtime';
       // a game that was never made (create failed and the person answered) is made first, whatever the change
-      return go(!changing || migrate || !S.created ? 'create' : 'build', `the spec is locked with ${promises.length} promises (${promises.filter(p => p.kind === 'build').length} the build writes)`);
+      return go(!changing || migrate || !S.created ? 'create' : 'design', `the spec is locked with ${promises.length} promises (${promises.filter(p => p.kind === 'build').length} the build writes)`);
     },
 
     async create() {
@@ -304,7 +318,7 @@ export async function openLoop(host) {
       S.fresh = !migrate;
       // the look comes before the build when the host draws looks (builder/look); a migration keeps the look it has
       const look = !migrate && !!tools.lookOptions && flags.look !== false;
-      return go(look ? 'look' : 'build', `the game was made on ${rid(spec.runtime, spec.profile)}: ${look ? 'the look, before the build round' : `the ${migrate ? 'migration' : 'build'} round`}`);
+      return go(look ? 'look' : 'design', `the game was made on ${rid(spec.runtime, spec.profile)}: ${look ? 'the look, then the play, before the build round' : `the play, then the ${migrate ? 'migration' : 'build'} round`}`);
     },
 
     // The look before the build (builder/look): the style target (the spec's, or read now from the references and the
@@ -325,9 +339,9 @@ export async function openLoop(host) {
         if (applied?.spec) { const text = JSON.stringify(applied.spec, null, 2) + '\n'; S.lock = { ...S.lock, at: stamp(), spec: { sha: sha(text), text } }; }
         S.look.pick = { option: o.id, by: input.pick.by === 'judge' ? 'judge' : 'person', ...(words ? { words } : {}), at: stamp() };
         S.status = 'building'; S.waiting = null;
-        return go('build', `the look "${o.title}" is in the game: the build round`);
+        return go('design', `the look "${o.title}" is in the game: the play is designed next`);
       }
-      if (!tools.lookOptions || flags.look === false) { S.look = { skipped: 'this host draws no look options' }; return go('build', 'no look step on this host: the kind and the spec decide the look'); }
+      if (!tools.lookOptions || flags.look === false) { S.look = { skipped: 'this host draws no look options' }; return go('design', 'no look step on this host: the kind and the spec decide the look'); }
       S.look ??= {};
       if (!S.look.target) {
         if (spec.look?.target) S.look.target = spec.look.target;
@@ -340,12 +354,12 @@ export async function openLoop(host) {
             const t = await tools.finishTarget(p.pending.base, r.got.judged ?? r.got);
             if (!t?.ok) return talkTrouble('look', t?.problems ?? ['no style target'], probs => `${p.pending.message}\n\nThe last answer was not a valid target: ${probs.join('; ')}`);
             S.look.target = t.target; S.talk = { sets: [], strong: S.talk.strong };
-          } else { S.look = { skipped: p?.why ?? 'no style target' }; return go('build', `no look step: ${S.look.skipped}`); }
+          } else { S.look = { skipped: p?.why ?? 'no style target' }; return go('design', `no look step: ${S.look.skipped}`); }
         }
       }
       const opts = await tools.lookOptions(spec, { game: host.game, target: S.look.target });
       const drawn = (opts ?? []).filter(o => o.ok);
-      if (!drawn.length) { S.look.skipped = `the look options could not be drawn${opts?.[0]?.skipped ? ` (${opts[0].skipped})` : ''}`; return go('build', `${S.look.skipped}: the target stands as create mapped it`); }
+      if (!drawn.length) { S.look.skipped = `the look options could not be drawn${opts?.[0]?.skipped ? ` (${opts[0].skipped})` : ''}`; return go('design', `${S.look.skipped}: the target stands as create mapped it`); }
       S.look.options = drawn.map(({ id, title, reading, values, levers, sheet, tiles, score, findings, calibration, world, camera, made }) => ({ id, title, reading, values, levers, sheet, tiles, score: score ?? null, findings: findings ?? [], ...(calibration ? { calibration } : {}), ...(world ? { world } : {}), ...(camera ? { camera } : {}), ...(made ? { made } : {}) }));
       S.look.at = stamp();
       S.status = 'waiting-on-creator'; S.waiting = { about: 'looks' };
@@ -353,9 +367,70 @@ export async function openLoop(host) {
       return { waiting: 'creator', about: 'looks', looks: S.look.options, why: `${drawn.length} looks on the game's own world: the person picks one (headless: the judge's best)` };
     },
 
+    // The play before the build (builder/play/design.mjs): the spec's own play target, or a designer round on the
+    // stronger model that reads the person's words, the ledger, the foundation's parts, the world and the references.
+    // Its mechanics and build lines join the spec (checked like any spec: no ledger line is dropped), the game is made
+    // again when the spec changed, and each "what makes it play" line becomes a promise the play-tester checks.
+    async design(input = {}) {
+      const spec = lockedSpec();
+      if (flags.design === false) { S.play = { skipped: 'the design step is off on this host' }; return go('build', 'no design step on this host: the build round plays it from the rules'); }
+      const { loadSchemas, SCHEMA } = await import('../../registry/schemas.mjs');
+      const { validate } = await loadSchemas();
+      const ctx = { spec: { ...spec, ledger: S.ledger }, registry, validate: t => validate(SCHEMA.playTarget, t) };
+      // a change request to what a player does (or who acts when) is designed again from the request, starting from the
+      // play the game had; a look, a tune, a migration and an answer to the loop's questions keep it
+      const redesign = S.change?.why === 'change' && ['play', 'loop'].includes(S.change.class);
+      let target = redesign ? null : spec.play?.target ?? null, previous = null, model = null;
+      let brief = null;
+      if (!target) {
+        const given = (await tools.playRefs?.(spec, { references: S.references ?? [] })) ?? (S.references ?? []).filter(r => r?.file).map(r => ({ file: r.file, note: r.caption ?? r.note ?? null }));
+        const refs = await playRefsOf(given), parts = await partsOf(spec, registry);
+        const look = S.look?.pick ? `${S.look.options?.find(o => o.id === S.look.pick.option)?.title ?? S.look.pick.option}: ${(S.look.target?.reads ?? []).join('; ')}` : null;
+        brief = { spec, ledger: S.ledger, refs, parts, look, ...(redesign ? { request: S.change.words, before: spec.play?.target ?? null } : {}) };
+        const dirs = [...new Set(refs.filter(f => f.file).map(f => f.file.replace(/\/[^/]+$/, '')))];
+        const r = await round({ kind: 'design', message: designMessage(brief), strong: true, schema: { type: 'object', required: ['target'], properties: { target: PLAY_OUTPUT } }, dirs }, input.target ? { target: input.target } : null);
+        if (r.waiting) return { ...r.waiting, dirs };
+        previous = r.got.target ?? r.got;
+        model = host.agent ? lim.strong : null;
+        target = finishPlay({ refs: refs.filter(f => f.file).length, words: !!S.prompt }, previous, { model, at: stamp() });
+      }
+      const live = liveRows(S.ledger);
+      const rowOf = () => (live.find(r => r.core && r.about === 'action') ?? live.find(r => r.core) ?? live[0])?.id ?? null;
+      const next = withPlay(spec, target, { rowOf });
+      const problems = [
+        ...await checkTarget(target, ctx),
+        ...(target === spec.play?.target ? [] : await checkSpec(next, { ledger: S.ledger, foundation: S.foundation, registry, hostCheck: tools.checkSpec ?? null, at: '$.spec' })),
+      ];
+      if (problems.length) {
+        if (!brief) { S.questions = { message: `The plan's own play target is not valid: ${problems.slice(0, 2).join('; ')}`, questions: [{ id: 'play', text: 'How should I go on?', options: [{ id: 'redesign', label: 'Design the play again' }, { id: 'explain', label: 'I will explain how it plays' }], default: 'redesign' }] }; return go('ask', 'the spec\'s play target is not valid: the person decides'); }
+        return talkTrouble('design', problems, p => designMessage({ ...brief, problems: p, previous }));
+      }
+      S.talk = { sets: [], strong: S.talk.strong };
+      const changed = JSON.stringify(next) !== JSON.stringify(spec);
+      if (changed) {
+        // the game is made again from the spec with its play (new mechanics, tuned params, the target in spec.json);
+        // the look the person picked goes back on top (its world is already in the spec)
+        // before any round wrote the game, its rules.js stub is made again too (it names the new mechanics' callbacks)
+        const made = await tools.create(next, { game: host.game, kind: 'build', newRules: !!S.fresh && !S.rounds.length });
+        if (!made?.ok) { S.questions = { message: `The kit could not make the game with its play (${flat(made?.why ?? 'create failed', 200)}).`, questions: [{ id: 'go', text: 'How should I go on?', options: [{ id: 'retry', label: 'Try again' }, { id: 'change', label: 'I will change the plan' }], default: 'retry' }] }; return go('ask', 'create could not make the game with its play: the person decides'); }
+        const o = S.look?.pick ? S.look.options?.find(x => x.id === S.look.pick.option) : null;
+        if (o) await tools.applyLook?.(host.game, { ...o, made: null }, { spec: next });
+        const text = JSON.stringify(next, null, 2) + '\n';
+        const promises = promisesOf({ spec: next, ledger: S.ledger, loopManifest: await registry.manifest('loop', next.loop), friends: await friendsShapeOf(next, registry) });
+        holdPromises(promises, (S.lock.promises ?? []).filter(p => p.kind !== 'play'));
+        S.lock = { ...S.lock, at: stamp(), spec: { sha: sha(text), text }, promises };
+        S.promises = promises;
+      }
+      const plays = S.promises.filter(p => p.kind === 'play').length;
+      S.play = { at: stamp(), by: brief ? 'designer' : 'spec', ...(model ? { model } : {}), remade: changed, promises: plays, build: (target.build ?? []).length, mechanics: (target.mechanics ?? []).map(m => m.id) };
+      return go('build', `the play is designed (${target.genre?.name ?? 'its genre'}): ${plays} promise(s) of play${target.build?.length ? `, ${target.build.length} thing(s) the build writes for it` : ''}`);
+    },
+
     async build(input = {}) {
       const spec = lockedSpec(), kind = !S.change || S.fresh ? 'build' : S.change.class === 'runtime' ? 'migrate' : 'change';
-      const message = composeBrief({ kind, spec, ledger: S.ledger, promises: S.promises, manifests: await manifestsOf(spec, registry), request: S.change?.words, change: S.change?.class, tools: host.toolNames, game: host.gameRef ?? host.game, offers: S.pitch?.offers ?? {}, look: lookOfState(S) });
+      const message = composeBrief({ kind, spec, ledger: S.ledger, promises: S.promises, manifests: await manifestsOf(spec, registry), request: S.change?.words, change: S.change?.class, tools: host.toolNames, game: host.gameRef ?? host.game, offers: S.pitch?.offers ?? {}, look: lookOfState(S), play: spec.play?.target ?? null });
+      // the art step for what the objectives draw (builder/art/objectives.mjs), once, before the first round writes the game
+      if (!S.handed && S.fresh && tools.objectiveArt && !S.objectiveArt) S.objectiveArt = { at: stamp(), ...(await tools.objectiveArt(host.game)) };
       if (!S.handed) { S.before = await hash(); say(SAY.build, { rung: 'build', kind }); }
       const r = await round({ kind, message, strong: !!S.ladder?.strong }, input);
       if (r.waiting) return r.waiting;
@@ -383,6 +458,8 @@ export async function openLoop(host) {
       const h = (await hash()) === before ? before : null;
       // the verdict (builder/gates/verdict.schema.json): `pass`, the gates by letter with what ran, passed and was skipped, and a flat `failed`
       S.verify = { n: S.verifies, ok: v.pass === true, hash: h, at: stamp(), gates: v.gates ?? {}, failed: v.failed ?? [] };
+      // the play judge's record (gate D's play leg, builder/play/judge.mjs): its findings go into the repair brief
+      if (v.play) S.playJudge = { n: S.verifies, at: stamp(), ...v.play };
       if (S.verify.ok) { await versions.keep('verified'); S.kept = { n: S.verifies, hash: h }; }
       if (S.phase === 'recheck') { S.phase = null; return go('deliver', 'verified again: the version is settled'); }
       if (S.verify.ok) return flags.playtest === false ? go(readOr('deliver'), 'the six gates passed; play-testing is off here') : go('playtest', 'the six gates passed: the play-tester checks the promises');
@@ -450,7 +527,7 @@ export async function openLoop(host) {
         say(sayKeyOf(n.round, { after: repairAfter() === 'playtest' ? 'playtest' : 'verify', ladder: S.ladder }), { rung: S.ladder?.rung ?? 'repair', ...n.round });
       }
       const after = repairAfter();
-      const message = M.repairMessage({ round: S.current, after, verify: S.verify, playtest: S.playtest, promises: S.promises, ladder: S.ladder, partsFailed: S.partsFailed ?? [], tune: S.tune ?? null, ...words });
+      const message = M.repairMessage({ round: S.current, after, verify: S.verify, playtest: S.playtest, promises: S.promises, ladder: S.ladder, partsFailed: S.partsFailed ?? [], tune: S.tune ?? null, play: lockedSpec()?.play?.target ?? null, playJudge: S.playJudge ?? null, ...words });
       const r = await round({ kind: S.current.kind, message, strong: S.current.strong, ...(S.current.area ? { area: S.current.area } : {}), ...(S.current.areas ? { areas: S.current.areas, generate: true } : {}) }, input);
       if (r.waiting) return r.waiting;
       S.round++;
@@ -630,6 +707,42 @@ export async function openLoop(host) {
     return go('deliver', `the second reader marked every line${lost ? ` (${lost} not kept: the delivery says which)` : ': all kept'}`);
   }
 
+  /**
+   * A game the loop did not make (create from a spec or an example, a composed level) taken as it is: its ledger was
+   * read from its own words (spec.prompt), its foundation is what it was made on, its spec is the lock with its
+   * promises, and the person's request then re-enters as a change (the pitch and create are not run again).
+   */
+  async function adopted(made) {
+    const text = S.adopted.spec.text;
+    S.foundation = { ...S.foundation, runtime: made.runtime, profile: made.profile ?? null, loop: made.loop, kind: made.kind,
+      why: { ...S.foundation.why, runtime: `${rid(made.runtime, made.profile)}: the game was made on it`, loop: `${made.loop}: the game plays on it`, kind: `${made.kind}: the game's look` } };
+    S.ledger = { ...S.ledger, foundation: foundationSummary(S.foundation) };
+    const promises = promisesOf({ spec: made, ledger: S.ledger, loopManifest: await registry.manifest('loop', made.loop), friends: await friendsShapeOf(made, registry) });
+    S.lock = { at: stamp(), spec: { sha: sha(text), text }, promises };
+    S.promises = promises;
+    S.created = { at: stamp(), runtime: made.runtime, profile: made.profile ?? null, adopted: true };
+    S.history.push({ step: 'adopt', next: 'ledger', why: 'the game as it was made is the lock: the request is a change to it', at: stamp() });
+    return reenter('change', S.adopted.request);
+  }
+
+  /**
+   * What a game made outside the loop is, in its spec's own words: the idea it was made from, then what it became (the
+   * hook, how a round is won, the controls, the things in its world). Its ledger is read from all of it, so a change
+   * keeps what the game has (its objective too) unless the person's request moves it: the first words alone missed the
+   * berries a composed level was won by (sunny-pvp, 2026-10-14).
+   */
+  function madeWords(spec) {
+    const things = (spec.world?.props ?? []).filter(x => x.kind === 'gameplay' || x.goal).map(x => `${x.describe ?? x.name}${x.role ? ` (${x.role})` : ''}`);
+    const lines = [
+      spec.hook && `What it became: ${spec.hook}`,
+      spec.round?.winBy && `A round is won by ${spec.round.winBy}.`,
+      Object.keys(spec.controls ?? {}).length && `Controls: ${Object.entries(spec.controls).filter(([, v]) => typeof v === 'string').map(([k, v]) => `${k} = ${v}`).join('; ')}.`,
+      things.length && `In the world: ${things.join('; ')}.`,
+      spec.world?.notes,
+    ].filter(Boolean).map(l => flat(l, 400));
+    return [String(spec.prompt ?? spec.title ?? '').trim(), ...lines].filter(Boolean).join('\n');
+  }
+
   /** A change request or an answer: back to the ledger, the ladder reset on the new plan, its history kept. */
   function reenter(why, text) {
     if (S.ladder) S.ladders.push(S.ladder);
@@ -669,6 +782,22 @@ export async function openLoop(host) {
       // a failed hand-over by the host is the host's to retry (its next deliver step), never a loop of its own
       for (let n = 0; n < 500 && !r.waiting && r.next !== 'done' && r.refused !== 'delivery-failed' && !(r.refused && r.next === r.ran && r.ran === S.step && !host.agent); n++) r = await loop.step({});
       return r;
+    },
+    /**
+     * A change request on a game the loop never ran on (no state): `spec` is the game's own spec.json. The ledger is read
+     * from the spec's words first, then the request re-enters as a change (adopted() above).
+     */
+    async adopt(spec, request) {
+      if (S.lock || S.prompt) return { refused: 'not-new', why: 'this game already has a run: a change request is gamesfun_change' };
+      if (!spec?.runtime || !spec?.loop) return { refused: 'no-spec', why: 'the game has no spec v2 (runtime, loop): make it with create first' };
+      const text = JSON.stringify(spec, null, 2) + '\n';
+      S.kind = 'change'; S.status = 'building'; S.step = 'ledger';
+      S.prompt = madeWords(spec) || String(request);
+      S.adopted = { at: stamp(), request: String(request), spec: { sha: sha(text), text } };
+      S.why = 'a game made outside the loop: its ledger from its own words, then the change';
+      S.history.push({ step: 'adopt', next: 'ledger', why: S.why, at: stamp() });
+      await save();
+      return { ran: 'adopt', next: 'ledger', why: S.why };
     },
     /** A change request on a game whose run is over (or waiting): it re-enters at the ledger. */
     async change(request) {

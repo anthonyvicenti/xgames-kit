@@ -8,9 +8,12 @@
 // Added, in the upload only: foundation.lock.json and adaptation-plan.json when the game has none (games.fun keeps
 // them with every version; a game made in the kit does not need them on disk). They are made from gf-three.json and
 // spec.json, and the lock is the same for every kit publish, so each update of a game keeps it.
+// Copied, in the upload only: spec.json without the names of the games it was made to look or play like
+// (./names.mjs: the person's prompt keeps them on this machine; the published copy says "a reference game").
 import { createHash } from 'node:crypto';
 import { lstat, readdir, readFile } from 'node:fs/promises';
 import path from 'node:path';
+import { referenceNames, redactJson } from './names.mjs';
 
 export const LEFT_OUT_DIRS = ['evidence', 'node_modules', 'supabase'];
 export const TREE_FORMAT = 'gf-tree-v1';
@@ -26,9 +29,17 @@ export function canonical(value) {
 
 const readJson = async file => { try { return JSON.parse(await readFile(file, 'utf8')); } catch { return null; } };
 
-/** The two files games.fun keeps with every version, made from the game's own records. */
-export async function kitRecords(dir) {
-  const spec = (await readJson(path.join(dir, 'spec.json'))) ?? {};
+/** The names of the games this one was made to look or play like (./names.mjs), from its spec and its loop's ledger. */
+export async function referenceNamesOf(dir) {
+  const spec = await readJson(path.join(dir, 'spec.json'));
+  const state = await readJson(path.join(dir, '.gf-loop', 'state.json'));
+  return referenceNames({ spec, ledger: state?.ledger ?? null });
+}
+
+/** The two files games.fun keeps with every version, made from the game's own records (`names` taken out). */
+export async function kitRecords(dir, { names = [] } = {}) {
+  const raw = (await readJson(path.join(dir, 'spec.json'))) ?? {};
+  const spec = names.length ? redactJson(raw, names) : raw;
   const game = (await readJson(path.join(dir, 'config', 'game.json'))) ?? {};
   const record = (await readJson(path.join(dir, 'gf-three.json'))) ?? {};
   const title = game.text?.title ?? spec.title ?? path.basename(dir);
@@ -44,11 +55,13 @@ export async function kitRecords(dir) {
 
 /**
  * Build the tree for `dir`. → { tree: {schemaVersion, format, files:[{path, sha256, bytes}]}, sources: Map<sha256,
- * {file?, data?}>, bytes, skipped: [path], refused: [{path, why}], added: [path], fingerprint, title }
+ * {file?, data?}>, bytes, skipped: [path], refused: [{path, why}], added: [path], copied: [path] (sent as a copy
+ * without the reference names), names (those names), fingerprint, title }
  * `fingerprint` names exactly these files with these contents (the check gate keys its pass on it).
  */
 export async function buildTree(dir) {
-  const root = path.resolve(dir), files = [], sources = new Map(), skipped = [], refused = [];
+  const root = path.resolve(dir), files = [], sources = new Map(), skipped = [], refused = [], copied = [];
+  const names = await referenceNamesOf(root);
   async function walk(abs, rel) {
     const entries = (await readdir(abs, { withFileTypes: true })).sort((a, b) => (a.name < b.name ? -1 : a.name > b.name ? 1 : 0));
     for (const e of entries) {
@@ -61,13 +74,18 @@ export async function buildTree(dir) {
       if (st.isSymbolicLink()) { refused.push({ path: relPath, why: 'a symbolic link: a published game holds ordinary files only' }); continue; }
       if (st.isDirectory()) { await walk(full, relPath); continue; }
       if (!st.isFile()) { refused.push({ path: relPath, why: 'not an ordinary file' }); continue; }
-      const data = await readFile(full), sha = sha256(data);
+      let data = await readFile(full), own = false;
+      // the spec goes up as a copy without the reference games' names (the file on disk keeps the person's words)
+      if (relPath === 'spec.json' && names.length) {
+        try { const red = Buffer.from(JSON.stringify(redactJson(JSON.parse(data.toString('utf8')), names), null, 2) + '\n'); if (!red.equals(data)) { data = red; own = true; copied.push(relPath); } } catch { /* not JSON: scanned as it is */ }
+      }
+      const sha = sha256(data);
       files.push({ path: relPath, sha256: sha, bytes: data.length });
-      if (!sources.has(sha)) sources.set(sha, { file: full });
+      if (!sources.has(sha)) sources.set(sha, own ? { data } : { file: full });
     }
   }
   await walk(root, '');
-  const added = [], { lock, plan, title } = await kitRecords(root);
+  const added = [], { lock, plan, title } = await kitRecords(root, { names });
   for (const [name, value] of [['foundation.lock.json', lock], ['adaptation-plan.json', plan]]) {
     if (files.some(f => f.path === name)) continue;
     const data = Buffer.from(JSON.stringify(value, null, 2) + '\n'), sha = sha256(data);
@@ -77,7 +95,7 @@ export async function buildTree(dir) {
   }
   files.sort((a, b) => (a.path < b.path ? -1 : a.path > b.path ? 1 : 0));
   const tree = { schemaVersion: 1, format: TREE_FORMAT, files };
-  return { tree, sources, bytes: files.reduce((n, f) => n + f.bytes, 0), skipped, refused, added, fingerprint: sha256(canonical(files)), title };
+  return { tree, sources, bytes: files.reduce((n, f) => n + f.bytes, 0), skipped, refused, added, copied, names, fingerprint: sha256(canonical(files)), title };
 }
 
 /** A file's bytes for upload: from disk, or the made-up records. */

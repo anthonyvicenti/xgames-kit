@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://xgames.fun/schemas/play-target/1.json",
+  "title": "xgames-kit play target",
+  "description": "What a game must play like, as a design a build writes toward and a judge measures against (spec.play.target). Written by the designer round (builder/play/design.mjs) from the person's words, the ledger, the foundation's parts, the references and what the designer knows of the genre; after the look, before the build. Every number is one a judge can measure in real play. It never narrows the idea: what no part does is a build line. It never names a reference game.",
+  "type": "object",
+  "required": ["schema", "from", "confidence", "genre", "verbs", "beats", "objective", "touchpoints", "risk", "pacing", "events", "feel", "avoid", "makes", "mechanics", "bots"],
+  "additionalProperties": false,
+  "properties": {
+    "schema": { "const": "gf-play-target/1" },
+    "from": { "enum": ["words", "refs+words"], "description": "What the designer read beside the person's words: reference frames or clips (refs+words), or the words and genre knowledge alone." },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "genre": {
+      "type": "object",
+      "required": ["name", "traits"],
+      "additionalProperties": false,
+      "description": "The kind of play in plain words (\"turn-based artillery\", \"co-op garden sim\"), never a game's name, and what players of such games come for.",
+      "properties": {
+        "name": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "traits": { "type": "array", "minItems": 2, "maxItems": 6, "items": { "type": "string", "minLength": 2, "maxLength": 160 } }
+      }
+    },
+    "verbs": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "description": "The core verbs: what a player does, each on a control.",
+      "items": {
+        "type": "object",
+        "required": ["id", "does", "input"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "#/$defs/name" },
+          "does": { "type": "string", "minLength": 2, "maxLength": 200 },
+          "input": { "type": "string", "minLength": 1, "maxLength": 100, "description": "The control it is on, in the spec's control words (primary, move, jump …) or keys." },
+          "feel": { "type": "string", "maxLength": 160 }
+        }
+      }
+    },
+    "beats": {
+      "type": "object",
+      "required": ["moment", "stretch", "round"],
+      "additionalProperties": false,
+      "description": "The loop's beats: what fills each span of play.",
+      "properties": {
+        "moment": { "type": "string", "minLength": 4, "maxLength": 280, "description": "What a player does every few seconds (about 5 s)." },
+        "stretch": { "type": "string", "minLength": 4, "maxLength": 280, "description": "What happens every half minute or so: a turn, an exchange, a goal taken." },
+        "round": { "type": "string", "minLength": 4, "maxLength": 320, "description": "The whole round, run or match: its arc from start to end." },
+        "between": { "type": "string", "maxLength": 240, "description": "Between rounds: what carries over, what makes the next one different." }
+      }
+    },
+    "objective": {
+      "type": "object",
+      "required": ["goal", "win", "reach", "things"],
+      "additionalProperties": false,
+      "properties": {
+        "goal": { "type": "string", "minLength": 4, "maxLength": 240 },
+        "win": { "type": "string", "minLength": 4, "maxLength": 240 },
+        "lose": { "type": "string", "maxLength": 240 },
+        "reach": {
+          "type": "object",
+          "required": ["how", "within", "risks"],
+          "additionalProperties": false,
+          "description": "How the objective is reached from where the players start, on this game's own world.",
+          "properties": {
+            "how": { "type": "string", "minLength": 4, "maxLength": 320 },
+            "within": { "type": "number", "minimum": 0, "maximum": 600, "description": "Seconds a new player takes from a seat to act on the nearest objective (0: it is in front of them)." },
+            "risks": { "type": "array", "maxItems": 4, "items": { "type": "string", "minLength": 4, "maxLength": 200 }, "description": "What on this world could make it unreachable (water, cliffs, inside the ground), for the placement and the judge to rule out." }
+          }
+        },
+        "things": {
+          "type": "array",
+          "maxItems": 8,
+          "description": "What the objective places in the world (pickups, zones, goals, targets): each on ground a player can reach.",
+          "items": {
+            "type": "object",
+            "required": ["what", "where", "placed"],
+            "additionalProperties": false,
+            "properties": {
+              "what": { "type": "string", "minLength": 2, "maxLength": 120 },
+              "where": { "type": "string", "minLength": 2, "maxLength": 200 },
+              "placed": { "enum": ["ground", "surface", "zone", "carried", "board", "none"], "description": "ground: on the world's own ground under it; surface: on top of a prop or structure; zone: an area; carried: on a player; board: a cell of a board; none: not a thing in the world." },
+              "reach": { "enum": ["walk", "aim", "none"], "description": "How a player gets to it: walk (goes to it and takes it: a pickup, a goal, a zone; the default), aim (hits it from where they stand: a target, a rival's character), none (it comes to them). The play judge holds every walk thing to a spot a player can get to." },
+              "count": { "type": "integer", "minimum": 0, "maximum": 500 }
+            }
+          }
+        }
+      }
+    },
+    "touchpoints": {
+      "type": "array",
+      "maxItems": 8,
+      "description": "How players affect each other (against or together). Empty only for a game one person plays alone.",
+      "items": {
+        "type": "object",
+        "required": ["how", "kind", "often"],
+        "additionalProperties": false,
+        "properties": {
+          "how": { "type": "string", "minLength": 4, "maxLength": 240 },
+          "kind": { "enum": ["hit", "knock", "block", "steal", "race", "help", "revive", "trade", "share", "watch", "taunt", "other"] },
+          "often": { "type": "string", "minLength": 2, "maxLength": 100 }
+        }
+      }
+    },
+    "risk": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["risk", "reward"],
+        "additionalProperties": false,
+        "properties": {
+          "risk": { "type": "string", "minLength": 4, "maxLength": 200 },
+          "reward": { "type": "string", "minLength": 4, "maxLength": 200 }
+        }
+      }
+    },
+    "pacing": {
+      "type": "object",
+      "required": ["firstAction", "eventsPerMinute", "roundSeconds", "idleMax", "comeback"],
+      "additionalProperties": false,
+      "description": "The numbers a judge measures in real play (bots and the play-tester).",
+      "properties": {
+        "firstAction": { "type": "number", "minimum": 0, "maximum": 120, "description": "Seconds from Play to the first meaningful action a new player takes." },
+        "eventsPerMinute": { "type": "number", "minimum": 0.5, "maximum": 600, "description": "Meaningful events (the events marked meaningful) per minute, the whole game." },
+        "roundSeconds": { "type": "number", "minimum": 10, "maximum": 7200, "description": "How long a round, run or match lasts, about." },
+        "turnSeconds": { "type": "number", "minimum": 1, "maximum": 300, "description": "A turn's length, when players take turns." },
+        "idleMax": { "type": "number", "minimum": 1, "maximum": 300, "description": "The longest stretch a player may go with nothing meaningful done by or to them (watching another player's turn counts as idle only when nothing on screen concerns them)." },
+        "comeback": { "type": "number", "minimum": 0, "maximum": 1, "description": "The chance a player or side behind at the halfway point still wins (0 when nobody competes)." },
+        "rounds": { "type": "integer", "minimum": 1, "maximum": 50, "description": "Rounds in a usual session." },
+        "downMax": { "type": "number", "minimum": 0, "maximum": 60, "description": "The longest a knocked player stays down (a tumble, a ragdoll flight, its landing and get-up) before they act again; 0 when nobody is knocked down. Fair play (gate C/D's down rule) takes its limit from it: a chaos game allows long flights, a calm one keeps them short." },
+        "out": { "enum": ["never", "respawn", "round"], "description": "Whether a player can be knocked out of play: never; respawn (out, then back after a while); round (out until the round or match ends, as a sunk worm)." }
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 12,
+      "description": "The gameplay events this game reports by these names (the judge counts them; meaningful ones make eventsPerMinute).",
+      "items": {
+        "type": "object",
+        "required": ["name", "what", "meaningful"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "#/$defs/name" },
+          "what": { "type": "string", "minLength": 4, "maxLength": 200 },
+          "meaningful": { "type": "boolean" }
+        }
+      }
+    },
+    "feel": {
+      "type": "object",
+      "required": ["impact", "weight", "chaos", "juice"],
+      "additionalProperties": false,
+      "properties": {
+        "impact": { "enum": ["none", "low", "mid", "high"] },
+        "weight": { "enum": ["light", "medium", "heavy"] },
+        "chaos": { "type": "number", "minimum": 0, "maximum": 1, "description": "0 calm and exact … 1 bodies flying, things breaking, surprises every exchange." },
+        "comedy": { "type": "string", "maxLength": 280, "description": "Where the laughs come from, when the game is meant to be funny." },
+        "juice": { "type": "array", "maxItems": 8, "items": { "type": "string", "minLength": 2, "maxLength": 160 }, "description": "The feedback that sells an action: shake, hitstop, slow motion, squash, sound, particles." }
+      }
+    },
+    "avoid": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "description": "The failure modes this design must avoid, each with the guard that prevents it.",
+      "items": {
+        "type": "object",
+        "required": ["failure", "guard"],
+        "additionalProperties": false,
+        "properties": {
+          "failure": { "enum": ["idle", "unreachable", "runaway-leader", "stalemate", "too-long", "confusion", "one-strategy", "spawn-trap", "griefing", "other"] },
+          "guard": { "type": "string", "minLength": 4, "maxLength": 280 },
+          "measure": { "type": "string", "maxLength": 200, "description": "What a judge measures to see the guard hold." }
+        }
+      }
+    },
+    "makes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "description": "What makes it play, in 3–6 lines. Each becomes a promise the play-tester checks (play.<n>).",
+      "items": {
+        "type": "object",
+        "required": ["says", "see"],
+        "additionalProperties": false,
+        "properties": {
+          "says": { "type": "string", "minLength": 6, "maxLength": 220 },
+          "see": { "type": "string", "minLength": 6, "maxLength": 260, "description": "What a player sees on their own screen when this holds." },
+          "friends": { "type": "boolean", "description": "Proven only with two player-driven seats." }
+        }
+      }
+    },
+    "mechanics": {
+      "type": "array",
+      "maxItems": 12,
+      "description": "The registry's mechanics this design uses, tuned (params), and why. A mechanic the spec has is kept; one added here joins the spec.",
+      "items": {
+        "type": "object",
+        "required": ["id", "why"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "https://xgames.fun/schemas/common/1.json#/$defs/id" },
+          "as": { "type": "string", "maxLength": 120 },
+          "params": { "type": "object" },
+          "why": { "type": "string", "minLength": 4, "maxLength": 240 }
+        }
+      }
+    },
+    "build": {
+      "type": "array",
+      "maxItems": 10,
+      "description": "What the build must write new for this play because no part does it. Each joins spec.build (a promise).",
+      "items": {
+        "type": "object",
+        "required": ["what", "how", "where", "why"],
+        "additionalProperties": false,
+        "properties": {
+          "what": { "type": "string", "minLength": 4, "maxLength": 160, "description": "What is built, in plain words (it joins spec.build: the same limits)." },
+          "how": { "type": "string", "minLength": 4, "maxLength": 300, "description": "What will be written: rules logic, a module in src/<name>.js, an engine override." },
+          "where": { "enum": ["rules", "module", "engine"] },
+          "row": { "type": "string", "maxLength": 40, "description": "The ledger line it serves (its id)." },
+          "why": { "type": "string", "minLength": 4, "maxLength": 240 }
+        }
+      }
+    },
+    "params": {
+      "type": "object",
+      "maxProperties": 24,
+      "description": "Tuning numbers for rules.params (config/game.json), named in camelCase.",
+      "additionalProperties": { "type": ["number", "string", "boolean"] }
+    },
+    "bots": { "type": "string", "minLength": 4, "maxLength": 320, "description": "How bots play it, so one person still gets the game and a judge's bot run means something." },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "words": { "type": "boolean" },
+        "refs": { "type": "integer", "minimum": 0 },
+        "model": { "type": "string", "maxLength": 80 },
+        "at": { "type": "string", "maxLength": 40 }
+      }
+    }
+  },
+  "$defs": {
+    "name": { "type": "string", "pattern": "^[a-z][a-z0-9-]{1,31}$" },
+    "sketch": {
+      "type": "object",
+      "required": ["style", "verbs", "beat", "touch"],
+      "additionalProperties": false,
+      "description": "A card's play in a few words, so the cards of one pitch differ in how they play and the person chooses play, not only look (pitch v2 cards[].play).",
+      "properties": {
+        "style": { "type": "string", "minLength": 3, "maxLength": 80, "description": "The kind of play: \"turn-based artillery\", \"real-time brawl\"." },
+        "verbs": { "type": "array", "minItems": 2, "maxItems": 5, "items": { "type": "string", "minLength": 2, "maxLength": 40 } },
+        "beat": { "type": "string", "minLength": 4, "maxLength": 200, "description": "What a player does every few seconds." },
+        "touch": { "type": "string", "minLength": 4, "maxLength": 200, "description": "How players affect each other." },
+        "chaos": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

@@ -43,7 +43,12 @@ export async function fingerprintFiles() {
   const flows = ['builder/tools/verify-forge.mjs', 'builder/tools/verify-vista.mjs', 'builder/tools/verify-world.mjs', 'builder/tools/lib/flow-signs.mjs',
     'builder/tools/lib/presence.mjs', 'builder/multiplayer/party/gate.mjs', 'builder/multiplayer/party/gate-live.mjs',
     // measure 23's judge (tools/lib/look-check.mjs reads it): its numbers and its pass rule decide the look's verdict
-    'builder/look/judge.mjs', 'builder/look/stats.mjs', 'builder/look/vision.mjs', 'builder/look/render.mjs', 'builder/look/pixels.mjs', 'builder/look/settings.mjs', 'builder/look/measure.mjs'];
+    'builder/look/judge.mjs', 'builder/look/stats.mjs', 'builder/look/vision.mjs', 'builder/look/render.mjs', 'builder/look/pixels.mjs', 'builder/look/settings.mjs', 'builder/look/measure.mjs',
+    // measure 6's play leg (tools/lib/play-check.mjs reads it): the session, the scripted player, the measured parts, the
+    // vision judge and the pass rule
+    'builder/play/judge.mjs', 'builder/play/measure.mjs', 'builder/play/session.mjs', 'builder/play/agent.mjs', 'builder/play/vision.mjs',
+    // measure 14's objective leg (tools/lib/looks-check.mjs reads it): which props the objectives draw, and what a model means
+    'builder/art/objectives.mjs', 'builder/art/resolve.mjs', 'library/words.json'];
   return [...['builder/tools/verify.mjs', 'builder/tools/lib/verdict.mjs', 'builder/tools/lib/stepped.mjs', 'builder/gates/regress.mjs'], ...flows, ...checks, ...own].sort();
 }
 /** {file: sha256} over fingerprintFiles(), and one hash of them all. */

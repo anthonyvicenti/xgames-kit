@@ -3,7 +3,7 @@
 // (runtimes/three/tools/voxel-bench/bench.js horizon and cave), made pure over the world's grid, light and terrain so a
 // game can ask for them too:
 //
-//   placeFor(voxel, 'cave' | 'day' | 'night', { from }) → { eye: [x, y, z], target: [x, y, z], fov, setting, score } | null
+//   placeFor(voxel, 'cave' | 'day' | 'night' | 'wide', { from }) → { eye: [x, y, z], target: [x, y, z], fov, setting, score } | null
 //
 // 'night' is a place outdoors (the time of day is the look's). Nothing found → null (the caller frames around the
 // player instead and says so).
@@ -30,7 +30,23 @@ export function dayPlace({ grid, terrain: T, table }, { from = null } = {}) {
   }
   if (!best) return null;
   const eye = [best.x + 0.5, best.h + 1.65, best.z + 0.5];
-  return { setting: 'day', eye, target: [eye[0] + Math.sin(best.yaw) * 20, eye[1] - 2, eye[2] + Math.cos(best.yaw) * 20], fov: 70, score: Math.round(best.score * 10) / 10 };
+  return { setting: 'day', eye, target: [eye[0] + Math.sin(best.yaw) * 20, eye[1] - 2, eye[2] + Math.cos(best.yaw) * 20], fov: 70, score: Math.round(best.score * 10) / 10, rise: best };
+}
+
+/**
+ * A wide view of the land in daylight: from above the best rise (dayPlace), stepped back and up, looking down across the
+ * open view, so the land fills the frame below the horizon (the kit's own 'wide' shot frames the whole grid's bounds,
+ * which for a voxel world puts the camera far above it, in the haze).
+ */
+export function widePlace(voxel, opts = {}) {
+  const d = dayPlace(voxel, opts);
+  if (!d) return null;
+  const { grid } = voxel, { x, z, h, yaw } = d.rise;
+  const back = 10, up = 14;
+  const eye = [x + 0.5 - Math.sin(yaw) * back, h + up, z + 0.5 - Math.cos(yaw) * back];
+  // lift out of anything solid (a tree, a hill behind the rise)
+  for (let k = 0; k < 20 && grid.solidAt(Math.floor(eye[0]), Math.floor(eye[1]), Math.floor(eye[2])); k++) eye[1] += 2;
+  return { setting: 'day', eye, target: [x + 0.5 + Math.sin(yaw) * 45, h - 4, z + 0.5 + Math.cos(yaw) * 45], fov: 60, score: d.score };
 }
 
 /** An open cavern with the most block light and no sky, looking across it toward its light. */
@@ -65,6 +81,7 @@ export function cavePlace({ grid, light }) {
 /** The place for a setting, or null. */
 export function placeFor(voxel, setting, opts = {}) {
   if (setting === 'cave') return cavePlace(voxel);
-  if (setting === 'day' || setting === 'night') { const p = dayPlace(voxel, opts); return p ? { ...p, setting } : null; }
+  if (setting === 'day' || setting === 'night') { const p = dayPlace(voxel, opts); if (!p) return null; const { rise, ...rest } = p; return { ...rest, setting }; }
+  if (setting === 'wide') return widePlace(voxel, opts);
   return null;
 }

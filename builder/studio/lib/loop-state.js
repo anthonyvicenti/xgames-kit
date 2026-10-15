@@ -25,6 +25,7 @@ export const STAGES = [
   { id: 'pitch', label: 'Pitch', steps: ['pitch'] },
   { id: 'spec', label: 'Spec', steps: ['spec'] },
   { id: 'look', label: 'Look', steps: ['look'] },
+  { id: 'play', label: 'Play', steps: ['design'] },
   { id: 'build', label: 'Build', steps: ['create', 'build', 'fix', 'repair', 'ask'] },
   { id: 'gates', label: 'Gates', steps: ['economy', 'backend', 'verify'] },
   { id: 'playtest', label: 'Play-test', steps: ['playtest'] },

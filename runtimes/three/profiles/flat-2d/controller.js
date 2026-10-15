@@ -163,7 +163,7 @@ export function createController(ctx, opts = {}) {
       plane,
       place(p, yaw = c.state.facing) { c.teleport({ x: p.x, y: p.y ?? 0, z: side ? 0 : p.z ?? 0 }, yaw, { keepCamera: false }); return true; },
       state: () => { const t = c.body.translation(), v = c.body.linvel(); return { x: t.x, y: t.y - cap.feetOffset, z: t.z, vx: v.x, vy: v.y, onGround: !!c.state.onGround, jumps: c.state.jumps, ledge: { ...c.ledge }, frame: c.character?.frame ?? null }; },
-      reach: () => { const R = ctx.world.reach?.() ?? {}; return { plane, tile: ctx.world.tile, up: R.up, across0: R.across?.(0), jump: R.jump, gravity: R.gravity, speed: R.speed, surfaces: R.surfaces ?? [], tree: R.tree ?? [], problems: R.problems ?? [], spawns: ctx.world.spawns.map(s => ({ x: s.x, y: s.y, z: s.z })) }; },
+      reach: () => { const R = ctx.world.jumps?.() ?? {}; return { plane, tile: ctx.world.tile, up: R.up, across0: R.across?.(0), jump: R.jump, gravity: R.gravity, speed: R.speed, surfaces: R.surfaces ?? [], tree: R.tree ?? [], problems: R.problems ?? [], spawns: ctx.world.spawns.map(s => ({ x: s.x, y: s.y, z: s.z })) }; },
       feet: (cc, r) => ctx.world.map.feet(cc, r),
     };
   }

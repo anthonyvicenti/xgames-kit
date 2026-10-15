@@ -146,6 +146,44 @@ export function harmonizeLook(C, spec, { place = {} } = {}) {
   return { on: true, notes };
 }
 
+/**
+ * The packs a game's look names: spec look.packs, and each level's (a target's looks[].packs, a level's own packs in the
+ * look config) — art made in the target's style already, from its anchor and judged against it.
+ */
+export function lookPacksOf(spec, C = null) {
+  const out = new Set(spec?.look?.packs ?? []);
+  for (const l of spec?.look?.target?.looks ?? []) for (const p of l?.packs ?? []) out.add(p);
+  for (const l of Object.values(C?.look?.levels ?? {})) for (const p of l?.packs ?? []) out.add(p);
+  return [...out];
+}
+
+/**
+ * The style pass leaves the look's own packs alone by default (the parent, 2026-10-14: they were made in the target's
+ * style, and moving their colours again risks drift): every file create took from one of them (props, bodies, the
+ * world's pictures: `from: library:<pack>/<id>`) goes into the pass's `keepFiles`, in the look and in each level's.
+ * A person who wants them moved anyway opts in: a pack in look.harmonize.includePacks, or one asset by its slot (its
+ * assets.json slot's `harmonize: true`, or a pattern in look.harmonize.include). C: create's config, changed in place.
+ * → { files, packs }
+ */
+export function keepLookArt(C, spec) {
+  const packs = lookPacksOf(spec, C);
+  const h = C?.look?.harmonize;
+  if (!packs.length || !isObj(h)) return { files: [], packs };
+  const opted = new Set([...(spec?.look?.harmonize?.includePacks ?? []), ...(h.includePacks ?? [])]);
+  const keep = packs.filter(p => !opted.has(p));
+  const packOf = from => String(from ?? '').match(/^library:([^/]+)\//)?.[1] ?? null;
+  const files = new Set();
+  for (const p of Object.values(C.propFiles ?? {})) if (keep.includes(packOf(p?.from))) files.add(p.file);
+  for (const b of Object.values(C.bodies ?? {})) if (keep.includes(packOf(b?.from))) files.add(b.file);
+  for (const w of C.worldArt ?? []) { const m = String(w?.what ?? '').match(/\(library:([^/]+)\//); if (m && keep.includes(m[1])) files.add(w.file); }
+  const list = [...files].sort();
+  if (list.length) {
+    h.keepFiles = [...new Set([...(h.keepFiles ?? []), ...list])];
+    for (const l of Object.values(C.look.levels ?? {})) if (isObj(l?.harmonize)) l.harmonize.keepFiles = [...new Set([...(l.harmonize.keepFiles ?? []), ...list])];
+  }
+  return { files: list, packs: keep };
+}
+
 /** How far a set of colours is from the look's colours of things: palette transport (OKLab ×100), and the gaps in mean
  *  lightness and chroma. palette: [{hex|colour, share}] (a signature's top colours). */
 export function distanceTo(palette, settings) {

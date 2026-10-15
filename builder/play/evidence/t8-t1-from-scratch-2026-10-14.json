@@ -1,0 +1,68 @@
+{
+  "schema": "xgk-evidence/1",
+  "date": "2026-10-14",
+  "stream": "sunny-pvp (the gameplay layer's proving build, turned into from-scratch eval runs)",
+  "creator": [
+    "\"Sunny Castle is good enough. But still some flags we talked about before, like making all area reachable and more dynamic activities like PvP throwing explosions and rag dolls.\"",
+    "\"I just want to make sure we aren't falling into the trap of itterating on this game ourselves, but itterating on the system. The goal is close to the working product with just a single prompt and making sure we have the infra in place to make that reasonable.\""
+  ],
+  "what": "The creator's own prompt frozen as eval case T8 (evals/cases/T8.json, manifest evals/cases/frozen/2026-10-14-1.json) and run from scratch through the headless loop (gamesfun build --prompt, default answers, no hand edits), with T1 as the control. Both runs were stopped by Ctrl+C at the parent's request (a clean stopping point), neither delivered. Not played by the creator.",
+  "first": {
+    "what": "The Sunny Castle change build (before the change of task): a change request on the composed level through the loop.",
+    "found": [
+      "The loop had no way to take a change on a game it did not make (no loop state): fixed, the loop adopts a made game (its ledger from what the game became, its spec locked, the request re-entering as a change).",
+      "The first adopted ledger read only the spec's first words and lost the berries the level was won by: fixed, the ledger reads the hook, how a round is won, the controls and the gameplay things too.",
+      "A change request to play kept the old play target and the designer never saw the request: fixed, a play or loop change request is designed again, the designer reading the request and the play the game had."
+    ],
+    "target": "Designed by the loop on the creator's words (second planning run): a real-time party brawl, not turns; verbs lob, throw a boom seed, grab, hop, waddle; touchpoints hit, knock (blast throws rivals limp, ring-outs into the sea credited to the thrower), race, block, help (teams), the crowned leader as everyone's target; pacing firstAction 6 s, 30 events a minute, 120 s rounds, idleMax 15 s, downMax 3.5 s, out respawn. Stopped at the build step when the task changed; nothing was built."
+  },
+  "runs": [
+    {
+      "case": "T8",
+      "game": "games/t8-r1 (git-ignored)",
+      "foundation": "three/standard-3d, loop turns, kind silly",
+      "target": "turn-based team artillery on destructible 3D islands: crawl, hop, aim, charge-fire, pick a weapon, grab a crate; touchpoints hit, knock (blasts fling worms off ledges and into the sea), crater the cover, race for crates, watch the shot; pacing firstAction 20 s, 8 events a minute, 270 s rounds, 30 s turns, idleMax 75 s, downMax 8 s, out round",
+      "look": "three options judged side by side 70/65/65 (faithful picked); each option's own judge timed out in the loop's process (fixed after this run: the judge runs under the GPU wrap)",
+      "verifies": [
+        { "n": 1, "pass": false, "gates": { "A": false, "B": false, "C": false, "D": true, "E": false, "F": true },
+          "failed": ["A 18: 37 sounds in .look/options/faithful/game/audio/audio.js (kit flaw: the scan walked the look step's copies)", "B 3: mechanic aim.update threw on a non-finite AudioParam value (kit flaw: aim's fire sound at a place not copied yet)", "C 13: the weapon control was listed but no screen showed it (the game's)", "C 15: pickups never taken by anyone (the game's: bots)", "E 5: the loadout leg saw the same aim error (kit flaw, as B)"],
+          "playJudge": { "score": 79.8, "interval": [73.4, 86.2], "verdict": "pass", "findings": ["5 of 34 objectives cannot be reached (3 walled off)", "only 11 of 34 objectives ever taken", "toasts pile up under the turn panel", "blasts hit hard: fireball, debris, deep craters, SPLASH! on a drowning"] } }
+      ],
+      "stoppedAt": "the repair round after verify 1 had finished and the economy check passed; verify 2 was next",
+      "minutes": 148.4,
+      "usd": 18.91,
+      "rounds": "ledger x2, pitch x2, look, design, build, repair (opus)",
+      "byHand": "1920x1080, 3 bots, the files after the repair round (unverified): a turn game with a worm per seat, wind, an angle dial and a power ring, cartoon islands over the sea. My charged shot hit nobody; walking forward my worm slid into the sea (SPLASH! Your worm drowned) and lost a life; bots took their turns; the round ended at the clock with nobody scored. Grey slabs stand where the target asked for signposts and gravestones (no library prop, left to the art ladder). Blasts and ragdolls were seen by the play judge, not caught in my short pass."
+    },
+    {
+      "case": "T1",
+      "game": "games/t1-r1 (git-ignored)",
+      "foundation": "three/standard-3d, loop round, kind silly",
+      "target": "slapstick stream-fight party brawler: an arcing stream that soaks, a soak meter that flops a rival, a bladder refilled by drinks, a crown on the leader, a double-points finish; touchpoints hit, knock, race, block; pacing firstAction 5 s, 45 events a minute, 120 s rounds, downMax 1.5 s",
+      "look": "options 55/54/52 (pushed picked), judged under the GPU wrap",
+      "verifies": [
+        { "n": 1, "pass": false, "failed": ["A 18: the look step's copies (the same kit flaw as T8)", "B 9: kit-ui-hidden on the kit's own boot.js style rule (caused by this stream: a kit file changed under the running build, so the game's copy read as an undeclared kit edit; the change was held back until the runs ended)"], "playJudge": { "score": 80.4, "interval": [76.2, 84.6], "verdict": "pass" } },
+        { "n": 2, "pass": true, "gates": { "A": true, "B": true, "C": true, "D": true, "E": true, "F": true }, "playJudge": { "score": 81.6, "interval": [77.4, 85.8], "verdict": "pass" }, "look": "57/100, advisory (a target from words)" }
+      ],
+      "playtest": "The black-box tester (sonnet): the round runs to results and Play again, the soak meter, knockdown splash, crown toasts and the last-call banner seen; never landed a hit or scored, never found a drink, and with a friend the stream never showed. Six play promises not seen.",
+      "stoppedAt": "the repair round after the play-test had finished; verify 3 was next",
+      "minutes": 135.7,
+      "usd": 13.59,
+      "spec": "locked with the title \"PeeVPee Brawl\" (the reference game's name: fixed after this run, the spec lock holds publish's name rule)"
+    }
+  ],
+  "systemFixes": [
+    "builder/loop: a change request on a game the loop did not make (adopt), its ledger from what the game became; a play or loop change request is designed again from the request (tests/loop/adopt.test.mjs)",
+    "builder/loop/kit.mjs judgeUnder: the look step's judge runs as its own process under GAMESFUN_GPU_WRAP with the GPU env (tests/loop/look-judge-under.test.mjs)",
+    "builder/loop/pitch.mjs namedInShown and builder/play/design.mjs: a locked spec and a play target never name the reference game where players read it (tests/loop/reference-names.test.mjs)",
+    "gate A measure 18 skips dot folders (regression look-copies-not-the-game)",
+    "ctx.audio.play plays a sound at a not-yet-known place unplaced; aim copies a shell's place before its fire sound (regression sound-at-unknown-place, gate B)",
+    "the studio shows a game whose headless build was stopped (tests/studio-start.test.mjs)"
+  ],
+  "open": [
+    "The play judge passed T1 at 81.6 while the black-box tester never landed a hit: the measured half counts what bots do to each other, so a game a new player cannot hit with still scores. The interaction part should weigh the scripted player's own hits (play-judge's to decide).",
+    "A look target from words only never fails (BAR.words is null): T8 named a game and gave no image, so gate F cannot hold the look to the 8.5/10 bar the case asks for.",
+    "T8's designer chose turns (faithful to the named genre) with idleMax 75 s and 8 events a minute; the creator's later words ask for more PvP chaos. Whether a turn game's waiting meets the creator's bar is for the creator to judge.",
+    "Runs were slow mostly from the shared GPU queue (repair rounds' quick verifies waited 10 to 23 minutes)."
+  ]
+}

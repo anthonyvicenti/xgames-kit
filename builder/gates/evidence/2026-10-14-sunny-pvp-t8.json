@@ -1,0 +1,16 @@
+{
+  "schema": "xgk-evidence/1",
+  "date": "2026-10-14",
+  "stream": "sunny-pvp (eval T8 from scratch)",
+  "found": "T8 run 1, verify 1 (the creator's prompt through the headless loop, no hand edits): gate A measure 18 failed on 37 sounds in the look step's own option copy inside the game (.look/options/faithful/game/audio/audio.js), and gate B measure 3 (and gate E's loadout leg) on \"mechanic aim.update threw TypeError: Failed to execute 'linearRampToValueAtTime' on 'AudioParam': The provided float value is non-finite\". Neither is the game's to fix; together they cost a whole repair round. T1 run 1 failed measure 18 the same way.",
+  "rootCause": [
+    "Measure 18 (builder/tools/lib/sounds-check.mjs) walked every folder of the game but a few named ones, so the loop's and the tools' own dot folders (the look step's option copies, the loop's state, .verify) were read as the game's code.",
+    "The aim part made a non-local shooter's shell view before copying the shell's position into it, so its fire sound went to ctx.audio.play with at {x: undefined}; the kit's positional wrapper turned that into a NaN pan and gain, and the audio graph threw inside the part's update on every bot shot."
+  ],
+  "fix": [
+    "sounds-check skips every folder whose name starts with a dot (regression look-copies-not-the-game: a look option's copy that plays unlisted sounds passes measure 18).",
+    "ctx.audio.play (three and forge boots) plays a sound whose place has a non-finite coordinate unplaced; aim copies the place before newShell (regression sound-at-unknown-place: rules that ask for a sound at an undefined place every frame boot with no console error, gate B)."
+  ],
+  "regress": "node builder/gates/regress.mjs --record: 30/30 green on stream/sunny-pvp",
+  "record": "builder/play/evidence/t8-t1-from-scratch-2026-10-14.json"
+}

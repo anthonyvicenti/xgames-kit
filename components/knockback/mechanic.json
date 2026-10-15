@@ -1,0 +1,425 @@
+{
+  "id": "knockback",
+  "name": "Knockback",
+  "describe": "Blasts throw every body near them (ragdolls, tumbling creatures, loose props); the host simulates each flight and every screen plays the same one",
+  "examples": [
+    "a blast throws everyone near it flying",
+    "explosions send ragdolls tumbling into the sea",
+    "a bomb bowls over a row of crates"
+  ],
+  "rank": 30,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "radius": {
+        "type": "number",
+        "description": "Reach of a blast that names none (m)",
+        "minimum": 0.5,
+        "maximum": 20,
+        "default": 4
+      },
+      "force": {
+        "type": "number",
+        "description": "Speed a blast gives a body of mass 1 at its centre (m/s)",
+        "minimum": 0,
+        "maximum": 32,
+        "default": 15
+      },
+      "up": {
+        "type": "number",
+        "description": "How far a blast tips its push upward (0 straight out, 1 about 45°)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 0.7
+      },
+      "falloff": {
+        "type": "string",
+        "enum": [
+          "smooth",
+          "linear",
+          "flat"
+        ],
+        "default": "smooth",
+        "description": "How a blast weakens toward its edge"
+      },
+      "damage": {
+        "type": "number",
+        "description": "Damage at a blast's centre, passed to the health mechanic (0: blasts only throw)",
+        "minimum": 0,
+        "maximum": 1000,
+        "default": 0
+      },
+      "gravity": {
+        "type": "number",
+        "description": "Gravity on a flying body (m/s²)",
+        "minimum": 2,
+        "maximum": 40,
+        "default": 18
+      },
+      "bounce": {
+        "type": "number",
+        "description": "Speed a body keeps off a hard landing (0 thud, 1 rubber)",
+        "minimum": 0,
+        "maximum": 0.9,
+        "default": 0.38
+      },
+      "friction": {
+        "type": "number",
+        "description": "Sliding speed a body keeps per bounce",
+        "minimum": 0,
+        "maximum": 1,
+        "default": 0.72
+      },
+      "settle": {
+        "type": "number",
+        "description": "Seconds a body lies still after it stops, before it gets up",
+        "minimum": 0,
+        "maximum": 4,
+        "default": 0.5
+      },
+      "chain": {
+        "type": "boolean",
+        "default": true,
+        "description": "A body thrown fast knocks the bodies it passes"
+      },
+      "chainSpeed": {
+        "type": "number",
+        "description": "Slowest a thrown body knocks another (m/s)",
+        "minimum": 1,
+        "maximum": 30,
+        "default": 5
+      },
+      "chainShare": {
+        "type": "number",
+        "description": "Share of its speed a thrown body passes on",
+        "minimum": 0,
+        "maximum": 1.5,
+        "default": 0.6
+      },
+      "masses": {
+        "type": "object",
+        "default": {
+          "humanoid": 1,
+          "blob": 0.85,
+          "worm": 0.8,
+          "quadruped": 1.3,
+          "flyer": 0.6,
+          "prop": 1.2
+        },
+        "description": "Mass per body kind (humanoid, blob, worm, quadruped, flyer, prop): heavier flies less far",
+        "additionalProperties": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 20
+        }
+      },
+      "props": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "default": [],
+        "description": "Names of the world's scenery props that are loose: a blast throws them too"
+      },
+      "fromProjectile": {
+        "type": "boolean",
+        "default": true,
+        "description": "A projectile splash (splashRadius > 0) throws through this part, not the projectile's own knock"
+      },
+      "creditSeconds": {
+        "type": "number",
+        "description": "Seconds a thrown player still counts as thrown by whoever threw them (kb.lastHitBy)",
+        "minimum": 0,
+        "maximum": 60,
+        "default": 8
+      },
+      "juice": {
+        "type": "boolean",
+        "default": true,
+        "description": "Shake, hitstop and slow motion sized by each blast and landing (ctx.juice, within the player's comfort settings)"
+      },
+      "landFx": {
+        "type": "string",
+        "default": "",
+        "description": "A vfx preset where a body lands hard (dust-kick, smoke-puff, ...); unset: the effect style's hit, or none"
+      },
+      "splashFx": {
+        "type": "string",
+        "default": "",
+        "description": "A vfx preset where a body falls into the sea (water-splash); unset: none"
+      },
+      "sound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id when a body is thrown; unset: none"
+      },
+      "landSound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id when a body lands hard; unset: none"
+      },
+      "splashSound": {
+        "type": "string",
+        "default": "",
+        "description": "A sound id when a body falls into the sea; unset: none"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.knockback.force",
+        "label": "Blast throw",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/force"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 66,
+        "constraints": {
+          "min": 0,
+          "max": 32,
+          "unit": "m/s"
+        }
+      },
+      {
+        "id": "mechanic.knockback.radius",
+        "label": "Blast reach",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/radius"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 64,
+        "constraints": {
+          "min": 0.5,
+          "max": 20,
+          "unit": "m"
+        }
+      },
+      {
+        "id": "mechanic.knockback.up",
+        "label": "Blast lift",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/up"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 62,
+        "constraints": {
+          "min": 0,
+          "max": 3
+        }
+      },
+      {
+        "id": "mechanic.knockback.bounce",
+        "label": "Bounciness",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/bounce"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 58,
+        "constraints": {
+          "min": 0,
+          "max": 0.9
+        }
+      },
+      {
+        "id": "mechanic.knockback.damage",
+        "label": "Blast damage",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/damage"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 1000
+        }
+      },
+      {
+        "id": "mechanic.knockback.settle",
+        "label": "Seconds lying still",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/settle"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 4,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.knockback.gravity",
+        "label": "Flight gravity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/gravity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 2,
+          "max": 40
+        }
+      },
+      {
+        "id": "mechanic.knockback.chain",
+        "label": "Thrown bodies knock others",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/chain"
+        },
+        "tier": "advanced",
+        "facet": "gameplay"
+      },
+      {
+        "id": "mechanic.knockback.juice",
+        "label": "Shake and slow motion on big hits",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/juice"
+        },
+        "tier": "advanced",
+        "facet": "look"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onBlast",
+      "on": "every copy",
+      "args": "{ at, radius, force, from, bodies (host: [{ key, player, v, k }]) }",
+      "when": "a blast went off",
+      "play": "blast"
+    },
+    {
+      "name": "onFling",
+      "on": "every copy",
+      "args": "{ body, kind: 'player' | 'prop', player, v, from, duration, into }",
+      "when": "a body was thrown (into: rest | water | out): the flight is its answer on every screen",
+      "play": "hit"
+    },
+    {
+      "name": "onLand",
+      "on": "every copy",
+      "args": "{ body, player, at, speed, first }",
+      "when": "a thrown body hit the ground hard",
+      "quiet": true
+    },
+    {
+      "name": "onSplash",
+      "on": "every copy",
+      "args": "{ body, player, at, from }",
+      "when": "a thrown body fell into the sea",
+      "play": "knockout"
+    },
+    {
+      "name": "onSettle",
+      "on": "every copy",
+      "args": "{ body, player, at }",
+      "when": "a thrown body came to rest",
+      "quiet": true
+    }
+  ],
+  "counters": [],
+  "host": {
+    "owner": "host",
+    "how": "the host simulates each flight once against the world and sends the whole path; every copy plays it from when it arrived (the owner's capsule rides it, every copy steers the ragdoll onto it); moved props are in the shared state for late copies",
+    "state": "kb",
+    "fields": {
+      "o": "{ propKey: [x, y, z, angle, axisX, axisZ] } loose props a blast moved"
+    }
+  },
+  "owns": [],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "health",
+    "projectile",
+    "carve",
+    "hazards",
+    "aim"
+  ],
+  "capabilities": [
+    "physics-bodies",
+    "ragdoll"
+  ],
+  "gives": [
+    "blast-knockback",
+    "ragdoll"
+  ],
+  "bots": "no bot code (blasts throw bots as they throw players)",
+  "notes": {
+    "lines": [
+      "Nothing throws by itself but a projectile splash (fromProjectile): rules or another part call kb.blast(at, { radius, force, from }) on the host.",
+      "A thrown player is down for the flight and the settle; fair play refuses a throw on a player who is down or protected. Score in onFling or onSplash (from: who threw them), on the host.",
+      "kb.lastHitBy(p) says who threw a player within creditSeconds: the hazards mechanic credits a fall into the sea with it."
+    ],
+    "readme": "components/knockback/README.md",
+    "stub": {
+      "as": "kb",
+      "worked": "kb.onSplash(e => { if (ctx.host && e.from && e.player && e.from !== e.player) e.from.score += 3; });",
+      "traps": [
+        "kb.blast and kb.fling act on the host only: keep them under if (ctx.host)",
+        "a projectile splash already blasts through here (fromProjectile): calling kb.blast in onHit too throws everyone twice"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "players": 2,
+    "missing": "no k2 fixture folder: the two-player check is tests/chaos-two-players.mjs <game> (host + joiner over WebRTC, a blast throws the joiner into the sea, both screens play the same flight)"
+  },
+  "impl": {
+    "three": {
+      "path": "components/knockback/index.js",
+      "profiles": [
+        "standard-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/knockback.test.mjs pass; tests/chaos-two-players.mjs (WebRTC, two games): the thrown joiner lands identically on both screens, the body drawn within 0.02 m of the path, screens within 0.2 m (median) (11/11); verify 6/6, 22/22",
+            "date": "2026-10-14"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/knockback.test.mjs pass; tests/chaos-two-players.mjs (WebRTC, two games): the thrown joiner lands identically on both screens, the body drawn within 0.02 m of the path, screens within 0.2 m (median) (11/11); verify 6/6, 22/22",
+        "date": "2026-10-14"
+      }
+    ]
+  }
+}

@@ -4,9 +4,13 @@
 // joining the four cells round it. Normals are the field's own gradient at each vertex, so lighting is smooth and the
 // same on both sides of a chunk seam (the two chunks compute the same vertex from the same samples).
 //
-//   meshChunk(field, cx, cy, cz, { top, orig }) → { position, normal, ter, index } typed arrays (empty: position.length 0)
+//   meshChunk(field, cx, cy, cz, { top, orig, own }) → { position, normal, ter, own, index } typed arrays (empty:
+//     position.length 0)
 //     ter (2 per vertex): [depth below the ground's original top (m), how far inside the original ground the vertex is
 //     (m, 0 on an untouched surface)]: the material paints the top surface, the cut faces and the soil's layers by them.
+//     own (1 per vertex): the set piece the vertex's ground belongs to (generate.mjs's owner mask: a composed level's
+//     landmark or bridge, worlds/terrain/compose.mjs), 0 for the land: the material leaves a piece's own surface to its
+//     model and draws only what a blast cut into it.
 import { CHUNK, BAND } from './field.mjs';
 import { topAt } from './generate.mjs';
 
@@ -33,13 +37,13 @@ function sampleOrig(field, orig, x, y, z) {
 }
 
 /** Mesh one chunk. The chunk owns the sample edges whose first sample is in [c·N, c·N + N) on each axis. */
-export function meshChunk(field, cx, cy, cz, { top = null, orig = null } = {}) {
+export function meshChunk(field, cx, cy, cz, { top = null, orig = null, own = null } = {}) {
   const N = CHUNK, { nx, ny, nz, d, cell: h, origin: O } = field;
   const x0 = cx * N, y0 = cy * N, z0 = cz * N;
   // cells [c·N − 1, c·N + N − 1] on each axis: L a side (vertex slots), cell (i, j, k) at slot (i − x0 + 1, ...)
   const L = N + 1;
   const slot = new Int32Array(L * L * L).fill(-1);
-  const pos = [], nor = [], ter = [], idx = [];
+  const pos = [], nor = [], ter = [], idx = [], ownV = [];
   const cv = new Float64Array(8), nrm = [0, 1, 0];
   const at = (i, j, k) => d[(j * nz + k) * nx + i];
   // vertices
@@ -49,8 +53,12 @@ export function meshChunk(field, cx, cy, cz, { top = null, orig = null } = {}) {
       if (k < 0 || k > nz - 2) continue;
       for (let i = x0 - 1; i <= x0 + N - 1; i++) {
         if (i < 0 || i > nx - 2) continue;
-        let mask = 0;
-        for (let c = 0; c < 8; c++) { const v = at(i + (c & 1), j + ((c >> 1) & 1), k + ((c >> 2) & 1)); cv[c] = v; if (v < 0) mask |= 1 << c; }
+        let mask = 0, owner = 0, land = false;
+        for (let c = 0; c < 8; c++) {
+          const ii = i + (c & 1), jj = j + ((c >> 1) & 1), kk = k + ((c >> 2) & 1), v = at(ii, jj, kk);
+          cv[c] = v;
+          if (v < 0) { mask |= 1 << c; if (own) { const o = own[(jj * nz + kk) * nx + ii]; if (o) owner = Math.max(owner, o); else land = true; } }
+        }
         if (mask === 0 || mask === 255) continue;
         let sx = 0, sy = 0, sz = 0, n = 0;
         for (const [a, b] of EDGES) {
@@ -70,6 +78,8 @@ export function meshChunk(field, cx, cy, cz, { top = null, orig = null } = {}) {
         const depth = top ? topAt(field, top, px, pz) - py : 0;
         const cut = orig ? Math.max(0, -sampleOrig(field, orig, px, py, pz)) : 0;
         ter.push(Math.max(-1, Math.min(60, depth)), Math.min(BAND, cut));
+        // a piece's vertex when every solid corner is the piece's (where it meets the land, the land's)
+        ownV.push(land ? 0 : owner);
       }
     }
   }
@@ -107,19 +117,20 @@ export function meshChunk(field, cx, cy, cz, { top = null, orig = null } = {}) {
   const remap = new Int32Array(pos.length / 3).fill(-1);
   let n = 0;
   for (const v of idx) if (remap[v] < 0) remap[v] = n++;
-  const position = new Float32Array(n * 3), normal = new Float32Array(n * 3), terOut = new Float32Array(n * 2);
+  const position = new Float32Array(n * 3), normal = new Float32Array(n * 3), terOut = new Float32Array(n * 2), ownOut = new Float32Array(n);
   for (let v = 0; v < remap.length; v++) {
     const r = remap[v]; if (r < 0) continue;
     position[r * 3] = pos[v * 3]; position[r * 3 + 1] = pos[v * 3 + 1]; position[r * 3 + 2] = pos[v * 3 + 2];
     normal[r * 3] = nor[v * 3]; normal[r * 3 + 1] = nor[v * 3 + 1]; normal[r * 3 + 2] = nor[v * 3 + 2];
     terOut[r * 2] = ter[v * 2]; terOut[r * 2 + 1] = ter[v * 2 + 1];
+    ownOut[r] = ownV[v];
   }
   const index = n > 65535 ? new Uint32Array(idx.length) : new Uint16Array(idx.length);
   for (let q = 0; q < idx.length; q++) index[q] = remap[idx[q]];
-  return { position, normal, ter: terOut, index };
+  return { position, normal, ter: terOut, own: ownOut, index };
 }
 
 const dist2 = (p, a, b) => (p[a * 3] - p[b * 3]) ** 2 + (p[a * 3 + 1] - p[b * 3 + 1]) ** 2 + (p[a * 3 + 2] - p[b * 3 + 2]) ** 2;
-const empty = () => ({ position: new Float32Array(0), normal: new Float32Array(0), ter: new Float32Array(0), index: new Uint16Array(0) });
+const empty = () => ({ position: new Float32Array(0), normal: new Float32Array(0), ter: new Float32Array(0), own: new Float32Array(0), index: new Uint16Array(0) });
 /** The buffers of a mesh result, to transfer from a worker. */
-export const transfers = r => [r.position.buffer, r.normal.buffer, r.ter.buffer, r.index.buffer];
+export const transfers = r => [r.position.buffer, r.normal.buffer, r.ter.buffer, r.own.buffer, r.index.buffer];

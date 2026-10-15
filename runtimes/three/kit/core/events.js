@@ -2,7 +2,8 @@
 // the kit itself counts it. Read-only for the game; verify reads it through window.__game.events().
 //
 //   const log = createEventLog(ctx, { list, modules });   // boot: after the mechanics exist, before rules.setup
-//   ctx.events.count(player, what, { at })                // rules: a counted event of the game's own (its own scoring)
+//   ctx.events.count(player, what, { at, target })        // rules: a counted event of the game's own (its own scoring;
+//                                                         // target: the player it was done to)
 //   window.__game.events({ since })                       // { entries, next, dropped, kinds, me }
 //
 // What it logs, each entry {i, t (the game's seconds), w (performance.now()), ph (the round's phase), k, …}:
@@ -135,8 +136,13 @@ export function createEventLog(ctx, { list = [], modules = new Map(), now = () =
 
   const api = {
     /** A counted event of the game's own (its own way to score: a lap of its own, a round won by its rules). */
-    count(player, what = 'count', { at = null } = {}) {
-      push({ k: 'event', part: 'rules', name: String(what).slice(0, 40), who: isPlayer(player) ? { player: player.id } : typeof player === 'string' ? { player } : {}, at: at ? pointOf({ at }) : player?.position ? pointOf({ at: player.position }) : null });
+    count(player, what = 'count', { at = null, target = null } = {}) {
+      // target: the player it was done to (a hit, a steal, a tag of the game's own), so the play feed counts players on
+      // each other (kit/core/play.js)
+      const id = v => (isPlayer(v) ? v.id : typeof v === 'string' ? v : null);
+      const who = id(player) ? { player: id(player) } : {};
+      if (id(target) && id(target) !== who.player) who.target = id(target);
+      push({ k: 'event', part: 'rules', name: String(what).slice(0, 40), who, at: at ? pointOf({ at }) : player?.position ? pointOf({ at: player.position }) : null });
     },
     /** The log since entry `since` (the index the last read returned as `next`). */
     read({ since = 0 } = {}) {

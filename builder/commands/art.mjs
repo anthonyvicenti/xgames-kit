@@ -13,6 +13,8 @@ const usage = `Usage:
   gamesfun art find "<words>" [--kind <k>] [--3d|--2d|--audio] [--category <c>] [--devices phone,desktop] [--json]
                                                    search the asset library (every pack, ranked by need and fit)
   gamesfun art fill <game> [--kind <k>] [--write]  every file slot of a game, filled from the library by need and fit
+  gamesfun art objectives <game> [--yes]           what the game's objectives draw, each slot filled by meaning: the
+                                                   library, else a maker in the look's style (paid: only with --yes)
   gamesfun art ingest <file|folder|zip|url> --pack <id> [--licence <spdx> --author "…" to start a pack] [options]
   gamesfun art fetch <pack>/<asset> [--to <file>]  an asset's bytes: the store, the kit's default set, a mirror, or rebuilt
   gamesfun art check                               every manifest against the schemas, every binary on this machine
@@ -50,8 +52,8 @@ export default {
   run: args => guard(async () => {
     const [verb, ...rest] = args;
     // the library's own verbs: their command line is builder/art/cli.mjs's (the same flags as library/README.md)
-    if (['find', 'fill', 'ingest', 'fetch', 'check', 'autorig', 'harmonize'].includes(verb)) {
-      const game = verb === 'fill' && (!rest[0] || rest[0].startsWith('--')) ? [await resolveGame(null)] : [];
+    if (['find', 'fill', 'objectives', 'ingest', 'fetch', 'check', 'autorig', 'harmonize'].includes(verb)) {
+      const game = ['fill', 'objectives'].includes(verb) && (!rest[0] || rest[0].startsWith('--')) ? [await resolveGame(null)] : [];
       await libraryCli([verb, ...game, ...rest]);
       return process.exitCode ?? 0;
     }

@@ -1,0 +1,25 @@
+{
+ "base": "critter-lob",
+ "why": "The look test's levels as the creator got them (2026-10-14): a rules.js the build never wrote (create's stub: nothing fires, bots chase and never act), so after the few berries near the seats are gone nothing happens. The class: a round where nothing meaningful happens for 30 s and more. Here the stub with three berries that do not come back. Gate D must fail it on measure 6's play leg: nothing meaningful for 30 s at a stretch.",
+ "evidence": "builder/play/evidence/calibration-look-test-2026-10-14.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "patches": [
+  {
+   "file": "config/game.json",
+   "pointer": "/mechanics/1/params/count",
+   "value": 3
+  },
+  {
+   "file": "config/game.json",
+   "pointer": "/mechanics/1/params/respawnSeconds",
+   "value": 0
+  }
+ ],
+ "mustFail": [
+  "D"
+ ],
+ "measure": 6,
+ "detail": "nothing meaningful happened"
+}

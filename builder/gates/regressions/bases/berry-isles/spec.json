@@ -1,0 +1,169 @@
+{
+  "specVersion": 2,
+  "title": "Berry Isles",
+  "hook": "Round little critters on three islands round a ruined tower: lob seeds to bowl your friends over, and grab the berries before they do.",
+  "prompt": "round cartoon critters lobbing seeds at each other and grabbing berries on islands round a ruined tower",
+  "runtime": "three",
+  "profile": "standard-3d",
+  "loop": "round",
+  "kind": "silly",
+  "players": {
+    "min": 1,
+    "max": 3,
+    "bots": true
+  },
+  "multiplayer": {
+    "mode": "live",
+    "together": "versus"
+  },
+  "devices": {
+    "targets": [
+      "desktop",
+      "phone"
+    ]
+  },
+  "camera": "third",
+  "controls": {
+    "primary": "lob a seed",
+    "interact": "grab a berry",
+    "jump": "hop"
+  },
+  "round": {
+    "seconds": 90,
+    "winBy": "most berries when time is up",
+    "replay": true
+  },
+  "world": {
+    "template": "terrain",
+    "size": "medium",
+    "props": [
+      {
+        "name": "berry",
+        "describe": "a big shiny red berry",
+        "count": 10,
+        "role": "collected by players",
+        "kind": "gameplay"
+      }
+    ],
+    "notes": "Berries lie about the islands (on the ground every seat reaches) and come back a few seconds after they are taken.",
+    "params": {
+      "shape": "islands",
+      "islands": {
+        "count": 3
+      },
+      "size": [
+        112,
+        44,
+        80
+      ],
+      "compose": {
+        "landmarks": [
+          "ruin-tower",
+          "gatehouse"
+        ],
+        "bridges": [
+          "bridge"
+        ],
+        "playOn": "around",
+        "share": 0.25,
+        "verticality": 0.5,
+        "bridgeCount": 1,
+        "camera": {
+          "distance": 5.2,
+          "height": 1.7,
+          "pitchDeg": 16,
+          "fov": 60
+        },
+        "seats": 8
+      }
+    }
+  },
+  "mechanics": [
+    {
+      "id": "projectile",
+      "as": "seeds lobbed at friends",
+      "params": {
+        "kind": "discrete",
+        "color": "#ffb020",
+        "size": 0.24,
+        "speed": 13,
+        "arc": 0.35,
+        "muzzle": "hips",
+        "fireAnim": "throw",
+        "knockback": 5,
+        "knockUp": 3.5,
+        "knockSeconds": 1.4,
+        "cooldown": 0.7
+      }
+    },
+    {
+      "id": "pickup",
+      "as": "berries to collect",
+      "params": {
+        "prop": "berry",
+        "effect": "score",
+        "value": 1,
+        "respawnSeconds": 5
+      }
+    },
+    {
+      "id": "health",
+      "params": {
+        "hp": 0,
+        "ragdollOnHit": true,
+        "getUpSeconds": 1.4
+      }
+    }
+  ],
+  "rules": {
+    "summary": "Hop about the islands and grab berries: each one is a point, and the critter who takes it does a little celebration. Lob a seed at a friend to bowl them over: they tumble, roll and pop back up a moment later. Most berries when the time runs out wins.",
+    "scoring": "+1 per berry",
+    "params": {
+      "cheerSeconds": 1.2
+    }
+  },
+  "characters": [
+    {
+      "role": "player",
+      "describe": "a round jelly slime with big eyes",
+      "body": {
+        "archetype": "blob",
+        "from": "library",
+        "asset": "xk-creature-bodies/slime-blue"
+      }
+    }
+  ],
+  "look": {
+    "preset": "jelly-pastel",
+    "time": "day",
+    "packs": [
+      "forge-world",
+      "folio-nature"
+    ]
+  },
+  "sounds": [
+    {
+      "id": "pop",
+      "describe": "a soft pop as a berry is taken"
+    },
+    {
+      "id": "bell",
+      "describe": "round-end bell"
+    }
+  ],
+  "build": [],
+  "accept": [
+    "friends see each other as different critters",
+    "a seed bowls a friend over and they get back up",
+    "berries score and the taker celebrates"
+  ],
+  "notInV1": [
+    "teams",
+    "more critters to choose from",
+    "more maps"
+  ],
+  "content": {
+    "rating": "E",
+    "notes": "A cartoon lawn game: critters are bowled over and pop back up, nobody is hurt."
+  }
+}

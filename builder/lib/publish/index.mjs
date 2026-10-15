@@ -4,6 +4,8 @@
 //   1. signed in?           builder/lib/publish/client.mjs (gamesfun login)
 //   2. the files            builder/lib/publish/tree.mjs: refuses .env files and links; leaves out evidence/ and hidden files
 //   3. no secrets           builder/lib/publish/scan.mjs (games.fun runs the same scan again on its side)
+//      no reference names   builder/lib/publish/names.mjs: a file that names a game this one was made to look or play
+//                           like refuses it (spec.json goes up as a copy without them; the person's records keep them)
 //   4. its backend          backend.json → origins (`gamesfun backend connect`): the only other sites the game may
 //                           talk to once published; games.fun's play host opens that game's CSP to exactly those
 //   5. the checks           builder/lib/publish/gate.mjs: verify --quick on these files; a fail publishes a private draft only
@@ -14,7 +16,8 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { buildTree, sourceBytes, sha256 } from './tree.mjs';
-import { scanFile, secretsMessage, backendOrigins, isBinaryPath, BACKEND_FILE } from './scan.mjs';
+import { scanFile, secretsMessage, backendOrigins, isBinaryPath, looksText, SCAN_BYTES, BACKEND_FILE } from './scan.mjs';
+import { findNames, namesMessage } from './names.mjs';
 import { gate } from './gate.mjs';
 import { addKitIgnores } from '../manifest-ignores.mjs';
 import { call, savedLogin, studioOrigin } from './client.mjs';
@@ -35,19 +38,23 @@ export class PublishRefusal extends Error { constructor(message, details = {}) {
 export async function preflight(dir, { origin = studioOrigin() } = {}) {
   const built = await buildTree(dir);
   const problems = built.refused.map(r => `${r.path}: ${r.why}`);
-  const hits = [];
+  const hits = [], named = [];
   let config = null;
   for (const f of built.tree.files) {
+    // a file's own path names a reference game too (assets/<name>-logo.png)
+    if (built.names.length) for (const h of findNames(f.path, built.names)) named.push({ ...h, path: f.path, line: 0 });
     if (isBinaryPath(f.path)) continue;
     const src = built.sources.get(f.sha256);
     const bytes = new Uint8Array(await sourceBytes(src));
     hits.push(...scanFile(f.path, bytes));
+    if (built.names.length && looksText(f.path, bytes)) for (const h of findNames(new TextDecoder().decode(bytes.subarray(0, SCAN_BYTES)), built.names)) named.push({ ...h, path: f.path });
     if (f.path === BACKEND_FILE) { try { config = JSON.parse(Buffer.from(bytes).toString('utf8')); } catch { problems.push(`${BACKEND_FILE} is not valid JSON`); } }
   }
   const secrets = secretsMessage(hits);
   const backend = backendOrigins(config, { own: [origin] });
   problems.push(...backend.problems);
-  return { built, hits, secrets, backend: backend.origins, problems };
+  const names = namesMessage(named);
+  return { built, hits, secrets, backend: backend.origins, problems, named: named.filter(h => !h.warn), nameWarnings: named.filter(h => h.warn), names };
 }
 
 /**
@@ -67,6 +74,9 @@ export async function publishGame(dir, { origin = studioOrigin(), draft = false,
   let pre = await preflight(dir, { origin });
   if (pre.problems.length) throw new PublishRefusal(`Nothing was published:\n  - ${pre.problems.join('\n  - ')}`, { code: 'files', problems: pre.problems });
   if (pre.secrets) throw new PublishRefusal(pre.secrets, { code: 'secrets', hits: pre.hits });
+  if (pre.names) throw new PublishRefusal(pre.names, { code: 'names', hits: pre.named });
+  for (const w of pre.nameWarnings) progress(`Worth a look: ${w.path}:${w.line} says "${w.found}", the first word of a reference game's name (${w.name}). It goes up; take it out if it means that game.`);
+  if (pre.built.copied?.length) progress(`${pre.built.copied.join(', ')} goes up as a copy without the reference game${pre.built.names.length === 1 ? '' : 's'} named in it (the file on this machine keeps the words).`);
   let { built } = pre;
   const L = me.limits ?? {};
   if (L.totalBytes && built.bytes > L.totalBytes) throw new PublishRefusal(`This game is ${mb(built.bytes)}; a published game may be ${mb(L.totalBytes)}.`, { code: 'size' });
@@ -81,7 +91,7 @@ export async function publishGame(dir, { origin = studioOrigin(), draft = false,
   // What goes up is exactly what was checked: read the files again, and a pass for other files is no pass.
   if (checked.fingerprint !== built.fingerprint) {
     pre = await preflight(dir, { origin });
-    if (pre.problems.length || pre.secrets) throw new PublishRefusal(pre.secrets ?? `Nothing was published:\n  - ${pre.problems.join('\n  - ')}`, { code: pre.secrets ? 'secrets' : 'files' });
+    if (pre.problems.length || pre.secrets || pre.names) throw new PublishRefusal(pre.secrets ?? pre.names ?? `Nothing was published:\n  - ${pre.problems.join('\n  - ')}`, { code: pre.secrets ? 'secrets' : pre.names ? 'names' : 'files' });
     built = pre.built;
     if (built.fingerprint !== checked.fingerprint) report.pass = false;
   }

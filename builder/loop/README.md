@@ -14,6 +14,7 @@ agent or calls a model: a host passes runners, or each round is handed over and 
 | pitch | `gamesfun_step_pitch` | nothing (hands the round); `choice` {card, answers, words}: answers or any words send the card through a spec round that applies them; a bare pick locks the card |
 | spec | `gamesfun_step_spec` | `pitch` {reply, cards, questions} or `spec` |
 | create | `gamesfun_step_create` | nothing; runs create and hands the build round (one-page brief) |
+| design | `gamesfun_step_design` | nothing (hands the designer round, on the stronger model); `target` (the play target: `builder/play/README.md`). Its mechanics and build lines join the spec, the game is made again when the spec changed, each line of what makes it play becomes a promise `play.<n>` |
 | build, repair (round end), fix | `gamesfun_step_fix` | `summary`, `controls` |
 | economy (a kept economy only) | `gamesfun_step_economy` | nothing; the kit's economy checker on gamesfun.json |
 | backend (a kept backend only) | `gamesfun_step_backend` | nothing; no secret, row-level security on every table |

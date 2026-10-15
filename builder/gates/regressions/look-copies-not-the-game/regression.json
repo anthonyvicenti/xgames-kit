@@ -1,0 +1,12 @@
+{
+ "base": "critter-lob",
+ "why": "T8 run 1 (the creator's prompt from scratch, 2026-10-14): gate A failed on measure 18 with 37 sounds played \"but not listed\", every one in .look/options/faithful/game/audio/audio.js, the look step's own copy of the game, kept inside the game folder. The build round cannot fix it (it is the loop's folder) and every game that goes through the look step would fail it. The class: a check that reads the game's code walked into the loop's and tools' dot folders. The control: the same game with a look option's copy that plays sounds the game does not list passes measure 18.",
+ "evidence": "builder/gates/evidence/2026-10-14-sunny-pvp-t8.json",
+ "files": {
+  ".look/options/faithful/game/audio/audio.js": "stray-audio.js"
+ },
+ "mustPass": [
+  "A"
+ ],
+ "measure": 18
+}

@@ -8,6 +8,9 @@
 //   - an ink line where the top meets the soil (`ink`; `inkWidth` about pixels a side, 0 none): the cartoon edge.
 // Which is which comes from the mesh: each vertex carries its depth below the ground's original top and how far inside
 // the original ground it is (mesh.mjs `ter`), so a crater shows soil where it bit and grass where it did not.
+// A composed level's set pieces are ground too (mesh.mjs `own`: which piece a vertex belongs to): their own surface is
+// left to their models (world.js draws them, clipped where blasts took ground), and what a blast cut into one is drawn
+// here, in the piece's inside colour (`built`, one a piece) over the soil picture's shading.
 import * as THREE from 'three';
 import { material } from '../../look/materials.js';
 
@@ -39,22 +42,27 @@ export function createTerrainMaterial(opts = {}) {
     uTerLip: { value: V.lip }, uTerSlope: { value: new THREE.Vector2(V.slope[0], V.slope[1]) }, uTerStrata: { value: V.strata },
     uTerInk: { value: C(V.ink) }, uTerInkWidth: { value: V.inkWidth },
     uGfDetail: { value: V.detail }, uGfPatternOn: { value: 0 },
+    // a composed level's pieces: the colour their cut faces show (piece n at n − 1), and how deep a cut must be before
+    // the field draws it (shallower, the piece's model still stands there)
+    uTerBuilt: { value: Array.from({ length: 8 }, () => C('#9a8f80')) }, uTerBuiltCut: { value: 0.06 },
   };
   const house = mat.onBeforeCompile;
   mat.onBeforeCompile = (sh, r) => {
     house(sh, r);
     Object.assign(sh.uniforms, u);
     sh.vertexShader = sh.vertexShader
-      .replace('#include <common>', '#include <common>\nattribute vec2 aTer;\nvarying vec2 vTer;\nvarying vec3 vTerN;')
-      .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\n\tvTer = aTer;\n\tvTerN = normalize( mat3( modelMatrix ) * objectNormal );');
+      .replace('#include <common>', '#include <common>\nattribute vec2 aTer;\nattribute float aOwn;\nvarying vec2 vTer;\nvarying vec3 vTerN;\nvarying float vOwn;')
+      .replace('#include <beginnormal_vertex>', '#include <beginnormal_vertex>\n\tvTer = aTer;\n\tvOwn = aOwn;\n\tvTerN = normalize( mat3( modelMatrix ) * objectNormal );');
     sh.fragmentShader = sh.fragmentShader
       .replace('#include <common>', `#include <common>
-varying vec2 vTer; varying vec3 vTerN;
+varying vec2 vTer; varying vec3 vTerN; varying float vOwn; uniform vec3 uTerBuilt[ 8 ]; uniform float uTerBuiltCut;
 uniform sampler2D uTerTop; uniform sampler2D uTerSoil; uniform float uTerTopSize; uniform float uTerSoilSize;
 uniform sampler2D uTerCliff; uniform float uTerCliffOn; uniform float uTerCliffSize; uniform vec3 uTerCliffTint;
 uniform vec3 uTerTopTint; uniform vec3 uTerSoilTint; uniform vec3 uTerSand; uniform float uTerSandBelow;
 uniform float uTerLip; uniform vec2 uTerSlope; uniform float uTerStrata; uniform vec3 uTerInk; uniform float uTerInkWidth;`)
       .replace('#include <map_fragment>', `#include <map_fragment>
+	// a set piece's own surface: its model draws it (only a cut into it is the field's to draw)
+	if ( vOwn > 0.5 && vTer.y < uTerBuiltCut ) discard;
 	{
 		vec3 tn = normalize( vTerN ), tp = vGfWorld;
 		vec3 tw = pow( abs( tn ), vec3( 4.0 ) ); tw /= max( 1e-4, tw.x + tw.y + tw.z );
@@ -85,10 +93,16 @@ uniform float uTerLip; uniform vec2 uTerSlope; uniform float uTerStrata; uniform
 		float edge = 1.0 - smoothstep( 0.0, max( fwidth( top ) * uTerInkWidth * 2.0, 1e-3 ), abs( top - 0.5 ) );
 		vec3 ground = mix( soil, topc, smoothstep( 0.4, 0.6, top ) );
 		ground = mix( ground, uTerInk, edge * 0.8 * step( 0.001, uTerInkWidth ) );
+		// a cut into a set piece: its inside colour, shaded by the soil picture's light and dark
+		if ( vOwn > 0.5 ) {
+			vec3 inside = uTerBuilt[ int( clamp( vOwn + 0.5, 1.0, 8.0 ) ) - 1 ];
+			float shade = dot( soil / max( uTerSoilTint, vec3( 1e-3 ) ), vec3( 0.333 ) );
+			ground = inside * ( 0.75 + 0.35 * shade );
+		}
 		diffuseColor.rgb *= ground;
 	}`);
   };
-  mat.customProgramCacheKey = () => 'gf-terrain-2';
+  mat.customProgramCacheKey = () => 'gf-terrain-3';
   return {
     material: mat, values: V, uniforms: u,
     /** A layer's picture ('top' | 'soil' | 'cliff'): drawn at its size in metres, its colour then only the tint. */
@@ -100,5 +114,7 @@ uniform float uTerLip; uniform vec2 uTerSlope; uniform float uTerStrata; uniform
       u[K[1]].value.set(V[layer]?.tint ?? '#ffffff');
       if (layer === 'cliff') u.uTerCliffOn.value = 1;
     },
+    /** The colour a set piece's cut faces show (owner n: worlds/terrain/compose.mjs). */
+    setBuilt(owner, color) { if (owner >= 1 && owner <= 8) u.uTerBuilt.value[owner - 1].set(color); },
   };
 }

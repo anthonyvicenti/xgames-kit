@@ -477,6 +477,75 @@
         "notes": {
           "type": "string",
           "maxLength": 600
+        },
+        "reach": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Every area of the world worth going to is joined to the seats' ground (worlds/connect.mjs: shallows, ramps, bridges, launch pads, chosen by the gap and the look). connect false turns the connectors off; kinds limits them to what the look allows; apart keeps regions apart on purpose, each with its reason (gate D, measure 6 reads it).",
+          "properties": {
+            "connect": {
+              "type": "boolean",
+              "default": true
+            },
+            "kinds": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "shallows",
+                  "ramp",
+                  "bridge",
+                  "pad"
+                ]
+              },
+              "uniqueItems": true,
+              "description": "The connectors this world may use (all by default)."
+            },
+            "apart": {
+              "type": "array",
+              "maxItems": 12,
+              "items": {
+                "type": "object",
+                "required": [
+                  "what",
+                  "why"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "what": {
+                    "oneOf": [
+                      {
+                        "const": "seats",
+                        "description": "the seats stay on their own grounds (an artillery duel across water)"
+                      },
+                      {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 60,
+                        "not": {
+                          "const": "seats"
+                        },
+                        "description": "a thing's id: a landmark, a prop or an objective; the region holding it"
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2,
+                        "description": "[x, z]: the region there"
+                      }
+                    ]
+                  },
+                  "why": {
+                    "type": "string",
+                    "minLength": 8,
+                    "maxLength": 240
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -755,6 +824,21 @@
               }
             }
           ]
+        }
+      }
+    },
+    "play": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How this game plays, designed before the build (builder/play/design.mjs): the play target a build writes toward, the play-tester proves line by line and the play judge measures. Left out, the build round plays it from the rules alone.",
+      "properties": {
+        "sketch": {
+          "$ref": "https://xgames.fun/schemas/play-target/1.json#/$defs/sketch",
+          "description": "The chosen card's play in a few words (pitch v2 cards[].play): where the designer starts."
+        },
+        "target": {
+          "$ref": "https://xgames.fun/schemas/play-target/1.json",
+          "description": "The play target (gf-play-target/1): verbs, beats, the objective and how it is reached, how players affect each other, pacing numbers, feel, the failure modes it avoids and what makes it play."
         }
       }
     },

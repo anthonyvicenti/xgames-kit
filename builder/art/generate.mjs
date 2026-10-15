@@ -4,7 +4,9 @@
 // manifest, a preview, its validator's verdict, its licence, its bytes in the store by hash, and never in the
 // repository (a private pack lives in the private packs folder, library.json).
 //
-//   generateSlot({ game, slot, words, maker = 'meshy', yes, size, makers, config, renderer, log })
+//   generateSlot({ game, slot, words, maker = 'meshy', yes, size, style, makers, config, renderer, log })
+//     style: { anchor: <png>, target, loose } draws a prop from a look's style anchor (the looks wave's recipe), so a
+//     made model sits in the game's look (loose: a thing players get, drawn with no base); left out, the words alone
 //     → { ok, paid, plan | { ref, file, credits, validated, problems }, next }
 //
 // Without `yes` nothing is called and nothing is spent: it returns the plan and the cost, a step for the person (or the
@@ -33,20 +35,45 @@ export const MAKERS = {
     licenceText: 'Meshy output generated on the creator\'s paid Meshy plan (the creator, 2026-10-10: "They are paid"); under Meshy\'s paid-plan terms the output belongs to the account holder. A private pack: never pushed.',
     // a creature's body (archetype worm, blob, quadruped or flyer: CREATURES.md) is made like a prop, unrigged (Meshy's
     // rigging fits bipeds only), and rigged on its archetype's standard by the kit's autorig when it is taken in
-    async plan({ kind, words, size, archetype = 'humanoid' }) {
+    async plan({ kind, words, size, archetype = 'humanoid', style = null }) {
       if (kind === 'body' && archetype === 'humanoid') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, out: path.join(os.tmpdir(), 'plan.glb'), dryRun: true }); }
       const { generateProp } = await import('../tools/meshy-prop.mjs');
+      // drawn from a look's anchor: the concept is image-to-image (the same 6 credits as text-to-image), then the model
+      if (style?.anchor && kind === 'prop') { const { conceptPrompt } = await import('./recipe.mjs'); return { ...(await generateProp({ prompt: words, image: style.anchor, out: path.join(os.tmpdir(), 'plan.glb'), size, dryRun: true })), conceptPrompt: conceptPrompt({ kind: 'prop', words, size, held: !!style.loose }, style.target ?? null), anchor: path.basename(style.anchor) }; }
       return generateProp({ prompt: words, out: path.join(os.tmpdir(), 'plan.glb'), size, dryRun: true });
     },
-    async make({ kind, words, size, out, log, archetype = 'humanoid' }) {
+    async make({ kind, words, size, out, log, archetype = 'humanoid', style = null }) {
       const onProgress = m => log(m);
       if (kind === 'body' && archetype === 'humanoid') { const { generateCharacter } = await import('../tools/meshy-character.mjs'); return generateCharacter({ prompt: words, describe: words, out, onProgress }); }
       if (kind === 'body') { const { POSE_OF } = await import('./recipe.mjs'); words = `${words}, ${POSE_OF[archetype] ?? ''}`; }
       const { generateProp } = await import('../tools/meshy-prop.mjs');
+      if (style?.anchor && kind === 'prop') return makeFromAnchor({ words, size, out, style, onProgress, generateProp });
       return generateProp({ prompt: words, describe: words, out, size, onProgress });
     },
   },
 };
+
+/**
+ * A prop drawn in a look's style, as the looks wave makes its pieces (builder/art/wave.mjs): a concept by image-to-image
+ * with the look's style anchor as the only reference (builder/art/recipe.mjs conceptPrompt: the one subject, in the
+ * sheet's palette, shading and proportions), then image-to-3D from that concept. Every task goes through the kit's Meshy
+ * client (its ledger and the wave's cap). → generateProp's result, its credits counting the concept
+ */
+async function makeFromAnchor({ words, size, out, style, onProgress, generateProp }) {
+  const meshy = await import('../tools/lib/char-meshy.mjs');
+  const { conceptPrompt } = await import('./recipe.mjs');
+  const { readFileSync } = await import('node:fs');
+  const id = path.basename(out, '.glb');
+  // a loose thing (a pickup, a carried item) is drawn with no base or plinth under it, as the wave draws a held one
+  const prompt = conceptPrompt({ kind: 'prop', words, size, held: !!style.loose }, style.target ?? null);
+  const body = { ai_model: 'nano-banana-2', prompt, reference_image_urls: [meshy.dataUri(readFileSync(style.anchor), 'image/png')], aspect_ratio: '1:1', remove_background: true };
+  const task = await meshy.create('image-to-image', '/v1/image-to-image', body, `${id} prop-concept (anchor ${path.basename(style.anchor)})`);
+  const t = await meshy.wait('/v1/image-to-image', task, `${id} prop-concept`, { onProgress });
+  const concept = path.join(path.dirname(out), `${id}-concept.png`);
+  await meshy.download(t.image_urls[0], concept);
+  const g = await generateProp({ image: concept, concept: false, out, id, describe: words, size, onProgress });
+  return { ...g, credits: (g.credits ?? 0) + (t.consumed_credits ?? 0), tasks: { concept: { id: task, endpoint: 'image-to-image', credits: t.consumed_credits ?? null, prompt }, ...(g.tasks ?? {}) }, concept };
+}
 
 /** What a slot is made as: a body (a character.body.* model) or a prop (any other model slot). null: no maker here. */
 export function kindOfSlot(slot) {
@@ -57,7 +84,7 @@ export function kindOfSlot(slot) {
 /** The game's private pack id: generated art for this game, by its folder name. */
 export const gamePack = game => `game-${slug(path.basename(path.resolve(game)))}`;
 
-export async function generateSlot({ game, slot: slotId, words, maker = 'meshy', yes = false, size = null, makers = MAKERS, config = null, renderer = null, log = () => {} } = {}) {
+export async function generateSlot({ game, slot: slotId, words, maker = 'meshy', yes = false, size = null, style = null, makers = MAKERS, config = null, renderer = null, log = () => {} } = {}) {
   if (!game || !slotId) throw new Error('generate: give a game and a slot');
   if (!words || typeof words !== 'string') throw new Error('generate: say what to make (words)');
   const m = makers[maker];
@@ -68,7 +95,7 @@ export async function generateSlot({ game, slot: slotId, words, maker = 'meshy',
   const sz = size ?? (Array.isArray(slot.constraints?.size) ? Math.max(...slot.constraints.size) : 1);
   const archetype = kind === 'body' ? slot.constraints?.archetype ?? 'humanoid' : null;
   if (!yes) {
-    const plan = await m.plan({ kind, words, size: sz, archetype });
+    const plan = await m.plan({ kind, words, size: sz, archetype, style });
     return { ok: false, paid: false, plan, next: `Not run. ${m.name} makes this on the person's own key and costs about ${plan.estimate ?? '?'} credits. Run it again with yes once that is agreed.` };
   }
   config ??= loadConfig();
@@ -80,7 +107,7 @@ export async function generateSlot({ game, slot: slotId, words, maker = 'meshy',
     const id = slug(`${slotId.split('.').pop()}-${words}`).slice(0, 40);
     const out = path.join(tmp, `${id}.glb`);
     log(`${m.name}: making ${kind} "${words}" for ${slotId}`);
-    const made = await m.make({ kind, words, size: sz, out, log, archetype });
+    const made = await m.make({ kind, words, size: sz, out, log, archetype, style });
     if (!made?.file || !existsSync(made.file)) return { ok: false, paid: true, problems: [`${m.name} made no file`], next: 'Nothing was put in the slot. Try again, or another maker.' };
     // the game's private pack: generated, private, the maker's licence (a paid maker's output: policy class paid-maker)
     const pack = gamePack(game);

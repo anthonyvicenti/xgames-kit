@@ -330,3 +330,15 @@ test('noise: the spread of repeated scores (mean, sample deviation, range, stand
   assert.ok(Math.abs(s.sd - 3.16) < 0.01 && Math.abs(s.se - 1.41) < 0.01);
   assert.equal(spreadOf([null, undefined]), null);
 });
+
+test('a frame of ours that shows nothing, or is called daylight with hardly any of it lit, is never paired', async () => {
+  const { unusableWhy, judgeStats } = await import('../builder/look/judge.mjs');
+  const haze = judgeStats(picture(80, 45, (x, y) => (y > 30 && x > 40 ? [20, 40, 60] : [215, 218, 222])));
+  const fog = judgeStats(picture(80, 45, () => [210, 212, 215]));
+  const under = judgeStats(picture(80, 45, (x, y) => ((x * 7 + y * 3) % 11 === 0 ? [90, 80, 70] : [25, 22, 30])));
+  assert.match(unusableWhy(fog, 'day'), /haze or blank/);
+  assert.match(unusableWhy(under, 'day'), /lit/);
+  assert.equal(unusableWhy(under, 'cave'), null, 'a dark frame is a cave frame, not a bad one');
+  assert.equal(unusableWhy(judgeStats(candy), 'day'), null);
+  void haze;
+});

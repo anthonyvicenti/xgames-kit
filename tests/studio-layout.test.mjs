@@ -36,7 +36,7 @@ describe('the studio page shows the creation loop', { skip: !chromium && 'playwr
       await p.waitForSelector('#product-empty [data-part=loop-panel]', { timeout: 20000 });
       const m = await measure(p);
       assert.equal(m.sideways, false, `the page scrolls sideways at ${w}`);
-      assert.equal(m.stages, 10);
+      assert.equal(m.stages, 11);
       assert.equal(m.current, 'Pitch');
       assert.equal(m.panelIn, 'product');
       assert.deepEqual(m.sections.filter(s => s.open).map(s => s.id), ['ledger', 'foundation']);
@@ -65,7 +65,7 @@ describe('the studio page shows the creation loop', { skip: !chromium && 'playwr
       await p.waitForFunction(() => [...document.querySelectorAll('details.loop-sec')].every(d => d.open));
       const m = await measure(p);
       assert.equal(m.sideways, false);
-      assert.equal(m.stages, 10);
+      assert.equal(m.stages, 11);
       assert.equal(m.current, 'Deliver');
       assert.equal(m.panelIn, 'chat');
       assert.deepEqual(m.sections.map(s => s.id), ['ledger', 'foundation', 'promises', 'ladder', 'reader', 'economy']);

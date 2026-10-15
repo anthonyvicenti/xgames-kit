@@ -8,11 +8,11 @@ import os from 'node:os';
 import path from 'node:path';
 import { openLoop, fileStore, stateFileOf } from '../../builder/loop/index.mjs';
 import { fakeBindings, scriptedVerify, seenTwo, touch } from '../loop/dryrun/fakes.mjs';
-import { fakeRegistry, goodLedger, PROMPT } from '../loop/fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, playOf, PROMPT, GATE_PLAY } from '../loop/fixtures/registry.mjs';
 
 const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate of Ash', hook: 'Hold the gate with friends until the boss comes.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse', hook: 'E' },
   build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js', where: 'module', row: 'hook' }], notInV1: [] };
-const card = (id, title, hook) => ({ id, title, hook, whyFunny: 'Friends swinging into each other off the walls.', conceptPrompt: 'A ruined gate at night, torches, a crowd of zombies.', howItPlays: 'Waves come at the gate; hook onto the walls to hit them from above; the boss comes last.', players: '2 to 4, together', v1: { has: ['waves', 'a boss'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: { ...SPEC, economy: { in: 'gamesfun.json' } } });
+const card = (id, title, hook) => ({ id, title, hook, play: playOf(id === 'a' ? 0 : 1), whyFunny: 'Friends swinging into each other off the walls.', conceptPrompt: 'A ruined gate at night, torches, a crowd of zombies.', howItPlays: 'Waves come at the gate; hook onto the walls to hit them from above; the boss comes last.', players: '2 to 4, together', v1: { has: ['waves', 'a boss'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: { ...SPEC, economy: { in: 'gamesfun.json' } } });
 const PITCH = {
   research: { bank: [], web: [], notes: '' }, policy: { ok: true },
   reply: 'Card 1 holds the gate in the ruins. A grappling hook that pulls you onto the walls is built new for this game, which makes the build take longer.',
@@ -38,6 +38,8 @@ export async function loopStates() {
       agent: async o => {
         if (o.kind === 'ledger') return { ledger: goodLedger() };
         if (o.kind === 'pitch') return { pitch: PITCH };
+        // the designer round: the gate's play (gf-play-target/1, builder/play/design.mjs)
+        if (o.kind === 'design') { const { schema, from, confidence, sources, ...target } = GATE_PLAY; return { target }; }
         await touch(game, 'rules.js', `// round ${++n}`);
         return { summary: 'Hold the gate with friends; hook onto the walls with E.', controls: 'WASD move, mouse swing, E hook' };
       },

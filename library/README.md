@@ -28,6 +28,8 @@ code. `words.json` is what the resolver reads to match a slot's words (stop word
 ```
 gamesfun art find "wooden bridge" --kind scenic --3d [--devices phone]
 gamesfun art fill <game folder> --kind silly [--write]   every file slot of a game, filled by need and fit
+gamesfun art objectives <game folder> [--yes]             what the game's objectives draw, filled by meaning: the
+                                                          library, else a maker in the look's style (paid: --yes)
 gamesfun art ingest <file|folder|zip|url> --pack <id> [--include <glob>] [--style pixel|drawn] [--licence <spdx> --author … to start a pack]
 gamesfun art fetch <pack>/<asset> [--to <file>]           bytes from the store, the default set, a mirror, or rebuilt
 gamesfun art check                                        every manifest against the schemas, every binary on this machine

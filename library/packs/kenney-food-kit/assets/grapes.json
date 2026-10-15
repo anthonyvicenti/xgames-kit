@@ -1,0 +1,99 @@
+{
+ "assetVersion": 1,
+ "id": "grapes",
+ "pack": "kenney-food-kit",
+ "file": "grapes.glb",
+ "sha256": "b639af3a119bae6c0361930ca4aa5d30e5072a74c278cce8c494330fbf9657ee",
+ "bytes": 14352,
+ "preview": "previews/grapes.png",
+ "from": "kenney:food-kit/grapes; its colour texture packed in, baked to metres (largest side 0.34 m), base at y=0 and centred (builder/tools/meshy-prop.mjs --fit): grapes.glb; dedup and prune, meshopt compression",
+ "dimension": "3d",
+ "category": "prop",
+ "describe": "a bunch of purple grapes",
+ "tags": [
+  "item",
+  "pickup",
+  "food",
+  "fruit",
+  "grape",
+  "grapes"
+ ],
+ "use": {
+  "size": [
+   0.224,
+   0.34,
+   0.192
+  ],
+  "origin": "feet",
+  "facing": "+z"
+ },
+ "budgets": {
+  "triangles": 592,
+  "textures": 1,
+  "textureMax": 512,
+  "materials": 1
+ },
+ "validated": [
+  {
+   "by": "budget",
+   "version": "triangle-budget-1",
+   "ok": true,
+   "date": "2026-10-15",
+   "report": {
+    "facts": {
+     "triangles": 592,
+     "meshes": 1,
+     "skins": 0,
+     "animations": 0,
+     "images": 1,
+     "bytes": 14352,
+     "role": "prop"
+    }
+   }
+  }
+ ],
+ "fits": {
+  "signature": {
+   "measured": "2026-10-15",
+   "tool": "art ingest 1",
+   "palette": {
+    "size": 9,
+    "hues": [
+     "#714bc5",
+     "#9164d9",
+     "#7c54ce",
+     "#8c61d7",
+     "#774fc9",
+     "#865bd1",
+     "#885dd3",
+     "#359e75"
+    ],
+    "saturation": 0.548,
+    "value": 0.553,
+    "families": [
+     {
+      "hue": "purple",
+      "share": 0.845
+     },
+     {
+      "hue": "cyan",
+      "share": 0.121
+     }
+    ],
+    "grey": 0
+   },
+   "trianglesPerMetre": 46.85,
+   "texturedShare": 0,
+   "textured": false,
+   "outline": {
+    "present": false,
+    "share": 0
+   }
+  }
+ },
+ "source": {
+  "sha256": "56bda875be4de56b5cdcf4f047f7614197d1ff3880bb4d21fcb2693dc1086d97",
+  "modified": "dedup and prune, meshopt compression",
+  "retrieved": "2026-10-15"
+ }
+}

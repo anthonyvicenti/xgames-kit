@@ -1,0 +1,12 @@
+{
+ "base": "critter-lob",
+ "why": "T8 run 1 (the creator's prompt from scratch, 2026-10-14): gate B failed on measure 3 with \"mechanic aim.update threw TypeError: Failed to execute 'linearRampToValueAtTime' on 'AudioParam': The provided float value is non-finite\". The aim part made a bot's shell view before copying its position, and its fire sound went to ctx.audio.play with at {x: undefined}: the distance and pan came out NaN and the audio graph threw inside the part's update, every shot. The class: a sound asked for at a place not known yet. The kit now plays it unplaced (and aim copies the place first). The control: rules that ask for a sound at an undefined place every frame boot with no console error.",
+ "evidence": "builder/gates/evidence/2026-10-14-sunny-pvp-t8.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "mustPass": [
+  "B"
+ ],
+ "measure": 3
+}

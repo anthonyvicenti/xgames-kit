@@ -82,6 +82,9 @@ function shapeOf(R, radius, n) {
   return { radius: r2(radius), n: r2(n), rot: r2(R() * 6.28), wobble };
 }
 
+/** Metres of open water between the play ground's reach and a backdrop island's near shore. */
+export const BACKDROP_CLEAR = 30;
+
 /**
  * Islands in a ring out at sea, toward the horizon (scenery: no play on them): `P.islands` of them past `inner` metres
  * from the middle, their tops up to the cliff height (and the relief's hills) over the sea at `sea`. Drawn by
@@ -91,8 +94,10 @@ export function ringIslands(P, R, { inner, sea, cliff, relief }) {
   const out = [], nIsles = Math.round(clamp(P.islands ?? 0, 0, 10));
   for (let k = 0; k < nIsles; k++) {
     const a = (k / Math.max(1, nIsles)) * Math.PI * 2 + (R() - 0.5) * 1.1;
-    const dist = inner + 30 + R() * 140 + k * 12;
-    const rad = 8 + R() * 22, top = r2(sea + 1.5 + R() * (cliff + relief * 6));
+    // its near shore at least BACKDROP_CLEAR m of open water past `inner` (the play ground's reach): out at sea it is the
+    // horizon, never a place that looks a swim or a jump away (worlds/connect.mjs judgeAreas holds a world to it)
+    const far = inner + BACKDROP_CLEAR + R() * 140 + k * 12;
+    const rad = 8 + R() * 22, dist = far + rad * 1.3, top = r2(sea + 1.5 + R() * (cliff + relief * 6));
     const isl = { id: `isle-${k + 1}`, at: [r2(Math.cos(a) * dist), top, r2(Math.sin(a) * dist)], shape: shapeOf(R, rad, 2 + R() * 1.2), lip: 2.5, lipDrop: 0.8, cliff: r2(top - sea), terraces: R() < 0.5 ? 1 : 0, beach: r2((P.beach ?? 0.5) * (2 + R() * 4)), hills: [] };
     const nh = 1 + Math.floor(R() * 3 + relief * 2);
     for (let j = 0; j < nh; j++) { const b = R() * Math.PI * 2, d = R() * rad * 0.5; isl.hills.push({ at: [r2(isl.at[0] + Math.cos(b) * d), r2(isl.at[2] + Math.sin(b) * d)], r: r2(rad * (0.35 + R() * 0.4)), h: r2((1 + R() * 3) * (0.4 + relief * 1.6)) }); }

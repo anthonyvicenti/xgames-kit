@@ -11,7 +11,8 @@
 //   B Health           boots to play with no errors or refusals, at an acceptable frame cost; the kit's own pages work
 //   C Cause → effect   every input and every event the kit logs shows on the screen of the player it concerns, soon, and
 //                      control comes back within fair.downSeconds
-//   D The loop closes  a round can be won or lost, ends and replays, and every score change comes from a counted event
+//   D The loop closes  a round can be won or lost (6's play leg: its objective reachable and taken in real play, something
+//                      happening), ends and replays, and every score change comes from a counted event
 //   E Shared truth     every player sees every other where they are; each player's own values are theirs
 //   F Matches the spec the game is what its locked spec says (world, looks, hits per kill, the look its target holds it
 //                      to (23), its own tests)
@@ -30,7 +31,7 @@ export const GATES = [
   { id: 'A', name: 'Integrity', question: 'Is the kit untouched (its hashes are the kit release\'s, never a list inside the game), is every visible thing a slot, and does every file a slot names exist and pass its own validator?' },
   { id: 'B', name: 'Health', question: 'Does it boot to play with no errors or kit refusals, at an acceptable frame cost, and do the kit\'s own pages (menu, wallet, a post, every screen) work?' },
   { id: 'C', name: 'Cause → effect', question: 'Does every input and every event the kit logs (a hit, a kill, a pickup, a spawn, a sound) produce something the player it concerns can see or hear on their own screen, soon, and does control come back within the spec\'s fair.downSeconds?' },
-  { id: 'D', name: 'The loop closes', question: 'Can a round be won or lost, does it end and replay, and does every score change come from a counted event in the kit\'s log (never a number that only ticks)?' },
+  { id: 'D', name: 'The loop closes', question: 'Can a round be won or lost (its objective reachable and taken in real play, something meaningful happening), does it end and replay, and does every score change come from a counted event in the kit\'s log (never a number that only ticks)?' },
   { id: 'E', name: 'Shared truth', question: 'Does every player see every other player where they really are, and does each player\'s own value (score, colour, loadout, name) belong to that player?' },
   { id: 'F', name: 'Matches the spec', question: 'Is the game what its locked spec and promises say: world size and completeness, a body per role, hits per kill, the look its target holds it to, the game\'s own tests?' },
 ];
@@ -92,9 +93,10 @@ export const isAdvisory = n => MEASURES[n]?.run === 'advisory';
 export const MEASURES_OF = {
   // a round game (party, scenic, flat): 38 (every event answered) and 39 (hits per kill as the spec says) since the gates
   round: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 31, 34, 35, 38, 39],
-  // a world (CONTRACT §9, tools/verify-world.mjs): no rounds, so 6, 10, 12, 15, 16, 17 and 23 have a world's equivalents
-  // instead (26 persists, 27 the host leaves, 28 the spawn square holds, 29 sign words, 30 phones)
-  world: [1, 2, 3, 4, 5, 7, 8, 11, 13, 14, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29, 30, 31, 34],
+  // a world (CONTRACT §9, tools/verify-world.mjs): no rounds, so 6, 10, 12, 15, 16 and 17 have a world's equivalents
+  // instead (26 persists, 27 the host leaves, 28 the spawn square holds, 29 sign words, 30 phones); 23 (looks like its
+  // target) since 2026-10-14: every game with a look target is held to it, a world too
+  world: [1, 2, 3, 4, 5, 7, 8, 11, 13, 14, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 34],
   // the forge runtime (runtimes/CONTRACT.md §7, tools/verify-forge.mjs): every round measure through the observation
   // (12, 35, 38 and 39 since the runtimes stream, 2026-10-13: the core's events in the kit's event log, stepped time,
   // forge's hits per kill), and forge's own 32 (one core, two builds; no WebGPU) and 33 (a lost GPU device is recovered)
@@ -299,7 +301,7 @@ export function verdictOf(rec, { skips = [] } = {}) {
     for (const n of req) if (!mine.some(c => c.n === n)) skipped.push({ measure: n, why: 'not run in this verify', required: true });
     if (!ran.length && !skipped.length && !req.length) continue;
     for (const s of skips) if (gateOf(s.measure) === g.id && !mine.some(c => c.n === s.measure) && !skipped.some(x => x.measure === s.measure)) skipped.push({ measure: s.measure, why: clip(s.why, 400) });
-    const failed = mine.filter(c => c.ok === false).map(c => ({ measure: c.n, ...(c.detail ? { detail: clip(c.detail, 1000) } : {}), ...(c.rule ? { rule: clip(c.rule, 400) } : {}), ...(c.fix ? { fix: clip(c.fix, 400) } : {}) }));
+    const failed = mine.filter(c => c.ok === false).map(c => ({ measure: c.n, ...(c.area ? { area: c.area } : {}), ...(c.detail ? { detail: clip(c.detail, 1000) } : {}), ...(c.rule ? { rule: clip(c.rule, 400) } : {}), ...(c.fix ? { fix: clip(c.fix, 400) } : {}) }));
     gates[g.id] = { gate: g.id, name: g.name, ran: [...new Set(ran)], passed: [...new Set(passed)], skipped: skipped.sort((a, b) => a.measure - b.measure), failed, ok: !failed.length && !skipped.some(s => s.required) };
   }
   const judges = (rec.checks ?? []).filter(c => isAdvisory(c.n) && c.ok === false).slice(0, 8).map(c => ({ measure: c.n, finding: clip(c.detail || c.name, 600) }));

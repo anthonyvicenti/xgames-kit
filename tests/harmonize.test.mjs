@@ -231,3 +231,32 @@ test('the bake: a new asset in a derived pack with provenance; the original pack
     assert.ok(r.added[0].after.distance.palette <= r.added[0].before.distance.palette);
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+test('the style pass leaves the look\'s own packs as they were made; a pack or a slot can opt in', async () => {
+  const H = await import('../runtimes/three/kit/look/harmonize-core.js');
+  const { keepLookArt, lookPacksOf } = await import('../builder/look/harmonize.mjs');
+  const C = {
+    look: { harmonize: { palette: ['#7aa4e8'], strength: 0.8 }, levels: { dusk: { harmonize: { palette: ['#6952bd'], strength: 0.8 } } } },
+    propFiles: { crate: { file: 'assets/models/crate.glb', from: 'library:looks-pilot-artillery/crate' }, bench: { file: 'assets/models/bench.glb', from: 'library:kenney-holiday-kit/bench' } },
+    bodies: { player: { file: 'assets/models/body-player.glb', from: 'library:looks-pilot-dusk/critter' } },
+    worldArt: [{ file: 'assets/textures/grass-top.png', what: 'Ground (library:looks-pilot-artillery/grass-top)' }, { file: 'assets/textures/noise.png', what: 'Noise (library:kit-textures/noise-soft)' }],
+  };
+  const spec = { look: { packs: ['looks-pilot-artillery'], target: { looks: [{ id: 'dusk', packs: ['looks-pilot-dusk'] }] } } };
+  assert.deepEqual(lookPacksOf(spec, C).sort(), ['looks-pilot-artillery', 'looks-pilot-dusk'], 'the look\'s packs and each level\'s');
+  const k = keepLookArt(structuredClone(C), spec);
+  assert.deepEqual(k.files, ['assets/models/body-player.glb', 'assets/models/crate.glb', 'assets/textures/grass-top.png']);
+  const c2 = structuredClone(C); keepLookArt(c2, spec);
+  assert.deepEqual(c2.look.levels.dusk.harmonize.keepFiles, c2.look.harmonize.keepFiles, 'each level keeps them too');
+  // a pack opted in is moved like any other
+  const c3 = structuredClone(C); const k3 = keepLookArt(c3, { look: { ...spec.look, harmonize: { includePacks: ['looks-pilot-artillery'] } } });
+  assert.deepEqual(k3.files, ['assets/models/body-player.glb']);
+  // at load time: a kept file is not touched; a slot's own harmonize: true, or a look include pattern, opts back in
+  const s = { ...H.DEFAULTS, palette: ['#7aa4e8'], keepFiles: c2.look.harmonize.keepFiles };
+  const slot = (id, file, extra = {}) => ({ id, source: { file }, ...extra });
+  assert.equal(H.slotTaken(s, 'prop.crate', slot('prop.crate', 'assets/models/crate.glb')), false);
+  assert.equal(H.slotTaken(s, 'prop.bench', slot('prop.bench', 'assets/models/bench.glb')), true, 'other packs\' art is harmonised as before');
+  assert.equal(H.slotTaken(s, 'character.body.hero', slot('character.body.hero', 'assets/models/look-moss-mole.glb')), false, 'the pitch\'s look picks too');
+  assert.equal(H.slotTaken(s, 'prop.crate', slot('prop.crate', 'assets/models/crate.glb', { harmonize: true })), true, 'one asset opted in');
+  assert.equal(H.slotTaken({ ...s, include: ['prop.crate'] }, 'prop.crate', slot('prop.crate', 'assets/models/crate.glb')), true, 'a look include pattern');
+  assert.equal(H.slotTaken(s, 'ui.logo', slot('ui.logo', 'assets/ui/logo.png', { harmonize: true })), false, 'never the UI, opted in or not');
+});

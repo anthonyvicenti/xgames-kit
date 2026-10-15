@@ -24,17 +24,29 @@ async function loadTerrain(dir) {
   const own = join(game, 'gf/three/world/terrain/generate.mjs');
   const mod = await import(pathToFileURL(existsSync(own) ? own : kitPath(KIT, 'world/terrain/generate.mjs')).href);
   const gameCfg = JSON.parse(await readFile(join(game, 'config/game.json'), 'utf8').catch(() => '{}'));
-  const gen = mod.generateTerrain(cfg.terrain ?? {});
-  // the spawns as the world lays them (worlds/terrain/world.js): the config's own, else twice the count found, paired in sight
+  // a composed level's pieces (terrain.compose: worlds/terrain/compose.mjs) are ground: their models' triangles, as the
+  // browser loads them
+  const C = cfg.terrain?.compose;
+  const pieces = C ? await (await import('./glb-tris.mjs')).piecesOf(game, [...(C.landmarks ?? []), ...(C.bridges ?? [])]) : null;
+  // with the game's connectors (worlds/terrain/connect.mjs: its reach config, its seats in play, its jump), as the
+  // browser makes them
+  const c = gameCfg.controller ?? {}, numbers = Object.fromEntries(Object.entries({ jump: c.jump, speed: c.speed, gravity: gameCfg.gravity }).filter(([, v]) => Number.isFinite(v)));
+  const gen = mod.generateTerrain(cfg.terrain ?? {}, { pieces, reach: cfg.reach, numbers, players: gameCfg.players?.max ?? 0, seats: Array.isArray(cfg.spawns) ? cfg.spawns.map(s => ({ x: s[0], y: s[1], z: s[2] })) : null });
+  // the spawns as the world lays them (worlds/terrain/world.js): the config's own, a composed level's seats, else twice
+  // the count found, paired in sight
   const n = Number.isInteger(cfg.spawns) ? cfg.spawns : 8;
-  const spawns = Array.isArray(cfg.spawns) ? cfg.spawns.map(s => ({ x: s[0], y: s[1], z: s[2] })) : mod.seatSpawns(gen.field, mod.spawnsOn(gen.field, n * 2, gen.params.seed), { count: n });
+  const spawns = Array.isArray(cfg.spawns) ? cfg.spawns.map(s => ({ x: s[0], y: s[1], z: s[2] }))
+    : gen.info.landmarks && gen.info.pads?.length ? gen.info.pads.slice(0, n)
+      : mod.seatSpawns(gen.field, mod.spawnsOn(gen.field, n * 2, gen.params.seed).filter(p => !gen.info.reached || gen.info.reached(p.x, p.y, p.z)), { count: n });
   return { game, cfg, gameCfg, gen, spawns, sea: cfg.sea?.level ?? 0, mod };
 }
 
 export async function terrainDressing(dir) {
   const { gen, spawns, mod } = await loadTerrain(dir);
   const f = gen.field, problems = [];
-  const fl = mod.floatingOf(f);
+  // a composed level's pieces are drawn by their models (a ruin's loose top stone is the model's): only the land counts
+  const own = gen.info.own, fl0 = mod.floatingOf(f), list = own ? fl0.list.filter(a => !own[a]) : fl0.list;
+  const fl = { samples: list.length, at: list.length === fl0.samples ? fl0.at : list.length ? [f.origin[0] + (list[0] % f.nx) * f.cell, f.origin[1] + Math.floor(list[0] / (f.nx * f.nz)) * f.cell, f.origin[2] + (Math.floor(list[0] / f.nx) % f.nz) * f.cell] : null };
   if (fl.samples > 0) problems.push({ severity: 'error', rule: 'floating', message: `${fl.samples} samples of ground float free of the land (one near ${fl.at.map(v => v.toFixed(1)).join(', ')})`, fix: 'lower terrain.land.overhang or terrain.land.tunnels in config/world.json, or change terrain.seed' });
   spawns.forEach((s, n) => {
     if (f.sample(s.x, s.y + 1, s.z) < 0.3 || f.sample(s.x, s.y + 2, s.z) < 0.3) problems.push({ severity: 'error', rule: 'spawn-clear', message: `spawn ${n} at ${s.x}, ${s.y}, ${s.z} has ground in the air over it`, fix: 'let the world choose the spawns (config/world.json spawns: a number) or move this one' });

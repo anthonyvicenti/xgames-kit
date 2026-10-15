@@ -137,7 +137,8 @@
               "sound",
               "netcode",
               "feel",
-              "code"
+              "code",
+              "play"
             ]
           },
           "detail": {
@@ -238,6 +239,17 @@
             "properties": {
               "measure": {
                 "type": "integer"
+              },
+              "area": {
+                "description": "Who repairs it when the measure says so (gate D's play leg: play).",
+                "enum": [
+                  "art",
+                  "sound",
+                  "netcode",
+                  "feel",
+                  "code",
+                  "play"
+                ]
               },
               "detail": {
                 "type": "string",

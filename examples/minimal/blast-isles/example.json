@@ -1,0 +1,10 @@
+{
+  "title": "Blast Isles",
+  "summary": "Physical chaos from shared parts: turn-based artillery on terrain islands with creature bodies. The aim part (charge, angle, wind, a trajectory preview, a weapon wheel; the camera follows the shot), the knockback part (blasts throw every body, one host-simulated flight played the same on every screen), craters that drop the ground they undermine, and the sea that takes a critter out for a moment.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22",
+    "kit": "xgames-kit stream/chaos",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from blast-isles, then node builder/tools/verify.mjs <dir> (175 s) under gpu-run.sh on Linux with a desktop GPU; tests/chaos-two-players.mjs <dir>: host and joiner over WebRTC take turns with real input, the host's blast throws the joiner into the sea, both screens play the same flight (11 of 11 steps; components/knockback/evidence/chaos-2026-10-14)"
+  }
+}

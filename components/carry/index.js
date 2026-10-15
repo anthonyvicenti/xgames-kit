@@ -8,8 +8,8 @@
 // Controls (CONTRACT §6d): near a free item the HUD shows "E: <controls.interact>" (when grabAction is interact), and a
 // throw with no direction goes to the thrower's crosshair point (kit/core/aim.js: the arc that lands there).
 import * as THREE from 'three';
-import { nearestFree, heldBy, canGrab, throwVelocity, stepItem, wallBounce, scatter } from './logic.js';
-import { areaOf, physicsOf } from '../../core/util.js';
+import { nearestFree, heldBy, canGrab, throwVelocity, stepItem, wallBounce } from './logic.js';
+import { physicsOf } from '../../core/util.js';
 import { aimTarget, solveLaunch } from '../../core/aim.js';
 
 export const id = 'carry';
@@ -113,15 +113,19 @@ export function create(ctx, params = {}) {
     const it = { id: nextId++, x, y, z, vx: 0, vy: 0, vz: 0, holder: '', mode: 'rest', ...extra };
     items.set(it.id, it); return it;
   }
+  let shortfall = null, asked = 0;
   function hostSpawnStart() {
+    if (ctx.world.walk && !ctx.world.walk.ready()) return;   // the world's ground is read after the physics' first step
     needSpawn = false;
     const supplied = (ctx.config?.mechanics ?? []).some(m => m.id === 'pickup');   // a pickup mechanic owns the supply
     const n = V('count') >= 0 ? V('count') : supplied ? 0 : (gameProp()?.count ?? 0);
     if (n <= 0) return;
-    const zone = V('spawnZone') && ctx.world.zone?.(V('spawnZone')), A = areaOf(ctx.world);
-    const sp = scatter(n, () => ctx.rng(), zone ? { cx: zone.at.x ?? zone.at[0], cz: zone.at.z ?? zone.at[2], hx: Array.isArray(zone.size) ? zone.size[0] / 2 : 3, hz: Array.isArray(zone.size) ? (zone.size[2] ?? zone.size[0]) / 2 : 3, margin: 0.3 }
-      : { cx: A.cx, cz: A.cz, hx: A.hx, hz: A.hz, margin: 2.5, keepClear: ctx.world.spawns ? ctx.world.spawns.map(s => ({ x: s.x ?? s[0], z: s.z ?? s[2], r: 2 })) : [] });
-    for (const q of sp) spawnItem(q.x, itemSize() / 2, q.z);
+    asked = n;
+    // on the world's own ground where every seat gets to it (worlds/placement.js), clear of the seats; never a flat
+    // floor at y = 0
+    const sp = ctx.world.place?.('carry', n, { zone: V('spawnZone') || null, rng: () => ctx.rng(), clear: Math.max(0.5, itemSize()), gap: 1.5, away: 2 }) ?? [];
+    if (sp.length < n) { shortfall = { asked: n, placed: sp.length, why: sp.why ?? (ctx.world.place ? 'no more open ground every seat reaches' : 'the world has no placement') }; console.warn(`carry: ${sp.length} of ${n} items placed (${shortfall.why})`); }
+    for (const q of sp) spawnItem(q.x, q.y + itemSize() / 2, q.z);
   }
   function hostGrab(p) {
     const list = live();
@@ -158,7 +162,11 @@ export function create(ctx, params = {}) {
     for (const it of items.values()) {
       if (it.mode === 'fly') {
         const a0 = { x: it.x, y: it.y, z: it.z };
-        stepItem(it, dt, { gravity: V('gravity'), radius: r, restitution: V('bounciness') });
+        // it lands on the ground under it (the world's own: a hill, a roof, a bridge); with none under it (the sea, off
+        // the edge) it falls, and one lost under the play area comes back on ground every seat reaches
+        const ground = ctx.world.groundAt?.(it.x, it.z, it.y) ?? null, low = (ctx.world.bounds?.min.y ?? 0) - 6;
+        stepItem(it, dt, { gravity: V('gravity'), radius: r, restitution: V('bounciness'), groundY: ground ?? -Infinity });
+        if (it.y < low) { const q = ctx.world.place?.('carry', 1, { rng: () => ctx.rng(), clear: Math.max(0.5, r * 2), away: 2 })?.[0]; if (q) { Object.assign(it, { x: q.x, y: q.y + r, z: q.z, vx: 0, vy: 0, vz: 0, mode: 'rest' }); } else items.delete(it.id); }
         if (it.mode === 'fly') {
           const w = rayFixed(ctx, a0, { x: it.x, y: it.y, z: it.z });
           if (w && Math.abs(w.n[1]) < 0.7) { wallBounce(it, w.n, V('bounciness')); it.x = w.point.x + w.n[0] * r; it.z = w.point.z + w.n[2] * r; }
@@ -250,6 +258,11 @@ export function create(ctx, params = {}) {
     get aimed() { return !!V('throwAction'); },
     get interacts() { return !!V('grabAction'); },
     /** What a player can grab (QA, verify check 13): free items, with the grab distance. */
+    /** The things a player must get to (gate D's reach leg, window.__game.objectives()): every item at rest or flying. */
+    objectives() {
+      const list = api.items().filter(i => i.mode !== 'held').map(i => ({ kind: 'carry', id: `carry:${i.id}`, label: propName() || 'item', x: i.x, y: i.y - itemSize() / 2, z: i.z, present: true, open: true, radius: V('reach') + 0.6 }));
+      return Object.assign(list, { asked, shortfall });
+    },
     interactables: () => (V('grabAction') ? api.items().map(i => ({ kind: 'carry', id: `carry:${i.id}`, x: i.x, y: i.y, z: i.z, reach: V('reach'), touch: 0, action: V('grabAction') })) : []),
     /** What this player holds, on any copy: {id, prop} or null. */
     held(p) {

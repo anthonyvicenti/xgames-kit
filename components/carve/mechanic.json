@@ -55,6 +55,23 @@
         "default": true,
         "description": "Lumps of ground thrown out of each crater"
       },
+      "collapse": {
+        "type": "boolean",
+        "default": true,
+        "description": "Ground a crater leaves hanging (a thin roof, a lump cut loose, a tower whose foot is gone) falls and crumbles, on every screen"
+      },
+      "collapseReach": {
+        "type": "number",
+        "description": "How far round a crater ground may fall, per metre of its radius",
+        "minimum": 1,
+        "maximum": 4,
+        "default": 1.7
+      },
+      "collapseSound": {
+        "type": "string",
+        "description": "A sound id played where ground falls; unset: none",
+        "default": ""
+      },
       "blastFx": {
         "type": "string",
         "description": "A vfx preset (kit/vfx: impact-flash, spark-burst, ...) at the heart of each blast; unset: none",
@@ -77,7 +94,7 @@
       },
       "sound": {
         "type": "string",
-        "description": "A sound id (assets.json \u2192 sounds) played at each crater; unset: none",
+        "description": "A sound id (assets.json → sounds) played at each crater; unset: none",
         "default": ""
       },
       "shake": {
@@ -151,6 +168,18 @@
         "facet": "gameplay"
       },
       {
+        "id": "mechanic.carve.collapse",
+        "label": "Ground a crater leaves hanging falls",
+        "group": "mechanics",
+        "type": "boolean",
+        "source": {
+          "pointer": "{base}/collapse"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 44
+      },
+      {
         "id": "mechanic.carve.shake",
         "label": "Blast camera shake",
         "group": "mechanics",
@@ -172,8 +201,8 @@
     {
       "name": "onCarve",
       "on": "every copy",
-      "args": "{ op: 'carve' | 'add', at: {x, y, z}, r, normal, live, by }",
-      "when": "the ground changed here (live: false while a late copy catches up)"
+      "args": "{ op: 'carve' | 'add' | 'settle', at: {x, y, z}, r, normal, live, by, fell }",
+      "when": "the ground changed here (live: false while a late copy catches up); a settle's fell is the ground that dropped"
     }
   ],
   "counters": [],
@@ -203,6 +232,7 @@
     "smooth-terrain"
   ],
   "gives": [
+    "collapsing-ground",
     "destructible-ground"
   ],
   "bots": "no bot code (bots fire the projectile; the craters come by themselves)",

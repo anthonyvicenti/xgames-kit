@@ -353,6 +353,8 @@ export async function specToConfig(spec, { place = { runtime: spec.runtime, prof
     : spec.world?.template === 'terrain' ? await terrainWorld(spec, { assets, notes })
     : worldConfig ? await worldConfig(spec, { spawns, layoutProps, rng, assets, propFiles, notes, named })
     : modules.world ? await realWorld(spec, { spawns, layoutProps, rng, assets, propFiles, notes, named }) : null;
+  // every area worth going to joined to the seats, or kept apart with a reason (worlds/connect.mjs; gate D, measure 6)
+  if (world && spec.world?.reach) world.reach = spec.world.reach;
   if (spec.loop === 'world') worldGame(spec, game, world, notes);
   if (!world) world = {
     template: spec.world?.template ?? 'backyard', size: spec.world?.size ?? 'small', half,
@@ -462,7 +464,17 @@ async function realWorld(spec, { spawns, layoutProps, rng, assets, propFiles, no
   const size = spec.world?.size ?? 'small';
   // the spec's world.params over the template's own (a sea-islands world's relief, cliffs, clouds… set from the look
   // target: builder/look/world.mjs)
-  const world = generateLayout(spec.world?.params ? { ...tpl, params: { ...(tpl.params ?? {}), ...spec.world.params } } : tpl, { size, seed: hashString(`${spec.title}|world`) });
+  let world = generateLayout(spec.world?.params ? { ...tpl, params: { ...(tpl.params ?? {}), ...spec.world.params } } : tpl, { size, seed: hashString(`${spec.title}|world`) });
+  // a composed level (looks wave 4: worlds/sea-compose.mjs): the landmark in the play area as ground, the seats round it;
+  // its piece from the look's own packs first
+  const compose = world.islands?.length ? spec.world?.params?.compose : null;
+  if (compose) {
+    for (const a of assetsIn([...(spec.look?.packs ?? []), ...scopePacks('three')], { category: 'prop' }).filter(a => localFile(a))) if (!byId.has(a.id)) byId.set(a.id, { ...propEntry(a), path: localFile(a) });
+    const { composeSea } = await importPart(kitPath(KIT, 'world/sea-compose.mjs'), 'the sea-islands composer');
+    world = composeSea(world, compose, id => byId.get(id)?.size ?? null);
+    for (const n of world.composition?.notes ?? []) notes.push(`world: composition: ${n}`);
+    notes.push(`world: a composed level (${compose.playOn ?? 'around'}): ${world.landmarks?.map(l => l.prop).join(', ') || 'no landmark'} in the play area as ground, ${world.spawns.length} seats round it`);
+  }
   // a picture the layout names from the library (library:<pack>/<asset>: a ground or cliff pattern) is copied into the game
   for (const part of [world.ground, world.cliffs]) {
     const f = part?.pattern?.file;
@@ -654,13 +666,23 @@ async function terrainWorld(spec, { assets, notes }) {
     assets.push({ to, from, license: licenceOf(a) });
     L.file = to;
   }
-  // the scenery's props (worlds/scenery.js: set dressing a look target asks for): their models and catalog entries
-  if (W.scenery?.props?.length) {
+  // the scenery's props (worlds/scenery.js: set dressing a look target asks for) and a composed level's landmarks and
+  // bridges (worlds/terrain/compose.mjs: their models are made ground): their models and catalog entries
+  const C = W.terrain.compose;
+  if (W.scenery?.props?.length || C) {
     // the look's own packs first (spec look.packs: a wave made for this look), then the runtime's
     const byId = new Map(assetsIn([...(spec.look?.packs ?? []), ...scopePacks('three')], { category: 'prop' }).filter(a => localFile(a)).map(a => [a.id, { ...propEntry(a), path: localFile(a) }]));
     const catalog = { schema: 'gf-three-props/1', about: 'The asset library\'s props this game uses (library/packs, each named by its ref), for the world module.', props: [] };
-    W.scenery.props = W.scenery.props.filter(id => byId.has(id));
-    for (const id of W.scenery.props) {
+    if (W.scenery) W.scenery.props = (W.scenery.props ?? []).filter(id => byId.has(id));
+    if (C) {
+      for (const k of ['landmarks', 'bridges']) {
+        const gone = (C[k] ?? []).filter(id => !byId.has(id));
+        if (gone.length) notes.push(`world: the level's ${k} ${gone.join(', ')} are not in the library on this machine; the level is composed without them`);
+        C[k] = (C[k] ?? []).filter(id => byId.has(id));
+      }
+      notes.push(`world: a composed level (${C.playOn}): ${[...C.landmarks, ...C.bridges].join(', ') || 'no pieces'} made the playfield's ground, the seats round them`);
+    }
+    for (const id of [...new Set([...(W.scenery?.props ?? []), ...(C?.landmarks ?? []), ...(C?.bridges ?? [])])]) {
       const { path: from, ...entry } = byId.get(id);
       catalog.props.push({ ...entry, id });
       const to = `assets/models/${id}.glb`;

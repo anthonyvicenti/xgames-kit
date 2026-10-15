@@ -157,6 +157,85 @@
             "type": "integer",
             "minimum": 1
           }
+        },
+        "game": {
+          "type": "string",
+          "maxLength": 120,
+          "description": "The reference game's name, when the frames are of a game. A local record only: the publish scan refuses a game whose shipped files carry it (builder/lib/publish/names.mjs), and the published spec.json is a copy with it taken out."
+        }
+      }
+    },
+    "composition": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What the play happens on, read from the gameplay frames (looks wave 4): the playfield's main landmarks, whether play is on them, around them, across bridges between landmasses or with them behind the action, how vertical play is, and how much of a gameplay frame the landmarks take at play distance. A world that composes (worlds/terrain/compose.mjs, worlds/sea-compose.mjs) places set pieces as the playfield from it.",
+      "properties": {
+        "landmarks": {
+          "type": "array",
+          "maxItems": 4,
+          "description": "The playfield's main landmarks, the biggest in play first.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "what"
+            ],
+            "properties": {
+              "what": {
+                "type": "string",
+                "maxLength": 60,
+                "description": "Plain words for the piece (a castle keep with cone-roofed towers, a sandstone mesa), never a name."
+              },
+              "kind": {
+                "enum": [
+                  "building",
+                  "fortress",
+                  "tower",
+                  "ruin",
+                  "bridge",
+                  "rock",
+                  "tree",
+                  "ship",
+                  "statue",
+                  "other"
+                ]
+              },
+              "play": {
+                "enum": [
+                  "on",
+                  "around",
+                  "across",
+                  "behind",
+                  "far"
+                ],
+                "description": "How play meets it: standing on it, on the ground round it, across it (a bridge), with it behind the action, or far off in the view."
+              }
+            }
+          }
+        },
+        "playOn": {
+          "enum": [
+            "on",
+            "around",
+            "across",
+            "behind",
+            "open"
+          ],
+          "description": "Where play happens against the main landmark: on it (its walls and roofs are the ground), around it, across bridges between landmasses, with it behind the action as a backdrop, or open ground with no landmark."
+        },
+        "bridges": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4,
+          "description": "Bridges joining landmasses in a level (0 none)."
+        },
+        "verticality": {
+          "$ref": "#/$defs/unit",
+          "description": "How much play goes up and down (0 flat ground, 1 towers, ledges and drops)."
+        },
+        "share": {
+          "$ref": "#/$defs/unit",
+          "description": "The share of a gameplay frame the landmarks' silhouettes take at play distance (0 none, 0.5 half the frame)."
         }
       }
     }
@@ -735,6 +814,9 @@
             }
           }
         },
+        "composition": {
+          "$ref": "#/$defs/composition"
+        },
         "words": {
           "type": "array",
           "maxItems": 6,
@@ -785,6 +867,97 @@
         "ink": {
           "$ref": "#/$defs/level",
           "description": "How heavy the UI's outlines are."
+        },
+        "inkColor": {
+          "$ref": "#/$defs/hex",
+          "description": "The colour of the UI's outlines (and of the ink on its big words)."
+        },
+        "type": {
+          "enum": [
+            "comic",
+            "rounded",
+            "soft",
+            "blocky",
+            "condensed",
+            "serif",
+            "pixel",
+            "hand",
+            "plain"
+          ],
+          "description": "The display type's class, read from the frames: comic (tall bold comic capitals), rounded (chunky rounded display), soft (round friendly sans), blocky (square heavy display), condensed, serif (old-world or engraved), pixel, hand (hand-lettered), plain (a system sans). The HUD takes a library font of that class (builder/look/ui-style.mjs FONTS)."
+        },
+        "shapes": {
+          "type": "array",
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "dial",
+              "plate",
+              "banner",
+              "pill",
+              "bar",
+              "card",
+              "bubble",
+              "minimal"
+            ]
+          },
+          "description": "The UI's shape language, the main one first: dial (round widgets and badges), plate (squared plates with a bevel), banner (ribbons and torn-edge banners), pill, bar (thin strips along an edge), card (stacked cards), bubble (speech-bubble shapes), minimal (bare text, no panels)."
+        },
+        "layout": {
+          "enum": [
+            "corners",
+            "top-bar",
+            "bottom-bar",
+            "sides",
+            "minimal",
+            "diegetic"
+          ],
+          "description": "Where the HUD sits: corners (widgets in the four corners), top-bar or bottom-bar (one strip), sides, minimal (almost nothing on screen), diegetic (in the world)."
+        },
+        "widgets": {
+          "type": "array",
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "radial-dial",
+              "compass",
+              "wind",
+              "power",
+              "team-cards",
+              "turn-timer",
+              "weapon-grid",
+              "weapon-wheel",
+              "name-tags",
+              "damage-numbers",
+              "banners",
+              "minimap",
+              "score-badge",
+              "hotbar"
+            ]
+          },
+          "description": "The widget kinds the frames show (what the HUD offers first; a game's mechanics still decide what shows)."
+        },
+        "motion": {
+          "enum": [
+            "pop",
+            "bounce",
+            "slide",
+            "fade",
+            "snap",
+            "none"
+          ],
+          "description": "How popups and banners arrive: pop (scale overshoot), bounce, slide, fade, snap (no easing), none."
+        },
+        "tags": {
+          "enum": [
+            "ink-text",
+            "pill",
+            "plate",
+            "none"
+          ],
+          "description": "Name and health tags over characters: ink-text (coloured words with a heavy outline, no panel), pill, plate, none."
         }
       }
     },
@@ -806,6 +979,69 @@
           "items": {
             "$ref": "#/$defs/hex"
           }
+        },
+        "explosion": {
+          "enum": [
+            "puffs",
+            "fireball",
+            "flash",
+            "pixel",
+            "ink",
+            "realistic",
+            "none"
+          ],
+          "description": "What a blast is drawn as: puffs (clusters of solid round cartoon puffs), fireball (a rolling orange fireball), flash (a bright pop of light), pixel (square bits), ink (drawn comic burst), realistic (fire and wispy smoke)."
+        },
+        "smoke": {
+          "enum": [
+            "puffs",
+            "wispy",
+            "none"
+          ],
+          "description": "Smoke: solid round puffs, or soft wispy smoke."
+        },
+        "debris": {
+          "enum": [
+            "chunks",
+            "shards",
+            "sparks",
+            "none"
+          ],
+          "description": "What a blast throws: chunky low-poly rocks, thin shards, sparks."
+        },
+        "sparks": {
+          "enum": [
+            "stars",
+            "streaks",
+            "dots",
+            "none"
+          ],
+          "description": "A hit's sparks: cartoon stars, stretched streaks, round dots."
+        },
+        "rings": {
+          "type": "boolean",
+          "description": "A shock ring spreads from a blast or a heavy hit."
+        },
+        "numbers": {
+          "enum": [
+            "comic",
+            "float",
+            "none"
+          ],
+          "description": "Damage numbers: comic (big inked numerals that pop), float (small numbers that rise and fade), none."
+        },
+        "trail": {
+          "enum": [
+            "puffs",
+            "ribbon",
+            "streak",
+            "none"
+          ],
+          "description": "What a flying shot leaves behind."
+        },
+        "outline": {
+          "$ref": "#/$defs/level",
+          "description": "Ink drawn round the effects themselves."
         }
       }
     },
@@ -1232,6 +1468,9 @@
                     "description": "Whether the ground shows its soil and rock cut open at edges and holes."
                   }
                 }
+              },
+              "composition": {
+                "$ref": "#/$defs/composition"
               },
               "words": {
                 "type": "array",

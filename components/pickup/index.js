@@ -10,8 +10,8 @@
 // shows "E: <the game's own words for interact>". Every collect shows: the item flies into the collector and shrinks,
 // with the collect sound, on every copy, whatever the rules then do with it (a full bladder still sees the drink go).
 import * as THREE from 'three';
-import { touches, createSpots, pointsIn, clearOfShapes } from './logic.js';
-import { areaOf } from '../../core/util.js';
+import { touches, createSpots } from './logic.js';
+import { fixedRay } from '../../core/util.js';
 
 export const id = 'pickup';
 export const examples = ['balls respawn', 'health hearts around the arena', 'coins to collect'];
@@ -105,17 +105,31 @@ export function create(ctx, params = {}) {
     return v;
   }
 
+  // where spots go: the world's own ground (worlds/placement.js world.place), on open ground every seat reaches, clear
+  // of colliders and cliff edges, spread out, in the zone when one is named; never a flat floor at y = 0 (the creator,
+  // 2026-10-14: "there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get")
+  const placeOpts = () => ({ zone: V('zone') || null, rng: () => ctx.rng(), clear: Math.max(0.6, V('size') * 0.5 + 0.35), gap: Math.max(0.8, V('size') * 1.6) });
+  let shortfall = null, warned = false;
   function hostSpawnStart() {
-    needSpawn = false;
     const n = V('count') >= 0 ? V('count') : (gameProp()?.count ?? 0);
-    if (n <= 0) return;
-    const z = V('zone') && ctx.world.zone?.(V('zone')), A = areaOf(ctx.world);
-    let zone;
-    if (z) { const at = z.at; zone = z.shape === 'box' ? { shape: 'box', cx: at.x ?? at[0], cz: at.z ?? at[2], rx: (z.size[0] ?? 2) / 2, rz: (z.size[2] ?? z.size[0] ?? 2) / 2 } : { shape: 'circle', cx: at.x ?? at[0], cz: at.z ?? at[2], rx: z.size[0] ?? 2 }; }
-    else zone = { shape: 'box', cx: A.cx, cz: A.cz, rx: Math.max(1, A.hx - 3), rz: Math.max(1, A.hz - 3) };
-    // never inside a bench or a wall: spots keep clear of the world's colliders
-    const free = ctx.world?.shapes ? clearOfShapes(ctx.world.shapes, V('size') * 0.5 + 0.35) : null;
-    for (const q of pointsIn(zone, n, () => ctx.rng(), Math.max(0.8, V('size') * 1.6), free)) pool.add(q.x, 0, q.z, V('respawnSeconds'));
+    if (n <= 0) { needSpawn = false; return; }
+    if (typeof ctx.world?.place !== 'function') { if (!warned) { warned = true; console.warn('pickup: this world has no placement (world.place): no spots'); } needSpawn = false; shortfall = { asked: n, placed: 0, why: 'the world has no placement' }; return; }
+    // a world whose colliders are not in the physics' queries yet (before its first step) has no ground to read: next frame
+    if (!ctx.world.walk.ready()) return;
+    needSpawn = false;
+    const pts = ctx.world.place('pickup', n, placeOpts());
+    for (const q of pts) pool.add(q.x, q.y, q.z, V('respawnSeconds'));
+    shortfall = pts.length < n ? { asked: n, placed: pts.length, why: pts.why ?? 'no more open ground every seat reaches' } : null;
+    if (shortfall) console.warn(`pickup: ${pts.length} of ${n} spots placed (${shortfall.why}${V('zone') ? `, zone "${V('zone')}"` : ''})`);
+  }
+  // a spot that comes back stands on the ground as it is now (a crater, a block built over it); where there is no ground
+  // a body can stand on any more, it moves to open ground every seat reaches
+  function settle(i) {
+    const s = pool.spots[i], W = ctx.world; if (!s || typeof W?.isWalkable !== 'function') return;
+    const y = W.groundAt(s.x, s.z, s.y + 1);
+    if (y != null && W.isWalkable(s.x, s.z, y) && W.walk.audit([{ x: s.x, y, z: s.z }])[0].ok) { s.y = y; return; }
+    const q = W.place('pickup', 1, { ...placeOpts(), exclude: pool.spots.filter((o, k) => k !== i && o.state !== 2).map(o => ({ x: o.x, z: o.z, r: placeOpts().gap })) })[0];
+    if (q) { s.x = q.x; s.y = q.y; s.z = q.z; }
   }
   function collectBy(i, p, how = 'touch') {
     if (!pool.take(i, now())) return false;
@@ -130,13 +144,24 @@ export function create(ctx, params = {}) {
     return true;
   }
   const canTouch = () => V('collect') !== 'press', canPress = () => V('collect') !== 'touch';
+  // a spot a player can take: near in 3D (from the nearest point of their body, feet to head, to the item where it is
+  // drawn), and nothing solid between them (the ground over a buried spot, a wall): never through the ground or a wall.
+  // The player's position is the body's middle (the capsule: about 0.8 m over the feet)
+  const ITEM_UP = 0.55;
+  const bodyGap = (s, q) => { const iy = s.y + ITEM_UP, dy = iy < q.y - 0.8 ? q.y - 0.8 - iy : iy > q.y + 0.9 ? iy - q.y - 0.9 : 0; return Math.hypot(Math.hypot(s.x - q.x, s.z - q.z), dy); };
+  const inSight = (s, q) => {
+    const from = { x: q.x, y: q.y + 0.3, z: q.z }, d = { x: s.x - from.x, y: s.y + ITEM_UP - from.y, z: s.z - from.z }, len = Math.hypot(d.x, d.y, d.z);
+    if (len < 0.05) return true;
+    const hit = fixedRay(ctx, from, d, len);
+    return hit === null || hit >= len - 0.05;
+  };
   /** The nearest present spot within `reach` of a player (every copy, from what it draws) → {index, d} | null */
   function inReach(p, reach = V('reach')) {
     let best = null;
     for (const s of api.list()) {
       if (!s.present) continue;
-      const d = Math.hypot(s.x - p.position.x, s.z - p.position.z);
-      if (d <= reach && Math.abs(s.y - p.position.y) < 2.5 && (!best || d < best.d)) best = { index: s.index, d };
+      const d = bodyGap(s, p.position);
+      if (d <= reach && (!best || d < best.d) && inSight(s, p.position)) best = { index: s.index, d };
     }
     return best;
   }
@@ -145,7 +170,7 @@ export function create(ctx, params = {}) {
     if (!p || p.alive === false || !canPress()) return false;
     let n = null;
     if (i === null) n = inReach(p);
-    else { const s = pool.spots[i]; if (s && s.state === 1 && Math.hypot(s.x - p.position.x, s.z - p.position.z) <= V('reach') + slack) n = { index: i }; }
+    else { const s = pool.spots[i]; if (s && s.state === 1 && bodyGap(s, p.position) <= V('reach') + slack && inSight(s, p.position)) n = { index: i }; }
     if (!n) { stats.pressMissed++; return false; }
     return collectBy(n.index, p, 'press');
   }
@@ -190,8 +215,16 @@ export function create(ctx, params = {}) {
     interactables: () => (canPress() ? api.list().filter(s => s.present).map(s => ({ kind: 'pickup', id: `pickup:${s.index}`, x: s.x, y: s.y, z: s.z, reach: V('reach'), touch: canTouch() ? V('radius') : 0, action: V('action') })) : []),
     /** Collects so far by how (touch, press) and presses that found nothing in reach (host). */
     get stats() { return { ...stats }; },
-    /** Host: a new spot at pos {x, z, y?}. opts {respawn} seconds (default respawnSeconds; 0 = once). → index or -1 */
-    spawnAt(pos, opts = {}) { return ctx.host && S ? pool.add(pos.x, pos.y ?? 0, pos.z, opts.respawn ?? V('respawnSeconds')) : -1; },
+    /** Host: a new spot at pos {x, z, y?} (y: the ground there, world.groundAt, when not given). opts {respawn} seconds
+     *  (default respawnSeconds; 0 = once). → index or -1. Where may it go? ctx.world.place('pickup', n, {zone}) says. */
+    spawnAt(pos, opts = {}) { return ctx.host && S ? pool.add(pos.x, pos.y ?? ctx.world?.groundAt?.(pos.x, pos.z) ?? 0, pos.z, opts.respawn ?? V('respawnSeconds')) : -1; },
+    /** The things a player must get to (gate D: the reach leg's window.__game.objectives() and the play feed,
+     *  kit/core/play.js): every spot that is out or coming back, where it is and how near a player must come (touch,
+     *  reach: the press distance), and how many the start asked for and got. */
+    objectives() {
+      const list = api.list().map(s => ({ kind: 'pickup', id: `pickup:${s.index}`, label: V('prop') || gameProp()?.name || 'pickup', x: s.x, y: s.y, z: s.z, present: s.present, open: s.present, touch: canTouch() ? V('radius') : 0, reach: canPress() ? V('reach') : 0, radius: Math.max(V('radius'), canPress() ? V('reach') : 0) }));
+      return Object.assign(list, { asked: V('count') >= 0 ? V('count') : (gameProp()?.count ?? 0), shortfall });
+    },
     /** Host: remove spot i for good. */
     remove(i) { if (ctx.host) pool.remove(i); },
     /** Host: show or hide spot i by hand (a hidden spot waits until set(i, true)). */
@@ -209,12 +242,12 @@ export function create(ctx, params = {}) {
       if (ctx.host) {
         if (needSpawn) hostSpawnStart();
         if (ctx.round?.phase === 'playing') {
-          pool.tick(now());
+          for (const i of pool.tick(now())) settle(i);
           for (const p of ctx.players.list()) {
             const cur = { x: p.position.x, y: p.position.y, z: p.position.z }, prev = lastPos.get(p.id) ?? cur;
             lastPos.set(p.id, cur);
             if (p.alive === false) continue;
-            if (canTouch()) for (let i = 0; i < pool.spots.length; i++) { const s = pool.spots[i]; if (s.state === 1 && touches(s, prev, cur, V('radius'), P.touchHeight)) { collectBy(i, p, 'touch'); } }
+            if (canTouch()) for (let i = 0; i < pool.spots.length; i++) { const s = pool.spots[i]; if (s.state === 1 && touches(s, prev, cur, V('radius'), P.touchHeight) && bodyGap(s, cur) <= V('radius') + 0.6 && inSight(s, cur)) { collectBy(i, p, 'touch'); } }
             // a press of the action by an owned player (the host's own, every bot); friends ask through pickup:press
             if (p.owned && p.actions?.[V('action')]?.pressed) hostPress(p);
           }
@@ -289,7 +322,7 @@ export const manifest = {
     worked: 'pk.onCollect(({ player }) => { player.data.ammo = (player.data.ammo ?? 0) + 5; });',
     traps: [
       'with effect "score" (or auto without carry) a collect already adds value to the score: adding it again in onCollect counts it twice',
-      'bots take pickups only when the rules send them: in bot(ctx, p) use p.bot.seek(pk.nearest(p.position))',
+      'a game whose rules have no bot() gets bots that go for the nearest pickup; a rules.bot of its own sends them itself: p.bot.seek(pk.nearest(p.position))',
     ],
   },
   signs: {

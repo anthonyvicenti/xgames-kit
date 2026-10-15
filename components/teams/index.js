@@ -90,7 +90,7 @@ export function create(ctx, params = {}) {
     /** The winners to hand to ctx.round.end(reason, winners) right now. */
     winnerIds() { const w = winnerOf(api.scores()); return players().filter(p => w.teams.includes(api.teamOf(p))).map(p => p.id); },
     /** Where a player of this team starts: a point in the team's spawn zone, or null. */
-    spawnPoint(p) { const z = V('spawnZones')?.[api.teamOf(p)]; const zn = z && ctx.world.zone?.(z); return zn ? zn.random(ctx.rng) : null; },
+    spawnPoint(p) { const z = V('spawnZones')?.[api.teamOf(p)]; const zn = z && ctx.world.zone?.(z); return zn ? ctx.world.place?.('spawn', 1, { zone: z, rng: () => ctx.rng(), clear: 0.5, away: 0 })?.[0] ?? zn.random(ctx.rng) : null; },
     reset() { manual = Array(4).fill(0); applied.clear(); announced = false; started = false; lastKey = ''; },
     update() {
       if (!S) { if (!(ctx.shared && ctx.players && ctx.me)) return; S = ctx.shared.register('teams', { a: {}, m: [] }); }

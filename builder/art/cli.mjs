@@ -4,6 +4,10 @@
 //   art ingest <path|url> --pack <id> [options]        take files (a file, a folder, a zip, a URL) into a pack
 //   art find "<words>" [--kind <k>] [--3d|--2d|--audio] [--category <c>] [--devices phone,desktop] [--all] [--json]
 //   art fill <game folder | assets.json> [--kind <k>] [--runtime three] [--devices …] [--provided a,b] [--write] [--json]
+//   art objectives <game folder> [--yes] [--maker meshy] [--json]
+//                                                      what the game's objectives draw (a pickup, a carried item, a goal),
+//                                                      each slot filled by meaning: the library, else a maker in the look's
+//                                                      style (paid: only with --yes), else the stand-in and why (objectives.mjs)
 //   art fetch <pack>/<asset> [--to <file>]              the asset's bytes: the store, the kit's default set, a mirror, or
 //                                                      rebuilt from the pack's pinned source
 //   art check                                          every manifest against the schemas, every binary on this machine
@@ -47,7 +51,7 @@ export function parse(argv) {
     const a = argv[i];
     if (!a.startsWith('--')) { pos.push(a); continue; }
     const k = a.slice(2), v = argv[i + 1];
-    if (['3d', '2d', 'audio', 'all', 'json', 'as-is', 'ktx2', 'private', 'write', 'replace', 'public', 'dry'].includes(k) || v === undefined || v.startsWith('--')) { o[k] = true; continue; }
+    if (['3d', '2d', 'audio', 'all', 'json', 'as-is', 'ktx2', 'private', 'write', 'replace', 'public', 'dry', 'yes'].includes(k) || v === undefined || v.startsWith('--')) { o[k] = true; continue; }
     if (k === 'include' || k === 'exclude') (o[k] ??= []).push(v); else o[k] = v;
     i++;
   }
@@ -109,6 +113,15 @@ async function cmdFill(pos, o, config) {
     ...r.next.map(n => `  ${n.slot.padEnd(34)} — ${n.findings.join('; ')} → next: ${n.next}`),
     ...r.findings.slice(0, 20).map(f => `  finding: ${f}`)].join('\n'));
   if (r.next.some(n => !n.optional)) process.exitCode = 1;
+}
+
+async function cmdObjectives(pos, o, config) {
+  if (!pos[0]) throw new Error('usage: art objectives <game folder> [--yes] [--maker meshy] [--json]');
+  const { objectiveArt } = await import('./objectives.mjs');
+  const r = await objectiveArt(pos[0], { yes: !!o.yes, maker: o.maker ?? 'meshy', config, log: o.json ? () => {} : m => console.log(`  ${m}`) });
+  out(o, r, () => [`art objectives ${pos[0]}: ${r.items.length} objective prop${r.items.length === 1 ? '' : 's'}${r.credits ? `, ${r.credits} credits` : ''}`,
+    ...r.items.map(i => `  ${i.slot.padEnd(24)} ${i.now.padEnd(9)} ${i.ref ?? i.was ?? ''}${i.why ? `  — ${i.why}` : ''}`), ...r.notes.map(n => `  note: ${n}`)].join('\n'));
+  if (r.items.some(i => i.now === 'standin')) process.exitCode = 1;
 }
 
 async function cmdFetch(pos, o, config) {
@@ -175,11 +188,11 @@ async function cmdHarmonize(pos, o, config) {
   } finally { await renderer?.close(); }
 }
 
-const COMMANDS = { harmonize: cmdHarmonize, ingest: cmdIngest, find: cmdFind, fill: cmdFill, fetch: cmdFetch, check: cmdCheck, coverage: cmdCoverage, autorig: cmdAutorig };
+const COMMANDS = { harmonize: cmdHarmonize, ingest: cmdIngest, find: cmdFind, fill: cmdFill, objectives: cmdObjectives, fetch: cmdFetch, check: cmdCheck, coverage: cmdCoverage, autorig: cmdAutorig };
 
 export async function main(argv = process.argv.slice(2)) {
   const [cmd, ...rest] = argv;
-  if (!COMMANDS[cmd]) { console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 25).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exitCode = cmd ? 1 : 0; return; }
+  if (!COMMANDS[cmd]) { console.log(readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(1, 29).map(l => l.replace(/^\/\/ ?/, '')).join('\n')); process.exitCode = cmd ? 1 : 0; return; }
   const { pos, o } = parse(rest);
   await COMMANDS[cmd](pos, o, loadConfig());
 }

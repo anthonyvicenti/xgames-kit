@@ -29,7 +29,8 @@ test('an edit is whole centimetres, and a malformed one is refused', () => {
   assert.equal(editOf('carve', { x: 0, y: 0, z: 0 }, 0), null);
   assert.equal(editOf('blast', { x: 0, y: 0, z: 0 }, 1), null);
   assert.ok(isEdit([0, 1, 2, 3, 4]));
-  for (const bad of [null, [0, 1, 2, 3], [2, 0, 0, 0, 1], [0, 0.5, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 99999], ['0', 0, 0, 0, 1]]) assert.ok(!isEdit(bad), JSON.stringify(bad));
+  assert.deepEqual(editOf('settle', { x: 0, y: 1, z: 0 }, 4), [2, 0, 100, 0, 400]);
+  for (const bad of [null, [0, 1, 2, 3], [3, 0, 0, 0, 1], [0, 0.5, 0, 0, 1], [0, 0, 0, 0, 0], [0, 0, 0, 0, 99999], ['0', 0, 0, 0, 1]]) assert.ok(!isEdit(bad), JSON.stringify(bad));
 });
 
 test('the same seed makes the same ground; another seed another; the box is sealed', () => {
@@ -59,6 +60,37 @@ test('edits replayed in order give the same field on any copy; a carve lowers th
   assert.ok(g.heightAt(0, 0) < y0 - 2, `the ground under the blast went down (${y0.toFixed(2)} → ${g.heightAt(0, 0).toFixed(2)})`);
   assert.equal(g.apply(editOf('carve', { x: 0, y: 30, z: 0 }, 1)), null, 'a carve in the open air changes nothing');
   assert.ok(g.solid(0, y0 - 3, 0) && !g.solid(0, y0 - 1, 0));
+});
+
+test('a settle drops ground that no longer holds on: a thin roof over a hollow, a lump in the air; thick ground stays', () => {
+  // a hollow dug under the top leaving a roof half a metre thick: the roof over it falls; one left 1.6 m thick holds
+  const solid = () => small({ land: { tunnels: 0, overhang: 0 } }).field;
+  const thin = solid(), y0 = thin.heightAt(0, 0);
+  thin.apply(editOf('carve', { x: 0, y: y0 - 0.5 - 2.4, z: 0 }, 2.4));
+  assert.ok(Math.abs(thin.heightAt(0, 0) - y0) < 0.3, 'the hollow is under the top: the top still stands before the settle');
+  const box = thin.apply(editOf('settle', { x: 0, y: y0 - 2, z: 0 }, 4.5));
+  assert.ok(box && thin.settled?.samples > 10, `the thin roof fell (${thin.settled?.samples} samples)`);
+  assert.ok(thin.heightAt(0, 0) < y0 - 2, `nothing is left over the hollow's middle (${thin.heightAt(0, 0)?.toFixed(2)} under ${y0.toFixed(2)})`);
+  assert.ok(thin.settled.points.length > 0 && thin.settled.points.length <= 90, 'points for the crumbling lumps, capped');
+  const thick = solid();
+  thick.apply(editOf('carve', { x: 0, y: y0 - 1.6 - 2.4, z: 0 }, 2.4));
+  assert.equal(thick.apply(editOf('settle', { x: 0, y: y0 - 3, z: 0 }, 4.5)), null, 'a roof 1.6 m thick holds');
+  assert.ok(Math.abs(thick.heightAt(0, 0) - y0) < 0.3);
+  // a lump of ground added in the open air touches nothing: it falls whole
+  const air = solid();
+  air.apply(editOf('add', { x: 0, y: y0 + 1.7, z: 0 }, 0.6));
+  assert.ok(air.sample(0, y0 + 1.7, 0) < 0);
+  assert.ok(air.apply(editOf('settle', { x: 0, y: y0 + 1.7, z: 0 }, 1.0)));
+  assert.ok(air.sample(0, y0 + 1.7, 0) > 0, 'the lump is gone');
+  // the same edits on two copies: the same field, bit for bit
+  const a = solid(), b = solid();
+  for (const f of [a, b]) { f.apply(editOf('carve', { x: 2, y: y0 - 2.9, z: 1 }, 2.3)); f.apply(editOf('settle', { x: 2, y: y0 - 2, z: 1 }, 4)); }
+  assert.ok(a.settled?.samples > 0, 'that settle dropped something');
+  assert.equal(hashOf(a), hashOf(b));
+  // ground the settle box reaches only at its faces is never judged (it goes on outside the box)
+  const edge = solid(), h0 = hashOf(edge);
+  assert.equal(edge.apply(editOf('settle', { x: 0, y: y0, z: 0 }, 3)), null, 'whole ground: nothing falls');
+  assert.equal(hashOf(edge), h0);
 });
 
 test('meshing: faces turn out, chunks meet with no gap, an edit re-meshes only what it touched', () => {

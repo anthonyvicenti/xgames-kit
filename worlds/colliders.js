@@ -60,7 +60,9 @@ function partyColliders(cfg, catalog, { fit = () => 1 } = {}) {
   const groups = new Map();
   for (const p of expandLayout(cfg)) { if (!groups.has(p.prop)) groups.set(p.prop, []); groups.get(p.prop).push(p); }
   const out = [{ prop: '#ground', tag: 'ground', shape: 'box', size: [size[0] + 40, 1, size[1] + 40], position: [0, -0.5, 0], rotationY: 0 }];
-  for (const [id, list] of groups) { const meta = byId.get(id), f = fit(id) ?? 1; for (const p of list) for (const part of colliderParts(meta)) out.push(partyCollider(id, part, p, f)); }
+  // a composed level's landmark (worlds/sea-compose.mjs: collider 'mesh') is solid by its model's own triangles, which the
+  // world builds when it has the model (kit/world/world.js): no catalog box over it
+  for (const [id, list] of groups) { const meta = byId.get(id), f = fit(id) ?? 1; for (const p of list) if (p.collider !== 'mesh') for (const part of colliderParts(meta)) out.push(partyCollider(id, part, p, f)); }
   // a sea-islands world (sea.js): each hill of the play island that reaches the play area is a hull of its dome, so a
   // player walks up what they see (the flat middle is the ground box)
   const main = (cfg.islands ?? []).find(i => i.play);

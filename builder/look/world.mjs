@@ -106,7 +106,7 @@ const NOUN = w => w.replace(/ies$/, 'y').replace(/(ch|sh|x)es$/, '$1').replace(/
  * machine, each with its style fit to `target`). A match whose fit is under FIT_FLOOR goes with the missing (`offStyle` says which and why),
  * unless it is from the look's own packs (made from the look's anchor and judged against it).
  */
-export async function dressingOf(words = [], { props = null, target = null, minFit = FIT_FLOOR, packs = [] } = {}) {
+export async function dressingOf(words = [], { props = null, target = null, minFit = FIT_FLOOR, packs = [], prefer = [] } = {}) {
   if (!props) {
     const [{ assetsIn, localFile, scopePacks }, { styleFit }] = await Promise.all([import('../art/views.mjs'), import('../art/coverage.mjs')]);
     // the look's own packs first (a wave made for it), then the runtime's
@@ -116,9 +116,12 @@ export async function dressingOf(words = [], { props = null, target = null, minF
   const found = [], missing = [], offStyle = [];
   for (const phrase of words) {
     const ws = String(phrase).toLowerCase().split(/[^a-z]+/).filter(w => w.length > 2).map(NOUN);
-    // the phrase's head noun is its last word; a match on it beats one on an adjective; among equals the best style fit
+    // the phrase's head noun is its last word; a match on it beats one on an adjective; among equals the best style fit.
+    // `prefer` (ids: a level's own set dressing) is searched first, the rest only when none of it answers
     let best = null, bestScore = 0;
-    for (const p of props) {
+    const first = prefer.length ? props.filter(p => prefer.includes(p.id)) : [];
+    for (const p of [...first, ...(first.length ? ['|'] : []), ...props]) {
+      if (p === '|') { if (best && bestScore >= 3) break; continue; }
       const parts = p.id.split('-'), tags = p.tags.map(String);
       let s = 0;
       ws.forEach((w, i) => { const head = i === ws.length - 1 ? 3 : 1; if (parts.includes(w)) s += 2 * head; else if (tags.includes(w)) s += head; });
@@ -139,12 +142,82 @@ export async function dressingOf(words = [], { props = null, target = null, minF
 /** The style fit (builder/art/coverage.mjs styleFit) below which a library prop is not placed as a look's set dressing. */
 export const FIT_FLOOR = 0.6;
 
+// ---------------------------------------------------------------- the level's composition: its landmarks as pieces
+const LANDMARK_KINDS = new Set(['building', 'fortress', 'tower', 'ruin', 'bridge', 'statue', 'ship', 'other']);
+// a landmark's words up to its first preposition ("a castle keep with cone-roofed towers" → "a castle keep")
+const HEAD_OF = /\b(with|between|on|over|by|of|in|from|under|across|atop|beside|near|along)\b/;
+const wordsOf = s => String(s).toLowerCase().split(/[^a-z]+/).filter(w => w.length > 2).map(NOUN);
+const meets = (w, part) => w === part || (w.length >= 4 && part.length >= 4 && (w.startsWith(part) || part.startsWith(w)));
+/** How well a piece answers a landmark's words: its head (the last word before a preposition, and the kind) counts thrice. */
+function landmarkScore(p, words, heads) {
+  const parts = p.id.split('-'), tags = (p.tags ?? []).map(String);
+  let s = 0;
+  for (const w of new Set([...words, ...heads])) {
+    const k = heads.includes(w) ? 3 : 1;
+    if (parts.some(x => meets(w, x))) s += 2 * k; else if (tags.some(x => meets(w, x))) s += k;
+  }
+  return s;
+}
+/**
+ * The pieces a target's composition (world.composition: what the play happens on) names: the level's own set dressing
+ * first (`dressing`: its ids, already found for this level and its style), then the look's packs and the runtime's for
+ * a building or a bridge; trees, crates and the land's own rock (the ground makes those) are never composed. Each piece
+ * once. → {landmarks: [id], bridges: [id], missing: [words]} (landmarks in the order the target ranks them)
+ */
+export async function compositionPieces(t, { dressing = [], packs = [], props = null } = {}) {
+  const C = t?.world?.composition;
+  const out = { landmarks: [], bridges: [], missing: [] };
+  if (!C?.landmarks?.length || C.playOn === 'open') return out;
+  if (!props) {
+    const { assetsIn, localFile, scopePacks } = await import('../art/views.mjs');
+    props = assetsIn([...packs, ...scopePacks('three')], { category: 'prop' }).filter(a => localFile(a) && /\.glb$/i.test(a.file)).map(a => ({ id: a.id, tags: a.tags ?? [] }));
+  }
+  const NOT = /tree|palm|pine|crate|drum|barrel|cloud/;
+  for (const L of C.landmarks) {
+    if (L.play === 'far') continue;
+    const bridge = L.kind === 'bridge' || /\bbridge/.test(L.what);
+    // the heads: the nouns before the first preposition that are plural ("sandstone mesas split"), else its last word,
+    // and the kind; the rest of the words count once (the cone roofs tell one castle from another)
+    const trimmed = L.what.split(HEAD_OF)[0], toks = String(trimmed).toLowerCase().split(/[^a-z]+/).filter(w => w.length > 2);
+    const plural = toks.filter(w => /[^s]s$/.test(w) && w.length > 3).map(NOUN), words = wordsOf(L.what);
+    const heads = [...(plural.length ? plural : toks.slice(-1).map(NOUN)), ...(L.kind && L.kind !== 'other' ? [NOUN(L.kind)] : [])];
+    const fits = p => !NOT.test(p.id) && (bridge ? /bridge/.test(p.id) : !/bridge/.test(p.id)) && !out.landmarks.includes(p.id) && !out.bridges.includes(p.id);
+    const best = list => list.filter(fits).map(p => ({ p, s: landmarkScore(p, words, heads) })).sort((a, b) => b.s - a.s || a.p.id.length - b.p.id.length)[0] ?? null;
+    // the level's own pieces answer on any shared word; the rest of the library only on the head (a building or a bridge)
+    let got = best(props.filter(p => dressing.includes(p.id)));
+    if (!(got?.s >= 3)) got = LANDMARK_KINDS.has(L.kind ?? 'other') ? best(props) : null;
+    if (!got || got.s < (dressing.includes(got.p.id) ? 3 : 6)) { out.missing.push(L.what); continue; }
+    (bridge ? out.bridges : out.landmarks).push(got.p.id);
+  }
+  return out;
+}
+
+/**
+ * terrain.compose from a target and its pieces (worlds/terrain/compose.mjs): what the play happens on, how many bridges,
+ * the share of the frame the main landmark takes, and the play camera the seats are framed for. null when the target
+ * has no composition or none of its landmarks is in the library.
+ */
+export function composeOf(t, pieces) {
+  const C = t?.world?.composition;
+  if (!C || C.playOn === 'open' || !(pieces?.landmarks?.length || pieces?.bridges?.length)) return null;
+  const cam = cameraOf(t, 'third')?.settings ?? null;
+  return {
+    landmarks: pieces.landmarks, bridges: pieces.bridges,
+    playOn: C.playOn ?? 'around', share: r2(clamp(C.share ?? 0.25, 0.05, 0.6)), verticality: r2(C.verticality ?? 0.5),
+    bridgeCount: pieces.bridges.length ? Math.max(1, Math.min(3, C.bridges ?? 1)) : 0,
+    ...(cam ? { camera: { distance: cam.distance, pitchDeg: cam.pitchDeg, fov: cam.fov, ...(cam.height != null ? { height: cam.height } : {}) } } : {}),
+    seats: 8,
+  };
+}
+
 // ---------------------------------------------------------------- world parameters per template
 /**
  * A sea-islands world's parameters from a target (worlds/sea.js SEA_PARAMS). art: {ground, soil} pictures the look
  * brings ({ref, tint?} each: library refs, copied into the game by create), dressing: library prop ids.
  */
-export function seaParams(t, { art = {}, dressing = [], push = 0 } = {}) {
+export function seaParams(t, { art = {}, dressing = [], push = 0, compose = null } = {}) {
+  // a composed level (looks wave 4: worlds/sea-compose.mjs): its landmark is the play area's ground, not dressing
+  if (compose) dressing = dressing.filter(id => !compose.landmarks.includes(id) && !compose.bridges.includes(id));
   const W = t.world ?? {};
   const land = W.land ?? 'islands';
   const cliff = { floating: 6, cliffs: 5, canyon: 5.5, terraces: 4.5, islands: 4, hills: 2.6, flat: 1.6 }[land] ?? 4;
@@ -158,6 +231,7 @@ export function seaParams(t, { art = {}, dressing = [], push = 0 } = {}) {
     ...(W.sky?.cloudColor ? { cloudColor: W.sky.cloudColor } : {}),
     density: r2(clamp((W.props?.density ?? 0.5) + 0.15 * push, 0, 1)),
     dressing,
+    ...(compose ? { compose } : {}),
   };
   // the ground: the picture the look brings over white (its own colours read), else the target's grass colours
   const grass = grassOf(t), tile = groundTileOf(t) * (1 + 0.25 * push);
@@ -184,7 +258,7 @@ export function seaParams(t, { art = {}, dressing = [], push = 0 } = {}) {
  * high and hilly the land, its top, cliff and soil pictures (the look's art, else the target's colours), an open sea to
  * the horizon, and round it the clouds, the islands out at sea and the set dressing.
  */
-export function terrainParams(t, { art = {}, dressing = [], push = 0 } = {}) {
+export function terrainParams(t, { art = {}, dressing = [], push = 0, compose = null } = {}) {
   const W = t.world ?? {}, land = W.land ?? 'islands';
   const relief = clamp((W.relief ?? 0.5) + 0.2 * push, 0, 1);
   const shape = W.setting === 'coast' || (['cliffs', 'canyon'].includes(land) && W.setting !== 'islands') ? 'cliffs' : 'islands';
@@ -198,6 +272,13 @@ export function terrainParams(t, { art = {}, dressing = [], push = 0 } = {}) {
     // level sites for the look's landmarks (worlds/terrain sites): only when it has set dressing to stand on them
     ...(dressing.length ? { sites: { count: 4 } } : {}),
   };
+  // a composed level (looks wave 4): its landmarks and bridges are the playfield, made ground by the composer, which
+  // seats the players round them; a taller box so a castle has its whole height as ground
+  if (compose) {
+    P.compose = compose; P.size = [112, 44, 80];
+    delete P.pads; delete P.sites;
+    dressing = dressing.filter(id => !compose.landmarks.includes(id) && !compose.bridges.includes(id));
+  }
   const grass = grassOf(t), strata = strataOf(t), sand = sandOf(t), tile = groundTileOf(t) * (1 + 0.25 * push);
   const M = {};
   if (art.ground) M.top = { from: `library:${art.ground.ref}`, size: r2(tile * 1.5), ...(grass.length ? { color: grass[0] } : {}) };
@@ -302,7 +383,7 @@ export const SHAPERS = { 'sea-islands': seaParams, terrain: terrainParams };
  * the target when the world takes parameters. opts: {loop, current (the spec's template), art ({ground, soil}),
  * dressing (library ids), rank (0 the best, 1 the next…), push}. → {template, params, score, ranked, why, notes}
  */
-export function worldPlan(target, place, { loop = null, current = null, art = {}, dressing = [], rank = 0, push = 0 } = {}) {
+export function worldPlan(target, place, { loop = null, current = null, art = {}, dressing = [], rank = 0, push = 0, compose = null } = {}) {
   const ranked = rankWorlds(target, place, { loop, current });
   if (!target?.world || !ranked.length) return { template: current, params: null, score: null, ranked, why: target?.world ? 'the runtime lists no worlds' : 'the target says nothing about the place', notes: [] };
   const pickd = ranked[Math.min(rank, ranked.length - 1)];
@@ -310,7 +391,7 @@ export function worldPlan(target, place, { loop = null, current = null, art = {}
   // a world for some loops only (voxel: world) is in the list only when the loop fits; a world of another family is never
   // forced over a better fit: below half the best's score the next one is not worth a pitch
   const shaper = SHAPERS[pickd.id];
-  const params = shaper ? shaper(target, { art, dressing, push }) : null;
+  const params = shaper ? shaper(target, { art, dressing, push, compose }) : null;
   if (!shaper) notes.push(`world ${pickd.id} takes no parameters from a target yet: it is chosen as it is`);
   if (pickd.score < 0.5) notes.push(`no world of ${place.runtime}${place.profile ? `/${place.profile}` : ''} reads like the references' place (${target.world.setting ?? '?'}, ${target.world.land ?? '?'} land, a ${target.world.horizon ?? '?'} horizon): ${pickd.id} is the closest (${pickd.score}); build the rest in the game (a build item with closest: ${pickd.id})`);
   return { template: pickd.id, params, score: pickd.score, ranked: ranked.slice(0, 4).map(({ id, score, why }) => ({ id, score, why })), why: `${pickd.id} (${pickd.score}): ${pickd.why}`, notes };

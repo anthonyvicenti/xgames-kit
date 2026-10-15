@@ -87,6 +87,31 @@ export function lookLines(look) {
     ...(t.avoid?.length ? [`- avoid: ${t.avoid.join('; ')}`] : []), ''];
 }
 
+/**
+ * The play designed before this round (spec.play.target, builder/play/design.mjs): what the game must play like, in
+ * the words and numbers the play-tester and the play judge hold it to. Never cut from the page.
+ */
+export function playLines(t) {
+  if (!t) return [];
+  const p = t.pacing ?? {}, f = t.feel ?? {}, o = t.objective ?? {};
+  const cut = (s, n = 200) => String(s ?? '').replace(/\s+/g, ' ').trim().slice(0, n);
+  return ['## The play (designed before this round: write toward it)', '',
+    `${cut(t.genre?.name, 80)}: ${(t.genre?.traits ?? []).map(x => cut(x, 120)).join('; ')}. The whole target is \`play.target\` in the game's spec.json.`,
+    `- verbs: ${(t.verbs ?? []).map(v => `${v.id} (${cut(v.input, 40)}): ${cut(v.does, 120)}`).join('; ')}`,
+    `- every few seconds: ${cut(t.beats?.moment, 240)}`, `- every half minute: ${cut(t.beats?.stretch, 240)}`, `- the round: ${cut(t.beats?.round, 260)}`,
+    `- the objective: ${cut(o.goal)}; win: ${cut(o.win, 160)}. Reached: ${cut(o.reach?.how, 240)} (within ${o.reach?.within ?? '?'} s of a seat).${(o.things ?? []).length ? ` In the world: ${o.things.map(x => `${cut(x.what, 60)} (${x.placed}: ${cut(x.where, 100)})`).join('; ')}. Place each on the world's own ground where a player can stand and reach it from the seats, never at a fixed height.` : ''}`,
+    ...((t.touchpoints ?? []).length ? [`- players affect each other: ${t.touchpoints.map(x => `${cut(x.how, 140)} (${x.often})`).join('; ')}`] : []),
+    ...((t.risk ?? []).length ? [`- risk and reward: ${t.risk.map(x => `${cut(x.risk, 100)} → ${cut(x.reward, 100)}`).join('; ')}`] : []),
+    `- pacing: the first meaningful action within ${p.firstAction} s of Play; about ${p.eventsPerMinute} meaningful events a minute; nobody idle over ${p.idleMax} s; a round about ${p.roundSeconds} s${p.turnSeconds ? `, a turn ${p.turnSeconds} s` : ''}; the side behind keeps a ${Math.round((p.comeback ?? 0) * 100)}% chance`,
+    ...(p.downMax != null || p.out ? [`- knocked down: ${p.downMax != null ? `a player is back in control within ${p.downMax} s of a knock (flight, landing and get-up; fair play holds the game to it)` : ''}${p.downMax != null && p.out ? '; ' : ''}${p.out ? `knocked out of play: ${p.out === 'never' ? 'never' : p.out === 'respawn' ? 'out, then back after a while' : 'out until the round ends'}` : ''}`] : []),
+    `- feel: impact ${f.impact}, weight ${f.weight}, chaos ${f.chaos}${f.comedy ? `; the comedy: ${cut(f.comedy, 200)}` : ''}${(f.juice ?? []).length ? `; juice: ${f.juice.map(x => cut(x, 80)).join('; ')}` : ''}`,
+    ...(t.avoid ?? []).map(a => `- avoid ${a.failure}: ${cut(a.guard, 220)}`),
+    `- report each of these gameplay events when it happens, on the host's copy: \`ctx.events.count(player, '<name>', { at, target })\` with the player it concerns (target: the player it was done to) (the event log, window.__game.events(), kind \`rules.<name>\`, is what the play judge counts): ${(t.events ?? []).map(e => `\`${e.name}\`${e.meaningful ? '' : ' (minor)'}`).join(', ')}`,
+    ...((o.things ?? []).some(x => (x.reach ?? 'walk') === 'walk' && ['ground', 'surface', 'zone'].includes(x.placed)) ? ['- an objective this game places itself (not a mechanic\'s) is reported from `objectives(ctx)` in rules.js: `[{id, kind, x, y, z, open}]`, so the play judge and the reach check see it'] : []),
+    `- bots: ${cut(t.bots, 260)}`,
+    '', 'What makes it play (each is a promise the play-tester checks on their own screen):', ...(t.makes ?? []).map((m, i) => `${i + 1}. ${cut(m.says, 220)} (seen: ${cut(m.see, 200)})`), ''];
+}
+
 /** The characters that are creatures (CREATURES.md): what their bodies answer, so a build drives them by the words they
  *  know and never looks for clips or a hand they do not have. */
 export function bodyLines(spec) {
@@ -100,7 +125,7 @@ export function bodyLines(spec) {
  * The brief for a round that writes the game. kind: 'build' | 'change' | 'migrate'. `request`: the person's words for a
  * change. `controlsTool` / `endTool` / `quickTool`: the host's tool names. → markdown, at most BRIEF_MAX characters
  */
-export function composeBrief({ kind = 'build', spec, ledger, promises, manifests, request = null, change = null, tools = {}, game = null, offers = {}, look = null }) {
+export function composeBrief({ kind = 'build', spec, ledger, promises, manifests, request = null, change = null, tools = {}, game = null, offers = {}, look = null, play = null }) {
   const T = { quick: 'gamesfun_verify', end: 'gamesfun_step_fix', remove: 'gamesfun_remove', ...tools };
   const head = kind === 'build' ? [`# Build round: ${spec.title}`, '', spec.hook ?? '', '', `The game folder was made from the locked spec (runtime ${rid(spec.runtime, spec.profile)}, loop ${spec.loop}, kind ${spec.kind}). This round is yours: write rules.js, the src/ modules and the overrides the list below needs, and tune config/, so the game plays as promised.`, ...(game ? ['', `The game's folder: \`${game}\`. Its AGENTS.md names its files and where the kit's rules API is described; rules.js starts as a stub that names each mechanic's callbacks.`] : [])]
     : kind === 'migrate' ? [`# Migration round: ${spec.title}`, '', `The game was made again on ${rid(spec.runtime, spec.profile)} from its spec, as the person agreed. Bring its rules, modules and build lines over; what the old runtime's engine code did is written again for this one.`]
@@ -117,7 +142,7 @@ export function composeBrief({ kind = 'build', spec, ledger, promises, manifests
     `3. Call \`${T.end}\` with \`summary\` (2–4 sentences on what the person will see) and \`controls\` (keys and touch, one line).`];
   const fixed = [...head, '', '## What the person asked for', '', ...asked, ...cut, '',
     ...(builds.length ? ['## What this game builds (each is a promise the play-tester checks on its own screen)', '', ...builds, ''] : []),
-    ...briefPartLines(spec, offers), ...bodyLines(spec), ...lookLines(look)];
+    ...briefPartLines(spec, offers), ...bodyLines(spec), ...lookLines(look), ...playLines(play ?? spec.play?.target ?? null)];
   const tail = [...rules, '## The six gates', '', ...gates, ...(skips.length ? ['', `On ${spec.runtime}, verify skips: ${skips.join('; ')}.`] : []), '', ...end];
   // the parts, cut down until the page fits: traps first, then note lines from the last part back. The person's words
   // and the build list are never cut.

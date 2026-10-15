@@ -1,9 +1,20 @@
 {
  "schema": "xgk-regress/1",
- "date": "2026-10-14T15:10:21.211Z",
+ "date": "2026-10-15T07:17:11.716Z",
  "ok": true,
- "seconds": 576,
+ "seconds": 2225,
  "results": [
+  {
+   "id": "areas-joined",
+   "kind": "control",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "passes measure 6: objectives: 10 objectives (berry) on ground every seat reaches (walk grid 0.587 m, 4759 places); every area worth going to is reached (10 connectors: 5 fill, 2 ramp, 3 pad); 1 cave the walk reads as a trap, reported (a 63 m² cave at (-9.4, 7.6, -18.6)); alone with 3 bots: results (Pip 7, Bo 5, You 0",
+   "seconds": 169
+  },
   {
    "id": "board-friend-unseen",
    "kind": "broken",
@@ -93,6 +104,50 @@
    "seconds": 1
   },
   {
+   "id": "critter-lob-plays",
+   "kind": "control",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "passes measure 6: objectives: 10 objectives (berry) on ground every seat reaches (walk grid 0.5 m, 4975 places); every area worth going to is reached; alone with 3 bots: results (Pip 6, Bo 5, You 0), Play again → round 2; two players: the same results on both, play again, the host ends round 2; plays: pass: 79.5/100 ",
+   "seconds": 142
+  },
+  {
+   "id": "idle-round",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 3 objectives (berry) on ground every seat reaches (walk grid 0.5 m, 4975 places); every area worth going to is reached; does not play: fail: 20.4/100 (16.2–24.6) (no play target: advisory); nothing meaningful happened for 82.7 s at a stretch in 4 of 5 rounds (the line is 30 s); 2 meaning",
+   "seconds": 135
+  },
+  {
+   "id": "island-no-connector",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 3 reach problems: an area at (36.9, 11.4, 6.9) (326 m² of ground, 326 m²) cannot be reached: 11.8 m of water from the seats' ground, nearest from (13.6, 7.7, 3.7); an area at (-41.7, 8.6, -9.7) (173 m² of ground, 173 m²) cannot be reached: 8.0 m of water from the seats' ground, nearest f",
+   "seconds": 151
+  },
+  {
+   "id": "late-copy-look-lost",
+   "kind": "broken",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "gate E failed, measure 5: pass 24/24 (mp-gate-1); loadouts failed: a late copy (reloaded) gets the host's look: body colour the game's (want #13d6d6); the body's tint material is #ff7eb3 (want #13d6d6)",
+   "seconds": 106
+  },
+  {
    "id": "lights-race-friends-seen",
    "kind": "control",
    "gates": [
@@ -102,6 +157,17 @@
    "ok": true,
    "why": "passes measure 5: pass 20/20 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material), a change mid-round and a reloaded copy follow; no player is a character (board): boards shown on both screens; 2 of 2 moves the host made with the mouse showed on the joiner",
    "seconds": 100
+  },
+  {
+   "id": "look-copies-not-the-game",
+   "kind": "control",
+   "gates": [
+    "A"
+   ],
+   "measure": 18,
+   "ok": true,
+   "why": "passes measure 18: 6 sounds listed, 0 from files; every file and every id the game plays is in assets.json → sounds → sounds",
+   "seconds": 1
   },
   {
    "id": "look-greyed",
@@ -122,8 +188,52 @@
    ],
    "measure": 23,
    "ok": true,
-   "why": "passes measure 23: 84/100 like its look target (held to the target's measured numbers; needs 55); closer still: pooled: upper frame (sky) more saturated than the reference (chroma 0.057 against 0.019)",
+   "why": "passes measure 23: 82/100 like its look target (held to the target's measured numbers; needs 55); closer still: pooled: upper frame (sky) more saturated than the reference (chroma 0.053 against 0.019)",
    "seconds": 3
+  },
+  {
+   "id": "objective-in-library",
+   "kind": "control",
+   "gates": [
+    "F"
+   ],
+   "measure": 14,
+   "ok": true,
+   "why": "passes measure 14: looks honoured: berry (objective): assets/models/berry.glb is the library prop kenney-food-kit/strawberry (\"a red strawberry with a green leafy top\")",
+   "seconds": 1
+  },
+  {
+   "id": "objective-out-of-reach",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 7 reach problems: berry pickup:0 at (27.0, 0.0, 0.0): outside the world (ground 0.0) from every seat; berry pickup:2 at (8.3, 0.0, 21.9): outside the world (ground 0.0) from every seat; berry pickup:3 at (-8.3, 0.0, 21.9): outside the world (ground 0.0) from every seat; berry pickup:5 at",
+   "seconds": 138
+  },
+  {
+   "id": "objective-standin",
+   "kind": "broken",
+   "gates": [
+    "F"
+   ],
+   "measure": 14,
+   "ok": true,
+   "why": "gate F failed, measure 14: 1 look not honoured: the objective \"berry\" (prop.berry, drawn by pickup.prop: \"a big shiny red berry\") is the kit stand-in crate.glb: assets/models/berry.glb; what the player is sent to get must look like it (the art step fills it from the library by meaning or makes it: gamesfun art objectives <gam",
+   "seconds": 1
+  },
+  {
+   "id": "objective-wrong-model",
+   "kind": "broken",
+   "gates": [
+    "F"
+   ],
+   "measure": 14,
+   "ok": true,
+   "why": "gate F failed, measure 14: 1 look not honoured: the objective \"berry\" (prop.berry, drawn by pickup.prop: \"a big shiny red berry\") is the library prop kaykit-dungeon-remastered/dungeon-barrel (\"a large wooden barrel\"), which is not a berry: its id and tags never name it (the art step fills it from the library by meaning or mak",
+   "seconds": 1
   },
   {
    "id": "own-board-unseen",
@@ -134,7 +244,62 @@
    "measure": 5,
    "ok": true,
    "why": "gate E failed, measure 5: no player is a character here (board), so each friend's own board is drawn live beside yours, framed in their colour, with their name, their avatar on its rim and their score: the host shows the boards shape: this screen shows seats; the game must show boards (each friend's own board is drawn live b",
-   "seconds": 115
+   "seconds": 119
+  },
+  {
+   "id": "pickups-at-sea-level",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 10 reach problems: berry pickup:0 at (-53.0, 0.0, -3.9): in water (no ground, water 0.0) from every seat; berry pickup:1 at (-20.0, 0.0, -33.7): in water (no ground, water 0.0) from every seat; berry pickup:2 at (38.2, 0.0, -6.8): in water (no ground, water 0.0) from every seat; berry pi",
+   "seconds": 159
+  },
+  {
+   "id": "pickups-on-reachable-ground",
+   "kind": "control",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "passes measure 6: objectives: 10 objectives (berry) on ground every seat reaches (walk grid 0.587 m, 4759 places); every area worth going to is reached (10 connectors: 5 fill, 2 ramp, 3 pad); 1 cave the walk reads as a trap, reported (a 63 m² cave at (-9.4, 7.6, -18.6)); alone with 3 bots: results (Pip 6, Bo 3, You 0",
+   "seconds": 161
+  },
+  {
+   "id": "pickups-walled-off",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 3 reach problems: berry pickup:0 at (-40.4, 14.1, -8.0): walled off (ground 14.1, water 0.0) from every seat; an area at (-39.4, 15.2, -12.6) (holds the landmark gatehouse, 34 m²) cannot be reached: a cliff 2.9 m high (a jump climbs 1.1 m), nearest from (-44.0, 12.2, -8.0); an area at (-",
+   "seconds": 167
+  },
+  {
+   "id": "rounds-end-by-rules",
+   "kind": "control",
+   "gates": [
+    "E"
+   ],
+   "measure": 5,
+   "ok": true,
+   "why": "passes measure 5: pass 24/24 (mp-gate-1); loadouts: each copy draws the other player in their own look (the body colour read from its material, the shot colour each copy resolves for the shooter), a change mid-round and a reloaded copy follow",
+   "seconds": 137
+  },
+  {
+   "id": "ruin-on-cliff",
+   "kind": "broken",
+   "gates": [
+    "D"
+   ],
+   "measure": 6,
+   "ok": true,
+   "why": "gate D failed, measure 6: objectives: 3 reach problems: an area at (36.9, 11.4, 6.9) (326 m² of ground, 326 m²) cannot be reached: 11.8 m of water from the seats' ground, nearest from (13.6, 7.7, 3.7); an area at (-41.7, 8.6, -9.7) (173 m² of ground, 173 m²) cannot be reached: a cliff 3.1 m high (a jump climbs 1.1 m), neares",
+   "seconds": 143
   },
   {
    "id": "slow-bots-race",
@@ -146,6 +311,17 @@
    "ok": true,
    "why": "passes measure 12: scores moved: solo round 0/0/0/0; fair-play pages max score 3, 3, held moved 0.1 s, 0.1 s; every score change came from a counted event (2 of 2 changes over 3 pages: race.onCheckpoint 2)",
    "seconds": 45
+  },
+  {
+   "id": "sound-at-unknown-place",
+   "kind": "control",
+   "gates": [
+    "B"
+   ],
+   "measure": 3,
+   "ok": true,
+   "why": "passes measure 3: no console errors; the player walked 10.02 m on real keys; 3 players",
+   "seconds": 38
   },
   {
    "id": "table-four-friends-seen",
@@ -177,7 +353,7 @@
    ],
    "measure": 17,
    "ok": true,
-   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 7.1 s); none is the reference island (ffca9377)",
+   "why": "passes measure 17: the game is its spec's 2 islands, each built from its own seed and words: 1. Fern Key (seed 811, place f6a6b6e9); 2. Table Rock (seed 2207, place 230c7973, built in 6.8 s); none is the reference island (ffca9377)",
    "seconds": 17
   },
   {
@@ -192,10 +368,16 @@
    "seconds": 10
   }
  ],
- "fingerprint": "afee897118c22c5709cfcae1d50044b035bcc1e79679ee70f869958d8acc0219",
+ "fingerprint": "ecf451d61a78e3cfdde5030c645c1a8c7edd8aef31c5cc0156cd164d057e8031",
  "files": {
-  "builder/gates/regress.mjs": "2e6b9b3d58381943d12e9440ded8d615d4bfd76ec51b1525f91dd6f0188f7cb4",
-  "builder/gates/regressions/README.md": "29f7caa60ccd04afddf0abcca8136f68872e12ff4d42c137ea15d055ce3b1bdf",
+  "builder/art/objectives.mjs": "13912ac41d60efabbd8ed6ceb402c01439b6f42a3ee9888570cb45584ea84c18",
+  "builder/art/resolve.mjs": "6e3b0641da178e4405af29eb0620ddf6c48b20681eee453b516cd398f673ae0a",
+  "builder/gates/regress.mjs": "a2bc6a285488b05aa525677a65e2c0d97cd250187887acfbebeb75b1d13d60d3",
+  "builder/gates/regressions/README.md": "8811c9d0e4fad45d2422c56a6f6b55b2fedc6fd806b43332ebd62fd98973ff35",
+  "builder/gates/regressions/areas-joined/regression.json": "8b5224a91bae0c24e971378c3bc9a866fd97f006e72a65495f6f28f52bc7c400",
+  "builder/gates/regressions/bases/berry-isles/base.json": "d66c97ad0c88f3bd3029c82fc4142460c18e2df06314d170d57ade276355d22a",
+  "builder/gates/regressions/bases/berry-isles/rules.js": "9fd65892a0dec9c05a71eff540f4e9ae61a7ae8fb99f786917a210896a736dd8",
+  "builder/gates/regressions/bases/berry-isles/spec.json": "eaff483172d5c8a92084fff9013bd29eeca1fb5c95744de038b1973467d2a81a",
   "builder/gates/regressions/bases/critter-lob/base.json": "4ab2288f9233685aa4ecdd6f2a0d4b01eae93b1a739814d1c03c63e03f4f8c66",
   "builder/gates/regressions/bases/critter-lob/rules.js": "9fd65892a0dec9c05a71eff540f4e9ae61a7ae8fb99f786917a210896a736dd8",
   "builder/gates/regressions/bases/critter-lob/spec.json": "d609600d1b81d9419c88e45c76602399c79e05b6a254587cdbbf39bbe2ddb935",
@@ -227,24 +409,56 @@
   "builder/gates/regressions/creature-holds/regression.json": "e04f9d8a55bbb5371af8234e972dbdad5d290b47744d62958677c5181c6ede0e",
   "builder/gates/regressions/creature-torn/regression.json": "756f5f437c53c5e6797af95f4d9ef535df15c58948f5ba56909cc5608c2294cb",
   "builder/gates/regressions/creature-torn/slime-top-off.glb": "e508a187da5a32f2add484f980c0d5b909b141c3955e41a8eac1a787eb39625b",
+  "builder/gates/regressions/critter-lob-plays/regression.json": "45fb6a079d216967f02ac555740937acc2bbae938151bedbd9aa97c010c61a56",
+  "builder/gates/regressions/idle-round/regression.json": "0a1f4b35db3bbf5bb3252abfed394ac7e92cfcae24b84edf65fca931a3dbac3f",
+  "builder/gates/regressions/idle-round/rules.js": "146ac99bfb4e1260c3d2594ac1d861d1c971643a93ce2aa486218a3bd5781446",
+  "builder/gates/regressions/island-no-connector/regression.json": "621304d04e569316cf685840195fd81b51e91ef8fbe4b0c6c6b2728a6919a7e0",
+  "builder/gates/regressions/late-copy-look-lost/regression.json": "c479a45e2e3badc55ec988939a3d552c84e48dc8b051c5e5e28faf58b2b09a39",
+  "builder/gates/regressions/late-copy-look-lost/rules.js": "c2b186f3d6f2e0212464ecb036b27eeeda357de30709c98e8dd3b67ad123c709",
   "builder/gates/regressions/lights-race-friends-seen/regression.json": "493ed7d39ef241dd702c985311e6de8c6b13b52620457102528268f3551c8822",
+  "builder/gates/regressions/look-copies-not-the-game/regression.json": "3d9c2d479ca3a298044efd98addcd45e0ec84dabdc2784cdc01e5f8257367608",
+  "builder/gates/regressions/look-copies-not-the-game/stray-audio.js": "fcb73bd2092cab56d484dbc73ef2746314b66a4cfe15553745a9d7453bd041d6",
   "builder/gates/regressions/look-greyed/regression.json": "4d10f9fdcc93e263b4abb5c657755e6f410d94d63f4873c7f63685e1b7679e5e",
   "builder/gates/regressions/look-yard-holds/regression.json": "77b84dcf8e6b5032043978cacf9c41b943b6186d08548216136724ed8dc40097",
+  "builder/gates/regressions/objective-in-library/regression.json": "2c145b4cc078297c9f930885775de455f36c4b4a78e85005bc2ebd71d23b3138",
+  "builder/gates/regressions/objective-out-of-reach/regression.json": "9209ea89eebf25b5126ece069c7a5ac71785b37ecf7aecd963c923499ef3ddcb",
+  "builder/gates/regressions/objective-out-of-reach/rules.js": "76823531f0f6b08bb78733d5fe6950935172272ca932f9c76f9ab18284b90590",
+  "builder/gates/regressions/objective-standin/ATTRIBUTION.txt": "4eec7cc6b45c4cf460a5130201740793029c7b67380796391062b3f39a76ab0a",
+  "builder/gates/regressions/objective-standin/crate.glb": "4468360121b5f23b960cbd9c03b78f6ec75ad2f30a09c4c1ff66983094f41998",
+  "builder/gates/regressions/objective-standin/regression.json": "74d5398c9703ea53a511c849cdb8276d87f5ec9a2b87f7d90543a2897ec177c0",
+  "builder/gates/regressions/objective-wrong-model/ATTRIBUTION.txt": "bbf1c048cbfbf92bf6362891ba0302612573ee9bfa7bf4e8fdcacd640c0ba2b8",
+  "builder/gates/regressions/objective-wrong-model/barrel.glb": "e86b3c635c2e4722dc3e8016635d7348823b717b79998c53c882f53fb61be336",
+  "builder/gates/regressions/objective-wrong-model/regression.json": "b1513dd4c1e4a01da46e01f3bd5c6778873027a0e8dc6e52e6a75fe396e1ed4b",
   "builder/gates/regressions/own-board-unseen/regression.json": "ac52bbfef06e636caed2a86c50056cf89cabecfdde6a0eeddc22aa7a8643fac2",
+  "builder/gates/regressions/pickups-at-sea-level/regression.json": "3cdc1ba59aaf5f51a9f2b68564f1ab2d85f7e1c76c164ca25d6e68d08327aa8d",
+  "builder/gates/regressions/pickups-at-sea-level/rules.js": "520438e75a8a8995cc314dc66c2b3be10ddc5c8562ee34615431e6b17f9f5413",
+  "builder/gates/regressions/pickups-on-reachable-ground/regression.json": "3ff05d83dbfab5d834ae769b359f6e6c894f706d1100338b2abd79e0c1a63b2f",
+  "builder/gates/regressions/pickups-walled-off/regression.json": "4db0d50da7e848ef38235d9d2c3ed2f1445721f76ee6c4607ca85dc75d4a7c36",
+  "builder/gates/regressions/pickups-walled-off/rules.js": "a24a0d70f553a2ed6bd82abe10cf811349d079c13c6cb6fcb76dd083ef686107",
+  "builder/gates/regressions/rounds-end-by-rules/regression.json": "97aacdd30f0045f67bfa068af48db5129dc892763e4de4cffcaf770feabe9eec",
+  "builder/gates/regressions/rounds-end-by-rules/rules.js": "27381023611a1f4c7a477cbfc58e1dddbc4330f01e3822234939c9d1a1c98083",
+  "builder/gates/regressions/ruin-on-cliff/regression.json": "9322eac5b2a40d7c287334b63fa2fc0609b7f84a7da77e76df1967e0ca7fb05d",
   "builder/gates/regressions/slow-bots-race/regression.json": "8e1c0d8899099a2dff284d049d486c5e755a1748576e1e6cc9d7641de5e1125e",
+  "builder/gates/regressions/sound-at-unknown-place/regression.json": "9b2c7d77e5230099ecc217bcc56a9e09f41108b5a628a5dd67c7cc3b2d24de0e",
+  "builder/gates/regressions/sound-at-unknown-place/rules.js": "bec5bfd97cb05fbe3f25cd1b6d36f6dcea7b27611226d461cbddf9ebeca75603",
   "builder/gates/regressions/table-four-friends-seen/regression.json": "c6d15b3ebb279cc82912d614d8ee1b7f5a8874fc31aca8a4f03b77db81796a17",
   "builder/gates/regressions/vista-fewer-islands/regression.json": "b6130e88585e189c96bccd01fc54d944d565b9bd2963081c953e8c43948751e1",
   "builder/gates/regressions/vista-own-islands/regression.json": "6113a737cd41c4f48da8504d2630837b56db7cdf2090a61ff64c5e14289c1443",
   "builder/gates/regressions/vista-reference-island/regression.json": "5e9c1bdf725b99cddaad95c0cf28a11b67ede99a1284efba790e7cc510ae1099",
-  "builder/look/judge.mjs": "330740878cebfb098584d56d77773ed0a7a1d2db01aa2a7cb2b80cbbdab491e3",
+  "builder/look/judge.mjs": "9ca6c55f92540f9eb84839f07e398c197177789c2833dd3bb3929c3d309e4c6b",
   "builder/look/measure.mjs": "340a06b4b2fa3521b09dd991cbe725feb7110c5727e614ec95b18d298d446194",
   "builder/look/pixels.mjs": "eaca86dc6b84e9010edb10d7e36b83c1cec889ac840d6397234919f09f804274",
-  "builder/look/render.mjs": "af48af37c93f5fb9b0c3f56caaf3ce902046cb915da74fa19c0afb8ac4573113",
+  "builder/look/render.mjs": "85693dcc1291aa9ec2b688c93b620911d4adc80cfc424011e470daee68b91f60",
   "builder/look/settings.mjs": "c8938cac003b344725d5d7b914e66c083adfcc9ac3e64d3cfbaef0214dfe087d",
   "builder/look/stats.mjs": "52df835f4ec00ee6c8355577e2b0d9ee65278052dac7970efdacc8b90a7b76e3",
   "builder/look/vision.mjs": "94fdaeb84154f5ad4fa1645af2e9b90ab8070b7c3bc9e979568f8706f45364cb",
   "builder/multiplayer/party/gate-live.mjs": "465a511d6ea717f5eafa4a80ee969a7b99111bffe91f74b77ddf92d5af169596",
   "builder/multiplayer/party/gate.mjs": "9f54772c860e07c022b63b4e5f69c8398a791d92cca1b3667712fa1ab91020fd",
+  "builder/play/agent.mjs": "0234797f51c052d86f5403fcaab283c6cc8e9dd2c3d841616e6c2c87ab552d63",
+  "builder/play/judge.mjs": "f81ce5e9ff9274b3845664da85b313014b03d0263a8785e0d20f157c07557411",
+  "builder/play/measure.mjs": "a822f1a47c494c43d4164992f2f2d1595cffa7d21f05aeba4ea159d26a941c86",
+  "builder/play/session.mjs": "35a43f5b6788f451c3eaade25b17ed8efba676f5ef6f2ec0e8de19c90ace1c9b",
+  "builder/play/vision.mjs": "6fb21245fa727deb34f2383c02e79951c4d4254c1c4915515534ec1f3ca24ef3",
   "builder/tools/lib/alive-check.mjs": "52ffa1cc82a3984c9d013c179474886ee7f9d490cc649da85d15273293c13509",
   "builder/tools/lib/bodies-check.mjs": "8f9c37ac644e190041ed91934b2a436e10537ee7517403a4c91a59050abe70b4",
   "builder/tools/lib/controls-check.mjs": "457985506dffc33b09f87958b30aa0ce39c2006f7369455b88f8288fab699312",
@@ -269,19 +483,21 @@
   "builder/tools/lib/hits-check.mjs": "768a4b3a482b8de1357b9816cdeabdf13a274b416ef8317616aa75c7cc4d06de",
   "builder/tools/lib/improvised-check.mjs": "dd309201627d4452a97c53e1ddf14f9a8aa323b2515724bae37e736279c4961b",
   "builder/tools/lib/kit-check.mjs": "30f92a78b903e93246e64a6d7864c572099e6b69e7694341ad9d2469a3c759fb",
-  "builder/tools/lib/loadout-check.mjs": "6df2ae727c6302789a3596c489c1afee1f52e6860acef8692500b48e614f7a0b",
+  "builder/tools/lib/loadout-check.mjs": "5559ba7189cff320c81d9f907e88685dc616f423939528f8171e714931c48e0c",
   "builder/tools/lib/look-check.mjs": "f05e1406577925df9fc42d5d517dad8316bb9c21d37f9d46a93ea7c4f14aa753",
-  "builder/tools/lib/looks-check.mjs": "a751d31b15ec347ac277da0a73e22892a2213c7645fa18afdd03f2823063497b",
+  "builder/tools/lib/looks-check.mjs": "cafb27af2aba62b630935d5f280208034e283f52e78f740b5f40c137723b9bae",
   "builder/tools/lib/manifest-check.mjs": "881b36fc7a0d667be49a01244be90a7cc2ada1501297d75d511083fe1f006638",
   "builder/tools/lib/menu-check.mjs": "c011e65493350868260d0756930713457f44817f3bc0f14770f13d19b379ea97",
+  "builder/tools/lib/play-check.mjs": "82c9d08b555f0dd9f7490ab860b7f950d67c76247de4a2cf651ce68fb060f652",
   "builder/tools/lib/presence-check.mjs": "06412a9c600c18a90a89602351a9c10838002aead9504d78729b393178e16811",
   "builder/tools/lib/presence.mjs": "affae62b33fe343e81425cd68927c2b33bd8fb2b329aa5220530e20872e88d29",
+  "builder/tools/lib/reach-check.mjs": "fef13e8d79979eb0b6d82cb2471a81cdf84c478da64968f46a1f4c7b16e6ae7b",
   "builder/tools/lib/screens-check.mjs": "2dd8dbd34e36b715a0e10f0ac30f9b6f37f70915a59f5591658ef1a5b2d98a31",
   "builder/tools/lib/sheet-check.mjs": "6ba0651b86b81f0c5faa1e0537e29d5451411b95ca6a7a280fbe939c895cc66e",
-  "builder/tools/lib/sounds-check.mjs": "a1b3bf30e85b99803fc35469d790e670e9775976c21ef9d871dcf8a65a70b626",
+  "builder/tools/lib/sounds-check.mjs": "e2b36dc199f24db0134f4b3bbad139f929bc906f50a6777c840f9d1fdb55d809",
   "builder/tools/lib/stepped.mjs": "b734ebd7cd5792dcfc5706532938e045649cda9ce0df7d747b1dda48971330bc",
-  "builder/tools/lib/terrain-check.mjs": "c41d75633fe6c6dc6417cf2589755d60f6541ed64bd20b7a81dec17a3c46b021",
-  "builder/tools/lib/verdict.mjs": "4a5d79abd1c0605d27cad2cb8fddfd47c7e20c2f2f043d80b729c81f9c15e49d",
+  "builder/tools/lib/terrain-check.mjs": "d109341413aecaf375044e647e1e0bfee032b486cb62b86a988a473936a864cb",
+  "builder/tools/lib/verdict.mjs": "bd3cc9732af4387079c83eff425bd2683c5a11b8bfb83519bec6b23000476208",
   "builder/tools/lib/vista-sight-check.mjs": "5d1a193a7641ee3e5be1357fb15dcf57b5fa2f8ac4551db90cbc7ffd40f9ddc5",
   "builder/tools/lib/voice-chat-check.mjs": "eb362061c40b256b2d4d1712c147be2fb7be81b53507b81492acb0dfeb3b6218",
   "builder/tools/lib/world-check.mjs": "e84f30100c609b68a923f6565a2ef9dd631cdbd8f597b388008efbb046dfdc12",
@@ -289,10 +505,11 @@
   "builder/tools/lib/worlds-net-check.mjs": "01075d040a2a7f695710fc11662710f9f3fe22e3421fb32f8cb3ae24cc21cc43",
   "builder/tools/lib/worlds-room-check.mjs": "0490ff4756cd7b4ce20d1405980fe8e5576917ce4720537fc887c013a9f1767e",
   "builder/tools/lib/worlds-watch-check.mjs": "de72125f7a1733a66290c27426da7a401e5ec9a3b986f5a819e52c476feb9011",
-  "builder/tools/verify-forge.mjs": "d374a578935cccb5afa52e5d30dd6aecf1a7b66280ef084cfdfe71b54b678b7f",
-  "builder/tools/verify-vista.mjs": "d4312877fae15fc92636b8e63aa1d132fdd836140766c07a693786e3207e2c1c",
-  "builder/tools/verify-world.mjs": "efdd835f291dbd67c3f68d8c8b344c991bca20e05a65eb6f2f3ca6348f61e8c5",
-  "builder/tools/verify.mjs": "67853c82e43a097c9e4784bc5e671f1267bf22581de2d902c30f0f9e72dc0387"
+  "builder/tools/verify-forge.mjs": "915c28c556a3fc718cbe7acbad4990895ecce1f87d48fc9865602cf56a6ef578",
+  "builder/tools/verify-vista.mjs": "0ed56bc02f0b7a782ab6c495e6203e1183fb4f45d76b30042525e0d0769f52c2",
+  "builder/tools/verify-world.mjs": "6df92c1ddc37430df38c18908456ae036e0f9cccce1e45e8d8e265a20456d537",
+  "builder/tools/verify.mjs": "a17212074ea9d2458e889def51c4c80962bd515d7bafea96dddbc4d08a3543af",
+  "library/words.json": "b780e690059fbcfe9f510232db50f9d499644ceedc7c0805fa7b9bc8b24bf443"
  },
  "machine": {
   "node": "v24.19.0",

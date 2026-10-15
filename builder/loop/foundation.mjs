@@ -76,6 +76,10 @@ export async function chooseFoundation(ledger, registry, { current = null } = {}
     said.push(`Who acts when (${wanted?.id ?? acts?.acts}) is built in this game on the ${loop} loop.`);
   }
 
+  // other ways to play it the person left open: when their own words never said who acts when (the line is the
+  // ledger's reading of the genre), a pitch card may play on another open loop, so the cards can differ in play
+  const loopChoices = acts && !String(acts.words ?? '').trim() && !loopBuild ? loops.filter(l => fits(l) && l.id !== loop).map(l => l.id) : [];
+
   // the kind, last: the feel line names it, else a reference does; never a word of the idea
   const kinds = await registry.kinds();
   const named = live.filter(r => r.kind && r.about === 'feel'), refs = live.filter(r => r.kind && r.about === 'reference');
@@ -100,7 +104,7 @@ export async function chooseFoundation(ledger, registry, { current = null } = {}
     said.push(`No feel was named: the ${kind} look for now; a change request can give it another without touching play.`);
   }
   return { ok: !problems.length, problems, probes: [], runtime: chosen.runtime, profile: chosen.profile, loop, kind, limits,
-    why: { runtime: whyRuntime, loop: whyLoop, kind: whyKind }, said, candidates: candidates.map(({ score, ...c }) => c), builds, rehome, loopBuild, kindProof };
+    why: { runtime: whyRuntime, loop: whyLoop, kind: whyKind }, said, candidates: candidates.map(({ score, ...c }) => c), builds, rehome, loopBuild, kindProof, loopChoices };
 }
 
 /** The foundation as the ledger keeps it (ledger.schema.json $defs/foundation): what was chosen, why, what it builds. */

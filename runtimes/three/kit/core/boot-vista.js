@@ -53,6 +53,7 @@ import { createFair } from './fair.js';
 import * as refusals from './refusals.js';
 import { seedRules, readOnlyView, refusedPress, watchKit, setupFailed, frameFailed } from './guard.js';
 import { createEventLog } from './events.js';
+import { createPlay } from './play.js';
 import { stepAsked, createStepper } from './step.js';
 import { net } from '../../mp/net.js';
 import { probeWebGPU, noWebGPUScreen } from '../../vista/kit/gpu.js';
@@ -279,6 +280,8 @@ export async function boot({ rules = {} } = {}) {
     const vistaEvents = O.vistaPart(vgame, ctx);
     const kitLog = createEventLog(ctx, { list: [vistaEvents], modules: new Map([['vista', { manifest: vistaEvents.manifest }]]) });
     ctx.events = Object.freeze({ count: kitLog.count });
+    // the play feed (gf/three/core/play.js; builder/play): the same numbers as every runtime's, from the kit's event log
+    const playFeed = createPlay(ctx, { log: kitLog, list: [vistaEvents], modules: new Map([['vista', { manifest: vistaEvents.manifest }]]), rows: () => session.round.rows });
     try { await rules.setup?.(ctx); } catch (e) { console.error(e); setupFailed('rules', e); throw e; }
 
     function onPhase(ph) {
@@ -404,6 +407,7 @@ export async function boot({ rules = {} } = {}) {
       sounds: () => JSON.parse(JSON.stringify({ plays: audio.stats?.plays ?? {}, dropped: audio.stats?.dropped ?? {}, core: ctx.vistaAudio?.observe?.() ?? null })),
       panels: () => JSON.parse(JSON.stringify(ui.panels?.observe?.() ?? { open: [], covered: false, opened: 0, closed: 0, refused: 0, last: null })),
       events: o => JSON.parse(JSON.stringify(kitLog.read(o ?? {}))),     // the event log (gf/three/core/events.js; gates C and D)
+      play: () => JSON.parse(JSON.stringify(playFeed.read())),             // the play feed (gf/three/core/play.js; gate D's play leg)
       ...(stepped ? { stepped: true, step: (ms, opts) => JSON.parse(JSON.stringify({ ...stepper.step(ms, opts), now: ctx.time.now, round: ctx.time.round, phase: session.round.phase })) } : {}),
       menu: () => JSON.parse(JSON.stringify(menu.observe())),
       hud: () => JSON.parse(JSON.stringify({ phase: session.round.phase, covered: ui.covered, ...hud.observe(), vista: { layer: !!layer.isConnected, children: layer.childElementCount } })),

@@ -1,0 +1,9 @@
+{
+ "base": "berry-isles",
+ "why": "The creator after the berry fix (2026-10-14): \"Sunny Castle is good enough. But still some flags we talked about before, like making all area reachable\". The composed levels were made with nothing that joins their places: Sunny Castle's third island had no bridge. Here the world may only cut ramps (config/world.json reach.kinds [\"ramp\"]: a look with no bridge, sandbar or pad), and no ramp crosses 12 m of sea: the east island and the west island with the gatehouse on its hill are left across the water. Gate D must fail it on measure 6, naming each area, where it is and why.",
+ "evidence": "builder/gates/evidence/2026-10-14-connect.json",
+ "patches": [{ "file": "config/world.json", "pointer": "/reach", "value": { "kinds": ["ramp"] } }],
+ "mustFail": ["D"],
+ "measure": 6,
+ "detail": "an area at \\(.*\\) \\(.*\\) cannot be reached: [0-9.]+ m of water from the seats' ground"
+}

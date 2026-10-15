@@ -105,16 +105,17 @@ test('the conversation\'s words: the person\'s words first, the line for their s
 });
 
 test('the stages a person follows, from the loop state (gf-loop/2: every step has a stage)', () => {
-  assert.deepEqual(STAGES.map(s => s.label), ['Ledger', 'Foundation', 'Pitch', 'Spec', 'Look', 'Build', 'Gates', 'Play-test', 'Reader', 'Deliver']);
+  assert.deepEqual(STAGES.map(s => s.label), ['Ledger', 'Foundation', 'Pitch', 'Spec', 'Look', 'Play', 'Build', 'Gates', 'Play-test', 'Reader', 'Deliver']);
   assert.equal(stageOf(null).index, -1, 'no loop (an example): no stages shown');
   assert.deepEqual(stageOf({ status: 'building', step: 'ledger' }), { index: 0, waiting: false, done: false });
   assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'pitch', waiting: { about: 'cards' } }), { index: 2, waiting: true, done: false });
   assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'foundation', waiting: { about: 'migration' } }), { index: 1, waiting: true, done: false });
   assert.deepEqual(stageOf({ status: 'waiting-on-creator', step: 'look', waiting: { about: 'looks' } }), { index: 4, waiting: true, done: false });
-  assert.equal(stageOf({ status: 'building', step: 'repair' }).index, 5);
-  for (const step of ['economy', 'backend', 'verify']) assert.equal(stageOf({ status: 'building', step }).index, 6);
-  assert.equal(stageOf({ status: 'building', step: 'read' }).index, 8);
-  assert.deepEqual(stageOf({ status: 'delivered', step: 'done' }), { index: 9, waiting: false, done: true });
+  assert.equal(stageOf({ status: 'building', step: 'design' }).index, 5, 'the play is designed between the look and the build');
+  assert.equal(stageOf({ status: 'building', step: 'repair' }).index, 6);
+  for (const step of ['economy', 'backend', 'verify']) assert.equal(stageOf({ status: 'building', step }).index, 7);
+  assert.equal(stageOf({ status: 'building', step: 'read' }).index, 9);
+  assert.deepEqual(stageOf({ status: 'delivered', step: 'done' }), { index: 10, waiting: false, done: true });
   const { ORDER } = ORDER_MOD;
   for (const o of ORDER) assert.ok(STAGES.some(s => s.steps.includes(o.step)), `the step ${o.step} has a stage`);
 });
@@ -144,5 +145,14 @@ test('a game the build loop is still making on its first build is not shown; a c
       assert.equal(gameReady(dir), shown, `${kind} ${status}`);
       assert.equal(buildRunning(dir), !shown, `${kind} ${status}`);
     }
+    // a headless build: running while its record says so; stopped (Ctrl+C, the wall clock), its game is shown
+    await state('build', 'building');
+    await mkdir(path.join(dir, '.gf-loop', 'headless'), { recursive: true });
+    const record = running => writeFile(path.join(dir, '.gf-loop', 'headless', 'record.json'), JSON.stringify({ schema: 'gf-headless/1', running }));
+    await record(true);
+    assert.equal(gameReady(dir), false, 'a headless build under way');
+    await record(false);
+    assert.equal(gameReady(dir), true, 'a headless build that was stopped');
+    assert.equal(buildRunning(dir), false);
   } finally { await t.cleanup(); }
 });

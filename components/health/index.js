@@ -65,6 +65,10 @@ export function create(ctx, params = {}) {
   const pool = createPool({ hp: V('hp'), regen: V('regen'), regenDelay: V('regenDelay'), respawnSeconds: V('respawnSeconds'), respawnInvuln: V('respawnInvuln'), getUpSeconds: ctx.fair?.on ? ctx.fair.params.downSeconds : V('getUpSeconds') });
   const L = { damage: [], down: [], respawn: [], hurt: [] };
   const lastSeen = new Map();       // every copy: the hp last seen per id (the edge for onHurt)
+  // the game's effect style (config/game.json → fx, kit/vfx/styles.js) shows each hurt as a damage number over the body,
+  // in the HUD's number style; the vfx module is loaded only by a game with a style that has numbers
+  let vfx = null;
+  if (ctx.config?.fx && ctx.config.fx.numbers !== 'none') import('../../vfx/index.js').then(m => { vfx = m.vfxOf(ctx); }).catch(e => console.warn(`gf-three health: damage numbers need the vfx module (${e.message})`));
   let S = null, demoAt = 0;
   const demoHurt = (() => { try { return new URLSearchParams(globalThis.location?.search ?? '').get('gf-demo') === 'health.hurt'; } catch { return false; } })();
   const now = () => ctx.time.now;
@@ -83,7 +87,8 @@ export function create(ctx, params = {}) {
   function respawn(p) {
     let pos = null, yaw = p.yaw;
     const zone = V('respawnZone') && ctx.world?.zone?.(V('respawnZone'));
-    if (zone) { pos = zone.random(ctx.rng); yaw = Math.atan2(-pos.x, -pos.z); } else { const s = spawnFor(p); pos = s; yaw = s.yaw; }
+    // in the zone on open ground every seat reaches (worlds/placement.js), never a random point in the sea or a wall
+    if (zone) { pos = ctx.world.place?.('respawn', 1, { zone: V('respawnZone'), rng: () => ctx.rng(), clear: 0.5, away: 0 })?.[0] ?? zone.random(ctx.rng); yaw = Math.atan2(-pos.x, -pos.z); } else { const s = spawnFor(p); pos = s; yaw = s.yaw; }
     pool.revive(p.id, now()); p.alive = true;
     p.teleport({ x: pos.x, y: pos.y ?? 0, z: pos.z }, yaw);
     for (const fn of L.respawn.slice()) try { fn({ player: p }); } catch (e) { console.error(e); }
@@ -173,6 +178,7 @@ export function create(ctx, params = {}) {
             if (v > 0) { p.character?.play?.('hit', { fade: 0.05 }); p.character?.express?.('hurt', 0.6); }
             if (V('soundHurt')) ctx.audio?.play(V('soundHurt'), { at: p.position, optional: true });
             if (v <= 0 && V('soundDown')) ctx.audio?.play(V('soundDown'), { at: p.position, optional: true });
+            if (vfx && p.position) vfx.damage({ x: p.position.x, y: p.position.y + (p.character?.height ?? 1.7) + 0.35, z: p.position.z }, v - was, { color: p.color ?? null });
             for (const fn of L.hurt.slice()) try { fn({ player: p, hp: v, delta: v - was }); } catch (e) { console.error(e); }
           }
           lastSeen.set(p.id, v);

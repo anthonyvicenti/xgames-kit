@@ -570,6 +570,9 @@ export function create(ctx, params = {}) {
 
   return {
     id: 'build', interacts: true, aimed: false, stats,
+    // players place and break blocks: any ledge, cliff or gap the walk grid sees, they build their own way to
+    // (the reach gate reads it: worlds/connect.mjs judgeAreas)
+    makesWay: 'players place and break blocks, so they build their own way up any cliff and across any gap',
     setup(c) {
       V = ctx.world.voxel;
       if (!V) throw new Error('gf-three build: needs a voxel world (config/world.json template "voxel")');

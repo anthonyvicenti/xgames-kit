@@ -1,0 +1,13 @@
+{
+  "base": "berry-isles",
+  "why": "The same class with a real model: the berry slot holds a library model that means something else (KayKit's dungeon barrel, CC0, from the library's kaykit-dungeon-remastered pack): not a stand-in, but not a berry either, so the player is still told to collect a thing the world does not show. Gate F must fail it on measure 14: its id and tags never name a berry.",
+  "evidence": "builder/gates/evidence/2026-10-14-objective-art.json",
+  "files": {
+    "assets/models/berry.glb": "barrel.glb"
+  },
+  "mustFail": [
+    "F"
+  ],
+  "measure": 14,
+  "detail": "the objective \"berry\" \\(prop\\.berry.*kaykit-dungeon-remastered/dungeon-barrel.*which is not a berry"
+}

@@ -12,7 +12,13 @@
 //      still a stand-in: its file is byte-identical to a library bean or a kit stand-in file (tools/lib/standin-assets),
 //      or to the placeholder create put in that slot (gf-three.json bodies/props), or its GLB says it is a bean (gfBody
 //      extras); or the file is missing;
-//   2. two roles the spec describes differently (the player and an enemy) share one body file, so they differ only by tint.
+//   2. two roles the spec describes differently (the player and an enemy) share one body file, so they differ only by tint;
+//   3. an objective's prop (what a mechanic's objectives() draw, by its manifest's `objectives`, or a goal prop:
+//      builder/art/objectives.mjs objectiveProps) is a stand-in, or a library model whose id and tags never name the
+//      thing the slot draws (a barrel in the berry slot), whatever the spec asked. The creator, 2026-10-14, on the composed
+//      levels: "We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some
+//      boxes": the berries were the kit's stand-in crate. A prop the spec names exactly (fill.from library or provided)
+//      is the creator's choice. The art step (builder/art/objectives.mjs, `gamesfun art objectives`) fills these slots.
 // Library files are the asset library's, in both 3D profiles' packs (builder/art/views.mjs).
 // The only excuse is a recorded generation failure: the worker's game/generated.json lists the item with a state that
 // is not 'placed' and a reason, and its `delivery` line (what the worker adds to the delivery summary) names the role or
@@ -29,6 +35,8 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { STANDIN_ASSETS, sha256 } from './paths.mjs';
 import { assetsIn, findAsset } from '../../art/views.mjs';
+import { objectiveProps, triedAndFailed, whatModel } from '../../art/objectives.mjs';
+import { readCatalog } from './spec.mjs';
 
 // The asset library's bodies and props in both 3D profiles' packs (runtimes/three/art.json, then the scenic-3d
 // profile's): a scenic library body is a real body, never a stand-in, and a game may wear one on any three profile. The
@@ -97,16 +105,27 @@ async function asks(dir) {
     const key = slot.replace(/^prop\./, '');
     items.push({ kind: 'prop', key: p.name, slot, from: p.from, describe: clean(p.describe), file: slotFile(slot) ?? `assets/models/${key}.glb`, placeholder: record.props?.[key]?.from ?? record.props?.[p.name]?.from ?? null });
   }
+  // what the game's objectives draw (a pickup, a carried item, a goal): held to what it is, whatever the spec asked
+  const catalog = await readCatalog().catch(() => null);
+  for (const o of objectiveProps(spec, catalog)) {
+    if (o.fill?.from === 'library' || o.fill?.from === 'provided') continue;
+    const slot = record.named?.[o.name] ?? `prop.${o.name}`;
+    const key = slot.replace(/^prop\./, '');
+    items.push({ kind: 'objective', key: o.name, slot, from: o.fill?.from ?? 'kind', by: o.by, describe: clean(o.describe), file: slotFile(slot) ?? `assets/models/${key}.glb`, placeholder: null });
+  }
   // a revision may ask for a look the game's spec.json predates: the worker's record lists what it was asked to make
   for (const g of gen?.items ?? []) {
     const it = items.find(x => x.kind === g.kind && x.key === g.key);
     if (it) { if (ASKED.has(g.from)) it.from = g.from; continue; }
     if (ASKED.has(g.from)) items.push({ kind: g.kind, key: g.key, slot: g.slot, from: g.from, describe: clean(g.asked), file: g.file ?? slotFile(g.slot), placeholder: null });
   }
+  // a prop the spec (or a revision) asks to be made is held by the leg above, which knows the worker's progress
+  const made = new Set(items.filter(i => i.kind === 'prop' && ASKED.has(i.from)).map(i => i.key));
+  for (let i = items.length - 1; i >= 0; i--) if (items[i].kind === 'objective' && made.has(items[i].key)) items.splice(i, 1);
   return { items, gen };
 }
 
-const named = it => (it.kind === 'body' ? `the ${it.key}` : `the prop "${it.key}"`);
+const named = it => (it.kind === 'body' ? `the ${it.key}` : it.kind === 'objective' ? `the objective "${it.key}"` : `the prop "${it.key}"`);
 
 /** Check 14. → { ok, detail, record: { items, pairs }, notes } */
 export async function checkLooks(gameDir) {
@@ -127,7 +146,22 @@ export async function checkLooks(gameDir) {
     return { ok: true, why: `generation ${g.state}: ${short(g.why, 100)}; the delivery says so` };
   };
 
-  for (const it of items) {
+  for (const it of items.filter(i => i.kind === 'objective')) {
+    const p = join(dir, it.file ?? '');
+    if (!it.file || !existsSync(p)) { it.state = 'missing'; fails.push(`${named(it)} (${it.slot}, drawn by ${it.by.join(', ')}): ${it.file ?? 'no file'} is missing`); continue; }
+    const w = await whatModel(await readFile(p), it.key);
+    it.sha256 = w.sha256; it.is = w.is;
+    if (w.means !== false) { it.state = w.means ? 'means' : 'own'; oks.push(`${it.key} (objective): ${it.file} is ${w.is}`); if (w.means === null) notes.push(`check 14: ${named(it)} is ${w.is} (not in the library, so what it is was not read)`); continue; }
+    const g = (gen?.items ?? []).find(x => x.kind === 'prop' && x.key === it.key);
+    // a stand-in stays only when making the thing was tried and did not land, and the delivery says so
+    if (w.standin && triedAndFailed(g) && delivery.includes(it.key) && delivery.includes(it.file)) { it.state = 'excused'; notes.push(`check 14: ${named(it)} is still ${w.is} (${it.file}); generation ${g.state}: ${short(g.why, 100)}; the delivery says so`); oks.push(`${it.key} (objective): stand-in, excused`); continue; }
+    it.state = w.standin ? 'standin' : 'other';
+    fails.push(w.standin
+      ? `${named(it)} (${it.slot}, drawn by ${it.by.join(', ')}: "${short(it.describe)}") is ${w.is}: ${it.file}; what the player is sent to get must look like it (the art step fills it from the library by meaning or makes it: gamesfun art objectives <game> --yes${g ? `; game/${GENERATED_FILE}: ${g.state}${g.why ? `, ${short(g.why, 100)}` : ''}` : ''})`
+      : `${named(it)} (${it.slot}, drawn by ${it.by.join(', ')}: "${short(it.describe)}") is ${w.is}, which is not a ${it.key}: its id and tags never name it (the art step fills it from the library by meaning or makes it: gamesfun art objectives <game> --yes)`);
+  }
+
+  for (const it of items.filter(i => i.kind !== 'objective')) {
     const p = join(dir, it.file ?? '');
     if (!it.file || !existsSync(p)) { it.state = 'missing'; if (ASKED.has(it.from)) fails.push(`${named(it)} (${it.slot}, from ${it.from}): ${it.file ?? 'no file'} is missing`); continue; }
     const buf = await readFile(p);
@@ -161,10 +195,10 @@ export async function checkLooks(gameDir) {
     fails.push(`the ${A.key} and the ${B.key} are described differently ("${short(A.describe, 40)}" / "${short(B.describe, 40)}") but share one body file (${A.file} = ${B.file}, ${A.is}) and differ only by tint; give the ${B.key} its own body (generated, or a library body that fits it)`);
   }
 
-  const asked = items.filter(i => ASKED.has(i.from));
+  const asked = items.filter(i => ASKED.has(i.from) || i.kind === 'objective');
   const ok = fails.length === 0;
   const detail = ok
-    ? (asked.length || bodies.length > 1 ? `looks honoured: ${[...oks, ...(bodies.length > 1 ? [`${bodies.length} roles, ${new Set(bodies.map(b => b.sha256)).size} body files`] : [])].join('; ')}` : 'nothing to judge: no generated or reference looks, one character role')
+    ? (asked.length || bodies.length > 1 ? `looks honoured: ${[...oks, ...(bodies.length > 1 ? [`${bodies.length} roles, ${new Set(bodies.map(b => b.sha256)).size} body files`] : [])].join('; ')}` : 'nothing to judge: no generated or reference looks, no objective props, one character role')
     : `${fails.length} look${fails.length > 1 ? 's' : ''} not honoured: ${fails.join(' | ')}. A stand-in passes only when the generation failed and game/${GENERATED_FILE} records why with the delivery line naming it (the Studio worker writes it)`;
   return { ok, detail, notes, record: { items: items.map(({ body, placeholder, ...i }) => i), pairs, generated: gen ? { items: (gen.items ?? []).length, delivery: gen.delivery ?? null } : null } };
 }

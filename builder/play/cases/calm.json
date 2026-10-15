@@ -1,0 +1,620 @@
+{
+  "schema": "gf-play-case/1",
+  "id": "calm",
+  "prompt": "a calm relaxing game where me and a friend look after a little island garden together at sunset: planting, watering, picking fruit and fishing off the dock, no rush and no losing",
+  "how": "gamesfun build --until build stopped in the pitch: the pitch rounds could not settle the loop (the ledger named the closed \"saved\" loop, the foundation chose \"world\", whose kit part plays only on the voxel world with the build mechanic). Card 1 of the last pitch was put on the foundation's loop and the designer ran on it through the CLI: node builder/play/design.mjs <spec> --ledger <ledger> --design --model opus",
+  "ledger": [
+    {
+      "id": "acts",
+      "about": "acts",
+      "words": "no rush and no losing",
+      "what": "No rounds, no clock and no losing: one shared garden the two players tend at their own pace, kept between visits.",
+      "home": "exists",
+      "by": "loop:saved"
+    },
+    {
+      "id": "perspective",
+      "about": "perspective",
+      "words": "look after a little island garden",
+      "what": "A 3D view following your gardener around the little island.",
+      "home": "build"
+    },
+    {
+      "id": "players",
+      "about": "players",
+      "words": "me and a friend look after a little island garden together",
+      "what": "Two friends look after the same garden together, cooperatively.",
+      "home": "exists",
+      "by": "capability:friend-presence"
+    },
+    {
+      "id": "body",
+      "about": "body",
+      "words": "me and a friend look after",
+      "what": "Each player is a little gardener character who walks around the island.",
+      "home": "exists",
+      "by": "capability:characters"
+    },
+    {
+      "id": "planting",
+      "about": "action",
+      "words": "planting",
+      "what": "Players plant seeds in garden plots, and the plants grow over time into fruiting plants.",
+      "home": "build"
+    },
+    {
+      "id": "watering",
+      "about": "action",
+      "words": "watering",
+      "what": "Players water planted plots, which helps them grow; dry plots wait patiently and never die.",
+      "home": "build"
+    },
+    {
+      "id": "picking",
+      "about": "action",
+      "words": "picking fruit",
+      "what": "Players pick ripe fruit from grown plants and fruit trees, collected into a shared basket.",
+      "home": "build"
+    },
+    {
+      "id": "fishing",
+      "about": "action",
+      "words": "fishing off the dock",
+      "what": "Players cast a line off the dock and reel in fish, calmly with no fail state.",
+      "home": "build"
+    },
+    {
+      "id": "feel",
+      "about": "feel",
+      "words": "a calm relaxing game",
+      "what": "Calm and relaxing: soft light, gentle sounds, nothing hurries you.",
+      "home": "exists",
+      "by": "kind:calm"
+    },
+    {
+      "id": "island",
+      "about": "thing",
+      "words": "a little island garden",
+      "what": "The place is a little island with a garden on it, surrounded by sea, with a dock.",
+      "home": "build"
+    },
+    {
+      "id": "sunset",
+      "about": "thing",
+      "words": "at sunset",
+      "what": "It is always sunset: a low warm sun over the sea.",
+      "home": "build"
+    },
+    {
+      "id": "no-losing",
+      "about": "thing",
+      "words": "no rush and no losing",
+      "what": "No timers, no fail states and nothing that can be lost: plants never die and there is no score to beat.",
+      "home": "build"
+    }
+  ],
+  "foundation": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "world",
+    "kind": "calm",
+    "why": {
+      "runtime": "three/standard-3d: meets camera follow, dimension 3d; builds 6 things it lacks in the game",
+      "loop": "world: \"no rush and no losing\": No rounds: one shared place, saved on the play host, that players drop in and out of; no clock, no score, no bots, no results.",
+      "kind": "calm: \"a calm relaxing game\""
+    }
+  },
+  "cards": [
+    {
+      "id": "sunset-garden",
+      "title": "Sunset Island Garden",
+      "play": {
+        "style": "cosy co-op gardening",
+        "verbs": [
+          "plant",
+          "water",
+          "pick",
+          "fish"
+        ],
+        "beat": "walk to a plot, plant or water it, glance at what's ripening, pick a fruit into the basket",
+        "touch": "one shared garden and basket: what one plants the other can water and pick",
+        "chaos": 0.05
+      }
+    }
+  ],
+  "chosen": "sunset-garden",
+  "spec": {
+    "title": "Sunset Island Garden",
+    "hook": "You and a friend tend a little island garden at sunset: plant, water, pick fruit and fish off the dock.",
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "world",
+    "kind": "calm",
+    "camera": "follow",
+    "players": {
+      "min": 1,
+      "max": 2,
+      "bots": false
+    },
+    "multiplayer": {
+      "mode": "live",
+      "together": "coop",
+      "presence": "character"
+    },
+    "world": "voxel",
+    "controls": {
+      "move": "walk your gardener",
+      "interact": "plant, water or pick at what you face",
+      "cast": "cast and reel in at the dock",
+      "primary": "lay soil, path or fence blocks"
+    },
+    "mechanics": [
+      {
+        "id": "build",
+        "as": "lay soil, paths and fences on the island",
+        "params": {
+          "reach": 6,
+          "boomPush": 0,
+          "boomRadius": 1,
+          "hotbar": [
+            "dirt",
+            "gravel",
+            "planks",
+            "log",
+            "cobble",
+            "flower-red",
+            "flower-yellow",
+            "flower-blue",
+            "lantern",
+            "sign"
+          ],
+          "rate": 4,
+          "burst": 10,
+          "paint": true,
+          "signs": true,
+          "boomCooldown": 120,
+          "saveEvery": 2
+        }
+      },
+      {
+        "id": "panels",
+        "as": "the basket and journal",
+        "params": {
+          "kinds": [
+            "inventory"
+          ],
+          "inventoryTitle": "Our basket",
+          "inventoryEmpty": "Nothing picked yet",
+          "inventoryClose": "Close"
+        }
+      }
+    ],
+    "build": [
+      "A little island garden surrounded by sea, with a dock",
+      "A 3D view following your gardener around the little island",
+      "Planting seeds that grow over time into fruiting plants",
+      "Watering plots, which helps them grow; dry plots wait and never die",
+      "Picking ripe fruit into a shared basket",
+      "Fishing off the dock, calmly, with no fail state",
+      "It is always sunset: a low warm sun over the sea",
+      "No timers, no fail states, nothing lost, no score",
+      "The calm look on three",
+      "Protected garden: block edits that break or cover a plot, tree, the well, the basket, the dock or the ground under them are refused",
+      "One interact that does what you face: plant, water, fill the can, pick or open the basket, with the HUD prompt naming it",
+      "Seed rotation and the journal: the next seed kind is on the HUD, and fruit and fish kinds found are kept in the shared save",
+      "Gentle choices: an unpicked fruit can turn golden, and a fisher can let a nibble pass for a bigger tug",
+      "Together touches: a toast when you water or pick a friend's planting, and quicker bites while two fish side by side",
+      "Shore return: a player who wades into deep sea floats back to the nearest beach after a moment, with nothing lost"
+    ]
+  },
+  "target": {
+    "schema": "gf-play-target/1",
+    "from": "words",
+    "confidence": 0.6,
+    "genre": {
+      "name": "cosy co-op garden and fishing sim",
+      "traits": [
+        "the quiet pleasure of small loops: plant, water, watch it grow, pick, and plant again, always with something nearly ripe to come back to",
+        "no pressure at all: nothing dies, nothing is lost, no clock, so every choice is about what you feel like doing next",
+        "the little surprise of a bite on the line and seeing what fish came up, with a rare one now and then",
+        "a shared place that grows more lush and more 'ours' each visit: paths, fences and flowers laid by hand",
+        "friends splitting the chores without being asked: one waters while the other picks, then you sit on the dock and fish side by side"
+      ]
+    },
+    "verbs": [
+      {
+        "id": "walk",
+        "does": "Walk your little gardener around the island, from plots to trees to the well and the dock",
+        "input": "move",
+        "feel": "unhurried stroll, soft footsteps on grass and planks"
+      },
+      {
+        "id": "plant",
+        "does": "Plant the next seed (shown on the HUD) in the empty plot you face",
+        "input": "interact",
+        "feel": "a soft soil pop and a tiny seed mound"
+      },
+      {
+        "id": "water",
+        "does": "Pour the watering can on the plot you face: the soil darkens and it grows while wet",
+        "input": "interact",
+        "feel": "a gentle arc of droplets and a sparkle on the soil"
+      },
+      {
+        "id": "fill-can",
+        "does": "Fill the watering can at the stone well",
+        "input": "interact",
+        "feel": "a bucket splash and the can's drops on the HUD filling up"
+      },
+      {
+        "id": "pick",
+        "does": "Pick a ripe fruit from the plant or tree you face; it hops into the shared basket",
+        "input": "interact",
+        "feel": "a little pluck, the fruit bounces in an arc to the basket with a pling"
+      },
+      {
+        "id": "cast",
+        "does": "At the dock end, cast a line; the bobber floats on the sunset sea",
+        "input": "cast",
+        "feel": "a whoosh of the line and a plop with ripples"
+      },
+      {
+        "id": "reel",
+        "does": "When the bobber dips, press cast again to reel the fish in; a miss just means it bites again",
+        "input": "cast",
+        "feel": "a splash, the fish flops up into view with its name, then into the basket"
+      },
+      {
+        "id": "lay-blocks",
+        "does": "Lay soil, path, fence, flower and lantern blocks to shape the garden; secondary lifts one back up",
+        "input": "primary / secondary",
+        "feel": "a soft block thunk, nothing explodes"
+      }
+    ],
+    "beats": {
+      "moment": "Walk a few steps to a plot or tree, press interact to plant, water or pick, glance at which plot is about to fruit; or watch the bobber and press cast when it dips.",
+      "stretch": "Every half minute a plot ripens or a tree fruits, the can runs dry and you stroll to the well, or a fish comes up; between chores you lay a path or a flower bed, and you see your friend's harvest land in the same basket.",
+      "round": "A visit of about 20 minutes: you arrive beside the basket at sunset with the garden as you left it, walk the plots planting and watering, the first fruit ripens within about a minute, the basket fills, you wander to the dock to fish, decorate a little, and leave whenever you like.",
+      "between": "The garden is saved: plots keep their stage and water, the basket keeps its fruit and fish, the paths and flowers you laid stay; the journal of fruit and fish kinds found grows, so the next visit chases a kind you have not seen yet."
+    },
+    "objective": {
+      "goal": "Tend the island garden together: keep the plots planted and watered, pick what ripens and fish off the dock until the shared basket is full of fruit and fish of every kind.",
+      "win": "Nobody wins and nothing ends: the reward is a garden in full fruit, a basket that keeps filling and a journal of fruit and fish kinds that fills in over visits.",
+      "lose": "Never: plants never wilt or die, dry plots just pause, missed bites bite again, and nothing in the basket can be lost.",
+      "reach": {
+        "how": "Players spawn on flat grass at the garden's edge beside the basket; the 12 plots sit in a grid 2–8 m away on the same ground, the 3 trees and the well ring the garden within 10 m, and the dock starts on the sunset-side beach about 15–20 m away on a gentle walk with no climb.",
+        "within": 4,
+        "risks": [
+          "a plot, tree or the well placed in the sea, on the beach slope or sunk inside the voxel ground",
+          "the dock not joined to the beach so its end cannot be walked to, or its fishing spot facing land instead of sea",
+          "players spawning on the far side of the island or behind trees from the garden, or the camera hidden by leaves",
+          "a player breaking the ground under a plot or the dock planks, or wading out into deep water and stranding themselves"
+        ]
+      },
+      "things": [
+        {
+          "what": "garden plot",
+          "where": "a 4×3 grid of dark soil squares on flat grass in the middle of the island",
+          "placed": "ground",
+          "count": 12
+        },
+        {
+          "what": "fruit tree",
+          "where": "around the edge of the garden, on grass, at least 2 m from any plot",
+          "placed": "ground",
+          "count": 3
+        },
+        {
+          "what": "shared basket",
+          "where": "on the grass by the spawn, at the garden's edge",
+          "placed": "ground",
+          "count": 1
+        },
+        {
+          "what": "stone well",
+          "where": "on the grass beside the garden, opposite the basket",
+          "placed": "ground",
+          "count": 1
+        },
+        {
+          "what": "dock",
+          "where": "from the sunset-side beach out over the sea, its first planks on the sand",
+          "placed": "ground",
+          "count": 1
+        },
+        {
+          "what": "fishing spot",
+          "where": "the last 3 m of the dock, over open sea",
+          "placed": "zone",
+          "count": 1
+        }
+      ]
+    },
+    "touchpoints": [
+      {
+        "how": "One garden and one basket: what one player plants the other can water and pick, and every fruit or fish either brings in lands in the same basket both see",
+        "kind": "share",
+        "often": "every few seconds"
+      },
+      {
+        "how": "Watering or picking a plot your friend planted shows a small toast to both ('watered Ana's strawberries'), so splitting chores is felt",
+        "kind": "help",
+        "often": "several times a minute"
+      },
+      {
+        "how": "Fishing side by side on the dock makes bites come sooner for both, an invitation to sit together",
+        "kind": "help",
+        "often": "a few times a visit"
+      },
+      {
+        "how": "A friend's catch pops up over the dock with the fish's name, and a new kind in the journal is announced to both",
+        "kind": "watch",
+        "often": "every minute or two"
+      },
+      {
+        "how": "Laying paths, fences and flower beds together around the shared garden",
+        "kind": "other",
+        "often": "between chores"
+      }
+    ],
+    "risk": [
+      {
+        "risk": "Leave a fruiting plant unpicked for longer instead of picking now",
+        "reward": "It may turn into a golden fruit, a rare kind for the journal"
+      },
+      {
+        "risk": "Let the first small nibble pass and wait on the line for a bigger tug",
+        "reward": "The big tug brings a rarer fish; missing it costs only time, it bites again"
+      },
+      {
+        "risk": "Spend the last drops in the can on far plots before walking back to the well",
+        "reward": "More plots grow at once, so more ripens together on the next lap"
+      }
+    ],
+    "pacing": {
+      "firstAction": 5,
+      "eventsPerMinute": 10,
+      "roundSeconds": 1200,
+      "idleMax": 30,
+      "comeback": 0,
+      "rounds": 1
+    },
+    "events": [
+      {
+        "name": "planted",
+        "what": "A seed was planted in an empty plot (player, plot, seed kind)",
+        "meaningful": true
+      },
+      {
+        "name": "watered",
+        "what": "A plot was watered (player, plot, whether a friend planted it)",
+        "meaningful": true
+      },
+      {
+        "name": "can-filled",
+        "what": "A player filled the watering can at the well",
+        "meaningful": true
+      },
+      {
+        "name": "ripened",
+        "what": "A plot or tree reached its fruiting stage (plot or tree, golden or not)",
+        "meaningful": true
+      },
+      {
+        "name": "picked",
+        "what": "A fruit was picked into the shared basket (player, kind, golden)",
+        "meaningful": true
+      },
+      {
+        "name": "fish-bite",
+        "what": "The bobber of a player's line dipped: a bite to reel",
+        "meaningful": true
+      },
+      {
+        "name": "fish-caught",
+        "what": "A fish was reeled in to the basket (player, kind, new to the journal)",
+        "meaningful": true
+      },
+      {
+        "name": "bite-missed",
+        "what": "A bite went by unreeled; another will come",
+        "meaningful": false
+      },
+      {
+        "name": "journal-new",
+        "what": "A fruit or fish kind entered the shared journal for the first time",
+        "meaningful": false
+      }
+    ],
+    "feel": {
+      "impact": "low",
+      "weight": "light",
+      "chaos": 0.05,
+      "comedy": "Gentle and warm rather than funny: a fish that flops comically on the dock before hopping into the basket, a fruit that bounces once on the basket rim.",
+      "juice": [
+        "soil puffs and a small squash-and-stretch as a seed goes in and each growth stage pops up",
+        "droplet arc and a darkening soil tint while a plot is wet",
+        "fruit plucked with a pling and bouncing in an arc into the basket, the basket count ticking up",
+        "bobber plop with spreading ripples, a dip and splash on a bite",
+        "the caught fish held up with its name in a soft label",
+        "soft chimes and waves; no shake, no hitstop, no slow motion",
+        "a warm glow on a plot or tree when it is ready to pick"
+      ]
+    },
+    "avoid": [
+      {
+        "failure": "idle",
+        "guard": "Growth is quick and staggered (about a minute seed to fruit while wet), 12 plots and 3 trees re-fruit on their own timers, and fishing is always available, so there is always a chore within a few steps.",
+        "measure": "Longest stretch with no planted, watered, can-filled, picked, fish-bite or fish-caught event by or for a player stays under 30 s"
+      },
+      {
+        "failure": "unreachable",
+        "guard": "Plots, trees, well and basket are placed on flat grass in the island's middle next to the spawn, the dock's first planks rest on the beach, and a player who wades into deep water floats back to the nearest beach.",
+        "measure": "From a fresh seat a player reaches the nearest plot in under 5 s and the dock end in under 30 s on every placement"
+      },
+      {
+        "failure": "griefing",
+        "guard": "The host refuses block edits that break or cover a plot, tree, the well, the basket, the dock or the ground under them; the boom block is not on the hotbar and there is no shove.",
+        "measure": "Breaking at a plot or dock plank is refused with the denied sound; all 12 plots and the dock stay intact after a play session"
+      },
+      {
+        "failure": "confusion",
+        "guard": "One interact key does what fits what you face, with the HUD prompt naming it (Plant, Water, Fill can, Pick); the next seed and the can's drops are on the HUD, and a first toast says what to do.",
+        "measure": "A new player's first interact at a plot plants a seed within 10 s of Play"
+      },
+      {
+        "failure": "other",
+        "guard": "Nothing decays or can be lost: dry plots pause instead of wilting, missed bites bite again, the basket only grows, and there is no score or timer on screen.",
+        "measure": "No event or state ever removes a plant, fruit or fish; a plot left dry for 5 minutes is still at the stage it reached"
+      },
+      {
+        "failure": "too-long",
+        "guard": "First fruit within about a minute of the first planting and a bite within 3–9 s of a cast keep the first reward close.",
+        "measure": "First picked event within 90 s of Play; first fish-bite within 12 s of a cast"
+      }
+    ],
+    "makes": [
+      {
+        "says": "Planting a seed in an empty plot starts a plant that visibly grows through sprout, plant and fruiting stages",
+        "see": "Pressing interact at an empty plot puts a seed mound in the soil; within about a minute of watering it a sprout, then a leafy plant, then a plant with glowing fruit appears there"
+      },
+      {
+        "says": "Watering makes plots grow and a dry plot just waits, never wilting",
+        "see": "Filling the can at the well shows its drops on the HUD; watering a plot darkens the soil with droplets and it grows; a plot left dry stays green at its stage"
+      },
+      {
+        "says": "Picking ripe fruit puts it in the shared basket and the plant fruits again",
+        "see": "Pressing interact at a fruiting plant or tree sends a fruit bouncing into the basket and the basket count rises; later the same plant shows fruit again"
+      },
+      {
+        "says": "Fishing off the dock is calm and always pays off in the end",
+        "see": "Pressing cast at the dock end drops a bobber in the sea; after a few seconds it dips with a splash, pressing cast reels up a named fish that goes into the basket; a missed bite is followed by another"
+      },
+      {
+        "says": "Two friends tend one garden: what one plants the other can water and pick, into one basket",
+        "see": "On both screens the same plots show the same stages; my friend's planted plot can be watered and picked by me with a toast naming them, and fruit either of us picks raises the same basket count",
+        "friends": true
+      },
+      {
+        "says": "It is always sunset and the garden is kept between visits",
+        "see": "A low warm orange sun sits over the sea the whole visit; after leaving and coming back the plots, basket and laid paths are as they were left"
+      }
+    ],
+    "mechanics": [
+      {
+        "id": "build",
+        "as": "garden shaping: soil, paths, fences, flowers and lanterns",
+        "params": {
+          "hotbar": [
+            "dirt",
+            "gravel",
+            "planks",
+            "log",
+            "cobble",
+            "flower-red",
+            "flower-yellow",
+            "flower-blue",
+            "lantern",
+            "sign"
+          ],
+          "reach": 6,
+          "rate": 4,
+          "burst": 10,
+          "paint": true,
+          "signs": true,
+          "boomCooldown": 120,
+          "saveEvery": 2
+        },
+        "why": "The plan's primary control lays soil, path and fence blocks and the world loop saves the island; the hotbar leaves out the boom block so nothing in this calm game can blow the garden up."
+      },
+      {
+        "id": "panels",
+        "as": "the basket and journal",
+        "params": {
+          "kinds": [
+            "inventory"
+          ],
+          "inventoryTitle": "Our basket",
+          "inventoryEmpty": "Nothing picked yet",
+          "inventoryClose": "Close"
+        },
+        "why": "Interact at the basket opens the shared harvest: each fruit and fish kind with how many, and the kinds not yet found, which gives a reason to come back without a score."
+      }
+    ],
+    "build": [
+      {
+        "what": "Protected garden: block edits that break or cover a plot, tree, the well, the basket, the dock or the ground under them are refused",
+        "how": "rules.js lists the protected cells from the props' positions at setup and refuses build edits on them on the host; if the build mechanic has no edit hook, a declared override of components/build/index.js adds that check",
+        "where": "rules",
+        "row": "no-losing",
+        "why": "Secondary breaks any block; without this one click could unmake a plot or sever the dock, which is a loss in a game promised to have none."
+      },
+      {
+        "what": "One interact that does what you face: plant, water, fill the can, pick or open the basket, with the HUD prompt naming it",
+        "how": "src/garden/interact.js picks the nearest plot, tree, well or basket in front within interactReach and its state, sets the HUD prompt word, and on press asks the host to act; it reports planted, watered, can-filled, picked",
+        "where": "module",
+        "row": "planting",
+        "why": "Four actions share one control in the plan; without a single resolver they fight over E and a new player cannot tell what the key will do."
+      },
+      {
+        "what": "Seed rotation and the journal: the next seed kind is on the HUD, and fruit and fish kinds found are kept in the shared save",
+        "how": "src/garden/journal.js holds seed kinds and fish kinds (with a rare golden fruit and rare big fish), the next-seed choice, and the found-kinds list in host shared state saved with the world; reports journal-new",
+        "where": "module",
+        "row": "picking",
+        "why": "Variety and a collection to fill are what bring cosy-game players back, and they replace a score without breaking 'no score'."
+      },
+      {
+        "what": "Gentle choices: an unpicked fruit can turn golden, and a fisher can let a nibble pass for a bigger tug",
+        "how": "In the growth and fishing modules: after goldenAfterSeconds a fruiting plot may turn golden (ctx.rng, goldenChance); a bite is a nibble, and waiting bigTugDelay may bring a big tug with a rarer fish (bigTugChance); misses only re-bite",
+        "where": "module",
+        "row": "fishing",
+        "why": "A calm game still needs small decisions; these reward patience and never take anything away."
+      },
+      {
+        "what": "Together touches: a toast when you water or pick a friend's planting, and quicker bites while two fish side by side",
+        "how": "rules.js records who planted each plot; on a water or pick by another player it toasts both; the fishing module multiplies bite waits by togetherBiteFactor when two lines are cast within dockTogetherRadius",
+        "where": "rules",
+        "row": "players",
+        "why": "Sharing one garden is invisible unless the game says so; these make the co-op felt on both screens."
+      },
+      {
+        "what": "Shore return: a player who wades into deep sea floats back to the nearest beach after a moment, with nothing lost",
+        "how": "rules.js on the host checks each player's feet against the voxel water level; after shoreReturnSeconds in deep water it moves them to the nearest sand cell with a soft splash and toast",
+        "where": "rules",
+        "row": "island",
+        "why": "The island is ringed by sea; a calm game must never strand a player in water or out of reach of the garden."
+      }
+    ],
+    "params": {
+      "growSproutSeconds": 12,
+      "growPlantSeconds": 20,
+      "growFruitSeconds": 25,
+      "dryGrowthRate": 0,
+      "waterSeconds": 90,
+      "canCapacity": 6,
+      "regrowSeconds": 25,
+      "treeFruitSeconds": 40,
+      "treeFruitMax": 3,
+      "goldenAfterSeconds": 45,
+      "goldenChance": 0.3,
+      "interactReach": 2,
+      "biteMinSeconds": 3,
+      "biteMaxSeconds": 9,
+      "reelWindowSeconds": 2.5,
+      "bigTugChance": 0.35,
+      "bigTugDelay": 4,
+      "togetherBiteFactor": 0.7,
+      "dockTogetherRadius": 4,
+      "shoreReturnSeconds": 3,
+      "seedKinds": 4,
+      "fishKinds": 6
+    },
+    "bots": "The world loop has no bots: a player alone gets the whole game, since every verb (plant, water, pick, fish, build) works solo and a friend only shares the chores and the basket. A judge's run drives real seats, one or two, through the garden and the dock.",
+    "sources": {
+      "words": true,
+      "refs": 0,
+      "model": "claude-opus-5-5",
+      "at": "2026-10-14T19:34:44.296Z"
+    }
+  }
+}

@@ -113,9 +113,12 @@ export function create(ctx, params = {}) {
     return d.id;
   }
   const keepIn = (x, z) => { const lv = ctx.world?.levels?.[ctx.world.level ?? 0]; if (!lv) return { x, z }; const cx = lv.at?.[0] ?? 0, cz = lv.at?.[2] ?? 0, R = (lv.radius ?? 12) - 1.2, dx = x - cx, dz = z - cz, d = Math.hypot(dx, dz); return d > R ? { x: cx + dx / d * R, z: cz + dz / d * R } : { x, z }; };
+  // a drop lies where a player can get to it: a point the spill throws off a cliff or into the sea goes to the nearest
+  // open ground every seat reaches (worlds/placement.js), never left where nobody can take it
+  const onGround = c => { const W = ctx.world; if (!W.isWalkable || W.isWalkable(c.x, c.z)) return c; const q = W.place?.('loot', 1, { prefer: c, clear: 0.3, away: 0 })?.[0]; return q ? { x: q.x, z: q.z } : c; };
   function spill(x, z, list) {
     const pts = scatter(x, z, list.length, rnd);
-    list.forEach((it, i) => { const c = keepIn(pts[i].x, pts[i].z); add(it.kind, c.x, c.z, it); });
+    list.forEach((it, i) => { const c = onGround(keepIn(pts[i].x, pts[i].z)); add(it.kind, c.x, c.z, it); });
   }
   const weaponsCount = () => M('melee')?.weapons?.length ?? 0;
   function dropFor(enemy, { boss = false } = {}) {
@@ -178,8 +181,9 @@ export function create(ctx, params = {}) {
     if (!R || !W || !v.obj || v.collider) return;
     const box = new THREE.Box3().setFromObject(v.obj), sz = box.getSize(new THREE.Vector3());
     if (!(sz.x > 0.05 && sz.z > 0.05)) return;
-    const body = W.createRigidBody(R.RigidBodyDesc.fixed().setTranslation(v.x, Math.max(0.2, sz.y / 2), v.z));
+    const body = W.createRigidBody(R.RigidBodyDesc.fixed().setTranslation(v.x, (v.y ?? 0) + Math.max(0.2, sz.y / 2), v.z));
     W.createCollider(R.ColliderDesc.cuboid(sz.x / 2 * 0.9, Math.max(0.2, sz.y / 2), sz.z / 2 * 0.9).setCollisionGroups(WORLD_GROUPS), body);
+    ctx.world.walk?.invalidate([v.x - sz.x, v.z - sz.z, v.x + sz.x, v.z + sz.z]);   // a chest stands in the way now
     v.collider = body;
   }
   function unsolid(v) { if (!v.collider) return; try { physicsOf(ctx).world?.removeRigidBody(v.collider); } catch {} v.collider = null; }
@@ -246,7 +250,7 @@ export function create(ctx, params = {}) {
         let v = view.get(id);
         if (!v) {
           v = { id, kind, x, z, ox: x, oz: z, w, r, obj: null, t: 0, making: true }; view.set(id, v);
-          makeObj(v).then(o => { v.obj = o; v.making = false; if (view.get(id) !== v) return; o.position.set(v.x, 0, v.z); root.add(o); if (v.kind === KIND.chest || v.kind === KIND.open) solid(v); }).catch(err => { v.making = false; console.warn('loot: drop', err); });
+          makeObj(v).then(o => { v.obj = o; v.making = false; if (view.get(id) !== v) return; v.y ??= ctx.world.groundAt?.(v.x, v.z) ?? 0; o.position.set(v.x, v.y, v.z); root.add(o); if (v.kind === KIND.chest || v.kind === KIND.open) solid(v); }).catch(err => { v.making = false; console.warn('loot: drop', err); });
         }
         if (v.kind !== kind) { v.kind = kind; if (kind === KIND.open) v.openT = 0; }
         v.ox = x; v.oz = z;
@@ -265,10 +269,10 @@ export function create(ctx, params = {}) {
       }
       const o = v.obj; if (!o) continue;
       const pop = Math.min(1, v.t * 5);
-      if (v.kind === KIND.coin) { o.position.set(v.x, 0.32 + Math.sin(v.t * 3 + v.id) * 0.06, v.z); o.rotation.y = v.t * 3; o.scale.setScalar(pop); }
-      else if (v.kind === KIND.potion) { o.position.set(v.x, 0.2 + Math.sin(v.t * 2.4 + v.id) * 0.05, v.z); o.scale.setScalar(pop); }
-      else if (v.kind === KIND.weapon) { o.position.set(v.x, 0, v.z); o.rotation.y = v.t * 0.8; o.scale.setScalar(pop); }
-      else { o.position.set(v.x, 0, v.z); if (v.kind === KIND.open && o.userData.lid) { v.openT = (v.openT ?? 0) + dt; o.userData.lid.rotation.x = Math.max(-1, Math.min(1, V('chestOpen') / 110)) * Math.min(1.9, v.openT * 6); } }
+      if (v.kind === KIND.coin) { o.position.set(v.x, (v.y ?? 0) + 0.32 + Math.sin(v.t * 3 + v.id) * 0.06, v.z); o.rotation.y = v.t * 3; o.scale.setScalar(pop); }
+      else if (v.kind === KIND.potion) { o.position.set(v.x, (v.y ?? 0) + 0.2 + Math.sin(v.t * 2.4 + v.id) * 0.05, v.z); o.scale.setScalar(pop); }
+      else if (v.kind === KIND.weapon) { o.position.set(v.x, v.y ?? 0, v.z); o.rotation.y = v.t * 0.8; o.scale.setScalar(pop); }
+      else { o.position.set(v.x, v.y ?? 0, v.z); if (v.kind === KIND.open && o.userData.lid) { v.openT = (v.openT ?? 0) + dt; o.userData.lid.rotation.x = Math.max(-1, Math.min(1, V('chestOpen') / 110)) * Math.min(1.9, v.openT * 6); } }
     }
   }
   // the players this copy owns take what they walk over (coins, potions) and what they press E at (chests, weapons)
@@ -327,7 +331,9 @@ export function create(ctx, params = {}) {
     id, params: P,
     /** Interact (E) takes chests and weapons (CONTRACT §6d: verify check 13 walks to one and presses E). */
     interacts: true,
-    interactables: () => [...view.values()].filter(v => v.kind === KIND.chest || v.kind === KIND.weapon).map(v => ({ kind: 'loot', id: `loot:${v.id}`, x: v.x, y: 0, z: v.z, reach: V('reach'), touch: 0, action: 'interact', what: KIND_NAME[v.kind] })),
+    interactables: () => [...view.values()].filter(v => v.kind === KIND.chest || v.kind === KIND.weapon).map(v => ({ kind: 'loot', id: `loot:${v.id}`, x: v.x, y: v.y ?? 0, z: v.z, reach: V('reach'), touch: 0, action: 'interact', what: KIND_NAME[v.kind] })),
+    /** The things a player must get to (gate D's reach leg, window.__game.objectives()): every drop and chest. */
+    objectives: () => [...view.values()].map(v => ({ kind: 'loot', id: `loot:${v.id}`, label: KIND_NAME[v.kind], x: v.x, y: v.y ?? ctx.world.groundAt?.(v.x, v.z) ?? 0, z: v.z, present: true, open: v.kind !== KIND.open, radius: V('reach') + 0.5 })),
     /** Every copy: a player's coins. */
     coinsOf: p => (S?.c?.[p?.id] ?? 0),
     /** Every copy: a player's upgrades (ids) and what they do to the melee mechanic's moves. */
@@ -346,7 +352,7 @@ export function create(ctx, params = {}) {
       const z = zone ?? (ctx.world?.zone?.('arena') ? { at: ctx.world.zone('arena').at, size: ctx.world.zone('arena').size } : null);
       if (!z) return;
       const avoid = ctx.players.list().map(p => ({ x: p.position.x, z: p.position.z }));
-      for (let i = 0; i < n; i++) { const p = arenaPoint(z, rnd, { inner: 0.35, outer: 0.7, avoid, away: 4 }); add(KIND.chest, p.x, p.z); avoid.push(p); }
+      for (let i = 0; i < n; i++) { const p = onGround(arenaPoint(z, rnd, { inner: 0.35, outer: 0.7, avoid, away: 4 })); add(KIND.chest, p.x, p.z); avoid.push(p); }
     },
     offerUpgrades,
     /** Host: take a drop for a player (rules, QA). */

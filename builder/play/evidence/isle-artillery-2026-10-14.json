@@ -1,0 +1,19 @@
+{
+ "schema": "gf-evidence/1",
+ "what": "The first game built from a designed play target: the artillery target from the creator's prompt (builder/play/cases/artillery.json), on a copy of the sunny-castle-isles level (its world, look and HUD style; the plan's worm squads), through the loop's build round with the target in the brief (gamesfun build, resumed at build, opus rounds, sonnet play-tester). Not played by the creator.",
+ "rounds": { "build": 1, "repair": 10, "playtests": 5, "verifies": 10 },
+ "verifies": [
+  { "n": 1, "pass": false, "failed": ["C 13 (charge-and-fire showed nothing mid-screen)", "C 15 (shots hit nothing that changed)"] },
+  { "n": 2, "pass": true }, { "n": 3, "pass": true }, { "n": 4, "pass": true },
+  { "n": 5, "pass": false, "failed": ["E 5: the loadout leg's late copy: the round had already ended"] },
+  { "n": 6, "pass": true },
+  { "n": 7, "pass": false, "failed": ["E 5: the same leg (returned: the ladder climbed to the stronger model)"] },
+  { "n": 8, "pass": false, "failed": ["A 2, B, C, D, F: a half re-vendor of the kit copies after main moved (bots.js and menu.js new, two overrides refused): the operator's doing, not the game's"] },
+  { "n": 9, "pass": false, "failed": ["A 1: carve.collapse slot pointer (a param the new kit added)", "D 6: play judge 40.8/100 (36.6-45), bar 50, a hard finding: the target's 12 worms and 2 crates counted as walk objectives and none reported"] },
+  { "n": 10, "pass": true, "playJudge": { "score": 78.4, "interval": [74.2, 82.6], "verdict": "pass", "bar": 50 } }
+ ],
+ "gateFlaw": "Gate E measure 5's loadout leg needed one round of about two minutes; the artillery match ended by its own rules (the leg's own shots knock worms out) before the reload. Rounds spent on it: verifies 5 and 7, repair round 6 and repair round 8 (on the stronger model, stopped partway). The ladder read a gate flaw as a game flaw. Fixed in builder/tools/lib/loadout-check.mjs (each part follows the round into the next one); regressions rounds-end-by-rules and late-copy-look-lost.",
+ "playtest": "Seen across five play-tests: turns with a clock and refusals, charge-and-release fire, wind each turn, craters, cartwheeling worms with damage numbers, the grenade's bounce and fuse, the camera riding shells, the practice versus prize banner. Never seen in a tester's 8 minutes: a match end, the prize award, sudden death, a crate taken; a KO/SPLASH was seen by the play judge, not by the tester. The target's match length (about 7 minutes) is longer than a play-test's budget.",
+ "judge": "verify 10: 78.4/100 pass. Its findings: the camera often sits inside a roof, cliff or rock; 0.5 player-on-player moments a minute (target 1); the first to score keeps the lead; the scripted player could not reach 4 crates; most seconds are someone aiming.",
+ "last": "A repair round after the fifth play-test finished its edits; the build was stopped before they were verified (the parent's limit of two verifies after the re-vendor). The verified version is verify 10's."
+}

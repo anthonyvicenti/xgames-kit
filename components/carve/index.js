@@ -4,13 +4,16 @@
 //
 //   const carve = ctx.mechanics.get('carve');
 //   if (ctx.host) carve.carve({ x, y, z }, 2.5);       // a crater 2.5 m across the radius, on every copy
-//   carve.onCarve(c => ...)                              // every copy: {op, at, r, normal, live} (sounds, shake, score)
+//   carve.onCarve(c => ...)                              // every copy: {op, at, r, normal, live, fell} (sounds, shake, score)
+//   With `collapse` on (the default), every crater is followed by a settle edit (worlds/terrain field.mjs, op 2): ground
+//   round it that no longer holds on to the rest (a thin roof, a lump cut loose, a tower whose foot was blown away)
+//   falls and crumbles, the same on every screen, so a crater undermines whoever stands over it.
 import { craterRadius, createFeed, chunksOf } from './logic.js';
 
 export const id = 'carve';
 export const examples = ['explosions blow smooth craters in the ground', 'dig tunnels through an island', 'artillery that reshapes the land'];
 
-const D = { fromProjectile: true, radius: 0, scale: 1, minRadius: 0.6, maxRadius: 8, keep: false, debris: true, blastFx: '', dustFx: '', splashFx: '', sound: '', splashSound: '', shake: 0.25 };
+const D = { fromProjectile: true, radius: 0, scale: 1, minRadius: 0.6, maxRadius: 8, keep: false, debris: true, collapse: true, collapseReach: 1.7, blastFx: '', dustFx: '', splashFx: '', sound: '', collapseSound: '', splashSound: '', shake: 0.25 };
 const kebab = s => s.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase();
 const num = (description, minimum, maximum) => ({ type: 'number', description, minimum, maximum });
 export const params = {
@@ -23,6 +26,9 @@ export const params = {
     maxRadius: { ...num('Largest crater (m)', 0.5, 20), default: D.maxRadius },
     keep: { type: 'boolean', default: D.keep, description: 'Keep the craters from one round to the next (false: every round starts on the ground as it was made)' },
     debris: { type: 'boolean', default: D.debris, description: 'Lumps of ground thrown out of each crater' },
+    collapse: { type: 'boolean', default: D.collapse, description: 'Ground a crater leaves hanging (a thin roof, a lump cut loose, a tower whose foot is gone) falls and crumbles, on every screen' },
+    collapseReach: { ...num('How far round a crater ground may fall, per metre of its radius', 1, 4), default: D.collapseReach },
+    collapseSound: { type: 'string', description: 'A sound id played where ground falls; unset: none', default: D.collapseSound },
     blastFx: { type: 'string', description: 'A vfx preset (kit/vfx: impact-flash, spark-burst, ...) at the heart of each blast; unset: none', default: D.blastFx },
     dustFx: { type: 'string', description: 'A vfx preset (kit/vfx: smoke-puff, dust-kick, ...) rising from each crater; unset: none', default: D.dustFx },
     splashFx: { type: 'string', description: 'A vfx preset (kit/vfx: smoke-puff, ...) where a blast lands in the sea and carves nothing; unset: none', default: D.splashFx },
@@ -37,6 +43,7 @@ export const slots = [
   vs('radius', 'Crater size (fixed, 0: from the blast)', 'number', { constraints: { min: 0, max: 20, unit: 'm' } }),
   vs('maxRadius', 'Largest crater', 'number', { constraints: { min: 0.5, max: 20, unit: 'm' } }),
   vs('keep', 'Craters stay between rounds', 'boolean'),
+  vs('collapse', 'Ground a crater leaves hanging falls', 'boolean', { tier: 'main', rank: 44 }),
   vs('shake', 'Blast camera shake', 'number', { facet: 'look', constraints: { min: 0, max: 2, unit: 'm' } }),
 ];
 
@@ -45,7 +52,7 @@ export function create(ctx, params = {}) {
   const V = k => { const sid = `mechanic.carve.${kebab(k)}`; try { return ctx.assets?.has(sid) ? ctx.assets.value(sid, P[k]) : P[k]; } catch { return P[k]; } };
   const L = { carve: [] };
   const feed = createFeed();
-  const stats = { carved: 0, added: 0, splashes: 0, asked: 0, logsSent: 0, caughtUp: 0 };
+  const stats = { carved: 0, added: 0, settled: 0, fell: 0, splashes: 0, asked: 0, logsSent: 0, caughtUp: 0 };
   let S = null, T = null, round = 0, linked = false, askedAt = -9, shake = 0, vfx = null, groundRound = 0;
   if (P.blastFx || P.dustFx || P.splashFx) import('../../vfx/index.js').then(m => { vfx = m.vfxOf(ctx); }).catch(e => console.warn(`gf-three carve: blastFx/dustFx need the vfx module (${e.message})`));
   const log = [];           // host: every edit of this round, in order (what a late copy is sent)
@@ -54,18 +61,33 @@ export function create(ctx, params = {}) {
   function applied(e, { live = true, by = null } = {}) {
     const changed = T.apply(e, { quiet: !live || !V('debris') });
     if (!changed) return false;
-    const op = e[0] === 0 ? 'carve' : 'add', at = { x: e[1] / 100, y: e[2] / 100, z: e[3] / 100 }, r = e[4] / 100;
-    if (op === 'carve') stats.carved++; else stats.added++;
+    const op = ['carve', 'add', 'settle'][e[0]], at = { x: e[1] / 100, y: e[2] / 100, z: e[3] / 100 }, r = e[4] / 100;
+    const fell = op === 'settle' ? T.field?.settled ?? null : null;
+    if (op === 'carve') stats.carved++; else if (op === 'add') stats.added++; else { stats.settled++; stats.fell += fell?.samples ?? 0; }
     if (live && op === 'carve') {
       if (vfx && P.blastFx) vfx.fx(P.blastFx, { at, scale: Math.max(0.6, r / 1.6) });
       if (vfx && P.dustFx) vfx.fx(P.dustFx, { at: { x: at.x, y: at.y + r * 0.3, z: at.z }, scale: Math.max(0.8, r / 1.2) });
       if (P.sound) ctx.audio?.play?.(P.sound, { at, optional: true });
-      const cam = ctx.camera?.position, d = cam ? Math.hypot(cam.x - at.x, cam.y - at.y, cam.z - at.z) : 99;
-      shake = Math.max(shake, V('shake') * Math.max(0, 1 - d / (r * 8 + 10)));
+      shakeAt(at, V('shake'), r * 8 + 10);
+    }
+    // ground that fell: dust where it was, its sound, a small shake
+    if (live && fell) {
+      const c = { x: fell.at[0], y: fell.at[1], z: fell.at[2] }, size = Math.cbrt(fell.samples) * (T.field?.cell ?? 0.5);
+      if (vfx && P.dustFx) vfx.fx(P.dustFx, { at: c, scale: Math.max(0.8, size / 1.2) });
+      if (P.collapseSound) ctx.audio?.play?.(P.collapseSound, { at: c, optional: true });
+      shakeAt(c, V('shake') * 0.6, size * 8 + 8);
     }
     const normal = T.normal(at.x, at.y + r * 0.5, at.z);
-    for (const fn of L.carve.slice()) try { fn({ op, at, r, normal, live, by }); } catch (err) { console.error(err); }
+    for (const fn of L.carve.slice()) try { fn({ op, at, r, normal, live, by, fell }); } catch (err) { console.error(err); }
     return true;
+  }
+  /** A shake from a point, fading with the camera's distance: the kit's juice when the game has it (it keeps to the
+   *  player's comfort settings), else the old jitter here. */
+  function shakeAt(at, amount, reach) {
+    if (!(amount > 0)) return;
+    if (ctx.juice?.shake) { ctx.juice.shake(amount, { at, reach }); return; }
+    const cam = ctx.camera?.position, d = cam ? Math.hypot(cam.x - at.x, cam.y - at.y, cam.z - at.z) : 99;
+    shake = Math.max(shake, amount * Math.max(0, 1 - d / reach));
   }
   /** Every copy: a blast that landed in the sea (it carves nothing): a splash where everyone sees it. */
   function splashAt(at, r) {
@@ -81,6 +103,8 @@ export function create(ctx, params = {}) {
     log.push(e);
     if (S) S.n = log.length;
     ctx.net?.send('carve:e', { r: round, i: log.length - 1, e });
+    // a crater leaves ground hanging: it falls, as one more edit in the log (every copy, late joiners and viewers replay it)
+    if (op === 'carve' && V('collapse')) hostEdit('settle', at, r * V('collapseReach'), by);
     return e;
   }
   /** A copy that is not the host: back to the ground as it was made, for the host's round R. */
@@ -112,6 +136,8 @@ export function create(ctx, params = {}) {
     },
     /** Host: a crater of radius r (m) at {x, y, z}, on every copy. → the edit, or null (nothing there to carve). */
     carve: (at, r, by = null) => hostEdit('carve', at, r, by),
+    /** Host: ground within r of {x, y, z} that no longer holds on to the rest falls, on every copy. → the edit or null */
+    settle: (at, r, by = null) => hostEdit('settle', at, r, by),
     /** Host: a lump of ground of radius r at {x, y, z} (a bridge, a wall, a filled hole), on every copy. */
     add: (at, r, by = null) => hostEdit('add', at, r, by),
     /** Every copy: after each edit of the ground {op, at, r, normal, live (false when a late copy catches up), by}. */
@@ -179,7 +205,7 @@ export const manifest = {
   owns: () => [],
   state: { key: 'carve', fields: { r: 'the host\'s round count (a new round starts the ground again)', n: 'how many edits the host has made this round' } },
   events: [
-    { name: 'onCarve', on: 'every copy', args: '{ op: \'carve\' | \'add\', at: {x, y, z}, r, normal, live, by }', when: 'the ground changed here (live: false while a late copy catches up)' },
+    { name: 'onCarve', on: 'every copy', args: '{ op: \'carve\' | \'add\' | \'settle\', at: {x, y, z}, r, normal, live, by, fell }', when: 'the ground changed here (live: false while a late copy catches up); a settle\'s fell is the ground that dropped' },
   ],
   sync: { owner: 'host', how: 'the host makes every edit and numbers it; every copy applies them in order on the same generated ground; a copy missing some asks the host for them' },
   note: [

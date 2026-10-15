@@ -21,7 +21,8 @@ import { launchForGame } from '../tools/lib/paths.mjs';
 /** The kit's sheet framings, beside a target's own cameras: the world wide, a character close, props and bodies at mid
  *  range (the action shot), the player's own view with the HUD. */
 export const SHEET_FRAMINGS = [
-  { name: 'wide', shot: 'wide' },
+  // the world wide: from a place the world offers for it (a voxel world's high rise over the land), else the kit's shot
+  { name: 'wide', shot: 'wide', where: 'wide' },
   { name: 'hero', shot: 'hero' },
   { name: 'props', shot: 'action' },
   { name: 'hud', shot: null, hud: true },
@@ -82,7 +83,10 @@ export async function openGame(dir, { size = [1280, 720], query = 'bots=3&seed=7
         const info = await page.evaluate(f => {
           const ui = document.getElementById('gf-ui');
           if (ui) ui.style.display = f.hud ? '' : 'none';
-          return f.view ? window.__gfLook.view(f.view) : window.__gfLook.shot(f.shot ?? null);
+          if (f.view) return window.__gfLook.view(f.view);
+          // a sheet shot the world can place (wide): the world's place when it has one, else the kit's own framing
+          if (f.where) { const v = window.__gfLook.view({ where: f.where }); if (v?.placed) return v; }
+          return window.__gfLook.shot(f.shot ?? null);
         }, f);
         // a placed shot (a cave): the world's own light and fog ease to where the camera now is (the fog underground
         // follows the sky above the camera over a few dozen frames)
@@ -93,7 +97,7 @@ export async function openGame(dir, { size = [1280, 720], query = 'bots=3&seed=7
         const bodies = await page.evaluate(() => window.__gfLook.bodies?.() ?? []);
         const file = join(outDir, `${prefix}${f.name}.jpg`);
         await page.screenshot({ path: file, type: 'jpeg', quality: 90 });
-        out.push({ framing: f.name, frame: f.frame ?? null, where: f.view?.where ?? null, placed: !!info?.placed, file, info, bodies });
+        out.push({ framing: f.name, frame: f.frame ?? null, where: f.view?.where ?? (info?.placed ? f.where : null) ?? null, placed: !!info?.placed, file, info, bodies });
       }
       await page.evaluate(() => { window.__gfLook.shot(null); const ui = document.getElementById('gf-ui'); if (ui) ui.style.display = 'none'; });
       return out;

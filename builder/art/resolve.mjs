@@ -95,12 +95,25 @@ function idfOf(assets) {
   return t => Math.log(1 + n / (1 + (df.get(t) ?? 0)));
 }
 
+function prepared(a, words = loadWords()) {
+  const idT = tokens(a.id.replace(/-/g, ' '), words), tagT = tokens((a.tags ?? []).join(' '), words), descT = tokens(a.describe, words);
+  return { ...a, _idT: new Set(idT), _tagT: new Set(tagT), _descT: new Set(descT), _tokens: [...new Set([...idT, ...tagT, ...descT])] };
+}
 function prepare(lib) {
   const words = loadWords();
-  return allAssets(lib).map(a => {
-    const idT = tokens(a.id.replace(/-/g, ' '), words), tagT = tokens((a.tags ?? []).join(' '), words), descT = tokens(a.describe, words);
-    return { ...a, _idT: new Set(idT), _tagT: new Set(tagT), _descT: new Set(descT), _tokens: [...new Set([...idT, ...tagT, ...descT])] };
-  });
+  return allAssets(lib).map(a => prepared(a, words));
+}
+
+/**
+ * Does an asset mean what a slot names? The thing named is the last meaningful word of `name` ("berry" in "Berry",
+ * "coin" in "gold-coin"); the asset means it when that word, or a word of its family (words.json), is in its id or its
+ * tags. Its description alone is not enough: "a bush with berries" is a bush. → true | false
+ */
+export function means(asset, name, words = loadWords()) {
+  const head = tokens(String(name ?? '').replace(/[-_.]/g, ' '), words).at(-1);
+  if (!head || !asset?.id) return false;
+  const a = prepared(asset, words), named = t => a._idT.has(t) || a._tagT.has(t);
+  return named(head) || (words.also[head] ?? []).some(w => named(stem(w)));
 }
 
 /** Does the asset answer one word (itself, or a word of its family)? 1, 0.6 or 0 (0.7 / 0.45 from the description). */

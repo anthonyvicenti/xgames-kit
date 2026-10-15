@@ -1,0 +1,511 @@
+{
+  "id": "aim",
+  "name": "Aim",
+  "describe": "A ballistic aim: charge the power, set the angle with the view, wind, a trajectory preview, weapons on a wheel; joins turn games (one acts, the camera follows the shot)",
+  "examples": [
+    "turn-based artillery: angle, power and wind",
+    "lob grenades that bounce before they blow",
+    "pick a weapon from a wheel, fire, watch it fly"
+  ],
+  "rank": 12,
+  "params": {
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+      "weapons": {
+        "type": "array",
+        "default": [
+          {
+            "id": "rocket",
+            "label": "Rocket",
+            "icon": "🚀",
+            "speed": 32,
+            "gravity": 1,
+            "wind": 1,
+            "radius": 3.2,
+            "force": 17,
+            "damage": 30,
+            "crater": 1,
+            "color": "#e2553a"
+          },
+          {
+            "id": "grenade",
+            "label": "Grenade",
+            "icon": "💣",
+            "speed": 24,
+            "gravity": 1,
+            "wind": 0.2,
+            "fuse": 3,
+            "bounces": 8,
+            "restitution": 0.45,
+            "radius": 3,
+            "force": 16,
+            "damage": 30,
+            "crater": 1,
+            "color": "#3d5a2c"
+          },
+          {
+            "id": "big-bomb",
+            "label": "Big bomb",
+            "icon": "💥",
+            "speed": 26,
+            "gravity": 1.15,
+            "wind": 0.6,
+            "radius": 5,
+            "force": 24,
+            "damage": 50,
+            "crater": 1.35,
+            "ammo": 1,
+            "size": 0.34,
+            "color": "#2a2a33"
+          }
+        ],
+        "description": "The weapons, each data: {id, label, icon, speed (m/s at full power), gravity (× the part's), wind (× the wind), fuse (s; 0 goes off where it lands), bounces, restitution, radius (blast m), force (throw m/s), damage, crater (× the radius), ammo (-1: unlimited), size, color, prop}",
+        "items": {
+          "type": "object",
+          "required": [
+            "id"
+          ]
+        }
+      },
+      "start": {
+        "type": "string",
+        "default": "",
+        "description": "The weapon each player starts with (\"\": the first)"
+      },
+      "chargeSeconds": {
+        "type": "number",
+        "description": "Seconds from no power to full while primary is held",
+        "minimum": 0.2,
+        "maximum": 6,
+        "default": 1.3
+      },
+      "charge": {
+        "type": "string",
+        "enum": [
+          "clamp",
+          "swing"
+        ],
+        "default": "clamp",
+        "description": "Full power holds (clamp) or swings back down (swing)"
+      },
+      "minPower": {
+        "type": "number",
+        "description": "Power of a tap",
+        "minimum": 0,
+        "maximum": 0.9,
+        "default": 0.12
+      },
+      "gravity": {
+        "type": "number",
+        "description": "Gravity on a shell (m/s², × each weapon's)",
+        "minimum": 1,
+        "maximum": 60,
+        "default": 18
+      },
+      "angleLift": {
+        "type": "number",
+        "description": "Degrees the shot leaves above where the view looks",
+        "minimum": -30,
+        "maximum": 80,
+        "default": 32
+      },
+      "minAngle": {
+        "type": "number",
+        "description": "Lowest elevation (degrees)",
+        "minimum": -60,
+        "maximum": 60,
+        "default": -10
+      },
+      "maxAngle": {
+        "type": "number",
+        "description": "Highest elevation (degrees)",
+        "minimum": 0,
+        "maximum": 89,
+        "default": 85
+      },
+      "wind": {
+        "type": "number",
+        "description": "Strongest wind (m/s² sideways on a shell; 0: none)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 5
+      },
+      "windPer": {
+        "type": "string",
+        "enum": [
+          "turn",
+          "round",
+          "shot"
+        ],
+        "default": "turn",
+        "description": "When the wind changes"
+      },
+      "preview": {
+        "type": "string",
+        "enum": [
+          "full",
+          "short",
+          "none"
+        ],
+        "default": "full",
+        "description": "The trajectory preview: the whole arc, its start (previewSeconds), or none"
+      },
+      "previewSeconds": {
+        "type": "number",
+        "description": "Seconds of flight a short preview shows",
+        "minimum": 0.2,
+        "maximum": 6,
+        "default": 1.1
+      },
+      "previewColor": {
+        "type": "string",
+        "default": "#ffffff",
+        "description": "Colour of the preview dots"
+      },
+      "cooldown": {
+        "type": "number",
+        "description": "Seconds between one player's shots (real-time games)",
+        "minimum": 0,
+        "maximum": 20,
+        "default": 1.2
+      },
+      "follow": {
+        "type": "string",
+        "enum": [
+          "turns",
+          "own",
+          "all",
+          "none"
+        ],
+        "default": "turns",
+        "description": "Whose shots the camera follows: in turn games (turns), your own, everyone's, none"
+      },
+      "shotsPerTurn": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 5,
+        "default": 1,
+        "description": "Shots a player fires on a turn"
+      },
+      "holdOthers": {
+        "type": "boolean",
+        "default": true,
+        "description": "In a turn game the players whose turn it is not hold still"
+      },
+      "settleSeconds": {
+        "type": "number",
+        "description": "Seconds after everything has come to rest before the turn passes",
+        "minimum": 0,
+        "maximum": 6,
+        "default": 1
+      },
+      "lifetime": {
+        "type": "number",
+        "description": "Seconds before a shell that never lands is gone",
+        "minimum": 2,
+        "maximum": 30,
+        "default": 12
+      },
+      "carveScale": {
+        "type": "number",
+        "description": "Crater radius per metre of blast (with the carve mechanic)",
+        "minimum": 0,
+        "maximum": 3,
+        "default": 0.85
+      },
+      "botError": {
+        "type": "number",
+        "description": "How far a bot's aim is off (0 perfect, 0.3 wild)",
+        "minimum": 0,
+        "maximum": 0.6,
+        "default": 0.12
+      },
+      "botThink": {
+        "type": "number",
+        "description": "Seconds a bot thinks before it aims",
+        "minimum": 0,
+        "maximum": 6,
+        "default": 0.9
+      },
+      "hud": {
+        "type": "boolean",
+        "default": true,
+        "description": "The angle, power and wind dials and the weapon wheel on the kit HUD"
+      },
+      "explodeFx": {
+        "type": "string",
+        "default": "",
+        "description": "A vfx preset at each blast as well as the effect style's (blast-puffs, fireball, ...); unset: the style alone"
+      },
+      "splashFx": {
+        "type": "string",
+        "default": "",
+        "description": "A vfx preset where a shell lands in the water (water-splash); unset: none"
+      },
+      "soundFire": {
+        "type": "string",
+        "default": "throw",
+        "description": "Sound id when a shell leaves"
+      },
+      "soundBoom": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id at a blast"
+      },
+      "soundSplash": {
+        "type": "string",
+        "default": "",
+        "description": "Sound id when a shell lands in the water"
+      },
+      "textCharge": {
+        "type": "string",
+        "default": "Hold to charge, release to fire",
+        "description": "The hint on the first turn"
+      }
+    }
+  },
+  "slots": {
+    "templates": [
+      {
+        "id": "mechanic.aim.wind",
+        "label": "Strongest wind",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/wind"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 66,
+        "constraints": {
+          "min": 0,
+          "max": 20
+        }
+      },
+      {
+        "id": "mechanic.aim.charge-seconds",
+        "label": "Seconds to full power",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/chargeSeconds"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 62,
+        "constraints": {
+          "min": 0.2,
+          "max": 6,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.aim.preview",
+        "label": "Trajectory preview",
+        "group": "mechanics",
+        "type": "text",
+        "source": {
+          "pointer": "{base}/preview"
+        },
+        "tier": "main",
+        "facet": "gameplay",
+        "rank": 60,
+        "constraints": {
+          "enum": [
+            "full",
+            "short",
+            "none"
+          ]
+        }
+      },
+      {
+        "id": "mechanic.aim.gravity",
+        "label": "Shell gravity",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/gravity"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 1,
+          "max": 60
+        }
+      },
+      {
+        "id": "mechanic.aim.angle-lift",
+        "label": "Shot above the view (degrees)",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/angleLift"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": -30,
+          "max": 80
+        }
+      },
+      {
+        "id": "mechanic.aim.cooldown",
+        "label": "Time between shots",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/cooldown"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 20,
+          "unit": "s"
+        }
+      },
+      {
+        "id": "mechanic.aim.bot-error",
+        "label": "Bot aim error",
+        "group": "mechanics",
+        "type": "number",
+        "source": {
+          "pointer": "{base}/botError"
+        },
+        "tier": "advanced",
+        "facet": "gameplay",
+        "constraints": {
+          "min": 0,
+          "max": 0.6
+        }
+      },
+      {
+        "id": "mechanic.aim.preview-color",
+        "label": "Preview colour",
+        "group": "mechanics",
+        "type": "color",
+        "source": {
+          "pointer": "{base}/previewColor"
+        },
+        "tier": "advanced",
+        "facet": "look"
+      }
+    ]
+  },
+  "events": [
+    {
+      "name": "onFire",
+      "on": "every copy",
+      "args": "{ shooter, weapon, power, yaw, elevation, point }",
+      "when": "a shell left a muzzle",
+      "play": "attempt"
+    },
+    {
+      "name": "onExplode",
+      "on": "host",
+      "args": "{ shooter, at, weapon, water, thrown }",
+      "when": "a shell went off (thrown: the bodies the blast threw)",
+      "play": "blast"
+    },
+    {
+      "name": "onTurnDone",
+      "on": "host",
+      "args": "{ player }",
+      "when": "a turn's shot went off and everything came to rest (the turn passes)",
+      "quiet": true
+    }
+  ],
+  "counters": [],
+  "host": {
+    "owner": "host",
+    "how": "a player's copy sends its aim, power and weapon when it fires; the host flies every shell (wind, bounces, fuse), blasts where it ends and tells everyone; the wind and ammunition are shared",
+    "state": "aim",
+    "fields": {
+      "w": "[x, z] the wind (m/s²)",
+      "s": "[[id, x, y, z, vx, vy, vz, weapon, shooter]] shells in flight",
+      "n": "shots fired",
+      "x": "shells gone off",
+      "a": "{ player: { weapon: left } } ammunition",
+      "c": "[player, power] who is charging now"
+    }
+  },
+  "owns": [
+    {
+      "res": "input.primary",
+      "why": "hold to charge the power, release to fire"
+    },
+    {
+      "res": "input.secondary",
+      "why": "opens the weapon wheel"
+    }
+  ],
+  "needs": {
+    "mechanics": [],
+    "worlds": []
+  },
+  "uses": [
+    "knockback",
+    "carve",
+    "health",
+    "hazards"
+  ],
+  "capabilities": [
+    "projectiles"
+  ],
+  "gives": [
+    "ballistic-aim"
+  ],
+  "bots": "aim.bot(p) from rules.bot: solves the shot with the wind, adds an error, charges in view and fires",
+  "notes": {
+    "lines": [
+      "The part fires by itself on primary (hold to charge, release) for this screen's player; rules.bot calls aim.bot(p) so bots aim and fire too.",
+      "A blast throws through the knockback mechanic and carves through the carve mechanic when the game has them; score in their events or aim.onExplode (host).",
+      "In a turns game the turn passes by itself once the shot has gone off and everything has settled: never call ctx.turns.done for it."
+    ],
+    "readme": "components/aim/README.md",
+    "stub": {
+      "as": "aim",
+      "worked": "bot(ctx, p) { ctx.mechanics.get('aim').bot(p); }",
+      "traps": [
+        "rules.bot must call aim.bot(p) (or bots never fire)",
+        "a blast already throws and carves through the knockback and carve parts: do not do it again in onExplode"
+      ]
+    }
+  },
+  "signs": "checked: gate C (measure 15) judges its sign of life (sample and judge in the implementation)",
+  "fixture": {
+    "players": 2,
+    "missing": "no k2 fixture folder: the two-player check is tests/chaos-two-players.mjs <game> (turns over WebRTC: each fires on their own turn, the camera follows the shot)"
+  },
+  "impl": {
+    "three": {
+      "path": "components/aim/index.js",
+      "profiles": [
+        "standard-3d"
+      ],
+      "state": {
+        "exists": true,
+        "tested": true,
+        "open": true,
+        "evidence": [
+          {
+            "what": "tests/aim-juice.test.mjs pass; tests/chaos-two-players.mjs: turns over WebRTC with real input (view, F held, release), the camera follows the shot on both screens (11/11); verify 6/6 gates, 22/22 measures",
+            "date": "2026-10-14"
+          }
+        ]
+      }
+    }
+  },
+  "state": {
+    "exists": true,
+    "tested": true,
+    "open": true,
+    "evidence": [
+      {
+        "what": "tests/aim-juice.test.mjs pass; tests/chaos-two-players.mjs: turns over WebRTC with real input (view, F held, release), the camera follows the shot on both screens (11/11); verify 6/6 gates, 22/22 measures",
+        "date": "2026-10-14"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+ "base": "critter-lob",
+ "why": "The creator, 2026-10-14, on the look test's three levels: \"The biggest thing these all miss is the actual gameplay itself ... We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get.\" The pickup part placed every spot at y = 0, which on island terrain is out at sea or inside the ground, and every gate passed. The class: the objective is where no player can get to it. Here the game's own code places the berries past the yard's fence (the smallest change on a flat yard that brings it back); seeds, tumbles and bots are as the example has them, so the round is not idle. Gate D must fail it on measure 6's play leg: most objectives cannot be reached.",
+ "evidence": "builder/play/evidence/calibration-look-test-2026-10-14.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "patches": [
+  {
+   "file": "config/game.json",
+   "pointer": "/mechanics/1/params/count",
+   "value": 0
+  }
+ ],
+ "mustFail": [
+  "D"
+ ],
+ "measure": 6,
+ "detail": "(no objective can|most objectives cannot) be reached"
+}

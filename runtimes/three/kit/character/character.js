@@ -612,6 +612,11 @@ export async function spawnCharacter(ctx, opts = {}) {
       if (rag && S.mode === 'ragdoll') { rag.push(new THREE.Vector3(impulse.x ?? 0, impulse.y ?? 0, impulse.z ?? 0).clampLength(0, 30)); ragT = Math.min(ragT, 0.2); wantUp = getUp; return; }
       startRagdoll(v); wantUp = getUp;
     },
+    /** Where the body's middle is now (the ragdoll's pelvis while down, else the hips over object3d): {x, y, z}. */
+    centre() { const p = rag?.pose('pelvis')?.position; if (p) return { x: p.x, y: p.y, z: p.z }; const o = object3d.getWorldPosition(new THREE.Vector3()); return { x: o.x, y: o.y + (bp.pos.get('Hips').y - rt.ground) * scale, z: o.z }; },
+    /** While ragdolled: pull the body onto a path someone else simulates (the knockback mechanic's flight, the same on
+     *  every screen): its middle toward `target` at velocity `vel`. → false when not ragdolled. */
+    steer(target, vel) { if (!rag || S.mode !== 'ragdoll') return false; rag.steer(target, vel); ragT = Math.min(ragT, 0.3); return true; },
     /** Ragdoll on (stays down) or off (gets up once it has settled). The controller's 'knockdown' word uses this. */
     ragdoll(on, { upSeconds = null } = {}) {
       if (on) { if (!rag && RAPIER && pworld) startRagdoll(carried()); else if (!rag) startAction('knockdown', { hold: true }); wantUp = false; upIn = null; }

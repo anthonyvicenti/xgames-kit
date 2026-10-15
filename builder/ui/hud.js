@@ -18,6 +18,8 @@
 //                 No offer, no line; rules.js never sees them.
 //   top middle    the boss's name and its big health bar while a boss fights (the boss mechanic)
 //   the edges     a red flash when you are hurt, and a slow pulse while your health is low
+//   bottom middle the team health cards (ui.teams, ./widgets.js), for a game with teams and health whose HUD style names
+//                 them (config/game.json → ui.style.widgets has 'team-cards': a look target that shows them sets it)
 //
 // The observation, window.__game.hud() (verify check 21): every widget the game's mechanics call for, whether it is on
 // screen, what it shows (read back from the page) and what the kit's state says it should show.
@@ -220,7 +222,7 @@ export function createHud(ctx, ui, { onMenu = () => {} } = {}) {
   root.prepend(vig);
   root.append(btn, fsBtn, goal, card, bossBar);
 
-  let plan = null, goalText = '', goalSet = null, hpKey = '', lastHp = null, hitT = 0, built = false;
+  let plan = null, goalText = '', goalSet = null, hpKey = '', lastHp = null, hitT = 0, built = false, teamCards = null, teamKey = '', cardOn = null;
   const rows = new Map();     // id → { box, fill, num } for bar/line/chip widgets
   const drawn = new Map();    // id → read(): a widget a runtime draws itself (drawnBy)
 
@@ -240,6 +242,13 @@ export function createHud(ctx, ui, { onMenu = () => {} } = {}) {
     if (h) { hp.style.setProperty('--hp', h.color || '#ff5e6c'); card.style.setProperty('--hp', h.color || '#ff5e6c'); }
     const hurtable = ctx.mechanics?.get?.('health');
     if (hurtable?.onHurt && !hurtable.standin) hurtable.onHurt(({ player, delta }) => { if (player === ctx.me && delta < 0) hurt(); });
+    // team health cards: each team's hit points summed over its members (the health mechanic's), in the team's colour
+    const teams = ctx.mechanics?.get?.('teams'), hm = hurtable && !hurtable.standin ? hurtable : null;
+    const want = ctx.config?.ui?.style?.widgets;
+    teamCards = Array.isArray(want) && want.includes('team-cards') && teams && !teams.standin && hm && typeof ui.teams === 'function' && (hm.maxHp?.() ?? 0) > 0
+      ? () => (teams.standings?.() ?? []).map(t => { const ms = (t.members ?? []).map(id => ctx.players?.get?.(id)).filter(Boolean);
+        return { id: `t${t.team}`, name: t.name, color: t.color, value: ms.reduce((a, p) => a + Math.max(0, hm.hpOf(p) ?? 0), 0), max: Math.max(1, ms.length * hm.maxHp()) }; })
+      : null;
   }
   function hurt() { hitT = 0.25; vig.classList.add('hit'); hp.classList.remove('hit'); void hp.offsetWidth; hp.classList.add('hit'); }
 
@@ -296,6 +305,12 @@ export function createHud(ctx, ui, { onMenu = () => {} } = {}) {
       const g = api.goalText;
       goal.style.display = on && g ? 'block' : 'none'; if (goal.textContent !== g) goal.textContent = g;
       if (hitT > 0 && (hitT -= dt) <= 0) vig.classList.remove('hit');
+      const showCard = on && !!ctx.me;
+      if (showCard !== cardOn) { cardOn = showCard; ui.place?.(); }
+      if (teamCards) {
+        if (on) { let rows = []; try { rows = teamCards(); } catch {} const k = JSON.stringify(rows); if (k !== teamKey) { teamKey = k; ui.teams(rows); } }
+        else if (teamKey) { teamKey = ''; ui.teams(null); }
+      }
       if (!on || !plan || !ctx.me) { if (!on) { vig.classList.remove('low'); bossBar.classList.remove('on'); } return; }
       const me = ctx.me;
       if (nameText.textContent !== me.name) nameText.textContent = me.name;

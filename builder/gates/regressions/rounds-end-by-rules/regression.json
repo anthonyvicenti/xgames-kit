@@ -1,0 +1,12 @@
+{
+ "base": "critter-lob",
+ "why": "The isle-artillery build (play-design stream, 2026-10-14): gate E's loadout leg fires shots, changes a look and reloads the joiner across one round, and needed about two minutes of it. The artillery match ended by its own rules (a squad knocked out) before the reload in verify 5 and 7 of 7, so the leg failed a game with no look bug, and two repair rounds went to it (the second on the stronger model). The class: rounds that end by the game's own rules, whenever that happens. Here Critter Lob as a duel: the first seed that bowls a player over ends the round. Each part of the leg runs in the next round when the last one ended, and it must pass.",
+ "evidence": "builder/play/evidence/isle-artillery-2026-10-14.json",
+ "mustPass": [
+  "E"
+ ],
+ "measure": 5,
+ "files": {
+  "rules.js": "rules.js"
+ }
+}

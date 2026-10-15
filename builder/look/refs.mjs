@@ -2,7 +2,7 @@
 // never an image-to-image source); a spec carries only each one's sha256 and source URL (spec.look.refs). A reference
 // folder holds the images and a manifest.json (gf-look-refs/1):
 //
-//   { "schema": "gf-look-refs/1", "name": "…", "made": "2026-10-14",
+//   { "schema": "gf-look-refs/1", "name": "…", "made": "2026-10-14", "game": "the reference game's name (optional)",
 //     "frames": [{ "file": "01-gameplay.jpg", "sha256": "…", "url": "https://…", "frame": "gameplay", "note": "…" }] }
 //
 //   const m = await readManifest(dir);                 // the frames with absolute `file`, sha256 checked
@@ -51,12 +51,13 @@ export async function readManifest(dir) {
     if (!existsSync(abs)) { problems.push(`${f.file}: missing`); continue; }
     const sha = await sha256Of(abs);
     if (f.sha256 && f.sha256 !== sha) { problems.push(`${f.file}: sha256 ${sha.slice(0, 12)}… is not the manifest's ${f.sha256.slice(0, 12)}…`); continue; }
-    frames.push({ ...f, file: abs, sha256: sha, frame: FRAMES.has(f.frame) ? f.frame : 'other' });
+    frames.push({ ...f, file: abs, sha256: sha, frame: FRAMES.has(f.frame) ? f.frame : 'other', ...(!f.game && m.game ? { game: String(m.game) } : {}) });
   }
   return { name: m.name ?? path.basename(dir), dir, frames, problems };
 }
 
-/** Frames → what spec.look.refs carries (no local path ever). */
+/** Frames → what spec.look.refs carries (no local path ever). `game` (the reference game's name) is a local record: the
+ *  publish scan refuses a game whose shipped files carry it, and the published spec.json is a copy without it. */
 export function refsOf(frames) {
   return frames.map(f => ({
     sha256: f.sha256,
@@ -64,6 +65,7 @@ export function refsOf(frames) {
     frame: FRAMES.has(f.frame) ? f.frame : 'other',
     ...(f.note ? { note: String(f.note).slice(0, 200) } : {}),
     ...(f.size ? { size: f.size } : {}),
+    ...(f.game ? { game: String(f.game).slice(0, 120) } : {}),
   }));
 }
 

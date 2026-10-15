@@ -33,12 +33,15 @@ import { REPO, KIT, SCENIC_KIT, FORGE, FORGE_KIT, VISTA_KIT, importPart, KIT_VER
 import { check, withDefaults } from './lib/schema.mjs';
 import { readSpec, readCatalog, lookOf, planeOf } from './lib/spec.mjs';
 import { applyKind } from '../../kinds/apply.mjs';
+import { keepLookArt } from '../look/harmonize.mjs';
 import { applyTarget } from '../look/apply.mjs';
+import { applyTargetUi } from '../look/ui-style.mjs';
 import { put, vendorLibraries, vendorKit, vendorGfAssets, kitModuleFiles, optionalModuleDirs, gameCodeTexts, kitNow } from './lib/vendor.mjs';
 import { overrideConflicts, holdOverrides } from './lib/overrides.mjs';
 import { importKitModule } from './lib/kit-import.mjs';
 import { specToConfig } from './lib/spec-config.mjs';
 import { libraryFill } from '../art/fill.mjs';
+import { objectiveArt } from '../art/objectives.mjs';
 import { refFile } from '../art/views.mjs';
 import { assembleManifest } from './lib/slots-lib.mjs';
 import { ensurePictures } from './lib/items-lib.mjs';
@@ -273,6 +276,7 @@ export async function create(specPath, outDir, { force = false, newRules = false
   C.notes.unshift(...madeNotes, ...(await applyKind(C, spec, { place })).notes);   // the kind's layer: kinds/apply.mjs (the one seam)
   C.notes.push(...applyTarget(C, spec, { place }).notes);   // the style target over the kind, then the spec's own look values (builder/look/apply.mjs)
   C.notes.push(...cameraForBody(C));                       // a small creature's camera comes in to its size
+  C.notes.push(...(await applyTargetUi(C, spec, { place })).notes);   // the target's UI facts as HUD tokens over the kind's (builder/look/ui-style.mjs)
   // a param whose default follows the game's own config (a mechanic module's derive(game, params), after the kind has
   // set the camera): only what the spec left unset, and said in the notes
   for (const m of C.game?.mechanics ?? []) {
@@ -307,7 +311,11 @@ export async function create(specPath, outDir, { force = false, newRules = false
       extras.add(id);
       const frag = m.configFor?.(spec, { rules });
       if (frag?.game) C.game = mergeMissing(C.game, frag.game);
-      for (const f of m.files?.(C.game) ?? []) extraFiles.push({ from: kitPath(KIT, f.from), to: f.to });
+      for (const f of m.files?.(C.game) ?? []) {
+        extraFiles.push({ from: kitPath(KIT, f.from), to: f.to });
+        // a stand-in that is not the kit's own work carries its licence into the credits (kit/vfx: a library sprite)
+        if (f.license && !(C.worldArt ??= []).some(a => a.file === f.to)) C.worldArt.push({ file: f.to, what: f.license.what ?? `${id} stand-in`, license: `${f.license.spdx}${f.license.credit ? `: ${f.license.credit}` : ''}` });
+      }
     }
     if (extras.size) modules.extras = [...extras].sort();
   }
@@ -327,6 +335,8 @@ export async function create(specPath, outDir, { force = false, newRules = false
   await mkdir(dir, { recursive: true });
 
   await gen('spec.json', specBytes);
+  // the style pass leaves the look's own packs' art as it was made (builder/look/harmonize.mjs keepLookArt)
+  if (C.look?.harmonize) { const k = keepLookArt(C, spec); if (k.files.length) C.notes.push(`style pass: ${k.files.length} file${k.files.length === 1 ? '' : 's'} from the look's own packs (${k.packs.join(', ')}) left as they were made (look.harmonize.includePacks or a slot's harmonize: true moves them anyway)`); }
   for (const n of ['game', 'look', 'world', 'characters']) await own(`config/${n}.json`, json(C[n]));
   if (C.props) await own('config/props.json', json(C.props));
   for (const a of C.assets) await own(a.to, await readFile(a.from));
@@ -378,6 +388,12 @@ export async function create(specPath, outDir, { force = false, newRules = false
   warnings.push(...A.warnings);
   await gen('assets.json', json(A.manifest));
   await gen('ATTRIBUTION.md', attribution(spec, record));
+  // the art step for what the objectives draw (builder/art/objectives.mjs): the library by meaning, no paid maker here
+  // (the loop's art step and `gamesfun art objectives --yes` make what the library lacks); what stays a stand-in is said
+  if (place.runtime === 'three') {
+    const oa = await objectiveArt(dir, { log, attribution });
+    for (const i of oa.items) if (i.now === 'standin') warnings.push(`objective "${i.name}" (${i.slot}) is still a stand-in: ${i.why}`);
+  }
   // the kit's own licence (MIT) beside its code: gf/three/LICENSE comes with the kit copy; gf/LICENSE says it covers
   // all of games.fun's code in the game (a forge game's gf/three/ is a closure without it)
   await gen('gf/LICENSE', kitLicence(await readFile(kitPath(KIT, 'LICENSE'), 'utf8')));

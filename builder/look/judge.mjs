@@ -2,7 +2,7 @@
 // The reference look judge (builder/look/README.md): how close a game's look is to its style target and its reference
 // frames, 0–100, by part, with plain findings a repair round (or the tuning loop) can act on.
 //
-//   node builder/look/judge.mjs <game-dir> [--refs <manifest.json>] [--target <target.json>] [--out <dir>] [--no-vision]
+//   node builder/look/judge.mjs <game-dir> [--refs <manifest.json>] [--target <target.json>] [--out <dir>] [--no-vision] [--json <file>]
 //   node builder/look/judge.mjs --frames <frames.json> --refs <manifest.json> [--out <dir>] [--no-vision]
 //
 // A manifest (refs or frames) is { "frames": [{ "file", "framing"?, "crop"?: [x, y, w, h], "sha256"? }] }, files
@@ -35,7 +35,10 @@ export const BAR = { refs: 55, words: null };
  * evidence/noise-*), and how many standard errors the interval spans (Z = 2: about 95 %).
  */
 export const NOISE = { judgedSd: 6 };
-export const Z = 2;
+// Z = 3, not 2 (2026-10-14): at two standard errors a game near the bar (block-valley against Hollow Reach, three-pass
+// scores 50–56) came out "fail" in 1 of 10 verify runs and "unsure" in 9; at three none of its runs can reach "fail",
+// and a game must sit about 7 points from the bar to pass or fail
+export const Z = 3;
 /** Measure 23's own settings (look-check.mjs): k judge passes, and the blend the gate holds (set from the noise). */
 export const GATE = { passes: 3, blend: { measured: 0.3, judged: 0.7 } };
 /**
@@ -67,6 +70,18 @@ export function judgeStats(img, { ref = false } = {}) {
   const regions = measureFrame(img).regions ?? {};
   s.surfaces = Object.fromEntries(Object.entries(bands).filter(([k]) => regions[k]));
   return s;
+}
+
+/**
+ * Why a frame of ours cannot stand for its setting, or null: almost no edges and almost no contrast (the camera is in
+ * the haze or the fog, or the frame is blank), or a "day" frame with hardly any lit pixels (underground, or in shade).
+ */
+export function unusableWhy(s, setting = null) {
+  if (!s) return null;
+  if ((s.edges?.density ?? 1) < 0.02 && (s.mean?.contrast ?? 1) < 0.06) return 'mostly haze or blank: no edges and no contrast';
+  if ((s.mean?.L ?? 0) > 0.9 && (s.mean?.contrast ?? 1) < 0.06) return 'a white-out';
+  if (setting === 'day' && s.lit && s.lit.share < 0.15) return `called daylight with only ${Math.round(s.lit.share * 100)} % of it lit`;
+  return null;
 }
 
 /** The lit pixels (OKLab L over 0.45, as measure.mjs reads a target): how much of the frame is lit, and how light and
@@ -246,6 +261,11 @@ export async function score(game, target, refs = [], opts = {}) {
     }
     let oursP = opts.oursPrepared ?? await prepareFrames(ours, px, join(sheetDir, 'tmp-ours'));
     if (bySetting && refsP.length && oursP.some(o => !o.setting)) oursP = await settingsOf(oursP, classifyOpts);
+    // a frame of ours that shows nothing (a camera in the haze, a blank or a white-out) is never judged, and one that is
+    // not lit like daylight is never held to daylight references
+    const unusable = [];
+    oursP = oursP.filter(o => { const why = unusableWhy(o.stats, o.setting); if (why) unusable.push({ framing: o.framing, why }); return !why; });
+    if (unusable.length) log(`  look judge: left out ${unusable.map(u => `${u.framing} (${u.why})`).join(', ')}`);
     const confidence = confidenceOf(target, refsP);
     const against = refsP.length ? refsP : [wordsReference(target)].filter(Boolean);
     if (!against.length) return { score: null, bar: null, pass: true, advisory: true, confidence, parts: {}, framings: [], findings: [], change: [], why: 'no reference frames and no target palette: nothing to hold the look to' };
@@ -336,7 +356,7 @@ export async function score(game, target, refs = [], opts = {}) {
       bar, advisory: bar === null, verdict: bar === null ? 'advisory' : interval[0] >= bar ? 'pass' : interval[1] < bar ? 'fail' : 'unsure',
       pass: bar === null ? true : interval[1] >= bar, confidence, targetConfidence: typeof target?.confidence === 'number' ? target.confidence : null,
       blend: verdict?.pairs ? blend : { measured: 1, judged: 0 }, passes: perPass.length, partWeights: weights, vision: verdict ? (verdict.error ? { error: verdict.error } : { model: verdict.model ?? VISION_MODEL, rubric: verdict.rubric, seconds: verdict.seconds, cost: verdict.cost }) : null,
-      halves, settings: Object.fromEntries(Object.entries(settings).map(([k, v]) => [k, { ...v, exact: Math.round(v.exact * 10) / 10 }])), missingSettings: [...new Set(missing.map(m => m.setting))], parts, framings: framings.map(({ measuredFindings, ...f }) => f), findings, change: verdict?.change ?? [], summary: verdict?.summary ?? null,
+      unusable, halves, settings: Object.fromEntries(Object.entries(settings).map(([k, v]) => [k, { ...v, exact: Math.round(v.exact * 10) / 10 }])), missingSettings: [...new Set(missing.map(m => m.setting))], parts, framings: framings.map(({ measuredFindings, ...f }) => f), findings, change: verdict?.change ?? [], summary: verdict?.summary ?? null,
     };
     if (opts.sheet !== false) result.sheet = await sideBySide(px, pairs, framings, result, sheetDir).catch(e => { log(`  look judge: no sheet (${e.message})`); return null; });
     if (opts.outDir) { await mkdir(opts.outDir, { recursive: true }); await writeFile(join(opts.outDir, 'look-judge.json'), JSON.stringify(result, null, 1) + '\n'); }
@@ -425,7 +445,7 @@ export function lookLine(r) {
 
 if (isMain(import.meta)) {
   const a = process.argv.slice(2), opt = k => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : null; };
-  const VALUED = new Set(['--refs', '--target', '--out', '--frames', '--name']);
+  const VALUED = new Set(['--refs', '--target', '--out', '--frames', '--name', '--json']);
   const dir = a.find((x, i) => !x.startsWith('--') && !VALUED.has(a[i - 1]));
   const framesFile = opt('--frames');
   if (!dir && !framesFile) { console.error('usage: judge.mjs <game-dir> | --frames <frames.json>  [--refs <manifest.json>] [--target <target.json>] [--out <dir>] [--no-vision]'); process.exit(2); }
@@ -435,6 +455,8 @@ if (isMain(import.meta)) {
   const game = framesFile ? { frames: await readManifest(framesFile) } : dir;
   const r = await score(game, target, refs, { vision: !a.includes('--no-vision'), outDir: opt('--out') ?? (dir ? join(dir, '.verify', 'look') : null), name: opt('--name') ?? undefined, log: console.log });
   console.log(lookLine(r));
+  // the whole record for a caller that ran the judge as its own process (builder/loop/kit.mjs judgeUnder)
+  if (opt('--json')) await writeFile(opt('--json'), JSON.stringify(r) + '\n');
   if (r.sheet) console.log(`sheet (local, shows the references): ${r.sheet}`);
   process.exit(r.pass ? 0 : 1);
 }

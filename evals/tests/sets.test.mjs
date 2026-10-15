@@ -103,9 +103,9 @@ test('depth: eight kinds, two or three candidates each, no reference chosen yet'
   assert.equal(set.screen.size, '3840x2160');
 });
 
-test('cases: T1-T7 on spec v2, no engine field, every foundation value from the vocabulary', async () => {
+test('cases: T1-T8 on spec v2 (T8 frozen 2026-10-14 in its own manifest), no engine field, every foundation value from the vocabulary', async () => {
   const { cases } = await loadSet(path.join(HERE, 'cases'));
-  assert.deepEqual(Object.keys(cases), ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7']);
+  assert.deepEqual(Object.keys(cases), ['T1', 'T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'T8']);
   for (const c of Object.values(cases)) {
     assert.equal(c.specVersion, 2, c.id);
     assert.ok(!('engine' in c), `${c.id} has no engine field`);

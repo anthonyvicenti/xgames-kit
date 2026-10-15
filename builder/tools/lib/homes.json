@@ -78,8 +78,8 @@
       "home": "part",
       "part": "loop:round",
       "run": "build",
-      "rule": "A round ends in results and Play again starts round 2, alone with bots and with two players.",
-      "fix": "Let the kit end the round (the clock, or rules.check returning a result). Do not hold the phase in rules.js, and reset the game's own state in rules.roundStart so round 2 starts clean."
+      "rule": "A round can be won: every objective the parts put in play (pickups, zones, goals, enemies to reach) is there and reachable from the seats, read from window.__game.objectives() (any one out of reach fails). A round ends in results and Play again starts round 2, alone with bots and with two players; and the round is a game (its play leg, builder/play/judge.mjs): in real rounds with bots and a scripted player the objectives can be reached and get taken, something meaningful happens at least every 30 s, and with a play target in the locked spec the play scores at least the bar against it.",
+      "fix": "Put things where players can get them: ctx.world.place(kind, n, {zone}) gives open ground every seat reaches (feet height y), ctx.world.groundAt(x, z) the ground, ctx.world.reach(seat, point) says why a place cannot be reached; never a spot at y = 0 or by the play box. Let the kit end the round (the clock, or rules.check returning a result). Do not hold the phase in rules.js, and reset the game's own state in rules.roundStart so round 2 starts clean. When the play leg fails, read its findings: put every objective on the world's own ground above the water where players can walk from their seats (never at a fixed height), make bots go for the objective and for each other in rules.bot, make the main action do something on a press, and report the game's own gameplay events with ctx.events.count(player, name, { target }); node builder/play/judge.mjs <game> runs the play leg alone."
     },
     "7": {
       "name": "audio gate v5",
@@ -172,8 +172,8 @@
       "gate": "F",
       "home": "invariant",
       "run": "build",
-      "rule": "A character or prop the spec asks to be generated or made from a reference is not still a stand-in, and two roles described differently never share one body file.",
-      "fix": "Wait for the worker's generation (game/generated.json says how far it is). Give a role that is not generated its own body from library/bodies.json. Do not call Meshy or draw a stand-in in code."
+      "rule": "A character or prop the spec asks to be generated or made from a reference is not still a stand-in, two roles described differently never share one body file, and what the game's objectives draw (a pickup, a carried item, a goal) is that thing: never a stand-in, never a library model that means something else.",
+      "fix": "Wait for the worker's generation (game/generated.json says how far it is). Give a role that is not generated its own body from library/bodies.json. For an objective, run the art step (gamesfun art objectives <game> --yes): the library by meaning, else a maker in the look's style. Never draw a stand-in in code."
     },
     "15": {
       "name": "the loop is alive",

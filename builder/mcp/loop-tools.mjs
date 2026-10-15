@@ -3,7 +3,7 @@
 // A tool called out of order is refused with the reason and the right tool.
 //
 //   gamesfun_step_ledger → gamesfun_step_foundation → gamesfun_step_pitch → gamesfun_step_spec → gamesfun_step_create
-//   → gamesfun_step_look (the look, before the build) → [the build round] → gamesfun_step_fix → [gamesfun_step_economy] → [gamesfun_step_backend] → gamesfun_step_verify
+//   → gamesfun_step_look (the look, before the build) → gamesfun_step_design (the play, before the build) → [the build round] → gamesfun_step_fix → [gamesfun_step_economy] → [gamesfun_step_backend] → gamesfun_step_verify
 //   → gamesfun_step_playtest → gamesfun_step_read (the second reader) → gamesfun_step_deliver
 //   a fail: gamesfun_step_repair (the stop rule and the ladder) → [the round] → gamesfun_step_fix → …
 //   the top of the ladder: gamesfun_ask; the person's answer: gamesfun_step_ledger {answer}; after delivery: gamesfun_change
@@ -32,6 +32,7 @@
 // }
 import { randomBytes } from 'node:crypto';
 import path from 'node:path';
+import { readFile } from 'node:fs/promises';
 import { openLoop } from '../loop/loop.mjs';
 import { ORDER, ROUND_STEPS, actionOf, toolOf } from '../loop/order.mjs';
 import { readReport } from '../loop/playtest.mjs';
@@ -238,7 +239,8 @@ export function loopTools(bind) {
           if (L.state.step !== 'create') return refusal('out-of-order', `the loop is at "${L.state.step}": ${where(L.state, G.arg).tool ?? where(L.state, G.arg).after?.tool} is next`, where(L.state, G.arg).tool);
           let r = await L.step({}, { expect: 'create' });
           if (r.next === 'look') r = await L.step({}, { expect: 'look' });
-          return answer(G, L, r.next === 'build' ? await L.step({}, { expect: 'build' }) : r);
+          if (!r.waiting && r.next === 'design') r = await L.step({}, { expect: 'design' });
+          return answer(G, L, !r.waiting && r.next === 'build' ? await L.step({}, { expect: 'build' }) : r);
         });
       },
     },
@@ -249,7 +251,13 @@ export function loopTools(bind) {
       handler: stepTool(['look'], async (args, L, G) => {
         if (L.state.status === 'waiting-on-creator' && !(L.state.waiting?.about === 'looks' && args.pick)) return { refusal: refusal('waiting-on-creator', 'the looks are with the person: call this tool with their pick', null, where(L.state, G.arg)) };
         return { ...(args.judged ? { judged: args.judged } : {}), ...(args.pick ? { pick: args.pick } : {}) };
-      }, { then: ['look', 'build'] }),
+      }, { then: ['look', 'design'] }),
+    },
+    {
+      name: 'gamesfun_step_design',
+      description: 'The play, before the build round (builder/play/design.mjs). The first call hands you the designer round: the person\'s words, the ledger, the foundation\'s parts with their params, the world and the references, and the play target\'s fields. Design how it plays (reason from the genre their words point to; never narrow the idea) and pass the target as `target`: verbs, beats, the objective and how it is reached on this world, touchpoints, risk, pacing numbers, events, feel, the failures it avoids, what makes it play (3–6 lines, each a promise the play-tester checks), mechanics, build lines, params and bots. It is checked; its mechanics and build lines join the spec, and the build round follows.',
+      inputSchema: schema({ target: { type: 'object', description: 'The play target (builder/spec/play-target.schema.json), less schema, from, confidence and sources.' } }),
+      handler: stepTool(['design'], async args => (args.target ? { target: args.target } : {}), { then: ['build'] }),
     },
     {
       name: 'gamesfun_step_fix',
@@ -386,7 +394,9 @@ export function loopTools(bind) {
         const G = placeOf(args.game);
         return serial(G.game, async () => {
           const L = await open(G);
-          const r = await L.change(args.request);
+          // a game made outside the loop (create, a composed level) has no run: the loop takes it as it is first
+          const made = !L.state.lock && !L.state.prompt ? await readFile(path.join(G.game, 'spec.json'), 'utf8').then(JSON.parse, () => null) : null;
+          const r = made ? await L.adopt(made, args.request) : await L.change(args.request);
           if (r.refused) return refusal(r.refused, r.why, where(L.state, G.arg).tool);
           return answer(G, L, await L.step({}, { expect: 'ledger' }));
         });

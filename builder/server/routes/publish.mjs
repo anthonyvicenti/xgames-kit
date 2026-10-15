@@ -20,7 +20,7 @@ export default function register(router, ctx) {
 
   router.get('/check', async () => {
     const p = await preflight(gameDir, { origin: studioOrigin() });
-    return { ok: !p.problems.length && !p.secrets, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, problems: p.problems, secrets: p.secrets, backend: p.backend };
+    return { ok: !p.problems.length && !p.secrets && !p.names, files: p.built.tree.files.length, bytes: p.built.bytes, skipped: p.built.skipped, added: p.built.added, copied: p.built.copied, problems: p.problems, secrets: p.secrets, names: p.names, nameWarnings: p.nameWarnings, backend: p.backend };
   });
 
   // Starts a sign-in and answers at once with the page to open; the page opens it in a new tab, the person approves

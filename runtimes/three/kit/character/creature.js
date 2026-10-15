@@ -231,6 +231,19 @@ export async function spawnCreature(ctx, opts = {}) {
       if (tumble && S.mode === 'ragdoll') { const lv = tumble.rb.linvel(); tumble.rb.setLinvel({ x: lv.x + (impulse.x ?? 0), y: lv.y + (impulse.y ?? 0), z: lv.z + (impulse.z ?? 0) }, true); tumbleT = Math.min(tumbleT, 0.2); wantUp = getUp; return; }
       startTumble(v); wantUp = getUp; upIn = null;
     },
+    /** Where the body's middle is now (the tumbling body while down, else half its height over object3d). */
+    centre() { if (tumble) { const t = tumble.rb.translation(); return { x: t.x, y: t.y, z: t.z }; } const o = object3d.getWorldPosition(new THREE.Vector3()); return { x: o.x, y: o.y + info.height * scale * 0.5, z: o.z }; },
+    /** While tumbling: pull the body onto a path someone else simulates (the knockback mechanic's flight) at its
+     *  velocity; it keeps its own spin. → false when not tumbling. */
+    steer(target, vel, { gain = 9, maxDv = 8 } = {}) {
+      if (!tumble || S.mode !== 'ragdoll') return false;
+      const rb = tumble.rb, t = rb.translation(), v = rb.linvel();
+      let dx = (vel.x ?? 0) + (target.x - t.x) * gain - v.x, dy = (vel.y ?? 0) + (target.y - t.y) * gain - v.y, dz = (vel.z ?? 0) + (target.z - t.z) * gain - v.z;
+      const l = Math.hypot(dx, dy, dz); if (l > maxDv) { dx *= maxDv / l; dy *= maxDv / l; dz *= maxDv / l; }
+      rb.setLinvel({ x: v.x + dx, y: v.y + dy, z: v.z + dz }, true);
+      tumbleT = Math.min(tumbleT, 0.3);
+      return true;
+    },
     /** Down (stays down) or up (gets up once it has come to rest). The controller's 'knockdown' word uses this. */
     ragdoll(on, { upSeconds = null } = {}) {
       if (on) { if (S.mode !== 'ragdoll') startTumble(vel.clone().clampLength(0, MAX_CARRY)); wantUp = false; upIn = null; }

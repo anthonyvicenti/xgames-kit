@@ -1,0 +1,13 @@
+{
+ "base": "critter-lob",
+ "why": "The control's other half: a real late-copy look bug. A copy that boots a second time in its tab (the reloaded joiner) draws every other player without the body colour they wear (their loadout), in the seat colour. Gate E's loadout leg must still fail it: the reloaded copy does not get the host's look.",
+ "evidence": "builder/play/evidence/isle-artillery-2026-10-14.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "mustFail": [
+  "E"
+ ],
+ "measure": 5,
+ "detail": "late copy"
+}

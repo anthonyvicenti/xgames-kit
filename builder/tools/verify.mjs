@@ -36,7 +36,14 @@
 //     other in their own body colour (read from its material) and shot or stream colour, a change mid-round and a
 //     reloaded copy follow
 //   6 a round runs to results and replays: alone with bots (here, a 25 s round through Studio's overrides) and with
-//     two players (the gate's results, play-again and end-round checks)
+//     two players (the gate's results, play-again and end-round checks); and it can be won: every objective the parts
+//     put in play (pickups, zones, goals, enemies to reach: window.__game.objectives()) is there and reachable from
+//     every seat, read at the start of play and mid-round (tools/lib/reach-check.mjs; a failure names the thing, where
+//     it is and why: in water, under the ground, walled off, floating)
+//     and its play leg (tools/lib/play-check.mjs → builder/play/judge.mjs; gate D widened 2026-10-14): real rounds with
+//     bots and a scripted player at two and four players, a friends round, the play feed (kit/core/play.js) against the
+//     locked spec's play.target and a vision judge on clips of that play; it fails on objectives a player cannot reach
+//     or nothing meaningful for 30 s in most rounds (any game), and below the bar with a play target
 //   7 audio gate v5 (builder/audio-gates/qa-gate-v5.mjs) over the solo round: the loudest sound, while it sounds, is clearly
 //     audible (v4 read the loudest 400 ms, which a game of single short sounds never fills), sounds really start and
 //     reach the speakers, the game's own listed sounds are among them (the kit's count, window.__game.sounds()), and
@@ -63,7 +70,10 @@
 //  14 looks honoured (tools/lib/looks-check.mjs, no browser, runs in --quick): a character or prop the spec asks to be
 //     generated or made from a reference is not still a stand-in (the library bean, a kit stand-in file, create's
 //     placeholder) unless game/generated.json records the failed generation and the delivery line naming it; two roles
-//     described differently never share one body file (creator, Hang Up On Them: purple jelly-bean zombies)
+//     described differently never share one body file (creator, Hang Up On Them: purple jelly-bean zombies); and what
+//     the game's objectives draw (a pickup, a carried item, a goal: each mechanic manifest's `objectives`) is neither a
+//     stand-in nor a library model that means something else (creator, the composed levels, 2026-10-14: "We were
+//     supposed to collect berries, but there were no berries anywhere"; builder/art/objectives.mjs fills them)
 //  15 the loop is alive (tools/lib/alive-check.mjs): each mechanic shows its own sign of life in the kit's state on the
 //     pages above (waves: enemies come and go for their goal, an idle player alone loses the target, an aimed shot hurts
 //     one; pickup taken; a hit lands; …), and the goal (a prop whose role is the thing to defend) fills a readable share
@@ -169,9 +179,11 @@ import { checkScreens } from './lib/screens-check.mjs';
 import { checkFriends } from './lib/friends-check.mjs';
 import { checkFriendsWatch } from './lib/friends-watch-check.mjs';
 import { checkLook, lookInputs } from './lib/look-check.mjs';
+import { checkPlay } from './lib/play-check.mjs';
 import { STEP_PRE, STEP_POST } from './lib/stepped.mjs';
 import { lockFor } from './lib/lock.mjs';
 import { checkGameTests } from './lib/game-tests.mjs';
+import { judgeReach, objectivesAtStart, readObjectives } from './lib/reach-check.mjs';
 import { shortRound, flowPulse } from './lib/flow-signs.mjs';
 import { judgeScores } from './lib/score-events.mjs';
 import { checkEvents } from './lib/events-check.mjs';
@@ -402,6 +414,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
   const snap = page => page.evaluate(() => window.__game?.snapshot?.() ?? null);
   const roundSeconds = 25;
   let S = null, sr = null, replayed = null, audio = null, cov = [];
+  const objectiveReads = [];
   try {
     if (needRound) {
     // the solo round: real clicks and keys; a 25 s round through Studio's own override mechanism
@@ -417,6 +430,8 @@ export async function verify(gameDir, { quick = false, out = null, log = console
     await until(async () => (await snap(p))?.phase === 'playing', 15000, 'the round to start');
     look = await firstLook(p, game, world);                          // check 15: the goal and the HUD in the first look
     await shot(p, 'first-look');
+    // measure 6's reach leg: what the play is for, in play and reachable from every seat (tools/lib/reach-check.mjs)
+    if (want(6)) objectiveReads.push(await objectivesAtStart(p));
     await resetAudioTap(p);
     await p.mouse.click(640, 400);                                   // takes the mouse (pointer lock)
     // The walk test: the farthest the local player gets from its start while keys are held, sampled, so a bot knocking
@@ -447,6 +462,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
     const tp = turnPlayer(p, { log: say });
     for (let i = 0; i < 3; i++) { cov.push(await p.evaluate(() => window.__game.coverage())); await tp.idle(2500); }
     await shot(p, 'mid-round');
+    if (want(6)) objectiveReads.push(await readObjectives(p));
     await until(async () => { if ((await snap(p))?.phase === 'results') return true; await tp.step(); return false; }, (roundSeconds + 20) * 1000, 'the results');
     sr = await snap(p);
     await shot(p, 'results');
@@ -653,7 +669,7 @@ export async function verify(gameDir, { quick = false, out = null, log = console
       add(15, 'the loop is alive', al.ok, al.detail, { seconds: 0, from: 'the recordings of every page above and the undefended page' });
     }
     // ---- 5. the two-player live gate ---- (running beside this session since it started; awaited below)
-    solo = { errors: S?.errors ?? [], sr, replayed, audio };
+    solo = { errors: S?.errors ?? [], sr, replayed, audio, objectives: objectiveReads };
   } catch (e) {
     rec.notes.push(`solo session stopped: ${e.message}`);
     for (const [n, name] of [[3, 'boots to play with no console errors'], [4, 'slot coverage 100%'], [8, 'swap proof'], [10, 'fair play'], [12, 'something happens'], [13, 'controls work'], [15, 'the loop is alive'], [16, 'hits read'], [20, 'the menu works'], [21, 'the HUD shows your state'], [22, 'the wallet in the menu'], [24, 'plays inside a post'], [31, 'sharp on every screen'], [35, 'the game\'s own tests'], [38, 'every event answered'], [39, 'hits per kill as the spec says']]) if (want(n) && !checks.some(c => c.n === n)) add(n, name, false, `not reached: ${e.message}${solo?.errors?.length ? `; console: ${solo.errors.slice(0, 2).join(' | ')}` : ''}`);
@@ -703,7 +719,17 @@ export async function verify(gameDir, { quick = false, out = null, log = console
   const g = name => (gateRec?.checks ?? []).find(c => c.name === name)?.ok === true;
   const soloOk = !!(solo?.sr && solo.sr.phase === 'results' && solo.sr.results?.length && solo.replayed);
   const duoOk = g('both-see-the-same-results') && g('play-again-starts-a-new-round') && g('host-ends-the-round');
-  if (want(6) && !checks.some(c => c.n === 6)) add(6, 'a round reaches results and replays', soloOk && duoOk, `alone with 3 bots: ${soloOk ? `results (${(solo.sr.results ?? []).map(r => `${r.name} ${r.value}`).join(', ')}), Play again → round 2` : 'did not reach results and a second round'}; two players: ${duoOk ? 'the same results on both, play again, the host ends round 2' : 'the gate did not show results, play again and end round'}`, { seconds: soloSeconds, shares: 'the solo round, with 3 and 7, and the gate\'s results (check 5)' });
+  // the reach leg (gate D widened, 2026-10-14: "there were no berries anywhere ... boxes [in the ocean] impossible to
+  // get"): a round can be won only when every objective it needs is in play where the seats can get to it
+  // (tools/lib/reach-check.mjs, read on the solo page above from window.__game.objectives(): the world's walk grid)
+  const reach6 = want(6) ? judgeReach(solo?.objectives ?? []) : null;
+  if (reach6) rec.objectives = reach6.record;
+  // 6's play leg (gate D; tools/lib/play-check.mjs → builder/play/judge.mjs): real rounds at two and four players, the
+  // friends round and the clips, in its own server and browser once the sessions above have closed (it adds no load to
+  // their wall-clock legs; its own rounds run on stepped time). Its feed's reach is the same walk grid's (kit/core/play.js)
+  const pl = want(6) ? await (async () => { const t = Date.now(); const r = await checkPlay(dir, { outDir, log: say }).catch(e => ({ ok: false, detail: `the play judge stopped: ${e.message}`, record: null, notes: [] })); lap('play', t); return { ...r, seconds: (Date.now() - t) / 1000 }; })() : null;
+  if (pl) { rec.play = pl.record; if (pl.notes?.length) rec.notes.push(...pl.notes); }
+  if (want(6) && !checks.some(c => c.n === 6)) add(6, 'a round reaches results and replays', soloOk && duoOk && reach6.ok && (!pl || pl.ok), `objectives: ${reach6.detail}; ${pl && !pl.ok ? `${pl.detail}. ` : ''}alone with 3 bots: ${soloOk ? `results (${(solo.sr.results ?? []).map(r => `${r.name} ${r.value}`).join(', ')}), Play again → round 2` : 'did not reach results and a second round'}; two players: ${duoOk ? 'the same results on both, play again, the host ends round 2' : 'the gate did not show results, play again and end round'}${pl?.ok ? `; ${pl.detail}` : ''}`, { seconds: soloSeconds, shares: 'the solo round, with 3 and 7, and the gate\'s results (check 5)', ...(pl ? { play: { ok: pl.ok, seconds: Math.round(pl.seconds) } } : {}), ...((pl && !pl.ok) || !reach6.ok ? { area: 'play' } : {}) });
   // ---- 7. audio ----
   if (want(7) && !checks.some(c => c.n === 7)) {
     const a = solo?.audio;
@@ -948,7 +974,8 @@ async function lookOnly(dir, { rec, outDir, add, log, t0, refs }) {
 
 /** Check 14 (tools/lib/looks-check.mjs): generated and reference looks are not stand-ins; roles do not share a body. */
 async function looks(dir, rec, add) {
-  try { const lk = await checkLooks(dir); rec.looks = lk.record; rec.notes.push(...lk.notes); add(14, 'looks honoured', lk.ok, lk.detail); }
+  // a failure is art: the ladder's generate rung can make what is missing (builder/loop/ladder.mjs)
+  try { const lk = await checkLooks(dir); rec.looks = lk.record; rec.notes.push(...lk.notes); add(14, 'looks honoured', lk.ok, lk.detail, lk.ok ? {} : { area: 'art' }); }
   catch (e) { add(14, 'looks honoured', false, `the check could not run: ${e.message}`); }
 }
 /** Check 13's evidence: a live screenshot, or a frame it already took (PNG bytes). */

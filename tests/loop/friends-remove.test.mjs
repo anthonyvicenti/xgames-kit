@@ -11,10 +11,10 @@ import { openLoop, fileStore, stateFileOf, promisesOf, readReport, settlePromise
 import { removeMade } from '../../builder/loop/kit.mjs';
 import { checkpointStore } from '../../builder/lib/checkpoint.mjs';
 import { fakeBindings, keepAll, scriptedVerify, seenTwo, touch, TWO_SEATS } from './dryrun/fakes.mjs';
-import { fakeRegistry, goodLedger, pitchV2, PROMPT } from './fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, pitchV2, PROMPT, GATE_PLAY } from './fixtures/registry.mjs';
 
 const reg = fakeRegistry();
-const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
+const SPEC = { specVersion: 2, play: { target: GATE_PLAY }, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
   build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js', where: 'module', row: 'hook' }], notInV1: [] };
 const CARDS = pitchV2({ reply: 'Card 1 holds the gate. A grappling hook that pulls you onto the walls is built new, which makes the build take longer.', cards: ['a', 'b'].map(id => ({ id, title: id, v1: { has: ['waves at the gate'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: SPEC })), questions: [] });
 /** The same run with a bot on the host's screen: a friends round has none. */
@@ -72,7 +72,7 @@ test('seen with bots: the play-test is asked again once for the friends promise;
   assert.deepEqual(reports, ['bots', 'two']);
   assert.match(briefs[0], /`row\.friends` \(two players\)/);
   assert.match(briefs[0], /\{"do":"start","friend":true\}/);
-  assert.deepEqual(briefs[1].match(/^- `[^`]+`/gm), ['- `row.friends`', '- `build.1`'], 'the second round asks the friends promise again (and, as every re-test, the build lines)');
+  assert.deepEqual(briefs[1].match(/^- `[^`]+`/gm), ['- `row.friends`', '- `build.1`', '- `play.1`', '- `play.2`', '- `play.3`'], 'the second round asks the friends promise again (and, as every re-test, the build lines and the lines of play)');
   assert.equal(r.outcome.outcome, 'delivered');
   assert.equal(r.outcome.ledger.rows.find(x => x.id === 'friends').status, 'proven');
   assert.equal(r.outcome.promiseLedger.promises.find(p => p.id === 'row.friends').by.find(b => b.proof === 'play').seats, 'two players');

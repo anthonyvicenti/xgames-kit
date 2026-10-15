@@ -27,9 +27,16 @@ export const DEFAULT_SHAPE = Object.freeze({
   hueJitter: 0,         // 0..1: random hue shift per particle (confetti)
   intensity: 1.6,       // colour multiplier
   blending: 'additive', // additive | normal
+  // the effect styles' drawing options (styles.js; index.js draws them):
+  solid: 0,             // 1: a cut-out sprite (alpha test, depth write): solid cartoon puffs and stars that hide each other
+  alpha: 0,             // 1: a normal-blended sprite also fades its alpha over its life (soft smoke; on WebGL, else it shrinks)
+  upright: 0,           // 1: never rotated on screen (rings, pixel squares)
+  mesh: '',             // '' a sprite; 'chunk' (low-poly rocks) or 'shard' (thin shards): lit pieces that tumble, no texture
+  flipCols: 0, flipRows: 0, flipFrames: 0,   // > 0: the sprite is a flipbook of this grid, played once over the life
 });
 export const EMITTERS = Object.freeze(['point', 'sphere', 'disc', 'ring', 'box', 'line']);
 export const BLENDINGS = Object.freeze(['additive', 'normal']);
+export const MESHES = Object.freeze(['', 'chunk', 'shard']);
 const FIELDS = ['px', 'py', 'pz', 'vx', 'vy', 'vz', 'age', 'life', 'size', 'rot', 'spin', 'hue'];
 
 export function createSystem(cap) {
@@ -47,6 +54,7 @@ export function normalizeShape(over = {}) {
     if (typeof d === 'number') out[k] = Number.isFinite(v) ? v : d;
     else if (k === 'emitter') out[k] = EMITTERS.includes(v) ? v : d;
     else if (k === 'blending') out[k] = BLENDINGS.includes(v) ? v : d;
+    else if (k === 'mesh') out[k] = MESHES.includes(v) ? v : d;
   }
   return out;
 }

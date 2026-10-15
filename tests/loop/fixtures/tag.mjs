@@ -18,5 +18,24 @@ export const tagSpec = (title = 'Yard Tag') => ({
   characters: [{ role: 'player', describe: 'a jelly bean in your colour', body: { from: 'kind' } }],
   build: [{ what: 'a backyard with cover to run around', how: 'config: props in config/world.json as cover', where: 'rules', row: 'yard' }],
   content: { rating: 'E' },
+  play: { target: TAG_PLAY },
 });
 
+
+/** The tag game's play target (gf-play-target/1, builder/play/design.mjs), as a designer round answers it. */
+export const TAG_PLAY_ANSWER = {
+  genre: { name: 'playground tag', traits: ['the chase: being it is a short panic, not a sentence', 'near misses round cover'] },
+  verbs: [{ id: 'run', does: 'run round the yard', input: 'move' }, { id: 'tag', does: 'touch the player in front of you to pass it on', input: 'primary' }],
+  beats: { moment: 'run at or away from whoever is it', stretch: 'it passes hands after a chase round the cover', round: '90 s of chases; whoever is it at the end loses' },
+  objective: { goal: 'not be it when the clock runs out', win: 'the fewest seconds as it', reach: { how: 'every player starts in the yard; the it player is always within a short run', within: 3, risks: ['a player stuck behind the fence'] }, things: [] },
+  touchpoints: [{ how: 'a tag passes it on', kind: 'hit', often: 'every 10 to 20 s' }],
+  risk: [{ risk: 'cut across the open lawn', reward: 'get away faster' }],
+  pacing: { firstAction: 3, eventsPerMinute: 4, roundSeconds: 90, idleMax: 20, comeback: 0.4 },
+  events: [{ name: 'tagged', what: 'it passes to another player', meaningful: true }, { name: 'near-miss', what: 'a tag swing that misses', meaningful: false }],
+  feel: { impact: 'mid', weight: 'light', chaos: 0.4, comedy: 'the panic of the one who is it', juice: ['a bonk and a squash on a tag'] },
+  avoid: [{ failure: 'idle', guard: 'a small yard: the chase always comes back round' }, { failure: 'unreachable', guard: 'no ledge or water in the yard' }, { failure: 'runaway-leader', guard: 'no tag-backs for 2 s, then anyone can be caught' }],
+  makes: [{ says: 'Being it is a short panic you can pass on', see: 'the it marker jumps to another player after a touch' }, { says: 'Cover makes near misses', see: 'a chaser swings and misses round the bench' }, { says: 'The clock makes the last seconds tense', see: 'the timer turns red and the it player dives at the nearest friend' }],
+  mechanics: [{ id: 'tag', as: 'tag a friend to pass it on', why: 'the whole game' }],
+  bots: 'bots chase the nearest player when they are it and run from it otherwise',
+};
+export const TAG_PLAY = { schema: 'gf-play-target/1', from: 'words', confidence: 0.6, ...TAG_PLAY_ANSWER, sources: { words: true, refs: 0, at: '2026-10-14T00:00:00.000Z' } };

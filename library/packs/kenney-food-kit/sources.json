@@ -660,49 +660,294 @@
      }
     }
    ]
+  },
+  "strawberry": {
+   "origin": "ingest strawberry.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 5,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.628
+      },
+      {
+       "hue": "green",
+       "share": 0.233
+      },
+      {
+       "hue": "orange",
+       "share": 0.139
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.594,
+     "saturation": 0.663,
+     "top": [
+      {
+       "colour": "#e55e4a",
+       "share": 0.175
+      },
+      {
+       "colour": "#ea6346",
+       "share": 0.129
+      },
+      {
+       "colour": "#53bc84",
+       "share": 0.124
+      },
+      {
+       "colour": "#ee6346",
+       "share": 0.105
+      },
+      {
+       "colour": "#e05b48",
+       "share": 0.099
+      },
+      {
+       "colour": "#e6ac86",
+       "share": 0.079
+      },
+      {
+       "colour": "#54bd85",
+       "share": 0.07
+      },
+      {
+       "colour": "#db594b",
+       "share": 0.058
+      }
+     ]
+    },
+    "trianglesPerMetre": 29.99,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-15",
+     "ok": true,
+     "facts": {
+      "triangles": 156,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7856,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "cherries": {
+   "origin": "ingest cherries.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 7,
+     "families": [
+      {
+       "hue": "red",
+       "share": 0.687
+      },
+      {
+       "hue": "green",
+       "share": 0.159
+      },
+      {
+       "hue": "orange",
+       "share": 0.154
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.571,
+     "saturation": 0.621,
+     "top": [
+      {
+       "colour": "#dd5b4b",
+       "share": 0.162
+      },
+      {
+       "colour": "#d8584b",
+       "share": 0.162
+      },
+      {
+       "colour": "#de5b47",
+       "share": 0.105
+      },
+      {
+       "colour": "#d5564d",
+       "share": 0.105
+      },
+      {
+       "colour": "#4cb781",
+       "share": 0.092
+      },
+      {
+       "colour": "#d4554e",
+       "share": 0.079
+      },
+      {
+       "colour": "#e15c49",
+       "share": 0.076
+      },
+      {
+       "colour": "#e38a60",
+       "share": 0.036
+      }
+     ]
+    },
+    "trianglesPerMetre": 26.57,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-15",
+     "ok": true,
+     "facts": {
+      "triangles": 134,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 7648,
+      "role": "prop"
+     }
+    }
+   ]
+  },
+  "grapes": {
+   "origin": "ingest grapes.glb",
+   "signature": {
+    "version": 1,
+    "palette": {
+     "size": 9,
+     "families": [
+      {
+       "hue": "purple",
+       "share": 0.845
+      },
+      {
+       "hue": "cyan",
+       "share": 0.121
+      }
+     ],
+     "grey": 0,
+     "lightness": 0.553,
+     "saturation": 0.548,
+     "top": [
+      {
+       "colour": "#714bc5",
+       "share": 0.157
+      },
+      {
+       "colour": "#9164d9",
+       "share": 0.145
+      },
+      {
+       "colour": "#7c54ce",
+       "share": 0.144
+      },
+      {
+       "colour": "#8c61d7",
+       "share": 0.121
+      },
+      {
+       "colour": "#774fc9",
+       "share": 0.107
+      },
+      {
+       "colour": "#865bd1",
+       "share": 0.093
+      },
+      {
+       "colour": "#885dd3",
+       "share": 0.041
+      },
+      {
+       "colour": "#359e75",
+       "share": 0.036
+      }
+     ]
+    },
+    "trianglesPerMetre": 46.85,
+    "texturedShare": 0,
+    "outline": {
+     "present": false,
+     "share": 0
+    }
+   },
+   "validated": [
+    {
+     "by": "model-budget",
+     "version": "triangle-budget-1",
+     "date": "2026-10-15",
+     "ok": true,
+     "facts": {
+      "triangles": 592,
+      "meshes": 1,
+      "skins": 0,
+      "animations": 0,
+      "images": 1,
+      "bytes": 14352,
+      "role": "prop"
+     }
+    }
+   ]
   }
  },
  "pack": {
   "signature": {
    "version": 1,
-   "assets": 8,
-   "paletteSize": 9,
+   "assets": 11,
+   "paletteSize": 7,
    "families": [
     {
      "hue": "orange",
-     "share": 0.388
+     "share": 0.31
     },
     {
      "hue": "red",
-     "share": 0.198
+     "share": 0.265
+    },
+    {
+     "hue": "purple",
+     "share": 0.092
     },
     {
      "hue": "grey",
-     "share": 0.094
+     "share": 0.069
     },
     {
      "hue": "pink",
-     "share": 0.087
-    },
-    {
-     "hue": "blue",
-     "share": 0.081
-    },
-    {
-     "hue": "brown",
      "share": 0.063
     },
     {
+     "hue": "blue",
+     "share": 0.059
+    },
+    {
      "hue": "cyan",
-     "share": 0.054
+     "share": 0.051
     }
    ],
-   "lightness": 0.595,
-   "saturation": 0.63,
-   "trianglesPerMetre": 24.86,
+   "lightness": 0.577,
+   "saturation": 0.621,
+   "trianglesPerMetre": 26.57,
    "texturedShare": 0,
    "outlineShare": 0,
-   "grey": 0.006
+   "grey": 0
   },
   "licenceText": "License.txt in the zip: Creative Commons Zero, CC0 (http://creativecommons.org/publicdomain/zero/1.0/)."
  }

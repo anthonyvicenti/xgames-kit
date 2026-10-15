@@ -1,0 +1,20 @@
+{
+ "base": "berry-isles",
+ "why": "The creator played the composed island levels, 2026-10-14: \"We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get.\" The pickup part put its spots over the play box at y = 0, the old yard's floor, which on island terrain is sea level: in the sea or inside the ground, while every gate passed. The class: anything placed by a flat floor or the play box instead of the world's own ground. This game's own file puts the berries the old way (the mechanic places none); gate D must fail it on measure 6 and say where they are and why.",
+ "evidence": "builder/gates/evidence/2026-10-14-reach.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "patches": [
+  {
+   "file": "config/game.json",
+   "pointer": "/mechanics/1/params/count",
+   "value": 0
+  }
+ ],
+ "mustFail": [
+  "D"
+ ],
+ "measure": 6,
+ "detail": "pickup:\\d+ at \\(.*\\): (in water|under the ground)"
+}

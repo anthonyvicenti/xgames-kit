@@ -62,7 +62,7 @@ export function hexToRgb(hex) { const n = parseInt(String(hex).replace('#', '').
 export const rgbToHex = ([r, g, b]) => '#' + [r, g, b].map(x => clamp(Math.round(x), 0, 255).toString(16).padStart(2, '0')).join('');
 
 /** The defaults a look's harmonize block is read over. */
-export const DEFAULTS = { strength: 0.85, value: 0.35, reach: 0.2, chroma: 0.15, roughness: null, metalness: null, emissiveMax: null, toon: false, outline: 'none', outlineColor: '#1a1a24', outlineWidth: 1, quantize: null, texelsPerMetre: null, skip: [], only: null };   // quantize null: a pixel-style game's pictures snap, others do not
+export const DEFAULTS = { strength: 0.85, value: 0.35, reach: 0.2, chroma: 0.15, roughness: null, metalness: null, emissiveMax: null, toon: false, outline: 'none', outlineColor: '#1a1a24', outlineWidth: 1, quantize: null, texelsPerMetre: null, skip: [], only: null, keepFiles: [], include: [] };   // quantize null: a pixel-style game's pictures snap, others do not
 /** Slots the pass never touches unless a look names them in `only`: what has to stay as it is drawn (UI, fonts, the
  *  look's own data pictures such as its noise). A look adds its own (a logo) to `skip`. */
 export const SKIP_ALWAYS = ['ui.*', 'hud.*', 'menu.*', 'font.*', 'look.*', 'card.*', '*.logo', '*.icon', '*.icon.*', '*.flag'];
@@ -90,13 +90,24 @@ export function settingsOfLook(look, level = look?.level ?? null) {
   return s && s.strength > 0 && (s.palette?.length || s.roughness != null || s.metalness != null || s.toon || s.outline !== 'none' || s.texelsPerMetre) ? s : null;
 }
 
-/** May the pass touch this slot? A slot's own `harmonize: false` (assets.json), the look's skip and only lists. */
+/**
+ * May the pass touch this slot? A slot's own `harmonize: false` (assets.json), the look's skip and only lists, and the
+ * look's own packs: a file in `keepFiles` (create lists what it took from the packs the look names) or a look pick
+ * (KEEP_FILES: the pitch's `assets/<kind>/look-<id>` copies) is left as it was made, unless the slot opts in (its own
+ * `harmonize: true`, or a pattern in the look's `include`).
+ */
 export function slotTaken(settings, id, slot = null) {
   if (!settings || !id) return false;
   if (slot?.harmonize === false || slot?.constraints?.harmonize === false) return false;
   if (settings.only?.length) return matches(id, settings.only);
-  return !matches(id, SKIP_ALWAYS) && !matches(id, settings.skip);
+  if (matches(id, SKIP_ALWAYS) || matches(id, settings.skip)) return false;
+  const optIn = slot?.harmonize === true || slot?.constraints?.harmonize === true || matches(id, settings.include);
+  const file = slot?.source?.file ?? null;
+  if (!optIn && file && (matches(file, settings.keepFiles) || matches(file, KEEP_FILES))) return false;
+  return true;
 }
+/** Files the pass leaves alone whatever the look says: the look pitch's own art copies (builder/look/pitch.mjs applyArt). */
+export const KEEP_FILES = ['assets/*/look-*'];
 
 /** A stable key for a settings object (what a cache of recoloured textures is keyed by). */
 export const keyOf = s => (s ? JSON.stringify([HARMONIZE_VERSION, s.strength, s.palette, s.weights, s.roles, s.value, s.reach, s.chroma, s.quantize, s.outline, s.outlineColor, s.outlineWidth, s.texelsPerMetre]) : 'off');

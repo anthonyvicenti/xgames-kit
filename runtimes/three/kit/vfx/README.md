@@ -25,6 +25,19 @@ block and the stand-in sprite and vendors this folder. Added by hand to an exist
 `radius`, `height`, `outward`, `speed`, `life`, `size` (each with a `...Jitter`), `gravity` (negative rises), `drag`,
 `spread`, `up`, `stretch`, `spin`, `fade`, `shrink`, `grow`, `hueJitter`, `intensity`, `blending` (additive | normal).
 
+## Effect styles (styles.js)
+
+A game's effect style is `config/game.json → fx` = `{style, blast, hit, trail, numbers, scale, palette?}` (slot
+`vfx.style`), written by `create` from the spec's look target (`look.target.vfx`, `styleFromFacts`): cartoon (solid round
+puffs, chunky low-poly rocks and bright bits thrown far, a shock ring, star sparks, inked damage numbers), fiery (a
+CC BY flipbook fireball, wispy smoke, sparks, shards), pixel (square bits) and soft (the kit's party default). The
+mechanics call the part, never a preset: `vfx.blast(at, {radius})` (projectile: a splash), `vfx.hit(at)` (a direct hit, a
+landing), `vfx.trail(object)` (each shot), `vfx.damage(at, amount)` (health: every hurt, through `ui.pop` in the HUD's
+number style). New drawing options: `solid` (cut-out sprites with depth), `alpha` (soft sprites that fade, WebGL),
+`upright`, `mesh` (`chunk`, `shard`: lit tumbling pieces), `flipCols/flipRows/flipFrames` (a flipbook). Sprites:
+`standin/` (ours from `scripts/make-vfx-standins.mjs`; the Kenney smoke CC0 and the Quiver flipbook CC BY 4.0, credited
+in a game's ATTRIBUTION.md: NOTICE-styles). Preview: `?gf-show=vfx.blast`.
+
 ## Limits (honest)
 
 - Additive light is washed out on a bright backdrop (the party looks by day): pick a `normal` preset there or set `blending`.

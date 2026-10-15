@@ -141,9 +141,12 @@ export function create(ctx, params = {}) {
   const targetProviders = [];
   const cool = cooldownGate(V('cooldown'));
   const root = new THREE.Group(); root.name = 'gf-projectiles'; ctx.scene.add(root);
-  // a hit effect (the hitFx param): the vfx module is loaded only by a game that asks for it (it is not in every game's gf/three)
+  // a hit effect (the hitFx param) and the game's effect style (config/game.json → fx: a blast where a splash lands, a hit
+  // where a shot strikes, a trail behind each shot; kit/vfx/styles.js): the vfx module is loaded only by a game that
+  // asks for one of them (it is not in every game's gf/three)
   let vfx = null;
-  if (P.hitFx) import('../../vfx/index.js').then(m => { vfx = m.vfxOf(ctx); }).catch(e => console.warn(`gf-three projectile: hitFx "${P.hitFx}" needs the vfx module (${e.message})`));
+  const styled = !!ctx.config?.fx;
+  if (P.hitFx || styled) import('../../vfx/index.js').then(m => { vfx = m.vfxOf(ctx); }).catch(e => console.warn(`gf-three projectile: ${P.hitFx ? `hitFx "${P.hitFx}"` : 'the effect style (config fx)'} needs the vfx module (${e.message})`));
   const prj = new Map();            // host: the shots {id, shooter, seat, x..vz, age, bounces, tag}
   const view = new Map();           // every copy: what is drawn {x, y, z, vx, vy, vz, obj, fresh}
   const lastPos = new Map();        // body key → feet position last frame (the previous raw sample)
@@ -257,7 +260,10 @@ export function create(ctx, params = {}) {
     const pt = { x: d.p[0], y: d.p[1], z: d.p[2] };
     const c = tint(typeof d.o === 'string' ? ctx.players?.get?.(d.o) ?? null : null);      // the shooter's colour (`o`: their id)
     if (d.k === 'h' || d.k === 'w') { burst(pt, d.k === 'h' ? 14 : 8, 3.2, V('size') * 0.5 + 0.04, c); ctx.audio?.play(V('soundHit'), { at: pt, optional: true }); }
-    if (vfx && (d.k === 'h' || d.k === 'w')) vfx.fx(V('hitFx') || P.hitFx, { at: pt, scale: d.k === 'h' ? 1 : 0.6 });
+    if (vfx && (d.k === 'h' || d.k === 'w') && (V('hitFx') || P.hitFx)) vfx.fx(V('hitFx') || P.hitFx, { at: pt, scale: d.k === 'h' ? 1 : 0.6 });
+    // the game's effect style: a splash blasts (`x`: the shot ended in a splash), a direct hit hits, a shot that lands
+    // on the world (`e`: it ended there) puffs a little
+    if (vfx && styled) { if (d.x) vfx.blast(pt, { radius: V('splashRadius') }); else if (d.k === 'h') vfx.hit(pt); else if (d.e) vfx.hit(pt, { scale: 0.6 }); }
     if (d.k === 'h' && d.t != null) ctx.players?.get?.(d.t)?.character?.express?.('hurt', 0.7);     // the hit body winces
     if (d.k === 's') burst(pt, 20, 5, 0.1, c);
   }
@@ -317,9 +323,10 @@ export function create(ctx, params = {}) {
       if (best && (!wall || best.h.t <= wall.t)) {
         const pt = { x: a0.x + (a1.x - a0.x) * best.h.t, y: a0.y + (a1.y - a0.y) * best.h.t, z: a0.z + (a1.z - a0.z) * best.h.t };
         const T = best.t;
-        applyHit({ kind: 'discrete', shooter: b.shooter, target: T.player ?? null, targetId: T.id, provider: T.provider ?? null, point: pt, dir, speed, damage: V('damage'), splash: false }, b);
+        // with the knockback part taking splashes, the blast throws everyone near (this body too): the hit only hurts
+        applyHit({ kind: 'discrete', shooter: b.shooter, target: T.player ?? null, targetId: T.id, provider: T.provider ?? null, point: pt, dir, speed, damage: V('damage'), splash: false, ...(kbTakes() ? { impulse: { x: 0, y: 0, z: 0 } } : {}) }, b);
         if (V('splashRadius') > 0) splash(b, pt, dir, T.id, list);
-        fx({ k: 'h', p: [r2(pt.x), r2(pt.y), r2(pt.z)], t: T.id, ...(b.shooter ? { o: b.shooter.id } : {}) });
+        fx({ k: 'h', p: [r2(pt.x), r2(pt.y), r2(pt.z)], t: T.id, ...(b.shooter ? { o: b.shooter.id } : {}), ...(V('splashRadius') > 0 ? { x: 1 } : {}) });
         endShot(b, 'hit', pt);
       } else if (wall) {
         for (const fn of L.surface.slice()) try { fn({ kind: 'discrete', shooter: b.shooter, point: wall.point, normal: wall.n, projectile: { id: b.id, tag: b.tag } }); } catch (e) { console.error(e); }
@@ -329,13 +336,25 @@ export function create(ctx, params = {}) {
           fx({ k: 'w', p: [r2(wall.point.x), r2(wall.point.y), r2(wall.point.z)], ...(b.shooter ? { o: b.shooter.id } : {}) });
         } else {
           if (V('splashRadius') > 0) splash(b, wall.point, dir, null, list);
-          fx({ k: 'w', p: [r2(wall.point.x), r2(wall.point.y), r2(wall.point.z)], ...(b.shooter ? { o: b.shooter.id } : {}) });
+          fx({ k: 'w', p: [r2(wall.point.x), r2(wall.point.y), r2(wall.point.z)], ...(b.shooter ? { o: b.shooter.id } : {}), e: 1, ...(V('splashRadius') > 0 ? { x: 1 } : {}) });
           endShot(b, 'world', wall.point);
         }
       } else if (b.age > V('lifetime') || Math.abs(b.x) > 200 || Math.abs(b.z) > 200 || b.y < -20) endShot(b, 'expired', a1);
     }
   }
+  // the knockback mechanic, when the game has it and it takes splashes: a splash throws through it (one flight per body,
+  // simulated on the host, the same on every screen), and the hits here only hurt
+  const kbTakes = () => { const kb = ctx.mechanics?.get('knockback'); return !!kb && !kb.standin && kb.takesSplash === true && V('splashRadius') > 0; };
   function splash(b, pt, dir, skipId, list) {
+    if (kbTakes()) {
+      const cand = list.filter(t => t.id !== skipId && !(t.player && !canHit(b.shooter, t.player, { friendlyFire: ffOn(), selfHit: true, teamOf })));
+      for (const s of splashTargets(pt, V('splashRadius'), cand.map(t => { const c = centre(t); return { id: t.id, x: c.x, y: c.y, z: c.z }; }))) {
+        const t = cand.find(x => x.id === s.id);
+        applyHit({ kind: 'splash', shooter: b.shooter, target: t.player ?? null, targetId: t.id, provider: t.provider ?? null, point: pt, dir, speed: 0, damage: V('damage') * s.falloff, impulse: { x: 0, y: 0, z: 0 }, splash: true, falloff: s.falloff }, b);
+      }
+      ctx.mechanics.get('knockback').blast(pt, { radius: V('splashRadius'), from: b.shooter, source: 'projectile' });
+      return;
+    }
     const cand = list.filter(t => t.id !== skipId && !(t.player && !canHit(b.shooter, t.player, { friendlyFire: ffOn(), selfHit: true, teamOf })));
     for (const s of splashTargets(pt, V('splashRadius'), cand.map(t => { const c = centre(t); return { id: t.id, x: c.x, y: c.y, z: c.z }; }))) {
       const t = cand.find(x => x.id === s.id), c = centre(t);
@@ -492,7 +511,7 @@ export function create(ctx, params = {}) {
     }
     for (const v of view.values()) {
       if (!ctx.host) { v.vy -= V('gravity') * dt; v.x += v.vx * dt; v.y += v.vy * dt; v.z += v.vz * dt; }
-      if (!v.obj) v.obj = objFor(v.who);
+      if (!v.obj) { v.obj = objFor(v.who); if (v.obj && vfx && styled) vfx.trail(v.obj); }      // the style's trail stops itself when the shot leaves
       if (v.obj) { v.obj.position.set(v.x, v.y, v.z); v.spin += dt * 9; v.obj.rotation.set(v.spin, v.spin * 0.7, 0); }
     }
   }
@@ -502,7 +521,7 @@ export function create(ctx, params = {}) {
       seen.add(b.id);
       let v = view.get(b.id); if (!v) { v = { obj: null, spin: rnd() * 6 }; view.set(b.id, v); }
       Object.assign(v, { x: b.x, y: b.y, z: b.z });
-      if (!v.obj) v.obj = objFor(b.shooter);
+      if (!v.obj) { v.obj = objFor(b.shooter); if (v.obj && vfx && styled) vfx.trail(v.obj); }
       if (v.obj) { v.obj.position.set(b.x, b.y, b.z); v.spin += 0.15; v.obj.rotation.set(v.spin, v.spin * 0.7, 0); }
     }
     for (const [k, v] of view) if (!seen.has(k)) { v.obj?.removeFromParent(); view.delete(k); }

@@ -16,7 +16,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loopTools } from '../../../builder/mcp/loop-tools.mjs';
 import { fakeBindings, scriptedVerify, seenTwo, touch } from './fakes.mjs';
-import { fakeRegistry, goodLedger, PROMPT, CARD_WORDS, pitchV2 } from '../fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, PROMPT, CARD_WORDS, pitchV2, GATE_PLAY } from '../fixtures/registry.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -110,6 +110,8 @@ export async function dryRun({ quiet = false, write = true } = {}) {
     world: { template: 'ruins', seed: 3, size: 'medium' }, rules: { summary: 'Waves come at the gate; a boss ends the run.' }, characters: [{ role: 'player', describe: 'a watchman in your colour', body: { from: 'kind' } }],
     mechanics: [{ id: 'waves' }, { id: 'boss' }, { id: take === 'b' ? 'shove' : 'melee' }], controls: { swing: 'Mouse / tap', hook: 'E / the hook button', move: 'WASD / the stick' },
     build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js that casts a ray and pulls the body up', where: 'module', row: 'hook' }], notInV1: [] });
+  // the play the designer writes for card a (gf-play-target/1): the gate's, with its melee
+  const PLAY = { ...GATE_PLAY, mechanics: [...GATE_PLAY.mechanics, { id: 'melee', why: 'every swing' }] };
   const card = (id, take) => ({ ...CARD_WORDS, id, title: id === 'a' ? 'Hold the Gate' : 'Push Them Back', v1: { has: ['waves', 'a boss'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: spec(id) });
   a = await call('gamesfun_step_pitch', {}, { note: 'hands the pitch round' });
   a = await call('gamesfun_step_spec', { pitch: pitchV2({ reply: 'Not in this kit yet: the grappling hook, so card 1 has ladders.', cards: [{ ...card('a', 'swing'), v1: { has: ['waves at the gate'], build: [], notYet: ['the grappling hook'] }, spec: { ...spec('a'), build: [], notInV1: ['grappling hook'] } }, card('b', 'shove')] }) }, { note: 'cards that narrow the idea' });
@@ -117,7 +119,11 @@ export async function dryRun({ quiet = false, write = true } = {}) {
   a = await call('gamesfun_step_spec', { pitch: pitchV2({ reply: 'Card 1 holds the gate in first person on your phone. A grappling hook that pulls you onto the walls is built new for this game, which makes the build take a little longer.', cards: [card('a', 'swing'), card('b', 'shove')], questions: [] }) }, { note: 'two cards that keep every line' });
   a = await call('gamesfun_step_pitch', { choice: { card: 'a' } }, { note: 'the person chooses card a' });
   a = await call('gamesfun_step_spec', {}, { note: 'the chosen spec is checked and locked' });
-  a = await call('gamesfun_step_create', {}, { note: 'create, then the build round' });
+  a = await call('gamesfun_step_create', {}, { note: 'create, then the designer round' });
+  record.design = { round: a.round?.kind, model: a.round?.model, hasParts: /## The mechanics this runtime has/.test(a.round?.message ?? '') };
+  const { schema: _s, from: _f, confidence: _c, sources: _src, ...designed } = PLAY;
+  a = await call('gamesfun_step_design', { target: designed }, { note: 'the play target: the build round follows' });
+  record.brief0 = { play: /## The play \(designed before this round/.test(a.round?.message ?? '') };
   say(`  brief: ${a.round.message.length} characters; forge's notes ${/MARK-RUNTIME-FORGE/.test(a.round.message) ? 'in' : 'MISSING'}; tag's ${/MARK-MECH-TAG/.test(a.round.message) ? 'IN (wrong)' : 'not'} (not chosen)`);
   record.brief = { chars: a.round.message.length, hasChosen: /MARK-RUNTIME-FORGE/.test(a.round.message) && /MARK-MECH-WAVES/.test(a.round.message), hasUnchosen: /MARK-MECH-TAG|MARK-RUNTIME-VISTA/.test(a.round.message) };
   await mkdir(join(game, 'src'), { recursive: true });
@@ -169,9 +175,10 @@ export async function dryRun({ quiet = false, write = true } = {}) {
   a = await call('gamesfun_step_ledger', { ledger: amended }, { note: 'the amended ledger' });
   a = await call('gamesfun_step_foundation', {}, { note: 'classified' });
   say(`  change: ${a.why}`);
-  const spec2 = { ...spec('a'), build: [{ what: 'a rope players climb onto the walls', how: 'a module in src/rope.js that hangs a rope and lets a body climb it', where: 'module', row: 'hook' }] };
+  // the spec round keeps the play the locked spec has (its base); a change of play would design it again
+  const spec2 = { ...spec('a'), play: { target: PLAY }, build: [{ what: 'a rope players climb onto the walls', how: 'a module in src/rope.js that hangs a rope and lets a body climb it', where: 'module', row: 'hook' }] };
   a = await call('gamesfun_step_spec', { spec: spec2 }, { note: 'the changed spec, locked' });
-  a = await call('gamesfun_step_fix', {}, { note: 'hands the change round' });
+  a = await call('gamesfun_step_design', {}, { note: 'the spec keeps its play: hands the change round' });
   await touch(game, 'src/rope.js', 'export const rope = 1;\n');
   a = await roundEnd('// round 9: the rope\n', 'the change round ends');
   a = await call('gamesfun_step_verify', {}, { note: 'verify 9 passes' });
@@ -208,7 +215,7 @@ export async function dryRun({ quiet = false, write = true } = {}) {
   say(`  problems: ${a.problems?.slice(0, 1).join(' | ')}`);
   record.lookRefused = (a.problems ?? []).some(p => /never changes play/.test(p));
   a = await call('gamesfun_step_spec', { spec: { ...spec2, kind: 'lofi' } }, { note: 'only the look' });
-  a = await call('gamesfun_step_fix', {}, { note: 'hands the change round' });
+  a = await call('gamesfun_step_design', {}, { note: 'the spec keeps its play: hands the change round' });
   a = await roundEnd('// round 13: lofi\n', 'the change round ends');
   a = await call('gamesfun_step_verify', {}, { note: 'verify passes' });
   a = await play({});
@@ -228,7 +235,7 @@ export async function dryRun({ quiet = false, write = true } = {}) {
   record.migration = a.migration;
   for (const c of a.migration?.consequences ?? []) say(`    - ${c}`);
   a = await call('gamesfun_step_foundation', { approve: 'Yes, move it.' }, { note: 'the person says yes' });
-  const vistaSpec = { ...spec2, runtime: 'vista', kind: 'calm', mechanics: [], camera: 'third', devices: { targets: ['desktop'], inputs: ['keyboard-mouse'] },
+  const vistaSpec = { ...spec2, play: { target: { ...PLAY, mechanics: [] } }, runtime: 'vista', kind: 'calm', mechanics: [], camera: 'third', devices: { targets: ['desktop'], inputs: ['keyboard-mouse'] },
     build: [spec2.build[0], ...['hold', 'waves', 'boss'].map(row => ({ what: `${amended.rows.find(l => l.id === row).what} on vista`, how: `a module in src/${row}.js that runs it`, where: 'module', row }))] };
   a = await call('gamesfun_step_spec', { spec: vistaSpec }, { note: 'the spec on vista' });
   a = await call('gamesfun_step_create', {}, { note: 'made again on vista; the migration round' });

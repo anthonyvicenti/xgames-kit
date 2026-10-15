@@ -53,7 +53,11 @@ function listen(server, port) {
 export function buildRunning(dir) {
   let s = null;
   try { s = JSON.parse(readFileSync(path.join(dir, '.gf-loop', 'state.json'), 'utf8')); } catch { return false; }
-  return (s?.kind ?? 'build') === 'build' && ['building', 'waiting-on-creator'].includes(s?.status);
+  if (!((s?.kind ?? 'build') === 'build' && ['building', 'waiting-on-creator'].includes(s?.status))) return false;
+  // a headless build that was stopped (Ctrl+C, the wall clock) keeps its state to go on from, and is not running: its
+  // record says so, and the game it left is shown (T8 run 1, 2026-10-14: a stopped build's game could never be opened)
+  try { if (JSON.parse(readFileSync(path.join(dir, '.gf-loop', 'headless', 'record.json'), 'utf8'))?.running === false) return false; } catch { /* no headless record: a session's build */ }
+  return true;
 }
 
 /**

@@ -43,39 +43,3 @@ export function createSpots(max = 24) {
     encode: () => spots.map(s => [Math.round(s.x * 100) / 100, Math.round(s.y * 100) / 100, Math.round(s.z * 100) / 100, s.state]),
   };
 }
-
-/**
- * `n` points in a circle or box zone ({shape, cx, cz, rx, rz}) at least `gap` apart. rng() → 0..1.
- * free(x, z) → false rejects a point (inside a prop); a point that never fits falls back to the free-est try.
- */
-export function pointsIn(zone, n, rng, gap = 1.0, free = null) {
-  const out = [];
-  for (let i = 0; i < n; i++) {
-    let p = null, spare = null;
-    for (let t = 0; t < 80 && !p; t++) {
-      let x, z;
-      if (zone.shape === 'box') { x = zone.cx + (rng() - 0.5) * zone.rx * 2; z = zone.cz + (rng() - 0.5) * zone.rz * 2; }
-      else { const a = rng() * Math.PI * 2, d = Math.sqrt(rng()) * zone.rx; x = zone.cx + Math.cos(a) * d; z = zone.cz + Math.sin(a) * d; }
-      const open = !free || free(x, z);
-      if (open && !spare) spare = { x, z };
-      if (open && out.every(q => Math.hypot(q.x - x, q.z - z) >= gap)) p = { x, z };
-    }
-    out.push(p ?? spare ?? { x: zone.cx, z: zone.cz });
-  }
-  return out;
-}
-
-/**
- * free(x, z) for pointsIn: false within `pad` metres of a world collider (world.shapes: {shape, position, size |
- * radius, rotationY}; the ground and the invisible walls, '#…', are skipped). Pure: no three.js.
- */
-export function clearOfShapes(shapes, pad = 0.5) {
-  const solid = (shapes ?? []).filter(s => !String(s.prop ?? '').startsWith('#'));
-  return (x, z) => solid.every(s => {
-    const [cx, , cz] = s.position ?? [0, 0, 0];
-    if (s.shape === 'cylinder' || s.shape === 'sphere') return Math.hypot(x - cx, z - cz) > (s.radius ?? 0.5) + pad;
-    const a = -(s.rotationY ?? 0) * Math.PI / 180, dx = x - cx, dz = z - cz;
-    const lx = dx * Math.cos(a) + dz * Math.sin(a), lz = -dx * Math.sin(a) + dz * Math.cos(a);
-    return Math.abs(lx) > (s.size?.[0] ?? 1) / 2 + pad || Math.abs(lz) > (s.size?.[2] ?? 1) / 2 + pad;
-  });
-}

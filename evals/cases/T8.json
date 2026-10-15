@@ -1,0 +1,154 @@
+{
+ "schema": "xgk-eval-case/1",
+ "set": "cases",
+ "id": "T8",
+ "frozen": "2026-10-14",
+ "specVersion": 2,
+ "origin": {
+  "frozen": "2026-10-14",
+  "where": "the creator's own prompt for the gameplay layer (2026-10-14); their verdicts on the look test and on Sunny Castle are the acceptance"
+ },
+ "prompt": "make a game with the same asethetic as worms ultmate mayhem that lets people battle for an NFT",
+ "ownWords": {
+  "never": [
+   "Worms",
+   "Ultimate Mayhem",
+   "Team17"
+  ],
+  "exact": [],
+  "why": "The named game is someone else's: its style and its kind of play are fair, its name, characters and art are not. They may stand where the creator reads about the game they named: the pitch's research and reply."
+ },
+ "answers": {
+  "default": "accept"
+ },
+ "foundation": {
+  "at": {
+   "runtime": "/runtime",
+   "profile": "/profile",
+   "loop": "/loop",
+   "kind": "/kind",
+   "camera": "/camera"
+  },
+  "accept": {
+   "runtime": [
+    "three",
+    "godot"
+   ],
+   "profile": [
+    "standard-3d",
+    "scenic-3d"
+   ],
+   "loop": [
+    "turns",
+    "round",
+    "match"
+   ],
+   "kind": [
+    "silly"
+   ]
+  },
+  "why": "A cartoon 3D artillery brawl on islands for friends: the named game plays in turns, and the creator also asked for real-time PvP chaos (2026-10-14), so a round or a match is accepted beside turns. Godot is accepted on the same terms as three; profile applies to three."
+ },
+ "checklist": [
+  {
+   "id": "ledger",
+   "text": "The loop's requirements ledger holds every essential of the prompt in the creator's own words, each with a home (exists, build or probe): the look of the named game, people battling each other, and an NFT as what they battle for; no line is cut that the creator did not cut, and nothing is narrowed or deferred because the kit lacks it",
+   "how": "judge"
+  },
+  {
+   "id": "foundation",
+   "text": "The locked spec's runtime, profile, loop and kind are among this case's foundation.accept, and the ledger names the lines that decided each",
+   "how": "probe:foundation"
+  },
+  {
+   "id": "gates",
+   "text": "All six gates pass on the delivered game, each verdict naming what ran and what it skipped",
+   "how": "gates:all"
+  },
+  {
+   "id": "promises",
+   "text": "The delivery carries the promise ledger: every build promise and every core ledger line proven by the play-test, or named as failed, untested or unreachable; if anything failed, the delivery says so first",
+   "how": "probe:promises"
+  },
+  {
+   "id": "no-rescue",
+   "text": "Nobody touched the run between the prompt and the delivered version: no file edited by hand, no step re-run by a person, no answer beyond the case's answers",
+   "how": "record"
+  },
+  {
+   "id": "play-target",
+   "text": "The spec carries a play target (spec.play.target) the designer step wrote before the build: verbs, player-on-player touchpoints, pacing with downMax, and the gameplay events the judge counts",
+   "how": "record"
+  },
+  {
+   "id": "play-judge",
+   "text": "The play judge (gate D's play leg) scores the delivered game against its target at or above its bar, with no hard finding",
+   "how": "gate:D"
+  },
+  {
+   "id": "objectives-reachable",
+   "text": "Every objective the game places (a pickup, a crate, a goal) stands on ground a player can walk to from the seats, and can be seen: none in the sea, inside the ground or walled off (the creator: \"there were no berries anywhere ... boxes but those are impossible to get\")",
+   "how": "gate:D"
+  },
+  {
+   "id": "areas-reachable",
+   "text": "Every area of the world a player is meant to play on can be reached from the seats (the creator: \"making all area reachable\")",
+   "how": "gate:D"
+  },
+  {
+   "id": "pvp-throwing",
+   "text": "Players throw or fire things at each other, and a hit on another player does something they see (the creator: \"PvP throwing\")",
+   "how": "human"
+  },
+  {
+   "id": "explosions",
+   "text": "Blasts throw players and loose things away from where they burst, and can change the ground (the creator: \"explosions\")",
+   "how": "human"
+  },
+  {
+   "id": "ragdolls",
+   "text": "A player caught in a blast flies limp, tumbles and lands, then gets up and plays on within the target's downMax; falling into the water or off the world is credited to the player who sent them (the creator: \"rag dolls\")",
+   "how": "human"
+  },
+  {
+   "id": "battle-for-nft",
+   "text": "The battle's winner gets the prize the prompt names: an NFT as the reward, with practice play when no prize is set up (devnet only; never a real payment in an eval)",
+   "how": "human"
+  },
+  {
+   "id": "look-close",
+   "text": "The look is close in style to the named game without copying it (cartoon characters, chunky islands over the sea, bright sky), at least as good as the composed look the creator rated 8.5/10 on 2026-10-14; the look judge (gate F) passes",
+   "how": "gate:F"
+  },
+  {
+   "id": "friends-visible",
+   "text": "With 2 players, each screen shows the other player as a character with a nameplate, where they really are, in the same round or match",
+   "how": "gate:E"
+  },
+  {
+   "id": "loop-closes",
+   "text": "A round or match runs to a results screen and replays",
+   "how": "gate:D"
+  },
+  {
+   "id": "swap",
+   "text": "The player body and one prop swap through slots with no code change",
+   "how": "release"
+  },
+  {
+   "id": "coverage",
+   "text": "Every visible thing is a slot",
+   "how": "gate:A"
+  },
+  {
+   "id": "gameplay",
+   "text": "The game plays: two to four people battling for 3 minutes have something to do every few seconds, hit each other often, and laugh at least once (the creator: \"The biggest thing these all miss is the actual gameplay itself\")",
+   "how": "human"
+  }
+ ],
+ "control": {
+  "text": "The game includes a working chess board",
+  "how": "judge"
+ },
+ "note": "The creator's prompt for the gameplay layer, frozen 2026-10-14 after the look test (visuals 8.5/10, play the common miss) and Sunny Castle (berries fixed; still missing every area reachable, PvP throwing, explosions and ragdolls). Copy the kind of play and the style, never the named game's name, characters or art. T1 (PeeVPee) also exercises PvP (a stream that knocks friends back) but not blasts or ragdolls."
+}

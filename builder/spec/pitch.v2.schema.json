@@ -64,6 +64,52 @@
             "minLength": 1,
             "maxLength": 600
           },
+          "play": {
+            "type": "object",
+            "required": [
+              "style",
+              "verbs",
+              "beat",
+              "touch"
+            ],
+            "additionalProperties": false,
+            "description": "How this card plays, in a few words. The cards of one pitch differ in play (style, verbs, beat, how players touch), so the person chooses play, not only look. The chosen card's play goes into spec.play.sketch.",
+            "properties": {
+              "style": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 80,
+                "description": "The kind of play: \"turn-based artillery\", \"real-time brawl\"."
+              },
+              "verbs": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "minLength": 2,
+                  "maxLength": 40
+                }
+              },
+              "beat": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 200,
+                "description": "What a player does every few seconds."
+              },
+              "touch": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 200,
+                "description": "How players affect each other."
+              },
+              "chaos": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
           "players": {
             "type": "string",
             "minLength": 1,

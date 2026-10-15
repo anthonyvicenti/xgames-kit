@@ -62,7 +62,18 @@ export function create(ctx, params = {}) {
   const root = new THREE.Group(); root.name = 'gf-race'; ctx.scene.add(root);
   const gates = [];
   const lastPos = new Map(), seen = new Map();
-  let S = null, t0 = 0, built = false, tmpl = null, loading = false;
+  let S = null, t0 = 0, built = false, tmpl = null, loading = false, settled = false;
+  // where each gate stands: on the world's own ground (worlds/placement.js), the same on every copy. Checkpoints the
+  // game gives stand where it says, on the ground there; the default ring's go to the nearest open ground every seat
+  // reaches (on island terrain a ring round the middle would stand in the sea), each a few metres from the others
+  function settle() {
+    settled = true;
+    const W = ctx.world, given = !!V('checkpoints')?.length;
+    cps.forEach((c, i) => {
+      if (!given) { const q = W.place?.('checkpoint', 1, { prefer: { x: c.x, z: c.z }, clear: 1.0, away: 0, exclude: cps.slice(0, i).map(o => ({ x: o.x, z: o.z, r: 3 })) })?.[0]; if (q) { c.x = q.x; c.y = q.y; c.z = q.z; return; } }
+      c.y = W.groundAt?.(c.x, c.z) ?? 0;
+    });
+  }
   const now = () => ctx.time.now;
   const list = () => ctx.players.list();
 
@@ -73,7 +84,7 @@ export function create(ctx, params = {}) {
       let o;
       if (tmpl) o = tmpl.clone(true);
       else { o = new THREE.Mesh(new THREE.TorusGeometry(V('gateSize') / 2, 0.1, 10, 36), ctx.modules?.look?.material?.('glow', { tint: V('color') }) ?? new THREE.MeshStandardMaterial({ color: V('color'), emissive: V('color'), emissiveIntensity: 0.5 })); ctx.assets.tag(o, 'mechanic.race.color'); }
-      o.position.set(c.x, V('gateSize') / 2, c.z);
+      o.position.set(c.x, (c.y ?? 0) + V('gateSize') / 2, c.z);
       o.rotation.y = Math.atan2(cps[(i + 1) % cps.length].x - c.x, cps[(i + 1) % cps.length].z - c.z);
       root.add(o); gates.push(o);
     });
@@ -87,6 +98,9 @@ export function create(ctx, params = {}) {
     progress(p) { const w = progress(p); return { ...w, fraction: w.place ? 1 : (w.lap * cps.length + w.cp) / (V('laps') * cps.length), done: w.place > 0 }; },
     /** The next gate for a player: {x, z, index} (for bots and arrows). */
     nextGate(p) { const w = progress(p); return w.place ? null : { ...cps[w.cp], index: w.cp }; },
+    /** The places every racer must get to (gate D: the reach leg's window.__game.objectives() and the play feed,
+     *  kit/core/play.js): the gates, standing on the world's ground. */
+    objectives: () => Object.assign(cps.map((g, i) => ({ id: `race:${i}`, kind: 'gate', label: `gate ${i + 1}`, x: g.x, y: g.y ?? 0, z: g.z, present: true, open: true, radius: g.r ?? g.radius ?? V('radius') })), { asked: cps.length }),
     /** Every copy: players best first [{player, lap, cp, place, fraction}]. */
     standings() {
       const ps = list(), pos = Object.fromEntries(ps.map(p => [p.id, p.position]));
@@ -111,6 +125,7 @@ export function create(ctx, params = {}) {
     reset() { race.reset(); lastPos.clear(); seen.clear(); },
     update(dt) {
       if (!S) { if (!(ctx.shared && ctx.players && ctx.me)) return; S = ctx.shared.register('race', { r: {}, o: [] }); }
+      if (!settled) { if (ctx.world.walk && !ctx.world.walk.ready()) return; settle(); }   // the ground is read after the physics' first step
       if (!built) build();
       t0 += dt;
       if (ctx.host) {

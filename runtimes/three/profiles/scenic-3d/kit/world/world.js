@@ -17,6 +17,7 @@
 import * as THREE from 'three/webgpu';
 import { uniform } from 'three/tsl';
 import { collidersOf, buildColliders, dungeonPieces, MATERIALS } from '../../three/world/colliders.js';
+import { placeOnColliders } from '../../three/world/placement.js';
 import { HouseMaterial, U, adoptMaterials } from '../look/materials.js';
 import { createTerrainData, terrainColors, floorMaterial, runeNode, topGeometry, boxTopGeometry, cliffGeometry, rockMaterial, waterSurfaceMaterial, fallGeometry, fallMaterial } from './terrain.js';
 import { createGrass, createFoliage, createFlowers, leafRefs, pineRefs, towardCamera } from './vegetation.js';
@@ -463,5 +464,8 @@ export async function loadWorld(ctx, cfg = {}) {
       }
     },
   };
+  // where things may be put and what a seat can get to (the shared kit's placement.js), from the one collider list, over
+  // the current level's play box and seats; past an island's edge is the sea (or the void)
+  placeOnColliders(world, ctx, { seats: () => (levels[level]?.spawns?.length ? levels[level].spawns : spawns), version: () => level, solid: isWorld, ...(cfg.water?.sea && !cfg.void ? { water: () => cfg.water.seaLevel ?? -0.55 } : {}) });
   return world;
 }

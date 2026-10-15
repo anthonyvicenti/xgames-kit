@@ -1,0 +1,495 @@
+{
+ "schema": "xgk-evidence/1",
+ "date": "2026-10-14",
+ "stream": "reach (the gameplay layer, item 3)",
+ "creator": "\"We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get.\" (games.fun research/foundations/evidence/creator-looks-playtest-2026-10-14.json)",
+ "rootCause": "components/pickup put its spots with pool.add(q.x, 0, q.z): y = 0, the old yard's floor, is sea level on island terrain; the spots stood in the sea or inside the ground. The \"boxes\" were the berries: the composed games' prop.berry slot holds the kit's stand-in (CC0, standin-bake), a box, not a berry model.",
+ "fix": "worlds/placement.js: one placement API on every three.js world (groundAt, waterAt, isWalkable, reach, place, route, walk.audit) over the world's own colliders; every part that places things moved onto it; gate D measure 6 reach leg (builder/tools/lib/reach-check.mjs).",
+ "levels": {
+  "how": "copies of the creator's three composed levels (games/ in the stream worktree, kit re-vendored), 60 s rounds with 3 seats (?seed=7&bots=3): idle = the local player stands still, play = a scripted player walks to the nearest berry by window.__game.routeTo with real keys (W A S D, Space where the route says jump, E near a berry); tool: the stream's scratch probe.mjs",
+  "results": {
+   "sunny-castle-isles": {
+    "idle": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 0,
+      "Pip (bot)": 1,
+      "Bo (bot)": 18
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 4601,
+      "edges": 83820,
+      "buildMs": 104,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       41.7,
+       15,
+       9.6
+      ],
+      [
+       25.9,
+       9.4,
+       10.8
+      ],
+      [
+       10.6,
+       14.2,
+       4.3
+      ],
+      [
+       42.9,
+       8.8,
+       0.8
+      ],
+      [
+       37,
+       10.8,
+       20.2
+      ],
+      [
+       3.6,
+       14.2,
+       3.1
+      ],
+      [
+       34.1,
+       8.3,
+       3.7
+      ],
+      [
+       17.7,
+       9.1,
+       10.8
+      ],
+      [
+       -5.8,
+       14.2,
+       6.1
+      ],
+      [
+       -4,
+       8.3,
+       20.8
+      ]
+     ],
+     "consoleErrors": []
+    },
+    "play": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 9,
+      "Pip (bot)": 2,
+      "Bo (bot)": 19
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 4601,
+      "edges": 83820,
+      "buildMs": 126,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       41.7,
+       15,
+       9.6
+      ],
+      [
+       25.9,
+       9.4,
+       10.8
+      ],
+      [
+       10.6,
+       14.2,
+       4.3
+      ],
+      [
+       42.9,
+       8.8,
+       0.8
+      ],
+      [
+       37,
+       10.8,
+       20.2
+      ],
+      [
+       3.6,
+       14.2,
+       3.1
+      ],
+      [
+       34.1,
+       8.3,
+       3.7
+      ],
+      [
+       17.7,
+       9.1,
+       10.8
+      ],
+      [
+       -5.8,
+       14.2,
+       6.1
+      ],
+      [
+       -4,
+       8.3,
+       20.8
+      ]
+     ],
+     "consoleErrors": []
+    }
+   },
+   "violet-dusk-fortress": {
+    "idle": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 0,
+      "Pip (bot)": 12,
+      "Bo (bot)": 18
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 4773,
+      "edges": 89194,
+      "buildMs": 97,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       45.3,
+       7,
+       2.6
+      ],
+      [
+       20,
+       7.7,
+       10.2
+      ],
+      [
+       42.3,
+       6.5,
+       1.4
+      ],
+      [
+       25.9,
+       7.8,
+       7.3
+      ],
+      [
+       21.8,
+       8.1,
+       9
+      ],
+      [
+       43.5,
+       6.7,
+       2
+      ],
+      [
+       25.3,
+       7.9,
+       8.4
+      ],
+      [
+       20,
+       7.7,
+       9
+      ],
+      [
+       41.7,
+       6.6,
+       2
+      ],
+      [
+       20.6,
+       7.8,
+       9.6
+      ]
+     ],
+     "consoleErrors": []
+    },
+    "play": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 6,
+      "Pip (bot)": 14,
+      "Bo (bot)": 22
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 4773,
+      "edges": 89194,
+      "buildMs": 285,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       45.3,
+       7,
+       2.6
+      ],
+      [
+       20,
+       7.7,
+       10.2
+      ],
+      [
+       42.3,
+       6.5,
+       1.4
+      ],
+      [
+       25.9,
+       7.8,
+       7.3
+      ],
+      [
+       21.8,
+       8.1,
+       9
+      ],
+      [
+       43.5,
+       6.7,
+       2
+      ],
+      [
+       25.3,
+       7.9,
+       8.4
+      ],
+      [
+       20,
+       7.7,
+       9
+      ],
+      [
+       41.7,
+       6.6,
+       2
+      ],
+      [
+       20.6,
+       7.8,
+       9.6
+      ]
+     ],
+     "consoleErrors": []
+    }
+   },
+   "sunset-canyon-sands": {
+    "idle": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 0,
+      "Pip (bot)": 12,
+      "Bo (bot)": 25
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 9520,
+      "edges": 154172,
+      "buildMs": 205,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       5.9,
+       3.5,
+       -1.6
+      ],
+      [
+       -45.7,
+       6.2,
+       8.4
+      ],
+      [
+       7.7,
+       10.9,
+       21.4
+      ],
+      [
+       -19.3,
+       3.5,
+       -2.1
+      ],
+      [
+       -16.4,
+       10.2,
+       11.9
+      ],
+      [
+       -6.4,
+       5.7,
+       3.7
+      ],
+      [
+       -33.4,
+       4.9,
+       2
+      ],
+      [
+       10,
+       6.6,
+       8.4
+      ],
+      [
+       -1.7,
+       10.1,
+       17.2
+      ],
+      [
+       -41.6,
+       3.6,
+       -1.6
+      ]
+     ],
+     "consoleErrors": []
+    },
+    "play": {
+     "seconds": 60,
+     "objectivesReachableAtStart": "10/10",
+     "reachableAtEnd": "10/10",
+     "scores": {
+      "You (scripted player)": 3,
+      "Pip (bot)": 12,
+      "Bo (bot)": 25
+     },
+     "walkGrid": {
+      "cell": 0.587,
+      "columns": 26167,
+      "nodes": 9520,
+      "edges": 154172,
+      "buildMs": 177,
+      "builds": 2,
+      "jumpUp": 1.06,
+      "jumpAcross": 2.71
+     },
+     "berriesAt": [
+      [
+       5.9,
+       3.5,
+       -1.6
+      ],
+      [
+       -45.7,
+       6.2,
+       8.4
+      ],
+      [
+       7.7,
+       10.9,
+       21.4
+      ],
+      [
+       -19.3,
+       3.5,
+       -2.1
+      ],
+      [
+       -16.4,
+       10.2,
+       11.9
+      ],
+      [
+       -6.4,
+       5.7,
+       3.7
+      ],
+      [
+       -33.4,
+       4.9,
+       2
+      ],
+      [
+       10,
+       6.6,
+       8.4
+      ],
+      [
+       -1.7,
+       10.1,
+       17.2
+      ],
+      [
+       -41.6,
+       3.6,
+       -1.6
+      ]
+     ],
+     "consoleErrors": []
+    }
+   }
+  }
+ },
+ "regressions": {
+  "how": "node builder/gates/regress.mjs --record on the GPU (gpu-run.sh), then --only the reach and play ones again on the final code",
+  "record": "GREEN 23/23 in 1448 s (last-green.json at 7c81845)",
+  "final": "--only pickups-at-sea-level, pickups-walled-off, pickups-on-reachable-ground, objective-out-of-reach, critter-lob-plays, idle-round on 1ecd42c: GREEN 6/6 in 851 s"
+ },
+ "notes": [
+  "The berry slot of the three composed games is the kit's stand-in box: a looks-layer gap (a real berry model is needed), not a placement one.",
+  "Before the fix the berry-isles base (Critter Lob on Tower Isles terrain without the pieces' packs) put 0 of 10 berries in play: the seats stood on islands with no way across; measure 6 named it (\"pickup was asked for 10 and put 0 in play\"). With the pieces (bridge) it places 10."
+ ],
+ "examples": {
+  "how": "each example created fresh (builder/lib/create.mjs --from) and a build verify (builder/tools/verify.mjs) under gpu-run.sh, on 1ecd42c; crater-isles again on f3c9bcb (bots wander only where they can walk from)",
+  "pass": [
+   "blast-isles 22/22",
+   "block-valley 17/17",
+   "coin-hop 22/22",
+   "critter-lob 22/22",
+   "giant-four 22/22",
+   "isle-run 22/22",
+   "lights-race 22/22",
+   "market-day 22/22",
+   "ruin-hold 24/24 (forge)",
+   "soak-squad 22/22",
+   "table-four 22/22",
+   "tower-isles 22/22",
+   "crater-isles 22/22 (f3c9bcb)"
+  ],
+  "notes": [
+   "crater-isles failed measure 6 play leg on 1ecd42c (dead air) and on main 297ebe2 as well; it passed on f3c9bcb",
+   "not run: the vista examples (isle-hop, lantern-cove) and the godot examples: their runtimes do not carry the placement API and no file they run changed"
+  ],
+  "foundAndFixed": [
+   "a flat game has no world module: placement.js is now vendored into every three.js game (coin-hop did not boot)",
+   "Market Day seats in one-tile corridors read \"inside something solid\": a body is fitted off its column middle",
+   "Critter Lob fair play (C 10) failed with berries beside the seats: placement spreads from the seats in play",
+   "Blast Isles measure 12: hazards respawned at a random point within 8 m of the seat; now the open ground nearest the seat",
+   "Violet Dusk: a Float32 cost field never settled (the page ran out of memory); bots scrambled up terraced hillsides (jumps up only between level surfaces)"
+  ]
+ }
+}

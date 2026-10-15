@@ -8,10 +8,10 @@ import { openLoop, fileStore, stateFileOf } from '../../builder/loop/index.mjs';
 import { loopTools } from '../../builder/mcp/loop-tools.mjs';
 import { fakeBindings, keepAll, scriptedVerify, seenTwo, touch } from './dryrun/fakes.mjs';
 import { dryRun } from './dryrun/dry-run.mjs';
-import { fakeRegistry, goodLedger, pitchV2, PROMPT } from './fixtures/registry.mjs';
+import { fakeRegistry, goodLedger, pitchV2, PROMPT, GATE_PLAY } from './fixtures/registry.mjs';
 
 const reg = fakeRegistry();
-const SPEC = { specVersion: 2, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
+const SPEC = { specVersion: 2, play: { target: GATE_PLAY }, runtime: 'forge', loop: 'run', kind: 'dark', title: 'Gate', hook: 'Hold it.', mechanics: [{ id: 'waves' }, { id: 'boss' }], controls: { swing: 'Mouse' },
   build: [{ what: 'a grappling hook that pulls you onto the walls', how: 'a module in src/hook.js', where: 'module', row: 'hook' }], notInV1: [] };
 const CARDS = pitchV2({ reply: 'Card 1 holds the gate. A grappling hook that pulls you onto the walls is built new, which makes the build take longer.', cards: ['a', 'b'].map(id => ({ id, title: id, v1: { has: ['waves at the gate'], build: ['a grappling hook that pulls you onto the walls'], notYet: [] }, spec: SPEC })), questions: [] });
 
@@ -74,6 +74,7 @@ test('a handed-over host: a step called out of order is refused and names the st
   r = await L.step({ pitch: CARDS }); assert.equal(r.about, 'cards');
   r = await L.step({ choice: { card: 'b' } }); assert.equal(r.next, 'spec');
   r = await L.step({}); assert.equal(r.next, 'create');
+  r = await L.step({}); assert.equal(r.next, 'design');
   r = await L.step({}); assert.equal(r.next, 'build');
   r = await L.step({}); assert.equal(r.waiting, 'agent');
   await touch(game, 'rules.js', '// built');

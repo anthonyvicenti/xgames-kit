@@ -1,0 +1,14 @@
+gf-three vfx: the effect styles' sprites (standin/), where each comes from
+
+Ours (MIT, like the rest of the kit), drawn from SVG by scripts/make-vfx-standins.mjs:
+  puff-toon.png, puff-ink.png, star.png, ring.png, square.png
+
+From the asset library, with their licences (scripts/make-vfx-standins.mjs reads them from the library's store by the
+manifests' sha256; create writes each one's credit into a game's ATTRIBUTION.md when the game uses it):
+  smoke-wisp.png   Kenney Particle Pack 1.1, smoke_04 (library/packs/kenney-particle-pack/assets/smoke-04.json),
+                   downscaled to 128 px. CC0-1.0, Kenney (www.kenney.nl).
+  fireball.png     Quiver's Outpost Assault, die_fx_spritesheet.png
+                   (library/packs/quiver-outpost-fx/assets/explosion-flipbook.json; github.com/quiver-dev/tower-defense-tutorial
+                   at 9f5cc040da4eca020afd8b10afefc238dd30708d), downscaled from 1280 to 640 px.
+                   CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/): "Explosion art from Quiver's Outpost
+                   Assault (github.com/quiver-dev/tower-defense-tutorial), CC BY 4.0", changed: downscaled.

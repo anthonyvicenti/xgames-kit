@@ -1,0 +1,704 @@
+{
+  "schema": "gf-play-case/1",
+  "id": "artillery",
+  "prompt": "make a game with the same asethetic as <a well-known 3D artillery game> that lets people battle for an NFT",
+  "how": "gamesfun build --until build (headless, opus): the ledger, the foundation, the pitch (card 1 by the answers hook), the spec, create, then the design step; the look step was off (GAMESFUN_LOOK=0)",
+  "at": "2026-10-14T19:08:24.644Z",
+  "ledger": [
+    {
+      "id": "reference-wum",
+      "about": "reference",
+      "words": "the same asethetic as <a well-known 3D artillery game>",
+      "what": "The game looks and feels like <a well-known 3D artillery game>: cartoon 3D worms on colourful destructible islands, with silly over-the-top weapons.",
+      "home": "build"
+    },
+    {
+      "id": "feel",
+      "about": "feel",
+      "words": "same asethetic as <a well-known 3D artillery game>",
+      "what": "A bright, cartoony, comic feel where explosions are funny and worms flop and fly rather than suffer.",
+      "home": "exists",
+      "by": "kind:silly"
+    },
+    {
+      "id": "acts",
+      "about": "acts",
+      "words": "<a well-known 3D artillery game>",
+      "what": "Players take turns in order, as in Worms: one worm moves and fires per turn on a turn clock, then play passes on.",
+      "home": "exists",
+      "by": "loop:turns"
+    },
+    {
+      "id": "perspective",
+      "about": "perspective",
+      "words": "<a well-known 3D artillery game>",
+      "what": "A 3D view that orbits the active worm and follows shots across the island, like <a well-known 3D artillery game>.",
+      "home": "exists",
+      "by": "runtime:three"
+    },
+    {
+      "id": "players",
+      "about": "players",
+      "words": "lets people battle",
+      "what": "Friends battle each other, each commanding their own side, last side standing wins.",
+      "home": "build"
+    },
+    {
+      "id": "body",
+      "about": "body",
+      "words": "<a well-known 3D artillery game>",
+      "what": "Each player is a team of cartoon worms they move one at a time.",
+      "home": "build"
+    },
+    {
+      "id": "action-fire",
+      "about": "action",
+      "words": "battle",
+      "what": "On their turn a worm aims and fires artillery-style weapons (bazooka, grenade) whose arcs are bent by gravity and wind.",
+      "home": "exists",
+      "by": "mechanic:projectile"
+    },
+    {
+      "id": "action-destroy",
+      "about": "action",
+      "words": "<a well-known 3D artillery game>",
+      "what": "Explosions blow craters out of the 3D island, so the ground itself changes as the battle goes on.",
+      "home": "exists",
+      "by": "mechanic:carve"
+    },
+    {
+      "id": "action-damage",
+      "about": "action",
+      "words": "battle",
+      "what": "Blasts damage and knock back worms; a worm at zero health or knocked into the water is out.",
+      "home": "build"
+    },
+    {
+      "id": "action-move",
+      "about": "action",
+      "words": "<a well-known 3D artillery game>",
+      "what": "The active worm crawls and jumps across the terrain to get a better shot before firing.",
+      "home": "build"
+    },
+    {
+      "id": "nft-prize",
+      "about": "thing",
+      "words": "lets people battle for an NFT",
+      "what": "The battle is fought for an NFT: the winner of a match is awarded the NFT prize, on games.fun devnet.",
+      "home": "build"
+    }
+  ],
+  "foundation": {
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly",
+    "why": {
+      "runtime": "three/standard-3d: meets graphics standard, camera orbit, dimension 3d; builds 6 things it lacks in the game",
+      "loop": "turns: \"<a well-known 3D artillery game>\": One player acts at a time, in order; a move out of turn is refused with a reason; a clock for each turn; bots act on theirs.",
+      "kind": "silly: \"same asethetic as <a well-known 3D artillery game>\""
+    }
+  },
+  "cards": [
+    {
+      "id": "worm-mayhem",
+      "title": "Worm Mayhem Isles",
+      "play": {
+        "style": "turn-based artillery",
+        "verbs": [
+          "crawl",
+          "aim",
+          "fire",
+          "blast"
+        ],
+        "beat": "On your turn: crawl to a ledge, read the wind, set the angle and power, fire, then watch it land",
+        "touch": "Your shots blast other worms, knock them back and dig away the ground under their feet",
+        "chaos": 0.7
+      }
+    },
+    {
+      "id": "blitz-isles",
+      "title": "Blitz Isles: Sudden-Death Worms",
+      "play": {
+        "style": "sudden-death snap artillery",
+        "verbs": [
+          "hop",
+          "snap-aim",
+          "fire",
+          "climb"
+        ],
+        "beat": "Every few seconds a new turn: one quick hop, one snap shot, then the next worm, while the sea creeps up",
+        "touch": "Your blasts sink the ground other worms stand on into the rising sea and knock them off the last high ground",
+        "chaos": 0.85
+      }
+    }
+  ],
+  "chosen": "worm-mayhem",
+  "designRounds": 0,
+  "spec": {
+    "title": "Worm Mayhem Isles",
+    "hook": "Take turns lobbing bazookas and grenades across a 3D island you blow apart, until one worm squad is left standing and wins the NFT.",
+    "runtime": "three",
+    "profile": "standard-3d",
+    "loop": "turns",
+    "kind": "silly",
+    "camera": "orbit",
+    "players": {
+      "min": 2,
+      "max": 4,
+      "bots": true
+    },
+    "multiplayer": {
+      "mode": "live",
+      "together": "versus",
+      "presence": "character"
+    },
+    "world": "terrain",
+    "controls": {
+      "move": "crawl your worm",
+      "jump": "jump",
+      "aim": "aim the weapon",
+      "primary": "hold to set power, let go to fire",
+      "weapon": "switch between bazooka and grenade",
+      "endTurn": "end your turn early"
+    },
+    "round": {
+      "seconds": 900,
+      "params": {
+        "turnSeconds": 30,
+        "botThink": 1.5,
+        "first": "rotate",
+        "late": "join"
+      },
+      "winBy": "The last squad with a worm still in play wins the match and the NFT prize.",
+      "loseBy": "All your worms are at zero health or in the water.",
+      "replay": true
+    },
+    "mechanics": [
+      {
+        "id": "projectile",
+        "as": "bazooka and grenade shots",
+        "params": {
+          "kind": "discrete",
+          "prop": "rocket",
+          "speed": 40,
+          "arc": 0,
+          "gravity": 14,
+          "lifetime": 8,
+          "cooldown": 0.5,
+          "maxActive": 2,
+          "damage": 0,
+          "knockback": 0,
+          "knockUp": 0,
+          "splashRadius": 2.5,
+          "splashKnockback": 0,
+          "selfHit": true,
+          "friendlyFire": true,
+          "bounces": 0,
+          "autoHealth": false,
+          "hitFx": "impact-flash",
+          "bodyHeight": 0.9
+        }
+      },
+      {
+        "id": "carve",
+        "as": "craters blown out of the island",
+        "params": {
+          "fromProjectile": true,
+          "scale": 1.2,
+          "maxRadius": 6,
+          "debris": true,
+          "blastFx": "impact-flash",
+          "dustFx": "smoke-puff",
+          "splashFx": "smoke-puff",
+          "shake": 0.5,
+          "minRadius": 0.6,
+          "keep": false,
+          "sound": "explosion-small",
+          "splashSound": "splash"
+        }
+      }
+    ],
+    "build": [
+      "The game looks and feels like <a well-known 3D artillery game>: cartoon 3D worms on colourful destructible islands, with silly over-the-top weapons",
+      "Friends battle each other, each commanding their own side, last side standing wins",
+      "Each player is a team of cartoon worms they move one at a time",
+      "Blasts damage and knock back worms; a worm at zero health or knocked into the water is out",
+      "The active worm crawls and jumps across the terrain to get a better shot before firing",
+      "The battle is fought for an NFT: the winner of a match is awarded the NFT prize, on games.fun devnet",
+      "Hold to charge a power dial and let go to fire: the shot heads where you point, and pointing higher lifts its launch angle",
+      "Wind changes every turn and bends every shell sideways; the grenade bounces and goes off when its 3 s fuse runs out",
+      "Every screen's camera swoops to the active worm, rides each shell in flight and holds on its blast before play goes on",
+      "Once a shell has gone off and flung worms land, the turn passes to the next squad's next living worm; off your turn your worm cannot move",
+      "Worms start spread out on open ground across the islands, never in a tunnel, under an overhang or at the water's edge",
+      "Every 4th turn a supply crate drops near the squad that is behind; crawl into it for +30 health or a Mega Rocket with a huge blast",
+      "At 6 minutes sudden death drops every worm to 1 health, and a match never ends without a winner",
+      "Bots take whole turns: pick a target, crawl, read the wind, choose a weapon and fire, missing less as they retry",
+      "Each worm wears a health tag in its squad colour; hits pop damage numbers, KO! or SPLASH!, and the HUD shows power, angle, wind and squads",
+      "The NFT prize goes to the winner only when two or more people battled; a match against bots alone is practice and says so"
+    ]
+  },
+  "target": {
+    "schema": "gf-play-target/1",
+    "from": "words",
+    "confidence": 0.6,
+    "genre": {
+      "name": "turn-based squad artillery on destructible 3D islands",
+      "traits": [
+        "Every shot is a public bet on angle, power and wind: everyone watches it fly, and a near miss or a lucky bounce gets a shout from the whole room.",
+        "The ground is a weapon too: craters eat cover and ledges, and a worm flung into the sea is gone whatever its health.",
+        "Turn tension: you plan in your 30 seconds, then watch helplessly as the other squad lines up on your worm.",
+        "Slapstick, never gore: worms yelp, cartwheel and splash, and a grenade that rolls back onto its thrower is half the fun.",
+        "Choices every turn: crawl for a crate or high ground, bazooka or grenade for this shot, the weakest worm or the one by the water.",
+        "One great shot can turn a match: a blast that takes two worms or sinks a full-health one keeps the side behind in it."
+      ]
+    },
+    "verbs": [
+      {
+        "id": "crawl",
+        "does": "Wriggle the active worm over hills and crater lips to a better spot or a crate, on your turn only",
+        "input": "move",
+        "feel": "Slow and squishy at 2.2 m/s; slopes and cliff edges make every step tense"
+      },
+      {
+        "id": "hop",
+        "does": "A short springy jump over a gap or out of a crater",
+        "input": "jump",
+        "feel": "A boing and a wobble on landing"
+      },
+      {
+        "id": "aim",
+        "does": "Point at a target with the mouse or a finger: the shot heads there, and pointing higher lifts its launch angle, read on the angle dial",
+        "input": "aim",
+        "feel": "A reticle and an angle needle that follow your pointer"
+      },
+      {
+        "id": "charge-fire",
+        "does": "Hold F (or click or tap once) to fill the power dial, let go (or click again) to fire; full power fires by itself; one shot a turn",
+        "input": "primary",
+        "feel": "A rising whine, then a thunk, a muzzle puff and a little recoil"
+      },
+      {
+        "id": "switch-weapon",
+        "does": "Cycle the bazooka, the grenade and any Mega Rocket from a crate before you fire",
+        "input": "secondary (Q, right-click or a long press; the spec's weapon control)",
+        "feel": "A quick swap with the weapon's name on screen"
+      },
+      {
+        "id": "end-turn",
+        "does": "Pass your turn without firing, to keep a worm out of sight",
+        "input": "interact (E; the spec's endTurn control)",
+        "feel": "A quick pass chime"
+      },
+      {
+        "id": "grab-crate",
+        "does": "Crawl into a dropped crate to take +30 health or a Mega Rocket",
+        "input": "move (touch the crate)",
+        "feel": "A pop and the reward's name over your worm"
+      }
+    ],
+    "beats": {
+      "moment": "On your turn: crawl a few metres to a ledge or a crate, point at a worm, read the windsock, charge and fire. Off your turn: the camera rides the other squad's shell and you wince as it lands near one of yours.",
+      "stretch": "One turn: a worm's 30 s to move and fire, a 2–5 s flight the whole room watches, the blast (crater, flung worms, damage numbers), the island settles, and the next squad's worm gets the turn with a new wind; every 4th turn a crate drops in.",
+      "round": "About 7 minutes: squads spread over three islands trade long opening shots across the water; mid-match the land is cratered, worms get flung off ledges and crates drop toward the squad behind; at 6 minutes sudden death drops every worm to 1 health; the last squad standing takes the NFT prize.",
+      "between": "A fresh, uncratered island, new worm spots and winds, and the next seat fires first; each match is its own battle for the prize, and the results card names who won the last one."
+    },
+    "objective": {
+      "goal": "Knock every worm of the other squads out of play, by blasting their health to zero or flinging them into the sea, while keeping at least one of your own worms alive.",
+      "win": "The last squad with a worm in play wins the match, and the NFT prize when two or more people battled; at 870 s the squad with the most worms, then the most health, wins.",
+      "lose": "All your worms are at zero health or in the sea.",
+      "reach": {
+        "how": "Every worm starts on open top ground of the three islands (sky above it, ≥ 1.5 m above the sea, ≥ 7 m from any other worm), and shells fly over the water: full power (40 m/s, ~114 m at 45°) reaches across the 112 × 80 m map, so an enemy is in range on your first turn without crawling.",
+        "within": 10,
+        "risks": [
+          "Worms or crates placed in the terrain's tunnels or under its overhangs, where no shell can reach: place only where a ray from the sky meets the ground first.",
+          "Spots on beaches near sea level or on thin ledges, where the first crater drops the worm into the sea before anyone aims.",
+          "A worm behind a 14 m cliff on every side: high lobs and a bouncing grenade clear it, and blasts carve the cover away.",
+          "A target too small or far to see: worms drawn 0.9 m tall with health tags over them, the orbit camera 8 m back with zoom out to 30 m."
+        ]
+      },
+      "things": [
+        {
+          "what": "worms of every squad",
+          "where": "spread over the islands' open top ground, ≥ 7 m apart and ≥ 3 m from the shore, squads mixed across the islands",
+          "placed": "ground",
+          "count": 12
+        },
+        {
+          "what": "supply crates (+30 health or a Mega Rocket)",
+          "where": "dropped onto open ground on the island of the squad with the least health, ≥ 4 m from any worm",
+          "placed": "ground",
+          "count": 2
+        },
+        {
+          "what": "the NFT prize",
+          "where": "the prize badge on every screen at the start and on the winner's screen at the end; awarded on devnet",
+          "placed": "none",
+          "count": 1
+        }
+      ]
+    },
+    "touchpoints": [
+      {
+        "how": "Your shell's blast drops the health of every enemy worm near it, by how close it stood",
+        "kind": "hit",
+        "often": "about once a turn"
+      },
+      {
+        "how": "Blasts fling worms away from the centre: off ledges, into craters and into the sea, where they are out",
+        "kind": "knock",
+        "often": "most hits; a sea knock-out a few times a match"
+      },
+      {
+        "how": "Craters dig away the hill a worm hides behind and the ground under its feet, so it loses cover or drops",
+        "kind": "other",
+        "often": "every blast on land"
+      },
+      {
+        "how": "A crate that lands where two squads' worms can crawl to it goes to whichever turn reaches it first",
+        "kind": "race",
+        "often": "a crate every 4 turns"
+      },
+      {
+        "how": "Every screen follows the active worm and rides its shell, so you watch the shot coming for your worm",
+        "kind": "watch",
+        "often": "every turn, on every screen"
+      }
+    ],
+    "risk": [
+      {
+        "risk": "Crawl out to a cliff edge or a high ledge for a clear line of fire",
+        "reward": "A clean shot at a worm you could not reach from cover, though you stay there for the next squad's shot, by the drop to the sea"
+      },
+      {
+        "risk": "Spend your turn's seconds crawling to a crate in the open",
+        "reward": "+30 health, or a Mega Rocket whose 5 m blast can take two worms at once"
+      },
+      {
+        "risk": "Fire the bazooka long in a strong wind",
+        "reward": "A burst on contact from across the map if you read the curve; misread it and it lands by your own squad"
+      },
+      {
+        "risk": "Bounce a grenade into a crater or behind cover at close range",
+        "reward": "It needs no direct hit, but it can roll back and go off beside your own worm"
+      },
+      {
+        "risk": "Aim at the worm by the water instead of the weakest one",
+        "reward": "A blast that sinks it outright, whatever its health"
+      },
+      {
+        "risk": "Blast a group of worms that includes one of your own",
+        "reward": "Two enemies hurt at once, but your own worm takes the same blast"
+      }
+    ],
+    "pacing": {
+      "firstAction": 30,
+      "eventsPerMinute": 9,
+      "roundSeconds": 420,
+      "turnSeconds": 30,
+      "idleMax": 90,
+      "comeback": 0.3,
+      "rounds": 3
+    },
+    "events": [
+      {
+        "name": "shot-fired",
+        "what": "A worm launched its turn's weapon (bazooka, grenade or Mega Rocket).",
+        "meaningful": true
+      },
+      {
+        "name": "blast",
+        "what": "A shell went off: on the ground, on a worm, at a grenade's fuse, or on the sea.",
+        "meaningful": true
+      },
+      {
+        "name": "worm-hurt",
+        "what": "A worm lost health to a blast (once per worm per blast).",
+        "meaningful": true
+      },
+      {
+        "name": "worm-flung",
+        "what": "A blast threw a worm more than 2 m from where it stood.",
+        "meaningful": false
+      },
+      {
+        "name": "worm-out",
+        "what": "A worm's health reached zero and it popped out of play.",
+        "meaningful": true
+      },
+      {
+        "name": "worm-sunk",
+        "what": "A worm fell into the sea and is out, whatever its health.",
+        "meaningful": true
+      },
+      {
+        "name": "crate-drop",
+        "what": "A supply crate dropped onto an island.",
+        "meaningful": false
+      },
+      {
+        "name": "crate-taken",
+        "what": "The active worm crawled into a crate and took its health or Mega Rocket.",
+        "meaningful": true
+      },
+      {
+        "name": "turn-begin",
+        "what": "A squad's next living worm got the turn, with this turn's wind.",
+        "meaningful": false
+      },
+      {
+        "name": "weapon-switch",
+        "what": "The active player changed weapon.",
+        "meaningful": false
+      },
+      {
+        "name": "sudden-death",
+        "what": "Sudden death began: every worm dropped to 1 health.",
+        "meaningful": false
+      },
+      {
+        "name": "match-won",
+        "what": "One squad was left (or was named at the deciding second) and won; the prize goes to it when two or more people battled.",
+        "meaningful": true
+      }
+    ],
+    "feel": {
+      "impact": "high",
+      "weight": "light",
+      "chaos": 0.7,
+      "comedy": "Worms yelp and cartwheel away from blasts, plop into the sea with a big splash, or drop into the crater that just opened under them; a grenade bounces back to its thrower, a bot blows itself off a cliff, and the worm that was gloating gets sunk by a lucky gust.",
+      "juice": [
+        "Each blast: a comic flash ring, a smoke puff, dirt lumps flying out of a fresh crater, a boom, and a camera shake that grows the nearer you are",
+        "A hurt worm flashes, yelps and cartwheels away; a damage number pops over it and its health tag counts down",
+        "A big 'SPLASH!' over a water plume when a worm is sunk, and 'KO!' when one pops out at zero health",
+        "The power dial fills with a rising whine; firing gives a thunk, a muzzle puff and a little recoil",
+        "The camera rides behind the shell and holds a beat on the landing so every screen sees what it did",
+        "The windsock swings and the wind arrows light up with each turn's new wind",
+        "A resting grenade ticks faster and faster before it goes off",
+        "'Your turn!' banner and chime as the camera swoops onto your active worm"
+      ]
+    },
+    "avoid": [
+      {
+        "failure": "idle",
+        "guard": "Every screen's camera follows the active worm and rides each shell to its blast; turns are capped at 30 s and pass once the island settles (≤ 3 s after the blast); bots think 1.5 s; a squad with no worm left is skipped.",
+        "measure": "Longest gap between a player's own turns or a blast touching their worms: ≤ 90 s with 4 squads, ≤ 40 s with 2."
+      },
+      {
+        "failure": "unreachable",
+        "guard": "Worms and crates go only on open top ground (a ray from the sky meets it first, ≥ 1.5 m above the sea, slope ≤ 30°); full power reaches ~114 m, across the map, so some enemy is always in range; a turn never waits on a worm that cannot act.",
+        "measure": "At the start every worm has open sky above it and a bot shot solution to some enemy; no turn passes as 'no move' while its squad has a living worm."
+      },
+      {
+        "failure": "runaway-leader",
+        "guard": "Every squad gets one turn per round however many worms it has left, crates drop near the squad with the least health, sudden death puts every worm at 1 health, and any worm can be sunk by one blast.",
+        "measure": "The side behind at half time wins about 3 matches in 10."
+      },
+      {
+        "failure": "stalemate",
+        "guard": "Sudden death at 6 minutes drops every worm to 1 health, and at 870 s the squad with the most worms, then the most health, is named winner before the 900 s cap; craters dig out any worm that hides.",
+        "measure": "Median match about 7 minutes; no match reaches the 900 s cap without a winner."
+      },
+      {
+        "failure": "one-strategy",
+        "guard": "The bazooka bursts on contact and flies far; the grenade bounces into craters and behind cover and blows on its fuse; wind re-rolls each turn; sea knock-outs reward aiming at worms by the water; crates bring a Mega Rocket.",
+        "measure": "Across a session the bazooka and the grenade each make up at least a quarter of shots."
+      },
+      {
+        "failure": "spawn-trap",
+        "guard": "No worm starts within 7 m of another or 3 m of a shore or cliff edge, squads are mixed across the islands, and the first turn rotates by seat each match.",
+        "measure": "Smallest worm-to-worm gap at the start ≥ 7 m, and every worm stands ≥ 3 m from a shore or cliff edge."
+      },
+      {
+        "failure": "confusion",
+        "guard": "'Your turn!' banner and chime as the camera swoops onto your active worm; power, angle and wind dials; squad-coloured headbands and health tags; 'Not your turn' when you press out of turn; the weapon's name on each switch.",
+        "measure": "A new player fires on their first turn within 15 s of it starting and sees where the shot landed."
+      },
+      {
+        "failure": "other",
+        "guard": "The NFT prize is awarded only when two or more human squads began the match; a match against bots alone is practice and says so at its start and end, so the prize cannot be farmed off bots.",
+        "measure": "No prize is reported for a match with fewer than two human squads, and the practice line shows at its start and end."
+      }
+    ],
+    "makes": [
+      {
+        "says": "On your turn you crawl, point and charge, and the shell you fire flies on an arc the wind bends.",
+        "see": "The power dial fills while you hold F or after one click, and your worm fires on release or the next click; the camera rides the shell as it drifts the way the windsock points, then lands."
+      },
+      {
+        "says": "Every blast bites a crater out of the island and flings the worms near it, hurting each by how close it stood.",
+        "see": "A fresh crater where the shell went off, nearby worms cartwheeling away, damage numbers popping over them and their health tags dropping, the closest by the most."
+      },
+      {
+        "says": "A worm knocked into the sea or down to zero health is out of the match.",
+        "see": "A big SPLASH! as a flung worm hits the water, or KO! as one reaches 0; that worm is gone and its squad's worms-left count on the HUD drops by one."
+      },
+      {
+        "says": "Turns go squad by squad, each to that squad's next living worm, and a move out of turn is refused.",
+        "see": "On a friend's turn your camera follows their worm and rides their shot, and pressing fire says 'Not your turn'; when your turn returns, a different worm of yours is active.",
+        "friends": true
+      },
+      {
+        "says": "The bazooka and the grenade play differently: one bursts where it first touches, the other bounces and goes off on its fuse.",
+        "see": "Switching shows the weapon's name; a bazooka shell bursts where it first touches, while a grenade bounces off the ground, ticks, and blows about 3 s after the throw."
+      },
+      {
+        "says": "The last squad with a worm left wins the match, and when people battled the winner is awarded the NFT prize.",
+        "see": "When the second-to-last squad loses its last worm, the results card names the winning squad and the winner's screen shows the prize badge awarded to them.",
+        "friends": true
+      }
+    ],
+    "mechanics": [
+      {
+        "id": "projectile",
+        "as": "bazooka, grenade and Mega Rocket shells",
+        "params": {
+          "kind": "discrete",
+          "prop": "rocket",
+          "speed": 40,
+          "arc": 0,
+          "gravity": 14,
+          "lifetime": 8,
+          "cooldown": 0.5,
+          "maxActive": 2,
+          "damage": 0,
+          "knockback": 0,
+          "knockUp": 0,
+          "splashRadius": 2.5,
+          "splashKnockback": 0,
+          "selfHit": true,
+          "friendlyFire": true,
+          "bounces": 0,
+          "autoHealth": false,
+          "bodyHeight": 0.9,
+          "hitFx": "impact-flash"
+        },
+        "why": "Flies every shell, synced and drawn from the rocket prop (the grenade's own prop via the override); damage and knock are src/blast.js's, so the kit's splash only marks where a shell ended"
+      },
+      {
+        "id": "carve",
+        "as": "craters blown out of the island",
+        "params": {
+          "fromProjectile": true,
+          "scale": 1.2,
+          "minRadius": 0.6,
+          "maxRadius": 6,
+          "keep": false,
+          "debris": true,
+          "blastFx": "impact-flash",
+          "dustFx": "smoke-puff",
+          "splashFx": "smoke-puff",
+          "sound": "explosion-small",
+          "splashSound": "splash",
+          "shake": 0.5
+        },
+        "why": "Every shell that ends on land digs a 3 m crater the same on every screen with dirt, dust and a boom; a sea blast splashes; the Mega Rocket adds a bigger carve.carve; each match starts on fresh ground"
+      }
+    ],
+    "build": [
+      {
+        "what": "Hold to charge a power dial and let go to fire: the shot heads where you point, and pointing higher lifts its launch angle",
+        "how": "src/artillery.js aims and charges on your turn: the shot heads for the aim point at its pitch + aimLiftDeg; holding F fills the power meter, or a click or tap starts it and the next fires (orbit's mouse has no hold); rules.js move() fires it once a turn with prj.fire(p, dir, {speed})",
+        "where": "module",
+        "row": "action-fire",
+        "why": "The projectile mechanic lands shots on the crosshair point by itself; artillery needs the player's own angle and power, read on dials"
+      },
+      {
+        "what": "Wind changes every turn and bends every shell sideways; the grenade bounces and goes off when its 3 s fuse runs out",
+        "how": "rules.js rolls each turn's wind with ctx.rng into ctx.shared; a declared override of gf/three/mechanics/projectile/index.js takes a wind pull, bounces, a fuse, a prop and a size per shot from fire() opts, the same on every copy, and a fused shot ends as 'fuse' so carve digs there",
+        "where": "engine",
+        "row": "action-fire",
+        "why": "One gravity, bounce count and lifetime serve every shot and nothing bends a shot sideways; the two weapons must fly differently"
+      },
+      {
+        "what": "Every screen's camera swoops to the active worm, rides each shell in flight and holds on its blast before play goes on",
+        "how": "A declared override of gf/three/controller/controller.js lets rules.js set a camera focus that the orbit pivot follows (active worm, shell, blast); config/game.json rests the camera 8 m back with zoom to 30 m, and config/characters.json draws worms 0.9 m tall",
+        "where": "engine",
+        "row": "perspective",
+        "why": "The orbit camera follows only your own body; seeing every shot land is the genre's shared moment and keeps a waiting player watching"
+      },
+      {
+        "what": "Once a shell has gone off and flung worms land, the turn passes to the next squad's next living worm; off your turn your worm cannot move",
+        "how": "src/turn-phases.js runs each turn on the host: move() fires and keeps the turn ({again: true}), the end move goes in once the shell has ended and worms rest (≤ settleSeconds); it holds off-turn controllers, and config/game.json maps weapon to secondary and endTurn to interact",
+        "where": "module",
+        "row": "acts",
+        "why": "The turns flow passes the turn on a move; a shot must land and the island settle before the next worm acts, and only the active worm crawls"
+      },
+      {
+        "what": "Worms start spread out on open ground across the islands, never in a tunnel, under an overhang or at the water's edge",
+        "how": "src/placement.js samples the terrain on the host with ctx.world.raycast from the sky and keeps spots ≥ 1.5 m above the sea, slope ≤ 30°, spawnGapMetres apart and ≥ 3 m from an edge, dealing them to squads mixed across the islands; crates use it too",
+        "where": "module",
+        "row": "body",
+        "why": "The world gives 8 spawns and has tunnels and overhangs; up to 12 worms need fair starts a shell can reach"
+      },
+      {
+        "what": "Every 4th turn a supply crate drops near the squad that is behind; crawl into it for +30 health or a Mega Rocket with a huge blast",
+        "how": "src/crates.js drops a crate every crateEveryTurns turns on open ground near the squad with the least health, drawn from a new 'crate' gameplay prop slot; the active worm crawling within 1.2 m takes it on the host for +crateHeal health or a Mega Rocket",
+        "where": "module",
+        "row": "reference-wum",
+        "why": "Crates are the genre's gamble and its comeback: a reason to crawl into the open, dropped toward the side that is losing"
+      },
+      {
+        "what": "At 6 minutes sudden death drops every worm to 1 health, and a match never ends without a winner",
+        "how": "rules.js starts sudden death at suddenDeathSeconds with a banner and every worm at 1 health, and check() names the squad with the most worms, then the most health, the winner at decideAtSeconds, before the 900 s cap",
+        "where": "rules",
+        "row": "players",
+        "why": "A battle for a prize must end with a winner; hiding and waiting is the genre's stall"
+      },
+      {
+        "what": "Bots take whole turns: pick a target, crawl, read the wind, choose a weapon and fire, missing less as they retry",
+        "how": "src/bot-gunner.js plans a bot's turn in rules.bot on the host: pick the enemy worm with the best shot, crawl up to 3 s, solve angle and power for gravity and wind with a botMissMetres error halved per retry, then ctx.turns.submit the shot",
+        "where": "module",
+        "row": "players",
+        "why": "The kit's bots aim at a crosshair point; one person alone needs bots that play a whole artillery turn"
+      },
+      {
+        "what": "Each worm wears a health tag in its squad colour; hits pop damage numbers, KO! or SPLASH!, and the HUD shows power, angle, wind and squads",
+        "how": "src/hud-tags.js draws each worm's number on the game.health-tag picture over it on every copy, pops damage, KO! and SPLASH!, swings the game.wind-sock prop by the active worm, and fills ctx.ui meters for power, angle and wind and ctx.ui.score for each squad's worms",
+        "where": "module",
+        "row": "action-damage",
+        "why": "Without the health mechanic the kit's HUD shows no worm's health; health, wind and power are what a player reads to plan a shot"
+      },
+      {
+        "what": "The NFT prize goes to the winner only when two or more people battled; a match against bots alone is practice and says so",
+        "how": "rules.js records the human squads that began each match and reports the prize win to the economy only when there were two or more; otherwise the start banner and the results card say 'Practice: no prize'",
+        "where": "rules",
+        "row": "nft-prize",
+        "why": "A prize anyone could win alone against bots would be farmed; the prize is for battling people"
+      }
+    ],
+    "params": {
+      "wormsPerSide": 3,
+      "wormHealth": 100,
+      "blastDamage": 45,
+      "blastRadius": 3,
+      "blastKnock": 12,
+      "blastLift": 6,
+      "megaDamage": 70,
+      "megaRadius": 5,
+      "windMax": 2,
+      "maxPower": 40,
+      "powerFillSeconds": 1.6,
+      "aimLiftDeg": 35,
+      "crawlSpeed": 2.2,
+      "jumpSpeed": 5,
+      "grenadeFuse": 3,
+      "grenadeBounces": 3,
+      "settleSeconds": 3,
+      "suddenDeathSeconds": 360,
+      "decideAtSeconds": 870,
+      "crateEveryTurns": 4,
+      "crateHeal": 30,
+      "botMissMetres": 6,
+      "focusHoldSeconds": 1,
+      "spawnGapMetres": 7
+    },
+    "bots": "On its turn a bot thinks 1.5 s, picks the enemy worm it can hurt most (low health, by the water, or beside another), crawls up to 3 s toward a clear line, solves angle and power for gravity and wind with a ~6 m miss halved on each retry at that worm, takes the grenade at close range or behind cover, and fires.",
+    "sources": {
+      "words": true,
+      "refs": 0,
+      "model": "opus",
+      "at": "2026-10-14T19:08:23.439Z"
+    }
+  }
+}

@@ -111,4 +111,24 @@ export function goodLedger() {
 /** What a pitch v2 card says beside its id, title, v1 and spec (builder/spec/pitch.v2.schema.json). */
 export const CARD_WORDS = { hook: 'Hold the gate with your friends.', howItPlays: 'Waves come at the gate; hold it together; the boss comes last.', players: '2 to 4, together', whyFunny: 'Friends hooking onto the walls at the worst moment.', conceptPrompt: 'A ruined gate at night, torches, a crowd of zombies.' };
 /** A pitch in the v2 shape: every card with its words (an old `take` is dropped), research and policy. */
-export const pitchV2 = p => ({ research: { bank: [], web: [], notes: '' }, policy: { ok: true }, ...p, cards: (p.cards ?? []).map(({ take, ...c }) => ({ ...CARD_WORDS, ...c })) });
+export const pitchV2 = p => ({ research: { bank: [], web: [], notes: '' }, policy: { ok: true }, ...p, cards: (p.cards ?? []).map(({ take, ...c }, i) => ({ ...CARD_WORDS, play: playOf(i), ...c })) });
+/** A card's play sketch (pitch v2 cards[].play): each card of a pitch its own style of play. */
+export const playOf = (i = 0) => ({ style: ['hold the line together', 'a scramble on the walls', 'a slow siege'][i % 3], verbs: ['shoot', 'climb'], beat: 'shoot at the nearest zombie, climb a wall', touch: 'cover a friend who is pulled down', chaos: 0.5 });
+
+/** The gate game's play target (gf-play-target/1), for loops whose spec already carries its play. */
+export const GATE_PLAY = {
+  schema: 'gf-play-target/1', from: 'words', confidence: 0.6,
+  genre: { name: 'co-op wave defence', traits: ['holding a line together', 'a boss that tests the team'] },
+  verbs: [{ id: 'swing', does: 'swing at the nearest zombie', input: 'swing' }, { id: 'hook', does: 'pull yourself onto the walls', input: 'hook' }],
+  beats: { moment: 'swing at what reaches the gate', stretch: 'a wave breaks on the gate', round: 'waves, then the boss' },
+  objective: { goal: 'hold the gate', win: 'the boss falls', reach: { how: 'the gate is where everyone starts', within: 0, risks: [] }, things: [] },
+  touchpoints: [{ how: 'cover a friend who is pulled down', kind: 'help', often: 'every wave' }],
+  risk: [{ risk: 'leave the gate for the wall', reward: 'hit the boss from above' }],
+  pacing: { firstAction: 5, eventsPerMinute: 20, roundSeconds: 300, idleMax: 15, comeback: 0 },
+  events: [{ name: 'kill', what: 'a zombie falls', meaningful: true }, { name: 'boss-hit', what: 'the boss is hit', meaningful: true }],
+  feel: { impact: 'high', weight: 'heavy', chaos: 0.5, juice: ['hitstop on a kill'] },
+  avoid: [{ failure: 'idle', guard: 'the next wave starts as the last breaks' }, { failure: 'unreachable', guard: 'the boss comes to the gate' }],
+  makes: [{ says: 'Every swing lands with weight', see: 'a zombie staggers back with a thud' }, { says: 'The wall is the place to be for the boss', see: 'a hooked player hits the boss from above' }, { says: 'A fallen friend is covered', see: 'a friend stands over a downed player while they get up' }],
+  mechanics: [{ id: 'waves', why: 'the waves' }, { id: 'boss', why: 'the boss' }],
+  bots: 'bots hold the gate and swing at the nearest zombie',
+};

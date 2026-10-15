@@ -1,0 +1,196 @@
+{
+ "what": "Physical chaos parts (knockback, hazards, aim, juice, terrain settle) proved on two games over real WebRTC: host and joiner take turns with real input; the host's blast throws the joiner into the sea; both screens agree.",
+ "date": "2026-10-14",
+ "how": "tests/chaos-two-players.mjs <game> --shots <dir> under gpu-run.sh (CHROME_ARGS=\"--use-gl=angle --use-angle=gl-egl\"), headless Chrome on the desktop GPU, 1280x720 per page",
+ "games": {
+  "blast-isles": {
+   "from": "npx gamesfun create <dir> --from blast-isles (CC0 stand-in blob bodies, the terrain world)",
+   "steps": [
+    {
+     "name": "a turn game with two players, the host first",
+     "ok": true,
+     "saw": "order p1,p2, turn p1"
+    },
+    {
+     "name": "both took turns and fired with real input",
+     "ok": true,
+     "saw": "2 shells, 2 turns played, 2 passed"
+    },
+    {
+     "name": "the camera followed a shot on both screens",
+     "ok": true,
+     "saw": "follows: host 2, joiner 2"
+    },
+    {
+     "name": "the joiner, thrown by the host's blasts, ended in the sea",
+     "ok": true,
+     "saw": "turn 0: {\"player\":\"p2\",\"cause\":\"water\",\"at\":{\"x\":-26.48,\"y\":-0.63,\"z\":16},\"by\":\"p1\",\"t\":7.68}"
+    },
+    {
+     "name": "both screens saw the same fall into the water, by the host",
+     "ok": true,
+     "saw": "joiner's screen: {\"player\":\"p2\",\"cause\":\"water\",\"at\":{\"x\":-26.48,\"y\":-0.63,\"z\":16},\"by\":\"p1\",\"t\":7.68}"
+    },
+    {
+     "name": "the same thrown flight on both screens (its landing)",
+     "ok": true,
+     "saw": "host [-26.41,-1.5,16.18], joiner [-26.41,-1.5,16.18]; the flight ended: water (1 flights of the joiner on the host)"
+    },
+    {
+     "name": "each screen draws the thrown body on the path (median distance under 0.8 m)",
+     "ok": true,
+     "saw": "host 0.01 m over 33 samples, joiner 0.01 m over 33"
+    },
+    {
+     "name": "both screens draw the body in the same place at the same moment of the flight (median under 1 m)",
+     "ok": true,
+     "saw": "median 0.15 m, max 0.34 m over 48 pairs"
+    },
+    {
+     "name": "the joiner came back on dry ground, the same place on both screens",
+     "ok": true,
+     "saw": "host sees -31.1,5.75,3.57; joiner -31.1,5.75,3.57; ground 5.6832600578007"
+    },
+    {
+     "name": "scores agree",
+     "ok": true,
+     "saw": "[[\"Hosta\",4],[\"Joan\",0]]"
+    },
+    {
+     "name": "no page errors",
+     "ok": true,
+     "saw": "none"
+    }
+   ],
+   "turns": [
+    {
+     "n": 0,
+     "who": "host",
+     "edge": 2.5,
+     "fire": {
+      "miss": 0.46,
+      "power": 0.63,
+      "solved": 0.635
+     }
+    },
+    {
+     "n": 1,
+     "who": "joiner",
+     "fire": {
+      "miss": 0.46,
+      "power": 0.86,
+      "solved": 0.8650000000000002
+     }
+    }
+   ],
+   "flight": {
+    "into": "water",
+    "end": [
+     -26.41,
+     -1.5,
+     16.18
+    ],
+    "flights": {
+     "host": 1,
+     "joiner": 1
+    }
+   }
+  },
+  "sunny-chaos": {
+   "from": "the composed look-test level Sunny Castle Isles (spec copied, loop turns and the chaos parts; private pilot art: its film strip is kept outside the repo)",
+   "steps": [
+    {
+     "name": "a turn game with two players, the host first",
+     "ok": true,
+     "saw": "order p1,p2, turn p1"
+    },
+    {
+     "name": "both took turns and fired with real input",
+     "ok": true,
+     "saw": "2 shells, 2 turns played, 2 passed"
+    },
+    {
+     "name": "the camera followed a shot on both screens",
+     "ok": true,
+     "saw": "follows: host 2, joiner 2"
+    },
+    {
+     "name": "the joiner, thrown by the host's blasts, ended in the sea",
+     "ok": true,
+     "saw": "turn 0: {\"player\":\"p2\",\"cause\":\"water\",\"at\":{\"x\":-19.53,\"y\":-0.63,\"z\":-16.57},\"by\":\"p1\",\"t\":7.8}"
+    },
+    {
+     "name": "both screens saw the same fall into the water, by the host",
+     "ok": true,
+     "saw": "joiner's screen: {\"player\":\"p2\",\"cause\":\"water\",\"at\":{\"x\":-19.53,\"y\":-0.63,\"z\":-16.57},\"by\":\"p1\",\"t\":7.8}"
+    },
+    {
+     "name": "the same thrown flight on both screens (its landing)",
+     "ok": true,
+     "saw": "host [-19.42,-1.61,-16.83], joiner [-19.42,-1.61,-16.83]; the flight ended: water (1 flights of the joiner on the host)"
+    },
+    {
+     "name": "each screen draws the thrown body on the path (median distance under 0.8 m)",
+     "ok": true,
+     "saw": "host 0.02 m over 47 samples, joiner 0.02 m over 47"
+    },
+    {
+     "name": "both screens draw the body in the same place at the same moment of the flight (median under 1 m)",
+     "ok": true,
+     "saw": "median 0.19 m, max 0.36 m over 61 pairs"
+    },
+    {
+     "name": "the joiner came back on dry ground, the same place on both screens",
+     "ok": true,
+     "saw": "host sees -6.5,9.27,-4; joiner -6.5,9.27,-4; ground 9.20890153751133"
+    },
+    {
+     "name": "scores agree",
+     "ok": true,
+     "saw": "[[\"Hosta\",4],[\"Joan\",0]]"
+    },
+    {
+     "name": "no page errors",
+     "ok": true,
+     "saw": "none"
+    }
+   ],
+   "turns": [
+    {
+     "n": 0,
+     "who": "host",
+     "edge": 4,
+     "fire": {
+      "miss": 0.41,
+      "power": 0.4,
+      "solved": 0.415
+     }
+    },
+    {
+     "n": 1,
+     "who": "joiner",
+     "fire": {
+      "miss": 9.94,
+      "power": 0.98,
+      "solved": 0.64
+     }
+    }
+   ],
+   "flight": {
+    "into": "water",
+    "end": [
+     -19.42,
+     -1.61,
+     -16.83
+    ],
+    "flights": {
+     "host": 1,
+     "joiner": 1
+    }
+   }
+  }
+ },
+ "verify": "blast-isles: node builder/tools/verify.mjs <dir> \u2192 PASS gates 6/6, measures 22/22 (175 s)",
+ "strip": "two-players-strip.jpg: rows in time order (about 0.32 s apart through the shot), host left, joiner right: the aim and its preview, the shell, the blast and crater, the critter thrown off the cliff, tumbling over the sea, the splash and the banner",
+ "read": "Reads as physical comedy in still frames: the blast, the crater and debris, a critter sent sailing off the cliff into the sea, the Splash! banner, the same on both screens. Weak spots: the thrown body is small in frame during its flight; the splash column is brief; the creature tumble spins little; on the joiner page a duplicate band of the top HUD showed in two screenshots while a toast was up (not chased: possibly the headless capture). Not judged by a person."
+}

@@ -66,7 +66,7 @@ export const MANIFEST = {
   uses: 'mechanics it works with when the game has them (never refused)',
   owns: 'params => [{res, why, free, shared?}]: the resources it claims (input.<action>, player.socket.<name>, player.control, round.end, hud.scoreboard); create refuses two owners of one resource unless every claim on it is shared, and says how each lets go (free)',
   state: '{key, fields}: its key in window.__game.snapshot().shared (null when it keeps none) and how to read each field',
-  events: '[{name, on, args, when, quiet?}]: the callbacks rules.js can hook, who hears them and with what. The kit\'s event log (kit/core/events.js) records each one, and verify gate C (measure 38) looks for its answer on the screen of every player it names; quiet: true when nothing on screen answers it by itself (fair play refusing a hit)',
+  events: '[{name, on, args, when, quiet?, play?}]: the callbacks rules.js can hook, who hears them and with what. The kit\'s event log (kit/core/events.js) records each one, and verify gate C (measure 38) looks for its answer on the screen of every player it names; quiet: true when nothing on screen answers it by itself (fair play refusing a hit); play: what it is in play (score, hit, knockout, pickup, goal, death, combo, move, tag, blast, attempt) for the play feed (kit/core/play.js)',
   sync: '{owner: host | copy | none, how}: which copy decides',
   note: 'at most three lines for the build agent, read only by builds whose spec uses the part',
   stub: '{as, worked, traps}: its variable in rules.js, one worked line, its own traps; create writes rules.js from these and `events`',

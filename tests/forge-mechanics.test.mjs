@@ -6,9 +6,11 @@ import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { REPO } from '../builder/tools/lib/paths.mjs';
-import { placeSpots } from '../components/pickup/impl/forge/index.js';
+import { importLayer } from '../builder/tools/lib/kit-import.mjs';
 import { planWaves, tables as waveTables } from '../components/waves/impl/forge/index.js';
 import { forgeKitClosure, kitFiles } from '../builder/tools/lib/vendor.mjs';
+// the pickup's forge implementation imports the shared placement as a game sees it (gf/three/world/placement.js)
+const { placeSpots } = await importLayer(join(REPO, 'components/pickup/impl/forge/index.js'));
 
 const FORGE_IMPLS = ['health', 'loot', 'pickup', 'waves'];
 
@@ -33,16 +35,21 @@ test('the loader: a forge implementation runs, a mechanic without one stays a st
   assert.deepEqual(mech.observe().map(m => [m.id, m.standin]), [['pickup', false], ['tag', true], ['bad', true]]);
 });
 
-test('pickup on forge: spots go round the middle, clear of the walls, never on a floor slab', () => {
+test('pickup on forge: spots on open floor every seat reaches, clear of the walls, never on a wall or in a walled-off room', () => {
   const ground = { min: [-21, -1, -21], max: [21, 0, 21] };
   const wall = { min: [2, 0, -1], max: [6, 3, 1] };
-  const at = placeSpots(4, { r: 4, turn: Math.PI / 2, boxes: [ground, wall], bounds: [-12, -12, 12, 12] });
-  assert.equal(at.length, 4);
+  // a closed room in the north-west corner: walls a jump cannot pass
+  const room = [{ min: [-9, 0, -9], max: [-3, 3, -8.6] }, { min: [-9, 0, -3.4], max: [-3, 3, -3] }, { min: [-9, 0, -9], max: [-8.6, 3, -3] }, { min: [-3.4, 0, -9], max: [-3, 3, -3] }];
+  let q = 7; const rng = () => ((q = (q * 16807) % 2147483647) / 2147483647);
+  const world = { size: [24, 24], colliders: [ground, wall, ...room], spawns: [[0, 0.05, 8], [4, 0.05, 8]] };
+  const at = placeSpots(6, { world, rng });
+  assert.equal(at.length, 6);
   for (const s of at) {
+    assert.equal(s.y, 0, 'on the floor');
     assert.ok(!(s.x > wall.min[0] - 0.6 && s.x < wall.max[0] + 0.6 && Math.abs(s.z) < 1.6), `spot ${JSON.stringify(s)} is in the wall`);
-    assert.ok(Math.hypot(s.x, s.z) > 0.5, 'a spot is never left at the middle when the ring has room');
+    assert.ok(!(s.x > -9 && s.x < -3 && s.z > -9 && s.z < -3), `spot ${JSON.stringify(s)} is in the closed room`);
   }
-  assert.ok(new Set(at.map(s => `${s.x},${s.z}`)).size === 4, 'four different places');
+  assert.ok(new Set(at.map(s => `${s.x},${s.z}`)).size === 6, 'six different places');
 });
 
 test('waves on forge: the params make the core\'s plan, and a spec\'s own waves win', () => {

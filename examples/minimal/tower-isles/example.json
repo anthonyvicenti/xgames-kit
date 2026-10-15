@@ -1,0 +1,10 @@
+{
+  "title": "Tower Isles",
+  "summary": "An artillery party round on a composed level: a ruined tower on the middle island with a plaza round it, a gatehouse on the next island and a bridge between them, all of them ground that bombs carve on every screen; the seats in pairs that see each other and the tower.",
+  "verified": {
+    "result": "PASS gates 6/6, measures 22/22",
+    "kit": "xgames-kit stream/compose (worlds/terrain/compose.mjs, piece.mjs, worlds/compose.mjs)",
+    "date": "2026-10-14",
+    "how": "node bin/gamesfun.mjs create <dir> --from tower-isles, then node builder/tools/verify.mjs <dir> (186 s) under gpu-run.sh on Linux with a desktop GPU; tests/terrain-two-players.mjs <dir> --landmark: host and joiner over WebRTC hold the same ground after real bomb clicks aimed at the tower, the tower lost the same samples on both screens, a late joiner gets it (9 of 9 steps)"
+  }
+}

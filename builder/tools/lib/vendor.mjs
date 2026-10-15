@@ -219,19 +219,24 @@ export async function optionalModuleDirs() {
 
 // What a game's gf/three/ holds: the kit's code and licences, never its docs, tests, the mechanics' fixtures or the
 // registry's manifests (mechanics/<id>/mechanic.json, loops/<id>/loop.json: the catalog's, read by the tools)
-const kitSkip = rel => /(^|\/)(fixture|fixtures|tests?|evidence)(\/|$)/.test(rel) || /^(mechanics\/[a-z0-9-]+\/mechanic|loops\/[a-z0-9-]+\/loop)\.json$/.test(rel) || /\.test\.m?js$/.test(rel) || (/\.md$/i.test(rel) && !/^(LICEN[CS]E|NOTICE|THIRD_PARTY)/i.test(rel.split('/').pop()));
+// an optional module's stand-in pictures (vfx/standin/) reach a game through the module's files() into assets/, only the
+// ones its config uses (a game whose effect style has no fireball never carries the flipbook): never through gf/three/
+const kitSkip = rel => /^vfx\/standin\//.test(rel) || /(^|\/)(fixture|fixtures|tests?|evidence)(\/|$)/.test(rel) || /^(mechanics\/[a-z0-9-]+\/mechanic|loops\/[a-z0-9-]+\/loop)\.json$/.test(rel) || /\.test\.m?js$/.test(rel) || (/\.md$/i.test(rel) && !/^(LICEN[CS]E|NOTICE|THIRD_PARTY)/i.test(rel.split('/').pop()));
 
 // a scenic-3d game's look and world are gf/scenic's, so gf/three/ leaves the standard-3d ones out (CONTRACT §8); it keeps
 // the world pieces both profiles share, which gf/scenic/world imports as ../../three/world/…: the places vocabulary, the one
-// collider list and the layout helpers they stand on (open builder wave 10)
-export const sharedWorld = rel => rel.startsWith('world/places/') || rel === 'world/colliders.js' || rel === 'world/layout.js';
+// collider list and the layout helpers they stand on (open builder wave 10), and placement (where things may be put),
+// which every three.js game carries (the flat profile's world attaches it too)
+// (placement stands on the walk grid, walk.mjs, and joins a world's areas with connectors, connect.mjs and pads.js)
+export const EVERY_WORLD = ['world/placement.js', 'world/walk.mjs', 'world/connect.mjs', 'world/pads.js'];
+export const sharedWorld = rel => rel.startsWith('world/places/') || rel === 'world/colliders.js' || rel === 'world/layout.js' || EVERY_WORLD.includes(rel);
 // a forge game's gf/three/ is the forge closure alone (forgeKitClosure), a vista game's the vista closure; a three.js game
 // never carries either boot
 const closed = modules => modules.runtime === 'forge' || modules.runtime === 'vista';
 const closureOf = modules => (modules.runtime === 'forge' ? forgeKitClosure() : modules.runtime === 'vista' ? vistaKitClosure() : null);
 const scenicOf = modules => modules.runtime === 'three' && modules.profile === 'scenic-3d';
 const dropModule = (modules, rel, closure = null, optional = new Set()) => (closed(modules) ? !closure?.includes(rel) : rel === 'core/boot-forge.js' || rel === 'core/boot-vista.js')
-  || ((!modules.look || scenicOf(modules)) && rel.startsWith('look/')) || ((!modules.world || scenicOf(modules)) && rel.startsWith('world/') && !(scenicOf(modules) && sharedWorld(rel))) || (!modules.character && rel.startsWith('character/'))
+  || ((!modules.look || scenicOf(modules)) && rel.startsWith('look/')) || ((!modules.world || scenicOf(modules)) && rel.startsWith('world/') && !EVERY_WORLD.includes(rel) && !(scenicOf(modules) && sharedWorld(rel))) || (!modules.character && rel.startsWith('character/'))
   || (rel.startsWith('mechanics/') && !(modules.mechanics ?? []).includes(rel.split('/')[1]))
   || (/^mechanics\/[^/]+\/impl\/[^/]+\//.test(rel) && rel.split('/')[3] !== modules.runtime)
   || (optional.has(rel.split('/')[0]) && !(modules.extras ?? []).includes(rel.split('/')[0]));

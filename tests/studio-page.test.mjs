@@ -123,8 +123,8 @@ test('the loop as the page shows it: the ledger in the person\'s words with each
   assert.ok(v.promises.length > 10 && v.promises.every(p => p.status === 'proven'));
   assert.equal(v.parts.economy.state, 'waiting-for-approval');
   assert.equal(v.parts.economy.by, 'their answer');
-  assert.deepEqual(stageOf(delivered), { index: 9, waiting: false, done: true });
-  assert.equal(STAGES.length, 10);
+  assert.deepEqual(stageOf(delivered), { index: 10, waiting: false, done: true });
+  assert.equal(STAGES.length, 11);
 });
 
 test('tune: only safe value slots, staged edits, all "reload"', () => {

@@ -36,6 +36,17 @@ export function createDebris(ctx, field, { color = '#8a5a36', top = '#7cc444', s
       });
     }
   }
+  /** Ground that let go (a settle): a lump at each of its points, dropping with a little spin and spread. */
+  function crumble(points, { size = 0.5 } = {}) {
+    for (const q of points) {
+      if (live.length >= cap) live.shift();
+      live.push({
+        p: [q[0] + (rnd() - 0.5) * size, q[1], q[2] + (rnd() - 0.5) * size], v: [(rnd() - 0.5) * 1.5, -0.5 - rnd() * 1.5, (rnd() - 0.5) * 1.5],
+        rot: [rnd() * 6, rnd() * 6, rnd() * 6], spin: [(rnd() - 0.5) * 5, (rnd() - 0.5) * 5, (rnd() - 0.5) * 5],
+        size: size * (1.1 + rnd() * 0.9), age: 0, life: 2.4 + rnd() * 1.2, tint: rnd() < 0.25 ? 1 : 0, shade: 0.7 + rnd() * 0.35,
+      });
+    }
+  }
   function update(dt) {
     let k = 0;
     for (let i = live.length - 1; i >= 0; i--) {
@@ -64,5 +75,5 @@ export function createDebris(ctx, field, { color = '#8a5a36', top = '#7cc444', s
     mesh.count = k;
     if (k) { mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true; }
   }
-  return { mesh, burst, update, get count() { return live.length; }, setColors(s, t) { if (s) soil.set(s); if (t) grass.set(t); } };
+  return { mesh, burst, crumble, update, get count() { return live.length; }, setColors(s, t) { if (s) soil.set(s); if (t) grass.set(t); } };
 }

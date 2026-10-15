@@ -170,7 +170,8 @@ export function create(ctx, params = {}) {
     if (!z) { if (portal) portal.visible = false; return; }
     const at = z.at ?? [0, 0, 0], x = at.x ?? at[0] ?? 0, zz = at.z ?? at[2] ?? 0;
     const c = levelCenter(i);
-    const put = g => { g.position.set(x, 0, zz); g.rotation.y = Math.atan2(c.x - x, c.z - zz); g.visible = true; };
+    // it stands on the ground there (worlds/placement.js world.groundAt), never a floor at y = 0
+    const put = g => { g.position.set(x, ctx.world.groundAt?.(x, zz, Number.isFinite(at.y ?? at[1]) ? (at.y ?? at[1]) + 1 : Infinity) ?? (at.y ?? at[1] ?? 0), zz); g.rotation.y = Math.atan2(c.x - x, c.z - zz); g.visible = true; };
     if (portal) put(portal);
     else portalLoading ??= makePortal().then(g => { portal = g; put(g); });
   }
@@ -212,6 +213,12 @@ export function create(ctx, params = {}) {
 
   const api = {
     id, params: P,
+    /** The portal a player must get to once it opens (gate D's reach leg, window.__game.objectives()). */
+    objectives() {
+      const st = api.state(); if (!st.portal) return [];
+      const { x, z } = st.portal, y = ctx.world.groundAt?.(x, z) ?? 0;
+      return [{ kind: 'portal', id: `portal:${st.level}`, label: 'portal', x, y, z, present: true, open: st.portal.open, radius: st.portal.r }];
+    },
     /** Every copy: {level (0-based), count, phase, boss (this level is the boss's), portal: {x, z, r, open} | null, left (enemies), inPortal, seconds (the portal's wait)}. */
     state() {
       const s = ctx.host ? run : { l: S?.l ?? 0, ph: S?.ph ?? PH.fight, t: S?.t ?? 0 };

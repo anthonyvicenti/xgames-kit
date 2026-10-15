@@ -1,0 +1,13 @@
+{
+ "base": "berry-isles",
+ "why": "The same class from the other side (2026-10-14): a berry on real ground, in plain sight, that nobody can get to, here walled off by a ring of raised ground higher than a hop. Gate D must fail it on measure 6, naming the berry, where it is and that it is walled off.",
+ "evidence": "builder/gates/evidence/2026-10-14-reach.json",
+ "files": {
+  "rules.js": "rules.js"
+ },
+ "mustFail": [
+  "D"
+ ],
+ "measure": 6,
+ "detail": "pickup:0 at \\(.*\\): walled off"
+}

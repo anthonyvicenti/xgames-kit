@@ -1,17 +1,18 @@
 // Places in a sea-islands world (sea.js) for a camera that must show one kind of view (the look judge's place requests:
-// __gfLook.view({ where }) asks ctx.world.place(where)): the outdoor lookouts (lookouts.mjs) over the layout's ground
+// __gfLook.view({ where }) asks ctx.world.lookout(where)): the outdoor lookouts (lookouts.mjs) over the layout's ground
 // height, within the play island and its shore. Pure.
 //
-//   placeFor(layout, where) → { eye, target, fov, setting, where, score } | null
+//   placeFor(layout, where, { clear }) → { eye, target, fov, setting, where, score } | null (clear: the world's ray,
+//   lookouts.mjs viewClear: a view blocked near the camera is passed over)
 import { lookout } from './lookouts.mjs';
 import { heightAt, edgeOf } from './sea.js';
 
-export function placeFor(layout, where) {
+export function placeFor(layout, where, { clear = null } = {}) {
   if (where === 'beach') return beachPlace(layout);
   const main = (layout.islands ?? []).find(i => i.play) ?? layout.islands?.[0];
   const R = (main?.shape?.radius ?? 30) * 1.4;
   const c = main?.at ?? [0, 0, 0];
-  return lookout({ heightAt: (x, z) => heightAt(layout, x, z), seaLevel: layout.sea?.level ?? 0, bounds: [c[0] - R, c[2] - R, c[0] + R, c[2] + R], seats: (layout.spawns ?? []).map(s => ({ x: s[0], y: s[1], z: s[2] })) }, where);
+  return lookout({ heightAt: (x, z) => heightAt(layout, x, z), seaLevel: layout.sea?.level ?? 0, bounds: [c[0] - R, c[2] - R, c[0] + R, c[2] + R], seats: (layout.spawns ?? []).map(s => ({ x: s[0], y: s[1], z: s[2] })), clear }, where);
 }
 
 /** The play island's beach (the sand collar islands.js draws at the cliff's foot, outside the land's height): on the

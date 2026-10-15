@@ -1,0 +1,63 @@
+{
+  "schema": "xgk-evidence/1",
+  "date": "2026-10-14",
+  "stream": "objective-art (the gameplay layer)",
+  "creator": "\"We were supposed to collect berries, but there were no berries anywhere. I think in the ocean I saw some boxes but those are impossible to get.\" (games.fun research/foundations/evidence/creator-looks-playtest-2026-10-14.json)",
+  "rootCause": "After stream reach put every berry on reachable ground, the composed levels' prop.berry slot still held the kit's stand-in crate (CC0, standin-bake): create's prop lookup matched the library by the prop's name only, found no berry, fell back to crate.glb with a note, and no gate looked at what an objective is drawn with (measure 14 held only props the spec asked to be generated). The class: an objective, pickup or goal prop that ships as a stand-in or as an unrelated model.",
+  "fix": {
+    "manifests": "A mechanic manifest says which params draw its objectives (registry/schema/mechanic.schema.json `objectives`: pickup and carry `prop` (empty: the first gameplay prop), race `prop`, loot coin/potion/chest, levels portal); a spec prop with goal: true is one too. builder/art/objectives.mjs objectiveProps reads them; nothing names a game, a prop or a mechanic.",
+    "artStep": "builder/art/objectives.mjs objectiveArt: the spec's own choice (fill library/provided) stays; else the library by meaning (resolve.mjs `means`: the thing in an asset's id or tags, or a word of its family in library/words.json; a shape the look takes, coverage styleFit shape >= 0.5; the look's own packs first); else a maker in the look's style (generateSlot `style`: a concept from the look's style anchor by image-to-image, then image-to-3D, through the Meshy ledger and the wave's cap; only with yes); else the library's model that means it in any shape; else the stand-in, recorded in game/generated.json with a delivery line. create runs it library-only; the loop runs it once before the first build round (kit tool objectiveArt; makers on when a key is there, GAMESFUN_ART_MAKE=0 off); `gamesfun art objectives <game> [--yes]` runs it by hand.",
+    "gate": "Gate F, measure 14 widened (no numbered check, no prompt rule): an objective's prop that is a stand-in, or a library model whose id and tags never name the thing, fails and names the slot; a failure carries area art (the ladder's generate rung). Excused only by a try that did not land (failed, refused, timeout) and a delivery line naming it; 'skipped' (no maker allowed) is no excuse.",
+    "library": "kenney-food-kit gains strawberry, cherries and grapes (Kenney Food Kit, CC0, from the pack's pinned zip sha256 cdad9085…; baked to metres with meshy-prop --fit, ingested with art ingest; bytes in library/defaults). library/words.json: families berry and fruit."
+  },
+  "levels": {
+    "how": "copies of the three reach-fixed levels (games/ in this worktree; the originals untouched), the art step run on each (gamesfun art objectives, no maker needed), served with gamesfun dev and played in GPU Chrome (ANGLE on OpenGL) at 1920x1080: ?seed=7&bots=0, a scripted player walks to the nearest berry by window.__game.routeTo with real keys (W A S D relative to the view, Space where the route jumps, E within reach), a screenshot facing the berry from about 4 m, then the score read. A first run on sunny-castle-isles with 3 bots also took a berry (score 0 → 1); its screenshots missed the berry when a bot had taken it first.",
+    "artStep": "every level: prop.berry was the kit stand-in crate.glb → the library's kenney-food-kit/strawberry (in shape for each look: styleFit shape 0.68; colours moved by the runtime's style pass). assets.json assembled again: only the slot's licence lines changed. Measure 14: pass on all three (the originals fail it: 'the objective \"berry\" ... is the kit stand-in crate.glb'). Measure 1 fails on the copies and on the originals alike (look.levels.*.harmonize.outline and look.level enums lack constraints.options): not this stream's, left as it was.",
+    "results": {
+      "sunny-castle-isles": {
+        "port": 5189,
+        "berries": "10 present, 10 reachable",
+        "nearestFromSeat": "10.3 m",
+        "screenshot": "berry 4.3 m ahead, on screen, still present after the shot",
+        "score": "0 → 1",
+        "consoleErrors": 0
+      },
+      "violet-dusk-fortress": {
+        "port": 5190,
+        "berries": "10 present, 10 reachable",
+        "nearestFromSeat": "28.5 m",
+        "screenshot": "berry 4.4 m ahead, on screen (most of the level's berries sit together on the bridge)",
+        "score": "0 → 2",
+        "consoleErrors": 0
+      },
+      "sunset-canyon-sands": {
+        "port": 5196,
+        "berries": "10 present, 10 reachable",
+        "nearestFromSeat": "22.1 m",
+        "screenshot": "berry 4.2 m ahead, on screen",
+        "score": "0 → 1",
+        "consoleErrors": 0
+      }
+    }
+  },
+  "meshy": {
+    "spent": 36,
+    "cap": 150,
+    "wave": "objective-art-2026-10-14",
+    "what": "One real run of the maker path the art step takes when the library has nothing: generateSlot with the sunny-castle-isles style anchor (looks-artillery-levels/style-anchor-sunny-castle-isles), words 'a big shiny red berry', loose (no base): image-to-image concept 6 + image-to-3D 30 credits, 6,244 triangles, passed its budget validator. Made on a scratch copy; kept in the private pack game-sunny-meshy (LicenseRef-Meshy-Paid, never pushed). Not in the served levels: the library's strawberry comes first by the art order.",
+    "tasks": [
+      "01a13cfe-a6cd-77a8-9e07-05ddca5fd7fe (image-to-image)",
+      "01a13cfe-e872-73aa-b51a-775a73ce0a63 (image-to-3d)"
+    ]
+  },
+  "regressions": "objective-standin (F · 14: the kit's stand-in crate in the berry slot), objective-wrong-model (F · 14: a CC0 barrel from the library in the berry slot), control objective-in-library (create's art step: the library's strawberry, passes 14). The run with every regression: see `record`.",
+  "examples": "Every three example made by create and held to measure 14: critter-lob (berry → kenney-food-kit/strawberry), soak-squad (bucket → kenney-survival-kit/bucket), coin-hop (coin → flat-standins-drawn/coin), market-day (its own coin picture) and the rest with no objective props pass. Before the change critter-lob's berry was the stand-in crate.",
+  "notes": [
+    "Not judged by the creator: these are the stream's own checks.",
+    "The served levels use a low-poly CC0 strawberry; the made Meshy berry (glossier, closer to 'a big shiny red berry') is one command away: gamesfun slots set prop.berry --file <its file> or the art step with yes after the strawberry is set aside.",
+    "The loop's art step spends on the person's own Meshy key when one is there (the creator: cost never stops a build); GAMESFUN_ART_MAKE=0 turns makers off."
+  ],
+  "record": {
+    "regress": "node builder/gates/regress.mjs --record (GPU queue): GREEN 26/26 in 1450 s, last-green.json recorded (23 earlier regressions unchanged in verdict; the three new ones as intended)"
+  }
+}

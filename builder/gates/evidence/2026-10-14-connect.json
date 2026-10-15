@@ -1,0 +1,58 @@
+{
+ "schema": "xgk-evidence/1",
+ "date": "2026-10-14",
+ "stream": "connect (the gameplay layer: making all area reachable)",
+ "creator": "\"Sunny Castle is good enough. But still some flags we talked about before, like making all area reachable and more dynamic activities like PvP throwing explosions and rag dolls.\" (this stream: the reachable part; PvP is the designer step's)",
+ "measured": {
+  "how": "the walk grid's regions (worlds/walk.mjs walk.regions: ground the seats cannot get to and traps they cannot leave, strongly connected; window.__game.regions()) read in GPU Chrome at the start of play, judged as gate D's reach leg judges them (worlds/connect.mjs judgeAreas). 'Before' is the same world with config/world.json reach.connect false.",
+  "sunnyCastleAsPlayed": "the copy of the composed level the creator played (kit before this stream): 53 regions out of the seats' reach; the one worth going to was the west island, 472 m² with four castle-wall ruins, palms, pines and a crate, 14.1 m of water from the seats' ground (no bridge). The generator's own analysis found more: the two bridged islands and the ring under the castle's plateau were traps (a player who dropped off the plateau to walk to them could never climb back).",
+  "sunnyCastleNow": "a pad from the plateau to the east island and back, a pad from the south ring back up, the level's own arched bridge to the west island (with earthen approaches onto its deck); every area worth going to reached; caves the colliders' grid reads under cliffs reported, not failed",
+  "freshFromPrompt": {
+   "how": "the kit's own headless loop (gamesfun build) from one prompt each, stopped by its own process group when it reached the build round (ledger, foundation, pitch, spec, create and the look done by the loop, nothing hand-edited); the world is what create made; the game copies were then served with create's stub rules (the build round had not run). Copies made without the loop's state folder.",
+   "islands": {
+    "prompt": "round little critters lobbing coconuts at each other across a chain of tropical islands, with an old stone fort on the biggest island and treasure chests to grab",
+    "world": "terrain islands (spec world.reach written by the spec round)",
+    "before": "3 regions worth going to out of reach (the east island 311 m² and the west island 266 m² across 12.4 m and 10.6 m of water; the lower ground holding seat 2, a trap) and the seats split",
+    "after": "0; connectors: 2 land bridges (the ground's own arched deck), a ramp back up from the lower ground, a ramp cut into the fort's court",
+    "walked": "a scripted player with real keys (W A S D relative to the view, routed by window.__game.routeTo) walked to the west island over the bridge in 10.9 s and back up the ramp in 17.2 s, to the east island in 17.7 s and back in 23.3 s, into the fort in 2.7 s"
+   },
+   "canyon": {
+    "prompt": "a desert canyon scramble: friends race over mesas, rope bridges and gorges collecting glowing gems before sunset, shoving each other off ledges",
+    "world": "terrain cliffs; the spec round limited the connectors to bridge and ramp",
+    "before": "6 regions out of reach (three mesas across 7.6–11.2 m of water, three seats' grounds as traps) and the seats split",
+    "after": "1 left: the ground holding seat 6 (273 m²), a trap across 10.6 m of water no bridge or ramp fits (pads were not allowed by the spec); the gate fails it, naming it"
+   },
+   "blocks": {
+    "prompt": "friends explore a blocky mountain valley with caves and cliffs, and build a lookout tower together on the highest peak",
+    "world": "voxel with the build mechanic",
+    "before": "7 regions the walk cannot reach",
+    "after": "the same 7, passed: the build mechanic says players build their own way (makesWay); no connector is made in a block world"
+   }
+  }
+ },
+ "fix": "worlds/connect.mjs (the rule: worth, apart, the cheapest fitting connector, the planner that takes back a connector that does not join both ways, the gate's verdict) + worlds/terrain/connect.mjs (connectors in the terrain's distance field at generation: shallows, ramps cut into or along cliffs, the level's bridge model or a land bridge, pad discs, closing caves nothing leads out of) + worlds/pads.js (launch pads on any world at the first ready walk grid; controller.carry upright) + worlds/walk.mjs (regions, traps, links, open-air drops). Backdrop islands stand 30 m of water out (worlds/sea.js); set dressing and generated seats only on ground the seats get to and back from. Config reach {connect, kinds, apart} in config/world.json, spec world.reach.",
+ "gate": "Gate D measure 6's reach leg widened (no new check): regions worth going to neither reached nor kept apart with a reason fail, named with where and why; seats split without reach.apart 'seats' fail; backdrop islands nearer than 30 m of water fail. Caves the colliders' grid reads as traps are reported, not failed (it sees each collider once down a column).",
+ "regressions": {
+  "island-no-connector": "fails D·6 (ramps only: water)",
+  "ruin-on-cliff": "fails D·6 (connectors off: a cliff 3.1 m)",
+  "areas-joined": "control passes D·6"
+ },
+ "fixedOnTheWay": "worlds/terrain/compose.mjs crashed on a composition with landmarks and no bridges (the defaults' bridges is a count): a fresh world from the islands prompt did not load; the pieces are now lists",
+ "notDone": [
+  "ladders and climbable faces: no controller climbs; not offered",
+  "the colliders' walk grid and the generator's field disagree on caves at the foot of cliffs; reported by the gate, closed where the generator sees them",
+  "connectors' art: pads are drawn in the look's accent (procedural); ramps and land bridges take the terrain material; no slot of their own"
+ ],
+ "verified": {
+  "regressions": "after merging main 62b4410: node builder/gates/regress.mjs --record GREEN 33/33 (2225 s), last-green.json recorded (before the merge: 29/29, and the nine D·6 regressions 9/9 after the last walk-grid change)",
+  "npmTest": "after the merge: 1296 tests, 1273 pass, 22 skipped, 1 fail before recording (the last-green fingerprint, now recorded)",
+  "examples": {
+   "ex-tower-isles": "PASS 6/6, 22/22",
+   "ex-blast-isles": "PASS 6/6, 22/22",
+   "ex-crater-isles": "gate D measure 6 FAIL twice, on the play leg only (nothing meaningful for 33.6 s in 3 of 5 rounds; score 73.9 advisory); its reach leg passes (2 bridges, 2 caves closed). The reach stream recorded the same play leg failing on 1ecd42c and main 297ebe2 and passing on f3c9bcb; whether its islands now joined by bridges make the rounds quieter is not settled",
+   "ex-critter-lob": "PASS 6/6, 22/22",
+   "others": "the areas judge (window.__game.regions + judgeAreas, in GPU Chrome) passes on soak-squad, giant-four, lights-race, table-four, block-valley (build makes its own way), coin-hop, market-day, isle-run; their full verify was stopped twice when the kit copy changed under it (measure 2 failed on stale copies) and not rerun"
+  },
+  "composedLevels": "areas judge passes on copies of sunny-castle-isles, violet-dusk-fortress, sunset-canyon-sands (connect on)"
+ }
+}

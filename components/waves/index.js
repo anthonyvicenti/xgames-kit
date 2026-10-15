@@ -213,6 +213,12 @@ export function create(ctx, params = {}) {
   const radiusOf = v => (typed ? 0.45 * Math.max(0.8, Math.min(1.8, heightOf(v) / 1.7)) : 0.45);
   // the current level's circle (scenic worlds, CONTRACT §8): enemies keep on its island
   const levelCircle = () => { const lv = ctx.world?.levels?.[ctx.world.level ?? 0]; return lv ? { x: lv.at?.[0] ?? 0, z: lv.at?.[2] ?? 0, r: Math.max(2, (lv.radius ?? 10) - 0.9) } : null; };
+  // the world's own ground under an enemy (worlds/placement.js world.groundAt): enemies walk the land as it is (a hill,
+  // a bridge, a roof), never a flat floor at y = 0; every copy works it out from the same world. near: the height it
+  // stood at, so one on a bridge stays on the bridge
+  const groundY = (x, z, near = Infinity) => ctx.world.groundAt?.(x, z, Number.isFinite(near) ? near + 0.6 : Infinity) ?? ctx.world.groundAt?.(x, z) ?? (Number.isFinite(near) ? near : 0);
+  // a step an enemy may take: onto ground a body can stand on (not into the sea, off a cliff, up a wall)
+  const canStep = (e, x, z) => !ctx.world.isWalkable || !ctx.world.isWalkable(e.x, e.z, (e.y ?? 0) + 0.5) || ctx.world.isWalkable(x, z, (e.y ?? 0) + 0.5);
   const keepIn = (x, z) => {
     const c = typed ? levelCircle() : null;
     if (c) { const dx = x - c.x, dz = z - c.z, d = Math.hypot(dx, dz); if (d > c.r) return { x: c.x + dx / d * c.r, z: c.z + dz / d * c.r }; return { x, z }; }
@@ -277,7 +283,7 @@ export function create(ctx, params = {}) {
         if (typed) await arm(v);
       } else if (typed) v.obj = typedStandin(v);
       else if (templ) v.obj = templ.obj.clone(true);
-      if (v.obj) { v.obj.rotation.order = 'YXZ'; root.add(v.obj); v.obj.position.set(v.x, 0, v.z); }
+      if (v.obj) { v.obj.rotation.order = 'YXZ'; root.add(v.obj); v.obj.position.set(v.x, v.y ?? groundY(v.x, v.z), v.z); }
       if (v.gone && v.obj) { v.obj.removeFromParent(); v.character?.dispose?.(); }      // it died while its body loaded
     } catch (e) { console.warn('waves: enemy body failed', e); }
     v.making = false;
@@ -328,11 +334,11 @@ export function create(ctx, params = {}) {
     const s = Math.max(0.02, smooth(share));
     if (kind === 'lane' || kind === 'line') {
       const len = kind === 'lane' ? T.lungeSpeed * T.active * 0.62 + 1 : Math.min(T.reach, v.aimLen ?? T.reach);
-      g.position.set(v.x, 0.05, v.z); g.rotation.set(0, v.atkYaw ?? v.yaw, 0);
+      g.position.set(v.x, (v.y ?? 0) + 0.05, v.z); g.rotation.set(0, v.atkYaw ?? v.yaw, 0);
       edge.scale.set(1, 1, len); fill.scale.set(1, 1, len * s);
     } else {
       const R = kind === 'ring' ? T.reach + 0.4 : T.reach + 0.35;
-      g.position.set(v.x, 0.05, v.z); g.rotation.set(0, v.atkYaw ?? v.yaw, 0);
+      g.position.set(v.x, (v.y ?? 0) + 0.05, v.z); g.rotation.set(0, v.atkYaw ?? v.yaw, 0);
       edge.scale.setScalar(R); fill.scale.setScalar(R * s);
     }
   }
@@ -346,19 +352,20 @@ export function create(ctx, params = {}) {
       const zone = ctx.world.zone?.('arena');
       if (zone) p = arenaPoint({ at: zone.at, size: zone.size }, () => ctx.rng(), { avoid: ctx.players.list().filter(q => q.alive !== false).map(q => ({ x: q.position.x, z: q.position.z })), away: 6 });
     }
-    p ??= ctx.world.entry?.(() => ctx.rng()) ?? edgePoint(A, () => ctx.rng());
+    // else on ground every seat reaches, nearest a point on the play area's edge, away from the players
+    p ??= ctx.world.entry?.(() => ctx.rng()) ?? ctx.world.place?.('enemy', 1, { prefer: edgePoint(A, () => ctx.rng()), away: 0, clear: 0.5, exclude: ctx.players.list().filter(q => q.alive !== false).map(q => ({ x: q.position.x, z: q.position.z, r: 6 })) })?.[0] ?? edgePoint(A, () => ctx.rng());
     if (typed) {
       const ty = Number.isInteger(opts.ty) ? opts.ty : pickType(TYPES, enc.level, () => ctx.rng(), enc.mix);
       const crowd = opts.still ? 1 : 1 + V('hpPerPlayer') * Math.max(0, ctx.players.list().length - 1);
       const T = TYPES[ty], hp = Math.max(1, Math.round(T.hp * (opts.hpScale ?? enc.hpScale) * crowd * (1 + V('hpGrowth') * 0.25 * Math.max(0, director.wave - 1))));
       const c = keepIn(p.x, p.z);
-      const e = { id: nextId++, x: c.x, z: c.z, hp, max: hp, speed: at && opts.still ? 0 : T.speed * (0.92 + ctx.rng() * 0.16) * enc.speedScale, wave: director.wave, atk: 0, side: ctx.rng() < 0.5 ? 1 : -1, hits: 0, shots: 0, stun: 0, demo: !!opts.still,
+      const e = { id: nextId++, x: c.x, y: groundY(c.x, c.z, p.y), z: c.z, hp, max: hp, speed: at && opts.still ? 0 : T.speed * (0.92 + ctx.rng() * 0.16) * enc.speedScale, wave: director.wave, atk: 0, side: ctx.rng() < 0.5 ? 1 : -1, hits: 0, shots: 0, stun: 0, demo: !!opts.still,
         ty, st: ST.move, t: 0, cd: 0.6 + ctx.rng() * 0.9, token: false, facing: Math.atan2(-c.x, -c.z), atkYaw: 0, hitDone: false, broken: false, summoned: !!opts.summoned };
       enemies.set(e.id, e);
       for (const fn of L.spawn.slice()) try { fn({ enemy: pub(e) }); } catch (er) { console.error(er); }
       return e;
     }
-    const e = { id: nextId++, x: p.x, z: p.z, hp: st.hp, max: st.hp, speed: at ? 0 : st.speed * (0.9 + ctx.rng() * 0.2), wave: director.wave, atk: 0, side: ctx.rng() < 0.5 ? 1 : -1, hits: 0, shots: 0, stun: 0, demo: !!at };
+    const e = { id: nextId++, x: p.x, y: groundY(p.x, p.z, p.y), z: p.z, hp: st.hp, max: st.hp, speed: at ? 0 : st.speed * (0.9 + ctx.rng() * 0.2), wave: director.wave, atk: 0, side: ctx.rng() < 0.5 ? 1 : -1, hits: 0, shots: 0, stun: 0, demo: !!at };
     enemies.set(e.id, e);
     for (const fn of L.spawn.slice()) try { fn({ enemy: pub(e) }); } catch (er) { console.error(er); }
     return e;
@@ -390,16 +397,16 @@ export function create(ctx, params = {}) {
       // a player who is in the way still gets attacked when the goal is the target
       if (goal.target && V('aggro') === 'target') { const q = nearestOf(e.x, e.z, players.map(p => ({ x: p.position.x, z: p.position.z, player: p }))); if (q && q.dist < V('attackRange')) goal = q.target; }
       // through the doors when the goal is in another room (world.via; null in one room or outdoors)
-      const wp = ctx.world.via?.(e, goal) ?? null;
+      const wp = ctx.world.via?.(e, { x: goal.x, y: goal.player?.position.y, z: goal.z }) ?? null;
       let h = steer(e, wp ?? goal, list, { separation: 0.9 });
       const dGoal = wp ? Math.hypot(goal.x - e.x, goal.z - e.z) : h.dist;
       const reach = V('attackRange') * 0.8;
       if (dGoal > reach) {
         // look ahead for a wall or prop; turn away from it
-        const ahead = { x: e.x + h.x * 0.9, y: 0.6, z: e.z + h.z * 0.9 };
-        if (rayFixed(ctx, { x: e.x, y: 0.6, z: e.z }, ahead) !== null) { const t = rotate(h, 1.0 * e.side); const t2 = rotate(h, -1.0 * e.side); const a2 = { x: e.x + t.x * 0.9, y: 0.6, z: e.z + t.z * 0.9 }; h = rayFixed(ctx, { x: e.x, y: 0.6, z: e.z }, a2) === null ? t : t2; }
+        const ey = (e.y ?? 0) + 0.6, ahead = { x: e.x + h.x * 0.9, y: ey, z: e.z + h.z * 0.9 };
+        if (rayFixed(ctx, { x: e.x, y: ey, z: e.z }, ahead) !== null || !canStep(e, ahead.x, ahead.z)) { const t = rotate(h, 1.0 * e.side); const t2 = rotate(h, -1.0 * e.side); const a2 = { x: e.x + t.x * 0.9, y: ey, z: e.z + t.z * 0.9 }; h = rayFixed(ctx, { x: e.x, y: ey, z: e.z }, a2) === null && canStep(e, a2.x, a2.z) ? t : t2; }
         const c = clampTo(A, e.x + h.x * e.speed * dt, e.z + h.z * e.speed * dt);
-        e.x = c.x; e.z = c.z;
+        if (canStep(e, c.x, c.z)) { e.x = c.x; e.z = c.z; e.y = groundY(e.x, e.z, e.y); }
       }
       e.atk -= dt;
       if (dGoal <= V('attackRange') && e.atk <= 0) {
@@ -422,8 +429,8 @@ export function create(ctx, params = {}) {
       let x = vx + sx * dt * 2.4, z = vz + sz * dt * 2.4;
       const l = Math.hypot(x, z);
       if (l > 1e-4) {
-        const ahead = { x: e.x + x / l * 0.9, y: 0.6, z: e.z + z / l * 0.9 };
-        if (rayFixed(ctx, { x: e.x, y: 0.6, z: e.z }, ahead) !== null) { const t = rotate({ x: x / l, z: z / l }, 1.1 * e.side); x = t.x * l; z = t.z * l; }
+        const ey = (e.y ?? 0) + 0.6, ahead = { x: e.x + x / l * 0.9, y: ey, z: e.z + z / l * 0.9 };
+        if (rayFixed(ctx, { x: e.x, y: ey, z: e.z }, ahead) !== null || !canStep(e, ahead.x, ahead.z)) { const t = rotate({ x: x / l, z: z / l }, 1.1 * e.side); x = t.x * l; z = t.z * l; }
       }
       return { x, z };
     };
@@ -434,7 +441,9 @@ export function create(ctx, params = {}) {
       for (const p of players) { const d = Math.hypot(p.position.x - e.x, p.position.z - e.z); if (d < bd) { bd = d; best = p; } }
       const target = best ? { id: best.id, x: best.position.x, z: best.position.z } : null;
       const was = e.st;
+      const ox = e.x, oz = e.z;
       const acts = stepEnemy(e, T, { target, dt, now: now(), grant, release, avoid, clamp: keepIn, rng: () => ctx.rng() });
+      if (!canStep({ x: ox, y: e.y, z: oz }, e.x, e.z)) { e.x = ox; e.z = oz; } else if (e.x !== ox || e.z !== oz) e.y = groundY(e.x, e.z, e.y);
       for (const a of acts) {
         if (a.type === 'attack') attacks++;
         if (a.type === 'hit') {
@@ -474,18 +483,20 @@ export function create(ctx, params = {}) {
     const a = me.aim, yaw = me.yaw ?? 0;
     const heading = a && Math.hypot(a[0] ?? a.x ?? 0, a[2] ?? a.z ?? 0) > 0.1 ? { x: a[0] ?? a.x, z: a[2] ?? a.z } : { x: Math.sin(yaw), z: Math.cos(yaw) };
     let dist = 6, at = demoSpot(me.position, heading, A, dist);
-    const from = { x: me.position.x, y: 0.6, z: me.position.z };
+    // rays at the player's own height (their feet are the ground under them, wherever that is)
+    const feet = groundY(me.position.x, me.position.z, me.position.y), from = { x: me.position.x, y: feet + 0.6, z: me.position.z };
     // a melee player must reach it: turn until the way is clear (a projectile game keeps the spot straight ahead)
     if (melee()) {
       for (const turn of [0, 0.5, -0.5, 1, -1, 1.6, -1.6, 2.4, -2.4, Math.PI]) {
         const h = rotate({ x: heading.x / (Math.hypot(heading.x, heading.z) || 1), z: heading.z / (Math.hypot(heading.x, heading.z) || 1) }, turn);
         const t = demoSpot(me.position, h, A, 5.5);
-        if (rayFixed(ctx, from, { x: t.x, y: 0.6, z: t.z }) === null && rayFixed(ctx, { x: me.position.x, y: 1.6, z: me.position.z }, { x: t.x, y: 1.6, z: t.z }) === null) { at = t; dist = 5.5; break; }
+        if (rayFixed(ctx, from, { x: t.x, y: feet + 0.6, z: t.z }) === null && rayFixed(ctx, { x: me.position.x, y: feet + 1.6, z: me.position.z }, { x: t.x, y: feet + 1.6, z: t.z }) === null) { at = t; dist = 5.5; break; }
       }
     }
-    const wall = rayFixed(ctx, from, { x: at.x, y: 0.6, z: at.z });
+    const wall = rayFixed(ctx, from, { x: at.x, y: feet + 0.6, z: at.z });
     if (wall !== null) { dist = Math.max(3, wall - 0.8); at = demoSpot(me.position, heading, A, dist); }
     if (typed) { const c = keepIn(at.x, at.z); at = { x: c.x, z: c.z }; }
+    at = { ...at, y: feet };
     spawn(waveStats(1, stats()), at, { still: true, ty: 0, hpScale: 1 });
     demoT = 0.8;
   }
@@ -553,7 +564,7 @@ export function create(ctx, params = {}) {
     const pts = k?.[2] ?? V('killPoints');
     if (k && ctx.me && k[1] === ctx.me.id && pts && ctx.ui?.pop && ctx.camera) {
       ctx.camera.updateMatrixWorld();
-      const s = screen(v.x, heightOf(v) + 0.5, v.z);
+      const s = screen(v.x, (v.y ?? 0) + heightOf(v) + 0.5, v.z);
       if (s.front) ctx.ui.pop(`+${pts}`, s.x, s.y, ctx.me.color ?? null);
     }
     if (v.character) {
@@ -609,6 +620,7 @@ export function create(ctx, params = {}) {
       const frozen = (v.freezeT ?? 0) > 0; if (frozen) v.freezeT -= dt;
       const px = v.x, pz = v.z, k = ctx.host ? 1 : Math.min(1, dt * 9);
       if (!frozen) { v.x += (v.tx - v.x) * k; v.z += (v.tz - v.z) * k; }
+      if (!frozen || v.y === undefined) { const gy = groundY(v.x, v.z, v.y); v.y = v.y === undefined ? gy : v.y + (gy - v.y) * Math.min(1, dt * 12); }
       const mx = v.x - px, mz = v.z - pz, sp = Math.hypot(mx, mz) / Math.max(dt, 1e-3);
       let face = null;
       if (typed && (v.st === ST.windup || v.st === ST.attack) && v.atkYaw !== undefined) face = v.atkYaw;
@@ -620,7 +632,7 @@ export function create(ctx, params = {}) {
       if (v.obj) {
         v.born = Math.min(1, v.born + dt * 4);
         const s = 0.3 + 0.7 * v.born, q = v.character ? 0 : Math.max(0, 1 - v.hitT / 0.22);      // a stand-in squashes on a hit
-        v.obj.position.set(v.x, 0, v.z); v.obj.rotation.y = v.yaw;
+        v.obj.position.set(v.x, v.y ?? 0, v.z); v.obj.rotation.y = v.yaw;
         v.obj.scale.set(s * (1 + 0.14 * q), s * (1 - 0.2 * q), s * (1 + 0.14 * q));
         if (typed) {
           const T = TYPES[v.ty] ?? TYPES[0];
@@ -654,7 +666,7 @@ export function create(ctx, params = {}) {
       const rows = [];
       for (const v of view.values()) {
         if (!v.obj || !(v.hp < v.max - 1e-6) || v.hp <= 0) continue;
-        const s = screen(v.x, heightOf(v) + 0.32, v.z);
+        const s = screen(v.x, (v.y ?? 0) + heightOf(v) + 0.32, v.z);
         rows.push({ id: v.id, x: s.x, y: s.y, value: v.hp, max: v.max, color: V('barColor'), visible: s.front && Math.abs(s.ndc[0]) < 1.05 && Math.abs(s.ndc[1]) < 1.05, hit: !!v.barHit });
         v.barHit = false;
       }
@@ -665,7 +677,7 @@ export function create(ctx, params = {}) {
   // ---------- the melee mechanic's targets (kit/mechanics/melee: ctx.meleeTargets) ----------
   const meleeProvider = {
     key: 'w',
-    list: () => [...view.values()].filter(v => v.obj && v.hp > 0).map(v => ({ id: v.id, x: v.x, z: v.z, radius: radiusOf(v), height: heightOf(v) })),
+    list: () => [...view.values()].filter(v => v.obj && v.hp > 0).map(v => ({ id: v.id, x: v.x, y: v.y ?? 0, z: v.z, radius: radiusOf(v), height: heightOf(v) })),
     hostFind: id => { const e = enemies.get(id); return e ? { x: e.x, z: e.z, radius: radiusOf(e) } : null; },
     /** The host applies a swing's hit: guard, damage (each swing once: melee dedupes), push and stagger. */
     hit({ id, attacker, damage, dir, move }) {
@@ -737,6 +749,14 @@ export function create(ctx, params = {}) {
     /** Host: this level's encounter is over: its last wave is out and every enemy is down. */
     encounterCleared() { return enc.active && director.wave >= enc.waves && (director.phase === 'rest' || director.phase === 'done') && director.left === 0 && enemies.size === 0; },
     /** Enemies now on this copy: [{id, x, z, hp, max}] (for bots and rules). */
+    /** What a player must get to (gate D's reach leg, window.__game.objectives()): every enemy in play and the target to
+     *  defend, each where it stands on the world's ground. */
+    objectives() {
+      const list = [...view.values()].filter(v => v.obj && v.hp > 0).map(v => ({ kind: 'enemy', id: `enemy:${v.id}`, label: typed ? TYPES[v.ty]?.id ?? 'enemy' : 'enemy', x: v.x, y: v.y ?? groundY(v.x, v.z), z: v.z, present: true, open: true, radius: V('attackRange') + radiusOf(v) + 0.6 }));
+      const tp = targetPos();
+      if (tp) list.push({ kind: 'goal', id: `target:${V('target')}`, label: V('target'), x: tp.x, y: groundY(tp.x, tp.z), z: tp.z, present: true, open: targetHp > 0, radius: 2.5 });
+      return list;
+    },
     enemies: () => (ctx.host ? live().map(e => ({ ...pub(e), max: e.max, ...(typed ? { st: e.st } : {}) })) : (S?.e ?? []).map(e => ({ id: e[0], x: e[1], z: e[2], hp: e[3], max: e[4] ?? e[3], ...(typed ? { type: TYPES[e[5]]?.id, behaviour: TYPES[e[5]]?.behaviour, st: e[6] } : {}) }))),
     /** This copy only: hold an enemy's drawn body still for `secs` (hit-stop). */
     freeze(id, secs) { const v = view.get(id); if (v) v.freezeT = Math.max(v.freezeT ?? 0, secs); },
@@ -755,7 +775,7 @@ export function create(ctx, params = {}) {
         kills: killLog.slice(-16),
         ...(typed ? { typed: true, tokens: tokensUsed, attacks, dodged, bolts: bolts?.stats ?? null, telegraphs: [...view.values()].filter(v => v.tele?.visible).length } : {}),
         enemies: [...view.values()].filter(v => v.obj).map(v => ({ id: v.id, x: r2(v.x), z: r2(v.z), hp: v.hp, max: v.max, bar: v.hp < v.max - 1e-6, ...(typed ? { type: TYPES[v.ty]?.id, st: v.st } : {}),
-          ...(cam ? { body: (({ x, y, front }) => ({ x: r2(x), y: r2(y), front }))(screen(v.x, heightOf(v) * 0.55, v.z)), head: (({ x, y, front }) => ({ x: r2(x), y: r2(y), front }))(screen(v.x, heightOf(v) + 0.32, v.z)), feet: (({ x, y }) => ({ x: r2(x), y: r2(y) }))(screen(v.x, 0, v.z)) } : {}) })),
+          ...(cam ? { body: (({ x, y, front }) => ({ x: r2(x), y: r2(y), front }))(screen(v.x, (v.y ?? 0) + heightOf(v) * 0.55, v.z)), head: (({ x, y, front }) => ({ x: r2(x), y: r2(y), front }))(screen(v.x, (v.y ?? 0) + heightOf(v) + 0.32, v.z)), feet: (({ x, y }) => ({ x: r2(x), y: r2(y) }))(screen(v.x, v.y ?? 0, v.z)) } : {}) })),
       };
     },
     reset() { enemies.clear(); director.reset(); kills = 0; targetHp = V('targetHp'); targetDownFired = false; started = false; view.forEach(v => { v.obj?.removeFromParent(); v.character?.dispose?.(); v.tele?.removeFromParent(); }); view.clear(); dying.forEach(d => { d.v.obj?.removeFromParent(); d.v.character?.dispose?.(); d.v.tele?.removeFromParent(); }); dying.length = 0; lastList = null; lastWave = 0; recentKills.length = 0; demoT = 0; ctx.ui?.bars?.('waves', []); bolts?.clear(); tokensUsed = 0; lastGrant = -9; attacks = 0; dodged = 0; if (managed) enc = { level: 1, active: false, waves: 0, hpScale: 1, speedScale: 1, mix: null, done: false }; },
@@ -765,9 +785,9 @@ export function create(ctx, params = {}) {
         S = ctx.shared.register('waves', { e: [], w: [0, 0, V('targetHp'), 'wait'], k: [] });
         loadTemplate();
         const prj = ctx.mechanics.get('projectile');
-        if (V('hittable') && prj && !prj.standin && prj.addTargets) prj.addTargets({ list: () => (ctx.host ? live().map(e => ({ id: `e${e.id}`, x: e.x, y: 0, z: e.z, radius: radiusOf(e), height: typed ? (TYPES[e.ty]?.height ?? V('height')) : V('height') })) : []), hit: h => { const id = Number(String(h.target ?? h.targetId).replace(/^e/, '')); const e = enemies.get(id); if (e) e.shots++; damageEnemy(id, h.damage ?? 1, { from: h.shooter, kind: h.kind, impulse: h.dir ? { x: h.dir[0] * 4, z: h.dir[2] * 4 } : null }); } });
+        if (V('hittable') && prj && !prj.standin && prj.addTargets) prj.addTargets({ list: () => (ctx.host ? live().map(e => ({ id: `e${e.id}`, x: e.x, y: e.y ?? 0, z: e.z, radius: radiusOf(e), height: typed ? (TYPES[e.ty]?.height ?? V('height')) : V('height') })) : []), hit: h => { const id = Number(String(h.target ?? h.targetId).replace(/^e/, '')); const e = enemies.get(id); if (e) e.shots++; damageEnemy(id, h.damage ?? 1, { from: h.shooter, kind: h.kind, impulse: h.dir ? { x: h.dir[0] * 4, z: h.dir[2] * 4 } : null }); } });
         // the crosshair stops on an enemy where this copy draws it (kit/core/aim.js), so a shot lands on the one under it
-        if (V('hittable') && ((prj && !prj.standin) || melee())) { aimSrc = () => [...view.values()].filter(v => v.obj).map(v => ({ id: `e${v.id}`, x: v.x, z: v.z, height: heightOf(v), radius: radiusOf(v) })); (ctx.aimBodies ??= []).push(aimSrc); }
+        if (V('hittable') && ((prj && !prj.standin) || melee())) { aimSrc = () => [...view.values()].filter(v => v.obj).map(v => ({ id: `e${v.id}`, x: v.x, y: v.y ?? 0, z: v.z, height: heightOf(v), radius: radiusOf(v) })); (ctx.aimBodies ??= []).push(aimSrc); }
         // swings hit enemies (kit/mechanics/melee)
         if (V('hittable') && melee()) (ctx.meleeTargets ??= []).push(meleeProvider);
       }
@@ -793,7 +813,7 @@ export function create(ctx, params = {}) {
       // the target: a ring on the ground and a HUD bar
       if (api.state().hasTarget) {
         const tp = targetPos();
-        if (!ring) { ring = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.1, 40).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: V('color'), transparent: true, opacity: 0.6, depthWrite: false })); ring.position.set(tp.x, 0.04, tp.z); ctx.assets.tag(ring, 'mechanic.waves.color'); root.add(ring); }
+        if (!ring) { ring = new THREE.Mesh(new THREE.RingGeometry(0.9, 1.1, 40).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ color: V('color'), transparent: true, opacity: 0.6, depthWrite: false })); ring.position.set(tp.x, groundY(tp.x, tp.z) + 0.04, tp.z); ctx.assets.tag(ring, 'mechanic.waves.color'); root.add(ring); }
         if (ctx.ui?.meter) { if (!meter) meter = ctx.ui.meter('target', { label: V('targetLabel'), value: w.targetHp, max: V('targetHp'), color: V('color') }); meter.set(w.targetHp, V('targetHp')); }
       }
     },

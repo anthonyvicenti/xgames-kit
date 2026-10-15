@@ -41,7 +41,7 @@ export function levelValues(t, values) {
 
 /**
  * Framings with the kind of place each camera stands in (`where`, the look judge's place requests: a world answers
- * ctx.world.place(where)), where none is given: a play or close framing stands at a seat, a scene framing on a sunlit
+ * ctx.world.lookout(where)), where none is given: a play or close framing stands at a seat, a scene framing on a sunlit
  * rise (over an open sea view when the horizon is the sea), a night frame outdoors at night; a map or UI framing has
  * no place. → new framings
  */

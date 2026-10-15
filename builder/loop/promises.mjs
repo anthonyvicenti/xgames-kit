@@ -4,11 +4,14 @@
 //                  core, and proven only by the play-tester seeing it work
 //   control.<a>    a control of the spec: the key does what it says
 //   loop.closes    the loop's own promise (its manifest): a round ends, is won or lost, and replays
+//   play.<n>       a "what makes it play" line of the play target (spec.play.target.makes, builder/play/design.mjs):
+//                  core, and proven only by the play-tester seeing it on their own screen
 // Each ledger line is proven by its promises: delivery carries every line as proven, failed or untested.
 // A promise about friends (`friends: true`: the ledger's players line, and a build line that serves it) is proven by
 // the play-tester only with two player-driven seats (playtest.mjs twoSeats); seen with bots or alone it stays untested.
 import { liveRows } from './ledger.mjs';
 import { SEES } from '../gf-multiplayer/source/presence.js';
+import { playPromises } from '../play/design.mjs';
 
 export const PLAY = 'play';
 const gate = g => `gate:${g}`;
@@ -33,6 +36,7 @@ export function promisesOf({ spec, ledger, loopManifest = null, friends = null }
     id: `build.${i + 1}`, kind: 'build', row: b.row ?? null, ...(b.kind ? { look: b.kind } : {}), where: b.where,
     text: `Built new for this game, and I can see it working when I play: ${b.what}`, how: b.how, core: true, confirm: true, proofs: [PLAY], ...(friendRows.has(b.row) ? { friends: true } : {}),
   }));
+  for (const p of playPromises(spec?.play?.target)) out.push(p.friends && sees ? { ...p, text: p.text + sees.text, sees: sees.sees } : p);
   for (const [action, keys] of Object.entries(spec?.controls ?? {})) out.push({ id: `control.${action}`, kind: 'control', text: `${keys}: ${action}`, action, keys, core: false, proofs: [gate('C'), PLAY] });
   out.push({ id: 'loop.closes', kind: 'loop', text: loopManifest?.promise ?? `A ${spec?.loop ?? 'round'} can be won or lost, ends, and plays again.`, core: true, proofs: [gate('D'), PLAY] });
   return out;
